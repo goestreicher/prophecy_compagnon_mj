@@ -34,10 +34,10 @@ class CreaturesMainPage extends StatefulWidget {
 
 class _CreaturesMainPageState extends State<CreaturesMainPage> {
   final TextEditingController _categoryController = TextEditingController();
-  final TextEditingController _searchController = TextEditingController();
+  // final TextEditingController _searchController = TextEditingController();
   final GlobalKey<FormState> _newCreatureFormKey = GlobalKey();
   CreatureCategory? _category;
-  String? _search;
+  // String? _search;
   bool editing = false;
   CreatureModel? _selected;
   String? _newCreatureName;
@@ -59,8 +59,8 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
 
           setState(() {
             if(creature != null) {
-              _selected = creature!;
-              _category = creature!.category;
+              _selected = creature;
+              _category = creature.category;
             }
             editing = false;
           });
