@@ -1,0 +1,624 @@
+[
+  {
+    "name": "Certitude",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 5,
+    "cost": 1,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de la précision"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage récupère (2 + NR) Points de Maîtrise déjà dépensés. Il ne peut en aucun cas dépasser la valeur de son Attribut Maîtrise de cette façon. Rater le lancement de ce sort ne rapporte aucun Point de Chance."
+  },
+  {
+    "name": "Croyance draconique",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 5,
+    "cost": 3,
+    "difficulty": 16,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "sagianor",
+      "rune de Moryargorn (sur la cible)",
+      "chant d'appel (Social + Don artistique : Chant, Diff. 15)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "Ce sort mineur, lancé au contact, est parfois d'une grande aide pour accomplir un petit exploit au nom des Dragons. Pour une durée de (Sphère) tours, la cible dispose d'un bonus de +1/NR sur l'une des Compétences qu'elle possède déjà (choisie par le lanceur). Les éventuels Critiques sont gérés vis à vis du score virtuel, mais il n'est pas possible d'entamer des actions soumises à des scores de Compétence (ex : sorts demandant une Expertise, potions soumises à Compétences) ou des actions de longue haleine (ex : création d'objet). Il n'est pas possible d'instruire un personnage à partir de Compétences augmentées."
+  },
+  {
+    "name": "Estampille de Kezyr",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 15,
+    "cost": 2,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune du métal",
+      "marque de Kezyr gravée sur l'objet",
+      "chant du forgeron"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "En apposant la marque de Kezyr sur un objet, le mage en augmente définitivement la qualité de (1 + 1 par 3NR) niveaux (de bonne à très bonne, etc.). Un objet ne peut porter qu'une marque de Kezyr et l'augmentation de la qualité de procure aucune capacité spéciale."
+  },
+  {
+    "name": "Force du forgeron",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 10,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "tatouage ou dessin d'une rune du métal",
+      "pression musculaire"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage augmente sa force ou celle d'une personne consentante de 5 pendant (1 + NR) tours. Cette modification n'affecte pas l'Attribut Physique mais s'applique aux dommages physiques."
+  },
+  {
+    "name": "Frère du métal",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 10,
+    "cost": 3,
+    "difficulty": 17,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "sifflement grave",
+      "paume ouverte",
+      "rune du métal sur la paume"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "En tendant la main vers un objet métallique, le personnage peut provoquer une impulsion élémentaire capable de le faire jaillir vers sa main. A l'inverse, l'impulsion peut projeter un objet de sa main vers un adversaire ou un endroit précis. L'objet ou la cible doit être situé à moins de (Sphère du Métal) m et peser moins de deux kilos par point en Sphère du Métal (ex : avec un score de 6, un mage peut déplacer un objet de 12 kg situé à moins de 6m de lui ou guider à 6 m un objet qu'il tiendrait dans la main). Ce sort ne permet pas de manipuler une arme métallique pour parer un coup mais une épée, une hache ou une dague peuvent devenir des projectiles mortels qui ne demandent pas d'armer son coup. Il n'y a pas de jet d'attaque car les éventuels NR du sort servent à calculer la Difficulté d'une parade ou d'une esquive. Dans ce cas, au lieu d'utiliser la Force pour calculer les dommages, on utilise la Sphère du mage. Si un objet attiré est attaché, le Mj doit déterminer le nombre de NR nécessaire pour l'arracher (1 pour un râtelier, 2 pour une arme maintenue par une chaîne, 3 pour une épée enfoncée dans un mur depuis 50 ans...). Si l'objet est tenu par un adversaire, ce dernier peut tenter un jet d'opposition de Physique + Force contre le jet d'incantation pour garder l'objet. Ce sort ne permet que de mouvoir un objet vers ou depuis sa main, pas de le manipuler avec télékinésie."
+  },
+  {
+    "name": "Jeu de la gravité",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 25,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "objet de moins d'une tonne",
+      "rune de plomb",
+      "plume"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "L'objet enchanté voit son poids multiplié ou divisé par 3 pendant (1 + NR) jours. Ce sort baisse les prérequis de Force des armes et armures (ainsi que leur pénalité d'encombrement) de 3."
+  },
+  {
+    "name": "Lame brisée",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 5,
+    "cost": 1,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune d'acier",
+      "cri aigu"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage brise un objet en métal situé à moins de 5 mètres. Les objets enchantés, magiques, ou de très bonne qualité ne sont pas affectés par ce sort."
+  },
+  {
+    "name": "Lame des artisans",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 10,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "arme de Bonne qualité",
+      "gestuelle des doigts",
+      "murmure saccadé"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "En passant rapidement ses doigts sur une lame ou le fer d'une arme, le personnage lui confère, le temps de (1 + NR) attaques (obligatoirement les prochaines à toucher), la faculté de réduire de moitié l'Indice de protection de n'importe quelle armure métallique - ou comportant des parties métalliques (ou d'un bouclier, mais pas des deux en même temps, au choix du lanceur). Si l'armure est enchantée, l'Indice de protection n'est réduit que d'un quart. Ce sortilège est sans effet contre les dragons du Métal ou les armures draconiques faites à partir de leurs écailles. Ce sort est inefficace sur les armes en os, en pierre, en bois ou en Sombre Acier."
+  },
+  {
+    "name": "Lame du héros",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 10,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "arme",
+      "runes",
+      "sentiment de force",
+      "sable noir"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort enchante la lame d'une arme qui bénéficie alors d'un bonus de +5 aux dommages pendant (1 + NR) jours. Le sable utilisé semble rester inclus dans la lame durant ce laps de temps. Il disparaît ensuite, laissant la lame retrouver son état d'origine."
+  },
+  {
+    "name": "Le refus de la fatalité",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 5,
+    "difficulty": 16,
+    "casting_duration": 3,
+    "casting_duration_unit": "action",
+    "keys": [
+      "tête baissée",
+      "yeux clos",
+      "paume ouverte vers le ciel"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "En lançant ce sortilège, le mage peut transformer autant de points de Chance qu'il le souhaite - et qu'il possède au moment de l'incantation - en points de Maîtrise. Le coût du sort est réduit d'un point de magie par NR obtenu.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Kezyr »."
+  },
+  {
+    "name": "Les ailes d'airain",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 12,
+    "difficulty": 15,
+    "casting_duration": 15,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "encens de Kezyr",
+      "posture (un genou à terre, une épée scintillante à la main la pointe en base, tête baissée, attitude révérente)",
+      "cercle runique formé de limaille de métal"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "À la fin de la méditation, le mage sort de transe alors que les runes du cercle émettent des rayons de lumière argentée qui jaillissent vers le ciel. Le magicien attire alors l'attention d'un fils de Kezyr (le plus proche) pour lui demander conseil ou solliciter un transport personnel vers une destination précise. Le dragon est de la seconde tranche d'âge + 1/NR. Le dragon vient par ses propres moyens (et donc peut mettre un moment à arriver), n'a aucune obligation vis à vis du mage et ne vient pas pour se battre (il a d'ailleurs probablement d'autres affaires en cours à régler). Le magicien doit avoir une bonne raison de demander son aide, mais un présent pour service rendu n'est pas obligatoire. Les dragons de Kezyr peuvent priver l'invocateur de l'usage de sa Sphère du Métal pour un jour par tranche d'âge s'ils estiment que sa requête est futile, mais n'useront généralement pas de violence vis à vis d'un mage doté de peu de discernement. En général, le fait d'oser cette invocation les incitera à la patience et c'est avec un a priori confiant qu'ils rejoindront le mage. Tant que ce dernier ne les mène pas visiblement en bateau, ils lui accorderont une confiance relative. Par contre, les dragons de Kezyr ont tendance à rester longtemps aux côtés des humains après leur avoir prodigué des conseils, juste pour voir s'ils en font bon usage, mais sans leur en prodiguer d'autres..."
+  },
+  {
+    "name": "Manteau élémentaire",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 8,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "un peu de l'élément correspondant",
+      "posture (bras croisés, tête rentrée)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
+  },
+  {
+    "name": "Mine merveilleuse",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 5,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "pioche ou pelle",
+      "chant de mineur"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "En creusant la terre d'une cinquantaine de centimètres, le mage découvre des pépites de fer. Le poids total de la découverte est de (1 + NR) kilos de fer."
+  },
+  {
+    "name": "Pas léger",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 5,
+    "cost": 4,
+    "difficulty": 15,
+    "casting_duration": 3,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "plume",
+      "rune d'agilité tracée sur l'armure en métal",
+      "danse du métal",
+      "voix grave"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "En invoquant l'agilité de Kezyr, le mage assouplit magiquement une armure de métal et en diminue ainsi la pénalité d'encombrement de 5 pendant (5 + 2 par NR) heures."
+  },
+  {
+    "name": "Poing d'acier",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 35,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune d'acier",
+      "voix"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "La chair d'un membre devient de l'acier malléable qui permet de lui donner la forme d'une arme ou d'un outil pendant (1 + NR) tours. Si le membre se transforme en arme, cette dernière dispose d'un bonus de +5 aux dommages. Dans le cas d'un outil, la compétence nécessaire pour l'utiliser bénéficie d'un bonus de +5."
+  },
+  {
+    "name": "Rideau d'acier",
+    "sphere": "metal",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 20,
+    "cost": 7,
+    "difficulty": 15,
+    "casting_duration": 5,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune",
+      "posture (bras croisés devant le visage)"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage est protégé par un écheveau de fins fils d'acier qui ondulent autour de lui pendant (2 + NR) tours. Cette barrière métallique divise par 3 tous les dommages physiques infligés contre le lanceur du sort et par 2 les dommages magiques. Tous les dommages sont arrondis à l'inférieur."
+  },
+  {
+    "name": "Acide de Kezyr",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 25,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "fiole",
+      "eau",
+      "chant des fontaines mercuriales"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet de créer 1 litre d'une substance capable de liquéfier le métal. Très pratique pour les loquets et les armures trop épaisses, l'acide de Kezyr ne peut malheureusement affecter que des objets métalliques de qualité inférieure à bonne. Le liquide conserve ses propriétés pendant (5 + NR) semaines."
+  },
+  {
+    "name": "Attraction des faibles",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 35,
+    "cost": 12,
+    "difficulty": 25,
+    "casting_duration": 5,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune",
+      "limaille de fer",
+      "souffle"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage souffle sur de la poussière métallique et forme un nuage qu'il déplace à volonté pendant (30 + 30 par NR) minutes. Tous les objets métalliques situés à moins de 30 mètres sont attirés vers le nuage. Les individus portant plus de 5 kilos de métal subissent le même sort. Toutefois il leur est possible de résister par un jet de Manuel + Force contre une Difficulté de 15 + 1 par kilo de métal porté. S'ils sont libres, les objets métalliques s'agglutinent ensemble et ne peuvent plus être séparés."
+  },
+  {
+    "name": "Éclat insoutenable",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 40,
+    "cost": 4,
+    "difficulty": 18,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "armure comportant du métal",
+      "position (bras écartés, tête renversée)",
+      "respiration bloquée"
+    ],
+    "source": "La colère des dragons",
+    "description": "Tout le métal porté par le mage (arme, armure) se met à briller violemment d'une lumière platine, aveuglant toutes les personnes sur 5 mètres de rayon comme s'ils regardaient le soleil. Il n'y a aucun dégagement de chaleur, seule la lumière est gênante et oblige à combattre en aveugle, avec les malus appropriés (de -5 à l'impossibilité d'agir, au choix du meneur)."
+  },
+  {
+    "name": "Globes de la vengeance",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 30,
+    "cost": 8,
+    "difficulty": 18,
+    "casting_duration": 3,
+    "casting_duration_unit": "action",
+    "keys": [
+      "billes de plomb",
+      "grognements"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage projette des billes de plomb vers sa cible. Elles tournoient autour de la cible et la percutent irrégulièrement, occasionnant (30 + 1D10) points de dommages par tour. Elles peuvent être parées (avec un bouclier) ou esquivées avec une Difficulté de +10. Ce sort dure pendant (1 + NR) tours."
+  },
+  {
+    "name": "Griffes rasoir",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 25,
+    "cost": 9,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "gants munis de griffes en métal ou katar",
+      "chant du métal",
+      "position (bras croisés sur la poitrine)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage croise ses griffes en finissant son chant. Ces dernières deviennent invisibles et peuvent toucher un adversaire jusqu'à 15 mètres comme si le mage était engagé au corps à corps avec lui. Les griffes ignorent les armures ne comportant pas de métal et infligent des dommages de base de 10. Le mage doit réussir un jet de Physique + Corps à corps pour toucher son adversaire, ce dernier ne pouvant qu'esquiver en anticipant les mouvements du mage. Le sort dure 5 + 2 par NR tours après quoi les griffes redeviennent normales."
+  },
+  {
+    "name": "L'éclat de l'unique",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 30,
+    "cost": 6,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "minerai de métal brut (consommé)",
+      "perle de valeur (au moins 200 df, consommée)",
+      "respiration bloquée"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "En écrasant la perle dans sa main avec les grains de minerai, le mage libère autour de lui une vague d'énergie qui affecte chaque élément métallique présent dans un rayon de 1 mètre/ Statut + 1m/NR. Tous les éléments métalliques présents reprennent instantanément leur indépendance et se désolidarisent des matières et éléments non métalliques auxquels ils étaient fixés - gonds, attaches, éléments d'armure, etc. Ils se nimbent alors d'une lueur nacrée et flottent durant un tour avant de retomber au sol sous le coup de la gravité. Le mage est affecté par les effets de son propre sort. Par la suite, la Difficulté de tous les jets de réparation est augmentée de 3 pour assembler de nouveau les parties métalliques ainsi dispersées."
+  },
+  {
+    "name": "Le creuset du métal",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 30,
+    "cost": 4,
+    "difficulty": 18,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "encens de Kezyr (consommé)",
+      "diamant gravé d'une rune du métal (à passer lentement sur l'objet)",
+      "mantra sourd"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "En lançant ce sort sur un objet manufacturé comportant du métal (pour au moins la moitié de sa composition), le mage peut bonifier le travail de l'artisan. Ce faisant, il épure les défauts dont pourrait être entaché l'objet et lui confère (1 + 1 par NR) niveaux de qualité virtuels. Ces NR sont capables de conférer des qualités comme s'ils étaient issus du travail de l'artisan. Néanmoins, pour être efficace, le mage doit lancer ce sort avec un jet d'incantation plus élevé que le score final d'Artisanat (ou de création) qui a servi à obtenir l'objet. Les capacités obtenues sont décidées par le mage en fonction des effets possibles sur la table de la page 146. Les effets de ce sort durent Sphère du Métal jours.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Kezyr »."
+  },
+  {
+    "name": "Serviteur argenté",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 35,
+    "cost": 7,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "Drac d'argent",
+      "rune d'argent"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Un petit serviteur élémentaire sort du Drac d'argent. Il sert le mage pendant (10 + 10 par NR) minutes et peut accomplir de simples tâches (ouvrir une porte, apporter un message, etc.). Craintif, il ne participe à aucun combat. En disparaissant, le serviteur ne laisse pas 1 mais 2 Dracs d'argent derrière lui."
+  },
+  {
+    "name": "Talisman élémentaire mineur",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 30,
+    "cost": 3,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "sagianor (à étaler sur l'objet ensorcelé, consommé)",
+      "encens de l'élément concerné",
+      "chant des éléments (Mental + Don artistique : Chant, Diff. 15)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
+  },
+  {
+    "name": "Traits acérés",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 40,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "clous en acier",
+      "rune d'acier",
+      "posture élancée"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort fait jaillir des aiguilles d'acier de 30 centimètres de long vers une cible située à moins de 100 mètres. Elles occasionnent (15 + 1D10 par NR) points de dommages. Les aiguilles ne peuvent être ni parées ni esquivées."
+  },
+  {
+    "name": "Cisaille expéditive",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 50,
+    "cost": 6,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "armure contenant du métal",
+      "position (coup du plat de la main)",
+      "cri aigu"
+    ],
+    "source": "La colère des dragons",
+    "description": "Ce sort très puissant est redouté par tous les combattants de Kor. Pour peu qu'il arrive au corps à corps, le mage peut poser sa main sur l'armure métallique visée par un simple jet de Physique + Corps à Corps de Difficulté 15. La manœuvre s'esquive normalement, mais ne se pare pas. L'armure éclate alors en de multiples fragments acérés qui blessent cruellement son porteur, comme si le métal fuyait le contact du mage. La victime subit (30 + 1 par NR) points de dommages sans armure. L'armure perd immédiatement la moitié de son Indice de protection."
+  },
+  {
+    "name": "Colère du métal",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 60,
+    "cost": 15,
+    "difficulty": 25,
+    "casting_duration": 10,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "20 billes de fer",
+      "rune de métal",
+      "poudre de charbon"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage enchante 20 billes de fer pendant (1 + NR) ans qu'il peut placer où il souhaite mais jamais côte à côte. Les billes explosent ensuite au moindre contact, occasionnant (30 + 2D10) points de dommages si le mot de commande n'est pas prononcé dans les 2 mètres. Le mage peut transporter les billes sans risque dans de la poudre de charbon. Au moment de la pose, il doit les nettoyer consciencieusement et prononcer le mot de commande."
+  },
+  {
+    "name": "Étole de lacération",
+    "sphere": "metal",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 100,
+    "cost": 15,
+    "difficulty": 20,
+    "casting_duration": 4,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "écharpe de très bonne facture",
+      "position (danse du derviche)",
+      "chant du métal"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage ensorcèle un ruban de tissu large comme la main, long d'environ 3 mètres. Généralement porté ballant, il ressemble à une banale écharpe ou à un chèche. En combat, le ruban peut filer en tourbillonnant vers un adversaire en devenant tranchant comme un rasoir : il s'allonge magiquement et peut frapper jusqu'à 20 mètres, provoquant 15 + 1D10 points de dommages. Il s'esquive ou se pare normalement, mais peut frapper 4 cibles proches. Il est utilisable jusqu'à 5 fois par jour et demande une action du mage pour être guidé."
+  },
+  {
+    "name": "Le manteau de foudre",
+    "sphere": "metal",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 80,
+    "cost": 10,
+    "difficulty": 27,
+    "casting_duration": 2,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "poudre d'argent (consommée)",
+      "rune du métal (à tisser ou à broder)",
+      "chant du métal scandé sous un orage (magique ou non)"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "Ce sort peut être lancé sur un vêtement, une cape, un manteau ou même une armure. Seul impératif, que le vêtement comporte des éléments de métal (clous, rivets, mailles, boucles). Bien souvent, les mages du métal le lancent sur les capes de mailles fines qu'ils portent au dessus de leurs vêtements. Dès que l'armure ou le vêtement est touché par une arme en métal, elle devient capable de déchaîner la foudre vengeresse de Kezyr. Les dommages sont de 2D10 + 5 et cet effet peut être déclenché jusqu'à (Tendance Dragon du porteur) fois par jour, mais le porteur n'a aucun pouvoir sur le déclenchement, qui est systématique à chaque touche. Ce sort dure un Augure. Il n'est pas possible de se prémunir matériellement de cette attaque, de la parer, de l'esquiver ou de comptabiliser une armure physique. On ne peut prendre en compte que les protections dues à un enchantement ou un objet ensorcelé, tel qu'une armure, un talisman ou un sort."
+  },
+  {
+    "name": "Le sceau de confiance",
+    "sphere": "metal",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 85,
+    "cost": 15,
+    "difficulty": 30,
+    "casting_duration": 2,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "rune de Kezyr ciselée sur l'objet (Diff. 15 avec au moins 2NR)",
+      "goutelette de sang de Kezyr",
+      "chant sacré de vénération"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "En lançant ce sortilège sur un objet manufacturé de nature mécanique (et donc normalement interdite), le personnage peut lui conférer une aura magique liée à la Sphère du Métal durant un Cycle. Cette aura a force de reconnaissance auprès des autorités draconiques et ne doit pas être utilisée à la légère (sa durée permet d'ailleurs une surveillance de l'usage de l'objet conforme aux préceptes draconiques). Ce sort est relativement rare et ne s'utilise que sur des objets dont l'utilité commune est indéniable (moulin, horloge publique, arme de siège tolérée dans les régions les plus dangereuses...). Très souvent, les cadrans élémentaires en sont munis afin de renforcer la paternité draconique de cet objet courant. Tout mage de premier statut sait lire profondément la trame de l'enchantement, dans laquelle apparaît toujours le nom et l'identité psychique du lanceur (si ce dernier possède le Privilège Anonymat, sa trace peut être altérée ou brouillée, revoir p.115). Ce sort est socialement discuté car sa mise au point (il y a à peine un siècle) par les Visionnaires n'est toujours pas très bien acceptée par les érudits, et dans une moindre mesure, par les Prodiges et l'Inquisition. A ce jour, on n'a jamais vu un mage le lancer à la légère sur un objet clairement hérétique, et toute confrontation entre le lanceur du Sceau et un érudit le remettant en cause s'est toujours réglée par prééminence de Statut, voire par l'arbitrage suprême d'un dragon."
+  },
+  {
+    "name": "Les clefs du destin",
+    "sphere": "metal",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 70,
+    "cost": 2,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "runes de la révélation, du métal et de la transformation à entrelacer sur l'objet (Manue + Don artistique : Gravure, Diff. 15)",
+      "chant des Matières Essentielles",
+      "gestuelle de malaxage et d'assouplissement de l'objet"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "Ce sort repose sur la croyance qui stipule que « tout outil existe en fait au sein d'un autre, il suffit de le révéler comme le sculpteur dévoile la statue qui existe au sein du bloc de marbre. » En se concentrant sur une certaine utilisation, le personnage peut transformer un objet métallique (ou même un simple lingot) en un outil parfaitement approprié à l'usage auquel il pense. Au maximum, ce sort peut affecter un objet d'un kilo par point dans la Sphère du Métal. Il peut être lancé par avance sur un objet et activé seulement par un mot choisi par le mage (auquel cas il prend la forme que le mage a prévu durant son incantation, sans qu'aucune modification ne soit possible). Dans ce cas, l'objet peut se transformer une fois, dans la limite de Sphère jours. On peut bien sûr porter plusieurs fois le sort sur un même objet, tant que les mots de commande sont différents. L'objet prend forme en une action et reprend sa forme originelle au bout d'une heure. La Difficulté de base est de 15, mais certains objets complexes requièrent des NR pour émerger : 0 pour un simple stylet ou un burin, 1 NR pour un loquet de porte ou des tenailles, 2 NR pour un outil mécanique ou comportant des parties mobiles complexes, un ressort ou encore un engrenage, etc. Si l'objet d'origine est déjà un objet mécanique, l'interaction entre la Sphère du Métal et la science humaniste augmente la Difficulté de 5. Par contre, il sera ainsi possible de transformer un ressort ou un mécanisme d'arbalète en poinçon ou en burin, etc."
+  },
+  {
+    "name": "Les larmes de Kezyr",
+    "sphere": "metal",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 85,
+    "cost": 13,
+    "difficulty": 25,
+    "casting_duration": 10,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "runes (rune de Kezyr à porter sur le front et runes de larmes d'argent sous les yeux)",
+      "kata de la pureté de l'âme (Empathie + Acrobatie, Diff. 15)",
+      "poussière d'argent (à frotter sur le corps avant le kata, consommée)"
+    ],
+    "source": "Les Forges de Kezyr",
+    "description": "Ce sortilège est une protection issue de la clémence du Grand Dragon du Métal. Elle est invoquée avant les actes d'un grand courage pouvant entraîner la mort du mage, ou un combat qui semble perdu d'avance. Ce sortilège n'est utilisable qu'une fois par jour et Kezyr se réserve le droit d'en refuser l'activation, car il ne saurait constituer une garantie systématique. Il est en effet destiné à favoriser les actes glorieux et/ou courageux afin de donner l'exemple à l'Humanité. Durant toute la journée qui suit le lancement, au moment où le mage s'apprête à recevoir un coup fatal (et non une simple blessure), le mage ressentira le chagrin de Kezyr lorsque le premier décès eut lieu sur Kor. Cet accès de tristesse provoquera une aura d'énergie faite d'éclairs argentés qui annulera les dommages du coup (mais pas un éventuel renversement ou recul) et intimidera son adversaire par sa nature profondément draconique. Durant tout le reste du tour, les agresseurs comme les alliés du mage à portée de vue seront frappés de stupeur et ne pourront effectuer aucune action, mis à part se défendre avec un malus de 5. Si le mage est affecté par un effet intimidant, paralysant ou terrifiant, il est immédiatement dissipé. Lorsque l'aura disparaît, toutes les Réserves de Sphère du mage tombent à 0 et sa Réserve personnelle actuelle est divisée par 2 arrondi à l'inférieur."
+  },
+  {
+    "name": "Métal servile",
+    "sphere": "metal",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 95,
+    "cost": 11,
+    "difficulty": 20,
+    "casting_duration": 5,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "cercle runique du métal complexe",
+      "danse du métal",
+      "vif argent (consommé)"
+    ],
+    "source": "",
+    "description": "Ce sort fut développé par les mages ingénieurs pour les aider dans leurs travaux sulfureux. Une fois le rituel terminé, le mage obtient une petite quantité de vif argent enchanté pour un jour. Versé sur du minerai ou des lingots de métal, il permet de procéder à froid au mélange de métaux normalement difficiles à liquéfier. Ce sort permet de rendre malléable un kilo de métal comme s'il s'agissait de glaise. Il en résulte un bonus de +2 pou travailler ce métal et bien sûr, la possibilité de se passer de forge. Les effets du liquide durent (1 + 1 par NR) jours. En cas d'échec, le vif argent se transforme en un poison extrêmement volatile occasionnant de violents tremblements au lanceur du sort pendant toute une journée."
+  },
+  {
+    "name": "Sceau de portail",
+    "sphere": "metal",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 85,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 10,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "chaîne de métal précieux (consommée)",
+      "rune du passage brisé",
+      "position (un genou à terre, tête baissée, bras écartés)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Ce sort permet de sceller un portail élémentaire durable en y apposant le sceau élémentaire de Kezyr. Initialement conçu pour contrer les invasions de créatures éeriques, il fonctionne pour tout portail, passage ou tunnel issu de la magie. Le mage doit réussir un jet d'opposition de Mental + Volonté contre le score d'invocation du lanceur du portail pour le fermer instantanément. Le portail ne peut se rouvrir naturellement avant un cycle. Les portails durables ainsi clos sont toujours référencés par les mages du métal qui se chargent régulièrement de veiller à leur inviolabilité."
+  }
+]

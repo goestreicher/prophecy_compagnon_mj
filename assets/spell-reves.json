@@ -1,0 +1,800 @@
+[
+  {
+    "name": "Admiration",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 10,
+    "cost": 5,
+    "difficulty": 18,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune des rêves",
+      "claquement des doigts désignant un point",
+      "regard droit dans les yeux"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le magicien désigne du doigt à sa cible quelque chose située à moins de 15 m. Celle-ci doit réussir un jet de Mental + Volonté en opposition contre le score d'invocation du mage pour éviter de regarder dans la direction indiquée pendant 2 + 1/NR actions. Le meneur de jeu est libre d'imposer des malus appropriés, allant d'un malus de -1 à -3 à l'impossibilité totale d'agir ou de réagir."
+  },
+  {
+    "name": "Arc-en-ciel des passions",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "larme de femme",
+      "rune des rêves"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet au mage de provoquer un grand émoi chez (1 + NR) cibles qu'il fixe. Ces dernières sont forcées de révéler leurs sentiments de manière claire et publique à moins qu'elles ne réussissent un jet de résistance de Social + Volonté contre une Difficulté de 20."
+  },
+  {
+    "name": "Blocage mental",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "voix aigüe puis grave"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Une cible située à une portée maximale de (10 + 10 par NR) mètres interrompt toutes ses actions jusqu'à la fin du tour. L'activité entreprise est un échec sauf si la cible réussit un jet de Social + Résistance contre une Difficulté de 20."
+  },
+  {
+    "name": "Bouclier mystique",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 4,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "miroir brisé",
+      "rune du rêve"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort augmente la Difficulté de tous les sorts dont le mage est la cible, y compris les siens, de +10 pendant (1 + NR) heures."
+  },
+  {
+    "name": "Brumes éthérées",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 10,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "encens des rêves (consommé)",
+      "rire",
+      "yeux fermés"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Ce sort est strictement interdit dans les sanctuaires car il ouvre une brèche à une distance maximale de 10 m, d'où sort un filet de fumée toxique mauve. La zone envahie est de 25m3. Respirer cette fumée fait perdre momentanément la moitié de ses points d'Intelligence et de ses points de Volonté, mais fait beaucoup rire et donne parfois l'impression de voler. Ce n'est qu'une impression car sitôt les effets dissipés (en 1 + 1/NR tours), il ne reste qu'un terrible mal de crâne. Ce sort est parfois utilisé pour nuire à la sérénité de réunions importantes. Eviter de respirer cette fumée est très difficile et demande un jet de Mental + Résistance d'une Difficulté de 20 (25 en combat)."
+  },
+  {
+    "name": "Couleurs de Nenya",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 20,
+    "cost": 5,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune des rêves",
+      "souffle",
+      "cendres d'encens de Nenya (à souffler au visage de la cible)"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Ce sort n'est efficace qu'à 5 m, distance à laquelle les cendres sont portées par le souffle. Toutes les couleurs dans le champ de vision de la cible sont inversées. Le résultat est une perte complète des repères et un malus de -3 pour toutes les actions pendant 1 + 1/NR tours, sans compter d'éventuelles incapacités d'action décidées par le meneur."
+  },
+  {
+    "name": "Coursier éthéré",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 12,
+    "difficulty": 15,
+    "casting_duration": 15,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "encens de Nenya",
+      "posture (méditation en tailleur, bras à l'équerre sur les côtés, yeux fermés)",
+      "cercle runique formé de poudre de nacre"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "À la fin de la méditation, le mage sort de transe alors que les runes du cercle émettent des rayons de lumière violacée qui jaillissent vers le ciel. Le magicien attire alors l'attention d'un fils de Nenya (le plus proche) pour lui demander conseil ou solliciter un transport personnel vers une destination précise. Le dragon est de la seconde tranche d'âge + 1 / NR. Le dragon vient par ses propres moyens (et donc peut mettre un moment à arriver ou venir de l'Ether), n'a aucune obligation vis à vis du mage et ne vient pas pour se battre (il a d'ailleurs probablement d'autres affaires en cours à régler). Le magicien doit avoir une bonne raison de demander son aide et un présent pour service rendu n'est jamais superflu. Les dragons de Nenya peuvent priver l'invocateur de l'usage de n'importe quelle Sphère ou Discipline pour un jour par tranche d'âge s'ils estiment que sa requête est futile, mais ne feront généralement pas usage de la force. Par contre, ils peuvent décider de s'investir ultérieurement dans la psyché du mage en modifiant ses rêves, en y apportant de subtiles modifications et en orientant son comportement ou sa vie selon ses désirs."
+  },
+  {
+    "name": "Déviation subtile",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 5,
+    "difficulty": 20,
+    "casting_duration": 3,
+    "casting_duration_unit": "action",
+    "keys": [
+      "voix chaude",
+      "rune des rêves"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet au mage, une fois par tour pendant (1 + NR) tours, de contraindre une cible de son choix située à moins de 50 mètres, à rediriger une attaque ou un sort vers une autre cible. Le mage peut choisir l'attaque ou le sort à détourner une fois le jet de dés effectué. La seule façon pour sa victime de se prémunir contre les effets de « Déviation subtile » est de réussir un jet de Physique + Volonté contre une Difficulté de 20."
+  },
+  {
+    "name": "Flots d'Eerie",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 5,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "voix",
+      "danse d'Eerie",
+      "rune"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort invoque de petites créatures immatérielles et spectrales difficiles à fixer. Elles donnent une information vague avec (1 + NR) éléments de précision. Elles ont tendance à parler par comptine ou par chant."
+  },
+  {
+    "name": "Gouffre d'Ether",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 15,
+    "cost": 10,
+    "difficulty": 25,
+    "casting_duration": 3,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "miroir (consommé)",
+      "vocalises dissonantes",
+      "posture (mains ouvertes, formant devant le mage des cercles de plus en plus larges)"
+    ],
+    "source": "La colère des dragons",
+    "description": "En brisant le miroir, le mage déchire la trame entre le réalité et l'Ether. Il se crée alors une distorsion spiralée qui se résorbe brutalement en aspirant tout objet ou être vivant dans un cercle de (10 + 5 par NR) mètres de rayon autour du mage. Résister à son aspiration nécessite un jet de Physique + Athlétisme (ou Force le cas échéant) contre le score d'incantation du sort pour ne pas être projeté dans l'Ether (au hasard). Le mage n'est pas aspiré et ses compagnons, s'ils sont prévenus, ont une Difficulté de 15. Le mage peut également utiliser le portail pour se rendre dans l'Ether, mais le sort ne permet pas le voyage inverse."
+  },
+  {
+    "name": "Grelots tintants",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 10,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "trois gros grelots",
+      "rune de confiance"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage enchante des grelots pendant (1 + NR) jours qui détectent les dangers et l'avertissent par un tintement au timbre particulier."
+  },
+  {
+    "name": "Heaume d'auras",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 15,
+    "cost": 5,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "heaume",
+      "rune des rêves",
+      "coiffure hirsute"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet à la personne qui porte le heaume enchanté par le mage de percevoir les auras de (2 + NR) personnes à la fois. La couleur des auras permet de déterminer l'état d'esprit de ces personnes. L'enchantement dure une semaine."
+  },
+  {
+    "name": "Illusion cauchemardesque",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 10,
+    "cost": 4,
+    "difficulty": 17,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune d'œil fermé",
+      "doigt accusateur",
+      "hurlement de terreur"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le mage désigne une cible à moins de 10 m. Celle-ci doit réussir un jet de Mental + Volonté en opposition contre le score d'incantation du mage. En cas d'échec, elle croit se retrouver au cœur de son pire cauchemar. Ce peut être n'importe quoi, mais toujours ce qu'il y a de pire dans l'esprit de la cible (torture, réminiscence d'une scène atroce, impression de mourir, etc.). A partir de ce moment et pour un tour par point en Sphère des Rêves du lanceur, la cible perd conscience de son environnement et réagit comme si son cauchemar se superposait à la réalité. Si la cible échoue à un second jet de Mental + Volonté de Difficulté 15, elle voit alors sa Volonté divisée par deux pour une journée. Si le jet est un échec critique, la victime obtient automatiquement le Désavantage Phobie (1) en rapport avec la scène."
+  },
+  {
+    "name": "Manteau élémentaire",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 8,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "un peu de l'élément correspondant",
+      "posture (bras croisés, tête rentrée)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
+  },
+  {
+    "name": "Poudre de rêve",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 10,
+    "cost": 4,
+    "difficulty": 15,
+    "casting_duration": 3,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "rune du sommeil",
+      "farine",
+      "voix fluette"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort crée un dose de poudre qui, une fois ingérée, permet au mage de bénéficier d'un bonus de +5 au lancement d'un sort, une fois par jour. Cette poudre est efficace pendant (1 + NR) semaines. Cependant elle a un effet d'accoutumance à moins de réussir un jet de résistance de Physique + Volonté contre une Difficulté de 20 à chaque ingestion. En cas d'échec, l'accoutumance oblige le mage à consommer cette poudre une fois par jour. Si elle n'est pas conservée, le mage dort toujours mal et ne regagne que la moitié de sa Réserve de magie."
+  },
+  {
+    "name": "Puits de chance",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 5,
+    "cost": 1,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de la fortune"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage récupère immédiatement (2 + NR) Point de Chance déjà dépensés. Il ne peut en aucun cas dépasser la valeur de son Attribut Chance de cette façon. Lancer efficacement ce sort ne rapporte aucun Point de Maîtrise."
+  },
+  {
+    "name": "Résistance magique",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 10,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "geste cabalistique",
+      "rune de la magie"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage distord la trame magique autour d'une cible de son choix située à moins de (5 + 5 par NR) mètres. Le coût de tous les sorts lancés par la victime ou sur elle est augmenté de 2 pendant 3 tours."
+  },
+  {
+    "name": "Révérence des énergies",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 4,
+    "difficulty": 17,
+    "casting_duration": 3,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "sagianor",
+      "rune de Moryargorn",
+      "kata d'harmonie (Manuel + Acrobatie, Diff. 15)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "En procédant à la méticuleuse harmonisation de son esprit avec les courants élémentaires qui baignent le corps de l'Etre Primordial, le mage prend conscience des points de convergence magique. Sans voir ou détecter les courants, il sait intuitivement s'ils sont forts ou faibles et où se situent les plus proches Eeries. Le personnage est informé des modificateurs de Sphère du site où il se trouve (environ 10m de rayon), et pour chaque Sphère qu'il maîtrise, il connaît la direction et la distance de la plus proche Eerie de cet élément. Il ne dispose par contre d'aucune indication quand à leur accessibilité ou contenu. Ce sort dure 1 + 1/NR tours."
+  },
+  {
+    "name": "Sceau de maladresse",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 10,
+    "cost": 4,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "bouteille cassée",
+      "papier déchiré"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Cette malédiction rend maladroite une personne située à moins de 10 mètres, pendant (1 + NR) tours. La victime subit un malus de -2 à tous ses jets. Le meneur de jeu est libre d'improviser des effets variés en cas d'échec critique sur une action."
+  },
+  {
+    "name": "Somme du bienheureux",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 5,
+    "cost": 2,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "voix somnolente",
+      "rune du sommeil",
+      "gestuelle des mains"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort endort une personne (ou une créature de taille humaine) située à moins de 10 mètres, à moins qu'elle ne réussisse un jet de résistance de Mental + Résistance contre une Difficulté de 15. La victime dort pendant (1 + NR) tours si on ne la secoue pas violemment."
+  },
+  {
+    "name": "Anneau de sort",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 30,
+    "cost": 6,
+    "difficulty": 18,
+    "casting_duration": 5,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "anneau en métal précieux",
+      "rune de la magie gravée"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet d'enfermer les effets d'un sort de magie instinctive dans un anneau. Le mage doit lancer le sort à emmagasiner 5 tours après cet enchantement et le sort ne doit pas avoir un coût en Points de Magie supérieur à 10. Pour déclencher les effets contenus, le porteur doit prononcer le mot de pouvoir choisi par le mage. Le porteur ne peut posséder qu'un seul « Anneau de sort » à la fois. Ce dernier reste enchanté (1 + NR) semaines et n'est utilisable qu'une seule fois avant sa désintégration."
+  },
+  {
+    "name": "Bénédiction de Khyméra",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 40,
+    "cost": 7,
+    "difficulty": 20,
+    "casting_duration": 4,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "rune du croissant",
+      "chant d'appel",
+      "danse des étoiles (Physique + Don artistique : Danse, Diff. 15)"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le mage ouvre une brèche sur un endroit de Kor où la lune Khyméra est pleine. Il obtient non seulement de la lumière (blafarde) mais aussi un bonus de 4 pour tout sort lancé (par lui ou un autre) dans le rayon de lune. Ce sort affecte une zone de 6 + 1/NR m de rayon autour du mage. Ce sort dure une heure."
+  },
+  {
+    "name": "Bénédiction éthérée",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 30,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 3,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de chance",
+      "posture tourbillonante",
+      "voix exaltée"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort influe sur toutes les actions entreprises par le mage ou une cible de son choix pendant (5 + NR) tours. Le sujet bénéficie d'un bonus de +5 à ses jets d'attaque et d'un bonus de +10 aux dommages de base d'une arme qu'il portait à la main au moment du lancement de ce sort. De plus, le coût des sorts qu'il lance est divisé par deux."
+  },
+  {
+    "name": "Brouillard",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 25,
+    "cost": 4,
+    "difficulty": 18,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "poudre de gemme (consommée)",
+      "farine (consommée)"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le magicien fait tomber les poudres de ses mains en les mélangeant. Elles se transforment en un épais brouillard sur un rayon de 5 + 1/NR mètres et sur environ 2 m de haut. Le brouillard se forme en un tour. On ne peut plus voir à plus d'un mètre dans la brume mais le magicien, lui, n'est pas affecté par le sort. Le brouillard persiste autant de tours que le score de Sphère des Rêves du lanceur."
+  },
+  {
+    "name": "Chuchotements",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 35,
+    "cost": 6,
+    "difficulty": 17,
+    "casting_duration": 3,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "chuchotement (dans le creux de sa main, à rejeter derrière son épaule)",
+      "rune du bouleversement",
+      "petit morceau de tissu (à poser sur le front de la cible, consommé)"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Ce sort est utilisé pour perdre un poursuivant. Tous les bruits que peut faire le mage (ou la cible enchantée au contact) sont déplacés de manière aléatoire dans une zone de 25 + 5/NR m2 située jusqu'à 25 mètres du porteur. Ce sort dure 1mn par point dans la Sphère des Rêves et la zone de « renvoi » se déplace avec le porteur pour rester à portée."
+  },
+  {
+    "name": "Croisée",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 30,
+    "cost": 6,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "paillettes d'or (consommées)",
+      "rune de majesté (à tracer sur la cible avec les paillettes)",
+      "yeux écarquillés"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le magicien enchante la cible (au toucher) qui attire alors l'attention de 5 + 1/NR personnes dans son entourage. Toutes les attentions sont focalisées sur lui pendant 1 tour complet. Cette fascination lui permet de doubler son Attribut Social sur son prochain jet de Communication ou d'Influence. Ce sort est dangereux en combat car toutes les attaques sont dirigées vers la cible en question. Si le sort n'est pas lancé sur le mage, la cible peut résister en réussissant un jet de Mental + Présence contre le score d'invocation du mage. En cas d'échec à l'incantation, le mage voit son Attribut Social divisé par deux pour le reste de la journée."
+  },
+  {
+    "name": "Déchirure éthérée",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 25,
+    "cost": 8,
+    "difficulty": 18,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "voix douce",
+      "rune du rêve",
+      "gestuelle berçante"
+    ],
+    "source": "Livre de base, 2e édition",
+    "description": "Ce sort ouvre une porte sur un lieu de manière aléatoire (multitude de lieux possibles) pendant (1 + NR) tours. Cette destination peut être dangereuse. Utilisé en combat, ce sort permet aussi de se débarrasser d'un adversaire qui charge durant le laps de temps où la faille est ouverte. Cependant, il est possible pour l'adversaire d'effectuer un jet d'esquive pour ne pas s'y engouffrer, mais avec une Difficulté de +5."
+  },
+  {
+    "name": "Fenêtre onirique",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 30,
+    "cost": 4,
+    "difficulty": 15,
+    "casting_duration": 4,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "posture (mains ouvrant une brèche imaginaire)",
+      "chant berçant",
+      "encens des rêves (consommé)"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Ce sort est la première étape avant le Psychonaute. Il permet d'ouvrir une fenêtre sur le rêve d'une cible (au contact) et de l'observer en se promenant dedans sans pouvoir intervenir. Cela permet d'avoir une première approche avant le grand saut. Si la cible n'est pas consentante, elle peut faire un jet de Mental + Présence en opposition avec le score d'incantation du mage pour résister. Ce sort dure une heure par point dans la Sphère des Rêves.\nNe peut être acquis que par les personnages possédant le Désavantage « Marque de Nenya »."
+  },
+  {
+    "name": "Prison de soie",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 30,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 3,
+    "casting_duration_unit": "action",
+    "keys": [
+      "voix envoûtante",
+      "regard pénétrant",
+      "sentiment de la cible (désir)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage adopte une posture lascive, fixe sa cible du regard tout en lui parlant d'une voix charmeuse. La victime subit alors un envoûtement auquel elle ne peut échapper qu'en réussissant un jet d'opposition de Mental + Volonté contre le score d'incantation du sort. Si elle échoue à ce jet, la cible tombe sous le charme du mage et ne peut ni détacher son regard de lui, ni effectuer d'action concrète pendant (5 + 2 par NR) tours. Pendant cette durée, la victime ne peut plus bouger, subjuguée par le mage, mais elle reste consciente de ce qui se passe et garde souvenir de ce qui se passe."
+  },
+  {
+    "name": "Réceptacle de Nenya",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 40,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 8,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "bâton",
+      "rune des rêves",
+      "gestuelle de remplissage"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le bâton enchanté par ce sort dispose d'une Réserve de magie de 15 points que le mage peut utiliser à sa guise pour lancer ses sorts. L'enchantement dure (1 + NR) semaines et ne peut être utilisé qu'une seule fois sur un même bâton. Cette réserve ne se régénère pas avec le temps et ne peut en aucun cas être reconstituée. Une fois la durée du sort écoulée, le bâton se désagrège en un nuage de poussières argentées qui se dissipe rapidement."
+  },
+  {
+    "name": "Refuge",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 35,
+    "cost": 7,
+    "difficulty": 22,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "rune du néant",
+      "plume de fluix (consommée)",
+      "posture (tracer dans le vide des contours d'un passage avec la plume de fluix)"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le magicien ouvre un repli dans la réalité pour s'y faufiler. Il peut emmener 1 personne par NR éventuel, qui doit rentrer avec lui. Ce mouvement de repli lui prend une action juste après la fin d'incantation du sort, mais peut se faire à tout moment dans la durée d'effet. Le repli existe durant autant de tours que la Sphère des Rêves du lanceur et peut être dans un arbre, dans un mur, dans le vide, etc. Dans le repli, le mage et ses alliés restent conscients de leur entourage, mais ne peuvent directement agir à moins de sortir du refuge. Il est bien sûr possible d'y effectuer des actions d'incantation ou de soin. Les personnages « réfugiés » ne sont détectables que sous la forme de silhouettes diaphanes (Mental + Perception Diff. 25) et ne peuvent être atteints depuis la réalité.\nNe peut être acquis que par les personnages possédant le Désavantage « Marque de Nenya »."
+  },
+  {
+    "name": "Sirène",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 30,
+    "cost": 3,
+    "difficulty": 18,
+    "casting_duration": 5,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "goutelette de rosée du jour (consommée)",
+      "chant des cascades d'Éther (Mental + Art de la scène : Chant, Diff. 15)",
+      "yeux fermés"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": " Le mage invoque une petite sirène éthérée qui flotte à côté de lui. Il lui donne un message qu'elle va transmettre à une personne, quelle qu'elle soit, où qu'elle soit, et ce en passant directement par l'Ether. Le mage peut obtenir une réponse immédiate et peut même ensuite renvoyer la sirène pour autant d'allers- retours qu'il a de NR. La sirène étant très rapide, le dialogue est quasiment instantané (1 action de délai par voyage). La sirène doit entreprendre son voyage dès son apparition, sans quoi elle perd toute concentration et se libère du contrôle du mage."
+  },
+  {
+    "name": "Talisman élémentaire mineur",
+    "sphere": "reves",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 30,
+    "cost": 3,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "sagianor (à étaler sur l'objet ensorcelé, consommé)",
+      "encens de l'élément concerné",
+      "chant des éléments (Mental + Don artistique : Chant, Diff. 15)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
+  },
+  {
+    "name": "Aura d'éther",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 55,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 10,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "cercle de poudre de sommeil",
+      "danse tournoyante",
+      "chant hypnotique"
+    ],
+    "source": "La colère des dragons",
+    "description": "En se plaçant au centre d'un cercle de poudre de sommeil, le mage réunit autour de lui un vortex d'énergie magique qu'il peut utiliser pour le lancement d'un sortilège dans les (4 + 1 par Nr) heures. Ce sort verra alors, au choix du mage, son coût divisé par 2 ou sa portée, sa durée d'effets ou ses dégâts multipliés par 2. Si le sort agit sur la Volonté d'une cible, le mage peut choisir d'augmenter la Difficulté du jet de résistance de 5. Pendant la durée de l'incantation, le mage est inconscient de son environnement."
+  },
+  {
+    "name": "Bandeau de vision",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 60,
+    "cost": 12,
+    "difficulty": 20,
+    "casting_duration": 3,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "rune de domination",
+      "bandeau de soie fine",
+      "psaume sourd"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le mage enchante un bandeau pour une semaine. Lorsqu'il le ceint et pendant 1 + 1/NR tours, il rend une cible (jusqu'à Sphère x10 m) aveugle et prend le contrôle de ses yeux. Il peut ainsi voir où elle se trouve. Si la cible dort, la magicien verra son rêve. Si la cible meurt durant cet intervalle, le mage est traumatisé et obtient le Désavantage Phobie (3) ou Trouble mental (au choix du meneur). Le bandeau peut être utilisé une fois par jour.\nNe peut être acquis que par les personnages possédant le Désavantage « Marque de Nenya »."
+  },
+  {
+    "name": "Baume apaisant",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 60,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 3,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "cendres d'encens de Nenya (consommées)",
+      "mélopée de l'Apaisement (Mental + Art de la scène : Chant, Diff. 15)",
+      "huile de palme (consommée)"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Ce sort enchante le mélange de cendres et d'huile pour le rendre irisé et scintillant durant une semaine, après quoi il perd tout pouvoir. Passé sur la peau, le baume dégage une odeur particulièrement entêtante capable de plonger le personnage dans une quiétude méditative incroyable. A moins de réussir un jet de Mental + Volonté contre le score d'incantation du mage, la personne portant le baume quitte tout sentiment autre que la concentration, l'ouverture d'esprit et le calme. Ce baume est utilisé pour préparer les cérémonies méditatives de magie, apaiser les élans de certains combattants ou encore créer une ambiance propice à la séduction ou au commerce. Chez les commerçants les plus influents ou les diplomates d'état, il est d'ailleurs traditionnel de se passer du baume sur les mains en signe de bienveillance avec son interlocuteur. Ceci aurait pour effet d'attirer la sagesse de la Chimère... Lorsque ce baume est utilisé, il octroie un bonus de +3 pour toute Compétence de Méditation, Séduction, Diplomatie, mais aussi de Marchandage ou d'Artisanat élémentaire. Ses effets durent dix minutes environ."
+  },
+  {
+    "name": "Cercle de puissance",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 85,
+    "cost": 4,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "chandelles parfumées",
+      "1 cristal (consommée)",
+      "chant hypnotique"
+    ],
+    "source": "La colère des dragons",
+    "description": "Tenant le cristal au creux de ses mains, le mage enchante un lieu qu'il a préalablement délimité à l'aide des chandelles parfumées qui doivent brûler tout au long de la cérémonie (l'extinction d'une chandelle n'empêche pas le lancement du sort mais rend ce dernière inefficace). A l'issue de l'incantation, le sort confère au lieu un caractère magique pour (1 + 1 par NR) heures. Pendant cette durée, tout lancement de sort ou usage de Compétence magique effectué au sein de la zone enchantée se verra gratifié d'un bonus de +5 (le modificateur de milieu continue de s'appliquer)."
+  },
+  {
+    "name": "Chariot des rêves",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 60,
+    "cost": 14,
+    "difficulty": 25,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "rune des rêves (flamme recourbée à la base)",
+      "mélopée",
+      "poudre d'or",
+      "plateau d'acier"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le mage saupoudre le plateau de poussière d'or en formant lentement une rune des rêves, ce qui a pour effet de le transformer en une vapeur iridescente qui drape le lanceur en un tour complet. Le magicien est transporté, seul, dans un lieu de son choix (qu'il doit avoir visité depuis moins d'un an) en passant par l'Ether, domaine de Nenya. La vitesse est telle qu'il n'a que quelques visions fugaces du domaine de la Chimère (se référer à « La Colère des Dragons » pour plus ce détail sur cet environnement). Ce sort est une forme de voyage dérivée des célèbres transferts des Tours d'Onyr et qui préfigure l'accès des mortels à l'Ether."
+  },
+  {
+    "name": "Confusion",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "instinctive",
+    "complexity": 45,
+    "cost": 5,
+    "difficulty": 18,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "pierre (précieuse ou semi-précieuse, consommée)",
+      "sentiment de la cible (curiosité)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage montre une pierre à la cible, située à moins de 50 mètres. Si celle-ci échoue à un jet d'opposition de Mental + Volonté contre le score d'incantation, elle devient confuse et perd toute capacité de réflexion pour (1 + 1 par NR) tours. Pendant ce temps, elle reçoit un malus de -5 pour toute action physique et de -3 pour toute activité intellectuelle."
+  },
+  {
+    "name": "Peinture multicolore",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 50,
+    "cost": 7,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "peinture blanche",
+      "rune des rêves",
+      "chant mélodieux"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le mage enchante de la peinture blanche qui devient capable de changer de couleur en une seconde et sur un simple mot. Cette peinture est utilisée dans les villes par les voleurs qui veulent se fondre dans la foule. Ils enduisent leurs vêtements du liquide et passent ainsi du vert au rouge au coin de la rue. On peut provoquer 1 + 1/NR changements de couleur. La peinture reste ensorcelée durant un jour par point en Sphère des Rêves."
+  },
+  {
+    "name": "Pinceaux",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 45,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "un pinceau de Bonne qualité",
+      "couleurs mélangées avec la poudre de gemmes (consommées)",
+      "rune de l'art"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Ce sort permet d'ensorceler un pinceau (ou tout autre objet d'écriture ou de dessin tel qu'un fusain, une plume ou une brosse) dans le but de réaliser une œuvre empreinte de la magnificence de la Chimère. Le pinceau peut être utilisé durant toute une journée après l'enchantement. Le bonus obtenu est de 3 + 1/NR."
+  },
+  {
+    "name": "Psychonaute",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 45,
+    "cost": 10,
+    "difficulty": 22,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "rune des rêves",
+      "sentiment d'apaisement",
+      "chant lent et profond",
+      "posture de méditation"
+    ],
+    "source": "Les Voiles de Nenya",
+    "description": "Le magicien ouvre une porte sur le rêve d'une cible au contact et peut ainsi y entrer avec d'autres personnes (au maximum une par point en Sphère des Rêves). Reportez-vous aux textes sur les voyages oniriques (\"Les Voiles de Nenya\" et « La Colère des Dragons ») pour la gestion de ce sort. Il faut cependant toujours garder à l'esprit que si le rêveur se réveille, tous les voyageurs disparaissent en même temps que le rêve se dissout.\nNe peut être acquis que par les personnages possédant le Désavantage « Marque de Nenya »."
+  },
+  {
+    "name": "Reflet chimérique",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 100,
+    "cost": 30,
+    "difficulty": 30,
+    "casting_duration": 10,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "un miroir de taille humaine (consommé)",
+      "rune des rêves",
+      "pierre de rêve (consommée)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Durant l'incantation, le mage appose la pierre de rêve sur le front de son reflet. Le reflet se détache alors peu à peu du miroir (qui devient inutilisable) et la pierre de rêve s'enchâsse sur son front. Si le sort est manqué, le mage se retrouve enfermé dans le miroir durant un Augure. S'il est brisé, le mage meurt. Le reflet chimérique dure (1 + 1 par NR) Augure. Double parfait du personnage, il peut agir à sa place en toutes circonstances. Les besoins d'un reflet sont les mêmes que ceux d'un être humain. Quand le reflet et son original sont séparés, ils ne peuvent communiquer que par les rêves (sans limite de distance). Nulle communication instantanée n'est possible entre les 2 doubles, sauf par magie. De nombreux grands mages utilisent ce sort pour confier leurs responsabilités à leur reflet et continuer leur quête personnelle. Certains mages gardent leur reflet en sécurité, disposant ainsi d'une personne à prévenir en cas de difficulté. Un reflet chimérique ne se bat jamais et n'utilise jamais de sort offensif."
+  },
+  {
+    "name": "Talisman de puissance",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 100,
+    "cost": 3,
+    "difficulty": 22,
+    "casting_duration": 2,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "bijou de Bonne qualité",
+      "sagianor (incluse dans le bijou)",
+      "cérémonie de Maîtrise de l'Éther (Présence + Conn. de la Magie, Diff. 15)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "Ce sort ancestral permet d'ensorceler un bijou afin d'en faire un point de concentration magique. Le bijou doit contenir de la sagianor, sous la forme d'une perle de verre remplie ou d'un bijou sculpté dans le Sang sous l'une de ses formes. Cet enchantement est une forme ancestrale de focus, peu connue des mages néophytes, mais très employée par les mages d'un certain Statut. En procédant à une cérémonie dangereuse (car il s'agit de canaliser de l'énergie brute dans la sagianor, et un échec interdit l'usage de la Sorcellerie durant un Augure), le sorcier enferme autant de points de magie qu'il le désire dans le talisman. Ces points peuvent provenir de sa Réserve personnelle ou de plusieurs de ses Réserves de Sphères. Pour une durée d'un an, il peut accéder à cette réserve brute par un jet d'Empathie + Sorcellerie de Diff. 15. Il transfère ainsi 1 + 1/NR points de magie de la Réserve de l'objet vers sa Réserve personnelle (à concurrence du maximum) en une action et jusqu'à (Empathie) mètres. Un talisman est transmissible, mais il est impossible d'y réinsuffler de l'énergie. A la fin de l'enchantement, l'énergie restante se dissipe. Identifier un talisman est immédiat (au toucher) pour un personnage possédant Sorcellerie. Il est possible de briser un talisman pour en dompter l'énergie brute. Ceci détruit l'objet, la sagianor et éventuellement le mage : si ce dernier rate un jet de Volonté+ Maîtrise (totale) de Difficulté 15 + nombre de points restants, il en résulte une explosion élémentaire qui inflige 50 points de dommages sur un rayon de 5 m (et l'énergie est perdue)."
+  },
+  {
+    "name": "Voix de Nenya",
+    "sphere": "reves",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 45,
+    "cost": 8,
+    "difficulty": 20,
+    "casting_duration": 10,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "cérémonie de vénération chimérique (Mental + Conn. de la Magie, Diff. 20)",
+      "polyphonie (Mental + Art de la scène : Chant, Diff. 20 pour chaque participant)",
+      "encens de Nenya (consommé)"
+    ],
+    "source": "",
+    "description": "Ce sort extrêmement puissant nécessite souvent la présence de plusieurs magiciens car l'incantation prend la forme d'un chant polyphonique harmonieux, complexe et mélodique qui transporte ses notes jusqu'au domaine éthéré de Nenya. Si la musique sonne juste, la légende veut que le Grand Dragon des Rêves se déplace en personne et bénisse de sa présence les plus folles entreprises. Ainsi, dans une situation désespérée, avant une bataille perdue d'avance, les mages audacieux ne manqueront pas d'invoquer la clémence de la Chimère. Malheureusement, nul n'a jamais pu prouver que ce rituel désespéré était un sort à part entière et possédait des effets fixes et prévisibles, car il dépendrait de la volonté de la Chimère...\nNe peut être acquis que par les personnages possédant le Désavantage « Marque de Nenya »."
+  }
+]

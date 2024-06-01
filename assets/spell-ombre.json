@@ -1,0 +1,782 @@
+[
+  {
+    "name": "Âge",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "position (œil fermé, main ouverte, pouce et index formant un cercle)",
+      "rune de l'ombre",
+      "murmure"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage détermine avec précision l'âge d'un objet. Si ce dernier comporte des parties amovibles ou d'origine différentes, le sort est capable de les différencier. L'objet peut avoir une taille maximale d'un mètre cube. Il est possible de lancer ce sort sur un homme ou un animal (Diff. normale) ou sur une créature élémentaire ou surnaturelle (nécessite 1 NR). Certains dragons peuvent être pris pour cible si le mage obtient 2NR. Ce sort permet de connaître avec précision l'Augure de naissance d'une personne ou l'époque de confection d'un objet rare. Il n'y a pas de limite de temps."
+  },
+  {
+    "name": "Champion de l'ombre",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 15,
+    "cost": 5,
+    "difficulty": 18,
+    "casting_duration": 2,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "un objet non ensorcelé de Bonne qualité",
+      "sang d'Abomination",
+      "rune de l'ombre (tracée avec le sang sur l'objet)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage de l'Ombre utilise ce sort pour donner à une créature mort-vivante un bonus de (3 + 1 par NR) dans un Attribut et de (2 + 1 par NR) dans deux Compétence. Ce bonus perdure aussi longtemps que le mort vivant. L'objet choisi doit être en rapport avec les Compétences augmentées. Chaque mort-vivant ne peut bénéficier que d'un sort de ce type. Si le mort vivant est physiquement séparé de l'objet, le sort est rompu. Les Champions de l'Ombre enchantés sont souvent chargés de missions spéciales et commandent des hordes de créatures de l'ombre."
+  },
+  {
+    "name": "Chant de l'ivrogne",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 10,
+    "cost": 4,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "une boisson",
+      "poudre d'os",
+      "chant à boire"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage rend une boisson qu'il touche particulièrement enivrante. Celui qui en boit devient complètement ivre en quelques tours. Les victimes peuvent éviter l'ivresse en effectuant un jet de Mental + Résistance contre une Difficulté de 15. La boisson est enchantée pour (30 + 10 par NR) minutes."
+  },
+  {
+    "name": "Danse du mouchoir",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 10,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de l'ombre",
+      "mouchoir"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet d'enrhumer un individu que le mage désigne pendant (1 + NR) tours. La victime est alors prise d'une violente crise de toux et d'éternuements incontrôlables. La victime voit la Difficulté de toutes ses actions augmenter de 5."
+  },
+  {
+    "name": "Dialogue mortuaire",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 10,
+    "cost": 1,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "une langue",
+      "caillou blanc"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "En plaçant la langue et le caillou dans la bouche d'une personne morte depuis moins de 24 heures, le mage peut poser (1 + NR) questions à la victime. Celle-ci répond par « oui », « non » ou « je ne sais pas », sans mentir. Ce sort ne peut être jeté qu'une seule fois sur un mort, dont la bouche se fermera ensuite définitivement."
+  },
+  {
+    "name": "Esprit du gouffre",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 5,
+    "cost": 2,
+    "difficulty": 15,
+    "casting_duration": 3,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "chant murmuré",
+      "position (bras écartés, yeux clos)",
+      "objet personnel ou os du défunt"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage projette son esprit aux frontières du Gouffre des Âmes et tente de retrouver les restes de l'âme errante d'un défunt. L'époque du décès peut être d'un siècle par point en Ombre. Le mage rassemble les effluves de cette âme amnésique et communique télépathiquement avec. Les chances pour que l'âme comprenne ce qu'on lui dit ou réponde à une question sont égales à (la Tendance Fatalité du lanceur + 1 par NR) au lancement sur 1D10. Le contact dure une minute par point de Volonté du mage. Ce sort est une variante du dialogue mortuaire, mais infiniment plus dangereuse, bien que plus précise. En cas d'échec au lancement, le mage doit effectuer un jet de Mental + Volonté contre une Difficulté de 20 ou perdre son âme, aspirée par le Gouffre. Il meurt alors instantanément."
+  },
+  {
+    "name": "Fouet de sang",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 5,
+    "difficulty": 18,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "stylet d'obsidienne",
+      "position (faire craquer un doigt)",
+      "feulement rauque"
+    ],
+    "source": "La colère des dragons",
+    "description": "En s'ouvrant une veine, le mage de l'ombre peut modeler le sang qui s'en échappe, créant un fouet carmin d'une dizaine de mètres de long qu'il pourra manier comme un fouet redoutable. Ses dommages de base sont de 20 et il s'utilise avec Armes articulées. Ce sort ignore les défenses physiques de la victime, mais se pare et s'esquive normalement. Ce sort possède un contrecoup notable : après les (10 + 2 par NR) où le sort est actif, le bras du mage devient exsangue et paralysé jusqu'au prochain coucher du soleil."
+  },
+  {
+    "name": "Frisson de la nuit",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 4,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de l'ombre",
+      "cris"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet d'effrayer pendant (1 + NR) tours une cible unique à une portée de trois fois la valeur de sa Compétence Sphère de l'Ombre en mètres. Une cible effrayée voit la Difficulté de toutes ses actions augmenter de 10, en cas d'échec d'un jet de Social + Volonté contre une Difficulté de 15."
+  },
+  {
+    "name": "Griffe d'os",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 20,
+    "cost": 4,
+    "difficulty": 16,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "gargouillement de gorge",
+      "rune de l'ombre",
+      "morceau de chitine long d'un pouce (consommé)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage enfonce brutalement le morceau de chitine dans son avant-bras. Ce dernier semble alors pousser dans la chair du mage et comprime ses muscles en les rétractant pour dévoiler les os. La chitine forme de nouveaux tendons et s'étire en fines lames. La souffrance est incroyable, mais la griffe obtenue inflige des dommages de (FOR + 10) au corps à corps. Elle déchire les armures et divise toutes les protections dénuées de métal par deux. Le mage obtient un bonus d'attaque de (+1 par NR) au jet d'incantation. On ne peut parer avec cette griffe qui perdure un tour par point en Ombre."
+  },
+  {
+    "name": "Manteau élémentaire",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 8,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "un peu de l'élément correspondant",
+      "posture (bras croisés, tête rentrée)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
+  },
+  {
+    "name": "Mémoire oublieuse",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 20,
+    "cost": 3,
+    "difficulty": 18,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de l'ombre",
+      "murmure"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet au mage de faire oublier (1 + NR) informations précises (son nom, le but de sa mission, ou encore ce qu'il vient de voir) à une cible. La mémoire lui revient comme si de rien n'était au bout de (1 + NR) jours."
+  },
+  {
+    "name": "Miroir des souvenirs",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 15,
+    "cost": 7,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "miroir",
+      "poudre blanche",
+      "poudre noire"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage ensorcelle un miroir pour observer des images s'y étant reflétées auparavant. Il jette deux poignées des poudres sur le miroir et incante. Les poudres s'animent alors et forment une image du reflet passé. Le mage peut reculer dans le temps en fonction de sa concentration à raison d'un tour par mois. Ce sort peut remonter jusqu'à (Sphère + 1 par NR) années."
+  },
+  {
+    "name": "Mur d'ombre",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 10,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "un voile noir",
+      "rune de l'ombre"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Un mur d'ombre apparaît devant le lanceur à une distance maximum de 10 mètres. Il est opaque et ne permet pas de voir ce qui se trouve de l'autre côté. Il est fixe et d'une surface de 4 m2. Le mur reste en place pendant (3 + 2 par NR) tours."
+  },
+  {
+    "name": "Nuage nauséabond",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 15,
+    "cost": 2,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "un peu d'eau souillée",
+      "rune de l'ombre"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage ouvre une porte vers un marais nauséabond. Il fait venir un nuage de miasmes putrides qui persiste pendant 5 tours. Toutes les personnes prises à l'intérieur de son aire d'effet de (10 + 5 par NR) m2 sont indisposées et cherchent à s'en éloigner. Ce sort ne cause aucun dommage. Le nuage se déplace lentement de 10 mètres par tour."
+  },
+  {
+    "name": "Œil de vie",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 20,
+    "cost": 10,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "ovale en forme d'œil de la fatalité à tracer au sol pour délimiter la zone",
+      "danse de la vie (dans un sens)",
+      "danse de la mort (dans l'autre sens)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Ce sort permet d'enchanter une zone en y concentrant les forces primales de la vie. L'ovale peut faire jusqu'à 3m de longueur par point en Ombre (environ les deux tiers en largeur). Toutes les créatures à l'intérieur de cette zone lors de la fin de l'incantation sont alors soignées d'une case de blessure (en commençant par les Egratignures). Le mage dispose de plus de 1 case par NR qu'il peut régénérer chez une cible ou plusieurs (toujours en commençant par les plus basses). Tout mort-vivant présent dans le cercle subit un Niveau de blessure par NR du mage et devra sortir, ne pensant plus qu'à cela. Toute relation sexuelle dans le cercle est fertile et donnera un ou plusieurs enfants tout à fait normaux. Les champs ainsi bénis verront leur récolte doubler lors de la prochaine moisson. Au dehors du cercle, une surface importante (une bande d'environ la moitié de la largeur) est instantanément drainée de sa force vitale. Les champs deviennent envahis d'herbes rachitiques, la récolte pourrit et les personnes présentes subissent un Niveau de blessure (en commençant par les Egratignures). Les morts vivants tombent en poussière et leurs spectres reviendront périodiquement hanter l'endroit."
+  },
+  {
+    "name": "Peau de douleur",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 7,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "huile de lin",
+      "toile d'araignée d'ombre",
+      "position (main levée au dessus de la tête lancée brutalement vers le sol)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Sortilège effrayant montrant à quelles techniques abjectes sont rompus les mages de l'ombre, la peau de la main se met à couler sur le sol en un flot ininterrompu, immédiatement absorbée par celui ci et rejaillissant pour agripper fermement les mollets d'un adversaire jusqu'à 10 mètres. Les 2 belligérants sont alors immobilisés. La cible est incapable de se déplacer à moins de réussir un jet de Physique + Force contre une Difficulté de 25. Si le mage utilise une action pour resserrer sa prise par un jet d'opposition de Physique + Sphère de l'Ombre contre Physique + Résistance de la cible, il peut infliger (10 + 1D10 par NR) points de dommages. Le mage subit normalement les dommages infligés à sa main. Si celle-ci est tranchée par une blessure Grave, le mage retire son membre de chair fluide du sol qui se rétracte alors en reconstituant sa main intacte. Ce sort peut fracasser une jambe si une blessure Grave est cochée, et même déchirer les veines avec les esquilles d'os, ce qui pourra tuer. Ce sort dure (3 + 2 par NR) tours."
+  },
+  {
+    "name": "Révélation",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "morsure de sa propre langue",
+      "yeux fermés",
+      "main devant les yeux"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage se mord la langue et avale son propre sang. En un instant, des vapeurs rouges dansent devant ses yeux clos et dessinent des formes évocatrices. Leur interprétation est immédiate et révèle le sentiment majeur qui anime la cible à cet instant. Pour le mage, il semble s'écouler plusieurs secondes mais à peine une dans la réalité. Si la cible a une Empathie supérieure à la Volonté du mage, ce dernier doit effectuer un jet de Mental + Volonté contre une Difficulté de 15 ou subir un malaise dû au choc en retour. Il est alors déséquilibré et confus et subit un malus de 5 à ses actions pour 5 minutes."
+  },
+  {
+    "name": "Servitude de l'ombre",
+    "sphere": "ombre",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 30,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "rune de l'ombre",
+      "cadavres (consommés)",
+      "sang du mage (causant une Égratignure)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Ce sort permet de transformer (1 + 1 par NR) cadavres ou squelettes en serviteurs animés dénués de toute émotivité. Une partie du caractère de chaque défunt est encore perceptible (brutalité, finesse, rébellion,...), mais les mort-vivants sont amnésiques, à peine conscients de leur état. Ils sont soumis à la volonté du mage et resteront animés jusqu'au prochain jour du Serpent. Le mage subit une Egratignure de plus par NR car plus de sang est nécessaire."
+  },
+  {
+    "name": "Dard de Kalimsshar",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 30,
+    "cost": 7,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "fléchette à pointe d'obsidienne",
+      "balayage des bras",
+      "respiration bloquée"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage jette la fléchette vers l'ombre de son adversaire, qui n'a pour seule défense que la possibilité d'Esquiver contre une Difficulté de 25 (ce qui représente le fait de comprendre in- extremis que c'est son ombre et non soi même qui est visé). Si l'ombre est touchée, la fléchette se plante (dans tous les supports sauf le métal). Elle ne peut se parer. Elle immobilise la cible durant 30 minutes ou tant qu'elle n'est pas ôtée. La victime peut parler, mais tout mouvement est impossible. Ce sort a une portée de 20 mètres et n'est pas utilisable dans les lieux très sombres, où l'ombre de la cible n'est pas nette. Il ne peut affecter des créatures d'un poids supérieur à (Sphère x10) kg."
+  },
+  {
+    "name": "Dette de Kalimsshar",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 25,
+    "cost": 7,
+    "difficulty": 17,
+    "casting_duration": 3,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "sablier de sable noir à briser (consommé)",
+      "sentiment de peur chez la cible (à provoquer)",
+      "regard fixe"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Ce sort permet d'altérer la force vitale qui sous-tend l'âme d'un humain pour le faire vieillir. La cible, située à moins de 50 mètres, vieillit de (5 + 1 par NR) ans. Elle vieillit visuellement en accéléré, sa pilosité abonde et son visage se creuse instantanément de rides. On ne peut lancer ce sort que deux fois sur la même cible, après quoi l'âme est altérée et peu malléable. Si ce sort modifie l'âge en passant d'une tranche d'âge à une autre, le personnage subit les effets néfastes de cette évolution, mais aucun des effets bénéfiques. On ne peut décéder directement des effets de ce sort, mais l'état dans lequel il laisse la victime peut provoquer son trépas en quelques jours si elle est âgée, affaiblie ou très malade."
+  },
+  {
+    "name": "Échardes d'ombre",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 35,
+    "cost": 7,
+    "difficulty": 22,
+    "casting_duration": 2,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "rune de l'ombre",
+      "longs clous métalliques enduits d'huile noire (consommés)",
+      "posture (à genoux, yeux fermés)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage enfonce les clous le long des os du dos de sa main pour en faire des fléchettes mortelles. Lorsqu'il le désire, le mage peut en une action retirer un clou et le lancer sur une cible située jusqu'à (Force x 3) mètres. Les clous se lancent avec la Compétence Armes de jet, sont considérés comme des dards et offrent un bonus de +1 au toucher par jour complet passés dans le mage (au maximum égal à deux fois le score de Tendance Fatalité au moment du lancement du sort, qui est la durée maximale du sort). Les clous sont indétectables à l'œil nu tant qu'ils sont enfoncés et lors de leur lancement, ils laissent un long sillage de fumée glaciale et noirâtre. Tant qu'il conserve les clous en lui, le mage doit garder cochées autant de cases de blessures que la moitié du nombre de clous (arrondi au supérieur) en commençant par les Egratignures. Ces cases sont impossibles à effacer ou déplacer que ce soit par magie ou par médecine. Une fois le clou retiré, chacune se soigne comme des dommages de corps à corps."
+  },
+  {
+    "name": "Éloge de la folie",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 30,
+    "cost": 12,
+    "difficulty": 25,
+    "casting_duration": 5,
+    "casting_duration_unit": "action",
+    "keys": [
+      "danse de la folie",
+      "rune de l'ombre",
+      "cris terrifiants"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "La personne ciblée perd tout contrôle de ses actes pendant (10 + 2 par NR) tours. Elle attaque toute personne à sa portée et tente de tuer. Laissée seule, elle se recroqueville sur elle-même en sanglotant, incapable d'avoir un comportement sensé. De plus, elle doit réussir un jet de résistance de Physique + Volonté contre une Difficulté de 15 pour ne pas tenter de mettre fin à ses jours. Si elle survit au sort, elle gagne définitivement un point de Volonté et devient immunisée à ce sort."
+  },
+  {
+    "name": "Émotion contrôlée",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 40,
+    "cost": 4,
+    "difficulty": 18,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "mains paumes vers le bas",
+      "mouvements rapides des doigts",
+      "yeux révulsés"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Ce sort permet, en réussissant un jet d'incantation en opposition contre Mental + Volonté d'une cible, de modifier un de ses sentiments et de le remplacer par un autre durant (1 + 1 par NR) minutes. La cible ne se rend compte de rien, mais interprète à son gré le sentiment qui l'habite. A la fin du sort, la cible est prise d'un léger malaise et de maux de tête. Elle se souvient de son revirement passager mais sera incapable de l'expliquer. Exemples d'émotions : Peur, haine, amour, envie, passion, dégoût, irritabilité, euphorie, malveillance, fatigue, paresse, vitalité, courage, désespoir..."
+  },
+  {
+    "name": "Étreinte de l'ombre",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 25,
+    "cost": 7,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "fiole de sang de Moryargorn mélangée à du charbon (consommée)",
+      "kata de la mygale d'ombre (Physique + Conn. de la Magie, Diff. 15)",
+      "rictus grimaçant"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage jette la fiole d'ichor noirâtre aux pieds d'une cible de taille humaine située à moins de 25 mètres (ou disperse le mélange dans une zone donnée) et exécute une danse complexe. La matière visqueuse s'étire alors en de longs filets d'ombre gluante dont les plus épais ressemblent à des serpents. La cible doit effectuer un jet de Physique + Esquive en opposition contre le score d'invocation du mage pour ne pas être saisie. La zone affectée est de (16 m2 (2m de rayon) + 5 m2 par NR) et toutes les cibles présentes dans la zone sont affectées. Si un personnage est saisi, les tentacules ont une Force égale à la Sphère de l'Ombre du lanceur et s'en libérer demande une action et un jet de Physique + Force contre une Difficulté de Mental + Ombre du mage. Il n'est pas possible de trancher ou détruire physiquement les tentacules d'ombre qui se reforment magiquement. Ce sort dure (3 + 2 par NR) tours."
+  },
+  {
+    "name": "Flux vital",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 40,
+    "cost": 7,
+    "difficulty": 22,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "runes de l'ombre",
+      "position (bras tendus, frémissement profond, yeux fermés)",
+      "deux poignées de poudre d'obsidienne (au moins 40g au total, consommées)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage lève les bras au ciel et les braque vers deux cibles à moins de (Sphère x 5) mètres de lui en lançant la poudre. Celle ci se change en arcs d'énergie pourpre crépitant entre ses mains et ses cibles. Le mage peut alors à son gré interchanger des cases de blessures entre les cibles, qu'elles soient cochées ou non et dans le même Niveau de blessure. Il peut décider d'être un des protagonistes. Si une cible est non- consentante, elle peut résister par un jet de Physique + Volonté contre le score d'invocation du mage pour chaque case de blessure. Le sort dure (1 + 1 par NR) tours et le transfert dure une action complexe par case transférée. Aucune case n'est régénérée par ce processus et les deux cibles subissent des souffrances intenses durant tout le sort, ce qui les oblige à se concentrer pour supporter la douleur (-2 en Volonté)."
+  },
+  {
+    "name": "Globe ténébreux",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 25,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "bille noire",
+      "rune de l'ombre"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet de plonger une source de lumière à moins de 10 mètres dans l'obscurité la plus complète. Il peut s'agir d'une torche ou d'un lustre. Un globe de ténèbres entoure l'objet et reste fixé autour de la cible pendant (2 + NR) tours même si elle se déplace. Ce sort ne peut pas être lancé sur un individu."
+  },
+  {
+    "name": "Guerriers fantômes",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 25,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "plume noire",
+      "mèche de cheveux blancs"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort ouvre un portail vers le Royaume de l'Ombre à moins de 30 mètres du mage. Une nuée de petites créatures de cauchemar en sort. Elles viennent assaillir, dans un rayon de 10 mètres, (2 + NR) cibles sur ordre du mage. Elles n'infligent aucun dommage réel mais effraient tellement les victimes qu'elles ne peuvent effectuer aucune action pendant un tour à moins de réussir un jet de résistance contre la peur de Social + Volonté contre une Difficulté de 20."
+  },
+  {
+    "name": "La flamme de Kali",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 25,
+    "cost": 5,
+    "difficulty": 20,
+    "casting_duration": 6,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "sablier rempli de sable noir (consommé)",
+      "rune d'ombre sur la cible",
+      "cérémonie nocture à la lueur de Shar"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage plonge ses mains dans le torse de sa cible mort-vivante et lui arrache le reste de son cœur, qu'il jette en direction de Shar pour créer un pont spirituel avec le coeur de Kalimsshar. Il scelle ce lien en plaçant le sablier dans la plaie béante. Le mort-vivant ainsi ensorcelé restera animé jusqu'au premier jour du prochain Augure du Fataliste et se libère ainsi des contraintes d'existences lui étant imposées. Par contre, il tombera en poussière à ce moment quelles que soit l'origine de sa mort-vivance (les sorts dotés d'une Complexité supérieure ou les Faveurs d'un dragon peuvent garantir sa survie au gré du Meneur). S'il se dissipe, il n'est plus possible de l'animer de nouveau."
+  },
+  {
+    "name": "Mâchoire monstrueuse",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 30,
+    "cost": 7,
+    "difficulty": 21,
+    "casting_duration": 3,
+    "casting_duration_unit": "action",
+    "keys": [
+      "sable noir de Kali (consommé)",
+      "sang du mage (consommé)",
+      "rune de l'ombre"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage verse le sable dans sa main et s'entaille la paume pour l'imbiber de sang. Il porte le mélange à sa bouche et se concentre un instant. Dès l'action suivant la fin de l'incantation, le mage peut faire jaillir de sa bouche de longs tentacules noirâtres semblables à des anguilles. Ces tentacules portent à chacune de leur extrémité une de ses propres dents rendue acérée. Les tentacules font 4 mètres par point en Ombre et le mage peut s'en servir pour attaquer, enlacer ou se tracter. Les dommages sont de (Coordination + 5) et les tentacules se manipulent par un jet de l'Attribut concerné et avec une Compétence égale à la Coordination du mage (pour frapper ou Saisir, Physique + Coordination contre la Difficulté du type d'attaque). Chaque attaque anime plusieurs tentacules et peut toucher (3 + 1 par NR) cibles proches. Les tentacules ne peuvent se parer, sauf avec un bouclier. Si une même cible subit plusieurs attaques, le fait d'esquiver ou d'interposer son bouclier vaut pour toutes les attaques. On ne peut ni Charger, ni Parer ni faire d'Attaque brutale. Si un tentacule est touché et que le mage ne parvient pas à esquiver, il subit les dégâts normaux sans armure et le sort est rompu. Le mage a alors la bouche en sang et meurtrie. La résistance des tentacules permet de supporter le poids du mage équipé légèrement (pas d'armure moyenne ou lourde), sans plus et tout dépassement arrache une partie des gencives (Blessure grave automatique). Le sort dure Sphère tours."
+  },
+  {
+    "name": "Pacte de Kalimsshar",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 35,
+    "cost": 9,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "une victime à sacrifier ayant une Caractéristique plus haute que celle du lanceur",
+      "dague d'os"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "En sacrifiant une victime humaine selon un rituel bien précis, le mage remplace pendant (1 + NR) semaines une de ses caractéristique au choix par celle de sa victime."
+  },
+  {
+    "name": "Pointe suintante",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 25,
+    "cost": 6,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "un projectile",
+      "un peu d'alcool",
+      "rune de mort tracée sur l'arme de jet"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage enchante une arme de jet et lui donne un bonus de 2D10 sur ses dommages de base pendant (1 + NR) jours."
+  },
+  {
+    "name": "Portail de désespoir",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 40,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "runes de l'ombre et des rêves entremêlées (Manuel + Don artistique : Dessin, Diff. 15)",
+      "posture de méditation",
+      "râles moqueurs"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Ce sort est semblable au sort Psychonaute des mages des rêves. Il ne s'utilise par contre que sur une cible en proie à un cauchemar. Le ou les intrus (un par point en Sphère de l'Ombre au maximum) entrant dans le cauchemar rencontreront toujours des situation désagréables ou dangereuses, vu l'état d'esprit du dormeur. Il est possible de rester dans le cauchemar tant que le dormeur est inconscient. Si les intrus règlent la situation effrayante (comme détruire un monstre hideux et agressif...), ils risquent de transformer le cauchemar en rêve et doivent alors instantanément jeter 1D10 (non modifiable, pas de Tendances) sous leur Volonté. Si ce jet est manqué, ils se dissolvent et disparaissent comme dans le cas d'un réveil inopiné. Si ce jet est réussi, ils sont bannis de l'esprit du dormeur, qui s'éveillera quelques minutes plus tard en se souvenant d'avoir rêvé d'eux."
+  },
+  {
+    "name": "Sang d'éternité",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 25,
+    "cost": 11,
+    "difficulty": 20,
+    "casting_duration": 6,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "chaudron d'obsidienne gravé de runes d'ombre",
+      "litanie d'éternité (Social + Sphère d'Ombre, Diff. 15)",
+      "sang humain (plusieurs litres, consommé)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "Par ce sort, le sorcier concentre la force vitale du sang pour l'utiliser dans la conception de l'ichor d'ombre. Le sang d'éternité n'a aucune autre utilité connue. Le sorcier remplit le chaudron de sang frais, puis entre en méditation, ses doigts effleurant le bord du chaudron. Au terme d'une lente litanie de plusieurs heures, le volume du sang a diminué pour ne plus représenter qu'un dixième de sa taille initiale. Le sang a pris une couleur violacée, sa consistance est épaisse et il grésille comme de l'eau bouillante lorsqu'on le manipule. Il est glacé au toucher et doit être conservé dans un flacon d'obsidienne (ou le chaudron). Toute autre matière le contenant le dénature et le corrompt. Le sang d'éternité peut être conservé un Augure entier. Si le sorcier échoue à l'incantation, il doit cocher toutes ses cases de blessures (sauf sa/ses case (s) de Mort), car le sang lui dévore toute sa force vitale avant de se dénaturer et de figer définitivement."
+  },
+  {
+    "name": "Talisman élémentaire mineur",
+    "sphere": "ombre",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 30,
+    "cost": 3,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "sagianor (à étaler sur l'objet ensorcelé, consommé)",
+      "encens de l'élément concerné",
+      "chant des éléments (Mental + Don artistique : Chant, Diff. 15)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
+  },
+  {
+    "name": "Augure",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 100,
+    "cost": 16,
+    "difficulty": 25,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "neuf tablettes de matière élémentaire marquées de leur rune",
+      "sablier de cristal (détruit)",
+      "sang de Moryargorn (consommé)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage tente de décrypter les mystères du destin par une prédiction. Il brise le sablier et étale le sable, l'asperge de Sang de Moryagorn et y jette les tablettes élémentaires. Selon leurs positions, il détermine la trame du destin. Il peut alors avoir une évocation de l'avenir probable d'un personnage, d'un groupe, d'un objet, d'une situation (résumable en deux mots). Il apprend alors l'élément dominant du futur de la cible dans une période donnée : avec un jet réussi, le sort indique l'élément dominant de la prochaine année, avec un NR, sur les dix prochaines années et avec 2 NR, sur le prochain siècle. Le sort ne donne que l'élément principal de la période donnée. Il se peut parfois que le sort révèle un avenir lointain, mais plus important alors que le mage recherche des informations proches. Tels sont les mystères du temps. Si un personnage est insatisfait de l'augure, il peut décider de Briser le Destin. Pour ce faire, comme le destin n'est que potentiel, il doit puiser dans son propre avenir pour changer les choses. Il doit donc dépenser sur le champ des points d'Expérience et énoncer clairement son désir de Briser le Destin. La dépense varie selon l'importance des faits bouleversés : Mineur : une mauvaise rencontre, un mauvais voyage (10 points) Notable : un mariage, la mort d'un PNJ mineur ou d'un PJ anonyme (20 points) Important : une guerre locale, la mort d'un héros ou d'un PJ célèbre, les plans d'un dragon (30 points) Bouleversement : la mort d'un roi, une guerre d'ampleur, les plans d'un Grand Dragon (40 points) A ce moment, le Maître de Jeu peut mettre en scène l'accomplissement d'une quête au cours de laquelle le personnage aura l'opportunité de réussir à Briser le Destin, mais où il ne gagnera que la moitié des points d'Expérience prévus. Ses éventuels compagnons, s'ils n'ont pas décidé de Briser le Destin, ne sont pas soumis à cette réduction mais ne pourront rien faire pour changer le cours des choses. Ni accomplir de faits héroïques, ni arriver au bon moment pour infléchir l'avenir."
+  },
+  {
+    "name": "Échange de la vie",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 130,
+    "cost": 30,
+    "difficulty": 25,
+    "casting_duration": 13,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "une victime à sacrifier",
+      "le corps de la personne à ramener d'entre les morts",
+      "tatouage de la vie et de la mort sur tout le corps"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "En sacrifiant une victime humaine, le mage lui arrache son principe de vie puis l'insuffle à la personne qu'il veut ressusciter. L'individu ainsi ressuscité revient en parfaite santé avec tous ses souvenirs, ses Caractéristiques, ses Attributs et les Compétences qu'il avait au moment de sa mort. Son corps, qui pouvait être en état de décomposition avancée, se recompose. L'espérance de vie du miraculé n'est que de (1 + NR) ans, date à laquelle il meurt irrémédiablement sans aucune chance d'être à nouveau relevé d'entre les morts."
+  },
+  {
+    "name": "Élytres de guerre",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 45,
+    "cost": 6,
+    "difficulty": 18,
+    "casting_duration": 4,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "pince de scarabée d'ombre (consommée)",
+      "position (bras enserrés autour du torse)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Sortilège horrifique, les impressionnantes élytres composées d'ombres aux reflets nauséeux qui protègent le mage semble celles d'un insecte gigantesque posé sur lui. A chaque attaque, qu'il subit (sauf en cas d'attaques simultanées, où une seule attaque doit être sélectionnée), les élytres le recouvrent instantanément, lui offrant une protection supplémentaire de (5 + 3 par NR) contre tout dégât physique. Ce sort dure (1 + 1 par NR) heures."
+  },
+  {
+    "name": "Faiblesse de la chair",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 65,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "chair d'un cadavre",
+      "posture (doigt braqué)",
+      "bruit de succion"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage désigne une blessure affligeant la cible. Tous les jets de soins affectant la victime seront pénalisés d'un -3, du fait du pus qui commence à suinter de la plaie. Les effets du sort durent (3 + 1 par NR) jours. Ce sort ne peut être lancé dans un site élémentaire, sauf ceux de la Sphère de l'Ombre."
+  },
+  {
+    "name": "Malédiction de Kalimsshar",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 60,
+    "cost": 10,
+    "difficulty": 27,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "poupée (consommée)",
+      "goutte de sueur de la victime (consommée)",
+      "cérémonie d'asservissement (Social + Conn. de la Magie, Diff. 15)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Ce sort, d'une portée de 20 mètres, entraîne la transformation de la cible en mort-vivant. La cible résiste à chaque tour par un jet de Mental + Volonté de Difficulté de 20 pour éviter de perdre virtuellement un point de Volonté. Le sort dure (Sphère + 1 par NR) tours. Si elle arrive virtuellement à zéro en Volonté, la victime devient un mort- vivant asservi (voir ci-dessus) et passe sous le contrôle du nécromancien. Elle perd toute humanité et devient un monstre inexpressif. La malédiction peut être arrêtée si le mage meurt avant la fin de la transformation qui dure un tour complet. Le personnage est mort et injouable. Si le personnage résiste au sort, les points de Volonté \"perdus\" sont ignorés et il devient immunisé à ce sortilège."
+  },
+  {
+    "name": "Malédiction démentielle",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 100,
+    "cost": 4,
+    "difficulty": 18,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "sourire sadique",
+      "oreille momifiée (consommée)",
+      "ricanement"
+    ],
+    "source": "La colère des dragons",
+    "description": "Destiné à perturber l'équilibre mental d'un individu, ce sort maudit sa victime pour (1 semaine + (1 par NR) jours). Chaque réalisation de la victime (artisanat, passe d'arme, etc.) envahira son esprit d'un rire moqueur du mage, lui imposant une pression propres à faire craquer les plus volontaires. Tout jet indiquant un 1 impose alors de lancer 2 dés au lieu d'un seul pour déterminer un éventuel Echec critique. Si l'un des 2 dés indique un score supérieur au score de la Compétence, c'est automatiquement un échec critique."
+  },
+  {
+    "name": "Présence sulfureuse",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "instinctive",
+    "complexity": 45,
+    "cost": 5,
+    "difficulty": 17,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de l'ombre",
+      "poudre de diamant (au moins 10g, consommée)",
+      "mélopée rapide"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage étale la poudre de diamant sur son visage en psalmodiant. Il se pare alors d'une allure prestigieuse apte à subjuguer ses interlocuteurs. Il peut influencer (1 + 1 par NR) personnes durant une heure. Les cibles affectées considèrent le mage avec intérêt, appréciant son jugement et cherchant instinctivement à lui plaire et à s'en approcher. Le mage peut influencer les avis des cibles, mais les revirements notables demandent un jet de Social + Présence en opposition contre Mental + Volonté de la victime. Un revirement complet et la négation des convictions profondes est impossible."
+  },
+  {
+    "name": "Rappel draconique",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 55,
+    "cost": 20,
+    "difficulty": 25,
+    "casting_duration": 4,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "un os de dragon (consommé)",
+      "de la terre corrompue de Kali mêlée à un peu d'élément du dragon (consommée)",
+      "cercle d'invocation spectral (Manuel + Conn. de la Magie, Diff. 15)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage de l'ombre évoque l'esprit élémentaire du dragon décédé à qui appartient l'os. Le dragon se manifeste sous une forme spectrale, composée d'ombre et de restes de sa matière élémentaire tutélaire. L'esprit est souvent furieux d'avoir été extirpé du flux élémentaire où il sommeillait et le mage devra effectuer un jet de Mental + Volonté en opposition contre Volonté + Tranche d'âge du dragon. Ce dernier possède les caractéristiques de sa forme draconique (sauf pour les enfants de Khy). Le spectre est soumis pour un quart d'heure par NR. Durant ce temps, son corps obéit au mage et agit pour lui. Le dragon reste de toute façon réticent et refusera d'instruire le mage ou de répondre à ses questions à moins que le mage n'effectue un jet similaire pour chaque question. En cas de combat, le dragon dispose de toutes ses facultés et devra les utiliser. Il ne laisse aucune trace et tous ses coups physiques sont portés avec son corps spectral, qui gèle et nécrose les chairs (dommages normaux). Si le mage n'obtient pas de NR à son jet de contrôle initial, le Dragon reste inactif et invective copieusement le mage avant de se dissiper. Il persiste un tour par tranche d'âge. Si le jet est raté, le dragon est libre de toute entrave et agresse le mage tant qu'il persiste. Si le jet est un Echec critique, le dragon dévore l'âme du personnage et emmène son corps dans le flot élémentaire dont il provient. Le mage meurt sans recours."
+  },
+  {
+    "name": "Tourbillon des abysses",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 55,
+    "cost": 15,
+    "difficulty": 25,
+    "casting_duration": 10,
+    "casting_duration_unit": "action",
+    "keys": [
+      "diamant noir",
+      "un litre de sang"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage ouvre un portail sur les entrailles du Royaume de l'Ombre. Il en jaillit une tornade noire qui dévaste tout sur son passage pendant (1 + NR) tours. Contrôlée par le lanceur, elle se déplace à une vitesse de 50 mètres par tour et a un volume d'effet de 20 m3. Sa force est égale à deux fois la valeur de la Compétence Sphère de l'Ombre du mage. La tornade inflige (Force + 2D10) points de dommage par tour à toutes les personnes se trouvant sur son passage. Une fois lancée dans la direction choisie par le lanceur du sort, cette tornade destructrice ne peut plus être redirigée de quelque manière que ce soit."
+  },
+  {
+    "name": "Vision traumatique",
+    "sphere": "ombre",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 75,
+    "cost": 13,
+    "difficulty": 20,
+    "casting_duration": 5,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "rune de l'ombre",
+      "cercle d'évocation tracé au sang de fluix (Manuel + Conn. de la Magie, Diff. 15)",
+      "sang de fluix (consommé)"
+    ],
+    "source": "Les Secrets de Kalimsshar",
+    "description": "Le mage crée un pont spirituel avec le Gouffre des Ames. Il échange alors l'esprit de sa victime, à vue, avec une âme errante et incomplète. La victime peut résister par un jet de Mental + Volonté contre le score d'incantation du mage si elle possède une Volonté supérieure ou égale à celle du mage d'ombre. Si la victime ne résiste pas, elle subit alors la pire expérience d'Outre Tombe possible tout en restant consciente. Durant ce temps, l'esprit échangée tente de se libérer de ce corps qui le fait souffrir. Le corps est pris de convulsions, se mutile et cherche à se dégrader. Le sort dure (1 + 2 par NR) tours. Lors du retour de l'esprit de la victime, cette dernière doit effectuer un jet de Mental + Volonté contre une Difficulté de 15 (+ 3 par tour passé hors de son corps). Si ce jet est raté, l'esprit ne peut se réintégrer et deviendra un Esprit tourmenté. L'esprit prisonnier mutilera alors le corps jusqu'à la mort. Si le personnage retrouve son esprit, il aura subi une Egratignure par tour du sort et restera à jamais marqué. Il obtient alors le Désavantage « Mauvais Souvenir » ou « Déviance » (au choix), ce dernier se manifestant dans les semaines suivantes comme un effet secondaire."
+  }
+]

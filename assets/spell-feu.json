@@ -1,0 +1,878 @@
+[
+  {
+    "name": "Bouclier carmin",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "morceau de charbon",
+      "chant du feu"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage crée une petite flamme qui tourne autour de sa cible. Elle bloque la première attaque physique portée avec succès contre la personne qu'elle protège en créant un petit bouclier de feu qui pare l'attaque avant de disparaître. La flamme dépérit et devient inefficace au bout de (1 + NR) heures si elle n'a pas fait effet."
+  },
+  {
+    "name": "Brise volcanique",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 10,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 10,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "souffle",
+      "rune des volcans",
+      "chant des volcans"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort crée une poche d'air chaud à 30°C de (10 + 10 par NR) m3 pendant 8 heures. Elle permet de ne pas avoir froid la nuit."
+  },
+  {
+    "name": "Cachet brûlant",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 10,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "lettre",
+      "sceau et cire",
+      "voix forte",
+      "rune du feu"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "En lançant ce sort sur le sceau d'une lettre, le mage appose un mot de commande sur le cachet. Dès que le sceau est rompu sans que le mot de commande soit prononcé à voix haute, le lecteur ne dispose plus que d'un court moment pour comprendre la lettre avant qu'elle ne se consume (5 actions maximum). L'enchantement de la lettre dure (1 + NR) semaines."
+  },
+  {
+    "name": "Coup de tonnerre",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "respiration bloquée",
+      "claquement violent des mains",
+      "regard fixe"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Une explosion est provoquée juste à côté des oreilles d'une cible distante de moins de trente mètres. Ce sort peut toucher (1 + 1 par NR) cibles et impose un jet de Mental + Résistance contre une Difficulté de 20. S'il est raté, la ou les cibles sont assourdies par le bruit et perdent toutes leurs actions pendant 2 tours. Si la ou les cibles ratent leur jet de façon critique, elles deviennent complètement sourdes pour une journée."
+  },
+  {
+    "name": "Coursier de feu",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 12,
+    "difficulty": 15,
+    "casting_duration": 15,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "encens de Kroryn",
+      "posture (méditation debout, jambes écartées, bras brandis vers le ciel",
+      "cercle runique formé de braises"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "À la fin de la méditation, le mage sort de transe alors que les runes du cercle émettent des rayons de lumière rougeâtre qui jaillissent vers le ciel. Le magicien attire alors l'attention d'un fils de Kroryn (le plus proche) pour lui demander conseil ou solliciter un transport personnel vers une destination précise. Le dragon est de la (2 + 1 par NR)ième tranche d'âge. Le dragon vient par ses propres moyens (et donc peut mettre un moment à arriver), n'a aucune obligation vis à vis du mage et ne vient pas pour se battre (il a d'ailleurs probablement d'autres affaires en cours à régler). Le magicien doit avoir une bonne raison de demander son aide et un présent pour service rendu n'est jamais superflu. Les dragons de Kroryn peuvent priver l'invocateur de l'usage de sa Sphère du Feu pour un jour par tranche d'âge s'ils estiment que sa requête est futile, tout comme ils peuvent violenter un impudent qui les dérangerait sans raison. Même s'il ne vient pas pour se battre, un enfant de Kroryn est toujours prompt à la violence et les circonstances d'accueil (cérémonie, bataille, bouleversement climatique ou magique) peuvent largement altérer son humeur."
+  },
+  {
+    "name": "Espion igné",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 4,
+    "difficulty": 18,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "bille de verre rouge (consommée)",
+      "position (en tailleur, mains croisées sur les yeux)",
+      "quelques braises où poser la bille de verre (consommées)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien utilise toutes les sources de lumière à moins de 50 mètres (feu de camp, torche) pour y projeter ses sens et ainsi voir et entendre pendant (5 + 1 par NR) minutes. Il ne peut projeter ses sens que dans une seule source à la fois. Si le sort est manqué, le mage entrouvre brièvement une fissure dans la trame de la réalité entre lui et le feu le plus proche, s'infligeant 10 points de dommages par brûlure. De même, si la source dans laquelle il se trouve est brutalement éteinte, le sort est brisé et le mage subit cette fois 20 points de dommages psychiques à cause de la rupture."
+  },
+  {
+    "name": "Feux follets",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 10,
+    "cost": 1,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "bille de charbon",
+      "la voix"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort crée une lumière dansante qui illumine une zone de (1 + NR) mètres de rayon pendant 1 heure. C'est une lumière froide que les créatures sensibles aux sources de chaleur ne peuvent déceler."
+  },
+  {
+    "name": "Forge ardente",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 20,
+    "cost": 8,
+    "difficulty": 15,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "forge ou foyer (gravé d'une rune du feu)",
+      "rubis (gemme d'au moins 20g)",
+      "chant de la forge (Mental + Artisanat : Forge, Diff. 15)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "Le sorcier ou le forgeron place la gemme dans le foyer de la forge où il désire attirer le regard ardent de Kroryn, en ayant soin de tracer au fond la rune du feu. Il ajoute alors lentement les blocs de charbon dans le foyer, en psalmodiant le fier chant de travail des Forgerons. Le rubis devient lumineux et vire à l'orange sombre, dégageant une chaleur infernale qui embrase les charbons. A la fin de l'incantation, le rubis est indiscernable des autres braises, mais durant (Sphères) heures, les braises possèdent une puissance capable de faire rougeoyer et fondre les métaux les plus nobles, y compris l'acier, mais aussi le Sang de Kezyr ou le Sombre Acier. Au terme du temps d'action, les braises refroidissent normalement et le rubis peut être récupéré (brûlant, mais intact). Si le sort est raté, le rubis explose en fragments qui ne sont plus que de la poudre de rubis."
+  },
+  {
+    "name": "Fulgurance",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de la foudre",
+      "kata de la fureur des braises (Corps-à-Corps, Diff. 15)",
+      "regard vitreux"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Ce sort augmente la vitesse du magicien, qui perçoit alors les mouvements de son entourage au ralenti. Cette altération lui octroie un bonus de +3 sur tous ses jets de défense physique (esquive, parade). De plus, il dispose d'un bonus de +3 sur tous ses jets d'attaque. Ce sort n'influe pas sur le nombre d'actions ou la vitesse de déplacement du mage et dure (1 + 1 par NR) tours."
+  },
+  {
+    "name": "Guide écarlate",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 15,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "brindille",
+      "chant du dragon"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort fait apparaître un petit lézard de feu qui obéit aux ordres du mage pendant (30 + 10 par NR) minutes avant de disparaître. Il est utile pour déclencher des pièges ou bouger des bibelots à distance. Il est également capable de rendre de menus services. Craintif, il ne peut être utilisé en combat."
+  },
+  {
+    "name": "L'œil de Pyrite",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 2,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "geste vif traçant une rune du feu dans l'air",
+      "brindille",
+      "chant de la lumière"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet d'enflammer un objet combustible situé à moins de 10 mètres pendant (1 + NR) tours. Il peut servir à allumer un peu de bois sec ou une torche. Il peut enflammer une étoffe, un rideau, ou une lettre. Il n'occasionne pas directement de dommage, mais une personne dont la chemise prend feu doit se dépêcher de l'éteindre ou l'enlever en 1 action maximum, sous peine de subir (15 + 1D10) points de dommages."
+  },
+  {
+    "name": "Lame ardente",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 15,
+    "cost": 8,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "lame",
+      "forge",
+      "voix",
+      "gestuelle"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort permet à celui qui porte la lame de l'enflammer à volonté pendant (1 + NR) heures. L'arme enflammée bénéficie d'un bonus de +10 aux dommages de base."
+  },
+  {
+    "name": "Langue de feu",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 3,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "poudre de soufre (consommée)",
+      "voix crépitante",
+      "expiration mesurée"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le mage peut générer à la surface de son corps une petite flamme inoffensive dont il peut contrôler l'intensité durant (1 + 1 par NR) tours. Contrairement à « Souffle ardent », ce sort ne provoque pas de dommages notables mais peut servir à calciner de petits objets ou à travailler un matériau car il est très précis et délicat."
+  },
+  {
+    "name": "Les Rugissantes",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 10,
+    "cost": 4,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "danse de guerre des Dompteurs de Flamme (Don artistique : Danse, Diff. 15)",
+      "runes de l'immatérialité et des volcans imbriquées à tracer sur le corps",
+      "hurlement sauvage durant la charge"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Cette invocation est utilisée lors des charges pour impressionner les adversaires. En effet, les Rugissantes sont des formes voilées qui flottent derrière le mage et qui le dépassent lors de sa charge pour se transformer en d'impressionnants monstres spectraux dont la présence est affreusement réaliste. Elles n'existent que pendant le tour de la charge du mage. Les Rugissantes effraient la cible de la charge plus deux par NR (au plus proche). Chaque victime doit réussir un jet de Mental + Volonté contre une Difficulté de 20, ou prendre immédiatement la fuite. Les mages d'au moins III° Statut sont immunisés à ce sort. Les Rugissantes n'infligent aucun dommage, mais elles changent d'apparence à chaque invocation, rendant toute habitude impossible."
+  },
+  {
+    "name": "Manteau élémentaire",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 8,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "un peu de l'élément correspondant",
+      "posture (bras croisés, tête rentrée)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
+  },
+  {
+    "name": "Piège lumineux",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "sorcellerie",
+    "complexity": 20,
+    "cost": 6,
+    "difficulty": 18,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "sable noir",
+      "rune de la lumière",
+      "danse de la lumière"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort piège pendant (5 + NR) heures une zone de (1 + NR) m2. Toute personne qui y pénètre sans avoir préalablement prononcé le mot de pouvoir déclenche le piège. Un flash illumine toute la zone rendant visible les personnes qui s'y trouvent. Les victimes aveuglées subissent un malus de -5 à toutes leurs actions nécessitant la vue pendant 1 tour."
+  },
+  {
+    "name": "Scintillements",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 20,
+    "cost": 5,
+    "difficulty": 18,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "limaille de cuivre (consommée)",
+      "position (bras croisés sur les oreilles, puis mains descendant vivement le long des flancs",
+      "mélopée sourde"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien choisit une cible à moins de 10 mètres et lance la limaille de cuivre dans sa direction. Il se crée alors une cascade jaillissant du néant qui recouvre la cible de minuscules étincelles virevoltantes. Elles lui confèrent alors un bonus de protection physique de +8, dont l'Indice est cumulable avec d'autres armures ou sorts de protection. Les étincelles scintillent pendant (4 + 1 par NR) tours avant de disparaître."
+  },
+  {
+    "name": "Souffle ardent",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 20,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "respiration",
+      "rune gravée sur un morceau de charbon (ou tatouée)",
+      "posture d'inspiration d'air"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage fait jaillir de sa bouche un jet de flammes de 5 mètres de long qui embrase tout objet combustible affecté. Le mage peut souffler pendant (1 + NR) tours. Ce sort inflige (15 + 1D10) points de dommages par souffle sur une zone de 2m2. Il ne peut être qu'esquivé ou paré à l'aide d'un bouclier."
+  },
+  {
+    "name": "Subjugation",
+    "sphere": "feu",
+    "level": 1,
+    "skill": "instinctive",
+    "complexity": 15,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "runes de la lumière et des volcans entremêlées (Don artistique : Dessin, Diff. 15)",
+      "danse de la salamandre",
+      "murmure lancinant"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien choisit une cible à moins de 20 mètres et l'hypnotise par le mouvement d'une aura d'étincelles qui danse autour de lui. La victime doit réussir un jet d'opposition de Mental + Volonté contre le score d'incantation du mage pour résister. Dans le cas contraire, elle se perd dans la contemplation des effets de lumière qui jaillissent des mains du magicien. Deux de ses dés d'Initiative (au choix, mais désignés avant le lancer) subissent alors un malus de -5 pendant (1 + 1 par NR) tours. Les dés dont le score tombe à 0 ou moins sont perdus et inutilisables.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Nenya »."
+  },
+  {
+    "name": "Comète",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 35,
+    "cost": 4,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "poudre combustible (soufre, salpêtre ou explosif de Brorne, consommée)",
+      "graviers de lave (consommés)",
+      "posture (lancer en cloche la poudre et les graviers au-dessus de la cible)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "En lançant le mélange vers une cible située à moins de 20 mètres de lui, le mage transforme les particules en de véritables petites comètes qui retombent en une pluie incandescente à la vitesse de l'éclair. Elles infligent au total et en une seule fois (20 + 1D10 par NR) points de dommages. Ce sort ne peut être esquivé et ne se pare qu'à l'aide d'un bouclier."
+  },
+  {
+    "name": "Dard de feu",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 35,
+    "cost": 5,
+    "difficulty": 15,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "graviers de soufre (consommés)",
+      "posture (geste de lancer)",
+      "cri rageur"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage lance un projectile de flammes comprimées vers son adversaire jusqu'à 50 mètres. Le dard est rapide, mais s'esquive et se pare avec un bouclier normalement. Il inflige 15 + 1D10 points de dommages et peut éventuellement enflammer des matériaux perforés au point d'impact (tunique, cheveux, cape...)."
+  },
+  {
+    "name": "Dryades",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 35,
+    "cost": 7,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "danse sautillante",
+      "rune des volcans",
+      "pierres précieuses (minimum 200 df)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le mage invoque de petites dryades de feu qui apparaissent autour de lui (moins de deux mètres). Ces esprits follets dansent et sautillent en permanence en chantonnant d'une voix aigüe et discrète. D'une intelligence rudimentaire, elles ne peuvent identifier les objets ou comprendre les termes humains désignant l'environnement. Elles sont capables de danser, chanter ou enflammer des objets combustibles sur demande. En cas de danger, elles se précipitent vers la menace en pirouettant pour la gêner, y boutant du même coup le feu et provoquant (15 + 1D10) points de dommages. Leur Initiative est de 1D et leur attaque ou déplacement est résolu globalement pour le groupe. Leurs attaques peuvent s'esquiver normalement sans NR, mais pas se parer. Un simple ordre permet de les rappeler. Elles restent présentes pendant (3 + 1 par NR) tours."
+  },
+  {
+    "name": "Esprit du sang",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 30,
+    "cost": 6,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "une arme de qualité au moins Bonne",
+      "rune de Kroryn tracée avec le sang du mage sur l'arme (consommé)",
+      "murmures incantatoires"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien invoque l'Esprit du sang, une créature draconique née du sang de Kroryn versé sur les champs de bataille où le Grand Dragon a été blessé. Créature martyre de lave et de sang bouillonnant, l'Esprit a une forme fluctuante grossièrement draconique. Une fois invoqué, l'Esprit se focalise sur l'arme par laquelle il a été invoqué. Il s'en saisit et la plonge alors dans ses entrailles pour la rendre à son propriétaire en une action. Il se dissipe ensuite alors que l'arme dégoutante de sang igné se met à crépiter d'étincelles orangées. Durant (1 + 1 par NR) tours, l'arme ignore les armures physiques car elle peut percer et trancher n'importe quelle matière (sauf les écailles draconiques). Utilisée en combat, ses dommages sont augmentés de la Sphère du Feu de l'invocateur et elle octroie également un bonus d'attaque de +3. Si l'invocation du sort échoue, l'invocateur perd tous les points de magie de sa Sphère du Feu, absorbés par l'Esprit et l'arme utilisée fond en un clin d'œil.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Nenya »."
+  },
+  {
+    "name": "Feu intérieur",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 35,
+    "cost": 12,
+    "difficulty": 25,
+    "casting_duration": 6,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de l'homme",
+      "danse du feu"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort entoure une cible consentante d'un halo de flammes qui l'immunise, elle et son équipement, contre toutes les formes de dommages de feu pendant (10 + 10 par NR) minutes. Ce halo lui confère un bonus de +15 à ses jets de dommages à main nue, et un Indice de protection supplémentaire de +15. Lorsque ce sort prend fin, tous les objets combustibles transportés par la cible sont détruits."
+  },
+  {
+    "name": "Flash",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 30,
+    "cost": 7,
+    "difficulty": 20,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune de l'éclair",
+      "œuf de luciole de lave (consommé)",
+      "posture (doigts entrecroisés selon une position complexe)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien fait exploser une boule de lumière devant les yeux d'une cible à moins de 15 mètres de lui. Pour fermer les yeux à temps, la victime doit réussir un jet d'esquive en opposition contre le score d'incantation du mage. En cas d'échec, elle est aveuglée pendant (1 + 1 par NR) tours. Elle subit alors un malus de -8 à toutes ses actions impliquant la vue. Le mage peut doubler la dépense de points de magie pour viser en même temps une cible supplémentaire."
+  },
+  {
+    "name": "Grêle de feu",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 40,
+    "cost": 12,
+    "difficulty": 20,
+    "casting_duration": 14,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "lave élémentaire (consommée)",
+      "dent de dragon gravée d'or",
+      "morceau de verre (consommé)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage lance la lave vers le ciel, où elle se fond dans les nuages soufrés qui s'accumulent durant toute la durée de l'incantation (charge à lui de la manipuler). Il saisit ensuite le morceau de verre et regarde une zone du paysage au travers, avant de le fracasser avec la dent de dragon. Au tour suivant, une grêle de feu commence à tomber du ciel, touchant une zone de 1200 m2 (forme au choix ou cercle de 40 mètres de diamètre. La grêle dure 10 tours et possède un effet de Barrage de 14 + 3/NR (voir Yris, p.91). Une cible peut être touchée à chaque tour et la grêle inflige 3D10 points de dommages. A la fin de la grêle, la zone touchée est entièrement dévastée, les bâtiments sont lourdement endommagés ou détruits et un incendie est probable dans les zones naturelles boisées ou les villes."
+  },
+  {
+    "name": "Immunité au feu",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 40,
+    "cost": 6,
+    "difficulty": 18,
+    "casting_duration": 1,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune des volcans tracée à la suie sur le dos des mains",
+      "posture défensive (bras croisés devant le visage)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien, ou une cible de son choix à moins de 5 mètres, devient complètement immunisé aux dégâts provoqués par le feu et la chaleur pendant (2 + 2 par NR) tours (qu'ils soient d'origine magique ou naturelle). En revanche, son équipement et ses vêtements subissent des dégâts normaux. En doublant la dépense des points de magie, le magicien peut cibler en même temps deux personnes proches (moins de 2 mètres). Il est impossible de faire profiter de ce sort à plus de 2 personnes.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Nenya »."
+  },
+  {
+    "name": "Mur de flammes",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 35,
+    "cost": 7,
+    "difficulty": 17,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "rune du feu",
+      "poudre de pierre précieuse (rubis, opale ou agate de feu)",
+      "exhalation grave"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien invoque un mur de flammes d'un volume égal à deux fois son score de Sphère du Feu, à 5 mètres maximum de lui. Ce volume peut prendre une forme au choix du mage, décidée durant l'invocation. Ces flammes infligent (15 + 1D10) points de dommages à tout ce qui les traverse. Il est impossible de le déplacer, et il reste actif pendant (10 + 5 par NR) minutes."
+  },
+  {
+    "name": "Poing foudroyant",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 25,
+    "cost": 8,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "rune du feu",
+      "posture (mains en coupole au-dessus de la tête, geste de lancer des deux mains)",
+      "hurlement bestial"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Une décharge d'énergie, mélange de foudre et de flammes élémentaires incontrôlables, sort de la main du magicien et inflige (30 + 10 par NR) points de dommages, à une cible distante de moins de 20 mètres. En cas d'échec, c'est le magicien qui reçoit la décharge et qui subit 30 points de dommages.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Nenya »."
+  },
+  {
+    "name": "Portail maudit",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 25,
+    "cost": 7,
+    "difficulty": 15,
+    "casting_duration": 2,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "braises incandescentes ou source de feu",
+      "chaînette d'or ou de cuivre (consommée)",
+      "danse circulaire d'enchevêtrement"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Ce sort permet d'ouvrir une connexion pyrétique avec une Eérie volcanique, que le mage peut ensuite faire progresser vers une cible de son choix à moins de 25 mètres, l'emprisonnant ainsi dans un carcan brûlant, qui la suivra dans ses mouvements et déplacements. La cible peut tenter un jet d'esquive en opposition contre le score d'invocation du mage. En cas d'échec, la victime est environnée de vapeurs brûlantes et sulfureuses et se dessèche à vue d'œil durant autant de tours que la Sphère du Feu de l'invocateur. Elle subit alors (10 + 1D10 par NR) points de dommages par tour sans aucune protection physique. Le seul moyen de faire disparaître la zone brûlante consiste à rendre l'invocateur inconscient ou à lancer un sort des Océans capable de créer des dommages dont le score d'invocation sera supérieur à celui du Portail maudit. Les protections surnaturelles contre le feu ou la chaleur sont utilisables, tout comme les éventuelles capacités à clore de force un portail d'invocation."
+  },
+  {
+    "name": "Sang igné",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "instinctive",
+    "complexity": 35,
+    "cost": 4,
+    "difficulty": 17,
+    "casting_duration": 2,
+    "casting_duration_unit": "action",
+    "keys": [
+      "sagianor (enduisant une dague)",
+      "blessure sanglante (par la dague enduite)",
+      "kata de protection (Physique + Corps à corps, Diff. 15)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "En convoquant les énergies élémentaires par une brusque série de mouvements, le mage se blesse volontairement (ou blesse la cible du sort, Egratignure automatique) et mêle la sagianor à son sang. Instantanément, le sang devient un fluide élémentaire bouillonnant. Le personnage n'en souffre pas, pas plus qu'il ne subit les effets du froid s'il y est soumis (il divise par deux tout dommage infligé et réussit tout jet de Résistance automatiquement). Si jamais le personnage est blessé, son sang gicle de la blessure sous la forme d'un geyser de feu liquide et incandescent, qui inflige automatiquement à l'agresseur (1 + 1/NR)D10 pts de dommages de feu et peut l'embraser (cf. LdB p. 194 dans ce cas). Ce sort dure (Sphère) tours. L'équipement du Pj n'est pas altéré par les éclaboussures de son propre sang igné."
+  },
+  {
+    "name": "Talisman élémentaire mineur",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "sorcellerie",
+    "complexity": 30,
+    "cost": 3,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "sagianor (à étaler sur l'objet ensorcelé, consommé)",
+      "encens de l'élément concerné",
+      "chant des éléments (Mental + Don artistique : Chant, Diff. 15)"
+    ],
+    "source": "Le sang noir de Moryargorn",
+    "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
+  },
+  {
+    "name": "Transe belgorienne",
+    "sphere": "feu",
+    "level": 2,
+    "skill": "invocatoire",
+    "complexity": 35,
+    "cost": 8,
+    "difficulty": 20,
+    "casting_duration": 8,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "sang d'un ennemi vaincu (consommé)",
+      "danse de colère",
+      "cercle runique de feu"
+    ],
+    "source": "La colère des dragons",
+    "description": "Ce sort barbare est originaire des sorciers des Lacs sanglants. En entraînant 1 + NR cibles dans une danse guerrière et haineuse, le mage les asperge de gouttelettes de sang. Les cibles sont alors prises d'une transe qui leur confère un bonus de toucher et de dommages égal à leur Volonté. Ce sort dure une demi-heure. Durant cette durée, les cibles ne peuvent effectuer qu'une action de défense (parade ou esquive) par tour, en plus d'avoir un comportement colérique et irascible invivable."
+  },
+  {
+    "name": "Bouclier flamboyant",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 60,
+    "cost": 12,
+    "difficulty": 22,
+    "casting_duration": 2,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "bouclier de métal de Bonne qualité",
+      "sang de salamandre (consommé)",
+      "rune du soleil (à tracer avec le sang de la salamandre)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Ce sort enchante un bouclier pendant autant de jours que son score en Sphère du Feu. Ce dernier peut alors s'embraser d'une aura flamboyante capable d'éblouir un adversaire à moins de 10 mètres. Le bouclier peut être utilisé 7 fois par jour. La cible doit réussir un jet d'esquive contre une Difficulté égale au score d'incantation du mage enchanteur pour se protéger les yeux à temps ou être aveuglée pendant 1 tour, et subir un malus de -5 à toutes ses actions physiques (pouvant même aller jusqu'à l'impossibilité d'agir). Activer ce pouvoir ne requiert pas d'action complexe de la part du porteur."
+  },
+  {
+    "name": "Cendres brûlantes",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 55,
+    "cost": 10,
+    "difficulty": 20,
+    "casting_duration": 3,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "voix plaintive",
+      "sentiment de perte",
+      "rune du feu tracée dans l'air"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage invoque une pluie de cendres incandescentes qui tombe sur une zone de 2m2. Elle inflige (25 + 1D10) points de dommages à chaque tour pendant (1 + NR) tours. Les cendres ayant la fâcheuse habitude de rester collées et de continuer à grésiller. Elles infligent encore (10 + 1D10) points de dommages pendant 2 tours après la fin du sort."
+  },
+  {
+    "name": "Conflagration écarlate",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "instinctive",
+    "complexity": 45,
+    "cost": 8,
+    "difficulty": 20,
+    "casting_duration": 3,
+    "casting_duration_unit": "action",
+    "keys": [
+      "regard",
+      "rune"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage enflamme une sphère de 10m3 d'air pendant (1 + NR) tours à une distance de moins de 30 mètres. Toutes les personnes et les objets à l'intérieur de cette zone subissent (20 + 1D10) points de dommages par tour."
+  },
+  {
+    "name": "Eau de feu",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 55,
+    "cost": 6,
+    "difficulty": 22,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "flacon d'alcool fort (consommé)",
+      "braises élémentaires (consommées)",
+      "rune de force (à tracer sur le bouchon)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien enchante pour (Sphère du Feu) jours le contenu élémentaire et flamboyant d'un flacon. Au contact de l'air, ce liquide s'enflamme et explose (que ce soit par ouverture ou éclatement du récipient). L'explosion atteint toutes les cibles présentes dans un rayon de 5 mètres. Les cibles touchées par l'\"Eau de feu\" subissent (20 + 5 par NR) points de dommages. Les armures ne comptent pas. Note : Il est extrêmement dangereux de porter une telle fiole sur soi. Le produit est instable et peut exploser au moindre choc, causant les mêmes dommages à son porteur. Généralement, on le lance du haut des remparts d'un château attaqué.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Nenya »."
+  },
+  {
+    "name": "Effigie de Kroryn",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 100,
+    "cost": 40,
+    "difficulty": 33,
+    "casting_duration": 24,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "statuette de Kroryn en or pur (consommée)",
+      "deux rubis purs constituant les yeux de la statuette (consommés)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "On ne sait combien de magiciens sont capables d'utiliser un tel sort. Pour ce faire, le magicien doit enchanter une statuette de Kroryn définitivement. Une fois activée, l'effigie explose et inflige 200 points de dommages en une seule fois à (25 + 5 par NR) mètres à la ronde. Rien ne peut contrer une telle force, ni magie, ni rempart, ni protection physique. On estime qu'il faut se trouver à plus de 2 kilomètres pour ne pas sentir la terre trembler suite au contrecoup.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Nenya »."
+  },
+  {
+    "name": "Exhorte",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "instinctive",
+    "complexity": 45,
+    "cost": 10,
+    "difficulty": 15,
+    "casting_duration": 3,
+    "casting_duration_unit": "action",
+    "keys": [
+      "posture (bras écartés, pieds fermement campés, poings fermés)",
+      "rugissement de défi",
+      "cercle de braises"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Ce sort s'utilise lorsqu'une armée est en déroute ou qu'un groupe est effrayé. Le magicien se poste devant les rangs qui battent en retraite et leur redonne courage. Ce sort affecte les (5 + 2 par NR) cibles les plus proches du mage en s'éloignant progressivement de lui. Ce sort peut influencer des combattants jusqu'à (Sphère du Feu x 4) mètres, car les cris porteurs de la fougue de Kroryn dépendent directement de la puissance du lanceur. Ce sort n'immunise pas à la peur ultérieurement, mais peut relancer dans la bataille une troupe démoralisée. Toute perte ultérieure de moral devra être gérée séparément. Dans le cas d'un effet de peur permanent (comme un sort ou une aura de peur draconique), ce sort est efficace durant un seul tour."
+  },
+  {
+    "name": "Foudres de Kroryn",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 75,
+    "cost": 6,
+    "difficulty": 22,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "arme de jet de Bonne qualité",
+      "rune des volcans (à tracer sur l'arme)",
+      "incantation hachée"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien enchante une arme de jet pendant (1 + 1 par NR) heures. Lorsqu'elle est lancée (et ce autant de fois que la Sphère du Feu du mage), l'arme se nimbe d'une aura crépitante d'étincelles ardentes et augmente les dommages de base de l'arme de 5. L'Indice de protection des armures est divisé par deux contre une arme ainsi ensorcelée. Si le sort est manqué, l'arme est réduite instantanément en cendres et scories.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Nenya »."
+  },
+  {
+    "name": "La main des flammes",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 85,
+    "cost": 25,
+    "difficulty": 25,
+    "casting_duration": 10,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "gant",
+      "rune du feu",
+      "soufre"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort enchante un gant pendant 1 cycle. Une fois par jour, il permet au mage de lancer des petites boules de feu pendant (1 + NR) heures, à raison de 1 par tour. Les projectiles enflammés ont une portée de 50 mètres et infligent (20 + 1D10) points de dommages qui ne peuvent pas être parés, seulement esquivés avec une Difficulté de +5. L'Indice de protection des armures est divisé par 2 contre ces petites boules de feu."
+  },
+  {
+    "name": "Phénix",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 45,
+    "cost": 8,
+    "difficulty": 22,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "plume d'or",
+      "encens élémentaire des volcans (consommé)",
+      "danse voltigeante"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Par ce sort, le mage va invoquer un des phénix élémentaires composé de cendres et de lave. L'oiseau de feu apparaît devant l'invocateur et s'interpose entre lui et tous les coups physiques ou magiques qu'il pourrait subir (seuls les effets de zone ne peuvent être absorbés). Le phénix refusera de se battre pour un humain et se contentera de s'interposer. Il ne possède qu'une case de blessure, dont le seuil est égal à (1 + NR) fois le score de Sphère du Feu du mage. S'il est dispersé, le phénix renaît de ses cendres au début du tour suivant, à un rang d'action de 15, avec la même case de blessure vierge. Le phénix est immunisé au feu et aux vents et les dommages infligés par ces Sphères augmentent le seuil de sa case de blessure à raison de 1 point pour 5 points de dommages. Le phénix n'accorde son attention au mage que pour un nombre de tours égal à sa Tendance Dragon plus son Statut. Si aucun danger immédiat ne menace le mage, le phénix disparaît dans une gerbe d'étincelles et de braises qui inflige 20 points de dommages au mage. Il est impossible de convoquer plusieurs phénix simultanément, ces créatures draconiques se battant entre elles sans retenue lorsqu'elles se rencontrent, quittant tout contrôle humain.\nNe peut être acquis que par les personnages possédant le désavantage « Malédiction de Nenya »."
+  },
+  {
+    "name": "Poudre de déshydratation",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 50,
+    "cost": 10,
+    "difficulty": 24,
+    "casting_duration": 2,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "sable fin (consommé)",
+      "mélopée d'invocation des volcans",
+      "rune de la vapeur (à tracer dans la poignée de sable avant le lancer)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien enchante du sable pour une journée. Ce sable se lance avec un jet de Manuel + Coordination (Difficulté 15) sur une cible à moins de 5 mètres. Si le sable la touche (il ne peut que s'esquiver, pas se parer), il se colle et s'enfonce dans sa peau. Dès l'action suivante, l'eau du corps de la victime commence à bouillir et s'échappe sous forme de vapeur, provoquant des douleurs effroyables. La victime subit (5 + 1D10 par NR) points de dommages par tour. Aucune protection physique ne fonctionne et les facultés surnaturelles destinées à intercepter les dommages sont inopérantes. Ce sort dure Sphère du Feu tours et s'interrompt si la cible est copieusement aspergée d'eau, ce qui est la seule méthode pour chasser le sable."
+  },
+  {
+    "name": "Rune du feu",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 95,
+    "cost": 9,
+    "difficulty": 15,
+    "casting_duration": 4,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "rune du feu (ornée, soigneusement tissée ou gravée)",
+      "chant saccadé aigu"
+    ],
+    "source": "La colère des dragons",
+    "description": "Ce sort extrêmement répandu et populaire permet d'ensorceler un objet pour qu'il puisse dispenser la chaleur de Kroryn. En lançant un peu de feu élémentaire sur la rune (Techniques : La matière, mages statut I), il l'ensorcèle pour un Augure. L'objet peut alors servir 3 + NR heures par jour pour chauffer plus ou moins fort. Un pot pourra faire bouillir de l'eau, une couverture sera tiède et une tunique permettra de sortir sous la neige à bras nus. Si l'objet est rendu brûlant et maintenu en contact avec la peau durant 1 tour, il peut en résulter une brûlure moyenne (1 Egratignure, une fois par jour et seulement s'il en reste au moins une à cocher). Il est impossible d'augmenter les dommages d'une arme avec cette rune somme toute utilitaire. Un échec au lancé de ce sort a des effets désastreux et enflamme brutalement toute matière combustible dans un rayon de 10 mètres autour du mage."
+  },
+  {
+    "name": "Runes de feu",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 45,
+    "cost": 6,
+    "difficulty": 18,
+    "casting_duration": 3,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "stylet d'or ou de cuivre",
+      "encre élémentaire du feu (consommée)",
+      "petit cercle runique complexe"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "Le magicien ensorcelle un crayon pendant une semaine lui permettant d'écrire (pour 4 points de magie) sur n'importe quelle surface de (1 + 1 par NR) m2 des lettres de feu visibles uniquement par les personnes choisies verbalement par le mage. Beaucoup s'en servent pour marquer leur chemin ou laisser des messages. Les écritures perdurent une heure par point en Sphère du Feu du sorcier."
+  },
+  {
+    "name": "Sanctuaire de flammes",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 90,
+    "cost": 25,
+    "difficulty": 25,
+    "casting_duration": 10,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "brasier",
+      "cercle runique du feu",
+      "cendres volcaniques (à lancer sur la cible, consommées)"
+    ],
+    "source": "La colère des dragons",
+    "description": "Le mage se met en transe dans un lieu dépassant les 40°C. A la fin de ce rituel, il enchante les cendres volcaniques pour une heure. Celles-ci, lancées sur une cible, permettent de se fondre dans un feu et d'y trouver refuge. Il est aussi possible de l'utiliser avec de la lave. La cible se transforme en flammes et se mêle au brasier proche. Elle est alors indétectable normalement, tout en restant consciente de son environnement. Elle est réduite à une conscience pure et ne peut parler (bien que la télépathie reste utilisable), ni bouger, ni interagir avec son équipement (qui est dématérialisé). Le sort dure tant que le feu est actif, au maximum 1 heure + 30 minutes par NR. S'il s'éteint et que le personnage en est inconscient (en sommeil ou en méditation), il est alors rematérialisé brutalement et subit 1D10 blessures en commençant par les Egratignures. Le personnage peut mettre fin au sort et se rematérialiser en 1 action dès qu'il le désire. Dans le brasier, ses points de magie de la sphère du Feu se régénèrent au rythme de 2 par heure et les créatures élémentaires régénèrent 4 fois plus vite."
+  },
+  {
+    "name": "Sang de Moryargorn",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 90,
+    "cost": 25,
+    "difficulty": 30,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "voix plaintive",
+      "posture de peur",
+      "morceaux de lave"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Le mage fait jaillir du sol un flot de lave à moins de 10 mètres de lui. La lave s'écoule à gros bouillons pendant (1 + NR) heures ou jusqu'à ce que le mage meure ou mette fin à ce sort. La lave inflige (80 + 2D10) points de dommages à tout ce qui se trouve sur son passage. Elle se déplace de 30 mètres par tour."
+  },
+  {
+    "name": "Scellé",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 45,
+    "cost": 6,
+    "difficulty": 20,
+    "casting_duration": 1,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "baguette d'étain (consommée)",
+      "rune des forges",
+      "position (mains jointes à l'équerre, paume contre paume, bras alignés en travers du torse)"
+    ],
+    "source": "Les Foudres de Kroryn",
+    "description": "le mage ensorcelle un bâtonnet qui devient, durant un cycle, capable de souder magiquement des pièces métalliques après un tour complet de contact. Il est ainsi possible de souder des pointes à un bouclier, un loquet de porte ou encore un renfort sur une porte d'acier. Suivant le nombre de NR, la taille des objets soudés est variable : un loquet de coffret pour une réussite simple, un cadenas avec 1 NR, une porte à son montant pour 2 NR, etc."
+  },
+  {
+    "name": "Torche éternelle",
+    "sphere": "feu",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 45,
+    "cost": 7,
+    "difficulty": 20,
+    "casting_duration": 5,
+    "casting_duration_unit": "hour",
+    "keys": [
+      "torche",
+      "incantation crépitante",
+      "soufre",
+      "rune de lumière"
+    ],
+    "source": "Livre de base 2e édition",
+    "description": "Ce sort enchante (1 + NR) torches qui brûlent pendant 1 an sans se consumer. Elles se rallument après une poignée de minutes si elles sont éteintes avec de l'eau ou par manque d'oxygène."
+  }
+]

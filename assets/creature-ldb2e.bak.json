@@ -1,0 +1,631 @@
+[
+  {
+    "name": "Aigle",
+    "category": "animauxSauvages",
+    "description": "S’il est l’un des plus majestueux volatiles de Kor, l'aigle est néanmoins considéré comme porteur de malheur. Beaucoup d’hommes le chassent, voyant en lui une insulte à la face des dragons. D'autres sont utilisés pour la chasse, bien que dans ce cas, les faucons leur soient préférés. Certains trappeurs disent avoir vu des spécimens d'une taille gigantesque, capables de soulever sans problème un cheval. Dans certaines régions, il semblerait que des primitifs aient réussi à en dompter certains et à les chevaucher pour observer les civilisations humaines.",
+    "biome": "Zones tempérées",
+    "size": "5 m d'envergure",
+    "weight": "20 kg",
+    "map_size": 0.8,
+    "abilities": {
+      "force":        4,
+      "intelligence": 4,
+      "coordination": 9,
+      "presence":     0,
+      "resistance":   5,
+      "volonte":      2,
+      "perception":   14,
+      "empathie":     0
+    },
+    "attributes": {
+      "physique": 5,
+      "mental":   1,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 4,
+    "natural_armor": 0,
+    "injured_ceiling": 20,
+    "injured_count": 2,
+    "base_skills": {
+      "esquive": 6
+    },
+    "specialized_skills": {
+      "athletisme:voler": 8
+    },
+    "natural_weapons": [
+      { "name": "Bec", "ranges": { "contact": 0.0 }, "skill": 7, "damage": 12 },
+      { "name": "Serres", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 9 }
+    ],
+    "special_capability": "Piqué - cette attaque se résout comme une charge avec deux actions d'élan."
+  },
+  {
+    "name": "Cheval",
+    "category": "animauxSauvages",
+    "description": "Solide et rapide, le cheval est utilisé par la moitié des cavaliers de Kor. À l'aise en plaine et colline, il demande des soins journaliers et une alimentation riche. D’autres types de chevaux existent, utilisés dans différentes circonstances. Le cheval de trait (RÉS 14, FOR 13, COO 4, Course 2, Saut 0, Poids 800 kg) ne se rencontre quasiment qu’en zone rurale ou aux abords des marchés. Le cheval de course (RÉS 10, COO 8, Course 10, dommages de ruade 5, excessivement exigeant en soins, pas plus d’une journée sur trois de voyage) est un animal racé, recherché par les messagers ou utilisé pour des spectacles et des courses de char très populaires. Enfin, le cheval de guerre (FOR 12) est un animal puissant et habitué aux fracas et à la violence des batailles, recherché par de nombreux chevaliers bien que les légendaires destriers kariens soient préférés par les plus riches.",
+    "biome": "Plaines",
+    "size": "1,80 m au garrot",
+    "weight": "700 kg",
+    "map_size": 1.2,
+    "abilities": {
+      "force":        11,
+      "intelligence": 3,
+      "coordination": 6,
+      "presence":     0,
+      "resistance":   12,
+      "volonte":      5,
+      "perception":   5,
+      "empathie":     7
+    },
+    "attributes": {
+      "physique": 6,
+      "mental":   1,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 4,
+    "natural_armor": 0,
+    "injured_ceiling": 35,
+    "injured_count": 4,
+    "base_skills": {
+      "esquive": 4,
+      "natation": 3
+    },
+    "specialized_skills": {
+      "athletisme:course": 6,
+      "athletisme:sauter": 5
+    },
+    "natural_weapons": [
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 2, "damage": 4 },
+      { "name": "Ruade", "ranges": { "contact":  0.0, "melee": 1.0 }, "skill": 3, "damage": 7 }
+    ]
+  },
+  {
+    "name": "Hyène",
+    "category": "animauxSauvages",
+    "description": "Ce petit canidé se déplace souvent en meute et attaque toujours ses proies avec un minimum de cinq contre un. Il pousse des petits cris geignards pour attirer sa victime et communiquer avec ses compagnons. Le plus souvent, les hyènes n’attaquent que les proies blessées. Pourtant, même si elles n'ont pas une bonne image, les humains ne les chassent pas. En effet, comme elles se trouvent toujours non loin des zones habitées, elles débarrassent les alentours de tous les cadavres propagateurs de maladies. En revanche, il est dit que quiconque croise deux fois la même hyène dans la journée va bientôt courir un danger de mort.",
+    "biome": "Zones chaudes ou tempérées",
+    "size": "70 cm",
+    "weight": "30 kg",
+    "map_size": 0.7,
+    "abilities": {
+      "force":        4,
+      "intelligence": 5,
+      "coordination": 9,
+      "presence":     0,
+      "resistance":   5,
+      "volonte":      4,
+      "perception":   8,
+      "empathie":     6
+    },
+    "attributes": {
+      "physique": 5,
+      "mental":   4,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 4,
+    "natural_armor": 4,
+    "natural_armor_description": "poils gras",
+    "injured_ceiling": 30,
+    "injured_count": 2,
+    "base_skills": {
+      "pister": 6
+    },
+    "specialized_skills": {
+      "athletisme:course": 6
+    },
+    "natural_weapons": [
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 5, "damage": 9 }
+    ],
+    "special_capability": "Happer - si les dommages d'une morsure sont inférieurs ou égaux à 10, la hyène peut rester accrochée à sa victime et infliger alors la moitié des dommages de cette attaque à chaque tour. Il ne lui est alors pas possible de se défendre, mais elle lâchera prise si elle est touchée."
+  },
+  {
+    "name": "Lézard des profondeurs",
+    "category": "animauxSauvages",
+    "description": "Malgré leur caractère très rebelle, les lézards sont largement utilisés comme montures et constituent près d’un tiers des bêtes de selle de Kor. Bien qu’à demi-aveugles à plus de trois pas, ils compensent leur handicap par une perception de la chaleur par des organes près de leurs oreilles, ce qui les rend indifférents aux conditions nocturnes ou diurnes.",
+    "biome": "Collines, grottes et réseaux souterrains",
+    "size": "1,50 m au garrot",
+    "weight": "700 kg",
+    "map_size": 1.2,
+    "abilities": {
+      "force":        13,
+      "intelligence": 4,
+      "coordination": 7,
+      "presence":     0,
+      "resistance":   11,
+      "volonte":      6,
+      "perception":   4,
+      "empathie":     5
+    },
+    "attributes": {
+      "physique": 7,
+      "mental":   1,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 3,
+    "natural_armor": 5,
+    "natural_armor_description": "fines écailles",
+    "injured_ceiling": 30,
+    "injured_count": 4,
+    "base_skills": {
+      "discretion": 3,
+      "esquive": 4,
+      "natation": 6
+    },
+    "specialized_skills": {
+      "athletisme:course": 4
+    },
+    "natural_weapons": [
+      { "name": "Griffes", "ranges": { "contact": 0.0 }, "skill": 2, "damage": 18 },
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 3, "damage": 19 }
+    ]
+  },
+  {
+    "name": "Loup",
+    "category": "animauxSauvages",
+    "description": "Le loup voyage souvent en meute, mais devient vraiment imprévisible lorsqu'il est seul. Il est redouté de l’homme qui lui attribue souvent des pouvoirs légendaires. Certains primitifs utilisent les loups pour chasser, mais c’est souvent parce qu'ils vivent eux-mêmes comme des loups.",
+    "biome": "Zones tempérées ou froides, plus rarement en zones très chaudes",
+    "size": "1 à 1,5 m",
+    "weight": "50 à 70 kg",
+    "map_size": 0.8,
+    "abilities": {
+      "force":        6,
+      "intelligence": 3,
+      "coordination": 8,
+      "presence":     0,
+      "resistance":   5,
+      "volonte":      5,
+      "perception":   8,
+      "empathie":     5
+    },
+    "attributes": {
+      "physique": 6,
+      "mental":   4,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 4,
+    "natural_armor": 5,
+    "natural_armor_description": "poils rêches",
+    "injured_ceiling": 35,
+    "injured_count": 3,
+    "death_count": 1,
+    "base_skills": {
+      "esquive": 9,
+      "pister": 8
+    },
+    "specialized_skills": {
+      "athletisme:course": 7
+    },
+    "natural_weapons": [
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 7, "damage": 14 }
+    ],
+    "special_capability": ""
+  },
+  {
+    "name": "Ours - Petit",
+    "category": "animauxSauvages",
+    "description": "L'ours est un animal commun des forêts. Malgré son appétit vorace, il est respecté et plutôt aimé des hommes. Sa taille peut varier considérablement à mesure qu'on s'éloigne des habitations. Les plus petits spécimens sont souvent à proximité des fermes les plus isolées. Les plus gros se cachent dans les vallées profondes au cœur des zones encore vierges. On dit que dans le domaine d’un ours, si on le respecte, un voyageur peut se réfugier. Dans les faits, c’est une légende - surtout au sortir d’une longue hibernation. Dans les zones glaciaires, les ours sont blancs. Partout ailleurs, ils sont bruns ou noirs. On les chasse parfois pour leur viande, leur fourrure et pour protéger les zones habitables.",
+    "biome": "Zones tempérées, froides, généralement boisées",
+    "size": "1 m",
+    "weight": "300 kg",
+    "map_size": 0.8,
+    "abilities": {
+      "force":        12,
+      "intelligence": 4,
+      "coordination": 6,
+      "presence":     0,
+      "resistance":   12,
+      "volonte":      7,
+      "perception":   7,
+      "empathie":     6
+    },
+    "attributes": {
+      "physique": 7,
+      "mental":   3,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 3,
+    "natural_armor": 6,
+    "natural_armor_description": "poils et cuir",
+    "injured_ceiling": 50,
+    "injured_count": 3,
+    "death_count": 1,
+    "base_skills": {
+      "corpsACorps": 6,
+      "esquive": 5,
+      "intimidation": 5
+    },
+    "specialized_skills": {
+      "athletisme:course": 4
+    },
+    "natural_weapons": [
+      { "name": "Griffes", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 15 },
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 23 }
+    ],
+    "special_capability": "Un ours bénéficie d'un bonus de +3 sur ses manœuvres de saisir."
+  },
+  {
+    "name": "Ours - Moyen",
+    "category": "animauxSauvages",
+    "description": "L'ours est un animal commun des forêts. Malgré son appétit vorace, il est respecté et plutôt aimé des hommes. Sa taille peut varier considérablement à mesure qu'on s'éloigne des habitations. Les plus petits spécimens sont souvent à proximité des fermes les plus isolées. Les plus gros se cachent dans les vallées profondes au cœur des zones encore vierges. On dit que dans le domaine d’un ours, si on le respecte, un voyageur peut se réfugier. Dans les faits, c’est une légende - surtout au sortir d’une longue hibernation. Dans les zones glaciaires, les ours sont blancs. Partout ailleurs, ils sont bruns ou noirs. On les chasse parfois pour leur viande, leur fourrure et pour protéger les zones habitables.",
+    "biome": "Zones tempérées, froides, généralement boisées",
+    "size": "2 m",
+    "weight": "450 kg",
+    "map_size": 1.0,
+    "abilities": {
+      "force":        12,
+      "intelligence": 4,
+      "coordination": 6,
+      "presence":     0,
+      "resistance":   12,
+      "volonte":      7,
+      "perception":   7,
+      "empathie":     6
+    },
+    "attributes": {
+      "physique": 10,
+      "mental":   3,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 3,
+    "natural_armor": 6,
+    "natural_armor_description": "poils et cuir",
+    "injured_ceiling": 50,
+    "injured_count": 4,
+    "death_count": 1,
+    "base_skills": {
+      "corpsACorps": 6,
+      "esquive": 5,
+      "intimidation": 5
+    },
+    "specialized_skills": {
+      "athletisme:course": 4
+    },
+    "natural_weapons": [
+      { "name": "Griffes", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 15 },
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 23 }
+    ],
+    "special_capability": "Un ours bénéficie d'un bonus de +3 sur ses manœuvres de saisir."
+  },
+  {
+    "name": "Ours - Grand",
+    "category": "animauxSauvages",
+    "description": "L'ours est un animal commun des forêts. Malgré son appétit vorace, il est respecté et plutôt aimé des hommes. Sa taille peut varier considérablement à mesure qu'on s'éloigne des habitations. Les plus petits spécimens sont souvent à proximité des fermes les plus isolées. Les plus gros se cachent dans les vallées profondes au cœur des zones encore vierges. On dit que dans le domaine d’un ours, si on le respecte, un voyageur peut se réfugier. Dans les faits, c’est une légende - surtout au sortir d’une longue hibernation. Dans les zones glaciaires, les ours sont blancs. Partout ailleurs, ils sont bruns ou noirs. On les chasse parfois pour leur viande, leur fourrure et pour protéger les zones habitables.",
+    "biome": "Zones tempérées, froides, généralement boisées",
+    "size": "3 m",
+    "weight": "600 kg",
+    "map_size": 1.2,
+    "abilities": {
+      "force":        12,
+      "intelligence": 4,
+      "coordination": 6,
+      "presence":     0,
+      "resistance":   12,
+      "volonte":      7,
+      "perception":   7,
+      "empathie":     6
+    },
+    "attributes": {
+      "physique": 13,
+      "mental":   3,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 3,
+    "natural_armor": 6,
+    "natural_armor_description": "poils et cuir",
+    "injured_ceiling": 50,
+    "injured_count": 5,
+    "death_count": 1,
+    "base_skills": {
+      "corpsACorps": 6,
+      "esquive": 5,
+      "intimidation": 5
+    },
+    "specialized_skills": {
+      "athletisme:course": 4
+    },
+    "natural_weapons": [
+      { "name": "Griffes", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 15 },
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 23 }
+    ],
+    "special_capability": "Un ours bénéficie d'un bonus de +3 sur ses manœuvres de saisir."
+  },
+  {
+    "name": "Sanglier",
+    "category": "animauxSauvages",
+    "description": "Le poids et la taille des sangliers peuvent varier fortement suivant la région. On a observé des spécimens de plus de cinq cents kilos dans les zones froides du sud, Il semble que ces monstres rusés soient devenus omnivores pour produire une graisse suffisante afin de résister aux températures extrêmes. Le sanglier est un animal dangereux, capable de charger avec une férocité incroyable et ayant de plus la fâcheuse habitude de le faire en groupe, ce qui est assez dévastateur. La défense du sanglier est réputée aphrodisiaque. C’est une légende qui a coûté la vie à bien des amoureux.",
+    "biome": "Forêts tempérées ou froides",
+    "size": "1 m",
+    "weight": "200 kg",
+    "map_size": 0.8,
+    "abilities": {
+      "force":        12,
+      "intelligence": 3,
+      "coordination": 5,
+      "presence":     0,
+      "resistance":   14,
+      "volonte":      7,
+      "perception":   7,
+      "empathie":     4
+    },
+    "attributes": {
+      "physique": 8,
+      "mental":   3,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 2,
+    "natural_armor": 8,
+    "natural_armor_description": "cuir et crin",
+    "injured_ceiling": 50,
+    "injured_count": 4,
+    "death_count": 1,
+    "base_skills": {
+    },
+    "specialized_skills": {
+    },
+    "natural_weapons": [
+      { "name": "Défenses", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 18 },
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 7, "damage": 23 }
+    ],
+    "special_capability": "Le sanglier bénéficie d'un bonus de +3 sur toutes ses attaques de charge."
+  },
+  {
+    "name": "Horaldiens",
+    "category": "peuplesAnciens",
+    "description": "",
+    "biome": "Archipel d'îles situées au-delà de l'Interdit",
+    "size": "3,50 m en moyenne",
+    "weight": "1 t en moyenne",
+    "map_size": 1.2,
+    "abilities": {
+      "force":        15,
+      "intelligence": 11,
+      "coordination": 6,
+      "presence":     12,
+      "resistance":   16,
+      "volonte":      8,
+      "perception":   6,
+      "empathie":     1
+    },
+    "attributes": {
+      "physique": 12,
+      "mental":   10,
+      "manuel":   6,
+      "social":   5
+    },
+    "initiative": 3,
+    "natural_armor": 0,
+    "injured_ceiling": 55,
+    "injured_count": 4,
+    "death_count": 2,
+    "base_skills": {
+    },
+    "specialized_skills": {
+    },
+    "natural_weapons": [
+    ],
+    "equipment": [
+      "weapon:hacheDoubleADeuxMains",
+      "armor:armureDOsEtDeCorne"
+    ],
+    "special_capability": "Terreur - les Horaldiens provoquent malgré eux la terreur chez les humains. Tout humain voyant un Horaldien doit effectuer un jet de Mental Volonté à 25 au premier tour, 20 au deuxième et 15 au troisième. Une fois passé ce cap, le personnage est capable de supporter la compagnie des Horaldiens pour une journée. Si l'un de ces jets est manqué, le personnage doit fuir pour éviter de sombrer dans la catatonie et s'évanouir de peur. Cette inconscience persiste plusieurs heures et la victime doit recommencer les jets dès son réveil. Inutile de dire que quelques jours de ce traitement risquent de provoquer de sérieux dommages mentaux…"
+  },
+  {
+    "name": "Dragon de Lôm",
+    "category": "creaturesDraconiques",
+    "description": "",
+    "biome": "Régions marécageuses",
+    "size": "2 m au garrot",
+    "weight": "2 à 3 tonnes",
+    "map_size": 1.4,
+    "abilities": {
+      "force":        14,
+      "intelligence": 3,
+      "coordination": 5,
+      "presence":     0,
+      "resistance":   15,
+      "volonte":      10,
+      "perception":   6,
+      "empathie":     0
+    },
+    "attributes": {
+      "physique": 12,
+      "mental":   3,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 3,
+    "natural_armor": 18,
+    "natural_armor_description": "cuir écailleux",
+    "injured_ceiling": 65,
+    "injured_count": 5,
+    "death_count": 2,
+    "base_skills": {
+      "esquive": 6,
+      "intimidation": 9
+    },
+    "specialized_skills": {
+      "athletisme:course": 5
+    },
+    "natural_weapons": [
+      { "name": "Corne", "ranges": { "contact": 0.0 }, "skill": 7, "damage": 28 },
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 24 }
+    ],
+    "special_capability": "Le dragon de Lôm bénéficie d'un bonus de +6 sur toutes ses attaques de charge et double les bonus de renversement."
+  },
+  {
+    "name": "Slyart",
+    "category": "creaturesDraconiques",
+    "description": "Respecté car étant une des rares créatures draconiques capables de voler, le slyarth est particulièrement inquiétant. Son corps évoque une morphologie féline, dotée de grandes ailes membraneuses mues par des membres antérieurs supplémentaires. Sa tête est large et épatée, sa gueule rappelle la forme d’un bec recouvert de peau et hérissé de crocs aiguisés. Le slyarth a de grands yeux ronds et des oreilles très sensibles. Des écailles osseuses couvrent l’épine dorsale depuis le cou jusqu'à l'extrémité de leur longue queue reptilienne. Le slyarth vit essentiellement dans les montagnes au nord des Écailles de Brorne entre la Forêt Mère et l’Empire Nésora. C'est un prédateur diurne qui est friand de chamois, La femelle pond plusieurs œufs au cours de sa vie mais rares sont ceux qui parviennent saufs jusqu'à éclosion, On raconte que les slyarth communiqueraient entre eux par télépathie et vivraient en communautés ordonnées mais aucun humain n'est revenu vivant après une rencontre avec un représentant de cette espèce pour infirmer ou confirmer les rumeurs.",
+    "biome": "Régions montagneuses",
+    "size": "2,5 m debout",
+    "weight": "150 kg en moyenne",
+    "map_size": 1.0,
+    "abilities": {
+      "force":        10,
+      "intelligence": 6,
+      "coordination": 10,
+      "presence":     0,
+      "resistance":   8,
+      "volonte":      5,
+      "perception":   12,
+      "empathie":     0
+    },
+    "attributes": {
+      "physique": 9,
+      "mental":   4,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 4,
+    "natural_armor": 12,
+    "natural_armor_description": "cuir écailleux",
+    "injured_ceiling": 45,
+    "injured_count": 4,
+    "death_count": 1,
+    "base_skills": {
+      "esquive": 6
+    },
+    "specialized_skills": {
+      "athletisme:voler": 7
+    },
+    "natural_weapons": [
+      { "name": "Griffes", "ranges": { "contact": 0.0 }, "skill": 8, "damage": 16 },
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 8, "damage": 18 }
+    ],
+    "special_capability": "Déchiquetage - si un slyarth réussi deux attaques dans un même rang d’Initiative (il ne retarde jamais ses actions) avec ses griffes, il s’agrippe à sa victime et porte une attaque automatique avec ses pattes arrières en labourant sa proie. Cette attaque touche automatiquement et ses dommages sont de Force x2, non modifiés par le moindre dé. Un slyarth peut attaquer en piqué, ce qui correspond à une charge avec une action d’élan, jamais deux car il ouvre ses ailes au dernier moment."
+  },
+  {
+    "name": "Tark",
+    "category": "creaturesDraconiques",
+    "description": "Le tark est un petit varan très rapide et court sur patte. Il est l’un des animaux de compagnie et de garde les plus répandus dans tout Kor. Dans certaines régions, il a complètement remplacé le chien (tant pour la guerre que pour la chasse). Il peut monter la garde sans bouger une écaille et même patrouiller seul. Certains dresseurs leur passent parfois des armures ou s’en servent pour tracter des petits véhicules. Le seul gros problème du tark est qu’il ne supporte pas les températures négatives et qu'il hiberne aux premières neiges. Les meilleurs dresseurs arrivent à les acclimater mais ces cas restent rares. De plus, le tark obéit et travaille à la condition qu’il soit bien nourri. Dans le cas contraire, il se retourne contre ses maîtres. On utilise parfois la peau du tark pour renforcer les parties souples des armures.",
+    "biome": "Dans les marais à l'état sauvage, partout quand il est domestiqué",
+    "size": "50 cm au garrot",
+    "weight": "45 kg en moyenne",
+    "map_size": 0.7,
+    "abilities": {
+      "force":        5,
+      "intelligence": 4,
+      "coordination": 10,
+      "presence":     0,
+      "resistance":   6,
+      "volonte":      4,
+      "perception":   8,
+      "empathie":     8
+    },
+    "attributes": {
+      "physique": 5,
+      "mental":   2,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 4,
+    "natural_armor": 6,
+    "natural_armor_description": "cuir écailleux",
+    "injured_ceiling": 35,
+    "injured_count": 3,
+    "death_count": 1,
+    "base_skills": {
+    },
+    "specialized_skills": {
+      "athletisme:course": 5
+    },
+    "natural_weapons": [
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 7, "damage": 11 },
+      { "name": "Queue", "ranges": { "contact": 0.0 }, "skill": 6, "damage": 10 }
+    ],
+    "special_capability": "Happer - si les dommages d’une morsure sont inférieurs ou égaux à 15, le tark peut choisir de rester accroché à sa victime et inflige alors la moitié des dommages de cette attaque à chaque tour. Il n’est alors pas possible de se défendre, mais le tark se détache s’il subit des dommages. Le tark peut effectuer une manœuvre de renversement en utilisant sa queue."
+  },
+  {
+    "name": "Vorok",
+    "category": "creaturesDraconiques",
+    "description": "Aussi appelé le varan noir, le vorok est une créature amphibie et solitaire qui représente l'ennemi naturel du dragon de Lôm. Son corps longiligne est couvert d’une épaisse cuirasse caoutchouteuse formant une armure naturelle ornée d’une crête membraneuse. Cet appendice capable de changer de couleur peut de plus imiter la végétation. Lourd et lent sur terre, le vorok est néanmoins capable d’escalader des falaises à pic pour s’aventurer jusque dans les plaines herbeuses où vivent les dragons de Lôm. À l’aise et rapide quand il nage entre deux eaux, le vorok est un prédateur discret et respecté. Il peut aussi parcourir de longues distances sans prendre un seul instant de repos. Très vorace, le vorok cherche à se nourrir dès qu'il se réveille. Comme il dort peu, il est toujours en quête de nourriture. Pratiquement aveugle, le vorok possède cependant une excellente ouïe et un odorat très développé. Sa technique de prédilection pour attraper ses proies terrestres est de rester parfaitement immobile, camouflé sous la boue, et de surgir brusquement pour saisir l'infortunée victime qui passe à sa portée. Sa morsure secrète alors un venin qui brûle sa proie et il n’a plus qu’à déchiqueter sa victime. Sinon, il se nourrit de larves géantes qu'il déterre des berges boueuses.",
+    "biome": "Régions marécageuses",
+    "size": "4,5 m de long en moyenne",
+    "weight": "de 1,5 à 2 t",
+    "map_size": 1.4,
+    "abilities": {
+      "force":        13,
+      "intelligence": 3,
+      "coordination": 6,
+      "presence":     0,
+      "resistance":   15,
+      "volonte":      7,
+      "perception":   5,
+      "empathie":     0
+    },
+    "attributes": {
+      "physique": 11,
+      "mental":   3,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 2,
+    "natural_armor": 10,
+    "natural_armor_description": "peau et graisse",
+    "injured_ceiling": 60,
+    "injured_count": 4,
+    "death_count": 2,
+    "base_skills": {
+      "discretion": 11,
+      "escalade": 7,
+      "esquive": 8,
+      "natation": 8
+    },
+    "specialized_skills": {
+      "athletisme:course": 0
+    },
+    "natural_weapons": [
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 8, "damage": 23 }
+    ],
+    "special_capability": "Embuscade - un vorok embusqué est quasiment indétectable et capable de surgir très vite. Tant que le milieu est humide et lui permet de s’enfouir partiellement, il peut doubler ses NR obtenus pour calculer les malus ou bonus obtenus sur sa prochaine action (cf. page 178). La Difficulté d’un jet de réaction face à un vorok jaillissant de sa cachette est toujours de 25."
+  },
+  {
+    "name": "Zaal",
+    "category": "creaturesDraconiques",
+    "description": "Le zaal est une créature qui tient à la fois de l’humanoïde, du reptile et de la chauve-souris. On ne sait pas vraiment de quel animal il se rapproche le plus alors, par défaut, les sages le rangent dans la famille des créatures draconiques, voyant en lui la  marque de Kalimsshar.\nDe fait, même les dragons semblent éprouver le plus grand  dégoût face à un zaal. Il se dissimule souvent non loin des habitations (humaines ou primitives) et chasse la nuit,.Le zaal est capable de se déplacer sur des parois verticales ou même inversées, ses pattes semblant adhérer magiquement à la paroi la plus lisse. Malgré sa taille phénoménale, il est capable de se glisser dans de petits trous et d'y rester pendant plusieurs jours sans bouger. \nSa prédation a deux raisons : la nourriture et la reproduction. En effet, le zaal ne peut se reproduire que par infection d’un autre être vivant. Il le capture, le place dans un immense cocon et monte la garde pendant la transformation. Sa victime mute entièrement en quelques jours, jusqu'à devenir un zaal à son tour. En sortant du cocon, elle doit immédiatement prendre la fuite avant que son père ne la tue. Elle peut à son tour partir en chasse sur son propre domaine. La toile du cocon du zaal est, paraît-il, aussi légère que la plume et aussi résistante que l'acier. Certaines armures magiques en sont couvertes. \nCette créature ne semble craindre ni le feu, ni le froid, ni la douleur. En revanche, elle préfère éviter le contact de l’eau froide, même si ce n’est pas mortel - à l’image des chats.",
+    "biome": "Forêts, ruines, douves d'un château, tous les endroits où il peut se tenir embusqué",
+    "size": "3 m debout",
+    "weight": "180 kg en moyenne",
+    "map_size": 1.0,
+    "abilities": {
+      "force":        12,
+      "intelligence": 5,
+      "coordination": 12,
+      "presence":     0,
+      "resistance":   10,
+      "volonte":      7,
+      "perception":   13,
+      "empathie":     0
+    },
+    "attributes": {
+      "physique": 10,
+      "mental":   5,
+      "manuel":   4,
+      "social":   0
+    },
+    "initiative": 6,
+    "natural_armor": 15,
+    "natural_armor_description": "cuir et chitine",
+    "injured_ceiling": 50,
+    "injured_count": 4,
+    "death_count": 2,
+    "base_skills": {
+      "acrobatie": 8,
+      "discretion": 10,
+      "esquive": 10
+    },
+    "natural_weapons": [
+      { "name": "Griffes", "ranges": { "contact": 0.0 }, "skill": 8, "damage": 18 },
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 7, "damage": 22 }
+    ],
+    "special_capability": ""
+  }
+]
