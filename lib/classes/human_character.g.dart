@@ -170,6 +170,7 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
       renown: (json['renown'] as num?)?.toInt() ?? 0,
       age: (json['age'] as num?)?.toInt() ?? 25,
       height: (json['height'] as num?)?.toDouble() ?? 1.7,
+      weight: (json['weight'] as num?)?.toDouble() ?? 60.0,
       origin: $enumDecodeNullable(_$OriginCountryEnumMap, json['origin']) ??
           OriginCountry.empireDeSolyr,
       interdicts: (json['interdicts'] as List<dynamic>?)
@@ -199,7 +200,6 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
       ..magicPool = (json['magic_pool'] as num).toInt()
       ..description = json['description'] as String
       ..size = (json['size'] as num).toDouble()
-      ..weight = (json['weight'] as num).toDouble()
       ..skills = (json['skills'] as List<dynamic>)
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList();
