@@ -7,6 +7,7 @@ import '../../classes/human_character.dart';
 import '../../classes/player_character.dart';
 import '../../classes/character/base.dart';
 import '../utils/ability_list_edit_widget.dart';
+import '../utils/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
 import 'advantage_picker_dialog.dart';
 import 'caste_privilege_picker_dialog.dart';
@@ -475,43 +476,12 @@ class _AttributesEditWidget extends StatelessWidget {
             border: Border.all(color: Colors.black54),
             borderRadius: BorderRadius.circular(5.0),
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              CharacterDigitInputWidget(
-                initialValue: character.attribute(Attribute.physique),
-                onChanged: (int value) {
-                  character.setAttribute(Attribute.physique, value);
-                },
-                label: 'PHYsique',
-              ),
-              const SizedBox(height: 16.0),
-              CharacterDigitInputWidget(
-                initialValue: character.attribute(Attribute.mental),
-                onChanged: (int value) {
-                  character.setAttribute(Attribute.mental, value);
-                },
-                label: 'MENtal',
-              ),
-              const SizedBox(height: 16.0),
-              CharacterDigitInputWidget(
-                initialValue: character.attribute(Attribute.manuel),
-                onChanged: (int value) {
-                  character.setAttribute(Attribute.manuel, value);
-                },
-                label: 'MANuel',
-              ),
-              const SizedBox(height: 16.0),
-              CharacterDigitInputWidget(
-                initialValue: character.attribute(Attribute.social),
-                onChanged: (int value) {
-                  character.setAttribute(Attribute.social, value);
-                },
-                label: 'SOCial',
-              ),
-            ],
-          ),
+          child: AttributeListEditWidget(
+            attributes: character.attributes,
+            onAttributeChanged: (Attribute attribute, int value) {
+              character.setAttribute(attribute, value);
+            },
+          )
         ),
         Positioned(
           top: 3,
