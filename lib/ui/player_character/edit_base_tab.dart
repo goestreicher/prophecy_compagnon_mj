@@ -6,6 +6,7 @@ import '../../classes/character/injury.dart';
 import '../../classes/human_character.dart';
 import '../../classes/player_character.dart';
 import '../../classes/character/base.dart';
+import '../utils/ability_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
 import 'advantage_picker_dialog.dart';
 import 'caste_privilege_picker_dialog.dart';
@@ -427,106 +428,13 @@ class _AbilitiesEditWidget extends StatelessWidget {
             border: Border.all(color: Colors.black54),
             borderRadius: BorderRadius.circular(5.0),
           ),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: CharacterDigitInputWidget(
-                      initialValue: character.ability(Ability.force),
-                      onChanged: (int value) {
-                        character.setAbility(Ability.force, value);
-                      },
-                      label: 'FORce',
-                    ),
-                  ),
-                  const SizedBox(width: 8.0),
-                  Expanded(
-                    child: CharacterDigitInputWidget(
-                      initialValue: character.ability(Ability.intelligence),
-                      onChanged: (int value) {
-                        character.setAbility(Ability.intelligence, value);
-                      },
-                      label: 'INTelligence',
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16.0),
-              Row(
-                children: [
-                  Expanded(
-                    child: CharacterDigitInputWidget(
-                      initialValue: character.ability(Ability.coordination),
-                      onChanged: (int value) {
-                        character.setAbility(Ability.coordination, value);
-                      },
-                      label: 'COOrdination',
-                    ),
-                  ),
-                  const SizedBox(width: 8.0),
-                  Expanded(
-                    child: CharacterDigitInputWidget(
-                      initialValue: character.ability(Ability.presence),
-                      onChanged: (int value) {
-                        character.setAbility(Ability.presence, value);
-                      },
-                      label: 'PRÉsence',
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16.0),
-              Row(
-                children: [
-                  Expanded(
-                    child: CharacterDigitInputWidget(
-                      initialValue: character.ability(Ability.resistance),
-                      onChanged: (int value) {
-                        character.setAbility(Ability.resistance, value);
-                      },
-                      label: 'RÉSistance',
-                    ),
-                  ),
-                  const SizedBox(width: 8.0),
-                  Expanded(
-                    child: CharacterDigitInputWidget(
-                      initialValue: character.ability(Ability.volonte),
-                      onChanged: (int value) {
-                        character.setAbility(Ability.volonte, value);
-                      },
-                      label: 'VOLonté',
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 16.0),
-              Row(
-                children: [
-                  Expanded(
-                    child: CharacterDigitInputWidget(
-                      initialValue: character.ability(Ability.perception),
-                      onChanged: (int value) {
-                        character.setAbility(Ability.perception, value);
-                      },
-                      label: 'PERception',
-                    ),
-                  ),
-                  const SizedBox(width: 8.0),
-                  Expanded(
-                    child: CharacterDigitInputWidget(
-                      initialValue: character.ability(Ability.empathie),
-                      onChanged: (int value) {
-                        character.setAbility(Ability.empathie, value);
-                      },
-                      label: 'EMPathie',
-                    ),
-                  ),
-                ],
-              ),
-            ],
+          child: AbilityListEditWidget(
+            abilities: character.abilities,
+            minValue: 1,
+            maxValue: 15,
+            onAbilityChanged: (Ability ability, int value) {
+              character.setAbility(ability, value);
+            },
           ),
         ),
         Positioned(
