@@ -4,6 +4,7 @@ import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
+import 'package:prophecy_compagnon_mj/ui/utils/attribute_list_display_widget.dart';
 
 import '../../classes/armor.dart';
 import '../../classes/character/base.dart';
@@ -433,7 +434,7 @@ class _CreatureDisplayWidget extends StatelessWidget {
                   const SizedBox(width: 16.0),
                   AbilityListDisplayWidget(abilities: creature.abilities),
                   const SizedBox(width: 32.0),
-                  _AttributesDisplayWidget(creature: creature),
+                  AttributeListDisplayWidget(attributes: creature.attributes),
                 ],
               ),
               const SizedBox(height: 8.0),
@@ -555,78 +556,6 @@ class _CreatureDisplayWidget extends StatelessWidget {
             ],
           ),
         )
-    );
-  }
-}
-
-class _AttributesDisplayWidget extends StatelessWidget {
-  const _AttributesDisplayWidget({ required this.creature });
-
-  final CreatureModel creature;
-
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
-    return SizedBox(
-      width: 90,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Text(
-                'Physique',
-                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const Spacer(),
-              Text(
-                creature.attributes[Attribute.physique]!.toString(),
-                style: theme.textTheme.bodyLarge,
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Text(
-                'Mental',
-                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const Spacer(),
-              Text(
-                creature.attributes[Attribute.mental]!.toString(),
-                style: theme.textTheme.bodyLarge,
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Text(
-                'Manuel',
-                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const Spacer(),
-              Text(
-                creature.attributes[Attribute.manuel]!.toString(),
-                style: theme.textTheme.bodyLarge,
-              )
-            ],
-          ),
-          Row(
-            children: [
-              Text(
-                'Social',
-                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const Spacer(),
-              Text(
-                creature.attributes[Attribute.social]!.toString(),
-                style: theme.textTheme.bodyLarge,
-              )
-            ],
-          ),
-        ],
-      ),
     );
   }
 }
