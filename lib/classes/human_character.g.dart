@@ -155,8 +155,7 @@ Map<String, dynamic> _$CharacterTendenciesToJson(
     };
 
 HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
-    HumanCharacter(
-      json['uuid'] as String,
+    HumanCharacter.create(
       name: json['name'] as String,
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
       caste:
@@ -170,6 +169,7 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
       renown: (json['renown'] as num?)?.toInt() ?? 0,
       age: (json['age'] as num?)?.toInt() ?? 25,
       height: (json['height'] as num?)?.toDouble() ?? 1.7,
+      size: (json['size'] as num?)?.toDouble(),
       weight: (json['weight'] as num?)?.toDouble() ?? 60.0,
       origin: $enumDecodeNullable(_$OriginCountryEnumMap, json['origin']) ??
           OriginCountry.empireDeSolyr,
@@ -193,13 +193,13 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
           : CharacterTendencies.fromJson(
               json['tendencies'] as Map<String, dynamic>),
     )
-      ..magicSpells = (json['magic_spells'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry($enumDecode(_$MagicSphereEnumMap, k),
-            (e as List<dynamic>).map((e) => e as String).toList()),
-      )
-      ..magicPool = (json['magic_pool'] as num).toInt()
+      ..magicSpells = (json['magic_spells'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry($enumDecode(_$MagicSphereEnumMap, k),
+                (e as List<dynamic>).map((e) => e as String).toList()),
+          ) ??
+          {}
+      ..magicPool = (json['magic_pool'] as num?)?.toInt() ?? 0
       ..description = json['description'] as String
-      ..size = (json['size'] as num).toDouble()
       ..skills = (json['skills'] as List<dynamic>)
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList();
@@ -210,7 +210,6 @@ Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
           .map((k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e)),
       'magic_pool': instance.magicPool,
       'equiped': equipedToJson(instance.equiped),
-      'uuid': instance.uuid,
       'name': instance.name,
       'description': instance.description,
       'size': instance.size,

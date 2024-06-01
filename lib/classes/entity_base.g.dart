@@ -6,8 +6,7 @@ part of 'entity_base.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase(
-      json['uuid'] as String,
+EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase.create(
       name: json['name'] as String,
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
       size: (json['size'] as num?)?.toDouble(),
@@ -21,7 +20,6 @@ EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase(
 Map<String, dynamic> _$EntityBaseToJson(EntityBase instance) =>
     <String, dynamic>{
       'equiped': equipedToJson(instance.equiped),
-      'uuid': instance.uuid,
       'name': instance.name,
       'description': instance.description,
       'size': instance.size,

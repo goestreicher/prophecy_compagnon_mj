@@ -62,11 +62,12 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
       luck: (json['luck'] as num?)?.toInt() ?? 0,
       proficiency: (json['proficiency'] as num?)?.toInt() ?? 0,
     )
-      ..magicSpells = (json['magic_spells'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry($enumDecode(_$MagicSphereEnumMap, k),
-            (e as List<dynamic>).map((e) => e as String).toList()),
-      )
-      ..magicPool = (json['magic_pool'] as num).toInt()
+      ..magicSpells = (json['magic_spells'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry($enumDecode(_$MagicSphereEnumMap, k),
+                (e as List<dynamic>).map((e) => e as String).toList()),
+          ) ??
+          {}
+      ..magicPool = (json['magic_pool'] as num?)?.toInt() ?? 0
       ..description = json['description'] as String
       ..size = (json['size'] as num).toDouble()
       ..weight = (json['weight'] as num).toDouble()

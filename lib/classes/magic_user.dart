@@ -1,3 +1,5 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'magic.dart';
 
 mixin MagicUser {
@@ -37,9 +39,11 @@ mixin MagicUser {
     magicSpells[spell.sphere]!.remove(spell.name);
   }
 
-  Map<MagicSphere, List<String>> magicSpells = <MagicSphere, List<String>>{};
+  @JsonKey(defaultValue: <MagicSphere, List<String>>{})
+    Map<MagicSphere, List<String>> magicSpells = <MagicSphere, List<String>>{};
 
-  int magicPool = 0;
+  @JsonKey(defaultValue: 0)
+    int magicPool = 0;
 
   final Map<MagicSkill, int> _magicSkills = <MagicSkill, int>{
     MagicSkill.instinctive: 0,

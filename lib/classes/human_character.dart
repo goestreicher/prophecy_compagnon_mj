@@ -235,7 +235,7 @@ class CharacterTendencies {
   Map<String, dynamic> toJson() => _$CharacterTendenciesToJson(this);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, constructor: 'create')
 class HumanCharacter extends EntityBase with MagicUser {
   HumanCharacter(
       super.uuid,
@@ -251,6 +251,7 @@ class HumanCharacter extends EntityBase with MagicUser {
         this.renown = 0,
         this.age = 25,
         this.height = 1.7,
+        super.size,
         super.weight = 60.0,
         this.origin = OriginCountry.empireDeSolyr,
         List<Interdict>? interdicts,
@@ -281,6 +282,7 @@ class HumanCharacter extends EntityBase with MagicUser {
         this.renown = 0,
         this.age = 25,
         this.height = 1.7,
+        super.size,
         super.weight = 60.0,
         this.origin = OriginCountry.empireDeSolyr,
         List<Interdict>? interdicts,
