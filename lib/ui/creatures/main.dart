@@ -13,6 +13,7 @@ import '../../classes/creature.dart';
 import '../../classes/equipment.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
+import '../utils/ability_list_display_widget.dart';
 import '../utils/ability_list_edit_widget.dart';
 import '../utils/armor_picker_dialog.dart';
 import '../utils/attribute_list_edit_widget.dart';
@@ -430,7 +431,7 @@ class _CreatureDisplayWidget extends StatelessWidget {
               Row(
                 children: [
                   const SizedBox(width: 16.0),
-                  _AbilitiesDisplayWidget(creature: creature),
+                  AbilityListDisplayWidget(abilities: creature.abilities),
                   const SizedBox(width: 32.0),
                   _AttributesDisplayWidget(creature: creature),
                 ],
@@ -554,144 +555,6 @@ class _CreatureDisplayWidget extends StatelessWidget {
             ],
           ),
         )
-    );
-  }
-}
-
-class _AbilitiesDisplayWidget extends StatelessWidget {
-  const _AbilitiesDisplayWidget({ required this.creature });
-
-  final CreatureModel creature;
-
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
-    return SizedBox(
-      width: 120,
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      'FOR',
-                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const Spacer(),
-                    Text(
-                      creature.abilities[Ability.force]!.toString(),
-                      style: theme.textTheme.bodyLarge,
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'INT',
-                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const Spacer(),
-                    Text(
-                      creature.abilities[Ability.intelligence]!.toString(),
-                      style: theme.textTheme.bodyLarge,
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'COO',
-                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const Spacer(),
-                    Text(
-                      creature.abilities[Ability.coordination]!.toString(),
-                      style: theme.textTheme.bodyLarge,
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'PRÉ',
-                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const Spacer(),
-                    Text(
-                      creature.abilities[Ability.presence]!.toString(),
-                      style: theme.textTheme.bodyLarge,
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 12.0),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    Text(
-                      'RÉS',
-                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const Spacer(),
-                    Text(
-                      creature.abilities[Ability.resistance]!.toString(),
-                      style: theme.textTheme.bodyLarge,
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'VOL',
-                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const Spacer(),
-                    Text(
-                      creature.abilities[Ability.volonte]!.toString(),
-                      style: theme.textTheme.bodyLarge,
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'PER',
-                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const Spacer(),
-                    Text(
-                      creature.abilities[Ability.perception]!.toString(),
-                      style: theme.textTheme.bodyLarge,
-                    )
-                  ],
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'EMP',
-                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    ),
-                    const Spacer(),
-                    Text(
-                      creature.abilities[Ability.empathie]!.toString(),
-                      style: theme.textTheme.bodyLarge,
-                    )
-                  ],
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
     );
   }
 }
