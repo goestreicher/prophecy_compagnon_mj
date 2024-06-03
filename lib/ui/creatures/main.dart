@@ -19,6 +19,7 @@ import '../utils/ability_list_edit_widget.dart';
 import '../utils/armor_picker_dialog.dart';
 import '../utils/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
+import '../utils/injuries_display_widget.dart';
 import '../utils/shield_picker_dialog.dart';
 import '../utils/single_line_input_dialog.dart';
 import '../utils/skill_picker_dialog.dart';
@@ -491,33 +492,7 @@ class _CreatureDisplayWidget extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
-                child: Column(
-                  children: [
-                    for(var i = 0; i < creature.injuries.length; ++i)
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 100,
-                            child: Text(
-                              '${creature.injuries[i].title} (${creature.injuries[i].start+1}${creature.injuries[i].end == -1 ? "+" : "-${creature.injuries[i].end.toString()}"})',
-                              style: theme.textTheme.bodySmall,
-                            ),
-                          ),
-                          for(var j = 0; j < creature.injuries[i].capacity; ++j)
-                            Container(
-                              margin: const EdgeInsets.fromLTRB(1.0, 0.0, 1.0, 0.0),
-                              width: 12.0,
-                              height: 12.0,
-                              decoration: BoxDecoration(
-                                // color: Colors.white,
-                                border: Border.all(color: Colors.black),
-                                borderRadius: BorderRadius.circular(6.0),
-                              ),
-                            ),
-                        ],
-                      )
-                  ],
-                )
+                child: InjuriesDisplayWidget(injuries: creature.injuries),
               ),
               if(equipment.isNotEmpty)
                 const SizedBox(height: 8.0),
