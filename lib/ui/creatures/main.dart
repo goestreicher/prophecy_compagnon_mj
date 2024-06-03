@@ -20,6 +20,7 @@ import '../utils/armor_picker_dialog.dart';
 import '../utils/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
 import '../utils/injuries_display_widget.dart';
+import '../utils/injuries_edit_widget.dart';
 import '../utils/shield_picker_dialog.dart';
 import '../utils/single_line_input_dialog.dart';
 import '../utils/skill_picker_dialog.dart';
@@ -1087,52 +1088,7 @@ class _CreatureEditWidgetState extends State<_CreatureEditWidget> {
                       style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 12.0),
-                    for(var i = 0; i < _injuries.length; ++i)
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
-                        child: Row(
-                          children: [
-                            SizedBox(
-                              width: 100,
-                              child: Text(
-                                _injuries[i].title,
-                                style: theme.textTheme.bodySmall,
-                              ),
-                            ),
-                            const SizedBox(width: 8.0),
-                            if(_injuries[i].end != -1)
-                              SizedBox(
-                                width: 80,
-                                child: CharacterDigitInputWidget(
-                                  initialValue: _injuries[i].end,
-                                  maxValue: 501,
-                                  label: 'Max.',
-                                  onChanged: (int value) {
-                                    setState(() {
-                                      _injuries[i].end = value;
-                                      _injuries[i+1].start = value;
-                                    });
-                                  },
-                                ),
-                              ),
-                            if(_injuries[i].end == -1)
-                              const SizedBox(width: 80),
-                            const SizedBox(width: 8.0),
-                            SizedBox(
-                              width: 80,
-                              child: CharacterDigitInputWidget(
-                                initialValue: _injuries[i].capacity,
-                                label: 'Nb.',
-                                onChanged: (int value) {
-                                  setState(() {
-                                    _injuries[i].capacity = value;
-                                  });
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
+                    InjuriesEditWidget(injuries: _injuries),
                     const SizedBox(height: 20.0),
                     Text(
                       'Équipement',
