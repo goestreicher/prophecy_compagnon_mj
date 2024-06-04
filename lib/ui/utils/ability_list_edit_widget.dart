@@ -20,9 +20,8 @@ class AbilityListEditWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var widgetRows = <Widget>[];
-    
-    var abilityList = abilities.keys.toList();
-    for(var i = 0; i < abilityList.length; i += 2) {
+
+    for(var i = 0; (i+4) < Ability.values.length; ++i) {
       if(widgetRows.isNotEmpty) {
         widgetRows.add(const SizedBox(height: 16.0));
       }
@@ -30,29 +29,29 @@ class AbilityListEditWidget extends StatelessWidget {
       var currentRow = <Widget>[
         Expanded(
           child: CharacterDigitInputWidget(
-            initialValue: abilities[abilityList[i]]!,
+            initialValue: abilities[Ability.values[i]] ?? 0,
             minValue: minValue,
             maxValue: maxValue,
             onChanged: (int value) {
-              onAbilityChanged(abilityList[i], value);
+              onAbilityChanged(Ability.values[i], value);
             },
-            label: '${abilityList[i].title.substring(0, 3).toUpperCase()}${abilityList[i].title.substring(3)}',
+            label: '${Ability.values[i].title.substring(0, 3).toUpperCase()}${Ability.values[i].title.substring(3)}',
           ),
         ),
       ];
 
-      if(i + 1 < abilityList.length) {
+      if(i + 4 < Ability.values.length) {
         currentRow.add(const SizedBox(width: 8.0));
         currentRow.add(
           Expanded(
             child: CharacterDigitInputWidget(
-              initialValue: abilities[abilityList[i+1]]!,
+              initialValue: abilities[Ability.values[i+4]] ?? 0,
               minValue: minValue,
               maxValue: maxValue,
               onChanged: (int value) {
-                onAbilityChanged(abilityList[i+1], value);
+                onAbilityChanged(Ability.values[i+4], value);
               },
-              label: '${abilityList[i+1].title.substring(0, 3).toUpperCase()}${abilityList[i+1].title.substring(3)}',
+              label: '${Ability.values[i+4].title.substring(0, 3).toUpperCase()}${Ability.values[i+4].title.substring(3)}',
             ),
           ),
         );
