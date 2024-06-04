@@ -10,9 +10,9 @@ import '../utils/ability_list_edit_widget.dart';
 import '../utils/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
 import '../utils/advantage_picker_dialog.dart';
-import 'caste_privilege_picker_dialog.dart';
+import '../utils/caste_privilege_picker_dialog.dart';
 import '../utils/disadvantage_picker_dialog.dart';
-import 'interdict_picker_dialog.dart';
+import '../utils/interdict_picker_dialog.dart';
 
 class EditBaseTab extends StatefulWidget {
   const EditBaseTab({ super.key, required this.character });
