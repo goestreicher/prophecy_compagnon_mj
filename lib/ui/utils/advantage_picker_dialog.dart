@@ -131,7 +131,6 @@ class _AdvantagePickerDialogState extends State<AdvantagePickerDialog> {
                         if(_type == null) return;
                         if(_advantage == null) return;
                         if(_costController.text.isEmpty) return;
-                        if(_detailsController.text.isEmpty) return;
 
                         var ret = CharacterAdvantage(
                           advantage: _advantage!,

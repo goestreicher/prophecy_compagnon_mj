@@ -131,7 +131,6 @@ class _DisadvantagePickerDialogState extends State<DisadvantagePickerDialog> {
                       if(_type == null) return;
                       if(_disadvantage == null) return;
                       if(_costController.text.isEmpty) return;
-                      if(_detailsController.text.isEmpty) return;
 
                       var ret = CharacterDisadvantage(
                         disadvantage: _disadvantage!,
