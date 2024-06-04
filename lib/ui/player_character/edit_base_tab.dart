@@ -9,9 +9,9 @@ import '../../classes/character/base.dart';
 import '../utils/ability_list_edit_widget.dart';
 import '../utils/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
-import 'advantage_picker_dialog.dart';
+import '../utils/advantage_picker_dialog.dart';
 import 'caste_privilege_picker_dialog.dart';
-import 'disadvantage_picker_dialog.dart';
+import '../utils/disadvantage_picker_dialog.dart';
 import 'interdict_picker_dialog.dart';
 
 class EditBaseTab extends StatefulWidget {
