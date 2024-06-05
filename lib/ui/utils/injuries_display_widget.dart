@@ -17,7 +17,7 @@ class InjuriesDisplayWidget extends StatelessWidget {
           Row(
             children: [
               SizedBox(
-                width: 100,
+                width: 120,
                 child: Text(
                   '${injuries[i].title} (${injuries[i].start+1}${injuries[i].end == -1 ? "+" : "-${injuries[i].end.toString()}"})',
                   style: theme.textTheme.bodySmall,

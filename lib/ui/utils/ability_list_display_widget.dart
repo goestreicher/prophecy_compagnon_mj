@@ -19,7 +19,7 @@ class AbilityListDisplayWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 16.0),
         child: SizedBox(
-          width: 120,
+          width: 132,
           child: Row(
             children: [
               Expanded(
@@ -81,7 +81,7 @@ class AbilityListDisplayWidget extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(width: 12.0),
+              const SizedBox(width: 24.0),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
