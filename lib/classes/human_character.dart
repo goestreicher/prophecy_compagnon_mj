@@ -259,6 +259,7 @@ class HumanCharacter extends EntityBase with MagicUser {
         List<CharacterDisadvantage>? disadvantages,
         List<CharacterAdvantage>? advantages,
         CharacterTendencies? tendencies,
+        super.description,
       })
     : interdicts = interdicts ?? <Interdict>[],
       castePrivileges = castePrivileges ?? <CastePrivilege>[],
@@ -290,6 +291,7 @@ class HumanCharacter extends EntityBase with MagicUser {
         List<CharacterDisadvantage>? disadvantages,
         List<CharacterAdvantage>? advantages,
         CharacterTendencies? tendencies,
+        super.description,
       })
     : interdicts = interdicts ?? <Interdict>[],
       castePrivileges = castePrivileges ?? <CastePrivilege>[],
@@ -454,7 +456,7 @@ class HumanCharacter extends EntityBase with MagicUser {
 }
 
 InjuryManager _humanCharacterDefaultInjuries(EntityBase? entity, InjuryManager? source) =>
-    InjuryManager.simple(injuredCeiling: 30, injuredCount: 4, deathCount: 1, source: source);
+    InjuryManager.simple(injuredCeiling: 40, injuredCount: 3, deathCount: 1, source: source);
 
 InjuryManager fullCharacterDefaultInjuries(EntityBase? entity, InjuryManager? source) {
   if(entity == null) return _humanCharacterDefaultInjuries(entity, source);

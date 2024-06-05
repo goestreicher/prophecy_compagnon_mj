@@ -192,6 +192,7 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
           ? null
           : CharacterTendencies.fromJson(
               json['tendencies'] as Map<String, dynamic>),
+      description: json['description'] as String?,
     )
       ..magicSpells = (json['magic_spells'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry($enumDecode(_$MagicSphereEnumMap, k),
@@ -199,7 +200,6 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
           ) ??
           {}
       ..magicPool = (json['magic_pool'] as num?)?.toInt() ?? 0
-      ..description = json['description'] as String
       ..skills = (json['skills'] as List<dynamic>)
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList();
