@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../classes/magic.dart';
 import '../../classes/player_character.dart';
 import '../utils/character_digit_input_widget.dart';
-import 'spell_picker_dialog.dart';
+import '../utils/spell_picker_dialog.dart';
 
 class EditMagicTab extends StatelessWidget {
   const EditMagicTab({ super.key, required this.character });
