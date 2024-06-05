@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:file_picker/file_picker.dart';
 import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -147,7 +148,55 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                     editing = true;
                   });
                 },
-              )
+              ),
+              const SizedBox(width: 8.0),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.upload),
+                label: const Text('Importer une créature'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: theme.colorScheme.primary,
+                  foregroundColor: theme.colorScheme.onPrimary,
+                ),
+                onPressed: () async {
+                  var result = await FilePicker.platform.pickFiles(
+                    type: FileType.custom,
+                    allowedExtensions: ['json'],
+                  );
+                  if(!context.mounted) return;
+                  if(result == null) return;
+
+                  try {
+                    var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
+                    var creature = CreatureModel.fromJson(json.decode(jsonStr));
+                    var model = CreatureModel.get(creature.id);
+                    if(model != null) {
+                      await showDialog(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('Créature existante'),
+                          content: const Text('Une créature avec ce nom (ou un nom similaire) existe déjà'),
+                          actions: [
+                            TextButton(
+                              child: const Text('OK'),
+                              onPressed: () => Navigator.of(context).pop(),
+                            ),
+                          ],
+                        ),
+                      );
+                      return;
+                    }
+
+                    CreatureModel.saveLocalModel(creature);
+                    setState(() {
+                      _category = creature.category;
+                      _selected = creature;
+                    });
+                  } catch (e) {
+                    // TODO: notify the user that things went south
+                    // TODO: catch FormatException from the UTF-8 conversion?
+                  }
+                },
+              ),
             ],
           ),
           const SizedBox(height: 12.0),
