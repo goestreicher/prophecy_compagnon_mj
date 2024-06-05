@@ -59,11 +59,16 @@ class EditMagicTab extends StatelessWidget {
   }
 }
 
-class _MagicSkillsEditWidget extends StatelessWidget {
+class _MagicSkillsEditWidget extends StatefulWidget {
   const _MagicSkillsEditWidget({ required this.character });
 
   final PlayerCharacter character;
 
+  @override
+  State<_MagicSkillsEditWidget> createState() => _MagicSkillsEditWidgetState();
+}
+
+class _MagicSkillsEditWidgetState extends State<_MagicSkillsEditWidget> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -90,11 +95,13 @@ class _MagicSkillsEditWidget extends StatelessWidget {
                     SizedBox(
                       width: 96.0,
                       child: CharacterDigitInputWidget(
-                        initialValue: character.magicPool,
+                        initialValue: widget.character.magicPool,
                         minValue: 0,
                         maxValue: 30,
                         onChanged: (int value) {
-                          character.magicPool = value;
+                          setState(() {
+                            widget.character.magicPool = value;
+                          });
                         },
                       ),
                     ),
@@ -111,11 +118,13 @@ class _MagicSkillsEditWidget extends StatelessWidget {
                     SizedBox(
                       width: 96.0,
                       child: CharacterDigitInputWidget(
-                        initialValue: character.magicSkill(MagicSkill.instinctive),
+                        initialValue: widget.character.magicSkill(MagicSkill.instinctive),
                         minValue: 0,
                         maxValue: 30,
                         onChanged: (int value) {
-                          character.setMagicSkill(MagicSkill.instinctive, value);
+                          setState(() {
+                            widget.character.setMagicSkill(MagicSkill.instinctive, value);
+                          });
                         },
                       ),
                     ),
@@ -132,11 +141,13 @@ class _MagicSkillsEditWidget extends StatelessWidget {
                     SizedBox(
                       width: 96.0,
                       child: CharacterDigitInputWidget(
-                        initialValue: character.magicSkill(MagicSkill.invocatoire),
+                        initialValue: widget.character.magicSkill(MagicSkill.invocatoire),
                         minValue: 0,
                         maxValue: 30,
                         onChanged: (int value) {
-                          character.setMagicSkill(MagicSkill.invocatoire, value);
+                          setState(() {
+                            widget.character.setMagicSkill(MagicSkill.invocatoire, value);
+                          });
                         },
                       ),
                     ),
@@ -153,11 +164,13 @@ class _MagicSkillsEditWidget extends StatelessWidget {
                     SizedBox(
                       width: 96.0,
                       child: CharacterDigitInputWidget(
-                        initialValue: character.magicSkill(MagicSkill.sorcellerie),
+                        initialValue: widget.character.magicSkill(MagicSkill.sorcellerie),
                         minValue: 0,
                         maxValue: 30,
                         onChanged: (int value) {
-                          character.setMagicSkill(MagicSkill.sorcellerie, value);
+                          setState(() {
+                            widget.character.setMagicSkill(MagicSkill.sorcellerie, value);
+                          });
                         },
                       ),
                     ),
