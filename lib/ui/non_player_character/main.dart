@@ -27,6 +27,7 @@ import '../utils/disadvantage_picker_dialog.dart';
 import '../utils/injuries_display_widget.dart';
 import '../utils/injuries_edit_widget.dart';
 import '../utils/interdict_picker_dialog.dart';
+import '../utils/magic_sphere_edit_widget.dart';
 import '../utils/shield_picker_dialog.dart';
 import '../utils/single_line_input_dialog.dart';
 import '../utils/skill_picker_dialog.dart';
@@ -2053,7 +2054,7 @@ class _NPCEditWidgetState extends State<_NPCEditWidget> {
                                 for(var j = 0; j < 3; ++j)
                                   Container(
                                     margin: const EdgeInsets.fromLTRB(0, 0, 0, 16),
-                                    child: _MagicSphereEditWidget(
+                                    child: MagicSphereEditWidget(
                                       sphere: MagicSphere.values[i+j*3],
                                       value: _magicSphereSkills[MagicSphere.values[i+j*3]]!,
                                       pool: _magicSpherePools[MagicSphere.values[i+j*3]]!,
@@ -2250,102 +2251,6 @@ class _MagicSphereDisplayWidget extends StatelessWidget {
                         )
                       ]
                   )
-              ),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class _MagicSphereEditWidget extends StatefulWidget {
-  const _MagicSphereEditWidget({
-    required this.sphere,
-    required this.value,
-    required this.pool,
-    required this.onValueChanged,
-    required this.onPoolChanged,
-  });
-
-  final MagicSphere sphere;
-  final int value;
-  final int pool;
-  final void Function(int) onValueChanged;
-  final void Function(int) onPoolChanged;
-
-  @override
-  State<_MagicSphereEditWidget> createState() => _MagicSphereEditWidgetState();
-}
-
-class _MagicSphereEditWidgetState extends State<_MagicSphereEditWidget> {
-  late int _value;
-  late int _pool;
-
-  @override
-  void initState() {
-    super.initState();
-    _value = widget.value;
-    _pool = widget.pool;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.black),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        children: [
-          SizedBox(
-            width: 32,
-            height: 48,
-            child: Image.asset(
-              'assets/images/magic/sphere-${widget.sphere.name}-icon.png',
-            ),
-          ),
-          const SizedBox(width: 12.0),
-          Column(
-            children: [
-              SizedBox(
-                width: 96,
-                child: CharacterDigitInputWidget(
-                    label: 'Niveau',
-                    initialValue: _value,
-                    minValue: 0,
-                    maxValue: 15,
-                    onChanged: (int value) {
-                      var old = _value;
-                      var delta = value - old;
-
-                      setState(() {
-                        _value = value;
-                        _pool = _pool + delta;
-                      });
-
-                      widget.onValueChanged(_value);
-                      widget.onPoolChanged(_pool);
-                    }
-                ),
-              ),
-              const SizedBox(height: 8.0),
-              SizedBox(
-                width: 96,
-                child: CharacterDigitInputWidget(
-                  label: 'Réserve',
-                  initialValue: _pool,
-                  minValue: 0,
-                  maxValue: 15,
-                  onChanged: (int value) {
-                    setState(() {
-                      _pool = value;
-                    });
-
-                    widget.onPoolChanged(_pool);
-                  }
-                ),
               ),
             ],
           )
