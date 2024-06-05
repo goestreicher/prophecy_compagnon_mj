@@ -27,14 +27,9 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
   final TextEditingController _controller = TextEditingController();
 
   @override
-  void initState() {
-    super.initState();
-    _controller.text = widget.initialValue.toString();
-  }
-
-  @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    _controller.text = widget.initialValue.toString();
 
     return TextFormField(
       controller: _controller,
