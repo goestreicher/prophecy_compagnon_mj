@@ -66,6 +66,7 @@ flutter:
   assets:
     - assets/armor.json
     - assets/creature-ldb2e.json
+    - assets/npc-ldb2e.json
     - assets/shield.json
     - assets/spell-pierre.json
     - assets/spell-feu.json
@@ -78,6 +79,7 @@ flutter:
     - assets/spell-ombre.json
     - assets/weapon.json
     - assets/images/magic/
+    - assets/images/tendencies/
   fonts:
     - family: CustomIcons
       fonts:

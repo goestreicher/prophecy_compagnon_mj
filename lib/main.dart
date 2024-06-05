@@ -6,12 +6,14 @@ import 'package:provider/provider.dart';
 import 'classes/armor.dart';
 import 'classes/creature.dart';
 import 'classes/magic.dart';
+import 'classes/non_player_character.dart';
 import 'classes/shield.dart';
 import 'classes/weapon.dart';
 
 import 'ui/utils/custom_icons.dart';
 
 import 'ui/creatures/main.dart';
+import 'ui/non_player_character/main.dart';
 import 'ui/scenario/list.dart';
 import 'ui/session/list.dart';
 import 'ui/spells/main.dart';
@@ -66,6 +68,7 @@ class _MainAppPageState extends State<MainAppPage> {
     ArmorModel.loadDefaultAssets();
     CreatureModel.loadDefaultAssets();
     MagicSpell.loadDefaultAssets();
+    NonPlayerCharacter.loadDefaultAssets();
     ShieldModel.loadDefaultAssets();
     WeaponModel.loadDefaultAssets();
 
@@ -86,6 +89,9 @@ class _MainAppPageState extends State<MainAppPage> {
         activePage = const SpellsMainPage();
         break;
       case 4:
+        activePage = const NPCMainPage();
+        break;
+      case 5:
         activePage = const CreaturesMainPage();
         break;
       default:
@@ -122,6 +128,10 @@ class _MainAppPageState extends State<MainAppPage> {
                     NavigationRailDestination(
                       icon: Icon(Symbols.auto_fix_high),
                       label: Text('Sorts'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Symbols.face),
+                      label: Text('PNJs'),
                     ),
                     NavigationRailDestination(
                       icon: Icon(CustomIcons.creature),

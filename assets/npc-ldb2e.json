@@ -1,0 +1,60 @@
+[
+  {
+    "name": "Villageois sans caste",
+    "category": "generique",
+    "sub_category": {
+      "subcategory": "sansCaste"
+    },
+    "description": "XOXO",
+    "abilities": {
+      "force":        6,
+      "intelligence": 3,
+      "coordination": 4,
+      "presence":     4,
+      "resistance":   7,
+      "volonte":      5,
+      "perception":   6,
+      "empathie":     5
+    },
+    "attributes": {
+      "physique": 5,
+      "mental":   3,
+      "manuel":   4,
+      "social":   3
+    },
+    "initiative": 3,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "levels": [
+        {
+          "rank": 0,
+          "title": "Blessé",
+          "start": 0,
+          "end": 40,
+          "malus": 0,
+          "capacity": 3
+        },
+        {
+          "rank": 1,
+          "title": "Mort",
+          "start": 40,
+          "end": -1,
+          "malus": 0,
+          "capacity": 1
+        }
+      ]
+    },
+    "skills": [
+      {
+        "skill": "armesArticulees",
+        "value": 2
+      },
+      {
+        "skill": "armesDeJet",
+        "value": 3
+      }
+    ],
+    "equipment": [
+    ]
+  }
+]
