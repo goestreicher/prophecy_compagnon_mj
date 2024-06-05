@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../classes/magic.dart';
 import '../../classes/player_character.dart';
 import '../utils/character_digit_input_widget.dart';
+import '../utils/magic_sphere_edit_widget.dart';
 import '../utils/spell_picker_dialog.dart';
 
 class EditMagicTab extends StatelessWidget {
@@ -203,38 +204,35 @@ class _MagicSpheresEditWidget extends StatelessWidget {
               border: Border.all(color: Colors.black54),
               borderRadius: BorderRadius.circular(5.0),
             ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
+            child: Row(
               children: [
-                Row(
-                  children: [
-                    Expanded(child: _MagicSphereInputWidget(character: character, sphere: MagicSphere.pierre)),
-                    const SizedBox(width: 8.0),
-                    Expanded(child: _MagicSphereInputWidget(character: character, sphere: MagicSphere.feu)),
-                    const SizedBox(width: 8.0),
-                    Expanded(child: _MagicSphereInputWidget(character: character, sphere: MagicSphere.oceans)),
-                  ],
-                ),
-                const SizedBox(height: 8.0),
-                Row(
-                  children: [
-                    Expanded(child: _MagicSphereInputWidget(character: character, sphere: MagicSphere.metal)),
-                    const SizedBox(width: 8.0),
-                    Expanded(child: _MagicSphereInputWidget(character: character, sphere: MagicSphere.nature)),
-                    const SizedBox(width: 8.0),
-                    Expanded(child: _MagicSphereInputWidget(character: character, sphere: MagicSphere.reves)),
-                  ],
-                ),
-                const SizedBox(height: 8.0),
-                Row(
-                  children: [
-                    Expanded(child: _MagicSphereInputWidget(character: character, sphere: MagicSphere.cite)),
-                    const SizedBox(width: 8.0),
-                    Expanded(child: _MagicSphereInputWidget(character: character, sphere: MagicSphere.vents)),
-                    const SizedBox(width: 8.0),
-                    Expanded(child: _MagicSphereInputWidget(character: character, sphere: MagicSphere.ombre)),
-                  ],
-                ),
+                for(var i = 0; i < 3; ++i)
+                  Expanded(
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB((i == 0 ? 0 : 24), 0, 0, 0),
+                      child: Column(
+                        children: [
+                          for(var j = 0; j < 3; ++j)
+                            Container(
+                              margin: EdgeInsets.fromLTRB(0, 0, 0, (j == 2 ? 0 : 16)),
+                              child: Expanded(
+                                child: MagicSphereEditWidget(
+                                  sphere: MagicSphere.values[i+j*3],
+                                  value: character.magicSphere(MagicSphere.values[i+j*3]),
+                                  pool: character.magicSpherePool(MagicSphere.values[i+j*3]),
+                                  onValueChanged: (int value) {
+                                    character.setMagicSphere(MagicSphere.pierre, value);
+                                  },
+                                  onPoolChanged: (int value) {
+                                    character.setMagicSpherePool(MagicSphere.pierre, value);
+                                  },
+                                ),
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ),
               ],
             )
         ),

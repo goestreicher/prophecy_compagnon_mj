@@ -38,7 +38,7 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        border: Border.all(color: Colors.black),
+        border: Border.all(color: Colors.black54),
         borderRadius: BorderRadius.circular(8.0),
       ),
       padding: const EdgeInsets.all(8.0),
