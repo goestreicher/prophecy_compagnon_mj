@@ -7,12 +7,14 @@ class NPCListWidget extends StatefulWidget {
     super.key,
     required this.category,
     this.subCategory,
+    this.npcs,
     required this.onSelected,
     this.selected,
   });
 
   final NPCCategory category;
   final NPCSubCategory? subCategory;
+  final List<NonPlayerCharacter>? npcs;
   final void Function(NonPlayerCharacter) onSelected;
   final NonPlayerCharacter? selected;
 
@@ -24,8 +26,13 @@ class _NPCListWidgetState extends State<NPCListWidget> {
   late List<NonPlayerCharacter> _npcs;
 
   void _updateNPCList() {
-    _npcs = NonPlayerCharacter.forCategory(widget.category, widget.subCategory);
-    _npcs.sort((a, b) => a.id.compareTo(b.id));
+    if(widget.npcs != null) {
+      _npcs = widget.npcs!;
+    }
+    else {
+      _npcs = NonPlayerCharacter.forCategory(widget.category, widget.subCategory);
+      _npcs.sort((a, b) => a.id.compareTo(b.id));
+    }
   }
 
   @override

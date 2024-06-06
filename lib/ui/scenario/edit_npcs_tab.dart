@@ -44,13 +44,12 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
               categories: [ NPCCategory.scenario ]
           ),
           onEditDone: (NonPlayerCharacter? npc) {
-            if(_newNPCName != null) {
-              _newNPCName = null;
-            }
-
             setState(() {
               if(npc != null) {
-                widget.npcs.add(npc);
+                if(_newNPCName != null) {
+                  widget.npcs.add(npc);
+                  _newNPCName = null;
+                }
                 _selected = npc;
               }
               _editing = false;
@@ -140,10 +139,7 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                   Expanded(
                     child: NPCListWidget(
                       category: NPCCategory.scenario,
-                      subCategory: NPCSubCategory(
-                        title: widget.scenarioName,
-                        categories: [ NPCCategory.scenario ],
-                      ),
+                      npcs: widget.npcs,
                       selected: _selected,
                       onSelected: (NonPlayerCharacter model) {
                         setState(() {

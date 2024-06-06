@@ -37,7 +37,7 @@ Future<Scenario> getScenario(String uuid) async {
   if(scenarioJson.containsKey('npcs') && scenarioJson['npcs'] is List<dynamic>) {
     for (dynamic npcId in scenarioJson['npcs'] as List<dynamic>) {
       var npc = NonPlayerCharacter.get(npcId);
-      npcs.add(npc!.toJson());
+      npcs.add(json.decode(json.encode(npc!.toJson())));
     }
   }
   scenarioJson['npcs'] = npcs;
@@ -61,7 +61,7 @@ Future<void> saveScenario(Scenario scenario) async {
     await NonPlayerCharacter.saveLocalModel(npc);
     npcIds.add(npc.id);
   }
-  scenarioJson['npcs'] = json.encode(npcIds);
+  scenarioJson['npcs'] = npcIds;
 
   var scenarioBox = await Hive.openLazyBox('scenariosBox');
   await scenarioBox.put(scenario.uuid, json.encode(scenarioJson));
