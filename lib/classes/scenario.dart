@@ -57,7 +57,7 @@ Future<void> saveScenario(Scenario scenario) async {
   }
 
   var npcIds = <String>[];
-  for(var npc in scenarioJson['npcs']) {
+  for(var npc in scenario.npcs) {
     await NonPlayerCharacter.saveLocalModel(npc);
     npcIds.add(npc.id);
   }
