@@ -244,7 +244,13 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
     super.initState();
 
     _category = widget.category;
+    if(widget.category != null) {
+      _categoryController.text = widget.category!.title;
+    }
     _subCategory = widget.subCategory;
+    if(widget.subCategory != null) {
+      _subCategoryController.text = widget.subCategory!.title;
+    }
 
     if(widget.npc != null) {
       _name = widget.npc!.name;
