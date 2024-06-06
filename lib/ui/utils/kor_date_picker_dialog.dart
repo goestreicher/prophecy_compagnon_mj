@@ -279,7 +279,7 @@ class _KorDatePickerDayWidget extends StatelessWidget {
     var defaultDayStyle = TextButton.styleFrom(
       minimumSize: Size.zero,
       padding: const EdgeInsets.all(16.0),
-      foregroundColor: theme.colorScheme.onBackground,
+      foregroundColor: theme.colorScheme.onSurface,
     );
 
     var selectedDayStyle = TextButton.styleFrom(

@@ -303,7 +303,7 @@ class _CreaturesListWidgetState extends State<_CreaturesListWidget> {
             borderRadius: BorderRadius.circular(4.0),
           ),
           color: widget.selected == _creatures[index] ?
-            theme.colorScheme.surfaceVariant :
+            theme.colorScheme.surfaceContainerHighest :
             null,
           child: InkWell(
             onTap: () {
@@ -764,7 +764,7 @@ class _CreatureEditWidgetState extends State<_CreatureEditWidget> {
           Container(
             margin: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
             child: Card(
-              color: theme.colorScheme.surfaceVariant,
+              color: theme.colorScheme.surfaceContainerHighest,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(

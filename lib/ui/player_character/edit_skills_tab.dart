@@ -78,7 +78,7 @@ class _SkillFamilyEditWidgetState extends State<SkillFamilyEditWidget> {
           widget.family.title,
           style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
         ),
-        backgroundColor: theme.colorScheme.surfaceVariant,
+        backgroundColor: theme.colorScheme.surfaceContainerHighest,
         initiallyExpanded: widget.character.skillsForFamily(widget.family).isNotEmpty,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
@@ -306,7 +306,7 @@ class SpecializedSkillEditWidget extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          color: theme.colorScheme.surfaceVariant,
+          color: theme.colorScheme.surfaceContainerHighest,
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(

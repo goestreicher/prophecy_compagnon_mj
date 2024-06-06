@@ -89,7 +89,7 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                       return Card(
                         clipBehavior: Clip.hardEdge,
                         color: _selected == widget.maps[index] ?
-                        theme.colorScheme.surfaceVariant :
+                        theme.colorScheme.surfaceContainerHighest :
                         null,
                         child: InkWell(
                           splashColor: theme.colorScheme.surface,
@@ -140,7 +140,7 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
         Expanded(
           flex: 2,
           child: Container(
-              color: theme.colorScheme.surfaceVariant,
+              color: theme.colorScheme.surfaceContainerHighest,
               child: mapEditWidget,
           ),
         ),

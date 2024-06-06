@@ -198,7 +198,7 @@ class _SphereMagicSpellsListWidgetState extends State<_SphereMagicSpellsListWidg
                     borderRadius: BorderRadius.circular(4.0),
                   ),
                   color: widget.selected == spell ?
-                    theme.colorScheme.surfaceVariant :
+                    theme.colorScheme.surfaceContainerHighest :
                     null,
                   child: InkWell(
                     onTap: () {
@@ -238,7 +238,7 @@ class _SphereMagicSpellsListWidgetState extends State<_SphereMagicSpellsListWidg
                     borderRadius: BorderRadius.circular(4.0),
                   ),
                   color: widget.selected == spell ?
-                  theme.colorScheme.surfaceVariant :
+                  theme.colorScheme.surfaceContainerHighest :
                   null,
                   child: InkWell(
                     onTap: () {
@@ -278,7 +278,7 @@ class _SphereMagicSpellsListWidgetState extends State<_SphereMagicSpellsListWidg
                     borderRadius: BorderRadius.circular(4.0),
                   ),
                   color: widget.selected == spell ?
-                  theme.colorScheme.surfaceVariant :
+                  theme.colorScheme.surfaceContainerHighest :
                   null,
                   child: InkWell(
                     onTap: () {

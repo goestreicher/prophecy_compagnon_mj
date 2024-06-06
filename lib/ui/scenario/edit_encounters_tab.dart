@@ -73,7 +73,7 @@ class _ScenarioEditEncountersPageState extends State<ScenarioEditEncountersPage>
                     return Card(
                       clipBehavior: Clip.hardEdge,
                       color: _selected == widget.encounters[index] ?
-                          theme.colorScheme.surfaceVariant :
+                          theme.colorScheme.surfaceContainerHighest :
                           null,
                       child: InkWell(
                         splashColor: theme.colorScheme.surface,
@@ -109,7 +109,7 @@ class _ScenarioEditEncountersPageState extends State<ScenarioEditEncountersPage>
         Expanded(
           flex: 2,
           child: Container(
-            color: theme.colorScheme.surfaceVariant,
+            color: theme.colorScheme.surfaceContainerHighest,
             child: encounterEditWidget
           ),
         ),

@@ -142,7 +142,7 @@ class _MainAppPageState extends State<MainAppPage> {
               ),
               Expanded(
                 child: ColoredBox(
-                  color: theme.colorScheme.surfaceVariant,
+                  color: theme.colorScheme.surfaceContainerHighest,
                   child: AnimatedSwitcher(
                     duration: const Duration(milliseconds: 200),
                     child: activePage,

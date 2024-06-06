@@ -88,7 +88,7 @@ class _WeaponListWidgetState extends State<WeaponListWidget> {
     }
 
     return Card(
-        color: theme.colorScheme.surfaceVariant,
+        color: theme.colorScheme.surfaceContainerHighest,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),

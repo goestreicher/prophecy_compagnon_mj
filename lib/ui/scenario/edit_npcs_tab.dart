@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:prophecy_compagnon_mj/main.dart';
 import 'package:prophecy_compagnon_mj/ui/utils/npc_display_widget.dart';
 
 import '../../classes/non_player_character.dart';

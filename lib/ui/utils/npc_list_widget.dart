@@ -53,7 +53,7 @@ class _NPCListWidgetState extends State<NPCListWidget> {
             borderRadius: BorderRadius.circular(4.0),
           ),
           color: widget.selected == _npcs[index] ?
-          theme.colorScheme.surfaceVariant :
+          theme.colorScheme.surfaceContainerHighest :
           null,
           child: InkWell(
             onTap: () {

@@ -350,7 +350,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
             Container(
               margin: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
               child: Card(
-                color: theme.colorScheme.surfaceVariant,
+                color: theme.colorScheme.surfaceContainerHighest,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Row(
