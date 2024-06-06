@@ -75,6 +75,17 @@ Future<void> saveScenario(Scenario scenario) async {
 Future<void> deleteScenario(String uuid) async {
   var summaryBox = await Hive.openBox('scenarioSummariesBox');
   await summaryBox.delete(uuid);
+
+  var scenario = await getScenario(uuid);
+  for(var npc in scenario.npcs) {
+    await NonPlayerCharacter.deleteLocalModel(npc.id);
+  }
+  var binariesBox = await Hive.openLazyBox('binariesBox');
+  for(var map in scenario.maps) {
+    var hash = sha256.convert(utf8.encode(imageDataToBase64(map.data.imageData)));
+    await binariesBox.delete(hash.toString());
+  }
+
   var scenarioBox = await Hive.openLazyBox('scenariosBox');
   await scenarioBox.delete(uuid);
 }
