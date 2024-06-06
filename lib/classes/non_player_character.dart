@@ -25,7 +25,7 @@ enum NPCCategory {
 }
 
 enum NPCSubCategoryEnum {
-  sansCaste(title: 'Sans caste', categories: [ NPCCategory.scenario, NPCCategory.generique ]),
+  sansCaste(title: 'Sans caste', categories: [ NPCCategory.generique ]),
   ;
 
   final String title;

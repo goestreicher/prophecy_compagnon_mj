@@ -460,6 +460,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                               labelStyle: theme.textTheme.labelSmall,
                             ),
                             dropdownMenuEntries: NPCCategory.values
+                                .where((NPCCategory c) => c != NPCCategory.scenario)
                                 .map((NPCCategory c) => DropdownMenuEntry(value: c, label: c.title))
                                 .toList(),
                             onSelected: (NPCCategory? category) {
