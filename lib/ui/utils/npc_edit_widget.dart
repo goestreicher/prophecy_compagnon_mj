@@ -34,11 +34,15 @@ class NPCEditWidget extends StatefulWidget {
     super.key,
     this.npc,
     this.name,
+    this.category,
+    this.subCategory,
     required this.onEditDone,
   });
 
   final NonPlayerCharacter? npc;
   final String? name;
+  final NPCCategory? category;
+  final NPCSubCategory? subCategory;
   final void Function(NonPlayerCharacter?) onEditDone;
 
   @override
@@ -239,6 +243,9 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
   @override void initState() {
     super.initState();
 
+    _category = widget.category;
+    _subCategory = widget.subCategory;
+
     if(widget.npc != null) {
       _name = widget.npc!.name;
       _category = widget.npc!.category;
@@ -311,6 +318,23 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+
+    var subCategoryDropdownMenuEntries = <DropdownMenuEntry<NPCSubCategory>>[];
+    if(widget.subCategory != null) {
+      subCategoryDropdownMenuEntries.add(
+          DropdownMenuEntry(
+              value: widget.subCategory!,
+              label: widget.subCategory!.title
+          )
+      );
+    }
+    else if(_category != null) {
+      subCategoryDropdownMenuEntries.addAll(
+          NPCSubCategory.subCategoriesForCategory(_category!)
+              .where((NPCSubCategory s) => s.categories.contains(_category))
+              .map((NPCSubCategory s) => DropdownMenuEntry(value: s, label: s.title))
+      );
+    }
 
     var skillsWidgets = <Widget>[];
     for(var s in _skills) {
@@ -425,6 +449,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                           child: DropdownMenu(
                             controller: _categoryController,
                             initialSelection: _category,
+                            enabled: widget.category == null,
                             requestFocusOnTap: true,
                             label: const Text('Catégorie'),
                             textStyle: theme.textTheme.bodySmall,
@@ -452,6 +477,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                           child: DropdownMenu(
                             controller: _subCategoryController,
                             initialSelection: _subCategory,
+                            enabled: widget.subCategory == null,
                             requestFocusOnTap: true,
                             label: const Text('Sous-catégorie'),
                             textStyle: theme.textTheme.bodySmall,
@@ -461,12 +487,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                               contentPadding: const EdgeInsets.all(12.0),
                               labelStyle: theme.textTheme.labelSmall,
                             ),
-                            dropdownMenuEntries: _category == null ?
-                                <DropdownMenuEntry<NPCSubCategory>>[] :
-                                NPCSubCategory.subCategoriesForCategory(_category!)
-                                    .where((NPCSubCategory s) => s.categories.contains(_category))
-                                    .map((NPCSubCategory s) => DropdownMenuEntry(value: s, label: s.title))
-                                    .toList(),
+                            dropdownMenuEntries: subCategoryDropdownMenuEntries,
                             onSelected: (NPCSubCategory? subCategory) {
                               setState(() {
                                 _subCategory = subCategory;
