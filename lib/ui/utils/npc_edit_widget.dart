@@ -971,12 +971,21 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                             );
                             if(skill == null) return;
 
+                            var parentSkillFound = false;
                             for(var s in _skills) {
                               if(s.skill == skill.parent) {
+                                parentSkillFound = true;
                                 setState(() {
                                   s.specializations[skill] = 0;
                                 });
                               }
+                            }
+                            if(!parentSkillFound) {
+                              var parent = SkillInstance(skill: skill.parent, value: 0);
+                              parent.specializations[skill] = 0;
+                              setState(() {
+                                _skills.add(parent);
+                              });
                             }
                           },
                         ),
