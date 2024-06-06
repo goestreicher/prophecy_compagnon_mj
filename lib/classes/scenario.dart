@@ -6,6 +6,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'map_background_data.dart';
+import 'non_player_character.dart';
 import 'scenario_encounter.dart';
 
 part 'scenario.g.dart';
@@ -32,18 +33,35 @@ Future<Scenario> getScenario(String uuid) async {
     map['data']['image_data'] = binary;
   }
 
+  var npcs = <Map<String, dynamic>>[];
+  if(scenarioJson.containsKey('npcs') && scenarioJson['npcs'] is List<dynamic>) {
+    for (dynamic npcId in scenarioJson['npcs'] as List<dynamic>) {
+      var npc = NonPlayerCharacter.get(npcId);
+      npcs.add(npc!.toJson());
+    }
+  }
+  scenarioJson['npcs'] = npcs;
+
   return Scenario.fromJson(scenarioJson);
 }
 
 Future<void> saveScenario(Scenario scenario) async {
   var binariesBox = await Hive.openLazyBox('binariesBox');
   var scenarioJson = scenario.toJson();
+
   for(var map in scenarioJson['maps']) {
     var binary = map['data']['image_data'];
     var hash = sha256.convert(utf8.encode(binary));
     await binariesBox.put(hash.toString(), binary);
     map['data']['image_data'] = hash.toString();
   }
+
+  var npcIds = <String>[];
+  for(var npc in scenarioJson['npcs']) {
+    await NonPlayerCharacter.saveLocalModel(npc);
+    npcIds.add(npc.id);
+  }
+  scenarioJson['npcs'] = json.encode(npcIds);
 
   var scenarioBox = await Hive.openLazyBox('scenariosBox');
   await scenarioBox.put(scenario.uuid, json.encode(scenarioJson));
@@ -118,12 +136,14 @@ class Scenario {
         this.implication = 0,
         this.synopsys = '',
         List<ScenarioMap>? maps,
+        List<NonPlayerCharacter>? npcs,
         List<ScenarioEncounter>? encounters,
         Map<int, List<ScenarioEvent>>? pcEvents,
         Map<int, List<ScenarioEvent>>? worldEvents,
       })
     : uuid = uuid ?? const Uuid().v4().toString(),
       maps = maps ?? <ScenarioMap>[],
+      npcs = npcs ?? <NonPlayerCharacter>[],
       encounters = encounters ?? <ScenarioEncounter>[],
       pcEvents = pcEvents ?? <int, List<ScenarioEvent>>{},
       worldEvents = worldEvents ?? <int, List<ScenarioEvent>>{};
@@ -145,6 +165,7 @@ class Scenario {
   int implication;
   String synopsys;
   final List<ScenarioMap> maps;
+  final List<NonPlayerCharacter> npcs;
   final List<ScenarioEncounter> encounters;
   final Map<int, List<ScenarioEvent>> pcEvents;
   final Map<int, List<ScenarioEvent>> worldEvents;

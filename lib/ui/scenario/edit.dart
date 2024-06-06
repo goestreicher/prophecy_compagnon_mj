@@ -10,6 +10,7 @@ import 'edit_encounters_tab.dart';
 import 'edit_events_tab.dart';
 import 'edit_general_tab.dart';
 import 'edit_maps_tab.dart';
+import 'edit_npcs_tab.dart';
 
 class ScenarioEditPage extends StatefulWidget {
   const ScenarioEditPage({super.key, required this.uuid}) : scenario = null;
@@ -119,7 +120,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
         return Stack(
           children: [
             DefaultTabController(
-              length: 4,
+              length: 5,
               child: Scaffold(
                 appBar: AppBar(
                   title: Text('Scénario: ${_scenario.name}'),
@@ -165,6 +166,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     tabs: [
                       Tab(text: 'Général'),
                       Tab(text: 'Événements'),
+                      Tab(text: 'PNJs'),
                       Tab(text: 'Rencontres'),
                       Tab(text: 'Cartes'),
                     ],
@@ -174,6 +176,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                   children: [
                     ScenarioEditGeneralPage(scenario: _scenario,),
                     const ScenarioEditEventsPage(),
+                    ScenarioEditNPCsPage(npcs: _scenario.npcs, scenarioName: _scenario.name),
                     ScenarioEditEncountersPage(encounters: _scenario.encounters),
                     ScenarioEditMapsPage(maps: _scenario.maps),
                   ],

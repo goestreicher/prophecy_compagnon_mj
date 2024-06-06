@@ -45,6 +45,10 @@ class NPCSubCategory {
     if(_subcat == null && (_title == null || _categories == null)) {
       throw ArgumentError('Either the subcategory or the title and the categories must be given');
     }
+
+    if(_subcat == null && _title != null && _categories != null && _categories.contains(NPCCategory.scenario)) {
+      _scenarioNames.add(this);
+    }
   }
 
   String get title => _subcat != null ? _subcat.title : _title!;
@@ -54,11 +58,14 @@ class NPCSubCategory {
   static List<NPCSubCategory> subCategoriesForCategory(NPCCategory category) {
     var ret = <NPCSubCategory>[];
 
-    if(category != NPCCategory.scenario) {
+    if(category == NPCCategory.scenario) {
+      ret.addAll(_scenarioNames.toList());
+    }
+    else {
       ret.addAll(
-        NPCSubCategoryEnum.values
-          .where((NPCSubCategoryEnum s) => s.categories.contains(category))
-          .map((NPCSubCategoryEnum s) => NPCSubCategory(subcategory: s))
+          NPCSubCategoryEnum.values
+              .where((NPCSubCategoryEnum s) => s.categories.contains(category))
+              .map((NPCSubCategoryEnum s) => NPCSubCategory(subcategory: s))
       );
     }
 
@@ -75,6 +82,8 @@ class NPCSubCategory {
     if(_subcat != null) return _subcat == other._subcat;
     return _title == other._title;
   }
+
+  static final Set<NPCSubCategory> _scenarioNames = <NPCSubCategory>{};
 
   final String? _title;
   final List<NPCCategory>? _categories;

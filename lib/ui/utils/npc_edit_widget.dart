@@ -441,7 +441,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                 maxWidth: 700,
               ),
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
+                padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 12.0),
                 child: Column(
                   children: [
                     Text(
@@ -520,7 +520,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                         Expanded(
                           child: DropdownMenu(
                             controller: _casteController,
-                            initialSelection: _caste,
+                            initialSelection: widget.npc?.caste,
                             requestFocusOnTap: true,
                             label: const Text('Caste'),
                             textStyle: theme.textTheme.bodySmall,
@@ -534,16 +534,11 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                 .map((Caste c) => DropdownMenuEntry(value: c, label: c.title))
                                 .toList(),
                             onSelected: (Caste? caste) {
+                              if(caste == null) return;
                               setState(() {
-                                if(caste == null) {
-                                  _caste = Caste.sansCaste;
-                                }
-                                else {
-                                  _caste = caste;
-                                }
-                                _casteStatus = CasteStatus.none;
-                                _casteController.clear();
+                                _caste = caste;
                                 _updateCasteStatusLabels();
+                                _casteStatusController.text = Caste.statusName(_caste, _casteStatus);
                               });
                             },
                           ),
@@ -552,7 +547,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                         Expanded(
                           child: DropdownMenu(
                             controller: _casteStatusController,
-                            initialSelection: _casteStatus,
+                            initialSelection: widget.npc?.casteStatus,
                             requestFocusOnTap: true,
                             label: const Text('Statut de Caste'),
                             textStyle: theme.textTheme.bodySmall,
@@ -566,13 +561,9 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                 .map((CasteStatus s) => DropdownMenuEntry(value: s, label: _casteStatusLabels[s]!))
                                 .toList(),
                             onSelected: (CasteStatus? status) {
+                              if(status == null) return;
                               setState(() {
-                                if(status == null) {
-                                  _casteStatus = CasteStatus.none;
-                                }
-                                else {
-                                  _casteStatus = status;
-                                }
+                                _casteStatus = status;
                               });
                             },
                           ),
