@@ -171,7 +171,6 @@ class NonPlayerCharacter extends HumanCharacter {
       );
     }
     else {
-      print(json['categories'].runtimeType);
       List<NPCCategory> categories = (json['categories'] as List<dynamic>)
           .map((dynamic name) => NPCCategory.values.byName(name as String))
           .toList();
