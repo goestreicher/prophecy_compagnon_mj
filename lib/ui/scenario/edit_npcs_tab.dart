@@ -140,6 +140,10 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                   Expanded(
                     child: NPCListWidget(
                       category: NPCCategory.scenario,
+                      subCategory: NPCSubCategory(
+                        title: widget.scenarioName,
+                        categories: [ NPCCategory.scenario ],
+                      ),
                       selected: _selected,
                       onSelected: (NonPlayerCharacter model) {
                         setState(() {
