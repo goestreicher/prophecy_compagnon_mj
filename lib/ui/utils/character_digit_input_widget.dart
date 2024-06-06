@@ -25,11 +25,18 @@ class CharacterDigitInputWidget extends StatefulWidget {
 
 class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
   final TextEditingController _controller = TextEditingController();
+  late int _current;
+
+  @override
+  void initState() {
+    super.initState();
+    _current = widget.initialValue;
+  }
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    _controller.text = widget.initialValue.toString();
+    _controller.text = _current.toString();
 
     return TextFormField(
       controller: _controller,
@@ -49,8 +56,10 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
             int? input = int.tryParse(_controller.text);
             if(input == null) return;
             if(input > widget.minValue) {
-              widget.onChanged(input - 1);
-              _controller.text = (input - 1).toString();
+              setState(() {
+                _current = input - 1;
+              });
+              widget.onChanged(_current);
             }
           },
           child: const Icon(
@@ -65,8 +74,10 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
             int? input = int.tryParse(_controller.text);
             if(input == null) return;
             if(input < widget.maxValue) {
-              widget.onChanged(input + 1);
-              _controller.text = (input + 1).toString();
+              setState(() {
+                _current = input + 1;
+              });
+              widget.onChanged(_current);
             }
           },
           child: const Icon(
@@ -94,7 +105,10 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
         if(value == null) return;
         int? input = int.tryParse(value);
         if(input == null) return;
-        widget.onChanged(input);
+        setState(() {
+          _current = input;
+        });
+        widget.onChanged(_current);
       },
     );
   }
