@@ -50,10 +50,13 @@ class NPCDisplayWidget extends StatelessWidget {
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      npc.name,
-                      style: theme.textTheme.headlineMedium!.copyWith(
-                        fontWeight: FontWeight.bold,
+                    Expanded(
+                      child: Text(
+                        npc.name,
+                        softWrap: true,
+                        style: theme.textTheme.headlineMedium!.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                     const SizedBox(width: 8.0),

@@ -378,10 +378,13 @@ class _CreatureDisplayWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    creature.name,
-                    style: theme.textTheme.headlineMedium!.copyWith(
-                      fontWeight: FontWeight.bold,
+                  Expanded(
+                    child: Text(
+                      creature.name,
+                      softWrap: true,
+                      style: theme.textTheme.headlineMedium!.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 8.0),
