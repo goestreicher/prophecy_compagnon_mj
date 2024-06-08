@@ -80,6 +80,7 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
           onDelete: () {
             setState(() {
               NonPlayerCharacter.deleteLocalModel(_selected!.id);
+              widget.npcs.remove(_selected);
               _selected = null;
             });
           },
