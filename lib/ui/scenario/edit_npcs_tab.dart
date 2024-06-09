@@ -76,6 +76,7 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
           },
           onCloneEditRequested: (NonPlayerCharacter clone) {
             setState(() {
+              _newNPCName = clone.name;
               _selected = clone;
               _editing = true;
             });
