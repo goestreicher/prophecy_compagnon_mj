@@ -5,6 +5,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+import 'creature.dart';
 import 'map_background_data.dart';
 import 'non_player_character.dart';
 import 'scenario_encounter.dart';
@@ -35,12 +36,21 @@ Future<Scenario> getScenario(String uuid) async {
 
   var npcs = <Map<String, dynamic>>[];
   if(scenarioJson.containsKey('npcs') && scenarioJson['npcs'] is List<dynamic>) {
-    for (dynamic npcId in scenarioJson['npcs'] as List<dynamic>) {
+    for(dynamic npcId in scenarioJson['npcs'] as List<dynamic>) {
       var npc = NonPlayerCharacter.get(npcId);
       npcs.add(json.decode(json.encode(npc!.toJson())));
     }
   }
   scenarioJson['npcs'] = npcs;
+
+  var creatures = <Map<String, dynamic>>[];
+  if(scenarioJson.containsKey('creatures') && scenarioJson['creatures'] is List<dynamic>) {
+    for(dynamic creatureId in scenarioJson['creatures'] as List<dynamic>) {
+      var creature = CreatureModel.get(creatureId);
+      creatures.add(json.decode(json.encode(creature!.toJson())));
+    }
+  }
+  scenarioJson['creatures'] = creatures;
 
   return Scenario.fromJson(scenarioJson);
 }
@@ -63,6 +73,13 @@ Future<void> saveScenario(Scenario scenario) async {
   }
   scenarioJson['npcs'] = npcIds;
 
+  var creatureIds = <String>[];
+  for(var creature in scenario.creatures) {
+    await CreatureModel.saveLocalModel(creature);
+    creatureIds.add(creature.id);
+  }
+  scenarioJson['creatures'] = creatureIds;
+
   var scenarioBox = await Hive.openLazyBox('scenariosBox');
   await scenarioBox.put(scenario.uuid, json.encode(scenarioJson));
 
@@ -79,6 +96,9 @@ Future<void> deleteScenario(String uuid) async {
   var scenario = await getScenario(uuid);
   for(var npc in scenario.npcs) {
     await NonPlayerCharacter.deleteLocalModel(npc.id);
+  }
+  for(var creature in scenario.creatures) {
+    await CreatureModel.deleteLocalModel(creature.id);
   }
   var binariesBox = await Hive.openLazyBox('binariesBox');
   for(var map in scenario.maps) {
@@ -148,6 +168,7 @@ class Scenario {
         this.synopsys = '',
         List<ScenarioMap>? maps,
         List<NonPlayerCharacter>? npcs,
+        List<CreatureModel>? creatures,
         List<ScenarioEncounter>? encounters,
         Map<int, List<ScenarioEvent>>? pcEvents,
         Map<int, List<ScenarioEvent>>? worldEvents,
@@ -155,6 +176,7 @@ class Scenario {
     : uuid = uuid ?? const Uuid().v4().toString(),
       maps = maps ?? <ScenarioMap>[],
       npcs = npcs ?? <NonPlayerCharacter>[],
+      creatures = creatures ?? <CreatureModel>[],
       encounters = encounters ?? <ScenarioEncounter>[],
       pcEvents = pcEvents ?? <int, List<ScenarioEvent>>{},
       worldEvents = worldEvents ?? <int, List<ScenarioEvent>>{};
@@ -177,6 +199,7 @@ class Scenario {
   String synopsys;
   final List<ScenarioMap> maps;
   final List<NonPlayerCharacter> npcs;
+  final List<CreatureModel> creatures;
   final List<ScenarioEncounter> encounters;
   final Map<int, List<ScenarioEvent>> pcEvents;
   final Map<int, List<ScenarioEvent>> worldEvents;

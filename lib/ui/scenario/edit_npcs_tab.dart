@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prophecy_compagnon_mj/ui/utils/npc_display_widget.dart';
 
 import '../../classes/non_player_character.dart';
+import '../utils/npc_display_widget.dart';
 import '../utils/npc_edit_widget.dart';
 import '../utils/npc_list_widget.dart';
 import '../utils/single_line_input_dialog.dart';
@@ -12,10 +12,12 @@ class ScenarioEditNPCsPage extends StatefulWidget {
     super.key,
     required this.npcs,
     required this.scenarioName,
+    required this.onNPCCommitted,
   });
 
   final List<NonPlayerCharacter> npcs;
   final String scenarioName;
+  final void Function() onNPCCommitted;
 
   @override
   State<ScenarioEditNPCsPage> createState() => _ScenarioEditNPCsPageState();
@@ -52,6 +54,7 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                 }
                 _selected = npc;
               }
+              widget.onNPCCommitted();
               _editing = false;
             });
           },
@@ -79,6 +82,7 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
           },
           onDelete: () {
             setState(() {
+              widget.onNPCCommitted();
               NonPlayerCharacter.deleteLocalModel(_selected!.id);
               widget.npcs.remove(_selected);
               _selected = null;

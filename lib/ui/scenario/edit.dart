@@ -6,6 +6,7 @@ import 'package:sticky_grouped_list/sticky_grouped_list.dart';
 
 import '../../classes/scenario.dart';
 import '../../classes/scenario_encounter.dart';
+import 'edit_creatures_tab.dart';
 import 'edit_encounters_tab.dart';
 import 'edit_events_tab.dart';
 import 'edit_general_tab.dart';
@@ -120,7 +121,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
         return Stack(
           children: [
             DefaultTabController(
-              length: 5,
+              length: 6,
               child: Scaffold(
                 appBar: AppBar(
                   title: Text('Scénario: ${_scenario.name}'),
@@ -167,6 +168,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       Tab(text: 'Général'),
                       Tab(text: 'Événements'),
                       Tab(text: 'PNJs'),
+                      Tab(text: 'Créatures'),
                       Tab(text: 'Rencontres'),
                       Tab(text: 'Cartes'),
                     ],
@@ -174,9 +176,26 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                 ),
                 body: TabBarView(
                   children: [
-                    ScenarioEditGeneralPage(scenario: _scenario,),
+                    ScenarioEditGeneralPage(scenario: _scenario),
                     const ScenarioEditEventsPage(),
-                    ScenarioEditNPCsPage(npcs: _scenario.npcs, scenarioName: _scenario.name),
+                    ScenarioEditNPCsPage(
+                      npcs: _scenario.npcs,
+                      scenarioName: _scenario.name,
+                      onNPCCommitted: () {
+                        setState(() {
+                          _canCancel = false;
+                        });
+                      },
+                    ),
+                    ScenarioEditCreaturesPage(
+                      creatures: _scenario.creatures,
+                      scenarioName: _scenario.name,
+                      onCreatureCommitted: () {
+                        setState(() {
+                          _canCancel = false;
+                        });
+                      },
+                    ),
                     ScenarioEditEncountersPage(encounters: _scenario.encounters),
                     ScenarioEditMapsPage(maps: _scenario.maps),
                   ],

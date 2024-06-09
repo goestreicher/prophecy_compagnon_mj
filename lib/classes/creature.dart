@@ -63,6 +63,7 @@ class CreatureModel extends EncounterEntityModel {
       {
         required this.name,
         required this.category,
+        required this.source,
         this.description = '',
         required this.biome,
         required this.size,
@@ -91,6 +92,7 @@ class CreatureModel extends EncounterEntityModel {
     bool editable = false;
   final String name;
   CreatureCategory category;
+  String source;
   String description;
   String biome;
   String size;
@@ -253,6 +255,12 @@ class CreatureModel extends EncounterEntityModel {
     return ret;
   }
 
+  static List<CreatureModel> forSource(String source, CreatureCategory? category) {
+    return _models.values
+        .where((CreatureModel c) => c.source == source && (category == null || c.category == category!))
+        .toList();
+  }
+
   static EncounterEntityModel? _modelFactory(String id) {
     return _models[id];
   }
@@ -302,6 +310,7 @@ class CreatureModel extends EncounterEntityModel {
 
   static bool _defaultAssetsLoaded = false;
   static final Map<String, CreatureModel> _models = <String, CreatureModel>{};
+  static const String localCreatureSource = 'LOCAL_CREATED';
 
   factory CreatureModel.fromJson(Map<String, dynamic> json) => _$CreatureModelFromJson(json);
   Map<String, dynamic> toJson() => _$CreatureModelToJson(this);

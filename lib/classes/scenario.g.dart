@@ -60,6 +60,9 @@ Scenario _$ScenarioFromJson(Map<String, dynamic> json) => Scenario(
       npcs: (json['npcs'] as List<dynamic>?)
           ?.map((e) => NonPlayerCharacter.fromJson(e as Map<String, dynamic>))
           .toList(),
+      creatures: (json['creatures'] as List<dynamic>?)
+          ?.map((e) => CreatureModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
       encounters: (json['encounters'] as List<dynamic>?)
           ?.map((e) => ScenarioEncounter.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -90,6 +93,7 @@ Map<String, dynamic> _$ScenarioToJson(Scenario instance) => <String, dynamic>{
       'synopsys': instance.synopsys,
       'maps': instance.maps.map((e) => e.toJson()).toList(),
       'npcs': instance.npcs.map((e) => e.toJson()).toList(),
+      'creatures': instance.creatures.map((e) => e.toJson()).toList(),
       'encounters': instance.encounters.map((e) => e.toJson()).toList(),
       'pc_events': instance.pcEvents.map(
           (k, e) => MapEntry(k.toString(), e.map((e) => e.toJson()).toList())),
