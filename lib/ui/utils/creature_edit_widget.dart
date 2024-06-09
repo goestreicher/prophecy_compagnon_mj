@@ -225,6 +225,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                       SizedBox(
                         width: 80,
                         child: CharacterDigitInputWidget(
+                          key: UniqueKey(),
                           initialValue: s.specializations[sp]!,
                           minValue: 0,
                           onChanged: (int value) {
@@ -266,6 +267,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                             SizedBox(
                               width: 80,
                               child: CharacterDigitInputWidget(
+                                key: UniqueKey(),
                                 initialValue: s.value,
                                 minValue: 0,
                                 onChanged: (int value) {

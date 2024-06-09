@@ -372,6 +372,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                       SizedBox(
                         width: 80,
                         child: CharacterDigitInputWidget(
+                          key: UniqueKey(),
                           initialValue: s.specializations[sp]!,
                           minValue: 0,
                           onChanged: (int value) {
@@ -413,6 +414,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                             SizedBox(
                               width: 80,
                               child: CharacterDigitInputWidget(
+                                key: UniqueKey(),
                                 initialValue: s.value,
                                 minValue: 0,
                                 onChanged: (int value) {
