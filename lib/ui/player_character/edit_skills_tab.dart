@@ -86,7 +86,20 @@ class _SkillFamilyEditWidgetState extends State<SkillFamilyEditWidget> {
         childrenPadding: const EdgeInsets.only(bottom: 4.0),
         children: [
           for(var s in widget.character.skillsForFamily(widget.family))
-            SkillEditWidget(character: widget.character, skill: s.skill),
+            SkillEditWidget(
+              character: widget.character,
+              skill: s.skill,
+              onDeleteSkill: () {
+                setState(() {
+                  widget.character.deleteSkill(s.skill);
+                });
+              },
+              onDeleteSpecialization: (SpecializedSkill sp) {
+                setState(() {
+                  widget.character.deleteSpecializedSkill(sp);
+                });
+              },
+            ),
           const SizedBox(height: 8.0),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -165,10 +178,14 @@ class SkillEditWidget extends StatelessWidget {
     super.key,
     required this.character,
     required this.skill,
+    required this.onDeleteSkill,
+    required this.onDeleteSpecialization,
   });
 
   final EntityBase character;
   final Skill skill;
+  final void Function() onDeleteSkill;
+  final void Function(SpecializedSkill) onDeleteSpecialization;
   final TextEditingController _controller = TextEditingController();
 
   @override
@@ -199,6 +216,12 @@ class SkillEditWidget extends StatelessWidget {
             children: [
               Row(
                   children: [
+                    IconButton(
+                      icon: const Icon(Icons.delete),
+                      onPressed: () {
+                        onDeleteSkill();
+                      },
+                    ),
                     Text(
                       skill.title,
                       style: theme.textTheme.bodyMedium,
@@ -273,7 +296,13 @@ class SkillEditWidget extends StatelessWidget {
                   ]
               ),
               for(var sp in character.allSpecializedSkills(skill))
-                SpecializedSkillEditWidget(character: character, skill: sp),
+                SpecializedSkillEditWidget(
+                  character: character,
+                  skill: sp,
+                  onDelete: () {
+                    onDeleteSpecialization(sp);
+                  }
+                ),
             ],
           ),
         ),
@@ -287,10 +316,12 @@ class SpecializedSkillEditWidget extends StatelessWidget {
     super.key,
     required this.character,
     required this.skill,
+    required this.onDelete,
   });
 
   final EntityBase character;
   final SpecializedSkill skill;
+  final void Function() onDelete;
   final TextEditingController _controller = TextEditingController();
 
   @override
@@ -318,6 +349,12 @@ class SpecializedSkillEditWidget extends StatelessWidget {
           child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                IconButton(
+                  icon: const Icon(Icons.delete),
+                  onPressed: () {
+                    onDelete();
+                  },
+                ),
                 Text(
                   skill.title,
                   style: theme.textTheme.bodyMedium,
