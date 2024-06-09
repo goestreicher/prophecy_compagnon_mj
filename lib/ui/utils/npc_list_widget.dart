@@ -31,8 +31,8 @@ class _NPCListWidgetState extends State<NPCListWidget> {
     }
     else {
       _npcs = NonPlayerCharacter.forCategory(widget.category, widget.subCategory);
-      _npcs.sort((a, b) => a.id.compareTo(b.id));
     }
+    _npcs.sort((a, b) => a.id.compareTo(b.id));
   }
 
   @override
