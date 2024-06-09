@@ -226,7 +226,8 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
                     _specializedSkills = SpecializedSkill
                         .withParent(_currentSkill!)
                         .where((SpecializedSkill s) => !s.reserved)
-                        .toList();
+                        .toList()
+                        ..sort((a, b) => a.title.compareTo(b.title));
                   }
                 });
               },
