@@ -30,12 +30,17 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
             requestFocusOnTap: true,
             label: const Text('Type'),
             expandedInsets: EdgeInsets.zero,
-            dropdownMenuEntries:
-            Skill.fromFamily(SkillFamily.combat)
-            // TODO: this static filtering is a bit dirty...
+            dropdownMenuEntries: Skill.fromFamily(SkillFamily.combat)
+                // TODO: this static filtering is a bit dirty...
                 .where((Skill s) => s.canInstantiate && s != Skill.bouclier)
                 .map((Skill s) => DropdownMenuEntry(value: s, label: s.title))
-                .toList(),
+                .toList()
+                ..add(
+                  DropdownMenuEntry(
+                    value: Skill.armesAProjectiles,
+                    label: Skill.armesAProjectiles.title
+                  )
+                ),
             onSelected: (Skill? s) {
               var weapons = <WeaponModel>[];
               if(s != null) {
@@ -56,8 +61,9 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
             requestFocusOnTap: true,
             label: const Text('Arme'),
             expandedInsets: EdgeInsets.zero,
-            dropdownMenuEntries:
-            _weapons.map((WeaponModel w) => DropdownMenuEntry(value: w, label: w.name)).toList(),
+            dropdownMenuEntries: _weapons
+                .map((WeaponModel w) => DropdownMenuEntry(value: w, label: w.name))
+                .toList(),
             onSelected: (WeaponModel? w) {
               if(w == null) return;
               _weaponId = w.id;
