@@ -152,7 +152,8 @@ class _SkillFamilyEditWidgetState extends State<SkillFamilyEditWidget> {
                         return SpecializedSkillPickerDialog(
                           skills: Skill.fromFamily(widget.family)
                               .where((Skill s) => s.requireSpecialization || characterSkills.contains(s))
-                              .toList(),
+                              .toList()
+                              ..sort((Skill a, Skill b) => a.title.compareTo(b.title)),
                         );
                       }
                   );

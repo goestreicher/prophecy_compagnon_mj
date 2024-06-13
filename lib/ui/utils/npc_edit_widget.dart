@@ -968,7 +968,8 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                     SpecializedSkillPickerDialog(
                                       skills: Skill.values
                                           .where((Skill s) => s.requireSpecialization || _skills.any((SkillInstance si) => s == si.skill))
-                                          .toList(),
+                                          .toList()
+                                          ..sort((Skill a, Skill b) => a.title.compareTo(b.title)),
                                     )
                             );
                             if(skill == null) return;

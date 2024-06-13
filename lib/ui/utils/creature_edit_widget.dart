@@ -539,7 +539,8 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                                     SpecializedSkillPickerDialog(
                                       skills: Skill.values
                                           .where((Skill s) => s.requireSpecialization || _skills.any((SkillInstance si) => s == si.skill))
-                                          .toList(),
+                                          .toList()
+                                          ..sort((Skill a, Skill b) => a.title.compareTo(b.title)),
                                       reservedPrefix: 'creature:$creatureId:specialized:misc',
                                     )
                             );
