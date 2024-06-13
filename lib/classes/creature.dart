@@ -257,7 +257,7 @@ class CreatureModel extends EncounterEntityModel {
 
   static List<CreatureModel> forSource(String source, CreatureCategory? category) {
     return _models.values
-        .where((CreatureModel c) => c.source == source && (category == null || c.category == category!))
+        .where((CreatureModel c) => c.source == source && (category == null || c.category == category))
         .toList();
   }
 
