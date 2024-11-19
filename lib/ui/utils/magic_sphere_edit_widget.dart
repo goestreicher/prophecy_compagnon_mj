@@ -24,8 +24,9 @@ class MagicSphereEditWidget extends StatefulWidget {
 }
 
 class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
-  late int _value;
-  late int _pool;
+  int _value = 0;
+  int _pool = 0;
+  final _poolController = TextEditingController();
 
   @override
   void initState() {
@@ -64,10 +65,14 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
                     onChanged: (int value) {
                       var old = _value;
                       var delta = value - old;
+                      if(_pool + delta < 0) {
+                        delta = _pool;
+                      }
 
                       setState(() {
                         _value = value;
                         _pool = _pool + delta;
+                        _poolController.text = _pool.toString();
                       });
 
                       widget.onValueChanged(_value);
@@ -83,6 +88,7 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
                     initialValue: _pool,
                     minValue: 0,
                     maxValue: 15,
+                    controller: _poolController,
                     onChanged: (int value) {
                       setState(() {
                         _pool = value;

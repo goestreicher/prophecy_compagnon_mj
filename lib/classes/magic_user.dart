@@ -7,7 +7,10 @@ mixin MagicUser {
   void setMagicSkill(MagicSkill skill, int value) => _magicSkills[skill] = value;
 
   int magicSphere(MagicSphere sphere) => _magicSpheres[sphere]!;
-  void setMagicSphere(MagicSphere sphere, int value) => _magicSpheres[sphere] = value;
+  void setMagicSphere(MagicSphere sphere, int value) {
+    setMagicSpherePool(sphere, magicSpherePool(sphere) + value - magicSphere(sphere));
+    _magicSpheres[sphere] = value;
+  }
 
   int magicSpherePool(MagicSphere sphere) => _magicSpherePools[sphere]!;
   void setMagicSpherePool(MagicSphere sphere, int value) => _magicSpherePools[sphere] = value;
