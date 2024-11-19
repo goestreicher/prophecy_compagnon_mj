@@ -61,10 +61,10 @@ class _TablesListPageState extends State<TablesListPage> {
                 child: InkWell(
                   splashColor: theme.colorScheme.surface,
                   onTap: () async {
-                    bool changeConfirmed = await Navigator.of(context).push(
+                    bool? changeConfirmed = await Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => TableEditPage(uuid: tableSummaries[index].uuid))
                     );
-                    if(changeConfirmed) {
+                    if(changeConfirmed != null && changeConfirmed) {
                       setState((){ loadTableSummaries(); });
                     }
                   },

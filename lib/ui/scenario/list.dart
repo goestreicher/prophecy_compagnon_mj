@@ -63,14 +63,14 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                   child: InkWell(
                     splashColor: theme.colorScheme.surface,
                     onTap: () async {
-                      bool changeConfirmed = await Navigator.of(context).push(
+                      bool? changeConfirmed = await Navigator.of(context).push(
                           MaterialPageRoute(builder: (context) =>
                               ScenarioEditPage(
                                   uuid: scenarioSummaries[index].uuid
                               )
                           )
                       );
-                      if (changeConfirmed) {
+                      if (changeConfirmed != null && changeConfirmed) {
                         setState(() {
                           loadScenarioSummaries();
                         });

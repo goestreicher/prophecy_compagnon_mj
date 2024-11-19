@@ -65,54 +65,58 @@ class _TableEditPageState extends State<TableEditPage> {
           );
         }
         else {
-          mainArea = ListView.builder(
-            padding: const EdgeInsets.all(12),
-            itemCount: _table.playerSummaries.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Card(
-                clipBehavior: Clip.hardEdge,
-                child: InkWell(
-                  splashColor: theme.colorScheme.surface,
-                  onTap: () async {
-                    var saved = await Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => PlayerCharacterEditPage(uuid: _table.playerSummaries[index].uuid)),
-                    );
-                    if(saved != null && saved) {
-                      setState(() {
-                        _isWorking = true;
-                      });
-                      await pc.saveGameTable(_table);
-                      setState(() {
-                        _isWorking = false;
-                      });
-                    }
-                  },
-                  child: ListTile(
-                    title: Text(_table.playerSummaries[index].name),
-                    subtitle: Text(
-                        'Caste: ${_table.playerSummaries[index].caste.title} '
-                        '(${Caste.statusName(_table.playerSummaries[index].caste, _table.playerSummaries[index].casteStatus)})'
-                    ),
-                    trailing: IconButton(
-                      icon: const Icon(Icons.delete),
-                      onPressed: () async {
-                        // TODO: ask confirmation maybe?
-                        setState(() {
-                          _canCancel = false;
-                          _isWorking = true;
-                        });
-                        await deletePlayerCharacter(_table.playerSummaries[index].uuid);
-                        _table.playerSummaries.removeAt(index);
-                        await pc.saveGameTable(_table);
-                        setState(() {
-                          _isWorking = false;
-                        });
+          mainArea = Stack(
+            children: [
+              ListView.builder(
+                padding: const EdgeInsets.all(12),
+                itemCount: _table.playerSummaries.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Card(
+                    clipBehavior: Clip.hardEdge,
+                    child: InkWell(
+                      splashColor: theme.colorScheme.surface,
+                      onTap: () async {
+                        var saved = await Navigator.of(context).push(
+                          MaterialPageRoute(builder: (context) => PlayerCharacterEditPage(uuid: _table.playerSummaries[index].uuid)),
+                        );
+                        if(saved != null && saved) {
+                          setState(() {
+                            _isWorking = true;
+                          });
+                          await pc.saveGameTable(_table);
+                          setState(() {
+                            _isWorking = false;
+                          });
+                        }
                       },
+                      child: ListTile(
+                        title: Text(_table.playerSummaries[index].name),
+                        subtitle: Text(
+                            'Caste: ${_table.playerSummaries[index].caste.title} '
+                            '(${Caste.statusName(_table.playerSummaries[index].caste, _table.playerSummaries[index].casteStatus)})'
+                        ),
+                        trailing: IconButton(
+                          icon: const Icon(Icons.delete),
+                          onPressed: () async {
+                            // TODO: ask confirmation maybe?
+                            setState(() {
+                              _canCancel = false;
+                              _isWorking = true;
+                            });
+                            await deletePlayerCharacter(_table.playerSummaries[index].uuid);
+                            _table.playerSummaries.removeAt(index);
+                            await pc.saveGameTable(_table);
+                            setState(() {
+                              _isWorking = false;
+                            });
+                          },
+                        )
+                      ),
                     )
-                  ),
-                )
-              );
-            }
+                  );
+                }
+              ),
+            ],
           );
         }
 
@@ -121,28 +125,122 @@ class _TableEditPageState extends State<TableEditPage> {
             Scaffold(
               appBar: AppBar(
                 title: Text('Table: ${_table.name}'),
-                leading: IconButton(
-                  icon: const Icon(Icons.download),
-                  onPressed: () async {
-                    setState(() {
-                      _isWorking = true;
-                    });
-                    var jsonFull = await _table.toJsonFull();
-                    var jsonStr = json.encode(jsonFull);
-                    setState(() {
-                      _isWorking = false;
-                    });
-                    await FileSaver.instance.saveFile(
-                      name: 'table_${_table.uuid}.json',
-                      bytes: utf8.encode(jsonStr),
-                    );
-                  },
-                ),
-                automaticallyImplyLeading: false,
                 actions: <Widget>[
                   IconButton(
-                    icon: const Icon(Icons.publish),
-                    tooltip: 'Importer un PJ',
+                    icon: const Icon(Icons.download),
+                    tooltip: 'Exporter la table',
+                    onPressed: () async {
+                      setState(() {
+                        _isWorking = true;
+                      });
+                      var jsonFull = await _table.toJsonFull();
+                      var jsonStr = json.encode(jsonFull);
+                      setState(() {
+                        _isWorking = false;
+                      });
+                      await FileSaver.instance.saveFile(
+                        name: 'table_${_table.uuid}.json',
+                        bytes: utf8.encode(jsonStr),
+                      );
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.close),
+                    tooltip: 'Annuler',
+                    onPressed: !_canCancel
+                      ? null
+                      : () {
+                      Navigator.of(context).pop(false);
+                    },
+                  ),
+                  IconButton(
+                    icon: const Icon(Icons.check),
+                    tooltip: 'Valider',
+                    onPressed: () async {
+                      setState(() {
+                        _isWorking = true;
+                      });
+                      await pc.saveGameTable(_table);
+                      setState(() {
+                        _isWorking = false;
+                      });
+
+                      if(!context.mounted) return;
+                      Navigator.of(context).pop(true);
+                    },
+                  )
+                ],
+              ),
+              body: mainArea,
+            ),
+            Positioned(
+              bottom: 16.0,
+              right: 16.0,
+              child: MenuAnchor(
+                style: const MenuStyle(
+                  alignment: Alignment.topLeft,
+                ),
+                alignmentOffset: const Offset(-100, 10),
+                builder: (BuildContext context, MenuController controller, Widget? child) {
+                  return IconButton.filled(
+                    icon: const Icon(Icons.add),
+                    padding: const EdgeInsets.all(12.0),
+                    tooltip: 'Créer / Importer',
+                    onPressed: () {
+                      if(controller.isOpen) {
+                        controller.close();
+                      }
+                      else {
+                        controller.open();
+                      }
+                    },
+                  );
+                },
+                menuChildren: [
+                  MenuItemButton(
+                    child: const Row(
+                      children: [
+                        Icon(Icons.create),
+                        SizedBox(width: 4.0),
+                        Text('Nouveau PJ'),
+                      ],
+                    ),
+                    onPressed: () async {
+                      PlayerCharacter? character = await showDialog(
+                        context: context,
+                        builder: (context) => NewPlayerCharacterDialog(
+                          formKey: _newPlayerCharacterForm,
+                        ),
+                      );
+                      // User canceled the pop-up dialog
+                      if(character == null) return;
+
+
+                      if(!context.mounted) return;
+                      var saved = await Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => PlayerCharacterEditPage.immediate(character: character)),
+                      );
+                      if(saved != null && saved) {
+                        setState(() {
+                          _canCancel = false;
+                          _isWorking = true;
+                        });
+                        _table.playerSummaries.add(character.summary());
+                        await pc.saveGameTable(_table);
+                        setState(() {
+                          _isWorking = false;
+                        });
+                      }
+                    },
+                  ),
+                  MenuItemButton(
+                    child: const Row(
+                      children: [
+                        Icon(Icons.publish),
+                        SizedBox(width: 4.0),
+                        Text('Importer un PJ'),
+                      ],
+                    ),
                     onPressed: () async {
                       var result = await FilePicker.platform.pickFiles(
                         type: FileType.custom,
@@ -173,67 +271,8 @@ class _TableEditPageState extends State<TableEditPage> {
                       }
                     },
                   ),
-                  IconButton(
-                    icon: const Icon(Icons.close),
-                    tooltip: 'Annuler',
-                    onPressed: !_canCancel
-                      ? null
-                      : () {
-                      Navigator.of(context).pop(false);
-                    },
-                  ),
-                  IconButton(
-                    icon: const Icon(Icons.check),
-                    tooltip: 'Valider',
-                    onPressed: () async {
-                      setState(() {
-                        _isWorking = true;
-                      });
-                      await pc.saveGameTable(_table);
-                      setState(() {
-                        _isWorking = false;
-                      });
-
-                      if(!context.mounted) return;
-                      Navigator.of(context).pop(true);
-                    },
-                  )
                 ],
               ),
-              floatingActionButton: FloatingActionButton.extended(
-                backgroundColor: theme.colorScheme.primary,
-                foregroundColor: theme.colorScheme.onPrimary,
-                icon: const Icon(Icons.add),
-                label: const Text('Nouveau PJ'),
-                onPressed: () async {
-                  PlayerCharacter? character = await showDialog(
-                    context: context,
-                    builder: (context) => NewPlayerCharacterDialog(
-                      formKey: _newPlayerCharacterForm,
-                    ),
-                  );
-                  // User canceled the pop-up dialog
-                  if(character == null) return;
-
-
-                  if(!context.mounted) return;
-                  var saved = await Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => PlayerCharacterEditPage.immediate(character: character)),
-                  );
-                  if(saved != null && saved) {
-                    setState(() {
-                      _canCancel = false;
-                      _isWorking = true;
-                    });
-                    _table.playerSummaries.add(character.summary());
-                    await pc.saveGameTable(_table);
-                    setState(() {
-                      _isWorking = false;
-                    });
-                  }
-                },
-              ),
-              body: mainArea,
             ),
             if(_isWorking)
               const Opacity(

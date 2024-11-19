@@ -125,18 +125,18 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
               child: Scaffold(
                 appBar: AppBar(
                   title: Text('Scénario: ${_scenario.name}'),
-                  leading: IconButton(
-                    icon: const Icon(Icons.download),
-                    onPressed: () async {
-                      var jsonStr = json.encode(_scenario.toJson());
-                      await FileSaver.instance.saveFile(
-                        name: 'scenario_${_scenario.uuid}.json',
-                        bytes: utf8.encode(jsonStr),
-                      );
-                    },
-                  ),
-                  automaticallyImplyLeading: false,
                   actions: <Widget>[
+                    IconButton(
+                      icon: const Icon(Icons.download),
+                      tooltip: 'Exporter le scénario',
+                      onPressed: () async {
+                        var jsonStr = json.encode(_scenario.toJson());
+                        await FileSaver.instance.saveFile(
+                          name: 'scenario_${_scenario.uuid}.json',
+                          bytes: utf8.encode(jsonStr),
+                        );
+                      },
+                    ),
                     IconButton(
                       icon: const Icon(Icons.close),
                       tooltip: 'Annuler',
