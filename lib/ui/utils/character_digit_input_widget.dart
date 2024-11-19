@@ -31,12 +31,12 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
   void initState() {
     super.initState();
     _current = widget.initialValue;
+    _controller.text = _current.toString();
   }
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    _controller.text = _current.toString();
 
     return TextFormField(
       controller: _controller,
@@ -58,6 +58,7 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
             if(input > widget.minValue) {
               setState(() {
                 _current = input - 1;
+                _controller.text = _current.toString();
               });
               widget.onChanged(_current);
             }
@@ -76,6 +77,7 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
             if(input < widget.maxValue) {
               setState(() {
                 _current = input + 1;
+                _controller.text = _current.toString();
               });
               widget.onChanged(_current);
             }
