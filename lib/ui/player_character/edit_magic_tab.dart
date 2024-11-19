@@ -217,37 +217,33 @@ class _MagicSpheresEditWidget extends StatelessWidget {
               border: Border.all(color: Colors.black54),
               borderRadius: BorderRadius.circular(5.0),
             ),
-            child: Row(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                for(var i = 0; i < 3; ++i)
-                  Expanded(
-                    child: Container(
-                      margin: EdgeInsets.fromLTRB((i == 0 ? 0 : 24), 0, 0, 0),
-                      child: Column(
-                        children: [
-                          for(var j = 0; j < 3; ++j)
-                            Container(
-                              margin: EdgeInsets.fromLTRB(0, 0, 0, (j == 2 ? 0 : 16)),
-                              child: Expanded(
-                                child: MagicSphereEditWidget(
-                                  sphere: MagicSphere.values[i+j*3],
-                                  value: character.magicSphere(MagicSphere.values[i+j*3]),
-                                  pool: character.magicSpherePool(MagicSphere.values[i+j*3]),
-                                  onValueChanged: (int value) {
-                                    character.setMagicSphere(MagicSphere.pierre, value);
-                                  },
-                                  onPoolChanged: (int value) {
-                                    character.setMagicSpherePool(MagicSphere.pierre, value);
-                                  },
-                                ),
-                              ),
+                for(var i=0; i<3; ++i)
+                  Row(
+                    children: [
+                      for(var j=0; j<3; ++j)
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+                            child: MagicSphereEditWidget(
+                              sphere: MagicSphere.values[j+i*3],
+                              value: character.magicSphere(MagicSphere.values[j+i*3]),
+                              pool: character.magicSpherePool(MagicSphere.values[j+i*3]),
+                              onValueChanged: (int value) {
+                                character.setMagicSphere(MagicSphere.values[j+i*3], value);
+                              },
+                              onPoolChanged: (int value) {
+                                character.setMagicSpherePool(MagicSphere.values[j+i*3], value);
+                              },
                             ),
-                        ],
-                      ),
-                    ),
+                          ),
+                        ),
+                    ],
                   ),
               ],
-            )
+            ),
         ),
         Positioned(
           top: 3,
