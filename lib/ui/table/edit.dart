@@ -176,102 +176,108 @@ class _TableEditPageState extends State<TableEditPage> {
             Positioned(
               bottom: 16.0,
               right: 16.0,
-              child: MenuAnchor(
-                style: const MenuStyle(
-                  alignment: Alignment.topLeft,
-                ),
-                alignmentOffset: const Offset(-100, 10),
-                builder: (BuildContext context, MenuController controller, Widget? child) {
-                  return IconButton.filled(
-                    icon: const Icon(Icons.add),
-                    padding: const EdgeInsets.all(12.0),
-                    tooltip: 'Créer / Importer',
-                    onPressed: () {
-                      if(controller.isOpen) {
-                        controller.close();
-                      }
-                      else {
-                        controller.open();
-                      }
-                    },
-                  );
-                },
-                menuChildren: [
-                  MenuItemButton(
-                    child: const Row(
-                      children: [
-                        Icon(Icons.create),
-                        SizedBox(width: 4.0),
-                        Text('Nouveau PJ'),
-                      ],
-                    ),
-                    onPressed: () async {
-                      PlayerCharacter? character = await showDialog(
-                        context: context,
-                        builder: (context) => NewPlayerCharacterDialog(
-                          formKey: _newPlayerCharacterForm,
+              child: Directionality(
+                textDirection: TextDirection.rtl,
+                child: MenuAnchor(
+                  alignmentOffset: const Offset(0, 4),
+                  builder: (BuildContext context, MenuController controller, Widget? child) {
+                    return IconButton.filled(
+                      icon: const Icon(Icons.add),
+                      padding: const EdgeInsets.all(12.0),
+                      tooltip: 'Créer / Importer',
+                      onPressed: () {
+                        if(controller.isOpen) {
+                          controller.close();
+                        }
+                        else {
+                          controller.open();
+                        }
+                      },
+                    );
+                  },
+                  menuChildren: [
+                    Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: MenuItemButton(
+                        child: const Row(
+                          children: [
+                            Icon(Icons.create),
+                            SizedBox(width: 4.0),
+                            Text('Nouveau PJ'),
+                          ],
                         ),
-                      );
-                      // User canceled the pop-up dialog
-                      if(character == null) return;
+                        onPressed: () async {
+                          PlayerCharacter? character = await showDialog(
+                            context: context,
+                            builder: (context) => NewPlayerCharacterDialog(
+                              formKey: _newPlayerCharacterForm,
+                            ),
+                          );
+                          // User canceled the pop-up dialog
+                          if(character == null) return;
 
 
-                      if(!context.mounted) return;
-                      var saved = await Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => PlayerCharacterEditPage.immediate(character: character)),
-                      );
-                      if(saved != null && saved) {
-                        setState(() {
-                          _canCancel = false;
-                          _isWorking = true;
-                        });
-                        _table.playerSummaries.add(character.summary());
-                        await pc.saveGameTable(_table);
-                        setState(() {
-                          _isWorking = false;
-                        });
-                      }
-                    },
-                  ),
-                  MenuItemButton(
-                    child: const Row(
-                      children: [
-                        Icon(Icons.publish),
-                        SizedBox(width: 4.0),
-                        Text('Importer un PJ'),
-                      ],
+                          if(!context.mounted) return;
+                          var saved = await Navigator.of(context).push(
+                            MaterialPageRoute(builder: (context) => PlayerCharacterEditPage.immediate(character: character)),
+                          );
+                          if(saved != null && saved) {
+                            setState(() {
+                              _canCancel = false;
+                              _isWorking = true;
+                            });
+                            _table.playerSummaries.add(character.summary());
+                            await pc.saveGameTable(_table);
+                            setState(() {
+                              _isWorking = false;
+                            });
+                          }
+                        },
+                      ),
                     ),
-                    onPressed: () async {
-                      var result = await FilePicker.platform.pickFiles(
-                        type: FileType.custom,
-                        allowedExtensions: ['json'],
-                      );
-                      if(result == null) return;
-                      try {
-                        setState(() {
-                          _isWorking = true;
-                        });
-                        var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
-                        var character = PlayerCharacter.import(json.decode(jsonStr));
-                        await savePlayerCharacter(character);
-                        setState(() {
-                          _table.playerSummaries.add(character.summary());
-                        });
-                        await pc.saveGameTable(_table);
-                        setState(() {
-                          _isWorking = false;
-                          _canCancel = false;
-                        });
-                      } catch (e) {
-                        setState(() {
-                          _isWorking = false;
-                        });
-                        // TODO: notify the user that things went south
-                        // TODO: catch FormatException from the UTF-8 conversion?
-                      }
-                    },
-                  ),
-                ],
+                    Directionality(
+                      textDirection: TextDirection.ltr,
+                      child: MenuItemButton(
+                        child: const Row(
+                          children: [
+                            Icon(Icons.publish),
+                            SizedBox(width: 4.0),
+                            Text('Importer un PJ'),
+                          ],
+                        ),
+                        onPressed: () async {
+                          var result = await FilePicker.platform.pickFiles(
+                            type: FileType.custom,
+                            allowedExtensions: ['json'],
+                          );
+                          if(result == null) return;
+                          try {
+                            setState(() {
+                              _isWorking = true;
+                            });
+                            var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
+                            var character = PlayerCharacter.import(json.decode(jsonStr));
+                            await savePlayerCharacter(character);
+                            setState(() {
+                              _table.playerSummaries.add(character.summary());
+                            });
+                            await pc.saveGameTable(_table);
+                            setState(() {
+                              _isWorking = false;
+                              _canCancel = false;
+                            });
+                          } catch (e) {
+                            setState(() {
+                              _isWorking = false;
+                            });
+                            // TODO: notify the user that things went south
+                            // TODO: catch FormatException from the UTF-8 conversion?
+                          }
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             if(_isWorking)

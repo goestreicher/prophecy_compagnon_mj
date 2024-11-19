@@ -115,46 +115,52 @@ class _SessionsListPageState extends State<SessionsListPage> {
               Positioned(
                 bottom: 16.0,
                 right: 16.0,
-                child: MenuAnchor(
-                  alignmentOffset: const Offset(-100, 10),
-                  builder: (BuildContext context, MenuController controller, Widget? child) {
-                    return IconButton.filled(
-                      icon: const Icon(Icons.add),
-                      padding: const EdgeInsets.all(12.0),
-                      tooltip: 'Créer / Importer',
-                      onPressed: () {
-                        if(controller.isOpen) {
-                          controller.close();
-                        }
-                        else {
-                          controller.open();
-                        }
-                      },
-                    );
-                  },
-                  menuChildren: [
-                    MenuItemButton(
-                      child: const Row(
-                        children: [
-                          Icon(Icons.create),
-                          SizedBox(width: 4.0),
-                          Text('Nouvelle session'),
-                        ],
+                child: Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: MenuAnchor(
+                    alignmentOffset: const Offset(0, 4),
+                    builder: (BuildContext context, MenuController controller, Widget? child) {
+                      return IconButton.filled(
+                        icon: const Icon(Icons.add),
+                        padding: const EdgeInsets.all(12.0),
+                        tooltip: 'Créer / Importer',
+                        onPressed: () {
+                          if(controller.isOpen) {
+                            controller.close();
+                          }
+                          else {
+                            controller.open();
+                          }
+                        },
+                      );
+                    },
+                    menuChildren: [
+                      Directionality(
+                        textDirection: TextDirection.ltr,
+                        child: MenuItemButton(
+                          child: const Row(
+                            children: [
+                              Icon(Icons.create),
+                              SizedBox(width: 4.0),
+                              Text('Nouvelle session'),
+                            ],
+                          ),
+                          onPressed: () async {
+                            var session = await showDialog(
+                                context: context,
+                                builder: (BuildContext context) => const SessionCreationDialog(),
+                            );
+                            if(session == null) return;
+                            await saveGameSession(session);
+                            setState(() {
+                              _sessions.clear();
+                              loadSessionSummaries();
+                            });
+                          },
+                        ),
                       ),
-                      onPressed: () async {
-                        var session = await showDialog(
-                            context: context,
-                            builder: (BuildContext context) => const SessionCreationDialog(),
-                        );
-                        if(session == null) return;
-                        await saveGameSession(session);
-                        setState(() {
-                          _sessions.clear();
-                          loadSessionSummaries();
-                        });
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               if(_isWorking)

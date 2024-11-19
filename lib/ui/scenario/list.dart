@@ -118,95 +118,101 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
               Positioned(
                 bottom: 16.0,
                 right: 16.0,
-                child: MenuAnchor(
-                  style: const MenuStyle(
-                    alignment: Alignment.topLeft,
-                  ),
-                  alignmentOffset: const Offset(-130, 10),
-                  builder: (BuildContext context, MenuController controller, Widget? child) {
-                      return IconButton.filled(
-                        icon: const Icon(Icons.add),
-                        padding: const EdgeInsets.all(12.0),
-                        tooltip: 'Créer / Importer',
-                        onPressed: () {
-                            if(controller.isOpen) {
-                              controller.close();
-                            }
-                            else {
-                              controller.open();
+                child: Directionality(
+                  textDirection: TextDirection.rtl,
+                  child: MenuAnchor(
+                    alignmentOffset: const Offset(0, 4),
+                    builder: (BuildContext context, MenuController controller, Widget? child) {
+                        return IconButton.filled(
+                          icon: const Icon(Icons.add),
+                          padding: const EdgeInsets.all(12.0),
+                          tooltip: 'Créer / Importer',
+                          onPressed: () {
+                              if(controller.isOpen) {
+                                controller.close();
+                              }
+                              else {
+                                controller.open();
+                              }
+                            },
+                        );
+                      },
+                    menuChildren: [
+                      Directionality(
+                        textDirection: TextDirection.ltr,
+                        child: MenuItemButton(
+                          child: const Row(
+                            children: [
+                              Icon(Icons.create),
+                              SizedBox(width: 4.0),
+                              Text('Nouveau scénario'),
+                            ],
+                          ),
+                          onPressed: () async {
+                            var newScenarioName = await showDialog(
+                              context: context,
+                              builder: (context) =>
+                                  SingleLineInputDialog(
+                                      title: 'Création de scénario',
+                                      formKey: _newScenarioNameForm
+                                  ),
+                            );
+                            // User canceled the pop-up dialog
+                            if (newScenarioName == null) return;
+
+                            if (!context.mounted) return;
+                            var scenario = Scenario(name: newScenarioName);
+                            bool changeConfirmed = await Navigator.of(context).push(
+                              MaterialPageRoute(builder: (context) =>
+                                  ScenarioEditPage.immediate(scenario: scenario)),
+                            );
+                            if (changeConfirmed) {
+                              setState(() {
+                                loadScenarioSummaries();
+                              });
                             }
                           },
-                      );
-                    },
-                  menuChildren: [
-                    MenuItemButton(
-                      child: const Row(
-                        children: [
-                          Icon(Icons.create),
-                          SizedBox(width: 4.0),
-                          Text('Nouveau scénario'),
-                        ],
+                        ),
                       ),
-                      onPressed: () async {
-                        var newScenarioName = await showDialog(
-                          context: context,
-                          builder: (context) =>
-                              SingleLineInputDialog(
-                                  title: 'Création de scénario',
-                                  formKey: _newScenarioNameForm
-                              ),
-                        );
-                        // User canceled the pop-up dialog
-                        if (newScenarioName == null) return;
-
-                        if (!context.mounted) return;
-                        var scenario = Scenario(name: newScenarioName);
-                        bool changeConfirmed = await Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) =>
-                              ScenarioEditPage.immediate(scenario: scenario)),
-                        );
-                        if (changeConfirmed) {
-                          setState(() {
-                            loadScenarioSummaries();
-                          });
-                        }
-                      },
-                    ),
-                    MenuItemButton(
-                      child: const Row(
-                        children: [
-                          Icon(Icons.publish),
-                          SizedBox(width: 4.0),
-                          Text('Importer un scénario'),
-                        ],
+                      Directionality(
+                        textDirection: TextDirection.ltr,
+                        child: MenuItemButton(
+                          child: const Row(
+                            children: [
+                              Icon(Icons.publish),
+                              SizedBox(width: 4.0),
+                              Text('Importer un scénario'),
+                            ],
+                          ),
+                          onPressed: () async {
+                            var result = await FilePicker.platform.pickFiles(
+                              type: FileType.custom,
+                              allowedExtensions: ['json'],
+                            );
+                            if(result == null) return;
+                            try {
+                              setState(() {
+                                _isWorking = true;
+                              });
+                              var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
+                              var scenario = Scenario.import(json.decode(jsonStr));
+                              await saveScenario(scenario);
+                              setState(() {
+                                loadScenarioSummaries();
+                                _isWorking = false;
+                              });
+                            } catch (e) {
+                              setState(() {
+                                _isWorking = false;
+                              });
+                              // TODO: notify the user that things went south
+                              // TODO: catch FormatException from the UTF-8 conversion?
+                            }
+                          },
+                        ),
                       ),
-                      onPressed: () async {
-                        var result = await FilePicker.platform.pickFiles(
-                          type: FileType.custom,
-                          allowedExtensions: ['json'],
-                        );
-                        if(result == null) return;
-                        try {
-                          setState(() {
-                            _isWorking = true;
-                          });
-                          var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
-                          var scenario = Scenario.import(json.decode(jsonStr));
-                          await saveScenario(scenario);
-                          setState(() {
-                            loadScenarioSummaries();
-                            _isWorking = false;
-                          });
-                        } catch (e) {
-                          setState(() {
-                            _isWorking = false;
-                          });
-                          // TODO: notify the user that things went south
-                          // TODO: catch FormatException from the UTF-8 conversion?
-                        }
-                      },
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
               if(_isWorking)
