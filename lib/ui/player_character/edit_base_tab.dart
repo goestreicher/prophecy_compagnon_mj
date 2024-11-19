@@ -396,7 +396,7 @@ class _GeneralInformationEditWidgetState extends State<_GeneralInformationEditWi
           top: 3,
           left: 8,
           child: Container(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceBright,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               'Général',
@@ -443,7 +443,7 @@ class _AbilitiesEditWidget extends StatelessWidget {
             top: 3,
             left: 8,
             child: Container(
-                color: Colors.white,
+                color: theme.colorScheme.surfaceBright,
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
                     'Caractéristiques',
@@ -488,7 +488,7 @@ class _AttributesEditWidget extends StatelessWidget {
           top: 3,
           left: 8,
           child: Container(
-              color: Colors.white,
+              color: theme.colorScheme.surfaceBright,
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                   'Attributs',
@@ -596,7 +596,7 @@ class _SecondaryAttributesEditWidgetState extends State<_SecondaryAttributesEdit
           top: 3,
           left: 8,
           child: Container(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceBright,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               'Attributs secondaires',
@@ -777,7 +777,7 @@ class _CasteEditWidgetState extends State<_CasteEditWidget> {
                     top: 3,
                     left: 8,
                     child: Container(
-                      color: Colors.white,
+                      color: theme.colorScheme.surfaceBright,
                       padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Text(
                         'Bénéfices',
@@ -831,7 +831,7 @@ class _CasteEditWidgetState extends State<_CasteEditWidget> {
                       top: 3,
                       left: 8,
                       child: Container(
-                          color: Colors.white,
+                          color: theme.colorScheme.surfaceBright,
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: Text(
                               'Techniques',
@@ -929,7 +929,7 @@ class _CasteEditWidgetState extends State<_CasteEditWidget> {
                       top: 3,
                       left: 8,
                       child: Container(
-                          color: Colors.white,
+                          color: theme.colorScheme.surfaceBright,
                           padding: const EdgeInsets.symmetric(horizontal: 8.0),
                           child: Text(
                               'Carrière',
@@ -948,7 +948,7 @@ class _CasteEditWidgetState extends State<_CasteEditWidget> {
           top: 3,
           left: 8,
           child: Container(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceBright,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               'Caste',
@@ -1054,7 +1054,7 @@ class _InterdictEditWidgetState extends State<_InterdictEditWidget> {
           top: 3,
           left: 8,
           child: Container(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceBright,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               'Interdits',
@@ -1159,7 +1159,7 @@ class _CastePrivilegeEditWidgetState extends State<_CastePrivilegeEditWidget> {
               top: 3,
               left: 8,
               child: Container(
-                  color: Colors.white,
+                  color: theme.colorScheme.surfaceBright,
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: Text(
                       'Privilèges',
@@ -1266,7 +1266,7 @@ class _DisadvantagesEditWidgetState extends State<_DisadvantagesEditWidget> {
             top: 3,
             left: 8,
             child: Container(
-                color: Colors.white,
+                color: theme.colorScheme.surfaceBright,
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
                   'Désavantages',
@@ -1374,7 +1374,7 @@ class _AdvantagesEditWidgetState extends State<_AdvantagesEditWidget> {
             top: 3,
             left: 8,
             child: Container(
-                color: Colors.white,
+                color: theme.colorScheme.surfaceBright,
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
                     'Avantages',
@@ -1439,7 +1439,7 @@ class _TendenciesEditWidgetState extends State<_TendenciesEditWidget> {
               top: 3,
               left: 8,
               child: Container(
-                color: Colors.white,
+                color: theme.colorScheme.surfaceBright,
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
                   'Tendances',
@@ -1529,7 +1529,7 @@ class _InjuriesEditWidgetState extends State<_InjuriesEditWidget> {
           top: 3,
           left: 8,
           child: Container(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceBright,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               'Blessures',
@@ -1587,7 +1587,7 @@ class _InjuryLevelInputWidget extends StatelessWidget {
             width: 12.0,
             height: 12.0,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: theme.colorScheme.surfaceBright,
               border: Border.all(color: Colors.black),
               borderRadius: BorderRadius.circular(6.0),
             ),

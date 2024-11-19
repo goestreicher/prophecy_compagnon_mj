@@ -183,7 +183,7 @@ class _MagicSkillsEditWidgetState extends State<_MagicSkillsEditWidget> {
           top: 3,
           left: 8,
           child: Container(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceBright,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               'Compétences magiques',
@@ -249,7 +249,7 @@ class _MagicSpheresEditWidget extends StatelessWidget {
           top: 3,
           left: 8,
           child: Container(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceBright,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               'Sphères de magie',
@@ -370,7 +370,7 @@ class _MagicSphereInputWidgetState extends State<_MagicSphereInputWidget> {
           top: 3,
           left: 8,
           child: Container(
-            color: Colors.white,
+            color: theme.colorScheme.surfaceBright,
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Text(
               widget.sphere.title,
@@ -473,7 +473,7 @@ class _MagicSpellsEditWidgetState extends State<_MagicSpellsEditWidget> {
             top: 3,
             left: 8,
             child: Container(
-                color: Colors.white,
+                color: theme.colorScheme.surfaceBright,
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: Text(
                     'Sorts connus',
