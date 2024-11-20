@@ -65,17 +65,18 @@ class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
               child: Scaffold(
                 appBar: AppBar(
                   title: Text('PJ: ${_character.name}'),
-                  leading: IconButton(
-                    icon: const Icon(Icons.download),
-                    onPressed: () async {
-                      var jsonStr = json.encode(_character.toJson());
-                      await FileSaver.instance.saveFile(
-                        name: 'player-character_${_character.uuid}.json',
-                        bytes: utf8.encode(jsonStr),
-                      );
-                    },
-                  ),
                   actions: <Widget>[
+                    IconButton(
+                      icon: const Icon(Icons.download),
+                      tooltip: 'Exporter le PJ',
+                      onPressed: () async {
+                        var jsonStr = json.encode(_character.toJson());
+                        await FileSaver.instance.saveFile(
+                          name: 'player-character_${_character.uuid}.json',
+                          bytes: utf8.encode(jsonStr),
+                        );
+                      },
+                    ),
                     IconButton(
                       icon: const Icon(Icons.close),
                       tooltip: 'Annuler',
