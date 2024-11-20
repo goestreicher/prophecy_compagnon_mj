@@ -87,7 +87,7 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
                     label: 'Réserve',
                     initialValue: _pool,
                     minValue: 0,
-                    maxValue: 15,
+                    maxValue: _value,
                     controller: _poolController,
                     onChanged: (int value) {
                       setState(() {
