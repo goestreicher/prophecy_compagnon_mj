@@ -194,21 +194,18 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
               json['tendencies'] as Map<String, dynamic>),
       description: json['description'] as String?,
     )
+      ..skills = (json['skills'] as List<dynamic>)
+          .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
+          .toList()
       ..magicSpells = (json['magic_spells'] as Map<String, dynamic>?)?.map(
             (k, e) => MapEntry($enumDecode(_$MagicSphereEnumMap, k),
                 (e as List<dynamic>).map((e) => e as String).toList()),
           ) ??
           {}
-      ..magicPool = (json['magic_pool'] as num?)?.toInt() ?? 0
-      ..skills = (json['skills'] as List<dynamic>)
-          .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
-          .toList();
+      ..extraMagicPool = (json['extra_magic_pool'] as num?)?.toInt() ?? 0;
 
 Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
     <String, dynamic>{
-      'magic_spells': instance.magicSpells
-          .map((k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e)),
-      'magic_pool': instance.magicPool,
       'equiped': equipedToJson(instance.equiped),
       'name': instance.name,
       'description': instance.description,
@@ -219,6 +216,9 @@ Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
       'attributes': enumKeyedMapToJson(instance.attributes),
       'skills': instance.skills,
       'equipment': equipmentToJson(instance.equipment),
+      'magic_spells': instance.magicSpells
+          .map((k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e)),
+      'extra_magic_pool': instance.extraMagicPool,
       'caste': _$CasteEnumMap[instance.caste]!,
       'caste_status': _$CasteStatusEnumMap[instance.casteStatus]!,
       'career': _$CareerEnumMap[instance.career],

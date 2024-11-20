@@ -1,10 +1,18 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'character/base.dart';
+import 'entity_base.dart';
 import 'magic.dart';
 
-mixin MagicUser {
+mixin MagicUser on EntityBase {
   int magicSkill(MagicSkill skill) => _magicSkills[skill]!;
   void setMagicSkill(MagicSkill skill, int value) => _magicSkills[skill] = value;
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  int get magicPool => super.ability(Ability.volonte) + extraMagicPool;
+  set magicPool(int value) {
+    extraMagicPool = (value < super.ability(Ability.volonte)) ? 0 : value - super.ability(Ability.volonte);
+  }
 
   int magicSphere(MagicSphere sphere) => _magicSpheres[sphere]!;
   void setMagicSphere(MagicSphere sphere, int value) {
@@ -46,7 +54,7 @@ mixin MagicUser {
     Map<MagicSphere, List<String>> magicSpells = <MagicSphere, List<String>>{};
 
   @JsonKey(defaultValue: 0)
-    int magicPool = 0;
+    int extraMagicPool = 0;
 
   final Map<MagicSkill, int> _magicSkills = <MagicSkill, int>{
     MagicSkill.instinctive: 0,

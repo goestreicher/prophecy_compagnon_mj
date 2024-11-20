@@ -62,18 +62,18 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
       luck: (json['luck'] as num?)?.toInt() ?? 0,
       proficiency: (json['proficiency'] as num?)?.toInt() ?? 0,
     )
-      ..magicSpells = (json['magic_spells'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry($enumDecode(_$MagicSphereEnumMap, k),
-                (e as List<dynamic>).map((e) => e as String).toList()),
-          ) ??
-          {}
-      ..magicPool = (json['magic_pool'] as num?)?.toInt() ?? 0
       ..description = json['description'] as String
       ..size = (json['size'] as num).toDouble()
       ..weight = (json['weight'] as num).toDouble()
       ..skills = (json['skills'] as List<dynamic>)
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList()
+      ..magicSpells = (json['magic_spells'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry($enumDecode(_$MagicSphereEnumMap, k),
+                (e as List<dynamic>).map((e) => e as String).toList()),
+          ) ??
+          {}
+      ..extraMagicPool = (json['extra_magic_pool'] as num?)?.toInt() ?? 0
       ..career = $enumDecodeNullable(_$CareerEnumMap, json['career'])
       ..age = (json['age'] as num).toInt()
       ..height = (json['height'] as num).toDouble()
@@ -98,9 +98,6 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
     <String, dynamic>{
-      'magic_spells': instance.magicSpells
-          .map((k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e)),
-      'magic_pool': instance.magicPool,
       'equiped': equipedToJson(instance.equiped),
       'uuid': instance.uuid,
       'name': instance.name,
@@ -112,6 +109,9 @@ Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
       'attributes': enumKeyedMapToJson(instance.attributes),
       'skills': instance.skills,
       'equipment': equipmentToJson(instance.equipment),
+      'magic_spells': instance.magicSpells
+          .map((k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e)),
+      'extra_magic_pool': instance.extraMagicPool,
       'caste': _$CasteEnumMap[instance.caste]!,
       'caste_status': _$CasteStatusEnumMap[instance.casteStatus]!,
       'career': _$CareerEnumMap[instance.career],
