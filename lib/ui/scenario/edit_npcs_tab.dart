@@ -53,8 +53,8 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                   _newNPCName = null;
                 }
                 _selected = npc;
+                widget.onNPCCommitted();
               }
-              widget.onNPCCommitted();
               _editing = false;
             });
           },
