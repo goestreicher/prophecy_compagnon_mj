@@ -110,15 +110,88 @@ Future<void> deleteScenario(String uuid) async {
   await scenarioBox.delete(uuid);
 }
 
+enum ScenarioEventCategory {
+  world,
+  pc,
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake)
 class ScenarioEvent {
-  ScenarioEvent({ required this.day, required this.description });
+  ScenarioEvent({ required this.title, required this.description });
 
-  int day;
+  String title;
   String description;
 
   factory ScenarioEvent.fromJson(Map<String, dynamic> json) => _$ScenarioEventFromJson(json);
   Map<String, dynamic> toJson() => _$ScenarioEventToJson(this);
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake)
+class ScenarioDayEvents {
+  ScenarioDayEvents();
+
+  ScenarioEvent? get(ScenarioEventCategory category, int pos) {
+    if(!events.containsKey(category)) {
+      return null;
+    }
+    if(pos < 0 || pos >= events[category]!.length) {
+      return null;
+    }
+    return events[category]![pos];
+  }
+
+  void add(ScenarioEventCategory category, ScenarioEvent event, int pos) {
+    if(!events.containsKey(category)) {
+      events[category] = <ScenarioEvent>[];
+    }
+    if(pos < 0 || pos >= events[category]!.length) {
+      events[category]!.add(event);
+    }
+    else {
+      events[category]!.insert(pos, event);
+    }
+  }
+
+  void remove(ScenarioEventCategory category, int pos) {
+    if(!events.containsKey(category)) {
+      return;
+    }
+    if(pos < 0 || pos >= events[category]!.length) {
+      return;
+    }
+    events[category]!.removeAt(pos);
+    if(events[category]!.isEmpty) {
+      events.remove(category);
+    }
+  }
+
+  void move(ScenarioEventCategory category, int start, int dest) {
+    if(!events.containsKey(category)) {
+      return;
+    }
+    if(start == dest) {
+      return;
+    }
+    if(start < 0 || start >= events[category]!.length) {
+      return;
+    }
+    if(dest < 0 || dest > events[category]!.length) {
+      return;
+    }
+
+    ScenarioEvent event = events[category]!.removeAt(start);
+    if(start < dest) {
+      dest -= 1;
+    }
+    events[category]!.insert(dest, event);
+  }
+
+  bool empty(ScenarioEventCategory category) => !events.containsKey(category) || events[category]!.isEmpty;
+
+  Map<ScenarioEventCategory, List<ScenarioEvent>> events = <ScenarioEventCategory, List<ScenarioEvent>>{};
+
+  factory ScenarioDayEvents.fromJson(Map<String, dynamic> json) => _$ScenarioDayEventsFromJson(json);
+  Map<String, dynamic> toJson() => _$ScenarioDayEventsToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -154,6 +227,33 @@ class ScenarioSummary {
   factory ScenarioSummary.fromJson(Map<String, dynamic> json) => _$ScenarioSummaryFromJson(json);
 }
 
+class ScenarioEventDayRange {
+  ScenarioEventDayRange({ required this.start, int end = -1 })
+    : end = end == -1 ? start : end;
+
+  final int start;
+  final int end;
+
+  @override
+  String toString() => "$start,$end";
+
+  factory ScenarioEventDayRange.fromString(String s) {
+    var regexp = RegExp(r'(-?\d+)');
+    var values = regexp.allMatches(s).map((v) => int.parse(v[0]!)).toList();
+    if(values.length < 2) {
+      values[1] = values[0];
+    }
+    return ScenarioEventDayRange(start: values[0], end: values[1]);
+  }
+
+  @override
+  bool operator==(Object other) =>
+      other is ScenarioEventDayRange && start == other.start && end == other.end;
+
+  @override
+  int get hashCode => Object.hash(start, end);
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class Scenario {
   Scenario(
@@ -170,16 +270,14 @@ class Scenario {
         List<NonPlayerCharacter>? npcs,
         List<CreatureModel>? creatures,
         List<ScenarioEncounter>? encounters,
-        Map<int, List<ScenarioEvent>>? pcEvents,
-        Map<int, List<ScenarioEvent>>? worldEvents,
+        Map<ScenarioEventDayRange, ScenarioDayEvents>? events,
       })
     : uuid = uuid ?? const Uuid().v4().toString(),
       maps = maps ?? <ScenarioMap>[],
       npcs = npcs ?? <NonPlayerCharacter>[],
       creatures = creatures ?? <CreatureModel>[],
       encounters = encounters ?? <ScenarioEncounter>[],
-      pcEvents = pcEvents ?? <int, List<ScenarioEvent>>{},
-      worldEvents = worldEvents ?? <int, List<ScenarioEvent>>{};
+      events = events ?? <ScenarioEventDayRange, ScenarioDayEvents>{};
 
   factory Scenario.import(Map<String, dynamic> json) {
     if(json.containsKey('uuid')) {
@@ -201,8 +299,8 @@ class Scenario {
   final List<NonPlayerCharacter> npcs;
   final List<CreatureModel> creatures;
   final List<ScenarioEncounter> encounters;
-  final Map<int, List<ScenarioEvent>> pcEvents;
-  final Map<int, List<ScenarioEvent>> worldEvents;
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  final Map<ScenarioEventDayRange, ScenarioDayEvents> events;
 
   ScenarioSummary summary() => ScenarioSummary(
     uuid: uuid,
@@ -215,34 +313,56 @@ class Scenario {
     return idx == -1 ? null : maps[idx];
   }
 
-  void addPcEvent(ScenarioEvent event, { int index = -1 }) {
-    if(!pcEvents.containsKey(event.day)) {
-      pcEvents[event.day] = <ScenarioEvent>[];
+  void addEvent(ScenarioEventDayRange day, ScenarioEventCategory category, ScenarioEvent event, { int pos = -1 }) {
+    if(!events.containsKey(day)) {
+      events[day] = ScenarioDayEvents();
     }
-    var position = index == -1 ? pcEvents[event.day]!.length : index;
-    pcEvents[event.day]!.insert(position, event);
+    events[day]!.add(category, event, pos);
   }
 
-  void removePcEvent({ required int day, required int index }) {
-    if(pcEvents.containsKey(day) && index >= 0 && index < pcEvents[day]!.length) {
-      pcEvents[day]!.removeAt(index);
+  void removeEvent(ScenarioEventDayRange day, ScenarioEventCategory category, int pos) {
+    if(!events.containsKey(day)) {
+      return;
     }
-  }
-
-  void addWorldEvent(ScenarioEvent event, { int index = -1 }) {
-    if(!worldEvents.containsKey(event.day)) {
-      worldEvents[event.day] = <ScenarioEvent>[];
-    }
-    var position = index == -1 ? worldEvents[event.day]!.length : index;
-    worldEvents[event.day]!.insert(position, event);
-  }
-
-  void removeWorldEvent({ required int day, required int index }) {
-    if(worldEvents.containsKey(day) && index >= 0 && index < worldEvents[day]!.length) {
-      worldEvents[day]!.removeAt(index);
+    events[day]!.remove(category, pos);
+    if(events[day]!.empty(ScenarioEventCategory.world) && events[day]!.empty(ScenarioEventCategory.pc)) {
+      events.remove(day);
     }
   }
 
-  Map<String, dynamic> toJson() => _$ScenarioToJson(this);
-  factory Scenario.fromJson(Map<String, dynamic> json) => _$ScenarioFromJson(json);
+  void moveEvent(ScenarioEventCategory category,
+      ScenarioEventDayRange startDay, ScenarioEventDayRange endDay,
+      int start, int dest
+  ) {
+    if(!events.containsKey(startDay)) {
+      return;
+    }
+
+    if(startDay == endDay) {
+      events[startDay]!.move(category, start, dest);
+    }
+    else {
+      var event = events[startDay]!.get(category, start);
+      if(event == null) {
+        // TODO: raise an exception here?
+        return;
+      }
+      removeEvent(startDay, category, start);
+      addEvent(endDay, category, event, pos: dest);
+    }
+  }
+
+  Map<String, dynamic> toJson() {
+    var json = _$ScenarioToJson(this);
+    json['events'] = events.map((k, v) => MapEntry(k.toString(), v.toJson()));
+    return json;
+  }
+
+  factory Scenario.fromJson(Map<String, dynamic> json) {
+    var ret = _$ScenarioFromJson(json);
+    (json['events'] as Map<String, dynamic>?)?.forEach(
+        (k, v) => ret.events[ScenarioEventDayRange.fromString(k)] = ScenarioDayEvents.fromJson(v as Map<String, dynamic>)
+    );
+    return ret;
+  }
 }

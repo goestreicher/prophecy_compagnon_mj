@@ -177,7 +177,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                 body: TabBarView(
                   children: [
                     ScenarioEditGeneralPage(scenario: _scenario),
-                    const ScenarioEditEventsPage(),
+                    ScenarioEditEventsPage(scenario: _scenario),
                     ScenarioEditNPCsPage(
                       npcs: _scenario.npcs,
                       scenarioName: _scenario.name,
