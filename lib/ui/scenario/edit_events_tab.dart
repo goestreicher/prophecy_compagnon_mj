@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../../classes/scenario.dart';
+import '../../classes/scenario_event.dart';
 import 'scenario_event_edit_dialog.dart';
 
 class ScenarioEditEventsPage extends StatelessWidget {

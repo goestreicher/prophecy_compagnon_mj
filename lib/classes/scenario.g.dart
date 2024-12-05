@@ -6,52 +6,6 @@ part of 'scenario.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ScenarioEvent _$ScenarioEventFromJson(Map<String, dynamic> json) =>
-    ScenarioEvent(
-      title: json['title'] as String,
-      description: json['description'] as String,
-    );
-
-Map<String, dynamic> _$ScenarioEventToJson(ScenarioEvent instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-      'description': instance.description,
-    };
-
-ScenarioDayEvents _$ScenarioDayEventsFromJson(Map<String, dynamic> json) =>
-    ScenarioDayEvents()
-      ..events = (json['events'] as Map<String, dynamic>).map(
-        (k, e) => MapEntry(
-            $enumDecode(_$ScenarioEventCategoryEnumMap, k),
-            (e as List<dynamic>)
-                .map((e) => ScenarioEvent.fromJson(e as Map<String, dynamic>))
-                .toList()),
-      );
-
-Map<String, dynamic> _$ScenarioDayEventsToJson(ScenarioDayEvents instance) =>
-    <String, dynamic>{
-      'events': instance.events
-          .map((k, e) => MapEntry(_$ScenarioEventCategoryEnumMap[k]!, e)),
-    };
-
-const _$ScenarioEventCategoryEnumMap = {
-  ScenarioEventCategory.world: 'world',
-  ScenarioEventCategory.pc: 'pc',
-};
-
-ScenarioMap _$ScenarioMapFromJson(Map<String, dynamic> json) => ScenarioMap(
-      name: json['name'] as String,
-      data: MapBackgroundData.fromJson(json['data'] as Map<String, dynamic>),
-      isDefault: json['is_default'] as bool?,
-    );
-
-Map<String, dynamic> _$ScenarioMapToJson(ScenarioMap instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'data': instance.data.toJson(),
-      'is_default': instance.isDefault,
-    };
-
 ScenarioSummary _$ScenarioSummaryFromJson(Map<String, dynamic> json) =>
     ScenarioSummary(
       uuid: json['uuid'] as String,

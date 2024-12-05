@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../classes/map_background_data.dart';
-import '../../classes/scenario.dart';
+import '../../classes/scenario_map.dart';
 import '../utils/map_background_picker.dart';
 import '../utils/single_line_input_dialog.dart';
 

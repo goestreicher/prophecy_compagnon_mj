@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../classes/scenario.dart';
+import '../../classes/scenario_event.dart';
 
 class ScenarioEventEditResult {
   final ScenarioEventDayRange dayRange;
