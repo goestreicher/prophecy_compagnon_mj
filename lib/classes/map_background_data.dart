@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
+import 'package:crypto/crypto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'map_background_data.g.dart';
@@ -19,6 +20,8 @@ class MapBackgroundData {
 
   @JsonKey(fromJson: base64ToImageData, toJson: imageDataToBase64)
     final Uint8List imageData;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+    String get hash => sha256.convert(utf8.encode(imageDataToBase64(imageData))).toString();
   final int imageWidth;
   final int imageHeight;
   double realWidth;

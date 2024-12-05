@@ -1,12 +1,10 @@
 import 'dart:convert';
 
-import 'package:crypto/crypto.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'creature.dart';
-import 'map_background_data.dart';
 import 'non_player_character.dart';
 import 'scenario_encounter.dart';
 import 'scenario_event.dart';
@@ -61,12 +59,17 @@ Future<void> saveScenario(Scenario scenario) async {
   var binariesBox = await Hive.openLazyBox('binariesBox');
   var scenarioJson = scenario.toJson();
 
-  for(var map in scenarioJson['maps']) {
-    var binary = map['data']['image_data'];
-    var hash = sha256.convert(utf8.encode(binary));
-    await binariesBox.put(hash.toString(), binary);
-    map['data']['image_data'] = hash.toString();
+  // It's safer to rewrite the whole 'maps' key in the JSON to
+  // ensure that the maps are correctly split between tables
+  var mapsJson = <Map<String, dynamic>>{};
+  for(var map in scenario.maps) {
+    var mapJson = map.toJson();
+    var mapHash = map.data.hash;
+    await binariesBox.put(mapHash, mapJson['data']['image_data']);
+    mapJson['data']['image_data'] = mapHash;
+    mapsJson.add(mapJson);
   }
+  scenarioJson['maps'] = mapsJson;
 
   var npcIds = <String>[];
   for(var npc in scenario.npcs) {
@@ -104,8 +107,7 @@ Future<void> deleteScenario(String uuid) async {
   }
   var binariesBox = await Hive.openLazyBox('binariesBox');
   for(var map in scenario.maps) {
-    var hash = sha256.convert(utf8.encode(imageDataToBase64(map.data.imageData)));
-    await binariesBox.delete(hash.toString());
+    await binariesBox.delete(map.data.hash);
   }
 
   var scenarioBox = await Hive.openLazyBox('scenariosBox');
