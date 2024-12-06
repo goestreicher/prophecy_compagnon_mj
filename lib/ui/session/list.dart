@@ -6,6 +6,7 @@ import 'command_dispatcher.dart';
 import 'play.dart';
 import 'session_creation_dialog.dart';
 import 'session_model.dart';
+import '../utils/full_page_loading.dart';
 
 class SessionsListPage extends StatefulWidget {
   const SessionsListPage({ super.key });
@@ -38,9 +39,7 @@ class _SessionsListPageState extends State<SessionsListPage> {
         builder: (BuildContext context,
             AsyncSnapshot<List<GameSession>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(
-              // TODO: something more fancy
-                child: Text('Chargement...'));
+            return FullPageLoadingWidget();
           }
 
           _sessions = snapshot.hasData

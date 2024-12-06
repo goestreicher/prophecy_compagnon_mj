@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../classes/table.dart';
 import 'edit.dart';
+import '../utils/full_page_loading.dart';
 import '../utils/single_line_input_dialog.dart';
 
 class TablesListPage extends StatefulWidget {
@@ -38,7 +39,7 @@ class _TablesListPageState extends State<TablesListPage> {
       future: _tableSummariesFuture,
       builder: (BuildContext context, AsyncSnapshot<List<GameTableSummary>> snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: Text('Chargement...')); // TODO: something more fancy
+          return FullPageLoadingWidget();
         }
 
         tableSummaries = snapshot.hasData
