@@ -2,10 +2,8 @@ import 'dart:convert';
 
 import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
-import 'package:sticky_grouped_list/sticky_grouped_list.dart';
 
 import '../../classes/scenario.dart';
-import '../../classes/scenario_encounter.dart';
 import 'edit_creatures_tab.dart';
 import 'edit_encounters_tab.dart';
 import 'edit_events_tab.dart';
@@ -43,8 +41,6 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
     return FutureBuilder(
       future: _scenarioFuture,
       builder: (BuildContext context, AsyncSnapshot<Scenario?> snapshot) {
@@ -58,64 +54,6 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
         }
         else {
           _scenario = snapshot.data!;
-        }
-
-        Widget mainArea;
-        if(_scenario.encounters.isEmpty) {
-          mainArea = const Center(
-            child: Text('Va falloir des rencontres.'),
-          );
-        }
-        else {
-          mainArea = StickyGroupedListView<ScenarioEncounter, int>(
-              elements: _scenario.encounters,
-              groupBy: (ScenarioEncounter element) => element.day,
-              groupSeparatorBuilder: (ScenarioEncounter element) {
-                return Row(
-                  children: [
-                    const Spacer(),
-                    Card(
-                      color: theme.colorScheme.primary,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                        child: Text(
-                          'Jour ${element.day}',
-                          style: theme.textTheme.bodyLarge!.copyWith(color: theme.colorScheme.onPrimary, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
-                    const Spacer(),
-                  ],
-                );
-              },
-              itemComparator: (ScenarioEncounter e1, ScenarioEncounter e2) => e1.day - e2.day,
-              order: StickyGroupedListOrder.ASC,
-              itemBuilder: (BuildContext context, ScenarioEncounter element) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 4.0),
-                  child: Card(
-                      clipBehavior: Clip.hardEdge,
-                      child: InkWell(
-                        splashColor: theme.colorScheme.surface,
-                        onTap: () async {
-                        },
-                        child: ListTile(
-                            title: Text(element.name),
-                            trailing: IconButton(
-                              icon: const Icon(Icons.delete),
-                              onPressed: () async {
-                                // TODO: ask confirmation maybe?
-                                setState(() {
-                                  _scenario.encounters.remove(element);
-                                });
-                              },
-                            )
-                        ),
-                      )
-                  ),
-                );
-              }
-          );
         }
 
         return Stack(
