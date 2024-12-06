@@ -27,7 +27,7 @@ class _TablesListPageState extends State<TablesListPage> {
   }
 
   void loadTableSummaries() {
-    _tableSummariesFuture = getGameTableSummaries();
+    _tableSummariesFuture = GameTableSummaryStore().getAll();
   }
 
   @override
@@ -78,7 +78,10 @@ class _TablesListPageState extends State<TablesListPage> {
                         setState(() {
                           _isWorking = true;
                         });
-                        await deleteGameTable(tableSummaries[index].uuid);
+                        var table = await GameTableStore().get(tableSummaries[index].uuid);
+                        if(table != null) {
+                          await GameTableStore().delete(table);
+                        }
                         setState(() {
                           _isWorking = false;
                           loadTableSummaries();

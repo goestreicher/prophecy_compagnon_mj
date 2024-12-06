@@ -129,7 +129,7 @@ class MapModel extends ChangeNotifier {
   MapModel({ required this.background })
     : controller = TransformationController();
 
-  final MapBackgroundData background;
+  final MapBackground background;
   TransformationController controller;
   bool displayInitializationDone = false;
 

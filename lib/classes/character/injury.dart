@@ -17,7 +17,7 @@ enum Injury {
   const Injury({ required this.title });
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class InjuryLevel {
   InjuryLevel({
     required this.rank,

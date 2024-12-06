@@ -67,7 +67,7 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                     if(newMapName == null) return;
                     if(!context.mounted) return;
 
-                    var background = await showDialog<MapBackgroundData>(
+                    var background = await showDialog<MapBackground>(
                       context: context,
                       builder: (BuildContext context) => const MapBackgroundPickerDialog(),
                     );
@@ -75,7 +75,7 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                     if(!context.mounted) return;
 
                     setState(() {
-                      widget.maps.add(ScenarioMap(name: newMapName, data: background));
+                      widget.maps.add(ScenarioMap(name: newMapName, background: background));
                     });
                   },
                   icon: const Icon(Icons.add),
@@ -104,6 +104,7 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                                 icon: const Icon(Icons.delete),
                                 onPressed: () async {
                                   // TODO: ask confirmation maybe?
+                                  await ScenarioMapStore().delete(widget.maps[index]);
                                   setState(() {
                                     if(_selected == widget.maps[index]) {
                                       _selected = null;
@@ -114,7 +115,7 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                               ),
                               const SizedBox(width: 12.0),
                               Image.memory(
-                                widget.maps[index].data.imageData,
+                                widget.maps[index].background.image.data,
                                 width: 128,
                               ),
                               const SizedBox(width: 8.0),
@@ -168,8 +169,8 @@ class _MapEditWidgetState extends State<_MapEditWidget> {
   void initState() {
     super.initState();
     _isDefault = widget.map.isDefault;
-    _realWidthController.text = widget.map.data.realWidth.toStringAsFixed(2);
-    _realHeightController.text = widget.map.data.realHeight.toStringAsFixed(2);
+    _realWidthController.text = widget.map.background.realWidth.toStringAsFixed(2);
+    _realHeightController.text = widget.map.background.realHeight.toStringAsFixed(2);
   }
 
   @override
@@ -218,10 +219,10 @@ class _MapEditWidgetState extends State<_MapEditWidget> {
                       var w = double.tryParse(value);
                       if(w == null) return;
 
-                      var whRatio = widget.map.data.imageWidth / widget.map.data.imageHeight;
+                      var whRatio = widget.map.background.imageWidth / widget.map.background.imageHeight;
                       var hStr = (w / whRatio).toStringAsFixed(2);
-                      widget.map.data.realWidth = w;
-                      widget.map.data.realHeight = double.parse(hStr);
+                      widget.map.background.realWidth = w;
+                      widget.map.background.realHeight = double.parse(hStr);
                       _realHeightController.text = hStr;
                     },
                   ),
@@ -252,10 +253,10 @@ class _MapEditWidgetState extends State<_MapEditWidget> {
                       var h = double.tryParse(value);
                       if(h == null) return;
 
-                      var whRatio = widget.map.data.imageWidth / widget.map.data.imageHeight;
+                      var whRatio = widget.map.background.imageWidth / widget.map.background.imageHeight;
                       var wStr = (h * whRatio).toStringAsFixed(2);
-                      widget.map.data.realWidth = double.parse(wStr);
-                      widget.map.data.realHeight = h;
+                      widget.map.background.realWidth = double.parse(wStr);
+                      widget.map.background.realHeight = h;
                       _realWidthController.text = wStr;
                     },
                   ),
@@ -263,7 +264,7 @@ class _MapEditWidgetState extends State<_MapEditWidget> {
               ],
             ),
             const SizedBox(height: 12.0),
-            Image.memory(widget.map.data.imageData),
+            Image.memory(widget.map.background.image.data),
           ]
         )
       )

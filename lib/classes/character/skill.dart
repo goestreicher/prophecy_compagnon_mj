@@ -139,7 +139,7 @@ enum Skill {
   final bool canInstantiate;
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class SpecializedSkill {
   factory SpecializedSkill(String name) {
     _initializeGlobalSpecializedSkills();
@@ -206,7 +206,7 @@ class SpecializedSkill {
   }
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class SkillInstance {
   SkillInstance({
     required this.skill,

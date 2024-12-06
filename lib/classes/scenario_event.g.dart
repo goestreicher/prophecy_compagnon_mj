@@ -30,8 +30,9 @@ ScenarioDayEvents _$ScenarioDayEventsFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ScenarioDayEventsToJson(ScenarioDayEvents instance) =>
     <String, dynamic>{
-      'events': instance.events
-          .map((k, e) => MapEntry(_$ScenarioEventCategoryEnumMap[k]!, e)),
+      'events': instance.events.map((k, e) => MapEntry(
+          _$ScenarioEventCategoryEnumMap[k]!,
+          e.map((e) => e.toJson()).toList())),
     };
 
 const _$ScenarioEventCategoryEnumMap = {

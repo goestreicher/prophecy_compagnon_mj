@@ -112,7 +112,7 @@ enum Disadvantage {
   });
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class CharacterDisadvantage {
   CharacterDisadvantage({
     required this.disadvantage,
@@ -181,7 +181,7 @@ enum Advantage {
   const Advantage({ required this.title, required this.cost, required this.type });
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class CharacterAdvantage {
   CharacterAdvantage({
     required this.advantage,
@@ -203,7 +203,7 @@ enum Tendency {
   fatality,
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class TendencyAttribute {
   TendencyAttribute({ required this.value, required this.circles });
 
@@ -214,7 +214,7 @@ class TendencyAttribute {
   Map<String, dynamic> toJson() => _$TendencyAttributeToJson(this);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class CharacterTendencies {
   CharacterTendencies.empty()
     : dragon = TendencyAttribute(value: 0, circles: 0),
@@ -235,7 +235,7 @@ class CharacterTendencies {
   Map<String, dynamic> toJson() => _$CharacterTendenciesToJson(this);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake, constructor: 'create')
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
 class HumanCharacter extends EntityBase with MagicUser {
   HumanCharacter(
       super.uuid,

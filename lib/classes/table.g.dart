@@ -31,5 +31,5 @@ GameTable _$GameTableFromJson(Map<String, dynamic> json) => GameTable(
 Map<String, dynamic> _$GameTableToJson(GameTable instance) => <String, dynamic>{
       'uuid': instance.uuid,
       'name': instance.name,
-      'players': instance.playerSummaries,
+      'players': instance.playerSummaries.map((e) => e.toJson()).toList(),
     };

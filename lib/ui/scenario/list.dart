@@ -26,7 +26,7 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
   }
 
   void loadScenarioSummaries() {
-    _scenarioSummariesFuture = getScenarioSummaries();
+    _scenarioSummariesFuture = ScenarioSummaryStore().getAll();
   }
 
   @override
@@ -97,7 +97,7 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                               setState(() {
                                 _isWorking = true;
                               });
-                              await deleteScenario(scenarioSummaries[index].uuid);
+                              await ScenarioSummaryStore().delete(scenarioSummaries[index]);
                               setState(() {
                                 _isWorking = false;
                                 loadScenarioSummaries();
@@ -196,7 +196,7 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                               });
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                               var scenario = Scenario.import(json.decode(jsonStr));
-                              await saveScenario(scenario);
+                              await ScenarioStore().save(scenario);
                               setState(() {
                                 loadScenarioSummaries();
                                 _isWorking = false;

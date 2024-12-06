@@ -7,7 +7,7 @@ enum ScenarioEventCategory {
   pc,
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ScenarioEvent {
   ScenarioEvent({ required this.title, required this.description });
 
@@ -18,7 +18,7 @@ class ScenarioEvent {
   Map<String, dynamic> toJson() => _$ScenarioEventToJson(this);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ScenarioDayEvents {
   ScenarioDayEvents();
 

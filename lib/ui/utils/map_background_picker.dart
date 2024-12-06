@@ -4,6 +4,7 @@ import 'dart:ui' as ui;
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../../classes/exportable_binary_data.dart';
 import '../../classes/map_background_data.dart';
 
 class MapBackgroundPickerDialog extends StatefulWidget {
@@ -129,8 +130,8 @@ class _MapBackgroundPickerDialogState extends State<MapBackgroundPickerDialog> {
                   var h = double.tryParse(realHeightController.text);
                   if(h == null) return;
 
-                  var background = MapBackgroundData(
-                    imageData: imageData!,
+                  var background = MapBackground(
+                    image: ExportableBinaryData(data: imageData!),
                     imageWidth: image!.width,
                     imageHeight: image!.height,
                     realWidth: w,

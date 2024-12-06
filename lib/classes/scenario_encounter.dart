@@ -9,7 +9,7 @@ import 'player_character.dart';
 
 part 'scenario_encounter.g.dart';
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class EncounterEntity {
   EncounterEntity({ required this.id, this.min = 1, this.max = 1 });
 
@@ -21,7 +21,7 @@ class EncounterEntity {
   factory EncounterEntity.fromJson(Map<String, dynamic> json) => _$EncounterEntityFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ScenarioEncounter {
   ScenarioEncounter(
       {

@@ -7,11 +7,12 @@ import '../../classes/table.dart';
 import 'map_model.dart';
 
 Future<SessionModel> createSessionModel(String uuid) async {
-  var session = await getGameSession(uuid);
-  var table = await getGameTable(session.table.uuid, loadPlayers: true);
-  var scenario = await getScenario(session.scenario.uuid);
+  var session = await GameSessionStore().get(uuid);
+  // TODO: decide what to do if no session is found (null-safety on the calls below)
+  var table = await GameTableStore().getWithPlayers(session!.table.uuid);
+  var scenario = await ScenarioStore().get(session.scenario.uuid);
 
-  return SessionModel(session: session, table: table, scenario: scenario);
+  return SessionModel(session: session, table: table!, scenario: scenario!);
 }
 
 class SessionModel extends ChangeNotifier {

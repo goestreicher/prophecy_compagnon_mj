@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:provider/provider.dart';
 
@@ -9,6 +8,7 @@ import 'classes/magic.dart';
 import 'classes/non_player_character.dart';
 import 'classes/shield.dart';
 import 'classes/weapon.dart';
+import 'classes/storage/storage.dart';
 
 import 'ui/utils/custom_icons.dart';
 
@@ -20,7 +20,7 @@ import 'ui/spells/main.dart';
 import 'ui/table/list.dart';
 
 void main() async {
-  await Hive.initFlutter();
+  await DataStorage.instance.init();
   runApp(const ProphecyCompanionApp());
 }
 

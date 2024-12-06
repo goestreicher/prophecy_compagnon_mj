@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
@@ -13,6 +12,7 @@ import 'weapon.dart';
 import 'character/base.dart';
 import 'character/injury.dart';
 import 'character/skill.dart';
+import 'storage/storable.dart';
 import '../text_utils.dart';
 
 part 'creature.g.dart';
@@ -28,7 +28,7 @@ enum CreatureCategory {
   final String title;
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class NaturalWeaponModel {
   NaturalWeaponModel({
     required this.name,
@@ -57,7 +57,23 @@ class NaturalArmor implements ProtectionProvider {
   int protection() => value;
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
+  CreatureModelStore();
+
+  @override
+  String storeCategory() => 'creatures';
+
+  @override
+  String key(CreatureModel object) => object.id;
+
+  @override
+  Future<CreatureModel> fromJsonRepresentation(Map<String, dynamic> j) async => CreatureModel.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(CreatureModel object) async => object.toJson();
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class CreatureModel extends EncounterEntityModel {
   CreatureModel(
       {
@@ -287,25 +303,23 @@ class CreatureModel extends EncounterEntityModel {
       _models[instance.id] = instance;
     }
 
-    var box = await Hive.openLazyBox('creaturesBox');
-    for(var id in box.keys) {
-      var model = await box.get(id);
-      var instance = CreatureModel.fromJson(json.decode(model));
-      instance.editable = true;
-      _models[instance.id] = instance;
+    for(var model in await CreatureModelStore().getAll()) {
+      model.editable = true;
+      _models[model.id] = model;
     }
   }
 
   static Future<void> saveLocalModel(CreatureModel model) async {
-    var box = await Hive.openLazyBox('creaturesBox');
-    await box.put(model.id, json.encode(model.toJson()));
+    await CreatureModelStore().save(model);
     _models[model.id] = model;
   }
 
   static Future<void> deleteLocalModel(String id) async {
-    var box = await Hive.openLazyBox('creaturesBox');
-    await box.delete(id);
-    _models.remove(id);
+    var model = await CreatureModelStore().get(id);
+    if(model != null) {
+      await CreatureModelStore().delete(model);
+      _models.remove(id);
+    }
   }
 
   static bool _defaultAssetsLoaded = false;

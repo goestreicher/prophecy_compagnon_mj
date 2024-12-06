@@ -60,7 +60,7 @@ enum CastingDurationUnit {
   const CastingDurationUnit({ required this.title });
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class MagicSpell {
   MagicSpell({
     required this.name,

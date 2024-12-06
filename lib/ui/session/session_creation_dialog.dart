@@ -28,8 +28,8 @@ class _SessionCreationDialogState extends State<SessionCreationDialog> {
   void initState() {
     super.initState();
     _buildFuture = Future.wait([
-      getGameTableSummaries(),
-      getScenarioSummaries(),
+      GameTableSummaryStore().getAll(),
+      ScenarioSummaryStore().getAll(),
     ]);
   }
 

@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:hive_flutter/adapters.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
@@ -11,34 +8,53 @@ import 'human_character.dart';
 import 'magic.dart';
 import 'character/base.dart';
 import 'character/skill.dart';
+import 'storage/storable.dart';
 
 part 'player_character.g.dart';
 
-Future<PlayerCharacter> getPlayerCharacter(String uuid) async {
-  var pcBox = await Hive.openLazyBox('playerCharactersBox');
-  var jsonStr = await pcBox.get(uuid);
-  return PlayerCharacter.fromJson(json.decode(jsonStr));
+class PlayerCharacterSummaryStore extends JsonStoreAdapter<PlayerCharacterSummary> {
+  PlayerCharacterSummaryStore();
+
+  @override
+  String storeCategory() => 'playerCharacterSummaries';
+
+  @override
+  String key(PlayerCharacterSummary object) => object.uuid;
+
+  @override
+  Future<PlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async => PlayerCharacterSummary.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(PlayerCharacterSummary object) async => object.toJson();
 }
 
-Future<void> savePlayerCharacter(PlayerCharacter character) async {
-  // Save the PC summary
-  var pcSummaryBox = await Hive.openBox('playerCharacterSummariesBox');
-  var summary = character.summary();
-  await pcSummaryBox.put(summary.uuid, json.encode(summary.toJson()));
+class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
+  PlayerCharacterStore();
 
-  // Save the PC itself
-  var pcBox = await Hive.openLazyBox('playerCharactersBox');
-  await pcBox.put(character.uuid, json.encode(character.toJson()));
+  @override
+  String storeCategory() => 'playerCharacters';
+
+  @override
+  String key(PlayerCharacter object) => object.uuid;
+
+  @override
+  Future<PlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async => PlayerCharacter.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(PlayerCharacter object) async => object.toJson();
+
+  @override
+  Future<void> willSave(PlayerCharacter object) async {
+    await PlayerCharacterSummaryStore().save(object.summary());
+  }
+
+  @override
+  Future<void> willDelete(PlayerCharacter object) async {
+    await PlayerCharacterSummaryStore().delete(object.summary());
+  }
 }
 
-Future<void> deletePlayerCharacter(String uuid) async {
-  var pcSummaryBox = await Hive.openBox('playerCharacterSummariesBox');
-  await pcSummaryBox.delete(uuid);
-  var pcBox = await Hive.openLazyBox('playerCharactersBox');
-  await pcBox.delete(uuid);
-}
-
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class PlayerCharacterSummary {
   PlayerCharacterSummary(
       this.uuid,
@@ -59,7 +75,7 @@ class PlayerCharacterSummary {
   factory PlayerCharacterSummary.fromJson(Map<String, dynamic> json) => _$PlayerCharacterSummaryFromJson(json);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class PlayerCharacter extends HumanCharacter {
   PlayerCharacter(
       super.uuid,

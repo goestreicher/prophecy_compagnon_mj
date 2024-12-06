@@ -7,14 +7,17 @@ part of 'scenario_map.dart';
 // **************************************************************************
 
 ScenarioMap _$ScenarioMapFromJson(Map<String, dynamic> json) => ScenarioMap(
+      uuid: json['uuid'] as String?,
       name: json['name'] as String,
-      data: MapBackgroundData.fromJson(json['data'] as Map<String, dynamic>),
+      background:
+          MapBackground.fromJson(json['background'] as Map<String, dynamic>),
       isDefault: json['is_default'] as bool?,
     );
 
 Map<String, dynamic> _$ScenarioMapToJson(ScenarioMap instance) =>
     <String, dynamic>{
+      'uuid': instance.uuid,
       'name': instance.name,
-      'data': instance.data.toJson(),
+      'background': instance.background.toJson(),
       'is_default': instance.isDefault,
     };

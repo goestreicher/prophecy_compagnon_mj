@@ -31,5 +31,5 @@ ScenarioEncounter _$ScenarioEncounterFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ScenarioEncounterToJson(ScenarioEncounter instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'entities': instance.entities,
+      'entities': instance.entities.map((e) => e.toJson()).toList(),
     };

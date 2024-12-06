@@ -1,120 +1,141 @@
-import 'dart:convert';
-
-import 'package:hive_flutter/adapters.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
+
+import 'dart:convert';
 
 import 'creature.dart';
 import 'non_player_character.dart';
 import 'scenario_encounter.dart';
 import 'scenario_event.dart';
 import 'scenario_map.dart';
+import 'storage/storable.dart';
 
 part 'scenario.g.dart';
 
-Future<List<ScenarioSummary>> getScenarioSummaries() async {
-  List<ScenarioSummary> ret = <ScenarioSummary>[];
-  var box = await Hive.openBox('scenarioSummariesBox');
-  for(var t in box.keys) {
-    var jsonStr = await box.get(t);
-    ret.add(ScenarioSummary.fromJson(json.decode(jsonStr)));
-  }
-  return ret;
+class ScenarioSummaryStore extends JsonStoreAdapter<ScenarioSummary> {
+  ScenarioSummaryStore();
+
+  @override
+  String storeCategory() => 'scenarioSummaries';
+
+  @override
+  String key(ScenarioSummary object) => object.uuid;
+
+  @override
+  Future<ScenarioSummary> fromJsonRepresentation(Map<String, dynamic> j) async => ScenarioSummary.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(ScenarioSummary object) async => object.toJson();
 }
 
-Future<Scenario> getScenario(String uuid) async {
-  var box = await Hive.openLazyBox('scenariosBox');
-  var binariesBox = await Hive.openLazyBox('binariesBox');
-  var jsonStr = await box.get(uuid);
-  var scenarioJson = json.decode(jsonStr);
+class ScenarioStore extends JsonStoreAdapter<Scenario> {
+  ScenarioStore();
 
-  for(var map in scenarioJson['maps']) {
-    var hash = map['data']['image_data'];
-    var binary = await binariesBox.get(hash);
-    map['data']['image_data'] = binary;
+  @override
+  String storeCategory() => 'scenarios';
+
+  @override
+  String key(Scenario object) => object.uuid;
+
+  @override
+  Future<Scenario> fromJsonRepresentation(Map<String, dynamic> j) async {
+    if(j.containsKey('npcs')) {
+      var npcsJson = <Map<String, dynamic>>[];
+      for (var npcId in j['npcs']) {
+        var npc = NonPlayerCharacter.get(npcId);
+        if(npc != null) {
+          npcsJson.add(npc.toJson());
+        }
+      }
+      j['npcs'] = npcsJson;
+    }
+
+    if(j.containsKey('creatures')) {
+      var creaturesJson = <Map<String, dynamic>>[];
+      for(var creatureId in j['creatures']) {
+        var creature = CreatureModel.get(creatureId);
+        if(creature != null) {
+          creaturesJson.add(creature.toJson());
+        }
+      }
+      j['creatures'] = creaturesJson;
+    }
+
+    if(j.containsKey('maps')) {
+      var mapsJson = <Map<String, dynamic>>[];
+      for(var mapId in j['maps']) {
+        var map = await ScenarioMapStore().get(mapId);
+        if(map != null) {
+          mapsJson.add(map.toJson());
+        }
+      }
+      j['maps'] = mapsJson;
+    }
+
+    return Scenario.fromJson(j);
   }
 
-  var npcs = <Map<String, dynamic>>[];
-  if(scenarioJson.containsKey('npcs') && scenarioJson['npcs'] is List<dynamic>) {
-    for(dynamic npcId in scenarioJson['npcs'] as List<dynamic>) {
-      var npc = NonPlayerCharacter.get(npcId);
-      npcs.add(json.decode(json.encode(npc!.toJson())));
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(Scenario object) async {
+    var j = object.toJson();
+
+    var npcIds = <String>[];
+    for(var npc in object.npcs) {
+      npcIds.add(npc.id);
+    }
+    j['npcs'] = npcIds;
+
+    var creatureIds = <String>[];
+    for(var creature in object.creatures) {
+      creatureIds.add(creature.id);
+    }
+    j['creatures'] = creatureIds;
+
+    var mapIds = <String>[];
+    for(var map in object.maps) {
+      mapIds.add(map.uuid);
+    }
+    j['maps'] = mapIds;
+
+    return j;
+  }
+
+  @override
+  Future<void> willSave(Scenario object) async {
+    ScenarioSummaryStore().save(object.summary());
+
+    for(var npc in object.npcs) {
+      await NonPlayerCharacter.saveLocalModel(npc);
+    }
+
+    for(var creature in object.creatures) {
+      await CreatureModel.saveLocalModel(creature);
+    }
+
+    for(var map in object.maps) {
+      await ScenarioMapStore().save(map);
     }
   }
-  scenarioJson['npcs'] = npcs;
 
-  var creatures = <Map<String, dynamic>>[];
-  if(scenarioJson.containsKey('creatures') && scenarioJson['creatures'] is List<dynamic>) {
-    for(dynamic creatureId in scenarioJson['creatures'] as List<dynamic>) {
-      var creature = CreatureModel.get(creatureId);
-      creatures.add(json.decode(json.encode(creature!.toJson())));
+  @override
+  Future<void> willDelete(Scenario object) async {
+    ScenarioSummaryStore().delete(object.summary());
+
+    for(var npc in object.npcs) {
+      await NonPlayerCharacter.deleteLocalModel(npc.id);
+    }
+
+    for(var creature in object.creatures) {
+      await CreatureModel.deleteLocalModel(creature.id);
+    }
+
+    for(var map in object.maps) {
+      await ScenarioMapStore().delete(map);
     }
   }
-  scenarioJson['creatures'] = creatures;
-
-  return Scenario.fromJson(scenarioJson);
 }
 
-Future<void> saveScenario(Scenario scenario) async {
-  var binariesBox = await Hive.openLazyBox('binariesBox');
-  var scenarioJson = scenario.toJson();
-
-  // It's safer to rewrite the whole 'maps' key in the JSON to
-  // ensure that the maps are correctly split between tables
-  var mapsJson = <Map<String, dynamic>>{};
-  for(var map in scenario.maps) {
-    var mapJson = map.toJson();
-    var mapHash = map.data.hash;
-    await binariesBox.put(mapHash, mapJson['data']['image_data']);
-    mapJson['data']['image_data'] = mapHash;
-    mapsJson.add(mapJson);
-  }
-  scenarioJson['maps'] = mapsJson;
-
-  var npcIds = <String>[];
-  for(var npc in scenario.npcs) {
-    await NonPlayerCharacter.saveLocalModel(npc);
-    npcIds.add(npc.id);
-  }
-  scenarioJson['npcs'] = npcIds;
-
-  var creatureIds = <String>[];
-  for(var creature in scenario.creatures) {
-    await CreatureModel.saveLocalModel(creature);
-    creatureIds.add(creature.id);
-  }
-  scenarioJson['creatures'] = creatureIds;
-
-  var scenarioBox = await Hive.openLazyBox('scenariosBox');
-  await scenarioBox.put(scenario.uuid, json.encode(scenarioJson));
-
-  // Saving the summary
-  var summaryBox = await Hive.openBox('scenarioSummariesBox');
-  var summary = scenario.summary();
-  await summaryBox.put(summary.uuid, json.encode(summary.toJson()));
-}
-
-Future<void> deleteScenario(String uuid) async {
-  var summaryBox = await Hive.openBox('scenarioSummariesBox');
-  await summaryBox.delete(uuid);
-
-  var scenario = await getScenario(uuid);
-  for(var npc in scenario.npcs) {
-    await NonPlayerCharacter.deleteLocalModel(npc.id);
-  }
-  for(var creature in scenario.creatures) {
-    await CreatureModel.deleteLocalModel(creature.id);
-  }
-  var binariesBox = await Hive.openLazyBox('binariesBox');
-  for(var map in scenario.maps) {
-    await binariesBox.delete(map.data.hash);
-  }
-
-  var scenarioBox = await Hive.openLazyBox('scenariosBox');
-  await scenarioBox.delete(uuid);
-}
-
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ScenarioSummary {
   ScenarioSummary({
     required this.uuid,

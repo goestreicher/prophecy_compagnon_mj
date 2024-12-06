@@ -24,7 +24,7 @@ class PlayerCharacterEditPage extends StatefulWidget {
 
 class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
   bool _isWorking = false;
-  late Future<PlayerCharacter> _characterFuture;
+  late Future<PlayerCharacter?> _characterFuture;
   late PlayerCharacter _character;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -37,7 +37,7 @@ class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
       _characterFuture = Future<PlayerCharacter>.sync(() => widget.character!);
     }
     else {
-      _characterFuture = getPlayerCharacter(widget.uuid);
+      _characterFuture = PlayerCharacterStore().get(widget.uuid);
     }
   }
 
@@ -45,7 +45,7 @@ class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: _characterFuture,
-      builder: (context, AsyncSnapshot<PlayerCharacter> snapshot) {
+      builder: (context, AsyncSnapshot<PlayerCharacter?> snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: Text('Chargement...'));
         }
@@ -94,7 +94,7 @@ class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
                           _isWorking = true;
                         });
                         _formKey.currentState!.save();
-                        await savePlayerCharacter(_character);
+                        await PlayerCharacterStore().save(_character);
                         setState(() {
                           _isWorking = false;
                         });

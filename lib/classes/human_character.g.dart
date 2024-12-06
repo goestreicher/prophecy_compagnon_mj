@@ -149,9 +149,9 @@ CharacterTendencies _$CharacterTendenciesFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$CharacterTendenciesToJson(
         CharacterTendencies instance) =>
     <String, dynamic>{
-      'dragon': instance.dragon,
-      'human': instance.human,
-      'fatality': instance.fatality,
+      'dragon': instance.dragon.toJson(),
+      'human': instance.human.toJson(),
+      'fatality': instance.fatality.toJson(),
     };
 
 HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
@@ -214,7 +214,7 @@ Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
       'initiative': instance.initiative,
       'abilities': enumKeyedMapToJson(instance.abilities),
       'attributes': enumKeyedMapToJson(instance.attributes),
-      'skills': instance.skills,
+      'skills': instance.skills.map((e) => e.toJson()).toList(),
       'equipment': equipmentToJson(instance.equipment),
       'magic_spells': instance.magicSpells
           .map((k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e)),
@@ -233,9 +233,9 @@ Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
       'caste_privileges': instance.castePrivileges
           .map((e) => _$CastePrivilegeEnumMap[e]!)
           .toList(),
-      'disadvantages': instance.disadvantages,
-      'advantages': instance.advantages,
-      'tendencies': instance.tendencies,
+      'disadvantages': instance.disadvantages.map((e) => e.toJson()).toList(),
+      'advantages': instance.advantages.map((e) => e.toJson()).toList(),
+      'tendencies': instance.tendencies.toJson(),
     };
 
 const _$CasteEnumMap = {

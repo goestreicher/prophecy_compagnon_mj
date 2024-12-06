@@ -21,9 +21,9 @@ GameSession _$GameSessionFromJson(Map<String, dynamic> json) => GameSession(
 Map<String, dynamic> _$GameSessionToJson(GameSession instance) =>
     <String, dynamic>{
       'uuid': instance.uuid,
-      'table': instance.table,
-      'scenario': instance.scenario,
+      'table': instance.table.toJson(),
+      'scenario': instance.scenario.toJson(),
       'scenario_day': instance.scenarioDay,
-      'start_date': instance.startDate,
-      'current_date': instance.currentDate,
+      'start_date': instance.startDate.toJson(),
+      'current_date': instance.currentDate.toJson(),
     };

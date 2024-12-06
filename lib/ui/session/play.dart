@@ -29,7 +29,7 @@ class _SessionPlayPageState extends State<SessionPlayPage> {
       mapPage = Center(
           child: ElevatedButton(
             onPressed: () async {
-              var background = await showDialog<MapBackgroundData>(
+              var background = await showDialog<MapBackground>(
                 context: context,
                 builder: (BuildContext context) => const MapBackgroundPickerDialog(),
               );

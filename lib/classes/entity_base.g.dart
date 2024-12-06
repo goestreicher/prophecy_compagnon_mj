@@ -27,6 +27,6 @@ Map<String, dynamic> _$EntityBaseToJson(EntityBase instance) =>
       'initiative': instance.initiative,
       'abilities': enumKeyedMapToJson(instance.abilities),
       'attributes': enumKeyedMapToJson(instance.attributes),
-      'skills': instance.skills,
+      'skills': instance.skills.map((e) => e.toJson()).toList(),
       'equipment': equipmentToJson(instance.equipment),
     };

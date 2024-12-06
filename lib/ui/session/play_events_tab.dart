@@ -70,7 +70,7 @@ class _PlayEventsPageState extends State<PlayEventsPage> {
                                 _isWorking = true;
                               });
                               for(var pc in selectedPcs) {
-                                await savePlayerCharacter(pc);
+                                await PlayerCharacterStore().save(pc);
                               }
                               setState(() {
                                 _isWorking = false;

@@ -299,7 +299,7 @@ class _MapViewWidgetState extends State<_MapViewWidget> with SingleTickerProvide
           builder: (BuildContext context, List<dynamic> accepted, List<dynamic> rejected) {
             return Stack(
               children: [
-                Image.memory(map.background.imageData),
+                Image.memory(map.background.image.data),
                 if(map.movementRangeSpecification != null)
                   Positioned(
                     left: map.movementRangeSpecification!.center.dx - map.movementRangeSpecification!.radius,

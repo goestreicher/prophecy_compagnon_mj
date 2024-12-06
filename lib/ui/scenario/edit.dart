@@ -27,7 +27,7 @@ class ScenarioEditPage extends StatefulWidget {
 class _ScenarioEditPageState extends State<ScenarioEditPage> {
   bool _isWorking = false;
   bool _canCancel = true;
-  late Future<Scenario> _scenarioFuture;
+  late Future<Scenario?> _scenarioFuture;
   late Scenario _scenario;
 
   @override
@@ -37,7 +37,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
       _scenarioFuture = Future<Scenario>.sync(() => widget.scenario!);
     }
     else {
-      _scenarioFuture = getScenario(widget.uuid);
+      _scenarioFuture = ScenarioStore().get(widget.uuid);
     }
   }
 
@@ -47,7 +47,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
 
     return FutureBuilder(
       future: _scenarioFuture,
-      builder: (BuildContext context, AsyncSnapshot<Scenario> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<Scenario?> snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: Text('Chargement...'));
         }
@@ -153,7 +153,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                         setState(() {
                           _isWorking = true;
                         });
-                        await saveScenario(_scenario);
+                        await ScenarioStore().save(_scenario);
                         setState(() {
                           _isWorking = false;
                         });

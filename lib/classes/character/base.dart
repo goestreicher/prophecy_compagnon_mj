@@ -498,7 +498,7 @@ enum Career {
   });
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class AttributeBasedCalculator {
   AttributeBasedCalculator({
     required this.static,

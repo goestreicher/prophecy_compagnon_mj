@@ -107,7 +107,7 @@ Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
       'initiative': instance.initiative,
       'abilities': enumKeyedMapToJson(instance.abilities),
       'attributes': enumKeyedMapToJson(instance.attributes),
-      'skills': instance.skills,
+      'skills': instance.skills.map((e) => e.toJson()).toList(),
       'equipment': equipmentToJson(instance.equipment),
       'magic_spells': instance.magicSpells
           .map((k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e)),
@@ -126,9 +126,9 @@ Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
       'caste_privileges': instance.castePrivileges
           .map((e) => _$CastePrivilegeEnumMap[e]!)
           .toList(),
-      'disadvantages': instance.disadvantages,
-      'advantages': instance.advantages,
-      'tendencies': instance.tendencies,
+      'disadvantages': instance.disadvantages.map((e) => e.toJson()).toList(),
+      'advantages': instance.advantages.map((e) => e.toJson()).toList(),
+      'tendencies': instance.tendencies.toJson(),
       'player': instance.player,
       'augure': _$AugureEnumMap[instance.augure]!,
     };

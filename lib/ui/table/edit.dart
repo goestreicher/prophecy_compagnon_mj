@@ -24,7 +24,7 @@ class TableEditPage extends StatefulWidget {
 class _TableEditPageState extends State<TableEditPage> {
   bool _isWorking = false;
   bool _canCancel = true;
-  late Future<pc.GameTable> _tableFuture;
+  late Future<pc.GameTable?> _tableFuture;
   late pc.GameTable _table;
   final GlobalKey<FormState> _newPlayerCharacterForm = GlobalKey<FormState>();
 
@@ -32,10 +32,10 @@ class _TableEditPageState extends State<TableEditPage> {
   void initState() {
     super.initState();
     if(widget.table != null) {
-      _tableFuture = Future<pc.GameTable>.sync(() => widget.table!);
+      _tableFuture = Future<pc.GameTable?>.sync(() => widget.table!);
     }
     else {
-      _tableFuture = pc.getGameTable(widget.uuid);
+      _tableFuture = pc.GameTableStore().get(widget.uuid);
     }
   }
 
@@ -45,7 +45,7 @@ class _TableEditPageState extends State<TableEditPage> {
 
     return FutureBuilder(
       future: _tableFuture,
-      builder: (BuildContext context, AsyncSnapshot<pc.GameTable> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<pc.GameTable?> snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: Text('Chargement...'));
         }
@@ -83,7 +83,7 @@ class _TableEditPageState extends State<TableEditPage> {
                           setState(() {
                             _isWorking = true;
                           });
-                          await pc.saveGameTable(_table);
+                          await pc.GameTableStore().save(_table);
                           setState(() {
                             _isWorking = false;
                           });
@@ -103,9 +103,12 @@ class _TableEditPageState extends State<TableEditPage> {
                               _canCancel = false;
                               _isWorking = true;
                             });
-                            await deletePlayerCharacter(_table.playerSummaries[index].uuid);
+                            var character = await PlayerCharacterStore().get(_table.playerSummaries[index].uuid);
+                            if(character != null) {
+                              await PlayerCharacterStore().delete(character);
+                            }
                             _table.playerSummaries.removeAt(index);
-                            await pc.saveGameTable(_table);
+                            await pc.GameTableStore().save(_table);
                             setState(() {
                               _isWorking = false;
                             });
@@ -160,7 +163,7 @@ class _TableEditPageState extends State<TableEditPage> {
                       setState(() {
                         _isWorking = true;
                       });
-                      await pc.saveGameTable(_table);
+                      await pc.GameTableStore().save(_table);
                       setState(() {
                         _isWorking = false;
                       });
@@ -227,7 +230,7 @@ class _TableEditPageState extends State<TableEditPage> {
                               _isWorking = true;
                             });
                             _table.playerSummaries.add(character.summary());
-                            await pc.saveGameTable(_table);
+                            await pc.GameTableStore().save(_table);
                             setState(() {
                               _isWorking = false;
                             });
@@ -257,11 +260,11 @@ class _TableEditPageState extends State<TableEditPage> {
                             });
                             var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                             var character = PlayerCharacter.import(json.decode(jsonStr));
-                            await savePlayerCharacter(character);
+                            await PlayerCharacterStore().save(character);
                             setState(() {
                               _table.playerSummaries.add(character.summary());
                             });
-                            await pc.saveGameTable(_table);
+                            await pc.GameTableStore().save(_table);
                             setState(() {
                               _isWorking = false;
                               _canCancel = false;

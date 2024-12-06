@@ -26,7 +26,7 @@ class _SessionsListPageState extends State<SessionsListPage> {
   }
 
   void loadSessionSummaries() {
-    _sessionsFuture = getGameSessions();
+    _sessionsFuture = GameSessionStore().getAll();
   }
 
   @override
@@ -95,7 +95,7 @@ class _SessionsListPageState extends State<SessionsListPage> {
                             setState(() {
                               _isWorking = true;
                             });
-                            await deleteGameSession(_sessions[index].uuid);
+                            await GameSessionStore().delete(_sessions[index]);
                             setState(() {
                               _isWorking = false;
                               loadSessionSummaries();
@@ -151,7 +151,7 @@ class _SessionsListPageState extends State<SessionsListPage> {
                                 builder: (BuildContext context) => const SessionCreationDialog(),
                             );
                             if(session == null) return;
-                            await saveGameSession(session);
+                            await GameSessionStore().save(session);
                             setState(() {
                               _sessions.clear();
                               loadSessionSummaries();

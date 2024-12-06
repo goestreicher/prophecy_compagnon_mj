@@ -55,7 +55,7 @@ abstract class Equipment {
   double weight();
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake, createFactory: false)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, createFactory: false)
 abstract mixin class SupportsEquipableItem {
   bool meetsEquipableRequirements(EquipableItem item);
   String unmetEquipableRequirementsDescription(EquipableItem item);

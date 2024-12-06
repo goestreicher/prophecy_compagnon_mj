@@ -1,50 +1,10 @@
-import 'package:hive_flutter/adapters.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
-import 'dart:convert';
-
 import 'player_character.dart';
+import 'storage/storable.dart';
 
 part 'table.g.dart';
-
-Future<List<GameTableSummary>> getGameTableSummaries() async {
-  List<GameTableSummary> ret = <GameTableSummary>[];
-  var box = await Hive.openBox('tableSummariesBox');
-  for(var t in box.keys) {
-    var jsonStr = await box.get(t);
-    ret.add(GameTableSummary.fromJson(json.decode(jsonStr)));
-  }
-  return ret;
-}
-
-Future<GameTable> getGameTable(String uuid, { bool loadPlayers = false }) async {
-  var box = await Hive.openLazyBox('tablesBox');
-  var jsonStr = await box.get(uuid);
-  var table = GameTable.fromJson(json.decode(jsonStr));
-  if(loadPlayers) {
-    await table.loadPlayers();
-  }
-  return table;
-}
-
-Future<void> saveGameTable(GameTable table) async {
-  // Saving the summary
-  var summaryBox = await Hive.openBox('tableSummariesBox');
-  var summary = table.summary();
-  await summaryBox.put(summary.uuid, json.encode(summary.toJson()));
-
-  // Saving the table itself
-  var tableBox = await Hive.openLazyBox('tablesBox');
-  // Saving with the latest and cleanest PC summaries
-  var uuids = table.summary().playersUuids;
-  table.playerSummaries.clear();
-  for(var uuid in uuids) {
-    await getPlayerCharacter(uuid)
-        .then((PlayerCharacter pc) => table.playerSummaries.add(pc.summary()));
-  }
-  await tableBox.put(table.uuid, json.encode(table.toJson()));
-}
 
 Future<void> importGameTable(Map<String, dynamic> json) async {
   // Just replace the UUID if it exists. If not, the Table constructor will add it
@@ -56,27 +16,87 @@ Future<void> importGameTable(Map<String, dynamic> json) async {
   var summaries = <Map<String, dynamic>>[];
   for(var pcJson in json['players']) {
     var pc = PlayerCharacter.fromJson(pcJson);
-    await savePlayerCharacter(pc);
+    await PlayerCharacterStore().save(pc);
     summaries.add(pc.summary().toJson());
   }
   json['players'] = summaries;
 
   var table = GameTable.fromJson(json);
-  await saveGameTable(table);
+  await GameTableStore().save(table);
 }
 
-Future<void> deleteGameTable(String uuid) async {
-  var table = await getGameTable(uuid);
-  for(var character in table.playerSummaries) {
-    await deletePlayerCharacter(character.uuid);
+class GameTableSummaryStore extends JsonStoreAdapter<GameTableSummary> {
+  GameTableSummaryStore();
+
+  @override
+  String storeCategory() => 'gameTableSummaries';
+
+  @override
+  String key(GameTableSummary object) => object.uuid;
+
+  @override
+  Future<GameTableSummary> fromJsonRepresentation(Map<String, dynamic> j) async => GameTableSummary.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(GameTableSummary object) async => object.toJson();
+}
+
+class GameTableStore extends JsonStoreAdapter<GameTable> {
+  GameTableStore();
+
+  @override
+  String storeCategory() => 'gameTables';
+
+  @override
+  String key(GameTable object) => object.uuid;
+
+  @override
+  Future<GameTable> fromJsonRepresentation(Map<String, dynamic> j) async => GameTable.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(GameTable object) async => object.toJson();
+
+  @override
+  Future<void> willSave(GameTable object) async {
+    var summary = object.summary();
+
+    // Player summaries can be out of sync, refresh them
+    object.playerSummaries.clear();
+    for(var uuid in summary.playersUuids) {
+      var character = await PlayerCharacterStore().get(uuid);
+      if(character != null) {
+        object.playerSummaries.add(character.summary());
+      }
+    }
+
+    await GameTableSummaryStore().save(summary);
   }
-  var summaryBox = await Hive.openBox('tableSummariesBox');
-  await summaryBox.delete(uuid);
-  var tableBox = await Hive.openLazyBox('tablesBox');
-  await tableBox.delete(uuid);
+
+  @override
+  Future<void> willDelete(GameTable object) async {
+    var summary = object.summary();
+
+    for(var uuid in summary.playersUuids) {
+      var character = await PlayerCharacterStore().get(uuid);
+      if(character != null) {
+        PlayerCharacterStore().delete(character);
+      }
+    }
+
+    GameTableSummaryStore().delete(summary);
+  }
+
+  Future<GameTable?> getWithPlayers(String key) async {
+    var table = await get(key);
+    if(table == null) {
+      return null;
+    }
+    await table.loadPlayers();
+    return table;
+  }
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class GameTableSummary {
   GameTableSummary({ required this.uuid, required this.name });
 
@@ -96,7 +116,7 @@ class GameTableSummary {
   }
 }
 
-@JsonSerializable()
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class GameTable {
   GameTable(
       {
@@ -130,8 +150,10 @@ class GameTable {
 
   Future<void> loadPlayers() async {
     for(var pcSummary in playerSummaries) {
-      var pcFull = await getPlayerCharacter(pcSummary.uuid);
-      players.add(pcFull);
+      var pcFull = await PlayerCharacterStore().get(pcSummary.uuid);
+      if(pcFull != null) {
+        players.add(pcFull);
+      }
     }
   }
 

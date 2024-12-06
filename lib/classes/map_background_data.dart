@@ -1,40 +1,70 @@
-import 'dart:convert';
-import 'dart:typed_data';
-
-import 'package:crypto/crypto.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import 'exportable_binary_data.dart';
+import 'storage/storable.dart';
 
 part 'map_background_data.g.dart';
 
+class MapBackgroundStore extends JsonStoreAdapter<MapBackground> {
+  MapBackgroundStore();
+
+  @override
+  String storeCategory() => 'mapBackgrounds';
+
+  @override
+  String key(MapBackground object) => object.hash;
+
+  @override
+  Future<MapBackground> fromJsonRepresentation(Map<String, dynamic> j) async {
+    var bin = await BinaryDataStore().get(j['image']);
+    if(bin != null) {
+      j['image'] = bin.toJson();
+    }
+    else {
+      // TODO: improve this, because as it is, decoding will fail
+      j['image'] = '';
+    }
+
+    return MapBackground.fromJson(j);
+  }
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(MapBackground object) async {
+    var j = object.toJson();
+    j['image'] = object.image.hash;
+    return j;
+  }
+
+  @override
+  Future<void> willSave(MapBackground object) async {
+    BinaryDataStore().save(object.image);
+  }
+
+  @override
+  Future<void> willDelete(MapBackground object) async {
+    BinaryDataStore().delete(object.image);
+  }
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class MapBackgroundData {
-  MapBackgroundData({
-    required this.imageData,
+class MapBackground {
+  MapBackground({
+    required this.image,
     required this.imageWidth,
     required this.imageHeight,
     required this.realWidth,
     required this.realHeight,
   });
 
+  String get hash => image.hash;
   double get pixelsPerMeter => imageWidth / realWidth;
 
-  @JsonKey(fromJson: base64ToImageData, toJson: imageDataToBase64)
-    final Uint8List imageData;
-  @JsonKey(includeFromJson: false, includeToJson: false)
-    String get hash => sha256.convert(utf8.encode(imageDataToBase64(imageData))).toString();
+  final ExportableBinaryData image;
   final int imageWidth;
   final int imageHeight;
   double realWidth;
   double realHeight;
 
-  factory MapBackgroundData.fromJson(Map<String, dynamic> json) => _$MapBackgroundDataFromJson(json);
-  Map<String, dynamic> toJson() => _$MapBackgroundDataToJson(this);
-}
-
-String imageDataToBase64(Uint8List data) {
-  return base64Encode(data);
-}
-
-Uint8List base64ToImageData(String data) {
-  return base64Decode(data);
+  factory MapBackground.fromJson(Map<String, dynamic> json) => _$MapBackgroundFromJson(json);
+  Map<String, dynamic> toJson() => _$MapBackgroundToJson(this);
 }

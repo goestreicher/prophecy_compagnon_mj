@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:prophecy_compagnon_mj/classes/storage/storable.dart';
 
 import 'character/base.dart';
 import 'character/skill.dart';
@@ -96,7 +96,23 @@ class NPCSubCategory {
   final NPCSubCategoryEnum? _subcat;
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake, constructor: 'create')
+class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
+  NonPlayerCharacterStore();
+
+  @override
+  String storeCategory() => 'npcs';
+
+  @override
+  String key(NonPlayerCharacter object) => object.id;
+
+  @override
+  Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async => NonPlayerCharacter.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(NonPlayerCharacter object) async => object.toJson();
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
 class NonPlayerCharacter extends HumanCharacter {
   NonPlayerCharacter(
     super.uuid,
@@ -236,25 +252,23 @@ class NonPlayerCharacter extends HumanCharacter {
       _instances[instance.id] = instance;
     }
 
-    var box = await Hive.openLazyBox('npcsBox');
-    for(var id in box.keys) {
-      var jsonStr = await box.get(id);
-      var npc = NonPlayerCharacter.fromJson(json.decode(jsonStr));
+    for(var npc in await NonPlayerCharacterStore().getAll()) {
       npc.editable = true;
       _instances[npc.id] = npc;
     }
   }
 
   static Future<void> saveLocalModel(NonPlayerCharacter npc) async {
-    var box = await Hive.openLazyBox('npcsBox');
-    await box.put(npc.id, json.encode(npc.toJson()));
+    await NonPlayerCharacterStore().save(npc);
     _instances[npc.id] = npc;
   }
 
   static Future<void> deleteLocalModel(String id) async {
-    var box = await Hive.openLazyBox('npcsBox');
-    await box.delete(id);
-    _instances.remove(id);
+    var npc = await NonPlayerCharacterStore().get(id);
+    if(npc != null) {
+      await NonPlayerCharacterStore().delete(npc);
+      _instances.remove(id);
+    }
   }
 
   factory NonPlayerCharacter.fromJson(Map<String, dynamic> json) {

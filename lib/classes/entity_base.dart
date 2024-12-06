@@ -52,7 +52,7 @@ class EntityStatus {
   int bitfield;
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake, constructor: 'create')
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
 class EntityBase extends ChangeNotifier with SupportsEquipableItem {
   EntityBase(
       this.uuid,

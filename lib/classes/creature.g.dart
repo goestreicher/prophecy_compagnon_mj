@@ -85,11 +85,12 @@ Map<String, dynamic> _$CreatureModelToJson(CreatureModel instance) =>
       'attributes': instance.attributes
           .map((k, e) => MapEntry(_$AttributeEnumMap[k]!, e)),
       'initiative': instance.initiative,
-      'injuries': instance.injuries,
+      'injuries': instance.injuries.map((e) => e.toJson()).toList(),
       'natural_armor': instance.naturalArmor,
       'natural_armor_description': instance.naturalArmorDescription,
-      'skills': instance.skills,
-      'natural_weapons': instance.naturalWeapons,
+      'skills': instance.skills.map((e) => e.toJson()).toList(),
+      'natural_weapons':
+          instance.naturalWeapons.map((e) => e.toJson()).toList(),
       'equipment': instance.equipment,
       'special_capability': instance.specialCapability,
     };

@@ -70,7 +70,7 @@ enum WeekDay {
   final String shortTitle;
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake)
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class KorDate {
   KorDate({
     this.age = KorAge.empires,
