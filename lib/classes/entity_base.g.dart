@@ -6,6 +6,15 @@ part of 'entity_base.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+EntityStatus _$EntityStatusFromJson(Map<String, dynamic> json) => EntityStatus(
+      (json['bitfield'] as num).toInt(),
+    );
+
+Map<String, dynamic> _$EntityStatusToJson(EntityStatus instance) =>
+    <String, dynamic>{
+      'bitfield': instance.bitfield,
+    };
+
 EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase.create(
       name: json['name'] as String,
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
@@ -15,13 +24,16 @@ EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase.create(
       skills: (json['skills'] as List<dynamic>?)
           ?.map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList(),
-    );
+    )..status = json['status'] == null
+        ? EntityStatus.empty()
+        : EntityStatus.fromJson(json['status'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$EntityBaseToJson(EntityBase instance) =>
     <String, dynamic>{
       'equiped': equipedToJson(instance.equiped),
       'name': instance.name,
       'description': instance.description,
+      'status': instance.status.toJson(),
       'size': instance.size,
       'weight': instance.weight,
       'initiative': instance.initiative,

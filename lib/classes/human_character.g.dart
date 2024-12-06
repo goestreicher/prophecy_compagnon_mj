@@ -194,6 +194,9 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
               json['tendencies'] as Map<String, dynamic>),
       description: json['description'] as String?,
     )
+      ..status = json['status'] == null
+          ? EntityStatus.empty()
+          : EntityStatus.fromJson(json['status'] as Map<String, dynamic>)
       ..skills = (json['skills'] as List<dynamic>)
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList()
@@ -209,6 +212,7 @@ Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
       'equiped': equipedToJson(instance.equiped),
       'name': instance.name,
       'description': instance.description,
+      'status': instance.status.toJson(),
       'size': instance.size,
       'weight': instance.weight,
       'initiative': instance.initiative,

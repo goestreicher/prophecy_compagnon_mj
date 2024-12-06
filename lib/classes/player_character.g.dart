@@ -63,6 +63,9 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
       proficiency: (json['proficiency'] as num?)?.toInt() ?? 0,
     )
       ..description = json['description'] as String
+      ..status = json['status'] == null
+          ? EntityStatus.empty()
+          : EntityStatus.fromJson(json['status'] as Map<String, dynamic>)
       ..size = (json['size'] as num).toDouble()
       ..weight = (json['weight'] as num).toDouble()
       ..skills = (json['skills'] as List<dynamic>)
@@ -102,6 +105,7 @@ Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
       'uuid': instance.uuid,
       'name': instance.name,
       'description': instance.description,
+      'status': instance.status.toJson(),
       'size': instance.size,
       'weight': instance.weight,
       'initiative': instance.initiative,

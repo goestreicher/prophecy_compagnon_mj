@@ -24,6 +24,7 @@ abstract interface class InitiativeProvider {
   int initiativeForRange(WeaponRange range);
 }
 
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class EntityStatus {
   static final none        = EntityStatus(0);
   static final injured     = EntityStatus(1 <<  1);
@@ -35,6 +36,7 @@ class EntityStatus {
   static final sprinting   = EntityStatus(1 << 12);
   static final attacking   = EntityStatus(1 << 20);
 
+  EntityStatus.empty() : bitfield = 0;
   EntityStatus(this.bitfield);
 
   EntityStatus operator &(EntityStatus other) =>
@@ -50,6 +52,9 @@ class EntityStatus {
   int get hashCode => bitfield;
 
   int bitfield;
+
+  factory EntityStatus.fromJson(Map<String, dynamic> json) => _$EntityStatusFromJson(json);
+  Map<String, dynamic> toJson() => _$EntityStatusToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
@@ -100,9 +105,9 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
   String name;
   String description;
 
-  // TODO: include this in JSON restore
-  @JsonKey(includeToJson: false, includeFromJson: false)
-    EntityStatus get status => _status;
+
+  @JsonKey(defaultValue: EntityStatus.empty)
+  EntityStatus get status => _status;
   set status(EntityStatus s) {
     _status = s;
   }
