@@ -1,6 +1,5 @@
 import 'package:hive_flutter/adapters.dart';
 
-import '../storable.dart';
 import '../storage_engine.dart';
 
 class HiveStorageEngine implements StorageEngine {

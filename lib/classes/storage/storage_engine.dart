@@ -1,5 +1,3 @@
-import 'storable.dart';
-
 abstract interface class StorageEngine {
   Future<void> init();
   Future<List<String>> keys(String category);

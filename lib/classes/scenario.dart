@@ -1,8 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
-import 'dart:convert';
-
 import 'creature.dart';
 import 'non_player_character.dart';
 import 'scenario_encounter.dart';

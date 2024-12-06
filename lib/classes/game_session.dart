@@ -1,12 +1,10 @@
-import 'dart:convert';
-
 import 'package:json_annotation/json_annotation.dart';
-import 'package:prophecy_compagnon_mj/classes/storage/storable.dart';
 import 'package:uuid/uuid.dart';
 
 import 'calendar.dart';
 import 'scenario.dart';
 import 'table.dart';
+import 'storage/storable.dart';
 
 part 'game_session.g.dart';
 
