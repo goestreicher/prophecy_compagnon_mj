@@ -267,8 +267,8 @@ class NonPlayerCharacter extends HumanCharacter {
     var npc = await NonPlayerCharacterStore().get(id);
     if(npc != null) {
       await NonPlayerCharacterStore().delete(npc);
-      _instances.remove(id);
     }
+    _instances.remove(id);
   }
 
   factory NonPlayerCharacter.fromJson(Map<String, dynamic> json) {

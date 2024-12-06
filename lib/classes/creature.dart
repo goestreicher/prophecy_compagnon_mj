@@ -318,8 +318,8 @@ class CreatureModel extends EncounterEntityModel {
     var model = await CreatureModelStore().get(id);
     if(model != null) {
       await CreatureModelStore().delete(model);
-      _models.remove(id);
     }
+    _models.remove(id);
   }
 
   static bool _defaultAssetsLoaded = false;
