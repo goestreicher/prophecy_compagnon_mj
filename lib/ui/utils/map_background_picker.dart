@@ -51,10 +51,22 @@ class _MapBackgroundPickerDialogState extends State<MapBackgroundPickerDialog> {
                     });
                     frame.image.dispose();
                   }
-                  catch (exception) {
+                  catch (e) {
                     if(!context.mounted) return;
-                    // TODO: warn the user that something went south
-                    Navigator.of(context).pop();
+
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                          title: const Text("Impossible d'importer l'image"),
+                          content: Text(e.toString()),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              child: const Text('OK'),
+                            )
+                          ]
+                      )
+                    );
                   }
                 },
                 child: Text(

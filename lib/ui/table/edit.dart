@@ -273,8 +273,22 @@ class _TableEditPageState extends State<TableEditPage> {
                             setState(() {
                               _isWorking = false;
                             });
-                            // TODO: notify the user that things went south
-                            // TODO: catch FormatException from the UTF-8 conversion?
+
+                            if(!context.mounted) return;
+
+                            showDialog(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                  title: const Text("Échec de l'import"),
+                                  content: Text(e.toString()),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      onPressed: () => Navigator.of(context).pop(),
+                                      child: const Text('OK'),
+                                    )
+                                  ]
+                              )
+                            );
                           }
                         },
                       ),

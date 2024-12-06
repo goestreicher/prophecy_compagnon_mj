@@ -168,11 +168,14 @@ class _TablesListPageState extends State<TablesListPage> {
                               type: FileType.custom,
                               allowedExtensions: ['json'],
                             );
+                            if(!context.mounted) return;
                             if(result == null) return;
+
                             try {
                               setState(() {
                                 _isWorking = true;
                               });
+
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                               await importGameTable(json.decode(jsonStr));
                               setState(() {
@@ -183,8 +186,22 @@ class _TablesListPageState extends State<TablesListPage> {
                               setState(() {
                                 _isWorking = false;
                               });
-                              // TODO: notify the user that things went south
-                              // TODO: catch FormatException from the UTF-8 conversion?
+
+                              if(!context.mounted) return;
+
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                  title: const Text("Échec de l'import"),
+                                  content: Text(e.toString()),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      onPressed: () => Navigator.of(context).pop(),
+                                      child: const Text('OK'),
+                                    )
+                                  ]
+                                )
+                              );
                             }
                           },
                         ),
