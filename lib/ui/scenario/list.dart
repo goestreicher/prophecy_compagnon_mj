@@ -97,7 +97,13 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                               setState(() {
                                 _isWorking = true;
                               });
-                              await ScenarioSummaryStore().delete(scenarioSummaries[index]);
+                              var scenario = await ScenarioStore().get(scenarioSummaries[index].uuid);
+                              if(scenario != null) {
+                                await ScenarioStore().delete(scenario);
+                              }
+                              else {
+                                await ScenarioSummaryStore().delete(scenarioSummaries[index]);
+                              }
                               setState(() {
                                 _isWorking = false;
                                 loadScenarioSummaries();
