@@ -18,6 +18,7 @@ class NPCMainPage extends StatefulWidget {
 }
 
 class _NPCMainPageState extends State<NPCMainPage> {
+  bool _isWorking = false;
   final TextEditingController _categoryController = TextEditingController();
   final TextEditingController _subCategoryController = TextEditingController();
   final GlobalKey<FormState> _newNPCFormKey = GlobalKey();
@@ -158,10 +159,18 @@ class _NPCMainPageState extends State<NPCMainPage> {
                   if(result == null) return;
 
                   try {
+                    setState(() {
+                      _isWorking = true;
+                    });
+
                     var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                     var npc = NonPlayerCharacter.fromJson(json.decode(jsonStr));
                     var model = NonPlayerCharacter.get(npc.id);
                     if(model != null) {
+                      setState(() {
+                        _isWorking = false;
+                      });
+
                       await showDialog(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
@@ -187,8 +196,25 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       _subCategoryController.text = npc.subCategory.title;
                     });
                   } catch (e) {
-                    // TODO: notify the user that things went south
-                    // TODO: catch FormatException from the UTF-8 conversion?
+                    setState(() {
+                      _isWorking = false;
+                    });
+
+                    if(!context.mounted) return;
+
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) => AlertDialog(
+                          title: const Text("Échec de l'import"),
+                          content: Text(e.toString()),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.of(context).pop(),
+                              child: const Text('OK'),
+                            )
+                          ]
+                      )
+                    );
                   }
                 },
               ),
@@ -229,9 +255,13 @@ class _NPCMainPageState extends State<NPCMainPage> {
                             editing = true;
                           });
                         },
-                        onDelete: () {
+                        onDelete: () async {
                           setState(() {
-                            NonPlayerCharacter.deleteLocalModel(_selected!.id);
+                            _isWorking = true;
+                          });
+                          await NonPlayerCharacter.deleteLocalModel(_selected!.id);
+                          setState(() {
+                            _isWorking = false;
                             _selected = null;
                           });
                         }
@@ -244,9 +274,25 @@ class _NPCMainPageState extends State<NPCMainPage> {
       );
     }
 
-    return Padding(
-      padding: const EdgeInsets.all(12.0),
-      child: mainArea,
+    return Stack(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: mainArea,
+        ),
+        if(_isWorking)
+          const Opacity(
+            opacity: 0.6,
+            child: ModalBarrier(
+              dismissible: false,
+              color: Colors.black,
+            ),
+          ),
+        if(_isWorking)
+          const Center(
+              child: CircularProgressIndicator()
+          ),
+      ],
     );
   }
 }
