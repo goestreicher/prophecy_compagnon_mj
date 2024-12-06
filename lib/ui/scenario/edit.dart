@@ -10,6 +10,7 @@ import 'edit_events_tab.dart';
 import 'edit_general_tab.dart';
 import 'edit_maps_tab.dart';
 import 'edit_npcs_tab.dart';
+import '../utils/full_page_loading.dart';
 
 class ScenarioEditPage extends StatefulWidget {
   const ScenarioEditPage({super.key, required this.uuid}) : scenario = null;
@@ -45,7 +46,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
       future: _scenarioFuture,
       builder: (BuildContext context, AsyncSnapshot<Scenario?> snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: Text('Chargement...'));
+          return FullPageLoadingWidget();
         }
 
         if(!snapshot.hasData || snapshot.data == null) {

@@ -8,6 +8,7 @@ import 'edit_base_tab.dart';
 import 'edit_magic_tab.dart';
 import 'edit_skills_tab.dart';
 import 'edit_equipment_tab.dart';
+import '../utils/full_page_loading.dart';
 
 class PlayerCharacterEditPage extends StatefulWidget {
   const PlayerCharacterEditPage({super.key, required this.uuid})
@@ -47,7 +48,7 @@ class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
       future: _characterFuture,
       builder: (context, AsyncSnapshot<PlayerCharacter?> snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: Text('Chargement...'));
+          return FullPageLoadingWidget();
         }
 
         if(!snapshot.hasData || snapshot.data == null) {
