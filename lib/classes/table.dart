@@ -83,7 +83,7 @@ class GameTableStore extends JsonStoreAdapter<GameTable> {
       }
     }
 
-    GameTableSummaryStore().delete(summary);
+    await GameTableSummaryStore().delete(summary);
   }
 
   Future<GameTable?> getWithPlayers(String key) async {

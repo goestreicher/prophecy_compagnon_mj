@@ -117,7 +117,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
 
   @override
   Future<void> willDelete(Scenario object) async {
-    ScenarioSummaryStore().delete(object.summary());
+    await ScenarioSummaryStore().delete(object.summary());
 
     for(var npc in object.npcs) {
       await NonPlayerCharacter.deleteLocalModel(npc.id);
