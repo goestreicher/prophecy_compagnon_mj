@@ -103,7 +103,6 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                               IconButton(
                                 icon: const Icon(Icons.delete),
                                 onPressed: () async {
-                                  // TODO: ask confirmation maybe?
                                   await ScenarioMapStore().delete(widget.maps[index]);
                                   setState(() {
                                     if(_selected == widget.maps[index]) {

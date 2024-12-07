@@ -86,7 +86,6 @@ class _ScenarioEditEncountersPageState extends State<ScenarioEditEncountersPage>
                           leading: IconButton(
                             icon: const Icon(Icons.delete),
                             onPressed: () async {
-                              // TODO: ask confirmation maybe?
                               setState(() {
                                 if(_selected == widget.encounters[index]) {
                                   _selected = null;

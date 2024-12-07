@@ -96,7 +96,27 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                           trailing: IconButton(
                             icon: const Icon(Icons.delete),
                             onPressed: () async {
-                              // TODO: ask confirmation maybe?
+                              var confirm = await showDialog<bool>(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                  title: const Text('Confirmer la suppression'),
+                                  content: const Text('Supprimer ce scenario, tous les PNJs, créatures et cartes ?'),
+                                  actions: <Widget>[
+                                    TextButton(
+                                      onPressed: () => Navigator.of(context).pop(false),
+                                      child: const Text('Annuler'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () => Navigator.of(context).pop(true),
+                                      child: const Text('Supprimer'),
+                                    ),
+                                  ]
+                                )
+                              );
+                              if(confirm == null || !confirm) return;
+
+                              // TODO: delete associated sessions
+
                               setState(() {
                                 _isWorking = true;
                               });

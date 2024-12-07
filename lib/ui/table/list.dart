@@ -80,7 +80,27 @@ class _TablesListPageState extends State<TablesListPage> {
                     trailing: IconButton(
                       icon: const Icon(Icons.delete),
                       onPressed: () async {
-                        // TODO: ask confirmation maybe?
+                        var confirm = await showDialog<bool>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('Confirmer la suppression'),
+                            content: const Text('Supprimer cette table et tous les PJs ?'),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(false),
+                                child: const Text('Annuler'),
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(true),
+                                child: const Text('Supprimer'),
+                              ),
+                            ]
+                          )
+                        );
+                        if(confirm == null || !confirm) return;
+
+                        // TODO: delete associated sessions
+
                         setState(() {
                           _isWorking = true;
                         });
