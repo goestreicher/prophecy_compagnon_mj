@@ -9,6 +9,7 @@ import '../../classes/player_character.dart';
 import '../../classes/character/base.dart';
 import '../player_character/edit.dart';
 import '../player_character/new_character_dialog.dart';
+import '../utils/full_page_error.dart';
 import '../utils/full_page_loading.dart';
 
 class TableEditPage extends StatefulWidget {
@@ -47,17 +48,19 @@ class _TableEditPageState extends State<TableEditPage> {
     return FutureBuilder(
       future: _tableFuture,
       builder: (BuildContext context, AsyncSnapshot<pc.GameTable?> snapshot) {
-        if(snapshot.connectionState == ConnectionState.waiting) {
+        if(snapshot.connectionState != ConnectionState.done) {
           return FullPageLoadingWidget();
         }
 
+        if(snapshot.hasError) {
+          return FullPageErrorWidget(message: snapshot.error!.toString(), canPop: true);
+        }
+
         if(!snapshot.hasData || snapshot.data == null) {
-          // TODO: find a better way to notify the user
-          return const Center(child: Text('Quelque chose a foiré grave'));
+          return FullPageErrorWidget(message: 'Aucune donnée retournée', canPop: true);
         }
-        else {
-          _table = snapshot.data!;
-        }
+
+        _table = snapshot.data!;
 
         Widget mainArea;
         if(_table.playerSummaries.isEmpty) {

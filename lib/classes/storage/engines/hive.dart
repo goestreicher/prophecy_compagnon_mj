@@ -1,5 +1,6 @@
 import 'package:hive_flutter/adapters.dart';
 
+import '../exceptions.dart';
 import '../storage_engine.dart';
 
 class HiveStorageEngine implements StorageEngine {
@@ -17,9 +18,11 @@ class HiveStorageEngine implements StorageEngine {
   }
 
   @override
-  Future<String?> get(String category, String key) async {
+  Future<String> get(String category, String key) async {
     var box = await Hive.openLazyBox('${category}Box');
-    return await box.get(key);
+    var res = await box.get(key);
+    if(res == null) throw KeyNotFoundException(category, key);
+    return res;
   }
 
   @override

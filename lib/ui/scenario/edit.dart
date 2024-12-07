@@ -10,6 +10,7 @@ import 'edit_events_tab.dart';
 import 'edit_general_tab.dart';
 import 'edit_maps_tab.dart';
 import 'edit_npcs_tab.dart';
+import '../utils/full_page_error.dart';
 import '../utils/full_page_loading.dart';
 
 class ScenarioEditPage extends StatefulWidget {
@@ -49,13 +50,15 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
           return FullPageLoadingWidget();
         }
 
+        if(snapshot.hasError) {
+          return FullPageErrorWidget(message: snapshot.error!.toString(), canPop: true);
+        }
+
         if(!snapshot.hasData || snapshot.data == null) {
-          // TODO: find a better way to notify the user
-          return const Center(child: Text('Quelque chose a foiré grave'));
+          return FullPageErrorWidget(message: 'Aucune donnée retournée', canPop: true);
         }
-        else {
-          _scenario = snapshot.data!;
-        }
+
+        _scenario = snapshot.data!;
 
         return Stack(
           children: [

@@ -8,6 +8,7 @@ import 'edit_base_tab.dart';
 import 'edit_magic_tab.dart';
 import 'edit_skills_tab.dart';
 import 'edit_equipment_tab.dart';
+import '../utils/full_page_error.dart';
 import '../utils/full_page_loading.dart';
 
 class PlayerCharacterEditPage extends StatefulWidget {
@@ -47,17 +48,19 @@ class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
     return FutureBuilder(
       future: _characterFuture,
       builder: (context, AsyncSnapshot<PlayerCharacter?> snapshot) {
-        if(snapshot.connectionState == ConnectionState.waiting) {
+        if(snapshot.connectionState != ConnectionState.done) {
           return FullPageLoadingWidget();
         }
 
+        if(snapshot.hasError) {
+          return FullPageErrorWidget(message: snapshot.error!.toString(), canPop: true);
+        }
+
         if(!snapshot.hasData || snapshot.data == null) {
-          // TODO: find a better way to notify the user
-          return const Center(child: Text('Quelque chose a foiré grave'));
+          return FullPageErrorWidget(message: 'Aucune donnée retournée', canPop: true);
         }
-        else {
-          _character = snapshot.data!;
-        }
+
+        _character = snapshot.data!;
 
         return Stack(
           children: [

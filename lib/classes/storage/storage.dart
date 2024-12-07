@@ -13,7 +13,7 @@ class DataStorage {
     return _engine.keys(category);
   }
 
-  Future<String?> get<T>(String category, String key) async {
+  Future<String> get<T>(String category, String key) async {
     return await _engine.get(category, key);
   }
 

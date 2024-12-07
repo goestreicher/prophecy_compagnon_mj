@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../classes/scenario.dart';
 import 'edit.dart';
+import '../utils/full_page_error.dart';
 import '../utils/full_page_loading.dart';
 import '../utils/single_line_input_dialog.dart';
 
@@ -37,8 +38,12 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
     return FutureBuilder<List<ScenarioSummary>>(
         future: _scenarioSummariesFuture,
         builder: (BuildContext context, AsyncSnapshot<List<ScenarioSummary>> snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
+          if(snapshot.connectionState != ConnectionState.done) {
             return FullPageLoadingWidget();
+          }
+
+          if(snapshot.hasError) {
+            return FullPageErrorWidget(message: snapshot.error!.toString(), canPop: false);
           }
 
           scenarioSummaries = snapshot.hasData

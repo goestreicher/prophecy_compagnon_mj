@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../classes/table.dart';
 import 'edit.dart';
+import '../utils/full_page_error.dart';
 import '../utils/full_page_loading.dart';
 import '../utils/single_line_input_dialog.dart';
 
@@ -38,8 +39,12 @@ class _TablesListPageState extends State<TablesListPage> {
     return FutureBuilder<List<GameTableSummary>>(
       future: _tableSummariesFuture,
       builder: (BuildContext context, AsyncSnapshot<List<GameTableSummary>> snapshot) {
-        if(snapshot.connectionState == ConnectionState.waiting) {
+        if(snapshot.connectionState != ConnectionState.done) {
           return FullPageLoadingWidget();
+        }
+
+        if(snapshot.hasError) {
+          return FullPageErrorWidget(message: snapshot.error!.toString(), canPop: false);
         }
 
         tableSummaries = snapshot.hasData
