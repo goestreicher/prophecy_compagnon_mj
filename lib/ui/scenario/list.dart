@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../../classes/game_session.dart';
 import '../../classes/scenario.dart';
 import 'edit.dart';
 import '../utils/full_page_error.dart';
@@ -100,7 +101,15 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
                                   title: const Text('Confirmer la suppression'),
-                                  content: const Text('Supprimer ce scenario, tous les PNJs, créatures et cartes ?'),
+                                  content: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      const Text('Supprimer ce scenario, tous les PNJs, créatures et cartes ?'),
+                                      const SizedBox(height: 8.0),
+                                      const Text('Cela supprimera aussi les sessions qui utilisent ce scénario.'),
+                                    ],
+                                  ),
                                   actions: <Widget>[
                                     TextButton(
                                       onPressed: () => Navigator.of(context).pop(false),
@@ -115,11 +124,16 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                               );
                               if(confirm == null || !confirm) return;
 
-                              // TODO: delete associated sessions
-
                               setState(() {
                                 _isWorking = true;
                               });
+
+                              for(var session in await GameSessionStore().getAll()) {
+                                if(session.scenario.uuid == scenarioSummaries[index].uuid) {
+                                  await GameSessionStore().delete(session);
+                                }
+                              }
+
                               var scenario = await ScenarioStore().get(scenarioSummaries[index].uuid);
                               if(scenario != null) {
                                 await ScenarioStore().delete(scenario);

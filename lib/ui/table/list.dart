@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../../classes/game_session.dart';
 import '../../classes/table.dart';
 import 'edit.dart';
 import '../utils/full_page_error.dart';
@@ -84,7 +85,15 @@ class _TablesListPageState extends State<TablesListPage> {
                           context: context,
                           builder: (BuildContext context) => AlertDialog(
                             title: const Text('Confirmer la suppression'),
-                            content: const Text('Supprimer cette table et tous les PJs ?'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('Supprimer cette table et tous les PJs ?'),
+                                const SizedBox(height: 8.0),
+                                const Text('Cela supprimera aussi les sessions qui utilisent cette table.'),
+                              ],
+                            ),
                             actions: <Widget>[
                               TextButton(
                                 onPressed: () => Navigator.of(context).pop(false),
@@ -99,14 +108,22 @@ class _TablesListPageState extends State<TablesListPage> {
                         );
                         if(confirm == null || !confirm) return;
 
-                        // TODO: delete associated sessions
-
                         setState(() {
                           _isWorking = true;
                         });
+
+                        for(var session in await GameSessionStore().getAll()) {
+                          if(session.table.uuid == tableSummaries[index].uuid) {
+                            await GameSessionStore().delete(session);
+                          }
+                        }
+
                         var table = await GameTableStore().get(tableSummaries[index].uuid);
                         if(table != null) {
                           await GameTableStore().delete(table);
+                        }
+                        else {
+                          await GameTableSummaryStore().delete(tableSummaries[index]);
                         }
                         setState(() {
                           _isWorking = false;
