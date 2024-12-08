@@ -536,9 +536,9 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                             label: const Text('Nouvelle compétence'),
                             onPressed: () async {
                               Skill? skill = await showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                  const FamilyAndSkillPickerDialog() // TODO: add excluded skills
+                                context: context,
+                                builder: (BuildContext context) =>
+                                  const FamilyAndSkillPickerDialog()
                               );
                               if(skill == null) return;
                               setState(() {
