@@ -49,6 +49,7 @@ class _FamilyAndSkillPickerDialogState extends State<FamilyAndSkillPickerDialog>
                 setState(() {
                   _currentFamily = family;
                   _currentSkill = null;
+                  _skillController.text = '';
                 });
                 _updateSkillsForCurrentFamily();
               },
