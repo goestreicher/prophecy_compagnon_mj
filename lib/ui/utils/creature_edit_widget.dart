@@ -6,6 +6,7 @@ import '../../classes/armor.dart';
 import '../../classes/character/base.dart';
 import '../../classes/character/injury.dart';
 import '../../classes/character/skill.dart';
+import '../../classes/combat.dart';
 import '../../classes/creature.dart';
 import '../../classes/equipment.dart';
 import '../../classes/shield.dart';
@@ -605,6 +606,27 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                       ),
                       for(var nw in _naturalWeapons)
                         _NaturalWeaponEditWidget(weapon: nw),
+                      const SizedBox(height: 12.0),
+                      ElevatedButton.icon(
+                        icon: const Icon(
+                          Icons.add,
+                          size: 16.0,
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          textStyle: theme.textTheme.bodySmall,
+                        ),
+                        label: const Text('Nouvelle arme naturelle'),
+                        onPressed: () async {
+                          NaturalWeaponModel? weapon = await showDialog(
+                              context: context,
+                              builder: (BuildContext context) => _NaturalWeaponCreateDialog(),
+                          );
+                          if(weapon == null) return;
+                          setState(() {
+                            _naturalWeapons.add(weapon);
+                          });
+                        },
+                      ),
                       const SizedBox(height: 20.0),
                       Text(
                         'Seuils de blessure',
@@ -859,6 +881,95 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
   }
 }
 
+class _NaturalWeaponCreateDialog extends StatefulWidget {
+  const _NaturalWeaponCreateDialog();
+
+  @override
+  State<_NaturalWeaponCreateDialog> createState() => _NaturalWeaponCreateDialogState();
+}
+
+class _NaturalWeaponCreateDialogState extends State<_NaturalWeaponCreateDialog> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController nameController = TextEditingController();
+  int skill = 0;
+  int damage = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Nouvelle arme naturelle'),
+      content: Form(
+        key: _formKey,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextFormField(
+              controller: nameController,
+              decoration: InputDecoration(
+                label: const Text('Nom'),
+                border: const OutlineInputBorder(),
+              ),
+              validator: (String? value) {
+                if(value == null || value.isEmpty) {
+                  return 'Valeur manquante';
+                }
+                return null;
+              },
+            ),
+            const SizedBox(height: 12.0),
+            Row(
+              children: [
+                Spacer(),
+                SizedBox(
+                  width: 90,
+                  child: CharacterDigitInputWidget(
+                    label: 'Compétence',
+                    initialValue: 0,
+                    minValue: 1,
+                    maxValue: 30,
+                    onChanged: (int value) => skill = value,
+                  ),
+                ),
+                SizedBox(width: 12.0),
+                SizedBox(
+                  width: 90,
+                  child: CharacterDigitInputWidget(
+                    label: 'Dégats',
+                    initialValue: 0,
+                    minValue: 1,
+                    maxValue: 9999,
+                    onChanged: (int value) => damage = value,
+                  ),
+                ),
+                Spacer(),
+              ],
+            )
+          ],
+        ),
+      ),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('Annuler'),
+        ),
+        TextButton(
+          onPressed: () {
+            if(!_formKey.currentState!.validate()) return;
+            var model = NaturalWeaponModel(
+              name: nameController.text,
+              skill: skill,
+              damage: damage,
+              ranges: {WeaponRange.contact: 0.0},
+            );
+            Navigator.of(context).pop(model);
+          },
+          child: const Text('OK'),
+        )
+      ],
+    );
+  }
+}
+
 class _NaturalWeaponEditWidget extends StatefulWidget {
   const _NaturalWeaponEditWidget({ required this.weapon });
 
@@ -886,43 +997,49 @@ class _NaturalWeaponEditWidgetState extends State<_NaturalWeaponEditWidget> {
       child: Row(
         children: [
           SizedBox(
-              width: 250,
-              child: TextField(
-                controller: _nameController,
-                decoration: InputDecoration(
-                  label: const Text('Nom'),
-                  labelStyle: theme.textTheme.labelSmall,
-                  floatingLabelStyle: theme.textTheme.labelLarge,
-                  border: const OutlineInputBorder(),
-                  contentPadding: const EdgeInsets.all(12.0),
-                  error: null,
-                  errorText: null,
-                  isDense: true,
-                ),
-                style: theme.textTheme.bodySmall,
-              )
+            width: 250,
+            child: TextFormField(
+              controller: _nameController,
+              decoration: InputDecoration(
+                label: const Text('Nom'),
+                labelStyle: theme.textTheme.labelSmall,
+                floatingLabelStyle: theme.textTheme.labelLarge,
+                border: const OutlineInputBorder(),
+                contentPadding: const EdgeInsets.all(12.0),
+                error: null,
+                errorText: null,
+                isDense: true,
+              ),
+              style: theme.textTheme.bodySmall,
+              validator: (String? value) {
+                if(value == null || value.isEmpty) {
+                  return 'Valeur manquante';
+                }
+                return null;
+              },
+            )
           ),
           const SizedBox(width: 8.0),
           SizedBox(
-              width: 90,
-              child: CharacterDigitInputWidget(
-                label: 'Compétence',
-                initialValue: widget.weapon.skill,
-                onChanged: (int value) {
-                  widget.weapon.skill = value;
-                },
-              )
+            width: 90,
+            child: CharacterDigitInputWidget(
+              label: 'Compétence',
+              initialValue: widget.weapon.skill,
+              onChanged: (int value) {
+                widget.weapon.skill = value;
+              },
+            )
           ),
           const SizedBox(width: 8.0),
           SizedBox(
-              width: 90,
-              child: CharacterDigitInputWidget(
-                label: 'Dégats',
-                initialValue: widget.weapon.damage,
-                onChanged: (int value) {
-                  widget.weapon.damage = value;
-                },
-              )
+            width: 90,
+            child: CharacterDigitInputWidget(
+              label: 'Dégats',
+              initialValue: widget.weapon.damage,
+              onChanged: (int value) {
+                widget.weapon.damage = value;
+              },
+            )
           ),
         ],
       ),
