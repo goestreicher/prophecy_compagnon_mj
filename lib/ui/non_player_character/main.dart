@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
+import '../utils/error_feedback.dart';
 import '../utils/npc_display_widget.dart';
 import '../utils/npc_edit_widget.dart';
 import '../utils/npc_list_widget.dart';
@@ -119,18 +120,10 @@ class _NPCMainPageState extends State<NPCMainPage> {
                   var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
                   var model = NonPlayerCharacter.get(id);
                   if(model != null) {
-                    await showDialog(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                        title: const Text('PNJ existant'),
-                        content: const Text('Un PNJ avec ce nom (ou un nom similaire) existe déjà'),
-                        actions: [
-                          TextButton(
-                            child: const Text('OK'),
-                            onPressed: () => Navigator.of(context).pop(),
-                          ),
-                        ],
-                      ),
+                    displayErrorDialog(
+                      context,
+                      'PNJ existant',
+                      'Un PNJ avec ce nom (ou un nom similaire) existe déjà'
                     );
                     return;
                   }
@@ -171,18 +164,10 @@ class _NPCMainPageState extends State<NPCMainPage> {
                         _isWorking = false;
                       });
 
-                      await showDialog(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('PNJ existant'),
-                          content: const Text('Un PNJ avec ce nom (ou un nom similaire) existe déjà'),
-                          actions: [
-                            TextButton(
-                              child: const Text('OK'),
-                              onPressed: () => Navigator.of(context).pop(),
-                            ),
-                          ],
-                        ),
+                      displayErrorDialog(
+                        context,
+                        'PNJ existant',
+                        'Un PNJ avec ce nom (ou un nom similaire) existe déjà'
                       );
                       return;
                     }
@@ -202,18 +187,10 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
                     if(!context.mounted) return;
 
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                          title: const Text("Échec de l'import"),
-                          content: Text(e.toString()),
-                          actions: <Widget>[
-                            TextButton(
-                              onPressed: () => Navigator.of(context).pop(),
-                              child: const Text('OK'),
-                            )
-                          ]
-                      )
+                    displayErrorDialog(
+                      context,
+                      "Échec de l'import",
+                      e.toString()
                     );
                   }
                 },

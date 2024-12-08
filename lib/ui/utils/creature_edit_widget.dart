@@ -14,6 +14,7 @@ import '../utils/ability_list_edit_widget.dart';
 import '../utils/armor_picker_dialog.dart';
 import '../utils/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
+import '../utils/error_feedback.dart';
 import '../utils/injuries_edit_widget.dart';
 import '../utils/shield_picker_dialog.dart';
 import '../utils/skill_picker_dialog.dart';
@@ -803,8 +804,18 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                       }
 
                       model!.editable = true;
-                      await CreatureModel.saveLocalModel(model);
-                      widget.onEditDone(model);
+                      try {
+                        await CreatureModel.saveLocalModel(model);
+                        widget.onEditDone(model);
+                      }
+                      catch(e) {
+                        if(!context.mounted) return;
+                        displayErrorDialog(
+                          context,
+                          'Sauvegarde impossible',
+                          e.toString()
+                        );
+                      }
                     }
                 )
               ],

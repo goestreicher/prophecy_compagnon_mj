@@ -8,7 +8,7 @@ import 'edit_base_tab.dart';
 import 'edit_magic_tab.dart';
 import 'edit_skills_tab.dart';
 import 'edit_equipment_tab.dart';
-import '../utils/full_page_error.dart';
+import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 
 class PlayerCharacterEditPage extends StatefulWidget {

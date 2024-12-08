@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import '../../classes/game_session.dart';
 import '../../classes/scenario.dart';
 import 'edit.dart';
-import '../utils/full_page_error.dart';
+import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 import '../utils/single_line_input_dialog.dart';
 

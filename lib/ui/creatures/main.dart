@@ -7,6 +7,7 @@ import '../../classes/creature.dart';
 import '../utils/creature_display_widget.dart';
 import '../utils/creature_edit_widget.dart';
 import '../utils/creature_list_widget.dart';
+import '../utils/error_feedback.dart';
 import '../utils/single_line_input_dialog.dart';
 import '../../text_utils.dart';
 
@@ -108,18 +109,10 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                   var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
                   var model = CreatureModel.get(id);
                   if(model != null) {
-                    await showDialog(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                        title: const Text('Créature existante'),
-                        content: const Text('Une créature avec ce nom (ou un nom similaire) existe déjà'),
-                        actions: [
-                          TextButton(
-                            child: const Text('OK'),
-                            onPressed: () => Navigator.of(context).pop(),
-                          ),
-                        ],
-                      ),
+                    displayErrorDialog(
+                      context,
+                      'Créature existante',
+                      'Une créature avec ce nom (ou un nom similaire) existe déjà'
                     );
                     return;
                   }
@@ -152,18 +145,10 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                     var creature = CreatureModel.fromJson(json.decode(jsonStr));
                     var model = CreatureModel.get(creature.id);
                     if(model != null) {
-                      await showDialog(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Créature existante'),
-                          content: const Text('Une créature avec ce nom (ou un nom similaire) existe déjà'),
-                          actions: [
-                            TextButton(
-                              child: const Text('OK'),
-                              onPressed: () => Navigator.of(context).pop(),
-                            ),
-                          ],
-                        ),
+                      displayErrorDialog(
+                        context,
+                        'Créature existante',
+                        'Une créature avec ce nom (ou un nom similaire) existe déjà'
                       );
                       return;
                     }
@@ -176,18 +161,10 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                   } catch (e) {
                     if(!context.mounted) return;
 
-                    showDialog(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                          title: const Text("Échec de l'import"),
-                          content: Text(e.toString()),
-                          actions: <Widget>[
-                            TextButton(
-                              onPressed: () => Navigator.of(context).pop(),
-                              child: const Text('OK'),
-                            )
-                          ]
-                      )
+                    displayErrorDialog(
+                      context,
+                      "Échec de l'import",
+                      e.toString()
                     );
                   }
                 },

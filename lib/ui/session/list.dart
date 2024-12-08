@@ -6,7 +6,7 @@ import 'command_dispatcher.dart';
 import 'play.dart';
 import 'session_creation_dialog.dart';
 import 'session_model.dart';
-import '../utils/full_page_error.dart';
+import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 
 class SessionsListPage extends StatefulWidget {

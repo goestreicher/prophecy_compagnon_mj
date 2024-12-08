@@ -9,7 +9,7 @@ import '../../classes/player_character.dart';
 import '../../classes/character/base.dart';
 import '../player_character/edit.dart';
 import '../player_character/new_character_dialog.dart';
-import '../utils/full_page_error.dart';
+import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 
 class TableEditPage extends StatefulWidget {

@@ -10,7 +10,7 @@ import 'edit_events_tab.dart';
 import 'edit_general_tab.dart';
 import 'edit_maps_tab.dart';
 import 'edit_npcs_tab.dart';
-import '../utils/full_page_error.dart';
+import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 
 class ScenarioEditPage extends StatefulWidget {

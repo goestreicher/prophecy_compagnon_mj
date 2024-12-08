@@ -65,6 +65,7 @@ class _MainAppPageState extends State<MainAppPage> {
     /*
       Load the default assets
      */
+    // TODO: some of those can throw storage exceptions, manage them
     ArmorModel.loadDefaultAssets();
     CreatureModel.loadDefaultAssets();
     MagicSpell.loadDefaultAssets();

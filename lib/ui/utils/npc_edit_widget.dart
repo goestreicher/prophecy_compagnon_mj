@@ -19,6 +19,7 @@ import '../utils/armor_picker_dialog.dart';
 import '../utils/attribute_list_edit_widget.dart';
 import '../utils/caste_privilege_picker_dialog.dart';
 import '../utils/disadvantage_picker_dialog.dart';
+import '../utils/error_feedback.dart';
 import '../utils/character_digit_input_widget.dart';
 import '../utils/injuries_edit_widget.dart';
 import '../utils/interdict_picker_dialog.dart';
@@ -1364,8 +1365,18 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                       }
 
                       npc!.editable = true;
-                      await NonPlayerCharacter.saveLocalModel(npc);
-                      widget.onEditDone(npc);
+                      try {
+                        await NonPlayerCharacter.saveLocalModel(npc);
+                        widget.onEditDone(npc);
+                      }
+                      catch(e) {
+                        if(!context.mounted) return;
+                        displayErrorDialog(
+                          context,
+                          'Sauvegarde impossible',
+                          e.toString()
+                        );
+                      }
                     }
                 )
               ],

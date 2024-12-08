@@ -1,5 +1,21 @@
 import 'package:flutter/material.dart';
 
+void displayErrorDialog(BuildContext context, String title, String content) async {
+  await showDialog(
+    context: context,
+    builder: (BuildContext context) => AlertDialog(
+      title: Text('Erreur - $title'),
+      content: Text(content),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: const Text('OK'),
+        )
+      ],
+    )
+  );
+}
+
 class FullPageErrorWidget extends StatelessWidget {
   const FullPageErrorWidget({ super.key, required this.message, required this.canPop });
 
