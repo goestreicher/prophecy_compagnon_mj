@@ -25,7 +25,8 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
   CreatureCategory? _category;
   // String? _search;
   bool editing = false;
-  CreatureModel? _selected;
+  CreatureModel? _selectedDisplay;
+  CreatureModel? _selectedEdit;
   String? _newCreatureName;
 
   @override
@@ -36,7 +37,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
 
     if(editing) {
       mainArea = CreatureEditWidget(
-        creature: _selected,
+        creature: _selectedEdit,
         name: _newCreatureName,
         onEditDone: (CreatureModel? creature) {
           if(_newCreatureName != null) {
@@ -45,9 +46,10 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
 
           setState(() {
             if(creature != null) {
-              _selected = creature;
+              _selectedDisplay = creature;
               _category = creature.category;
             }
+            _selectedEdit = null;
             editing = false;
           });
         },
@@ -66,7 +68,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                 onSelected: (CreatureCategory? category) {
                   setState(() {
                     _category = category;
-                    _selected = null;
+                    _selectedDisplay = null;
                   });
                 },
                 dropdownMenuEntries: CreatureCategory.values
@@ -118,7 +120,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                   }
 
                   setState(() {
-                    _selected = null;
+                    _selectedEdit = null;
                     _newCreatureName = name;
                     editing = true;
                   });
@@ -156,7 +158,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                     CreatureModel.saveLocalModel(creature);
                     setState(() {
                       _category = creature.category;
-                      _selected = creature;
+                      _selectedDisplay = creature;
                     });
                   } catch (e) {
                     if(!context.mounted) return;
@@ -181,34 +183,35 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       width: 350,
                       child: CreaturesListWidget(
                         category: _category!,
-                        selected: _selected,
+                        selected: _selectedDisplay,
                         onSelected: (CreatureModel model) {
                           setState(() {
-                            _selected = model;
+                            _selectedDisplay = model;
                           });
                         },
                       )
                   ),
                   const SizedBox(width: 12.0),
-                  if(_selected != null)
+                  if(_selectedDisplay != null)
                     Expanded(
                       child: CreatureDisplayWidget(
-                        creature: _selected!,
+                        creature: _selectedDisplay!,
                         onEditRequested: () {
                           setState(() {
+                            _selectedEdit = _selectedDisplay;
                             editing = true;
                           });
                         },
                         onCloneEditRequested: (CreatureModel clone) {
                           setState(() {
-                            _selected = clone;
+                            _selectedEdit = clone;
                             editing = true;
                           });
                         },
                         onDelete: () {
                           setState(() {
-                            CreatureModel.deleteLocalModel(_selected!.id);
-                            _selected = null;
+                            CreatureModel.deleteLocalModel(_selectedDisplay!.id);
+                            _selectedDisplay = null;
                           });
                         }
                       )
