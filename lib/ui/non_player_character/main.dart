@@ -26,7 +26,8 @@ class _NPCMainPageState extends State<NPCMainPage> {
   NPCCategory? _category;
   NPCSubCategory? _subCategory;
   bool editing = false;
-  NonPlayerCharacter? _selected;
+  NonPlayerCharacter? _selectedDisplay;
+  NonPlayerCharacter? _selectedEdit;
   String? _newNPCName;
 
   @override
@@ -37,7 +38,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
     if(editing) {
       mainArea = NPCEditWidget(
-        npc: _selected,
+        npc: _selectedEdit,
         name: _newNPCName,
         onEditDone: (NonPlayerCharacter? npc) {
           if(_newNPCName != null) {
@@ -46,10 +47,11 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
           setState(() {
             if(npc != null) {
-              _selected = npc;
+              _selectedDisplay = npc;
               _category = npc.category;
               _subCategory = npc.subCategory;
             }
+            _selectedEdit = null;
             editing = false;
           });
         },
@@ -70,7 +72,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                     _category = category;
                     _subCategory = null;
                     _subCategoryController.clear();
-                    _selected = null;
+                    _selectedDisplay = null;
                   });
                 },
                 dropdownMenuEntries: NPCCategory.values
@@ -88,7 +90,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                   onSelected: (NPCSubCategory? subCategory) {
                     setState(() {
                       _subCategory = subCategory;
-                      _selected = null;
+                      _selectedDisplay = null;
                     });
                   },
                   dropdownMenuEntries: _category == null ?
@@ -129,7 +131,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                   }
 
                   setState(() {
-                    _selected = null;
+                    _selectedEdit = null;
                     _newNPCName = name;
                     editing = true;
                   });
@@ -174,7 +176,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
                     NonPlayerCharacter.saveLocalModel(npc);
                     setState(() {
-                      _selected = npc;
+                      _selectedDisplay = npc;
                       _category = npc.category;
                       _categoryController.text = npc.category.title;
                       _subCategory = npc.subCategory;
@@ -208,19 +210,19 @@ class _NPCMainPageState extends State<NPCMainPage> {
                     child: NPCListWidget(
                       category: _category!,
                       subCategory: _subCategory,
-                      selected: _selected,
+                      selected: _selectedDisplay,
                       onSelected: (NonPlayerCharacter model) {
                         setState(() {
-                          _selected = model;
+                          _selectedDisplay = model;
                         });
                       },
                     )
                   ),
                   const SizedBox(width: 12.0),
-                  if(_selected != null)
+                  if(_selectedDisplay != null)
                     Expanded(
                       child: NPCDisplayWidget(
-                        npc: _selected!,
+                        npc: _selectedDisplay!,
                         onEditRequested: () {
                           setState(() {
                             editing = true;
@@ -228,7 +230,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                         },
                         onCloneEditRequested: (NonPlayerCharacter clone) {
                           setState(() {
-                            _selected = clone;
+                            _selectedEdit = clone;
                             editing = true;
                           });
                         },
@@ -236,10 +238,20 @@ class _NPCMainPageState extends State<NPCMainPage> {
                           setState(() {
                             _isWorking = true;
                           });
-                          await NonPlayerCharacter.deleteLocalModel(_selected!.id);
+                          try {
+                            await NonPlayerCharacter.deleteLocalModel(_selectedDisplay!.id);
+                          }
+                          catch(e) {
+                            if(!context.mounted) return;
+                            displayErrorDialog(
+                              context,
+                              "Suppression impossible",
+                              e.toString()
+                            );
+                          }
                           setState(() {
                             _isWorking = false;
-                            _selected = null;
+                            _selectedDisplay = null;
                           });
                         }
                       )

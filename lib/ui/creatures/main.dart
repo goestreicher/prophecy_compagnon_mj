@@ -210,11 +210,13 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                         },
                         onDelete: () async {
                           try {
-                            CreatureModel.deleteLocalModel(_selectedDisplay!.id);
+                            await CreatureModel.deleteLocalModel(_selectedDisplay!.id);
                           }
                           catch(e) {
+                            if(!context.mounted) return;
                             displayErrorDialog(
-                              context, "Suppression impossible",
+                              context,
+                              "Suppression impossible",
                               e.toString()
                             );
                           }
