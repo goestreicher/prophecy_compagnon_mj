@@ -208,9 +208,17 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                             editing = true;
                           });
                         },
-                        onDelete: () {
-                          setState(() {
+                        onDelete: () async {
+                          try {
                             CreatureModel.deleteLocalModel(_selectedDisplay!.id);
+                          }
+                          catch(e) {
+                            displayErrorDialog(
+                              context, "Suppression impossible",
+                              e.toString()
+                            );
+                          }
+                          setState(() {
                             _selectedDisplay = null;
                           });
                         }
