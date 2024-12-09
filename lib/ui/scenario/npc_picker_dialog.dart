@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
-import '../utils/dropdown_menu_form_field.dart';
 
 class NPCPickerDialog extends StatefulWidget {
   const NPCPickerDialog({ super.key });
