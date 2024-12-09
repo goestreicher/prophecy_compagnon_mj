@@ -43,6 +43,7 @@ class CreatureEditWidget extends StatefulWidget {
 
 class _CreatureEditWidgetState extends State<CreatureEditWidget> {
   late final String _name;
+  bool _unique = false;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _categoryController = TextEditingController();
   CreatureCategory? _category;
@@ -82,6 +83,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
   CreatureModel? _createCreature() {
     return CreatureModel(
       name: _name,
+      unique: _unique,
       category: _category!,
       source: widget.source ?? CreatureModel.localCreatureSource,
       description: _descriptionController.text,
@@ -103,6 +105,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
   }
 
   bool _saveCreature() {
+    widget.creature!.unique = _unique;
     widget.creature!.category = _category!;
     widget.creature!.size = _sizeController.text;
     widget.creature!.mapSize = double.parse(_mapSizeController.text);
@@ -144,6 +147,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
 
     if(widget.creature != null) {
       _name = widget.creature!.name;
+      _unique = widget.creature!.unique;
       _category = widget.creature!.category;
       _sizeController.text = widget.creature!.size;
       _mapSizeController.text = widget.creature!.mapSize.toString();
@@ -433,6 +437,16 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                               },
                             ),
                           ),
+                          const SizedBox(width: 8.0),
+                          const Text('Unique'),
+                          Switch(
+                            value: _unique,
+                            onChanged: (bool value) {
+                              setState(() {
+                                _unique = value;
+                              });
+                            }
+                          )
                         ],
                       ),
                       const SizedBox(height: 20.0),

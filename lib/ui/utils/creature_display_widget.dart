@@ -134,8 +134,10 @@ class CreatureDisplayWidget extends StatelessWidget {
                   ]
               ),
               const SizedBox(height: 16.0),
-              RichText(
-                  text: TextSpan(
+              Row(
+                children: [
+                  RichText(
+                    text: TextSpan(
                       text: 'Taille : ',
                       style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                       children: [
@@ -144,10 +146,11 @@ class CreatureDisplayWidget extends StatelessWidget {
                           style: theme.textTheme.bodyLarge,
                         )
                       ]
-                  )
-              ),
-              RichText(
-                  text: TextSpan(
+                    )
+                  ),
+                  const SizedBox(width: 12.0),
+                  RichText(
+                    text: TextSpan(
                       text: 'Poids : ',
                       style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                       children: [
@@ -156,7 +159,22 @@ class CreatureDisplayWidget extends StatelessWidget {
                           style: theme.textTheme.bodyLarge,
                         )
                       ]
-                  )
+                    )
+                  ),
+                  const SizedBox(width: 12.0),
+                  RichText(
+                    text: TextSpan(
+                      text: 'Unique : ',
+                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                      children: [
+                        TextSpan(
+                          text: creature.unique ? 'Oui' : 'Non',
+                          style: theme.textTheme.bodyLarge,
+                        )
+                      ]
+                    )
+                  ),
+                ],
               ),
               RichText(
                   text: TextSpan(
