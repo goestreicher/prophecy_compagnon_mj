@@ -74,10 +74,11 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class CreatureModel extends EncounterEntityModel {
+class CreatureModel with EncounterEntityModel {
   CreatureModel(
       {
         required this.name,
+        this.unique = false,
         required this.category,
         required this.source,
         this.description = '',
@@ -107,6 +108,7 @@ class CreatureModel extends EncounterEntityModel {
   @JsonKey(includeToJson: false, includeFromJson: false)
     bool editable = false;
   final String name;
+  bool unique;
   CreatureCategory category;
   String source;
   String description;
@@ -127,6 +129,9 @@ class CreatureModel extends EncounterEntityModel {
 
   @override
   String displayName() => name;
+
+  @override
+  bool isUnique() => unique;
 
   @override
   List<EntityBase> instantiate({ int count = 1 }) {

@@ -14,7 +14,7 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
   final TextEditingController _categoryController = TextEditingController();
   final TextEditingController _creatureController = TextEditingController();
   List<CreatureModel> _creatures = <CreatureModel>[];
-  String? _selectedCreature;
+  CreatureModel? _selectedCreature;
 
   @override
   Widget build(BuildContext context) {
@@ -59,7 +59,7 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
                   _selectedCreature = null;
                   return;
                 }
-                _selectedCreature = c.id;
+                _selectedCreature = c;
               },
             ),
             Padding(

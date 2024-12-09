@@ -1,7 +1,8 @@
 import 'entity_base.dart';
 
-abstract class EncounterEntityModel {
+mixin EncounterEntityModel {
   String displayName();
+  bool isUnique();
   List<EntityBase> instantiate({ int count = 1 });
 }
 

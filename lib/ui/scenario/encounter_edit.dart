@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../classes/scenario_encounter.dart';
 import '../../classes/encounter_entity_factory.dart';
 import 'creature_picker_dialog.dart';
+import 'npc_picker_dialog.dart';
 
 class EncounterEditWidget extends StatefulWidget {
   const EncounterEditWidget({ super.key, required this.encounter });
@@ -59,8 +60,17 @@ class _EncounterEditWidgetState extends State<EncounterEditWidget> {
               const SizedBox(width: 16.0),
               ElevatedButton(
                 child: const Text('\u{1F9D9} Ajouter un PNJ'),
-                onPressed: () {
-                  // TODO
+                onPressed: () async {
+                  var selectedNpcId = await showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const NPCPickerDialog()
+                  );
+                  if(selectedNpcId == null) return;
+
+                  var entity = EncounterEntity(id: 'npc:$selectedNpcId');
+                  setState(() {
+                    widget.encounter.entities.add(entity);
+                  });
                 },
               ),
             ],
@@ -77,9 +87,11 @@ class EncounterEntityEditWidget extends StatefulWidget {
     required this.entity,
     required this.onDelete,
   })
-    : name = EncounterEntityFactory.instance.getModel(entity.id)!.displayName();
+    : name = EncounterEntityFactory.instance.getModel(entity.id)!.displayName(),
+      unique = EncounterEntityFactory.instance.getModel(entity.id)!.isUnique();
 
   final String name;
+  final bool unique;
   final EncounterEntity entity;
   final Function(EncounterEntity) onDelete;
 
@@ -109,30 +121,31 @@ class _EncounterEntityEditWidgetState extends State<EncounterEntityEditWidget> {
                   widget.name,
                   style: theme.textTheme.headlineSmall,
                 ),
-                Row(
-                  children: [
-                    SizedBox(width: 24, child: Align(alignment: Alignment.centerRight, child: Text(widget.entity.min.toString()))),
-                    RangeSlider(
-                      values: _currentRange!,
-                      min: 1,
-                      max: _displayRangeMax.toDouble(),
-                      divisions: _displayRangeMax - 1,
-                      onChanged: (RangeValues range) {
-                        setState(() {
-                          _currentRange = range;
-                          widget.entity.min = range.start.round().toInt();
-                          widget.entity.max = range.end.round().toInt();
-                        });
-                      },
-                      onChangeEnd: (RangeValues range) {
-                        setState(() {
-                          _displayRangeMax = (1 + _currentRange!.end.round().toInt() ~/ 10) * 10;
-                        });
-                      }
-                    ),
-                    SizedBox(width: 24, child: Text(widget.entity.max.toString())),
-                  ],
-                ),
+                if(!widget.unique)
+                  Row(
+                    children: [
+                      SizedBox(width: 24, child: Align(alignment: Alignment.centerRight, child: Text(widget.entity.min.toString()))),
+                      RangeSlider(
+                        values: _currentRange!,
+                        min: 1,
+                        max: _displayRangeMax.toDouble(),
+                        divisions: _displayRangeMax - 1,
+                        onChanged: (RangeValues range) {
+                          setState(() {
+                            _currentRange = range;
+                            widget.entity.min = range.start.round().toInt();
+                            widget.entity.max = range.end.round().toInt();
+                          });
+                        },
+                        onChangeEnd: (RangeValues range) {
+                          setState(() {
+                            _displayRangeMax = (1 + _currentRange!.end.round().toInt() ~/ 10) * 10;
+                          });
+                        }
+                      ),
+                      SizedBox(width: 24, child: Text(widget.entity.max.toString())),
+                    ],
+                  ),
               ],
             ),
             const Spacer(),

@@ -6,6 +6,7 @@ import 'package:prophecy_compagnon_mj/classes/storage/storable.dart';
 
 import 'character/base.dart';
 import 'character/skill.dart';
+import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
 import 'human_character.dart';
@@ -113,7 +114,7 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
-class NonPlayerCharacter extends HumanCharacter {
+class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   NonPlayerCharacter(
     super.uuid,
     {
@@ -240,9 +241,42 @@ class NonPlayerCharacter extends HumanCharacter {
     return ret;
   }
 
+  @override
+  String displayName() => name;
+
+  @override
+  bool isUnique() => unique;
+
+  @override
+  List<EntityBase> instantiate({ int count = 1 }) {
+    var ret = <NonPlayerCharacter>[];
+
+    for(var i=0; i<count; ++i) {
+      var j = toJson();
+      j['name'] = '$name #${i+1}';
+      ret.add(NonPlayerCharacter.fromJson(j));
+    }
+
+    return ret;
+  }
+
+  static EncounterEntityModel? _modelFactory(String id) {
+    return _instances[id];
+  }
+
+  static List<EntityBase> _npcFactory(String id, int count) {
+    if(!_instances.containsKey(id)) return <EntityBase>[];
+    return _instances[id]!.instantiate(count: count);
+  }
+
   static Future<void> loadDefaultAssets() async {
     if(_defaultAssetsLoaded) return;
     _defaultAssetsLoaded = true;
+
+    EncounterEntityFactory.instance.registerFactory(
+        'npc',
+        _modelFactory,
+        _npcFactory);
 
     var jsonStr = await rootBundle.loadString('assets/npc-ldb2e.json');
     var assets = json.decode(jsonStr);

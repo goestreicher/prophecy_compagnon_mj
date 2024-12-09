@@ -36,6 +36,7 @@ const _$WeaponRangeEnumMap = {
 CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
     CreatureModel(
       name: json['name'] as String,
+      unique: json['unique'] as bool? ?? false,
       category: $enumDecode(_$CreatureCategoryEnumMap, json['category']),
       source: json['source'] as String,
       description: json['description'] as String? ?? '',
@@ -73,6 +74,7 @@ CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$CreatureModelToJson(CreatureModel instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'unique': instance.unique,
       'category': _$CreatureCategoryEnumMap[instance.category]!,
       'source': instance.source,
       'description': instance.description,
