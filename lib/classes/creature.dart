@@ -324,6 +324,7 @@ class CreatureModel with EncounterEntityModel {
       if(model == null) {
         return null;
       }
+      model.editable = true;
       _models[id] = model;
     }
     return _models[id];
