@@ -17,6 +17,7 @@ import '../utils/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
 import '../utils/dropdown_menu_form_field.dart';
 import '../utils/error_feedback.dart';
+import '../utils/full_page_loading.dart';
 import '../utils/injuries_edit_widget.dart';
 import '../utils/shield_picker_dialog.dart';
 import '../utils/skill_picker_dialog.dart';
@@ -26,14 +27,16 @@ import '../../text_utils.dart';
 class CreatureEditWidget extends StatefulWidget {
   const CreatureEditWidget({
     super.key,
+    required this.name,
     this.creature,
-    this.name,
+    this.creatureId,
     this.source,
     required this.onEditDone,
   });
 
+  final String name;
   final CreatureModel? creature;
-  final String? name;
+  final String? creatureId;
   final String? source;
   final void Function(CreatureModel?) onEditDone;
 
@@ -42,7 +45,7 @@ class CreatureEditWidget extends StatefulWidget {
 }
 
 class _CreatureEditWidgetState extends State<CreatureEditWidget> {
-  late final String _name;
+  Future<CreatureModel?>? creatureFuture;
   bool _unique = false;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _categoryController = TextEditingController();
@@ -82,7 +85,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
 
   CreatureModel? _createCreature() {
     return CreatureModel(
-      name: _name,
+      name: widget.name,
       unique: _unique,
       category: _category!,
       source: widget.source ?? CreatureModel.localCreatureSource,
@@ -104,772 +107,787 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
     );
   }
 
-  bool _saveCreature() {
-    widget.creature!.unique = _unique;
-    widget.creature!.category = _category!;
-    widget.creature!.size = _sizeController.text;
-    widget.creature!.mapSize = double.parse(_mapSizeController.text);
-    widget.creature!.weight = _weightController.text;
-    widget.creature!.biome = _biomeController.text;
+  bool _applyChanges(CreatureModel creature) {
+    creature.unique = _unique;
+    creature.category = _category!;
+    creature.size = _sizeController.text;
+    creature.mapSize = double.parse(_mapSizeController.text);
+    creature.weight = _weightController.text;
+    creature.biome = _biomeController.text;
     for(var a in _abilities.keys) {
-      widget.creature!.abilities[a] = _abilities[a]!;
+      creature.abilities[a] = _abilities[a]!;
     }
     for(var a in _attributes.keys) {
-      widget.creature!.attributes[a] = _attributes[a]!;
+      creature.attributes[a] = _attributes[a]!;
     }
-    widget.creature!.initiative = _initiative;
-    widget.creature!.naturalArmor = _armor;
-    widget.creature!.naturalArmorDescription = _armorDescriptionController.text;
-    widget.creature!.skills.clear();
+    creature.initiative = _initiative;
+    creature.naturalArmor = _armor;
+    creature.naturalArmorDescription = _armorDescriptionController.text;
+    creature.skills.clear();
     for(var s in _skills) {
-      widget.creature!.skills.add(SkillInstance.fromJson(s.toJson()));
+      creature.skills.add(SkillInstance.fromJson(s.toJson()));
     }
-    widget.creature!.naturalWeapons.clear();
+    creature.naturalWeapons.clear();
     for(var nw in _naturalWeapons) {
-      widget.creature!.naturalWeapons.add(NaturalWeaponModel.fromJson(nw.toJson()));
+      creature.naturalWeapons.add(NaturalWeaponModel.fromJson(nw.toJson()));
     }
-    widget.creature!.injuries.clear();
+    creature.injuries.clear();
     for(var level in _injuries) {
-      widget.creature!.injuries.add(InjuryLevel.fromJson(level.toJson()));
+      creature.injuries.add(InjuryLevel.fromJson(level.toJson()));
     }
-    widget.creature!.equipment.clear();
+    creature.equipment.clear();
     for(var e in _equipment) {
-      widget.creature!.equipment.add(e.type());
+      creature.equipment.add(e.type());
     }
-    widget.creature!.specialCapability = _specialCapabilityController.text;
-    widget.creature!.description = _descriptionController.text;
+    creature.specialCapability = _specialCapabilityController.text;
+    creature.description = _descriptionController.text;
 
     return true;
   }
 
   @override void initState() {
     super.initState();
-
     if(widget.creature != null) {
-      _name = widget.creature!.name;
-      _unique = widget.creature!.unique;
-      _category = widget.creature!.category;
-      _sizeController.text = widget.creature!.size;
-      _mapSizeController.text = widget.creature!.mapSize.toString();
-      _weightController.text = widget.creature!.weight;
-      _biomeController.text = widget.creature!.biome;
-      for(var a in Ability.values) {
-        _abilities[a] = widget.creature!.abilities[a]!;
-      }
-      for(var a in Attribute.values) {
-        _attributes[a] = widget.creature!.attributes[a]!;
-      }
-      _initiative = widget.creature!.initiative;
-      _armor = widget.creature!.naturalArmor;
-      _armorDescriptionController.text = widget.creature!.naturalArmorDescription;
-      for(var s in widget.creature!.skills) {
-        _skills.add(SkillInstance.fromJson(s.toJson()));
-      }
-      _skills.sort((a, b) => a.skill.title.compareTo(b.skill.title));
-      for(var nw in widget.creature!.naturalWeapons) {
-        _naturalWeapons.add(NaturalWeaponModel.fromJson(nw.toJson()));
-      }
-      _injuries.clear();
-      for(var level in widget.creature!.injuries) {
-        _injuries.add(InjuryLevel.fromJson(level.toJson()));
-      }
-      _injuries.sort((InjuryLevel a, InjuryLevel b) => a.start - b.start);
-      for(var e in widget.creature!.equipment) {
-        var eq = EquipmentFactory.instance.forgeEquipment(e);
-        if(eq != null ) {
-          _equipment.add(eq);
-        }
-      }
-      _specialCapabilityController.text = widget.creature!.specialCapability;
-      _descriptionController.text = widget.creature!.description;
+      creatureFuture = Future(() => widget.creature);
     }
-    else {
-      if(widget.name == null) {
-        throw ArgumentError('Pas de nom fourni pour la nouvelle créature');
-      }
-      _name = widget.name!;
-      _mapSizeController.text = '0.8';
-      _abilities = Map.fromEntries(Ability.values.map((a) => MapEntry(a, 0)));
-      _attributes = Map.fromEntries(Attribute.values.map((a) => MapEntry(a, 0)));
+    else if(widget.creatureId != null) {
+      creatureFuture = CreatureModel.get(widget.creatureId!);
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
+    return FutureBuilder(
+      future: creatureFuture,
+      builder: (BuildContext context, AsyncSnapshot<CreatureModel?> snapshot) {
+        if(snapshot.connectionState == ConnectionState.waiting) {
+          return FullPageLoadingWidget();
+        }
 
-    var skillsWidgets = <Widget>[];
-    for(var s in _skills) {
-      var spWidgets = <Widget>[];
-      for(var sp in s.specializations.keys) {
-        spWidgets.add(
-            Container(
-              margin: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
-              child: Card(
-                color: theme.colorScheme.surfaceContainerHighest,
+        if(snapshot.hasError) {
+          return FullPageErrorWidget(message: snapshot.error!.toString(), canPop: false);
+        }
+
+        CreatureModel? creature;
+        if(snapshot.hasData && snapshot.data != null) {
+          creature = snapshot.data!;
+          
+          _unique = creature.unique;
+          _category = creature.category;
+          _sizeController.text = creature.size;
+          _mapSizeController.text = creature.mapSize.toString();
+          _weightController.text = creature.weight;
+          _biomeController.text = creature.biome;
+          for(var a in Ability.values) {
+            _abilities[a] = creature.abilities[a]!;
+          }
+          for(var a in Attribute.values) {
+            _attributes[a] = creature.attributes[a]!;
+          }
+          _initiative = creature.initiative;
+          _armor = creature.naturalArmor;
+          _armorDescriptionController.text = creature.naturalArmorDescription;
+          for(var s in creature.skills) {
+            _skills.add(SkillInstance.fromJson(s.toJson()));
+          }
+          _skills.sort((a, b) => a.skill.title.compareTo(b.skill.title));
+          for(var nw in creature.naturalWeapons) {
+            _naturalWeapons.add(NaturalWeaponModel.fromJson(nw.toJson()));
+          }
+          _injuries.clear();
+          for(var level in creature.injuries) {
+            _injuries.add(InjuryLevel.fromJson(level.toJson()));
+          }
+          _injuries.sort((InjuryLevel a, InjuryLevel b) => a.start - b.start);
+          for(var e in creature.equipment) {
+            var eq = EquipmentFactory.instance.forgeEquipment(e);
+            if(eq != null ) {
+              _equipment.add(eq);
+            }
+          }
+          _specialCapabilityController.text = creature.specialCapability;
+          _descriptionController.text = creature.description;
+        }
+        else {
+          _mapSizeController.text = '0.8';
+          _abilities = Map.fromEntries(Ability.values.map((a) => MapEntry(a, 0)));
+          _attributes = Map.fromEntries(Attribute.values.map((a) => MapEntry(a, 0)));
+        }
+
+        var theme = Theme.of(context);
+
+        var skillsWidgets = <Widget>[];
+        for(var s in _skills) {
+          var spWidgets = <Widget>[];
+          for(var sp in s.specializations.keys) {
+            spWidgets.add(
+                Container(
+                  margin: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 0.0),
+                  child: Card(
+                    color: theme.colorScheme.surfaceContainerHighest,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        children: [
+                          IconButton(
+                            icon: const Icon(Icons.delete),
+                            iconSize: 16,
+                            onPressed: () {
+                              setState(() {
+                                s.specializations.remove(sp);
+                              });
+                            },
+                          ),
+                          Text(
+                            sp.title,
+                            style: theme.textTheme.bodySmall,
+                          ),
+                          const SizedBox(width: 8.0),
+                          SizedBox(
+                            width: 80,
+                            child: CharacterDigitInputWidget(
+                              key: UniqueKey(),
+                              initialValue: s.specializations[sp]!,
+                              minValue: 0,
+                              onChanged: (int value) {
+                                s.specializations[sp] = value;
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )
+            );
+          }
+
+          skillsWidgets.add(
+              Card(
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.delete),
-                        iconSize: 16,
-                        onPressed: () {
-                          setState(() {
-                            s.specializations.remove(sp);
-                          });
-                        },
-                      ),
-                      Text(
-                        sp.title,
-                        style: theme.textTheme.bodySmall,
-                      ),
-                      const SizedBox(width: 8.0),
-                      SizedBox(
-                        width: 80,
-                        child: CharacterDigitInputWidget(
-                          key: UniqueKey(),
-                          initialValue: s.specializations[sp]!,
-                          minValue: 0,
-                          onChanged: (int value) {
-                            s.specializations[sp] = value;
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            )
-        );
-      }
-
-      skillsWidgets.add(
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.delete),
-                        iconSize: 16,
-                        onPressed: () {
-                          setState(() {
-                            _skills.remove(s);
-                          });
-                        },
-                      ),
-                      Text(
-                        s.skill.title,
-                        style: theme.textTheme.bodySmall,
-                      ),
-                      const SizedBox(width: 8.0),
-                      if(!s.skill.requireSpecialization)
-                        SizedBox(
-                          width: 80,
-                          child: CharacterDigitInputWidget(
-                            key: UniqueKey(),
-                            initialValue: s.value,
-                            minValue: 0,
-                            onChanged: (int value) {
-                              s.value = value;
-                            },
-                          ),
-                        ),
-                    ],
-                  ),
-                  if(spWidgets.isNotEmpty)
-                    const SizedBox(height: 4.0),
-                  ...spWidgets,
-                ],
-              )
-            )
-          )
-      );
-    }
-
-    return Stack(
-      children: [
-        SingleChildScrollView(
-          child: Center(
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                maxWidth: 700,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
-                child: Form(
-                  key: _formKey,
                   child: Column(
                     children: [
-                      Text(
-                        _name,
-                        style: theme.textTheme.headlineMedium!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 12.0),
                       Row(
                         children: [
-                          Expanded(
-                            flex: 2,
-                            child: DropdownMenuFormField(
-                              controller: _categoryController,
-                              initialSelection: _category,
-                              requestFocusOnTap: true,
-                              label: const Text('Catégorie'),
-                              textStyle: theme.textTheme.bodySmall,
-                              expandedInsets: EdgeInsets.zero,
-                              inputDecorationTheme: InputDecorationTheme(
-                                border: const OutlineInputBorder(),
-                                contentPadding: const EdgeInsets.all(12.0),
-                                labelStyle: theme.textTheme.labelSmall,
-                              ),
-                              dropdownMenuEntries: CreatureCategory.values
-                                  .map((CreatureCategory c) => DropdownMenuEntry(value: c, label: c.title))
-                                  .toList(),
-                              onSelected: (CreatureCategory? category) {
-                                setState(() {
-                                  _category = category;
-                                });
-                              },
-                              validator: (CreatureCategory? value) {
-                                if(value == null) {
-                                  return 'Valeur manquante';
-                                }
-                                return null;
-                              },
-                            ),
-                          ),
-                          const SizedBox(width: 8.0),
-                          Expanded(
-                            flex: 2,
-                            child: TextFormField(
-                              controller: _sizeController,
-                              decoration: InputDecoration(
-                                border: const OutlineInputBorder(),
-                                label: const Text('Taille (m)'),
-                                labelStyle: theme.textTheme.labelSmall,
-                              ),
-                              style: theme.textTheme.bodySmall,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
-                              ],
-                              validator: (String? value) {
-                                if(value == null || value.isEmpty) {
-                                  return 'Valeur manquante';
-                                }
-                                return null;
-                              },
-                            ),
-                          ),
-                          const SizedBox(width: 8.0),
-                          Expanded(
-                            flex: 2,
-                            child: TextFormField(
-                              controller: _weightController,
-                              decoration: InputDecoration(
-                                border: const OutlineInputBorder(),
-                                label: const Text('Poids (kg)'),
-                                labelStyle: theme.textTheme.labelSmall,
-                              ),
-                              style: theme.textTheme.bodySmall,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
-                              ],
-                              validator: (String? value) {
-                                if(value == null || value.isEmpty) {
-                                  return 'Valeur manquante';
-                                }
-                                return null;
-                              },
-                            ),
-                          ),
-                          const SizedBox(width: 8.0),
-                          Expanded(
-                            flex: 1,
-                            child: TextFormField(
-                              controller: _mapSizeController,
-                              decoration: InputDecoration(
-                                border: const OutlineInputBorder(),
-                                label: const Text('Taille sur la carte (m)'),
-                                labelStyle: theme.textTheme.labelSmall,
-                              ),
-                              style: theme.textTheme.bodySmall,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
-                              ],
-                              validator: (String? value) {
-                                if(value == null || value.isEmpty) return 'Valeur manquante';
-                                double? input = double.tryParse(value);
-                                if(input == null) return 'Pas un nombre';
-                                return null;
-                              },
-                              autovalidateMode: AutovalidateMode.onUserInteraction,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 12.0),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: TextFormField(
-                              controller: _biomeController,
-                              decoration: InputDecoration(
-                                label: const Text('Habitat'),
-                                labelStyle: theme.textTheme.labelSmall,
-                                floatingLabelStyle: theme.textTheme.labelLarge,
-                                border: const OutlineInputBorder(),
-                                contentPadding: const EdgeInsets.all(12.0),
-                                error: null,
-                                errorText: null,
-                              ),
-                              style: theme.textTheme.bodySmall,
-                              validator: (String? value) {
-                                if(value == null || value.isEmpty) {
-                                  return 'Valeur manquante';
-                                }
-                                return null;
-                              },
-                            ),
-                          ),
-                          const SizedBox(width: 8.0),
-                          const Text('Unique'),
-                          Switch(
-                            value: _unique,
-                            onChanged: (bool value) {
+                          IconButton(
+                            icon: const Icon(Icons.delete),
+                            iconSize: 16,
+                            onPressed: () {
                               setState(() {
-                                _unique = value;
-                              });
-                            }
-                          )
-                        ],
-                      ),
-                      const SizedBox(height: 20.0),
-                      Text(
-                        'Caractéristiques & Attributs',
-                        style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 16.0),
-                      Row(
-                        children: [
-                          Expanded(
-                            flex: 2,
-                            child: AbilityListEditWidget(
-                                abilities: _abilities,
-                                minValue: 0,
-                                maxValue: 30,
-                                onAbilityChanged: (Ability ability, int value) {
-                                  _abilities[ability] = value;
-                                }
-                            ),
-                          ),
-                          const SizedBox(width: 20.0),
-                          Expanded(
-                            flex: 1,
-                            child: AttributeListEditWidget(
-                              attributes: _attributes,
-                              minValue: 0,
-                              maxValue: 30,
-                              onAttributeChanged: (Attribute attribute, int value) {
-                                _attributes[attribute] = value;
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20.0),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 120,
-                            child: CharacterDigitInputWidget(
-                                initialValue: _initiative,
-                                label: 'Initiative',
-                                onChanged: (int value) {
-                                  _initiative = value;
-                                }
-                            ),
-                          ),
-                          const SizedBox(width: 8.0),
-                          SizedBox(
-                            width: 120,
-                            child: CharacterDigitInputWidget(
-                                initialValue: _armor,
-                                label: 'Armure',
-                                minValue: 0,
-                                maxValue: 50,
-                                onChanged: (int value) {
-                                  _armor = value;
-                                }
-                            ),
-                          ),
-                          const SizedBox(width: 8.0),
-                          Expanded(
-                              child: TextField(
-                                controller: _armorDescriptionController,
-                                decoration: InputDecoration(
-                                  label: const Text('Armure (description)'),
-                                  labelStyle: theme.textTheme.labelSmall,
-                                  floatingLabelStyle: theme.textTheme.labelLarge,
-                                  border: const OutlineInputBorder(),
-                                  contentPadding: const EdgeInsets.all(12.0),
-                                  error: null,
-                                  errorText: null,
-                                  isDense: true,
-                                ),
-                                style: theme.textTheme.bodySmall,
-                              )
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20.0),
-                      Text(
-                        'Compétences',
-                        style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 12.0),
-                      ...skillsWidgets,
-                      if(skillsWidgets.isNotEmpty)
-                        const SizedBox(height: 8.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton.icon(
-                            icon: const Icon(
-                              Icons.add,
-                              size: 16.0,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              textStyle: theme.textTheme.bodySmall,
-                            ),
-                            label: const Text('Nouvelle compétence'),
-                            onPressed: () async {
-                              Skill? skill = await showDialog(
-                                context: context,
-                                builder: (BuildContext context) =>
-                                  const FamilyAndSkillPickerDialog()
-                              );
-                              if(skill == null) return;
-                              setState(() {
-                                _skills.add(SkillInstance(skill: skill, value: 0));
-                                // _skills.sort((a, b) => a.skill.title.compareTo(b.skill.title));
+                                _skills.remove(s);
                               });
                             },
                           ),
-                          const SizedBox(width: 12.0),
-                          ElevatedButton.icon(
-                            icon: const Icon(
-                              Symbols.target,
-                              size: 16.0,
+                          Text(
+                            s.skill.title,
+                            style: theme.textTheme.bodySmall,
+                          ),
+                          const SizedBox(width: 8.0),
+                          if(!s.skill.requireSpecialization)
+                            SizedBox(
+                              width: 80,
+                              child: CharacterDigitInputWidget(
+                                key: UniqueKey(),
+                                initialValue: s.value,
+                                minValue: 0,
+                                onChanged: (int value) {
+                                  s.value = value;
+                                },
+                              ),
                             ),
-                            style: ElevatedButton.styleFrom(
-                              textStyle: theme.textTheme.bodySmall,
-                            ),
-                            label: const Text('Nouvelle spécialisation'),
-                            onPressed: () async {
-                              String creatureId;
-                              if(widget.creature == null) {
-                                creatureId = sentenceToCamelCase(transliterateFrenchToAscii(_name));
-                              }
-                              else {
-                                creatureId = widget.creature!.id;
-                              }
+                        ],
+                      ),
+                      if(spWidgets.isNotEmpty)
+                        const SizedBox(height: 4.0),
+                      ...spWidgets,
+                    ],
+                  )
+                )
+              )
+          );
+        }
 
-                              SpecializedSkill? skill = await showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      SpecializedSkillPickerDialog(
-                                        skills: Skill.values
-                                            .where((Skill s) => s.requireSpecialization || _skills.any((SkillInstance si) => s == si.skill))
-                                            .toList()
-                                            ..sort((Skill a, Skill b) => a.title.compareTo(b.title)),
-                                        reservedPrefix: 'creature:$creatureId:specialized:misc',
-                                      )
-                              );
-                              if(skill == null) return;
-
-                              bool parentSkillFound = false;
-                              for(var s in _skills) {
-                                if(s.skill == skill.parent) {
-                                  parentSkillFound = true;
+        return Stack(
+          children: [
+            SingleChildScrollView(
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    maxWidth: 700,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
+                    child: Form(
+                      key: _formKey,
+                      child: Column(
+                        children: [
+                          Text(
+                            widget.name,
+                            style: theme.textTheme.headlineMedium!.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 12.0),
+                          Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: DropdownMenuFormField(
+                                  controller: _categoryController,
+                                  initialSelection: _category,
+                                  requestFocusOnTap: true,
+                                  label: const Text('Catégorie'),
+                                  textStyle: theme.textTheme.bodySmall,
+                                  expandedInsets: EdgeInsets.zero,
+                                  inputDecorationTheme: InputDecorationTheme(
+                                    border: const OutlineInputBorder(),
+                                    contentPadding: const EdgeInsets.all(12.0),
+                                    labelStyle: theme.textTheme.labelSmall,
+                                  ),
+                                  dropdownMenuEntries: CreatureCategory.values
+                                      .map((CreatureCategory c) => DropdownMenuEntry(value: c, label: c.title))
+                                      .toList(),
+                                  onSelected: (CreatureCategory? category) {
+                                    setState(() {
+                                      _category = category;
+                                    });
+                                  },
+                                  validator: (CreatureCategory? value) {
+                                    if(value == null) {
+                                      return 'Valeur manquante';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              const SizedBox(width: 8.0),
+                              Expanded(
+                                flex: 2,
+                                child: TextFormField(
+                                  controller: _sizeController,
+                                  decoration: InputDecoration(
+                                    border: const OutlineInputBorder(),
+                                    label: const Text('Taille (m)'),
+                                    labelStyle: theme.textTheme.labelSmall,
+                                  ),
+                                  style: theme.textTheme.bodySmall,
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                                  ],
+                                  validator: (String? value) {
+                                    if(value == null || value.isEmpty) {
+                                      return 'Valeur manquante';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              const SizedBox(width: 8.0),
+                              Expanded(
+                                flex: 2,
+                                child: TextFormField(
+                                  controller: _weightController,
+                                  decoration: InputDecoration(
+                                    border: const OutlineInputBorder(),
+                                    label: const Text('Poids (kg)'),
+                                    labelStyle: theme.textTheme.labelSmall,
+                                  ),
+                                  style: theme.textTheme.bodySmall,
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                                  ],
+                                  validator: (String? value) {
+                                    if(value == null || value.isEmpty) {
+                                      return 'Valeur manquante';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              const SizedBox(width: 8.0),
+                              Expanded(
+                                flex: 1,
+                                child: TextFormField(
+                                  controller: _mapSizeController,
+                                  decoration: InputDecoration(
+                                    border: const OutlineInputBorder(),
+                                    label: const Text('Taille sur la carte (m)'),
+                                    labelStyle: theme.textTheme.labelSmall,
+                                  ),
+                                  style: theme.textTheme.bodySmall,
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                                  ],
+                                  validator: (String? value) {
+                                    if(value == null || value.isEmpty) return 'Valeur manquante';
+                                    double? input = double.tryParse(value);
+                                    if(input == null) return 'Pas un nombre';
+                                    return null;
+                                  },
+                                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 12.0),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextFormField(
+                                  controller: _biomeController,
+                                  decoration: InputDecoration(
+                                    label: const Text('Habitat'),
+                                    labelStyle: theme.textTheme.labelSmall,
+                                    floatingLabelStyle: theme.textTheme.labelLarge,
+                                    border: const OutlineInputBorder(),
+                                    contentPadding: const EdgeInsets.all(12.0),
+                                    error: null,
+                                    errorText: null,
+                                  ),
+                                  style: theme.textTheme.bodySmall,
+                                  validator: (String? value) {
+                                    if(value == null || value.isEmpty) {
+                                      return 'Valeur manquante';
+                                    }
+                                    return null;
+                                  },
+                                ),
+                              ),
+                              const SizedBox(width: 8.0),
+                              const Text('Unique'),
+                              Switch(
+                                value: _unique,
+                                onChanged: (bool value) {
                                   setState(() {
-                                    s.specializations[skill] = 0;
+                                    _unique = value;
                                   });
                                 }
-                              }
-                              if(!parentSkillFound) {
-                                setState(() {
-                                  SkillInstance si = SkillInstance(skill: skill.parent, value: 0);
-                                  si.specializations[skill] = 0;
-                                  _skills.add(si);
-                                });
-                              }
-                            },
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20.0),
-                      Text(
-                        'Armes naturelles',
-                        style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      for(var nw in _naturalWeapons)
-                        _NaturalWeaponEditWidget(weapon: nw),
-                      const SizedBox(height: 12.0),
-                      ElevatedButton.icon(
-                        icon: const Icon(
-                          Icons.add,
-                          size: 16.0,
-                        ),
-                        style: ElevatedButton.styleFrom(
-                          textStyle: theme.textTheme.bodySmall,
-                        ),
-                        label: const Text('Nouvelle arme naturelle'),
-                        onPressed: () async {
-                          NaturalWeaponModel? weapon = await showDialog(
-                              context: context,
-                              builder: (BuildContext context) => _NaturalWeaponCreateDialog(),
-                          );
-                          if(weapon == null) return;
-                          setState(() {
-                            _naturalWeapons.add(weapon);
-                          });
-                        },
-                      ),
-                      const SizedBox(height: 20.0),
-                      Text(
-                        'Seuils de blessure',
-                        style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 12.0),
-                      InjuriesEditWidget(injuries: _injuries),
-                      const SizedBox(height: 20.0),
-                      Text(
-                        'Équipement',
-                        style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 12.0),
-                      for(var eq in _equipment.whereType<Weapon>())
-                        Row(
-                          children: [
-                            IconButton(
-                              icon: const Icon(Icons.delete),
-                              iconSize: 20,
-                              onPressed: () {
-                                setState(() {
-                                  _equipment.remove(eq);
-                                });
-                              },
-                            ),
-                            Text(
-                              '\u{2694} ${eq.name()}',
-                              style: theme.textTheme.bodySmall,
-                            ),
-                          ],
-                        ),
-                      for(var eq in _equipment.whereType<Shield>())
-                        Row(
-                          children: [
-                            IconButton(
-                              icon: const Icon(Icons.delete),
-                              iconSize: 20,
-                              onPressed: () {
-                                setState(() {
-                                  _equipment.remove(eq);
-                                });
-                              },
-                            ),
-                            Text(
-                              '\u{1F6E1} ${eq.name()}',
-                              style: theme.textTheme.bodySmall,
-                            ),
-                          ],
-                        ),
-                      for(var eq in _equipment.whereType<Armor>())
-                        Row(
-                          children: [
-                            IconButton(
-                              icon: const Icon(Icons.delete),
-                              iconSize: 20,
-                              onPressed: () {
-                                setState(() {
-                                  _equipment.remove(eq);
-                                });
-                              },
-                            ),
-                            Text(
-                              '\u{1F6E1} ${eq.name()}',
-                              style: theme.textTheme.bodySmall,
-                            ),
-                          ],
-                        ),
-                      if(_equipment.isNotEmpty)
-                        const SizedBox(height: 8.0),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ElevatedButton.icon(
-                            icon: const Icon(
-                              Icons.add,
-                              size: 16.0,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              textStyle: theme.textTheme.bodySmall,
-                            ),
-                            label: const Text('Nouvelle arme'),
-                            onPressed: () async {
-                              var id = await showDialog(
-                                context: context,
-                                builder: (BuildContext context) => const WeaponPickerDialog(),
-                              );
-                              if(!context.mounted) return;
-                              if(id == null) return;
-
-                              var eq = EquipmentFactory.instance.forgeEquipment('weapon:$id');
-                              if(eq == null) return;
-
-                              setState(() {
-                                _equipment.add(eq);
-                              });
-                            },
-                          ),
-                          const SizedBox(width: 12.0),
-                          ElevatedButton.icon(
-                            icon: const Icon(
-                              Icons.add,
-                              size: 16.0,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              textStyle: theme.textTheme.bodySmall,
-                            ),
-                            label: const Text('Nouveau bouclier'),
-                            onPressed: () async {
-                              var id = await showDialog(
-                                context: context,
-                                builder: (BuildContext context) => const ShieldPickerDialog(),
-                              );
-                              if(!context.mounted) return;
-                              if(id == null) return;
-
-                              var eq = EquipmentFactory.instance.forgeEquipment('shield:$id');
-                              if(eq == null) return;
-
-                              setState(() {
-                                _equipment.add(eq);
-                              });
-                            },
-                          ),
-                          const SizedBox(width: 12.0),
-                          ElevatedButton.icon(
-                            icon: const Icon(
-                              Icons.add,
-                              size: 16.0,
-                            ),
-                            style: ElevatedButton.styleFrom(
-                              textStyle: theme.textTheme.bodySmall,
-                            ),
-                            label: const Text('Nouvelle armure'),
-                            onPressed: () async {
-                              var id = await showDialog(
-                                context: context,
-                                builder: (BuildContext context) => const ArmorPickerDialog(),
-                              );
-                              if(!context.mounted) return;
-                              if(id == null) return;
-
-                              var eq = EquipmentFactory.instance.forgeEquipment('armor:$id');
-                              if(eq == null) return;
-
-                              setState(() {
-                                _equipment.add(eq);
-                              });
-                            },
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 20.0),
-                      Text(
-                        'Capacité spéciale',
-                        style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 12.0),
-                      Row(
-                        children: [
-                          Expanded(
-                              child: TextField(
-                                controller: _specialCapabilityController,
-                                decoration: const InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  contentPadding: EdgeInsets.all(12.0),
-                                  error: null,
-                                  errorText: null,
-                                ),
-                                style: theme.textTheme.bodySmall,
-                                minLines: 2,
-                                maxLines: 2,
                               )
+                            ],
                           ),
-                        ],
-                      ),
-                      const SizedBox(height: 20.0),
-                      Text(
-                        'Description',
-                        style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 12.0),
-                      Row(
-                        children: [
-                          Expanded(
-                            child: TextField(
-                              controller: _descriptionController,
-                              decoration: const InputDecoration(
-                                border: OutlineInputBorder(),
-                                contentPadding: EdgeInsets.all(12.0),
-                                error: null,
-                                errorText: null,
+                          const SizedBox(height: 20.0),
+                          Text(
+                            'Caractéristiques & Attributs',
+                            style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 16.0),
+                          Row(
+                            children: [
+                              Expanded(
+                                flex: 2,
+                                child: AbilityListEditWidget(
+                                  abilities: _abilities,
+                                  minValue: 0,
+                                  maxValue: 30,
+                                  onAbilityChanged: (Ability ability, int value) {
+                                    _abilities[ability] = value;
+                                  }
+                                ),
                               ),
-                              style: theme.textTheme.bodySmall,
-                              minLines: 10,
-                              maxLines: 10,
+                              const SizedBox(width: 20.0),
+                              Expanded(
+                                flex: 1,
+                                child: AttributeListEditWidget(
+                                  attributes: _attributes,
+                                  minValue: 0,
+                                  maxValue: 30,
+                                  onAttributeChanged: (Attribute attribute, int value) {
+                                    _attributes[attribute] = value;
+                                  },
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20.0),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 120,
+                                child: CharacterDigitInputWidget(
+                                  initialValue: _initiative,
+                                  label: 'Initiative',
+                                  onChanged: (int value) {
+                                    _initiative = value;
+                                  }
+                                ),
+                              ),
+                              const SizedBox(width: 8.0),
+                              SizedBox(
+                                width: 120,
+                                child: CharacterDigitInputWidget(
+                                  initialValue: _armor,
+                                  label: 'Armure',
+                                  minValue: 0,
+                                  maxValue: 50,
+                                  onChanged: (int value) {
+                                    _armor = value;
+                                  }
+                                ),
+                              ),
+                              const SizedBox(width: 8.0),
+                              Expanded(
+                                child: TextField(
+                                  controller: _armorDescriptionController,
+                                  decoration: InputDecoration(
+                                    label: const Text('Armure (description)'),
+                                    labelStyle: theme.textTheme.labelSmall,
+                                    floatingLabelStyle: theme.textTheme.labelLarge,
+                                    border: const OutlineInputBorder(),
+                                    contentPadding: const EdgeInsets.all(12.0),
+                                    error: null,
+                                    errorText: null,
+                                    isDense: true,
+                                  ),
+                                  style: theme.textTheme.bodySmall,
+                                )
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20.0),
+                          Text(
+                            'Compétences',
+                            style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 12.0),
+                          ...skillsWidgets,
+                          if(skillsWidgets.isNotEmpty)
+                            const SizedBox(height: 8.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ElevatedButton.icon(
+                                icon: const Icon(
+                                  Icons.add,
+                                  size: 16.0,
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  textStyle: theme.textTheme.bodySmall,
+                                ),
+                                label: const Text('Nouvelle compétence'),
+                                onPressed: () async {
+                                  Skill? skill = await showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) =>
+                                      const FamilyAndSkillPickerDialog()
+                                  );
+                                  if(skill == null) return;
+                                  setState(() {
+                                    _skills.add(SkillInstance(skill: skill, value: 0));
+                                    // _skills.sort((a, b) => a.skill.title.compareTo(b.skill.title));
+                                  });
+                                },
+                              ),
+                              const SizedBox(width: 12.0),
+                              ElevatedButton.icon(
+                                icon: const Icon(
+                                  Symbols.target,
+                                  size: 16.0,
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  textStyle: theme.textTheme.bodySmall,
+                                ),
+                                label: const Text('Nouvelle spécialisation'),
+                                onPressed: () async {
+                                  String creatureId;
+                                  if(creature == null) {
+                                    creatureId = sentenceToCamelCase(transliterateFrenchToAscii(widget.name));
+                                  }
+                                  else {
+                                    creatureId = creature.id;
+                                  }
+
+                                  SpecializedSkill? skill = await showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) =>
+                                          SpecializedSkillPickerDialog(
+                                            skills: Skill.values
+                                                .where((Skill s) => s.requireSpecialization || _skills.any((SkillInstance si) => s == si.skill))
+                                                .toList()
+                                              ..sort((Skill a, Skill b) => a.title.compareTo(b.title)),
+                                            reservedPrefix: 'creature:$creatureId:specialized:misc',
+                                          )
+                                  );
+                                  if(skill == null) return;
+
+                                  bool parentSkillFound = false;
+                                  for(var s in _skills) {
+                                    if(s.skill == skill.parent) {
+                                      parentSkillFound = true;
+                                      setState(() {
+                                        s.specializations[skill] = 0;
+                                      });
+                                    }
+                                  }
+                                  if(!parentSkillFound) {
+                                    setState(() {
+                                      SkillInstance si = SkillInstance(skill: skill.parent, value: 0);
+                                      si.specializations[skill] = 0;
+                                      _skills.add(si);
+                                    });
+                                  }
+                                },
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20.0),
+                          Text(
+                            'Armes naturelles',
+                            style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          for(var nw in _naturalWeapons)
+                            _NaturalWeaponEditWidget(weapon: nw),
+                          const SizedBox(height: 12.0),
+                          ElevatedButton.icon(
+                            icon: const Icon(
+                              Icons.add,
+                              size: 16.0,
                             ),
+                            style: ElevatedButton.styleFrom(
+                              textStyle: theme.textTheme.bodySmall,
+                            ),
+                            label: const Text('Nouvelle arme naturelle'),
+                            onPressed: () async {
+                              NaturalWeaponModel? weapon = await showDialog(
+                                context: context,
+                                builder: (BuildContext context) => _NaturalWeaponCreateDialog(),
+                              );
+                              if(weapon == null) return;
+                              setState(() {
+                                _naturalWeapons.add(weapon);
+                              });
+                            },
+                          ),
+                          const SizedBox(height: 20.0),
+                          Text(
+                            'Seuils de blessure',
+                            style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 12.0),
+                          InjuriesEditWidget(injuries: _injuries),
+                          const SizedBox(height: 20.0),
+                          Text(
+                            'Équipement',
+                            style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 12.0),
+                          for(var eq in _equipment.whereType<Weapon>())
+                            Row(
+                              children: [
+                                IconButton(
+                                  icon: const Icon(Icons.delete),
+                                  iconSize: 20,
+                                  onPressed: () {
+                                    setState(() {
+                                      _equipment.remove(eq);
+                                    });
+                                  },
+                                ),
+                                Text(
+                                  '\u{2694} ${eq.name()}',
+                                  style: theme.textTheme.bodySmall,
+                                ),
+                              ],
+                            ),
+                          for(var eq in _equipment.whereType<Shield>())
+                            Row(
+                              children: [
+                                IconButton(
+                                  icon: const Icon(Icons.delete),
+                                  iconSize: 20,
+                                  onPressed: () {
+                                    setState(() {
+                                      _equipment.remove(eq);
+                                    });
+                                  },
+                                ),
+                                Text(
+                                  '\u{1F6E1} ${eq.name()}',
+                                  style: theme.textTheme.bodySmall,
+                                ),
+                              ],
+                            ),
+                          for(var eq in _equipment.whereType<Armor>())
+                            Row(
+                              children: [
+                                IconButton(
+                                  icon: const Icon(Icons.delete),
+                                  iconSize: 20,
+                                  onPressed: () {
+                                    setState(() {
+                                      _equipment.remove(eq);
+                                    });
+                                  },
+                                ),
+                                Text(
+                                  '\u{1F6E1} ${eq.name()}',
+                                  style: theme.textTheme.bodySmall,
+                                ),
+                              ],
+                            ),
+                          if(_equipment.isNotEmpty)
+                            const SizedBox(height: 8.0),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              ElevatedButton.icon(
+                                icon: const Icon(
+                                  Icons.add,
+                                  size: 16.0,
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  textStyle: theme.textTheme.bodySmall,
+                                ),
+                                label: const Text('Nouvelle arme'),
+                                onPressed: () async {
+                                  var id = await showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => const WeaponPickerDialog(),
+                                  );
+                                  if(!context.mounted) return;
+                                  if(id == null) return;
+
+                                  var eq = EquipmentFactory.instance.forgeEquipment('weapon:$id');
+                                  if(eq == null) return;
+
+                                  setState(() {
+                                    _equipment.add(eq);
+                                  });
+                                },
+                              ),
+                              const SizedBox(width: 12.0),
+                              ElevatedButton.icon(
+                                icon: const Icon(
+                                  Icons.add,
+                                  size: 16.0,
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  textStyle: theme.textTheme.bodySmall,
+                                ),
+                                label: const Text('Nouveau bouclier'),
+                                onPressed: () async {
+                                  var id = await showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => const ShieldPickerDialog(),
+                                  );
+                                  if(!context.mounted) return;
+                                  if(id == null) return;
+
+                                  var eq = EquipmentFactory.instance.forgeEquipment('shield:$id');
+                                  if(eq == null) return;
+
+                                  setState(() {
+                                    _equipment.add(eq);
+                                  });
+                                },
+                              ),
+                              const SizedBox(width: 12.0),
+                              ElevatedButton.icon(
+                                icon: const Icon(
+                                  Icons.add,
+                                  size: 16.0,
+                                ),
+                                style: ElevatedButton.styleFrom(
+                                  textStyle: theme.textTheme.bodySmall,
+                                ),
+                                label: const Text('Nouvelle armure'),
+                                onPressed: () async {
+                                  var id = await showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) => const ArmorPickerDialog(),
+                                  );
+                                  if(!context.mounted) return;
+                                  if(id == null) return;
+
+                                  var eq = EquipmentFactory.instance.forgeEquipment('armor:$id');
+                                  if(eq == null) return;
+
+                                  setState(() {
+                                    _equipment.add(eq);
+                                  });
+                                },
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20.0),
+                          Text(
+                            'Capacité spéciale',
+                            style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 12.0),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextField(
+                                  controller: _specialCapabilityController,
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    contentPadding: EdgeInsets.all(12.0),
+                                    error: null,
+                                    errorText: null,
+                                  ),
+                                  style: theme.textTheme.bodySmall,
+                                  minLines: 2,
+                                  maxLines: 2,
+                                )
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20.0),
+                          Text(
+                            'Description',
+                            style: theme.textTheme.titleLarge!.copyWith(fontWeight: FontWeight.bold),
+                          ),
+                          const SizedBox(height: 12.0),
+                          Row(
+                            children: [
+                              Expanded(
+                                child: TextField(
+                                  controller: _descriptionController,
+                                  decoration: const InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    contentPadding: EdgeInsets.all(12.0),
+                                    error: null,
+                                    errorText: null,
+                                  ),
+                                  style: theme.textTheme.bodySmall,
+                                  minLines: 10,
+                                  maxLines: 10,
+                                ),
+                              ),
+                            ],
                           ),
                         ],
                       ),
-                    ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-        ),
-        Positioned(
-            top: 8,
-            right: 12,
-            child: Row(
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.cancel_outlined),
-                  onPressed: () {
-                    widget.onEditDone(null);
-                  },
-                ),
-                IconButton(
+            Positioned(
+              top: 8,
+              right: 12,
+              child: Row(
+                children: [
+                  IconButton(
+                    icon: const Icon(Icons.cancel_outlined),
+                    onPressed: () {
+                      widget.onEditDone(null);
+                    },
+                  ),
+                  IconButton(
                     icon: const Icon(Icons.check_circle_outline),
                     onPressed: () async {
                       if(!_formKey.currentState!.validate()) return;
 
                       CreatureModel? model;
-                      if(widget.creature == null) {
+                      if(creature == null) {
                         model = _createCreature();
                       }
                       else {
-                        _saveCreature();
-                        model = widget.creature;
+                        _applyChanges(creature);
+                        model = creature;
                       }
 
                       model!.editable = true;
@@ -886,11 +904,13 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                         );
                       }
                     }
-                )
-              ],
-            )
-        ),
-      ],
+                  )
+                ],
+              )
+            ),
+          ],
+        );
+      }
     );
   }
 }

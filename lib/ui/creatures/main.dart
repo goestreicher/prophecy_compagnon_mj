@@ -25,8 +25,9 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
   CreatureCategory? _category;
   // String? _search;
   bool editing = false;
-  CreatureModel? _selectedDisplay;
-  CreatureModel? _selectedEdit;
+  String? _selectedDisplay;
+  String? _selectedEdit;
+  CreatureModel? _selectedEditModel;
   String? _newCreatureName;
 
   @override
@@ -35,21 +36,20 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
 
     Widget mainArea;
 
-    if(editing) {
+    if(editing && _newCreatureName != null) {
       mainArea = CreatureEditWidget(
-        creature: _selectedEdit,
-        name: _newCreatureName,
+        name: _newCreatureName!,
+        creatureId: _selectedEdit,
+        creature: _selectedEditModel,
         onEditDone: (CreatureModel? creature) {
-          if(_newCreatureName != null) {
-            _newCreatureName = null;
-          }
-
           setState(() {
             if(creature != null) {
-              _selectedDisplay = creature;
+              _selectedDisplay = creature.id;
               _category = creature.category;
             }
+            _newCreatureName = null;
             _selectedEdit = null;
+            _selectedEditModel = null;
             editing = false;
           });
         },
@@ -109,7 +109,8 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                   if(name == null) return;
 
                   var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
-                  var model = CreatureModel.get(id);
+                  var model = await CreatureModel.get(id);
+                  if(!context.mounted) return;
                   if(model != null) {
                     displayErrorDialog(
                       context,
@@ -145,7 +146,8 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                   try {
                     var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                     var creature = CreatureModel.fromJson(json.decode(jsonStr));
-                    var model = CreatureModel.get(creature.id);
+                    var model = await CreatureModel.get(creature.id);
+                    if(!context.mounted) return;
                     if(model != null) {
                       displayErrorDialog(
                         context,
@@ -158,7 +160,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                     CreatureModel.saveLocalModel(creature);
                     setState(() {
                       _category = creature.category;
-                      _selectedDisplay = creature;
+                      _selectedDisplay = creature.id;
                     });
                   } catch (e) {
                     if(!context.mounted) return;
@@ -180,16 +182,16 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                      width: 350,
-                      child: CreaturesListWidget(
-                        category: _category!,
-                        selected: _selectedDisplay,
-                        onSelected: (CreatureModel model) {
-                          setState(() {
-                            _selectedDisplay = model;
-                          });
-                        },
-                      )
+                    width: 350,
+                    child: CreaturesListWidget(
+                      category: _category!,
+                      selected: _selectedDisplay,
+                      onSelected: (String creatureId) {
+                        setState(() {
+                          _selectedDisplay = creatureId;
+                        });
+                      },
+                    )
                   ),
                   const SizedBox(width: 12.0),
                   if(_selectedDisplay != null)
@@ -204,13 +206,15 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                         },
                         onCloneEditRequested: (CreatureModel clone) {
                           setState(() {
-                            _selectedEdit = clone;
+                            _newCreatureName = clone.name;
+                            _selectedEdit = null;
+                            _selectedEditModel = clone;
                             editing = true;
                           });
                         },
                         onDelete: () async {
                           try {
-                            await CreatureModel.deleteLocalModel(_selectedDisplay!.id);
+                            await CreatureModel.deleteLocalModel(_selectedDisplay!);
                           }
                           catch(e) {
                             if(!context.mounted) return;

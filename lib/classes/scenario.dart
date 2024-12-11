@@ -51,7 +51,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     if(j.containsKey('creatures')) {
       var creaturesJson = <Map<String, dynamic>>[];
       for(var creatureId in j['creatures']) {
-        var creature = CreatureModel.get(creatureId);
+        var creature = await CreatureModel.get(creatureId);
         if(creature != null) {
           creaturesJson.add(creature.toJson());
         }

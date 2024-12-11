@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../classes/creature.dart';
 import '../../classes/scenario_encounter.dart';
 import '../../classes/encounter_entity_factory.dart';
 import 'creature_picker_dialog.dart';
@@ -45,13 +46,13 @@ class _EncounterEditWidgetState extends State<EncounterEditWidget> {
               ElevatedButton(
                 child: const Text('\u{1F9CC} Ajouter une créature'),
                 onPressed: () async {
-                  var selectedCreatureId = await showDialog(
+                  var selected = await showDialog<CreatureModelSummary>(
                     context: context,
                     builder: (BuildContext context) => const CreaturePickerDialog(),
                   );
-                  if(selectedCreatureId == null) return;
+                  if(selected == null) return;
 
-                  var entity = EncounterEntity(id: 'creature:$selectedCreatureId');
+                  var entity = EncounterEntity(id: 'creature:${selected.id}');
                   setState(() {
                     widget.encounter.entities.add(entity);
                   });

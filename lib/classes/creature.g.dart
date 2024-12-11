@@ -33,6 +33,30 @@ const _$WeaponRangeEnumMap = {
   WeaponRange.ranged: 'ranged',
 };
 
+CreatureModelSummary _$CreatureModelSummaryFromJson(
+        Map<String, dynamic> json) =>
+    CreatureModelSummary(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      category: $enumDecode(_$CreatureCategoryEnumMap, json['category']),
+      source: json['source'] as String,
+    );
+
+Map<String, dynamic> _$CreatureModelSummaryToJson(
+        CreatureModelSummary instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'category': _$CreatureCategoryEnumMap[instance.category]!,
+      'source': instance.source,
+    };
+
+const _$CreatureCategoryEnumMap = {
+  CreatureCategory.animauxSauvages: 'animauxSauvages',
+  CreatureCategory.peuplesAnciens: 'peuplesAnciens',
+  CreatureCategory.creaturesDraconiques: 'creaturesDraconiques',
+};
+
 CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
     CreatureModel(
       name: json['name'] as String,
@@ -96,12 +120,6 @@ Map<String, dynamic> _$CreatureModelToJson(CreatureModel instance) =>
       'equipment': instance.equipment,
       'special_capability': instance.specialCapability,
     };
-
-const _$CreatureCategoryEnumMap = {
-  CreatureCategory.animauxSauvages: 'animauxSauvages',
-  CreatureCategory.peuplesAnciens: 'peuplesAnciens',
-  CreatureCategory.creaturesDraconiques: 'creaturesDraconiques',
-};
 
 const _$AbilityEnumMap = {
   Ability.force: 'force',

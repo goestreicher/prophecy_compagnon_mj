@@ -13,8 +13,8 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _categoryController = TextEditingController();
   final TextEditingController _creatureController = TextEditingController();
-  List<CreatureModel> _creatures = <CreatureModel>[];
-  CreatureModel? _selectedCreature;
+  List<CreatureModelSummary> _creatures = <CreatureModelSummary>[];
+  CreatureModelSummary? _selectedCreatureSummary;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
               onSelected: (CreatureCategory? c) {
                   if(c == null) return;
                   setState(() {
-                    _selectedCreature = null;
+                    _selectedCreatureSummary = null;
                     _creatures = CreatureModel.forCategory(c);
                   });
                 }
@@ -51,15 +51,11 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
               label: const Text('Créature'),
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries:
-                _creatures.map((CreatureModel c) =>
-                  DropdownMenuEntry<CreatureModel>(value: c, label: c.name)
+                _creatures.map((CreatureModelSummary c) =>
+                  DropdownMenuEntry<CreatureModelSummary>(value: c, label: c.name)
                 ).toList(),
-              onSelected: (CreatureModel? c) {
-                if(c == null) {
-                  _selectedCreature = null;
-                  return;
-                }
-                _selectedCreature = c;
+              onSelected: (CreatureModelSummary? c) {
+                _selectedCreatureSummary = c;
               },
             ),
             Padding(
@@ -78,7 +74,7 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
                       onPressed: () {
                         if(_categoryController.text.isEmpty) return;
                         if(_creatureController.text.isEmpty) return;
-                        Navigator.of(context).pop(_selectedCreature);
+                        Navigator.of(context).pop(_selectedCreatureSummary);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: theme.colorScheme.primary,

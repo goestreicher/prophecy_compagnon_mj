@@ -12,8 +12,8 @@ class CreaturesListWidget extends StatefulWidget {
   });
 
   final CreatureCategory? category;
-  final void Function(CreatureModel) onSelected;
-  final CreatureModel? selected;
+  final void Function(String) onSelected;
+  final String? selected;
   final String? source;
 
   @override
@@ -21,7 +21,7 @@ class CreaturesListWidget extends StatefulWidget {
 }
 
 class _CreaturesListWidgetState extends State<CreaturesListWidget> {
-  late List<CreatureModel> _creatures;
+  late List<CreatureModelSummary> _creatures;
 
   void _updateCreaturesList() {
     if(widget.source != null) {
@@ -31,7 +31,7 @@ class _CreaturesListWidgetState extends State<CreaturesListWidget> {
       _creatures = CreatureModel.forCategory(widget.category!);
     }
     else {
-      _creatures = <CreatureModel>[];
+      _creatures = <CreatureModelSummary>[];
     }
     _creatures.sort((a, b) => a.id.compareTo(b.id));
   }
@@ -60,12 +60,12 @@ class _CreaturesListWidgetState extends State<CreaturesListWidget> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(4.0),
               ),
-              color: widget.selected == _creatures[index] ?
+              color: widget.selected == _creatures[index].id ?
               theme.colorScheme.surfaceContainerHighest :
               null,
               child: InkWell(
                 onTap: () {
-                  widget.onSelected(_creatures[index]);
+                  widget.onSelected(_creatures[index].id);
                 },
                 child: ListTile(
                   title: Text(

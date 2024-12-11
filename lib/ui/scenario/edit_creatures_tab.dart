@@ -25,31 +25,32 @@ class ScenarioEditCreaturesPage extends StatefulWidget {
 
 class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
   CreatureCategory? _category;
-  CreatureModel? _selected;
-  final GlobalKey<FormState> _newCreatureNameKey = GlobalKey<FormState>();
   String? _newCreatureName;
+  String? _selectedId;
+  CreatureModel? _selectedModel;
   bool _editing = false;
+  final GlobalKey<FormState> _newCreatureNameKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
     Widget mainArea;
-    if(_editing == true) {
+    if(_editing == true && _newCreatureName != null) {
       mainArea = Container(
         color: theme.colorScheme.surfaceContainerHighest,
         child: CreatureEditWidget(
-          creature: _selected,
-          name: _newCreatureName,
+          name: _newCreatureName!,
+          creatureId: _selectedId,
+          creature: _selectedModel,
           source: widget.scenarioName,
           onEditDone: (CreatureModel? creature) {
             setState(() {
               if(creature != null) {
-                if(_newCreatureName != null) {
-                  widget.creatures.add(creature);
-                  _newCreatureName = null;
-                }
-                _selected = creature;
+                widget.creatures.add(creature);
+                _newCreatureName = null;
+                _selectedId = creature.id;
+                _selectedModel = null;
               }
               widget.onCreatureCommitted();
               _editing = false;
@@ -60,7 +61,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
     }
     else {
       Widget leftZone;
-      if(_selected == null) {
+      if(_selectedId == null) {
         leftZone = const Center(child: Text('Selectionner une créature'));
       }
       else {
@@ -68,7 +69,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
           children: [
             Expanded(
               child: CreatureDisplayWidget(
-                creature: _selected!,
+                creature: _selectedId!,
                 onEditRequested: () {
                   setState(() {
                     _editing = true;
@@ -76,16 +77,16 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                 },
                 onCloneEditRequested: (CreatureModel clone) {
                   setState(() {
-                    _selected = clone;
+                    _selectedId = clone.id;
                     _editing = true;
                   });
                 },
                 onDelete: () {
                   setState(() {
                     widget.onCreatureCommitted();
-                    CreatureModel.deleteLocalModel(_selected!.id);
-                    widget.creatures.removeWhere((CreatureModel c) => c.id == _selected!.id);
-                    _selected = null;
+                    CreatureModel.deleteLocalModel(_selectedId!);
+                    widget.creatures.removeWhere((CreatureModel c) => c.id == _selectedId!);
+                    _selectedId = null;
                   });
                 },
               ),
@@ -116,7 +117,8 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                       if(name == null) return;
 
                       var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
-                      var model = CreatureModel.get(id);
+                      var model = await CreatureModel.get(id);
+                      if(!context.mounted) return;
                       if(model != null) {
                         await showDialog(
                           context: context,
@@ -135,7 +137,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                       }
 
                       setState(() {
-                        _selected = null;
+                        _selectedId = null;
                         _newCreatureName = name;
                         _editing = true;
                       });
@@ -148,10 +150,10 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                     child: CreaturesListWidget(
                       category: _category ?? CreatureCategory.animauxSauvages,
                       source: widget.scenarioName,
-                      selected: _selected,
-                      onSelected: (CreatureModel model) {
+                      selected: _selectedId,
+                      onSelected: (String selectedId) {
                         setState(() {
-                          _selected = model;
+                          _selectedId = selectedId;
                         });
                       },
                     ),

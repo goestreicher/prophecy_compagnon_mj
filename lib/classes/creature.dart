@@ -57,6 +57,24 @@ class NaturalArmor implements ProtectionProvider {
   int protection() => value;
 }
 
+class CreatureModelSummaryStore extends JsonStoreAdapter<CreatureModelSummary> {
+  CreatureModelSummaryStore();
+
+  @override
+  String storeCategory() => 'creatureSummaries';
+
+  @override
+  String key(CreatureModelSummary object) => object.id;
+
+  @override
+  Future<CreatureModelSummary> fromJsonRepresentation(Map<String, dynamic> j) async =>
+      CreatureModelSummary.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(CreatureModelSummary object) async =>
+      object.toJson();
+}
+
 class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
   CreatureModelStore();
 
@@ -71,6 +89,24 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
 
   @override
   Future<Map<String, dynamic>> toJsonRepresentation(CreatureModel object) async => object.toJson();
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class CreatureModelSummary {
+  CreatureModelSummary({
+    required this.id,
+    required this.name,
+    required this.category,
+    required this.source,
+  });
+
+  String id;
+  String name;
+  CreatureCategory category;
+  String source;
+
+  factory CreatureModelSummary.fromJson(Map<String, dynamic> j) => _$CreatureModelSummaryFromJson(j);
+  Map<String, dynamic> toJson() => _$CreatureModelSummaryToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -126,6 +162,13 @@ class CreatureModel with EncounterEntityModel {
   List<NaturalWeaponModel> naturalWeapons;
   List<String> equipment = <String>[];
   String specialCapability;
+
+  CreatureModelSummary get summary => CreatureModelSummary(
+      id: id,
+      name: name,
+      category: category,
+      source: source,
+    );
 
   @override
   String displayName() => name;
@@ -259,26 +302,44 @@ class CreatureModel with EncounterEntityModel {
     return ret;
   }
 
-  static List<String> ids() {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    return _models.keys.toList();
+  static Future<List<String>> ids() async {
+    if(!_defaultAssetsLoaded) await loadDefaultAssets();
+    return _summaries.keys.toList();
   }
-  static CreatureModel? get(String id) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
+
+  static Future<CreatureModelSummary?> getSummary(String id) async {
+    if(!_defaultAssetsLoaded) await loadDefaultAssets();
+    return _summaries[id];
+  }
+
+  static Future<CreatureModel?> get(String id) async {
+    if(!_defaultAssetsLoaded) await loadDefaultAssets();
+
+    if(!_summaries.containsKey(id)) {
+      return null;
+    }
+
+    if(!_models.containsKey(id)) {
+      var model = await CreatureModelStore().get(id);
+      if(model == null) {
+        return null;
+      }
+      _models[id] = model;
+    }
     return _models[id];
   }
 
-  static List<CreatureModel> forCategory(CreatureCategory category) {
-    var ret = <CreatureModel>[];
-    for(var model in _models.values) {
-      if(model.category == category) ret.add(model);
+  static List<CreatureModelSummary> forCategory(CreatureCategory category) {
+    var ret = <CreatureModelSummary>[];
+    for(var summary in _summaries.values) {
+      if(summary.category == category) ret.add(summary);
     }
     return ret;
   }
 
-  static List<CreatureModel> forSource(String source, CreatureCategory? category) {
-    return _models.values
-        .where((CreatureModel c) => c.source == source && (category == null || c.category == category))
+  static List<CreatureModelSummary> forSource(String source, CreatureCategory? category) {
+    return _summaries.values
+        .where((CreatureModelSummary c) => c.source == source && (category == null || c.category == category))
         .toList();
   }
 
@@ -305,29 +366,34 @@ class CreatureModel with EncounterEntityModel {
 
     for(var model in assets) {
       var instance = CreatureModel.fromJson(model);
+      _summaries[instance.id] = instance.summary;
       _models[instance.id] = instance;
     }
 
-    for(var model in await CreatureModelStore().getAll()) {
-      model.editable = true;
-      _models[model.id] = model;
+    for(var summary in await CreatureModelSummaryStore().getAll()) {
+      _summaries[summary.id] = summary;
     }
   }
 
   static Future<void> saveLocalModel(CreatureModel model) async {
+    await CreatureModelSummaryStore().save(model.summary);
     await CreatureModelStore().save(model);
+    _summaries[model.id] = model.summary;
     _models[model.id] = model;
   }
 
   static Future<void> deleteLocalModel(String id) async {
     var model = await CreatureModelStore().get(id);
     if(model != null) {
+      await CreatureModelSummaryStore().delete(model.summary);
       await CreatureModelStore().delete(model);
     }
+    _summaries.remove(id);
     _models.remove(id);
   }
 
   static bool _defaultAssetsLoaded = false;
+  static final Map<String, CreatureModelSummary> _summaries = <String, CreatureModelSummary>{};
   static final Map<String, CreatureModel> _models = <String, CreatureModel>{};
   static const String localCreatureSource = 'LOCAL_CREATED';
 
