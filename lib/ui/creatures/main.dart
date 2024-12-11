@@ -198,17 +198,11 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                     Expanded(
                       child: CreatureDisplayWidget(
                         creature: _selectedDisplay!,
-                        onEditRequested: () {
+                        onEditRequested: (CreatureModel model) {
                           setState(() {
-                            _selectedEdit = _selectedDisplay;
-                            editing = true;
-                          });
-                        },
-                        onCloneEditRequested: (CreatureModel clone) {
-                          setState(() {
-                            _newCreatureName = clone.name;
-                            _selectedEdit = null;
-                            _selectedEditModel = clone;
+                            _newCreatureName = model.name;
+                            _selectedEdit = model.id;
+                            _selectedEditModel = model;
                             editing = true;
                           });
                         },

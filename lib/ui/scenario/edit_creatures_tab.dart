@@ -24,6 +24,7 @@ class ScenarioEditCreaturesPage extends StatefulWidget {
 }
 
 class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
+  UniqueKey _listWidgetKey = UniqueKey();
   CreatureCategory? _category;
   String? _newCreatureName;
   String? _selectedId;
@@ -70,23 +71,21 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
             Expanded(
               child: CreatureDisplayWidget(
                 creature: _selectedId!,
-                onEditRequested: () {
+                onEditRequested: (CreatureModel model) {
                   setState(() {
+                    _newCreatureName = model.name;
+                    _selectedId = model.id;
                     _editing = true;
                   });
                 },
-                onCloneEditRequested: (CreatureModel clone) {
-                  setState(() {
-                    _selectedId = clone.id;
-                    _editing = true;
-                  });
-                },
-                onDelete: () {
+                onDelete: () async {
+                  await CreatureModel.deleteLocalModel(_selectedId!);
                   setState(() {
                     widget.onCreatureCommitted();
-                    CreatureModel.deleteLocalModel(_selectedId!);
                     widget.creatures.removeWhere((CreatureModel c) => c.id == _selectedId!);
                     _selectedId = null;
+                    _selectedModel = null;
+                    _listWidgetKey = UniqueKey();
                   });
                 },
               ),
@@ -148,6 +147,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                   const SizedBox(height: 8.0),
                   Expanded(
                     child: CreaturesListWidget(
+                      key: _listWidgetKey,
                       category: _category ?? CreatureCategory.animauxSauvages,
                       source: widget.scenarioName,
                       selected: _selectedId,

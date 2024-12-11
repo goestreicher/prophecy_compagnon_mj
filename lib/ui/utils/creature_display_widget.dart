@@ -17,13 +17,11 @@ class CreatureDisplayWidget extends StatefulWidget {
     super.key,
     required this.creature,
     required this.onEditRequested,
-    required this.onCloneEditRequested,
     required this.onDelete,
   });
 
   final String creature;
-  final void Function() onEditRequested;
-  final void Function(CreatureModel) onCloneEditRequested;
+  final void Function(CreatureModel) onEditRequested;
   final void Function() onDelete;
 
   @override
@@ -118,7 +116,7 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                         tooltip: !creature.editable ?
                         'Modification impossible (créature par défaut)' :
                         'Modifier',
-                        onPressed: !creature.editable ? null : () => widget.onEditRequested(),
+                        onPressed: !creature.editable ? null : () => widget.onEditRequested(creature),
                       ),
                       const SizedBox(width: 8.0),
                       IconButton(
@@ -141,7 +139,7 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                           // The round-trip through json.encode and json.decode seems necessary
                           // to ensure that the full object in converted, otherwise List elements
                           // are not correctly converted to JSON
-                          widget.onCloneEditRequested(
+                          widget.onEditRequested(
                             CreatureModel.fromJson(
                               json.decode(json.encode(jsonObj))
                             )
