@@ -1,8 +1,11 @@
 import 'dart:convert';
 
+import 'package:prophecy_compagnon_mj/classes/storage/exceptions.dart';
+
 import 'storage.dart';
 
 abstract class ObjectStoreAdapter<T> {
+  bool nullOnKeyNotFound() => true;
   String storeCategory();
   Future<T> fromStoreRepresentation(String representation);
   String key(T object);
@@ -28,7 +31,13 @@ abstract class ObjectStoreAdapter<T> {
   }
 
   Future<String?> getRaw(String key) async {
-    return await DataStorage.instance.get(storeCategory(), key);
+    try {
+      return await DataStorage.instance.get(storeCategory(), key);
+    }
+    on KeyNotFoundException catch(e) {
+      if(nullOnKeyNotFound()) return null;
+      rethrow;
+    }
   }
 
   Future<void> save(T object) async {
