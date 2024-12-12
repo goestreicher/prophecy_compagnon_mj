@@ -40,7 +40,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     if(j.containsKey('npcs')) {
       var npcsJson = <Map<String, dynamic>>[];
       for (var npcId in j['npcs']) {
-        var npc = NonPlayerCharacter.get(npcId);
+        var npc = await NonPlayerCharacter.get(npcId);
         if(npc != null) {
           npcsJson.add(npc.toJson());
         }

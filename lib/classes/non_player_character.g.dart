@@ -6,12 +6,36 @@ part of 'non_player_character.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
+        Map<String, dynamic> json) =>
+    NonPlayerCharacterSummary(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      category: $enumDecode(_$NPCCategoryEnumMap, json['category']),
+      subCategory:
+          _subCategoryFromJson(json['sub_category'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
+        NonPlayerCharacterSummary instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'category': _$NPCCategoryEnumMap[instance.category]!,
+      'sub_category': _subCategoryToJson(instance.subCategory),
+    };
+
+const _$NPCCategoryEnumMap = {
+  NPCCategory.generique: 'generique',
+  NPCCategory.scenario: 'scenario',
+};
+
 NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
     NonPlayerCharacter.create(
       name: json['name'] as String,
       category: $enumDecode(_$NPCCategoryEnumMap, json['category']),
-      subCategory: NonPlayerCharacter._subCategoryFromJson(
-          json['sub_category'] as Map<String, dynamic>),
+      subCategory:
+          _subCategoryFromJson(json['sub_category'] as Map<String, dynamic>),
       unique: json['unique'] as bool? ?? false,
       editable: json['editable'] as bool? ?? false,
       useHumanInjuryManager: json['use_human_injury_manager'] as bool? ?? false,
@@ -99,17 +123,11 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
       'advantages': instance.advantages.map((e) => e.toJson()).toList(),
       'tendencies': instance.tendencies.toJson(),
       'category': _$NPCCategoryEnumMap[instance.category]!,
-      'sub_category':
-          NonPlayerCharacter._subCategoryToJson(instance.subCategory),
+      'sub_category': _subCategoryToJson(instance.subCategory),
       'unique': instance.unique,
       'editable': instance.editable,
       'use_human_injury_manager': instance.useHumanInjuryManager,
     };
-
-const _$NPCCategoryEnumMap = {
-  NPCCategory.generique: 'generique',
-  NPCCategory.scenario: 'scenario',
-};
 
 const _$CasteEnumMap = {
   Caste.sansCaste: 'sansCaste',

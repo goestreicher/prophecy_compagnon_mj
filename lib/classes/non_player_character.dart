@@ -97,6 +97,55 @@ class NPCSubCategory {
   final NPCSubCategoryEnum? _subcat;
 }
 
+Map<String, dynamic> _subCategoryToJson(NPCSubCategory sub) {
+  var ret = <String, dynamic>{};
+
+  if(sub.subCategory == null) {
+    ret['categories'] = sub.categories.map((NPCCategory c) => c.name).toList();
+    ret['title'] = sub.title;
+  }
+  else {
+    ret['subcategory'] = sub.subCategory!.name;
+  }
+
+  return ret;
+}
+
+NPCSubCategory _subCategoryFromJson(Map<String, dynamic> json) {
+  if(json.containsKey('subcategory')) {
+    return NPCSubCategory(
+      subcategory: NPCSubCategoryEnum.values.byName(json['subcategory']!),
+    );
+  }
+  else {
+    List<NPCCategory> categories = (json['categories'] as List<dynamic>)
+        .map((dynamic name) => NPCCategory.values.byName(name as String))
+        .toList();
+
+    return NPCSubCategory(
+      categories: categories,
+      title: json['title'],
+    );
+  }
+}
+
+class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacterSummary> {
+  NonPlayerCharacterSummaryStore();
+
+  @override
+  String storeCategory() => 'npcSummaries';
+
+  @override
+  String key(NonPlayerCharacterSummary object) => object.id;
+
+  @override
+  Future<NonPlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async =>
+      NonPlayerCharacterSummary.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(NonPlayerCharacterSummary object) async => object.toJson();
+}
+
 class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
   NonPlayerCharacterStore();
 
@@ -111,6 +160,25 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
 
   @override
   Future<Map<String, dynamic>> toJsonRepresentation(NonPlayerCharacter object) async => object.toJson();
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class NonPlayerCharacterSummary {
+  NonPlayerCharacterSummary({
+    required this.id,
+    required this.name,
+    required this.category,
+    required this.subCategory,
+  });
+
+  String id;
+  String name;
+  NPCCategory category;
+  @JsonKey(fromJson: _subCategoryFromJson, toJson: _subCategoryToJson)
+    NPCSubCategory subCategory;
+
+  factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j) => _$NonPlayerCharacterSummaryFromJson(j);
+  Map<String, dynamic> toJson() => _$NonPlayerCharacterSummaryToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
@@ -182,38 +250,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     }
   }
 
-  static Map<String, dynamic> _subCategoryToJson(NPCSubCategory sub) {
-    var ret = <String, dynamic>{};
-
-    if(sub.subCategory == null) {
-      ret['categories'] = sub.categories.map((NPCCategory c) => c.name).toList();
-      ret['title'] = sub.title;
-    }
-    else {
-      ret['subcategory'] = sub.subCategory!.name;
-    }
-
-    return ret;
-  }
-
-  static NPCSubCategory _subCategoryFromJson(Map<String, dynamic> json) {
-    if(json.containsKey('subcategory')) {
-      return NPCSubCategory(
-        subcategory: NPCSubCategoryEnum.values.byName(json['subcategory']!),
-      );
-    }
-    else {
-      List<NPCCategory> categories = (json['categories'] as List<dynamic>)
-          .map((dynamic name) => NPCCategory.values.byName(name as String))
-          .toList();
-
-      return NPCSubCategory(
-        categories: categories,
-        title: json['title'],
-      );
-    }
-  }
-
   @JsonKey(includeFromJson: false, includeToJson: false)
     final String id;
   NPCCategory category;
@@ -223,19 +259,41 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   bool editable;
   bool useHumanInjuryManager;
 
+  NonPlayerCharacterSummary get summary => NonPlayerCharacterSummary(
+      id: id,
+      name: name,
+      category: category,
+      subCategory: subCategory,
+    );
+
   static bool _defaultAssetsLoaded = false;
+  static final Map<String, NonPlayerCharacterSummary> _summaries = <String, NonPlayerCharacterSummary>{};
   static final Map<String, NonPlayerCharacter> _instances = <String, NonPlayerCharacter>{};
 
-  static NonPlayerCharacter? get(String id) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
+  static Future<NonPlayerCharacter?> get(String id) async {
+    if(!_defaultAssetsLoaded) await loadDefaultAssets();
+
+    if(!_summaries.containsKey(id)) {
+      return null;
+    }
+
+    if(!_instances.containsKey(id)) {
+      var model = await NonPlayerCharacterStore().get(id);
+      if(model == null) {
+        return null;
+      }
+      model.editable = true;
+      _instances[id] = model;
+    }
+
     return _instances[id];
   }
 
-  static List<NonPlayerCharacter> forCategory(NPCCategory category, NPCSubCategory? subCategory) {
-    var ret = <NonPlayerCharacter>[];
-    for(var instance in _instances.values) {
-      if(instance.category == category && (subCategory == null || instance.subCategory == subCategory)) {
-        ret.add(instance);
+  static List<NonPlayerCharacterSummary> forCategory(NPCCategory category, NPCSubCategory? subCategory) {
+    var ret = <NonPlayerCharacterSummary>[];
+    for(var summary in _summaries.values) {
+      if(summary.category == category && (subCategory == null || summary.subCategory == subCategory)) {
+        ret.add(summary);
       }
     }
     return ret;
@@ -283,25 +341,29 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
     for(var model in assets) {
       var instance = NonPlayerCharacter.fromJson(model);
+      _summaries[instance.id] = instance.summary;
       _instances[instance.id] = instance;
     }
 
-    for(var npc in await NonPlayerCharacterStore().getAll()) {
-      npc.editable = true;
-      _instances[npc.id] = npc;
+    for(var npc in await NonPlayerCharacterSummaryStore().getAll()) {
+      _summaries[npc.id] = npc;
     }
   }
 
   static Future<void> saveLocalModel(NonPlayerCharacter npc) async {
+    await NonPlayerCharacterSummaryStore().save(npc.summary);
     await NonPlayerCharacterStore().save(npc);
+    _summaries[npc.id] = npc.summary;
     _instances[npc.id] = npc;
   }
 
   static Future<void> deleteLocalModel(String id) async {
     var npc = await NonPlayerCharacterStore().get(id);
     if(npc != null) {
+      await NonPlayerCharacterSummaryStore().delete(npc.summary);
       await NonPlayerCharacterStore().delete(npc);
     }
+    _summaries.remove(id);
     _instances.remove(id);
   }
 

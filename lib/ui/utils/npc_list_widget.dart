@@ -14,16 +14,16 @@ class NPCListWidget extends StatefulWidget {
 
   final NPCCategory category;
   final NPCSubCategory? subCategory;
-  final List<NonPlayerCharacter>? npcs;
-  final void Function(NonPlayerCharacter) onSelected;
-  final NonPlayerCharacter? selected;
+  final List<NonPlayerCharacterSummary>? npcs;
+  final void Function(String) onSelected;
+  final String? selected;
 
   @override
   State<NPCListWidget> createState() => _NPCListWidgetState();
 }
 
 class _NPCListWidgetState extends State<NPCListWidget> {
-  late List<NonPlayerCharacter> _npcs;
+  late List<NonPlayerCharacterSummary> _npcs;
 
   void _updateNPCList() {
     if(widget.npcs != null) {
@@ -59,12 +59,12 @@ class _NPCListWidgetState extends State<NPCListWidget> {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(4.0),
           ),
-          color: widget.selected == _npcs[index] ?
+          color: widget.selected == _npcs[index].id ?
           theme.colorScheme.surfaceContainerHighest :
           null,
           child: InkWell(
             onTap: () {
-              widget.onSelected(_npcs[index]);
+              widget.onSelected(_npcs[index].id);
             },
             child: ListTile(
               title: Text(

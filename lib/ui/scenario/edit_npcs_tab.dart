@@ -24,22 +24,31 @@ class ScenarioEditNPCsPage extends StatefulWidget {
 }
 
 class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
-  NonPlayerCharacter? _selected;
+  late List<NonPlayerCharacterSummary> npcSummaries;
+  String? _selectedId;
+  NonPlayerCharacter? _selectedNPC;
   final GlobalKey<FormState> _newNPCNameKey = GlobalKey<FormState>();
   String? _newNPCName;
   bool _editing = false;
+
+  @override
+  void initState() {
+    super.initState();
+    npcSummaries = [for(var npc in widget.npcs) npc.summary];
+  }
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
     Widget mainArea;
-    if(_editing == true) {
+    if(_editing == true && _newNPCName != null) {
       mainArea = Container(
         color: theme.colorScheme.surfaceContainerHighest,
         child: NPCEditWidget(
-          npc: _selected,
-          name: _newNPCName,
+          npcId: _selectedId,
+          npc: _selectedNPC,
+          name: _newNPCName!,
           category: NPCCategory.scenario,
           subCategory: NPCSubCategory(
               title: widget.scenarioName,
@@ -48,11 +57,13 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
           onEditDone: (NonPlayerCharacter? npc) {
             setState(() {
               if(npc != null) {
-                if(_newNPCName != null) {
+                if(npcSummaries.indexWhere((NonPlayerCharacterSummary s) => s.id == npc.id) == -1) {
+                  npcSummaries.add(npc.summary);
                   widget.npcs.add(npc);
-                  _newNPCName = null;
                 }
-                _selected = npc;
+                _newNPCName = null;
+                _selectedId = npc.id;
+                _selectedNPC = npc;
                 widget.onNPCCommitted();
               }
               _editing = false;
@@ -63,30 +74,28 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
     }
     else {
       Widget leftZone;
-      if(_selected == null) {
+      if(_selectedId == null) {
         leftZone = const Center(child: Text('Selectionner un PNJ'));
       }
       else {
         leftZone = NPCDisplayWidget(
-          npc: _selected!,
-          onEditRequested: () {
+          id: _selectedId!,
+          onEditRequested: (NonPlayerCharacter npc) {
             setState(() {
-              _editing = true;
-            });
-          },
-          onCloneEditRequested: (NonPlayerCharacter clone) {
-            setState(() {
-              _newNPCName = clone.name;
-              _selected = clone;
+              _newNPCName = npc.name;
+              _selectedId = npc.id;
+              _selectedNPC = npc;
               _editing = true;
             });
           },
           onDelete: () {
             setState(() {
               widget.onNPCCommitted();
-              NonPlayerCharacter.deleteLocalModel(_selected!.id);
-              widget.npcs.remove(_selected);
-              _selected = null;
+              NonPlayerCharacter.deleteLocalModel(_selectedId!);
+              widget.npcs.removeWhere((NonPlayerCharacter pc) => pc.id == _selectedId);
+              npcSummaries.removeWhere((NonPlayerCharacterSummary pc) => pc.id == _selectedId);
+              _selectedId = null;
+              _selectedNPC = null;
             });
           },
         );
@@ -114,7 +123,8 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                       if(name == null) return;
 
                       var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
-                      var model = NonPlayerCharacter.get(id);
+                      var model = await NonPlayerCharacter.get(id);
+                      if(!context.mounted) return;
                       if(model != null) {
                         await showDialog(
                           context: context,
@@ -133,7 +143,8 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                       }
 
                       setState(() {
-                        _selected = null;
+                        _selectedId = null;
+                        _selectedNPC = null;
                         _newNPCName = name;
                         _editing = true;
                       });
@@ -145,11 +156,11 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                   Expanded(
                     child: NPCListWidget(
                       category: NPCCategory.scenario,
-                      npcs: widget.npcs,
-                      selected: _selected,
-                      onSelected: (NonPlayerCharacter model) {
+                      npcs: npcSummaries,
+                      selected: _selectedId,
+                      onSelected: (String id) {
                         setState(() {
-                          _selected = model;
+                          _selectedId = id;
                         });
                       },
                     ),

@@ -81,11 +81,11 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
               label: const Text('Personnage'),
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries: selectedCategory == null || selectedSubCategory == null
-                ? <DropdownMenuEntry<NonPlayerCharacter>>[]
+                ? <DropdownMenuEntry<NonPlayerCharacterSummary>>[]
                 : NonPlayerCharacter.forCategory(selectedCategory!, selectedSubCategory).map(
-                    (NonPlayerCharacter npc) => DropdownMenuEntry(value: npc, label: npc.name)
+                    (NonPlayerCharacterSummary npc) => DropdownMenuEntry(value: npc, label: npc.name)
                   ).toList(),
-              onSelected: (NonPlayerCharacter? npc) {
+              onSelected: (NonPlayerCharacterSummary? npc) {
                 if(npc == null) return;
                 setState(() {
                   selectedNpcId = npc.id;

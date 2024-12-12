@@ -34,15 +34,17 @@ import '../utils/weapon_picker_dialog.dart';
 class NPCEditWidget extends StatefulWidget {
   const NPCEditWidget({
     super.key,
+    required this.name,
     this.npc,
-    this.name,
+    this.npcId,
     this.category,
     this.subCategory,
     required this.onEditDone,
   });
 
+  final String name;
   final NonPlayerCharacter? npc;
-  final String? name;
+  final String? npcId;
   final NPCCategory? category;
   final NPCSubCategory? subCategory;
   final void Function(NonPlayerCharacter?) onEditDone;
