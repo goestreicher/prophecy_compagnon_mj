@@ -48,7 +48,9 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
           onEditDone: (CreatureModel? creature) {
             setState(() {
               if(creature != null) {
-                widget.creatures.add(creature);
+                if(widget.creatures.indexWhere((CreatureModel m) => m.id == creature.id) == -1) {
+                  widget.creatures.add(creature);
+                }
                 _newCreatureName = null;
                 _selectedId = creature.id;
                 _selectedModel = null;
