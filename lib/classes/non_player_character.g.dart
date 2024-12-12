@@ -6,14 +6,31 @@ part of 'non_player_character.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+NPCSubCategory _$NPCSubCategoryFromJson(Map<String, dynamic> json) =>
+    NPCSubCategory(
+      title: json['title'] as String,
+      categories: (json['categories'] as List<dynamic>)
+          .map((e) => const NPCCategoryJsonConverter().fromJson(e as String))
+          .toList(),
+    );
+
+Map<String, dynamic> _$NPCSubCategoryToJson(NPCSubCategory instance) =>
+    <String, dynamic>{
+      'title': instance.title,
+      'categories': instance.categories
+          .map(const NPCCategoryJsonConverter().toJson)
+          .toList(),
+    };
+
 NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
         Map<String, dynamic> json) =>
     NonPlayerCharacterSummary(
       id: json['id'] as String,
       name: json['name'] as String,
-      category: $enumDecode(_$NPCCategoryEnumMap, json['category']),
-      subCategory:
-          _subCategoryFromJson(json['sub_category'] as Map<String, dynamic>),
+      category:
+          const NPCCategoryJsonConverter().fromJson(json['category'] as String),
+      subCategory: const NPCSubcategoryJsonConverter()
+          .fromJson(json['sub_category'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
@@ -21,21 +38,18 @@ Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'category': _$NPCCategoryEnumMap[instance.category]!,
-      'sub_category': _subCategoryToJson(instance.subCategory),
+      'category': const NPCCategoryJsonConverter().toJson(instance.category),
+      'sub_category':
+          const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
     };
-
-const _$NPCCategoryEnumMap = {
-  NPCCategory.generique: 'generique',
-  NPCCategory.scenario: 'scenario',
-};
 
 NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
     NonPlayerCharacter.create(
       name: json['name'] as String,
-      category: $enumDecode(_$NPCCategoryEnumMap, json['category']),
-      subCategory:
-          _subCategoryFromJson(json['sub_category'] as Map<String, dynamic>),
+      category:
+          const NPCCategoryJsonConverter().fromJson(json['category'] as String),
+      subCategory: const NPCSubcategoryJsonConverter()
+          .fromJson(json['sub_category'] as Map<String, dynamic>),
       unique: json['unique'] as bool? ?? false,
       editable: json['editable'] as bool? ?? false,
       useHumanInjuryManager: json['use_human_injury_manager'] as bool? ?? false,
@@ -122,8 +136,9 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
       'disadvantages': instance.disadvantages.map((e) => e.toJson()).toList(),
       'advantages': instance.advantages.map((e) => e.toJson()).toList(),
       'tendencies': instance.tendencies.toJson(),
-      'category': _$NPCCategoryEnumMap[instance.category]!,
-      'sub_category': _subCategoryToJson(instance.subCategory),
+      'category': const NPCCategoryJsonConverter().toJson(instance.category),
+      'sub_category':
+          const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
       'unique': instance.unique,
       'editable': instance.editable,
       'use_human_injury_manager': instance.useHumanInjuryManager,

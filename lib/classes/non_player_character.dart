@@ -15,119 +15,229 @@ import '../text_utils.dart';
 
 part 'non_player_character.g.dart';
 
-enum NPCCategory {
-  generique(title: 'Générique'),
-  scenario(title: 'Scénario'),
-  ;
+class NPCCategoryJsonConverter extends JsonConverter<NPCCategory, String> {
+  const NPCCategoryJsonConverter();
 
-  final String title;
-
-  const NPCCategory({ required this.title });
-}
-
-enum NPCSubCategoryEnum {
-  sansCaste(title: 'Sans caste', categories: [ NPCCategory.generique ]),
-  ;
-
-  final String title;
-  final List<NPCCategory> categories;
-
-  const NPCSubCategoryEnum({ required this.title, required this.categories });
-}
-
-class NPCSubCategory {
-  NPCSubCategory({
-    String? title,
-    List<NPCCategory>? categories,
-    NPCSubCategoryEnum? subcategory,
-  })
-    : _title = title, _categories = categories, _subcat = subcategory
-  {
-    if(_subcat == null && (_title == null || _categories == null)) {
-      throw ArgumentError('Either the subcategory or the title and the categories must be given');
+  @override
+  NPCCategory fromJson(String json) {
+    var index = NPCCategory.values.indexWhere((NPCCategory c) => c.name == json);
+    if(index != -1) {
+      return NPCCategory.values[index];
     }
 
-    if(
-        _subcat == null &&
-        _title != null &&
-        _categories != null &&
-        _categories.contains(NPCCategory.scenario) &&
-        -1 == _scenarioNames.indexWhere((NPCSubCategory s) => s.title == _title)
-    ) {
-      _scenarioNames.add(this);
-    }
-  }
-
-  String get title => _subcat != null ? _subcat.title : _title!;
-  List<NPCCategory> get categories => _subcat != null ? _subcat.categories : _categories!;
-  NPCSubCategoryEnum? get subCategory => _subcat;
-
-  static List<NPCSubCategory> subCategoriesForCategory(NPCCategory category) {
-    var ret = <NPCSubCategory>[];
-
-    if(category == NPCCategory.scenario) {
-      ret.addAll(_scenarioNames);
-    }
-    else {
-      ret.addAll(
-          NPCSubCategoryEnum.values
-              .where((NPCSubCategoryEnum s) => s.categories.contains(category))
-              .map((NPCSubCategoryEnum s) => NPCSubCategory(subcategory: s))
-      );
+    var name = sentenceToCamelCase(transliterateFrenchToAscii(json));
+    index = NPCCategory.values.indexWhere((NPCCategory c) => c.name == name);
+    if(index != -1) {
+      return NPCCategory.values[index];
     }
 
-    return ret;
+    return NPCCategory(title: json);
   }
 
   @override
-  int get hashCode => Object.hash(_title, _categories, _subcat);
+  String toJson(NPCCategory object) => object.isDefault ? object.name : object.title;
+}
+
+class NPCCategory {
+  static NPCCategory generique = NPCCategory(title: 'Générique', isDefault: true);
+  static NPCCategory scenario = NPCCategory(title: 'Scénario', isDefault: true);
+
+  static void _doStaticInit() {
+    if(_staticInitDone) return;
+    _staticInitDone = true;
+    // ignore: unused_local_variable
+    var gen = generique;
+    // ignore: unused_local_variable
+    var sce = scenario;
+  }
+
+  factory NPCCategory({required String title, bool isDefault = false}) {
+    _doStaticInit();
+
+    var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
+    if(!_categories.containsKey(name)) {
+      var c = NPCCategory._create(title: title, isDefault: isDefault);
+      _categories[c.name] = c;
+      return c;
+    }
+    else {
+      return _categories[name]!;
+    }
+  }
+
+  NPCCategory._create({ required this.title, required this.isDefault });
+
+  final String title;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  final bool isDefault;
+
+  String get name => sentenceToCamelCase(transliterateFrenchToAscii(title));
+
+  static List<NPCCategory> get values {
+    _doStaticInit();
+    return _categories.values.toList();
+  }
+
+  static NPCCategory byName(String name) {
+    _doStaticInit();
+    return _categories.values.firstWhere((NPCCategory c) => c.name == name);
+  }
+
+  @override
+  int get hashCode => title.hashCode;
+
+  @override
+  bool operator ==(Object other) {
+    if(other is! NPCCategory) return false;
+    return title == other.title;
+  }
+
+  static final Map<String, NPCCategory> _categories = <String, NPCCategory>{};
+  static bool _staticInitDone = false;
+
+  // factory NPCCategory.fromJson(Map<String, dynamic> j) => _$NPCCategoryFromJson(j);
+  // Map<String, dynamic> toJson() => _$NPCCategoryToJson(this);
+}
+
+class NPCSubcategoryJsonConverter extends JsonConverter<NPCSubCategory, Map<String, dynamic>> {
+  const NPCSubcategoryJsonConverter();
+
+  @override
+  NPCSubCategory fromJson(Map<String, dynamic> json) {
+    if(json.containsKey('subcategory')) {
+      return NPCSubCategory.byName(json['subcategory']);
+    }
+    else {
+      var name = sentenceToCamelCase(transliterateFrenchToAscii(json['title']));
+      var index = NPCSubCategory.values.indexWhere((NPCSubCategory s) => s.name == name);
+      if(index != -1) {
+        return NPCSubCategory.values[index];
+      }
+      else {
+        return _$NPCSubCategoryFromJson(json);
+      }
+    }
+  }
+
+  @override
+  Map<String, dynamic> toJson(NPCSubCategory object) {
+    if(object.isDefault) {
+      return <String, dynamic>{'name': object.name};
+    }
+    else {
+      return object.toJson();
+    }
+  }
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+@NPCCategoryJsonConverter()
+class NPCSubCategory {
+  static NPCSubCategory sansCaste = NPCSubCategory(
+    title: 'Sans Caste',
+    categories: [NPCCategory.generique],
+    isDefault: true,
+  );
+
+  static void _doStaticInit() {
+    if(_staticInitDone) return;
+    _staticInitDone = true;
+    // ignore: unused_local_variable
+    var san = sansCaste;
+    return;
+  }
+
+  factory NPCSubCategory({
+    required String title,
+    required List<NPCCategory> categories,
+    bool isDefault = false,
+  }) {
+    _doStaticInit();
+
+    var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
+    if(_subCategories.containsKey(name)) {
+      return _subCategories[name]!;
+    }
+    else {
+      var s = NPCSubCategory._create(title: title, categories: categories, isDefault: isDefault);
+      _subCategories[s.name] = s;
+      return s;
+    }
+  }
+
+  NPCSubCategory._create({ required this.title, required this.categories, this.isDefault = false });
+
+  static List<NPCSubCategory> subCategoriesForCategory(NPCCategory category) {
+    _doStaticInit();
+    return _subCategories.values
+        .where((NPCSubCategory s) => s.categories.contains(category))
+        .toList();
+  }
+
+  static List<NPCSubCategory> get values {
+    _doStaticInit();
+    return _subCategories.values.toList();
+  }
+
+  static NPCSubCategory byName(String name) {
+    _doStaticInit();
+    return _subCategories[name]!;
+  }
+
+  final String title;
+  final List<NPCCategory> categories;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+    final bool isDefault;
+
+  String get name => sentenceToCamelCase(transliterateFrenchToAscii(title));
+
+  @override
+  int get hashCode => Object.hash(title, categories);
 
   @override
   bool operator ==(Object other) {
     if(other is! NPCSubCategory) return false;
-
-    if(_subcat != null) return _subcat == other._subcat;
-    return _title == other._title;
+    return title == other.title;
   }
 
-  static final List<NPCSubCategory> _scenarioNames = <NPCSubCategory>[];
+  static final Map<String, NPCSubCategory> _subCategories = <String, NPCSubCategory>{};
+  static bool _staticInitDone = false;
 
-  final String? _title;
-  final List<NPCCategory>? _categories;
-  final NPCSubCategoryEnum? _subcat;
+  factory NPCSubCategory.fromJson(Map<String, dynamic> j) => _$NPCSubCategoryFromJson(j);
+  Map<String, dynamic> toJson() => _$NPCSubCategoryToJson(this);
 }
 
-Map<String, dynamic> _subCategoryToJson(NPCSubCategory sub) {
-  var ret = <String, dynamic>{};
+// Map<String, dynamic> _subCategoryToJson(NPCSubCategory sub) {
+//   var ret = <String, dynamic>{};
+//
+//   if(sub.subCategory == null) {
+//     ret['categories'] = sub.categories.map((NPCCategory c) => c.name).toList();
+//     ret['title'] = sub.title;
+//   }
+//   else {
+//     ret['subcategory'] = sub.subCategory!.name;
+//   }
+//
+//   return ret;
+// }
 
-  if(sub.subCategory == null) {
-    ret['categories'] = sub.categories.map((NPCCategory c) => c.name).toList();
-    ret['title'] = sub.title;
-  }
-  else {
-    ret['subcategory'] = sub.subCategory!.name;
-  }
-
-  return ret;
-}
-
-NPCSubCategory _subCategoryFromJson(Map<String, dynamic> json) {
-  if(json.containsKey('subcategory')) {
-    return NPCSubCategory(
-      subcategory: NPCSubCategoryEnum.values.byName(json['subcategory']!),
-    );
-  }
-  else {
-    List<NPCCategory> categories = (json['categories'] as List<dynamic>)
-        .map((dynamic name) => NPCCategory.values.byName(name as String))
-        .toList();
-
-    return NPCSubCategory(
-      categories: categories,
-      title: json['title'],
-    );
-  }
-}
+// NPCSubCategory _subCategoryFromJson(Map<String, dynamic> json) {
+//   if(json.containsKey('subcategory')) {
+//     return NPCSubCategory(
+//       subcategory: NPCSubCategoryEnum.values.byName(json['subcategory']!),
+//     );
+//   }
+//   else {
+//     List<NPCCategory> categories = (json['categories'] as List<dynamic>)
+//         .map((dynamic name) => NPCCategory.byName(name as String))
+//         .toList();
+//
+//     return NPCSubCategory(
+//       categories: categories,
+//       title: json['title'],
+//     );
+//   }
+// }
 
 class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacterSummary> {
   NonPlayerCharacterSummaryStore();
@@ -163,6 +273,8 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+@NPCCategoryJsonConverter()
+@NPCSubcategoryJsonConverter()
 class NonPlayerCharacterSummary {
   NonPlayerCharacterSummary({
     required this.id,
@@ -174,7 +286,7 @@ class NonPlayerCharacterSummary {
   String id;
   String name;
   NPCCategory category;
-  @JsonKey(fromJson: _subCategoryFromJson, toJson: _subCategoryToJson)
+  //@JsonKey(fromJson: _subCategoryFromJson, toJson: _subCategoryToJson)
     NPCSubCategory subCategory;
 
   factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j) => _$NonPlayerCharacterSummaryFromJson(j);
@@ -182,6 +294,8 @@ class NonPlayerCharacterSummary {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
+@NPCCategoryJsonConverter()
+@NPCSubcategoryJsonConverter()
 class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   NonPlayerCharacter(
     super.uuid,
@@ -253,7 +367,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   @JsonKey(includeFromJson: false, includeToJson: false)
     final String id;
   NPCCategory category;
-  @JsonKey(fromJson: _subCategoryFromJson, toJson: _subCategoryToJson)
+  //@JsonKey(fromJson: _subCategoryFromJson, toJson: _subCategoryToJson)
     NPCSubCategory subCategory;
   bool unique;
   bool editable;
