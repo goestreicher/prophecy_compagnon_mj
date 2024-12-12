@@ -91,6 +91,7 @@ class _CombatTurnActionListWidgetState extends State<CombatTurnActionListWidget>
                   Future.forEach(
                     actionsToResolve,
                     (action) async {
+                      if(!context.mounted) return;
                       if(action.environment.containsKey(CombatTurnActionEnvironmentKey.onRankResolution)) {
                         await action.environment[CombatTurnActionEnvironmentKey.onRankResolution]!(context, action);
                       }

@@ -310,10 +310,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
       _descriptionController.text = widget.npc!.description;
     }
     else {
-      if(widget.name == null) {
-        throw ArgumentError('Pas de nom fourni pour le nouveau PNJ');
-      }
-      _name = widget.name!;
+      _name = widget.name;
       _abilities = Map.fromEntries(Ability.values.map((a) => MapEntry(a, 0)));
       _attributes = Map.fromEntries(Attribute.values.map((a) => MapEntry(a, 0)));
     }

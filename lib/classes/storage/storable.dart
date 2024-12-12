@@ -34,7 +34,7 @@ abstract class ObjectStoreAdapter<T> {
     try {
       return await DataStorage.instance.get(storeCategory(), key);
     }
-    on KeyNotFoundException catch(e) {
+    on KeyNotFoundException {
       if(nullOnKeyNotFound()) return null;
       rethrow;
     }
