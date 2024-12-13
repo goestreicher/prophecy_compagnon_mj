@@ -38,7 +38,8 @@ CreatureModelSummary _$CreatureModelSummaryFromJson(
     CreatureModelSummary(
       id: json['id'] as String,
       name: json['name'] as String,
-      category: $enumDecode(_$CreatureCategoryEnumMap, json['category']),
+      category: const CreatureCategoryJsonConverter()
+          .fromJson(json['category'] as String),
       source: json['source'] as String,
     );
 
@@ -47,21 +48,17 @@ Map<String, dynamic> _$CreatureModelSummaryToJson(
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'category': _$CreatureCategoryEnumMap[instance.category]!,
+      'category':
+          const CreatureCategoryJsonConverter().toJson(instance.category),
       'source': instance.source,
     };
-
-const _$CreatureCategoryEnumMap = {
-  CreatureCategory.animauxSauvages: 'animauxSauvages',
-  CreatureCategory.peuplesAnciens: 'peuplesAnciens',
-  CreatureCategory.creaturesDraconiques: 'creaturesDraconiques',
-};
 
 CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
     CreatureModel(
       name: json['name'] as String,
       unique: json['unique'] as bool? ?? false,
-      category: $enumDecode(_$CreatureCategoryEnumMap, json['category']),
+      category: const CreatureCategoryJsonConverter()
+          .fromJson(json['category'] as String),
       source: json['source'] as String,
       description: json['description'] as String? ?? '',
       biome: json['biome'] as String,
@@ -99,7 +96,8 @@ Map<String, dynamic> _$CreatureModelToJson(CreatureModel instance) =>
     <String, dynamic>{
       'name': instance.name,
       'unique': instance.unique,
-      'category': _$CreatureCategoryEnumMap[instance.category]!,
+      'category':
+          const CreatureCategoryJsonConverter().toJson(instance.category),
       'source': instance.source,
       'description': instance.description,
       'biome': instance.biome,

@@ -17,15 +17,87 @@ import '../text_utils.dart';
 
 part 'creature.g.dart';
 
-enum CreatureCategory {
-  animauxSauvages(title: "Animaux sauvages"),
-  peuplesAnciens(title: "Peuples anciens"),
-  creaturesDraconiques(title: "Créatures draconiques")
-  ;
+class CreatureCategoryJsonConverter extends JsonConverter<CreatureCategory, String> {
+  const CreatureCategoryJsonConverter();
 
-  const CreatureCategory({ required this.title });
+  @override
+  CreatureCategory fromJson(String json) {
+    var index = CreatureCategory.values.indexWhere((CreatureCategory c) => c.name == json);
+    if(index != -1) {
+      return CreatureCategory.values[index];
+    }
+
+    var name = sentenceToCamelCase(transliterateFrenchToAscii(json));
+    index = CreatureCategory.values.indexWhere((CreatureCategory c) => c.name == name);
+    if(index != -1) {
+      return CreatureCategory.values[index];
+    }
+
+    return CreatureCategory(title: json);
+  }
+
+  @override
+  String toJson(CreatureCategory object) => object.isDefault ? object.name : object.title;
+}
+
+class CreatureCategory {
+  static CreatureCategory animauxSauvages = CreatureCategory(title: "Animaux sauvages", isDefault: true);
+  static CreatureCategory peuplesAnciens = CreatureCategory(title: "Peuples anciens", isDefault: true);
+  static CreatureCategory creaturesDraconiques = CreatureCategory(title: "Créatures draconiques", isDefault: true);
+
+  static void _doStaticInit() {
+    if(_staticInitDone) return;
+    _staticInitDone = true;
+    // ignore: unused_local_variable
+    var ani = animauxSauvages;
+    // ignore: unused_local_variable
+    var peu = peuplesAnciens;
+    // ignore: unused_local_variable
+    var crea = creaturesDraconiques;
+  }
+
+  factory CreatureCategory({ required title, bool isDefault = false }) {
+    _doStaticInit();
+
+    var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
+    if(!_categories.containsKey(name)) {
+      var c = CreatureCategory._create(title: title, isDefault: isDefault);
+      _categories[c.name] = c;
+      return c;
+    }
+    else {
+      return _categories[name]!;
+    }
+  }
+
+  CreatureCategory._create({ required this.title, required this.isDefault });
 
   final String title;
+  final bool isDefault;
+
+  String get name => sentenceToCamelCase(transliterateFrenchToAscii(title));
+
+  static List<CreatureCategory> get values {
+    _doStaticInit();
+    return _categories.values.toList();
+  }
+
+  static CreatureCategory byName(String name) {
+    _doStaticInit();
+    return _categories.values.firstWhere((CreatureCategory c) => c.name == name);
+  }
+
+  @override
+  int get hashCode => title.hashCode;
+
+  @override
+  bool operator ==(Object other) {
+    if(other is! CreatureCategory) return false;
+    return title == other.title;
+  }
+
+  static final Map<String, CreatureCategory> _categories = <String, CreatureCategory>{};
+  static bool _staticInitDone = false;
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -92,6 +164,7 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+@CreatureCategoryJsonConverter()
 class CreatureModelSummary {
   CreatureModelSummary({
     required this.id,
@@ -110,6 +183,7 @@ class CreatureModelSummary {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+@CreatureCategoryJsonConverter()
 class CreatureModel with EncounterEntityModel {
   CreatureModel(
       {
