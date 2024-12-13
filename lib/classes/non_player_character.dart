@@ -188,6 +188,15 @@ class NPCSubCategory {
     return _subCategories[name]!;
   }
 
+  static NPCSubCategory? byTitle(String title) {
+    _doStaticInit();
+    String? key;
+    _subCategories.forEach((k, v) {
+      if (v.title == title) key = k;
+    });
+    return key == null ? null : _subCategories[key]!;
+  }
+
   final String title;
   final List<NPCCategory> categories;
   @JsonKey(includeFromJson: false, includeToJson: false)

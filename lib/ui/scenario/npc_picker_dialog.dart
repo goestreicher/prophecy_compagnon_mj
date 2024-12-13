@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../../classes/non_player_character.dart';
 
 class NPCPickerDialog extends StatefulWidget {
-  const NPCPickerDialog({ super.key });
+  const NPCPickerDialog({ super.key, this.forScenario });
+
+  final String? forScenario;
 
   @override
   State<NPCPickerDialog> createState() => _NPCPickerDialogState();
@@ -12,7 +14,7 @@ class NPCPickerDialog extends StatefulWidget {
 class _NPCPickerDialogState extends State<NPCPickerDialog> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController categoryController = TextEditingController();
-  NPCCategory? selectedCategory = NPCCategory.scenario;
+  NPCCategory? selectedCategory;
   final TextEditingController subCategoryController = TextEditingController();
   List<NPCSubCategory> subcategories = <NPCSubCategory>[];
   NPCSubCategory? selectedSubCategory;
@@ -43,10 +45,24 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
                 if(c == null) return;
                 setState(() {
                   selectedCategory = c;
-                  // TODO: if the current scenario doesn't exist in the sub-categories, create it here
-                  subCategoryController.text = '';
-                  subcategories = NPCSubCategory.subCategoriesForCategory(c);
-                  selectedSubCategory = null;
+                  if(selectedCategory == NPCCategory.scenario && widget.forScenario != null) {
+                    // Only allow adding NPCs from the current scenario
+                    var cat = NPCSubCategory.byTitle(widget.forScenario!);
+                    if(cat != null) {
+                      subcategories = [cat];
+                      subCategoryController.text = cat.title;
+                      selectedSubCategory = cat;
+                    }
+                    else {
+                      subcategories.clear();
+                      subCategoryController.text = '';
+                      selectedSubCategory = null;
+                    }
+                  } else {
+                    subcategories = NPCSubCategory.subCategoriesForCategory(c);
+                    subCategoryController.text = '';
+                    selectedSubCategory = null;
+                  }
                   npcController.text = '';
                   npcs.clear();
                   selectedNpcId = null;
@@ -61,7 +77,7 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries: selectedCategory == null
                 ? <DropdownMenuEntry<NPCSubCategory>>[]
-                : NPCSubCategory.subCategoriesForCategory(selectedCategory!).map(
+                : subcategories.map(
                     (NPCSubCategory s) => DropdownMenuEntry<NPCSubCategory>(value: s, label: s.title)
                   ).toList(),
               onSelected: (NPCSubCategory? s) {

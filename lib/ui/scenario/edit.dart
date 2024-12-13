@@ -138,7 +138,10 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                         });
                       },
                     ),
-                    ScenarioEditEncountersPage(encounters: _scenario.encounters),
+                    ScenarioEditEncountersPage(
+                      encounters: _scenario.encounters,
+                      scenarioName: _scenario.name,
+                    ),
                     ScenarioEditMapsPage(maps: _scenario.maps),
                   ],
                 ),

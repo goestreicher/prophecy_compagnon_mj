@@ -7,9 +7,14 @@ import 'creature_picker_dialog.dart';
 import 'npc_picker_dialog.dart';
 
 class EncounterEditWidget extends StatefulWidget {
-  const EncounterEditWidget({ super.key, required this.encounter });
+  const EncounterEditWidget({
+    super.key,
+    required this.encounter,
+    this.forScenario,
+  });
 
   final ScenarioEncounter encounter;
+  final String? forScenario;
 
   @override
   State<EncounterEditWidget> createState() => _EncounterEditWidgetState();
@@ -64,7 +69,7 @@ class _EncounterEditWidgetState extends State<EncounterEditWidget> {
                 onPressed: () async {
                   var selectedNpcId = await showDialog(
                     context: context,
-                    builder: (BuildContext context) => const NPCPickerDialog()
+                    builder: (BuildContext context) => NPCPickerDialog(forScenario: widget.forScenario)
                   );
                   if(selectedNpcId == null) return;
 

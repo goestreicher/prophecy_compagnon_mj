@@ -7,11 +7,13 @@ import '../utils/single_line_input_dialog.dart';
 class ScenarioEditEncountersPage extends StatefulWidget {
   ScenarioEditEncountersPage({
     super.key,
-    List<ScenarioEncounter>? encounters
+    List<ScenarioEncounter>? encounters,
+    required this.scenarioName,
   })
     : encounters = encounters ?? <ScenarioEncounter>[];
 
   final List<ScenarioEncounter> encounters;
+  final String scenarioName;
 
   @override
   State<ScenarioEditEncountersPage> createState() => _ScenarioEditEncountersPageState();
@@ -31,7 +33,8 @@ class _ScenarioEditEncountersPageState extends State<ScenarioEditEncountersPage>
     }
     else {
       encounterEditWidget = EncounterEditWidget(
-        encounter: _selected!
+        encounter: _selected!,
+        forScenario: widget.scenarioName,
       );
     }
 
