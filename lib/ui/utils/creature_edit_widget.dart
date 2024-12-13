@@ -1059,6 +1059,8 @@ class _NaturalWeaponEditWidgetState extends State<_NaturalWeaponEditWidget> {
             child: CharacterDigitInputWidget(
               label: 'Compétence',
               initialValue: widget.weapon.skill,
+              minValue: 1,
+              maxValue: 30,
               onChanged: (int value) {
                 widget.weapon.skill = value;
               },
@@ -1070,6 +1072,8 @@ class _NaturalWeaponEditWidgetState extends State<_NaturalWeaponEditWidget> {
             child: CharacterDigitInputWidget(
               label: 'Dégats',
               initialValue: widget.weapon.damage,
+              minValue: 1,
+              maxValue: 9999,
               onChanged: (int value) {
                 widget.weapon.damage = value;
               },
