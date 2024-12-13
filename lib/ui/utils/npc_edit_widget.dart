@@ -26,6 +26,7 @@ import '../utils/injuries_edit_widget.dart';
 import '../utils/interdict_picker_dialog.dart';
 import '../utils/magic_sphere_edit_widget.dart';
 import '../utils/shield_picker_dialog.dart';
+import '../utils/single_line_input_dialog.dart';
 import '../utils/skill_picker_dialog.dart';
 import '../utils/spell_picker_dialog.dart';
 import '../utils/tendencies_edit_widget.dart';
@@ -57,9 +58,11 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
   late final String _name;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _categoryController = TextEditingController();
+  String? _createCategoryName;
   NPCCategory? _category;
   final List<NPCSubCategory> _validSubCategories = <NPCSubCategory>[];
   final TextEditingController _subCategoryController = TextEditingController();
+  String? _createSubCategoryName;
   NPCSubCategory? _subCategory;
   bool _unique = false;
   final TextEditingController _casteController = TextEditingController();
@@ -335,6 +338,15 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
               .where((NPCSubCategory s) => s.categories.contains(_category))
               .map((NPCSubCategory s) => DropdownMenuEntry(value: s, label: s.title))
       );
+
+      if(subCategoryDropdownMenuEntries.isEmpty) {
+        subCategoryDropdownMenuEntries.add(
+          DropdownMenuEntry(
+            value: NPCSubCategory.createNewSubCategory,
+            label: NPCSubCategory.createNewSubCategory.title,
+          )
+        );
+      }
     }
 
     var skillsWidgets = <Widget>[];
@@ -468,9 +480,35 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                   .where((NPCCategory c) => c != NPCCategory.scenario)
                                   .map((NPCCategory c) => DropdownMenuEntry(value: c, label: c.title))
                                   .toList(),
+                              enableSearch: false,
+                              enableFilter: true,
+                              filterCallback: (List<DropdownMenuEntry<NPCCategory>> entries, String filter) {
+                                if(filter.isEmpty) return entries;
+                                String lcFilter = filter.toLowerCase();
+                                var ret = entries
+                                    .where((DropdownMenuEntry<NPCCategory> c) =>
+                                      c.label.toLowerCase().contains(lcFilter)
+                                    )
+                                    .toList();
+                                if(ret.isEmpty) {
+                                  _createCategoryName = filter;
+                                  ret.add(DropdownMenuEntry(
+                                      value: NPCCategory.createNewCategory,
+                                      label: 'Créer "$filter"',
+                                      leadingIcon: const Icon(Icons.add))
+                                  );
+                                }
+                                return ret;
+                              },
                               onSelected: (NPCCategory? category) {
                                 setState(() {
-                                  _category = category;
+                                  if(category == NPCCategory.createNewCategory) {
+                                    _category = NPCCategory(title: _createCategoryName!);
+                                    _createCategoryName = null;
+                                  }
+                                  else {
+                                    _category = category;
+                                  }
                                   _subCategory = null;
                                   _subCategoryController.clear();
                                   _updateSubCategories();
@@ -500,9 +538,60 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                 labelStyle: theme.textTheme.labelSmall,
                               ),
                               dropdownMenuEntries: subCategoryDropdownMenuEntries,
-                              onSelected: (NPCSubCategory? subCategory) {
+                              enableSearch: false,
+                              enableFilter: true,
+                              filterCallback: (List<DropdownMenuEntry<NPCSubCategory>> entries, String filter) {
+                                if(filter.isEmpty) return entries;
+                                String lcFilter = filter.toLowerCase();
+                                var ret = entries
+                                    .where((DropdownMenuEntry<NPCSubCategory> c) =>
+                                      c.value != NPCSubCategory.createNewSubCategory && c.label.toLowerCase().contains(lcFilter)
+                                    )
+                                    .toList();
+                                if(ret.isEmpty) {
+                                  _createSubCategoryName = filter;
+                                  ret.add(DropdownMenuEntry(
+                                      value: NPCSubCategory.createNewSubCategory,
+                                      label: 'Créer "$filter"',
+                                      leadingIcon: const Icon(Icons.add))
+                                  );
+                                }
+                                return ret;
+                              },
+                              onSelected: (NPCSubCategory? subCategory) async {
+                                NPCSubCategory? sub;
+
+                                if(subCategory == NPCSubCategory.createNewSubCategory) {
+                                  if(_createSubCategoryName != null) {
+                                    sub = NPCSubCategory(
+                                      title: _createSubCategoryName!,
+                                      categories: [_category!],
+                                    );
+                                    _createSubCategoryName = null;
+                                  }
+                                  else {
+                                    var name = await showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) => SingleLineInputDialog(
+                                        title: 'Nom de la sous-catégorie',
+                                        hintText: 'Nom',
+                                        formKey: GlobalKey<FormState>(),
+                                      ),
+                                    );
+                                    if(!context.mounted) return;
+                                    if(name == null) return;
+                                    sub = NPCSubCategory(
+                                      title: name,
+                                      categories: [_category!],
+                                    );
+                                  }
+                                }
+                                else {
+                                  sub = subCategory;
+                                }
+
                                 setState(() {
-                                  _subCategory = subCategory;
+                                  _subCategory = sub;
                                 });
                               },
                               validator: (NPCSubCategory? value) {

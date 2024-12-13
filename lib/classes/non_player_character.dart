@@ -42,6 +42,8 @@ class NPCCategory {
   static NPCCategory generique = NPCCategory(title: 'Générique', isDefault: true);
   static NPCCategory scenario = NPCCategory(title: 'Scénario', isDefault: true);
 
+  static NPCCategory createNewCategory = NPCCategory._create(title: "Créer cette catégorie", isDefault: true);
+
   static void _doStaticInit() {
     if(_staticInitDone) return;
     _staticInitDone = true;
@@ -132,6 +134,12 @@ class NPCSubCategory {
   static NPCSubCategory sansCaste = NPCSubCategory(
     title: 'Sans Caste',
     categories: [NPCCategory.generique],
+    isDefault: true,
+  );
+
+  static NPCSubCategory createNewSubCategory = NPCSubCategory._create(
+    title: 'Créer une sous-catégorie',
+    categories: [],
     isDefault: true,
   );
 
@@ -331,10 +339,10 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   @JsonKey(includeFromJson: false, includeToJson: false)
     final String id;
   NPCCategory category;
-  //@JsonKey(fromJson: _subCategoryFromJson, toJson: _subCategoryToJson)
-    NPCSubCategory subCategory;
+  NPCSubCategory subCategory;
   bool unique;
-  bool editable;
+  @JsonKey(includeToJson: false, includeFromJson: false)
+    bool editable = false;
   bool useHumanInjuryManager;
 
   NonPlayerCharacterSummary get summary => NonPlayerCharacterSummary(

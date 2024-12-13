@@ -180,6 +180,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       return;
                     }
 
+                    npc.editable = true;
                     await NonPlayerCharacter.saveLocalModel(npc);
                     setState(() {
                       _selectedDisplay = npc.id;
@@ -187,6 +188,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       _categoryController.text = npc.category.title;
                       _subCategory = npc.subCategory;
                       _subCategoryController.text = npc.subCategory.title;
+                      _isWorking = false;
                     });
                   } catch (e) {
                     setState(() {
