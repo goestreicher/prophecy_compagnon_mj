@@ -159,6 +159,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       return;
                     }
 
+                    creature.editable = true;
                     await CreatureModel.saveLocalModel(creature);
                     setState(() {
                       _category = creature.category;
