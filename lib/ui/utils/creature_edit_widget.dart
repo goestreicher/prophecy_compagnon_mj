@@ -347,16 +347,20 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                                   dropdownMenuEntries: CreatureCategory.values
                                       .map((CreatureCategory c) => DropdownMenuEntry(value: c, label: c.title))
                                       .toList(),
-                                  enableSearch: false,
+                                  enableSearch: true,
                                   enableFilter: true,
                                   filterCallback: (List<DropdownMenuEntry<CreatureCategory>> entries, String filter) {
-                                    if(filter.isEmpty) return entries;
+                                    if(filter.isEmpty || (_category != null && filter == _category!.title)) {
+                                      return entries;
+                                    }
+
                                     String lcFilter = filter.toLowerCase();
                                     var ret = entries
                                         .where((DropdownMenuEntry<CreatureCategory> c) =>
                                           c.label.toLowerCase().contains(lcFilter)
                                         )
                                         .toList();
+
                                     if(ret.isEmpty) {
                                       _createCategoryName = filter;
                                       ret.add(DropdownMenuEntry(
@@ -365,12 +369,13 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                                         leadingIcon: const Icon(Icons.add))
                                       );
                                     }
+
                                     return ret;
                                   },
                                   onSelected: (CreatureCategory? category) {
                                     setState(() {
                                       if(category == CreatureCategory.createNewCreatureCategory) {
-                                        _category = CreatureCategory(title: _createCategoryName);
+                                        _category = CreatureCategory(title: _createCategoryName!);
                                       }
                                       else {
                                         _category = category;

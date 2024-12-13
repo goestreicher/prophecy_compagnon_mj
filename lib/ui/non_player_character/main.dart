@@ -68,7 +68,6 @@ class _NPCMainPageState extends State<NPCMainPage> {
               DropdownMenu(
                 controller: _categoryController,
                 label: const Text('Catégorie'),
-                requestFocusOnTap: true,
                 textStyle: theme.textTheme.bodySmall,
                 onSelected: (NPCCategory? category) {
                   setState(() {

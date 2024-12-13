@@ -63,7 +63,6 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
               DropdownMenu(
                 controller: _categoryController,
                 label: const Text('Catégorie'),
-                requestFocusOnTap: true,
                 textStyle: theme.textTheme.bodySmall,
                 onSelected: (CreatureCategory? category) {
                   setState(() {
@@ -74,8 +73,6 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                 dropdownMenuEntries: CreatureCategory.values
                     .map((CreatureCategory c) => DropdownMenuEntry(value: c, label: c.title))
                     .toList(),
-                enableSearch: false,
-                enableFilter: true,
               ),
               const SizedBox(width: 8.0),
               // SizedBox(

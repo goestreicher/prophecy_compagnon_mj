@@ -344,6 +344,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
           DropdownMenuEntry(
             value: NPCSubCategory.createNewSubCategory,
             label: NPCSubCategory.createNewSubCategory.title,
+            leadingIcon: const Icon(Icons.add),
           )
         );
       }
@@ -480,16 +481,20 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                   .where((NPCCategory c) => c != NPCCategory.scenario)
                                   .map((NPCCategory c) => DropdownMenuEntry(value: c, label: c.title))
                                   .toList(),
-                              enableSearch: false,
+                              enableSearch: true,
                               enableFilter: true,
                               filterCallback: (List<DropdownMenuEntry<NPCCategory>> entries, String filter) {
-                                if(filter.isEmpty) return entries;
+                                if(filter.isEmpty || (_category != null && filter == _category!.title)) {
+                                  return entries;
+                                }
+
                                 String lcFilter = filter.toLowerCase();
                                 var ret = entries
                                     .where((DropdownMenuEntry<NPCCategory> c) =>
                                       c.label.toLowerCase().contains(lcFilter)
                                     )
                                     .toList();
+
                                 if(ret.isEmpty) {
                                   _createCategoryName = filter;
                                   ret.add(DropdownMenuEntry(
@@ -498,6 +503,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                       leadingIcon: const Icon(Icons.add))
                                   );
                                 }
+
                                 return ret;
                               },
                               onSelected: (NPCCategory? category) {
@@ -527,7 +533,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                             child: DropdownMenuFormField(
                               controller: _subCategoryController,
                               initialSelection: _subCategory,
-                              enabled: widget.subCategory == null,
+                              enabled: (widget.subCategory == null && _category != null),
                               requestFocusOnTap: true,
                               label: const Text('Sous-catégorie'),
                               textStyle: theme.textTheme.bodySmall,
@@ -538,16 +544,20 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                 labelStyle: theme.textTheme.labelSmall,
                               ),
                               dropdownMenuEntries: subCategoryDropdownMenuEntries,
-                              enableSearch: false,
+                              enableSearch: true,
                               enableFilter: true,
                               filterCallback: (List<DropdownMenuEntry<NPCSubCategory>> entries, String filter) {
-                                if(filter.isEmpty) return entries;
+                                if(filter.isEmpty || (_subCategory != null && filter == _subCategory!.title)) {
+                                  return entries;
+                                }
+
                                 String lcFilter = filter.toLowerCase();
                                 var ret = entries
                                     .where((DropdownMenuEntry<NPCSubCategory> c) =>
                                       c.value != NPCSubCategory.createNewSubCategory && c.label.toLowerCase().contains(lcFilter)
                                     )
                                     .toList();
+
                                 if(ret.isEmpty) {
                                   _createSubCategoryName = filter;
                                   ret.add(DropdownMenuEntry(
@@ -556,6 +566,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                       leadingIcon: const Icon(Icons.add))
                                   );
                                 }
+
                                 return ret;
                               },
                               onSelected: (NPCSubCategory? subCategory) async {
