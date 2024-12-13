@@ -49,6 +49,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
   bool _unique = false;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _categoryController = TextEditingController();
+  String? _createCategoryName;
   CreatureCategory? _category;
   final TextEditingController _sizeController = TextEditingController();
   final TextEditingController _weightController = TextEditingController();
@@ -346,9 +347,34 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                                   dropdownMenuEntries: CreatureCategory.values
                                       .map((CreatureCategory c) => DropdownMenuEntry(value: c, label: c.title))
                                       .toList(),
+                                  enableSearch: false,
+                                  enableFilter: true,
+                                  filterCallback: (List<DropdownMenuEntry<CreatureCategory>> entries, String filter) {
+                                    if(filter.isEmpty) return entries;
+                                    String lcFilter = filter.toLowerCase();
+                                    var ret = entries
+                                        .where((DropdownMenuEntry<CreatureCategory> c) =>
+                                          c.label.toLowerCase().contains(lcFilter)
+                                        )
+                                        .toList();
+                                    if(ret.isEmpty) {
+                                      _createCategoryName = filter;
+                                      ret.add(DropdownMenuEntry(
+                                        value: CreatureCategory.createNewCreatureCategory,
+                                        label: 'Créer "$filter"',
+                                        leadingIcon: const Icon(Icons.add))
+                                      );
+                                    }
+                                    return ret;
+                                  },
                                   onSelected: (CreatureCategory? category) {
                                     setState(() {
-                                      _category = category;
+                                      if(category == CreatureCategory.createNewCreatureCategory) {
+                                        _category = CreatureCategory(title: _createCategoryName);
+                                      }
+                                      else {
+                                        _category = category;
+                                      }
                                     });
                                   },
                                   validator: (CreatureCategory? value) {

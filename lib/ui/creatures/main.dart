@@ -74,6 +74,8 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                 dropdownMenuEntries: CreatureCategory.values
                     .map((CreatureCategory c) => DropdownMenuEntry(value: c, label: c.title))
                     .toList(),
+                enableSearch: false,
+                enableFilter: true,
               ),
               const SizedBox(width: 8.0),
               // SizedBox(

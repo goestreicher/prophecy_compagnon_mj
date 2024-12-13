@@ -45,6 +45,8 @@ class CreatureCategory {
   static CreatureCategory peuplesAnciens = CreatureCategory(title: "Peuples anciens", isDefault: true);
   static CreatureCategory creaturesDraconiques = CreatureCategory(title: "Créatures draconiques", isDefault: true);
 
+  static CreatureCategory createNewCreatureCategory = CreatureCategory._create(title: "Créer cette catégorie", isDefault: true);
+
   static void _doStaticInit() {
     if(_staticInitDone) return;
     _staticInitDone = true;
