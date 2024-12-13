@@ -31,8 +31,6 @@ class ScenarioEncounter {
     : entities = entities ?? <EncounterEntity>[];
 
   final String name;
-  @JsonKey(includeFromJson: false, includeToJson: false)
-    int day = 0;
   final List<EncounterEntity> entities;
 
   Encounter instantiate(List<PlayerCharacter> characters) {
