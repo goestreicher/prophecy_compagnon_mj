@@ -159,7 +159,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       return;
                     }
 
-                    CreatureModel.saveLocalModel(creature);
+                    await CreatureModel.saveLocalModel(creature);
                     setState(() {
                       _category = creature.category;
                       _selectedDisplay = creature.id;
