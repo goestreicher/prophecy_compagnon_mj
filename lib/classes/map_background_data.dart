@@ -37,12 +37,12 @@ class MapBackgroundStore extends JsonStoreAdapter<MapBackground> {
 
   @override
   Future<void> willSave(MapBackground object) async {
-    BinaryDataStore().save(object.image);
+    await BinaryDataStore().save(object.image);
   }
 
   @override
   Future<void> willDelete(MapBackground object) async {
-    BinaryDataStore().delete(object.image);
+    await BinaryDataStore().delete(object.image);
   }
 }
 
