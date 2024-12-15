@@ -8,12 +8,11 @@ class DataStorage {
     await _engine.init();
   }
 
-  // DataStorage.instance.keys(ObjectStoreAdapter<ScenarioSummary>());
   Future<List<String>> keys<T>(String category) async {
     return _engine.keys(category);
   }
 
-  Future<String> get<T>(String category, String key) async {
+  Future<String> get(String category, String key) async {
     return await _engine.get(category, key);
   }
 

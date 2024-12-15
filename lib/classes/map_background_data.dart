@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:uuid/uuid.dart';
 
 import 'exportable_binary_data.dart';
 import 'storage/storable.dart';
@@ -12,7 +13,7 @@ class MapBackgroundStore extends JsonStoreAdapter<MapBackground> {
   String storeCategory() => 'mapBackgrounds';
 
   @override
-  String key(MapBackground object) => object.hash;
+  String key(MapBackground object) => object.uuid;
 
   @override
   Future<MapBackground> fromJsonRepresentation(Map<String, dynamic> j) async {
@@ -49,16 +50,18 @@ class MapBackgroundStore extends JsonStoreAdapter<MapBackground> {
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class MapBackground {
   MapBackground({
+    String? uuid,
     required this.image,
     required this.imageWidth,
     required this.imageHeight,
     required this.realWidth,
     required this.realHeight,
-  });
+  })
+    : uuid = uuid ?? const Uuid().v4().toString();
 
-  String get hash => image.hash;
   double get pixelsPerMeter => imageWidth / realWidth;
 
+  final String uuid;
   final ExportableBinaryData image;
   final int imageWidth;
   final int imageHeight;

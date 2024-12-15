@@ -8,6 +8,7 @@ part of 'map_background_data.dart';
 
 MapBackground _$MapBackgroundFromJson(Map<String, dynamic> json) =>
     MapBackground(
+      uuid: json['uuid'] as String?,
       image:
           ExportableBinaryData.fromJson(json['image'] as Map<String, dynamic>),
       imageWidth: (json['image_width'] as num).toInt(),
@@ -18,6 +19,7 @@ MapBackground _$MapBackgroundFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$MapBackgroundToJson(MapBackground instance) =>
     <String, dynamic>{
+      'uuid': instance.uuid,
       'image': instance.image.toJson(),
       'image_width': instance.imageWidth,
       'image_height': instance.imageHeight,

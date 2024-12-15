@@ -31,18 +31,18 @@ class ScenarioMapStore extends JsonStoreAdapter<ScenarioMap> {
   @override
   Future<Map<String, dynamic>> toJsonRepresentation(ScenarioMap object) async {
     var j = object.toJson();
-    j['background'] = object.background.hash;
+    j['background'] = object.background.uuid;
     return j;
   }
 
   @override
   Future<void> willSave(ScenarioMap object) async {
-    MapBackgroundStore().save(object.background);
+    await MapBackgroundStore().save(object.background);
   }
 
   @override
   Future<void> willDelete(ScenarioMap object) async {
-    MapBackgroundStore().delete(object.background);
+    await MapBackgroundStore().delete(object.background);
   }
 }
 
