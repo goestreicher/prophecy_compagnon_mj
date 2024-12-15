@@ -81,7 +81,7 @@ class NewPlayerCharacterDialog extends StatelessWidget {
                         var playerName = playerNameController.text;
                         var augure = Augure.byTitle(augureController.text)!;
 
-                        PlayerCharacter char = PlayerCharacter.create(
+                        PlayerCharacter char = PlayerCharacter(
                           name: characterName,
                           player: playerName,
                           augure: augure,

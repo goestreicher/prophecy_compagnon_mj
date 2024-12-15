@@ -38,10 +38,12 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
   String key(PlayerCharacter object) => object.uuid;
 
   @override
-  Future<PlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async => PlayerCharacter.fromJson(j);
+  Future<PlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async
+    => PlayerCharacter.fromJson(j);
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(PlayerCharacter object) async => object.toJson();
+  Future<Map<String, dynamic>> toJsonRepresentation(PlayerCharacter object) async
+    => object.toJson();
 
   @override
   Future<void> willSave(PlayerCharacter object) async {
@@ -78,8 +80,8 @@ class PlayerCharacterSummary {
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class PlayerCharacter extends HumanCharacter {
   PlayerCharacter(
-      super.uuid,
       {
+        super.uuid,
         required this.player,
         required this.augure,
         required super.name,
@@ -90,18 +92,6 @@ class PlayerCharacter extends HumanCharacter {
         super.luck,
         super.proficiency,
       });
-
-  PlayerCharacter.create({
-      required this.player,
-      required this.augure,
-      required super.name,
-      super.caste,
-      super.casteStatus,
-      super.initiative,
-      super.injuryProvider = fullCharacterDefaultInjuries,
-      super.luck,
-      super.proficiency,
-    }) : super.create();
 
   factory PlayerCharacter.import(Map<String, dynamic> json) {
     if(json.containsKey('uuid')) {

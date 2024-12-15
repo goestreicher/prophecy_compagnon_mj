@@ -155,7 +155,8 @@ Map<String, dynamic> _$CharacterTendenciesToJson(
     };
 
 HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
-    HumanCharacter.create(
+    HumanCharacter(
+      uuid: json['uuid'] as String?,
       name: json['name'] as String,
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
       caste:
@@ -210,6 +211,7 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
     <String, dynamic>{
       'equiped': equipedToJson(instance.equiped),
+      'uuid': instance.uuid,
       'name': instance.name,
       'description': instance.description,
       'status': instance.status.toJson(),

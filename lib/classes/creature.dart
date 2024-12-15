@@ -257,7 +257,7 @@ class CreatureModel with EncounterEntityModel {
     var ret = <Creature>[];
 
     for(var idx = 0; idx < count; ++idx) {
-      var creature = Creature.create(
+      var creature = Creature(
         name: '$name #${idx+1}',
         initiative: initiative,
         injuryProvider: (EntityBase? e, InjuryManager? i) =>
@@ -480,21 +480,12 @@ class CreatureModel with EncounterEntityModel {
 
 class Creature extends EntityBase {
   Creature(
-      super.uuid,
       {
+        super.uuid,
         required super.name,
         super.initiative,
         super.injuryProvider,
         super.size,
       }
   );
-
-  Creature.create(
-      {
-        required super.name,
-        super.initiative,
-        super.injuryProvider,
-        super.size,
-      })
-    : super.create();
 }

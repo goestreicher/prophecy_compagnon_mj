@@ -235,11 +235,11 @@ class CharacterTendencies {
   Map<String, dynamic> toJson() => _$CharacterTendenciesToJson(this);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class HumanCharacter extends EntityBase with MagicUser {
   HumanCharacter(
-      super.uuid,
       {
+        super.uuid,
         required super.name,
         super.initiative,
         super.injuryProvider = _humanCharacterDefaultInjuries,
@@ -266,39 +266,6 @@ class HumanCharacter extends EntityBase with MagicUser {
       disadvantages = disadvantages ?? <CharacterDisadvantage>[],
       advantages = advantages ?? <CharacterAdvantage>[],
       tendencies = tendencies ?? CharacterTendencies.empty()
-  {
-    _initialize();
-  }
-
-  HumanCharacter.create(
-      {
-        required super.name,
-        super.initiative,
-        super.injuryProvider = _humanCharacterDefaultInjuries,
-        this.caste = Caste.sansCaste,
-        this.casteStatus = CasteStatus.none,
-        this.career,
-        this.luck = 0,
-        this.proficiency = 0,
-        this.renown = 0,
-        this.age = 25,
-        this.height = 1.7,
-        super.size,
-        super.weight = 60.0,
-        this.origin = OriginCountry.empireDeSolyr,
-        List<Interdict>? interdicts,
-        List<CastePrivilege>? castePrivileges,
-        List<CharacterDisadvantage>? disadvantages,
-        List<CharacterAdvantage>? advantages,
-        CharacterTendencies? tendencies,
-        super.description,
-      })
-    : interdicts = interdicts ?? <Interdict>[],
-      castePrivileges = castePrivileges ?? <CastePrivilege>[],
-      disadvantages = disadvantages ?? <CharacterDisadvantage>[],
-      advantages = advantages ?? <CharacterAdvantage>[],
-      tendencies = tendencies ?? CharacterTendencies.empty(),
-      super.create()
   {
     _initialize();
   }

@@ -44,14 +44,14 @@ Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
     };
 
 NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
-    NonPlayerCharacter.create(
+    NonPlayerCharacter(
+      uuid: json['uuid'] as String?,
       name: json['name'] as String,
       category:
           const NPCCategoryJsonConverter().fromJson(json['category'] as String),
       subCategory: const NPCSubcategoryJsonConverter()
           .fromJson(json['sub_category'] as Map<String, dynamic>),
       unique: json['unique'] as bool? ?? false,
-      editable: json['editable'] as bool? ?? false,
       useHumanInjuryManager: json['use_human_injury_manager'] as bool? ?? false,
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
       caste:
@@ -106,6 +106,7 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
     <String, dynamic>{
       'equiped': equipedToJson(instance.equiped),
+      'uuid': instance.uuid,
       'name': instance.name,
       'description': instance.description,
       'status': instance.status.toJson(),
@@ -140,7 +141,6 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
       'sub_category':
           const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
       'unique': instance.unique,
-      'editable': instance.editable,
       'use_human_injury_manager': instance.useHumanInjuryManager,
     };
 

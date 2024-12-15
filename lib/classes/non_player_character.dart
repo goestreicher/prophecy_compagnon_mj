@@ -247,10 +247,12 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
   String key(NonPlayerCharacter object) => object.id;
 
   @override
-  Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async => NonPlayerCharacter.fromJson(j);
+  Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async
+    => NonPlayerCharacter.fromJson(j);
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(NonPlayerCharacter object) async => object.toJson();
+  Future<Map<String, dynamic>> toJsonRepresentation(NonPlayerCharacter object) async
+    => object.toJson();
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -274,13 +276,13 @@ class NonPlayerCharacterSummary {
   Map<String, dynamic> toJson() => _$NonPlayerCharacterSummaryToJson(this);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @NPCCategoryJsonConverter()
 @NPCSubcategoryJsonConverter()
 class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   NonPlayerCharacter(
-    super.uuid,
     {
+      super.uuid,
       required super.name,
       required this.category,
       required this.subCategory,
@@ -307,38 +309,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     }
   )
     : id = sentenceToCamelCase(transliterateFrenchToAscii(name))
-  {
-    if(!subCategory.categories.contains(category)) {
-      throw ArgumentError('La sous-catégorie "${subCategory.title}" ne peut pas être utilisée avec la catégorie "${category.title}"');
-    }
-  }
-
-  NonPlayerCharacter.create({
-    required super.name,
-    required this.category,
-    required this.subCategory,
-    this.unique = false,
-    this.editable = false,
-    this.useHumanInjuryManager = false,
-    super.initiative,
-    super.caste,
-    super.casteStatus,
-    super.age,
-    super.height,
-    super.size,
-    super.weight,
-    super.luck,
-    super.proficiency,
-    super.renown,
-    super.origin,
-    super.interdicts,
-    super.castePrivileges,
-    super.disadvantages,
-    super.advantages,
-    super.tendencies,
-    super.description,
-  })
-    : id = sentenceToCamelCase(transliterateFrenchToAscii(name)), super.create()
   {
     if(!subCategory.categories.contains(category)) {
       throw ArgumentError('La sous-catégorie "${subCategory.title}" ne peut pas être utilisée avec la catégorie "${category.title}"');

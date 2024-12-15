@@ -57,11 +57,11 @@ class EntityStatus {
   Map<String, dynamic> toJson() => _$EntityStatusToJson(this);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, constructor: 'create')
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class EntityBase extends ChangeNotifier with SupportsEquipableItem {
   EntityBase(
-      this.uuid,
       {
+        String? uuid,
         required this.name,
         this.initiative = 1,
         InjuryManager Function(EntityBase?, InjuryManager?) injuryProvider = _entityBaseDefaultInjuries,
@@ -71,27 +71,7 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
         List<SkillInstance>? skills,
       }
     )
-    : _injuryProvider = injuryProvider,
-      size = size ?? 0.8,
-      weight = weight ?? 15.0,
-      description = description ?? '',
-      skills = skills ?? <SkillInstance>[]
-  {
-    injuries = injuryProvider(this, null);
-  }
-
-  EntityBase.create(
-      {
-        required this.name,
-        this.initiative = 1,
-        InjuryManager Function(EntityBase?, InjuryManager?) injuryProvider = _entityBaseDefaultInjuries,
-        double? size,
-        double? weight,
-        String? description,
-        List<SkillInstance>? skills,
-      }
-    )
-    : uuid = const Uuid().v4().toString(),
+    : uuid = uuid ?? const Uuid().v4().toString(),
       _injuryProvider = injuryProvider,
       size = size ?? 0.8,
       weight = weight ?? 15.0,

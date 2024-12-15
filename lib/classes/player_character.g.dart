@@ -49,7 +49,7 @@ const _$CasteStatusEnumMap = {
 
 PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
     PlayerCharacter(
-      json['uuid'] as String,
+      uuid: json['uuid'] as String?,
       player: json['player'] as String,
       augure: $enumDecode(_$AugureEnumMap, json['augure']),
       name: json['name'] as String,
