@@ -7,6 +7,7 @@ import 'package:uuid/uuid.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
+import 'exportable_binary_data.dart';
 import 'combat.dart';
 import 'weapon.dart';
 import 'character/base.dart';
@@ -141,12 +142,27 @@ class CreatureModelSummaryStore extends JsonStoreAdapter<CreatureModelSummary> {
   String key(CreatureModelSummary object) => object.id;
 
   @override
-  Future<CreatureModelSummary> fromJsonRepresentation(Map<String, dynamic> j) async =>
-      CreatureModelSummary.fromJson(j);
+  Future<CreatureModelSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
+    if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    return CreatureModelSummary.fromJson(j);
+  }
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(CreatureModelSummary object) async =>
-      object.toJson();
+  Future<Map<String, dynamic>> toJsonRepresentation(CreatureModelSummary object) async {
+    var j = object.toJson();
+    if(object.icon != null) j['icon'] = object.icon!.hash;
+    return j;
+  }
+
+  @override
+  Future<void> willSave(CreatureModelSummary object) async {
+    if(object.icon != null) await BinaryDataStore().save(object.icon!);
+  }
+
+  @override
+  Future<void> willDelete(CreatureModelSummary object) async {
+    if(object.icon != null) await BinaryDataStore().delete(object.icon!);
+  }
 }
 
 class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
@@ -159,10 +175,39 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
   String key(CreatureModel object) => object.id;
 
   @override
-  Future<CreatureModel> fromJsonRepresentation(Map<String, dynamic> j) async => CreatureModel.fromJson(j);
+  Future<CreatureModel> fromJsonRepresentation(Map<String, dynamic> j) async {
+    if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
+    if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    return CreatureModel.fromJson(j);
+  }
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(CreatureModel object) async => object.toJson();
+  Future<Map<String, dynamic>> toJsonRepresentation(CreatureModel object) async {
+    var j = object.toJson();
+    if(object.image != null) j['image'] = object.image!.hash;
+    if(object.icon != null) j['icon'] = object.icon!.hash;
+    return j;
+  }
+
+  @override
+  Future<void> willSave(CreatureModel object) async {
+    if(object.image != null) await BinaryDataStore().save(object.image!);
+    if(object.icon != null) await BinaryDataStore().save(object.icon!);
+
+    var summary = await CreatureModelSummaryStore().get(object.id);
+    if(summary != null) await CreatureModelSummaryStore().delete(summary);
+
+    await CreatureModelSummaryStore().save(object.summary);
+  }
+
+  @override
+  Future<void> willDelete(CreatureModel object) async {
+    if(object.icon != null) await BinaryDataStore().delete(object.icon!);
+    if(object.image != null) await BinaryDataStore().delete(object.image!);
+
+    var summary = await CreatureModelSummaryStore().get(object.id);
+    if(summary != null) await CreatureModelSummaryStore().delete(summary);
+  }
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -173,12 +218,14 @@ class CreatureModelSummary {
     required this.name,
     required this.category,
     required this.source,
+    this.icon,
   });
 
-  String id;
-  String name;
-  CreatureCategory category;
-  String source;
+  final String id;
+  final String name;
+  final CreatureCategory category;
+  final String source;
+  final ExportableBinaryData? icon;
 
   factory CreatureModelSummary.fromJson(Map<String, dynamic> j) => _$CreatureModelSummaryFromJson(j);
   Map<String, dynamic> toJson() => _$CreatureModelSummaryToJson(this);
@@ -208,12 +255,16 @@ class CreatureModel with EncounterEntityModel {
         List<NaturalWeaponModel>? naturalWeapons,
         List<String>? equipment,
         this.specialCapability = '',
+        ExportableBinaryData? image,
+        ExportableBinaryData? icon,
       })
     : id = sentenceToCamelCase(transliterateFrenchToAscii(name)),
       mapSize = mapSize ?? 0.8,
       skills = skills ?? <SkillInstance>[],
       naturalWeapons = naturalWeapons ?? <NaturalWeaponModel>[],
-      equipment = equipment ?? <String>[];
+      equipment = equipment ?? <String>[],
+      _image = image,
+      _icon = icon;
 
   @JsonKey(includeToJson: false, includeFromJson: false)
     String id;
@@ -244,7 +295,22 @@ class CreatureModel with EncounterEntityModel {
       name: name,
       category: category,
       source: source,
+      icon: icon?.clone(),
     );
+
+  ExportableBinaryData? get image => _image;
+  set image(ExportableBinaryData? i) {
+    if(_image != null && (i == null || _image!.hash != i.hash)) BinaryDataStore().delete(_image!);
+    _image = i;
+  }
+  ExportableBinaryData? _image;
+
+  ExportableBinaryData? get icon => _icon;
+  set icon(ExportableBinaryData? i) {
+    if(_icon != null && (i == null || _icon!.hash != i.hash)) BinaryDataStore().delete(_icon!);
+    _icon = i;
+  }
+  ExportableBinaryData? _icon;
 
   @override
   String displayName() => name;
@@ -265,6 +331,8 @@ class CreatureModel with EncounterEntityModel {
               levels: injuries,
             ),
         size: mapSize,
+        image: image,
+        icon: icon,
       );
 
       creature.addProtectionProvider(NaturalArmor(value: naturalArmor));
@@ -453,7 +521,6 @@ class CreatureModel with EncounterEntityModel {
   }
 
   static Future<void> saveLocalModel(CreatureModel model) async {
-    await CreatureModelSummaryStore().save(model.summary);
     await CreatureModelStore().save(model);
     _summaries[model.id] = model.summary;
     _models[model.id] = model;
@@ -462,7 +529,6 @@ class CreatureModel with EncounterEntityModel {
   static Future<void> deleteLocalModel(String id) async {
     var model = await CreatureModelStore().get(id);
     if(model != null) {
-      await CreatureModelSummaryStore().delete(model.summary);
       await CreatureModelStore().delete(model);
     }
     _summaries.remove(id);
@@ -486,6 +552,8 @@ class Creature extends EntityBase {
         super.initiative,
         super.injuryProvider,
         super.size,
+        super.image,
+        super.icon,
       }
   );
 }

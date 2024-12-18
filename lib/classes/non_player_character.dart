@@ -9,6 +9,7 @@ import 'character/skill.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
+import 'exportable_binary_data.dart';
 import 'human_character.dart';
 import 'magic.dart';
 import '../text_utils.dart';
@@ -230,11 +231,27 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
   String key(NonPlayerCharacterSummary object) => object.id;
 
   @override
-  Future<NonPlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async =>
-      NonPlayerCharacterSummary.fromJson(j);
+  Future<NonPlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
+    if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    return NonPlayerCharacterSummary.fromJson(j);
+  }
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(NonPlayerCharacterSummary object) async => object.toJson();
+  Future<Map<String, dynamic>> toJsonRepresentation(NonPlayerCharacterSummary object) async {
+    var j = object.toJson();
+    if(object.icon != null) j['icon'] = object.icon!.hash;
+    return j;
+  }
+
+  @override
+  Future<void> willSave(NonPlayerCharacterSummary object) async {
+    if(object.icon != null) await BinaryDataStore().save(object.icon!);
+  }
+
+  @override
+  Future<void> willDelete(NonPlayerCharacterSummary object) async {
+    if(object.icon != null) await BinaryDataStore().delete(object.icon!);
+  }
 }
 
 class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
@@ -247,12 +264,39 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
   String key(NonPlayerCharacter object) => object.id;
 
   @override
-  Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async
-    => NonPlayerCharacter.fromJson(j);
+  Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
+    if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
+    if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    return NonPlayerCharacter.fromJson(j);
+  }
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(NonPlayerCharacter object) async
-    => object.toJson();
+  Future<Map<String, dynamic>> toJsonRepresentation(NonPlayerCharacter object) async {
+    var j = object.toJson();
+    if(object.image != null) j['image'] = object.image!.hash;
+    if(object.icon != null) j['icon'] = object.icon!.hash;
+    return j;
+  }
+
+  @override
+  Future<void> willSave(NonPlayerCharacter object) async {
+    if(object.image != null) await BinaryDataStore().save(object.image!);
+    if(object.icon != null) await BinaryDataStore().save(object.icon!);
+
+    var summary = await NonPlayerCharacterSummaryStore().get(object.uuid);
+    if(summary != null) await NonPlayerCharacterSummaryStore().delete(summary);
+
+    await NonPlayerCharacterSummaryStore().save(object.summary);
+  }
+
+  @override
+  Future<void> willDelete(NonPlayerCharacter object) async {
+    if(object.icon != null) await BinaryDataStore().delete(object.icon!);
+    if(object.image != null) await BinaryDataStore().delete(object.image!);
+
+    var summary = await NonPlayerCharacterSummaryStore().get(object.uuid);
+    if(summary != null) await NonPlayerCharacterSummaryStore().delete(summary);
+  }
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -264,13 +308,14 @@ class NonPlayerCharacterSummary {
     required this.name,
     required this.category,
     required this.subCategory,
+    this.icon,
   });
 
-  String id;
-  String name;
-  NPCCategory category;
-  //@JsonKey(fromJson: _subCategoryFromJson, toJson: _subCategoryToJson)
-    NPCSubCategory subCategory;
+  final String id;
+  final String name;
+  final NPCCategory category;
+  final NPCSubCategory subCategory;
+  final ExportableBinaryData? icon;
 
   factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j) => _$NonPlayerCharacterSummaryFromJson(j);
   Map<String, dynamic> toJson() => _$NonPlayerCharacterSummaryToJson(this);
@@ -306,6 +351,8 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       super.advantages,
       super.tendencies,
       super.description,
+      super.image,
+      super.icon,
     }
   )
     : id = sentenceToCamelCase(transliterateFrenchToAscii(name))
@@ -329,6 +376,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       name: name,
       category: category,
       subCategory: subCategory,
+      icon: icon?.clone(),
     );
 
   static bool _defaultAssetsLoaded = false;
@@ -416,7 +464,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   }
 
   static Future<void> saveLocalModel(NonPlayerCharacter npc) async {
-    await NonPlayerCharacterSummaryStore().save(npc.summary);
     await NonPlayerCharacterStore().save(npc);
     _summaries[npc.id] = npc.summary;
     _instances[npc.id] = npc;
@@ -425,7 +472,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   static Future<void> deleteLocalModel(String id) async {
     var npc = await NonPlayerCharacterStore().get(id);
     if(npc != null) {
-      await NonPlayerCharacterSummaryStore().delete(npc.summary);
       await NonPlayerCharacterStore().delete(npc);
     }
     _summaries.remove(id);

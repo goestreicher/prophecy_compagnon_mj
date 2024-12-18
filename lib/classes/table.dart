@@ -17,7 +17,7 @@ Future<void> importGameTable(Map<String, dynamic> json) async {
   for(var pcJson in json['players']) {
     var pc = PlayerCharacter.fromJson(pcJson);
     await PlayerCharacterStore().save(pc);
-    summaries.add(pc.summary().toJson());
+    summaries.add(pc.summary.toJson());
   }
   json['players'] = summaries;
 
@@ -65,7 +65,7 @@ class GameTableStore extends JsonStoreAdapter<GameTable> {
     for(var uuid in summary.playersUuids) {
       var character = await PlayerCharacterStore().get(uuid);
       if(character != null) {
-        object.playerSummaries.add(character.summary());
+        object.playerSummaries.add(character.summary);
       }
     }
 

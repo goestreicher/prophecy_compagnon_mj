@@ -41,6 +41,9 @@ CreatureModelSummary _$CreatureModelSummaryFromJson(
       category: const CreatureCategoryJsonConverter()
           .fromJson(json['category'] as String),
       source: json['source'] as String,
+      icon: json['icon'] == null
+          ? null
+          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CreatureModelSummaryToJson(
@@ -51,6 +54,7 @@ Map<String, dynamic> _$CreatureModelSummaryToJson(
       'category':
           const CreatureCategoryJsonConverter().toJson(instance.category),
       'source': instance.source,
+      'icon': instance.icon?.toJson(),
     };
 
 CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
@@ -90,6 +94,13 @@ CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
           ?.map((e) => e as String)
           .toList(),
       specialCapability: json['special_capability'] as String? ?? '',
+      image: json['image'] == null
+          ? null
+          : ExportableBinaryData.fromJson(
+              json['image'] as Map<String, dynamic>),
+      icon: json['icon'] == null
+          ? null
+          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$CreatureModelToJson(CreatureModel instance) =>
@@ -117,6 +128,8 @@ Map<String, dynamic> _$CreatureModelToJson(CreatureModel instance) =>
           instance.naturalWeapons.map((e) => e.toJson()).toList(),
       'equipment': instance.equipment,
       'special_capability': instance.specialCapability,
+      'image': instance.image?.toJson(),
+      'icon': instance.icon?.toJson(),
     };
 
 const _$AbilityEnumMap = {

@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'entity_base.dart';
 import 'combat.dart';
 import 'equipment.dart';
+import 'exportable_binary_data.dart';
 import 'magic.dart';
 import 'magic_user.dart';
 import 'weapon.dart';
@@ -260,6 +261,8 @@ class HumanCharacter extends EntityBase with MagicUser {
         List<CharacterAdvantage>? advantages,
         CharacterTendencies? tendencies,
         super.description,
+        super.image,
+        super.icon,
       })
     : interdicts = interdicts ?? <Interdict>[],
       castePrivileges = castePrivileges ?? <CastePrivilege>[],

@@ -10,6 +10,16 @@ import 'storage/storable.dart';
 
 part 'exportable_binary_data.g.dart';
 
+Future<void> restoreJsonBinaryData(Map<String, dynamic> j, String key) async {
+  var bin = await BinaryDataStore().get(j[key]);
+  if(bin != null) {
+    j[key] = bin.toJson();
+  }
+  else {
+    j.remove(key);
+  }
+}
+
 class BinaryDataStore extends JsonStoreAdapter<ExportableBinaryData> {
   BinaryDataStore();
 
@@ -83,6 +93,8 @@ class ExportableBinaryData {
   @JsonKey(fromJson: base64ToBinaryData, toJson: binaryDataToBase64)
   final Uint8List data;
   bool isNew;
+
+  ExportableBinaryData clone() => ExportableBinaryData(data: data);
 
   String get hash => sha256.convert(
       utf8.encode(

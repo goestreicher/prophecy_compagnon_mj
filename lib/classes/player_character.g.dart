@@ -14,6 +14,9 @@ PlayerCharacterSummary _$PlayerCharacterSummaryFromJson(
       player: json['player'] as String,
       caste: $enumDecode(_$CasteEnumMap, json['caste']),
       casteStatus: $enumDecode(_$CasteStatusEnumMap, json['caste_status']),
+      icon: json['icon'] == null
+          ? null
+          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$PlayerCharacterSummaryToJson(
@@ -24,6 +27,7 @@ Map<String, dynamic> _$PlayerCharacterSummaryToJson(
       'player': instance.player,
       'caste': _$CasteEnumMap[instance.caste]!,
       'caste_status': _$CasteStatusEnumMap[instance.casteStatus]!,
+      'icon': instance.icon?.toJson(),
     };
 
 const _$CasteEnumMap = {
@@ -61,6 +65,13 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
       luck: (json['luck'] as num?)?.toInt() ?? 0,
       proficiency: (json['proficiency'] as num?)?.toInt() ?? 0,
+      image: json['image'] == null
+          ? null
+          : ExportableBinaryData.fromJson(
+              json['image'] as Map<String, dynamic>),
+      icon: json['icon'] == null
+          ? null
+          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
     )
       ..description = json['description'] as String
       ..status = json['status'] == null
@@ -105,6 +116,8 @@ Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
       'uuid': instance.uuid,
       'name': instance.name,
       'description': instance.description,
+      'image': instance.image?.toJson(),
+      'icon': instance.icon?.toJson(),
       'status': instance.status.toJson(),
       'size': instance.size,
       'weight': instance.weight,

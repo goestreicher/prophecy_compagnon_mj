@@ -25,6 +25,13 @@ EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase(
       skills: (json['skills'] as List<dynamic>?)
           ?.map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList(),
+      image: json['image'] == null
+          ? null
+          : ExportableBinaryData.fromJson(
+              json['image'] as Map<String, dynamic>),
+      icon: json['icon'] == null
+          ? null
+          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
     )..status = json['status'] == null
         ? EntityStatus.empty()
         : EntityStatus.fromJson(json['status'] as Map<String, dynamic>);
@@ -35,6 +42,8 @@ Map<String, dynamic> _$EntityBaseToJson(EntityBase instance) =>
       'uuid': instance.uuid,
       'name': instance.name,
       'description': instance.description,
+      'image': instance.image?.toJson(),
+      'icon': instance.icon?.toJson(),
       'status': instance.status.toJson(),
       'size': instance.size,
       'weight': instance.weight,

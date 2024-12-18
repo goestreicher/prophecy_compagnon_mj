@@ -12,6 +12,7 @@ import '../utils/character_digit_input_widget.dart';
 import '../utils/advantage_picker_dialog.dart';
 import '../utils/caste_privilege_picker_dialog.dart';
 import '../utils/disadvantage_picker_dialog.dart';
+import '../utils/illustration_edit_widget.dart';
 import '../utils/interdict_picker_dialog.dart';
 import '../utils/tendencies_edit_widget.dart';
 
@@ -98,6 +99,10 @@ class _EditBaseTabState extends State<EditBaseTab> {
                       const SizedBox(height: 16.0),
                       _InjuriesEditWidget(
                         character: widget.character,
+                      ),
+                      const SizedBox(height: 16.0),
+                      _IllustrationEditWidget(
+                        character: widget.character
                       ),
                     ],
                   ),
@@ -1627,6 +1632,48 @@ class _InjuryLevelInputWidget extends StatelessWidget {
             iconSize: 12.0,
           ),
           onPressed: () => increase(),
+        ),
+      ],
+    );
+  }
+}
+
+class _IllustrationEditWidget extends StatelessWidget {
+  const _IllustrationEditWidget({ required this.character });
+
+  final PlayerCharacter character;
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    return Stack(
+      children: [
+        Container(
+          padding: const EdgeInsets.fromLTRB(16.0, 20.0, 16.0, 8.0),
+          margin: const EdgeInsets.fromLTRB(0.0, 12.0, 0.0, 0.0),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black54),
+            borderRadius: BorderRadius.circular(5.0),
+          ),
+          child: IllustrationEditFormField(
+            entity: character
+          ),
+        ),
+        Positioned(
+          top: 3,
+          left: 8,
+          child: Container(
+            color: theme.colorScheme.surfaceBright,
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Text(
+              'Illustration',
+              style: theme.textTheme.bodyMedium!.copyWith(
+                color: Colors.black87,
+                fontWeight: FontWeight.bold,
+              )
+            )
+          )
         ),
       ],
     );

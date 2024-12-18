@@ -194,6 +194,13 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
           : CharacterTendencies.fromJson(
               json['tendencies'] as Map<String, dynamic>),
       description: json['description'] as String?,
+      image: json['image'] == null
+          ? null
+          : ExportableBinaryData.fromJson(
+              json['image'] as Map<String, dynamic>),
+      icon: json['icon'] == null
+          ? null
+          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
     )
       ..status = json['status'] == null
           ? EntityStatus.empty()
@@ -214,6 +221,8 @@ Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
       'uuid': instance.uuid,
       'name': instance.name,
       'description': instance.description,
+      'image': instance.image?.toJson(),
+      'icon': instance.icon?.toJson(),
       'status': instance.status.toJson(),
       'size': instance.size,
       'weight': instance.weight,

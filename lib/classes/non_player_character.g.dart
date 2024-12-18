@@ -31,6 +31,9 @@ NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
           const NPCCategoryJsonConverter().fromJson(json['category'] as String),
       subCategory: const NPCSubcategoryJsonConverter()
           .fromJson(json['sub_category'] as Map<String, dynamic>),
+      icon: json['icon'] == null
+          ? null
+          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
@@ -41,6 +44,7 @@ Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
       'category': const NPCCategoryJsonConverter().toJson(instance.category),
       'sub_category':
           const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
+      'icon': instance.icon?.toJson(),
     };
 
 NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
@@ -88,6 +92,13 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
           : CharacterTendencies.fromJson(
               json['tendencies'] as Map<String, dynamic>),
       description: json['description'] as String?,
+      image: json['image'] == null
+          ? null
+          : ExportableBinaryData.fromJson(
+              json['image'] as Map<String, dynamic>),
+      icon: json['icon'] == null
+          ? null
+          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
     )
       ..status = json['status'] == null
           ? EntityStatus.empty()
@@ -109,6 +120,8 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
       'uuid': instance.uuid,
       'name': instance.name,
       'description': instance.description,
+      'image': instance.image?.toJson(),
+      'icon': instance.icon?.toJson(),
       'status': instance.status.toJson(),
       'size': instance.size,
       'weight': instance.weight,

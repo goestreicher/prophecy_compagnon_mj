@@ -95,6 +95,20 @@ class _TableEditPageState extends State<TableEditPage> {
                       },
                       child: ListTile(
                         title: Text(_table.playerSummaries[index].name),
+                        leading: _table.playerSummaries[index].icon == null
+                          ? null
+                          : Container(
+                              width: 48,
+                              height: 48,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(24.0),
+                                image: DecorationImage(
+                                  image: MemoryImage(
+                                    _table.playerSummaries[index].icon!.data
+                                  )
+                                ),
+                              ),
+                            ),
                         subtitle: Text(
                             'Caste: ${_table.playerSummaries[index].caste.title} '
                             '(${Caste.statusName(_table.playerSummaries[index].caste, _table.playerSummaries[index].casteStatus)})'
@@ -259,7 +273,7 @@ class _TableEditPageState extends State<TableEditPage> {
                               _canCancel = false;
                               _isWorking = true;
                             });
-                            _table.playerSummaries.add(character.summary());
+                            _table.playerSummaries.add(character.summary);
                             await pc.GameTableStore().save(_table);
                             setState(() {
                               _isWorking = false;
@@ -292,7 +306,7 @@ class _TableEditPageState extends State<TableEditPage> {
                             var character = PlayerCharacter.import(json.decode(jsonStr));
                             await PlayerCharacterStore().save(character);
                             setState(() {
-                              _table.playerSummaries.add(character.summary());
+                              _table.playerSummaries.add(character.summary);
                             });
                             await pc.GameTableStore().save(_table);
                             setState(() {

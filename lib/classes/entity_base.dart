@@ -6,6 +6,7 @@ import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
 import 'equipment.dart';
+import 'exportable_binary_data.dart';
 import 'character/base.dart';
 import 'character/injury.dart';
 import 'character/skill.dart';
@@ -69,6 +70,8 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
         double? weight,
         String? description,
         List<SkillInstance>? skills,
+        ExportableBinaryData? image,
+        ExportableBinaryData? icon,
       }
     )
     : uuid = uuid ?? const Uuid().v4().toString(),
@@ -76,7 +79,9 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
       size = size ?? 0.8,
       weight = weight ?? 15.0,
       description = description ?? '',
-      skills = skills ?? <SkillInstance>[]
+      skills = skills ?? <SkillInstance>[],
+      _image = image,
+      _icon = icon
   {
     injuries = injuryProvider(this, null);
   }
@@ -84,6 +89,20 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
   final String uuid;
   String name;
   String description;
+
+  ExportableBinaryData? get image => _image;
+  set image(ExportableBinaryData? i) {
+    if(_image != null && (i == null || _image!.hash != i.hash)) BinaryDataStore().delete(_image!);
+    _image = i;
+  }
+  ExportableBinaryData? _image;
+
+  ExportableBinaryData? get icon => _icon;
+  set icon(ExportableBinaryData? i) {
+    if(_icon != null && (i == null || _icon!.hash != i.hash)) BinaryDataStore().delete(_icon!);
+    _icon = i;
+  }
+  ExportableBinaryData? _icon;
 
 
   @JsonKey(defaultValue: EntityStatus.empty)
