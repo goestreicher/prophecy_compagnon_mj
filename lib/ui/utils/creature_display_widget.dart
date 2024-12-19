@@ -11,6 +11,92 @@ import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 import '../utils/injuries_display_widget.dart';
 import '../utils/single_line_input_dialog.dart';
+import '../utils/uniform_height_wrap.dart';
+import '../../text_utils.dart';
+
+class CreatureActionButtons extends StatelessWidget {
+  const CreatureActionButtons({
+    super.key,
+    required this.creature,
+    required this.onEdit,
+    required this.onClone,
+    required this.onDelete,
+  });
+
+  final CreatureModelSummary creature;
+  final void Function() onEdit;
+  final void Function(String) onClone;
+  final void Function() onDelete;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        IconButton(
+          icon: const Icon(Icons.edit_outlined),
+          tooltip: !creature.editable
+            ? 'Modification impossible (créature par défaut)'
+            : 'Modifier',
+          onPressed: !creature.editable
+            ? null
+            : () => onEdit(),
+        ),
+        IconButton(
+          icon: const Icon(Icons.content_copy_outlined),
+          tooltip: 'Cloner',
+          onPressed: () async {
+            var name = await showDialog(
+              context: context,
+              builder: (BuildContext context) => SingleLineInputDialog(
+                title: 'Nom de la créature',
+                hintText: 'Nom',
+                formKey: GlobalKey<FormState>(),
+              ),
+            );
+            if(!context.mounted) return;
+            if(name == null) return;
+
+            var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
+            var model = await CreatureModel.get(id);
+            if(!context.mounted) return;
+            if(model != null) {
+              displayErrorDialog(
+                context,
+                'Clonage impossible',
+                'Une créature avec ce nom (ou un nom similaire) existe déjà'
+              );
+              return;
+            }
+
+            onClone(name);
+          },
+        ),
+        IconButton(
+          icon: const Icon(Icons.delete),
+          tooltip: !creature.editable
+            ? 'Suppression impossible (créature par défaut)'
+            : 'Supprimer',
+          onPressed: !creature.editable
+            ? null
+            : () => onDelete(),
+        ),
+        IconButton(
+          icon: const Icon(Icons.download),
+          tooltip: 'Télécharger (JSON)',
+          onPressed: () async {
+            var model = await CreatureModel.get(creature.id);
+            var jsonStr = json.encode(model!.toJson());
+            await FileSaver.instance.saveFile(
+              name: 'creature-${creature.id}.json',
+              bytes: utf8.encode(jsonStr),
+            );
+          },
+        )
+      ],
+    );
+  }
+}
 
 class CreatureDisplayWidget extends StatefulWidget {
   const CreatureDisplayWidget({
@@ -92,111 +178,43 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
         }
         var skillsOrder = skills.keys.toList()..sort((a, b) => a.compareTo(b));
 
-        return Padding(
-          padding: const EdgeInsets.fromLTRB(12.0, 24.0, 12.0, 12.0),
-          child: SingleChildScrollView(
+        return SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(12.0, 12.0, 20.0, 12.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: Text(
-                          creature.name,
-                          softWrap: true,
-                          style: theme.textTheme.headlineMedium!.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                UniformHeightWrap(
+                  spacing: 8.0,
+                  runSpacing: 4.0,
+                  allocation: UniformHeightWrapAllocation.expandSpacing,
+                  children: [
+                    Text(
+                      creature.name,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.headlineMedium!.copyWith(
+                        fontWeight: FontWeight.bold,
                       ),
-                      const SizedBox(width: 8.0),
-                      IconButton(
-                        icon: const Icon(Icons.edit_outlined),
-                        tooltip: !creature.editable ?
-                        'Modification impossible (créature par défaut)' :
-                        'Modifier',
-                        onPressed: !creature.editable ? null : () => widget.onEditRequested(creature),
-                      ),
-                      const SizedBox(width: 8.0),
-                      IconButton(
-                        icon: const Icon(Icons.content_copy_outlined),
-                        tooltip: 'Cloner',
-                        onPressed: () async {
-                          var name = await showDialog(
-                            context: context,
-                            builder: (BuildContext context) => SingleLineInputDialog(
-                              title: 'Nom de la créature',
-                              hintText: 'Nom',
-                              formKey: GlobalKey<FormState>(),
-                            ),
-                          );
-                          if(!context.mounted) return;
-                          if(name == null) return;
-
-                          var jsonObj = creature.toJson();
-                          jsonObj['name'] = name;
-                          // The round-trip through json.encode and json.decode seems necessary
-                          // to ensure that the full object in converted, otherwise List elements
-                          // are not correctly converted to JSON
-                          widget.onEditRequested(
-                            CreatureModel.fromJson(
-                              json.decode(json.encode(jsonObj))
-                            )
-                          );
-                        },
-                      ),
-                      const SizedBox(width: 8.0),
-                      IconButton(
-                        icon: const Icon(Icons.delete),
-                        tooltip: !creature.editable ?
-                        'Suppression impossible (créature par défaut)' :
-                        'Supprimer',
-                        onPressed: !creature.editable ? null : () => widget.onDelete(),
-                      ),
-                      const SizedBox(width: 8.0),
-                      IconButton(
-                        icon: const Icon(Icons.download),
-                        tooltip: 'Télécharger (JSON)',
-                        onPressed: () async {
-                          var jsonStr = json.encode(creature.toJson());
-                          await FileSaver.instance.saveFile(
-                            name: 'creature-${creature.id}.json',
-                            bytes: utf8.encode(jsonStr),
-                          );
-                        },
-                      ),
-                    ]
+                    ),
+                    SizedBox(width: 8.0),
+                    CreatureActionButtons(
+                      creature: creature.summary,
+                      onEdit: () => widget.onEditRequested(creature),
+                      onClone: (String newName) {
+                        var j = creature.toJson();
+                        j['name'] = newName;
+                        widget.onEditRequested(CreatureModel.fromJson(j));
+                      },
+                      onDelete: () => widget.onDelete(),
+                    ),
+                  ]
                 ),
                 const SizedBox(height: 16.0),
-                Row(
+                Wrap(
+                  direction: Axis.horizontal,
+                  spacing: 12.0,
+                  runSpacing: 4.0,
                   children: [
-                    RichText(
-                      text: TextSpan(
-                        text: 'Taille : ',
-                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                        children: [
-                          TextSpan(
-                            text: creature.size,
-                            style: theme.textTheme.bodyLarge,
-                          )
-                        ]
-                      )
-                    ),
-                    const SizedBox(width: 12.0),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Poids : ',
-                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                        children: [
-                          TextSpan(
-                            text: creature.weight,
-                            style: theme.textTheme.bodyLarge,
-                          )
-                        ]
-                      )
-                    ),
-                    const SizedBox(width: 12.0),
                     RichText(
                       text: TextSpan(
                         text: 'Unique : ',
@@ -209,122 +227,226 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                         ]
                       )
                     ),
+                    RichText(
+                      text: TextSpan(
+                        text: 'Taille : ',
+                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                        children: [
+                          TextSpan(
+                            text: creature.size,
+                            style: theme.textTheme.bodyLarge,
+                          )
+                        ]
+                      )
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        text: 'Poids : ',
+                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                        children: [
+                          TextSpan(
+                            text: creature.weight,
+                            style: theme.textTheme.bodyLarge,
+                          )
+                        ]
+                      )
+                    ),
+                    RichText(
+                      text: TextSpan(
+                        text: 'Habitat : ',
+                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                        children: [
+                          TextSpan(
+                            text: creature.biome,
+                            style: theme.textTheme.bodyLarge,
+                          )
+                        ]
+                      )
+                    ),
                   ],
                 ),
-                RichText(
-                  text: TextSpan(
-                    text: 'Habitat : ',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    children: [
-                      TextSpan(
-                        text: creature.biome,
-                        style: theme.textTheme.bodyLarge,
-                      )
-                    ]
-                  )
-                ),
                 const SizedBox(height: 8.0),
-                Row(
+                UniformHeightWrap(
+                  spacing: 16.0,
+                  runSpacing: 8.0,
+                  allocation: UniformHeightWrapAllocation.resizeChildren,
                   children: [
-                    const SizedBox(width: 16.0),
                     AbilityListDisplayWidget(abilities: creature.abilities),
-                    const SizedBox(width: 32.0),
                     AttributeListDisplayWidget(attributes: creature.attributes),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black87),
+                        borderRadius: BorderRadius.circular(4.0),
+                      ),
+                      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              RichText(
+                                text: TextSpan(
+                                  text: 'Initiative : ',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                  children: [
+                                    TextSpan(
+                                      text: creature.initiative.toString(),
+                                      style: theme.textTheme.bodyLarge,
+                                    )
+                                  ]
+                                )
+                              ),
+                              RichText(
+                                text: TextSpan(
+                                  text: 'Armure : ',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                  children: [
+                                    TextSpan(
+                                      text: armorDescription,
+                                      style: theme.textTheme.bodyLarge,
+                                    )
+                                  ]
+                                )
+                              ),
+                              Text(
+                                'Seuils de blessure',
+                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
+                                child: InjuriesDisplayWidget(injuries: creature.injuries),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    )
                   ],
                 ),
                 const SizedBox(height: 8.0),
-                RichText(
-                  text: TextSpan(
-                    text: 'Initiative : ',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    children: [
-                      TextSpan(
-                        text: creature.initiative.toString(),
-                        style: theme.textTheme.bodyLarge,
-                      )
-                    ]
-                  )
+                UniformHeightWrap(
+                  spacing: 16.0,
+                  runSpacing: 8.0,
+                  allocation: UniformHeightWrapAllocation.resizeChildren,
+                  children: [
+                    if(skillsOrder.isNotEmpty)
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black87),
+                          borderRadius: BorderRadius.circular(4.0),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Compétences',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                ),
+                                for(var skill in skillsOrder)
+                                  Text('$skill ${skills[skill]}'),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    if(creature.naturalWeapons.isNotEmpty)
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black87),
+                          borderRadius: BorderRadius.circular(4.0),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Armes naturelles',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                ),
+                                for(var w in creature.naturalWeapons)
+                                  Text('${w.name} (${w.skill}), Dommages ${w.damage}'),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    if(equipment.isNotEmpty)
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black87),
+                          borderRadius: BorderRadius.circular(4.0),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Équipement',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                ),
+                                for(var e in equipment)
+                                  Text(e),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    if(creature.specialCapability.isNotEmpty)
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black87),
+                          borderRadius: BorderRadius.circular(4.0),
+                        ),
+                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Flexible(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Capacité spéciale',
+                                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(creature.specialCapability, softWrap: true),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )
+                      ),
+                  ],
                 ),
-                RichText(
-                  text: TextSpan(
-                    text: 'Armure : ',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                    children: [
-                      TextSpan(
-                        text: armorDescription,
-                        style: theme.textTheme.bodyLarge,
-                      )
-                    ]
-                  )
-                ),
-                const SizedBox(height: 8.0),
-                Text(
-                  'Compétences',
-                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                ),
-                for(var skill in skillsOrder)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
-                    child: Text('$skill ${skills[skill]}'),
-                  ),
-                if(creature.naturalWeapons.isNotEmpty)
-                  const SizedBox(height: 8.0),
-                if(creature.naturalWeapons.isNotEmpty)
-                  Text(
-                    'Armes naturelles',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                for(var w in creature.naturalWeapons)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
-                    child: Text('${w.name} (${w.skill}), Dommages ${w.damage}'),
-                  ),
-                const SizedBox(height: 8.0),
-                Text(
-                  'Seuils de blessure',
-                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
-                  child: InjuriesDisplayWidget(injuries: creature.injuries),
-                ),
-                if(equipment.isNotEmpty)
-                  const SizedBox(height: 8.0),
-                if(equipment.isNotEmpty)
-                  Text(
-                    'Équipement',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                for(var e in equipment)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
-                    child: Text(e),
-                  ),
-                if(creature.specialCapability.isNotEmpty)
-                  const SizedBox(height: 8.0),
-                if(creature.specialCapability.isNotEmpty)
-                  Text(
-                    'Capacité spéciale',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                if(creature.specialCapability.isNotEmpty)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
-                    child: Text(creature.specialCapability),
-                  ),
                 const SizedBox(height: 8.0),
                 Text(
                   'Description',
                   style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                 ),
-                Text(
-                  creature.description,
-                  style: theme.textTheme.bodyLarge,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
+                  child: Text(creature.description),
                 ),
                 const SizedBox(height: 8.0),
               ],
             ),
-          )
+          ),
         );
       }
     );

@@ -106,7 +106,7 @@ class _MainAppPageState extends State<MainAppPage> {
             children: [
               SafeArea(
                 child: NavigationRail(
-                  extended: constraints.maxWidth >= 600,
+                  extended: constraints.maxWidth >= 800,
                   selectedIndex: _selectedPageIndex,
                   onDestinationSelected: (value) {
                     setState(() {

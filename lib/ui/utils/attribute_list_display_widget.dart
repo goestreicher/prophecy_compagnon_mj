@@ -16,68 +16,57 @@ class AttributeListDisplayWidget extends StatelessWidget {
         border: Border.all(color: Colors.black87),
         borderRadius: BorderRadius.circular(4.0),
       ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 16.0),
-        child: SizedBox(
-          width: 90,
-          child: Column(
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Column(
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  Text(
-                    'Physique',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  const Spacer(),
-                  Text(
-                    attributes[Attribute.physique]!.toString(),
-                    style: theme.textTheme.bodyLarge,
-                  )
-                ],
+              Text(
+                'Physique',
+                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
               ),
-              Row(
-                children: [
-                  Text(
-                    'Mental',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  const Spacer(),
-                  Text(
-                    attributes[Attribute.mental]!.toString(),
-                    style: theme.textTheme.bodyLarge,
-                  )
-                ],
+              Text(
+                'Mental',
+                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
               ),
-              Row(
-                children: [
-                  Text(
-                    'Manuel',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  const Spacer(),
-                  Text(
-                    attributes[Attribute.manuel]!.toString(),
-                    style: theme.textTheme.bodyLarge,
-                  )
-                ],
+              Text(
+                'Manuel',
+                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
               ),
-              Row(
-                children: [
-                  Text(
-                    'Social',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  const Spacer(),
-                  Text(
-                    attributes[Attribute.social]!.toString(),
-                    style: theme.textTheme.bodyLarge,
-                  )
-                ],
+              Text(
+                'Social',
+                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
               ),
             ],
           ),
-        ),
+          SizedBox(width: 4.0),
+          Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              Text(
+                attributes[Attribute.physique]!.toString(),
+                style: theme.textTheme.bodyLarge,
+              ),
+              Text(
+                attributes[Attribute.mental]!.toString(),
+                style: theme.textTheme.bodyLarge,
+              ),
+              Text(
+                attributes[Attribute.manuel]!.toString(),
+                style: theme.textTheme.bodyLarge,
+              ),
+              Text(
+                attributes[Attribute.social]!.toString(),
+                style: theme.textTheme.bodyLarge,
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }

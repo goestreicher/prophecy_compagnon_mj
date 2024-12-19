@@ -1,44 +1,73 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
+import 'creature_display_widget.dart';
+import '../utils/error_feedback.dart';
 
 class CreaturesListWidget extends StatefulWidget {
   const CreaturesListWidget({
     super.key,
-    this.category,
-    required this.onSelected,
-    this.selected,
+    this.creatures,
     this.source,
+    this.category,
+    this.initialSelection,
+    required this.onEditRequested,
   });
 
+  final List<CreatureModelSummary>? creatures;
   final CreatureCategory? category;
-  final void Function(String) onSelected;
-  final String? selected;
   final String? source;
+  final String? initialSelection;
+  final void Function(CreatureModel) onEditRequested;
 
   @override
   State<CreaturesListWidget> createState() => _CreaturesListWidgetState();
 }
 
 class _CreaturesListWidgetState extends State<CreaturesListWidget> {
-  late List<CreatureModelSummary> _creatures;
+  late List<CreatureModelSummary> creatures;
+  String? selected;
 
   void _updateCreaturesList() {
-    if(widget.source != null) {
-      _creatures = CreatureModel.forSource(widget.source!, widget.category);
+    if(widget.creatures != null) {
+      creatures = widget.creatures!;
+    }
+    else if(widget.source != null) {
+      creatures = CreatureModel.forSource(widget.source!, widget.category);
     }
     else if(widget.category != null) {
-      _creatures = CreatureModel.forCategory(widget.category!);
+      creatures = CreatureModel.forCategory(widget.category!);
     }
     else {
-      _creatures = <CreatureModelSummary>[];
+      creatures = <CreatureModelSummary>[];
     }
-    _creatures.sort((a, b) => a.id.compareTo(b.id));
+    creatures.sort((a, b) => a.id.compareTo(b.id));
+  }
+
+  Future<void> _deleteModel(BuildContext context, int index) async {
+    try {
+      await CreatureModel.deleteLocalModel(creatures[index].id);
+      setState(() {
+        creatures.removeAt(index);
+      });
+    }
+    catch(e) {
+      if(!context.mounted) return;
+      displayErrorDialog(
+        context,
+        "Suppression impossible",
+        e.toString()
+      );
+    }
+    setState(() {
+      selected = null;
+    });
   }
 
   @override
   void initState() {
     super.initState();
+    selected = widget.initialSelection;
     _updateCreaturesList();
   }
 
@@ -53,30 +82,74 @@ class _CreaturesListWidgetState extends State<CreaturesListWidget> {
     var theme = Theme.of(context);
 
     return ListView.builder(
-        itemCount: _creatures.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
+      itemCount: creatures.length,
+      itemBuilder: (BuildContext context, int index) {
+        return GestureDetector(
+          onTap: () {
+            setState(() {
+              if(selected == creatures[index].id) {
+                selected = null;
+              }
+              else {
+                selected = creatures[index].id;
+              }
+            });
+          },
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Card(
               clipBehavior: Clip.hardEdge,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(4.0),
               ),
-              color: widget.selected == _creatures[index].id ?
-              theme.colorScheme.surfaceContainerHighest :
-              null,
-              child: InkWell(
-                onTap: () {
-                  widget.onSelected(_creatures[index].id);
-                },
-                child: ListTile(
-                  title: Text(
-                    _creatures[index].name,
-                    style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                  trailing: const Icon(Icons.arrow_forward_ios),
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if(selected != creatures[index].id)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            creatures[index].name,
+                            style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                            overflow: TextOverflow.fade,
+                          ),
+                          CreatureActionButtons(
+                            creature: creatures[index],
+                            onEdit: () async {
+                              var model = await CreatureModel.get(creatures[index].id);
+                              widget.onEditRequested(model!);
+                            },
+                            onClone: (String newName) async {
+                              var model = await CreatureModel.get(creatures[index].id);
+                              var j = model!.toJson();
+                              j['name'] = newName;
+                              widget.onEditRequested(CreatureModel.fromJson(j));
+                            },
+                            onDelete: () async {
+                              await _deleteModel(context, index);
+                            }
+                          )
+                        ],
+                      ),
+                    if(selected == creatures[index].id)
+                      CreatureDisplayWidget(
+                        creature: selected!,
+                        onEditRequested: (CreatureModel model) =>
+                          widget.onEditRequested(model),
+                        onDelete: () async {
+                          await _deleteModel(context, index);
+                        }
+                      ),
+                  ],
                 ),
               )
-          );
-        }
+            ),
+          ),
+        );
+      }
     );
   }
 }

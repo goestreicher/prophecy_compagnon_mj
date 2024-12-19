@@ -53,7 +53,11 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       for(var creatureId in j['creatures']) {
         var creature = await CreatureModel.get(creatureId);
         if(creature != null) {
-          creaturesJson.add(creature.toJson());
+          var creatureJson = creature.toJson();
+          // We have to set the creature as editable otherwise modifications
+          // are blocked
+          creatureJson['editable'] = true;
+          creaturesJson.add(creatureJson);
         }
       }
       j['creatures'] = creaturesJson;

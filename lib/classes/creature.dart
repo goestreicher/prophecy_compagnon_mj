@@ -144,6 +144,7 @@ class CreatureModelSummaryStore extends JsonStoreAdapter<CreatureModelSummary> {
   @override
   Future<CreatureModelSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    j['editable'] = true;
     return CreatureModelSummary.fromJson(j);
   }
 
@@ -178,6 +179,7 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
   Future<CreatureModel> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    j['editable'] = true;
     return CreatureModel.fromJson(j);
   }
 
@@ -219,6 +221,7 @@ class CreatureModelSummary {
     required this.category,
     required this.source,
     this.icon,
+    this.editable = false,
   });
 
   final String id;
@@ -226,6 +229,8 @@ class CreatureModelSummary {
   final CreatureCategory category;
   final String source;
   final ExportableBinaryData? icon;
+  @JsonKey(includeToJson: false, includeFromJson: true)
+    final bool editable;
 
   factory CreatureModelSummary.fromJson(Map<String, dynamic> j) => _$CreatureModelSummaryFromJson(j);
   Map<String, dynamic> toJson() => _$CreatureModelSummaryToJson(this);
@@ -257,6 +262,7 @@ class CreatureModel with EncounterEntityModel {
         this.specialCapability = '',
         ExportableBinaryData? image,
         ExportableBinaryData? icon,
+        this.editable = false,
       })
     : id = sentenceToCamelCase(transliterateFrenchToAscii(name)),
       mapSize = mapSize ?? 0.8,
@@ -268,8 +274,8 @@ class CreatureModel with EncounterEntityModel {
 
   @JsonKey(includeToJson: false, includeFromJson: false)
     String id;
-  @JsonKey(includeToJson: false, includeFromJson: false)
-    bool editable = false;
+  @JsonKey(includeToJson: false, includeFromJson: true)
+    bool editable;
   final String name;
   bool unique;
   CreatureCategory category;
@@ -296,6 +302,7 @@ class CreatureModel with EncounterEntityModel {
       category: category,
       source: source,
       icon: icon?.clone(),
+      editable: editable,
     );
 
   ExportableBinaryData? get image => _image;

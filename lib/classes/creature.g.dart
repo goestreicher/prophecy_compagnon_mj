@@ -44,6 +44,7 @@ CreatureModelSummary _$CreatureModelSummaryFromJson(
       icon: json['icon'] == null
           ? null
           : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
+      editable: json['editable'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$CreatureModelSummaryToJson(
@@ -101,6 +102,7 @@ CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
       icon: json['icon'] == null
           ? null
           : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
+      editable: json['editable'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$CreatureModelToJson(CreatureModel instance) =>

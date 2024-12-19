@@ -11,32 +11,52 @@ class InjuriesDisplayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
-    return Column(
+    return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
-        for(var i = 0; i < injuries.length; ++i)
-          Row(
-            children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for(var i = 0; i < injuries.length; ++i)
               SizedBox(
-                width: 120,
-                child: Text(
-                  '${injuries[i].title} (${injuries[i].start+1}${injuries[i].end == -1 ? "+" : "-${injuries[i].end.toString()}"})',
-                  style: theme.textTheme.bodySmall,
+                height: 20,
+                child: Row(
+                  children: [
+                    Text(
+                      '${injuries[i].title} (${injuries[i].start+1}${injuries[i].end == -1 ? "+" : "-${injuries[i].end.toString()}"})',
+                      style: theme.textTheme.bodySmall,
+                    ),
+                  ],
                 ),
               ),
-              for(var j = 0; j < injuries[i].capacity; ++j)
-                Container(
-                  margin: const EdgeInsets.fromLTRB(1.0, 0.0, 1.0, 0.0),
-                  width: 12.0,
-                  height: 12.0,
-                  decoration: BoxDecoration(
-                    // color: Colors.white,
-                    border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(6.0),
-                  ),
+          ],
+        ),
+        SizedBox(width: 16.0),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            for(var i = 0; i < injuries.length; ++i)
+              SizedBox(
+                height: 20,
+                child: Row(
+                  children: [
+                    for(var j = 0; j < injuries[i].capacity; ++j)
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(1.0, 0.0, 1.0, 0.0),
+                        width: 12.0,
+                        height: 12.0,
+                        decoration: BoxDecoration(
+                          // color: Colors.white,
+                          border: Border.all(color: Colors.black),
+                          borderRadius: BorderRadius.circular(6.0),
+                        ),
+                      ),
+                  ],
                 ),
-            ],
-          )
-      ],
+              ),
+          ],
+        )
+      ]
     );
   }
 }
