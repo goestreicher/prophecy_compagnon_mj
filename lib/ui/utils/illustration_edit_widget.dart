@@ -25,14 +25,11 @@ class IllustrationEditFormField extends FormField<IllustrationEditData> {
     : super(
         initialValue: IllustrationEditData(image: entity.image, icon: entity.icon),
         onSaved: (IllustrationEditData? data) {
-          print(data);
           if(data == null) {
             entity.image = null;
             entity.icon = null;
           }
           else {
-            print('${entity.image} - ${entity.icon}');
-            print('${data.image} - ${data.icon}');
             entity.image = data.image;
             entity.icon = data.icon;
           }
