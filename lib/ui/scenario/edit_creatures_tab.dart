@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
+import '../../classes/object_source.dart';
 import '../utils/creature_edit_widget.dart';
 import '../utils/creature_list_widget.dart';
 import '../utils/single_line_input_dialog.dart';
@@ -48,7 +49,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
           name: _newCreatureName!,
           creatureId: _selectedId,
           creature: _selectedModel,
-          source: widget.scenarioName,
+          source: ObjectSource(type: ObjectSourceType.scenario, name: widget.scenarioName),
           onEditDone: (CreatureModel? creature) {
             setState(() {
               if(creature != null) {
@@ -124,7 +125,10 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                 child: CreaturesListWidget(
                   creatures: creatureSummaries,
                   initialSelection: _selectedId,
-                  source: widget.scenarioName,
+                  source: ObjectSource(
+                    type: ObjectSourceType.scenario,
+                    name: widget.scenarioName,
+                  ),
                   onEditRequested: (CreatureModel model) {
                     setState(() {
                       _newCreatureName = model.name;

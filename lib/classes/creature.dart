@@ -4,11 +4,12 @@ import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+import 'combat.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
-import 'combat.dart';
+import 'object_source.dart';
 import 'weapon.dart';
 import 'character/base.dart';
 import 'character/injury.dart';
@@ -227,7 +228,7 @@ class CreatureModelSummary {
   final String id;
   final String name;
   final CreatureCategory category;
-  final String source;
+  final ObjectSource source;
   final ExportableBinaryData? icon;
   @JsonKey(includeToJson: false, includeFromJson: true)
     final bool editable;
@@ -279,7 +280,7 @@ class CreatureModel with EncounterEntityModel {
   final String name;
   bool unique;
   CreatureCategory category;
-  String source;
+  ObjectSource source;
   String description;
   String biome;
   String size;
@@ -489,7 +490,7 @@ class CreatureModel with EncounterEntityModel {
     return ret;
   }
 
-  static List<CreatureModelSummary> forSource(String source, CreatureCategory? category) {
+  static List<CreatureModelSummary> forSource(ObjectSource source, CreatureCategory? category) {
     return _summaries.values
         .where((CreatureModelSummary c) => c.source == source && (category == null || c.category == category))
         .toList();
@@ -545,7 +546,10 @@ class CreatureModel with EncounterEntityModel {
   static bool _defaultAssetsLoaded = false;
   static final Map<String, CreatureModelSummary> _summaries = <String, CreatureModelSummary>{};
   static final Map<String, CreatureModel> _models = <String, CreatureModel>{};
-  static const String localCreatureSource = 'LOCAL_CREATED';
+  static const ObjectSource localCreatureSource = ObjectSource(
+    type: ObjectSourceType.original,
+    name: "LOCAL_CREATED"
+  );
 
   factory CreatureModel.fromJson(Map<String, dynamic> json) => _$CreatureModelFromJson(json);
   Map<String, dynamic> toJson() => _$CreatureModelToJson(this);

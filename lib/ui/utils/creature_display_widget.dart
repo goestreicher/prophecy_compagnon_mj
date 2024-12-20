@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
 import '../../classes/equipment.dart';
+import '../../classes/object_source.dart';
 import '../utils/ability_list_display_widget.dart';
 import '../utils/attribute_list_display_widget.dart';
 import '../utils/error_feedback.dart';
@@ -21,24 +22,38 @@ class CreatureActionButtons extends StatelessWidget {
     required this.onEdit,
     required this.onClone,
     required this.onDelete,
+    this.restrictModificationToSourceTypes,
   });
 
   final CreatureModelSummary creature;
   final void Function() onEdit;
   final void Function(String) onClone;
   final void Function() onDelete;
+  final List<ObjectSourceType>? restrictModificationToSourceTypes;
 
   @override
   Widget build(BuildContext context) {
+    bool canModify = true;
+    String? canModifyMessage;
+
+    if(!creature.editable) {
+      canModify = false;
+      canModifyMessage = 'Modification impossible (créature par défaut)';
+    }
+    else if(restrictModificationToSourceTypes != null && !restrictModificationToSourceTypes!.contains(creature.source.type)) {
+      canModify = false;
+      canModifyMessage = 'Modification impossible depuis cette page';
+    }
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         IconButton(
           icon: const Icon(Icons.edit_outlined),
-          tooltip: !creature.editable
-            ? 'Modification impossible (créature par défaut)'
+          tooltip: !canModify
+            ? canModifyMessage!
             : 'Modifier',
-          onPressed: !creature.editable
+          onPressed: !canModify
             ? null
             : () => onEdit(),
         ),
@@ -74,10 +89,10 @@ class CreatureActionButtons extends StatelessWidget {
         ),
         IconButton(
           icon: const Icon(Icons.delete),
-          tooltip: !creature.editable
-            ? 'Suppression impossible (créature par défaut)'
-            : 'Supprimer',
-          onPressed: !creature.editable
+          tooltip: !canModify
+              ? canModifyMessage!
+              : 'Supprimer',
+          onPressed: !canModify
             ? null
             : () => onDelete(),
         ),
@@ -104,11 +119,13 @@ class CreatureDisplayWidget extends StatefulWidget {
     required this.creature,
     required this.onEditRequested,
     required this.onDelete,
+    this.restrictModificationToSourceTypes,
   });
 
   final String creature;
   final void Function(CreatureModel) onEditRequested;
   final void Function() onDelete;
+  final List<ObjectSourceType>? restrictModificationToSourceTypes;
 
   @override
   State<CreatureDisplayWidget> createState() => _CreatureDisplayWidgetState();
@@ -206,6 +223,7 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                         widget.onEditRequested(CreatureModel.fromJson(j));
                       },
                       onDelete: () => widget.onDelete(),
+                      restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
                     ),
                   ]
                 ),

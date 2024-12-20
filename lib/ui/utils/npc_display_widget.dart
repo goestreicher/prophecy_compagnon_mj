@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../classes/character/base.dart';
 import '../../classes/magic.dart';
 import '../../classes/non_player_character.dart';
+import '../../classes/object_source.dart';
 import 'ability_list_display_widget.dart';
 import 'attribute_list_display_widget.dart';
 import 'error_feedback.dart';
@@ -23,24 +24,38 @@ class NPCActionButtons extends StatelessWidget {
     required this.onEdit,
     required this.onClone,
     required this.onDelete,
+    this.restrictModificationToSourceTypes,
   });
 
   final NonPlayerCharacterSummary npc;
   final void Function() onEdit;
   final void Function(String) onClone;
   final void Function() onDelete;
+  final List<ObjectSourceType>? restrictModificationToSourceTypes;
 
   @override
   Widget build(BuildContext context) {
+    bool canModify = true;
+    String? canModifyMessage;
+
+    if(!npc.editable) {
+      canModify = false;
+      canModifyMessage = 'Modification impossible (créature par défaut)';
+    }
+    else if(restrictModificationToSourceTypes != null && !restrictModificationToSourceTypes!.contains(npc.source.type)) {
+      canModify = false;
+      canModifyMessage = 'Modification impossible depuis cette page';
+    }
+
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
         IconButton(
           icon: const Icon(Icons.edit_outlined),
-          tooltip: !npc.editable
-            ? 'Modification impossible (PNJ par défaut)'
+          tooltip: !canModify
+            ? canModifyMessage!
             : 'Modifier',
-          onPressed: !npc.editable
+          onPressed: !canModify
             ? null
             : () => onEdit(),
         ),
@@ -76,10 +91,10 @@ class NPCActionButtons extends StatelessWidget {
         ),
         IconButton(
           icon: const Icon(Icons.delete),
-          tooltip: !npc.editable
-            ? 'Suppression impossible (PNJ par défaut)'
+          tooltip: !canModify
+            ? canModifyMessage!
             : 'Supprimer',
-          onPressed: !npc.editable
+          onPressed: !canModify
             ? null
             : () => onDelete(),
         ),
@@ -106,11 +121,13 @@ class NPCDisplayWidget extends StatefulWidget {
     required this.id,
     required this.onEditRequested,
     required this.onDelete,
+    this.restrictModificationToSourceTypes,
   });
 
   final String id;
   final void Function(NonPlayerCharacter) onEditRequested;
   final void Function() onDelete;
+  final List<ObjectSourceType>? restrictModificationToSourceTypes;
 
   @override
   State<NPCDisplayWidget> createState() => _NPCDisplayWidgetState();
@@ -190,6 +207,7 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                         widget.onEditRequested(NonPlayerCharacter.fromJson(j));
                       },
                       onDelete: () => widget.onDelete(),
+                      restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
                     ),
                   ]
                 ),

@@ -3,6 +3,7 @@ import 'package:uuid/uuid.dart';
 
 import 'creature.dart';
 import 'non_player_character.dart';
+import 'object_source.dart';
 import 'scenario_encounter.dart';
 import 'scenario_event.dart';
 import 'scenario_map.dart';
@@ -189,11 +190,17 @@ class Scenario {
     }
 
     // Force NPC and creatures source
+    var source = ObjectSource(
+      type: ObjectSourceType.scenario,
+      name: json['name'],
+    );
     for(var npc in json['npcs'] as List<dynamic>? ?? []) {
-      npc['source'] = json['name'];
+      npc['editable'] = true;
+      npc['source'] = source.toJson();
     }
     for(var creature in json['creatures'] as List<dynamic>? ?? []) {
-      creature['source'] = json['name'];
+      creature['editable'] = true;
+      creature['source'] = source.toJson();
     }
 
     return Scenario.fromJson(json);

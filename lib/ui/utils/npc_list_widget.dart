@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
+import '../../classes/object_source.dart';
 import 'npc_display_widget.dart';
 import '../utils/error_feedback.dart';
 
@@ -13,6 +14,7 @@ class NPCListWidget extends StatefulWidget {
     this.subCategory,
     this.initialSelection,
     required this.onEditRequested,
+    this.restrictModificationToSourceTypes,
   });
 
   final List<NonPlayerCharacterSummary>? npcs;
@@ -21,6 +23,7 @@ class NPCListWidget extends StatefulWidget {
   final NPCSubCategory? subCategory;
   final String? initialSelection;
   final void Function(NonPlayerCharacter) onEditRequested;
+  final List<ObjectSourceType>? restrictModificationToSourceTypes;
 
   @override
   State<NPCListWidget> createState() => _NPCListWidgetState();
@@ -133,7 +136,8 @@ class _NPCListWidgetState extends State<NPCListWidget> {
                             },
                             onDelete: () async {
                               await _deleteModel(context, index);
-                            }
+                            },
+                            restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
                           ),
                         ],
                       ),
@@ -144,7 +148,8 @@ class _NPCListWidgetState extends State<NPCListWidget> {
                           widget.onEditRequested(npc),
                         onDelete: () async {
                           await _deleteModel(context, index);
-                        }
+                        },
+                        restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
                       )
                   ],
                 ),

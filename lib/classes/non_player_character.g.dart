@@ -31,7 +31,7 @@ NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
           const NPCCategoryJsonConverter().fromJson(json['category'] as String),
       subCategory: const NPCSubcategoryJsonConverter()
           .fromJson(json['sub_category'] as Map<String, dynamic>),
-      source: json['source'] as String,
+      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
       icon: json['icon'] == null
           ? null
           : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
@@ -46,7 +46,7 @@ Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
       'category': const NPCCategoryJsonConverter().toJson(instance.category),
       'sub_category':
           const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
-      'source': instance.source,
+      'source': instance.source.toJson(),
       'icon': instance.icon?.toJson(),
     };
 
@@ -58,7 +58,7 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
           const NPCCategoryJsonConverter().fromJson(json['category'] as String),
       subCategory: const NPCSubcategoryJsonConverter()
           .fromJson(json['sub_category'] as Map<String, dynamic>),
-      source: json['source'] as String,
+      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
       unique: json['unique'] as bool? ?? false,
       useHumanInjuryManager: json['use_human_injury_manager'] as bool? ?? false,
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
@@ -158,7 +158,7 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
       'category': const NPCCategoryJsonConverter().toJson(instance.category),
       'sub_category':
           const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
-      'source': instance.source,
+      'source': instance.source.toJson(),
       'unique': instance.unique,
       'use_human_injury_manager': instance.useHumanInjuryManager,
     };

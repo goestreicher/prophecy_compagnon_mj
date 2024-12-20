@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
+import '../../classes/object_source.dart';
 import '../utils/npc_edit_widget.dart';
 import '../utils/npc_list_widget.dart';
 import '../utils/single_line_input_dialog.dart';
@@ -53,6 +54,7 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
               title: widget.scenarioName,
               categories: [ NPCCategory.scenario ]
           ),
+          source: ObjectSource(type: ObjectSourceType.scenario, name: widget.scenarioName),
           onEditDone: (NonPlayerCharacter? npc) {
             setState(() {
               if(npc != null) {

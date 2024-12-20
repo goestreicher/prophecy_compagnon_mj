@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
+import '../../classes/object_source.dart';
 import 'creature_display_widget.dart';
 import '../utils/error_feedback.dart';
 
@@ -12,13 +13,15 @@ class CreaturesListWidget extends StatefulWidget {
     this.category,
     this.initialSelection,
     required this.onEditRequested,
+    this.restrictModificationToSourceTypes,
   });
 
   final List<CreatureModelSummary>? creatures;
   final CreatureCategory? category;
-  final String? source;
+  final ObjectSource? source;
   final String? initialSelection;
   final void Function(CreatureModel) onEditRequested;
+  final List<ObjectSourceType>? restrictModificationToSourceTypes;
 
   @override
   State<CreaturesListWidget> createState() => _CreaturesListWidgetState();
@@ -130,7 +133,8 @@ class _CreaturesListWidgetState extends State<CreaturesListWidget> {
                             },
                             onDelete: () async {
                               await _deleteModel(context, index);
-                            }
+                            },
+                            restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
                           )
                         ],
                       ),
@@ -141,7 +145,8 @@ class _CreaturesListWidgetState extends State<CreaturesListWidget> {
                           widget.onEditRequested(model),
                         onDelete: () async {
                           await _deleteModel(context, index);
-                        }
+                        },
+                        restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
                       ),
                   ],
                 ),

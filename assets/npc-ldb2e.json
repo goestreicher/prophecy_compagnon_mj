@@ -5,7 +5,10 @@
     "sub_category": {
       "name": "sansCaste"
     },
-    "source": "LdB 2e",
+    "source": {
+      "type": "officiel",
+      "name": "LdB 2e"
+    },
     "description": "XOXO",
     "abilities": {
       "force":        6,

@@ -11,6 +11,7 @@ import '../../classes/equipment.dart';
 import '../../classes/human_character.dart';
 import '../../classes/magic.dart';
 import '../../classes/non_player_character.dart';
+import '../../classes/object_source.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
 import '../utils/ability_list_edit_widget.dart';
@@ -47,7 +48,7 @@ class NPCEditWidget extends StatefulWidget {
   final String name;
   final NonPlayerCharacter? npc;
   final String? npcId;
-  final String? source;
+  final ObjectSource? source;
   final NPCCategory? category;
   final NPCSubCategory? subCategory;
   final void Function(NonPlayerCharacter?) onEditDone;

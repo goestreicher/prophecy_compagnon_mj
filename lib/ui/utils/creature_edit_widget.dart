@@ -9,6 +9,7 @@ import '../../classes/character/skill.dart';
 import '../../classes/combat.dart';
 import '../../classes/creature.dart';
 import '../../classes/equipment.dart';
+import '../../classes/object_source.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
 import '../utils/ability_list_edit_widget.dart';
@@ -37,7 +38,7 @@ class CreatureEditWidget extends StatefulWidget {
   final String name;
   final CreatureModel? creature;
   final String? creatureId;
-  final String? source;
+  final ObjectSource? source;
   final void Function(CreatureModel?) onEditDone;
 
   @override

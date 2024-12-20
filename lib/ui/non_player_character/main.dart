@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
+import '../../classes/object_source.dart';
 import '../utils/error_feedback.dart';
 import '../utils/npc_edit_widget.dart';
 import '../utils/npc_list_widget.dart';
@@ -246,6 +247,9 @@ class _NPCMainPageState extends State<NPCMainPage> {
                     editing = true;
                   });
                 },
+                restrictModificationToSourceTypes: [
+                  ObjectSourceType.original
+                ],
               ),
             ),
         ],

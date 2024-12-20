@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
+import '../../classes/object_source.dart';
 import '../utils/creature_edit_widget.dart';
 import '../utils/creature_list_widget.dart';
 import '../utils/error_feedback.dart';
@@ -216,6 +217,9 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                     editing = true;
                   });
                 },
+                restrictModificationToSourceTypes: [
+                  ObjectSourceType.original
+                ],
               ),
             ),
         ],

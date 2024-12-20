@@ -12,6 +12,7 @@ import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
 import 'magic.dart';
+import 'object_source.dart';
 import '../text_utils.dart';
 
 part 'non_player_character.g.dart';
@@ -319,7 +320,7 @@ class NonPlayerCharacterSummary {
   final String name;
   final NPCCategory category;
   final NPCSubCategory subCategory;
-  final String source;
+  final ObjectSource source;
   final ExportableBinaryData? icon;
   @JsonKey(includeToJson: false, includeFromJson: true)
     final bool editable;
@@ -374,7 +375,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     final String id;
   NPCCategory category;
   NPCSubCategory subCategory;
-  String source;
+  ObjectSource source;
   bool unique;
   @JsonKey(includeToJson: false, includeFromJson: true)
     bool editable;
@@ -393,7 +394,10 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   static bool _defaultAssetsLoaded = false;
   static final Map<String, NonPlayerCharacterSummary> _summaries = <String, NonPlayerCharacterSummary>{};
   static final Map<String, NonPlayerCharacter> _instances = <String, NonPlayerCharacter>{};
-  static const String localNPCSource = 'LOCAL_CREATED';
+  static const ObjectSource localNPCSource = ObjectSource(
+    type: ObjectSourceType.original,
+    name: "LOCAL_CREATED"
+  );
 
   static Future<NonPlayerCharacter?> get(String id) async {
     if(!_defaultAssetsLoaded) await loadDefaultAssets();
