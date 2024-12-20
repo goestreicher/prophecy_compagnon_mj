@@ -31,9 +31,11 @@ NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
           const NPCCategoryJsonConverter().fromJson(json['category'] as String),
       subCategory: const NPCSubcategoryJsonConverter()
           .fromJson(json['sub_category'] as Map<String, dynamic>),
+      source: json['source'] as String,
       icon: json['icon'] == null
           ? null
           : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
+      editable: json['editable'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
@@ -44,6 +46,7 @@ Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
       'category': const NPCCategoryJsonConverter().toJson(instance.category),
       'sub_category':
           const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
+      'source': instance.source,
       'icon': instance.icon?.toJson(),
     };
 
@@ -55,6 +58,7 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
           const NPCCategoryJsonConverter().fromJson(json['category'] as String),
       subCategory: const NPCSubcategoryJsonConverter()
           .fromJson(json['sub_category'] as Map<String, dynamic>),
+      source: json['source'] as String,
       unique: json['unique'] as bool? ?? false,
       useHumanInjuryManager: json['use_human_injury_manager'] as bool? ?? false,
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
@@ -99,6 +103,7 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
       icon: json['icon'] == null
           ? null
           : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
+      editable: json['editable'] as bool? ?? false,
     )
       ..status = json['status'] == null
           ? EntityStatus.empty()
@@ -153,6 +158,7 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
       'category': const NPCCategoryJsonConverter().toJson(instance.category),
       'sub_category':
           const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
+      'source': instance.source,
       'unique': instance.unique,
       'use_human_injury_manager': instance.useHumanInjuryManager,
     };

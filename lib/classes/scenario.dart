@@ -42,7 +42,11 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       for (var npcId in j['npcs']) {
         var npc = await NonPlayerCharacter.get(npcId);
         if(npc != null) {
-          npcsJson.add(npc.toJson());
+          // We have to set the NPC as editable otherwise modifications
+          // are blocked
+          var npcJson = npc.toJson();
+          npcJson['editable'] = true;
+          npcsJson.add(npcJson);
         }
       }
       j['npcs'] = npcsJson;
@@ -183,6 +187,15 @@ class Scenario {
       // Just replace the existing UUID to prevent any conflicts
       json['uuid'] = const Uuid().v4().toString();
     }
+
+    // Force NPC and creatures source
+    for(var npc in json['npcs'] as List<dynamic>? ?? []) {
+      npc['source'] = json['name'];
+    }
+    for(var creature in json['creatures'] as List<dynamic>? ?? []) {
+      creature['source'] = json['name'];
+    }
+
     return Scenario.fromJson(json);
   }
 

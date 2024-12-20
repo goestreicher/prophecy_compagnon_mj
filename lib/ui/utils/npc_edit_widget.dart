@@ -38,6 +38,7 @@ class NPCEditWidget extends StatefulWidget {
     required this.name,
     this.npc,
     this.npcId,
+    this.source,
     this.category,
     this.subCategory,
     required this.onEditDone,
@@ -46,6 +47,7 @@ class NPCEditWidget extends StatefulWidget {
   final String name;
   final NonPlayerCharacter? npc;
   final String? npcId;
+  final String? source;
   final NPCCategory? category;
   final NPCSubCategory? subCategory;
   final void Function(NonPlayerCharacter?) onEditDone;
@@ -139,6 +141,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
   NonPlayerCharacter? _createNPC() {
     var ret = NonPlayerCharacter(
       name: _name,
+      source: widget.source ?? NonPlayerCharacter.localNPCSource,
       category: _category!,
       subCategory: _subCategory!,
       unique: _unique,

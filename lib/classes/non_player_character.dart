@@ -103,8 +103,8 @@ class NPCSubcategoryJsonConverter extends JsonConverter<NPCSubCategory, Map<Stri
 
   @override
   NPCSubCategory fromJson(Map<String, dynamic> json) {
-    if(json.containsKey('subcategory')) {
-      return NPCSubCategory.byName(json['subcategory']);
+    if(json.containsKey('name')) {
+      return NPCSubCategory.byName(json['name']);
     }
     else {
       var name = sentenceToCamelCase(transliterateFrenchToAscii(json['title']));
@@ -233,6 +233,7 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
   @override
   Future<NonPlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    j['editable'] = true;
     return NonPlayerCharacterSummary.fromJson(j);
   }
 
@@ -267,6 +268,7 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
   Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    j['editable'] = true;
     return NonPlayerCharacter.fromJson(j);
   }
 
@@ -308,14 +310,19 @@ class NonPlayerCharacterSummary {
     required this.name,
     required this.category,
     required this.subCategory,
+    required this.source,
     this.icon,
+    this.editable = false,
   });
 
   final String id;
   final String name;
   final NPCCategory category;
   final NPCSubCategory subCategory;
+  final String source;
   final ExportableBinaryData? icon;
+  @JsonKey(includeToJson: false, includeFromJson: true)
+    final bool editable;
 
   factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j) => _$NonPlayerCharacterSummaryFromJson(j);
   Map<String, dynamic> toJson() => _$NonPlayerCharacterSummaryToJson(this);
@@ -331,8 +338,8 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       required super.name,
       required this.category,
       required this.subCategory,
+      required this.source,
       this.unique = false,
-      this.editable = false,
       this.useHumanInjuryManager = false,
       super.initiative,
       super.caste,
@@ -353,6 +360,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       super.description,
       super.image,
       super.icon,
+      this.editable = false,
     }
   )
     : id = sentenceToCamelCase(transliterateFrenchToAscii(name))
@@ -366,9 +374,10 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     final String id;
   NPCCategory category;
   NPCSubCategory subCategory;
+  String source;
   bool unique;
-  @JsonKey(includeToJson: false, includeFromJson: false)
-    bool editable = false;
+  @JsonKey(includeToJson: false, includeFromJson: true)
+    bool editable;
   bool useHumanInjuryManager;
 
   NonPlayerCharacterSummary get summary => NonPlayerCharacterSummary(
@@ -376,12 +385,15 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       name: name,
       category: category,
       subCategory: subCategory,
+      source: source,
       icon: icon?.clone(),
+      editable: editable,
     );
 
   static bool _defaultAssetsLoaded = false;
   static final Map<String, NonPlayerCharacterSummary> _summaries = <String, NonPlayerCharacterSummary>{};
   static final Map<String, NonPlayerCharacter> _instances = <String, NonPlayerCharacter>{};
+  static const String localNPCSource = 'LOCAL_CREATED';
 
   static Future<NonPlayerCharacter?> get(String id) async {
     if(!_defaultAssetsLoaded) await loadDefaultAssets();

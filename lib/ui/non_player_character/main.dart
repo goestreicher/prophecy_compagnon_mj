@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
 import '../utils/error_feedback.dart';
-import '../utils/npc_display_widget.dart';
 import '../utils/npc_edit_widget.dart';
 import '../utils/npc_list_widget.dart';
 import '../utils/single_line_input_dialog.dart';
@@ -20,16 +19,16 @@ class NPCMainPage extends StatefulWidget {
 
 class _NPCMainPageState extends State<NPCMainPage> {
   bool _isWorking = false;
-  final TextEditingController _categoryController = TextEditingController();
-  final TextEditingController _subCategoryController = TextEditingController();
-  final GlobalKey<FormState> _newNPCFormKey = GlobalKey();
-  NPCCategory? _category;
-  NPCSubCategory? _subCategory;
+  final TextEditingController categoryController = TextEditingController();
+  final TextEditingController subCategoryController = TextEditingController();
+  final GlobalKey<FormState> newNPCFormKey = GlobalKey();
+  NPCCategory? npcCategory;
+  NPCSubCategory? npcSubCategory;
   bool editing = false;
-  String? _selectedDisplay;
-  String? _selectedEdit;
-  NonPlayerCharacter? _selectedEditNPC;
-  String? _newNPCName;
+  String? selectedDisplay;
+  String? selectedEdit;
+  NonPlayerCharacter? selectedEditNPC;
+  String? newNPCName;
 
   @override
   Widget build(BuildContext context) {
@@ -37,24 +36,24 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
     Widget mainArea;
 
-    if(editing && _newNPCName != null) {
+    if(editing && newNPCName != null) {
       mainArea = NPCEditWidget(
-        name: _newNPCName!,
-        npc: _selectedEditNPC,
-        npcId: _selectedEdit,
+        name: newNPCName!,
+        npc: selectedEditNPC,
+        npcId: selectedEdit,
         onEditDone: (NonPlayerCharacter? npc) {
-          if(_newNPCName != null) {
-            _newNPCName = null;
+          if(newNPCName != null) {
+            newNPCName = null;
           }
 
           setState(() {
             if(npc != null) {
-              _selectedDisplay = npc.id;
-              _category = npc.category;
-              _subCategory = npc.subCategory;
+              selectedDisplay = npc.id;
+              npcCategory = npc.category;
+              npcSubCategory = npc.subCategory;
             }
-            _selectedEdit = null;
-            _selectedEditNPC = null;
+            selectedEdit = null;
+            selectedEditNPC = null;
             editing = false;
           });
         },
@@ -62,205 +61,191 @@ class _NPCMainPageState extends State<NPCMainPage> {
     }
     else {
       mainArea = Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Row(
-            children: [
-              DropdownMenu(
-                controller: _categoryController,
-                label: const Text('Catégorie'),
-                textStyle: theme.textTheme.bodySmall,
-                onSelected: (NPCCategory? category) {
-                  setState(() {
-                    _category = category;
-                    _subCategory = null;
-                    _subCategoryController.clear();
-                    _selectedDisplay = null;
-                  });
-                },
-                dropdownMenuEntries: NPCCategory.values
-                    .map((NPCCategory c) => DropdownMenuEntry(value: c, label: c.title))
-                    .toList(),
-              ),
-              if(_category != null)
-                const SizedBox(width: 8.0),
-              if(_category != null)
+          Padding(
+            padding: const EdgeInsets.fromLTRB(8.0, 12.0, 8.0, 0.0),
+            child: Wrap(
+              direction: Axis.horizontal,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              spacing: 16.0,
+              runSpacing: 8.0,
+              children: [
                 DropdownMenu(
-                  controller: _subCategoryController,
-                  label: const Text('Sous-catégorie'),
-                  requestFocusOnTap: true,
+                  controller: categoryController,
+                  label: const Text('Catégorie'),
                   textStyle: theme.textTheme.bodySmall,
-                  onSelected: (NPCSubCategory? subCategory) {
+                  onSelected: (NPCCategory? category) {
                     setState(() {
-                      _subCategory = subCategory;
-                      _selectedDisplay = null;
+                      npcCategory = category;
+                      npcSubCategory = null;
+                      subCategoryController.clear();
+                      selectedDisplay = null;
                     });
                   },
-                  dropdownMenuEntries: _category == null ?
-                    <DropdownMenuEntry<NPCSubCategory>>[] :
-                    NPCSubCategory.subCategoriesForCategory(_category!)
-                      .map((NPCSubCategory s) => DropdownMenuEntry(value: s, label: s.title))
-                      .toList(),
+                  dropdownMenuEntries: NPCCategory.values
+                    .map((NPCCategory c) => DropdownMenuEntry(value: c, label: c.title))
+                    .toList(),
                 ),
-              const SizedBox(width: 8.0),
-              ElevatedButton.icon(
-                icon: const Icon(Icons.add),
-                label: const Text('Nouveau PNJ'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: theme.colorScheme.primary,
-                  foregroundColor: theme.colorScheme.onPrimary,
-                ),
-                onPressed: () async {
-                  var name = await showDialog(
-                    context: context,
-                    builder: (BuildContext context) => SingleLineInputDialog(
-                      title: 'Nom du PNJ',
-                      formKey: _newNPCFormKey,
-                      hintText: 'Nom',
-                    ),
-                  );
-                  if(!context.mounted) return;
-                  if(name == null) return;
-
-                  var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
-                  var model = await NonPlayerCharacter.get(id);
-                  if(!context.mounted) return;
-                  if(model != null) {
-                    displayErrorDialog(
-                      context,
-                      'PNJ existant',
-                      'Un PNJ avec ce nom (ou un nom similaire) existe déjà'
-                    );
-                    return;
-                  }
-
-                  setState(() {
-                    _selectedEdit = null;
-                    _selectedEditNPC = null;
-                    _newNPCName = name;
-                    editing = true;
-                  });
-                },
-              ),
-              const SizedBox(width: 8.0),
-              ElevatedButton.icon(
-                icon: const Icon(Icons.upload),
-                label: const Text('Importer un PNJ'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: theme.colorScheme.primary,
-                  foregroundColor: theme.colorScheme.onPrimary,
-                ),
-                onPressed: () async {
-                  var result = await FilePicker.platform.pickFiles(
-                    type: FileType.custom,
-                    allowedExtensions: ['json'],
-                  );
-                  if(!context.mounted) return;
-                  if(result == null) return;
-
-                  try {
-                    setState(() {
-                      _isWorking = true;
-                    });
-
-                    var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
-                    var npc = NonPlayerCharacter.fromJson(json.decode(jsonStr));
-                    var model = await NonPlayerCharacter.get(npc.id);
-                    if(!context.mounted) return;
-                    if(model != null) {
+                if(npcCategory != null)
+                  DropdownMenu(
+                    controller: subCategoryController,
+                    label: const Text('Sous-catégorie'),
+                    requestFocusOnTap: true,
+                    textStyle: theme.textTheme.bodySmall,
+                    onSelected: (NPCSubCategory? subCategory) {
                       setState(() {
-                        _isWorking = false;
+                        npcSubCategory = subCategory;
+                        selectedDisplay = null;
                       });
-
-                      displayErrorDialog(
-                        context,
-                        'PNJ existant',
-                        'Un PNJ avec ce nom (ou un nom similaire) existe déjà'
-                      );
-                      return;
-                    }
-
-                    npc.editable = true;
-                    await NonPlayerCharacter.saveLocalModel(npc);
-                    setState(() {
-                      _selectedDisplay = npc.id;
-                      _category = npc.category;
-                      _categoryController.text = npc.category.title;
-                      _subCategory = npc.subCategory;
-                      _subCategoryController.text = npc.subCategory.title;
-                      _isWorking = false;
-                    });
-                  } catch (e) {
-                    setState(() {
-                      _isWorking = false;
-                    });
-
-                    if(!context.mounted) return;
-
-                    displayErrorDialog(
-                      context,
-                      "Échec de l'import",
-                      e.toString()
+                    },
+                    dropdownMenuEntries: npcCategory == null
+                      ? <DropdownMenuEntry<NPCSubCategory>>[]
+                      : NPCSubCategory.subCategoriesForCategory(npcCategory!)
+                        .map((NPCSubCategory s) => DropdownMenuEntry(value: s, label: s.title))
+                        .toList(),
+                  ),
+                MenuAnchor(
+                  alignmentOffset: const Offset(0, 4),
+                  builder: (BuildContext context, MenuController controller, Widget? child) {
+                    return IconButton.filled(
+                      icon: const Icon(Icons.add),
+                      padding: const EdgeInsets.all(12.0),
+                      tooltip: 'Créer / Importer',
+                      onPressed: () {
+                        if(controller.isOpen) {
+                          controller.close();
+                        }
+                        else {
+                          controller.open();
+                        }
+                      },
                     );
-                  }
-                },
-              ),
-            ],
-          ),
-          const SizedBox(height: 12.0),
-          if(_category != null)
-            Expanded(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: 350,
-                    child: NPCListWidget(
-                      category: _category!,
-                      subCategory: _subCategory,
-                      selected: _selectedDisplay,
-                      onSelected: (String id) {
+                  },
+                  menuChildren: [
+                    MenuItemButton(
+                      child: const Row(
+                        children: [
+                          Icon(Icons.create),
+                          SizedBox(width: 4.0),
+                          Text('Nouveau PNJ'),
+                        ],
+                      ),
+                      onPressed: () async {
+                        var name = await showDialog(
+                          context: context,
+                          builder: (BuildContext context) => SingleLineInputDialog(
+                            title: 'Nom du PNJ',
+                            formKey: newNPCFormKey,
+                            hintText: 'Nom',
+                          ),
+                        );
+                        if(!context.mounted) return;
+                        if(name == null) return;
+
+                        var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
+                        var model = await NonPlayerCharacter.get(id);
+                        if(!context.mounted) return;
+                        if(model != null) {
+                          displayErrorDialog(
+                            context,
+                            'PNJ existant',
+                            'Un PNJ avec ce nom (ou un nom similaire) existe déjà'
+                          );
+                          return;
+                        }
+
                         setState(() {
-                          _selectedDisplay = id;
+                          selectedEdit = null;
+                          selectedEditNPC = null;
+                          newNPCName = name;
+                          editing = true;
                         });
                       },
-                    )
-                  ),
-                  const SizedBox(width: 12.0),
-                  if(_selectedDisplay != null)
-                    Expanded(
-                      child: NPCDisplayWidget(
-                        id: _selectedDisplay!,
-                        onEditRequested: (NonPlayerCharacter npc) {
-                          setState(() {
-                            _newNPCName = npc.name;
-                            _selectedEdit = npc.id;
-                            _selectedEditNPC = npc;
-                            editing = true;
-                          });
-                        },
-                        onDelete: () async {
+                    ),
+                    MenuItemButton(
+                      child: const Row(
+                        children: [
+                          Icon(Icons.publish),
+                          SizedBox(width: 4.0),
+                          Text('Importer un PNJ'),
+                        ],
+                      ),
+                      onPressed: () async {
+                        var result = await FilePicker.platform.pickFiles(
+                          type: FileType.custom,
+                          allowedExtensions: ['json'],
+                        );
+                        if(!context.mounted) return;
+                        if(result == null) return;
+
+                        try {
                           setState(() {
                             _isWorking = true;
                           });
-                          try {
-                            await NonPlayerCharacter.deleteLocalModel(_selectedDisplay!);
-                          }
-                          catch(e) {
-                            if(!context.mounted) return;
+
+                          var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
+                          var npc = NonPlayerCharacter.fromJson(json.decode(jsonStr));
+                          var model = await NonPlayerCharacter.get(npc.id);
+                          if(!context.mounted) return;
+                          if(model != null) {
+                            setState(() {
+                              _isWorking = false;
+                            });
+
                             displayErrorDialog(
                               context,
-                              "Suppression impossible",
-                              e.toString()
+                              'PNJ existant',
+                              'Un PNJ avec ce nom (ou un nom similaire) existe déjà'
                             );
+                            return;
                           }
+
+                          npc.editable = true;
+                          await NonPlayerCharacter.saveLocalModel(npc);
+                          setState(() {
+                            selectedDisplay = npc.id;
+                            npcCategory = npc.category;
+                            categoryController.text = npc.category.title;
+                            npcSubCategory = npc.subCategory;
+                            subCategoryController.text = npc.subCategory.title;
+                            _isWorking = false;
+                          });
+                        } catch (e) {
                           setState(() {
                             _isWorking = false;
-                            _selectedDisplay = null;
                           });
+
+                          if(!context.mounted) return;
+
+                          displayErrorDialog(
+                            context,
+                            "Échec de l'import",
+                            e.toString()
+                          );
                         }
-                      )
+                      },
                     ),
-                ],
+                  ],
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(height: 12.0),
+          if(npcCategory != null)
+            Expanded(
+              child: NPCListWidget(
+                category: npcCategory!,
+                subCategory: npcSubCategory,
+                initialSelection: selectedDisplay,
+                onEditRequested: (NonPlayerCharacter npc) {
+                  setState(() {
+                    newNPCName = npc.name;
+                    selectedEdit = npc.id;
+                    selectedEditNPC = npc;
+                    editing = true;
+                  });
+                },
               ),
             ),
         ],
@@ -269,10 +254,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
     return Stack(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: mainArea,
-        ),
+        mainArea,
         if(_isWorking)
           const Opacity(
             opacity: 0.6,

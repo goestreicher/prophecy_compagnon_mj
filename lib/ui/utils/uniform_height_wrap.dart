@@ -14,11 +14,13 @@ class UniformHeightWrap extends MultiChildRenderObjectWidget {
     this.spacing = 0.0,
     this.runSpacing = 0.0,
     this.allocation = UniformHeightWrapAllocation.none,
+    this.maxRunCount = 0,
   });
 
   final double spacing;
   final double runSpacing;
   final UniformHeightWrapAllocation allocation;
+  final int maxRunCount;
 
   @override
   RenderObject createRenderObject(BuildContext context) =>
@@ -26,6 +28,7 @@ class UniformHeightWrap extends MultiChildRenderObjectWidget {
         spacing: spacing,
         runSpacing: runSpacing,
         allocation: allocation,
+        maxRunCount: maxRunCount,
       );
 }
 
@@ -37,7 +40,12 @@ class RenderUniformHeightWrap extends RenderBox with
     double spacing = 0.0,
     double runSpacing = 0.0,
     UniformHeightWrapAllocation allocation = UniformHeightWrapAllocation.none,
-  }) : _spacing = spacing, _runSpacing = runSpacing, _allocation = allocation;
+    int maxRunCount = 0,
+  })
+    : _spacing = spacing,
+      _runSpacing = runSpacing,
+      _allocation = allocation,
+      _maxRunCount = maxRunCount;
 
   double get spacing => _spacing;
   set spacing(double s) {
@@ -62,6 +70,14 @@ class RenderUniformHeightWrap extends RenderBox with
     markNeedsLayout();
   }
   UniformHeightWrapAllocation _allocation;
+
+  int get maxRunCount => _maxRunCount;
+  set maxRunCount(int m) {
+    if(_maxRunCount == m) return;
+    _maxRunCount = m;
+    markNeedsLayout();
+  }
+  int _maxRunCount;
 
   @override
   void setupParentData(covariant RenderObject child) {
@@ -208,6 +224,11 @@ class RenderUniformHeightWrap extends RenderBox with
       final remainingWidth = constraints.maxWidth - currentRow.childrenTotalWidth - spacing * (currentRow.childrenCount - 1);
 
       if(remainingWidth < childSize.width) {
+        rows.add(currentRow);
+        currentRow = _UniformHeightWrapRow();
+      }
+
+      if(maxRunCount != 0 && currentRow.childrenCount == maxRunCount) {
         rows.add(currentRow);
         currentRow = _UniformHeightWrapRow();
       }

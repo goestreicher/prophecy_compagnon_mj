@@ -1,43 +1,76 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
+import 'npc_display_widget.dart';
+import '../utils/error_feedback.dart';
 
 class NPCListWidget extends StatefulWidget {
   const NPCListWidget({
     super.key,
-    required this.category,
-    this.subCategory,
     this.npcs,
-    required this.onSelected,
-    this.selected,
+    this.source,
+    this.category,
+    this.subCategory,
+    this.initialSelection,
+    required this.onEditRequested,
   });
 
-  final NPCCategory category;
-  final NPCSubCategory? subCategory;
   final List<NonPlayerCharacterSummary>? npcs;
-  final void Function(String) onSelected;
-  final String? selected;
+  final String? source;
+  final NPCCategory? category;
+  final NPCSubCategory? subCategory;
+  final String? initialSelection;
+  final void Function(NonPlayerCharacter) onEditRequested;
 
   @override
   State<NPCListWidget> createState() => _NPCListWidgetState();
 }
 
 class _NPCListWidgetState extends State<NPCListWidget> {
-  late List<NonPlayerCharacterSummary> _npcs;
+  late List<NonPlayerCharacterSummary> npcs;
+  String? selected;
 
   void _updateNPCList() {
     if(widget.npcs != null) {
-      _npcs = widget.npcs!;
+      npcs = widget.npcs!;
+    }
+    else if(widget.source != null) {
+      // TODO: implement
+      npcs = <NonPlayerCharacterSummary>[];
+    }
+    else if(widget.category != null) {
+      npcs = NonPlayerCharacter.forCategory(widget.category!, widget.subCategory);
     }
     else {
-      _npcs = NonPlayerCharacter.forCategory(widget.category, widget.subCategory);
+      npcs = <NonPlayerCharacterSummary>[];
     }
-    _npcs.sort((a, b) => a.id.compareTo(b.id));
+    npcs.sort((a, b) => a.id.compareTo(b.id));
+  }
+
+  Future<void> _deleteModel(BuildContext context, int index) async {
+    try {
+      await NonPlayerCharacter.deleteLocalModel(npcs[index].id);
+      setState(() {
+        npcs.removeAt(index);
+      });
+    }
+    catch(e) {
+      if(!context.mounted) return;
+      displayErrorDialog(
+        context,
+        "Suppression impossible",
+        e.toString()
+      );
+    }
+    setState(() {
+      selected = null;
+    });
   }
 
   @override
   void initState() {
     super.initState();
+    selected = widget.initialSelection;
     _updateNPCList();
   }
 
@@ -52,28 +85,72 @@ class _NPCListWidgetState extends State<NPCListWidget> {
     var theme = Theme.of(context);
 
     return ListView.builder(
-      itemCount: _npcs.length,
+      itemCount: npcs.length,
       itemBuilder: (BuildContext context, int index) {
-        return Card(
-          clipBehavior: Clip.hardEdge,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.0),
-          ),
-          color: widget.selected == _npcs[index].id ?
-          theme.colorScheme.surfaceContainerHighest :
-          null,
-          child: InkWell(
-            onTap: () {
-              widget.onSelected(_npcs[index].id);
-            },
-            child: ListTile(
-              title: Text(
-                _npcs[index].name,
-                style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+        return GestureDetector(
+          onTap: () {
+            setState(() {
+              if(selected == npcs[index].id) {
+                selected = null;
+              }
+              else {
+                selected = npcs[index].id;
+              }
+            });
+          },
+          child: MouseRegion(
+            cursor: SystemMouseCursors.click,
+            child: Card(
+              clipBehavior: Clip.hardEdge,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(4.0),
               ),
-              trailing: const Icon(Icons.arrow_forward_ios),
+              child: Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    if(selected != npcs[index].id)
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            npcs[index].name,
+                            style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+                            overflow: TextOverflow.fade,
+                          ),
+                          NPCActionButtons(
+                            npc: npcs[index],
+                            onEdit: () async {
+                              var npc = await NonPlayerCharacter.get(npcs[index].id);
+                              widget.onEditRequested(npc!);
+                            },
+                            onClone: (String newName) async {
+                              var npc = await NonPlayerCharacter.get(npcs[index].id);
+                              var j = npc!.toJson();
+                              j['name'] = newName;
+                              widget.onEditRequested(NonPlayerCharacter.fromJson(j));
+                            },
+                            onDelete: () async {
+                              await _deleteModel(context, index);
+                            }
+                          ),
+                        ],
+                      ),
+                    if(selected == npcs[index].id)
+                      NPCDisplayWidget(
+                        id: selected!,
+                        onEditRequested: (NonPlayerCharacter npc) =>
+                          widget.onEditRequested(npc),
+                        onDelete: () async {
+                          await _deleteModel(context, index);
+                        }
+                      )
+                  ],
+                ),
+              )
             ),
-          )
+          ),
         );
       }
     );

@@ -3,8 +3,9 @@
     "name": "Villageois sans caste",
     "category": "generique",
     "sub_category": {
-      "subcategory": "sansCaste"
+      "name": "sansCaste"
     },
+    "source": "LdB 2e",
     "description": "XOXO",
     "abilities": {
       "force":        6,
