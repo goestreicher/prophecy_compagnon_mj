@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
+import '../../classes/object_source.dart';
 
 class NPCPickerDialog extends StatefulWidget {
-  const NPCPickerDialog({ super.key, this.forScenario });
-
-  final String? forScenario;
+  const NPCPickerDialog({ super.key });
 
   @override
   State<NPCPickerDialog> createState() => _NPCPickerDialogState();
@@ -13,17 +12,43 @@ class NPCPickerDialog extends StatefulWidget {
 
 class _NPCPickerDialogState extends State<NPCPickerDialog> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController sourceTypeController = TextEditingController();
+  ObjectSourceType? selectedSourceType;
+  final TextEditingController sourceController = TextEditingController();
+  ObjectSource? selectedSource;
   final TextEditingController categoryController = TextEditingController();
   NPCCategory? selectedCategory;
   final TextEditingController subCategoryController = TextEditingController();
   List<NPCSubCategory> subcategories = <NPCSubCategory>[];
   NPCSubCategory? selectedSubCategory;
   final TextEditingController npcController = TextEditingController();
-  List<NonPlayerCharacter> npcs = <NonPlayerCharacter>[];
+  List<NonPlayerCharacterSummary> npcs = <NonPlayerCharacterSummary>[];
   String? selectedNpcId;
+
+  void _applyCurrentFilter() {
+    if(selectedSource != null) {
+      npcs = NonPlayerCharacter.forSource(selectedSource!, selectedCategory, selectedSubCategory);
+    }
+    else if(selectedSourceType != null) {
+      npcs = NonPlayerCharacter.forSourceType(selectedSourceType!, selectedCategory, selectedSubCategory);
+    }
+    else if(selectedCategory != null) {
+      npcs = NonPlayerCharacter.forCategory(selectedCategory!, selectedSubCategory);
+    }
+    else {
+      npcs = <NonPlayerCharacterSummary>[];
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+    var spacing = 12.0;
+
     return AlertDialog(
       title: const Text('Sélectionner le PNJ'),
       content: Form(
@@ -31,6 +56,49 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+            DropdownMenu(
+              controller: sourceTypeController,
+              requestFocusOnTap: true,
+              label: const Text('Type de source'),
+              expandedInsets: EdgeInsets.zero,
+              initialSelection: selectedSourceType,
+              onSelected: (ObjectSourceType? type) {
+                setState(() {
+                  selectedSourceType = type;
+                  sourceController.clear();
+                  selectedSource = null;
+                  _applyCurrentFilter();
+                  npcController.text = '';
+                  selectedNpcId = null;
+                });
+              },
+              dropdownMenuEntries: ObjectSourceType.values
+                .map((ObjectSourceType type) => DropdownMenuEntry(value: type, label: type.title))
+                .toList(),
+            ),
+            SizedBox(height: spacing),
+            DropdownMenu(
+              controller: sourceController,
+              enabled: selectedSourceType != null,
+              requestFocusOnTap: true,
+              label: const Text('Source'),
+              expandedInsets: EdgeInsets.zero,
+              initialSelection: selectedSource,
+              onSelected: (ObjectSource? source) {
+                setState(() {
+                  selectedSource = source;
+                  _applyCurrentFilter();
+                  npcController.text = '';
+                  selectedNpcId = null;
+                });
+              },
+              dropdownMenuEntries: selectedSourceType == null
+                ? <DropdownMenuEntry<ObjectSource>>[]
+                : ObjectSource.forType(selectedSourceType!)
+                  .map((ObjectSource s) => DropdownMenuEntry(value: s, label: s.name))
+                  .toList(),
+            ),
+            SizedBox(height: spacing),
             DropdownMenu(
               controller: categoryController,
               requestFocusOnTap: true,
@@ -45,36 +113,22 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
                 if(c == null) return;
                 setState(() {
                   selectedCategory = c;
-                  if(selectedCategory == NPCCategory.scenario && widget.forScenario != null) {
-                    // Only allow adding NPCs from the current scenario
-                    var cat = NPCSubCategory.byTitle(widget.forScenario!);
-                    if(cat != null) {
-                      subcategories = [cat];
-                      subCategoryController.text = cat.title;
-                      selectedSubCategory = cat;
-                    }
-                    else {
-                      subcategories.clear();
-                      subCategoryController.text = '';
-                      selectedSubCategory = null;
-                    }
-                  } else {
-                    subcategories = NPCSubCategory.subCategoriesForCategory(c);
-                    subCategoryController.text = '';
-                    selectedSubCategory = null;
-                  }
+                  subcategories = NPCSubCategory.subCategoriesForCategory(c);
+                  subCategoryController.text = '';
+                  selectedSubCategory = null;
+                  _applyCurrentFilter();
                   npcController.text = '';
-                  npcs.clear();
                   selectedNpcId = null;
                 });
               },
             ),
-            const SizedBox(height: 8.0),
+            SizedBox(height: spacing),
             DropdownMenu(
               controller: subCategoryController,
               requestFocusOnTap: true,
               label: const Text('Sous-catégorie'),
               expandedInsets: EdgeInsets.zero,
+              initialSelection: selectedSubCategory,
               dropdownMenuEntries: selectedCategory == null
                 ? <DropdownMenuEntry<NPCSubCategory>>[]
                 : subcategories.map(
@@ -84,23 +138,21 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
                 if(s == null) return;
                 setState(() {
                   selectedSubCategory = s;
+                  _applyCurrentFilter();
                   npcController.text = '';
-                  npcs.clear();
                   selectedNpcId = null;
                 });
               },
             ),
-            const SizedBox(height: 8.0),
+            SizedBox(height: spacing),
             DropdownMenu(
               controller: npcController,
               requestFocusOnTap: true,
               label: const Text('Personnage'),
               expandedInsets: EdgeInsets.zero,
-              dropdownMenuEntries: selectedCategory == null || selectedSubCategory == null
-                ? <DropdownMenuEntry<NonPlayerCharacterSummary>>[]
-                : NonPlayerCharacter.forCategory(selectedCategory!, selectedSubCategory).map(
-                    (NonPlayerCharacterSummary npc) => DropdownMenuEntry(value: npc, label: npc.name)
-                  ).toList(),
+              dropdownMenuEntries: npcs
+                .map((NonPlayerCharacterSummary npc) => DropdownMenuEntry(value: npc, label: npc.name))
+                .toList(),
               onSelected: (NonPlayerCharacterSummary? npc) {
                 if(npc == null) return;
                 setState(() {

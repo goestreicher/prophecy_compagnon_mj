@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
 import '../../classes/object_source.dart';
+import '../utils/error_feedback.dart';
 import '../utils/npc_edit_widget.dart';
 import '../utils/npc_list_widget.dart';
 import '../utils/single_line_input_dialog.dart';
@@ -31,6 +32,15 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
   String? newNPCName;
   bool editing = false;
 
+  void _startEditing(NonPlayerCharacter npc) {
+    setState(() {
+      newNPCName = npc.name;
+      selectedId = npc.id;
+      selectedNPC = npc;
+      editing = true;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
@@ -49,11 +59,6 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
           npcId: selectedId,
           npc: selectedNPC,
           name: newNPCName!,
-          category: NPCCategory.scenario,
-          subCategory: NPCSubCategory(
-              title: widget.scenarioName,
-              categories: [ NPCCategory.scenario ]
-          ),
           source: ObjectSource(type: ObjectSourceType.scenario, name: widget.scenarioName),
           onEditDone: (NonPlayerCharacter? npc) {
             setState(() {
@@ -129,16 +134,39 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
               child: ConstrainedBox(
                 constraints: BoxConstraints(maxWidth: 800),
                 child: NPCListWidget(
-                  category: NPCCategory.scenario,
-                  initialSelection: selectedId,
                   npcs: npcSummaries,
-                  onEditRequested: (NonPlayerCharacter npc) {
-                    setState(() {
-                      newNPCName = npc.name;
-                      selectedId = npc.id;
-                      selectedNPC = npc;
-                      editing = true;
-                    });
+                  initialSelection: selectedId,
+                  onEditRequested: (int index) async {
+                    var npc = await NonPlayerCharacter.get(npcSummaries[index].id);
+                    if(npc == null) return;
+                    _startEditing(npc);
+                  },
+                  onCloneRequested: (int index, String newName) async {
+                    var npc = await NonPlayerCharacter.get(npcSummaries[index].id);
+                    if(npc == null) return;
+
+                    var j = npc.toJson();
+                    j['name'] = newName;
+                    npc = NonPlayerCharacter.fromJson(j);
+                    npc.source = NonPlayerCharacter.localNPCSource;
+
+                    _startEditing(npc);
+                  },
+                  onDeleteRequested: (int index) async {
+                    try {
+                      await NonPlayerCharacter.deleteLocalModel(npcSummaries[index].id);
+                      setState(() {
+                        selectedId = null;
+                      });
+                    }
+                    catch(e) {
+                      if(!context.mounted) return;
+                      displayErrorDialog(
+                        context,
+                        "Suppression impossible",
+                        e.toString()
+                      );
+                    }
                   },
                 ),
               ),

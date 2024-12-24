@@ -3,15 +3,40 @@ import 'package:json_annotation/json_annotation.dart';
 part 'object_source.g.dart';
 
 enum ObjectSourceType {
-  original,
-  officiel,
-  scenario,
-  communaute,
+  original(title: 'Original'),
+  officiel(title: 'Officiel'),
+  scenario(title: 'Scénario'),
+  // communaute(title: 'Communauté'),
+  ;
+
+  final String title;
+
+  const ObjectSourceType({ required this.title });
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ObjectSource {
-  const ObjectSource({ required this.type, required this.name });
+  factory ObjectSource({ required ObjectSourceType type, required String name }) {
+    ObjectSource ret;
+
+    if(!_instances.containsKey(type)) {
+      _instances[type] = <String, ObjectSource>{};
+    }
+
+    if(!_instances[type]!.containsKey(name)) {
+      ret = ObjectSource._create(type: type, name: name);
+      _instances[type]![name] = ret;
+    }
+    else {
+      ret = _instances[type]![name]!;
+    }
+
+    return ret;
+  }
+
+  static List<ObjectSource> forType(ObjectSourceType type) {
+    return _instances[type]?.values.toList() ?? <ObjectSource>[];
+  }
 
   final ObjectSourceType type;
   final String name;
@@ -28,4 +53,9 @@ class ObjectSource {
 
   factory ObjectSource.fromJson(Map<String, dynamic> j) => _$ObjectSourceFromJson(j);
   Map<String, dynamic> toJson() => _$ObjectSourceToJson(this);
+
+  const ObjectSource._create({ required this.type, required this.name });
+
+  static final Map<ObjectSourceType, Map<String, ObjectSource>> _instances =
+    <ObjectSourceType, Map<String, ObjectSource>>{};
 }

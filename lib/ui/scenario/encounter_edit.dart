@@ -69,7 +69,7 @@ class _EncounterEditWidgetState extends State<EncounterEditWidget> {
                 onPressed: () async {
                   var selectedNpcId = await showDialog(
                     context: context,
-                    builder: (BuildContext context) => NPCPickerDialog(forScenario: widget.forScenario)
+                    builder: (BuildContext context) => NPCPickerDialog()
                   );
                   if(selectedNpcId == null) return;
 

@@ -60,7 +60,7 @@ class CreatureCategory {
     var crea = creaturesDraconiques;
   }
 
-  factory CreatureCategory({ required title, bool isDefault = false }) {
+  factory CreatureCategory({ required String title, bool isDefault = false }) {
     _doStaticInit();
 
     var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
@@ -490,6 +490,12 @@ class CreatureModel with EncounterEntityModel {
     return ret;
   }
 
+  static List<CreatureModelSummary> forSourceType(ObjectSourceType type, CreatureCategory? category) {
+    return _summaries.values
+        .where((CreatureModelSummary c) => c.source.type == type && (category == null || c.category == category))
+        .toList();
+  }
+
   static List<CreatureModelSummary> forSource(ObjectSource source, CreatureCategory? category) {
     return _summaries.values
         .where((CreatureModelSummary c) => c.source == source && (category == null || c.category == category))
@@ -546,7 +552,7 @@ class CreatureModel with EncounterEntityModel {
   static bool _defaultAssetsLoaded = false;
   static final Map<String, CreatureModelSummary> _summaries = <String, CreatureModelSummary>{};
   static final Map<String, CreatureModel> _models = <String, CreatureModel>{};
-  static const ObjectSource localCreatureSource = ObjectSource(
+  static ObjectSource localCreatureSource = ObjectSource(
     type: ObjectSourceType.original,
     name: "LOCAL_CREATED"
   );

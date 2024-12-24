@@ -4,6 +4,7 @@ import '../../classes/creature.dart';
 import '../../classes/object_source.dart';
 import '../utils/creature_edit_widget.dart';
 import '../utils/creature_list_widget.dart';
+import '../utils/error_feedback.dart';
 import '../utils/single_line_input_dialog.dart';
 import '../../text_utils.dart';
 
@@ -31,10 +32,19 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
   bool _editing = false;
   final GlobalKey<FormState> _newCreatureNameKey = GlobalKey<FormState>();
 
+  void _startEditing(CreatureModel model) {
+    setState(() {
+      _newCreatureName = model.name;
+      _selectedId = model.id;
+      _editing = true;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    creatureSummaries = [for(var c in widget.creatures) c.summary];
+    creatureSummaries = [for(var c in widget.creatures) c.summary]
+      ..sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
   }
 
   @override
@@ -125,16 +135,36 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                 child: CreaturesListWidget(
                   creatures: creatureSummaries,
                   initialSelection: _selectedId,
-                  source: ObjectSource(
-                    type: ObjectSourceType.scenario,
-                    name: widget.scenarioName,
-                  ),
-                  onEditRequested: (CreatureModel model) {
-                    setState(() {
-                      _newCreatureName = model.name;
-                      _selectedId = model.id;
-                      _editing = true;
-                    });
+                  onEditRequested: (int index) async {
+                    var model = await CreatureModel.get(creatureSummaries[index].id);
+                    if(model == null) return;
+                    _startEditing(model);
+                  },
+                  onCloneRequested: (int index, String newName) async {
+                    var model = await CreatureModel.get(creatureSummaries[index].id);
+                    if(model == null) return;
+
+                    var j = model.toJson();
+                    j['name'] = newName;
+                    model = CreatureModel.fromJson(j);
+
+                    _startEditing(model);
+                  },
+                  onDeleteRequested: (int index) async {
+                    try {
+                      await CreatureModel.deleteLocalModel(creatureSummaries[index].id);
+                      setState(() {
+                        _selectedId = null;
+                      });
+                    }
+                    catch(e) {
+                      if(!context.mounted) return;
+                      displayErrorDialog(
+                        context,
+                        "Suppression impossible",
+                        e.toString()
+                      );
+                    }
                   },
                 ),
               ),

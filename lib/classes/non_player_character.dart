@@ -42,7 +42,6 @@ class NPCCategoryJsonConverter extends JsonConverter<NPCCategory, String> {
 
 class NPCCategory {
   static NPCCategory generique = NPCCategory(title: 'Générique', isDefault: true);
-  static NPCCategory scenario = NPCCategory(title: 'Scénario', isDefault: true);
 
   static NPCCategory createNewCategory = NPCCategory._create(title: "Créer cette catégorie", isDefault: true);
 
@@ -51,8 +50,6 @@ class NPCCategory {
     _staticInitDone = true;
     // ignore: unused_local_variable
     var gen = generique;
-    // ignore: unused_local_variable
-    var sce = scenario;
   }
 
   factory NPCCategory({required String title, bool isDefault = false}) {
@@ -394,7 +391,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   static bool _defaultAssetsLoaded = false;
   static final Map<String, NonPlayerCharacterSummary> _summaries = <String, NonPlayerCharacterSummary>{};
   static final Map<String, NonPlayerCharacter> _instances = <String, NonPlayerCharacter>{};
-  static const ObjectSource localNPCSource = ObjectSource(
+  static ObjectSource localNPCSource = ObjectSource(
     type: ObjectSourceType.original,
     name: "LOCAL_CREATED"
   );
@@ -418,14 +415,31 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     return _instances[id];
   }
 
+  static bool _matchesCategory(NonPlayerCharacterSummary summary, NPCCategory category, NPCSubCategory? subCategory) {
+    return summary.category == category
+        && (subCategory == null || summary.subCategory == subCategory);
+  }
+
   static List<NonPlayerCharacterSummary> forCategory(NPCCategory category, NPCSubCategory? subCategory) {
     var ret = <NonPlayerCharacterSummary>[];
     for(var summary in _summaries.values) {
-      if(summary.category == category && (subCategory == null || summary.subCategory == subCategory)) {
+      if(_matchesCategory(summary, category, subCategory)) {
         ret.add(summary);
       }
     }
     return ret;
+  }
+
+  static List<NonPlayerCharacterSummary> forSourceType(ObjectSourceType type, NPCCategory? category, NPCSubCategory? subCategory) {
+    return _summaries.values
+        .where((NonPlayerCharacterSummary s) => s.source.type == type && (category == null || _matchesCategory(s, category, subCategory)))
+        .toList();
+  }
+
+  static List<NonPlayerCharacterSummary> forSource(ObjectSource source, NPCCategory? category, NPCSubCategory? subCategory) {
+    return _summaries.values
+        .where((NonPlayerCharacterSummary s) => s.source == source && (category == null || _matchesCategory(s, category, subCategory)))
+        .toList();
   }
 
   @override

@@ -21,5 +21,4 @@ const _$ObjectSourceTypeEnumMap = {
   ObjectSourceType.original: 'original',
   ObjectSourceType.officiel: 'officiel',
   ObjectSourceType.scenario: 'scenario',
-  ObjectSourceType.communaute: 'communaute',
 };
