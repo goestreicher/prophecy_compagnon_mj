@@ -74,8 +74,9 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
       luck: (json['luck'] as num?)?.toInt() ?? 0,
       proficiency: (json['proficiency'] as num?)?.toInt() ?? 0,
       renown: (json['renown'] as num?)?.toInt() ?? 0,
-      origin: $enumDecodeNullable(_$OriginCountryEnumMap, json['origin']) ??
-          OriginCountry.empireDeSolyr,
+      origin: json['origin'] == null
+          ? null
+          : Place.fromJson(json['origin'] as Map<String, dynamic>),
       interdicts: (json['interdicts'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$InterdictEnumMap, e))
               .toList() ??
@@ -143,7 +144,7 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
       'career': _$CareerEnumMap[instance.career],
       'age': instance.age,
       'height': instance.height,
-      'origin': _$OriginCountryEnumMap[instance.origin]!,
+      'origin': instance.origin.toJson(),
       'luck': instance.luck,
       'proficiency': instance.proficiency,
       'renown': instance.renown,
@@ -182,27 +183,6 @@ const _$CasteStatusEnumMap = {
   CasteStatus.expert: 'expert',
   CasteStatus.maitre: 'maitre',
   CasteStatus.grandMaitre: 'grandMaitre',
-};
-
-const _$OriginCountryEnumMap = {
-  OriginCountry.archipelDePyr: 'archipelDePyr',
-  OriginCountry.citeDeGriff: 'citeDeGriff',
-  OriginCountry.empireDeSolyr: 'empireDeSolyr',
-  OriginCountry.empireNesora: 'empireNesora',
-  OriginCountry.empireZul: 'empireZul',
-  OriginCountry.foretDeSolor: 'foretDeSolor',
-  OriginCountry.foretMere: 'foretMere',
-  OriginCountry.jaspor: 'jaspor',
-  OriginCountry.kali: 'kali',
-  OriginCountry.kar: 'kar',
-  OriginCountry.kern: 'kern',
-  OriginCountry.lacsSanglants: 'lacsSanglants',
-  OriginCountry.marchesAlyzees: 'marchesAlyzees',
-  OriginCountry.pomyrie: 'pomyrie',
-  OriginCountry.principauteDeMarne: 'principauteDeMarne',
-  OriginCountry.royaumeDesFleurs: 'royaumeDesFleurs',
-  OriginCountry.terresGalyrs: 'terresGalyrs',
-  OriginCountry.ysmir: 'ysmir',
 };
 
 const _$InterdictEnumMap = {

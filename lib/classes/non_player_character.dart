@@ -13,6 +13,7 @@ import 'exportable_binary_data.dart';
 import 'human_character.dart';
 import 'magic.dart';
 import 'object_source.dart';
+import 'place.dart';
 import '../text_utils.dart';
 
 part 'non_player_character.g.dart';

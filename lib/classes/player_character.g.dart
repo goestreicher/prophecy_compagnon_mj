@@ -91,7 +91,7 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
       ..career = $enumDecodeNullable(_$CareerEnumMap, json['career'])
       ..age = (json['age'] as num).toInt()
       ..height = (json['height'] as num).toDouble()
-      ..origin = $enumDecode(_$OriginCountryEnumMap, json['origin'])
+      ..origin = Place.fromJson(json['origin'] as Map<String, dynamic>)
       ..renown = (json['renown'] as num).toInt()
       ..interdicts = (json['interdicts'] as List<dynamic>?)
               ?.map((e) => $enumDecode(_$InterdictEnumMap, e))
@@ -134,7 +134,7 @@ Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
       'career': _$CareerEnumMap[instance.career],
       'age': instance.age,
       'height': instance.height,
-      'origin': _$OriginCountryEnumMap[instance.origin]!,
+      'origin': instance.origin.toJson(),
       'luck': instance.luck,
       'proficiency': instance.proficiency,
       'renown': instance.renown,
@@ -249,27 +249,6 @@ const _$CareerEnumMap = {
   Career.menestrels: 'menestrels',
   Career.messagers: 'messagers',
   Career.missionnaires: 'missionnaires',
-};
-
-const _$OriginCountryEnumMap = {
-  OriginCountry.archipelDePyr: 'archipelDePyr',
-  OriginCountry.citeDeGriff: 'citeDeGriff',
-  OriginCountry.empireDeSolyr: 'empireDeSolyr',
-  OriginCountry.empireNesora: 'empireNesora',
-  OriginCountry.empireZul: 'empireZul',
-  OriginCountry.foretDeSolor: 'foretDeSolor',
-  OriginCountry.foretMere: 'foretMere',
-  OriginCountry.jaspor: 'jaspor',
-  OriginCountry.kali: 'kali',
-  OriginCountry.kar: 'kar',
-  OriginCountry.kern: 'kern',
-  OriginCountry.lacsSanglants: 'lacsSanglants',
-  OriginCountry.marchesAlyzees: 'marchesAlyzees',
-  OriginCountry.pomyrie: 'pomyrie',
-  OriginCountry.principauteDeMarne: 'principauteDeMarne',
-  OriginCountry.royaumeDesFleurs: 'royaumeDesFleurs',
-  OriginCountry.terresGalyrs: 'terresGalyrs',
-  OriginCountry.ysmir: 'ysmir',
 };
 
 const _$InterdictEnumMap = {

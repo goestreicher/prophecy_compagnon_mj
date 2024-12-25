@@ -6,37 +6,13 @@ import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'magic.dart';
 import 'magic_user.dart';
+import 'place.dart';
 import 'weapon.dart';
 import 'character/base.dart';
 import 'character/injury.dart';
 import 'character/skill.dart';
 
 part 'human_character.g.dart';
-
-enum OriginCountry {
-  archipelDePyr(title: 'Archipel de Pyr'),
-  citeDeGriff(title: 'Cité de Griff'),
-  empireDeSolyr(title: 'Empire de Solyr'),
-  empireNesora(title: 'Empire Nésora'),
-  empireZul(title: 'Empire Zûl'),
-  foretDeSolor(title: 'Forêt de Solor'),
-  foretMere(title: 'Forêt Mère'),
-  jaspor(title: 'Jaspor'),
-  kali(title: 'Kali'),
-  kar(title: 'Kar'),
-  kern(title: 'Kern'),
-  lacsSanglants(title: 'Lacs Sanglants'),
-  marchesAlyzees(title: 'Marches Alyzées'),
-  pomyrie(title: 'Pomyrie'),
-  principauteDeMarne(title: 'Principauté de Marne'),
-  royaumeDesFleurs(title: 'Royaume des Fleurs'),
-  terresGalyrs(title: 'Terres Galyrs'),
-  ysmir(title: 'Ysmir');
-
-  final String title;
-
-  const OriginCountry({ required this.title });
-}
 
 enum DisadvantageType {
   commun(title: 'Commun'),
@@ -254,7 +230,7 @@ class HumanCharacter extends EntityBase with MagicUser {
         this.height = 1.7,
         super.size,
         super.weight = 60.0,
-        this.origin = OriginCountry.empireDeSolyr,
+        Place? origin,
         List<Interdict>? interdicts,
         List<CastePrivilege>? castePrivileges,
         List<CharacterDisadvantage>? disadvantages,
@@ -264,7 +240,8 @@ class HumanCharacter extends EntityBase with MagicUser {
         super.image,
         super.icon,
       })
-    : interdicts = interdicts ?? <Interdict>[],
+    : origin = origin ?? Place.empireDeSolyr,
+      interdicts = interdicts ?? <Interdict>[],
       castePrivileges = castePrivileges ?? <CastePrivilege>[],
       disadvantages = disadvantages ?? <CharacterDisadvantage>[],
       advantages = advantages ?? <CharacterAdvantage>[],
@@ -279,7 +256,7 @@ class HumanCharacter extends EntityBase with MagicUser {
     Career? career;
   int age;
   double height;
-  OriginCountry origin;
+  Place origin;
   int luck;
   int proficiency;
   int renown;

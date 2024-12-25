@@ -7,6 +7,7 @@ import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
 import 'magic.dart';
+import 'place.dart';
 import 'character/base.dart';
 import 'character/skill.dart';
 import 'storage/storable.dart';

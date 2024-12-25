@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import '../../classes/calendar.dart';
 import '../../classes/character/injury.dart';
 import '../../classes/human_character.dart';
+import '../../classes/place.dart';
 import '../../classes/player_character.dart';
 import '../../classes/character/base.dart';
 import '../utils/ability_list_edit_widget.dart';
@@ -350,7 +351,7 @@ class _GeneralInformationEditWidgetState extends State<_GeneralInformationEditWi
                   ),
                   const SizedBox(width: 8.0),
                   Expanded(
-                    child: DropdownMenu<OriginCountry>(
+                    child: DropdownMenu<Place>(
                       controller: _originController,
                       requestFocusOnTap: true,
                       label: const Text("Pays d'origine"),
@@ -363,19 +364,15 @@ class _GeneralInformationEditWidgetState extends State<_GeneralInformationEditWi
                         contentPadding: EdgeInsets.all(12.0),
                       ),
                       initialSelection: widget.character.origin,
-                      onSelected: (OriginCountry? country) {
+                      onSelected: (Place? country) {
                         if(country == null) return;
                         setState(() {
                           widget.character.origin = country;
                         });
                       },
-                      dropdownMenuEntries:
-                        OriginCountry.values.map<DropdownMenuEntry<OriginCountry>>((OriginCountry country) {
-                          return DropdownMenuEntry<OriginCountry>(
-                            value: country,
-                            label: country.title
-                          );
-                        }).toList(),
+                      dropdownMenuEntries: Place.byType(PlaceType.nation)
+                        .map((Place p) => DropdownMenuEntry(value: p, label: p.name))
+                        .toList(),
                     ),
                   ),
                 ],
