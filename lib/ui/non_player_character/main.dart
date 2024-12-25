@@ -141,7 +141,9 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: npcSource,
                       onSelected: (ObjectSource? source) {
-                        npcSource = source;
+                        setState(() {
+                          npcSource = source;
+                        });
                       },
                       dropdownMenuEntries: npcSourceType == null
                         ? <DropdownMenuEntry<ObjectSource>>[]

@@ -136,7 +136,9 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: creatureSource,
                       onSelected: (ObjectSource? source) {
-                        creatureSource = source;
+                        setState(() {
+                          creatureSource = source;
+                        });
                       },
                       dropdownMenuEntries: creatureSourceType == null
                         ? <DropdownMenuEntry<ObjectSource>>[]
