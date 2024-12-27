@@ -85,7 +85,7 @@ class _SphereSelectionButton extends StatelessWidget {
         boxShadow: selected ?
           [
             BoxShadow(
-              color: theme.colorScheme.primary.withOpacity(0.5),
+              color: theme.colorScheme.primary.withValues(alpha: 0.5),
               spreadRadius: 0.5,
               blurRadius: 1.0,
               offset: const Offset(1, 1),
