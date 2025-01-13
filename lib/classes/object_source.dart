@@ -38,6 +38,11 @@ class ObjectSource {
     return _instances[type]?.values.toList() ?? <ObjectSource>[];
   }
 
+  static ObjectSource local = ObjectSource(
+      type: ObjectSourceType.original,
+      name: "LOCAL_CREATED"
+  );
+
   final ObjectSourceType type;
   final String name;
 

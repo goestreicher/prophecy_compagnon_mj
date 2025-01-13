@@ -6,6 +6,7 @@ import 'classes/armor.dart';
 import 'classes/creature.dart';
 import 'classes/magic.dart';
 import 'classes/non_player_character.dart';
+import 'classes/place.dart';
 import 'classes/shield.dart';
 import 'classes/weapon.dart';
 import 'classes/storage/storage.dart';
@@ -14,6 +15,7 @@ import 'ui/utils/custom_icons.dart';
 
 import 'ui/creatures/main.dart';
 import 'ui/non_player_character/main.dart';
+import 'ui/places/main.dart';
 import 'ui/scenario/list.dart';
 import 'ui/session/list.dart';
 import 'ui/spells/main.dart';
@@ -66,6 +68,8 @@ class _MainAppPageState extends State<MainAppPage> {
       Load the default assets
      */
     // TODO: some of those can throw storage exceptions, manage them
+    // TODO: all of those are async, use a FutureBuilder to build the UI
+    Place.loadDefaultAssets();
     ArmorModel.loadDefaultAssets();
     CreatureModel.loadDefaultAssets();
     MagicSpell.loadDefaultAssets();
@@ -94,6 +98,9 @@ class _MainAppPageState extends State<MainAppPage> {
         break;
       case 5:
         activePage = const CreaturesMainPage();
+        break;
+      case 6:
+        activePage = const PlacesMainPage();
         break;
       default:
         throw UnimplementedError('Page not implemented for $_selectedPageIndex');
@@ -137,6 +144,10 @@ class _MainAppPageState extends State<MainAppPage> {
                     NavigationRailDestination(
                       icon: Icon(CustomIcons.creature),
                       label: Text('Créatures'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Icons.place_outlined),
+                      label: Text('Lieux'),
                     ),
                   ],
                 )

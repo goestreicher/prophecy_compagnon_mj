@@ -370,7 +370,7 @@ class _GeneralInformationEditWidgetState extends State<_GeneralInformationEditWi
                           widget.character.origin = country;
                         });
                       },
-                      dropdownMenuEntries: Place.byType(PlaceType.nation)
+                      dropdownMenuEntries: Place.withParent('kor')
                         .map((Place p) => DropdownMenuEntry(value: p, label: p.name))
                         .toList(),
                     ),

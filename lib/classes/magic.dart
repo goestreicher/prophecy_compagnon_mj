@@ -112,6 +112,7 @@ class MagicSpell {
 
   static Future<void> loadDefaultAssets() async {
     if(_defaultAssetsLoaded) return;
+    _defaultAssetsLoaded = true;
 
     await _loadSpellJsonAsset('assets/spell-pierre.json');
     await _loadSpellJsonAsset('assets/spell-feu.json');
@@ -122,8 +123,6 @@ class MagicSpell {
     await _loadSpellJsonAsset('assets/spell-cite.json');
     await _loadSpellJsonAsset('assets/spell-vents.json');
     await _loadSpellJsonAsset('assets/spell-ombre.json');
-
-    _defaultAssetsLoaded = true;
   }
 
   static Future<void> _loadSpellJsonAsset(String asset) async {

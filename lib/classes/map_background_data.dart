@@ -1,3 +1,6 @@
+import 'dart:ui' as ui;
+
+import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
@@ -67,6 +70,27 @@ class MapBackground {
   final int imageHeight;
   double realWidth;
   double realHeight;
+
+  static Future<MapBackground> fromAsset({
+    required String asset,
+    required double realWidth,
+    required double realHeight,
+  }) async {
+    var bytes = await rootBundle.load(asset);
+    var codec = await ui.instantiateImageCodec(bytes.buffer.asUint8List());
+    var frame = await codec.getNextFrame();
+    var w = frame.image.width;
+    var h = frame.image.height;
+    frame.image.dispose();
+
+    return MapBackground(
+      image: ExportableBinaryData(data: bytes.buffer.asUint8List()),
+      imageWidth: w,
+      imageHeight: h,
+      realWidth: realWidth,
+      realHeight: realHeight,
+    );
+  }
 
   factory MapBackground.fromJson(Map<String, dynamic> json) => _$MapBackgroundFromJson(json);
   Map<String, dynamic> toJson() => _$MapBackgroundToJson(this);

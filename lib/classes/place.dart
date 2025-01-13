@@ -1,5 +1,12 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'dart:convert';
 
+import 'package:flutter/services.dart';
+import 'package:json_annotation/json_annotation.dart';
+import 'package:uuid/uuid.dart';
+
+import 'exportable_binary_data.dart';
+import 'object_source.dart';
+import 'storage/storable.dart';
 import '../../text_utils.dart';
 
 part 'place.g.dart';
@@ -8,6 +15,7 @@ enum PlaceType {
   monde(title: 'Monde'),
   continent(title: 'Continent'),
   nation(title: 'Nation'),
+  citeEtat(title: 'Cité-État'),
   archiduche(title: 'Archiduché'),
   principaute(title: 'Principauté'),
   duche(title: 'Duché'),
@@ -19,6 +27,7 @@ enum PlaceType {
   cite(title: 'Cité'),
   ville(title: 'Ville'),
   village(title: 'Village'),
+  quartier(title: 'Quartier'),
   ;
 
   final String title;
@@ -26,22 +35,141 @@ enum PlaceType {
   const PlaceType({ required this.title });
 }
 
+enum PlaceMapSourceType {
+  asset,
+  local,
+}
+
+class PlaceStore extends JsonStoreAdapter<Place> {
+  @override
+  String storeCategory() => 'places';
+
+  @override
+  String key(Place object) => object.id;
+
+  @override
+  Future<Place> fromJsonRepresentation(Map<String, dynamic> j) async =>
+      Place.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(Place object) async =>
+      object.toJson();
+
+  @override
+  Future<void> willSave(Place object) async {
+    if(object.map?.exportableBinaryData != null) {
+      await BinaryDataStore().save(object.map!.exportableBinaryData!);
+    }
+  }
+
+  @override
+  Future<void> willDelete(Place object) async {
+    if(object.map?.exportableBinaryData != null) {
+      await BinaryDataStore().delete(object.map!.exportableBinaryData!);
+    }
+  }
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class PlaceMap {
+  PlaceMap({
+    required this.sourceType,
+    required this.source,
+  });
+
+  PlaceMapSourceType sourceType;
+  String source;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+    Uint8List? imageData;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+    ExportableBinaryData? exportableBinaryData;
+
+  Uint8List? get image {
+    Uint8List? ret;
+
+    if(sourceType == PlaceMapSourceType.asset) {
+      ret = imageData;
+    }
+    else if(sourceType == PlaceMapSourceType.local) {
+      ret = exportableBinaryData?.data;
+    }
+
+    return ret;
+  }
+
+  Future<void> load() async {
+    if(sourceType == PlaceMapSourceType.asset) {
+      if(imageData != null) return;
+      var data = await rootBundle.load(source);
+      imageData = data.buffer.asUint8List();
+    }
+    else if(sourceType == PlaceMapSourceType.local) {
+      if(exportableBinaryData != null) return;
+      exportableBinaryData = await BinaryDataStore().get(source);
+    }
+  }
+
+  factory PlaceMap.fromJson(Map<String, dynamic> j) => _$PlaceMapFromJson(j);
+  Map<String, dynamic> toJson() => _$PlaceMapToJson(this);
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class PlaceDescription {
+  PlaceDescription({
+    required this.general,
+    this.history,
+    this.ethnology,
+    this.society,
+    this.politics,
+    this.judicial,
+    this.economy,
+    this.military,
+  });
+
+  String general;
+  String? history;
+  String? ethnology;
+  String? society;
+  String? politics;
+  String? judicial;
+  String? economy;
+  String? military;
+
+  factory PlaceDescription.fromJson(Map<String, dynamic> j) => _$PlaceDescriptionFromJson(j);
+  Map<String, dynamic> toJson() => _$PlaceDescriptionToJson(this);
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class Place {
   factory Place({
-    Place? parent,
+    String? uuid,
+    String? parentId,
     required PlaceType type,
     required String name,
+    String? government,
+    String? leader,
+    String? motto,
+    String? climate,
+    required PlaceDescription description,
     bool isDefault = false,
+    required ObjectSource source,
+    PlaceMap? map,
   }) {
-    _doStaticinit();
-    var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
+    String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
     if(!_instances.containsKey(id)) {
       var place = Place._create(
-        parent: parent,
+        uuid: isDefault ? null : id,
+        parentId: parentId,
         type: type,
         name: name,
+        government: government,
+        leader: leader,
+        motto: motto,
+        climate: climate,
+        description: description,
         isDefault: isDefault,
+        source: source,
+        map: map,
       );
       _instances[id] = place;
     }
@@ -49,194 +177,96 @@ class Place {
   }
   
   Place._create({
-    this.parent,
+    String? uuid,
+    this.parentId,
     required this.type,
     required this.name,
+    this.government,
+    this.leader,
+    this.motto,
+    this.climate,
+    required this.description,
     this.isDefault = false,
-  });
+    required this.source,
+    this.map,
+  }) : uuid = uuid ?? (isDefault ? null : Uuid().v4().toString());
 
-  static Place monde = Place(
-      parent: null,
-      type: PlaceType.monde,
-      name: 'Monde',
-      isDefault: true,
-  );
-  static Place kor = Place(
-    parent: Place.monde,
-    type: PlaceType.continent,
-    name: 'Kor',
-    isDefault: true,
-  );
-  static Place archipelDePyr = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Archipel de Pyr',
-    isDefault: true,
-  );
-  static Place citeDeGriff = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Cité de Griff',
-    isDefault: true,
-  );
-  static Place empireDeSolyr = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Empire de Solyr',
-    isDefault: true,
-  );
-  static Place empireNesora = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Empire Nésora',
-    isDefault: true,
-  );
-  static Place empireZul = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Empire Zûl',
-    isDefault: true,
-  );
-  static Place foretDeSolor = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Forêt de Solor',
-    isDefault: true,
-  );
-  static Place foretMere = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Forêt Mère',
-    isDefault: true,
-  );
-  static Place jaspor = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Jaspor',
-    isDefault: true,
-  );
-  static Place kali = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Kali',
-    isDefault: true,
-  );
-  static Place kar = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Kar',
-    isDefault: true,
-  );
-  static Place kern = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Kern',
-    isDefault: true,
-  );
-  static Place lacsSanglants = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Lacs Sanglants',
-    isDefault: true,
-  );
-  static Place marchesAlyzees = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Marches Alyzées',
-    isDefault: true,
-  );
-  static Place pomyrie = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Pomyrie',
-    isDefault: true,
-  );
-  static Place principauteDeMarne = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Principauté de Marne',
-    isDefault: true,
-  );
-  static Place royaumeDesFleurs = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Royaume des Fleurs',
-    isDefault: true,
-  );
-  static Place terresGalyrs = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Terres Galyrs',
-    isDefault: true,
-  );
-  static Place ysmir = Place(
-    parent: Place.kor,
-    type: PlaceType.nation,
-    name: 'Ysmir',
-    isDefault: true,
-  );
-
-  String get id => sentenceToCamelCase(transliterateFrenchToAscii(name));
-  final Place? parent;
-  final PlaceType type;
-  final String name;
+  String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
+  @JsonKey(includeIfNull: false)
+    final String? uuid;
+  final String? parentId;
+  PlaceType type;
+  String name;
+  String? government;
+  String? leader;
+  String? motto;
+  String? climate;
+  PlaceDescription description;
   final bool isDefault;
+  final ObjectSource source;
+  PlaceMap? map;
 
   static List<Place> values() {
-    _doStaticinit();
+    loadDefaultAssets();
     return _instances.values.toList();
   }
 
+  static List<Place> withParent(String id) => _instances.values
+      .where((Place p) => p.parentId == id)
+      .toList();
+
+  static Place? byId(String id) {
+    loadDefaultAssets();
+    return _instances[id];
+  }
+
   static List<Place> byType(PlaceType type) {
-    _doStaticinit();
+    loadDefaultAssets();
     return _instances.values
         .where((Place p) => p.type == type)
         .toList();
   }
 
-  static final Map<String, Place> _instances = <String, Place>{};
-  static bool _staticInitDone = false;
+  static Future<void> delete(Place p) async {
+    for(var child in withParent(p.id)) {
+      await delete(child);
+    }
+    _instances.remove(p.id);
+    await PlaceStore().delete(p);
+  }
 
-  static void _doStaticinit() {
-    if(_staticInitDone) return;
-    _staticInitDone = true;
-    // ignore: unused_local_variable
-    var p = Place.monde;
-    p = Place.kor;
-    p = Place.archipelDePyr;
-    p = Place.citeDeGriff;
-    p = Place.empireDeSolyr;
-    p = Place.empireNesora;
-    p = Place.empireZul;
-    p = Place.foretDeSolor;
-    p = Place.foretMere;
-    p = Place.jaspor;
-    p = Place.kali;
-    p = Place.kar;
-    p = Place.kern;
-    p = Place.lacsSanglants;
-    p = Place.marchesAlyzees;
-    p = Place.pomyrie;
-    p = Place.principauteDeMarne;
-    p = Place.royaumeDesFleurs;
-    p = Place.terresGalyrs;
-    p = Place.ysmir;
+  static final Map<String, Place> _instances = <String, Place>{};
+  static bool _defaultAssetsLoaded = false;
+
+  static Future<void> loadDefaultAssets() async {
+    if(_defaultAssetsLoaded) return;
+    _defaultAssetsLoaded = true;
+
+    var jsonStr = await rootBundle.loadString('assets/places-ldb2e.json');
+    var assets = json.decode(jsonStr);
+
+    for(var a in assets) {
+      // ignore:unused_local_variable
+      var p = Place.fromJson(a);
+    }
+
+    PlaceStore().getAll();
   }
 
   factory Place.fromJson(Map<String, dynamic> json) {
-    if(json.containsKey('id') && _instances.containsKey(json['id']!) && _instances[json['id']]!.isDefault) {
-      return _instances[json['id']]!;
-    } else {
-      return _$PlaceFromJson(json);
-    }
-  }
+   if(json.containsKey('id') && _instances.containsKey(json['id']!) && _instances[json['id']]!.isDefault) {
+     return _instances[json['id']]!;
+   } else {
+     return _$PlaceFromJson(json);
+   }
+ }
 
-  Map<String, dynamic> toJson() {
-    if(isDefault) {
-      return {'id': id};
-    }
-    else {
-      return _$PlaceToJson(this);
-    }
-  }
+ Map<String, dynamic> toJson() {
+   if(isDefault) {
+     return {'id': id};
+   }
+   else {
+     return _$PlaceToJson(this);
+   }
+ }
 }

@@ -240,7 +240,7 @@ class HumanCharacter extends EntityBase with MagicUser {
         super.image,
         super.icon,
       })
-    : origin = origin ?? Place.empireDeSolyr,
+    : origin = origin ?? Place.byId('empireDeSolyr')!,
       interdicts = interdicts ?? <Interdict>[],
       castePrivileges = castePrivileges ?? <CastePrivilege>[],
       disadvantages = disadvantages ?? <CharacterDisadvantage>[],
