@@ -5,7 +5,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -18,7 +17,6 @@
     "description": {
       "general": "Le continent de Kor."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -44,7 +42,6 @@
       "economy": "aucune",
       "military": "l’Archipel de Pyr est peuplé de dragons et personne n'ose envisager le moindre affrontement contre eux…"
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -57,7 +54,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -81,7 +77,6 @@
       "economy": "la ville extrait de son port une curieuse huile noire qui lui fournit une monnaie d'échange avec de nombreux autres Etats. C’est grâce à cette fortune naturelle qu’elle s’approvisionne à l'extérieur et paye les mercenaires qui la protègent. On ne connaît nul autre endroit dans tout Kor où une telle substance peut être extraite. Les habitants de Grif la nomment Sang Noir de Moryagorn, mais l’huile est aussi conme pour ses propriétés inflammables et toxiques, qui l’apparentent plus à Kalimsshar dans l'esprit de nombreux commerçants. En plus de cette production, Griff est favorisée par sa position géographique et reste une étape incontournable entre les Etats du nord et ceux du sud.",
       "military": "en période de guerre, une participation à la défense peut être exigée de la part des individus susceptibles de s’avérer utiles − c'est-à-dire une grande majorité, aux yeux du conseil de guerre."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -105,7 +100,6 @@
       "economy": "l’Empire de Solyr est aujourd’hui puissant mais son centre est bien plus prospère que son pourtour. Le commerce impérial est très florissant, sa production couvrant la quasi-totalité des besoins. Il pratique le commerce avec ses proches voisins, mais également avec la plupart des territoires éloignés. De nombreux fleuves navigables favorisent le transport des marchandises. Les meilleurs artisans se retrouvent à Dungard, premier centre de production de minerai de tout Kor, pour mettre leur savoir-faire en commun. Situés sur le tracé des grands axes routiers et fluviaux, des postes de péage ont pour rôle de percevoir les taxes sur les marchandises - qui s'élèvent traditionnellement à un vingtième de la valeur des biens transportés. L'Empire frappe également sa propre monnaie.",
       "military": "chaque province est divisée en de très nombreux petits fiefs qui entretiennent des armées et se livrent sans cesse à des conflits privés de petite envergure. Au sud, les tribus zûls constituent une menace permanente. Il n’est pas rare qu'elles traversent la frontière pour se livrer à des raids et à des pillages. Au nord-ouest, l’unification des Marches Alyzées a rendu la situation beaucoup plus calme et sereine. Les trois cités draconiques que compte l’Empire sont d’ailleurs dédiées aux arts de la paix. Aussi, pour éviter d'être sans cesse bouleversés par les violences de la guerre, les hommes et les dragons ont conçu Solyr comme une véritable forteresse. Les marches de l’Empire sont relativement austères. Les cités frontalières étant principalement des garnisons fortifiées, destinées à repousser les menaces extérieures (invasions barbares, incursions étrangères, attaques de hordes), ces villes constituent autant de garanties de sécurité, et donc de prospérité, pour les provinces voisines. Loin au sud, le port kalishite et corrompu d’Hasran sert d'avant-poste à une incessante guerre de harcèlement contre l'Empire, ses côtes et ses navires en transit. De ce fait, rares sont ceux qui osent s’aventurer au large. Sur le continent, il arrive parfois qu'une expédition de représailles soit organisée par une province pour régler dans le sang un conflit frontalier avec Kar."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -118,7 +112,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -131,7 +124,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -144,7 +136,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -168,7 +159,6 @@
       "economy": "par la polyvalence de ses productions et la richesse de son milieu naturel, l’Empire Nésora est une terre riche et prospère qui subsiste de plus en plus en limitant ses échanges avec Kor et qui semble vivre d’autant mieux avec cette autarcie naissante.",
       "military": "bien que relativement calme, la région entretient une armée régulière importante, car nombreuses sont les villes qui vivent dans la psychose d’une attaque draconique. Cette appréhension est explicable par la simple ignorance de la race des Grands Ailés, dont les habitants de l’Empire refusent d'évoquer jusqu’au nom. D'autre part, les opérations pour récupérer le contrôle des Marches Alyzées sont un facteur de dissension qui augmente encore la tension. Chacun des deux États a massé des troupes à la frontière attendant une bonne raison pour entamer les hostilités. La situation est actuellement des plus tendues."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -181,7 +171,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -205,7 +194,6 @@
       "economy": "le commerce est issu de pillage et des impôts collectés sur les routes du désert. La nourriture provient de l'élevage au sein des oasis mais aussi des pillages de caravanes marchandes et des “taxes” réclamées aux caravanes qui transitent du nord au sud.",
       "military": "les Zûls sont en guerre avec tous leurs voisins et n’hésitent pas à aller frapper profondément et razzier les royaumes qui les entourent - y compris celui du Seigneur de l'Ombre. Ils sont d’ailleurs les seuls à oser défier ouvertement la puissance de Kalimsshar."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -218,7 +206,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -240,7 +227,6 @@
       "economy": "aucune",
       "military": "aucune structure militaire n'existe, mais toute tentative de purification échoue systématiquement, la forêt recelant des créatures réellement monstrueuses, en plus d’un milieu qui semble doté d’une volonté maligne et destructrice."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -264,7 +250,6 @@
       "economy": "les villes, construites autour d’anciens bâtiments ou directement dans les arbres, exploitent les grandes ressources naturelles de cette région où la culture des terres est très difficile. Cependant, telle une mère, la forêt nourrit ses enfants en leur offrant de très vastes ressources issues de la faune et de la flore. Les chasseurs sont nombreux et le gibier abondant. Hors des villes, les prédateurs sont rois. C’est pourquoi il est recommandé de voyager avec un guide. De très nombreuses collines recèlent de véritables trésors minéraux, pierres précieuses et autres matériaux rares. Plusieurs petites cités minières tentent d’en exploiter les fruits, mais le travail y est pénible, et il est extrêmement difficile de trouver une main-d'œuvre compétente et motivée. Aussi les commerçants qui décident de tenter l’aventure trouvent-ils différentes solutions pour leurs expéditions. Certains engagent des mages, capables de creuser la terre et de tenir la végétation à distance, d’autres achètent des prisonniers dans les bagnes de Kern, engagent des indigènes ou dressent des créatures capturées dans la jungle. Il semble cependant que la plupart de ces expéditions, qui comptent peu de survivants, ne servent qu’à renforcer davantage la réputation de cruauté naturelle de la région.",
       "military": "les Prodiges privilégient la défense à l’attaque et la Forêt Mère n’a jamais été attaquée de front, le respect des hommes pour les Prodiges empêchant tout assaut. De toute façon, lianes, chênes et ronces protègent activement la demeure du Dragon de la Nature."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -277,7 +262,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -301,7 +285,6 @@
       "economy": "Jaspor se situe au centre des plus importants échanges financiers de Kor et il faut en tenir compte lors des tractations commerciales. Les nobles de Jalad sont friands d’esclaves pour assouvir leurs instincts les plus primitifs ou pour les servir. L’importation d’esclaves est ainsi un marché en plein essor.",
       "military": "la fortune des princes marchands est telle que Jaspor se permet d'entretenir une puissante armée de mercenaires, ayant depuis longtemps passé des accords d’exclusivité avec les plus grandes compagnies et les meilleures guildes. La flotte de Jaspor arpente tous les rivages de Kor et l’île est la seule à avoir converti certains de ses navires en embarcations de guerre afin de transporter spécifiquement des troupes. Entre cette force de frappe mobile et motivée et les accords monétaires destinés à enrayer toute attaque, Jaspor connaît une paix globale depuis plusieurs siècles."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -314,7 +297,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -338,7 +320,6 @@
       "economy": "l’économie de Kali semble s’appuyer sur des cultures vivrières et l’exploitation des ressources des marais et de plantes rares y foisonnant.",
       "military": "divisées en de multiples fiefs en état de guerre permanent, les terres de Kali sont parcourues aussi bien par les vivants que par les morts ; les fiefs de Kali sont le repaire des pires combattants, souvent rejetés par les castes et mus par l'attrait de la violence gratuite. Par sa population monstrueuse, Kali est une entité militaire puissante, capable de menacer tous ses voisins par des raids épisodiques et meurtriers."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -351,7 +332,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -375,7 +355,6 @@
       "economy": "Kar est une terre de tradition essentiellement militaire qui vit pour et par les armées sur lesquelles repose une bonne partie de son économie. La caste des combattants est donc un client de choix qui fait régulièrement appel à nombre de fournisseurs pour équiper et nourrir ses membres regroupés en troupes. Les importations sont évidemment colossales. Les armées ont également besoin de grandes quantités de dracs pour payer les nombreux mercenaires. Les ressources financières proviennent essentiellement des mines et du pillage des caravanes provenant des cités blanches de l’Empire de Solyr. Sur la côte, d’incroyables troupeaux de chevaux sauvages offrent un spectacle réputé. Après un dressage intensif, ces nobles coursiers ont la réputation d’être les meilleures montures terrestres de tout Kor.\nLa paysannerie est faiblement répandue à Kar, où la majeure partie de l’activité organisée se situe dans les villes ou autour des châteaux fortifiés qui parsèment le pays.",
       "military": "les autres villes et villages ne sont que provisoires ou à moitié en ruine. Des incursions de l’Empire nomade Zûl ou du Royaume de l'Ombre sont fréquentes et donnent aux guerriers de très bons prétextes pour ne pas se battre entre eux mais, pour une fois, contre un ennemi commun. Les combattants parcourent les routes à la recherche d’adversaires, une ambiance de guerre civile permanente soumet les moindres ruelles à un climat de tension extrême et aucun ordre, aucune caste, ne donne l’impression de vouloir maîtriser quoi que ce soit. Seule la capitale dément cette généralité. Les rues y sont − à peine − plus sûres et les combats strictement surveillés, ou limités aux seules arènes."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -388,7 +367,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -412,7 +390,6 @@
       "economy": "relativement peu peuplé par rapport à sa superficie, Kern comprend principalement des villages montagnards qui fournissent de très nombreuses ressources, grâce à une ingénieuse agriculture par paliers instaurée sur les flancs inférieurs des grands monts.",
       "military": "l'académie militaire peut accueillir jusqu'à trois mille étudiants et il n’est pas rare que les maîtres d'armes, instructeurs et lieutenants de la garnison soient obligés de refuser des candidatures. Par sa grande puissance militaire, C’est un des rares endroits où les nobles et les chefs d'armées n’occupent pas leur temps libre à attaquer leurs voisins. Siège de l'Inquisition, la Forteresse des Neuf Pics se dresse dans une région reculée, très délicate d'accès par la route : Seuls ceux qui ont vraiment une bonne raison de s’y rendre entreprennent le voyage, qui constitue à lui seul une quête ardue et incertaine."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -425,7 +402,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -449,7 +425,6 @@
       "economy": "l’économie belgoriene est limitée, les Belgoriens répugnant à commercer avec les autres habitants de Kor. Lorsqu'ils le font, ils exportent des produits d'artisanat et surtout des peaux dont ils sont parmi les meilleurs travailleurs.",
       "military": "la population des Lacs Sanglants reste prudente vis-à-vis de l’Empire Nésora. Les armes et les techniques de combat dont disposent les Belgoriens sont particulièrement meurtrières, conférant à chacun d’eux la force et l’efficacité de deux ou trois hommes. De plus, ils sont particulièrement doués pour la tactique et la stratégie. Entraînés au combat dès leur plus jeune âge, quelle que soit leur caste d’origine, les Belgoriens ont à maintes reprises justifié leur réputation de soldats et de meurtriers dénués de toute émotion.\nAu combat, ils capturent le plus grand nombre de leurs ennemis pour les égorger sur les rives du Lac Sanglant, dont les eaux deviennent rouges du sang des vaincus. De nombreuses légendes font mention de ces pratiques, attribuant au sang versé des vertus rituelles, magiques, qui contribuent à renforcer l'aura de mystère et de peur qu’inspirent les habitants de cette région.\n"
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -462,7 +437,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -486,7 +460,6 @@
       "economy": "les Marches Alyzées produisent une multitude de denrées parmi lesquelles on retrouve les meilleurs crus de Kor. Au-delà de nombreuses autres spécialités, les Marches Alyzées sont bien dotées en mines, bois et rivages pour réussir à exporter une grande variété de biens.",
       "military": "la compétition entre les potentats ne s'étant pas limitée à des conflits militaires, les styles architecturaux varient d’une forteresse à l’autre, se retrouvant jusque dans les moindres constructions du quotidien."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -499,7 +472,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -523,7 +495,6 @@
       "economy": "l’économie pomyrienne est prospère, ses productions agricoles et la profusion de ressources magiques suffisant à entraîner d’importants flux d'argent et de denrées.",
       "military": "la Pomyrie s’expose régulièrement aux assauts répétés des Zûls et des Galyrs, ainsi qu'aux raids des monstruosités qui surgissent de la Forêt de Solor et du Royaume de l'Ombre. Pour lutter contre ces raids, la Pomyrie entretient d'importantes troupes de patrouille, chargées d’arpenter l’ensemble du territoire et des frontières."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -536,7 +507,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -560,7 +530,6 @@
       "economy": "cette principauté située à l’orée des grands marais de l’ouest est à la fois riche et prospère, car elle utilise la proximité des marais pour exploiter de nombreuses ressources naturelles - dont la culture du papyrus, la capture d’animaux sauvages, la cueillette des fruits des marais et la pêche aux poissons rares. On y trouve également du corail et du jade, deux matières hautement précieuses et prisées des négociants.\nLe commerce de toutes ces marchandises avec les marchands de l’Empire de Solyr constitue une manne providentielle pour les habitants, dont les demeures colossales attestent généralement de leur richesse.",
       "military": "bien que l’armée de la Principauté de Marne soit devenue un ramassis de mercenaires désargentés, les traditions guerrières des fondateurs du pays ne sont pas loin et tous les habitants sont des pionniers possédant des armes et savent se battre dans cette terre sauvage."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -573,7 +542,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -597,7 +565,6 @@
       "economy": "le commerce extérieur est la seule ressource économique du Royaume des Fleurs et est limité. Il existe essentiellement avec Témeth et Hyelle.",
       "military": "la situation reculée du royaume et sa relative inaccessibilité en font un des rares lieux de Kor qui ne connaisse pas régulièrement la guerre. Les Prodiges forment le rempart nécessaire pour éviter l’implantation des suppôts de Kalimsshar. Cependant, malgré tous leurs efforts la cité de l’Orchidée est aujourd’hui aux mains des serviteurs du Neuvième Dragon."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -610,7 +577,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -634,7 +600,6 @@
       "economy": "du port de Jyn, célèbre dans tout Kor pour ses chantiers navals, sortent chaque année de petites embarcations parfaitement adaptées pour le transport de marchandise en cabotage. Une partie de l'artisanat est ainsi exportée vers Oforia et Ephar. Les tribus montagnardes possèdent d'immenses troupeaux d'animaux à cornes - notamment des chèvres et des nervix, de gigantesques pachydermes laineux. Une fois teintée, la laine de ces énormes mammifères est utilisée par les artisans galyrs qui, en la mêlant à des fils de métal, confectionnent une étoffe légère et particulièrement résistante. Ils s’en servent pour tisser des vêtements chauds et souples, offrant une protection comparable à celle d’une cotte de mailles. Appelé “gal”, ce tissu est difficile à trouver car très rarement exporté par les artisans. Considéré comme l'une des seules véritables richesses locales, ce tissu possède également une connotation clanique, quasi religieuse, dont les guerriers font un usage très fréquent.",
       "military": "au regard des derniers siècles, aucune guerre n’a jamais divisé ce peuple pacifique et, quoi qu'en pensent les citoyens des grandes cités, extrêmement civilisé."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -647,7 +612,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -671,7 +635,6 @@
       "economy": "le commerce est florissant à Ysmir car sa position de port central le rend indispensable dans les échanges commerciaux de Kor. La papeterie, l’alchimie et la charpenterie navale sont ainsi les trois artisanats particulièrement développés. Oforia abrite d’ailleurs l’une des plus importantes flottes de cabotage de tout Kor, ce qui permet de pratiquer le commerce des matières premières et de l'artisanat par voie maritime, évitant au sud les redoutables Zûls.",
       "military": "Ysmir ne possède pratiquement pas d'armée, tout au plus des forces de protecteurs en charge de la capture des criminels, la surveillance des frontières et la lutte contre les incursions de brigands ou de monstres. En fait, Ysmir est la nation maîtresse de la diplomatie de Kor et si jamais une crise devait survenir, de nombreuses armées se porteraient à son secours, celles de l'Empire de Solyr en tête."
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"
@@ -684,7 +647,6 @@
     "description": {
       "general": ""
     },
-    "is_default": true,
     "source": {
       "type": "officiel",
       "name": "LdB 2e"

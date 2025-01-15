@@ -246,6 +246,7 @@ class Place {
     var assets = json.decode(jsonStr);
 
     for(var a in assets) {
+      a['is_default'] = true;
       // ignore:unused_local_variable
       var p = Place.fromJson(a);
     }
