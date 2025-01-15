@@ -145,6 +145,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                     if(model == null) return;
 
                     var j = model.toJson();
+                    j['is_default'] = false;
                     j['name'] = newName;
                     model = CreatureModel.fromJson(j);
 

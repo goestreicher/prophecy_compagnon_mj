@@ -44,7 +44,7 @@ CreatureModelSummary _$CreatureModelSummaryFromJson(
       icon: json['icon'] == null
           ? null
           : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
-      editable: json['editable'] as bool? ?? false,
+      isDefault: json['is_default'] as bool,
     );
 
 Map<String, dynamic> _$CreatureModelSummaryToJson(
@@ -56,14 +56,17 @@ Map<String, dynamic> _$CreatureModelSummaryToJson(
           const CreatureCategoryJsonConverter().toJson(instance.category),
       'source': instance.source.toJson(),
       'icon': instance.icon?.toJson(),
+      'is_default': instance.isDefault,
     };
 
 CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
     CreatureModel(
+      uuid: json['uuid'] as String?,
       name: json['name'] as String,
       unique: json['unique'] as bool? ?? false,
       category: const CreatureCategoryJsonConverter()
           .fromJson(json['category'] as String),
+      isDefault: json['is_default'] as bool? ?? false,
       source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
       description: json['description'] as String? ?? '',
       biome: json['biome'] as String,
@@ -102,11 +105,12 @@ CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
       icon: json['icon'] == null
           ? null
           : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
-      editable: json['editable'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$CreatureModelToJson(CreatureModel instance) =>
     <String, dynamic>{
+      if (instance.uuid case final value?) 'uuid': value,
+      'is_default': instance.isDefault,
       'name': instance.name,
       'unique': instance.unique,
       'category':

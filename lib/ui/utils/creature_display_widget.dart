@@ -36,7 +36,7 @@ class CreatureActionButtons extends StatelessWidget {
     bool canModify = true;
     String? canModifyMessage;
 
-    if(!creature.editable) {
+    if(creature.isDefault) {
       canModify = false;
       canModifyMessage = 'Modification impossible (créature par défaut)';
     }
@@ -219,6 +219,7 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                       onEdit: () => widget.onEditRequested(creature),
                       onClone: (String newName) {
                         var j = creature.toJson();
+                        j['is_default'] = false;
                         j['name'] = newName;
                         widget.onEditRequested(CreatureModel.fromJson(j));
                       },

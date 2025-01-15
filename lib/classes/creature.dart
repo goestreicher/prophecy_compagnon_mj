@@ -222,7 +222,7 @@ class CreatureModelSummary {
     required this.category,
     required this.source,
     this.icon,
-    this.editable = false,
+    required this.isDefault,
   });
 
   final String id;
@@ -230,8 +230,7 @@ class CreatureModelSummary {
   final CreatureCategory category;
   final ObjectSource source;
   final ExportableBinaryData? icon;
-  @JsonKey(includeToJson: false, includeFromJson: true)
-    final bool editable;
+  final bool isDefault;
 
   factory CreatureModelSummary.fromJson(Map<String, dynamic> j) => _$CreatureModelSummaryFromJson(j);
   Map<String, dynamic> toJson() => _$CreatureModelSummaryToJson(this);
@@ -242,9 +241,11 @@ class CreatureModelSummary {
 class CreatureModel with EncounterEntityModel {
   CreatureModel(
       {
+        String? uuid,
         required this.name,
         this.unique = false,
         required this.category,
+        this.isDefault = false,
         required this.source,
         this.description = '',
         required this.biome,
@@ -263,9 +264,8 @@ class CreatureModel with EncounterEntityModel {
         this.specialCapability = '',
         ExportableBinaryData? image,
         ExportableBinaryData? icon,
-        this.editable = false,
       })
-    : id = sentenceToCamelCase(transliterateFrenchToAscii(name)),
+    : uuid = uuid ?? (isDefault ? null : Uuid().v4().toString()),
       mapSize = mapSize ?? 0.8,
       skills = skills ?? <SkillInstance>[],
       naturalWeapons = naturalWeapons ?? <NaturalWeaponModel>[],
@@ -273,10 +273,10 @@ class CreatureModel with EncounterEntityModel {
       _image = image,
       _icon = icon;
 
-  @JsonKey(includeToJson: false, includeFromJson: false)
-    String id;
-  @JsonKey(includeToJson: false, includeFromJson: true)
-    bool editable;
+  String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
+  @JsonKey(includeIfNull: false)
+    final String? uuid;
+  bool isDefault;
   final String name;
   bool unique;
   CreatureCategory category;
@@ -303,7 +303,7 @@ class CreatureModel with EncounterEntityModel {
       category: category,
       source: source,
       icon: icon?.clone(),
-      editable: editable,
+      isDefault: isDefault,
     );
 
   ExportableBinaryData? get image => _image;
@@ -476,7 +476,6 @@ class CreatureModel with EncounterEntityModel {
       if(model == null) {
         return null;
       }
-      model.editable = true;
       _models[id] = model;
     }
     return _models[id];
@@ -524,6 +523,7 @@ class CreatureModel with EncounterEntityModel {
     var assets = json.decode(jsonStr);
 
     for(var model in assets) {
+      model['is_default'] = true;
       var instance = CreatureModel.fromJson(model);
       _summaries[instance.id] = instance.summary;
       _models[instance.id] = instance;

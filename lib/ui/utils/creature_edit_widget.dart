@@ -922,9 +922,8 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                         model = creature;
                       }
 
-                      model!.editable = true;
                       try {
-                        await CreatureModel.saveLocalModel(model);
+                        await CreatureModel.saveLocalModel(model!);
                         widget.onEditDone(model);
                       }
                       catch(e) {

@@ -261,7 +261,6 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                                 return;
                               }
 
-                              creature.editable = true;
                               await CreatureModel.saveLocalModel(creature);
                               setState(() {
                                 creatureCategory = creature.category;
@@ -299,6 +298,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       if(model == null) return;
 
                       var j = model.toJson();
+                      j['is_default'] = false;
                       j['name'] = newName;
                       model = CreatureModel.fromJson(j);
                       model.source = ObjectSource.local;
