@@ -142,7 +142,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
   NonPlayerCharacter? _createNPC() {
     var ret = NonPlayerCharacter(
       name: _name,
-      source: widget.source ?? NonPlayerCharacter.localNPCSource,
+      source: widget.source ?? ObjectSource.local,
       category: _category!,
       subCategory: _subCategory!,
       unique: _unique,

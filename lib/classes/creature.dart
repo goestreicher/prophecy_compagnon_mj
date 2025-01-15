@@ -552,10 +552,6 @@ class CreatureModel with EncounterEntityModel {
   static bool _defaultAssetsLoaded = false;
   static final Map<String, CreatureModelSummary> _summaries = <String, CreatureModelSummary>{};
   static final Map<String, CreatureModel> _models = <String, CreatureModel>{};
-  static ObjectSource localCreatureSource = ObjectSource(
-    type: ObjectSourceType.original,
-    name: "LOCAL_CREATED"
-  );
 
   factory CreatureModel.fromJson(Map<String, dynamic> json) => _$CreatureModelFromJson(json);
   Map<String, dynamic> toJson() => _$CreatureModelToJson(this);

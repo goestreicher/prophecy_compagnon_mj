@@ -331,7 +331,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       var j = npc.toJson();
                       j['name'] = newName;
                       npc = NonPlayerCharacter.fromJson(j);
-                      npc.source = NonPlayerCharacter.localNPCSource;
+                      npc.source = ObjectSource.local;
 
                       _startEditing(npc);
                     },

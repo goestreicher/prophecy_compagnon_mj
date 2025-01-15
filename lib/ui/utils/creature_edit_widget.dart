@@ -90,7 +90,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
       name: widget.name,
       unique: _unique,
       category: _category!,
-      source: widget.source ?? CreatureModel.localCreatureSource,
+      source: widget.source ?? ObjectSource.local,
       description: _descriptionController.text,
       biome: _biomeController.text,
       size: _sizeController.text,

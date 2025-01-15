@@ -392,10 +392,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   static bool _defaultAssetsLoaded = false;
   static final Map<String, NonPlayerCharacterSummary> _summaries = <String, NonPlayerCharacterSummary>{};
   static final Map<String, NonPlayerCharacter> _instances = <String, NonPlayerCharacter>{};
-  static ObjectSource localNPCSource = ObjectSource(
-    type: ObjectSourceType.original,
-    name: "LOCAL_CREATED"
-  );
 
   static Future<NonPlayerCharacter?> get(String id) async {
     if(!_defaultAssetsLoaded) await loadDefaultAssets();

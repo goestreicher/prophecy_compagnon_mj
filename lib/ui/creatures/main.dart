@@ -301,7 +301,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       var j = model.toJson();
                       j['name'] = newName;
                       model = CreatureModel.fromJson(j);
-                      model.source = CreatureModel.localCreatureSource;
+                      model.source = ObjectSource.local;
 
                       _startEditing(model);
                     },
