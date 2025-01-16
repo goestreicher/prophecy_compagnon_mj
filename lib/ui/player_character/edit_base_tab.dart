@@ -371,6 +371,7 @@ class _GeneralInformationEditWidgetState extends State<_GeneralInformationEditWi
                         });
                       },
                       dropdownMenuEntries: Place.withParent('kor')
+                        .where((Place p) => p.isDefault)
                         .map((Place p) => DropdownMenuEntry(value: p, label: p.name))
                         .toList(),
                     ),
