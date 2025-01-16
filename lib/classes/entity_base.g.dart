@@ -17,6 +17,7 @@ Map<String, dynamic> _$EntityStatusToJson(EntityStatus instance) =>
 
 EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase(
       uuid: json['uuid'] as String?,
+      isDefault: json['is_default'] as bool? ?? false,
       name: json['name'] as String,
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
       size: (json['size'] as num?)?.toDouble(),
@@ -39,7 +40,8 @@ EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase(
 Map<String, dynamic> _$EntityBaseToJson(EntityBase instance) =>
     <String, dynamic>{
       'equiped': equipedToJson(instance.equiped),
-      'uuid': instance.uuid,
+      if (instance.uuid case final value?) 'uuid': value,
+      'is_default': instance.isDefault,
       'name': instance.name,
       'description': instance.description,
       'image': instance.image?.toJson(),

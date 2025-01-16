@@ -284,7 +284,7 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
     if(object.image != null) await BinaryDataStore().save(object.image!);
     if(object.icon != null) await BinaryDataStore().save(object.icon!);
 
-    var summary = await NonPlayerCharacterSummaryStore().get(object.uuid);
+    var summary = await NonPlayerCharacterSummaryStore().get(object.id);
     if(summary != null) await NonPlayerCharacterSummaryStore().delete(summary);
 
     await NonPlayerCharacterSummaryStore().save(object.summary);
@@ -295,7 +295,7 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
     if(object.icon != null) await BinaryDataStore().delete(object.icon!);
     if(object.image != null) await BinaryDataStore().delete(object.image!);
 
-    var summary = await NonPlayerCharacterSummaryStore().get(object.uuid);
+    var summary = await NonPlayerCharacterSummaryStore().get(object.id);
     if(summary != null) await NonPlayerCharacterSummaryStore().delete(summary);
   }
 }
@@ -306,6 +306,7 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
 class NonPlayerCharacterSummary {
   NonPlayerCharacterSummary({
     required this.id,
+    required this.isDefault,
     required this.name,
     required this.category,
     required this.subCategory,
@@ -315,6 +316,7 @@ class NonPlayerCharacterSummary {
   });
 
   final String id;
+  final bool isDefault;
   final String name;
   final NPCCategory category;
   final NPCSubCategory subCategory;
@@ -334,6 +336,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   NonPlayerCharacter(
     {
       super.uuid,
+      super.isDefault,
       required super.name,
       required this.category,
       required this.subCategory,
@@ -361,16 +364,12 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       super.icon,
       this.editable = false,
     }
-  )
-    : id = sentenceToCamelCase(transliterateFrenchToAscii(name))
-  {
+  ) {
     if(!subCategory.categories.contains(category)) {
       throw ArgumentError('La sous-catégorie "${subCategory.title}" ne peut pas être utilisée avec la catégorie "${category.title}"');
     }
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
-    final String id;
   NPCCategory category;
   NPCSubCategory subCategory;
   ObjectSource source;
@@ -381,6 +380,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
   NonPlayerCharacterSummary get summary => NonPlayerCharacterSummary(
       id: id,
+      isDefault: isDefault,
       name: name,
       category: category,
       subCategory: subCategory,
@@ -480,6 +480,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     var assets = json.decode(jsonStr);
 
     for(var model in assets) {
+      model['is_default'] = true;
       var instance = NonPlayerCharacter.fromJson(model);
       _summaries[instance.id] = instance.summary;
       _instances[instance.id] = instance;

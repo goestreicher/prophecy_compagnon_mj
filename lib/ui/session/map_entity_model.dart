@@ -24,7 +24,7 @@ class MapEntityModel extends MapModelMovableItem {
   EntityBase entity;
 
   @override
-  String get uuid => entity.uuid;
+  String get id => entity.id;
 
   @override
   double get size => entity.size * map.background.pixelsPerMeter;

@@ -21,7 +21,7 @@ class PlayerCharacterSummaryStore extends JsonStoreAdapter<PlayerCharacterSummar
   String storeCategory() => 'playerCharacterSummaries';
 
   @override
-  String key(PlayerCharacterSummary object) => object.uuid;
+  String key(PlayerCharacterSummary object) => object.id;
 
   @override
   Future<PlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
@@ -54,7 +54,7 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
   String storeCategory() => 'playerCharacters';
 
   @override
-  String key(PlayerCharacter object) => object.uuid;
+  String key(PlayerCharacter object) => object.id;
 
   @override
   Future<PlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
@@ -76,7 +76,7 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
     if(object.image != null) await BinaryDataStore().save(object.image!);
     if(object.icon != null) await BinaryDataStore().save(object.icon!);
 
-    var summary = await PlayerCharacterSummaryStore().get(object.uuid);
+    var summary = await PlayerCharacterSummaryStore().get(object.id);
     if(summary != null) await PlayerCharacterSummaryStore().delete(summary);
 
     await PlayerCharacterSummaryStore().save(object.summary);
@@ -87,24 +87,25 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
     if(object.icon != null) await BinaryDataStore().delete(object.icon!);
     if(object.image != null) await BinaryDataStore().delete(object.image!);
 
-    var summary = await PlayerCharacterSummaryStore().get(object.uuid);
+    var summary = await PlayerCharacterSummaryStore().get(object.id);
     if(summary != null) await PlayerCharacterSummaryStore().delete(summary);
   }
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class PlayerCharacterSummary {
-  PlayerCharacterSummary(
-      this.uuid,
-      {
-        required this.name,
-        required this.player,
-        required this.caste,
-        required this.casteStatus,
-        this.icon,
-      });
+  PlayerCharacterSummary({
+    required this.id,
+    required this.isDefault,
+    required this.name,
+    required this.player,
+    required this.caste,
+    required this.casteStatus,
+    this.icon,
+  });
 
-  final String uuid;
+  final String id;
+  final bool isDefault;
   final String name;
   final String player;
   final Caste caste;
@@ -120,6 +121,7 @@ class PlayerCharacter extends HumanCharacter {
   PlayerCharacter(
       {
         super.uuid,
+        super.isDefault,
         required this.player,
         required this.augure,
         required super.name,
@@ -145,7 +147,8 @@ class PlayerCharacter extends HumanCharacter {
   final Augure augure;
 
   PlayerCharacterSummary get summary => PlayerCharacterSummary(
-    uuid,
+    id: id,
+    isDefault: isDefault,
     name: name,
     player: player,
     caste: caste,

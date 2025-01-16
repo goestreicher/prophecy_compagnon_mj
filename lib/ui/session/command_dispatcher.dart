@@ -168,7 +168,7 @@ class CommandDispatcher extends ChangeNotifier {
           _session.encounter!.currentTurn!.activeAction!.environment.containsKey(CombatTurnActionEnvironmentKey.selectableEntities)
       ) {
         var selectable = _session.encounter!.currentTurn!.activeAction!.environment[CombatTurnActionEnvironmentKey.selectableEntities] as List<String>;
-        if(selectable.contains(selectedEntityModel.uuid)) {
+        if(selectable.contains(selectedEntityModel.id)) {
           _session.encounter!.currentTurn!.activeAction!.environment[CombatTurnActionEnvironmentKey.defender] = selectedEntityModel.entity;
           _session.encounter!.currentTurn!.activeAction!.environment[CombatTurnActionEnvironmentKey.preCommitCallback]!();
         }
@@ -329,12 +329,12 @@ class CommandDispatcher extends ChangeNotifier {
       return;
     }
 
-    if(!_session.map!.items.containsKey(args['action']!.entity.uuid)) {
-      debugPrint('CommandDispatcher::_parseCommandCombatAction: unknown UUID ${args["action"]!.entity.uuid}');
+    if(!_session.map!.items.containsKey(args['action']!.entity.id)) {
+      debugPrint('CommandDispatcher::_parseCommandCombatAction: unknown UUID ${args["action"]!.entity.id}');
       return;
     }
 
-    var entityModel = _session.map!.items[args['action']!.entity.uuid] as MapEntityModel;
+    var entityModel = _session.map!.items[args['action']!.entity.id] as MapEntityModel;
 
     if(command == SessionCommand.combatActionTypeSelected) {
       if(args['action']!.type == CombatActionType.none) {
@@ -460,7 +460,7 @@ class CommandDispatcher extends ChangeNotifier {
     debugPrint('Updating targetable entities for ${entityModel.entity.name}');
 
     _session.encounter!.clearTargetRanges(entityModel.entity);
-    _session.map!.updateDistances(entityModel.uuid);
+    _session.map!.updateDistances(entityModel.id);
 
     // Contact combat
     var weaponRangeDistance = entityModel.size + entityModel.contactCombatRange;
@@ -511,9 +511,9 @@ class CommandDispatcher extends ChangeNotifier {
       // TODO: check if the entity can be selected for the current action subtype
       // e.g., disarm should not be possible for entity without a weapon
 
-      if(_session.map!.items.containsKey(entity.uuid)) {
-        selectable.add(entity.uuid);
-        _session.map!.items[entity.uuid]!.isSelectable = true;
+      if(_session.map!.items.containsKey(entity.id)) {
+        selectable.add(entity.id);
+        _session.map!.items[entity.id]!.isSelectable = true;
       }
     }
 

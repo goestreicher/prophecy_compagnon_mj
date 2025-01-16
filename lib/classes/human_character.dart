@@ -217,6 +217,7 @@ class HumanCharacter extends EntityBase with MagicUser {
   HumanCharacter(
       {
         super.uuid,
+        super.isDefault,
         required super.name,
         super.initiative,
         super.injuryProvider = _humanCharacterDefaultInjuries,

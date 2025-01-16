@@ -43,12 +43,12 @@ class Encounter extends ChangeNotifier {
       currentTurn!.removeEntity(entity, startAt: currentTurn!.currentRank);
     }
 
-    targetAttackMovementRanges.remove(entity.uuid);
+    targetAttackMovementRanges.remove(entity.id);
     for(var l in targetAttackMovementRanges.values) {
       l.removeWhere((element) => element.$1 == entity);
     }
 
-    targetAttackWeaponRanges.remove(entity.uuid);
+    targetAttackWeaponRanges.remove(entity.id);
     for(var l in targetAttackWeaponRanges.values) {
       l.removeWhere((element) => element.$1 == entity);
     }
@@ -62,25 +62,25 @@ class Encounter extends ChangeNotifier {
   }
 
   void clearTargetRanges(EntityBase entity) {
-    targetAttackWeaponRanges.remove(entity.uuid);
-    targetAttackMovementRanges.remove(entity.uuid);
+    targetAttackWeaponRanges.remove(entity.id);
+    targetAttackMovementRanges.remove(entity.id);
   }
 
   void addTargetInMovementRange(EntityBase source, EntityBase destination, WeaponRange range) {
-    if(!targetAttackMovementRanges.containsKey(source.uuid)) {
-      targetAttackMovementRanges[source.uuid] = [(destination, range)];
+    if(!targetAttackMovementRanges.containsKey(source.id)) {
+      targetAttackMovementRanges[source.id] = [(destination, range)];
     }
     else {
-      targetAttackMovementRanges[source.uuid]!.removeWhere((record) => record.$1.uuid == destination.uuid);
-      targetAttackMovementRanges[source.uuid]!.add((destination, range));
+      targetAttackMovementRanges[source.id]!.removeWhere((record) => record.$1.id == destination.id);
+      targetAttackMovementRanges[source.id]!.add((destination, range));
     }
   }
 
   List<EntityBase> targetsInMovementRangeFor(EntityBase entity, WeaponRange range) {
     var ret = <EntityBase>[];
 
-    if(targetAttackMovementRanges.containsKey(entity.uuid)) {
-      for(var (targetEntity, targetRange) in targetAttackMovementRanges[entity.uuid]!) {
+    if(targetAttackMovementRanges.containsKey(entity.id)) {
+      for(var (targetEntity, targetRange) in targetAttackMovementRanges[entity.id]!) {
         if(targetRange.index <= range.index) {
           ret.add(targetEntity);
         }
@@ -91,20 +91,20 @@ class Encounter extends ChangeNotifier {
   }
 
   void addTargetInWeaponRange(EntityBase source, EntityBase destination, WeaponRange range) {
-    if(!targetAttackWeaponRanges.containsKey(source.uuid)) {
-      targetAttackWeaponRanges[source.uuid] = [(destination, range)];
+    if(!targetAttackWeaponRanges.containsKey(source.id)) {
+      targetAttackWeaponRanges[source.id] = [(destination, range)];
     }
     else {
-      targetAttackWeaponRanges[source.uuid]!.removeWhere((record) => record.$1.uuid == destination.uuid);
-      targetAttackWeaponRanges[source.uuid]!.add((destination, range));
+      targetAttackWeaponRanges[source.id]!.removeWhere((record) => record.$1.id == destination.id);
+      targetAttackWeaponRanges[source.id]!.add((destination, range));
     }
   }
 
   List<(EntityBase, WeaponRange)> targetsFor(EntityBase entity) {
     var ret = <(EntityBase, WeaponRange)>[];
 
-    if(targetAttackWeaponRanges.containsKey(entity.uuid)) {
-      ret.addAll(targetAttackWeaponRanges[entity.uuid]!);
+    if(targetAttackWeaponRanges.containsKey(entity.id)) {
+      ret.addAll(targetAttackWeaponRanges[entity.id]!);
     }
 
     return ret;
@@ -113,8 +113,8 @@ class Encounter extends ChangeNotifier {
   List<EntityBase> targetsInWeaponRangeFor(EntityBase entity, WeaponRange range) {
     var ret = <EntityBase>[];
 
-    if(targetAttackWeaponRanges.containsKey(entity.uuid)) {
-      for(var (targetEntity, targetRange) in targetAttackWeaponRanges[entity.uuid]!) {
+    if(targetAttackWeaponRanges.containsKey(entity.id)) {
+      for(var (targetEntity, targetRange) in targetAttackWeaponRanges[entity.id]!) {
         if(targetRange.index <= range.index) {
           ret.add(targetEntity);
         }

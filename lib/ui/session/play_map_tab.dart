@@ -40,16 +40,16 @@ class _PlayMapPageState extends State<PlayMapPage> {
 
     if(session.encounter == null) {
       _undeployedPcs = session.table.players
-          .where((PlayerCharacter pc) => !session.map!.pcs.contains(pc.uuid))
+          .where((PlayerCharacter pc) => !session.map!.pcs.contains(pc.id))
           .toList();
       _undeployedNpcs = <EntityBase>[];
     }
     else {
       _undeployedPcs = session.encounter!.characters
-          .where((PlayerCharacter pc) => !session.map!.pcs.contains(pc.uuid))
+          .where((PlayerCharacter pc) => !session.map!.pcs.contains(pc.id))
           .toList();
       _undeployedNpcs = session.encounter!.npcs
-          .where((EntityBase e) => !session.map!.npcs.contains(e.uuid))
+          .where((EntityBase e) => !session.map!.npcs.contains(e.id))
           .toList();
     }
 
@@ -57,17 +57,17 @@ class _PlayMapPageState extends State<PlayMapPage> {
     _showNpcDeploymentWidget = _undeployedNpcs.isNotEmpty;
   }
 
-  void _onEntityDeployed(String uuid) {
+  void _onEntityDeployed(String id) {
     var session = context.read<SessionModel>();
 
-    int idx = _undeployedNpcs.indexWhere((e) => e.uuid == uuid);
+    int idx = _undeployedNpcs.indexWhere((e) => e.id == id);
     if(idx != -1) {
       session.encounter!.deployNpc(_undeployedNpcs[idx]);
     }
 
     setState(() {
-      _undeployedPcs.removeWhere((pc) => pc.uuid == uuid);
-      _undeployedNpcs.removeWhere((npc) => npc.uuid == uuid);
+      _undeployedPcs.removeWhere((pc) => pc.id == id);
+      _undeployedNpcs.removeWhere((npc) => npc.id == id);
     });
   }
 
@@ -80,7 +80,7 @@ class _PlayMapPageState extends State<PlayMapPage> {
         onPressed: () {
           ContextMenuController.removeAny();
 
-          if(!session.map!.items.containsKey(pc.uuid)) {
+          if(!session.map!.items.containsKey(pc.id)) {
             var entityModel = MapEntityModel(
               entity: pc,
               map: session.map!,
@@ -88,10 +88,10 @@ class _PlayMapPageState extends State<PlayMapPage> {
               y: mapPosition.dy,
             );
             session.map!.addPlayerCharacter(entityModel);
-            _onEntityDeployed(pc.uuid);
+            _onEntityDeployed(pc.id);
           }
           else {
-            var entityModel = session.map!.items[pc.uuid]! as MapEntityModel;
+            var entityModel = session.map!.items[pc.id]! as MapEntityModel;
             entityModel.moveTo(mapPosition.dx, mapPosition.dy);
           }
         },
@@ -354,7 +354,7 @@ class _MapViewWidgetState extends State<_MapViewWidget> with SingleTickerProvide
               map.addNonPlayerCharacter(entityModel);
             }
 
-            widget.onEntityDeployed(entityBase.uuid);
+            widget.onEntityDeployed(entityBase.id);
           },
         )
       ),

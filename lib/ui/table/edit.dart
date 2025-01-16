@@ -81,7 +81,7 @@ class _TableEditPageState extends State<TableEditPage> {
                       splashColor: theme.colorScheme.surface,
                       onTap: () async {
                         var saved = await Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => PlayerCharacterEditPage(uuid: _table.playerSummaries[index].uuid)),
+                          MaterialPageRoute(builder: (context) => PlayerCharacterEditPage(id: _table.playerSummaries[index].id)),
                         );
                         if(saved != null && saved) {
                           setState(() {
@@ -147,7 +147,7 @@ class _TableEditPageState extends State<TableEditPage> {
                               _canCancel = false;
                               _isWorking = true;
                             });
-                            var character = await PlayerCharacterStore().get(_table.playerSummaries[index].uuid);
+                            var character = await PlayerCharacterStore().get(_table.playerSummaries[index].id);
                             if(character != null) {
                               await PlayerCharacterStore().delete(character);
                             }

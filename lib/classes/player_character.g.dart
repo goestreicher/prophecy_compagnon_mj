@@ -9,7 +9,8 @@ part of 'player_character.dart';
 PlayerCharacterSummary _$PlayerCharacterSummaryFromJson(
         Map<String, dynamic> json) =>
     PlayerCharacterSummary(
-      json['uuid'] as String,
+      id: json['id'] as String,
+      isDefault: json['is_default'] as bool,
       name: json['name'] as String,
       player: json['player'] as String,
       caste: $enumDecode(_$CasteEnumMap, json['caste']),
@@ -22,7 +23,8 @@ PlayerCharacterSummary _$PlayerCharacterSummaryFromJson(
 Map<String, dynamic> _$PlayerCharacterSummaryToJson(
         PlayerCharacterSummary instance) =>
     <String, dynamic>{
-      'uuid': instance.uuid,
+      'id': instance.id,
+      'is_default': instance.isDefault,
       'name': instance.name,
       'player': instance.player,
       'caste': _$CasteEnumMap[instance.caste]!,
@@ -54,6 +56,7 @@ const _$CasteStatusEnumMap = {
 PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
     PlayerCharacter(
       uuid: json['uuid'] as String?,
+      isDefault: json['is_default'] as bool? ?? false,
       player: json['player'] as String,
       augure: $enumDecode(_$AugureEnumMap, json['augure']),
       name: json['name'] as String,
@@ -113,7 +116,8 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
     <String, dynamic>{
       'equiped': equipedToJson(instance.equiped),
-      'uuid': instance.uuid,
+      if (instance.uuid case final value?) 'uuid': value,
+      'is_default': instance.isDefault,
       'name': instance.name,
       'description': instance.description,
       'image': instance.image?.toJson(),

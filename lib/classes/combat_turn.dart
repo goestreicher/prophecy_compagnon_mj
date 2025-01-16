@@ -205,7 +205,7 @@ class CombatTurn extends ChangeNotifier {
       ));
     }
 
-    for(var d in _longRunningActions.where((CombatActionDuration d) => d.entity.uuid == entity.uuid)) {
+    for(var d in _longRunningActions.where((CombatActionDuration d) => d.entity.id == entity.id)) {
       _applyLongRunningActionToTurn(d);
     }
 
@@ -316,30 +316,30 @@ class CombatTurn extends ChangeNotifier {
   }
 
   void removeEntity(EntityBase entity, { int startAt = -1 }) {
-    _longRunningActions.removeWhere((CombatActionDuration d) => d.entity.uuid == entity.uuid);
-    _unspentActions.removeWhere((CombatTurnAction a) => a.entity.uuid == entity.uuid);
-    actions.removeWhere((CombatTurnAction a) => a.entity.uuid == entity.uuid && (startAt == -1 || a.rank < startAt));
+    _longRunningActions.removeWhere((CombatActionDuration d) => d.entity.id == entity.id);
+    _unspentActions.removeWhere((CombatTurnAction a) => a.entity.id == entity.id);
+    actions.removeWhere((CombatTurnAction a) => a.entity.id == entity.id && (startAt == -1 || a.rank < startAt));
     notifyListeners();
   }
 
   void addAttack(EntityBase entity) {
-    _entitiesAttackMalus[entity.uuid] =
-        (_entitiesAttackMalus[entity.uuid] ?? 0) + 5;
+    _entitiesAttackMalus[entity.id] =
+        (_entitiesAttackMalus[entity.id] ?? 0) + 5;
     notifyListeners();
   }
 
   int attackMalus(EntityBase entity) {
-    return _entitiesAttackMalus[entity.uuid] ?? 0;
+    return _entitiesAttackMalus[entity.id] ?? 0;
   }
 
   void addDefense(EntityBase entity) {
-    _entitiesDefenseMalus[entity.uuid] =
-        (_entitiesDefenseMalus[entity.uuid] ?? 0) + 5;
+    _entitiesDefenseMalus[entity.id] =
+        (_entitiesDefenseMalus[entity.id] ?? 0) + 5;
     notifyListeners();
   }
 
   int defenseMalus(EntityBase entity) {
-    return _entitiesDefenseMalus[entity.uuid] ?? 0;
+    return _entitiesDefenseMalus[entity.id] ?? 0;
   }
 
   final Map<String, int> _entitiesAttackMalus = <String, int>{};

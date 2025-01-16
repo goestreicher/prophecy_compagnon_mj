@@ -32,7 +32,7 @@ class _CombatTurnInitiativesInputWidgetState extends State<CombatTurnInitiatives
           ? widget.previousTurn!.unspentActionsForEntity(e).length
           : 0;
 
-      initiativesDone[e.uuid] = e.rollInitiatives(
+      initiativesDone[e.id] = e.rollInitiatives(
         additionalDices: extraInitiatives,
       );
     }
@@ -50,7 +50,7 @@ class _CombatTurnInitiativesInputWidgetState extends State<CombatTurnInitiatives
           previousTurn: widget.previousTurn,
           onInitiativeInputDone: (List<int> dominantHandInitiatives, int? weakHandInitiative) {
             setState(() {
-              initiativesDone[pc.uuid] = (dominantHandInitiatives, weakHandInitiative);
+              initiativesDone[pc.id] = (dominantHandInitiatives, weakHandInitiative);
             });
           },
         ))
@@ -59,13 +59,13 @@ class _CombatTurnInitiativesInputWidgetState extends State<CombatTurnInitiatives
     var npcWidgets = widget.encounter.deployedNpcs
         .where((EntityBase npc) => npc.canAct())
         .map((EntityBase e) => _CharacterInitiativeInputWidget(
-          initialValues: initiativesDone[e.uuid]!,
+          initialValues: initiativesDone[e.id]!,
           character: e,
           engagementRange: widget.encounter.smallestEngagementRangeFor(e),
           previousTurn: widget.previousTurn,
           onInitiativeInputDone: (List<int> dominantHandInitiatives, int? weakHandInitiative) {
             setState(() {
-              initiativesDone[e.uuid] = (dominantHandInitiatives, weakHandInitiative);
+              initiativesDone[e.id] = (dominantHandInitiatives, weakHandInitiative);
             });
           },
         ))
@@ -109,7 +109,7 @@ class _CombatTurnInitiativesInputWidgetState extends State<CombatTurnInitiatives
 
                                   for(var pc in widget.encounter.characters) {
                                     var damageMalus = pc.damageMalus();
-                                    List<int> initiativesFinal = initiativesDone[pc.uuid]!.$1
+                                    List<int> initiativesFinal = initiativesDone[pc.id]!.$1
                                         .map((int i) => i - damageMalus)
                                         .toList()
                                       ..removeWhere((int i) => i < 1);
@@ -117,12 +117,12 @@ class _CombatTurnInitiativesInputWidgetState extends State<CombatTurnInitiatives
                                     nextTurn.setEntityInitiatives(
                                         entity: pc,
                                         dominantHandInitiatives: initiativesFinal,
-                                        weakHandInitiative: initiativesDone[pc.uuid]!.$2);
+                                        weakHandInitiative: initiativesDone[pc.id]!.$2);
                                   }
 
                                   for(var e in widget.encounter.deployedNpcs) {
                                     var damageMalus = e.damageMalus();
-                                    List<int> initiativesFinal = initiativesDone[e.uuid]!.$1
+                                    List<int> initiativesFinal = initiativesDone[e.id]!.$1
                                         .map((int i) => i - damageMalus)
                                         .toList()
                                       ..removeWhere((int i) => i < 1);
@@ -130,7 +130,7 @@ class _CombatTurnInitiativesInputWidgetState extends State<CombatTurnInitiatives
                                     nextTurn.setEntityInitiatives(
                                         entity: e,
                                         dominantHandInitiatives: initiativesFinal,
-                                        weakHandInitiative: initiativesDone[e.uuid]!.$2);
+                                        weakHandInitiative: initiativesDone[e.id]!.$2);
                                   }
 
                                   Navigator.of(context).pop(nextTurn);

@@ -12,15 +12,15 @@ import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 
 class PlayerCharacterEditPage extends StatefulWidget {
-  const PlayerCharacterEditPage({super.key, required this.uuid})
+  const PlayerCharacterEditPage({super.key, required this.id})
     : character = null;
   PlayerCharacterEditPage.immediate({super.key, required this.character})
-    : uuid = character!.uuid;
+    : id = character!.id;
 
   @override
   State<PlayerCharacterEditPage> createState() => _PlayerCharacterEditPageState();
 
-  final String uuid;
+  final String id;
   final PlayerCharacter? character;
 }
 
@@ -39,7 +39,7 @@ class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
       _characterFuture = Future<PlayerCharacter>.sync(() => widget.character!);
     }
     else {
-      _characterFuture = PlayerCharacterStore().get(widget.uuid);
+      _characterFuture = PlayerCharacterStore().get(widget.id);
     }
   }
 
@@ -76,7 +76,7 @@ class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
                       onPressed: () async {
                         var jsonStr = json.encode(_character.toJson());
                         await FileSaver.instance.saveFile(
-                          name: 'player-character_${_character.uuid}.json',
+                          name: 'player-character_${_character.id}.json',
                           bytes: utf8.encode(jsonStr),
                         );
                       },

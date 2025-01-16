@@ -137,7 +137,7 @@ class _CombatTurnActionListWidgetState extends State<CombatTurnActionListWidget>
                             dispatcher.dispatchCommand(
                                 SessionCommand.mapSetActive,
                                 <String, dynamic>{
-                                  'uuid': action.entity.uuid,
+                                  'uuid': action.entity.id,
                                   'active': false,
                                 }
                             );
@@ -149,7 +149,7 @@ class _CombatTurnActionListWidgetState extends State<CombatTurnActionListWidget>
                               dispatcher.dispatchCommand(
                                   SessionCommand.mapSetActive,
                                   <String, dynamic>{
-                                    'uuid': action.entity.uuid,
+                                    'uuid': action.entity.id,
                                     'active': false,
                                   }
                               );
@@ -159,7 +159,7 @@ class _CombatTurnActionListWidgetState extends State<CombatTurnActionListWidget>
                           dispatcher.dispatchCommand(
                               SessionCommand.mapSetActive,
                               <String, dynamic>{
-                                'uuid': action.entity.uuid,
+                                'uuid': action.entity.id,
                                 'active': active,
                               }
                           );
@@ -198,7 +198,7 @@ class _CombatTurnActionListWidgetState extends State<CombatTurnActionListWidget>
                       onEntityStatusChanged: (EntityBase e) {
                         dispatcher.dispatchCommand(
                           SessionCommand.mapItemStatusChanged,
-                          <String, dynamic>{'uuid': e.uuid},
+                          <String, dynamic>{'uuid': e.id},
                         );
                       }
                     ),
@@ -276,7 +276,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
     return InkWell(
       onTap: () {
         if(!widget.action.used && widget.canBecomeActive()) {
-          widget.onCenterOn(widget.action.entity.uuid);
+          widget.onCenterOn(widget.action.entity.id);
           widget.onSetActive(true);
           setState(() {
             active = true;
@@ -666,7 +666,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           var selectedActionRank = int.parse(selectedActionStr);
           for(var action in action.turn
               .actionsForRank(selectedActionRank)
-              .where((CombatTurnAction a) => a.entity.uuid == target.uuid)
+              .where((CombatTurnAction a) => a.entity.id == target.id)
           ) {
             if(!action.used) {
               action.used = true;
@@ -765,7 +765,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
         if (selectedDefenseAction != null) {
           for(var action in action.turn
               .actionsForRank(selectedDefenseAction.actionRank)
-              .where((CombatTurnAction a) => a.entity.uuid == target.uuid)
+              .where((CombatTurnAction a) => a.entity.id == target.id)
           ) {
             if(!action.used) {
               action.used = true;

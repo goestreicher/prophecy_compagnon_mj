@@ -12,7 +12,7 @@ abstract class MapModelItem extends ChangeNotifier {
   })
     : _x = x ?? 0.0, _y = y ?? 0.0;
 
-  String get uuid;
+  String get id;
   double get size;
   void setActive(bool active);
 
@@ -150,20 +150,20 @@ class MapModel extends ChangeNotifier {
   }
 
   void addPlayerCharacter(MapModelItem pc) {
-    pcs.add(pc.uuid);
-    _addItem(pc.uuid, pc);
+    pcs.add(pc.id);
+    _addItem(pc.id, pc);
   }
 
   void addNonPlayerCharacter(MapModelItem npc) {
-    npcs.add(npc.uuid);
-    _addItem(npc.uuid, npc);
+    npcs.add(npc.id);
+    _addItem(npc.id, npc);
   }
 
   void removeItem(MapModelItem item) {
-    _distances.removeWhere((key, value) => key.node1 == item.uuid || key.node2 == item.uuid);
-    pcs.remove(item.uuid);
-    npcs.remove(item.uuid);
-    items.remove(item.uuid);
+    _distances.removeWhere((key, value) => key.node1 == item.id || key.node2 == item.id);
+    pcs.remove(item.id);
+    npcs.remove(item.id);
+    items.remove(item.id);
     notifyListeners();
   }
 
@@ -207,7 +207,7 @@ class MapModel extends ChangeNotifier {
   }
 
   void itemMoveEnd(MapModelMovableItem item) {
-    updateDistances(item.uuid);
+    updateDistances(item.id);
 
     if(!freeMovementEnabled && _controlsMovementRangeSpecification) {
       movementRangeSpecification = null;
@@ -243,7 +243,7 @@ class MapModel extends ChangeNotifier {
     var ret = -1.0;
 
     for(var edge in _distances.keys) {
-      if((edge.node1 == source.uuid || edge.node2 == source.uuid) && (edge.node1 == destination.uuid || edge.node2 == destination.uuid)) {
+      if((edge.node1 == source.id || edge.node2 == source.id) && (edge.node1 == destination.id || edge.node2 == destination.id)) {
         ret = _distances[edge]!;
         break;
       }
@@ -256,10 +256,10 @@ class MapModel extends ChangeNotifier {
     var ret = <MapModelItem>[];
 
     for(var edge in _distances.keys) {
-      if(edge.node1 == source.uuid && _distances[edge]! < distance) {
+      if(edge.node1 == source.id && _distances[edge]! < distance) {
         ret.add(items[edge.node2]!);
       }
-      else if(edge.node2 == source.uuid && _distances[edge]! < distance) {
+      else if(edge.node2 == source.id && _distances[edge]! < distance) {
         ret.add(items[edge.node1]!);
       }
     }

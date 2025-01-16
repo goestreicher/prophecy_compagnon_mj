@@ -134,7 +134,7 @@ class GameTable {
   GameTableSummary summary() {
     var ret = GameTableSummary(uuid: uuid, name: name);
     for(var pc in playerSummaries) {
-      ret.playersUuids.add(pc.uuid);
+      ret.playersUuids.add(pc.id);
     }
     return ret;
   }
@@ -150,7 +150,7 @@ class GameTable {
 
   Future<void> loadPlayers() async {
     for(var pcSummary in playerSummaries) {
-      var pcFull = await PlayerCharacterStore().get(pcSummary.uuid);
+      var pcFull = await PlayerCharacterStore().get(pcSummary.id);
       if(pcFull != null) {
         players.add(pcFull);
       }

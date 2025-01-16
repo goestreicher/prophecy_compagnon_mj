@@ -157,6 +157,7 @@ Map<String, dynamic> _$CharacterTendenciesToJson(
 HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
     HumanCharacter(
       uuid: json['uuid'] as String?,
+      isDefault: json['is_default'] as bool? ?? false,
       name: json['name'] as String,
       initiative: (json['initiative'] as num?)?.toInt() ?? 1,
       caste:
@@ -219,7 +220,8 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
     <String, dynamic>{
       'equiped': equipedToJson(instance.equiped),
-      'uuid': instance.uuid,
+      if (instance.uuid case final value?) 'uuid': value,
+      'is_default': instance.isDefault,
       'name': instance.name,
       'description': instance.description,
       'image': instance.image?.toJson(),
