@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:animated_tree_view/animated_tree_view.dart';
+import 'package:file_saver/file_saver.dart';
 import 'package:float_column/float_column.dart';
 import 'package:flutter/material.dart';
+import 'package:prophecy_compagnon_mj/classes/exportable_binary_data.dart';
 
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
@@ -186,6 +190,42 @@ class PlaceDisplayWidget extends StatelessWidget {
   final void Function(Place) onEdited;
   final void Function(Place) onDelete;
 
+  Future<List<Map<String, dynamic>>> _export(Place p, PlaceExportConfig cfg) async {
+    var ret = <Map<String, dynamic>>[];
+
+    var j = p.toJson();
+    if(!cfg.maps) {
+      j.remove('map');
+    }
+    else if(p.map != null) {
+      await p.map!.load();
+      if(p.map!.exportableBinaryData != null) {
+        var dataJson = p.map!.exportableBinaryData!.toJson();
+        dataJson.remove('is_new');
+        j['binary'] = <String, dynamic>{p.map!.exportableBinaryData!.hash: dataJson};
+      }
+      else if(place.map!.imageData != null) {
+        // Force inclusion of the resource by creating an ExportableBinaryData
+        // and changing the source
+        var data = ExportableBinaryData(data: place.map!.imageData!);
+        var map = PlaceMap(sourceType: PlaceMapSourceType.local, source: data.hash);
+        var dataJson = data.toJson();
+        dataJson.remove('is_new');
+        j['map'] = map.toJson();
+        j['binary'] = <String, dynamic>{data.hash: dataJson};
+      }
+    }
+    ret.add(j);
+
+    if(cfg.recursive) {
+      for (var child in Place.withParent(p.id)) {
+        ret.addAll(await _export(child, cfg));
+      }
+    }
+
+    return ret;
+  }
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -193,6 +233,27 @@ class PlaceDisplayWidget extends StatelessWidget {
     bool canEdit = place.source == ObjectSource.local;
 
     var actionButtons = <Widget>[];
+
+    if(!place.isDefault) {
+      actionButtons.add(IconButton(
+        onPressed: () async {
+          var config = await showDialog<PlaceExportConfig>(
+            context: context,
+            builder: (BuildContext context) => PlaceDownloadDialog(),
+          );
+          if(config == null) return;
+
+          var j = await _export(place, config);
+          var jStr = json.encode(j);
+          await FileSaver.instance.saveFile(
+            name: 'place_${place.id}.json',
+            bytes: utf8.encode(jStr),
+          );
+        },
+        icon: const Icon(Icons.download),
+      ));
+    }
+
     if(canEdit) {
       actionButtons.addAll([
         IconButton(
@@ -678,6 +739,83 @@ class _PlaceDescriptionItemEditDialog extends StatelessWidget {
           child: const Text('OK'),
         ),
       ],
+    );
+  }
+}
+
+class PlaceExportConfig {
+  const PlaceExportConfig({
+    required this.recursive,
+    required this.maps,
+    required this.forceMaps,
+  });
+
+  final bool recursive;
+  final bool maps;
+  final bool forceMaps;
+}
+
+class PlaceDownloadDialog extends StatefulWidget {
+  const PlaceDownloadDialog({ super.key });
+
+  @override
+  State<PlaceDownloadDialog> createState() => _PlaceDownloadDialogState();
+}
+
+class _PlaceDownloadDialogState extends State<PlaceDownloadDialog> {
+  bool recursive = false;
+  bool maps = false;
+  bool forceMaps = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: const Text('Téléchargement du lieu'),
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          SwitchListTile(
+            value: recursive,
+            title: const Text('Exporter tous les enfants (récursif)'),
+            onChanged: (bool b) {
+              setState(() {
+                recursive = b;
+              });
+            },
+          ),
+          SwitchListTile(
+            value: maps,
+            title: const Text('Exporter les cartes'),
+            onChanged: (bool b) {
+              setState(() {
+                maps = b;
+                if(!b) forceMaps = false;
+              });
+            }
+          ),
+          SwitchListTile(
+            value: forceMaps,
+            title: const Text("Forcer l'inclusion des éléments distants"),
+            onChanged: !maps ? null : (bool b) {
+              setState(() {
+                forceMaps = b;
+              });
+            }
+          )
+        ],
+      ),
+      actions: [
+        TextButton(
+          child: const Text('Annuler'),
+          onPressed: () => Navigator.of(context).pop(),
+        ),
+        ElevatedButton(
+          child: const Text('OK'),
+          onPressed: () => Navigator.of(context).pop(
+            PlaceExportConfig(recursive: recursive, maps: maps, forceMaps: forceMaps)
+          ),
+        )
+      ]
     );
   }
 }
