@@ -260,6 +260,30 @@ class Place {
     PlaceStore().getAll();
   }
 
+  static Future<void> import(List<dynamic> j) async {
+    for(Map<String, dynamic> placeJson in j) {
+      placeJson.remove('uuid');
+      PlaceMap? map;
+
+      if(placeJson.containsKey('map')) {
+        map = PlaceMap.fromJson(placeJson['map']!);
+        if(map.sourceType == PlaceMapSourceType.local
+            && placeJson.containsKey('binary')
+            && placeJson['binary'].containsKey(map.source)
+        ) {
+          ExportableBinaryData data = ExportableBinaryData.fromJson(
+              placeJson['binary'][map.source]
+          );
+          await BinaryDataStore().save(data);
+          placeJson.remove('binary');
+        }
+      }
+
+      Place p = Place.fromJson(placeJson);
+      await PlaceStore().save(p);
+    }
+  }
+
   factory Place.fromJson(Map<String, dynamic> json) {
    if(json.containsKey('id') && _instances.containsKey(json['id']!) && _instances[json['id']]!.isDefault) {
      return _instances[json['id']]!;

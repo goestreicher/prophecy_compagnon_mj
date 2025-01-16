@@ -1,6 +1,8 @@
 import 'dart:convert';
+import 'dart:js_interop';
 
 import 'package:animated_tree_view/animated_tree_view.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:file_saver/file_saver.dart';
 import 'package:float_column/float_column.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +11,7 @@ import 'package:prophecy_compagnon_mj/classes/exportable_binary_data.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
 import 'place_edit_dialog.dart';
+import '../utils/error_feedback.dart';
 
 class PlacesMainPage extends StatefulWidget {
   const PlacesMainPage({ super.key });
@@ -34,11 +37,16 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
     }
   }
 
+  void rebuildTree() {
+    tree.clear();
+    buildSubTree(tree, Place.byId('monde')!);
+  }
+
   @override
   void initState() {
     super.initState();
     tree = TreeNode.root();
-    buildSubTree(tree, Place.byId('monde')!);
+    rebuildTree();
   }
 
   @override
@@ -51,6 +59,42 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
             width: 350,
             child: CustomScrollView(
               slivers: [
+                SliverList.list(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),
+                      child: ElevatedButton.icon(
+                        icon: const Icon(Icons.add),
+                        label: const Text('Importer un lieu'),
+                        onPressed: () async {
+                          var result = await FilePicker.platform.pickFiles(
+                            type: FileType.custom,
+                            allowedExtensions: ['json'],
+                          );
+                          if(!context.mounted) return;
+                          if(result == null) return;
+
+                          try {
+                            var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
+                            List<dynamic> j = json.decode(jsonStr);
+                            await Place.import(j);
+                            setState(() {
+                              rebuildTree();
+                            });
+                          } catch (e) {
+                            if(!context.mounted) return;
+
+                            displayErrorDialog(
+                              context,
+                              "Échec de l'import",
+                              e.toString()
+                            );
+                          }
+                        },
+                      ),
+                    ),
+                  ],
+                ),
                 SliverPadding(
                   padding: const EdgeInsets.only(right: 8.0),
                   sliver: SliverTreeView.simple(
