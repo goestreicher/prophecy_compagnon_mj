@@ -12,27 +12,28 @@ import '../../text_utils.dart';
 part 'place.g.dart';
 
 enum PlaceType {
-  monde(title: 'Monde'),
-  continent(title: 'Continent'),
-  nation(title: 'Nation'),
-  citeEtat(title: 'Cité-État'),
-  archiduche(title: 'Archiduché'),
-  principaute(title: 'Principauté'),
-  duche(title: 'Duché'),
-  marche(title: 'Marche'),
-  comte(title: 'Comté'),
-  baronnie(title: 'Baronnie'),
-  citeLibre(title: 'Cité Libre'),
-  capitale(title: 'Capitale'),
-  cite(title: 'Cité'),
-  ville(title: 'Ville'),
-  village(title: 'Village'),
-  quartier(title: 'Quartier'),
+  monde(title: 'Monde', sort: -1),
+  continent(title: 'Continent', sort: 0),
+  nation(title: 'Nation', sort: 5),
+  citeEtat(title: 'Cité-État', sort: 5),
+  archiduche(title: 'Archiduché', sort: 10),
+  principaute(title: 'Principauté', sort: 15),
+  duche(title: 'Duché', sort: 20),
+  marche(title: 'Marche', sort: 25),
+  comte(title: 'Comté', sort: 30),
+  baronnie(title: 'Baronnie', sort: 35),
+  citeLibre(title: 'Cité Libre', sort: 40),
+  capitale(title: 'Capitale', sort: 40),
+  cite(title: 'Cité', sort: 45),
+  ville(title: 'Ville', sort: 50),
+  village(title: 'Village', sort: 55),
+  quartier(title: 'Quartier', sort: 60),
   ;
 
   final String title;
+  final int sort;
 
-  const PlaceType({ required this.title });
+  const PlaceType({ required this.title, required this.sort });
 }
 
 enum PlaceMapSourceType {
@@ -205,6 +206,11 @@ class Place {
   final bool isDefault;
   final ObjectSource source;
   PlaceMap? map;
+
+  static int sortComparator(Place a, Place b) =>
+      a.type.sort != b.type.sort
+        ? a.type.sort - b.type.sort
+        : a.name.compareTo(b.name);
 
   static List<Place> values() {
     loadDefaultAssets();

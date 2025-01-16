@@ -27,7 +27,7 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
   Place? selectedPlace;
 
   void buildSubTree(TreeNode root, Place place) {
-    for(var child in Place.withParent(place.id)) {
+    for(var child in Place.withParent(place.id)..sort(Place.sortComparator)) {
       var node = TreeNode(key: child.id, data: child);
       root.add(node);
       buildSubTree(node, child);
