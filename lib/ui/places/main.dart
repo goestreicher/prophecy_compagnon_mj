@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:js_interop';
 
 import 'package:animated_tree_view/animated_tree_view.dart';
 import 'package:file_picker/file_picker.dart';
