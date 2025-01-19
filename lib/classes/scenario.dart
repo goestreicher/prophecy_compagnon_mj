@@ -4,6 +4,7 @@ import 'package:uuid/uuid.dart';
 import 'creature.dart';
 import 'non_player_character.dart';
 import 'object_source.dart';
+import 'place.dart';
 import 'scenario_encounter.dart';
 import 'scenario_event.dart';
 import 'scenario_map.dart';
@@ -175,13 +176,15 @@ class Scenario {
         List<CreatureModel>? creatures,
         List<ScenarioEncounter>? encounters,
         Map<ScenarioEventDayRange, ScenarioDayEvents>? events,
+        List<Place>? places,
       })
     : uuid = uuid ?? const Uuid().v4().toString(),
       maps = maps ?? <ScenarioMap>[],
       npcs = npcs ?? <NonPlayerCharacter>[],
       creatures = creatures ?? <CreatureModel>[],
       encounters = encounters ?? <ScenarioEncounter>[],
-      events = events ?? <ScenarioEventDayRange, ScenarioDayEvents>{};
+      events = events ?? <ScenarioEventDayRange, ScenarioDayEvents>{},
+      places = places ?? <Place>[];
 
   factory Scenario.import(Map<String, dynamic> json) {
     if(json.containsKey('uuid')) {
@@ -218,8 +221,9 @@ class Scenario {
   final List<NonPlayerCharacter> npcs;
   final List<CreatureModel> creatures;
   final List<ScenarioEncounter> encounters;
+  final List<Place> places;
   @JsonKey(includeToJson: false, includeFromJson: false)
-  final Map<ScenarioEventDayRange, ScenarioDayEvents> events;
+    final Map<ScenarioEventDayRange, ScenarioDayEvents> events;
 
   ScenarioSummary summary() => ScenarioSummary(
     uuid: uuid,

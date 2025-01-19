@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../classes/map_background_data.dart';
+import '../../classes/place.dart';
 import '../../classes/scenario_map.dart';
-import '../utils/map_background_picker.dart';
+import '../utils/full_page_loading.dart';
+import '../utils/place_map_picker_dialog.dart';
 import '../utils/single_line_input_dialog.dart';
 
 class ScenarioEditMapsPage extends StatefulWidget {
@@ -67,15 +68,20 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                     if(newMapName == null) return;
                     if(!context.mounted) return;
 
-                    var background = await showDialog<MapBackground>(
+                    var map = await showDialog<PlaceMap>(
                       context: context,
-                      builder: (BuildContext context) => const MapBackgroundPickerDialog(),
+                      builder: (BuildContext context) => const PlaceMapPickerDialog(),
                     );
-                    if(background == null) return;
+                    if(map == null) return;
                     if(!context.mounted) return;
 
                     setState(() {
-                      widget.maps.add(ScenarioMap(name: newMapName, background: background));
+                      widget.maps.add(
+                        ScenarioMap(
+                          name: newMapName,
+                          placeMap: map,
+                        )
+                      );
                     });
                   },
                   icon: const Icon(Icons.add),
@@ -86,50 +92,63 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                   child: ListView.builder(
                     itemCount: widget.maps.length,
                     itemBuilder: (BuildContext context, int index) {
-                      return Card(
-                        clipBehavior: Clip.hardEdge,
-                        color: _selected == widget.maps[index] ?
-                        theme.colorScheme.surfaceContainerHighest :
-                        null,
-                        child: InkWell(
-                          splashColor: theme.colorScheme.surface,
-                          onTap: () {
-                            setState(() {
-                              _selected = widget.maps[index];
-                            });
-                          },
-                          child: Row(
-                            children: [
-                              IconButton(
-                                icon: const Icon(Icons.delete),
-                                onPressed: () async {
-                                  await ScenarioMapStore().delete(widget.maps[index]);
-                                  setState(() {
-                                    if(_selected == widget.maps[index]) {
-                                      _selected = null;
-                                    }
-                                    widget.maps.removeAt(index);
-                                  });
-                                },
+                      return FutureBuilder(
+                        future: widget.maps[index].placeMap.load(),
+                        builder: (BuildContext context, AsyncSnapshot snapshot) {
+                          var map = widget.maps[index];
+
+                          return Card(
+                            clipBehavior: Clip.hardEdge,
+                            color: _selected == map
+                                ? theme.colorScheme.surfaceContainerHighest
+                                : null,
+                            child: InkWell(
+                              splashColor: theme.colorScheme.surface,
+                              onTap: () {
+                                setState(() {
+                                  _selected = map;
+                                });
+                              },
+                              child: Row(
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(Icons.delete),
+                                    onPressed: () async {
+                                      await ScenarioMapStore().delete(map);
+                                      setState(() {
+                                        if(_selected == map) {
+                                          _selected = null;
+                                        }
+                                        widget.maps.removeAt(index);
+                                      });
+                                    },
+                                  ),
+                                  const SizedBox(width: 12.0),
+                                  if(map.placeMap.image != null)
+                                    Image.memory(
+                                      map.placeMap.image!,
+                                      width: 128,
+                                    ),
+                                  if(map.placeMap.image == null)
+                                    SizedBox(
+                                      width: 128,
+                                      height: 128 * (map.placeMap.imageHeight / map.placeMap.imageWidth)
+                                    ),
+                                  const SizedBox(width: 8.0),
+                                  if(map.isDefault)
+                                    Text(
+                                      '${map.name} (Par défaut)',
+                                      style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
+                                    ),
+                                  if(!map.isDefault)
+                                    Text(map.name),
+                                  const Spacer(),
+                                  const Icon(Icons.arrow_forward_ios),
+                                ],
                               ),
-                              const SizedBox(width: 12.0),
-                              Image.memory(
-                                widget.maps[index].background.image.data,
-                                width: 128,
-                              ),
-                              const SizedBox(width: 8.0),
-                              if(widget.maps[index].isDefault)
-                                Text(
-                                  '${widget.maps[index].name} (Par défaut)',
-                                  style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                                ),
-                              if(!widget.maps[index].isDefault)
-                                Text(widget.maps[index].name),
-                              const Spacer(),
-                              const Icon(Icons.arrow_forward_ios),
-                            ],
-                          ),
-                        ),
+                            ),
+                          );
+                        }
                       );
                     },
                   ),
@@ -168,105 +187,115 @@ class _MapEditWidgetState extends State<_MapEditWidget> {
   void initState() {
     super.initState();
     _isDefault = widget.map.isDefault;
-    _realWidthController.text = widget.map.background.realWidth.toStringAsFixed(2);
-    _realHeightController.text = widget.map.background.realHeight.toStringAsFixed(2);
+    _realWidthController.text = widget.map.placeMap.realWidth.toStringAsFixed(2);
+    _realHeightController.text = widget.map.placeMap.realHeight.toStringAsFixed(2);
   }
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          children: [
-            Row(
+    return FutureBuilder(
+      future: widget.map.placeMap.load(),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if(snapshot.connectionState != ConnectionState.done) {
+          return FullPageLoadingWidget();
+        }
+
+        return SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Column(
               children: [
-                const Text('Carte par défaut: '),
-                Checkbox(
-                  value: _isDefault,
-                  onChanged: (bool? value) {
-                    if(value == null) return;
-                    widget.onDefaultChanged(value);
-                    setState(() {
-                      _isDefault = value;
-                    });
-                  }
-                ),
-                const SizedBox(width: 12.0),
-                const Text('Largeur réelle (m): '),
-                SizedBox(
-                  width: 96.0,
-                  child: TextFormField(
-                    controller: _realWidthController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
+                Row(
+                  children: [
+                    const Text('Carte par défaut: '),
+                    Checkbox(
+                      value: _isDefault,
+                      onChanged: (bool? value) {
+                        if(value == null) return;
+                        widget.onDefaultChanged(value);
+                        setState(() {
+                          _isDefault = value;
+                        });
+                      }
                     ),
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [
-                      FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
-                    ],
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) return 'Valeur manquante';
-                      double? input = double.tryParse(value);
-                      if(input == null) return 'Pas un nombre';
-                      return null;
-                    },
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    onChanged: (String? value) {
-                      if(value == null) return;
+                    const SizedBox(width: 12.0),
+                    const Text('Largeur réelle (m): '),
+                    SizedBox(
+                      width: 96.0,
+                      child: TextFormField(
+                        controller: _realWidthController,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                        ],
+                        validator: (String? value) {
+                          if(value == null || value.isEmpty) return 'Valeur manquante';
+                          double? input = double.tryParse(value);
+                          if(input == null) return 'Pas un nombre';
+                          return null;
+                        },
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        onChanged: (String? value) {
+                          if(value == null) return;
 
-                      var w = double.tryParse(value);
-                      if(w == null) return;
+                          var w = double.tryParse(value);
+                          if(w == null) return;
 
-                      var whRatio = widget.map.background.imageWidth / widget.map.background.imageHeight;
-                      var hStr = (w / whRatio).toStringAsFixed(2);
-                      widget.map.background.realWidth = w;
-                      widget.map.background.realHeight = double.parse(hStr);
-                      _realHeightController.text = hStr;
-                    },
-                  ),
-                ),
-                const SizedBox(width: 12.0),
-                const Text('Hauteur réelle (m): '),
-                SizedBox(
-                  width: 96.0,
-                  child: TextFormField(
-                    controller: _realHeightController,
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
+                          var whRatio = widget.map.placeMap.imageWidth / widget.map.placeMap.imageHeight;
+                          var hStr = (w / whRatio).toStringAsFixed(2);
+                          widget.map.placeMap.realWidth = w;
+                          widget.map.placeMap.realHeight = double.parse(hStr);
+                          _realHeightController.text = hStr;
+                        },
+                      ),
                     ),
-                    keyboardType: TextInputType.number,
-                    inputFormatters: [
-                      FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
-                    ],
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) return 'Valeur manquante';
-                      double? input = double.tryParse(value);
-                      if(input == null) return 'Pas un nombre';
-                      return null;
-                    },
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    onChanged: (String? value) {
-                      if(value == null) return;
+                    const SizedBox(width: 12.0),
+                    const Text('Hauteur réelle (m): '),
+                    SizedBox(
+                      width: 96.0,
+                      child: TextFormField(
+                        controller: _realHeightController,
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
+                        ),
+                        keyboardType: TextInputType.number,
+                        inputFormatters: [
+                          FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                        ],
+                        validator: (String? value) {
+                          if(value == null || value.isEmpty) return 'Valeur manquante';
+                          double? input = double.tryParse(value);
+                          if(input == null) return 'Pas un nombre';
+                          return null;
+                        },
+                        autovalidateMode: AutovalidateMode.onUserInteraction,
+                        onChanged: (String? value) {
+                          if(value == null) return;
 
-                      var h = double.tryParse(value);
-                      if(h == null) return;
+                          var h = double.tryParse(value);
+                          if(h == null) return;
 
-                      var whRatio = widget.map.background.imageWidth / widget.map.background.imageHeight;
-                      var wStr = (h * whRatio).toStringAsFixed(2);
-                      widget.map.background.realWidth = double.parse(wStr);
-                      widget.map.background.realHeight = h;
-                      _realWidthController.text = wStr;
-                    },
-                  ),
+                          var whRatio = widget.map.placeMap.imageWidth / widget.map.placeMap.imageHeight;
+                          var wStr = (h * whRatio).toStringAsFixed(2);
+                          widget.map.placeMap.realWidth = double.parse(wStr);
+                          widget.map.placeMap.realHeight = h;
+                          _realWidthController.text = wStr;
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            const SizedBox(height: 12.0),
-            Image.memory(widget.map.background.image.data),
-          ]
-        )
-      )
+                const SizedBox(height: 12.0),
+                if(widget.map.placeMap.image != null)
+                  Image.memory(widget.map.placeMap.image!),
+              ]
+            )
+          )
+        );
+      }
     );
   }
 }

@@ -1,7 +1,8 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:prophecy_compagnon_mj/classes/exportable_binary_data.dart';
 import 'package:uuid/uuid.dart';
 
-import 'map_background_data.dart';
+import 'place.dart';
 import 'storage/storable.dart';
 
 part 'scenario_map.g.dart';
@@ -16,33 +17,25 @@ class ScenarioMapStore extends JsonStoreAdapter<ScenarioMap> {
   String key(ScenarioMap object) => object.uuid;
 
   @override
-  Future<ScenarioMap> fromJsonRepresentation(Map<String, dynamic> j) async {
-    var background = await MapBackgroundStore().get(j['background']);
-    if(background != null) {
-      j['background'] = background.toJson();
-    }
-    else {
-      // TODO: improve error handling in case the background is not found (ctor will fail)
-    }
-
-    return ScenarioMap.fromJson(j);
-  }
+  Future<ScenarioMap> fromJsonRepresentation(Map<String, dynamic> j) async =>
+      ScenarioMap.fromJson(j);
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(ScenarioMap object) async {
-    var j = object.toJson();
-    j['background'] = object.background.uuid;
-    return j;
-  }
+  Future<Map<String, dynamic>> toJsonRepresentation(ScenarioMap object) async =>
+      object.toJson();
 
   @override
   Future<void> willSave(ScenarioMap object) async {
-    await MapBackgroundStore().save(object.background);
+    if(object.placeMap.exportableBinaryData != null) {
+      await BinaryDataStore().save(object.placeMap.exportableBinaryData!);
+    }
   }
 
   @override
   Future<void> willDelete(ScenarioMap object) async {
-    await MapBackgroundStore().delete(object.background);
+    if(object.placeMap.exportableBinaryData != null) {
+      await BinaryDataStore().delete(object.placeMap.exportableBinaryData!);
+    }
   }
 }
 
@@ -51,7 +44,7 @@ class ScenarioMap {
   ScenarioMap({
     String? uuid,
     required this.name,
-    required this.background,
+    required this.placeMap,
     bool? isDefault,
   })
     : uuid = uuid ?? const Uuid().v4().toString(),
@@ -59,7 +52,7 @@ class ScenarioMap {
 
   String uuid;
   String name;
-  MapBackground background;
+  PlaceMap placeMap;
   bool isDefault;
 
   factory ScenarioMap.fromJson(Map<String, dynamic> json) => _$ScenarioMapFromJson(json);
