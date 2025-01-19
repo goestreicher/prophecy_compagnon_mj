@@ -1,4 +1,3 @@
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:file_picker/file_picker.dart';
@@ -36,9 +35,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
   int? mapImageWidth;
   int? mapImageHeight;
   final TextEditingController mapRealWidthController = TextEditingController();
-  double? mapRealWidth;
   final TextEditingController mapRealHeightController = TextEditingController();
-  double? mapRealHeight;
   final TextEditingController descriptionController = TextEditingController();
 
   @override
@@ -191,12 +188,14 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                   ],
                 ),
                 if(mapSourceLocalFileData != null)
+                  const SizedBox(height: 8.0),
+                if(mapSourceLocalFileData != null)
                   Row(
                     children: [
                       const Text('Dimensions réelles (m)'),
                       const SizedBox(width: 8.0),
                       SizedBox(
-                        width: 48.0,
+                        width: 96.0,
                         child: TextFormField(
                           controller: mapRealWidthController,
                           decoration: const InputDecoration(
@@ -227,7 +226,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                       ),
                       const Text(' x '),
                       SizedBox(
-                        width: 48.0,
+                        width: 96.0,
                         child: TextFormField(
                           controller: mapRealHeightController,
                           decoration: const InputDecoration(
@@ -283,6 +282,9 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
           onPressed: () async {
             if(!formKey.currentState!.validate()) return;
 
+            var w = double.parse(mapRealWidthController.text);
+            var h = double.parse(mapRealHeightController.text);
+
             if(widget.place == null) {
               PlaceMap? map;
 
@@ -300,8 +302,8 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                   source: data.hash,
                   imageWidth: mapImageWidth!,
                   imageHeight: mapImageHeight!,
-                  realWidth: mapRealWidth!,
-                  realHeight: mapRealHeight!,
+                  realWidth: w,
+                  realHeight: h,
                 );
                 map.exportableBinaryData = data;
               }
@@ -383,8 +385,8 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                   source: data.hash,
                   imageWidth: mapImageWidth!,
                   imageHeight: mapImageHeight!,
-                  realWidth: mapRealWidth!,
-                  realHeight: mapRealHeight!,
+                  realWidth: w,
+                  realHeight: h,
                 );
                 map.exportableBinaryData = data;
 
