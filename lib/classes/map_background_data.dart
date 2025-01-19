@@ -50,6 +50,7 @@ class MapBackgroundStore extends JsonStoreAdapter<MapBackground> {
   }
 }
 
+@Deprecated('Use PlaceMap instead')
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class MapBackground {
   MapBackground({

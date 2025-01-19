@@ -279,7 +279,14 @@ class PlaceDisplayWidget extends StatelessWidget {
         // Force inclusion of the resource by creating an ExportableBinaryData
         // and changing the source
         var data = ExportableBinaryData(data: place.map!.imageData!);
-        var map = PlaceMap(sourceType: PlaceMapSourceType.local, source: data.hash);
+        var map = PlaceMap(
+          sourceType: PlaceMapSourceType.local,
+          source: data.hash,
+          imageWidth: place.map!.imageWidth,
+          imageHeight: place.map!.imageHeight,
+          realWidth: place.map!.realWidth,
+          realHeight: place.map!.realHeight,
+        );
         var dataJson = data.toJson();
         dataJson.remove('is_new');
         j['map'] = map.toJson();

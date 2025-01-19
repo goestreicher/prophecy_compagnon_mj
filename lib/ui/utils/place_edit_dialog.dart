@@ -1,7 +1,9 @@
 import 'dart:typed_data';
+import 'dart:ui' as ui;
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:prophecy_compagnon_mj/classes/exportable_binary_data.dart';
 
 import '../../classes/object_source.dart';
@@ -31,6 +33,12 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
   PlaceMapSourceType? selectedMapSourceType;
   String? mapSourceLocalFileName;
   Uint8List? mapSourceLocalFileData;
+  int? mapImageWidth;
+  int? mapImageHeight;
+  final TextEditingController mapRealWidthController = TextEditingController();
+  double? mapRealWidth;
+  final TextEditingController mapRealHeightController = TextEditingController();
+  double? mapRealHeight;
   final TextEditingController descriptionController = TextEditingController();
 
   @override
@@ -143,10 +151,34 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                               var fpResult = await FilePicker.platform.pickFiles(type: FileType.image);
                               if(fpResult == null) return;
 
-                              setState(() {
-                                mapSourceLocalFileName = fpResult.files.first.name;
-                                mapSourceLocalFileData = fpResult.files.first.bytes;
-                              });
+                              try {
+                                var codec = await ui.instantiateImageCodec(fpResult.files.first.bytes!);
+                                var frame = await codec.getNextFrame();
+                                setState(() {
+                                  mapSourceLocalFileName = fpResult.files.first.name;
+                                  mapSourceLocalFileData = fpResult.files.first.bytes;
+                                  mapImageWidth = frame.image.width;
+                                  mapImageHeight = frame.image.height;
+                                });
+                                frame.image.dispose();
+                              }
+                              catch (e) {
+                                if(!context.mounted) return;
+
+                                showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) => AlertDialog(
+                                    title: const Text("Impossible d'importer l'image"),
+                                    content: Text(e.toString()),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        onPressed: () => Navigator.of(context).pop(),
+                                        child: const Text('OK'),
+                                      )
+                                    ]
+                                  )
+                                );
+                              }
                             },
                             child: Text(
                               mapSourceLocalFileName == null
@@ -158,6 +190,74 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                       ),
                   ],
                 ),
+                if(mapSourceLocalFileData != null)
+                  Row(
+                    children: [
+                      const Text('Dimensions réelles (m)'),
+                      const SizedBox(width: 8.0),
+                      SizedBox(
+                        width: 48.0,
+                        child: TextFormField(
+                          controller: mapRealWidthController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                          ),
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                          ],
+                          onChanged: (String? value) {
+                            if(value == null) return;
+
+                            var w = double.tryParse(value);
+                            if(w == null) return;
+
+                            var whRatio = mapImageWidth! / mapImageHeight!;
+                            mapRealHeightController.text = (w / whRatio).toStringAsFixed(2);
+                          },
+                          validator: (String? value) {
+                            if(mapSourceLocalFileData == null) return null;
+                            if(value == null || value.isEmpty) return 'Valeur manquante';
+                            double? input = double.tryParse(value);
+                            if(input == null) return 'Pas un nombre';
+                            return null;
+                          },
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                        ),
+                      ),
+                      const Text(' x '),
+                      SizedBox(
+                        width: 48.0,
+                        child: TextFormField(
+                          controller: mapRealHeightController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                          ),
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                          ],
+                          onChanged: (String? value) {
+                            if(value == null) return;
+
+                            var h = double.tryParse(value);
+                            if(h == null) return;
+
+                            var whRatio = mapImageWidth! / mapImageHeight!;
+                            mapRealWidthController.text = (h * whRatio).toStringAsFixed(2);
+                          },
+                          validator: (String? value) {
+                            if(mapSourceLocalFileData == null) return null;
+                            if(value == null || value.isEmpty) return 'Valeur manquante';
+                            double? input = double.tryParse(value);
+                            if(input == null) return 'Pas un nombre';
+                            return null;
+                          },
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                        ),
+                      ),
+                    ],
+                  ),
                 const SizedBox(height: 8.0),
                 TextField(
                   controller: descriptionController,
@@ -198,6 +298,10 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                 map = PlaceMap(
                   sourceType: selectedMapSourceType!,
                   source: data.hash,
+                  imageWidth: mapImageWidth!,
+                  imageHeight: mapImageHeight!,
+                  realWidth: mapRealWidth!,
+                  realHeight: mapRealHeight!,
                 );
                 map.exportableBinaryData = data;
               }
@@ -277,6 +381,10 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                 var map = PlaceMap(
                   sourceType: selectedMapSourceType!,
                   source: data.hash,
+                  imageWidth: mapImageWidth!,
+                  imageHeight: mapImageHeight!,
+                  realWidth: mapRealWidth!,
+                  realHeight: mapRealHeight!,
                 );
                 map.exportableBinaryData = data;
 

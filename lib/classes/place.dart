@@ -76,10 +76,18 @@ class PlaceMap {
   PlaceMap({
     required this.sourceType,
     required this.source,
+    required this.imageWidth,
+    required this.imageHeight,
+    required this.realWidth,
+    required this.realHeight,
   });
 
   PlaceMapSourceType sourceType;
   String source;
+  final int imageWidth;
+  final int imageHeight;
+  double realWidth;
+  double realHeight;
   @JsonKey(includeFromJson: false, includeToJson: false)
     Uint8List? imageData;
   @JsonKey(includeFromJson: false, includeToJson: false)

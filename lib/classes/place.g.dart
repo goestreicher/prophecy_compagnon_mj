@@ -9,11 +9,19 @@ part of 'place.dart';
 PlaceMap _$PlaceMapFromJson(Map<String, dynamic> json) => PlaceMap(
       sourceType: $enumDecode(_$PlaceMapSourceTypeEnumMap, json['source_type']),
       source: json['source'] as String,
+      imageWidth: (json['image_width'] as num).toInt(),
+      imageHeight: (json['image_height'] as num).toInt(),
+      realWidth: (json['real_width'] as num).toDouble(),
+      realHeight: (json['real_height'] as num).toDouble(),
     );
 
 Map<String, dynamic> _$PlaceMapToJson(PlaceMap instance) => <String, dynamic>{
       'source_type': _$PlaceMapSourceTypeEnumMap[instance.sourceType]!,
       'source': instance.source,
+      'image_width': instance.imageWidth,
+      'image_height': instance.imageHeight,
+      'real_width': instance.realWidth,
+      'real_height': instance.realHeight,
     };
 
 const _$PlaceMapSourceTypeEnumMap = {
@@ -83,6 +91,7 @@ const _$PlaceTypeEnumMap = {
   PlaceType.continent: 'continent',
   PlaceType.nation: 'nation',
   PlaceType.citeEtat: 'citeEtat',
+  PlaceType.capitale: 'capitale',
   PlaceType.archiduche: 'archiduche',
   PlaceType.principaute: 'principaute',
   PlaceType.duche: 'duche',
@@ -90,7 +99,6 @@ const _$PlaceTypeEnumMap = {
   PlaceType.comte: 'comte',
   PlaceType.baronnie: 'baronnie',
   PlaceType.citeLibre: 'citeLibre',
-  PlaceType.capitale: 'capitale',
   PlaceType.cite: 'cite',
   PlaceType.ville: 'ville',
   PlaceType.village: 'village',
