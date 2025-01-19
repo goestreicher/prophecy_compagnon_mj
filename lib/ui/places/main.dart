@@ -9,34 +9,9 @@ import 'package:prophecy_compagnon_mj/classes/exportable_binary_data.dart';
 
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
-import 'place_edit_dialog.dart';
+import '../utils/place_edit_dialog.dart';
 import '../utils/error_feedback.dart';
-
-class PlaceTreeData {
-  PlaceTreeData({ required this.place, this.matchesCurrentFilter = true});
-
-  Place place;
-  bool matchesCurrentFilter;
-}
-
-class PlaceTreeFilter {
-  ObjectSourceType? sourceType;
-  ObjectSource? source;
-
-  bool isNull() => sourceType == null && source == null;
-
-  bool matchesFilter(Place p) {
-    if(source != null && p.source != source) {
-      return false;
-    }
-
-    if(sourceType != null && p.source.type != sourceType) {
-      return false;
-    }
-
-    return true;
-  }
-}
+import '../utils/place_tree_widget.dart';
 
 class PlacesMainPage extends StatefulWidget {
   const PlacesMainPage({ super.key });
@@ -48,26 +23,12 @@ class PlacesMainPage extends StatefulWidget {
 class _PlacesMainPageState extends State<PlacesMainPage> {
   late final TreeNode<PlaceTreeData> tree;
   late UniqueKey treeKey;
-  List<TreeNode<PlaceTreeData>> treeNodesToExpand = <TreeNode<PlaceTreeData>>[];
   TreeViewController? treeViewController;
   final PlaceTreeFilter treeFilter = PlaceTreeFilter();
   final TextEditingController sourceTypeController = TextEditingController();
   final TextEditingController sourceController = TextEditingController();
 
   Place? selectedPlace;
-
-  bool hasChildMatchingFilter(TreeNode node) {
-    var data = node.data as PlaceTreeData;
-    if(data.matchesCurrentFilter) return true;
-
-    for(var child in node.childrenAsList) {
-      if(hasChildMatchingFilter(child as TreeNode<PlaceTreeData>)) {
-        return true;
-      }
-    }
-
-    return false;
-  }
 
   void buildSubTree(TreeNode root, Place place) {
     for(var child in Place.withParent(place.id)..sort(Place.sortComparator)) {
@@ -80,17 +41,8 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
         )
       );
       buildSubTree(node, child);
-      if(hasChildMatchingFilter(node) || child.isDefault) {
+      if(treeFilter.hasChildMatchingFilter(node) || child.isDefault) {
         root.add(node);
-      }
-    }
-  }
-
-  void getNodesToExpand(TreeNode<PlaceTreeData> root) {
-    if(hasChildMatchingFilter(root)) {
-      treeNodesToExpand.add(root);
-      for(var child in root.childrenAsList) {
-        getNodesToExpand(child as TreeNode<PlaceTreeData>);
       }
     }
   }
@@ -99,15 +51,6 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
     tree.clear();
     treeKey = UniqueKey();
     buildSubTree(tree, Place.byId('monde')!);
-
-    treeNodesToExpand.clear();
-    var kor = tree.elementAt("kor") as TreeNode<PlaceTreeData>;
-    if(treeFilter.isNull()) {
-      treeNodesToExpand.add(kor);
-    }
-    else {
-      getNodesToExpand(kor);
-    }
   }
 
   @override
@@ -234,90 +177,11 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                   slivers: [
                     SliverPadding(
                       padding: const EdgeInsets.only(right: 8.0),
-                      sliver: SliverTreeView.simple(
+                      sliver: PlaceTreeWidget(
                         key: treeKey,
                         tree: tree,
-                        showRootNode: false,
-                        onTreeReady: (TreeViewController controller) {
-                          for(var node in treeNodesToExpand) {
-                            controller.expandNode(node);
-                          }
-                        },
-                        expansionIndicatorBuilder: (BuildContext context, node) {
-                          var data = node.data as PlaceTreeData;
-                          return ChevronIndicator.rightDown(
-                            tree: node,
-                            alignment: Alignment.centerLeft,
-                            padding: const EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
-                            color: data.matchesCurrentFilter
-                              ? Colors.black
-                              : Colors.black26
-                          );
-                        },
-                        indentation: const Indentation(),
-                        builder: (BuildContext context, TreeNode node) {
-                          var leftPad = 12.0;
-                          if(node.children.isNotEmpty) {
-                            leftPad = 24.0;
-                          }
-                
-                          var data = node.data as PlaceTreeData;
-                
-                          return Card(
-                            child: Padding(
-                              padding: EdgeInsets.fromLTRB(leftPad, 0.0, 6.0, 0.0),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    data.place.name,
-                                    style: data.matchesCurrentFilter
-                                      ? TextStyle(color: Colors.black)
-                                      : TextStyle(color: Colors.black26),
-                                  ),
-                                  Spacer(),
-                                  if(data.matchesCurrentFilter)
-                                    IconButton(
-                                      icon: Icon(Icons.info_outline),
-                                      iconSize: 18.0,
-                                      onPressed: () {
-                                        setState(() {
-                                          selectedPlace = data.place;
-                                        });
-                                      },
-                                    ),
-                                  IconButton(
-                                    icon: const Icon(Icons.add),
-                                    iconSize: 18.0,
-                                    tooltip: 'Nouveau lieu',
-                                    onPressed: () async {
-                                      var child = await showDialog<Place>(
-                                        context: context,
-                                        barrierDismissible: false,
-                                        builder: (BuildContext context) =>
-                                            PlaceEditDialog(parent: data.place.id),
-                                      );
-                                      if(child == null) return;
-                
-                                      setState(() {
-                                        node.add(
-                                          TreeNode(
-                                            key: child.id,
-                                            data: PlaceTreeData(
-                                              place: child,
-                                              matchesCurrentFilter: true
-                                            ),
-                                          )
-                                        );
-                                        selectedPlace = child;
-                                      });
-                                    },
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        }
-                      ),
+                        filter: treeFilter,
+                      )
                     )
                   ],
                 ),

@@ -6,7 +6,7 @@ import 'package:prophecy_compagnon_mj/classes/exportable_binary_data.dart';
 
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
-import '../utils/dropdown_menu_form_field.dart';
+import 'dropdown_menu_form_field.dart';
 
 class PlaceEditDialog extends StatefulWidget {
   const PlaceEditDialog({ super.key, required this.parent, this.place });
