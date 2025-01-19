@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:prophecy_compagnon_mj/classes/place.dart';
 import 'package:provider/provider.dart';
 
-import '../../classes/map_background_data.dart';
 import 'command_dispatcher.dart';
 import 'map_model.dart';
 import 'play_events_tab.dart';
 import 'play_map_tab.dart';
 import 'session_model.dart';
-import '../utils/map_background_picker.dart';
+import '../utils/place_map_picker_dialog.dart';
 
 class SessionPlayPage extends StatefulWidget {
   const SessionPlayPage({ super.key });
@@ -29,9 +29,9 @@ class _SessionPlayPageState extends State<SessionPlayPage> {
       mapPage = Center(
           child: ElevatedButton(
             onPressed: () async {
-              var background = await showDialog<MapBackground>(
+              var background = await showDialog<PlaceMap>(
                 context: context,
-                builder: (BuildContext context) => const MapBackgroundPickerDialog(),
+                builder: (BuildContext context) => const PlaceMapPickerDialog(),
               );
 
               if(background == null) return;

@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/widgets.dart';
 
-import '../../classes/map_background_data.dart';
+import '../../classes/place.dart';
 
 abstract class MapModelItem extends ChangeNotifier {
   MapModelItem({
@@ -129,7 +129,7 @@ class MapModel extends ChangeNotifier {
   MapModel({ required this.background })
     : controller = TransformationController();
 
-  final MapBackground background;
+  final PlaceMap background;
   TransformationController controller;
   bool displayInitializationDone = false;
 

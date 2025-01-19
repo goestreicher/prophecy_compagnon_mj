@@ -93,6 +93,8 @@ class PlaceMap {
   @JsonKey(includeFromJson: false, includeToJson: false)
     ExportableBinaryData? exportableBinaryData;
 
+  double get pixelsPerMeter => imageWidth / realWidth;
+
   Uint8List? get image {
     Uint8List? ret;
 

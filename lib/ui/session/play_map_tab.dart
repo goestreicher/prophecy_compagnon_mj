@@ -10,12 +10,13 @@ import '../../classes/combat_turn.dart';
 import '../../classes/encounter.dart';
 import '../../classes/entity_base.dart';
 import '../../classes/player_character.dart';
+import 'combat_turn_initiatives.dart';
 import 'command_dispatcher.dart';
 import 'encounter_actions.dart';
-import 'combat_turn_initiatives.dart';
 import 'map_entity_model.dart';
 import 'map_model.dart';
 import 'session_model.dart';
+import '../utils/error_feedback.dart';
 
 class PlayMapPage extends StatefulWidget {
   const PlayMapPage({ super.key });
@@ -275,89 +276,101 @@ class _MapViewWidgetState extends State<_MapViewWidget> with SingleTickerProvide
     var dispatcher = context.read<CommandDispatcher>();
     var map = context.watch<MapModel>();
 
-    return GestureDetector(
-      onTap: () {
-        ContextMenuController.removeAny();
-      },
-      onSecondaryTapUp: (TapUpDetails details) {
-        var renderBox = interactiveViewerKey.currentContext!.findRenderObject() as RenderBox;
-        var position = map.controller.toScene(renderBox.globalToLocal(details.globalPosition));
+    return FutureBuilder(
+      future: map.background.load(),
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        if(snapshot.hasError) {
+          return FullPageErrorWidget(
+            message: 'Impossible de charger le fond de carte: ${snapshot.error.toString()}',
+            canPop: false
+          );
+        }
 
-        _displayContextMenu(
-            details.globalPosition,
-            position,
-            dispatcher,
-        );
-      },
-      child: InteractiveViewer(
-        key: interactiveViewerKey,
-        transformationController: map.controller,
-        constrained: false,
-        minScale: 0.1,
-        maxScale: 3.0,
-        child: DragTarget<EntityBase>(
-          builder: (BuildContext context, List<dynamic> accepted, List<dynamic> rejected) {
-            return Stack(
-              children: [
-                Image.memory(map.background.image.data),
-                if(map.movementRangeSpecification != null)
-                  Positioned(
-                    left: map.movementRangeSpecification!.center.dx - map.movementRangeSpecification!.radius,
-                    top: map.movementRangeSpecification!.center.dy - map.movementRangeSpecification!.radius,
-                    child: Opacity(
-                      opacity: 0.3,
-                      child: Container(
-                        width: map.movementRangeSpecification!.radius * 2,
-                        height: map.movementRangeSpecification!.radius * 2,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.indigo),
-                          borderRadius: BorderRadius.circular(map.movementRangeSpecification!.radius),
-                          gradient: const RadialGradient(
-                            colors: [
-                              Colors.transparent,
-                              Colors.white,
-                            ],
-                          ),
-                        ),
-                      ),
-                    )
-                  ),
-                for(var em in map.items.values)
-                  MultiProvider(
-                    providers: [
-                      ChangeNotifierProvider.value(value: dispatcher),
-                      ChangeNotifierProvider.value(value: em),
-                    ],
-                    child: const MapEntityWidget(),
-                  )
-              ],
-            );
+        return GestureDetector(
+          onTap: () {
+            ContextMenuController.removeAny();
           },
-          onAcceptWithDetails: (DragTargetDetails<EntityBase> details) {
-            var entityBase = details.data;
+          onSecondaryTapUp: (TapUpDetails details) {
             var renderBox = interactiveViewerKey.currentContext!.findRenderObject() as RenderBox;
-            // We have to add half the width of the drag feedback widget
-            var dropCenterOffset = details.offset + const Offset(25.0, 25.0);
-            var posOffset = map.controller.toScene(renderBox.globalToLocal(dropCenterOffset));
+            var position = map.controller.toScene(renderBox.globalToLocal(details.globalPosition));
 
-            var entityModel = MapEntityModel(
-              entity: entityBase,
-              map: map,
-              x: posOffset.dx,
-              y: posOffset.dy,
+            _displayContextMenu(
+                details.globalPosition,
+                position,
+                dispatcher,
             );
-
-            if(entityBase is PlayerCharacter) {
-              map.addPlayerCharacter(entityModel);
-            }
-            else {
-              map.addNonPlayerCharacter(entityModel);
-            }
-
-            widget.onEntityDeployed(entityBase.id);
           },
-        )
-      ),
+          child: InteractiveViewer(
+            key: interactiveViewerKey,
+            transformationController: map.controller,
+            constrained: false,
+            minScale: 0.1,
+            maxScale: 3.0,
+            child: DragTarget<EntityBase>(
+              builder: (BuildContext context, List<dynamic> accepted, List<dynamic> rejected) {
+                return Stack(
+                  children: [
+                    Image.memory(map.background.image!),
+                    if(map.movementRangeSpecification != null)
+                      Positioned(
+                        left: map.movementRangeSpecification!.center.dx - map.movementRangeSpecification!.radius,
+                        top: map.movementRangeSpecification!.center.dy - map.movementRangeSpecification!.radius,
+                        child: Opacity(
+                          opacity: 0.3,
+                          child: Container(
+                            width: map.movementRangeSpecification!.radius * 2,
+                            height: map.movementRangeSpecification!.radius * 2,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Colors.indigo),
+                              borderRadius: BorderRadius.circular(map.movementRangeSpecification!.radius),
+                              gradient: const RadialGradient(
+                                colors: [
+                                  Colors.transparent,
+                                  Colors.white,
+                                ],
+                              ),
+                            ),
+                          ),
+                        )
+                      ),
+                    for(var em in map.items.values)
+                      MultiProvider(
+                        providers: [
+                          ChangeNotifierProvider.value(value: dispatcher),
+                          ChangeNotifierProvider.value(value: em),
+                        ],
+                        child: const MapEntityWidget(),
+                      )
+                  ],
+                );
+              },
+              onAcceptWithDetails: (DragTargetDetails<EntityBase> details) {
+                var entityBase = details.data;
+                var renderBox = interactiveViewerKey.currentContext!.findRenderObject() as RenderBox;
+                // We have to add half the width of the drag feedback widget
+                var dropCenterOffset = details.offset + const Offset(25.0, 25.0);
+                var posOffset = map.controller.toScene(renderBox.globalToLocal(dropCenterOffset));
+
+                var entityModel = MapEntityModel(
+                  entity: entityBase,
+                  map: map,
+                  x: posOffset.dx,
+                  y: posOffset.dy,
+                );
+
+                if(entityBase is PlayerCharacter) {
+                  map.addPlayerCharacter(entityModel);
+                }
+                else {
+                  map.addNonPlayerCharacter(entityModel);
+                }
+
+                widget.onEntityDeployed(entityBase.id);
+              },
+            )
+          ),
+        );
+      }
     );
   }
 }
