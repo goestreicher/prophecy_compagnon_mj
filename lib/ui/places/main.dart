@@ -181,6 +181,9 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                         key: treeKey,
                         tree: tree,
                         filter: treeFilter,
+                        onPlaceSelected: (Place p) => setState(() {
+                          selectedPlace = p;
+                        }),
                       )
                     )
                   ],
