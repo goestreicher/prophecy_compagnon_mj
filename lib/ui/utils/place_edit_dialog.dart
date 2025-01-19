@@ -10,10 +10,16 @@ import '../../classes/place.dart';
 import 'dropdown_menu_form_field.dart';
 
 class PlaceEditDialog extends StatefulWidget {
-  const PlaceEditDialog({ super.key, required this.parent, this.place });
+  const PlaceEditDialog({
+    super.key,
+    required this.parent,
+    this.place,
+    this.source,
+  });
 
   final String parent;
   final Place? place;
+  final ObjectSource? source;
 
   @override
   State<PlaceEditDialog> createState() => _PlaceEditDialogState();
@@ -327,7 +333,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                 description: PlaceDescription(
                   general: descriptionController.text,
                 ),
-                source: ObjectSource.local,
+                source: widget.source ?? ObjectSource.local,
                 map: map,
               );
               await PlaceStore().save(p);

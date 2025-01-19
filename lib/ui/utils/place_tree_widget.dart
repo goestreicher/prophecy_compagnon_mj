@@ -50,11 +50,13 @@ class PlaceTreeWidget extends StatefulWidget {
     required this.tree,
     this.filter,
     this.onPlaceSelected,
+    this.newPlaceSource,
   });
 
   final TreeNode<PlaceTreeData> tree;
   final PlaceTreeFilter? filter;
   final void Function(Place)? onPlaceSelected;
+  final ObjectSource? newPlaceSource;
 
   @override
   State<PlaceTreeWidget> createState() => _PlaceTreeWidgetState();
@@ -144,7 +146,10 @@ class _PlaceTreeWidgetState extends State<PlaceTreeWidget> {
                       context: context,
                       barrierDismissible: false,
                       builder: (BuildContext context) =>
-                          PlaceEditDialog(parent: data.place.id),
+                          PlaceEditDialog(
+                            parent: data.place.id,
+                            source: widget.newPlaceSource,
+                          ),
                     );
                     if(child == null) return;
 
