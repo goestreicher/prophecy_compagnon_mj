@@ -20,7 +20,6 @@ class PlacesMainPage extends StatefulWidget {
 class _PlacesMainPageState extends State<PlacesMainPage> {
   late final TreeNode<PlaceTreeData> tree;
   late UniqueKey treeKey;
-  TreeViewController? treeViewController;
   final PlaceTreeFilter treeFilter = PlaceTreeFilter();
   final TextEditingController sourceTypeController = TextEditingController();
   final TextEditingController sourceController = TextEditingController();
