@@ -12,6 +12,32 @@ import '../../classes/place.dart';
 import 'place_edit_dialog.dart';
 import '../utils/error_feedback.dart';
 
+class PlaceTreeData {
+  PlaceTreeData({ required this.place, this.matchesCurrentFilter = true});
+
+  Place place;
+  bool matchesCurrentFilter;
+}
+
+class PlaceTreeFilter {
+  ObjectSourceType? sourceType;
+  ObjectSource? source;
+
+  bool isNull() => sourceType == null && source == null;
+
+  bool matchesFilter(Place p) {
+    if(source != null && p.source != source) {
+      return false;
+    }
+
+    if(sourceType != null && p.source.type != sourceType) {
+      return false;
+    }
+
+    return true;
+  }
+}
+
 class PlacesMainPage extends StatefulWidget {
   const PlacesMainPage({ super.key });
 
@@ -20,25 +46,68 @@ class PlacesMainPage extends StatefulWidget {
 }
 
 class _PlacesMainPageState extends State<PlacesMainPage> {
-  late final TreeNode<Place> tree;
+  late final TreeNode<PlaceTreeData> tree;
+  late UniqueKey treeKey;
+  List<TreeNode<PlaceTreeData>> treeNodesToExpand = <TreeNode<PlaceTreeData>>[];
+  TreeViewController? treeViewController;
+  final PlaceTreeFilter treeFilter = PlaceTreeFilter();
   final TextEditingController sourceTypeController = TextEditingController();
-  ObjectSourceType? selectedSourceType;
   final TextEditingController sourceController = TextEditingController();
-  ObjectSource? selectedSource;
 
   Place? selectedPlace;
 
+  bool hasChildMatchingFilter(TreeNode node) {
+    var data = node.data as PlaceTreeData;
+    if(data.matchesCurrentFilter) return true;
+
+    for(var child in node.childrenAsList) {
+      if(hasChildMatchingFilter(child as TreeNode<PlaceTreeData>)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
   void buildSubTree(TreeNode root, Place place) {
     for(var child in Place.withParent(place.id)..sort(Place.sortComparator)) {
-      var node = TreeNode(key: child.id, data: child);
-      root.add(node);
+      bool match = treeFilter.matchesFilter(child);
+      var node = TreeNode(
+        key: child.id,
+        data: PlaceTreeData(
+          place: child,
+          matchesCurrentFilter: match
+        )
+      );
       buildSubTree(node, child);
+      if(hasChildMatchingFilter(node) || child.isDefault) {
+        root.add(node);
+      }
+    }
+  }
+
+  void getNodesToExpand(TreeNode<PlaceTreeData> root) {
+    if(hasChildMatchingFilter(root)) {
+      treeNodesToExpand.add(root);
+      for(var child in root.childrenAsList) {
+        getNodesToExpand(child as TreeNode<PlaceTreeData>);
+      }
     }
   }
 
   void rebuildTree() {
     tree.clear();
+    treeKey = UniqueKey();
     buildSubTree(tree, Place.byId('monde')!);
+
+    treeNodesToExpand.clear();
+    var kor = tree.elementAt("kor") as TreeNode<PlaceTreeData>;
+    if(treeFilter.isNull()) {
+      treeNodesToExpand.add(kor);
+    }
+    else {
+      getNodesToExpand(kor);
+    }
   }
 
   @override
@@ -50,173 +119,265 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            width: 350,
-            child: CustomScrollView(
-              slivers: [
-                SliverList.list(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),
-                      child: ElevatedButton.icon(
-                        icon: const Icon(Icons.add),
-                        label: const Text('Importer un lieu'),
-                        onPressed: () async {
-                          var result = await FilePicker.platform.pickFiles(
-                            type: FileType.custom,
-                            allowedExtensions: ['json'],
-                          );
-                          if(!context.mounted) return;
-                          if(result == null) return;
+    var theme = Theme.of(context);
 
-                          try {
-                            var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
-                            List<dynamic> j = json.decode(jsonStr);
-                            await Place.import(j);
-                            setState(() {
-                              rebuildTree();
-                            });
-                          } catch (e) {
-                            if(!context.mounted) return;
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            children: [
+              DropdownMenu(
+                controller: sourceTypeController,
+                label: const Text('Type de source'),
+                textStyle: theme.textTheme.bodySmall,
+                leadingIcon: treeFilter.sourceType == null
+                  ? null
+                  : GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          treeFilter.sourceType = null;
+                          sourceTypeController.clear();
+                          treeFilter.source = null;
+                          sourceController.clear();
+                          rebuildTree();
+                        });
+                        FocusScope.of(context).unfocus();
+                      },
+                      child: Icon(Icons.cancel, size: 16.0,)
+                    ),
+                initialSelection: treeFilter.sourceType,
+                onSelected: (ObjectSourceType? sourceType) {
+                  setState(() {
+                    treeFilter.sourceType = sourceType;
+                    sourceController.clear();
+                    treeFilter.source = null;
+                    rebuildTree();
+                  });
+                },
+                dropdownMenuEntries: ObjectSourceType.values
+                    .map((ObjectSourceType s) => DropdownMenuEntry(value: s, label: s.title))
+                    .toList(),
+              ),
+              const SizedBox(width: 8.0),
+              DropdownMenu(
+                controller: sourceController,
+                enabled: treeFilter.sourceType != null,
+                label: const Text('Source'),
+                textStyle: theme.textTheme.bodySmall,
+                leadingIcon: treeFilter.source == null
+                    ? null
+                    : GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            treeFilter.source = null;
+                            sourceController.clear();
+                            rebuildTree();
+                          });
+                          FocusScope.of(context).unfocus();
+                        },
+                        child: Icon(Icons.cancel, size: 16.0,)
+                      ),
+                initialSelection: treeFilter.source,
+                onSelected: (ObjectSource? source) {
+                  setState(() {
+                    treeFilter.source = source;
+                    rebuildTree();
+                  });
+                },
+                dropdownMenuEntries: treeFilter.sourceType == null
+                    ? <DropdownMenuEntry<ObjectSource>>[]
+                    : ObjectSource.forType(treeFilter.sourceType!)
+                        .map((ObjectSource s) => DropdownMenuEntry(value: s, label: s.name))
+                        .toList(),
+              ),
+              const SizedBox(width: 8.0),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.add),
+                label: const Text('Importer un lieu'),
+                onPressed: () async {
+                  var result = await FilePicker.platform.pickFiles(
+                    type: FileType.custom,
+                    allowedExtensions: ['json'],
+                  );
+                  if(!context.mounted) return;
+                  if(result == null) return;
 
-                            displayErrorDialog(
-                              context,
-                              "Échec de l'import",
-                              e.toString()
-                            );
+                  try {
+                    var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
+                    List<dynamic> j = json.decode(jsonStr);
+                    await Place.import(j);
+                    setState(() {
+                      rebuildTree();
+                    });
+                  } catch (e) {
+                    if(!context.mounted) return;
+
+                    displayErrorDialog(
+                        context,
+                        "Échec de l'import",
+                        e.toString()
+                    );
+                  }
+                },
+              ),
+            ]
+          ),
+        ),
+        Expanded(
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                width: 350,
+                child: CustomScrollView(
+                  slivers: [
+                    SliverPadding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      sliver: SliverTreeView.simple(
+                        key: treeKey,
+                        tree: tree,
+                        showRootNode: false,
+                        onTreeReady: (TreeViewController controller) {
+                          for(var node in treeNodesToExpand) {
+                            controller.expandNode(node);
                           }
                         },
+                        expansionIndicatorBuilder: (BuildContext context, node) {
+                          var data = node.data as PlaceTreeData;
+                          return ChevronIndicator.rightDown(
+                            tree: node,
+                            alignment: Alignment.centerLeft,
+                            padding: const EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
+                            color: data.matchesCurrentFilter
+                              ? Colors.black
+                              : Colors.black26
+                          );
+                        },
+                        indentation: const Indentation(),
+                        builder: (BuildContext context, TreeNode node) {
+                          var leftPad = 12.0;
+                          if(node.children.isNotEmpty) {
+                            leftPad = 24.0;
+                          }
+                
+                          var data = node.data as PlaceTreeData;
+                
+                          return Card(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(leftPad, 0.0, 6.0, 0.0),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    data.place.name,
+                                    style: data.matchesCurrentFilter
+                                      ? TextStyle(color: Colors.black)
+                                      : TextStyle(color: Colors.black26),
+                                  ),
+                                  Spacer(),
+                                  if(data.matchesCurrentFilter)
+                                    IconButton(
+                                      icon: Icon(Icons.info_outline),
+                                      iconSize: 18.0,
+                                      onPressed: () {
+                                        setState(() {
+                                          selectedPlace = data.place;
+                                        });
+                                      },
+                                    ),
+                                  IconButton(
+                                    icon: const Icon(Icons.add),
+                                    iconSize: 18.0,
+                                    tooltip: 'Nouveau lieu',
+                                    onPressed: () async {
+                                      var child = await showDialog<Place>(
+                                        context: context,
+                                        barrierDismissible: false,
+                                        builder: (BuildContext context) =>
+                                            PlaceEditDialog(parent: data.place.id),
+                                      );
+                                      if(child == null) return;
+                
+                                      setState(() {
+                                        node.add(
+                                          TreeNode(
+                                            key: child.id,
+                                            data: PlaceTreeData(
+                                              place: child,
+                                              matchesCurrentFilter: true
+                                            ),
+                                          )
+                                        );
+                                        selectedPlace = child;
+                                      });
+                                    },
+                                  ),
+                                ],
+                              ),
+                            ),
+                          );
+                        }
                       ),
-                    ),
+                    )
                   ],
                 ),
-                SliverPadding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  sliver: SliverTreeView.simple(
-                    tree: tree,
-                    showRootNode: false,
-                    onTreeReady: (TreeViewController controller) {
-                      controller.expandNode(controller.elementAt('kor'));
-                    },
-                    expansionIndicatorBuilder: (BuildContext context, node) {
-                      return ChevronIndicator.rightDown(
-                        tree: node,
-                        alignment: Alignment.centerLeft,
-                        padding: const EdgeInsets.fromLTRB(6.0, 0.0, 0.0, 0.0),
-                      );
-                    },
-                    indentation: const Indentation(),
-                    builder: (BuildContext context, TreeNode node) {
-                      var leftPad = 12.0;
-                      if(node.children.isNotEmpty) {
-                        leftPad = 24.0;
-                      }
-
-                      var place = node.data as Place;
-
-                      return Card(
-                        child: Padding(
-                          padding: EdgeInsets.fromLTRB(leftPad, 0.0, 6.0, 0.0),
-                          child: Row(
-                            children: [
-                              Text(place.name),
-                              Spacer(),
-                              IconButton(
-                                icon: Icon(Icons.info_outline),
-                                iconSize: 18.0,
-                                onPressed: () {
-                                  setState(() {
-                                    selectedPlace = place;
-                                  });
-                                },
+              ),
+              if(selectedPlace != null)
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(4.0, 16.0, 0.0, 16.0),
+                    child: PlaceDisplayWidget(
+                      place: selectedPlace!,
+                      onEdited: (Place p) => setState(() {
+                        selectedPlace = p;
+                      }),
+                      onDelete: (Place p) async {
+                        var confirm = await showDialog<bool>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('Confirmer la suppression'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('Supprimer ce lieux et tous ses enfants ?'),
+                              ],
+                            ),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(false),
+                                child: const Text('Annuler'),
                               ),
-                              IconButton(
-                                icon: const Icon(Icons.add),
-                                iconSize: 18.0,
-                                tooltip: 'Nouveau lieu',
-                                onPressed: () async {
-                                  var child = await showDialog<Place>(
-                                    context: context,
-                                    barrierDismissible: false,
-                                    builder: (BuildContext context) =>
-                                        PlaceEditDialog(parent: place.id),
-                                  );
-                                  if(child == null) return;
-
-                                  setState(() {
-                                    node.add(TreeNode(key: child.id, data: child));
-                                    selectedPlace = child;
-                                  });
-                                },
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(true),
+                                child: const Text('Supprimer'),
                               ),
-                            ],
-                          ),
-                        ),
-                      );
-                    }
-                  ),
-                )
-              ],
-            ),
-          ),
-          if(selectedPlace != null)
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.fromLTRB(4.0, 16.0, 0.0, 16.0),
-                child: PlaceDisplayWidget(
-                  place: selectedPlace!,
-                  onEdited: (Place p) => setState(() {
-                    selectedPlace = p;
-                  }),
-                  onDelete: (Place p) async {
-                    var confirm = await showDialog<bool>(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                        title: const Text('Confirmer la suppression'),
-                        content: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text('Supprimer ce lieux et tous ses enfants ?'),
-                          ],
-                        ),
-                        actions: <Widget>[
-                          TextButton(
-                            onPressed: () => Navigator.of(context).pop(false),
-                            child: const Text('Annuler'),
-                          ),
-                          TextButton(
-                            onPressed: () => Navigator.of(context).pop(true),
-                            child: const Text('Supprimer'),
-                          ),
-                        ]
-                      )
-                    );
-                    if(confirm == null || !confirm) return;
-
-                    Place? current = p;
-                    var path = p.id;
-                    while(current != null && current.parentId != null && current.parentId != 'monde') {
-                      current = Place.byId(current.parentId!);
-                      path = '${current!.id}.$path';
-                    }
-                    var n = tree.elementAt(path);
-                    setState(() {
-                      selectedPlace = null;
-                      n.parent?.remove(n);
-                    });
-
-                    await Place.delete(p);
-                  },
+                            ]
+                          )
+                        );
+                        if(confirm == null || !confirm) return;
+          
+                        Place? current = p;
+                        var path = p.id;
+                        while(current != null && current.parentId != null && current.parentId != 'monde') {
+                          current = Place.byId(current.parentId!);
+                          path = '${current!.id}.$path';
+                        }
+                        var n = tree.elementAt(path);
+                        setState(() {
+                          selectedPlace = null;
+                          n.parent?.remove(n);
+                        });
+          
+                        await Place.delete(p);
+                      },
+                    ),
+                  )
                 ),
-              )
-            ),
-        ],
-      )
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
