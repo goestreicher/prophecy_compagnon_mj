@@ -288,9 +288,6 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
           onPressed: () async {
             if(!formKey.currentState!.validate()) return;
 
-            var w = double.parse(mapRealWidthController.text);
-            var h = double.parse(mapRealHeightController.text);
-
             if(widget.place == null) {
               PlaceMap? map;
 
@@ -302,6 +299,9 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                   data: mapSourceLocalFileData!,
                   isNew: true,
                 );
+
+                var w = double.parse(mapRealWidthController.text);
+                var h = double.parse(mapRealHeightController.text);
 
                 map = PlaceMap(
                   sourceType: selectedMapSourceType!,
@@ -385,6 +385,9 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                   data: mapSourceLocalFileData!,
                   isNew: true,
                 );
+
+                var w = double.parse(mapRealWidthController.text);
+                var h = double.parse(mapRealHeightController.text);
 
                 var map = PlaceMap(
                   sourceType: selectedMapSourceType!,
