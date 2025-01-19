@@ -386,9 +386,29 @@ class PlaceDisplayWidget extends StatelessWidget {
                             return Center(child: Text(snapshot.error.toString()));
                           }
 
-                          return Image.memory(
-                            place.map!.image!,
-                            fit: BoxFit.contain,
+                          return MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: GestureDetector(
+                              onTap: () async {
+                                await showDialog(
+                                  context: context,
+                                  barrierColor: Colors.black87,
+                                  builder: (BuildContext context) {
+                                    return Dialog(
+                                      insetPadding: EdgeInsets.zero,
+                                      child: InteractiveViewer(
+                                        maxScale: 4.0,
+                                        child: Image.memory(place.map!.image!)
+                                      )
+                                    );
+                                  }
+                                );
+                              },
+                              child: Image.memory(
+                                place.map!.image!,
+                                fit: BoxFit.contain,
+                              ),
+                            ),
                           );
                         }
                       ),
