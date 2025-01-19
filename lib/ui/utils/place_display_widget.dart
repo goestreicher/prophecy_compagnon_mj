@@ -15,11 +15,13 @@ class PlaceDisplayWidget extends StatelessWidget {
     required this.place,
     required this.onEdited,
     required this.onDelete,
+    this.modifyIfSourceMatches,
   });
 
   final Place place;
   final void Function(Place) onEdited;
   final void Function(Place) onDelete;
+  final ObjectSource? modifyIfSourceMatches;
 
   Future<List<Map<String, dynamic>>> _export(Place p, PlaceExportConfig cfg) async {
     var ret = <Map<String, dynamic>>[];
@@ -68,7 +70,9 @@ class PlaceDisplayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var paragraphSpacing = 16.0;
-    bool canEdit = place.source == ObjectSource.local;
+    bool canEdit = modifyIfSourceMatches != null
+      ? place.source == modifyIfSourceMatches
+      : place.source == ObjectSource.local;
 
     var actionButtons = <Widget>[];
 

@@ -10,6 +10,7 @@ import 'edit_events_tab.dart';
 import 'edit_general_tab.dart';
 import 'edit_maps_tab.dart';
 import 'edit_npcs_tab.dart';
+import 'edit_places_tab.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 
@@ -63,7 +64,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
         return Stack(
           children: [
             DefaultTabController(
-              length: 6,
+              length: 7,
               child: Scaffold(
                 appBar: AppBar(
                   title: Text('Scénario: ${_scenario.name}'),
@@ -111,6 +112,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       Tab(text: 'Événements'),
                       Tab(text: 'PNJs'),
                       Tab(text: 'Créatures'),
+                      Tab(text: 'Lieux'),
                       Tab(text: 'Rencontres'),
                       Tab(text: 'Cartes'),
                     ],
@@ -133,6 +135,15 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       creatures: _scenario.creatures,
                       scenarioName: _scenario.name,
                       onCreatureCommitted: () {
+                        setState(() {
+                          _canCancel = false;
+                        });
+                      },
+                    ),
+                    ScenarioEditPlacesPage(
+                      places: _scenario.places,
+                      scenarioName: _scenario.name,
+                      onPlaceCommitted: () {
                         setState(() {
                           _canCancel = false;
                         });

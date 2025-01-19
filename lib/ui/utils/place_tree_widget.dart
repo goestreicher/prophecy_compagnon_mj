@@ -51,12 +51,14 @@ class PlaceTreeWidget extends StatefulWidget {
     this.filter,
     this.onPlaceSelected,
     this.newPlaceSource,
+    this.onPlaceCreated,
   });
 
   final TreeNode<PlaceTreeData> tree;
   final PlaceTreeFilter? filter;
   final void Function(Place)? onPlaceSelected;
   final ObjectSource? newPlaceSource;
+  final void Function(Place)? onPlaceCreated;
 
   @override
   State<PlaceTreeWidget> createState() => _PlaceTreeWidgetState();
@@ -163,6 +165,7 @@ class _PlaceTreeWidgetState extends State<PlaceTreeWidget> {
                           ),
                         )
                       );
+                      widget.onPlaceCreated?.call(child);
                       widget.onPlaceSelected?.call(child);
                     });
                   },
