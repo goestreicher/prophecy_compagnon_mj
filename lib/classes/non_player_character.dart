@@ -417,25 +417,24 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
         && (subCategory == null || summary.subCategory == subCategory);
   }
 
-  static List<NonPlayerCharacterSummary> forCategory(NPCCategory category, NPCSubCategory? subCategory) {
-    var ret = <NonPlayerCharacterSummary>[];
-    for(var summary in _summaries.values) {
-      if(_matchesCategory(summary, category, subCategory)) {
-        ret.add(summary);
-      }
-    }
-    return ret;
+  static List<NonPlayerCharacterSummary> forCategory(NPCCategory category, NPCSubCategory? subCategory, {String? nameFilter}) {
+    return _summaries.values
+      .where((NonPlayerCharacterSummary s) => _matchesCategory(s, category, subCategory))
+      .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
+      .toList();
   }
 
-  static List<NonPlayerCharacterSummary> forSourceType(ObjectSourceType type, NPCCategory? category, NPCSubCategory? subCategory) {
+  static List<NonPlayerCharacterSummary> forSourceType(ObjectSourceType type, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
     return _summaries.values
         .where((NonPlayerCharacterSummary s) => s.source.type == type && (category == null || _matchesCategory(s, category, subCategory)))
+        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
         .toList();
   }
 
-  static List<NonPlayerCharacterSummary> forSource(ObjectSource source, NPCCategory? category, NPCSubCategory? subCategory) {
+  static List<NonPlayerCharacterSummary> forSource(ObjectSource source, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
     return _summaries.values
         .where((NonPlayerCharacterSummary s) => s.source == source && (category == null || _matchesCategory(s, category, subCategory)))
+        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
         .toList();
   }
 

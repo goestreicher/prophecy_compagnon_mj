@@ -29,6 +29,8 @@ class _NPCMainPageState extends State<NPCMainPage> {
   NPCCategory? npcCategory;
   final TextEditingController subCategoryController = TextEditingController();
   NPCSubCategory? npcSubCategory;
+  final TextEditingController searchController = TextEditingController();
+  String? search;
   final GlobalKey<FormState> newNPCFormKey = GlobalKey();
   bool editing = false;
   String? selectedDisplay;
@@ -38,13 +40,13 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
   Future<List<NonPlayerCharacterSummary>> _updateNPCsList() async {
     if(npcSource != null) {
-      return NonPlayerCharacter.forSource(npcSource!, npcCategory, npcSubCategory);
+      return NonPlayerCharacter.forSource(npcSource!, npcCategory, npcSubCategory, nameFilter: search);
     }
     else if(npcSourceType != null) {
-      return NonPlayerCharacter.forSourceType(npcSourceType!, npcCategory, npcSubCategory);
+      return NonPlayerCharacter.forSourceType(npcSourceType!, npcCategory, npcSubCategory, nameFilter: search);
     }
     else if(npcCategory != null) {
-      return NonPlayerCharacter.forCategory(npcCategory!, npcSubCategory);
+      return NonPlayerCharacter.forCategory(npcCategory!, npcSubCategory, nameFilter: search);
     }
 
     return <NonPlayerCharacterSummary>[];
@@ -187,6 +189,37 @@ class _NPCMainPageState extends State<NPCMainPage> {
                             .map((NPCSubCategory s) => DropdownMenuEntry(value: s, label: s.title))
                             .toList(),
                       ),
+                    SizedBox(
+                      width: 200.0,
+                      child: TextField(
+                        controller: searchController,
+                        style: theme.textTheme.bodySmall,
+                        decoration: InputDecoration(
+                          labelText: 'Recherche',
+                          border: OutlineInputBorder(),
+                          suffixIcon: Icon(Icons.search),
+                          prefixIcon: search == null
+                            ? null
+                            : GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                searchController.clear();
+                                search = null;
+                              });
+                              FocusScope.of(context).unfocus();
+                            },
+                            child: Icon(Icons.cancel, size: 16.0,)
+                          ),
+                        ),
+                        onSubmitted: (String? value) {
+                          if(value == null || value.length >= 3) {
+                            setState(() {
+                              search = value;
+                            });
+                          }
+                        },
+                      ),
+                    ),
                     MenuAnchor(
                       alignmentOffset: const Offset(0, 4),
                       builder: (BuildContext context, MenuController controller, Widget? child) {
