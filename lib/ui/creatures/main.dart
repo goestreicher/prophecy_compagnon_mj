@@ -118,6 +118,17 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       label: const Text('Type de source'),
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: creatureSourceType,
+                      leadingIcon: creatureSourceType == null
+                          ? null
+                          : GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  sourceTypeController.clear();
+                                  creatureSourceType = null;
+                                });
+                              },
+                              child: Icon(Icons.cancel, size: 16.0,)
+                            ),
                       onSelected: (ObjectSourceType? sourceType) {
                         setState(() {
                           creatureSourceType = sourceType;
@@ -135,6 +146,17 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       label: const Text('Source'),
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: creatureSource,
+                      leadingIcon: creatureSource == null
+                          ? null
+                          : GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  sourceController.clear();
+                                  creatureSource = null;
+                                });
+                              },
+                              child: Icon(Icons.cancel, size: 16.0,)
+                            ),
                       onSelected: (ObjectSource? source) {
                         setState(() {
                           creatureSource = source;
@@ -151,6 +173,17 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       label: const Text('Catégorie'),
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: creatureCategory,
+                      leadingIcon: creatureCategory == null
+                          ? null
+                          : GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  categoryController.clear();
+                                  creatureCategory = null;
+                                });
+                              },
+                              child: Icon(Icons.cancel, size: 16.0,)
+                            ),
                       onSelected: (CreatureCategory? category) {
                         setState(() {
                           creatureCategory = category;

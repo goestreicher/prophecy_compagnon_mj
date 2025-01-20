@@ -125,6 +125,17 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       label: const Text('Type de source'),
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: npcSourceType,
+                      leadingIcon: npcSourceType == null
+                          ? null
+                          : GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  sourceTypeController.clear();
+                                  npcSourceType = null;
+                                });
+                              },
+                              child: Icon(Icons.cancel, size: 16.0,)
+                            ),
                       onSelected: (ObjectSourceType? sourceType) {
                         setState(() {
                           npcSourceType = sourceType;
@@ -142,6 +153,17 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       label: const Text('Source'),
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: npcSource,
+                      leadingIcon: npcSource == null
+                          ? null
+                          : GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  sourceController.clear();
+                                  npcSource = null;
+                                });
+                              },
+                              child: Icon(Icons.cancel, size: 16.0,)
+                            ),
                       onSelected: (ObjectSource? source) {
                         setState(() {
                           npcSource = source;
@@ -158,6 +180,17 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       label: const Text('Catégorie'),
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: npcCategory,
+                      leadingIcon: npcCategory == null
+                          ? null
+                          : GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  categoryController.clear();
+                                  npcCategory = null;
+                                });
+                              },
+                              child: Icon(Icons.cancel, size: 16.0,)
+                            ),
                       onSelected: (NPCCategory? category) {
                         setState(() {
                           npcCategory = category;
@@ -177,6 +210,17 @@ class _NPCMainPageState extends State<NPCMainPage> {
                         requestFocusOnTap: true,
                         textStyle: theme.textTheme.bodySmall,
                         initialSelection: npcSubCategory,
+                        leadingIcon: npcSubCategory == null
+                            ? null
+                            : GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    subCategoryController.clear();
+                                    npcSubCategory = null;
+                                  });
+                                },
+                                child: Icon(Icons.cancel, size: 16.0,)
+                              ),
                         onSelected: (NPCSubCategory? subCategory) {
                           setState(() {
                             npcSubCategory = subCategory;
