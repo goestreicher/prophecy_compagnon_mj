@@ -481,23 +481,24 @@ class CreatureModel with EncounterEntityModel {
     return _models[id];
   }
 
-  static List<CreatureModelSummary> forCategory(CreatureCategory category) {
-    var ret = <CreatureModelSummary>[];
-    for(var summary in _summaries.values) {
-      if(summary.category == category) ret.add(summary);
-    }
-    return ret;
-  }
-
-  static List<CreatureModelSummary> forSourceType(ObjectSourceType type, CreatureCategory? category) {
+  static List<CreatureModelSummary> forCategory(CreatureCategory category, {String? nameFilter}) {
     return _summaries.values
-        .where((CreatureModelSummary c) => c.source.type == type && (category == null || c.category == category))
+        .where((CreatureModelSummary c) => c.category == category)
+        .where((CreatureModelSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
         .toList();
   }
 
-  static List<CreatureModelSummary> forSource(ObjectSource source, CreatureCategory? category) {
+  static List<CreatureModelSummary> forSourceType(ObjectSourceType type, CreatureCategory? category, {String? nameFilter}) {
+    return _summaries.values
+        .where((CreatureModelSummary c) => c.source.type == type && (category == null || c.category == category))
+        .where((CreatureModelSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .toList();
+  }
+
+  static List<CreatureModelSummary> forSource(ObjectSource source, CreatureCategory? category, {String? nameFilter}) {
     return _summaries.values
         .where((CreatureModelSummary c) => c.source == source && (category == null || c.category == category))
+        .where((CreatureModelSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
         .toList();
   }
 

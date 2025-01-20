@@ -26,9 +26,9 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
   ObjectSource? creatureSource;
   final TextEditingController categoryController = TextEditingController();
   CreatureCategory? creatureCategory;
-  // final TextEditingController _searchController = TextEditingController();
+  final TextEditingController searchController = TextEditingController();
+  String? search;
   final GlobalKey<FormState> newCreatureFormKey = GlobalKey();
-  // String? _search;
   bool editing = false;
   String? selectedDisplay;
   String? selectedEdit;
@@ -46,10 +46,10 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
 
   Future<List<CreatureModelSummary>> _updateCreaturesList() async {
     if(creatureSource != null) {
-      return CreatureModel.forSource(creatureSource!, creatureCategory);
+      return CreatureModel.forSource(creatureSource!, creatureCategory, nameFilter: search);
     }
     else if(creatureSourceType != null) {
-      return CreatureModel.forSourceType(creatureSourceType!, creatureCategory);
+      return CreatureModel.forSourceType(creatureSourceType!, creatureCategory, nameFilter: search);
     }
     else if(creatureCategory != null) {
       return CreatureModel.forCategory(creatureCategory!);
@@ -161,19 +161,37 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                         .map((CreatureCategory c) => DropdownMenuEntry(value: c, label: c.title))
                         .toList(),
                     ),
-                    // SizedBox(
-                    //   width: 350.0,
-                    //   child: TextFormField(
-                    //     controller: _searchController,
-                    //     style: theme.textTheme.bodySmall,
-                    //     decoration: const InputDecoration(
-                    //       labelText: 'Recherche',
-                    //       border: OutlineInputBorder(),
-                    //       suffixIcon: Icon(Icons.search),
-                    //     ),
-                    //   ),
-                    // ),
-                    // const SizedBox(width: 8.0),
+                    SizedBox(
+                      width: 200.0,
+                      child: TextField(
+                        controller: searchController,
+                        style: theme.textTheme.bodySmall,
+                        decoration: InputDecoration(
+                          labelText: 'Recherche',
+                          border: OutlineInputBorder(),
+                          suffixIcon: Icon(Icons.search),
+                          prefixIcon: search == null
+                            ? null
+                            : GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    searchController.clear();
+                                    search = null;
+                                  });
+                                  FocusScope.of(context).unfocus();
+                                },
+                                child: Icon(Icons.cancel, size: 16.0,)
+                              ),
+                        ),
+                        onSubmitted: (String? value) {
+                          if(value == null || value.length >= 3) {
+                            setState(() {
+                              search = value;
+                            });
+                          }
+                        },
+                      ),
+                    ),
                     MenuAnchor(
                       alignmentOffset: const Offset(0, 4),
                       builder: (BuildContext context, MenuController controller, Widget? child) {
