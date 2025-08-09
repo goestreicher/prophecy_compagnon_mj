@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:file_saver/file_saver.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
@@ -102,8 +102,8 @@ class CreatureActionButtons extends StatelessWidget {
           onPressed: () async {
             var model = await CreatureModel.get(creature.id);
             var jsonStr = json.encode(model!.toJson());
-            await FileSaver.instance.saveFile(
-              name: 'creature-${creature.id}.json',
+            await FilePicker.platform.saveFile(
+              fileName: 'creature-${creature.id}.json',
               bytes: utf8.encode(jsonStr),
             );
           },

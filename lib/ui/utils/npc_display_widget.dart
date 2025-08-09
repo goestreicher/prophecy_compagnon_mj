@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:file_saver/file_saver.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/character/base.dart';
@@ -104,8 +104,8 @@ class NPCActionButtons extends StatelessWidget {
           onPressed: () async {
             var model = await NonPlayerCharacter.get(npc.id);
             var jsonStr = json.encode(model!.toJson());
-            await FileSaver.instance.saveFile(
-              name: 'pnj-${npc.id}.json',
+            await FilePicker.platform.saveFile(
+              fileName: 'pnj-${npc.id}.json',
               bytes: utf8.encode(jsonStr),
             );
           },

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:file_saver/file_saver.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/scenario.dart';
@@ -74,8 +74,8 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       tooltip: 'Exporter le scénario',
                       onPressed: () async {
                         var jsonStr = json.encode(_scenario.toJson());
-                        await FileSaver.instance.saveFile(
-                          name: 'scenario_${_scenario.uuid}.json',
+                        await FilePicker.platform.saveFile(
+                          fileName: 'scenario_${_scenario.uuid}.json',
                           bytes: utf8.encode(jsonStr),
                         );
                       },

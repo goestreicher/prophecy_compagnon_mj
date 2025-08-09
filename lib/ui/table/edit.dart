@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
-import 'package:file_saver/file_saver.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/table.dart' as pc;
@@ -185,8 +184,8 @@ class _TableEditPageState extends State<TableEditPage> {
                       setState(() {
                         _isWorking = false;
                       });
-                      await FileSaver.instance.saveFile(
-                        name: 'table_${_table.uuid}.json',
+                      await FilePicker.platform.saveFile(
+                        fileName: 'table_${_table.uuid}.json',
                         bytes: utf8.encode(jsonStr),
                       );
                     },

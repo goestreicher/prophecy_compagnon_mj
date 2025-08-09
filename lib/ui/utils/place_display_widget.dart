@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:file_saver/file_saver.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:float_column/float_column.dart';
 import 'package:flutter/material.dart';
 
@@ -87,8 +87,8 @@ class PlaceDisplayWidget extends StatelessWidget {
 
           var j = await _export(place, config);
           var jStr = json.encode(j);
-          await FileSaver.instance.saveFile(
-            name: 'place_${place.id}.json',
+          await FilePicker.platform.saveFile(
+            fileName: 'place_${place.id}.json',
             bytes: utf8.encode(jStr),
           );
         },

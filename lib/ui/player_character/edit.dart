@@ -1,7 +1,7 @@
 import 'dart:convert';
 
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:file_saver/file_saver.dart';
 
 import '../../classes/player_character.dart';
 import 'edit_base_tab.dart';
@@ -75,8 +75,8 @@ class _PlayerCharacterEditPageState extends State<PlayerCharacterEditPage> {
                       tooltip: 'Exporter le PJ',
                       onPressed: () async {
                         var jsonStr = json.encode(_character.toJson());
-                        await FileSaver.instance.saveFile(
-                          name: 'player-character_${_character.id}.json',
+                        await FilePicker.platform.saveFile(
+                          fileName: 'player-character_${_character.id}.json',
                           bytes: utf8.encode(jsonStr),
                         );
                       },
