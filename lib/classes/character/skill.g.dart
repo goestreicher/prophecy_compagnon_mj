@@ -7,15 +7,11 @@ part of 'skill.dart';
 // **************************************************************************
 
 SpecializedSkill _$SpecializedSkillFromJson(Map<String, dynamic> json) =>
-    SpecializedSkill(
-      json['name'] as String,
-    )..reserved = json['reserved'] as bool;
+    SpecializedSkill(json['name'] as String)
+      ..reserved = json['reserved'] as bool;
 
 Map<String, dynamic> _$SpecializedSkillToJson(SpecializedSkill instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'reserved': instance.reserved,
-    };
+    <String, dynamic>{'name': instance.name, 'reserved': instance.reserved};
 
 SkillInstance _$SkillInstanceFromJson(Map<String, dynamic> json) =>
     SkillInstance(

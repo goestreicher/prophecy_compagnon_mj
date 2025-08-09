@@ -23,150 +23,169 @@ Map<String, dynamic> _$NPCSubCategoryToJson(NPCSubCategory instance) =>
     };
 
 NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
-        Map<String, dynamic> json) =>
-    NonPlayerCharacterSummary(
-      id: json['id'] as String,
-      isDefault: json['is_default'] as bool,
-      name: json['name'] as String,
-      category:
-          const NPCCategoryJsonConverter().fromJson(json['category'] as String),
-      subCategory: const NPCSubcategoryJsonConverter()
-          .fromJson(json['sub_category'] as Map<String, dynamic>),
-      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
-      icon: json['icon'] == null
-          ? null
-          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
-      editable: json['editable'] as bool? ?? false,
-    );
+  Map<String, dynamic> json,
+) => NonPlayerCharacterSummary(
+  id: json['id'] as String,
+  isDefault: json['is_default'] as bool,
+  name: json['name'] as String,
+  category: const NPCCategoryJsonConverter().fromJson(
+    json['category'] as String,
+  ),
+  subCategory: const NPCSubcategoryJsonConverter().fromJson(
+    json['sub_category'] as Map<String, dynamic>,
+  ),
+  source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+  icon: json['icon'] == null
+      ? null
+      : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
+  editable: json['editable'] as bool? ?? false,
+);
 
 Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
-        NonPlayerCharacterSummary instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'is_default': instance.isDefault,
-      'name': instance.name,
-      'category': const NPCCategoryJsonConverter().toJson(instance.category),
-      'sub_category':
-          const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
-      'source': instance.source.toJson(),
-      'icon': instance.icon?.toJson(),
-    };
+  NonPlayerCharacterSummary instance,
+) => <String, dynamic>{
+  'id': instance.id,
+  'is_default': instance.isDefault,
+  'name': instance.name,
+  'category': const NPCCategoryJsonConverter().toJson(instance.category),
+  'sub_category': const NPCSubcategoryJsonConverter().toJson(
+    instance.subCategory,
+  ),
+  'source': instance.source.toJson(),
+  'icon': instance.icon?.toJson(),
+};
 
 NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
     NonPlayerCharacter(
-      uuid: json['uuid'] as String?,
-      isDefault: json['is_default'] as bool? ?? false,
-      name: json['name'] as String,
-      category:
-          const NPCCategoryJsonConverter().fromJson(json['category'] as String),
-      subCategory: const NPCSubcategoryJsonConverter()
-          .fromJson(json['sub_category'] as Map<String, dynamic>),
-      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
-      unique: json['unique'] as bool? ?? false,
-      useHumanInjuryManager: json['use_human_injury_manager'] as bool? ?? false,
-      initiative: (json['initiative'] as num?)?.toInt() ?? 1,
-      caste:
-          $enumDecodeNullable(_$CasteEnumMap, json['caste']) ?? Caste.sansCaste,
-      casteStatus:
-          $enumDecodeNullable(_$CasteStatusEnumMap, json['caste_status']) ??
-              CasteStatus.none,
-      age: (json['age'] as num?)?.toInt() ?? 25,
-      height: (json['height'] as num?)?.toDouble() ?? 1.7,
-      size: (json['size'] as num?)?.toDouble(),
-      weight: (json['weight'] as num?)?.toDouble() ?? 60.0,
-      luck: (json['luck'] as num?)?.toInt() ?? 0,
-      proficiency: (json['proficiency'] as num?)?.toInt() ?? 0,
-      renown: (json['renown'] as num?)?.toInt() ?? 0,
-      origin: json['origin'] == null
-          ? null
-          : Place.fromJson(json['origin'] as Map<String, dynamic>),
-      interdicts: (json['interdicts'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$InterdictEnumMap, e))
-              .toList() ??
-          [],
-      castePrivileges: (json['caste_privileges'] as List<dynamic>?)
-              ?.map((e) => $enumDecode(_$CastePrivilegeEnumMap, e))
-              .toList() ??
-          [],
-      disadvantages: (json['disadvantages'] as List<dynamic>?)
-          ?.map(
-              (e) => CharacterDisadvantage.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      advantages: (json['advantages'] as List<dynamic>?)
-          ?.map((e) => CharacterAdvantage.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      tendencies: json['tendencies'] == null
-          ? null
-          : CharacterTendencies.fromJson(
-              json['tendencies'] as Map<String, dynamic>),
-      description: json['description'] as String?,
-      image: json['image'] == null
-          ? null
-          : ExportableBinaryData.fromJson(
-              json['image'] as Map<String, dynamic>),
-      icon: json['icon'] == null
-          ? null
-          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
-      editable: json['editable'] as bool? ?? false,
-    )
+        uuid: json['uuid'] as String?,
+        isDefault: json['is_default'] as bool? ?? false,
+        name: json['name'] as String,
+        category: const NPCCategoryJsonConverter().fromJson(
+          json['category'] as String,
+        ),
+        subCategory: const NPCSubcategoryJsonConverter().fromJson(
+          json['sub_category'] as Map<String, dynamic>,
+        ),
+        source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+        unique: json['unique'] as bool? ?? false,
+        useHumanInjuryManager:
+            json['use_human_injury_manager'] as bool? ?? false,
+        initiative: (json['initiative'] as num?)?.toInt() ?? 1,
+        caste:
+            $enumDecodeNullable(_$CasteEnumMap, json['caste']) ??
+            Caste.sansCaste,
+        casteStatus:
+            $enumDecodeNullable(_$CasteStatusEnumMap, json['caste_status']) ??
+            CasteStatus.none,
+        age: (json['age'] as num?)?.toInt() ?? 25,
+        height: (json['height'] as num?)?.toDouble() ?? 1.7,
+        size: (json['size'] as num?)?.toDouble(),
+        weight: (json['weight'] as num?)?.toDouble() ?? 60.0,
+        luck: (json['luck'] as num?)?.toInt() ?? 0,
+        proficiency: (json['proficiency'] as num?)?.toInt() ?? 0,
+        renown: (json['renown'] as num?)?.toInt() ?? 0,
+        origin: json['origin'] == null
+            ? null
+            : Place.fromJson(json['origin'] as Map<String, dynamic>),
+        interdicts:
+            (json['interdicts'] as List<dynamic>?)
+                ?.map((e) => $enumDecode(_$InterdictEnumMap, e))
+                .toList() ??
+            [],
+        castePrivileges:
+            (json['caste_privileges'] as List<dynamic>?)
+                ?.map((e) => $enumDecode(_$CastePrivilegeEnumMap, e))
+                .toList() ??
+            [],
+        disadvantages: (json['disadvantages'] as List<dynamic>?)
+            ?.map(
+              (e) => CharacterDisadvantage.fromJson(e as Map<String, dynamic>),
+            )
+            .toList(),
+        advantages: (json['advantages'] as List<dynamic>?)
+            ?.map((e) => CharacterAdvantage.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        tendencies: json['tendencies'] == null
+            ? null
+            : CharacterTendencies.fromJson(
+                json['tendencies'] as Map<String, dynamic>,
+              ),
+        description: json['description'] as String?,
+        image: json['image'] == null
+            ? null
+            : ExportableBinaryData.fromJson(
+                json['image'] as Map<String, dynamic>,
+              ),
+        icon: json['icon'] == null
+            ? null
+            : ExportableBinaryData.fromJson(
+                json['icon'] as Map<String, dynamic>,
+              ),
+        editable: json['editable'] as bool? ?? false,
+      )
       ..status = json['status'] == null
           ? EntityStatus.empty()
           : EntityStatus.fromJson(json['status'] as Map<String, dynamic>)
       ..skills = (json['skills'] as List<dynamic>)
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList()
-      ..magicSpells = (json['magic_spells'] as Map<String, dynamic>?)?.map(
-            (k, e) => MapEntry($enumDecode(_$MagicSphereEnumMap, k),
-                (e as List<dynamic>).map((e) => e as String).toList()),
+      ..magicSpells =
+          (json['magic_spells'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(
+              $enumDecode(_$MagicSphereEnumMap, k),
+              (e as List<dynamic>).map((e) => e as String).toList(),
+            ),
           ) ??
           {}
       ..extraMagicPool = (json['extra_magic_pool'] as num?)?.toInt() ?? 0
       ..career = $enumDecodeNullable(_$CareerEnumMap, json['career']);
 
-Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
-    <String, dynamic>{
-      'equiped': equipedToJson(instance.equiped),
-      if (instance.uuid case final value?) 'uuid': value,
-      'is_default': instance.isDefault,
-      'name': instance.name,
-      'description': instance.description,
-      'image': instance.image?.toJson(),
-      'icon': instance.icon?.toJson(),
-      'status': instance.status.toJson(),
-      'size': instance.size,
-      'weight': instance.weight,
-      'initiative': instance.initiative,
-      'abilities': enumKeyedMapToJson(instance.abilities),
-      'attributes': enumKeyedMapToJson(instance.attributes),
-      'skills': instance.skills.map((e) => e.toJson()).toList(),
-      'equipment': equipmentToJson(instance.equipment),
-      'magic_spells': instance.magicSpells
-          .map((k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e)),
-      'extra_magic_pool': instance.extraMagicPool,
-      'caste': _$CasteEnumMap[instance.caste]!,
-      'caste_status': _$CasteStatusEnumMap[instance.casteStatus]!,
-      'career': _$CareerEnumMap[instance.career],
-      'age': instance.age,
-      'height': instance.height,
-      'origin': instance.origin.toJson(),
-      'luck': instance.luck,
-      'proficiency': instance.proficiency,
-      'renown': instance.renown,
-      'interdicts':
-          instance.interdicts.map((e) => _$InterdictEnumMap[e]!).toList(),
-      'caste_privileges': instance.castePrivileges
-          .map((e) => _$CastePrivilegeEnumMap[e]!)
-          .toList(),
-      'disadvantages': instance.disadvantages.map((e) => e.toJson()).toList(),
-      'advantages': instance.advantages.map((e) => e.toJson()).toList(),
-      'tendencies': instance.tendencies.toJson(),
-      'category': const NPCCategoryJsonConverter().toJson(instance.category),
-      'sub_category':
-          const NPCSubcategoryJsonConverter().toJson(instance.subCategory),
-      'source': instance.source.toJson(),
-      'unique': instance.unique,
-      'use_human_injury_manager': instance.useHumanInjuryManager,
-    };
+Map<String, dynamic> _$NonPlayerCharacterToJson(
+  NonPlayerCharacter instance,
+) => <String, dynamic>{
+  'equiped': equipedToJson(instance.equiped),
+  'uuid': ?instance.uuid,
+  'is_default': instance.isDefault,
+  'name': instance.name,
+  'description': instance.description,
+  'image': instance.image?.toJson(),
+  'icon': instance.icon?.toJson(),
+  'status': instance.status.toJson(),
+  'size': instance.size,
+  'weight': instance.weight,
+  'initiative': instance.initiative,
+  'abilities': enumKeyedMapToJson(instance.abilities),
+  'attributes': enumKeyedMapToJson(instance.attributes),
+  'skills': instance.skills.map((e) => e.toJson()).toList(),
+  'equipment': equipmentToJson(instance.equipment),
+  'magic_spells': instance.magicSpells.map(
+    (k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e),
+  ),
+  'extra_magic_pool': instance.extraMagicPool,
+  'caste': _$CasteEnumMap[instance.caste]!,
+  'caste_status': _$CasteStatusEnumMap[instance.casteStatus]!,
+  'career': _$CareerEnumMap[instance.career],
+  'age': instance.age,
+  'height': instance.height,
+  'origin': instance.origin.toJson(),
+  'luck': instance.luck,
+  'proficiency': instance.proficiency,
+  'renown': instance.renown,
+  'interdicts': instance.interdicts.map((e) => _$InterdictEnumMap[e]!).toList(),
+  'caste_privileges': instance.castePrivileges
+      .map((e) => _$CastePrivilegeEnumMap[e]!)
+      .toList(),
+  'disadvantages': instance.disadvantages.map((e) => e.toJson()).toList(),
+  'advantages': instance.advantages.map((e) => e.toJson()).toList(),
+  'tendencies': instance.tendencies.toJson(),
+  'category': const NPCCategoryJsonConverter().toJson(instance.category),
+  'sub_category': const NPCSubcategoryJsonConverter().toJson(
+    instance.subCategory,
+  ),
+  'source': instance.source.toJson(),
+  'unique': instance.unique,
+  'use_human_injury_manager': instance.useHumanInjuryManager,
+};
 
 const _$CasteEnumMap = {
   Caste.sansCaste: 'sansCaste',

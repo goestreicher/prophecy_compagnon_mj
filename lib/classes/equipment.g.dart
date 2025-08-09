@@ -7,5 +7,5 @@ part of 'equipment.dart';
 // **************************************************************************
 
 Map<String, dynamic> _$SupportsEquipableItemToJson(
-        SupportsEquipableItem instance) =>
-    <String, dynamic>{};
+  SupportsEquipableItem instance,
+) => <String, dynamic>{};

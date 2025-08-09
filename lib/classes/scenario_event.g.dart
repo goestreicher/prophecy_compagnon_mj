@@ -22,17 +22,21 @@ ScenarioDayEvents _$ScenarioDayEventsFromJson(Map<String, dynamic> json) =>
     ScenarioDayEvents()
       ..events = (json['events'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(
-            $enumDecode(_$ScenarioEventCategoryEnumMap, k),
-            (e as List<dynamic>)
-                .map((e) => ScenarioEvent.fromJson(e as Map<String, dynamic>))
-                .toList()),
+          $enumDecode(_$ScenarioEventCategoryEnumMap, k),
+          (e as List<dynamic>)
+              .map((e) => ScenarioEvent.fromJson(e as Map<String, dynamic>))
+              .toList(),
+        ),
       );
 
 Map<String, dynamic> _$ScenarioDayEventsToJson(ScenarioDayEvents instance) =>
     <String, dynamic>{
-      'events': instance.events.map((k, e) => MapEntry(
+      'events': instance.events.map(
+        (k, e) => MapEntry(
           _$ScenarioEventCategoryEnumMap[k]!,
-          e.map((e) => e.toJson()).toList())),
+          e.map((e) => e.toJson()).toList(),
+        ),
+      ),
     };
 
 const _$ScenarioEventCategoryEnumMap = {

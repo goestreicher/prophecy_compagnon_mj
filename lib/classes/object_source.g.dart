@@ -7,9 +7,9 @@ part of 'object_source.dart';
 // **************************************************************************
 
 ObjectSource _$ObjectSourceFromJson(Map<String, dynamic> json) => ObjectSource(
-      type: $enumDecode(_$ObjectSourceTypeEnumMap, json['type']),
-      name: json['name'] as String,
-    );
+  type: $enumDecode(_$ObjectSourceTypeEnumMap, json['type']),
+  name: json['name'] as String,
+);
 
 Map<String, dynamic> _$ObjectSourceToJson(ObjectSource instance) =>
     <String, dynamic>{

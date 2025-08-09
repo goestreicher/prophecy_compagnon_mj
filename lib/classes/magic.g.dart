@@ -7,20 +7,22 @@ part of 'magic.dart';
 // **************************************************************************
 
 MagicSpell _$MagicSpellFromJson(Map<String, dynamic> json) => MagicSpell(
-      name: json['name'] as String,
-      sphere: $enumDecode(_$MagicSphereEnumMap, json['sphere']),
-      level: (json['level'] as num).toInt(),
-      skill: $enumDecode(_$MagicSkillEnumMap, json['skill']),
-      complexity: (json['complexity'] as num).toInt(),
-      cost: (json['cost'] as num).toInt(),
-      difficulty: (json['difficulty'] as num).toInt(),
-      castingDuration: (json['casting_duration'] as num).toInt(),
-      castingDurationUnit: $enumDecode(
-          _$CastingDurationUnitEnumMap, json['casting_duration_unit']),
-      keys: (json['keys'] as List<dynamic>).map((e) => e as String).toList(),
-      source: json['source'] as String,
-      description: json['description'] as String,
-    );
+  name: json['name'] as String,
+  sphere: $enumDecode(_$MagicSphereEnumMap, json['sphere']),
+  level: (json['level'] as num).toInt(),
+  skill: $enumDecode(_$MagicSkillEnumMap, json['skill']),
+  complexity: (json['complexity'] as num).toInt(),
+  cost: (json['cost'] as num).toInt(),
+  difficulty: (json['difficulty'] as num).toInt(),
+  castingDuration: (json['casting_duration'] as num).toInt(),
+  castingDurationUnit: $enumDecode(
+    _$CastingDurationUnitEnumMap,
+    json['casting_duration_unit'],
+  ),
+  keys: (json['keys'] as List<dynamic>).map((e) => e as String).toList(),
+  source: json['source'] as String,
+  description: json['description'] as String,
+);
 
 Map<String, dynamic> _$MagicSpellToJson(MagicSpell instance) =>
     <String, dynamic>{
