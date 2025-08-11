@@ -45,10 +45,12 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       for (var npcId in j['npcs']) {
         var npc = await NonPlayerCharacter.get(npcId);
         if(npc != null) {
+          var npcJson = npc.toJson();
           // We have to set the NPC as editable otherwise modifications
           // are blocked
-          var npcJson = npc.toJson();
           npcJson['editable'] = true;
+          // Same here, we have to set the location manually
+          npcJson['location'] = npc.location.toJson();
           npcsJson.add(npcJson);
         }
       }
@@ -64,6 +66,8 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
           // We have to set the creature as editable otherwise modifications
           // are blocked
           creatureJson['editable'] = true;
+          // Same here, we have to set the location manually
+          creatureJson['location'] = creature.location.toJson();
           creaturesJson.add(creatureJson);
         }
       }
@@ -220,10 +224,12 @@ class Scenario {
     );
     for(var npc in json['npcs'] as List<dynamic>? ?? []) {
       npc['editable'] = true;
+      npc['location'] = ObjectLocation.memory.toJson();
       npc['source'] = source.toJson();
     }
     for(var creature in json['creatures'] as List<dynamic>? ?? []) {
       creature['editable'] = true;
+      creature['location'] = ObjectLocation.memory.toJson();
       creature['source'] = source.toJson();
     }
     for(var place in json['places'] as List<dynamic>? ?? []) {

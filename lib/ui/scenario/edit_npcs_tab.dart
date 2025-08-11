@@ -145,12 +145,10 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                     var npc = await NonPlayerCharacter.get(npcSummaries[index].id);
                     if(npc == null) return;
 
-                    var j = npc.toJson();
-                    j['name'] = newName;
-                    npc = NonPlayerCharacter.fromJson(j);
-                    npc.source = ObjectSource.local;
+                    var clone = npc.clone(newName);
+                    clone.source = ObjectSource.local;
 
-                    _startEditing(npc);
+                    _startEditing(clone);
                   },
                   onDeleteRequested: (int index) async {
                     try {

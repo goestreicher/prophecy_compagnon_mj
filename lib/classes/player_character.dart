@@ -7,6 +7,7 @@ import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
 import 'magic.dart';
+import 'object_location.dart';
 import 'place.dart';
 import 'character/base.dart';
 import 'character/skill.dart';
@@ -60,6 +61,10 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
   Future<PlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    j['location'] = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    ).toJson();
     return PlayerCharacter.fromJson(j);
   }
 
@@ -79,6 +84,14 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
     var summary = await PlayerCharacterSummaryStore().get(object.id);
     if(summary != null) await PlayerCharacterSummaryStore().delete(summary);
 
+    // Force-set the location here in case the object is used after being saved,
+    // even if the location is not saved in the store (excluded from the
+    // JSON representation).
+    object.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
+
     await PlayerCharacterSummaryStore().save(object.summary);
   }
 
@@ -96,7 +109,6 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
 class PlayerCharacterSummary {
   PlayerCharacterSummary({
     required this.id,
-    required this.isDefault,
     required this.name,
     required this.player,
     required this.caste,
@@ -105,7 +117,6 @@ class PlayerCharacterSummary {
   });
 
   final String id;
-  final bool isDefault;
   final String name;
   final String player;
   final Caste caste;
@@ -121,7 +132,7 @@ class PlayerCharacter extends HumanCharacter {
   PlayerCharacter(
       {
         super.uuid,
-        super.isDefault,
+        required super.location,
         required this.player,
         required this.augure,
         required super.name,
@@ -148,7 +159,6 @@ class PlayerCharacter extends HumanCharacter {
 
   PlayerCharacterSummary get summary => PlayerCharacterSummary(
     id: id,
-    isDefault: isDefault,
     name: name,
     player: player,
     caste: caste,

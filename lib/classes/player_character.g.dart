@@ -10,7 +10,6 @@ PlayerCharacterSummary _$PlayerCharacterSummaryFromJson(
   Map<String, dynamic> json,
 ) => PlayerCharacterSummary(
   id: json['id'] as String,
-  isDefault: json['is_default'] as bool,
   name: json['name'] as String,
   player: json['player'] as String,
   caste: $enumDecode(_$CasteEnumMap, json['caste']),
@@ -24,7 +23,6 @@ Map<String, dynamic> _$PlayerCharacterSummaryToJson(
   PlayerCharacterSummary instance,
 ) => <String, dynamic>{
   'id': instance.id,
-  'is_default': instance.isDefault,
   'name': instance.name,
   'player': instance.player,
   'caste': _$CasteEnumMap[instance.caste]!,
@@ -56,7 +54,9 @@ const _$CasteStatusEnumMap = {
 PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
     PlayerCharacter(
         uuid: json['uuid'] as String?,
-        isDefault: json['is_default'] as bool? ?? false,
+        location: ObjectLocation.fromJson(
+          json['location'] as Map<String, dynamic>,
+        ),
         player: json['player'] as String,
         augure: $enumDecode(_$AugureEnumMap, json['augure']),
         name: json['name'] as String,
@@ -128,7 +128,6 @@ Map<String, dynamic> _$PlayerCharacterToJson(
 ) => <String, dynamic>{
   'equiped': equipedToJson(instance.equiped),
   'uuid': ?instance.uuid,
-  'is_default': instance.isDefault,
   'name': instance.name,
   'description': instance.description,
   'image': instance.image?.toJson(),

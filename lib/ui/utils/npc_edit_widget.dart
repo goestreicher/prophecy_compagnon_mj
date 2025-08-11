@@ -11,6 +11,7 @@ import '../../classes/equipment.dart';
 import '../../classes/human_character.dart';
 import '../../classes/magic.dart';
 import '../../classes/non_player_character.dart';
+import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
@@ -141,6 +142,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
 
   NonPlayerCharacter? _createNPC() {
     var ret = NonPlayerCharacter(
+      location: ObjectLocation.memory,
       name: _name,
       source: widget.source ?? ObjectSource.local,
       category: _category!,

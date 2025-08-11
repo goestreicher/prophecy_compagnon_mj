@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:prophecy_compagnon_mj/classes/storage/storable.dart';
 
@@ -12,9 +9,11 @@ import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
 import 'magic.dart';
+import 'object_location.dart';
 import 'object_source.dart';
 import 'place.dart';
 import '../text_utils.dart';
+import 'storage/default_assets_store.dart';
 
 part 'non_player_character.g.dart';
 
@@ -267,6 +266,10 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
   Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
+    j['location'] = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    ).toJson();
     j['editable'] = true;
     return NonPlayerCharacter.fromJson(j);
   }
@@ -287,6 +290,14 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
     var summary = await NonPlayerCharacterSummaryStore().get(object.id);
     if(summary != null) await NonPlayerCharacterSummaryStore().delete(summary);
 
+    // Force-set the location here in case the object is used after being saved,
+    // even if the location is not saved in the store (excluded from the
+    // JSON representation).
+    object.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
+
     await NonPlayerCharacterSummaryStore().save(object.summary);
   }
 
@@ -306,7 +317,6 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
 class NonPlayerCharacterSummary {
   NonPlayerCharacterSummary({
     required this.id,
-    required this.isDefault,
     required this.name,
     required this.category,
     required this.subCategory,
@@ -316,7 +326,6 @@ class NonPlayerCharacterSummary {
   });
 
   final String id;
-  final bool isDefault;
   final String name;
   final NPCCategory category;
   final NPCSubCategory subCategory;
@@ -336,7 +345,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   NonPlayerCharacter(
     {
       super.uuid,
-      super.isDefault,
+      required super.location,
       required super.name,
       required this.category,
       required this.subCategory,
@@ -380,7 +389,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
   NonPlayerCharacterSummary get summary => NonPlayerCharacterSummary(
       id: id,
-      isDefault: isDefault,
       name: name,
       category: category,
       subCategory: subCategory,
@@ -388,6 +396,13 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       icon: icon?.clone(),
       editable: editable,
     );
+
+  NonPlayerCharacter clone(String newName) {
+    var j = toJson();
+    j['name'] = newName;
+    j['location'] = ObjectLocation.memory;
+    return NonPlayerCharacter.fromJson(j);
+  }
 
   static bool _defaultAssetsLoaded = false;
   static final Map<String, NonPlayerCharacterSummary> _summaries = <String, NonPlayerCharacterSummary>{};
@@ -475,11 +490,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
         _modelFactory,
         _npcFactory);
 
-    var jsonStr = await rootBundle.loadString('assets/npc-ldb2e.json');
-    var assets = json.decode(jsonStr);
-
-    for(var model in assets) {
-      model['is_default'] = true;
+    for(var model in await loadJSONAssetObjectList('npc-ldb2e.json')) {
       var instance = NonPlayerCharacter.fromJson(model);
       _summaries[instance.id] = instance.summary;
       _instances[instance.id] = instance;

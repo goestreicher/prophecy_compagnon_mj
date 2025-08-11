@@ -7,6 +7,7 @@ import 'package:uuid/uuid.dart';
 import 'combat.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
+import 'object_location.dart';
 import 'character/base.dart';
 import 'character/injury.dart';
 import 'character/skill.dart';
@@ -64,7 +65,7 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
   EntityBase(
       {
         String? uuid,
-        this.isDefault = false,
+        required this.location,
         required this.name,
         this.initiative = 1,
         InjuryManager Function(EntityBase?, InjuryManager?) injuryProvider = _entityBaseDefaultInjuries,
@@ -76,7 +77,7 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
         ExportableBinaryData? icon,
       }
     )
-    : uuid = uuid ?? (isDefault ? null : Uuid().v4().toString()),
+    : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4.toString()),
       _injuryProvider = injuryProvider,
       size = size ?? 0.8,
       weight = weight ?? 15.0,
@@ -91,7 +92,8 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
   String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
   @JsonKey(includeIfNull: false)
     final String? uuid;
-  bool isDefault;
+  @JsonKey(includeFromJson: true, includeToJson: false)
+    ObjectLocation location;
   String name;
   String description;
 

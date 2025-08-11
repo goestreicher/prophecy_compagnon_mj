@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/calendar.dart';
+import '../../classes/object_location.dart';
 import '../../classes/player_character.dart';
 
 class NewPlayerCharacterDialog extends StatelessWidget {
@@ -82,6 +83,7 @@ class NewPlayerCharacterDialog extends StatelessWidget {
                         var augure = Augure.byTitle(augureController.text)!;
 
                         PlayerCharacter char = PlayerCharacter(
+                          location: ObjectLocation.memory,
                           name: characterName,
                           player: playerName,
                           augure: augure,

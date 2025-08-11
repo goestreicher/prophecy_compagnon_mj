@@ -6,6 +6,7 @@ import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'magic.dart';
 import 'magic_user.dart';
+import 'object_location.dart';
 import 'place.dart';
 import 'weapon.dart';
 import 'character/base.dart';
@@ -217,7 +218,7 @@ class HumanCharacter extends EntityBase with MagicUser {
   HumanCharacter(
       {
         super.uuid,
-        super.isDefault,
+        required super.location,
         required super.name,
         super.initiative,
         super.injuryProvider = _humanCharacterDefaultInjuries,

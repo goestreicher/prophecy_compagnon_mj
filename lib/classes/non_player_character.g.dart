@@ -26,7 +26,6 @@ NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
   Map<String, dynamic> json,
 ) => NonPlayerCharacterSummary(
   id: json['id'] as String,
-  isDefault: json['is_default'] as bool,
   name: json['name'] as String,
   category: const NPCCategoryJsonConverter().fromJson(
     json['category'] as String,
@@ -45,7 +44,6 @@ Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
   NonPlayerCharacterSummary instance,
 ) => <String, dynamic>{
   'id': instance.id,
-  'is_default': instance.isDefault,
   'name': instance.name,
   'category': const NPCCategoryJsonConverter().toJson(instance.category),
   'sub_category': const NPCSubcategoryJsonConverter().toJson(
@@ -58,7 +56,9 @@ Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
 NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
     NonPlayerCharacter(
         uuid: json['uuid'] as String?,
-        isDefault: json['is_default'] as bool? ?? false,
+        location: ObjectLocation.fromJson(
+          json['location'] as Map<String, dynamic>,
+        ),
         name: json['name'] as String,
         category: const NPCCategoryJsonConverter().fromJson(
           json['category'] as String,
@@ -145,7 +145,6 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(
 ) => <String, dynamic>{
   'equiped': equipedToJson(instance.equiped),
   'uuid': ?instance.uuid,
-  'is_default': instance.isDefault,
   'name': instance.name,
   'description': instance.description,
   'image': instance.image?.toJson(),

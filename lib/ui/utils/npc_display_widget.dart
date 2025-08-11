@@ -202,9 +202,7 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                       npc: npc.summary,
                       onEdit: () => widget.onEditRequested(npc),
                       onClone: (String newName) {
-                        var j = npc.toJson();
-                        j['name'] = newName;
-                        widget.onEditRequested(NonPlayerCharacter.fromJson(j));
+                        widget.onEditRequested(npc.clone(newName));
                       },
                       onDelete: () => widget.onDelete(),
                       restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,

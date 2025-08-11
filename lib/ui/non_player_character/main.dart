@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
+import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
@@ -344,7 +345,9 @@ class _NPCMainPageState extends State<NPCMainPage> {
                               });
 
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
-                              var npc = NonPlayerCharacter.fromJson(json.decode(jsonStr));
+                              var j = json.decode(jsonStr);
+                              j['location'] = ObjectLocation.memory.toJson();
+                              var npc = NonPlayerCharacter.fromJson(j);
                               var model = await NonPlayerCharacter.get(npc.id);
                               if(!context.mounted) return;
                               if(model != null) {
@@ -405,12 +408,10 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       var npc = await NonPlayerCharacter.get(npcs[index].id);
                       if(npc == null) return;
 
-                      var j = npc.toJson();
-                      j['name'] = newName;
-                      npc = NonPlayerCharacter.fromJson(j);
-                      npc.source = ObjectSource.local;
+                      var clone = npc.clone(newName);
+                      clone.source = ObjectSource.local;
 
-                      _startEditing(npc);
+                      _startEditing(clone);
                     },
                     onDeleteRequested: (int index) async {
                       try {

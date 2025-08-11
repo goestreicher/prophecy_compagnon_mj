@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+import 'object_location.dart';
 import 'player_character.dart';
 import 'storage/storable.dart';
 
@@ -15,6 +16,7 @@ Future<void> importGameTable(Map<String, dynamic> json) async {
   // Re-create all characters
   var summaries = <Map<String, dynamic>>[];
   for(var pcJson in json['players']) {
+    pcJson['location'] = ObjectLocation.memory.toJson();
     var pc = PlayerCharacter.fromJson(pcJson);
     await PlayerCharacterStore().save(pc);
     summaries.add(pc.summary.toJson());
