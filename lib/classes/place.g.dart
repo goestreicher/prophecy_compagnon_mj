@@ -65,7 +65,7 @@ Place _$PlaceFromJson(Map<String, dynamic> json) => Place(
   description: PlaceDescription.fromJson(
     json['description'] as Map<String, dynamic>,
   ),
-  isDefault: json['is_default'] as bool? ?? false,
+  location: ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
   source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   map: json['map'] == null
       ? null
@@ -82,7 +82,6 @@ Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
   'motto': instance.motto,
   'climate': instance.climate,
   'description': instance.description.toJson(),
-  'is_default': instance.isDefault,
   'source': instance.source.toJson(),
   'map': instance.map?.toJson(),
 };

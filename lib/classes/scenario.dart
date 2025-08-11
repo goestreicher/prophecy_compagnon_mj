@@ -3,6 +3,7 @@ import 'package:uuid/uuid.dart';
 
 import 'creature.dart';
 import 'non_player_character.dart';
+import 'object_location.dart';
 import 'object_source.dart';
 import 'place.dart';
 import 'scenario_encounter.dart';
@@ -80,6 +81,22 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       j['maps'] = mapsJson;
     }
 
+    if(j.containsKey('places')) {
+      var placesJson = <Map<String, dynamic>>[];
+      for(var placeJson in j['places']) {
+        if(placeJson.containsKey('id')) {
+          placesJson.add(placeJson);
+        }
+        else if(placeJson.containsKey('uuid')) {
+          var place = await PlaceStore().get(placeJson['uuid']);
+          if(place != null) {
+            placeJson['location'] = place.location.toJson();
+            placesJson.add(placeJson);
+          }
+        }
+      }
+    }
+
     return Scenario.fromJson(j);
   }
 
@@ -122,6 +139,10 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
 
     for(var map in object.maps) {
       await ScenarioMapStore().save(map);
+    }
+
+    for(var place in object.places) {
+      await PlaceStore().save(place);
     }
   }
 
@@ -192,7 +213,7 @@ class Scenario {
       json['uuid'] = const Uuid().v4().toString();
     }
 
-    // Force NPC and creatures source
+    // Force source and location for items requiring it
     var source = ObjectSource(
       type: ObjectSourceType.scenario,
       name: json['name'],
@@ -204,6 +225,10 @@ class Scenario {
     for(var creature in json['creatures'] as List<dynamic>? ?? []) {
       creature['editable'] = true;
       creature['source'] = source.toJson();
+    }
+    for(var place in json['places'] as List<dynamic>? ?? []) {
+      place['location'] = ObjectLocation.memory.toJson();
+      place['source'] = source.toJson();
     }
 
     return Scenario.fromJson(json);

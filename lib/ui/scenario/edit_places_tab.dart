@@ -1,6 +1,7 @@
 import 'package:animated_tree_view/animated_tree_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
 import '../utils/place_display_widget.dart';
@@ -40,7 +41,7 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
           )
       );
       buildSubTree(node, child);
-      if(treeFilter.hasChildMatchingFilter(node) || child.isDefault) {
+      if(treeFilter.hasChildMatchingFilter(node) || child.location.type == ObjectLocationType.assets) {
         root.add(node);
       }
     }

@@ -4,6 +4,7 @@ import 'package:animated_tree_view/animated_tree_view.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
 import '../utils/error_feedback.dart';
@@ -37,7 +38,7 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
         )
       );
       buildSubTree(node, child);
-      if(treeFilter.hasChildMatchingFilter(node) || child.isDefault) {
+      if(treeFilter.hasChildMatchingFilter(node) || child.location.type == ObjectLocationType.assets) {
         root.add(node);
       }
     }

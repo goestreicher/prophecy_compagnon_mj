@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import '../../classes/calendar.dart';
 import '../../classes/character/injury.dart';
 import '../../classes/human_character.dart';
+import '../../classes/object_location.dart';
 import '../../classes/place.dart';
 import '../../classes/player_character.dart';
 import '../../classes/character/base.dart';
@@ -371,7 +372,7 @@ class _GeneralInformationEditWidgetState extends State<_GeneralInformationEditWi
                         });
                       },
                       dropdownMenuEntries: Place.withParent('kor')
-                        .where((Place p) => p.isDefault)
+                        .where((Place p) => p.location.type == ObjectLocationType.assets)
                         .map((Place p) => DropdownMenuEntry(value: p, label: p.name))
                         .toList(),
                     ),

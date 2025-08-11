@@ -3,8 +3,9 @@ import 'dart:ui' as ui;
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:prophecy_compagnon_mj/classes/exportable_binary_data.dart';
 
+import '../../classes/exportable_binary_data.dart';
+import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
 import 'dropdown_menu_form_field.dart';
@@ -333,6 +334,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                 description: PlaceDescription(
                   general: descriptionController.text,
                 ),
+                location: ObjectLocation.memory,
                 source: widget.source ?? ObjectSource.local,
                 map: map,
               );

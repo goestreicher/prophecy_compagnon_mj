@@ -1,11 +1,11 @@
-import 'dart:convert';
-
 import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'exportable_binary_data.dart';
+import 'object_location.dart';
 import 'object_source.dart';
+import 'storage/default_assets_store.dart';
 import 'storage/storable.dart';
 import '../../text_utils.dart';
 
@@ -49,8 +49,13 @@ class PlaceStore extends JsonStoreAdapter<Place> {
   String key(Place object) => object.id;
 
   @override
-  Future<Place> fromJsonRepresentation(Map<String, dynamic> j) async =>
-      Place.fromJson(j);
+  Future<Place> fromJsonRepresentation(Map<String, dynamic> j) async {
+    j['location'] = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    ).toJson();
+    return Place.fromJson(j);
+  }
 
   @override
   Future<Map<String, dynamic>> toJsonRepresentation(Place object) async =>
@@ -61,6 +66,14 @@ class PlaceStore extends JsonStoreAdapter<Place> {
     if(object.map?.exportableBinaryData != null) {
       await BinaryDataStore().save(object.map!.exportableBinaryData!);
     }
+
+    // Force-set the location here in case the object is used after being saved,
+    // even if the location is not saved in the store (excluded from the
+    // JSON representation).
+    object.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
   }
 
   @override
@@ -162,10 +175,11 @@ class Place {
     String? motto,
     String? climate,
     required PlaceDescription description,
-    bool isDefault = false,
+    required ObjectLocation location,
     required ObjectSource source,
     PlaceMap? map,
   }) {
+    bool isDefault = (location.type == ObjectLocationType.assets);
     String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
     if(!_instances.containsKey(id)) {
       var place = Place._create(
@@ -178,7 +192,7 @@ class Place {
         motto: motto,
         climate: climate,
         description: description,
-        isDefault: isDefault,
+        location: location,
         source: source,
         map: map,
       );
@@ -197,10 +211,10 @@ class Place {
     this.motto,
     this.climate,
     required this.description,
-    this.isDefault = false,
+    required this.location,
     required this.source,
     this.map,
-  }) : uuid = uuid ?? (isDefault ? null : Uuid().v4().toString());
+  }) : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4.toString());
 
   String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
   @JsonKey(includeIfNull: false)
@@ -213,7 +227,8 @@ class Place {
   String? motto;
   String? climate;
   PlaceDescription description;
-  final bool isDefault;
+  @JsonKey(includeFromJson: true, includeToJson: false)
+    ObjectLocation location;
   final ObjectSource source;
   PlaceMap? map;
 
@@ -258,15 +273,13 @@ class Place {
     if(_defaultAssetsLoaded) return;
     _defaultAssetsLoaded = true;
 
-    var jsonStr = await rootBundle.loadString('assets/places-ldb2e.json');
-    var assets = json.decode(jsonStr);
-
-    for(var a in assets) {
-      a['is_default'] = true;
+    for(var a in await loadJSONAssetObjectList('places-ldb2e.json')) {
       // ignore:unused_local_variable
       var p = Place.fromJson(a);
     }
+  }
 
+  static Future<void> loadStoreAssets() async {
     PlaceStore().getAll();
   }
 
@@ -295,7 +308,7 @@ class Place {
   }
 
   factory Place.fromJson(Map<String, dynamic> json) {
-   if(json.containsKey('id') && _instances.containsKey(json['id']!) && _instances[json['id']]!.isDefault) {
+   if(json.containsKey('id') && _instances.containsKey(json['id']!) && _instances[json['id']]!.location.type == ObjectLocationType.assets) {
      return _instances[json['id']]!;
    } else {
      return _$PlaceFromJson(json);
@@ -303,7 +316,7 @@ class Place {
  }
 
  Map<String, dynamic> toJson() {
-   if(isDefault) {
+   if(location.type == ObjectLocationType.assets) {
      return {'id': id};
    }
    else {

@@ -5,6 +5,7 @@ import 'package:float_column/float_column.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/exportable_binary_data.dart';
+import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
 import 'place_edit_dialog.dart';
@@ -76,7 +77,7 @@ class PlaceDisplayWidget extends StatelessWidget {
 
     var actionButtons = <Widget>[];
 
-    if(!place.isDefault) {
+    if(place.location.type != ObjectLocationType.assets) {
       actionButtons.add(IconButton(
         onPressed: () async {
           var config = await showDialog<PlaceExportConfig>(

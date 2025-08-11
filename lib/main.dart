@@ -70,6 +70,7 @@ class _MainAppPageState extends State<MainAppPage> {
     // TODO: some of those can throw storage exceptions, manage them
     // TODO: all of those are async, use a FutureBuilder to build the UI
     Place.loadDefaultAssets();
+    Place.loadStoreAssets();
     ArmorModel.loadDefaultAssets();
     CreatureModel.loadDefaultAssets();
     CreatureModel.loadStoreAssets();
