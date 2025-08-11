@@ -1,9 +1,8 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import 'object_location.dart';
 import 'character/base.dart';
+import 'storage/default_assets_store.dart';
 
 part 'magic.g.dart';
 
@@ -73,6 +72,7 @@ class MagicSpell {
     required this.castingDuration,
     required this.castingDurationUnit,
     required this.keys,
+    required this.location,
     required this.source,
     required this.description,
   });
@@ -87,6 +87,8 @@ class MagicSpell {
   final int castingDuration;
   final CastingDurationUnit castingDurationUnit;
   final List<String> keys;
+  @JsonKey(includeFromJson: true, includeToJson: false)
+    ObjectLocation location;
   final String source;
   final String description;
 
@@ -114,22 +116,19 @@ class MagicSpell {
     if(_defaultAssetsLoaded) return;
     _defaultAssetsLoaded = true;
 
-    await _loadSpellJsonAsset('assets/spell-pierre.json');
-    await _loadSpellJsonAsset('assets/spell-feu.json');
-    await _loadSpellJsonAsset('assets/spell-oceans.json');
-    await _loadSpellJsonAsset('assets/spell-metal.json');
-    await _loadSpellJsonAsset('assets/spell-nature.json');
-    await _loadSpellJsonAsset('assets/spell-reves.json');
-    await _loadSpellJsonAsset('assets/spell-cite.json');
-    await _loadSpellJsonAsset('assets/spell-vents.json');
-    await _loadSpellJsonAsset('assets/spell-ombre.json');
+    await _loadSpellJsonAsset('spell-pierre.json');
+    await _loadSpellJsonAsset('spell-feu.json');
+    await _loadSpellJsonAsset('spell-oceans.json');
+    await _loadSpellJsonAsset('spell-metal.json');
+    await _loadSpellJsonAsset('spell-nature.json');
+    await _loadSpellJsonAsset('spell-reves.json');
+    await _loadSpellJsonAsset('spell-cite.json');
+    await _loadSpellJsonAsset('spell-vents.json');
+    await _loadSpellJsonAsset('spell-ombre.json');
   }
 
   static Future<void> _loadSpellJsonAsset(String asset) async {
-    var jsonStr = await rootBundle.loadString(asset);
-    var assets = json.decode(jsonStr);
-
-    for(var model in assets) {
+    for(var model in await loadJSONAssetObjectList(asset)) {
       if(model is! Map<String, dynamic>) continue;
 
       var spell = MagicSpell.fromJson(model);
