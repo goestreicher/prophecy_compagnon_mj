@@ -36,9 +36,9 @@ class CreatureActionButtons extends StatelessWidget {
     bool canModify = true;
     String? canModifyMessage;
 
-    if(creature.isDefault) {
+    if(!creature.location.type.canWrite) {
       canModify = false;
-      canModifyMessage = 'Modification impossible (créature par défaut)';
+      canModifyMessage = 'Modification impossible (créature en lecture seule)';
     }
     else if(restrictModificationToSourceTypes != null && !restrictModificationToSourceTypes!.contains(creature.source.type)) {
       canModify = false;
@@ -218,10 +218,7 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                       creature: creature.summary,
                       onEdit: () => widget.onEditRequested(creature),
                       onClone: (String newName) {
-                        var j = creature.toJson();
-                        j['is_default'] = false;
-                        j['name'] = newName;
-                        widget.onEditRequested(CreatureModel.fromJson(j));
+                        widget.onEditRequested(creature.clone(newName));
                       },
                       onDelete: () => widget.onDelete(),
                       restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,

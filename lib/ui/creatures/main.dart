@@ -348,13 +348,10 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                       var model = await CreatureModel.get(creatures[index].id);
                       if(model == null) return;
 
-                      var j = model.toJson();
-                      j['is_default'] = false;
-                      j['name'] = newName;
-                      model = CreatureModel.fromJson(j);
-                      model.source = ObjectSource.local;
+                      CreatureModel clone = model.clone(newName);
+                      clone.source = ObjectSource.local;
 
-                      _startEditing(model);
+                      _startEditing(clone);
                     },
                     onDeleteRequested: (int index) async {
                       try {

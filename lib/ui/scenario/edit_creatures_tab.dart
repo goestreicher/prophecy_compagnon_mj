@@ -144,12 +144,10 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                     var model = await CreatureModel.get(creatureSummaries[index].id);
                     if(model == null) return;
 
-                    var j = model.toJson();
-                    j['is_default'] = false;
-                    j['name'] = newName;
-                    model = CreatureModel.fromJson(j);
+                    CreatureModel clone = model.clone(newName);
+                    clone.source = ObjectSource.local;
 
-                    _startEditing(model);
+                    _startEditing(clone);
                   },
                   onDeleteRequested: (int index) async {
                     try {

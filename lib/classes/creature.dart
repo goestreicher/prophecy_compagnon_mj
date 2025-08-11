@@ -9,6 +9,7 @@ import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
+import 'object_location.dart';
 import 'object_source.dart';
 import 'weapon.dart';
 import 'character/base.dart';
@@ -145,7 +146,10 @@ class CreatureModelSummaryStore extends JsonStoreAdapter<CreatureModelSummary> {
   @override
   Future<CreatureModelSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    j['editable'] = true;
+    j['location'] = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    ).toJson();
     return CreatureModelSummary.fromJson(j);
   }
 
@@ -159,6 +163,14 @@ class CreatureModelSummaryStore extends JsonStoreAdapter<CreatureModelSummary> {
   @override
   Future<void> willSave(CreatureModelSummary object) async {
     if(object.icon != null) await BinaryDataStore().save(object.icon!);
+
+    // Force-set the location here in case the object is used after being saved,
+    // even if the location is not saved in the store (excluded from the
+    // JSON representation).
+    object.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
   }
 
   @override
@@ -180,7 +192,10 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
   Future<CreatureModel> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    j['editable'] = true;
+    j['location'] = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    ).toJson();
     return CreatureModel.fromJson(j);
   }
 
@@ -201,6 +216,14 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
     if(summary != null) await CreatureModelSummaryStore().delete(summary);
 
     await CreatureModelSummaryStore().save(object.summary);
+
+    // Force-set the location here in case the object is used after being saved,
+    // even if the location is not saved in the store (excluded from the
+    // JSON representation).
+    object.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
   }
 
   @override
@@ -220,17 +243,18 @@ class CreatureModelSummary {
     required this.id,
     required this.name,
     required this.category,
+    required this.location,
     required this.source,
     this.icon,
-    required this.isDefault,
   });
 
   final String id;
   final String name;
   final CreatureCategory category;
+  @JsonKey(includeFromJson: true, includeToJson: false)
+    ObjectLocation location;
   final ObjectSource source;
   final ExportableBinaryData? icon;
-  final bool isDefault;
 
   factory CreatureModelSummary.fromJson(Map<String, dynamic> j) => _$CreatureModelSummaryFromJson(j);
   Map<String, dynamic> toJson() => _$CreatureModelSummaryToJson(this);
@@ -245,7 +269,7 @@ class CreatureModel with EncounterEntityModel {
         required this.name,
         this.unique = false,
         required this.category,
-        this.isDefault = false,
+        required this.location,
         required this.source,
         this.description = '',
         required this.biome,
@@ -265,7 +289,7 @@ class CreatureModel with EncounterEntityModel {
         ExportableBinaryData? image,
         ExportableBinaryData? icon,
       })
-    : uuid = uuid ?? (isDefault ? null : Uuid().v4().toString()),
+    : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4.toString()),
       mapSize = mapSize ?? 0.8,
       skills = skills ?? <SkillInstance>[],
       naturalWeapons = naturalWeapons ?? <NaturalWeaponModel>[],
@@ -276,10 +300,11 @@ class CreatureModel with EncounterEntityModel {
   String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
   @JsonKey(includeIfNull: false)
     final String? uuid;
-  bool isDefault;
   final String name;
   bool unique;
   CreatureCategory category;
+  @JsonKey(includeFromJson: true, includeToJson: false)
+    ObjectLocation location;
   ObjectSource source;
   String description;
   String biome;
@@ -301,9 +326,9 @@ class CreatureModel with EncounterEntityModel {
       id: id,
       name: name,
       category: category,
+      location: location,
       source: source,
       icon: icon?.clone(),
-      isDefault: isDefault,
     );
 
   ExportableBinaryData? get image => _image;
@@ -524,7 +549,10 @@ class CreatureModel with EncounterEntityModel {
     var assets = json.decode(jsonStr);
 
     for(var model in assets) {
-      model['is_default'] = true;
+      model['location'] = ObjectLocation(
+        type: ObjectLocationType.assets,
+        collectionUri: 'assets/creature-ldb2e.json',
+      ).toJson();
       var instance = CreatureModel.fromJson(model);
       _summaries[instance.id] = instance.summary;
       _models[instance.id] = instance;
@@ -553,6 +581,13 @@ class CreatureModel with EncounterEntityModel {
   static bool _defaultAssetsLoaded = false;
   static final Map<String, CreatureModelSummary> _summaries = <String, CreatureModelSummary>{};
   static final Map<String, CreatureModel> _models = <String, CreatureModel>{};
+
+  CreatureModel clone(String newName) {
+    var j = toJson();
+    j['location'] = ObjectLocation.memory.toJson();
+    j['name'] = newName;
+    return CreatureModel.fromJson(j);
+  }
 
   factory CreatureModel.fromJson(Map<String, dynamic> json) => _$CreatureModelFromJson(json);
   Map<String, dynamic> toJson() => _$CreatureModelToJson(this);
