@@ -1,4 +1,6 @@
 abstract interface class StorageEngine {
+  String uriScheme();
+  String uriHost();
   Future<void> init();
   Future<List<String>> keys(String category);
   Future<String> get(String category, String key);

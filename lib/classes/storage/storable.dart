@@ -52,6 +52,10 @@ abstract class ObjectStoreAdapter<T> {
     await willDelete(object);
     await DataStorage.instance.delete(storeCategory(), k);
   }
+
+  String getUriBase() {
+    return '${DataStorage.instance.uriScheme}://${DataStorage.instance.uriHost}';
+  }
 }
 
 abstract class JsonStoreAdapter<T> extends ObjectStoreAdapter<T> {

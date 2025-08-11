@@ -7,6 +7,12 @@ class HiveStorageEngine implements StorageEngine {
   HiveStorageEngine();
 
   @override
+  String uriScheme() => 'hive';
+
+  @override
+  String uriHost() => 'localdb';
+
+  @override
   Future<void> init() async {
     await Hive.initFlutter();
   }

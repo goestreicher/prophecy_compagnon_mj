@@ -4,6 +4,9 @@ import 'engines/hive.dart';
 class DataStorage {
   static DataStorage get instance => _instance ??= DataStorage._ctor();
 
+  String get uriScheme => _engine.uriScheme();
+  String get uriHost => _engine.uriHost();
+
   Future<void> init() async {
     await _engine.init();
   }
