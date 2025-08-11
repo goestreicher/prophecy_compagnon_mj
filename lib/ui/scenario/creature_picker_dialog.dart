@@ -24,13 +24,13 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
 
   void _applyCurrentFilter() {
     if(selectedSource != null) {
-      creatures = CreatureModel.forSource(selectedSource!, selectedCategory);
+      creatures = CreatureModelSummary.forSource(selectedSource!, selectedCategory);
     }
     else if(selectedSourceType != null) {
-      creatures = CreatureModel.forSourceType(selectedSourceType!, selectedCategory);
+      creatures = CreatureModelSummary.forSourceType(selectedSourceType!, selectedCategory);
     }
     else if(selectedCategory != null) {
-      creatures = CreatureModel.forCategory(selectedCategory!);
+      creatures = CreatureModelSummary.forCategory(selectedCategory!);
     }
     else {
       creatures = <CreatureModelSummary>[];

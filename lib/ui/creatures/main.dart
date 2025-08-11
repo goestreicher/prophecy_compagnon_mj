@@ -46,13 +46,13 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
 
   Future<List<CreatureModelSummary>> _updateCreaturesList() async {
     if(creatureSource != null) {
-      return CreatureModel.forSource(creatureSource!, creatureCategory, nameFilter: search);
+      return CreatureModelSummary.forSource(creatureSource!, creatureCategory, nameFilter: search);
     }
     else if(creatureSourceType != null) {
-      return CreatureModel.forSourceType(creatureSourceType!, creatureCategory, nameFilter: search);
+      return CreatureModelSummary.forSourceType(creatureSourceType!, creatureCategory, nameFilter: search);
     }
     else if(creatureCategory != null) {
-      return CreatureModel.forCategory(creatureCategory!);
+      return CreatureModelSummary.forCategory(creatureCategory!);
     }
 
     return <CreatureModelSummary>[];
