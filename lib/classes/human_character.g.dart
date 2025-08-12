@@ -156,9 +156,9 @@ Map<String, dynamic> _$CharacterTendenciesToJson(
 HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
     HumanCharacter(
         uuid: json['uuid'] as String?,
-        location: ObjectLocation.fromJson(
-          json['location'] as Map<String, dynamic>,
-        ),
+        location: json['location'] == null
+            ? ObjectLocation.memory
+            : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
         name: json['name'] as String,
         initiative: (json['initiative'] as num?)?.toInt() ?? 1,
         caste:

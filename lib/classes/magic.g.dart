@@ -20,7 +20,9 @@ MagicSpell _$MagicSpellFromJson(Map<String, dynamic> json) => MagicSpell(
     json['casting_duration_unit'],
   ),
   keys: (json['keys'] as List<dynamic>).map((e) => e as String).toList(),
-  location: ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+  location: json['location'] == null
+      ? ObjectLocation.memory
+      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
   source: json['source'] as String,
   description: json['description'] as String,
 );

@@ -14,7 +14,7 @@ enum ObjectLocationType {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ObjectLocation {
-  ObjectLocation({
+  const ObjectLocation({
     required this.type,
     required this.collectionUri,
   });
@@ -22,7 +22,7 @@ class ObjectLocation {
   final ObjectLocationType type;
   final String collectionUri;
 
-  static ObjectLocation memory = ObjectLocation(
+  static const ObjectLocation memory = ObjectLocation(
     type: ObjectLocationType.memory,
     collectionUri: 'memory://',
   );

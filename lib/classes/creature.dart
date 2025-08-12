@@ -144,11 +144,12 @@ class CreatureModelSummaryStore extends JsonStoreAdapter<CreatureModelSummary> {
   @override
   Future<CreatureModelSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    j['location'] = ObjectLocation(
+    var summary = CreatureModelSummary.fromJson(j);
+    summary.location = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: '${getUriBase()}/${storeCategory()}',
-    ).toJson();
-    return CreatureModelSummary.fromJson(j);
+    );
+    return summary;
   }
 
   @override
@@ -190,11 +191,12 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
   Future<CreatureModel> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    j['location'] = ObjectLocation(
+    var model = CreatureModel.fromJson(j);
+    model.location = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: '${getUriBase()}/${storeCategory()}',
-    ).toJson();
-    return CreatureModel.fromJson(j);
+    );
+    return model;
   }
 
   @override
@@ -233,7 +235,7 @@ class CreatureModelSummary {
     required this.id,
     required this.name,
     required this.category,
-    required this.location,
+    this.location = ObjectLocation.memory,
     required this.source,
     this.icon,
   });
@@ -317,7 +319,7 @@ class CreatureModel with EncounterEntityModel {
         required this.name,
         this.unique = false,
         required this.category,
-        required this.location,
+        this.location = ObjectLocation.memory,
         required this.source,
         this.description = '',
         required this.biome,
@@ -607,7 +609,7 @@ class Creature extends EntityBase {
   Creature(
       {
         super.uuid,
-        required super.location,
+        super.location = ObjectLocation.memory,
         required super.name,
         super.initiative,
         super.injuryProvider,

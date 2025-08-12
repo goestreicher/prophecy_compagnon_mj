@@ -61,11 +61,12 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
   Future<PlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    j['location'] = ObjectLocation(
+    var pc = PlayerCharacter.fromJson(j);
+    pc.location = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: '${getUriBase()}/${storeCategory()}',
-    ).toJson();
-    return PlayerCharacter.fromJson(j);
+    );
+    return pc;
   }
 
   @override
@@ -132,7 +133,7 @@ class PlayerCharacter extends HumanCharacter {
   PlayerCharacter(
       {
         super.uuid,
-        required super.location,
+        super.location = ObjectLocation.memory,
         required this.player,
         required this.augure,
         required super.name,

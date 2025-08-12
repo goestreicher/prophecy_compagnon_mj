@@ -65,7 +65,7 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
   EntityBase(
       {
         String? uuid,
-        required this.location,
+        this.location = ObjectLocation.memory,
         required this.name,
         this.initiative = 1,
         InjuryManager Function(EntityBase?, InjuryManager?) injuryProvider = _entityBaseDefaultInjuries,

@@ -266,12 +266,13 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
   Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    j['location'] = ObjectLocation(
+    j['editable'] = true;
+    var npc = NonPlayerCharacter.fromJson(j);
+    npc.location = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: '${getUriBase()}/${storeCategory()}',
-    ).toJson();
-    j['editable'] = true;
-    return NonPlayerCharacter.fromJson(j);
+    );
+    return npc;
   }
 
   @override
@@ -345,7 +346,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   NonPlayerCharacter(
     {
       super.uuid,
-      required super.location,
+      super.location = ObjectLocation.memory,
       required super.name,
       required this.category,
       required this.subCategory,
@@ -400,8 +401,9 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   NonPlayerCharacter clone(String newName) {
     var j = toJson();
     j['name'] = newName;
-    j['location'] = ObjectLocation.memory;
-    return NonPlayerCharacter.fromJson(j);
+    var cloned = NonPlayerCharacter.fromJson(j);
+    cloned.location = ObjectLocation.memory;
+    return cloned;
   }
 
   static bool _defaultAssetsLoaded = false;

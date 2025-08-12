@@ -72,7 +72,7 @@ class MagicSpell {
     required this.castingDuration,
     required this.castingDurationUnit,
     required this.keys,
-    required this.location,
+    this.location = ObjectLocation.memory,
     required this.source,
     required this.description,
   });

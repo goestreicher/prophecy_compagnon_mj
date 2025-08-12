@@ -50,11 +50,12 @@ class PlaceStore extends JsonStoreAdapter<Place> {
 
   @override
   Future<Place> fromJsonRepresentation(Map<String, dynamic> j) async {
-    j['location'] = ObjectLocation(
+    var place = Place.fromJson(j);
+    place.location = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: '${getUriBase()}/${storeCategory()}',
-    ).toJson();
-    return Place.fromJson(j);
+    );
+    return place;
   }
 
   @override
@@ -175,7 +176,7 @@ class Place {
     String? motto,
     String? climate,
     required PlaceDescription description,
-    required ObjectLocation location,
+    ObjectLocation location = ObjectLocation.memory,
     required ObjectSource source,
     PlaceMap? map,
   }) {

@@ -4,7 +4,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
-import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../utils/creature_edit_widget.dart';
 import '../utils/creature_list_widget.dart';
@@ -302,7 +301,6 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                             try {
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                               var j = json.decode(jsonStr);
-                              j['location'] = ObjectLocation.memory.toJson();
                               var creature = CreatureModel.fromJson(j);
                               var model = await CreatureModel.get(creature.id);
                               if(!context.mounted) return;

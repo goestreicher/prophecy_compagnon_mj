@@ -44,7 +44,9 @@ CreatureModelSummary _$CreatureModelSummaryFromJson(
   category: const CreatureCategoryJsonConverter().fromJson(
     json['category'] as String,
   ),
-  location: ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+  location: json['location'] == null
+      ? ObjectLocation.memory
+      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
   source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   icon: json['icon'] == null
       ? null
@@ -70,7 +72,9 @@ CreatureModel _$CreatureModelFromJson(
   category: const CreatureCategoryJsonConverter().fromJson(
     json['category'] as String,
   ),
-  location: ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+  location: json['location'] == null
+      ? ObjectLocation.memory
+      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
   source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   description: json['description'] as String? ?? '',
   biome: json['biome'] as String,

@@ -65,7 +65,9 @@ Place _$PlaceFromJson(Map<String, dynamic> json) => Place(
   description: PlaceDescription.fromJson(
     json['description'] as Map<String, dynamic>,
   ),
-  location: ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+  location: json['location'] == null
+      ? ObjectLocation.memory
+      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
   source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   map: json['map'] == null
       ? null

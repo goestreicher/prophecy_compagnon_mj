@@ -56,9 +56,9 @@ Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
 NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
     NonPlayerCharacter(
         uuid: json['uuid'] as String?,
-        location: ObjectLocation.fromJson(
-          json['location'] as Map<String, dynamic>,
-        ),
+        location: json['location'] == null
+            ? ObjectLocation.memory
+            : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
         name: json['name'] as String,
         category: const NPCCategoryJsonConverter().fromJson(
           json['category'] as String,

@@ -9,7 +9,6 @@ import '../../classes/character/skill.dart';
 import '../../classes/combat.dart';
 import '../../classes/creature.dart';
 import '../../classes/equipment.dart';
-import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
@@ -91,7 +90,6 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
       name: widget.name,
       unique: _unique,
       category: _category!,
-      location: ObjectLocation.memory,
       source: widget.source ?? ObjectSource.local,
       description: _descriptionController.text,
       biome: _biomeController.text,

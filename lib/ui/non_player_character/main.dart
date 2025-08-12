@@ -4,7 +4,6 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
-import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
@@ -346,7 +345,6 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                               var j = json.decode(jsonStr);
-                              j['location'] = ObjectLocation.memory.toJson();
                               var npc = NonPlayerCharacter.fromJson(j);
                               var model = await NonPlayerCharacter.get(npc.id);
                               if(!context.mounted) return;
