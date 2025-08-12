@@ -232,7 +232,12 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
   Future<NonPlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
     j['editable'] = true;
-    return NonPlayerCharacterSummary.fromJson(j);
+    var summary = NonPlayerCharacterSummary.fromJson(j);
+    summary.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
+    return summary;
   }
 
   @override
@@ -245,6 +250,14 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
   @override
   Future<void> willSave(NonPlayerCharacterSummary object) async {
     if(object.icon != null) await BinaryDataStore().save(object.icon!);
+
+    // Force-set the location here in case the object is used after being saved,
+    // even if the location is not saved in the store (excluded from the
+    // JSON representation).
+    object.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
   }
 
   @override
@@ -321,6 +334,7 @@ class NonPlayerCharacterSummary {
     required this.name,
     required this.category,
     required this.subCategory,
+    this.location = ObjectLocation.memory,
     required this.source,
     this.icon,
     this.editable = false,
@@ -330,6 +344,8 @@ class NonPlayerCharacterSummary {
   final String name;
   final NPCCategory category;
   final NPCSubCategory subCategory;
+  @JsonKey(includeFromJson: true, includeToJson: false)
+    ObjectLocation location;
   final ObjectSource source;
   final ExportableBinaryData? icon;
   @JsonKey(includeToJson: false, includeFromJson: true)
@@ -395,6 +411,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       subCategory: subCategory,
       source: source,
       icon: icon?.clone(),
+      location: location,
       editable: editable,
     );
 

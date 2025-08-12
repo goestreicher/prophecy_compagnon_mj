@@ -33,6 +33,9 @@ NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
   subCategory: const NPCSubcategoryJsonConverter().fromJson(
     json['sub_category'] as Map<String, dynamic>,
   ),
+  location: json['location'] == null
+      ? ObjectLocation.memory
+      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
   source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   icon: json['icon'] == null
       ? null

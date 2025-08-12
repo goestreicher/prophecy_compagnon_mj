@@ -17,6 +17,9 @@ PlayerCharacterSummary _$PlayerCharacterSummaryFromJson(
   icon: json['icon'] == null
       ? null
       : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
+  location: json['location'] == null
+      ? ObjectLocation.memory
+      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$PlayerCharacterSummaryToJson(

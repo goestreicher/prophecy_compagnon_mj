@@ -27,7 +27,12 @@ class PlayerCharacterSummaryStore extends JsonStoreAdapter<PlayerCharacterSummar
   @override
   Future<PlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    return PlayerCharacterSummary.fromJson(j);
+    var summary = PlayerCharacterSummary.fromJson(j);
+    summary.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
+    return summary;
   }
 
   @override
@@ -40,6 +45,14 @@ class PlayerCharacterSummaryStore extends JsonStoreAdapter<PlayerCharacterSummar
   @override
   Future<void> willSave(PlayerCharacterSummary object) async {
     if(object.icon != null) await BinaryDataStore().save(object.icon!);
+
+    // Force-set the location here in case the object is used after being saved,
+    // even if the location is not saved in the store (excluded from the
+    // JSON representation).
+    object.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
   }
 
   @override
@@ -115,6 +128,7 @@ class PlayerCharacterSummary {
     required this.caste,
     required this.casteStatus,
     this.icon,
+    this.location = ObjectLocation.memory,
   });
 
   final String id;
@@ -123,6 +137,8 @@ class PlayerCharacterSummary {
   final Caste caste;
   final CasteStatus casteStatus;
   final ExportableBinaryData? icon;
+  @JsonKey(includeFromJson: true, includeToJson: false)
+    ObjectLocation location;
 
   Map<String, dynamic> toJson() => _$PlayerCharacterSummaryToJson(this);
   factory PlayerCharacterSummary.fromJson(Map<String, dynamic> json) => _$PlayerCharacterSummaryFromJson(json);
@@ -165,6 +181,7 @@ class PlayerCharacter extends HumanCharacter {
     caste: caste,
     casteStatus: casteStatus,
     icon: icon?.clone(),
+    location: location,
   );
 
   @override
