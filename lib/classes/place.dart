@@ -311,6 +311,8 @@ class Place {
   factory Place.fromJson(Map<String, dynamic> json) {
    if(json.containsKey('id') && _instances.containsKey(json['id']!) && _instances[json['id']]!.location.type == ObjectLocationType.assets) {
      return _instances[json['id']]!;
+   } else if(json.containsKey('uuid') && _instances.containsKey(json['uuid'])) {
+     return _instances[json['uuid']]!;
    } else {
      return _$PlaceFromJson(json);
    }
