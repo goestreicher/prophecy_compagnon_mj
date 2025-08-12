@@ -3,7 +3,6 @@ import 'package:uuid/uuid.dart';
 
 import 'creature.dart';
 import 'non_player_character.dart';
-import 'object_location.dart';
 import 'object_source.dart';
 import 'place.dart';
 import 'scenario_encounter.dart';
@@ -46,11 +45,6 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
         var npc = await NonPlayerCharacter.get(npcId);
         if(npc != null) {
           var npcJson = npc.toJson();
-          // We have to set the NPC as editable otherwise modifications
-          // are blocked
-          npcJson['editable'] = true;
-          // Same here, we have to set the location manually
-          npcJson['location'] = npc.location.toJson();
           npcsJson.add(npcJson);
         }
       }
@@ -63,11 +57,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
         var creature = await CreatureModel.get(creatureId);
         if(creature != null) {
           var creatureJson = creature.toJson();
-          // We have to set the creature as editable otherwise modifications
-          // are blocked
-          creatureJson['editable'] = true;
           // Same here, we have to set the location manually
-          creatureJson['location'] = creature.location.toJson();
           creaturesJson.add(creatureJson);
         }
       }
@@ -94,7 +84,6 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
         else if(placeJson.containsKey('uuid')) {
           var place = await PlaceStore().get(placeJson['uuid']);
           if(place != null) {
-            placeJson['location'] = place.location.toJson();
             placesJson.add(placeJson);
           }
         }
@@ -217,23 +206,18 @@ class Scenario {
       json['uuid'] = const Uuid().v4().toString();
     }
 
-    // Force source and location for items requiring it
+    // Force source for items requiring it
     var source = ObjectSource(
       type: ObjectSourceType.scenario,
       name: json['name'],
     );
     for(var npc in json['npcs'] as List<dynamic>? ?? []) {
-      npc['editable'] = true;
-      npc['location'] = ObjectLocation.memory.toJson();
       npc['source'] = source.toJson();
     }
     for(var creature in json['creatures'] as List<dynamic>? ?? []) {
-      creature['editable'] = true;
-      creature['location'] = ObjectLocation.memory.toJson();
       creature['source'] = source.toJson();
     }
     for(var place in json['places'] as List<dynamic>? ?? []) {
-      place['location'] = ObjectLocation.memory.toJson();
       place['source'] = source.toJson();
     }
 
