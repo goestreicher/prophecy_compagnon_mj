@@ -299,9 +299,6 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
     if(object.image != null) await BinaryDataStore().save(object.image!);
     if(object.icon != null) await BinaryDataStore().save(object.icon!);
 
-    var summary = await NonPlayerCharacterSummaryStore().get(object.id);
-    if(summary != null) await NonPlayerCharacterSummaryStore().delete(summary);
-
     // Force-set the location here in case the object is used after being saved,
     // even if the location is not saved in the store (excluded from the
     // JSON representation).
@@ -309,17 +306,12 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
       type: ObjectLocationType.store,
       collectionUri: '${getUriBase()}/${storeCategory()}',
     );
-
-    await NonPlayerCharacterSummaryStore().save(object.summary);
   }
 
   @override
   Future<void> willDelete(NonPlayerCharacter object) async {
     if(object.icon != null) await BinaryDataStore().delete(object.icon!);
     if(object.image != null) await BinaryDataStore().delete(object.image!);
-
-    var summary = await NonPlayerCharacterSummaryStore().get(object.id);
-    if(summary != null) await NonPlayerCharacterSummaryStore().delete(summary);
   }
 }
 
@@ -345,6 +337,59 @@ class NonPlayerCharacterSummary {
     ObjectLocation location;
   final ObjectSource source;
   final ExportableBinaryData? icon;
+
+  static bool exists(String id) => _summaries.containsKey(id);
+
+  static List<NonPlayerCharacterSummary> forCategory(NPCCategory category, NPCSubCategory? subCategory, {String? nameFilter}) {
+    return _summaries.values
+        .where((NonPlayerCharacterSummary s) => _matchesCategory(s, category, subCategory))
+        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .toList();
+  }
+
+  static List<NonPlayerCharacterSummary> forSourceType(ObjectSourceType type, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
+    return _summaries.values
+        .where((NonPlayerCharacterSummary s) => s.source.type == type && (category == null || _matchesCategory(s, category, subCategory)))
+        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .toList();
+  }
+
+  static List<NonPlayerCharacterSummary> forSource(ObjectSource source, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
+    return _summaries.values
+        .where((NonPlayerCharacterSummary s) => s.source == source && (category == null || _matchesCategory(s, category, subCategory)))
+        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .toList();
+  }
+
+  static bool _matchesCategory(NonPlayerCharacterSummary summary, NPCCategory category, NPCSubCategory? subCategory) {
+    return summary.category == category
+        && (subCategory == null || summary.subCategory == subCategory);
+  }
+
+  static void _defaultAssetLoaded(NonPlayerCharacterSummary summary) {
+    _summaries[summary.id] = summary;
+  }
+
+  static Future<void> _loadStoreAssets() async {
+    for(var npc in await NonPlayerCharacterSummaryStore().getAll()) {
+      _summaries[npc.id] = npc;
+    }
+  }
+
+  static Future<void> _saveLocalModel(NonPlayerCharacterSummary summary) async {
+    await NonPlayerCharacterSummaryStore().save(summary);
+    _summaries[summary.id] = summary;
+  }
+
+  static Future<void> _deleteLocalModel(String id) async {
+    var summary = await NonPlayerCharacterSummaryStore().get(id);
+    if(summary != null) {
+      await NonPlayerCharacterSummaryStore().delete(summary);
+    }
+    _summaries.remove(id);
+  }
+
+  static final Map<String, NonPlayerCharacterSummary> _summaries = <String, NonPlayerCharacterSummary>{};
 
   factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j) => _$NonPlayerCharacterSummaryFromJson(j);
   Map<String, dynamic> toJson() => _$NonPlayerCharacterSummaryToJson(this);
@@ -415,13 +460,12 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   }
 
   static bool _defaultAssetsLoaded = false;
-  static final Map<String, NonPlayerCharacterSummary> _summaries = <String, NonPlayerCharacterSummary>{};
   static final Map<String, NonPlayerCharacter> _instances = <String, NonPlayerCharacter>{};
 
   static Future<NonPlayerCharacter?> get(String id) async {
     if(!_defaultAssetsLoaded) await loadDefaultAssets();
 
-    if(!_summaries.containsKey(id)) {
+    if(!NonPlayerCharacterSummary.exists(id)) {
       return null;
     }
 
@@ -434,32 +478,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     }
 
     return _instances[id];
-  }
-
-  static bool _matchesCategory(NonPlayerCharacterSummary summary, NPCCategory category, NPCSubCategory? subCategory) {
-    return summary.category == category
-        && (subCategory == null || summary.subCategory == subCategory);
-  }
-
-  static List<NonPlayerCharacterSummary> forCategory(NPCCategory category, NPCSubCategory? subCategory, {String? nameFilter}) {
-    return _summaries.values
-      .where((NonPlayerCharacterSummary s) => _matchesCategory(s, category, subCategory))
-      .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
-      .toList();
-  }
-
-  static List<NonPlayerCharacterSummary> forSourceType(ObjectSourceType type, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
-    return _summaries.values
-        .where((NonPlayerCharacterSummary s) => s.source.type == type && (category == null || _matchesCategory(s, category, subCategory)))
-        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
-        .toList();
-  }
-
-  static List<NonPlayerCharacterSummary> forSource(ObjectSource source, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
-    return _summaries.values
-        .where((NonPlayerCharacterSummary s) => s.source == source && (category == null || _matchesCategory(s, category, subCategory)))
-        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
-        .toList();
   }
 
   @override
@@ -501,18 +519,18 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
     for(var model in await loadJSONAssetObjectList('npc-ldb2e.json')) {
       var instance = NonPlayerCharacter.fromJson(model);
-      _summaries[instance.id] = instance.summary;
+      NonPlayerCharacterSummary._defaultAssetLoaded(instance.summary);
       _instances[instance.id] = instance;
     }
+  }
 
-    for(var npc in await NonPlayerCharacterSummaryStore().getAll()) {
-      _summaries[npc.id] = npc;
-    }
+  static Future<void> loadStoreAssets() async {
+    await NonPlayerCharacterSummary._loadStoreAssets();
   }
 
   static Future<void> saveLocalModel(NonPlayerCharacter npc) async {
     await NonPlayerCharacterStore().save(npc);
-    _summaries[npc.id] = npc.summary;
+    await NonPlayerCharacterSummary._saveLocalModel(npc.summary);
     _instances[npc.id] = npc;
   }
 
@@ -520,8 +538,8 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     var npc = await NonPlayerCharacterStore().get(id);
     if(npc != null) {
       await NonPlayerCharacterStore().delete(npc);
+      await NonPlayerCharacterSummary._deleteLocalModel(id);
     }
-    _summaries.remove(id);
     _instances.remove(id);
   }
 

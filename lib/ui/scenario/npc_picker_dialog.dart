@@ -27,13 +27,13 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
 
   void _applyCurrentFilter() {
     if(selectedSource != null) {
-      npcs = NonPlayerCharacter.forSource(selectedSource!, selectedCategory, selectedSubCategory);
+      npcs = NonPlayerCharacterSummary.forSource(selectedSource!, selectedCategory, selectedSubCategory);
     }
     else if(selectedSourceType != null) {
-      npcs = NonPlayerCharacter.forSourceType(selectedSourceType!, selectedCategory, selectedSubCategory);
+      npcs = NonPlayerCharacterSummary.forSourceType(selectedSourceType!, selectedCategory, selectedSubCategory);
     }
     else if(selectedCategory != null) {
-      npcs = NonPlayerCharacter.forCategory(selectedCategory!, selectedSubCategory);
+      npcs = NonPlayerCharacterSummary.forCategory(selectedCategory!, selectedSubCategory);
     }
     else {
       npcs = <NonPlayerCharacterSummary>[];

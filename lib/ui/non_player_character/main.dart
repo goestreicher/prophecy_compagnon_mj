@@ -40,13 +40,13 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
   Future<List<NonPlayerCharacterSummary>> _updateNPCsList() async {
     if(npcSource != null) {
-      return NonPlayerCharacter.forSource(npcSource!, npcCategory, npcSubCategory, nameFilter: search);
+      return NonPlayerCharacterSummary.forSource(npcSource!, npcCategory, npcSubCategory, nameFilter: search);
     }
     else if(npcSourceType != null) {
-      return NonPlayerCharacter.forSourceType(npcSourceType!, npcCategory, npcSubCategory, nameFilter: search);
+      return NonPlayerCharacterSummary.forSourceType(npcSourceType!, npcCategory, npcSubCategory, nameFilter: search);
     }
     else if(npcCategory != null) {
-      return NonPlayerCharacter.forCategory(npcCategory!, npcSubCategory, nameFilter: search);
+      return NonPlayerCharacterSummary.forCategory(npcCategory!, npcSubCategory, nameFilter: search);
     }
 
     return <NonPlayerCharacterSummary>[];
