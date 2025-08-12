@@ -75,21 +75,6 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       j['maps'] = mapsJson;
     }
 
-    if(j.containsKey('places')) {
-      var placesJson = <Map<String, dynamic>>[];
-      for(var placeJson in j['places']) {
-        if(placeJson.containsKey('id')) {
-          placesJson.add(placeJson);
-        }
-        else if(placeJson.containsKey('uuid')) {
-          var place = await PlaceStore().get(placeJson['uuid']);
-          if(place != null) {
-            placesJson.add(placeJson);
-          }
-        }
-      }
-    }
-
     return Scenario.fromJson(j);
   }
 
