@@ -1489,9 +1489,8 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                         npc = widget.npc;
                       }
 
-                      npc!.editable = true;
                       try {
-                        await NonPlayerCharacter.saveLocalModel(npc);
+                        await NonPlayerCharacter.saveLocalModel(npc!);
                         widget.onEditDone(npc);
                       }
                       catch(e) {

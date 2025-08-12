@@ -361,7 +361,6 @@ class _NPCMainPageState extends State<NPCMainPage> {
                                 return;
                               }
 
-                              npc.editable = true;
                               await NonPlayerCharacter.saveLocalModel(npc);
                               setState(() {
                                 selectedDisplay = npc.id;

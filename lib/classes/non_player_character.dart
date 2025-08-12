@@ -231,7 +231,6 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
   @override
   Future<NonPlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    j['editable'] = true;
     var summary = NonPlayerCharacterSummary.fromJson(j);
     summary.location = ObjectLocation(
       type: ObjectLocationType.store,
@@ -279,7 +278,6 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
   Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    j['editable'] = true;
     var npc = NonPlayerCharacter.fromJson(j);
     npc.location = ObjectLocation(
       type: ObjectLocationType.store,
@@ -337,7 +335,6 @@ class NonPlayerCharacterSummary {
     this.location = ObjectLocation.memory,
     required this.source,
     this.icon,
-    this.editable = false,
   });
 
   final String id;
@@ -348,8 +345,6 @@ class NonPlayerCharacterSummary {
     ObjectLocation location;
   final ObjectSource source;
   final ExportableBinaryData? icon;
-  @JsonKey(includeToJson: false, includeFromJson: true)
-    final bool editable;
 
   factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j) => _$NonPlayerCharacterSummaryFromJson(j);
   Map<String, dynamic> toJson() => _$NonPlayerCharacterSummaryToJson(this);
@@ -388,7 +383,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       super.description,
       super.image,
       super.icon,
-      this.editable = false,
     }
   ) {
     if(!subCategory.categories.contains(category)) {
@@ -400,8 +394,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   NPCSubCategory subCategory;
   ObjectSource source;
   bool unique;
-  @JsonKey(includeToJson: false, includeFromJson: true)
-    bool editable;
   bool useHumanInjuryManager;
 
   NonPlayerCharacterSummary get summary => NonPlayerCharacterSummary(
@@ -412,7 +404,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       source: source,
       icon: icon?.clone(),
       location: location,
-      editable: editable,
     );
 
   NonPlayerCharacter clone(String newName) {
@@ -439,7 +430,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       if(model == null) {
         return null;
       }
-      model.editable = true;
       _instances[id] = model;
     }
 

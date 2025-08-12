@@ -40,7 +40,6 @@ NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
   icon: json['icon'] == null
       ? null
       : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
-  editable: json['editable'] as bool? ?? false,
 );
 
 Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
@@ -124,7 +123,6 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
             : ExportableBinaryData.fromJson(
                 json['icon'] as Map<String, dynamic>,
               ),
-        editable: json['editable'] as bool? ?? false,
       )
       ..status = json['status'] == null
           ? EntityStatus.empty()

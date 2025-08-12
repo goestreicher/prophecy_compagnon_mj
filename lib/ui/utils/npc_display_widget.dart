@@ -38,7 +38,7 @@ class NPCActionButtons extends StatelessWidget {
     bool canModify = true;
     String? canModifyMessage;
 
-    if(!npc.editable) {
+    if(!npc.location.type.canWrite) {
       canModify = false;
       canModifyMessage = 'Modification impossible (créature par défaut)';
     }
