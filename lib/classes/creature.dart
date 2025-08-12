@@ -252,9 +252,7 @@ class CreatureModelSummary {
     return _summaries.keys.toList();
   }
 
-  static Future<bool> exists(String id) async {
-    return _summaries.containsKey(id);
-  }
+  static bool exists(String id) => _summaries.containsKey(id);
 
   static Future<CreatureModelSummary?> get(String id) async {
     return _summaries[id];
@@ -533,7 +531,7 @@ class CreatureModel with EncounterEntityModel {
   static Future<CreatureModel?> get(String id) async {
     if(!_defaultAssetsLoaded) await loadDefaultAssets();
 
-    if(await CreatureModelSummary.exists(id) == false) {
+    if(CreatureModelSummary.exists(id) == false) {
       return null;
     }
 
