@@ -29,6 +29,7 @@ Scenario _$ScenarioFromJson(Map<String, dynamic> json) => Scenario(
   magic: (json['magic'] as num?)?.toInt() ?? 0,
   implication: (json['implication'] as num?)?.toInt() ?? 0,
   synopsys: json['synopsys'] as String? ?? '',
+  story: json['story'] as String? ?? '',
   maps: (json['maps'] as List<dynamic>?)
       ?.map((e) => ScenarioMap.fromJson(e as Map<String, dynamic>))
       .toList(),
@@ -55,6 +56,7 @@ Map<String, dynamic> _$ScenarioToJson(Scenario instance) => <String, dynamic>{
   'magic': instance.magic,
   'implication': instance.implication,
   'synopsys': instance.synopsys,
+  'story': instance.story,
   'maps': instance.maps.map((e) => e.toJson()).toList(),
   'npcs': instance.npcs.map((e) => e.toJson()).toList(),
   'creatures': instance.creatures.map((e) => e.toJson()).toList(),

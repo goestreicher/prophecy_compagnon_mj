@@ -1,12 +1,20 @@
+import 'package:fleather/fleather.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:parchment/codecs.dart';
 
 import '../../classes/scenario.dart';
 
 class ScenarioEditGeneralPage extends StatefulWidget {
-  const ScenarioEditGeneralPage({ super.key, required this.scenario });
+  const ScenarioEditGeneralPage({
+    super.key,
+    required this.scenario,
+    this.registerPreSaveCallback,
+  });
 
   final Scenario scenario;
+  final void Function(void Function())? registerPreSaveCallback;
 
   @override
   State<ScenarioEditGeneralPage> createState() => _ScenarioEditGeneralPageState();
@@ -15,12 +23,38 @@ class ScenarioEditGeneralPage extends StatefulWidget {
 class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
   final TextEditingController _subtitleController = TextEditingController();
   final TextEditingController _synopsysController = TextEditingController();
+  late final FleatherController storyController;
+  late final FocusNode storyFocusNode;
 
   @override
   void initState() {
     super.initState();
+
+    if(kIsWeb) {
+      BrowserContextMenu.disableContextMenu();
+    }
+
     _subtitleController.text = widget.scenario.subtitle;
     _synopsysController.text = widget.scenario.synopsys;
+
+    var document = ParchmentMarkdownCodec().decode(widget.scenario.story);
+    storyController = FleatherController(document: document);
+    storyFocusNode = FocusNode();
+
+    widget.registerPreSaveCallback?.call(() {
+      widget.scenario.story = ParchmentMarkdownCodec().encode(storyController.document);
+    });
+  }
+
+  @override
+  void dispose() {
+    if(kIsWeb) {
+      BrowserContextMenu.enableContextMenu();
+    }
+
+    storyFocusNode.dispose();
+
+    super.dispose();
   }
 
   @override
@@ -117,50 +151,59 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
           ),
           const VerticalDivider(),
           Expanded(
-            child: LayoutBuilder(
-              builder: (BuildContext context, BoxConstraints constraints) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        SizedBox(
-                          width: constraints.maxWidth,
-                          child: TextField(
-                            controller: _subtitleController,
-                            maxLength: 150,
-                            onChanged: (String value) {
-                              widget.scenario.subtitle = value;
-                            },
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              label: Text('Sous-titre'),
-                            ),
-                          ),
-                        ),
-                        const SizedBox(height: 8.0),
-                        SizedBox(
-                          width: constraints.maxWidth,
-                          child: TextField(
-                            controller: _synopsysController,
-                            minLines: 5,
-                            maxLines: 10,
-                            onChanged: (String value) {
-                              widget.scenario.synopsys = value;
-                            },
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              label: Text('Synopsys'),
-                            ),
-                          )
-                        ),
-                      ],
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 4.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  TextField(
+                    controller: _subtitleController,
+                    maxLength: 150,
+                    onChanged: (String value) {
+                      widget.scenario.subtitle = value;
+                    },
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      label: Text('Sous-titre'),
                     ),
                   ),
-                );
-              }
+                  Divider(),
+                  TextField(
+                    controller: _synopsysController,
+                    minLines: 5,
+                    maxLines: 10,
+                    onChanged: (String value) {
+                      widget.scenario.synopsys = value;
+                    },
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      label: Text('Synopsys'),
+                    ),
+                  ),
+                  Divider(),
+                  FleatherToolbar.basic(
+                    controller: storyController,
+                    hideUnderLineButton: true, // Not supported by markdown
+                    hideForegroundColor: true, // Not supported by markdown
+                    hideBackgroundColor: true, // Not supported by markdown
+                    hideDirection: true,
+                    hideAlignment: true, // Not supported by markdown
+                    hideIndentation: true, // No-op for markdown
+                    hideHorizontalRule: true, // No-op for markdown
+                  ),
+                  Expanded(
+                    child: FleatherField(
+                      controller: storyController,
+                      focusNode: storyFocusNode,
+                      expands: true,
+                      decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        label: Text('Histoire'),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           )
         ],

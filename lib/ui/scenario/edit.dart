@@ -30,6 +30,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   bool _canCancel = true;
   late Future<Scenario?> _scenarioFuture;
   late Scenario _scenario;
+  void Function()? tabGeneralPreSaveCallback;
 
   @override
   void initState() {
@@ -73,6 +74,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       icon: const Icon(Icons.download),
                       tooltip: 'Exporter le scénario',
                       onPressed: () async {
+                        tabGeneralPreSaveCallback?.call();
                         var jsonStr = json.encode(_scenario.toJson());
                         await FilePicker.platform.saveFile(
                           fileName: 'scenario_${_scenario.uuid}.json',
@@ -96,6 +98,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                         setState(() {
                           _isWorking = true;
                         });
+                        tabGeneralPreSaveCallback?.call();
                         await ScenarioStore().save(_scenario);
                         setState(() {
                           _isWorking = false;
@@ -120,7 +123,10 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                 ),
                 body: TabBarView(
                   children: [
-                    ScenarioEditGeneralPage(scenario: _scenario),
+                    ScenarioEditGeneralPage(
+                      scenario: _scenario,
+                      registerPreSaveCallback: (void Function() cb) => tabGeneralPreSaveCallback = cb,
+                    ),
                     ScenarioEditEventsPage(scenario: _scenario),
                     ScenarioEditNPCsPage(
                       npcs: _scenario.npcs,

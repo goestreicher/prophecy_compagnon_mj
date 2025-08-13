@@ -170,6 +170,7 @@ class Scenario {
         this.magic = 0,
         this.implication = 0,
         this.synopsys = '',
+        this.story = '',
         List<ScenarioMap>? maps,
         List<NonPlayerCharacter>? npcs,
         List<CreatureModel>? creatures,
@@ -217,6 +218,7 @@ class Scenario {
   int magic;
   int implication;
   String synopsys;
+  String story;
   final List<ScenarioMap> maps;
   final List<NonPlayerCharacter> npcs;
   final List<CreatureModel> creatures;
