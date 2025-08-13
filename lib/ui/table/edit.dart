@@ -109,6 +109,7 @@ class _TableEditPageState extends State<TableEditPage> {
                               ),
                             ),
                         subtitle: Text(
+                            'Joueur: ${_table.playerSummaries[index].player} / '
                             'Caste: ${_table.playerSummaries[index].caste.title} '
                             '(${Caste.statusName(_table.playerSummaries[index].caste, _table.playerSummaries[index].casteStatus)})'
                         ),
