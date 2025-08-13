@@ -76,6 +76,7 @@ class _MainAppPageState extends State<MainAppPage> {
     CreatureModel.loadStoreAssets();
     MagicSpell.loadDefaultAssets();
     NonPlayerCharacter.loadDefaultAssets();
+    NonPlayerCharacter.loadStoreAssets();
     ShieldModel.loadDefaultAssets();
     WeaponModel.loadDefaultAssets();
 
