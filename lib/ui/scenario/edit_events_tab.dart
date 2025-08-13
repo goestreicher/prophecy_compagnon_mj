@@ -514,70 +514,75 @@ class _SingleEventWidget extends StatelessWidget {
 
   final void Function() onDelete;
 
+  Future<void> _editEvent(BuildContext context, _ScenarioEventsModelItem eventModel) async {
+    var result = await showDialog<ScenarioEventEditResult>(
+      context: context,
+      builder: (context) => ScenarioEventEditDialog(
+        dayRange: eventModel.dayRange,
+        event: eventModel.event,
+      ),
+    );
+    if(result == null) return;
+    eventModel.eventUpdated();
+  }
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var eventModel = context.watch<_ScenarioEventsModelItem>();
 
     return Card(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                IconButton(
-                  onPressed: () => eventModel.collapsed = !eventModel.collapsed,
-                  icon: Icon(
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => eventModel.collapsed = !eventModel.collapsed,
+        onDoubleTap: () => _editEvent(context, eventModel),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Icon(
                     eventModel.collapsed
-                        ? Icons.keyboard_arrow_right
-                        : Icons.keyboard_arrow_down
+                      ? Icons.keyboard_arrow_right
+                      : Icons.keyboard_arrow_down,
                   ),
-                  iconSize: 20.0,
-                ),
-                Text(
-                  eventModel.event.title,
-                  style: theme.textTheme.titleMedium!.copyWith(
-                    fontWeight: FontWeight.bold,
+                  Text(
+                    eventModel.event.title,
+                    style: theme.textTheme.titleMedium!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Spacer(),
-                IconButton(
-                  onPressed: () async {
-                    var result = await showDialog<ScenarioEventEditResult>(
-                      context: context,
-                      builder: (context) => ScenarioEventEditDialog(
-                          dayRange: eventModel.dayRange,
-                          event: eventModel.event,
-                      ),
-                    );
-                    if(result == null) return;
-                    eventModel.eventUpdated();
-                  },
-                  icon: const Icon(Icons.edit),
-                  iconSize: 20.0,
-                ),
-                IconButton(
-                  onPressed: () {
-                    onDelete();
-                  },
-                  icon: const Icon(Icons.delete),
-                  iconSize: 20.0,
-                ),
-              ],
-            ),
-            if(!eventModel.collapsed)
-              const SizedBox(height: 4.0),
-            if(!eventModel.collapsed)
-              Padding(
-                padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 12.0),
-                child: Text(
-                  eventModel.event.description,
-                  style: theme.textTheme.bodyMedium,
-                ),
+                  Spacer(),
+                  IconButton(
+                    onPressed: () async => await _editEvent(context, eventModel),
+                    icon: const Icon(Icons.edit),
+                    iconSize: 20.0,
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      onDelete();
+                    },
+                    icon: const Icon(Icons.delete),
+                    iconSize: 20.0,
+                  ),
+                ],
               ),
-          ],
+              if(!eventModel.collapsed)
+                const SizedBox(height: 4.0),
+              if(!eventModel.collapsed)
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 12.0),
+                  child: GestureDetector(
+                    child: Text(
+                      eventModel.event.description,
+                      style: theme.textTheme.bodyMedium,
+                    ),
+                  ),
+                ),
+            ],
+          ),
         ),
       ),
     );

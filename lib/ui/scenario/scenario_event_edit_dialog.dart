@@ -44,6 +44,7 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
 
     return AlertDialog(
         title: const Text('Éditer un événement'),
+        backgroundColor: theme.colorScheme.surfaceContainerLow,
         content: SizedBox(
           width: 400,
           child: Column(
