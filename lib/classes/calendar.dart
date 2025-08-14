@@ -3,6 +3,54 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'calendar.g.dart';
 
+enum KorDuration {
+  year(title: 'Année', daysLength: 324, article: "l'"),
+  cycle(title: 'Cycle', daysLength: 81, article: "le "),
+  augure(title: 'Augure', daysLength: 32, article: "l'"),
+  week(title: 'Semaine', daysLength: 9, article: "la "),
+  day(title: 'Jour', daysLength: 1, article: "le ");
+
+  const KorDuration({required this.title, required this.daysLength, required this.article});
+
+  static DayRange toDayRange(KorDuration duration, int count, {bool inThePast = false}) {
+    int start;
+    int end;
+
+    if(inThePast) {
+      start = -(duration.daysLength * count);
+      end = -(duration.daysLength * (count - 1)) - 1;
+    }
+    else {
+      start = duration.daysLength * count;
+      end = duration.daysLength * (count + 1) - 1;
+    }
+
+    return DayRange(start: start, end: end);
+  }
+
+  static KorDuration bestFitForRange(DayRange range) {
+    var alignedEnd = range.end;
+    if(range.start != range.end) {
+      alignedEnd += 1;
+    }
+
+    for(KorDuration d in KorDuration.values) {
+      var alignmentStart = range.start % d.daysLength;
+      var alignmentEnd = alignedEnd % d.daysLength;
+      if(alignmentStart == 0 && alignmentEnd == 0) {
+        return d;
+      }
+    }
+
+    // Just to be safe, though the previous loop will always return 'day'
+    return day;
+  }
+
+  final String title;
+  final int daysLength;
+  final String article;
+}
+
 enum KorAge {
   fondations(title: 'Âge des Fondations', shortTitle: 'AdF'),
   conquetes(title: 'Âge des Conquêtes', shortTitle: 'AdC'),
@@ -68,6 +116,32 @@ enum WeekDay {
   const WeekDay({ required this.title, required this.shortTitle });
   final String title;
   final String shortTitle;
+}
+
+class DayRange {
+  DayRange({ required this.start, required this.end});
+
+  final int start;
+  final int end;
+
+  @override
+  String toString() => "$start,$end";
+
+  factory DayRange.fromString(String s) {
+    var regexp = RegExp(r'(-?\d+)');
+    var values = regexp.allMatches(s).map((v) => int.parse(v[0]!)).toList();
+    if(values.length < 2) {
+      values[1] = values[0];
+    }
+    return DayRange(start: values[0], end: values[1]);
+  }
+
+  @override
+  bool operator==(Object other) =>
+      other is DayRange && start == other.start && end == other.end;
+
+  @override
+  int get hashCode => Object.hash(start, end);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)

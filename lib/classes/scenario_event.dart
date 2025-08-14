@@ -85,30 +85,3 @@ class ScenarioDayEvents {
   factory ScenarioDayEvents.fromJson(Map<String, dynamic> json) => _$ScenarioDayEventsFromJson(json);
   Map<String, dynamic> toJson() => _$ScenarioDayEventsToJson(this);
 }
-
-class ScenarioEventDayRange {
-  ScenarioEventDayRange({ required this.start, int end = -1 })
-      : end = end == -1 ? start : end;
-
-  final int start;
-  final int end;
-
-  @override
-  String toString() => "$start,$end";
-
-  factory ScenarioEventDayRange.fromString(String s) {
-    var regexp = RegExp(r'(-?\d+)');
-    var values = regexp.allMatches(s).map((v) => int.parse(v[0]!)).toList();
-    if(values.length < 2) {
-      values[1] = values[0];
-    }
-    return ScenarioEventDayRange(start: values[0], end: values[1]);
-  }
-
-  @override
-  bool operator==(Object other) =>
-      other is ScenarioEventDayRange && start == other.start && end == other.end;
-
-  @override
-  int get hashCode => Object.hash(start, end);
-}

@@ -3,6 +3,7 @@ import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
+import '../../classes/calendar.dart';
 import '../../classes/scenario.dart';
 import '../../classes/scenario_event.dart';
 import 'scenario_event_edit_dialog.dart';
@@ -109,27 +110,34 @@ class _ScenarioEventsModel extends ChangeNotifier {
 
   final Scenario scenario;
 
-  List<ScenarioEventDayRange> days() {
+  List<DayRange> days() {
     return scenario.events.keys.toList()
-      ..sort((a, b) => a.start - b.start);
+      ..sort((DayRange a, DayRange b) {
+        if(a.start == b.start) {
+          return a.start == a.end ? -1 : 1;
+        }
+        else {
+          return a.start - b.start;
+        }
+      });
   }
 
-  ScenarioDayEvents eventsForDay(ScenarioEventDayRange day) {
+  ScenarioDayEvents eventsForDay(DayRange day) {
     return scenario.events[day]!;
   }
 
-  void add(ScenarioEventDayRange day, ScenarioEventCategory category, ScenarioEvent event, { int pos = -1 }) {
+  void add(DayRange day, ScenarioEventCategory category, ScenarioEvent event, { int pos = -1 }) {
     scenario.addEvent(day, category, event, pos: pos);
     notifyListeners();
   }
 
-  void remove(ScenarioEventDayRange day, ScenarioEventCategory category, int pos) {
+  void remove(DayRange day, ScenarioEventCategory category, int pos) {
     scenario.removeEvent(day, category, pos);
     notifyListeners();
   }
 
   void move(ScenarioEventCategory category,
-      ScenarioEventDayRange startDay, ScenarioEventDayRange endDay,
+      DayRange startDay, DayRange endDay,
       int start, int dest
   ) {
     scenario.moveEvent(category, startDay, endDay, start, dest);
@@ -145,9 +153,9 @@ class _ScenarioEventsModelItem extends ChangeNotifier {
     required this.event
   });
 
-  final ScenarioEventDayRange dayRange;
+  DayRange dayRange;
   final ScenarioEventCategory category;
-  final int position;
+  int position;
   final ScenarioEvent event;
   bool _collapsed = true;
 
@@ -163,7 +171,7 @@ class _ScenarioEventsModelItem extends ChangeNotifier {
 class _EventDragModel extends ChangeNotifier {
   _EventDragModel();
 
-  ScenarioEventDayRange? dayRange;
+  DayRange? dayRange;
   ScenarioEventCategory? category;
   int? eventPos;
 
@@ -176,14 +184,14 @@ class _EventDragModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  ScenarioEventDayRange? get hoverDayRange => _hoverDayRange;
-  set hoverDayRange(ScenarioEventDayRange? r) {
+  DayRange? get hoverDayRange => _hoverDayRange;
+  set hoverDayRange(DayRange? r) {
     _hoverDayRange = r;
     notifyListeners();
   }
 
   bool _dragging = false;
-  ScenarioEventDayRange? _hoverDayRange;
+  DayRange? _hoverDayRange;
 }
 
 class _ScenarioEventsListWidget extends StatelessWidget {
@@ -219,7 +227,7 @@ class _ScenarioDayEventsWidget extends StatelessWidget {
     required this.onDelete,
   });
 
-  final ScenarioEventDayRange dayRange;
+  final DayRange dayRange;
   final ScenarioDayEvents events;
   final void Function(ScenarioEventCategory, int) onDelete;
 
@@ -227,6 +235,38 @@ class _ScenarioDayEventsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var gutterWidth = 16.0;
+
+    var headerLabel = '';
+    var bestFitDuration = KorDuration.bestFitForRange(dayRange);
+    var bestFitStart = dayRange.start ~/ bestFitDuration.daysLength;
+    var bestFitEnd = dayRange.end ~/bestFitDuration.daysLength;
+
+    if(dayRange.start == 0) {
+      headerLabel = 'Début du scénario';
+    }
+    else if(bestFitStart < 0) {
+      if(bestFitStart != bestFitEnd) {
+        if(bestFitEnd < 0) {
+          headerLabel = "Entre ${bestFitStart.abs()} et ${bestFitEnd.abs()} ${bestFitDuration.title.toLowerCase()}s avant le début du scénario";
+        }
+        else {
+          headerLabel = "Entre ${bestFitStart.abs()} ${bestFitDuration.title.toLowerCase()}${bestFitStart.abs() > 1 ? 's' : ''} "
+              "avant le début et ${bestFitDuration.article}${bestFitDuration.title.toLowerCase()} "
+              "${bestFitEnd.abs()} du scénario";
+        }
+      }
+      else {
+        headerLabel = "${bestFitStart.abs()} ${bestFitDuration.title.toLowerCase()}${bestFitStart.abs() > 1 ? 's' : ''} avant le début du scénario";
+      }
+    }
+    else {
+      if(bestFitStart != bestFitEnd) {
+        headerLabel = "${bestFitDuration.title}${bestFitStart.abs() > 1 ? 's' : ''} ${bestFitStart.abs()} à ${bestFitEnd.abs()} du scénario";
+      }
+      else {
+        headerLabel = "${bestFitDuration.title} ${bestFitStart.abs()} du scénario";
+      }
+    }
 
     var worldEvents = _SingleDayEventsWidget(
       dayRange: dayRange,
@@ -274,9 +314,7 @@ class _ScenarioDayEventsWidget extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 12.0),
                     child: Text(
-                      dayRange.start == dayRange.end
-                          ? "Jour ${dayRange.start}"
-                          : "Jours ${dayRange.start} - ${dayRange.end}",
+                      headerLabel,
                       style: theme.textTheme.titleMedium!.copyWith(
                         color: theme.colorScheme.onPrimary,
                         fontWeight: FontWeight.bold,
@@ -316,7 +354,7 @@ class _SingleEventDragTarget extends StatefulWidget {
   });
 
   final int position;
-  final ScenarioEventDayRange dayRange;
+  final DayRange dayRange;
   final ScenarioEventCategory category;
 
   @override
@@ -403,7 +441,7 @@ class _SingleDayEventsWidget extends StatefulWidget {
     required this.onDelete,
   });
 
-  final ScenarioEventDayRange dayRange;
+  final DayRange dayRange;
   final ScenarioEventCategory category;
   final List<ScenarioEvent> events;
   final void Function(int) onDelete;
@@ -511,7 +549,7 @@ class _SingleEventDragData {
     required this.position,
     required this.event
   });
-  final ScenarioEventDayRange dayRange;
+  final DayRange dayRange;
   final ScenarioEventCategory category;
   final int position;
   final ScenarioEvent event;
@@ -542,6 +580,7 @@ class _SingleEventWidget extends StatelessWidget {
         eventModel.position,
         0
       );
+      eventModel.dayRange = result.dayRange;
     }
   }
 

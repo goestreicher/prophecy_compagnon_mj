@@ -1,6 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+import 'calendar.dart';
 import 'creature.dart';
 import 'non_player_character.dart';
 import 'object_source.dart';
@@ -175,7 +176,7 @@ class Scenario {
         List<NonPlayerCharacter>? npcs,
         List<CreatureModel>? creatures,
         List<ScenarioEncounter>? encounters,
-        Map<ScenarioEventDayRange, ScenarioDayEvents>? events,
+        Map<DayRange, ScenarioDayEvents>? events,
         List<Place>? places,
       })
     : uuid = uuid ?? const Uuid().v4().toString(),
@@ -183,7 +184,7 @@ class Scenario {
       npcs = npcs ?? <NonPlayerCharacter>[],
       creatures = creatures ?? <CreatureModel>[],
       encounters = encounters ?? <ScenarioEncounter>[],
-      events = events ?? <ScenarioEventDayRange, ScenarioDayEvents>{},
+      events = events ?? <DayRange, ScenarioDayEvents>{},
       places = places ?? <Place>[];
 
   factory Scenario.import(Map<String, dynamic> json) {
@@ -225,7 +226,7 @@ class Scenario {
   final List<ScenarioEncounter> encounters;
   final List<Place> places;
   @JsonKey(includeToJson: false, includeFromJson: false)
-    final Map<ScenarioEventDayRange, ScenarioDayEvents> events;
+    final Map<DayRange, ScenarioDayEvents> events;
 
   ScenarioSummary summary() => ScenarioSummary(
     uuid: uuid,
@@ -238,14 +239,14 @@ class Scenario {
     return idx == -1 ? null : maps[idx];
   }
 
-  void addEvent(ScenarioEventDayRange day, ScenarioEventCategory category, ScenarioEvent event, { int pos = -1 }) {
+  void addEvent(DayRange day, ScenarioEventCategory category, ScenarioEvent event, { int pos = -1 }) {
     if(!events.containsKey(day)) {
       events[day] = ScenarioDayEvents();
     }
     events[day]!.add(category, event, pos);
   }
 
-  void removeEvent(ScenarioEventDayRange day, ScenarioEventCategory category, int pos) {
+  void removeEvent(DayRange day, ScenarioEventCategory category, int pos) {
     if(!events.containsKey(day)) {
       return;
     }
@@ -256,7 +257,7 @@ class Scenario {
   }
 
   void moveEvent(ScenarioEventCategory category,
-      ScenarioEventDayRange startDay, ScenarioEventDayRange endDay,
+      DayRange startDay, DayRange endDay,
       int start, int dest
   ) {
     if(!events.containsKey(startDay)) {
@@ -286,7 +287,7 @@ class Scenario {
   factory Scenario.fromJson(Map<String, dynamic> json) {
     var ret = _$ScenarioFromJson(json);
     (json['events'] as Map<String, dynamic>?)?.forEach(
-        (k, v) => ret.events[ScenarioEventDayRange.fromString(k)] = ScenarioDayEvents.fromJson(v as Map<String, dynamic>)
+        (k, v) => ret.events[DayRange.fromString(k)] = ScenarioDayEvents.fromJson(v as Map<String, dynamic>)
     );
     return ret;
   }

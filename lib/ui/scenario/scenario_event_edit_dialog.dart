@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 
+import '../../classes/calendar.dart';
 import '../../classes/scenario_event.dart';
 
 class ScenarioEventEditResult {
-  final ScenarioEventDayRange dayRange;
+  final DayRange dayRange;
   final ScenarioEvent event;
 
   const ScenarioEventEditResult({ required this.dayRange, required this.event });
@@ -16,7 +17,7 @@ class ScenarioEventEditResult {
 class ScenarioEventEditDialog extends StatefulWidget {
   const ScenarioEventEditDialog({ super.key, this.dayRange, this.event });
 
-  final ScenarioEventDayRange? dayRange;
+  final DayRange? dayRange;
   final ScenarioEvent? event;
 
   @override
@@ -24,8 +25,8 @@ class ScenarioEventEditDialog extends StatefulWidget {
 }
 
 class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
-  final TextEditingController dayStartController = TextEditingController();
-  final TextEditingController dayEndController = TextEditingController();
+  late _EventTimeLocation timeLocation;
+  late DayRange? currentDayRange;
   final TextEditingController titleController = TextEditingController();
   late final FleatherController descriptionController;
   late final FocusNode descriptionFocusNode;
@@ -40,14 +41,18 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
 
     descriptionFocusNode = FocusNode();
     ParchmentDocument document;
+
+    currentDayRange = widget.dayRange;
     
     if(widget.dayRange != null && widget.event != null) {
-      dayStartController.text = widget.dayRange!.start.toString();
-      dayEndController.text = widget.dayRange!.end.toString();
+      timeLocation = widget.dayRange!.start < 0
+        ? _EventTimeLocation.beforeStart
+        : _EventTimeLocation.afterStart;
       titleController.text = widget.event!.title;
       document = ParchmentMarkdownCodec().decode(widget.event!.description);
     }
     else {
+      timeLocation = _EventTimeLocation.afterStart;
       document = ParchmentDocument();
     }
 
@@ -75,66 +80,6 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Row(
-                children: [
-                  Expanded(
-                    child: Focus(
-                      onFocusChange: (bool hasFocus) {
-                        if(dayEndController.text.isEmpty) {
-                          dayEndController.text = dayStartController.text;
-                        }
-                      },
-                      child: TextFormField(
-                        // enabled: widget.dayRange == null,
-                        controller: dayStartController,
-                        autofocus: widget.event == null ? true : false,
-                        decoration: const InputDecoration(
-                          labelText: "Premier jour",
-                          border: OutlineInputBorder(),
-                        ),
-                        textAlign: TextAlign.center,
-                        keyboardType: TextInputType.numberWithOptions(signed: true, decimal: false),
-                        inputFormatters: [
-                          FilteringTextInputFormatter.allow(RegExp(r'[-\d]+')),
-                        ],
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        validator: (String? value) {
-                          if(value == null || value.isEmpty) {
-                            return 'Valeur obligatoire';
-                          }
-                          return null;
-                        },
-                      ),
-                    ),
-                  ),
-                  const SizedBox(
-                    width: 16.0,
-                  ),
-                  Expanded(
-                    child: TextFormField(
-                      // enabled: widget.dayRange == null,
-                      controller: dayEndController,
-                      decoration: const InputDecoration(
-                        labelText: "Dernier jour",
-                        border: OutlineInputBorder(),
-                      ),
-                      textAlign: TextAlign.center,
-                      keyboardType: TextInputType.numberWithOptions(signed: true, decimal: false),
-                      inputFormatters: [
-                        FilteringTextInputFormatter.allow(RegExp(r'[-\d]+')),
-                      ],
-                      autovalidateMode: AutovalidateMode.onUserInteraction,
-                      validator: (String? value) {
-                        if(value == null || value.isEmpty) {
-                          return 'Valeur obligatoire';
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                ],
-              ),
-              Divider(),
               TextFormField(
                 controller: titleController,
                 decoration: const InputDecoration(
@@ -147,6 +92,16 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                   }
                   return null;
                 },
+              ),
+              Divider(),
+              const SizedBox(height: 8.0),
+              _DayRangeSelectionWidget(
+                dayRange: widget.dayRange,
+                onChanged: (DayRange? range) {
+                  setState(() {
+                    currentDayRange = range;
+                  });
+                }
               ),
               Divider(),
               FleatherToolbar.basic(
@@ -163,19 +118,10 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                 child: FleatherField(
                   controller: descriptionController,
                   expands: true,
-                  // autofocus: widget.event != null ? true : false,
-                  // minLines: 8,
-                  // maxLines: 8,
                   decoration: const InputDecoration(
                     labelText: "Description",
                     border: OutlineInputBorder(),
                   ),
-                  // validator: (String? value) {
-                  //   if(value == null || value.isEmpty) {
-                  //     return 'Valeur obligatoire';
-                  //   }
-                  //   return null;
-                  // },
                 ),
               ),
               Padding(
@@ -191,26 +137,27 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                       ),
                       const SizedBox(width: 12.0),
                       ElevatedButton(
-                        onPressed: () {
-                          ScenarioEvent event;
-                          if(widget.event != null) {
-                            event = widget.event!;
-                            event.title = titleController.text;
-                            event.description = ParchmentMarkdownCodec().encode(descriptionController.document);
-                          }
-                          else {
-                            event = ScenarioEvent(
-                                title: titleController.text,
-                                description: ParchmentMarkdownCodec().encode(descriptionController.document)
-                            );
-                          }
-                          Navigator.of(context).pop(ScenarioEventEditResult(
-                            dayRange: ScenarioEventDayRange(
-                              start: int.parse(dayStartController.text),
-                              end: int.parse(dayEndController.text),
-                            ),
-                            event: event,
-                          ));
+                        onPressed: currentDayRange == null
+                          ? null
+                          : () {
+                            if(currentDayRange == null) return;
+
+                            ScenarioEvent event;
+                            if(widget.event != null) {
+                              event = widget.event!;
+                              event.title = titleController.text;
+                              event.description = ParchmentMarkdownCodec().encode(descriptionController.document);
+                            }
+                            else {
+                              event = ScenarioEvent(
+                                  title: titleController.text,
+                                  description: ParchmentMarkdownCodec().encode(descriptionController.document)
+                              );
+                            }
+                            Navigator.of(context).pop(ScenarioEventEditResult(
+                              dayRange: currentDayRange!,
+                              event: event,
+                            ));
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: theme.colorScheme.primary,
@@ -224,6 +171,277 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
             ],
           ),
         )
+    );
+  }
+}
+
+enum _EventTimeLocation {
+  beforeStart,
+  afterStart
+}
+
+class _DayRangeSelectionWidget extends StatefulWidget {
+  const _DayRangeSelectionWidget({
+    this.dayRange,
+    required this.onChanged,
+  });
+
+  final DayRange? dayRange;
+  final ValueChanged<DayRange?> onChanged;
+
+  @override
+  State<_DayRangeSelectionWidget> createState() => _DayRangeSelectionWidgetState();
+}
+
+class _DayRangeSelectionWidgetState extends State<_DayRangeSelectionWidget> {
+  KorDuration duration = KorDuration.day;
+  int? currentStartCount;
+  int? currentEndCount;
+  bool endSet = false;
+
+  void dayRangeChanged() {
+    if(currentStartCount == null) {
+      widget.onChanged(null);
+    }
+    else {
+      if(!endSet) {
+        currentEndCount = currentStartCount;
+      }
+      else {
+        currentEndCount ??= currentStartCount!;
+
+        if(currentStartCount! > currentEndCount!) {
+          currentEndCount = currentStartCount! + 1;
+        }
+      }
+
+      var start = currentStartCount! * duration.daysLength;
+      var end = currentEndCount! * duration.daysLength;
+
+      if(duration != KorDuration.day && start != end) {
+        end -= 1;
+      }
+
+      widget.onChanged(DayRange(start: start, end: end));
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    if(widget.dayRange != null) {
+      duration = KorDuration.bestFitForRange(widget.dayRange!);
+      currentStartCount = widget.dayRange!.start ~/ duration.daysLength;
+      currentEndCount = widget.dayRange!.end ~/ duration.daysLength;
+      endSet = currentStartCount != currentEndCount;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            const SizedBox(
+              width: 96.0,
+              child: Text("Début : ")
+            ),
+            const SizedBox(width: 12.0),
+            _DayRangeLimitInputWidget(
+              count: currentStartCount,
+              duration: duration,
+              onCountChanged: (int? newStart) {
+                setState(() {
+                  currentStartCount = newStart;
+                  dayRangeChanged();
+                });
+              },
+              onDurationChanged: (KorDuration d) => setState(() {
+                duration = d;
+                dayRangeChanged();
+              }),
+            ),
+            const SizedBox(width: 16.0),
+            Switch(
+              value: endSet,
+              onChanged: (bool value) => setState(() {
+                endSet = value;
+                if(currentStartCount != null) {
+                  currentEndCount = currentStartCount! + 1;
+                }
+                dayRangeChanged();
+              }),
+            ),
+            const SizedBox(width: 12.0),
+            Text("Dure plusieurs ${duration.title.toLowerCase()}s")
+          ],
+        ),
+        if(endSet)
+          const SizedBox(height: 12.0),
+        if(endSet)
+          Row(
+            children: [
+              const SizedBox(
+                  width: 96.0,
+                  child: Text("Fin : ")
+              ),
+              const SizedBox(width: 12.0),
+              _DayRangeLimitInputWidget(
+                count: currentEndCount,
+                duration: duration,
+                onCountChanged: (int? newEnd) {
+                  setState(() {
+                    currentEndCount = newEnd;
+                    dayRangeChanged();
+                  });
+                },
+                onDurationChanged: (KorDuration d) => setState(() {
+                  duration = d;
+                  dayRangeChanged();
+                }),
+              ),
+            ],
+          ),
+      ],
+    );
+  }
+}
+
+class _DayRangeLimitInputWidget extends StatefulWidget {
+  const _DayRangeLimitInputWidget({
+    this.count,
+    this.duration = KorDuration.day,
+    required this.onCountChanged,
+    required this.onDurationChanged,
+  });
+  
+  final int? count;
+  final KorDuration duration;
+  final ValueChanged<int?> onCountChanged;
+  final ValueChanged<KorDuration> onDurationChanged;
+
+  @override
+  State<_DayRangeLimitInputWidget> createState() => _DayRangeLimitInputWidgetState();
+}
+
+class _DayRangeLimitInputWidgetState extends State<_DayRangeLimitInputWidget> {
+  final TextEditingController countController = TextEditingController();
+  _EventTimeLocation location = _EventTimeLocation.afterStart;
+
+  void countChanged() {
+    if(countController.text.isEmpty) {
+      widget.onCountChanged(null);
+    }
+    else {
+      var count = int.parse(countController.text);
+      if(location == _EventTimeLocation.beforeStart) {
+        count *= -1;
+      }
+      widget.onCountChanged(count);
+    }
+  }
+
+  void refreshWidgetData() {
+    if(widget.count == null) {
+      countController.clear();
+    }
+    else {
+      countController.text = widget.count!.abs().toString();
+      location = widget.count! < 0
+        ? _EventTimeLocation.beforeStart
+        : _EventTimeLocation.afterStart;
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    refreshWidgetData();
+  }
+  
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+    
+    return Row(
+      children: [
+        SizedBox(
+          width: 96.0,
+          child: Focus(
+            onFocusChange: (bool hasFocus) {
+              if(!hasFocus) {
+                countChanged();
+              }
+            },
+            child: TextFormField(
+              controller: countController,
+              decoration: InputDecoration(
+                labelText: "Nombre",
+                border: OutlineInputBorder(),
+                contentPadding: EdgeInsets.all(12.0),
+                isCollapsed: true,
+              ),
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodyMedium,
+              keyboardType: TextInputType.number,
+              inputFormatters: [
+                FilteringTextInputFormatter.digitsOnly,
+              ],
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              validator: (String? value) {
+                if(value == null || value.isEmpty) {
+                  return 'Valeur obligatoire';
+                }
+                return null;
+              },
+            ),
+          ),
+        ),
+        const SizedBox(width: 12.0),
+        DropdownMenu(
+          initialSelection: widget.duration,
+          inputDecorationTheme: const InputDecorationTheme(
+            border: OutlineInputBorder(),
+            isCollapsed: true,
+            constraints: BoxConstraints(maxHeight: 36.0),
+            contentPadding: EdgeInsets.all(12.0),
+          ),
+          textStyle: theme.textTheme.bodyMedium,
+          onSelected: (KorDuration? d) {
+            if(d == null) return;
+            setState(() {
+              widget.onDurationChanged(d);
+            });
+          },
+          dropdownMenuEntries: KorDuration.values
+            .map((KorDuration d) => DropdownMenuEntry(value: d, label: d.title))
+            .toList(),
+        ),
+        const SizedBox(width: 12.0),
+        DropdownMenu(
+          initialSelection: location,
+          inputDecorationTheme: const InputDecorationTheme(
+            border: OutlineInputBorder(),
+            isCollapsed: true,
+            constraints: BoxConstraints(maxHeight: 36.0),
+            contentPadding: EdgeInsets.all(12.0),
+          ),
+          textStyle: theme.textTheme.bodyMedium,
+          onSelected: (_EventTimeLocation? l) {
+            if(l == null) return;
+            setState(() {
+              location = l;
+              countChanged();
+            });
+          },
+          dropdownMenuEntries: <DropdownMenuEntry<_EventTimeLocation>>[
+              DropdownMenuEntry(value: _EventTimeLocation.beforeStart, label: "avant le début"),
+              DropdownMenuEntry(value: _EventTimeLocation.afterStart, label: "après le début"),
+            ],
+        ),
+      ],
     );
   }
 }
