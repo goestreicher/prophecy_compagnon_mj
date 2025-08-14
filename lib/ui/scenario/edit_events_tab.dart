@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -574,12 +575,11 @@ class _SingleEventWidget extends StatelessWidget {
               if(!eventModel.collapsed)
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 12.0),
-                  child: GestureDetector(
-                    child: Text(
-                      eventModel.event.description,
-                      style: theme.textTheme.bodyMedium,
-                    ),
-                  ),
+                  child: MarkdownBody(data: eventModel.event.description),
+                  // child: Text(
+                  //   eventModel.event.description,
+                  //   style: theme.textTheme.bodyMedium,
+                  // ),
                 ),
             ],
           ),
