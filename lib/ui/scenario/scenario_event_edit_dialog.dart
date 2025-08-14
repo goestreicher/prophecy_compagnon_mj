@@ -85,7 +85,7 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                         }
                       },
                       child: TextFormField(
-                        enabled: widget.dayRange == null,
+                        // enabled: widget.dayRange == null,
                         controller: dayStartController,
                         autofocus: widget.event == null ? true : false,
                         decoration: const InputDecoration(
@@ -112,7 +112,7 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                   ),
                   Expanded(
                     child: TextFormField(
-                      enabled: widget.dayRange == null,
+                      // enabled: widget.dayRange == null,
                       controller: dayEndController,
                       decoration: const InputDecoration(
                         labelText: "Dernier jour",

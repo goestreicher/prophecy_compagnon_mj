@@ -138,9 +138,16 @@ class _ScenarioEventsModel extends ChangeNotifier {
 }
 
 class _ScenarioEventsModelItem extends ChangeNotifier {
-  _ScenarioEventsModelItem({ required this.dayRange, required this.event });
+  _ScenarioEventsModelItem({
+    required this.dayRange,
+    required this.category,
+    required this.position,
+    required this.event
+  });
 
   final ScenarioEventDayRange dayRange;
+  final ScenarioEventCategory category;
+  final int position;
   final ScenarioEvent event;
   bool _collapsed = true;
 
@@ -470,6 +477,8 @@ class _SingleDayEventsWidgetState extends State<_SingleDayEventsWidget> {
                   create: (_) {
                     return _ScenarioEventsModelItem(
                         dayRange: widget.dayRange,
+                        category: widget.category,
+                        position: pos,
                         event: widget.events[pos]
                     );
                   },
@@ -515,7 +524,7 @@ class _SingleEventWidget extends StatelessWidget {
 
   final void Function() onDelete;
 
-  Future<void> _editEvent(BuildContext context, _ScenarioEventsModelItem eventModel) async {
+  Future<void> _editEvent(BuildContext context, _ScenarioEventsModel scenarioModel, _ScenarioEventsModelItem eventModel) async {
     var result = await showDialog<ScenarioEventEditResult>(
       context: context,
       builder: (context) => ScenarioEventEditDialog(
@@ -525,18 +534,28 @@ class _SingleEventWidget extends StatelessWidget {
     );
     if(result == null) return;
     eventModel.eventUpdated();
+    if(result.dayRange != eventModel.dayRange) {
+      scenarioModel.move(
+        eventModel.category,
+        eventModel.dayRange,
+        result.dayRange,
+        eventModel.position,
+        0
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
     var eventModel = context.watch<_ScenarioEventsModelItem>();
+    var scenarioModel = context.watch<_ScenarioEventsModel>();
 
     return Card(
       child: GestureDetector(
         behavior: HitTestBehavior.opaque,
         onTap: () => eventModel.collapsed = !eventModel.collapsed,
-        onDoubleTap: () => _editEvent(context, eventModel),
+        onDoubleTap: () => _editEvent(context, scenarioModel, eventModel),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
           child: Column(
@@ -557,7 +576,7 @@ class _SingleEventWidget extends StatelessWidget {
                   ),
                   Spacer(),
                   IconButton(
-                    onPressed: () async => await _editEvent(context, eventModel),
+                    onPressed: () async => await _editEvent(context, scenarioModel, eventModel),
                     icon: const Icon(Icons.edit),
                     iconSize: 20.0,
                   ),
