@@ -77,7 +77,7 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
         ExportableBinaryData? icon,
       }
     )
-    : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4.toString()),
+    : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4().toString()),
       _injuryProvider = injuryProvider,
       size = size ?? 0.8,
       weight = weight ?? 15.0,

@@ -215,7 +215,7 @@ class Place {
     required this.location,
     required this.source,
     this.map,
-  }) : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4.toString());
+  }) : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4().toString());
 
   String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
   @JsonKey(includeIfNull: false)

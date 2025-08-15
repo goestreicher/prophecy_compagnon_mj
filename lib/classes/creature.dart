@@ -337,7 +337,7 @@ class CreatureModel with EncounterEntityModel {
         ExportableBinaryData? image,
         ExportableBinaryData? icon,
       })
-    : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4.toString()),
+    : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4().toString()),
       mapSize = mapSize ?? 0.8,
       skills = skills ?? <SkillInstance>[],
       naturalWeapons = naturalWeapons ?? <NaturalWeaponModel>[],
