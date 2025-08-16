@@ -259,6 +259,20 @@ class Place {
         .toList();
   }
 
+  static List<Place> forLocationType(ObjectLocationType type) {
+    loadDefaultAssets();
+    return _instances.values
+        .where((Place p) => p.location.type == type)
+        .toList();
+  }
+
+  static List<Place> forSource(ObjectSource source) {
+    loadDefaultAssets();
+    return _instances.values
+        .where((Place p) => p.source == source)
+        .toList();
+  }
+
   static Future<void> delete(Place p) async {
     for(var child in withParent(p.id)) {
       await delete(child);
@@ -281,7 +295,7 @@ class Place {
   }
 
   static Future<void> loadStoreAssets() async {
-    PlaceStore().getAll();
+    await PlaceStore().getAll();
   }
 
   static Future<void> import(List<dynamic> j) async {

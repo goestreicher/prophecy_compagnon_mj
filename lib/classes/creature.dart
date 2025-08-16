@@ -258,6 +258,13 @@ class CreatureModelSummary {
     return _summaries[id];
   }
 
+  static List<CreatureModelSummary> forLocationType(ObjectLocationType type, CreatureCategory? category, {String? nameFilter}) {
+    return _summaries.values
+        .where((CreatureModelSummary c) => c.location.type == type && (category == null || c.category == category))
+        .where((CreatureModelSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .toList();
+  }
+
   static List<CreatureModelSummary> forCategory(CreatureCategory category, {String? nameFilter}) {
     return _summaries.values
         .where((CreatureModelSummary c) => c.category == category)
