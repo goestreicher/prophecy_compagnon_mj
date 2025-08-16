@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'resource_link.dart';
+
 part 'scenario_event.g.dart';
 
 enum ScenarioEventCategory {
@@ -9,10 +11,26 @@ enum ScenarioEventCategory {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ScenarioEvent {
-  ScenarioEvent({ required this.title, required this.description });
+  ScenarioEvent({ required this.title, required this.description }) {
+    refreshResourceLinks();
+  }
 
   String title;
   String description;
+  @JsonKey(includeToJson: false, includeFromJson: false)
+    List<ResourceLink> resourceLinks = <ResourceLink>[];
+
+  void refreshResourceLinks() {
+    resourceLinks.clear();
+
+    var resourceLinkRegExp = RegExp(r'\[([^\]]+)\]\((resource://[^)]+)\)');
+    for(var match in resourceLinkRegExp.allMatches(description)) {
+      if(match.groupCount == 2 && ResourceLink.isValidLink(match[2]!)) {
+        var link = ResourceLink(name: match[1]!, link: match[2]!);
+        resourceLinks.add(link);
+      }
+    }
+  }
 
   factory ScenarioEvent.fromJson(Map<String, dynamic> json) => _$ScenarioEventFromJson(json);
   Map<String, dynamic> toJson() => _$ScenarioEventToJson(this);

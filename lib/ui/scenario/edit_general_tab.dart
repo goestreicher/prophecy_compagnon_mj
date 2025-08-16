@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../classes/scenario.dart';
+import 'scenario_fleather_toolbar.dart';
 
 class ScenarioEditGeneralPage extends StatefulWidget {
   const ScenarioEditGeneralPage({
@@ -181,15 +182,9 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                     ),
                   ),
                   Divider(),
-                  FleatherToolbar.basic(
+                  ScenarioFleatherToolbar(
                     controller: storyController,
-                    hideUnderLineButton: true, // Not supported by markdown
-                    hideForegroundColor: true, // Not supported by markdown
-                    hideBackgroundColor: true, // Not supported by markdown
-                    hideDirection: true,
-                    hideAlignment: true, // Not supported by markdown
-                    hideIndentation: true, // No-op for markdown
-                    hideHorizontalRule: true, // No-op for markdown
+                    scenario: widget.scenario,
                   ),
                   Expanded(
                     child: FleatherField(

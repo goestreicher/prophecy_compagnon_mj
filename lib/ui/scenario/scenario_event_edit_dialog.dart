@@ -5,7 +5,9 @@ import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../classes/calendar.dart';
+import '../../classes/scenario.dart';
 import '../../classes/scenario_event.dart';
+import 'scenario_fleather_toolbar.dart';
 
 class ScenarioEventEditResult {
   final DayRange dayRange;
@@ -15,8 +17,14 @@ class ScenarioEventEditResult {
 }
 
 class ScenarioEventEditDialog extends StatefulWidget {
-  const ScenarioEventEditDialog({ super.key, this.dayRange, this.event });
+  const ScenarioEventEditDialog({
+    super.key,
+    required this.scenario,
+    this.dayRange,
+    this.event
+  });
 
+  final Scenario scenario;
   final DayRange? dayRange;
   final ScenarioEvent? event;
 
@@ -104,16 +112,7 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                 }
               ),
               Divider(),
-              FleatherToolbar.basic(
-                controller: descriptionController,
-                hideUnderLineButton: true, // Not supported by markdown
-                hideForegroundColor: true, // Not supported by markdown
-                hideBackgroundColor: true, // Not supported by markdown
-                hideDirection: true,
-                hideAlignment: true, // Not supported by markdown
-                hideIndentation: true, // No-op for markdown
-                hideHorizontalRule: true, // No-op for markdown
-              ),
+              ScenarioFleatherToolbar(controller: descriptionController, scenario: widget.scenario),
               Expanded(
                 child: FleatherField(
                   controller: descriptionController,
@@ -147,6 +146,7 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                               event = widget.event!;
                               event.title = titleController.text;
                               event.description = ParchmentMarkdownCodec().encode(descriptionController.document);
+                              event.refreshResourceLinks();
                             }
                             else {
                               event = ScenarioEvent(

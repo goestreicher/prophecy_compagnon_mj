@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
+import 'package:prophecy_compagnon_mj/classes/resource_link.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
@@ -51,7 +52,7 @@ class ScenarioEditEventsPage extends StatelessWidget {
                         onPressed: () async {
                           var result = await showDialog<ScenarioEventEditResult>(
                             context: context,
-                            builder: (context) => ScenarioEventEditDialog(),
+                            builder: (context) => ScenarioEventEditDialog(scenario: scenario),
                           );
                           if(result == null) return;
 
@@ -76,7 +77,7 @@ class ScenarioEditEventsPage extends StatelessWidget {
                         onPressed: () async {
                           var result = await showDialog<ScenarioEventEditResult>(
                             context: context,
-                            builder: (context) => ScenarioEventEditDialog(),
+                            builder: (context) => ScenarioEventEditDialog(scenario: scenario),
                           );
                           if(result == null) return;
 
@@ -566,6 +567,7 @@ class _SingleEventWidget extends StatelessWidget {
     var result = await showDialog<ScenarioEventEditResult>(
       context: context,
       builder: (context) => ScenarioEventEditDialog(
+        scenario: scenarioModel.scenario,
         dayRange: eventModel.dayRange,
         event: eventModel.event,
       ),
@@ -634,15 +636,142 @@ class _SingleEventWidget extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 12.0),
                   child: MarkdownBody(data: eventModel.event.description),
-                  // child: Text(
-                  //   eventModel.event.description,
-                  //   style: theme.textTheme.bodyMedium,
-                  // ),
                 ),
+              if(eventModel.event.resourceLinks.isNotEmpty)
+                _SingleEventResourcesInformationWidget(event: eventModel.event),
             ],
           ),
         ),
       ),
+    );
+  }
+}
+
+class _SingleEventResourcesInformationWidget extends StatelessWidget {
+  const _SingleEventResourcesInformationWidget({ required this.event });
+  
+  final ScenarioEvent event;
+  
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    var placeWidgets = <WidgetSpan>[];
+    for(var place in event.resourceLinks.where((ResourceLink r) => r.type == ResourceLinkType.place)) {
+      placeWidgets.add(
+        WidgetSpan(
+          alignment: PlaceholderAlignment.middle,
+          child: _SingleEventResourceInformationPill(link: place)
+        )
+      );
+    }
+
+    var npcWidgets = <WidgetSpan>[];
+    for(var npc in event.resourceLinks.where((ResourceLink r) => r.type == ResourceLinkType.npc)) {
+      npcWidgets.add(
+        WidgetSpan(
+          alignment: PlaceholderAlignment.middle,
+          child: _SingleEventResourceInformationPill(link: npc)
+        )
+      );
+    }
+
+    var creatureWidgets = <WidgetSpan>[];
+    for(var creature in event.resourceLinks.where((ResourceLink r) => r.type == ResourceLinkType.creature)) {
+      creatureWidgets.add(
+        WidgetSpan(
+          alignment: PlaceholderAlignment.middle,
+          child: _SingleEventResourceInformationPill(link: creature)
+        )
+      );
+    }
+
+    var encounterWidgets = <WidgetSpan>[];
+    for(var encounter in event.resourceLinks.where((ResourceLink r) => r.type == ResourceLinkType.encounter)) {
+      encounterWidgets.add(
+        WidgetSpan(
+          alignment: PlaceholderAlignment.middle,
+          child: _SingleEventResourceInformationPill(link: encounter)
+        )
+      );
+    }
+
+    var mapWidgets = <WidgetSpan>[];
+    for(var map in event.resourceLinks.where((ResourceLink r) => r.type == ResourceLinkType.map)) {
+      mapWidgets.add(
+        WidgetSpan(
+          alignment: PlaceholderAlignment.middle,
+          child: _SingleEventResourceInformationPill(link: map)
+        )
+      );
+    }
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 12.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          if(placeWidgets.isNotEmpty)
+            RichText(
+              text: TextSpan(
+                text: 'Lieux :',
+                style: theme.textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),
+                children: placeWidgets,
+              )
+            ),
+          if(npcWidgets.isNotEmpty)
+            RichText(
+              text: TextSpan(
+                text: 'PNJs :',
+                style: theme.textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),
+                children: npcWidgets,
+              )
+          ),
+          if(creatureWidgets.isNotEmpty)
+            RichText(
+              text: TextSpan(
+                text: 'Créatures :',
+                style: theme.textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),
+                children: creatureWidgets,
+              )
+            ),
+          if(encounterWidgets.isNotEmpty)
+            RichText(
+              text: TextSpan(
+                text: 'Rencontres :',
+                style: theme.textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),
+                children: encounterWidgets,
+              )
+            ),
+          if(mapWidgets.isNotEmpty)
+            RichText(
+              text: TextSpan(
+                text: 'Cartes :',
+                style: theme.textTheme.bodySmall!.copyWith(fontWeight: FontWeight.bold),
+                children: mapWidgets,
+              )
+            ),
+        ],
+      )
+    );
+  }
+}
+
+class _SingleEventResourceInformationPill extends StatelessWidget {
+  const _SingleEventResourceInformationPill({ required this.link });
+
+  final ResourceLink link;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 6.0),
+      margin: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 4.0),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black),
+        borderRadius: BorderRadius.circular(12.0),
+      ),
+      child: Text(link.name),
     );
   }
 }
