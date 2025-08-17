@@ -94,16 +94,16 @@ class _MainAppPageState extends State<MainAppPage> {
         activePage = const ScenariosListPage();
         break;
       case 3:
-        activePage = const SpellsMainPage();
-        break;
-      case 4:
         activePage = const NPCMainPage();
         break;
-      case 5:
+      case 4:
         activePage = const CreaturesMainPage();
         break;
-      case 6:
+      case 5:
         activePage = const PlacesMainPage();
+        break;
+      case 6:
+        activePage = const SpellsMainPage();
         break;
       default:
         throw UnimplementedError('Page not implemented for $_selectedPageIndex');
@@ -137,10 +137,6 @@ class _MainAppPageState extends State<MainAppPage> {
                         label: Text('Scénarios'),
                     ),
                     NavigationRailDestination(
-                      icon: Icon(Symbols.auto_fix_high),
-                      label: Text('Sorts'),
-                    ),
-                    NavigationRailDestination(
                       icon: Icon(Symbols.face),
                       label: Text('PNJs'),
                     ),
@@ -151,6 +147,10 @@ class _MainAppPageState extends State<MainAppPage> {
                     NavigationRailDestination(
                       icon: Icon(Icons.place_outlined),
                       label: Text('Lieux'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Symbols.auto_fix_high),
+                      label: Text('Sorts'),
                     ),
                   ],
                 )
