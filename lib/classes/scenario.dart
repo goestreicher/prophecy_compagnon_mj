@@ -237,15 +237,14 @@ class Scenario {
       factions = factions ?? <Faction>[];
 
   factory Scenario.import(Map<String, dynamic> json) {
-    if(json.containsKey('uuid')) {
-      // Just replace the existing UUID to prevent any conflicts
-      json['uuid'] = const Uuid().v4().toString();
-    }
+    // Force-set the UUID
+    json['uuid'] = const Uuid().v4().toString();
 
     // Force source for items requiring it
     var source = ObjectSource(
       type: ObjectSourceType.scenario,
       name: json['name'],
+      uuid: json['uuid'],
     ).toJson();
     for(var npc in json['npcs'] as List<dynamic>? ?? []) {
       npc['source'] = source;
@@ -284,6 +283,7 @@ class Scenario {
   ObjectSource get source => ObjectSource(
     type: ObjectSourceType.scenario,
     name: name,
+    uuid: uuid,
   );
 
   ScenarioSummary summary() => ScenarioSummary(

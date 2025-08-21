@@ -16,7 +16,11 @@ enum ObjectSourceType {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ObjectSource {
-  factory ObjectSource({ required ObjectSourceType type, required String name }) {
+  factory ObjectSource({
+    required ObjectSourceType type,
+    required String name,
+    String? uuid,
+  }) {
     ObjectSource ret;
 
     if(!_instances.containsKey(type)) {
@@ -24,7 +28,7 @@ class ObjectSource {
     }
 
     if(!_instances[type]!.containsKey(name)) {
-      ret = ObjectSource._create(type: type, name: name);
+      ret = ObjectSource._create(type: type, name: name, uuid: uuid);
       _instances[type]![name] = ret;
     }
     else {
@@ -45,21 +49,24 @@ class ObjectSource {
 
   final ObjectSourceType type;
   final String name;
+  @JsonKey(includeIfNull: false)
+    final String? uuid;
 
   @override
-  int get hashCode => Object.hash(type, name);
+  int get hashCode => Object.hash(type, name, uuid);
 
   @override
   bool operator==(Object other) {
     return other is ObjectSource
         && other.type == type
-        && other.name == name;
+        && other.name == name
+        && other.uuid == uuid;
   }
 
   factory ObjectSource.fromJson(Map<String, dynamic> j) => _$ObjectSourceFromJson(j);
   Map<String, dynamic> toJson() => _$ObjectSourceToJson(this);
 
-  const ObjectSource._create({ required this.type, required this.name });
+  const ObjectSource._create({ required this.type, required this.name, this.uuid });
 
   static final Map<ObjectSourceType, Map<String, ObjectSource>> _instances =
     <ObjectSourceType, Map<String, ObjectSource>>{};

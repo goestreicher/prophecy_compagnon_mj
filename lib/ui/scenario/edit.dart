@@ -161,7 +161,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     ScenarioEditEventsPage(scenario: _scenario),
                     ScenarioEditNPCsPage(
                       npcs: _scenario.npcs,
-                      scenarioName: _scenario.name,
+                      scenarioSource: _scenario.source,
                       onNPCCommitted: () {
                         setState(() {
                           _canCancel = false;
@@ -170,7 +170,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     ),
                     ScenarioEditCreaturesPage(
                       creatures: _scenario.creatures,
-                      scenarioName: _scenario.name,
+                      scenarioSource: _scenario.source,
                       onCreatureCommitted: () {
                         setState(() {
                           _canCancel = false;
@@ -178,8 +178,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       },
                     ),
                     ScenarioEditPlacesPage(
-                      places: _scenario.places,
-                      scenarioName: _scenario.name,
+                      scenarioSource: _scenario.source,
                       onPlaceCommitted: () {
                         setState(() {
                           _canCancel = false;

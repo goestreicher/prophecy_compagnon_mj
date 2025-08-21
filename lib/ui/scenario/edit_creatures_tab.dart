@@ -12,12 +12,12 @@ class ScenarioEditCreaturesPage extends StatefulWidget {
   const ScenarioEditCreaturesPage({
     super.key,
     required this.creatures,
-    required this.scenarioName,
+    required this.scenarioSource,
     required this.onCreatureCommitted,
   });
 
   final List<CreatureModel> creatures;
-  final String scenarioName;
+  final ObjectSource scenarioSource;
   final void Function() onCreatureCommitted;
 
   @override
@@ -59,7 +59,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
           name: _newCreatureName!,
           creatureId: _selectedId,
           creature: _selectedModel,
-          source: ObjectSource(type: ObjectSourceType.scenario, name: widget.scenarioName),
+          source: widget.scenarioSource,
           onEditDone: (CreatureModel? creature) {
             setState(() {
               if(creature != null) {

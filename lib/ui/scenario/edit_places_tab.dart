@@ -10,13 +10,11 @@ import '../utils/place_tree_widget.dart';
 class ScenarioEditPlacesPage extends StatefulWidget {
   const ScenarioEditPlacesPage({
     super.key,
-    required this.places,
-    required this.scenarioName,
+    required this.scenarioSource,
     required this.onPlaceCommitted,
   });
 
-  final List<Place> places;
-  final String scenarioName;
+  final ObjectSource scenarioSource;
   final void Function() onPlaceCommitted;
 
   @override
@@ -28,7 +26,6 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
   late UniqueKey treeKey;
   final PlaceTreeFilter treeFilter = PlaceTreeFilter();
   Place? selectedPlace;
-  late final ObjectSource mySource;
 
   void buildSubTree(TreeNode root, Place place) {
     for(var child in Place.withParent(place.id)..sort(Place.sortComparator)) {
@@ -56,12 +53,9 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
   @override
   void initState() {
     super.initState();
-    mySource = ObjectSource(
-        type: ObjectSourceType.scenario,
-        name: widget.scenarioName
-    );
+
     tree = TreeNode.root();
-    treeFilter.source = mySource;
+    treeFilter.source = widget.scenarioSource;
     rebuildTree();
   }
 
@@ -89,7 +83,7 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
                     onPlaceSelected: (Place p) => setState(() {
                       selectedPlace = p;
                     }),
-                    newPlaceSource: mySource,
+                    newPlaceSource: widget.scenarioSource,
                     onPlaceCreated: (Place p) => widget.onPlaceCommitted(),
                   )
                 )
@@ -102,7 +96,7 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
                 padding: EdgeInsets.fromLTRB(4.0, 16.0, 0.0, 16.0),
                 child: PlaceDisplayWidget(
                   place: selectedPlace!,
-                  modifyIfSourceMatches: mySource,
+                  modifyIfSourceMatches: widget.scenarioSource,
                   onEdited: (Place p) => setState(() {
                     selectedPlace = p;
                   }),

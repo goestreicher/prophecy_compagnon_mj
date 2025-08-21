@@ -9,12 +9,14 @@ part of 'object_source.dart';
 ObjectSource _$ObjectSourceFromJson(Map<String, dynamic> json) => ObjectSource(
   type: $enumDecode(_$ObjectSourceTypeEnumMap, json['type']),
   name: json['name'] as String,
+  uuid: json['uuid'] as String?,
 );
 
 Map<String, dynamic> _$ObjectSourceToJson(ObjectSource instance) =>
     <String, dynamic>{
       'type': _$ObjectSourceTypeEnumMap[instance.type]!,
       'name': instance.name,
+      'uuid': ?instance.uuid,
     };
 
 const _$ObjectSourceTypeEnumMap = {

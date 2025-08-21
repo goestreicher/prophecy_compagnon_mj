@@ -12,12 +12,12 @@ class ScenarioEditNPCsPage extends StatefulWidget {
   const ScenarioEditNPCsPage({
     super.key,
     required this.npcs,
-    required this.scenarioName,
+    required this.scenarioSource,
     required this.onNPCCommitted,
   });
 
   final List<NonPlayerCharacter> npcs;
-  final String scenarioName;
+  final ObjectSource scenarioSource;
   final void Function() onNPCCommitted;
 
   @override
@@ -59,7 +59,7 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
           npcId: selectedId,
           npc: selectedNPC,
           name: newNPCName!,
-          source: ObjectSource(type: ObjectSourceType.scenario, name: widget.scenarioName),
+          source: widget.scenarioSource,
           onEditDone: (NonPlayerCharacter? npc) {
             setState(() {
               if(npc != null) {
