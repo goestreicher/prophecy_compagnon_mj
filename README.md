@@ -13,7 +13,7 @@ Pretty much a WiP, not stable at the moment
 - [ ] Migrate places to GenericTreeWidget
 - [ ] Do not commit resources to the store when editing a scenario (use Factions as an example)
   - [ ] Places
-  - [ ] Maps
+  - [x] Maps
   - [ ] Creatures
     - Require using a static instance cache?
   - [ ] NPCs

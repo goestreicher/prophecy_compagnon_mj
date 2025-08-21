@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../classes/faction.dart';
 import '../../classes/scenario.dart';
+import '../../classes/scenario_map.dart';
 import 'edit_creatures_tab.dart';
 import 'edit_encounters_tab.dart';
 import 'edit_events_tab.dart';
@@ -34,31 +35,55 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   late Scenario _scenario;
   void Function()? tabGeneralPreSaveCallback;
 
-  List<Faction> uncommittedFactionsCreated = <Faction>[];
-  List<Faction> uncommittedFactionsModified = <Faction>[];
-  List<Faction> uncommittedFactionsDeleted = <Faction>[];
-
+  List<Faction> uncommittedFactionsCreation = <Faction>[];
+  List<Faction> uncommittedFactionsModification = <Faction>[];
+  List<Faction> uncommittedFactionsDeletion = <Faction>[];
+  List<ScenarioMap> uncommittedMapsCreation = <ScenarioMap>[];
+  List<ScenarioMap> uncommittedMapsModification = <ScenarioMap>[];
+  List<ScenarioMap> uncommittedMapsDeletion = <ScenarioMap>[];
+  
   Future<void> commitPendingChanges() async {
-    uncommittedFactionsCreated.clear();
-
-    uncommittedFactionsModified.clear();
-
-    for(var f in uncommittedFactionsDeleted) {
+    /*
+        Factions
+     */
+    uncommittedFactionsCreation.clear();
+    uncommittedFactionsModification.clear();
+    for(var f in uncommittedFactionsDeletion) {
       await FactionStore().delete(f);
     }
-    uncommittedFactionsDeleted.clear();
+    uncommittedFactionsDeletion.clear();
+
+    /*
+        Maps
+     */
+    uncommittedMapsCreation.clear();
+    uncommittedMapsModification.clear();
+    for(var m in uncommittedMapsDeletion) {
+      await ScenarioMapStore().delete(m);
+    }
+    uncommittedMapsDeletion.clear();
   }
 
   Future<void> cancelPendingChanges() async {
-    for(var f in uncommittedFactionsCreated) {
+    /*
+        Factions
+     */
+    for(var f in uncommittedFactionsCreation) {
       Faction.removeFromCache(f);
     }
-
-    for(var f in uncommittedFactionsModified) {
+    uncommittedFactionsCreation.clear();
+    for(var f in uncommittedFactionsModification) {
       await Faction.reloadFromStore(f);
     }
+    uncommittedFactionsModification.clear();
+    uncommittedFactionsDeletion.clear();
 
-    uncommittedFactionsDeleted.clear();
+    /*
+        Maps
+     */
+    uncommittedMapsCreation.clear();
+    uncommittedMapsModification.clear();
+    uncommittedMapsDeletion.clear();
   }
 
   @override
@@ -193,10 +218,10 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                         });
                       },
                       onFactionModified: (Faction f) {
-                        uncommittedFactionsModified.add(f);
+                        uncommittedFactionsModification.add(f);
                       },
                       onFactionDeleted: (Faction f) {
-                        uncommittedFactionsDeleted.add(f);
+                        uncommittedFactionsDeletion.add(f);
                         setState(() {
                           _scenario.factions.remove(f);
                         });
@@ -206,7 +231,24 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       encounters: _scenario.encounters,
                       scenarioName: _scenario.name,
                     ),
-                    ScenarioEditMapsPage(maps: _scenario.maps),
+                    ScenarioEditMapsPage(
+                      maps: _scenario.maps,
+                      onMapCreated: (ScenarioMap m) {
+                        uncommittedMapsCreation.add(m);
+                        setState(() {
+                          _scenario.maps.add(m);
+                        });
+                      },
+                      onMapModified: (ScenarioMap m) {
+                        uncommittedMapsModification.add(m);
+                      },
+                      onMapDeleted: (ScenarioMap m) {
+                        uncommittedMapsDeletion.add(m);
+                        setState(() {
+                          _scenario.maps.remove(m);
+                        });
+                      },
+                    ),
                   ],
                 ),
               ),

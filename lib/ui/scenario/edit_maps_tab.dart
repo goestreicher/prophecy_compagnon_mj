@@ -8,9 +8,18 @@ import '../utils/place_map_picker_dialog.dart';
 import '../utils/single_line_input_dialog.dart';
 
 class ScenarioEditMapsPage extends StatefulWidget {
-  const ScenarioEditMapsPage({ super.key, required this.maps });
+  const ScenarioEditMapsPage({
+    super.key,
+    required this.maps,
+    required this.onMapCreated,
+    required this.onMapModified,
+    required this.onMapDeleted,
+  });
 
   final List<ScenarioMap> maps;
+  final void Function(ScenarioMap) onMapCreated;
+  final void Function(ScenarioMap) onMapModified;
+  final void Function(ScenarioMap) onMapDeleted;
 
   @override
   State<ScenarioEditMapsPage> createState() => _ScenarioEditMapsPageState();
@@ -31,16 +40,18 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
     else {
       mapEditWidget = _MapEditWidget(
         map: _selected!,
-        onDefaultChanged: (bool value) {
-          if(value) {
-            for(var map in widget.maps) {
+        onChanged: () {
+          if(_selected!.isDefault) {
+            for (var map in widget.maps) {
               if(map.name != _selected!.name && map.isDefault) {
                 map.isDefault = false;
+                widget.onMapModified(map);
               }
             }
           }
+
           setState(() {
-            _selected!.isDefault = value;
+            widget.onMapModified(_selected!);
           });
         },
       );
@@ -76,7 +87,7 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                     if(!context.mounted) return;
 
                     setState(() {
-                      widget.maps.add(
+                      widget.onMapCreated(
                         ScenarioMap(
                           name: newMapName,
                           placeMap: map,
@@ -114,12 +125,11 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
                                   IconButton(
                                     icon: const Icon(Icons.delete),
                                     onPressed: () async {
-                                      await ScenarioMapStore().delete(map);
+                                      widget.onMapDeleted(map);
                                       setState(() {
                                         if(_selected == map) {
                                           _selected = null;
                                         }
-                                        widget.maps.removeAt(index);
                                       });
                                     },
                                   ),
@@ -169,26 +179,49 @@ class _ScenarioEditMapsPageState extends State<ScenarioEditMapsPage> {
 }
 
 class _MapEditWidget extends StatefulWidget {
-  const _MapEditWidget({ required this.map, required this.onDefaultChanged });
+  const _MapEditWidget({ required this.map, required this.onChanged });
 
   final ScenarioMap map;
-  final void Function(bool) onDefaultChanged;
+  final void Function() onChanged;
 
   @override
   State<_MapEditWidget> createState() => _MapEditWidgetState();
 }
 
 class _MapEditWidgetState extends State<_MapEditWidget> {
-  late bool _isDefault;
   final TextEditingController _realWidthController = TextEditingController();
   final TextEditingController _realHeightController = TextEditingController();
+
+  late bool currentIsDefault;
+  late double currentRealWidth;
+  late double currentRealHeight;
 
   @override
   void initState() {
     super.initState();
-    _isDefault = widget.map.isDefault;
-    _realWidthController.text = widget.map.placeMap.realWidth.toStringAsFixed(2);
-    _realHeightController.text = widget.map.placeMap.realHeight.toStringAsFixed(2);
+
+    currentIsDefault = widget.map.isDefault;
+    currentRealWidth = widget.map.placeMap.realWidth;
+    currentRealHeight = widget.map.placeMap.realHeight;
+
+    _realWidthController.text = currentRealWidth.toStringAsFixed(2);
+    _realHeightController.text = currentRealHeight.toStringAsFixed(2);
+  }
+
+  bool hasChanges() {
+    return currentIsDefault != widget.map.isDefault
+        || currentRealWidth != widget.map.placeMap.realWidth
+        || currentRealHeight != widget.map.placeMap.realHeight;
+  }
+
+  void applyChanges() {
+    if(!hasChanges()) return;
+    setState(() {
+      widget.map.isDefault = currentIsDefault;
+      widget.map.placeMap.realWidth = currentRealWidth;
+      widget.map.placeMap.realHeight = currentRealHeight;
+      widget.onChanged();
+    });
   }
 
   @override
@@ -209,12 +242,11 @@ class _MapEditWidgetState extends State<_MapEditWidget> {
                   children: [
                     const Text('Carte par défaut: '),
                     Checkbox(
-                      value: _isDefault,
+                      value: currentIsDefault,
                       onChanged: (bool? value) {
                         if(value == null) return;
-                        widget.onDefaultChanged(value);
                         setState(() {
-                          _isDefault = value;
+                          currentIsDefault = value;
                         });
                       }
                     ),
@@ -222,69 +254,86 @@ class _MapEditWidgetState extends State<_MapEditWidget> {
                     const Text('Largeur réelle (m): '),
                     SizedBox(
                       width: 96.0,
-                      child: TextFormField(
-                        controller: _realWidthController,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
-                        ],
-                        validator: (String? value) {
-                          if(value == null || value.isEmpty) return 'Valeur manquante';
-                          double? input = double.tryParse(value);
-                          if(input == null) return 'Pas un nombre';
-                          return null;
-                        },
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        onChanged: (String? value) {
-                          if(value == null) return;
+                      child: Focus(
+                        onFocusChange: (bool focus) {
+                          if(focus) return;
+                          if(_realWidthController.text.isEmpty) return;
 
-                          var w = double.tryParse(value);
+                          var w = double.tryParse(_realWidthController.text);
                           if(w == null) return;
 
                           var whRatio = widget.map.placeMap.imageWidth / widget.map.placeMap.imageHeight;
                           var hStr = (w / whRatio).toStringAsFixed(2);
-                          widget.map.placeMap.realWidth = w;
-                          widget.map.placeMap.realHeight = double.parse(hStr);
+                          setState(() {
+                            currentRealWidth = w;
+                            currentRealHeight = double.parse(hStr);
+                          });
                           _realHeightController.text = hStr;
                         },
+                        child: TextFormField(
+                          controller: _realWidthController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                          ),
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                          ],
+                          validator: (String? value) {
+                            if(value == null || value.isEmpty) return 'Valeur manquante';
+                            double? input = double.tryParse(value);
+                            if(input == null) return 'Pas un nombre';
+                            return null;
+                          },
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                        ),
                       ),
                     ),
                     const SizedBox(width: 12.0),
                     const Text('Hauteur réelle (m): '),
                     SizedBox(
                       width: 96.0,
-                      child: TextFormField(
-                        controller: _realHeightController,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(),
-                        ),
-                        keyboardType: TextInputType.number,
-                        inputFormatters: [
-                          FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
-                        ],
-                        validator: (String? value) {
-                          if(value == null || value.isEmpty) return 'Valeur manquante';
-                          double? input = double.tryParse(value);
-                          if(input == null) return 'Pas un nombre';
-                          return null;
-                        },
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
-                        onChanged: (String? value) {
-                          if(value == null) return;
+                      child: Focus(
+                        onFocusChange: (bool focus) {
+                          if(focus) return;
+                          if(_realHeightController.text.isEmpty) return;
 
-                          var h = double.tryParse(value);
+                          var h = double.tryParse(_realHeightController.text);
                           if(h == null) return;
 
                           var whRatio = widget.map.placeMap.imageWidth / widget.map.placeMap.imageHeight;
                           var wStr = (h * whRatio).toStringAsFixed(2);
-                          widget.map.placeMap.realWidth = double.parse(wStr);
-                          widget.map.placeMap.realHeight = h;
+                          setState(() {
+                            currentRealWidth = double.parse(wStr);
+                            currentRealHeight = h;
+                          });
                           _realWidthController.text = wStr;
                         },
+                        child: TextFormField(
+                          controller: _realHeightController,
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                          ),
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                          ],
+                          validator: (String? value) {
+                            if(value == null || value.isEmpty) return 'Valeur manquante';
+                            double? input = double.tryParse(value);
+                            if(input == null) return 'Pas un nombre';
+                            return null;
+                          },
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                        ),
                       ),
+                    ),
+                    const SizedBox(width: 12.0),
+                    ElevatedButton(
+                      onPressed: !hasChanges() ? null : () {
+                        applyChanges();
+                      },
+                      child: const Text('Appliquer'),
                     ),
                   ],
                 ),
