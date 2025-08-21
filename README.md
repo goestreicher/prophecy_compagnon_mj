@@ -22,6 +22,8 @@ Pretty much a WiP, not stable at the moment
 - [ ] Use UUIDs everywhere in the assets and make UUID mandatory in constructors
 - [ ] Add an optional UUID in ObjectSource to prevent conflicts in case of names collision
 - [ ] Add dates in the factions leaders and members?
+- [ ] Add artifacts resources?
+- [ ] Fill in more places from the official docs
 
 ## Play part
 
