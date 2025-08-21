@@ -3,9 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
+import 'package:prophecy_compagnon_mj/ui/scenario/scenario_fleather_toolbar.dart';
 
+import '../../classes/resource_link.dart';
 import '../../classes/scenario.dart';
-import 'scenario_fleather_toolbar.dart';
+import '../utils/markdown_fleather_toolbar.dart';
 
 class ScenarioEditGeneralPage extends StatefulWidget {
   const ScenarioEditGeneralPage({
@@ -182,9 +184,13 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                     ),
                   ),
                   Divider(),
-                  ScenarioFleatherToolbar(
+                  MarkdownFleatherToolbar(
                     controller: storyController,
-                    scenario: widget.scenario,
+                    showResourcePicker: true,
+                    openResourceLinkPickerDialog: () => ResourceLinkPickerDialog(
+                      localResourcesLinkGenerator: (ResourceLinkType type) =>
+                          generateScenarioResourceLinks(type, widget.scenario),
+                    ),
                   ),
                   Expanded(
                     child: FleatherField(

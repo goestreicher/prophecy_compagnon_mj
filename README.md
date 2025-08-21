@@ -8,8 +8,8 @@ Pretty much a WiP, not stable at the moment
 
 ## Creation part
 
-- [ ] Migrate to MarkdownFleatherToolbar
-  - [ ] Migrate the resource selector from ScenarioFleatherToolbar
+- [x] Migrate to MarkdownFleatherToolbar
+  - [x] Migrate the resource selector from ScenarioFleatherToolbar
 - [ ] Migrate places to GenericTreeWidget
 - [ ] Do not commit resources to the store when editing a scenario (use Factions as an example)
   - [ ] Places

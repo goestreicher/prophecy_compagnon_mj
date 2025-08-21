@@ -5,8 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../classes/calendar.dart';
+import '../../classes/resource_link.dart';
 import '../../classes/scenario.dart';
 import '../../classes/scenario_event.dart';
+import '../utils/markdown_fleather_toolbar.dart';
 import 'scenario_fleather_toolbar.dart';
 
 class ScenarioEventEditResult {
@@ -112,7 +114,14 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                 }
               ),
               Divider(),
-              ScenarioFleatherToolbar(controller: descriptionController, scenario: widget.scenario),
+              MarkdownFleatherToolbar(
+                controller: descriptionController,
+                showResourcePicker: true,
+                openResourceLinkPickerDialog: () => ResourceLinkPickerDialog(
+                  localResourcesLinkGenerator: (ResourceLinkType type) =>
+                      generateScenarioResourceLinks(type, widget.scenario),
+                ),
+              ),
               Expanded(
                 child: FleatherField(
                   controller: descriptionController,
