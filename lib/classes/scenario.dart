@@ -3,6 +3,7 @@ import 'package:uuid/uuid.dart';
 
 import 'calendar.dart';
 import 'creature.dart';
+import 'faction.dart';
 import 'non_player_character.dart';
 import 'object_source.dart';
 import 'place.dart';
@@ -76,6 +77,28 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       j['maps'] = mapsJson;
     }
 
+    if(j.containsKey('places')) {
+      var placesJson = <Map<String, dynamic>>[];
+      for(var placeId in j['places']) {
+        var place = Place.byId(placeId);
+        if(place != null) {
+          placesJson.add(place.toJson());
+        }
+      }
+      j['places'] = placesJson;
+    }
+
+    if(j.containsKey('factions')) {
+      var factionsJson = <Map<String, dynamic>>[];
+      for(var factionId in j['factions']) {
+        var faction = Faction.byId(factionId);
+        if(faction != null) {
+          factionsJson.add(faction.toJson());
+        }
+      }
+      j['factions'] = factionsJson;
+    }
+
     return Scenario.fromJson(j);
   }
 
@@ -101,6 +124,18 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     }
     j['maps'] = mapIds;
 
+    var placeIds = <String>[];
+    for(var place in object.places) {
+      placeIds.add(place.id);
+    }
+    j['places'] = placeIds;
+
+    var factionIds = <String>[];
+    for(var faction in object.factions) {
+      factionIds.add(faction.id);
+    }
+    j['factions'] = factionIds;
+
     return j;
   }
 
@@ -123,6 +158,10 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     for(var place in object.places) {
       await PlaceStore().save(place);
     }
+
+    for(var faction in object.factions) {
+      await FactionStore().save(faction);
+    }
   }
 
   @override
@@ -139,6 +178,14 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
 
     for(var map in object.maps) {
       await ScenarioMapStore().delete(map);
+    }
+
+    for(var place in object.places) {
+      await PlaceStore().delete(place);
+    }
+
+    for(var faction in object.factions) {
+      await FactionStore().delete(faction);
     }
   }
 }
@@ -178,6 +225,7 @@ class Scenario {
         List<ScenarioEncounter>? encounters,
         Map<DayRange, ScenarioDayEvents>? events,
         List<Place>? places,
+        List<Faction>? factions,
       })
     : uuid = uuid ?? const Uuid().v4().toString(),
       maps = maps ?? <ScenarioMap>[],
@@ -185,7 +233,8 @@ class Scenario {
       creatures = creatures ?? <CreatureModel>[],
       encounters = encounters ?? <ScenarioEncounter>[],
       events = events ?? <DayRange, ScenarioDayEvents>{},
-      places = places ?? <Place>[];
+      places = places ?? <Place>[],
+      factions = factions ?? <Faction>[];
 
   factory Scenario.import(Map<String, dynamic> json) {
     if(json.containsKey('uuid')) {
@@ -197,15 +246,18 @@ class Scenario {
     var source = ObjectSource(
       type: ObjectSourceType.scenario,
       name: json['name'],
-    );
+    ).toJson();
     for(var npc in json['npcs'] as List<dynamic>? ?? []) {
-      npc['source'] = source.toJson();
+      npc['source'] = source;
     }
     for(var creature in json['creatures'] as List<dynamic>? ?? []) {
-      creature['source'] = source.toJson();
+      creature['source'] = source;
     }
     for(var place in json['places'] as List<dynamic>? ?? []) {
-      place['source'] = source.toJson();
+      place['source'] = source;
+    }
+    for(var faction in json['factions'] as List<dynamic>? ?? []) {
+      faction['source'] = source;
     }
 
     return Scenario.fromJson(json);
@@ -225,8 +277,14 @@ class Scenario {
   final List<CreatureModel> creatures;
   final List<ScenarioEncounter> encounters;
   final List<Place> places;
+  final List<Faction> factions;
   @JsonKey(includeToJson: false, includeFromJson: false)
     final Map<DayRange, ScenarioDayEvents> events;
+
+  ObjectSource get source => ObjectSource(
+    type: ObjectSourceType.scenario,
+    name: name,
+  );
 
   ScenarioSummary summary() => ScenarioSummary(
     uuid: uuid,

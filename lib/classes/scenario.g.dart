@@ -45,6 +45,9 @@ Scenario _$ScenarioFromJson(Map<String, dynamic> json) => Scenario(
   places: (json['places'] as List<dynamic>?)
       ?.map((e) => Place.fromJson(e as Map<String, dynamic>))
       .toList(),
+  factions: (json['factions'] as List<dynamic>?)
+      ?.map((e) => Faction.fromJson(e as Map<String, dynamic>))
+      .toList(),
 );
 
 Map<String, dynamic> _$ScenarioToJson(Scenario instance) => <String, dynamic>{
@@ -62,4 +65,5 @@ Map<String, dynamic> _$ScenarioToJson(Scenario instance) => <String, dynamic>{
   'creatures': instance.creatures.map((e) => e.toJson()).toList(),
   'encounters': instance.encounters.map((e) => e.toJson()).toList(),
   'places': instance.places.map((e) => e.toJson()).toList(),
+  'factions': instance.factions.map((e) => e.toJson()).toList(),
 };

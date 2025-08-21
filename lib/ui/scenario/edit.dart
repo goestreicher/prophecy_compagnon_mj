@@ -3,10 +3,12 @@ import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../../classes/faction.dart';
 import '../../classes/scenario.dart';
 import 'edit_creatures_tab.dart';
 import 'edit_encounters_tab.dart';
 import 'edit_events_tab.dart';
+import 'edit_factions_tab.dart';
 import 'edit_general_tab.dart';
 import 'edit_maps_tab.dart';
 import 'edit_npcs_tab.dart';
@@ -31,6 +33,33 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   late Future<Scenario?> _scenarioFuture;
   late Scenario _scenario;
   void Function()? tabGeneralPreSaveCallback;
+
+  List<Faction> uncommittedFactionsCreated = <Faction>[];
+  List<Faction> uncommittedFactionsModified = <Faction>[];
+  List<Faction> uncommittedFactionsDeleted = <Faction>[];
+
+  Future<void> commitPendingChanges() async {
+    uncommittedFactionsCreated.clear();
+
+    uncommittedFactionsModified.clear();
+
+    for(var f in uncommittedFactionsDeleted) {
+      await FactionStore().delete(f);
+    }
+    uncommittedFactionsDeleted.clear();
+  }
+
+  Future<void> cancelPendingChanges() async {
+    for(var f in uncommittedFactionsCreated) {
+      Faction.removeFromCache(f);
+    }
+
+    for(var f in uncommittedFactionsModified) {
+      await Faction.reloadFromStore(f);
+    }
+
+    uncommittedFactionsDeleted.clear();
+  }
 
   @override
   void initState() {
@@ -65,7 +94,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
         return Stack(
           children: [
             DefaultTabController(
-              length: 7,
+              length: 8,
               child: Scaffold(
                 appBar: AppBar(
                   title: Text('Scénario: ${_scenario.name}'),
@@ -85,9 +114,9 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     IconButton(
                       icon: const Icon(Icons.close),
                       tooltip: 'Annuler',
-                      onPressed: !_canCancel
-                          ? null
-                          : () {
+                      onPressed: !_canCancel ? null : () async {
+                        await cancelPendingChanges();
+                        if(!context.mounted) return;
                         Navigator.of(context).pop(false);
                       },
                     ),
@@ -100,6 +129,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                         });
                         tabGeneralPreSaveCallback?.call();
                         await ScenarioStore().save(_scenario);
+                        await commitPendingChanges();
                         setState(() {
                           _isWorking = false;
                         });
@@ -116,6 +146,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       Tab(text: 'PNJs'),
                       Tab(text: 'Créatures'),
                       Tab(text: 'Lieux'),
+                      Tab(text: 'Factions'),
                       Tab(text: 'Rencontres'),
                       Tab(text: 'Cartes'),
                     ],
@@ -152,6 +183,23 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       onPlaceCommitted: () {
                         setState(() {
                           _canCancel = false;
+                        });
+                      },
+                    ),
+                    ScenarioEditFactionsPage(
+                      scenarioSource: _scenario.source,
+                      onFactionCreated: (Faction f) {
+                        setState(() {
+                          _scenario.factions.add(f);
+                        });
+                      },
+                      onFactionModified: (Faction f) {
+                        uncommittedFactionsModified.add(f);
+                      },
+                      onFactionDeleted: (Faction f) {
+                        uncommittedFactionsDeleted.add(f);
+                        setState(() {
+                          _scenario.factions.remove(f);
                         });
                       },
                     ),

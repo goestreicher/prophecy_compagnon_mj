@@ -1,0 +1,2716 @@
+[
+  {
+    "name": "Caste des artisans",
+    "uuid": "11bec81e-f18c-4116-bd87-05c878c49630",
+    "leaders": [
+      {
+        "name": "Kezyr",
+        "title": "Grand Dragon du Métal"
+      },
+      {
+        "name": "Sir Tharen",
+        "title": "Grand Maître de la Caste des Artisans"
+      }
+    ],
+    "description": "L‘organisation de la caste des artisans est particulièrement stricte et hiérarchisée. Ce n’est que par le respect du système de Statut, du principe du maître et de l’élève, que l'artisan peut espérer progresser au sein de sa caste.\n\nLes Apprentis et les Compagnons doivent être prêts à accomplir toutes les tâches ingrates que leurs maîtres ne manqueront pas de leur donner. Ils devront ensuite accomplir un chef-d'œuvre, qui sera jugé par des Maîtres de leur voie, avant de pouvoir espérer atteindre le rang d’Artisan. C’est aussi au deuxième Statut que la caste attend de ses membres qu’ils partent en compagnonnage - d’où le titre de Compagnon. Cette errance peut durer quelques mois ou plusieurs années. C’est au cours de ce voyage initiatique que la plupart des artisans explorent les spécificités des autres voies de leur caste. Il n’est d’ailleurs pas rare qu’un artisan décide de changer de voie à l’issue de son compagnonnage.\n\nLes membres de la caste qui ont atteint le Statut d’Artisan sont assurés de ne jamais manquer de travail. Chaque grande ville abrite une guilde des artisans qui regroupe des Maîtres de toutes les voies présentes. Cette guilde est chargée de gérer le nombre d'artisans afin d’éviter une surpopulation gênante - elle peut donc interdire l’installation d’un artisan d'une spécialité déjà trop représentée. Un tel système favorise bien évidemment la corruption et les passe-droits, mais les gardiens de la caste veillent à ce que de telles entorses à la règle ne se produisent pas trop souvent. Les artisans peuvent aussi trouver du travail comme enseignants au sein de la caste ou se faire patronner par de riches protecteurs. Il est à noter aussi que les artisans reconnus par la caste parviendront facilement à s'installer dans des villages reculés, trop heureux de pouvoir profiter des talents et des secrets détenus par ces hommes.\n\nTrès rapidement, la caste s’est dotée de quelques structures destinées à gérer les affaires importantes. C’est ainsi qu’en dehors du système des guildes, par ailleurs très proche de celui institué par la caste des commerçants, les artisans ont créé un certain nombre de conseils composés des membres les plus influents de la caste. Pour atteindre 1e cinquième Statut, il est nécessaire de présenter un chef-d'œuvre qui sera jugé par Kezyr et les parfaits - bien évidemment, le parfait qui voit sa position ainsi menacée n’a pas le droit de voter. Il n'existe qu’un seul Maître Artisan pour chaque voie. C’est donc une position instable, puisqu’un Maître Artisan est susceptible d’être évincé par un nouveau prétendant - l’ancien étant alors rétrogradé. Il est important de noter que, cette position étant éminemment politique, les Maîtres Artisans développent des réseaux d’amitiés afin de conserver leur place. Et, au sein même de chaque voie, les luttes sont parfois violentes entre les différentes mouvances, chacune désirant voir l’un des siens atteindre cette position prestigieuse et enviée.\n\n# Hiérarchie\n\nAu plus haut niveau de la caste des artisans, on peut distinguer cinq organisations particulièrement importantes : les parfaits, les ardents, les ordonnateurs, les visionnaires et le tribunal des arts. Seules trois d’entre elles sont connues du grand public, les deux autres ne l’étant que des membres les plus élevés de la caste.\n\nIl est important de noter que certains membres de la caste peuvent cumuler des positions dans plusieurs de ces structures.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Voies",
+    "uuid": "14920275-7718-4652-934d-58a52d2c301e",
+    "parent_id": "11bec81e-f18c-4116-bd87-05c878c49630",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les forgerons",
+    "uuid": "dd3398d9-df24-48fc-9cc2-6089d9192a09",
+    "parent_id": "14920275-7718-4652-934d-58a52d2c301e",
+    "description": "La carrière des artisans du métal est la plus prestigieuse qui soit. Ils obéissent consciencieusement aux règles édictées par Kezyr.\n\nCette voie regroupe lous les artisans du métal, qu'ils soient armuriers ou simples forgerons de village. C'est au sein de cette voie que l’on retrouve certains des plus grands enchanteurs de la caste - ces derniers forment un groupe prestigieux : les reliquaires. Ce sont eux qui sont responsables des contacts avec les autres castes afin de pouvoir rassembler les talents pour obtenir des enchantements particulièrement puissants.\n\nTraditionnellement, Kezyr est plus particulièrement associé à ces manipulateurs du métal et il est vrai que la plupart des Élus de dragons de Kezyr appartiennent à cette voie.\n\nElle reste très traditionaliste et c’est parmi ses membres que l'on peut compter le plus grand nombre d’Élus.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les reliquaires",
+    "uuid": "dd3398d9-df24-48fc-9cc2-6089d9192a09",
+    "parent_id": "2639b1a4-7a73-40f3-9f36-97fd84f09f13",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les architectes",
+    "uuid": "2639b1a4-7a73-40f3-9f36-97fd84f09f13",
+    "parent_id": "14920275-7718-4652-934d-58a52d2c301e",
+    "description": "La voie des architectes est double. Elle comprend la voie des concepteurs et celle des créateurs.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "leaders": [
+      {
+        "name": "Fendorn Kamil",
+        "title": "Grand ordonnateur de la voie des architectes"
+      }
+    ]
+  },
+  {
+    "name": "Les concepteurs",
+    "uuid": "1a4ec481-f8a5-419b-b104-e93b315ff653",
+    "parent_id": "2639b1a4-7a73-40f3-9f36-97fd84f09f13",
+    "description": "Les concepteurs sont les fondateurs de la voie. Ils sont engagés pour dessiner les plans des bâtiments civils ou militaires. Au sein de cette voie, certains concepteurs se sont ainsi spécialisés dans les ouvrages militaires tels que des forteresses, tours et murs fortifiés, mais aussi des ouvrages plus temporaires tels que des tours d’assaut, béliers, palissades d'attaque, trébuchets… La plupart des autres concepteurs se sont spécialisés dans l’archi tecture civile et un certain nombre d’entre eux sont particulièrement réputés pour l’excellence et la magnificence de leurs ouvrages.\n\nC'est aussi au sein de cette voie que l’on peut trouver les quelques architectes maritimes qui dessinent les plans des navires marchands, civils ou militaires. Il est important de noter que cette voie semble être de plus en plus influencée par l’Humanisme.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les créateurs",
+    "uuid": "70c871ae-662b-476a-9d3f-855376c15242",
+    "parent_id": "2639b1a4-7a73-40f3-9f36-97fd84f09f13",
+    "description": "La voie des créateurs regroupe les maçons, les terrassiers, les menuisiers et les charpentiers. En bref, toutes les professions travaillant de près ou de loin à la construction de bâtiments. II existe des règles hiérarchiques tacites entre ces différentes professions. C’est ainsi que, sur un chantier, la parole d’un charpentier aura plus de poids que celle d’un maçon, qui pourra lui-même donner des ordres à un terrassier.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les orfèvres",
+    "uuid": "527e267d-fd62-44b3-90eb-53eaaf21c437",
+    "parent_id": "14920275-7718-4652-934d-58a52d2c301e",
+    "description": "Cette voie regroupe les joailliers, les tailleurs de gemmes, les orfèvres… Les artisans de cette voie comptent certains des artistes les plus recherchés de tout Kor. Ils sont choyés par les nobles, mais aussi par les membres de toutes les autres castes. En effet, ce sont les membres de cette voie qui conçoivent la plupart des décorations de rang et de caste. Il est intéressant de noter qu’une grande partie des tailleurs de gemmes sont aussi des mages spécialisés dans les enchantements. Les orfèvres entretiennent des contacts privilégiés avec les horlogers et sont donc assez proches de la tendance humaniste. Les autres professions de cette vote sont cependant généralement très traditionalistes.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les alchimistes",
+    "uuid": "e976a3af-9f3a-4ab8-b055-8125d839c961",
+    "parent_id": "14920275-7718-4652-934d-58a52d2c301e",
+    "description": "Cette voie regroupe les verriers et les alchimistes. Ils se séparent ensuite en deux groupes aux attributions spécifiques, D'un côté, on peut trouver les artisans spécialisés dans la préparation de produits destinés à la guerre - liquides inflammables, produits fumigènes, boules de verre contenant divers produits empoisonnés ou explosifs. De l’autre, on compte les artisans qui travaillent à des produits civils - teintures, peintures, verres, vitres, etc. - ou destinés à des applications médicales. Cette voie comprend de nombreux sympathisants de la cause humaniste.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les tisserands",
+    "uuid": "052f833c-9f55-4bbb-9b73-89268c61d740",
+    "parent_id": "14920275-7718-4652-934d-58a52d2c301e",
+    "description": "La voie des tisserands est celle qui regroupe le plus grand nombre de membres. Cette voie comprend les tanneurs, les couturiers, les tisserands et toutes les professions liées à la confection de tissus.\n\nQuelques artisans se sont illustrés en créant des vêtements enchantés et dotés de capacités extraordinaires. Certains de ces tissus sont ainsi connus pour être indéchirables, d'autres sont parfaitement imperméables, d’autres sont ininflammables ou calorifères… Ce sont les membres de cette caste qui conçoivent et réalisent les tenues cérémonielles de la plupart des autres castes. Ils sont généralement assez traditionalistes.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les mineurs",
+    "uuid": "a76af3dc-5266-4491-afb0-a54365d5782b",
+    "parent_id": "14920275-7718-4652-934d-58a52d2c301e",
+    "description": "Cette voie regroupe deux types d'artisans : les fouisseurs et les “termites”.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "members": [
+      {
+        "name": "Tarel Orowitz",
+        "title": "Parfait de la voie des mineurs"
+      }
+    ]
+  },
+  {
+    "name": "Les fouisseurs",
+    "uuid": "bf5b6cf7-558f-4812-9376-577d99979a55",
+    "parent_id": "a76af3dc-5266-4491-afb0-a54365d5782b",
+    "description": "Les fouisseurs sont les artisans chargés de récupérer les minerais rares au cœur de la terre. Ils travaillent généralement en accord avec les concepteurs, qui dessinent les plans des mines, ainsi qu'avec les érudits, qui guident les zones de fouilles. C'est aussi parmi les fouisseurs que l’on peut trouver quelques artisans spécialisés dans l’excavation de reliques des Temps Anciens.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les termites",
+    "uuid": "94dd8936-fc98-4c9f-936c-020f73a9095f",
+    "parent_id": "a76af3dc-5266-4491-afb0-a54365d5782b",
+    "description": "Les “termites” se sont spécialisés dans la destruction des bâtiments et tout particulièrement dans l'éradication des constructions militaires. Ils comptent des sapeurs, qui creusent des tunnels destinés à faire s'effondrer les murailles des forteresses, des artificiers, qui utilisent les trouvailles des alchimistes pour miner les bâtiments. Une très forte rivalité oppose les “termites” aux architectes spécialisés dans l'édification de constructions militaires.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "members": [
+      {
+        "name": "Tarel Orowitz",
+        "title": "Parfait de la voie des mineurs"
+      }
+    ]
+  },
+  {
+    "name": "Les artisans élémentaires",
+    "uuid": "1e48d957-ba10-4d68-88bd-16ebfc3130b7",
+    "parent_id": "14920275-7718-4652-934d-58a52d2c301e",
+    "description": "Cette voie est très peu connue du grand public.\n\nLes artisans élémentaires sont des Maîtres capables de modeler les éléments par la seule force de leur volonté. Après avoir été élèves d'autres voies durant de longues années, les adeptes de cette voie suivent un entraînement auprès de Kezyr lui-même. On raconte que ces artisans sont capables de modifier de manière permanente la nature de l’air (on raconte ainsi que dans un palais merveilleux, l’air de chaque pièce produit une émotion différente sur les visiteurs; on parle aussi d’une forteresse en ruine où l’air est chargé de poison et de peur), la forme du métal ou des minéraux, la nature de l’eau (qui devient susceptible de provoquer des émotions) ou de contrôler le feu.\n\nCette voie n’est accessible qu’à des Maîtres Artisans et seul Kezyr peut décider de leur donner le pouvoir de façonner les éléments. Ils sont bien évidemment tous de farouches défenseurs de la voie draconique.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les mécanistes",
+    "uuid": "e838398c-98ed-4138-b419-c0f162e324dd",
+    "parent_id": "14920275-7718-4652-934d-58a52d2c301e",
+    "description": "Cette voie regroupe les artisans qui se sont spécialisés dans la construction de mécaniques plus ou moins complexes. On peut y trouver des artisans spécialisés dans la construction de structures destinées à aider aux travaux lourds - systèmes de grues et de poulies souvent utilisés par les architectes.\n\nCette voie est cependant surtout connue pour ses artisans spécialisés dans l’élaboration de petits mécanismes de précision. Leurs horloges et sabliers, qui font fureur auprès des plus riches habitants des grandes villes civilisées, mais aussi leurs automates, sont aussi prisés des nobles que proscrits par les dragons et les conservateurs.\n\nIl est important de noter que la plupart des artisans de cette voie sont des sympathisants humanistes. Ils sont aussi pourchassés et emprisonnés dans certains royaumes particulièrement traditionalistes - n’espérez pas trouver un horloger à Kern ou dans l'Empire Zûl…",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "members": [
+      {
+        "name": "Miroslav Katamankonos",
+        "title": "Parfait de la voie des mécanistes"
+      },
+      {
+        "name": "Arkandara Jolanof",
+        "title": "Garde du corps du parfait des mécanistes"
+      },
+      {
+        "name": "Ishandra Kalina",
+        "title": "Mécaniste"
+      }
+    ]
+  },
+  {
+    "name": "Les parfaits",
+    "uuid": "bdc1614f-de10-49ca-ab96-a8ce02a042e2",
+    "parent_id": "11bec81e-f18c-4116-bd87-05c878c49630",
+    "description": "Les Maîtres Artisans de chaque voie sont nommés les parfaits. Ils décident de la politique générale suivie par la caste.\n\nPlus que des artisans, ces hommes et ces femmes sont essentiellement des politiciens. Les parfaits vivent à Dungard auprès de leur Dragon tutélaire. Ils entretiennent des rapports permanents et réguliers avec Kezyr et sont constamment à l'écoute de ses désirs.\n\nCe sont les parfaits qui décident de l’idéologie générale des différentes voies. C’est ainsi qu'en fonction des parfaits, certaines voies se sont vues enjoindre de modifier leur manière de travailler. Récemment, les architectes ont ainsi dû renoncer à un certain nombre d’innovations jugées trop “ avant-gardistes ”. À l’inverse, les mécanistes et les alchimistes sont actuellement protégés par leurs parfaits, ce qui leur permet de développer des techniques nouvelles et étonnantes, qui ne sont pas du goût de tous les autres parfaits.\n\nLes intrigues politiques qui entourent ces hommes peuvent être terriblement meurtrières car il n’est pas rare que certaines de leurs décisions ruinent de nombreux artisans.\n\nLes parfaits sont entourés par un grand nombre de conseillers et tout autant de gardes du corps et d’espions.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "members": [
+      {
+        "name": "Tarel Orowitz",
+        "title": "Parfait de la voie des mineurs"
+      },
+      {
+        "name": "Fendorn Kamil",
+        "title": "Parfait de la voie des architectes"
+      },
+      {
+        "name": "Miroslav Katamankonos",
+        "title": "Parfait de la voie des mécanistes"
+      }
+    ]
+  },
+  {
+    "name": "Les ardents",
+    "uuid": "91d101da-0b58-4024-a15f-05441f74a00d",
+    "parent_id": "11bec81e-f18c-4116-bd87-05c878c49630",
+    "description": "Bien que moins spécialisé que Kroryn ou Brorne dans les allaires martiales, Kezyr n’en est pas moins connu pour ses qualités de combattant et sa fougue guerrière. Nombreux sont les Élus de dragons de Kezyr qui suivent des voies martiales et les artisans sont aussi fréquemment impliqués dans des conflits à plus ou moins grande échelle.\n\nIl existe donc, au sein de la caste des artisans, un groupe de Maîtres dont le rôle est de s'occuper des affaires militaires. Chaque mouvance de la caste dispose d’un ardent, mais il est évident que toutes les voies n’ont pas le même poids - et n’expriment pas le même intérêt - pour de telles affaires. C’est ainsi que les représentants des mouvances dépendant des architectes, des mineurs et des forgerons gèrent la plupart des affaires qui incombent aux ardents.\n\nTout comme pour les parfaits, les négociations politiques sont souvent âpres et les intrigues qui se nouent entre les ardents n’ont rien à envier aux intrigues politiques orchestrées par la caste des commerçants. Ce sont les ardents qui peuvent décider de faire intervenir les troupes de la caste pour défendre ses intérêts.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "members": [
+      {
+        "name": "Tarel Orowitz",
+        "title": "Ardent des termites"
+      }
+    ]
+  },
+  {
+    "name": "Les ordonnateurs",
+    "uuid": "8321eedb-b389-4c5c-b4f3-1fb0eb32822e",
+    "parent_id": "11bec81e-f18c-4116-bd87-05c878c49630",
+    "description": "Les ordonnateurs sont choisis au sein de chaque voie afin de s'occuper des affaires courantes - financement, promotion, blâme, établissement de nouvelles guildes, etc. Chaque voie nomme ensuite un grand ordonnateur qui siège à un conseil chargé de gérer les affaires de la caste dans son ensemble. Un tel poste n’a plus rien à voir avec le travail artisanal et il n'est pas rare que certains ordonnateurs s’entourent d’érudits et de commerçants. Cela n’est pas du goût de tous, nombreux étant les artisans qui n’apprécient guère que des membres d’autres castes - notamment les commerçants avec lesquels les relations sont parfois tendues - s'occupent des affaires financières de la caste. Cependant, le système semble avoir toujours bien fonctionné et les parfaits se contentent de rappeler à l’ordre quelques ordonnateurs laissant trop de liberté à leurs conseillers étrangers à la caste.\n\nEncore une fois, compte tenu des sommes énormes manipulées par ces hommes, ces postes sont éminemment politiques et hautement convoités.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les visionnaires",
+    "uuid": "111a823b-9000-48cd-899e-1d504e9982d6",
+    "parent_id": "11bec81e-f18c-4116-bd87-05c878c49630",
+    "description": "Inconnus du grand public, comme de la plupart des autres castes, les visionnaires forment une société secrète au sein même de laecaste des artisans. Il s’agit d’un groupe d’artisans de haut rang, particulièrement intéressés par les théories humanistes. Ces hommes et ces femmes sont intimement convaincus de l’importance des découvertes et des idées humanistes.\n\nCe sont eux qui protègent et subventionnent bon nombre de recherches “idéologiquement douteuses ”. Ils restent cependant convaincus de l'importance de ne pas tenter de changer les choses trop vite et ils se chargeront de faire taire les artisans trop désireux d’exposer leurs découvertes au grand jour.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "members": [
+      {
+        "name": "Tarel Orowitz",
+        "title": "Parfait de la voie des mineurs"
+      },
+      {
+        "name": "Miroslav Katamankonos",
+        "title": "Parfait de la voie des mécanistes"
+      }
+    ]
+  },
+  {
+    "name": "Le tribunal des arts",
+    "uuid": "4e0cc1b6-ee24-4c1a-a4fb-54a030a8eee6",
+    "parent_id": "11bec81e-f18c-4116-bd87-05c878c49630",
+    "description": "Bien que le nom de cette structure soit connu du grand public, rares sont ceux qui peuvent prétendre en connaître les attributions. Les membres de ce tribunal sont chargés de vérifier la qualité du travail des artisans de la caste. Ils sont aussi chargés de décider des dogmes esthétiques de la caste. Pour une grande part, ils définissent les modes architecturales et vestimentaires. Ce sont eux qui décident aussi de dévoiler certaines nouvelles techniques artisanales au plus grand nombre. Les juges du tribunal peuvent condamner des artisans ne respectant pas leurs édits. Les sanctions peuvent aller de l’exclusion à l’élimination.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "leaders": [
+      {
+        "name": "Fendorn Kamil",
+        "title": "Juge suprême du tribunal des arts"
+      }
+    ],
+    "members": [
+      {
+        "name": "Miroslav Katamankonos",
+        "title": "Parfait de la voie des mécanistes"
+      }
+    ]
+  },
+  {
+    "name": "Ordres et unités",
+    "uuid": "33ce2689-9caf-4b17-a34f-4fdd60c93676",
+    "parent_id": "11bec81e-f18c-4116-bd87-05c878c49630",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les veilleurs",
+    "uuid": "2964c737-7780-4b1e-bb86-65fb1bc1d5a0",
+    "parent_id": "33ce2689-9caf-4b17-a34f-4fdd60c93676",
+    "description": "La caste des artisans dispose d’un véritable service secret. Les veilleurs sont des hommes et des femmes appartenant à toutes les castes et à toutes les classes sociales. Ils sont chargés de veiller sur les intérêts de la caste. Ils ont aussi pour mission de récupérer des secrets “technologiques” qui pourraient être dissimulés par d’autres castes - les érudits, les voyageurs et les commerçants se trouvant ainsi tout particulièrement surveillés.\n\nL'organisation des veilleurs à permis à cet ordre de survivre à travers les âges sans que sa véritable dimension ne soit découverte. Chaque cellule est composée de trois individus, se connaissant les uns les autres, et est supervisée par un veilleur qui peut contacter ses subalternes - mais qui n’est pas connu d'eux. Chaque superviseur appartient à une cellule fonctionnant et supervisée de la même manière. Cette structure pyramidale permet d’isoler complètement des parties découvertes par d'éventuels adversaires. Un complexe système de codes et de signes secrets permet d'organiser des rendez-vous et d'assurer la discrétion des contacts entre membres.\n\nLes veilleurs sont placés sous les ordres directs des parfaits. Récemment cependant, une partie de cette organisation serait passée sous le contrôle des visionnaires et agirait ainsi pour protéger les intérêts de cette faction, avant même ceux de la caste.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "leaders": [
+      {
+        "name": "Arkandara Jolanof",
+        "title": "Chef des veilleurs"
+      }
+    ]
+  },
+  {
+    "name": "La garde métallique",
+    "uuid": "c7e1e652-4f40-47f7-a94c-88137ded1275",
+    "parent_id": "33ce2689-9caf-4b17-a34f-4fdd60c93676",
+    "description": "Kezyr, ainsi que les plus hauts dignitaires de la caste des artisans, est en permanence escorlé de gardes du corps très particuliers. Seuls les membres les plus éminents de la caste connaissent l’existence de cet ordre militaire. Aux yeux de tous, ces gardes du corps ne sont rien d’autres que des guerriers particulièrement bien entraînés.\n\nEn fait, les membres de la garde métallique sont des hommes et des femmes qui ont subi des enchantements inconnus de tous, sauf de quelques mages de la caste. Au cours d'un processus long et particulièrement douloureux - seul un candidat sur trente parvient à y survivre - le corps du sujet est imbibé de métal enchanté. Extérieurement, rien ne changera. En revanche, à la moindre coupure, il sera possible de découvrir une véritable structure métallique sous la peau. Fréquemment, les gardes métalliques suivent les enseignements des combattants et/ou des protecteurs en plus d’un entraînement qui leur est propre.\n\nLes gardes métalliques sont tous vêtus d’armures légères, mêlant habillement métal et cuir, et portent des armes diverses correspondant à leurs spécialisations.\n\nIls portent des masques de métal dissimulant entièrement leur visage. Tout cet équipement est d’excellente qualité et, bien évidemment, soigneusement enchanté. La plupart arborent aussi des tatouages que l’on prétend magiques et enchantés par les plus grands artisans de la caste. On dit qu'aucun de ces gardes n'aurait jamais été défait en combat singulier.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les casse-murailles",
+    "uuid": "48c17599-7d3b-44d9-bfd8-ee8ddf27f088",
+    "parent_id": "33ce2689-9caf-4b17-a34f-4fdd60c93676",
+    "description": "Détesté par les membres de la voie des architectes, l’ordre des casse-murailles regroupe essentiellement des adeptes de la voie des termites. Il est aussi possible d'y trouver quelques forgerons, des alchimistes, ainsi que quelques mécanistes.\n\nSi on y accepte des membres de toutes les voies - on raconte même que leurs rangs comptent certains architectes - ils acceptent uniquement des membres de la caste des artisans.\n\nLes casse-murailles louent leurs services afin de détruire les plus exceptionnelles fortifications existant à Kor. Ils sont capables de réduire en miettes les plus solides murs d’enceinte, les plus monumentales forteresses. Leurs extraordinaires talents font d’eux une cible de choix pour les armées auxquelles ils se trouvent opposés. Leur taux de mortalité est donc assez élevé. En revanche, au sein des armées qui les emploient, ces hommes et ces femmes jouissent d’un prestige immense et de privilèges sans pareils.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les incendiers",
+    "uuid": "a4314904-692c-4d8f-a224-0c8bb6484e1d",
+    "parent_id": "33ce2689-9caf-4b17-a34f-4fdd60c93676",
+    "description": "Proche de l’ordre des casse-murailles, l’ordre des incendiers est tout particulièrement recherché par les nations en guerre. Il est cependant important de se souvenir que cet ordre a aussi développé un aspect civil des plus importants.\n\nAu sein d’une armée, les membres de cet ordre sont destinés à mettre le feu aux machines de guerre ou aux fortifications adverses. Ils bâtissent aussi des pièges à feu destinés à brûler les soldats adverses. Ils disposent de machineries capables de projeter des langues de feu à plusieurs dizaines de mètres. Bien évidemment, ces machineries sont lourdes, peu mobiles et complexes, mais aussi parliculièrement dévastatrices. Les incendiers sont aussi connus pour leurs projectiles inflammables et explosifs destinés à être projetés par des machines ou lâchés du ciel par des dragons.\n\nAu sein des grandes villes de Kor, les incendiers occupent graduellement une nouvelle fonction plus utile encore. Ils mettent à profit tous les talents de la caste des artisans pour prévenir les incendies. C’est ainsi que les nouveaux quartiers d’Yris sont conçus par les architectes de la caste afin d'être beaux mais aussi afin de plus facilement pouvoir y prévenir les incendies. Les incendiers ont aussi conçu des chariots pouvant transporter de grandes quantités d’eau et permettant de la projeter sous pression. Ils ont aussi fabriqué des produits - pâtes et fumigènes - destinés à étouffer la combustion en étouffant les flammes.\n\nToutes les voies sont acceptées au sein de cet ordre, mais on y trouve essentiellement des termites, des architectes, des mécanistes, des alchimistes, ainsi que quelques artisans élémentaires.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    }
+  },
+  {
+    "name": "Les dissimulateurs",
+    "uuid": "15150772-1eef-4ba6-86bb-a93a42e81945",
+    "parent_id": "33ce2689-9caf-4b17-a34f-4fdd60c93676",
+    "description": "Cet ordre nouveau regroupe des artisans d’un genre assez particulier. À l’origine, il s’agissait d’un groupe de tatoueurs connus pour enchanter leurs créations. Ils étaient susceptibles de rendre les porteurs de leurs tatouages plus endurants, plus perceptifs ou plus habiles. Certains racontent même qu’ils auraient été capables de permettre la transformation en formes animales.\n\nRécemment, de nouveaux artisans ont été acceptés au sein de cet ordre. En premier lieu, on peut trouver les meurtrisseurs. Ces créateurs d'un genre nouveau savent mêler la chair et le métal en d’étranges et malsaines décorations. Ils percent les chairs pour y accrocher des anneaux, des pointes et des perles enchantées. On raconte que les plus habiles d’entre eux seraient susceptibles de pouvoir remplacer les yeux par des billes métalliques on des pierres précieuses permettant de voir des choses inaccessibles aux sens humains. On dit aussi qu'ils seraient capables de remplacer des organes internes par des substituts métalliques.\n\nEnfin, les sans-visages sont venus rejoindre les latoueurs et les meurtrisseurs. Ces artisans ne travaillent pas le corps même de leurs sujets, mais conçoivent des masques de tissu ou de métal. Ces créations dissimulent les traits de leurs porteurs et lui confèrent d’étranges pouvoirs.\n\nLes dissimulateurs doivent leur nom au fait qu'ils cherchent à cacher le corps d’origine de leurs sujets. On trouve parmi eux des forgerons, des orfèvres, des tisserands, des mécanistes et quelques artisans élémentaires. Les dissimulateurs, ainsi que ceux qui font appel à leurs services, sont pourchassés par l’Inquisition et par de nombreuses nations traditionalistes. Il est intéressant de noter que les Humanistes semblent détester les membres de cet ordre tout autant que l’Inquisition.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "members": [
+      {
+        "name": "Ishandra Kalina",
+        "title": "Dissimulateur"
+      }
+    ]
+  },
+
+  {
+    "name": "Caste des combattants",
+    "uuid": "4dd7728e-5672-49a3-9899-31c2a62c7df7",
+    "description": "La Caste des Combattants est organisée sur un principe relativement simple. Au sommet de la hiérarchie, on trouve le Grand Maître qui vit au cœur de la Citadelle d’Ankar. Il est le porte-parole de Kroryn et le garant des enseignements du Grand Dragon. Sa volonté a force de loi et il peut bannir de la caste tous ceux qu'il juge indignes d’en faire partie. Le Grand Maître est désigné par Kroryn en personne. Il peut aussi être défié par n'importe qui mais, même s’il perd, son adversaire devra tout de même recevoir l’aval du Grand Dragon avant d’aspirer au titre. Généralement, un Grand Maître quittant ses fonctions propose un successeur au Seigneur du Feu - et il est rare que ce dernier choisisse quelqu'un d’autre.\n\nLe Grand Maître se doit d’être un combattant accompli mais surtout, et c'est le plus important, d’être l’incarnation des valeurs enseignées par Kroryn. Car en tant que représentant de Kroryn, il a également le pouvoir de commander aux Dragons du Feu. Il est d’ailleurs protégé et conseillé par Kosnyr et Saryskar, deux vieux dragons.\n\nLe Grand Maître est entouré d’un conseil, constitué du Maître instructeur de chaque corps, qui lui rend compte de la situation dans chaque discipline. Il n’existe qu'un seul Maître instructeur par corps, qui doit forcément être un maître d'armes accompli (Statut 4 ou 5). Il est responsable de ses élèves et devra rendre des comptes si l'un d’eux enfreint les règles de la caste. C’est une responsabilité écrasante et il n’est donc pas étonnant que le Maître se montre extrêmement ferme avec ses étudiants.\n\nLes Maîtres instructeurs supervisent les activités de tous les instructeurs enseignant leur discipline. Bien que cette pratique soit officiellement réprouvée, tout Maître instructeur peut être défié. S'il perd, il cède sa place à celui qui l’a vaincu. Le Grand Maître peut toujours refuser une telle succession et maintenir le Maître instructeur à son poste, ou en désigner un autre.\n\nCeux qui maîtrisent à la perfection une catégorie d’armes ont le titre de “maître d’armes”, mais l'on précise toujours dans quel groupe. Par exemple, on parle du maître des épées, du maître des lances, etc. Quand on parle de ces individus de manière générale, on les regroupe sous le titre de “seigneurs maîtres”. Les seigneurs maîtres ne sont pas forcément des instructeurs travaillant directement au sein de la Caste des Combattants. Nombre d’entre eux sont des individus solitaires, mais il est de leur devoir d'enseigner leur art, que ce soit de manière individuelle ou comme instructeurs au sein de la caste. Il n'existe qu’un seul seigneur maître par catégorie d'armes. Ce titre ne s'obtient que par le défi. Si un seigneur maître invaincu vient à mourir, celui qui doit lui succéder est désigné par un tournoi dans la Grande Arène ou par la reconnaissance unanime de ses pairs.\n\nLes maîtres d’armes de Statut 4 constituent la masse des instructeurs. Cependant, il n’est pas nécessaire d’avoir atteint ce Statut pour enseigner. Un véritable maître d'armes aura le titre de maître tandis que ceux d'un Statut inférieur auront le titre d’instructeurs. Dans de nombreuses villes et communautés, en l'absence de seigneurs maîtres ou de maîtres instructeurs, les instructeurs des différents corps présents désignent parmi eux le responsable local.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Kroryn",
+        "title": "Grand Dragon du Feu"
+      },
+      {
+        "name": "Feyd Kar",
+        "title": "Grand Maître de la Caste des Combattants"
+      }
+    ]
+  },
+  {
+    "name": "Seigneurs maîtres",
+    "uuid": "a05a0895-d66b-4d8f-ab4c-2cd567663bd4",
+    "parent_id": "4dd7728e-5672-49a3-9899-31c2a62c7df7",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "members": [
+      {
+        "name": "Ostyr Kern",
+        "title": "Maître des faux de guerre"
+      },
+      {
+        "name": "Klauss Surval",
+        "title": "Maître des masses d'armes"
+      },
+      {
+        "name": "Simon Valir",
+        "title": "Maître des épées"
+      },
+      {
+        "name": "Filius Serln",
+        "title": "Maître des lances"
+      },
+      {
+        "name": "Filius Serln",
+        "title": "Maître des dagues"
+      },
+      {
+        "name": "Vosgard",
+        "title": "Maître des marteaux"
+      },
+      {
+        "name": "Kron Bréorne",
+        "title": "Maître des tridents"
+      },
+      {
+        "name": "Aldan le Preux",
+        "title": "Maître des fléaux"
+      },
+      {
+        "name": "Titus",
+        "title": "Maître de la lutte"
+      }
+    ]
+  },
+  {
+    "name": "Corps de métier",
+    "uuid": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "parent_id": "4dd7728e-5672-49a3-9899-31c2a62c7df7",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "Le corps des aventuriers",
+    "uuid": "a88f798a-68f8-4c29-a352-21ebfe856b50",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Les aventuriers sont des combattants solitaires qui voyagent de par le monde pour enseigner leur art du combat, mais aussi apprendre de nouvelles techniques qu'ils transmettent ensuite aux Maîtres de la caste. Ils sont les représentants de leur caste et se doivent d’en donner une image respectable. De plus en plus souvent, les aventuriers sont accompagnés de membres de la Caste des Voyageurs, avec lesquels ils ont de nombreux points communs - notamment avec les bardes de Szyl.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Anna Lestrov",
+        "title": "Maître-instructeur des aventuriers"
+      }
+    ]
+  },
+  {
+    "name": "Le corps des guerriers",
+    "uuid": "3a78bed7-15a9-4b42-a78a-80b76b4dcf83",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Le corps des guerriers réunit une grande majorité des fidèles de Kroryn — et de ceux, nombreux également, qui ne font aucun rapport entre la Caste des Combattants et le Grand Dragon du Feu… Ils se consacrent à l’art du combat sous toutes ses formes, sans privilégier un aspect plus qu’un autre, car leur seule préoccupation est de prouver leur héroïsme. La plupart d’entre eux ne conçoit effectivement la vie qu'une arme à la main, dans la fureur des combats. Ce corps est certainement le plus éclectique qui soit - les guerriers pouvant être tour à tour mercenaires, stratèges, chevaliers ou même gladiateurs.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Klauss Surval",
+        "title": "Maître-instructeur des guerriers"
+      }
+    ]
+  },
+  {
+    "name": "Le corps des duellistes",
+    "uuid": "1025bc36-e454-4fdf-839a-2a00ea084827",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Les duellistes ne vivent que pour se mesurer aux meilleurs combattants. Les conflits ne les intéressent pas. Ils vont de ville en ville pour parfaire leur maîtrise des armes et affronter les champions des différentes communautés. Les duellistes sont souvent considérés comme les théoriciens de l’art du combat, car ils mettent au point leurs propres techniques et manient des bottes, des gardes et des postures connues d’eux seuls. Nombre d’entre eux finissent leur carrière comme instructeurs.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Simon Valir",
+        "title": "Maître-instructeur des duellistes"
+      }
+    ]
+  },
+  {
+    "name": "Le corps des mercenaires",
+    "uuid": "210721d7-843a-403d-8187-e83bfa96c911",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Les mercenaires sont entraînés pour combattre dans n'importe quelles conditions. Comme les aventuriers, ils se doivent de faire honneur à leur caste, et ne prêtent donc leur bras à une cause que si elle est compatible avec les enseignements de Kroryn. Ce sont rarement des individus solitaires. Ils préfèrent nettement se réunir au sein de compagnies aux noms prestigieux. Le plus important pour un mercenaire est donc que sa compagnie soit réputée, la renommée individuelle n'ayant que peu d’importance. Les mercenaires sont plus redoutables en groupe.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Tylus Morg",
+        "title": "Maître-instructeur des mercenaires"
+      }
+    ]
+  },
+  {
+    "name": "Le corps des maîtres d'armes",
+    "uuid": "70bca73f-9cf2-4193-8067-534981303c05",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Les maîtres d’armes ne vivent que pour atteindre la perfection ultime du combat et du maniement d’une arme. La plupart des instructeurs de la caste sont issus de leurs rangs. Non seulement ils ne doivent plus faire qu’un avec leur arme mais, en plus, ils sont l’incarnation des enseignements de Kroryn. Les maîtres d’armes, plus que n'importe qui, se doivent d'être des exemples. On ne leur pardonne aucune faute et pour accéder au Statut le plus élevé de leur caste, îls sont jugés par Kroryn lui-même.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Filius Serln",
+        "title": "Maître-instructeur des maîtres d'armes"
+      }
+    ]
+  },
+  {
+    "name": "Le corps des stratèges",
+    "uuid": "01d83201-c55e-455d-92ce-d41e7fd513ad",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Théoriciens de l’art de la guerre, les stratèges forment un corps à part dans la Caste des Combattants. En effet, il n’est nul besoin d'être un redoutable combattant pour en faire partie, même si de nombreux guerriers prestigieux ont un jour choisi cette voie. Le stratège, comme son nom l'indique, s'occupe de tactique et de stratégie. Il se doit de connaître la mentalité des combattants et la manière dont ils voient les choses. C’est pour cela qu'avant d'étudier la stratégie, ces individus passent souvent quelques années au sein des autres corps.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Devon Styr",
+        "title": "Maître-instructeur des stratèges"
+      }
+    ]
+  },
+  {
+    "name": "Le corps des chevaliers",
+    "uuid": "179c254a-0557-4af7-b932-5676a66eb97a",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Le corps des chevaliers est considéré comme un corps d’élite qui n'accepte que ceux qui ont fait preuve d’une grande valeur. Il est régi par un code très strict, fondé avant tout sur le respect de la tradition et la défense des faibles. Les chevaliers sont sélectionnés par les instructeurs au sein des autres castes. On ne peut donc en faire partie que si l’on a été remarqué. Ce sont de redoutables cavaliers — qu’ils sotent montés sur des chevaux, comme dans la plupart des cas, ou sur les rares dragons qui offrent ce privilège à leurs Élus.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Vosgard",
+        "title": "Maître-instructeur des chevaliers"
+      }
+    ]
+  },
+  {
+    "name": "Le corps des gladiateurs",
+    "uuid": "5a866fa0-d481-4124-89bb-e9144a5a9760",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Les gladiateurs ont fait de l’art du combat un véritable spectacle. Peu attirés par les conflits et les guerres, ils préfèrent se mesurer à d’autres gladiateurs dans une arène, sous les acclamations de la foule. Certains considèrent ce corps comme le moins noble de la Caste des Combattants, mais nombre de gladiateurs sont réputés pour la maitrise dont il font preuve, ainsi que pour leur sens inné du commandement.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Kron Bréorne",
+        "title": "Maître-instructeur des gladiateurs"
+      }
+    ]
+  },
+  {
+    "name": "Le corps des paladins",
+    "uuid": "2d81e3c4-7909-409c-bb24-d3dc836f39ec",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Souvent issus du corps des chevaliers, les paladins sont passés maîtres dans l’art du combat, mais ce sont également des individus profondément mystiques. C’est le corps qui compte le moins de membres, mais chacun d’entre eux est respecté et honoré. Ils se fixent tous un objectif qui va déterminer leur ligne de conduite. Leur principale motivation est leur idéal, qui peut prendre différentes formes - bien qu’en règle générale, un paladin se montre toujours vertueux, franc, droit et honnête. Certains se consacrent entièrement à la lutte contre le FataLisme ou l'Humanisme, d’autres, pour des raisons souvent personnelles, choisissent de défendre la justice et de rétablir la vérité.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Aldan le Preux",
+        "title": "Maître-instructeur des paladins"
+      }
+    ]
+  },
+  {
+    "name": "Le corps des lutteurs",
+    "uuid": "3f743020-fdf7-4f77-b60f-13bc0b9ea631",
+    "parent_id": "94f4b204-8801-4651-8249-ec09c3296f0a",
+    "description": "Ce corps est très récent, mais l’art du pugilat et de la lutte fut de tous temps enseigné au sein des autres corps. Le luiteur est très proche du gladiateur, car son art est pour lui un spectacle, mais il s'en différencie par une hygiène de vie et un comportement des plus monastiques. Ce corps est exclusivement réservé aux hommes, mais quelques combattantes d’autres corps ont fait de la lutte leur spécialité, qui offre de nombreux avantages au corps à corps.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Titus",
+        "title": "Maître-instructeur des lutteurs"
+      }
+    ]
+  },
+  {
+    "name": "Le Conseil Rouge",
+    "uuid": "a40a8cf2-b07b-4aa4-95d8-fedca3f63d59",
+    "parent_id": "4dd7728e-5672-49a3-9899-31c2a62c7df7",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "Ordres",
+    "uuid": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "parent_id": "4dd7728e-5672-49a3-9899-31c2a62c7df7",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "Les hérauts",
+    "uuid": "50691160-2cc2-4080-bebd-5f92c0a118f9",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "Les Hérauts sont les messagers des Dragons de Feu - le Krosanty, le plus grand d’entre eux, est même l’émissaire personnel de Kroryn. Leur principale fonction est de colporter aux quatre coins du monde la parole du Dragon du Feu. Ils suivent un entraînement particulier qui mêle l’art du combat et la Magie du Feu. Ils ont tous un Lien avec un dragon. Le Krosanty actuel se nomme Yves Sancsand. On dit qu’il a été sauvé par Kroryn en personne des griffes d’un Dragon des Ombres. Élevé par les dragons, personne mieux que lui ne comprend leur mentalité.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "La milice de Kar",
+    "uuid": "8794f902-0157-432e-8822-400e72a17670",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "La milice dépend du corps des guerriers. Elle forme les soldats assurant la sécurité du territoire de Kar. La milice est dirigée par Isnoy Frisck, un individu peu recommandable et étroitement lié aux assassins et aux organisations illégales de Kar. La plupart des miliciens apprennent le maniement des lances. Seuls les officiers ont le droit de porter des épées.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "La garde écarlate",
+    "uuid": "912842d4-2a0e-4a31-b6aa-323e85d51383",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "La Garde Écarlate est un corps de fantassins d’élite qui apprennent à se battre tout en recevant l'enseignement des Mages de la Sphère du Feu. Cette troupe est installée à Ankar et ses baraquements jouxtent la Citadelle. Ces soldats gardent l’accès du Khurgal et de tous les lieux importants du royaume. Ce sont eux qui assurent la protection des hauts dignitaires. La garde est commandée directement par le Grand Maître de la Caste des Combattants, aidé en cela par le général Thar, un guerrier mage d’une grande puissance.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Feyd Kar",
+        "title": "Grand Maître de la Caste des Combattants"
+      },
+      {
+        "name": "Général Thar",
+        "title": "Commandeur de la garde écarlate"
+      }
+    ]
+  },
+  {
+    "name": "La légion du Khurgal",
+    "uuid": "746aa692-7382-4ff5-966e-061820afee94",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "Dépendant du corps des chevaliers, la Légion de Khurgal est composée d'unités de cavalerie lourde et de monteurs de dragons. Les baraquements de ces unités sont aménagés de l’autre côté du volcan de Khurgal. La légion est sous les ordres du Prince Shaveski, un redoutable cavalier chevauchant un très vieux Dragon de Feu nommé Segsyr.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Prince Shaveski",
+        "title": "Commandeur de la légion du Khurgal"
+      }
+    ]
+  },
+  {
+    "name": "La confrérie des maîtres",
+    "uuid": "6a7a9ece-b313-4e73-bf2f-9f736ce6c76e",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "Cette confrérie regroupe tous ceux qui ont atteint le Statut de Maîtres d’Armes de n’importe quelle discipline (Statuts 4 et 5). En cas de troubles graves, ils se réunissent et forment une troupe d’élite particulièrement redoutable. Le quartier général de la Confrérie est établi dans la Citadelle.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "La compagnie flamboyante",
+    "uuid": "c1f7645b-7ab1-4253-82d8-0403cb602202",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "Formée de duellistes, d’aventuriers, de mercenaires et de bien d’autres corps de la caste, cette compagnie est présente sur tout le territoire de Kor. Ceux qui en font partie peuvent se rendre dans les tavernes appartenant à la Compagnie, présentes dans presque toutes les villes, où ils peuvent bénéficier de nombreux avantages. De plus, il est fréquent que plusieurs membres du groupe voyagent et combattent ensemble. Il existe une incroyable solidarité entre les membres de la Compagnie. On dit que si le Royaume de Kar était menacé, la Compagnie Flamboyante pourrait réunir 6 000 soldats aguerris en seulement quelques jours.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "Les cavaliers du crépuscule",
+    "uuid": "4dd4ce6a-0a50-44f4-a287-e6305b7c31fd",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "Ce groupe de stratèges, mercenaires et magiciens loue ses services à tous ceux qui peuvent en payer le prix (généralement assez élevé). Leur chef n’est ni un combattant, ni un mage, mais un individu excellant dans l’art de la diplomatie, Exer Quar. Aux yeux de certains, les Cavaliers sont un peu trop préoccupés par le profit. Mais comme ils sont une importante source de revenus pour Kar, on les laisse en paix.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Exer Quar",
+        "title": "Chef des cavaliers du crépuscule"
+      }
+    ]
+  },
+  {
+    "name": "Le cimier rouge",
+    "uuid": "d237e881-697c-4124-8176-a6dcc649fefe",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "Autre groupement de chevaliers, la Confrérie du Cimier Rouge est réputée sur toutes les terres draconiques. Les exploits de ses membres sont innombrables et, contrairement aux Cavaliers du Crépuscule, le gain n’est pas leur principale motivation.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Vosgard",
+        "title": "Chef de la Confrérie du Cimier Rouge"
+      }
+    ]
+  },
+  {
+    "name": "Les bardes de Szyl",
+    "uuid": "71b8cc27-b311-4370-8b46-377c1e00f549",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "Les bardes de Szyl sont de plus en plus souvent associés aux membres de la Caste des Combattants. Les guerriers les plus impétueux ont recours à leurs services pour les aider à respecter les enseignements de Kroryn. Les bardes de Szyl ont été nommés amis du Royaume de Kar et il y aura toujours un combattant pour prendre leur défense en cas de problème.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "Les seigneurs ardents",
+    "uuid": "9a203ede-7234-4237-8bf6-581707487609",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "Il y a des lustres, certains Dragons de Feu se sont rebellés contre Kroryn. Pendant des millénaires, ils ont vécut isolés à l’autre bout du monde. Mais, depuis quelques siècles, ils sont revenus et ont créé le culte des Seigneurs Ardents, accueillant tous ceux qui rejettaient les enseignements de Kroryn. Des Dragons du Feu y enseignent les aspects les plus destructeurs de la Magie du Feu, mais aussi l'art du combat sous toutes ses formes - et sans aucune retenue. Ils se moquent des notions de vertu, d'honneur et de respect. Pour eux, seul compte le carnage. Les Seigneurs Ardents sont les ennemis jurés des autres Dragons du Feu et de tous ceux qui appartiennent à la Caste des Combattants.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Léna Longues-Tresses",
+        "title": "Chef des seigneurs ardents"
+      }
+    ]
+  },
+  {
+    "name": "Les assassins",
+    "uuid": "06c1c896-f150-4623-826a-1d857f26ce34",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "description": "Il existe trois principaux courants d’assassins : les Rédempteurs, les Ombres et la Confrérie du Sang de Glace.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "Les Rédempteurs",
+    "uuid": "6d555483-38b3-444c-aac0-22ab359c524d",
+    "parent_id": "06c1c896-f150-4623-826a-1d857f26ce34",
+    "description": "Les Rédempteurs, qui s'appuient sur les enseignements de Kroryn et qui ne comprennent pas que leur profession ne soit pas reconnue. Ce sont les assassins les plus répandus dans le Royaume de Kar. Dirigés par Filius Serln, ils luttent contre tous les ennemis du royaume et pensent que l’assassinat peut être pratiqué avec honneur.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "leaders": [
+      {
+        "name": "Filius Serln",
+        "title": "Chef des Rédempteurs"
+      }
+    ]
+  },
+  {
+    "name": "Les Ombres",
+    "uuid": "c7ea201e-ad8b-48b5-b086-30f6df45ad0d",
+    "parent_id": "06c1c896-f150-4623-826a-1d857f26ce34",
+    "description": "Les Ombres, qui sont tombés sous l'emprise des serviteurs de Kalimsshar, sont certainement les pires assassins qui soient. Rien ne les arrête. Il sont souvent dlirigés par des Dragons de l'Ombre ou d’autres agents de Kalimsshar.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "La Confrérie du Sang de Glace",
+    "uuid": "49468986-71a1-4a35-86d1-d9e62b598d19",
+    "parent_id": "06c1c896-f150-4623-826a-1d857f26ce34",
+    "description": "La Confrérie du Sang de Glace est manipulée en secret par les Seigneurs Ardents. Ces assassins louent leurs services au plus offrant et ne manifestent aucune fidélité envers quiconque — ils privilégient même les actions contre les serviteurs de Kroryn. Il existe très peu d’assassins de cet acabit sur le territoire de Kar, les rédempteurs veillant à ce qu'ils ne prolifèrent pas.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+
+  {
+    "name": "Caste des érudits",
+    "uuid": "cb614043-579a-4101-8162-6788e3f50f66",
+    "description": "La hiérarchie de la caste se décline selon deux échelles séparées : d’une part, les administrateurs, des érudits reconnus ayant choisi de consacrer une majorité de leur temps à la gestion de la caste et d’autre part, une hiérarchie fondée sur les connaissances des individus. Bon nombre d’érudits préfèrent éviter de perdre leur temps dans des affaires de gestion et laissent ceux qui le désirent postuler aux postes administratifs.\n\nLa hiérarchie administrative est assez stricte et facilement compréhensible, ses titres correspondant à des devoirs et pouvoirs. On y trouve des érudits de tous rangs qui disposent parfois d’un pouvoir important, malgré un Statut pas forcément élevé.\n\nLa hiérarchie honorifique est empirique, car il est impossible de quantifier le savoir d’un individu et donc de faire un classement qui donnerait sa place à chacun. Elle s’exerce à l’échelle régionale ou à l’intérieur des universités. C'est par voie de consensus que se désignent les postes de cette hiérarchie interne, les érudits n’admettant la supériorité d’un des leurs qu’en raison de ses travaux d'expert.\n\nLa hiérarchie administrative est celle qui impose des devoirs à ses membres et leur donne un pouvoir sur les autres érudits, alors que la seconde n'apporte aucun pouvoir, si ce n’est celui découlant du prestige.\n\nLes implantations de la caste sont aussi innombrables que le nombre d’universités, d’écoles et de bibliothèques de Kor. Toute région ou ville voit ses centres académiques se muer en autant de bureaux dévoués à la caste, vers lesquels un érudit de passage peut toujours se tourner. En théorie, toute université dispose d’un Légat, dépendant de la hiérarchie administrative et chargé des relations avec la caste, en répondant aux demandes des érudits locaux. Lorsque la structure en est dépourvue ou qu'il s’agit d’un modeste cercle d'étude, c’est alors la hiérarchie honorifique qui pallie la carence administrative avec plus ou moins d’efficacité. Le plus respecté des érudits se charge alors de la question. La caste des érudits est une grande utilisatrice des services des messagers de la caste des voyageurs, pourvoyant à l’acheminement des messages et rapports induits par la surveillance de l'administration.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "leaders": [
+      {
+        "name": "Ozyr",
+        "title": "Grand Dragon des Océans"
+      },
+      {
+        "name": "La Maîtresse",
+        "title": "Maîtresse de la Caste des Érudits"
+      }
+    ]
+  },
+  {
+    "name": "Le Collège des Cinq",
+    "uuid": "82502efc-5410-452b-9db4-0ae11d88a2f9",
+    "parent_id": "cb614043-579a-4101-8162-6788e3f50f66",
+    "description": "Maîtresse incontestée de la connaissance, Ozyr veille à ce que la caste qu’elle patronne remplisse consciencieusement ses devoirs. Prenant toutes les décisions d'importance, elle est entourée du Collège des Cinq, formé des Maîtres de Loges et de la Maîtresse de la caste. Ozyr distille subtilement les avis de ses prélats ysmiriens au sein de ses décisions personnelles, cherchant toujours à préserver son image maternelle auprès de la population et de ses érudits. Bien que régulièrement absente, de nombreux mages et dragons sont tout de même capables de lui transmettre des nouvelles urgentes.\n\nDétentrice de la parole d'Ozyr, la Maîtresse de la caste s'occupe d’appliquer les décisions du Dragon et consacre son temps au suivi des affaires courantes plus qu’à la prise de décision. Elle veille à l'efficacité des différents travaux des érudits et coordonne les Loges dans leurs œuvres. La Maîtresse de la caste est désignée à vie, choisie par Ozyr parmi les Maîtres de Loges, indifféremment hommes ou femmes.\n\nLes Maîtres de Loges sont des administrateurs hors pair que le cumul de compétences de gestion et de la connaissance approfondie de plusieurs sujets rend particulièrement indispensables. Ils dirigent les efforts de dizaines d'écoles et coordonnent des études impliquant parfois des centaines d’Érudits, en plus de leurs recherches personnelles. Chaque Maître de Loge est choisi par son prédécesseur, qui le désigne en en faisant son secrétaire particulier. Autour des Maîtres de Loges gravite une foule de secrétaires, scribes et conseillers, responsables des liaisons avec les Légats des universités, qui doivent sans exception déclarer leur rattachement à l’une des quatre Loges.\n\nLa caste se divise en quatre loges de tailles diverses, regroupant chacune plusieurs corps de métier. Partie intégrante de la hiérarchie administrative, elles chapeautent plusieurs ordres et rassemblent sous une même appellation tous les pratiquants d’un même domaine.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "leaders": [
+      {
+        "name": "Ozyr",
+        "title": "Grand Dragon des Océans"
+      },
+      {
+        "name": "Solana Gaïra",
+        "title": "Maîtresse de la Caste des Érudits"
+      }
+    ],
+    "members": [
+      {
+        "name": "Alakis Serball",
+        "title": "Maître de la Loge des Historiens"
+      },
+      {
+        "name": "Margeth d'Orande",
+        "title": "Maître de la Loge des Géographes"
+      },
+      {
+        "name": "Thyll le Galyr",
+        "title": "Maître de la Loge des Soigneurs"
+      },
+      {
+        "name": "Allham Quastih",
+        "title": "Maître de la Loge Théologique"
+      }
+    ]
+  },
+  {
+    "name": "La Loge des Géographes",
+    "uuid": "e5cd7b2e-754a-40cf-b1da-db1a445e3a8d",
+    "parent_id": "82502efc-5410-452b-9db4-0ae11d88a2f9",
+    "description": "La Loge des Géographes regroupe l’ordre des architectes, l’ordre des cartographes et l’ordre marin. La loge fonctionne de manière fractionnée. Les cartographes sillonnent le monde aux côtés des voyageurs et transmettent leurs écrits aux érudits, alors que les architectes pensent et créent de nouvelles formes ou de nouveaux plans qu’ils céderont aux artisans. L'ordre marin est une création récente, décidée par Ozyr afin de diriger les marins et de surveiller les navigateurs, détachés des voyageurs pour se placer sous la tutelle d'Ozyr.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Ordre des architectes",
+    "uuid": "c6467289-c5f3-4106-afa4-76fb289f61d1",
+    "parent_id": "e5cd7b2e-754a-40cf-b1da-db1a445e3a8d",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Ordre des cartographes",
+    "uuid": "ec796d69-a78d-481b-a7d5-7399664f2ea5",
+    "parent_id": "e5cd7b2e-754a-40cf-b1da-db1a445e3a8d",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Ordre marin",
+    "uuid": "926ff759-e1db-44f1-a1be-44362126f0cb",
+    "parent_id": "e5cd7b2e-754a-40cf-b1da-db1a445e3a8d",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "La Loge des Historiens",
+    "uuid": "1da5de41-adb0-4c20-b9bf-0425eb98ff6c",
+    "parent_id": "82502efc-5410-452b-9db4-0ae11d88a2f9",
+    "description": "La Loge des Historiens regroupe l’ordre des historiens, l’ordre des érudits et l’ordre des conteurs. Spécialisée dans l’étude du passé et la compilation du présent, la loge fonctionne en continuité : les historiens étudient et écrivent, les érudits conservent et les conteurs transmettent à la population.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Ordre des historiens",
+    "uuid": "14696ec2-4c28-469a-8070-211c08ffea57",
+    "parent_id": "1da5de41-adb0-4c20-b9bf-0425eb98ff6c",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Ordre des érudits",
+    "uuid": "bb963295-a1e3-4e91-a51b-1b095a2a25d4",
+    "parent_id": "1da5de41-adb0-4c20-b9bf-0425eb98ff6c",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Ordre des conteurs",
+    "uuid": "93aab030-1c22-41b2-8ec5-12201b7302fb",
+    "parent_id": "1da5de41-adb0-4c20-b9bf-0425eb98ff6c",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "La Loge des Soigneurs",
+    "uuid": "473992cd-0086-4e70-9e8b-978859abbb43",
+    "parent_id": "82502efc-5410-452b-9db4-0ae11d88a2f9",
+    "description": "La Loge des Soigneurs supervise toutes les professions liées au corps, à ses lois et à ses maux. Elle rassemble l'ordre des médecins, l’ordre des herboristes et l’ordre des scientifiques. Habitués à travailler de concert, les ordres de cette loge veillent à éviter tout isolement de leurs membres les uns par rapport aux autres.\n\nAlors que le médecin traite le patient et discerne le mal, l’herboriste tente de l’apaiser par ses préparations. L'ordre des scientifiques renforce depuis peu l'efficacité de cette loge en identifiant les raisons des maladies et les méthodes de soins s’y rapportant.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Ordre des médecins",
+    "uuid": "5a2df75d-4e34-4dcb-a274-3a915a917172",
+    "parent_id": "473992cd-0086-4e70-9e8b-978859abbb43",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Ordre des herboristes",
+    "uuid": "49f122f9-5fe7-4876-83d9-f81e5f072877",
+    "parent_id": "473992cd-0086-4e70-9e8b-978859abbb43",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Ordre des scientifiques",
+    "uuid": "a4efdf24-c99e-4b80-a090-1bb369b82d94",
+    "parent_id": "473992cd-0086-4e70-9e8b-978859abbb43",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "La Loge Théologique",
+    "uuid": "e89eb0e5-d359-427b-906f-8bf7390bf692",
+    "parent_id": "82502efc-5410-452b-9db4-0ae11d88a2f9",
+    "description": "La plus petite des quatre loges, la Loge Théologique est relativement unique en son genre dans la société draconique. Elle ne comprend aucun corps spécifique et ses membres sont assimilables à des religieux, dont le pouvoir moral sur le peuple est considérable. La Loge Théologique est la gardienne des temples d’Ozyr de par le monde et la responsable du temple d’Ozyr à Oforia. Ses membres sont chargés de relayer les volontés d’Ozyr, de coordonner les nombreuses prières et actions de foi jalonnant la vie des fidèles d’Ozyr et de maintenir les rapports avec les mages des océans. Ils sont aussi responsables des rapports avec les enfants d’Ozyr et du respect des rites religieux qui leur sont liés.\n\nOzyr étant le seul Dragon défendant l’existence d’une âme humaine, la Loge Théologique se veut la gardienne de la probité de cette âme, destinée à rejoindre Ozyr par-delà la mort. De ce fait, ses membres interviennent dans le maintien de la Loi du Secret et vouent une partie de leur existence à la protection spirituelle des hommes contre les théories hérétiques. Cette loge compte des individus de toutes origines et nombre de ses membres sont d'anciens Prodiges, protecteurs, paladins, érudits ou mages des océans qui ont choisi d’embrasser cette voie pour la sauvegarde de l'humanité.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Légats",
+    "uuid": "d09c43fd-46d5-46f6-a169-b4a33144350f",
+    "parent_id": "82502efc-5410-452b-9db4-0ae11d88a2f9",
+    "description": "Derniers maillons de la hiérarchie administrative, les Légats sont responsables de la liaison entre les différentes universités de Kor et la caste. Ils officient dans les cercles d’études et au sein de toutes les structures intellectuelles. Pour une part, ce sont des érudits qui ont choisi de consacrer une partie de leur temps à cette tâche ingrate mais indispensable, mais dans certains cas, c’est le chef de la structure locale qui devient Légat en raison de sa responsabilité envers ses cadets. Les Légats sont très nombreux et leurs pouvoirs sont surtout d'ordre structurel.\n\nToutefois, ils doivent se conformer à la hiérarchie honorifique qui les place parfois en situation de subordonnés. Cette organisation existe depuis des siècles et chacun a trouvé le moyen de la faire perdurer en respectant les volontés d'Ozyr et le prestige des plus méritants.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Principales carrières",
+    "uuid": "f1e0e8d2-0d3d-4aad-80c8-44bf00b5add0",
+    "parent_id": "cb614043-579a-4101-8162-6788e3f50f66",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les architectes",
+    "uuid": "50199cf2-d03d-4634-8de3-ff055f9a7cf7",
+    "parent_id": "f1e0e8d2-0d3d-4aad-80c8-44bf00b5add0",
+    "description": "Penseurs de la matière, les architectes d’Ozyr raisonnent en termes de conception et non de réalisation. Leurs travaux sont axés sur la recherche de la solidité, du renouvellement de l’esthétique et de la fonctionnalité. Ils laissent à leurs confrères de la caste des artisans le soin d'utiliser leurs plans et principes pour mener sur le terrain des chantiers bruyants et éreintants.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les cartographes",
+    "uuid": "adadddff-b94f-4188-9714-8686a7bea1eb",
+    "parent_id": "f1e0e8d2-0d3d-4aad-80c8-44bf00b5add0",
+    "description": "Probablement les plus mobiles et les plus intrépides des érudits, les cartographes se consacrent fidèlement au relevé du corps de l’Être Primordial. Relativement indifférents aux affaires politiques de leur caste, les cartographes travaillent depuis longtemps avec les explorateurs de Szyl, archivant consciencieusement les découvertes de ces derniers par des cartes sans cesse ajustées par les nouvelles générations.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les conteurs",
+    "uuid": "6cf28fc5-d75b-4b9a-82b2-1f68e73618e6",
+    "parent_id": "f1e0e8d2-0d3d-4aad-80c8-44bf00b5add0",
+    "description": "Très lié aux historiens, cet ordre se charge de relayer auprès des populations les facettes les plus communes de l’histoire. Ses membres sont autant des orateurs et des baladins que de véritables auteurs travaillant leurs textes pour en faire des outils de connaissances.\n\nCet ordre compte assez peu de membres, mais les plus célèbres auteurs de contes, légendes et pièces de théâtre sont issus de ses rangs. Une querelle grandissante les oppose aux ménestrels, qui les accusent de déformer certains faits pour des motifs obscurs. Leur nombre réduit les désavantages, mais leur prestige leur permet tout de même de conserver l'attention du peuple et des puissants, tonjours désireux de s'informer auprès des adeptes d’Ozyr.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les érudits",
+    "uuid": "7c95f30c-6106-4dfc-9afe-97edae91bca0",
+    "parent_id": "f1e0e8d2-0d3d-4aad-80c8-44bf00b5add0",
+    "description": "Véritables gardiens du savoir, les érudits se considèrent comme responsables de la transmission de la connaissance aux générations actuelles et futures. Leur travail consiste à veiller à ce que toute découverte soit soigneusement compilée par écrit et conservée à l’abri des outrages du temps dans des bibliothèques soignées. Parfois considérés comme des rats de bibliothèque, les érudits sont probablement l’ordre le plus mésestimé car, sans eux, la quête du savoir serait vaine. Leurs actions en font une progression au travers des âges et non une perpétuelle redécouverte. Compilateurs, scribes, enlumineurs ou rénovateurs, ils sont plus intéressés par la préservation du savoir que par son acquisition. Bien connus des aventuriers, les érudits constituent l’ordre le plus souvent rencontré par ces hommes et ces femmes en quête de vieux écrits ou de livres d’un autre âge. Il est bien rare qu’ils soient raillés par leurs visiteurs et les aventuriers de Kor ont pour coutume de défendre cet ordre utile à tous et, surtout, gardien des traces de leurs exploits.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les herboristes",
+    "uuid": "ac1868ab-b107-4cc2-8c1f-1c0c5d48839d",
+    "parent_id": "f1e0e8d2-0d3d-4aad-80c8-44bf00b5add0",
+    "description": "Dépositaires des secrets d’Heyra, les herboristes se sont rangés sous la bannière d’Ozyr, en raison de leur collaboration avec les médecins et de la rigueur des voies d’Ozyr dans la quête du savoir. Qu’ils soient alchimistes théoriciens cherchant à comprendre les principes fondamentaux des plantes ou patients observateurs des multiples espèces végétales, ce sont ceux qui répertorient l’usage des plantes par l’étude de leurs effets, plutôt que par une utilisation ancestrale, méthode préconisée par les Prodiges.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les historiens",
+    "uuid": "5a0285ae-0b9b-4f8c-9af3-974c524f8cf8",
+    "parent_id": "f1e0e8d2-0d3d-4aad-80c8-44bf00b5add0",
+    "description": "Soucieux de guider les hommes en leur permettant de bien connaître leur passé, les historiens sont aussi des philosophes.\n\nOutre la compilation des événements historiques, leur mission implique qu’ils en débattent longuement afin de bien cerner leur mise en place et de pouvoir offrir des garde-fous solides aux dirigeants du Royaume de Kor.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les médecins",
+    "uuid": "fb621ade-2ae7-4f92-be0b-7d459f0594f6",
+    "parent_id": "f1e0e8d2-0d3d-4aad-80c8-44bf00b5add0",
+    "description": "Bien que les érudits étudiant la médecine soient considérés par beaucoup comme de dangereux profanateurs de l’intégrité du corps offert par les Dragons, ils préfèrent se considérer comme les explorateurs d’un domaine indispensable à l'amélioration de la vie de tous. Dépositaires d’un savoir parfois douteux, les médecins sont presque tous obligés de recourir à un Aval draconique afin de pouvoir exercer leur art. Compatissants et dévoués, les médecins consacrent leur vie à l’application de la médecine plus qu’à sa recherche fondamentale, domaine dangereux qu’ils préfèrent laisser aux scientifiques.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les scientifiques",
+    "uuid": "4c782278-c57a-40e3-aece-aa7feb041c1b",
+    "parent_id": "f1e0e8d2-0d3d-4aad-80c8-44bf00b5add0",
+    "description": "Récemment créée à partir de la Loge des Soigneurs, la formation scientifique se consacre au délicat décryptage des secrets du monde, pour mieux en saisir les lois fondamentales. Flirtant perpétuellement avec l’Humanisme, ces érudits se font aussi les gardiens de connaissances dangereuses, se contraignant eux-mêmes à la Loi du Secret pour préserver l'humanité de dérives à l'égard des voies draconiques.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Organisations affiliées",
+    "uuid": "005a9492-8cc4-4f26-9a9c-d85594860eb6",
+    "parent_id": "cb614043-579a-4101-8162-6788e3f50f66",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les astronomes",
+    "uuid": "9679ba3d-fe9e-470b-a078-9235afe2a3d8",
+    "parent_id": "005a9492-8cc4-4f26-9a9c-d85594860eb6",
+    "description": "Descendants spirituels d’Alya, les astronomes forment une importante faction de chercheurs soutenus par Ozyr dans leur compréhension de la science des astres. Ils comptent parmi leur rang des historiens, des conteurs, des érudits et une forte proportion de scientifiques. Tous les membres de cette confrérie possèdent des Avals draconiques leur permettant d'utiliser des instruments proscrits afin de comprendre si une logique régule les phénomènes célestes. Soumis à la Loi du Secret, les astronomes n’ont pas le droit de divulguer leurs connaissances aux profanes et n’appliquent la Loi du Collège qu'entre eux. Cette confrérie est une faction malsaine, où les membres entretiennent une surveillance mutuelle d’ordre paranoïaque. En effet, à force de conserver leurs secrets, les astronomes en sont venus à douter de leurs confrères et à se suspecter mutuellement d’Humanisme. Si l’on trouve de nombreux Inspirés dans cette confrérie, il est bien rare que ces derniers se dévoilent, trop craintifs des réactions de leur hiérarchie à ce que beaucoup considèrent comme une possible affabulation. Si Alya a fièrement énoncé les Prophéties, ses descendants baignent dans un obscurantisme que l’on dit entretenu par Ozyr, en attendant qu’elle comprenne les secrets des Étoiles.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les juristes",
+    "uuid": "f05b05ba-fe20-4cf0-b9b5-43c37ef4bdfb",
+    "parent_id": "005a9492-8cc4-4f26-9a9c-d85594860eb6",
+    "description": "Présente à Oforia et en Ysmir, cette confrérie étend ses ramifications dans l’Empire de Solyr et dans toutes les grandes villes de l’est. Constituée d’érudits, d’historiens et de quelques protecteurs, elle offre à toutes les nations, malgré leur diversité de systèmes juridiques, um avis éclairé englobant les spécificités régionales. S'ils sont à Oforia et en Ysmir les officiants directs de la justice, les juristes sont ailleurs diversement intégrés. Conseillers, défenseurs ou consultants, ils sont pourtant toujours considérés par les nations civilisées comme les garants des lois. Les juristes disposent à Oforia d’une université célèbre : l'académie des tribunaux. C’est là que sont formés les juristes de nombre de nations et que sont examinées et consignées des lois de toutes provenances. Il est rare que les nations de Kor émettent une loi d’importance sans la faire examiner discrètement par les juristes, afin d'obtenir leur aval. Se considérant comme les gardiens de l’héritage des Édits draconiques, ils placent le respect de la loi au-dessus de toute considération. Bien que majoritairement issus de la caste des érudits, les juristes cherchent à conserver leur indépendance et tentent de concilier les différents courants draconiques pour étendre leurs conseils. Outre les juristes, l’académie des tribunaux forme des diplomates, éduque de nobles héritiers et dispose de sections entièrement réservées aux Maîtres de la caste des protecteurs désireux d’étoffer l’enseignement des lois dans leurs académies militaires. Il existe même une aile réservée aux Inquisiteurs, qui viennent régulièrement parfaire leurs connaissances des lois dans leur lutte contre l’hérésie et confronter leurs expériences à celles de leurs confrères.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+  {
+    "name": "Les navigateurs",
+    "uuid": "4e7cf0f5-e2e3-4f42-a782-9ec4b7fada0d",
+    "parent_id": "005a9492-8cc4-4f26-9a9c-d85594860eb6",
+    "description": "Les navigateurs constituent l’organisation la plus récente de celles patronnées par Ozyr. Elle rassemble les marins citoyens, qui représentent une faible proportion de la faction des marins, majoritairement formée de serviteurs. On trouve parmi eux les capitaines, les armateurs, les cartographes côtiers et les navigateurs proprement dits. Bon nombre d’entre eux sont des voyageurs contraints de suivre les enseignements d’Ozyr pour bénéficier de l'autorisation de circuler au long des côtes. À l’origine fidèles à Szyl et épris de liberté, ils ont dû se résigner à suivre les directives de l’ordre marin et accepter, en 1206 AdE, le joug du Dragon des Océans. Szyl dut se plier à cette interprétation des Édits draconiques, Ozyr arguant de sa suprématie sur les mers.\n\nToujours attachés à Szyl, les navigateurs vivent leur asservissement comme un mal nécessaire afin de pouvoir continuer à voguer. Nombre d’entre eux continuent, du fond de leur cœur, de suivre le Dragon des Vents, persuadés qu’il ne les pas abandonnés mais plutôt “détachés” pour leur propre sécurité et qu’il continue en secret à guider leur organisation. Quelques voyages sacrilèges en haute mer, mystérieusement favorisés par les vents, accréditent cette thèse, sans que la moindre preuve n’ait jamais été découverte par l’ordre marin.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    }
+  },
+
+  {
+    "name": "Caste des mages",
+    "uuid": "17ac17ae-dbca-4c29-bac7-cc881d58b70b",
+    "description": "Avant d'aborder la hiérarchie au sein de la Caste des Mages, il est important d'apporter quelques précisions sur le Statut d’expérience des mages. Le Statut de Grand Maître est le plus convoité. Il n'existe que trente-neuf Grands Maîtres en magie, quatre par Sphère et un dans chacune des trois Disciplines. Les quatre Grand Maîtres de chaque Sphère sont les suivants :\n* Le Grand Maître de la Sphère (qui maîtrise les trois Disciplines avec autant de brio)\n* Le Grand Maître Instinctif de la Sphère\n* Le Grand Maître Invocateur de la Sphère\n* Le Grand Maître Sorcier de la Sphère\n\nEnfin, les trois derniers Grands Maîtres ne sont pas spécialisés dans un Élément mais dans une Discipline. Ce sont le Grand Maître des Invocations, le Grand Maître de l’Instinct et le Grand maître de la Sorcellerie.\n\nLes Grands Maîtres peuvent perdre leur titre s'ils sont défiés par un candidat qui les surpasse au cours de duels magiques, impressionnants, mais très rarement dangereux. Généralement, ces duels ont lieu à l’écart de toute habitation et sont arbitrés par les autres Grands Maîtres. Il ne s’agit pas de vaincre son adversaire, mais de montrer qu'on possède une plus grande maîtrise de la magie.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "leaders": [
+      {
+        "name": "Nenya",
+        "title": "Grand Dragon des Rêves"
+      },
+      {
+        "name": "Nathiaël",
+        "title": "Seigneur Chimère"
+      }
+    ]
+  },
+  {
+    "name": "Principales carrières",
+    "uuid": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "parent_id": "17ac17ae-dbca-4c29-bac7-cc881d58b70b",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les mages de combat",
+    "uuid": "1a082568-8c37-439c-9222-02fad7c2bf75",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Spécialisés dans la magie instinclive, les mages de combat sont souvent des fidèles de Kroryn, de Brome ou de Kezyr. C’est une carrière attirant souvent les plus jeunes au grand désespoir de Nenya.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les spécialistes élémentaires",
+    "uuid": "83730fee-f6b5-477e-8e77-ded2bc58f2c8",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Les spécialistes élémentaires se consacrent à l'étude d’une seule Sphère. Ce sont les magiciens les plus répandus, car leur maîtrise de la Sphère est souvent source de grands pouvoirs.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les invocateurs",
+    "uuid": "58339903-c30a-4674-bcf6-04e0f99097de",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Ceux qui choisissent de se spécialiser dans la magie invocatoire suivent cette carrière. Ils maîtrisent la technique des Portails et tentent d'apporter une réponse sur l’existence ou non des autres mondes. De nombreux mages de Nenya et de Szyl sont attirés par cette profession.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les guérisseurs",
+    "uuid": "8eed1d7f-baea-4eba-99c2-cf3a8f3985f1",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Ces spécialistes de la Sorcellerie se consacrent à l’étude de l'utilisation de la magie sur les organismes. Bien qu'officiellement on parle de guérisseurs, il existe des écoles où les étudiants n’ont pas d’objectifs aussi nobles. On trouve donc des mages de toutes tendances dans cette carrière.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les généralistes",
+    "uuid": "a00390f3-d8bb-445f-8aad-c889fa9d4308",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Nombreux sont les magiciens, toutes tendances confondues, qui suivent cette carrière. Ils étudient toutes les formes de magie sans en privilégier aucune.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les enchanteurs",
+    "uuid": "f89a445e-ddfa-4bd8-92c2-f6ba2baa8c1b",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Les mages de Kezyr sont les plus nombreux à s'intéresser à cette carrière. Mélangeant l’art de l’artisanat à celui de la magie, les enchanteurs sont particulièrement appréciés par l'ensemble de la population.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les ingénieurs",
+    "uuid": "1d7ec086-63a3-4f64-ad0d-e05313bfc677",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Rares sont ceux qui osent suivre cette carrière. On y flirte dangereusement avec l’Humanisme. Pourtant, certains cherchent à démontrer que le mariage de la magie avec une certaine technologie est possible sans être une hérésie. Les ingénieurs sont surveillés mais autorisés à poursuivre leurs recherches. Les fidèles de Khy et de Kezyr sont les plus nombreux dans ce métier.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les rêveurs",
+    "uuid": "b1a5484e-2097-4902-aa19-4ad19ef06ce7",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Ces magiciens apprennent toutes les techniques du rêve. La plupart souhaitent être aussi fidèles que possible aux enseignements de Nenya. C’est un métier difficile qui demande une prédisposition que tous n'ont pas. Les rêveurs sont souvent des gens qui passent le plus clair de leur temps la tête dans les nuages.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les fidèles de Chimère",
+    "uuid": "fedf1d65-5211-46d9-9236-472c37e8abee",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Les mages d’Heyra, de Szyl et de Nenya sont nombreux à suivre cette carrière - on raconte aussi qu'elle intéresse certains adeptes de Kalimsshar.\n\nLes étudiants y apprennent toutes les techniques visant à embellir toute chose, que ce soit un objet, un chant, de la musique, un paysage ou un être. De nombreux mages poètes, peintres ou sculpteurs sont issus de celle carrière. C'est une profession totalement opposée à celle des mages combattants.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les spécialistes des rituels",
+    "uuid": "d04bfc97-182c-453c-895f-5fdf38d8fc4d",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Les mages qui suivent cette carrière se spécialisent dans les sortilèges les plus complexes demandant beaucoup de temps et une grande coopération. Ce n’est pas une profession où l'on voyage beaucoup et elle ne s'adresse donc pas à des aventuriers.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les Gardiens",
+    "uuid": "ec7983cb-0ee7-4ecf-8661-3fc295af5c84",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Cette carrière est généralement suivie par les mages de Nenya, d’Heyra et même quelque fois par ceux de Kalimsshar. Ils n’ont aucune spécialité mais apprennent toutes les techniques permettant de détecter la magie et de savoir ce que pense un individu. En plus d'être magiciens, les Gardiens sont psychologues et connaissent parfaitement le comportement humain.\n\nCette carrière compte très peu de membres, mais les mages de toutes les Sphères collaborent pour enseigner aux nouvelles recrues leurs techniques.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les savants du Grand Art",
+    "uuid": "855c3e97-77ff-4b19-beed-d69fcda21e58",
+    "parent_id": "e8a837e5-c25c-47ba-82e9-4172a6228419",
+    "description": "Ceux qui suivent cette carrière se consacrent exclusivement à la recherche de toutes les connaissances magiques. Ils passent beaucoup de temps à compulser des ouvrages, mais aussi à voyager aux quatre coins du monde pour en apprendre d'avantage. Nombre de ces magiciens ont disparu aux confins du monde ou ont trouvé la mort au cours de leurs voyages. D'autres se sont laissés séduire par lhérésie Humaniste, le Fatalisme ou par des doctrines encore plus efroyables. C'est donc une carrière dangereuse mais terriblement passionnante.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Conseil des Maîtres Élémentalistes",
+    "uuid": "d2220626-054a-44f7-8eb6-31b57c580725",
+    "parent_id": "17ac17ae-dbca-4c29-bac7-cc881d58b70b",
+    "description": "Au sommet de la hiérarchie, on trouve le Seigneur Chimère et les Maîtres Élémentalistes. Cependant, ils interviennent très rarement dans les affaires de la caste, leur prérogatives étant beaucoup plus générales. À l’instar du Conseil des Sages, ils s'occupent plus de la cohésion de l’ensemble que des détails de chaque institution.\n\nLe Seigneur Chimère est désigné directement par Nenya qui indique son choix en visitant ses mages par le rêve. Il s’agit généralement du Grand Maître des Rêves mais il est aussi possible que Nenya désigne un individu de Statut inférieur.\n\nLe Conseil des Maîtres Élémentalistes est constitué des spécialistes de chaque discipline au sein de chaque Sphère - Grand Maître Instinctif, Grand Maître Invocateur et Grand Maître Sorcier. Ils sont les conseillers privilégiés du Seigneur Chimère et ont pour principal objectif d'éviter des dérapages dans telle ou telle Sphère de Magie.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Conseil des Grands Maîtres",
+    "uuid": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "parent_id": "17ac17ae-dbca-4c29-bac7-cc881d58b70b",
+    "description": "La véritable hiérarchie de la Caste des Mages est dominée par le Conseil des Grands Maîtres. Ces derniers, maîtrisant chaque discipline de leur élément, et reconnus pour leurs grandes prouesses magiques mais aussi leur sagesse, s'occupent de toutes les affaires concernant leur domaine et les relations entre les différentes écoles. Ce sont généralement des personnes assez âgées, liées à un dragon. Ce conseil dirige directement l’Université des Huit Sphères, constituée de trois écoles, chacune d'elles spécialisée dans une discipline mais dans aucune Sphère en particulier.\n\nLe Conseil est constitué de onze membres, les Grands Maîtres de chaque Sphère - sauf celle de l'Ombre - et les Grands Maîtres des trois disciplines.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "members": [
+      {
+        "name": "Alde Baran",
+        "title": "Grand Maître du Feu"
+      },
+      {
+        "name": "Grand Maître des Cités",
+        "title": "Grand Maître des Cités"
+      },
+      {
+        "name": "Oknar Kryll",
+        "title": "Grand Maître du Métal"
+      },
+      {
+        "name": "Loreena Asselya",
+        "title": "Grande Maîtresse de la Nature"
+      },
+      {
+        "name": "Pya Tellyan",
+        "title": "Grande Maîtresse des Océans"
+      },
+      {
+        "name": "Courash Kell",
+        "title": "Grand Maître de la Pierre"
+      },
+      {
+        "name": "Cymballine",
+        "title": "Grande Maîtresse des Rêves"
+      },
+      {
+        "name": "Tadd Lenkell",
+        "title": "Grand Maître des Vents"
+      },
+      {
+        "name": "Kalisshya Assandreck",
+        "title": "Grande Maîtresse de l'Ombre"
+      },
+      {
+        "name": "Soder Fendrick",
+        "title": "Grand Maître des Invocations"
+      },
+      {
+        "name": "Aldur le Gris",
+        "title": "Grand Maître de l'instinct"
+      },
+      {
+        "name": "Agatha Sadryk",
+        "title": "Grande Maîtresse de la Sorcellerie"
+      }
+    ]
+  },
+  {
+    "name": "Directoire des Universités des Huit Sphères",
+    "uuid": "9fcae6cd-8ca9-4951-bc42-48e9378cc4e9",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Universités des Huit Castes",
+    "uuid": "b639eef3-ea67-4271-a51f-4325e469951f",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Sanctuaires",
+    "uuid": "5c35476b-9682-423e-af2a-505094637427",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Foyers",
+    "uuid": "3803ab82-e82c-4466-9819-7ea429210993",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Nids",
+    "uuid": "4d8e5298-d187-4860-bad1-7088de50feb9",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Citadines",
+    "uuid": "13c476b2-b9c8-4994-81dd-f973243eb602",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Grandes Forges",
+    "uuid": "228498fd-70a1-4781-9bcd-9af568a6b9f2",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Refuges",
+    "uuid": "5e0c19a2-6b03-4ac1-881f-6928df556dbb",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Sources",
+    "uuid": "f961f15b-cb33-47d6-ba18-e168809c7e09",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Fosses",
+    "uuid": "01b0f5f6-75e0-41aa-94b2-6f17eb9026dc",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Directoire des Dômes",
+    "uuid": "a3a89c61-c026-4d16-b409-034d692c34a1",
+    "parent_id": "2461cf96-b528-456d-90f6-8e2c140e20ae",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Milices et organisations",
+    "uuid": "64818b0f-afc7-4f83-b310-144ab0291b91",
+    "parent_id": "17ac17ae-dbca-4c29-bac7-cc881d58b70b",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les guildes de mages",
+    "uuid": "3a29182b-cd82-4d3f-8ca1-cba470a64397",
+    "parent_id": "64818b0f-afc7-4f83-b310-144ab0291b91",
+    "description": "Il existe de nombreuses guildes de magiciens qui fonctionnent en parallèle de la hiérarchie établie de la caste. Ces guildes - qui peuvent aussi s’appeler confréries, compagnies, etc. - ont des objecfs variables. Les plus répandues ont avant tout une fonction économique. Les guildes autorisent une grande autonomie à leurs membres et sont souvent spécialisées dans un domaine très particulier de la magie. Ainsi trouve-t-on une guilde des mages de guerre, une guilde des maîtres bâtisseurs, etc.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les corps combattants",
+    "uuid": "d3d36ffd-113e-4a31-8cba-2cbedda7276c",
+    "parent_id": "64818b0f-afc7-4f83-b310-144ab0291b91",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Le Corps des Mages",
+    "uuid": "834a790d-03f7-4634-a792-4ce5f8e8c30e",
+    "parent_id": "d3d36ffd-113e-4a31-8cba-2cbedda7276c",
+    "description": "Le Corps des Mages est au cœur du système défensif de la ville d'Onyr. Il est constitué de volontaires issus de toutes les écoles qui se relaient pour surveiller la ville et y renforcer les défenses magiques. En cas de crise grave, le Corps des Mages est organisé en petites escouades de neufs individus dont le rôle est de soutenir les unités engagées en combat. Ce corps est dirigé par Ammana Letov, une mage combattante de renom.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "leaders": [
+      {
+        "name": "Ammana Letov",
+        "title": "Commandeur du Corps des Mages"
+      }
+    ]
+  },
+  {
+    "name": "La milice d'Onyr",
+    "uuid": "dd2d889a-5c13-4c5b-8118-aaeefa15a72d",
+    "parent_id": "d3d36ffd-113e-4a31-8cba-2cbedda7276c",
+    "description": "La milice d’Onyr est formée par des membres de la Caste des Protecteurs, ce qui a d’ailleurs été très mal pris par les combattants. Les membres de la milice sont en majorité des protecteurs, avec des connaissances magiques très limitées. En revanche, les capitaines sont souvent des magiciens mineurs, doublés de protecteurs de Brorne ou de guerriers de Kroryn. La milice est dirigée par le Capitaine Zenra, un homme d’une quarantaine d'années, protecteur et magicien de la sphère de la Pierre.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "leaders": [
+      {
+        "name": "Capitaine Zenra",
+        "title": "Capitaine de la milice d'Onyr"
+      }
+    ]
+  },
+  {
+    "name": "La Milice Rouge",
+    "uuid": "028698b5-4821-480e-b279-fd6e2d18290c",
+    "parent_id": "d3d36ffd-113e-4a31-8cba-2cbedda7276c",
+    "description": "La Milice Rouge fut créée à Onyr par la Caste des Combattants pour surveiller les bâtiments liés à Kroryn. Les fidèles de Kroryn n'ayant pas du tout apprécié d’être complètement écartés des défenses de la ville, ils ont fondé cette milice dont ils louent les services à tous ceux qui le souhaitent. La milice rouge ne peut intervenir sur la voie publique et n’a pas le droit de s'opposer à une intervention de la milice d’Onyr, même dans un secteur qu’elle est payée pour protéger. Bizarrement, il existe très peu de tensions entre les membres des deux organismes qui ont plutôt tendance à coopérer et non à se mettre des bâtons dans les roues. Le Capitaine de la milice rouge se nomme Omrack le Flamboyant.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "leaders": [
+      {
+        "name": "Omrack le Flamboyant",
+        "title": "Capitaine de la Milice Rouge"
+      }
+    ]
+  },
+  {
+    "name": "Les Cavaliers de l'Aube",
+    "uuid": "7bbe39ea-46d4-4041-a550-4181f7d38558",
+    "parent_id": "d3d36ffd-113e-4a31-8cba-2cbedda7276c",
+    "description": "Ce groupe est constitué de monteurs de dragons. Ses membres sont mages, guerriers ou protecteurs et sont tous liés à leur monture. Ils constituent la troupe la plus puissante d’Onyr et ne sont mobilisés qu’en dernier recours. Les Cavaliers sont dirigés par Sutryl Lame-Rouge, un ancien Maître de la Caste des Combattants qui est aujourd’hui Mage de la Sphère du Feu.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "leaders": [
+      {
+        "name": "Sutry Lame-Rouge",
+        "title": "Commandeur des Cavaliers de l'Aube"
+      }
+    ]
+  },
+  {
+    "name": "Les mages de l'Ombre",
+    "uuid": "dfd42ba2-8e1f-4801-87d9-272b9b7ba126",
+    "parent_id": "64818b0f-afc7-4f83-b310-144ab0291b91",
+    "description": "Les mages de Kalimsshar sont présents à Onyr, mais ils sont scindés en plusieurs organisations distinctes dont les objectifs sont rarement identiques.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "La Confrérie Noire",
+    "uuid": "4c0abb1a-3929-4436-b225-928e6c46c410",
+    "parent_id": "dfd42ba2-8e1f-4801-87d9-272b9b7ba126",
+    "description": "La Confrérie Noire, dirigée par Sulik Osis, a pour but d’aider à préserver Onyr et l'équilibre des différentes magies, par tous les moyens. Ses membres sont le plus souvent tolérés au sein des conseils de magiciens. Ils leur arrive souvent de collaborer aux affaires de la ville. Ils donnent des cours à certains mages, dans le plus grand secret. On dit que les autorités inciteraient indirectement les membres de cet ordre à se charger des basses besognes, comme l'élimination d’un groupe de fanatiques.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "leaders": [
+      {
+        "name": "Sulik Osis",
+        "title": "Chef de la Confrérie Noire"
+      }
+    ]
+  },
+  {
+    "name": "L'Ordre Fataliste",
+    "uuid": "2532184b-1e8b-43be-917e-f18ab42652fe",
+    "parent_id": "dfd42ba2-8e1f-4801-87d9-272b9b7ba126",
+    "description": "L'Ordre Fataliste utilise toutes les ressources d'Onyr pour satisfaire ses propres ambitions. Il se fiche des autres mages. Anna Gauval, à la tête de cette organisation, ne recule devant rien pour que triomphe la Sphère de l'Ombre. Elle complote contre les institutions établies à chaque fois qu’elle le peut, espérant un jour imposer sa Sphère comme magie dominante de l'humanité.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les Guetteurs de l'Ombre",
+    "uuid": "79eb6339-8e06-4666-a59e-1636242893be",
+    "parent_id": "dfd42ba2-8e1f-4801-87d9-272b9b7ba126",
+    "description": "Les Guetteurs de l'Ombre sont des observateurs tout à fait neutres qui servent directement Kalimsshar et ses séides. Ils se cachent souvent sous des identités respectables mais sont au cœur des réseaux d'agents du Maître de la Fatalité. Leur chef est un certain Osval Loveck, un Grand Mage de la Neuvième Sphère. Publiquement, il assume l'identité d’un modeste maître d'études en Sorcellerie.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "leaders": [
+      {
+        "name": "Osval Loveck",
+        "title": "Chef des Guetteurs de l'Ombre"
+      }
+    ]
+  },
+  {
+    "name": "Les mages assassins",
+    "uuid": "59e6c0fb-4405-4cef-9e40-0afb404ca023",
+    "parent_id": "dfd42ba2-8e1f-4801-87d9-272b9b7ba126",
+    "description": "Cette organisation, qui n’existe pas officiellement, est constituée de mages venus de tous les horizons et qui mettent leurs talents au service du plus offrant. Ils utilisent la magie pour éliminer leurs cibles. Aucun d'entre eux n’est lié à un dragon. Ils n’ont pas de quartier général mais des établissements écrans où ils négocient leurs contrats. On dit que le chef des magiciens assassins serait un magicien de Khy. On ignore son nom.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+  {
+    "name": "Les Sorciers Obscurs",
+    "uuid": "7e1698ca-b2c4-4e99-9491-eeecea7928b2",
+    "parent_id": "dfd42ba2-8e1f-4801-87d9-272b9b7ba126",
+    "description": "Tous les Sorciers Obscurs n’ont pas été éliminés lors du conflit entre mages qui ébranla la cité il y a tant de siècles. Ceux qui ont survécu se sont cachés et sont restés pendant longtemps dans la plus parfaite clandestinité. Mais depuis quelques temps, ils se sont réorganisés. Actuellement, ils essaient de ne jamais faire parler d'eux, se contentant de reconstituer leur ordre. Leurs pires ennemis sont les magiciens de Nenya, ceux d’Heyra et ceux de Kalimsshar. Ils suivent les enseignements de la bête immonde qui sommeille encore aujourd’hui dans les Mondes des Rêves et des Cauchemars. Bien que cette chose ait été vaincue, ses fragments fournissent encore à ces magiciens l'énergie magique dont ils ont besoin.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    }
+  },
+
+  {
+    "name": "Caste des Prodiges",
+    "uuid": "5b088064-913d-429e-b1da-0f3ce535f65e",
+    "description": "L‘organisation de la caste des Prodiges est assez simple et particulièrement rigide.\n\nElle à très peu varié en plusieurs siècles d’existence. Contrairement aux autres castes, il n'existe pas de Grands Maîtres chez les Prodiges, mais tous peuvent prétendre au cinquième Statut. De plus, les postes de responsabilité dépendent rarement du Statut atteint au sein de la caste. Enfin, signalons que normalement, la Caste des Prodiges ne s'occupe pas des affaires des communautés d'Heyra. Ce sont les dragons qui règnent sur les villes et villages du domaine de la nature. L'avis du Grand Ordre est toujours pris en compte par les dragons et de nombreux Prodiges sont les conseillers privilégiés des ailés.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "leaders": [
+      {
+        "name": "Heyra",
+        "title": "Grand Dragon de la Nature"
+      }
+    ]
+  },
+  {
+    "name": "Le Grand Ordre",
+    "uuid": "397d0d16-cb62-4b7f-9cc3-4f71b6dd0374",
+    "parent_id": "5b088064-913d-429e-b1da-0f3ce535f65e",
+    "description": "La caste est dirigée par le Grand Ordre, constitué des Prodiges les plus sages, issus de toutes les voies suivies par les fidèles d’Heyra.\n\nLe Grand Ordre compte généralement vingt-quatre membres, mais ce chiffre peut varter. Il comprend au minimum un représentant de chaque voie et quelques personnages très particuliers :\n\n**Le Grand Prodige :** cet individu est désigné par le Grand Ordre. Il est généralement considéré comme le plus sage de tous. Très souvent, le Grand Prodige est lié directement à Heyra.\n\n**Le Garant des Lois :** ce Prodige est chargé de rappeler les Interdits ainsi que les Lois Draconiques et d'en garantir l’application. Le Garant des Lois dirige directement les Saints du Grand Ordre.\n\n**Le Médiateur Suprême :** arbitre de toutes les querelles, cet individu est considéré comme le juge le plus éclairé. On peut faire appel à lui dans n’importe quelle situation et son jugement est sans appel. Il est à la tête des médiateurs.\n\n**Le Garant du Lien :** il est le principal maillon entre les fidèles et les dragons d’Heyra. Il passe son temps entre les deux communautés pour éviter tout malentendu et permettre à l’ensemble des enfants d’Heyra de vivre en harmonie.\n\n**Les patriarches du Grand Ordre :** ces vieux sages ne font pas partie du Grand Ordre mais sont souvent consultés pour leurs connaissances et leur grande sagesse.\n\nLe Grand Ordre est la seule autorité suprême de la caste.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "members": [
+      {
+        "name": "Heised Lô",
+        "title": "Grand Prodige"
+      },
+      {
+        "name": "Iris Synomed",
+        "title": "Garante des Lois"
+      },
+      {
+        "name": "Velya Krorn",
+        "title": "Médiatrice Suprême"
+      },
+      {
+        "name": "Omar Pernt",
+        "title": "Garant du Lien"
+      }
+    ]
+  },
+  {
+    "name": "Les Vénérables",
+    "uuid": "1f146ba4-0a66-4b70-8af7-085d130c65ab",
+    "parent_id": "5b088064-913d-429e-b1da-0f3ce535f65e",
+    "description": "Généralement, un Vénérable est désigné pour protéger un domaine particulier de la nature. Ainsi, on peut trouver une de ces personnes dans chaque forêt, dans chaque groupe de montagnes, dans chaque marais, dans chaque plaine, etc. Ils vivent en communion avec la nature et sont chargés de protéger leur domaine de toute dégradation majeure. Les Vénérables sont souvent des ermites qui ont un lien privilégié avec tout ce qui les entoure. On dit qu’ils peuvent sentir toute perturbation sur le domaine, quelle que soit la distance. Presque tous les Vénérables sont liés à un Dragon de la Nature. Mais, dans certains cas, comme ceux qui vivent dans les montagnes, ils sont liés à un dragon correspondant à leur environnement. Les Vénérables des montagnes sont souvent liés à des dragons de Brorne.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les Hauts Prodiges",
+    "uuid": "9689cdb4-a6a6-4860-b464-3476143915e9",
+    "parent_id": "5b088064-913d-429e-b1da-0f3ce535f65e",
+    "description": "Les Hauts Prodiges dirigent les temples et les monastères dédiés à Heyra. Bien qu’ils soient indépendants du Grand Ordre, ils sont en relation constante avec cette autorité suprême.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les Fils du Secret",
+    "uuid": "44a2f207-4af1-47a9-b7d9-aa49f3790ad4",
+    "parent_id": "5b088064-913d-429e-b1da-0f3ce535f65e",
+    "description": "Les Fils du Secret sont les instructeurs de la Caste des Prodiges. Ils exercent leur activité au sein des temples et des monastères. C’est eux qui décident si tel ou tel candidat sera accepté au sein de la caste. Dans chaque monastère, on trouve généralement un Fils du Secret par voie.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les Maîtres du Secret",
+    "uuid": "3fd14e06-7be8-4d62-8d82-cebc2dfef6eb",
+    "parent_id": "5b088064-913d-429e-b1da-0f3ce535f65e",
+    "description": "Certains Prodiges ont atteint la maîtrise totale dans un domaine très précis. Ces Maîtres vivent le plus souvent en ermites dans des endroits retirés du monde. La plupart des Fils du Secret entreprennent souvent une quête pour recevoir l’enseignement d’un maître.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Le Pèlerin",
+    "uuid": "b5792267-265b-4183-8639-e3e6057eb752",
+    "parent_id": "5b088064-913d-429e-b1da-0f3ce535f65e",
+    "description": "Le Pèlerin n’est pas un Prodige mais plutôt une entité composée de la mémoire des plus grands serviteurs d’Heyra et pourvue d'une partie de la puissance du Grand Dragon de la Nature. On dit que le Pèlerin a été engendré par la nature elle-même. C'est un être énigmatique qui apparaît sous des formes et des traits divers. Humain ou animal, mâle ou femelle, il parcourt le monde pour protéger toute créature vivante. On le considère plus comme une force élémentaire que comme un individu. Bien qu’il n’intervienne que très rarement dans les affaires des communautés, sa parole a force de loi et personne ne la discute.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Voies",
+    "uuid": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "parent_id": "5b088064-913d-429e-b1da-0f3ce535f65e",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les gardiens",
+    "uuid": "c621b1af-8de4-4651-8c76-871254e9579d",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "Les gardiens sont les combattants de la Caste des Prodiges. Ils maîtrisent toutes les formes de combat visant à neutraliser un adversaire, mais sont aussi capables de tuer avec autant de savoir faire qu'un guerrier. Ils sont célèbres pour leur redoutable adresse avec des armes doubles. Protecteurs des lieux saints, des temples et des monastères, ce sont pour la plupart des individus d’un calme olympien.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les tuteurs",
+    "uuid": "11b01e7f-55db-4ae2-80c3-ed58c8136061",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "Les tuteurs sont des Prodiges beaucoup moins spécialisés que la plupart des autres membres de la caste. Ce sont des voyageurs qui tentent d'apporter la sagesse d’Heyra aux communautés qu’il visitent. Leur rôle est de partager leur savoir avec les futurs Prodiges. Au début de leur carrière, ils voyagent beaucoup pour apprendre et, dans certains cas, pour trouver un Maître des Secrets. Puis, quand ils se sentent suffisamment formés, ils reviennent dans un monastère - ou vont de monastère en monastère - pour enseigner leur art.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les prophètes",
+    "uuid": "5fa19eff-ea46-4d8b-aa7d-c26291f60d95",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "S'adonnant entièrement à la méditation et à l'écoute de la nature, les prophètes sont les plus silencieux et les plus réfléchis de la caste. Il leur arrive de percevoir le futur et ils doivent alors prendre la terrible décision de le révéler ou non. Ils réfléchissent toujours à leurs actes et, s'ils révèlent un secret, ils le confient à tous. Il arrive qu’un prophète se rapproche tellement de la nature que son esprit s’y égare. Son âme quitte à jamais son corps et se mêle aux plaines et aux forêts. Sa dépouille ne pourrit pas mais se pétrifie lentement. On dit que ces âmes peuvent entrer en contact avec ceux qui les prient. Les statues de pierre de ces Prodiges sont souvent des lieux de recueillement.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les fervents",
+    "uuid": "48b7ebfe-910b-40e2-92b9-2fed351b6dd4",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "Les fervents sont également appelés les jardiniers. Ils s'occupent des arbres, des plantes et des fleurs. Ils sont l’incarnation de la vie végétale à laquelle ils consacrent toute leur existence. Les plus grands fervents sont récompensés en acquérant une plus grande robustesse et en bénéficiant de la protection du règne végétal.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les guérisseurs",
+    "uuid": "cdcd53a1-9393-475d-8000-c7fadaaa5551",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "Ce sont les champions de la vie et de la notion “d'humanité” appliquée à toutes les créatures vivantes. Ils ne vivent que pour guérir, jamais pour détruire. Ce sont généralement des êtres bons et généreux qui s'occupent de tous sans poser de questions ni porter de jugement. Un guérisseur soignera un Fataliste, et même un Humaniste, sans hésiter.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les sages",
+    "uuid": "56e8d8f6-ab6f-4c62-ad18-6200d41dfdeb",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "Les sages sont des Prodiges qui aident les autres à trouver la réponse à leurs questions. Ce sont des conseillers et des rédempteurs. Ils tenteront toujours de ramener dans le droit chemin ceux qui se sont égarés. Ils sont ouverts à tous, aussi bien aux riches qu'aux pauvres, aux forts qu'aux faibles. Ils apportent la sagesse d'Heyra et peuvent, par conséquent, préconiser certaines mesures strictes pour résoudre un problème. Cependant, le recours à la violence et la condamnation sans appel d’une créature sont des solutions extrêmes, prises en désespoir de cause. Les sages sont souvent sollicités pour déterminer si une personne peut devenir Prodige. De plus, bon nombre de Prodiges n’arrivant pas à percevoir clairement leur voie font appel à eux.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les médiateurs",
+    "uuid": "34bd0609-7272-4690-812b-74eb8edb095f",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "Les médiateurs sont chargés d’aller de communauté en communauté pour arbitrer des conflits. Leur venue est souvent attendue par de nombreux villages pour régler des litiges ou juger des criminels. C’est une voie très difficile car le Prodige est rarement confronté à des affaires simples. De plus, le médiateur doit garantir la stabilité de la communauté et éviter de faire naître des rancunes. C’est une voie demandant une grande diplomatie et une très bonne connaissance des hommes. Il faut signaler qu’un médiateur peut également s'occuper des conflits entre humains et dragons et même entre des animaux et les humains.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les missionnaires",
+    "uuid": "404b4683-c3fd-4cd2-b48c-3de05de4add2",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "Les missionnaires voyagent au-delà des terres draconiques et visitent les communautés ignorantes des Lois Draconiques. Ce sont des explorateurs particulièrement ouverts. Certains se rendent même dans des villes humanistes ou fatalistes pour y prêcher la bonne parole. Les missionnaires sont ceux qui s’exposent le plus. Il arrive que certains renoncent à leurs vœux ou soient irrémédiablement attirés vers l’Humanisme ou le Fatalisme. Beaucoup trouvent la mort au cours de leurs voyages.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les prodiges animaux",
+    "uuid": "e3f93f84-8007-4aad-ac75-3a46fa5a1026",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "Les Prodiges animaux sont liés aux créatures sauvages de la nature. Ils partagent leur vie et s’intègrent entièrement à la nature. Un tel Prodige s'associe généralement à une seule espèce dont il accepte les lois. En récompense, les animaux reconnaissent en lui un des leurs et Heyra lui donne le don de prendre la forme de cet animal. Ces Prodiges sont les plus solitaires et les plus éloignés des lois humaines.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les poètes de la nature",
+    "uuid": "e8444ead-bf5d-4741-8dd2-69e407e6a902",
+    "parent_id": "08d3bdfc-035a-45a1-9cf5-a9f5553854ce",
+    "description": "Artistes et poètes, ces Prodiges ne vivent que pour embellir la nature. Proches de Nenya et de ses fidèles, mais aussi de Szyl, ce sont des individus pacifiques. On dit que certains peuvent, grâce à leur art, faire s'épanouir des fleurs en plein hiver. Ils sont très proches de certains animaux, comme les oiseaux chanteurs.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Ordres",
+    "uuid": "4cf602b3-6002-4235-b7b9-c76d0372cf2f",
+    "parent_id": "5b088064-913d-429e-b1da-0f3ce535f65e",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "L'Ordre des quatre saisons",
+    "uuid": "43be03d0-d037-4669-b49a-2d74faac9ad6",
+    "parent_id": "4cf602b3-6002-4235-b7b9-c76d0372cf2f",
+    "description": "Cet ordre étrange est constitué de Prodiges assez particuliers, qui sont les fidèles serviteurs de quatre entités engendrées par Heyra. Ces entités incarnent chacune une saison et ne se manifestent qu’au cours de leurs saisons respectives. De même, les fidèles d'une de ces entité ne sont actifs qu’au cours de la saison correspondante.\n\n**Les Apôtres de l’Hiver** servent l'entité connue sous le nom d’Ombre Blanche. Ce sont des individus craints par tous car ils apportent le froid et l’oubli.\n\n**Les Apôtres du Printemps** sont aimés de tous car ils servent la Vierge de la Fertilité. Ils apportent la prospérité, aident les femmes à mettre leurs enfants au monde, fertilisent les terres et les êtres incapables de procréer.\n\n**Les Apôtres de l’Automne** servent le Vent du Renouveau. On les aime autant qu'on les craint. Ils apportent la pluie aux terres arides mais aussi le déluge - ils dépouillent les arbres de leurs feuilles et emportent souvent l’âme des vieillards et des malades.\n\n**Les Apôtres de l’Été** servent le Soufle Ardent qui réchauffe les cœurs mais brûle les âmes.\n\nCes Ordres sont tous mystérieux et leurs membres sont des personnes énigmatiques qui vivent en marge de toute société. Ils n’ont presque aucun contact avec l'humanité. Ils vont et ils viennent comme le vent, la neige ou la pluie.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les Innocents",
+    "uuid": "9ccfa8ce-18fa-4be1-aae7-a9b5dafe1a05",
+    "parent_id": "4cf602b3-6002-4235-b7b9-c76d0372cf2f",
+    "description": "Les Innocents sont pour la plupart des enfants ou des adolescents dotés de dons naturels en rapport avec la nature. Il est très rare que des adultes conservent ces dons mais cela est déjà arrivé. De tels individus sont considérés comme bénis par Heyra. Les pouvoirs des Innocents sont variés mais tous très impressionnants. Certains font jaillir des plantes et des fleurs d'un simple contact de la main ou dans l'empreinte de leurs pas. D'autres peuvent faire pousser un arbre en un clin d’œil. D’autres encore attirent les animaux, volent dans les airs ou transforment tout liquide, même empoisonné, en eau cristalline.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les Hordes",
+    "uuid": "3c559809-9f62-4203-9ad1-c7d93ec40f98",
+    "parent_id": "4cf602b3-6002-4235-b7b9-c76d0372cf2f",
+    "description": "Les Hordes constituent une formidable défense. En cas de péril, il n’est pas rare de voir s'attrouper des hordes d'animaux prêtes à livrer combat contre um envahisseur. Elles sont toujours menées par une créature beaucoup plus grande que ses congénères qui est une incarnation d’Heyra. Ces hordes sont redoutables et dévastatrices.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Ceux qui ne font qu'Un",
+    "uuid": "b0f81492-8844-4af0-90cd-8e1e63e2b1df",
+    "parent_id": "4cf602b3-6002-4235-b7b9-c76d0372cf2f",
+    "description": "L'esprit de nombreux Prophètes erre en permanence au-dessus des plaines et des forêts. En cas de danger, ces esprits peuvent se fondre en une formidable force élémentaire déchaînant la puissance de la nature. Ils peuvent soulever la terre, animer les arbres, faire éclater la roche, s’entrouvrir le sol, noyer une troupe sous des trombes d’eau ou même s’incarner en un colosse végétal.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les Prodiges de Pierre",
+    "uuid": "e376369d-3376-4280-a2c9-93be0604ef7e",
+    "parent_id": "4cf602b3-6002-4235-b7b9-c76d0372cf2f",
+    "description": "On raconte que tous les Prophètes dont l’esprit s’est perdu dans la nature et dont le corps est devenu pierre peuvent, en cas de danger, animer leur enveloppe pétrifiée. On imagine sans mal la puissance d’une armée constituée de ces Prodiges au corps minéral, en union complète avec la nature. Certains murmurent que quelques esprits de Prophètes se seraient réincarnés par accident dans ces corps de pierre. Prisonniers et incapables de communier de nouveau avec la nature, ils seraient devenus fous. Ces êtres de pierre hanteraient des endroits reculés des forêts où ils s’attaqueraient à tout ce qui vit.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+  {
+    "name": "Les Prophètes muets",
+    "uuid": "b7f60212-3b3a-4c78-aa14-ac71cb6c469b",
+    "parent_id": "4cf602b3-6002-4235-b7b9-c76d0372cf2f",
+    "description": "Certains Prophètes, au cours de leurs méditations, ont découvert des secrets tellement terrifiants ou troublants que dans certains cas, quand îls estiment qu'ils ne peuvent les dévoiler, ils préfèrent se couper la langue pour être sûrs de ne pas parler par inadvertance. On dit que d'autres auraient découvert des nouveaux « mots » tellement puissants qu’en les prononçant ils pourraient avoir une influence sur la réalité ou libérer des forces dévastatrices.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    }
+  },
+
+  {
+    "name": "Caste des protecteurs",
+    "uuid": "b345d016-0ce0-4fa0-8ef7-1f4adcab3297",
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "leaders": [
+      {
+        "name": "Brorne",
+        "title": "Grand Dragon de la Pierre"
+      },
+      {
+        "name": "Ugmar Kast",
+        "title": "Haut Protecteur de Brorne"
+      }
+    ]
+  },
+  {
+    "name": "Le Conseil des Dragons",
+    "uuid": "0cfefbf0-62de-4058-b7c9-c2d3645be9ac",
+    "parent_id": "b345d016-0ce0-4fa0-8ef7-1f4adcab3297",
+    "description": "Les enfants de Brorne régnaient autrefois en maîtres absolus sur tous les humains du royaume de Kern. Cela changea après les grandes guerres. Le conseil des dragons est aujourd’hui une assemblée de sages chargée de superviser les activités humaines et d’intervenir quand ils constatent certains problèmes. Comme la plupart des membres de ce conseil sont liés aux humains du conseil du Roc, ces deux institutions s'opposent rarement.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "leaders": [
+      {
+        "name": "Bégormstyr",
+        "title": "Dirigeant du Conseil des Dragons"
+      }
+    ]
+  },
+  {
+    "name": "Le Conseil du Roc",
+    "uuid": "3a2ad4dc-fb57-4609-901e-81c6afd6dd63",
+    "parent_id": "b345d016-0ce0-4fa0-8ef7-1f4adcab3297",
+    "description": "Ce conseil s’occupe des affaires générales de la caste des protecteurs mais également des villes placées sous la protection de cette caste ainsi que de toutes celles dépendant du royaume de Kern. Ce conseil est constitué de douze humains : le Grand Maître de la caste, la régente de l’Inquisition, le Premier bâtisseur, le Premier armurier, le gouverneur de Kern, les deux délégués aux affaires commerciales, les deux hauts diplomates, le délégué aux affaires agricoles, le délégué aux affaires judiciaires et le délégué aux affaires magiques.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le Conseil des Hauts Protecteurs",
+    "uuid": "7508acbc-843a-4bf3-822e-784045e4b93e",
+    "parent_id": "3a2ad4dc-fb57-4609-901e-81c6afd6dd63",
+    "description": "Ce conseil est constitué d'officiers ayant tous le titre de Dragon. Ils sont responsables de l'administration générale de la caste et de tous ses choix politiques ou militaires. C’est ce conseil qui décide où envoyer des troupes, qui désigner à la tête de tel ou tel corps d’armée, etc. Les quatre plus hauts membres de ce conseil portent les titres suivants : le Heaume de Brorne, le Bouclier de Brorne, l’Armure de Brorne et l’Épée de Brorne. Les Protecteurs-Dragons dirigent directement les légions.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "members": [
+      {
+        "name": "Omstyr Fen",
+        "title": "Heaume de Brorne"
+      },
+      {
+        "name": "Alssinya Kerndal",
+        "title": "Bouclier de Brorne"
+      },
+      {
+        "name": "Melguior Sauders",
+        "title": "Armure de Brorne"
+      },
+      {
+        "name": "Ferden Ultyrr",
+        "title": "Épée de Brorne"
+      }
+    ]
+  },
+  {
+    "name": "Le Conseil des Stratèges",
+    "uuid": "0390070f-a1c8-4c4b-abd6-cea46054afb3",
+    "parent_id": "7508acbc-843a-4bf3-822e-784045e4b93e",
+    "description": "Constitué des meilleurs stratèges de la caste, ce conseil a pour but d'étudier la situation militaire de manière globale. Ils ne rendent compte qu’auprès du conseil des Hauts Protecteurs. Leur principale fonction est de prévoir les mouvements de troupes adverses et de conseiller l'envoi ou le retrait d’unités dans telle ou telle région. Les stratèges sont aidés dans leur tâche par un réseau d’espions particulièrement efficients.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Les Légions de Pierre",
+    "uuid": "f02e8b7f-f462-4efa-baa9-d226736b540f",
+    "parent_id": "7508acbc-843a-4bf3-822e-784045e4b93e",
+    "description": "Depuis la création de ce corps d’élite, vingt-quatre légions ont brandi les couleurs de Brorne. Aujourd’hui, on en compte douze dont huit sont établies hors des frontières de Kern. Les Légions de Pierre sont des troupes mobiles qui peuvent être envoyées n'importe où dans le royaume des dragons afin de restaurer la paix ou de défendre une ville assiégée. Certains commencent à estimer que leur puissance est un facteur de déséquilibre dans la politique interne du Royaume de Kor.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "members": [
+      {
+        "name": "Bégormstyr",
+        "title": "Commandant le la Ière Légion"
+      },
+      {
+        "name": "Omstyr Fen",
+        "title": "Commandant le la VIe Légion"
+      },
+      {
+        "name": "Alssinya Kerndal",
+        "title": "Commandant le la XIIe Légion"
+      },
+      {
+        "name": "Melguior Sauders",
+        "title": "Commandant le la IIe Légion, Commandant de la IIIe Légion"
+      },
+      {
+        "name": "Ferden Ultyrr",
+        "title": "Commandant le la XXIIIe Légion"
+      }
+    ]
+  },
+  {
+    "name": "Les conseils généraux",
+    "uuid": "7d46f959-08fc-43f7-ade4-e228116efb8c",
+    "parent_id": "3a2ad4dc-fb57-4609-901e-81c6afd6dd63",
+    "description": "Dans la caste des protecteurs, il existe un conseil général par arme, chaque arme correspondant à une carrière très précise au sein de cette caste. Les conseils sont chargés de faire appliquer les décisions des autorités supérieures.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le conseil des Gouverneurs",
+    "uuid": "5db258ed-5098-40f8-8660-c344701468d6",
+    "parent_id": "3a2ad4dc-fb57-4609-901e-81c6afd6dd63",
+    "description": "Tous les gouverneurs des cités et des régions de Kern, ainsi que les gouverneurs civils présents dans chaque ville d'importance où sont déployées des troupes de protecteurs, se réunissent régulièrement au sein de ce conseil pour examiner la situation globale dans le Royaume de Kor. Ce conseil rend compte directement au conseil du Roc.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "L'administration militaire",
+    "uuid": "d3e1d7a8-da98-4d8f-841c-09312c935c8c",
+    "parent_id": "5db258ed-5098-40f8-8660-c344701468d6",
+    "description": "Toute cité ou territoire placé sous le contrôle des protecteurs est géré par l’administration militaire, qui se charge de faire appliquer les décisions des gouverneurs.\n\nLes gouverneurs des cités de Kern sont chargés de faire appliquer les décrets promulgués par le conseil du Roc. Chaque gouverneur s’occupe d’une ville ou d’une région quand celle-ci ne compte aucune cité majeure. Ils ne sont pas élus mais désignés par le conseil du Roc. Il faut noter également que des gouverneurs civils sont présents dans chaque ville du Royaume de Kor où sont installées des troupes des protecteurs. Ils n’ont qu’un pouvoir consultatif et se contentent souvent de tenir le conseil du Roc au courant de la situation dans telle ou telle région.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Les milices",
+    "uuid": "ddffd181-7c9b-4261-b9ad-31990a30c5fe",
+    "parent_id": "d3e1d7a8-da98-4d8f-841c-09312c935c8c",
+    "description": "Pour la plupart des gens, la puissance militaire des protecteurs se résume aux miliciens qu’ils côtoient chaque jour en ville. Ces miliciens, en cas de guerre, peuvent rapidement constituer de puissantes unités de combat mais elles resteront cantonnées dans leurs villes ou leurs régions respectives. Les milices sont, en fait, sur les territoires étrangers, des sortes de “forces d'occupation” qui sont l'ultime rempart contre un éventuel assaillant.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Les armées",
+    "uuid": "14a1d24c-1b58-4a8d-a016-f6d2da3b1835",
+    "parent_id": "d3e1d7a8-da98-4d8f-841c-09312c935c8c",
+    "description": "Les armées ne sont déployées que dans le royaume de Kern. Elles constituent les premières défenses en cas d’invasion. Leurs principales fonctions sont d'assurer les patrouilles sur le territoire et de protéger les convois de marchandises. Elles peuvent aussi renforcer les effectifs des miliciens en cas de problèmes graves ou, au contraire, incorporer des miliciens dans leurs rangs pour constituer une armée plus importante.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le Haut Tribunal Militaire",
+    "uuid": "9f9581ee-0fae-4788-9e8c-d1117eb72487",
+    "parent_id": "3a2ad4dc-fb57-4609-901e-81c6afd6dd63",
+    "description": "Tout protecteur peut être jugé par un des nombreux tribunaux militaires dépendant de cette caste. Tous ces tribunaux sont placés sous le contrôle du Haut tribunal militaire de Kern et de ses juges.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "L'inquisition",
+    "uuid": "4f9518eb-8769-4204-9fee-32dc1147666e",
+    "parent_id": "b345d016-0ce0-4fa0-8ef7-1f4adcab3297",
+    "description": "L'Inquisition est une organisation en marge de la structure militaire de la caste des protecteurs. Cette élite est constituée des meilleurs soldats et surtout des plus fanatiques.\n\nLe régent, le Chevalier-Inquisiteur, est la plus haute autorité de cette organisation. Il ne répond de ses actes que devant le Grand Maître de la caste des protecteurs et, bien entendu, devant le Grand Dragon de la Pierre. Il peut prendre le commandement de n'importe quelle unité militaire, où qu’il soit. Le régent est toujours un humain ayant obtenu le titre de Dragon.\n\nLe Haut Conseil de l’Inquisition est constitué de sages chargés de superviser les agissements des Inquisiteurs et du régent. Tout individu condamné par l’Inquisition peut également faire appel à son arbitrage. Les membres de ce conseil sont pour la plupart d'anciens Inquisiteurs.\n\nLe Tribunal de l’Inquisition, unique, est installé à Kern. Ce tribunal a pour principale fonction de juger les affaires les plus importantes et notamment celles qui concernent les protecteurs et les dignitaires accusés d’Humanisme ou de Fatalisme. En effet, la grande majorité des jugements ne sont pas rendus dans ce tribunal mais directement par les juges de l’Inquisition.\n\nLes juges de l'Inquisition sont appelés par les Inquisiteurs pour prononcer leur sentence dans telle ou telle affaire. Ils sont en déplacement constant, allant de communauté en communauté pour rendre la justice. Les juges peuvent être solitaires mais nombreux sont ceux qui sont escortés par des gardes de l'Inquisition.\n\nLes Inquisiteurs sont chargés de débusquer les hérétiques où qu’ils se trouvent. Ce sont souvent des individus solitaires qui parcourent le monde à la recherche des ennemis du royaume draconique.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "leaders": [
+      {
+        "name": "Catherine Kerntyt",
+        "title": "Régente de l'Inquisition"
+      }
+    ]
+  },
+  {
+    "name": "Troupes",
+    "uuid": "4fec1cb5-7ab6-43f2-a880-6ec68687e553",
+    "parent_id": "b345d016-0ce0-4fa0-8ef7-1f4adcab3297",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Les Hommes-Dragons",
+    "uuid": "fad24ffc-5464-4f6a-a932-722d87ea02f7",
+    "parent_id": "4fec1cb5-7ab6-43f2-a880-6ec68687e553",
+    "description": "Les Hommes-Dragons sont les redoutables gardes des temples de Brorne. Ayant renoncé à leur humanité, ces fanatiques ont subi une métamorphose irréversible. Leur peau est couverte d’écailles de pierre, leurs pieds et leurs mains sont dotés de griffes. Leur corps est devenu plus robuste et, généralement, ils mesurent au moins deux mètres quarante. Leur visage est un horrible amalgame entre l’homme et le saurien. Ces êtres sont très rares. Ce sont de redoutables combattants dont la science des armes n’a d’égale que leur fougue au combat.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le peuple des montagnes",
+    "uuid": "ed5d5cd4-76d2-44d0-b61e-2a307a08c34f",
+    "parent_id": "4fec1cb5-7ab6-43f2-a880-6ec68687e553",
+    "description": "Ce peuple d’humains vit dans les plus hautes montagnes du royaume de Kern. Bien qu’ils vivent en marge de la société draconique, ils servent Brorne, qui est le seul Grand Dragon que ces gens respectent. Ces individus vivent dans des conditions extrêmes et Brorne les admire de résister aux rigueurs des plus hautes cimes. Bien qu’ils refusent l'ordre établi par les protecteurs, le Grand Dragon de la Pierre leur accorde souvent ses dons. Il est fort probable que si Brorne avait besoin d'eux, ils descendraient de leurs montagnes pour le servir.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Les géants pétrifiés",
+    "uuid": "a1e98031-5f35-4024-9a5c-dfb0f3ef646c",
+    "parent_id": "4fec1cb5-7ab6-43f2-a880-6ec68687e553",
+    "description": "On raconte qu’au sommet des plus hautes montagnes du royaume de Kern vivait une antique race de géants. Ces derniers auraient osé défier Brorne qui les aurait pétrifiés de son souflle vengeur. Depuis, la légende veut que, si un jour le royaume de Kern est menacé, ces géants s’animeront pour combattre les ennemis de celui qui les a vaincus.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Carrières",
+    "uuid": "ab404072-c771-4502-a885-9681d2ce1793",
+    "parent_id": "b345d016-0ce0-4fa0-8ef7-1f4adcab3297",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le soldat",
+    "uuid": "db9dd9f2-44c4-4c05-9a67-6a8f8dddbb5a",
+    "parent_id": "ab404072-c771-4502-a885-9681d2ce1793",
+    "description": "La carrière de soldat est une des plus pratiquées de la caste. On y forme la plupart des protecteurs qui constitueront le gros des troupes envoyées à droite et à gauche pour assurer la défense des villes. Les soldats les plus doués peuvent rapidement grimper les échelons de la hiérarchie militaire.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le légionnaire",
+    "uuid": "005bf9f7-229e-4875-b3cd-a07655cea6e8",
+    "parent_id": "ab404072-c771-4502-a885-9681d2ce1793",
+    "description": "Les légions sont constituées de l’élite des soldats. Un légionnaire est craint mais on le respecte plus que tout autre protecteur. Ils suivent un entraînement beaucoup plus dur que les autres soldats. La moindre faute est sévètement sanctionnée. Un légionnaire se doit d’être l’incarnation des enseignements de Brorne.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le garde du corps",
+    "uuid": "f55faf89-f545-4df6-9176-8872cbfa5f8d",
+    "parent_id": "ab404072-c771-4502-a885-9681d2ce1793",
+    "description": "Cette profession attire peu d’individus car elle souffre d’un important manque de prestige. Tout à fait immérité d’ailleurs car ses membres comptent parmi les meilleurs soldats du royaume et, bien souvent, on leur confie des respousabilités écrasantes. Ils peuvent être employés pour protéger des dignitaires, pour escorter des convois marchands ou porter des messages de la plus haute importance.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le milicien",
+    "uuid": "60ffe0d3-c856-4cb0-971e-89e191a81551",
+    "parent_id": "ab404072-c771-4502-a885-9681d2ce1793",
+    "description": "Spécialisés dans la protection civile et le maintien de l’ordre, ces protecteurs ne participent que très rarement à de grandes batailles. Leur lot quotidien consiste à régler les petites escarmouches, à surveiller les alentours des cités et à lutter contre les criminels. Ils participent généralement aux affaires des villes qu’ils protègent.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "L'inquisiteur",
+    "uuid": "5a958de6-1624-4045-a9de-e062075358ab",
+    "parent_id": "ab404072-c771-4502-a885-9681d2ce1793",
+    "description": "Les Inquisiteurs sont recrutés parmi les Lieutenants. Ils sont généralement sélectionnés pour leur fanatisme et leurs brillants résultats. Certaines mauvaises langues affirment que beaucoup d’Inquisiteurs sont engagés grâce à leurs relations ou celles de leurs parents. Tout nouveau candidat doit suivre un entraînement d’une année. Il sera alors jugé par Brorne ou ses représentants. S’il est digne de rejoindre les rangs des Inquisiteurs, on lui remettra les symboles sacrés de sa fonction. Sinon, il reprendra ses fonctions habituelles mais en bénéficiant d’une promotion.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "L'instructeur",
+    "uuid": "b81624a2-31e1-4d0e-9738-2e7f4110bb6a",
+    "parent_id": "ab404072-c771-4502-a885-9681d2ce1793",
+    "description": "Choisis à partir du grade de Lieutenant, les instructeurs abandonnent la gloire des champs de bataille pour se consacrer à la formation des futurs soldats. Ils jouissent d’une excellente réputation, surtout quand des élèves de leurs écoles se distinguent en service commandé. On a coutume de dire qu’un bon instructeur vaut une légion entière.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le stratège",
+    "uuid": "0294cbfa-3da0-49ab-b35b-560977ae1b45",
+    "parent_id": "ab404072-c771-4502-a885-9681d2ce1793",
+    "description": "Rivaux des stratèges de Kroryn, ceux de la caste des protecteurs jouissent d’un plus grand prestige. Cependant, ils ont une approche beaucoup plus globale des problèmes militaires et on leur reproche souvent de ne pas se soucler assez des individus. Les pertes humaines ne signifient pas grand-chose pourvu que l’objectif est atteint. De plus, leur spécialité est l’organisation des défenses et non des assauts.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "L'ingénieur militaire",
+    "uuid": "15bcd77d-fb6f-4a70-bd1e-9d508cc376fd",
+    "parent_id": "ab404072-c771-4502-a885-9681d2ce1793",
+    "description": "Cette profession tient à la fois du stratège et de l'architecte. L'ingénieur militaire a pour charge d'utiliser les ressources du terrain pour assurer la meilleure défense possible. Ils sont spécialisés dans la construction des fortifications.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+  {
+    "name": "Le protecteur itinérant",
+    "uuid": "b5e36024-7c2e-4a67-a1bc-7c150f899a88",
+    "parent_id": "ab404072-c771-4502-a885-9681d2ce1793",
+    "description": "Le protecteur itinérant est un solitaire qui parcourt le monde afin d'apporter son aide aux communautés isolées. Il est également le porte-parole de Brorne et se doit donc d’incarner ses valeurs.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    }
+  },
+
+  {
+    "name": "Caste des voyageurs",
+    "uuid": "ec6644ae-ffc5-4cfb-bf0f-2bc335bdd129",
+    "description": "La hiérarchie de la caste des voyageurs est très floue. En raison de la grande mobilité de ses membres, il est bien rare qu’ils soient à même de conserver un titre et une localisation fixes. Il n’est pas possible d'assumer une fonction officielle si l’on est perpétuellement sur les routes. Toutefois, chaque voyageur a ses préférences et les plus expérimentés ont souvent des régions privilégiées. La caste est divisée en compagnies, qui représentent les différents corps de métier. Au sein de ces compagnies, on trouve un maître - souvent un Solitaire ou un Orphelin - qui se voit confier cette tâche par Szyl ou un de ses fils et qui représente peu ou prou la hiérarchie. Ensuite, il existe plusieurs titres honorifiques propres à chaque compagnie, comme le Premier Pisteur de la compagnie des chasseurs ou le Seigneur Luthier de la compagnie des ménestrels. Ces titres sont seulement le reflet de compétences unanimement reconnues.\n\nIl n'existe pas de compétition réelle ou de classement fixe. Ces titres n’obligent à aucune stabilité géographique et si des visiteurs souhaitent rencontrer tel ou tel représentant, il lui est souvent nécessaire de le chercher sur les routes.\n\nEn termes d’implantations géographiques, la caste dispose d’un nombre incalculable de petits comptoirs, sortes d’auberges relais qui sont aussi des lieux de commerce pour les voyageurs. S’y échangent rumeurs, messages et informations officielles, mais aussi des cartes, du matériel de voyage ou des montures. Lorsqu'un lieu ne dispose pas de comptoir, il est courant que la taverne voisine lui serve de substitut. Les artisans locaux compensent alors les besoins matériels. Ce réseau irrégulier permet de garantir aux voyageurs et à leurs compagnons une disponibilité permanente des lieux de repos.\n\nLa communication à l’intérieur de la caste passe par les comptoirs, véritables relais d’information où l’on placarde parfois un édit ou une nouvelle d’importance. Dans le cas d’information majeure, la compagnie des messagers se charge de faire circuler la nouvelle aux quatre coins de Kor. Il est toutefois rare que de telles mesures soient prises, la présence diffuse d’une organisation derrière soi étant plus que malvenue. En général, seules des informations comme la mort du Grand Maître, une déclaration de guerre ou un édit draconique justifient le recours à un tel dispositif.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Szyl",
+        "title": "Grand Dragon des Vents"
+      },
+      {
+        "name": "Daana Toriser",
+        "title": "Grande Maîtresse de la Caste des Voyageurs"
+      }
+    ]
+  },
+  {
+    "name": "Carrières et Compagnies",
+    "uuid": "46864d2a-8d3f-4e00-bd63-ee16c4e345ee",
+    "parent_id": "ec6644ae-ffc5-4cfb-bf0f-2bc335bdd129",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    }
+  },
+  {
+    "name": "Les chasseurs",
+    "uuid": "3203dca6-b74a-4d13-839d-86d035bfdf68",
+    "parent_id": "46864d2a-8d3f-4e00-bd63-ee16c4e345ee",
+    "description": "Respectés et honorés, les chasseurs sont les seuls citoyens à affronter les animaux sauvages et les dangers de la nature de leur propre gré. Souvent très respectueux des enseignements de Heyra, ils ont pleine connaissance de la portée de chacun de leurs actes. Ils épargnent volontiers les animaux jeunes ou rares et ne chassent pas plus que ce qui est nécessaire à la subsistance de leur communauté. Ce sont souvent des personnes pratiques, quoiqu'un peu frustres de par leurs trop rares contacts avec d’autres humains, mais toujours empreints de sagesse. Ils sont souvent chargés de surveiller les lieux sauvages et s'organisent en patrouilles redoutables, si des incursions de monstres surviennent dans leur région.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Yunthar dit Le Gris",
+        "title": "Maître des chasseurs"
+      }
+    ]
+  },
+  {
+    "name": "Les éclaireurs",
+    "uuid": "c202d086-b07b-4bc7-9304-d6c67c34bbaf",
+    "parent_id": "46864d2a-8d3f-4e00-bd63-ee16c4e345ee",
+    "description": "Ce sont les éclaireurs qui représentent la majorité des voyageurs. Bien connus des citoyens pour leur rôle de protecteurs des caravanes et des troupes, ils sont considérés comme la branche la plus militaire de la caste. Disciplinés et dévoués à leurs compagnons, les éclaireurs deviennent guides ou escorteurs car ils sont les seuls à pouvoir éviter les dangers de la nature. Il n’est pas rare de voir des liens se tisser entre protecteurs et éclaireurs, dans leur mission commune de protection de leurs compagnons. En cas de guerre, ils sont aussi les meneurs des grands corps d’armée et forment des groupes de reconnaissance incomparables. Parfois, il arrive que les plus violents éclaireurs recherchent les conflits et s’apparentent alors plus à des mercenaires. Mais ils sont assez mal considérés par les combattants en raison de leurs talents d’archers, qui en font des adversaires insaisissables taxés de lâcheté.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Traffin Opff",
+        "title": "Maître des éclaireurs"
+      }
+    ]
+  },
+  {
+    "name": "Les errants",
+    "uuid": "390b9d24-7dab-4e60-93d6-89e3a314f9c9",
+    "parent_id": "46864d2a-8d3f-4e00-bd63-ee16c4e345ee",
+    "description": "Amoureux du voyage par nature, les errants ne supportent pas de planifier le moindre élément de leur parcours. Lunatiques, ils peuvent s’enflammer pour une cause ou une autre, décider brutalement d'aider une troupe le long d’un trajet, mais laissent souvent leurs pas les guider au hasard.\n\nLes errants sont parfois considérés comme des gueux sans but ou comme de doux illuminés qui ne parviennent pas à trouver un sens à leur vie. En fait, l'errant est souvent avide de contacts humains, de découvertes et de nouveauté, passions qui les amènent à ne plus se soucier de leur propre vie ou confort, mais uniquement de leur richesse relationnelle. Il n’est pas rare que des errants se découvrent certaines affinités avec des prodiges, comme des sages ou des prophètes, enclins comme eux aux relations intérieures et profondes.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    }
+  },
+  {
+    "name": "Les explorateurs",
+    "uuid": "dc1f8723-5891-4075-8f79-eda3dc7cc316",
+    "parent_id": "46864d2a-8d3f-4e00-bd63-ee16c4e345ee",
+    "description": "Toujours à l’affût de rumeurs et de légendes, les explorateurs se rencontrent à la frontière entre Kor et les régions inconnues. Ce sont des gens passionnés, souvent obsédés par la soif de découverte et le prestige qu’elle confère. Bien connus des érudits, les explorateurs sont souvent sollicités pour mener à bien des missions dangereuses d’exploration de ruines ou de récupération de livres ou d’objets anciens.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Bred Fejud",
+        "title": "Maître des explorateurs"
+      }
+    ]
+  },
+  {
+    "name": "Les ménestrels",
+    "uuid": "8d6d93eb-7774-4028-b335-a080d06c4afd",
+    "parent_id": "46864d2a-8d3f-4e00-bd63-ee16c4e345ee",
+    "description": "Les ménestrels forment le seul réseau de communication durable existant dans Kor. Outre leur rôle de pourvoyeurs de distractions par des contes, poésies et musiques, ils sont pour le peuple la seule source d’information sur les régions situées à plus de deux jours de route. Les ménestrels sont très appréciés par toutes les couches de population, du noble s’informant des affaires en cours hors de son fief jusqu’au serviteur, ravi de pouvoir avoir des nouvelles de son village natal. Les Historiens recherchent souvent les écrits des ménestrels, car ce sont souvent des témoignages vivants d’une époque et d’une région lointaines.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Hordral l'Harmonieux",
+        "title": "Maître des ménestrels"
+      }
+    ]
+  },
+  {
+    "name": "Les messagers",
+    "uuid": "d007b833-1909-4d25-a1bf-ab07741f7033",
+    "parent_id": "46864d2a-8d3f-4e00-bd63-ee16c4e345ee",
+    "description": "Les messagers sont probablement les voyageurs les plus solitaires en raison de leur constante mobilité et de la rapidité de leurs déplacements. Les messagers sont parmi les meilleurs cavaliers de Kor, très habiles pour déjouer pièges et embuscades ou semer des poursuivants. Certains usent de la vitesse pure pour accomplir leurs missions, mais bon nombre d’entre eux sont de rusés comédiens, dissimulés sous de fausses identités afin de garantir la discrétion de leurs actes.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Sezuil",
+        "title": "Maître des messagers"
+      }
+    ]
+  },
+  {
+    "name": "Les missionnaires",
+    "uuid": "79e54821-3bae-4cab-9f9d-a3aa07be4641",
+    "parent_id": "46864d2a-8d3f-4e00-bd63-ee16c4e345ee",
+    "description": "Ces voyageurs sont parmi les plus fanatiques de la cause draconique connus. Ayant pris conscience des bienfaits des Édits draconiques, ils cherchent à instruire les peuplades les plus lointaines afin de leur faire partager ces enseignements. Ils sont souvent associés aux missionnaires Prodiges qui partagent la même flamme qu'eux. On ne les rencontre que rarement, mais la plupart du temps au-delà des frontières connues, bravant des cultures parfois très hostiles. Leur prosélytisme leur vaut un grand respect lorsqu'ils passent en Kor, car ils y sont considérés comme des incarnations vivantes du savoir draconique, dotées d’un courage sans limite pour oser aller instruire les infidèles.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Hellestrid",
+        "title": "Maîtresse des missionnaires"
+      }
+    ]
+  },
+  {
+    "name": "Organisations affiliées",
+    "uuid": "50f72ec6-d099-493b-9034-56608c7dad30",
+    "parent_id": "ec6644ae-ffc5-4cfb-bf0f-2bc335bdd129",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    }
+  },
+  {
+    "name": "Les Bardes de Szyl",
+    "uuid": "d0f8331a-3b46-4cf8-9c88-7565c41aed95",
+    "parent_id": "50f72ec6-d099-493b-9034-56608c7dad30",
+    "description": "Les bardes sont les dépositaires du Chant des Ombres, écrit par Kalimsshar pour apaiser Kroryn. Ils sont considérés comme les chroniqueurs attitrés de la caste des combattants, ainsi que leurs proches conseillers. Composés majoritairement de ménestrels et de quelques éclaireurs, les bardes sont connus pour leur grande sagesse, la fiabilité de leurs récits et leur peu d'intérêt pour le combat. Gardiens de la fougue des combattants, ils sont rarement animés de la passion des armes. Ils sont réputés pour leur connaissance de la magie, bien que ne la pratiquant pas eux-mêmes. Ils sont très liés avec la confrérie des bardes d’azur d’Onyr, dont beaucoup de membres font partie des deux organisations. Le siège des bardes de Szyl est à Yris, mais on les croit souvent installés à Ankar, tant ils sont nombreux à s’y retrouver. Leur chef, Emrad Uljir, est un vieil homme malade dont la fin est proche. Tous s’accordent à dire que Ken Lore, mari de la Maîtresse instructrice des aventuriers de la caste des combattants, et vivant à Ankar, sera leur prochain chef.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Emrad Uljir",
+        "title": "Chef des Bardes de Szyl"
+      }
+    ]
+  },
+  {
+    "name": "Les Fils du Vent",
+    "uuid": "1d97fee7-5d84-4855-806b-0f52edbde3c0",
+    "parent_id": "50f72ec6-d099-493b-9034-56608c7dad30",
+    "description": "Les fils sont un puissant réseau de voyageurs de tous horizons qui ont pour vocation de faire circuler les informations et le savoir. Toujours prêts à affronter l’obscurantisme des dictatures, ils se dévouent principalement au peuple, trop souvent laissé ignorant des affaires du monde. Ils colportent toutes sortes de nouvelles et mettent un point d'honneur à séparer les rumeurs des véritables informations. Dangereux par leur tendance à ne garder aucun secret, ils sont toutefois respectés par les puissants qui ne peuvent se passer d’eux et de leurs précieuses informations. De plus, la crainte qu'ils peuvent parfois inspirer à la noblesse se fonde sur leur habileté à faire et défaire les réputations.\n\nLeur siège se situe à Havre, dans le caravansérail de l’horizon. Leur chef est Miyann Delgrand, une femme d’une quarantaine d'années, dont on dit qu’elle fut une élève de Lofyr, le barde de Kroryn. Elle porte aussi le titre de maîtresse conteuse dans la compagnie des ménestrels.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Miyann Delgrand",
+        "title": "Cheffe des Fils du Vent"
+      }
+    ]
+  },
+  {
+    "name": "Les Aëshims",
+    "uuid": "20334bca-8f2a-4a64-b8cb-217f7a061359",
+    "parent_id": "50f72ec6-d099-493b-9034-56608c7dad30",
+    "description": "Les Aëshims sont des guerriers qui ont appris à maîtriser la magie des vents. Considérés par certains comme des mages de combat, ils se pensent toutefois affiliés à Szyl. Souvent solitaires, ce sont des combattants discrets, dont les motivations sont mystérieuses. On sait qu’ils mettent leur puissance au service de la caste des voyageurs, mais qu’ils sont souvent guidés par des dragons proches de Szyl.\n\nD’aucuns pensent d’ailleurs qu’ils sont les espions, les assassins ou les agents de Szyl dans les affaires politiques. Peu nombreux, ils se cachent souvent sous de fausses identités et ne révèlent leur nature qu’au dernier moment. Leur magie puissante, combinée à une maîtrise poussée des armes, fait d’eux de redoutables adversaires, ainsi que le sujet de nombreuses légendes et rumeurs. Leur chef, le Dend’Aëshim, se nomme Ganaël. D'aucuns disent qu'il pourrait bien s'agir d’un\ndragon - ou plus probablement d’un Orphelin - tant sa puissance est phénoménale. Sa description est vague et personne ne sait où le trouver, pas plus que le siège des Aëshims, la tour des tempêtes, dont on dit qu’elle se dresserait au sommet du Château de Cristal, sur le Mont des Brumes…",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Ganaël",
+        "title": "Dend'Aëshim"
+      }
+    ]
+  },
+  {
+    "name": "La Flèche",
+    "uuid": "85df8792-5038-4d22-8a26-d259ddef5938",
+    "parent_id": "50f72ec6-d099-493b-9034-56608c7dad30",
+    "description": "Ce corps de mercenaires recrute la majorité de ses membres parmi les voyageurs, mais compte aussi quelques combattants. Il est composé de nombreux éclaireurs et de quelques chasseurs, tous spécialistes du maniement de l’arc. La flèche est le résultat d’une tentative avortée de création d’un corps des archers dans la caste des combattants, il y a environ deux siècles. Littéralement expulsés par le Maître de l’époque, Thulka Drân, ils choisirent de se constituer en une organisation indépendante et mercenaire. Bien qu’officleusement proscrits, ses membres ne cachent pas leur appartenance à la Flèche et plus d’un général, seigneur de Kar ou maître de caravane, apprécie de disposer d’une petite troupe de ces archers d'exception. Si leur engagement est déshonorant, personne n'ose en faire état, car leur utilité est reconnue à demi-mot par tous. Leur chef est le commandant Quazid Strum, un homme d’une cinquantaine d'années, ancien combattant et éclaireur expérimenté. Il vit à Maurore, où se trouve le discret siège de son organisation.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Quazid Strum",
+        "title": "Commandant de la Flèche"
+      }
+    ]
+  },
+  {
+    "name": "La Rose des Vents",
+    "uuid": "6308ea91-76f8-4c9c-bb3f-c95dea4a1d41",
+    "parent_id": "50f72ec6-d099-493b-9034-56608c7dad30",
+    "description": "Célèbre dans tout Kor, cette puissante organisation regroupe tous les guides et maîtres de caravanes. Bien que majoritairement formée d’éclaireurs expérimentés et d'anciens explorateurs, il est possible d'y trouver quelques combattants, marchands ou protecteurs. Très fraternelle, cette confrérie assure la sécurité des voyages et ses nombreux membres sont le gage d’un trajet bien préparé. Les guides assurent entre eux la transmission du savoir par un système d'apprentissage et de compagnonnage qui permet aux jeunes de se former aux côtés d’un ancien à ce métier indispensable au commerce et à la circulation des personnes. Très pieux, les guides de la Rose se considèrent comme les détenteurs des secrets que Szyl donna aux hommes avant l'Âge des Fondations. Ils ne manquent jamais de prier le Dragon des Vents chaque jour de voyage et s’interdisent la moindre rétention du savoir qu’ils détiennent. Leur chef est le Pionnier Yhann Tragorn, connu pour être aussi l’ancien maître de la compagnie des explorateurs. Il a démissionné pour s'occuper de la Rose et gère l’organisation depuis le siège à Yris, dans le manoir de saphir.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "leaders": [
+      {
+        "name": "Yhann Tragrorn",
+        "title": "Pionnier de la Rose des Vents"
+      }
+    ]
+  },
+
+  {
+    "name": "Caste des commerçants",
+    "uuid": "cb511457-dce4-4e3d-99bb-a8f681458d80",
+    "description": "Malgré une désorganisation apparente, la caste des commerçants se révèle être extrêmement structurée, car le désordre nuit gravement aux affaires ! Le flou qui semble être identifié par les non-membres dela caste provient justement d’une structure complexe qui intègre des sous-organisations et des organismes de contrôle. Ces derniers tolèrent, en fait, très peu les particularismes et les initiatives individuelles jugées “gratuites”.\n\nCertes, les diverses structures qui composent la caste ne chassent pas activement les sans-caste qui ne respectent pas les lois commerciales officielles. En revanche, elles sont intransigeantes vis-à-vis d’un membre qui prendrait des largesses avec le règlement.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "leaders": [
+      {
+        "name": "Khy",
+        "title": "Grand Dragon des Cités"
+      },
+      {
+        "name": "Swan Armen",
+        "title": "Grand Maître de la Caste des Commerçants"
+      }
+    ]
+  },
+  {
+    "name": "Le haut conseil des cités",
+    "uuid": "085677b2-682f-47b7-8dfc-a2a04c1efefd",
+    "parent_id": "cb511457-dce4-4e3d-99bb-a8f681458d80",
+    "description": "Ce conseil se réunit une fois l’an à Yris et regroupe le Grand Maître de la caste ainsi qu’un représentant mandaté officiellement par les conseils territoriaux ou professionnels. Il a pour objectif de statuer sur les grandes décisions pouvant avoir une influence sur tout le Royaume de Kor au cours de l’année suivante. Dans les faits, il n’a de réel pouvoir qu’en période de guerre. Il ne se contente souvent que de régler les problèmes organisationnels inhérents à la caste et d’entériner la nomination du Grand Maître.\n\nLors du dernier Haut Conseil des Cités, l’ambiance était des plus chahutées car la personnalité de Swan Armen est remise en cause ; certains prônent même un retour à l’ancienne tradition : plusieurs Grands Maîtres de la caste désignés selon leurs spécialités.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "members": [
+      {
+        "name": "Swan Armen",
+        "title": "Grand Maître de la Caste des Commerçants"
+      },
+      {
+        "name": "Hyman Glabecq",
+        "title": "Juge du haut conseil des cités"
+      },
+      {
+        "name": "Kästar Orgm",
+        "title": "Directeur du conseil territorial d'Omya"
+      }
+    ]
+  },
+  {
+    "name": "Les conseils territoriaux ou professionnels",
+    "uuid": "95733ddc-4e32-43fc-88e8-30ee725b58ec",
+    "parent_id": "cb511457-dce4-4e3d-99bb-a8f681458d80",
+    "description": "Localement, souvent à l'échelle d’une cité ou d’une ville, rarement sur des zones plus importantes, ces conseils prennent en charge les affaires courantes : définition du prix des denrées, développement des chartes salariales et de collaboration, entérinement des changements de Statut, gestion des patentes, régulation des pertes et profits - en d’autres termes, règlement des contentieux entre congrégations marchandes et guildes des voleurs. Selon les cas, ces conseils s'organisent plus ou moins démocratiquement et sont plus ou moins à l'écoute de leurs membres. Généralement, la direction du conseil revient à un membre de Statut élevé mais, ici aussi, les particularismes régionaux influencent grandement ce choix. De plus, compte tenu de la mainmise de congrégations ou guildes sur certaines villes, ces conseils peuvent se transformer en conseils corporatistes et ne plus tenir compte que de l’avis de certains membres de la caste !\n\nChaque année, ces conseils doivent soumettre au Haut Conseil des Cités le nom de leur représentant officiel. Il va sans dire que les villes très éloignées d’Yris n’envoient que très rarement leurs représentants.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Les congrégations",
+    "uuid": "28d452f9-74f0-4f19-aa1f-20ec748a162a",
+    "parent_id": "cb511457-dce4-4e3d-99bb-a8f681458d80",
+    "description": "Les congrégations s'organisent autour de métiers, de professions ou de carrières marchandes. Elles ont pour but de favoriser le transfert d'informations et de produits à travers le Royaume de Kor. Elles garantissent l'accueil à tous leurs membres et défendent leurs intérêts auprès des autorités et des conseils territoriaux. Chaque congrégation est dirigée par un directoire - sous la présidence d’un Haut Consul - qui nomme des responsables officiels, des consuls, dans chaque ville ou cité.\n\nActuellement, la congrégation des épices fait pression sur la congrégation du vin pour une sombre histoire de vin frelaté - toujours est-il que l’approvisionnement en épices de l’Empire de Solyr est plus que compromis.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "members": [
+      {
+        "name": "Hürgans Klimb",
+        "title": "Haut Consul de la congrégation des épices"
+      },
+      {
+        "name": "Strave Wiëk",
+        "title": "Haut Consul de la congrégation du vin"
+      },
+      {
+        "name": "Elft Armen",
+        "title": "Haut Consul de la congrégation des salaisons"
+      }
+    ]
+  },
+  {
+    "name": "Les guildes",
+    "uuid": "a5fca137-3572-4d8f-841e-1c13d79314a8",
+    "parent_id": "cb511457-dce4-4e3d-99bb-a8f681458d80",
+    "description": "Les guildes sont le pendant des congrégations, pour ce qui concerne les voleurs, mendiants, joueurs et prostituées. À l’inverse de celles-là, les guildes sont très morcelées et, si des rencontres régionales existent, leurs activités sont souvent circonscrites à une zone géographique bien délimitée. Les guildes ont aussi pour fonction de faire respecter l’ordre au sein de leurs adhérents. Gare à qui maltraiterait une prostituée ou ferait échouer un coup monté de longue date !",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Les syndicats",
+    "uuid": "ec7fb1d8-d624-4be2-8b29-0d86bede518f",
+    "parent_id": "cb511457-dce4-4e3d-99bb-a8f681458d80",
+    "description": "Apparue il y a quelques décennies, l’idée de syndicat a germé dans l’esprit de membres de bas rang qui souhaitaient faire valoir leurs droits face à des conseils territoriaux ou des congrégations quelquefois jugés partiaux. La rumeur dit que la création des syndicats serait une ruse des Humanistes pour s'implanter officiellement au sein de la caste.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Ordres",
+    "uuid": "8cf16630-218b-4e7a-bf55-68b14f6a341a",
+    "parent_id": "cb511457-dce4-4e3d-99bb-a8f681458d80",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "La Main de Brorne",
+    "uuid": "f7c5e7c5-ee38-414e-b012-7e80aac5ea31",
+    "parent_id": "8cf16630-218b-4e7a-bf55-68b14f6a341a",
+    "description": "La Main de Brorne est une organisation en marge de la guilde des voleurs d’Yris. Elle tire son nom du pied de nez que l’un des dirigeants de l’époque voulait faire aux protecteurs. Au fil des ans, cet ordre a pris de l’ampleur et s’est déplacé vers d’autres cités.\n\nDans le même temps, il a vu ses attributions s’étendre. Au début, il s’agissait simplement, pour les membres de l’ordre, de se protéger les uns les autres des actions menées par la justice. Depuis, l’ordre prend aussi en charge des missions d’évasion - car l’homme n’est pas né pour être enfermé contre son gré - des missions de renseignement et, depuis peu, la chasse aux Fatalistes.\n\nL'ordre vit dans la plus grande clandestinité et se structure autour de cellules indépendantes et mobiles. Force est de constater que malgré cette dispersion, il est très bien renseigné et se mobilise rapidement.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "L'Ordre des Cités",
+    "uuid": "f597b6a6-0a02-4f26-8f52-bcd702c9bbf0",
+    "parent_id": "8cf16630-218b-4e7a-bf55-68b14f6a341a",
+    "description": "Née il y a une vingtaine d’années au sein du syndicat des marchands d’étoffes, cette milice a vu ses objectifs et l'ampleur de son action se modifier radicalement au cours des ans. D'abord simple milice destinée à protéger les intérêts des marchands, l'Ordre est devenu un allié de l’Inquisition dans sa chasse aux Humanistes. Composé de commerçants convaincus que l'hérésie Humaniste nuit au bon déroulement de leurs affaires et pervertit l'essence même de la caste, l'Ordre apporte son soutien logistique, financier et “militaire“ aux troupes de l’Inquisition en manœuvre.\n\nTous les membres de l’ordre font vœu de respecter le Grand Dragon de la Pierre et apprenment à se battre. L'Ordre des Cités est toléré par les autres membres de la caste, car ils le jugent trop marginal pour nuire à l'équilibre du Royaume de Kor.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Les Capes",
+    "uuid": "57b5bb77-bda7-45ac-bccb-7a5db9849f0d",
+    "parent_id": "8cf16630-218b-4e7a-bf55-68b14f6a341a",
+    "description": "Cette umité d une bonne centaine de combattants est composée d’anciens marchands itinérants qui ont perdu des proches lors d'attaques de brigands. Ces vétérans mènent une guerre secrète contre les “vautours” - nom qu’ils donnent aux hors-la-loi et bandits de grand chemin qui attaquent des caravanes - en arpentant le Royaume de Kor par petites unités afin de protéger les convois. Ces troupes se vêtissent de couleurs sombres, portent une large capuche et cachent leur visage sous des masques terrifiants. Les unités des Capes sont très mobiles, efficaces et bien informées sur les déplacements des marchands itinérants.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "La troupe des Baladins de l'Aile Argentée",
+    "uuid": "4c530b05-ce74-492e-a7a0-c775cfa9a82a",
+    "parent_id": "8cf16630-218b-4e7a-bf55-68b14f6a341a",
+    "description": "Cette troupe de marionnettistes a pris le parti de voyager pour vendre du plaisir.\n\nRien de bien extraordinaire, si ce n’est que les Baladins ne sont aucunement des marionnettistes. En fait, les poupées articulées sont des personnes de petite taille qui sont grimées pour donner l’impression d’être faites de bois. La troupe a pour réelle fonction de servir de couverture et éventuellement de troupe d’appoint à des diplomates.\n\nCes derniers, grâce à l’anonymat que leur offrent les comédiens, peuvent ainsi rejoindre les zones de conflit en toute discrétion. Chaque membre de la troupe, qui au total doit bien comprendre une bonne cinquantaine de personnes, est recruté sur la base de son expertise dans des domaines sensibles : politique, stratégie, commerce, magie, technologie, etc.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Carrières",
+    "uuid": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "parent_id": "cb511457-dce4-4e3d-99bb-a8f681458d80",
+    "display_only": true,
+    "description": "",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Le marchand",
+    "uuid": "05522e40-73dc-47e8-b1d2-bd170560e99a",
+    "parent_id": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "description": "La carrière de marchand est une des plus courantes de la caste. S'y retrouvent tous les individus qui pensent faire carrière à partir de leur bagou et espèrent faire prospérer leurs intérêts personnels au profit de la collectivité - selon le principe : lorsque l’argent circule, tous les citoyens peuvent tirer leur épingle du jeu.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Le marchand itinérant",
+    "uuid": "565f597f-f9c3-49d2-8115-050c42668d0c",
+    "parent_id": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "description": "Cette carrière est une variante de la précédente et sied à des individus qui aiment voyager. Ces derniers ont souvent compris qu’élargir le cercle de circulation des biens peut être un facteur de progression sociale important : uniformisation de la société autour de certaines valeurs, propagation des innovations et des biens de consommation.\n\nLes marchands itinérants se considèrent, plus que les voyageurs, comme le ciment interculturel nécessaire à l'épanouissement du Royaume de Kor.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Le mendiant",
+    "uuid": "7992af16-123c-46e2-8941-1ceed148f363",
+    "parent_id": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "description": "Cette profession attire peu d’individus car elle souffre d’un important manque de prestige. Cependant, elle a trouvé sa place dans le tissu social urbain : les mendiants sont une arme aux mains des commerçants contre les voleurs ! En effet, mendier permet de faire circuler les richesses sans pour autant s’attaquer directement à des intérêts commerciaux, mais bien en s'appuyant sur “l’humanité“ de ses interlocuteurs. De plus, certaines rivalités persistent entre les organisations de voleurs et de mendiants, ce dont profitent allègrement les marchands",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Le voleur",
+    "uuid": "0bf26879-478d-482d-a3cb-09252cd5697c",
+    "parent_id": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "description": "Cette carrière a pris de plus en plus d’ampleur au fil des années, car ses représentants ont bien compris leur rôle de moteur de la société. Les voleurs sont continuellement sur le fil du rasoir car ils incarnent les deux principes fondateurs de la caste.\n\nD'une part, ils créent constamment des déséquilibres dans les processus sociaux mis en place et, d'autre part, ils luttent pour en maintenir l’équilibre grâce, entre autres, à la juste répartition des fruits de leurs larcins",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Le tenancier",
+    "uuid": "3f731c92-d6a0-4f08-b5ff-1589fcb5cd06",
+    "parent_id": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "description": "A la croisée de toutes les orientations de la caste, se trouvent les taverniers. Un peu commerçants, un peu voleurs, un peu espions, les aubergistes sont le moteur du développement social du Royaume de Ror. Que ce soit dans les grandes cités ou dans les petites bourgades, ils matérialisent toujours le centre névralgique de tous les échanges physiques ou philosophiques. Les idées neuves germent dans les auberges, les coups se préparent dans les auberges, les rencontres se déroulent dans les auberges. Consciente de son pouvoir, la guilde des taverniers tente de développer des règles d’éthique en vue de réguler le commerce de l’information.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "La courtisane",
+    "uuid": "bd740af8-6ef3-4e3e-b3a5-f59ecee5c0dc",
+    "parent_id": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "description": "Afin d'assurer leur présence au sein des différents réseaux d’information et renforcer leur action au sein des cités, les guildes de voleurs, de diplomates et d’espions ont développé une nouvelle carrière - majoritairement réservée aux femmes. Les confidences sur l’oreiller ont toujours su ouvrir de nombreuses perspectives, tant du point de vue des “coups” à monter que des informations à négocier. À l'inverse des prostituées, qui ne fréquentent que les salles embrumées des auberges et les rues de la cité, les courtisanes se prélassent dans le luxe et le confort des palais des puissants. Spécialement entraînées à la politique, à la pensée militaire et aux techno logies, mêmes interdites, les courtisanes se révèlent des interlocutrices difficiles à manipuler et des espionnes hors pair.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Le joueur",
+    "uuid": "7195e8f2-ecb9-4f9f-b10f-7633e564e991",
+    "parent_id": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "description": "Troisième nouvelle carrière développée par des associations de voleurs de plus en plus entreprenantes. S’il est mal vu de rétablir l’équilibre commercial par le vol, les humains sont moins réticents - surtout les nantis - à perdre volontairement les richesses dans des jeux de hasard. Passés maîtres dans l’art de la comédie, du verbe et de la manipulation, les joueurs sont, au fil des ans, devenus un élément non négligeable de l’économie des cités. En environnement rural, toutefois, l’affirmation de leur rôle est plus difficile.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "L'espion",
+    "uuid": "a79156e9-1984-4733-89d2-8bbee9f4e263",
+    "parent_id": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "description": "Cette carrière fascinante n’est en fait embrassée que par peu de citoyens, car les sacrifices à faire sont énormes - perte des liens familiaux, voyages fréquents, etc. Les espions servent des intérêts aussi bien politiques que commerciaux ou technologiques. De même, toujours en vue de respecter les préceptes de Khy, ils ne s’attacheront jamais à vie à une seule contrée.\n\nIl n’est d’ailleurs pas rare que certains d’entre eux travaillent simultanément pour plusieurs royaumes. Enfin, l’espion est un homme d’action qui ne rechigne pas à éliminer ou détruire si cela s’avère nécessaire.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  },
+  {
+    "name": "Le diplomate",
+    "uuid": "0e5e0d66-9749-49b5-a35d-712a9c89176c",
+    "parent_id": "1221c309-91c8-4a9b-bd53-ede745d46c07",
+    "description": "Le diplomate vend son aisance verbale et son érudition à des fins pacifistes. Il est un artisan essentiel de paix aussi bien entre organisations politiques - royaumes, contrées - qu’économiques - structures commerciales, guildes - ou sociales - castes.Les temps sont à la crise et nombre de diplomates sont les cibles privilégiées d’attentats.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    }
+  }
+]

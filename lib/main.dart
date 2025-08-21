@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:provider/provider.dart';
+import 'package:material_symbols_icons/material_symbols_icons.dart';
 
 import 'classes/armor.dart';
 import 'classes/creature.dart';
+import 'classes/faction.dart';
 import 'classes/magic.dart';
 import 'classes/non_player_character.dart';
 import 'classes/place.dart';
@@ -14,6 +16,7 @@ import 'classes/storage/storage.dart';
 import 'ui/utils/custom_icons.dart';
 
 import 'ui/creatures/main.dart';
+import 'ui/factions/main.dart';
 import 'ui/non_player_character/main.dart';
 import 'ui/places/main.dart';
 import 'ui/scenario/list.dart';
@@ -77,6 +80,8 @@ class _MainAppPageState extends State<MainAppPage> {
     MagicSpell.loadDefaultAssets();
     NonPlayerCharacter.loadDefaultAssets();
     NonPlayerCharacter.loadStoreAssets();
+    Faction.loadDefaultAssets();
+    Faction.loadStoreAssets();
     ShieldModel.loadDefaultAssets();
     WeaponModel.loadDefaultAssets();
 
@@ -103,6 +108,9 @@ class _MainAppPageState extends State<MainAppPage> {
         activePage = const PlacesMainPage();
         break;
       case 6:
+        activePage = FactionsMainPage();
+        break;
+      case 7:
         activePage = const SpellsMainPage();
         break;
       default:
@@ -147,6 +155,10 @@ class _MainAppPageState extends State<MainAppPage> {
                     NavigationRailDestination(
                       icon: Icon(Icons.place_outlined),
                       label: Text('Lieux'),
+                    ),
+                    NavigationRailDestination(
+                      icon: Icon(Symbols.graph_2),
+                      label: Text('Factions'),
                     ),
                     NavigationRailDestination(
                       icon: Icon(Symbols.auto_fix_high),
