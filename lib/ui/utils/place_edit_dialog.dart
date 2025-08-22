@@ -336,8 +336,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                 source: widget.source ?? ObjectSource.local,
                 map: map,
               );
-              await PlaceStore().save(p);
-              if(!context.mounted) return;
+
               Navigator.of(context).pop(p);
             }
             else {
@@ -363,18 +362,8 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                 widget.place!.description.general = descriptionController.text;
               }
 
-              // Delete the binary data held in local storage if it has been
-              // updated
-              if(widget.place!.map != null
-                  && widget.place!.map!.sourceType == PlaceMapSourceType.local
-                  && widget.place!.map!.source != mapSourceLocalFileName
-                  && widget.place!.map!.exportableBinaryData != null
-              ) {
-                await BinaryDataStore().delete(widget.place!.map!.exportableBinaryData!);
-              }
-
               if(selectedMapSourceType == null) {
-                widget.place!.map = null;
+                widget.place!.replaceMap(null);
               }
               else if(selectedMapSourceType == PlaceMapSourceType.local
                   && widget.place!.map?.source != mapSourceLocalFileName
@@ -399,10 +388,14 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                 );
                 map.exportableBinaryData = data;
 
-                widget.place!.map = map;
+                if(widget.place!.map == null) {
+                  widget.place!.map = map;
+                }
+                else {
+                  widget.place!.replaceMap(map);
+                }
               }
 
-              await PlaceStore().save(widget.place!);
               if(!context.mounted) return;
               Navigator.of(context).pop(widget.place);
             }

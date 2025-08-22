@@ -11,11 +11,15 @@ class ScenarioEditPlacesPage extends StatefulWidget {
   const ScenarioEditPlacesPage({
     super.key,
     required this.scenarioSource,
-    required this.onPlaceCommitted,
+    required this.onPlaceCreated,
+    required this.onPlaceModified,
+    required this.onPlaceDeleted,
   });
 
   final ObjectSource scenarioSource;
-  final void Function() onPlaceCommitted;
+  final void Function(Place) onPlaceCreated;
+  final void Function(Place) onPlaceModified;
+  final void Function(Place) onPlaceDeleted;
 
   @override
   State<ScenarioEditPlacesPage> createState() => _ScenarioEditPlacesPageState();
@@ -84,7 +88,7 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
                       selectedPlace = p;
                     }),
                     newPlaceSource: widget.scenarioSource,
-                    onPlaceCreated: (Place p) => widget.onPlaceCommitted(),
+                    onPlaceCreated: (Place p) => widget.onPlaceCreated(p),
                   )
                 )
               ],
@@ -98,6 +102,7 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
                   place: selectedPlace!,
                   modifyIfSourceMatches: widget.scenarioSource,
                   onEdited: (Place p) => setState(() {
+                    widget.onPlaceModified(p);
                     selectedPlace = p;
                   }),
                   onDelete: (Place p) async {
@@ -133,13 +138,11 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
                       path = '${current!.id}.$path';
                     }
                     var n = tree.elementAt(path);
+                    widget.onPlaceDeleted(p);
                     setState(() {
-                      widget.onPlaceCommitted();
                       selectedPlace = null;
                       n.parent?.remove(n);
                     });
-
-                    await Place.delete(p);
                   },
                 ),
               )

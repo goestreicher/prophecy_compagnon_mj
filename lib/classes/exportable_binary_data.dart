@@ -79,6 +79,25 @@ class BinaryDataStore extends JsonStoreAdapter<ExportableBinaryData> {
     }
   }
 
+  Future<void> deleteByHash(String hash) async {
+    var refCategory = 'binariesRefCount';
+    try {
+      var refCount = int.tryParse(await DataStorage.instance.get(refCategory, hash));
+      if(refCount != null) {
+        if(refCount <= 1) {
+          await DataStorage.instance.delete(refCategory, hash);
+          await DataStorage.instance.delete(storeCategory(), hash);
+        }
+        else {
+          await DataStorage.instance.save(refCategory, hash, (refCount-1).toString());
+        }
+      }
+    }
+    on KeyNotFoundException {
+      await DataStorage.instance.delete(storeCategory(), hash);
+    }
+  }
+
   @override
   Future<ExportableBinaryData> fromJsonRepresentation(Map<String, dynamic> j) async => ExportableBinaryData.fromJson(j);
 

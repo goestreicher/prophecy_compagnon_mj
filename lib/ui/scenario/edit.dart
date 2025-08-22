@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/faction.dart';
+import '../../classes/place.dart';
 import '../../classes/scenario.dart';
 import '../../classes/scenario_map.dart';
 import 'edit_creatures_tab.dart';
@@ -35,6 +36,9 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   late Scenario _scenario;
   void Function()? tabGeneralPreSaveCallback;
 
+  List<Place> uncommittedPlacesCreation = <Place>[];
+  List<Place> uncommittedPlacesModification = <Place>[];
+  List<Place> uncommittedPlacesDeletion = <Place>[];
   List<Faction> uncommittedFactionsCreation = <Faction>[];
   List<Faction> uncommittedFactionsModification = <Faction>[];
   List<Faction> uncommittedFactionsDeletion = <Faction>[];
@@ -43,6 +47,15 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   List<ScenarioMap> uncommittedMapsDeletion = <ScenarioMap>[];
   
   Future<void> commitPendingChanges() async {
+    /*
+        Places
+     */
+    uncommittedPlacesCreation.clear();
+    for(var p in uncommittedPlacesDeletion) {
+      await Place.delete(p);
+    }
+    uncommittedPlacesDeletion.clear();
+
     /*
         Factions
      */
@@ -65,6 +78,19 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   }
 
   Future<void> cancelPendingChanges() async {
+    /*
+        Places
+     */
+    for(var p in uncommittedPlacesCreation) {
+      Place.removeFromCache(p);
+    }
+    uncommittedPlacesCreation.clear();
+    for(var p in uncommittedPlacesModification) {
+      await Place.reloadFromStore(p);
+    }
+    uncommittedPlacesModification.clear();
+    uncommittedPlacesDeletion.clear();
+
     /*
         Factions
      */
@@ -204,15 +230,26 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     ),
                     ScenarioEditPlacesPage(
                       scenarioSource: _scenario.source,
-                      onPlaceCommitted: () {
+                      onPlaceCreated: (Place p) {
+                        uncommittedPlacesCreation.add(p);
                         setState(() {
-                          _canCancel = false;
+                          _scenario.places.add(p);
                         });
                       },
+                      onPlaceModified: (Place p) {
+                        uncommittedPlacesModification.add(p);
+                      },
+                      onPlaceDeleted: (Place p) {
+                        uncommittedPlacesDeletion.add(p);
+                        setState(() {
+                          _scenario.places.remove(p);
+                        });
+                      }
                     ),
                     ScenarioEditFactionsPage(
                       scenarioSource: _scenario.source,
                       onFactionCreated: (Faction f) {
+                        uncommittedFactionsCreation.add(f);
                         setState(() {
                           _scenario.factions.add(f);
                         });

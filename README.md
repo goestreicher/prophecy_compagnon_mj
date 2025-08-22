@@ -12,7 +12,7 @@ Pretty much a WiP, not stable at the moment
   - [x] Migrate the resource selector from ScenarioFleatherToolbar
 - [ ] Migrate places to GenericTreeWidget
 - [ ] Do not commit resources to the store when editing a scenario (use Factions as an example)
-  - [ ] Places
+  - [x] Places
   - [x] Maps
   - [ ] Creatures
     - Require using a static instance cache?

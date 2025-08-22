@@ -64,6 +64,7 @@ class PlaceStore extends JsonStoreAdapter<Place> {
 
   @override
   Future<void> willSave(Place object) async {
+    _deletePreviousData(object);
     if(object.map?.exportableBinaryData != null) {
       await BinaryDataStore().save(object.map!.exportableBinaryData!);
     }
@@ -79,8 +80,15 @@ class PlaceStore extends JsonStoreAdapter<Place> {
 
   @override
   Future<void> willDelete(Place object) async {
+    _deletePreviousData(object);
     if(object.map?.exportableBinaryData != null) {
       await BinaryDataStore().delete(object.map!.exportableBinaryData!);
+    }
+  }
+
+  Future<void> _deletePreviousData(Place object) async {
+    for(var h in object._previousMapsDataHashes) {
+      await BinaryDataStore().deleteByHash(h);
     }
   }
 }
@@ -233,6 +241,15 @@ class Place {
   final ObjectSource source;
   PlaceMap? map;
 
+  final List<String> _previousMapsDataHashes = <String>[];
+
+  void replaceMap(PlaceMap? newMap) {
+    if(map != null && map!.exportableBinaryData != null) {
+      _previousMapsDataHashes.add(map!.exportableBinaryData!.hash);
+    }
+    map = newMap;
+  }
+
   static int sortComparator(Place a, Place b) =>
       a.type.sort != b.type.sort
         ? a.type.sort - b.type.sort
@@ -272,6 +289,14 @@ class Place {
         .where((Place p) => p.source == source)
         .toList();
   }
+
+  static Future<void> reloadFromStore(Place p) async {
+    _instances.remove(p.id);
+    // ignore:unused_local_variable
+    var prev = await PlaceStore().get(p.id);
+  }
+
+  static Place? removeFromCache(Place p) => _instances.remove(p.id);
 
   static Future<void> delete(Place p) async {
     for(var child in withParent(p.id)) {

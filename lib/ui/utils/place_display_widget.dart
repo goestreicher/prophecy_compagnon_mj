@@ -284,7 +284,6 @@ class PlaceDisplayWidget extends StatelessWidget {
                             );
                             if(ret == null) return;
                             place.description.history = ret;
-                            await PlaceStore().save(place);
                             onEdited(place);
                           },
                           child: const Icon(Icons.edit, size: 16.0,),
@@ -326,7 +325,6 @@ class PlaceDisplayWidget extends StatelessWidget {
                             );
                             if(ret == null) return;
                             place.description.ethnology = ret;
-                            await PlaceStore().save(place);
                             onEdited(place);
                           },
                           child: const Icon(Icons.edit, size: 16.0,),
@@ -368,7 +366,6 @@ class PlaceDisplayWidget extends StatelessWidget {
                             );
                             if(ret == null) return;
                             place.description.society = ret;
-                            await PlaceStore().save(place);
                             onEdited(place);
                           },
                           child: const Icon(Icons.edit, size: 16.0,),
@@ -410,7 +407,6 @@ class PlaceDisplayWidget extends StatelessWidget {
                             );
                             if(ret == null) return;
                             place.description.politics = ret;
-                            await PlaceStore().save(place);
                             onEdited(place);
                           },
                           child: const Icon(Icons.edit, size: 16.0,),
@@ -452,7 +448,6 @@ class PlaceDisplayWidget extends StatelessWidget {
                             );
                             if(ret == null) return;
                             place.description.judicial = ret;
-                            await PlaceStore().save(place);
                             onEdited(place);
                           },
                           child: const Icon(Icons.edit, size: 16.0,),
@@ -494,7 +489,6 @@ class PlaceDisplayWidget extends StatelessWidget {
                             );
                             if(ret == null) return;
                             place.description.economy = ret;
-                            await PlaceStore().save(place);
                             onEdited(place);
                           },
                           child: const Icon(Icons.edit, size: 16.0,),
@@ -536,7 +530,6 @@ class PlaceDisplayWidget extends StatelessWidget {
                             );
                             if(ret == null) return;
                             place.description.military = ret;
-                            await PlaceStore().save(place);
                             onEdited(place);
                           },
                           child: const Icon(Icons.edit, size: 16.0,),

@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:prophecy_compagnon_mj/classes/place.dart';
 import 'package:uuid/uuid.dart';
 
 import 'object_location.dart';
@@ -121,7 +120,7 @@ class Faction extends ResourceBaseClass {
   static Future<void> reloadFromStore(Faction f) async {
     _instances.remove(f.id);
     // ignore:unused_local_variable
-    var prev = await PlaceStore().get(f.id);
+    var prev = await FactionStore().get(f.id);
   }
 
   static Faction? removeFromCache(Faction f) => _instances.remove(f.id);
