@@ -21,7 +21,6 @@ import '../utils/attribute_list_edit_widget.dart';
 import '../utils/caste_privilege_picker_dialog.dart';
 import '../utils/disadvantage_picker_dialog.dart';
 import '../utils/dropdown_menu_form_field.dart';
-import '../utils/error_feedback.dart';
 import '../utils/character_digit_input_widget.dart';
 import '../utils/injuries_edit_widget.dart';
 import '../utils/interdict_picker_dialog.dart';
@@ -38,7 +37,6 @@ class NPCEditWidget extends StatefulWidget {
     super.key,
     required this.name,
     this.npc,
-    this.npcId,
     this.source,
     this.category,
     this.subCategory,
@@ -47,7 +45,6 @@ class NPCEditWidget extends StatefulWidget {
 
   final String name;
   final NonPlayerCharacter? npc;
-  final String? npcId;
   final ObjectSource? source;
   final NPCCategory? category;
   final NPCSubCategory? subCategory;
@@ -191,7 +188,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
     return ret;
   }
 
-  bool _saveNPC() {
+  bool _applyChanges() {
     widget.npc!.category = _category!;
     widget.npc!.subCategory = _subCategory!;
     widget.npc!.unique = _unique;
@@ -1485,22 +1482,11 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                         npc = _createNPC();
                       }
                       else {
-                        _saveNPC();
+                        _applyChanges();
                         npc = widget.npc;
                       }
 
-                      try {
-                        await NonPlayerCharacter.saveLocalModel(npc!);
-                        widget.onEditDone(npc);
-                      }
-                      catch(e) {
-                        if(!context.mounted) return;
-                        displayErrorDialog(
-                          context,
-                          'Sauvegarde impossible',
-                          e.toString()
-                        );
-                      }
+                      widget.onEditDone(npc);
                     }
                 )
               ],

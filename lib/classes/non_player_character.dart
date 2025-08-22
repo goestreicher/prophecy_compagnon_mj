@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:prophecy_compagnon_mj/classes/storage/storable.dart';
+import 'package:uuid/uuid.dart';
 
 import 'character/base.dart';
 import 'character/skill.dart';
@@ -14,6 +14,7 @@ import 'object_source.dart';
 import 'place.dart';
 import '../text_utils.dart';
 import 'storage/default_assets_store.dart';
+import 'storage/storable.dart';
 
 part 'non_player_character.g.dart';
 
@@ -373,6 +374,16 @@ class NonPlayerCharacterSummary {
         && (subCategory == null || summary.subCategory == subCategory);
   }
 
+  static Future<void> _reloadFromStore(String id) async {
+    _removeFromCache(id);
+    var summary = await NonPlayerCharacterSummaryStore().get(id);
+    if(summary != null) {
+      _summaries[id] = summary;
+    }
+  }
+
+  static void _removeFromCache(String id) => _summaries.remove(id);
+
   static void _defaultAssetLoaded(NonPlayerCharacterSummary summary) {
     _summaries[summary.id] = summary;
   }
@@ -406,7 +417,73 @@ class NonPlayerCharacterSummary {
 @NPCCategoryJsonConverter()
 @NPCSubcategoryJsonConverter()
 class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
-  NonPlayerCharacter(
+  factory NonPlayerCharacter({
+    String? uuid,
+    ObjectLocation location = ObjectLocation.memory,
+    required ObjectSource source,
+    required String name,
+    required NPCCategory category,
+    required NPCSubCategory subCategory,
+    bool unique = false,
+    bool useHumanInjuryManager = false,
+    int initiative = 1,
+    Caste caste = Caste.sansCaste,
+    CasteStatus casteStatus = CasteStatus.none,
+    int age = 25,
+    double height = 1.7,
+    double? size,
+    double weight = 60.0,
+    int luck = 0,
+    int proficiency = 0,
+    int renown = 0,
+    Place? origin,
+    List<Interdict>? interdicts,
+    List<CastePrivilege>? castePrivileges,
+    List<CharacterDisadvantage>? disadvantages,
+    List<CharacterAdvantage>? advantages,
+    CharacterTendencies? tendencies,
+    String? description,
+    ExportableBinaryData? image,
+    ExportableBinaryData? icon,
+  }) {
+    bool isDefault = (location.type == ObjectLocationType.assets);
+    String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
+    if(!_instances.containsKey(id)) {
+      var npc = NonPlayerCharacter._create(
+        uuid: uuid,
+        location: location,
+        source: source,
+        name: name,
+        category: category,
+        subCategory: subCategory,
+        unique: unique,
+        useHumanInjuryManager: useHumanInjuryManager,
+        initiative: initiative,
+        caste: caste,
+        casteStatus: casteStatus,
+        age: age,
+        height: height,
+        size: size,
+        weight: weight,
+        luck: luck,
+        proficiency: proficiency,
+        renown: renown,
+        origin: origin,
+        interdicts: interdicts,
+        castePrivileges: castePrivileges,
+        disadvantages: disadvantages,
+        advantages: advantages,
+        tendencies: tendencies,
+        description: description,
+        image: image,
+        icon: icon,
+      );
+      _instances[id] = npc;
+    }
+    return _instances[id]!;
+  }
+
+  NonPlayerCharacter._create(
     {
       super.uuid,
       super.location = ObjectLocation.memory,
@@ -513,6 +590,16 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   static List<EntityBase> _npcFactory(String id, int count) {
     if(!_instances.containsKey(id)) return <EntityBase>[];
     return _instances[id]!.instantiate(count: count);
+  }
+
+  static Future<void> reloadFromStore(String id) async {
+    _instances.remove(id);
+    NonPlayerCharacterSummary._reloadFromStore(id);
+  }
+
+  static void removeFromCache(String id) {
+    _instances.remove(id);
+    NonPlayerCharacterSummary._removeFromCache(id);
   }
 
   static Future<void> loadDefaultAssets() async {

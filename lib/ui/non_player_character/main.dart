@@ -34,7 +34,6 @@ class _NPCMainPageState extends State<NPCMainPage> {
   final GlobalKey<FormState> newNPCFormKey = GlobalKey();
   bool editing = false;
   String? selectedDisplay;
-  String? selectedEdit;
   NonPlayerCharacter? selectedEditNPC;
   String? newNPCName;
 
@@ -55,7 +54,6 @@ class _NPCMainPageState extends State<NPCMainPage> {
   void _startEditing(NonPlayerCharacter npc) {
     setState(() {
       newNPCName = npc.name;
-      selectedEdit = npc.id;
       selectedEditNPC = npc;
       editing = true;
     });
@@ -69,20 +67,20 @@ class _NPCMainPageState extends State<NPCMainPage> {
       mainArea = NPCEditWidget(
         name: newNPCName!,
         npc: selectedEditNPC,
-        npcId: selectedEdit,
-        onEditDone: (NonPlayerCharacter? npc) {
+        onEditDone: (NonPlayerCharacter? npc) async {
           if(newNPCName != null) {
             newNPCName = null;
           }
 
+          if(npc != null) {
+            await NonPlayerCharacter.saveLocalModel(npc);
+            selectedDisplay = npc.id;
+            npcSourceType = npc.source.type;
+            npcCategory = npc.category;
+            npcSubCategory = npc.subCategory;
+          }
+
           setState(() {
-            if(npc != null) {
-              selectedDisplay = npc.id;
-              npcSourceType = npc.source.type;
-              npcCategory = npc.category;
-              npcSubCategory = npc.subCategory;
-            }
-            selectedEdit = null;
             selectedEditNPC = null;
             editing = false;
           });
@@ -315,7 +313,6 @@ class _NPCMainPageState extends State<NPCMainPage> {
                             }
 
                             setState(() {
-                              selectedEdit = null;
                               selectedEditNPC = null;
                               newNPCName = name;
                               editing = true;

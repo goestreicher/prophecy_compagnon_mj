@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:prophecy_compagnon_mj/classes/non_player_character.dart';
 
 import '../../classes/faction.dart';
 import '../../classes/place.dart';
@@ -36,6 +37,9 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   late Scenario _scenario;
   void Function()? tabGeneralPreSaveCallback;
 
+  List<NonPlayerCharacter> uncommittedNPCsCreation = <NonPlayerCharacter>[];
+  List<NonPlayerCharacter> uncommittedNPCsModification = <NonPlayerCharacter>[];
+  List<NonPlayerCharacter> uncommittedNPCsDeletion = <NonPlayerCharacter>[];
   List<Place> uncommittedPlacesCreation = <Place>[];
   List<Place> uncommittedPlacesModification = <Place>[];
   List<Place> uncommittedPlacesDeletion = <Place>[];
@@ -48,9 +52,20 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   
   Future<void> commitPendingChanges() async {
     /*
+        NPCs
+     */
+    uncommittedNPCsCreation.clear();
+    uncommittedPlacesModification.clear();
+    for(var n in uncommittedNPCsDeletion) {
+      await NonPlayerCharacter.deleteLocalModel(n.id);
+    }
+    uncommittedNPCsDeletion.clear();
+
+    /*
         Places
      */
     uncommittedPlacesCreation.clear();
+    uncommittedPlacesModification.clear();
     for(var p in uncommittedPlacesDeletion) {
       await Place.delete(p);
     }
@@ -78,6 +93,19 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   }
 
   Future<void> cancelPendingChanges() async {
+    /*
+        NPCs
+     */
+    for(var n in uncommittedNPCsCreation) {
+      NonPlayerCharacter.removeFromCache(n.id);
+    }
+    uncommittedNPCsCreation.clear();
+    for(var n in uncommittedNPCsModification) {
+      await NonPlayerCharacter.reloadFromStore(n.id);
+    }
+    uncommittedNPCsModification.clear();
+    uncommittedNPCsDeletion.clear();
+
     /*
         Places
      */
@@ -213,9 +241,19 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     ScenarioEditNPCsPage(
                       npcs: _scenario.npcs,
                       scenarioSource: _scenario.source,
-                      onNPCCommitted: () {
+                      onNPCCreated: (NonPlayerCharacter n) {
+                        uncommittedNPCsCreation.add(n);
                         setState(() {
-                          _canCancel = false;
+                          _scenario.npcs.add(n);
+                        });
+                      },
+                      onNPCModified: (NonPlayerCharacter n) {
+                        uncommittedNPCsModification.add(n);
+                      },
+                      onNPCDeleted: (NonPlayerCharacter n) {
+                        uncommittedNPCsDeletion.add(n);
+                        setState(() {
+                          _scenario.npcs.remove(n);
                         });
                       },
                     ),

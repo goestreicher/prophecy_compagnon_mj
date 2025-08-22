@@ -16,7 +16,7 @@ Pretty much a WiP, not stable at the moment
   - [x] Maps
   - [ ] Creatures
     - Require using a static instance cache?
-  - [ ] NPCs
+  - [x] NPCs
     - Same as for creatures
 - [ ] Rewrite UUIDs when importing factions to prevent conflicts?
 - [ ] Use UUIDs everywhere in the assets and make UUID mandatory in constructors
