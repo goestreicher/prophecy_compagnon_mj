@@ -396,9 +396,14 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
     }
 
     if(json.containsKey('equipment')) {
+      Set<String> currentUuids = equipment.map((Equipment e) => e.uuid()).toSet();
+
       for (Map<String, dynamic> e in json['equipment']) {
         if(!e.containsKey('uuid')) {
           e['uuid'] = const Uuid().v4().toString();
+        }
+        else if(currentUuids.contains(e['uuid'] as String)) {
+          continue;
         }
 
         var eq = EquipmentFactory.instance.forgeEquipment(e['type'], uuid: e['uuid']);
