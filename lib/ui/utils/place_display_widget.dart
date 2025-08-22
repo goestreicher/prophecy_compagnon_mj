@@ -29,16 +29,11 @@ class PlaceDisplayWidget extends StatelessWidget {
 
     var j = p.toJson();
     if(!cfg.maps) {
-      j.remove('map');
+      j['map'] = null;
     }
     else if(p.map != null) {
       await p.map!.load();
-      if(p.map!.exportableBinaryData != null) {
-        var dataJson = p.map!.exportableBinaryData!.toJson();
-        dataJson.remove('is_new');
-        j['binary'] = <String, dynamic>{p.map!.exportableBinaryData!.hash: dataJson};
-      }
-      else if(place.map!.imageData != null) {
+      if(place.map!.imageData != null) {
         // Force inclusion of the resource by creating an ExportableBinaryData
         // and changing the source
         var data = ExportableBinaryData(data: place.map!.imageData!);
@@ -50,10 +45,8 @@ class PlaceDisplayWidget extends StatelessWidget {
           realWidth: place.map!.realWidth,
           realHeight: place.map!.realHeight,
         );
-        var dataJson = data.toJson();
-        dataJson.remove('is_new');
+        map.exportableBinaryData = data;
         j['map'] = map.toJson();
-        j['binary'] = <String, dynamic>{data.hash: dataJson};
       }
     }
     ret.add(j);

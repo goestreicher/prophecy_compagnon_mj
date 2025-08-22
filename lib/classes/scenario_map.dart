@@ -17,12 +17,27 @@ class ScenarioMapStore extends JsonStoreAdapter<ScenarioMap> {
   String key(ScenarioMap object) => object.uuid;
 
   @override
-  Future<ScenarioMap> fromJsonRepresentation(Map<String, dynamic> j) async =>
-      ScenarioMap.fromJson(j);
+  Future<ScenarioMap> fromJsonRepresentation(Map<String, dynamic> j) async {
+    if(
+      j['place_map'].containsKey('exportable_binary_data')
+      && j['place_map']['exportable_binary_data'] != null
+    ) {
+      await restoreJsonBinaryData(j['place_map'], 'exportable_binary_data');
+    }
+    return ScenarioMap.fromJson(j);
+  }
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(ScenarioMap object) async =>
-      object.toJson();
+  Future<Map<String, dynamic>> toJsonRepresentation(ScenarioMap object) async {
+    var j = object.toJson();
+
+    await object.placeMap.load();
+    if(object.placeMap.exportableBinaryData != null) {
+      j['place_map']['exportable_binary_data'] = object.placeMap.exportableBinaryData!.hash;
+    }
+
+    return j;
+  }
 
   @override
   Future<void> willSave(ScenarioMap object) async {
@@ -52,8 +67,18 @@ class ScenarioMap {
 
   String uuid;
   String name;
+  // TODO: create a replaceMap function to keep track of previous data objects, as in Place
   PlaceMap placeMap;
   bool isDefault;
+
+  static void preImportFilter(Map<String, dynamic> j) {
+    if(
+        j['place_map'].containsKey('exportable_binary_data')
+        && j['place_map']['exportable_binary_data'] != null
+    ) {
+      j['place_map']['exportable_binary_data'].remove('is_new');
+    }
+  }
 
   factory ScenarioMap.fromJson(Map<String, dynamic> json) => _$ScenarioMapFromJson(json);
   Map<String, dynamic> toJson() => _$ScenarioMapToJson(this);

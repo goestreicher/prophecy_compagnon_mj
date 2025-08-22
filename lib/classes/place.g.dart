@@ -6,14 +6,23 @@ part of 'place.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-PlaceMap _$PlaceMapFromJson(Map<String, dynamic> json) => PlaceMap(
-  sourceType: $enumDecode(_$PlaceMapSourceTypeEnumMap, json['source_type']),
-  source: json['source'] as String,
-  imageWidth: (json['image_width'] as num).toInt(),
-  imageHeight: (json['image_height'] as num).toInt(),
-  realWidth: (json['real_width'] as num).toDouble(),
-  realHeight: (json['real_height'] as num).toDouble(),
-);
+PlaceMap _$PlaceMapFromJson(Map<String, dynamic> json) =>
+    PlaceMap(
+        sourceType: $enumDecode(
+          _$PlaceMapSourceTypeEnumMap,
+          json['source_type'],
+        ),
+        source: json['source'] as String,
+        imageWidth: (json['image_width'] as num).toInt(),
+        imageHeight: (json['image_height'] as num).toInt(),
+        realWidth: (json['real_width'] as num).toDouble(),
+        realHeight: (json['real_height'] as num).toDouble(),
+      )
+      ..exportableBinaryData = json['exportable_binary_data'] == null
+          ? null
+          : ExportableBinaryData.fromJson(
+              json['exportable_binary_data'] as Map<String, dynamic>,
+            );
 
 Map<String, dynamic> _$PlaceMapToJson(PlaceMap instance) => <String, dynamic>{
   'source_type': _$PlaceMapSourceTypeEnumMap[instance.sourceType]!,
@@ -22,6 +31,7 @@ Map<String, dynamic> _$PlaceMapToJson(PlaceMap instance) => <String, dynamic>{
   'image_height': instance.imageHeight,
   'real_width': instance.realWidth,
   'real_height': instance.realHeight,
+  'exportable_binary_data': instance.exportableBinaryData?.toJson(),
 };
 
 const _$PlaceMapSourceTypeEnumMap = {

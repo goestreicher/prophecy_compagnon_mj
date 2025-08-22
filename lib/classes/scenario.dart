@@ -246,17 +246,26 @@ class Scenario {
       name: json['name'],
       uuid: json['uuid'],
     ).toJson();
+
     for(var npc in json['npcs'] as List<dynamic>? ?? []) {
       npc['source'] = source;
     }
+
     for(var creature in json['creatures'] as List<dynamic>? ?? []) {
       creature['source'] = source;
     }
+
     for(var place in json['places'] as List<dynamic>? ?? []) {
+      Place.preImportFilter(place as Map<String, dynamic>);
       place['source'] = source;
     }
+
     for(var faction in json['factions'] as List<dynamic>? ?? []) {
       faction['source'] = source;
+    }
+
+    for(var map in json['maps']) {
+      ScenarioMap.preImportFilter(map as Map<String, dynamic>);
     }
 
     return Scenario.fromJson(json);

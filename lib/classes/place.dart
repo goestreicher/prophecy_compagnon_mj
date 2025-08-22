@@ -50,6 +50,15 @@ class PlaceStore extends JsonStoreAdapter<Place> {
 
   @override
   Future<Place> fromJsonRepresentation(Map<String, dynamic> j) async {
+    if(
+        j.containsKey('map')
+        && j['map'] != null
+        && j['map'].containsKey('exportable_binary_data')
+        && j['map']['exportable_binary_data'] != null
+    ) {
+      await restoreJsonBinaryData(j['map'], 'exportable_binary_data');
+    }
+
     var place = Place.fromJson(j);
     place.location = ObjectLocation(
       type: ObjectLocationType.store,
@@ -59,8 +68,16 @@ class PlaceStore extends JsonStoreAdapter<Place> {
   }
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(Place object) async =>
-      object.toJson();
+  Future<Map<String, dynamic>> toJsonRepresentation(Place object) async {
+    var j = object.toJson();
+    if(object.map != null) {
+      object.map!.load();
+      if(object.map!.exportableBinaryData != null) {
+        j['map']['exportable_binary_data'] = object.map!.exportableBinaryData!.hash;
+      }
+    }
+    return j;
+  }
 
   @override
   Future<void> willSave(Place object) async {
@@ -112,8 +129,7 @@ class PlaceMap {
   double realHeight;
   @JsonKey(includeFromJson: false, includeToJson: false)
     Uint8List? imageData;
-  @JsonKey(includeFromJson: false, includeToJson: false)
-    ExportableBinaryData? exportableBinaryData;
+  ExportableBinaryData? exportableBinaryData;
 
   double get pixelsPerMeter => imageWidth / realWidth;
 
@@ -323,25 +339,22 @@ class Place {
     await PlaceStore().getAll();
   }
 
+  static void preImportFilter(Map<String, dynamic> j) {
+    if(
+        j.containsKey('map')
+        && j['map'].containsKey('exportable_binary_data')
+        && j['map']['exportable_binary_data'] != null
+    ) {
+      j['map']['exportable_binary_data'].remove('is_new');
+    }
+
+    j.remove('source');
+  }
+
   static Future<void> import(List<dynamic> j) async {
     for(Map<String, dynamic> placeJson in j) {
-      placeJson.remove('uuid');
-      PlaceMap? map;
-
-      if(placeJson.containsKey('map')) {
-        map = PlaceMap.fromJson(placeJson['map']!);
-        if(map.sourceType == PlaceMapSourceType.local
-            && placeJson.containsKey('binary')
-            && placeJson['binary'].containsKey(map.source)
-        ) {
-          ExportableBinaryData data = ExportableBinaryData.fromJson(
-              placeJson['binary'][map.source]
-          );
-          await BinaryDataStore().save(data);
-          placeJson.remove('binary');
-        }
-      }
-
+      preImportFilter(placeJson);
+      placeJson['source'] = ObjectSource.local.toJson();
       Place p = Place.fromJson(placeJson);
       await PlaceStore().save(p);
     }

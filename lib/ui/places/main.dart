@@ -148,6 +148,8 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                     List<dynamic> j = json.decode(jsonStr);
                     await Place.import(j);
                     setState(() {
+                      treeFilter.sourceType = ObjectSource.local.type;
+                      treeFilter.source = ObjectSource.local;
                       rebuildTree();
                     });
                   } catch (e) {

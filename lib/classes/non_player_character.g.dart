@@ -61,6 +61,7 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
         location: json['location'] == null
             ? ObjectLocation.memory
             : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+        source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
         name: json['name'] as String,
         category: const NPCCategoryJsonConverter().fromJson(
           json['category'] as String,
@@ -68,7 +69,6 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
         subCategory: const NPCSubcategoryJsonConverter().fromJson(
           json['sub_category'] as Map<String, dynamic>,
         ),
-        source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
         unique: json['unique'] as bool? ?? false,
         useHumanInjuryManager:
             json['use_human_injury_manager'] as bool? ?? false,

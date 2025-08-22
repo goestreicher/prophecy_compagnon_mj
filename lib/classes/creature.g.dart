@@ -67,15 +67,15 @@ CreatureModel _$CreatureModelFromJson(
   Map<String, dynamic> json,
 ) => CreatureModel(
   uuid: json['uuid'] as String?,
+  location: json['location'] == null
+      ? ObjectLocation.memory
+      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+  source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   name: json['name'] as String,
   unique: json['unique'] as bool? ?? false,
   category: const CreatureCategoryJsonConverter().fromJson(
     json['category'] as String,
   ),
-  location: json['location'] == null
-      ? ObjectLocation.memory
-      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
-  source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   description: json['description'] as String? ?? '',
   biome: json['biome'] as String,
   size: json['size'] as String,
