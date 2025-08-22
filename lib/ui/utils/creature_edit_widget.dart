@@ -922,18 +922,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                         model = creature;
                       }
 
-                      try {
-                        await CreatureModel.saveLocalModel(model!);
-                        widget.onEditDone(model);
-                      }
-                      catch(e) {
-                        if(!context.mounted) return;
-                        displayErrorDialog(
-                          context,
-                          'Sauvegarde impossible',
-                          e.toString()
-                        );
-                      }
+                      widget.onEditDone(model);
                     }
                   )
                 ],

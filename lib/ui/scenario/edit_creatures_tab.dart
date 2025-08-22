@@ -13,29 +13,34 @@ class ScenarioEditCreaturesPage extends StatefulWidget {
     super.key,
     required this.creatures,
     required this.scenarioSource,
-    required this.onCreatureCommitted,
+    required this.onCreatureCreated,
+    required this.onCreatureModified,
+    required this.onCreatureDeleted,
   });
 
   final List<CreatureModel> creatures;
   final ObjectSource scenarioSource;
-  final void Function() onCreatureCommitted;
+  final void Function(CreatureModel) onCreatureCreated;
+  final void Function(CreatureModel) onCreatureModified;
+  final void Function(CreatureModel) onCreatureDeleted;
 
   @override
   State<ScenarioEditCreaturesPage> createState() => _ScenarioEditCreaturesPageState();
 }
 
 class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
+  final GlobalKey<FormState> _newCreatureNameKey = GlobalKey<FormState>();
+
   late List<CreatureModelSummary> creatureSummaries;
   String? _newCreatureName;
-  String? _selectedId;
   CreatureModel? _selectedModel;
   bool _editing = false;
-  final GlobalKey<FormState> _newCreatureNameKey = GlobalKey<FormState>();
+  bool creatingNewCreature = false;
 
   void _startEditing(CreatureModel model) {
     setState(() {
       _newCreatureName = model.name;
-      _selectedId = model.id;
+      _selectedModel = model;
       _editing = true;
     });
   }
@@ -57,7 +62,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
         color: theme.colorScheme.surfaceContainerHighest,
         child: CreatureEditWidget(
           name: _newCreatureName!,
-          creatureId: _selectedId,
+          creatureId: _selectedModel?.id,
           creature: _selectedModel,
           source: widget.scenarioSource,
           onEditDone: (CreatureModel? creature) {
@@ -68,11 +73,18 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                   widget.creatures.add(creature);
                 }
                 _newCreatureName = null;
-                _selectedId = creature.id;
-                _selectedModel = null;
+                _selectedModel = creature;
+
+                if(creatingNewCreature) {
+                  widget.onCreatureCreated(creature);
+                }
+                else {
+                  widget.onCreatureModified(creature);
+                }
               }
-              widget.onCreatureCommitted();
+
               _editing = false;
+              creatingNewCreature = false;
             });
           },
         ),
@@ -120,9 +132,10 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                 }
 
                 setState(() {
-                  _selectedId = null;
+                  _selectedModel = null;
                   _newCreatureName = name;
                   _editing = true;
+                  creatingNewCreature = true;
                 });
               },
               icon: const Icon(Icons.add),
@@ -134,10 +147,11 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                 constraints: BoxConstraints(maxWidth: 800),
                 child: CreaturesListWidget(
                   creatures: creatureSummaries,
-                  initialSelection: _selectedId,
+                  initialSelection: _selectedModel?.id,
                   onEditRequested: (int index) async {
                     var model = await CreatureModel.get(creatureSummaries[index].id);
                     if(model == null) return;
+                    creatingNewCreature = false;
                     _startEditing(model);
                   },
                   onCloneRequested: (int index, String newName) async {
@@ -147,13 +161,19 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                     CreatureModel clone = model.clone(newName);
                     clone.source = ObjectSource.local;
 
+                    creatingNewCreature = true;
                     _startEditing(clone);
                   },
                   onDeleteRequested: (int index) async {
                     try {
-                      await CreatureModel.deleteLocalModel(creatureSummaries[index].id);
+                      var creature = widget.creatures.firstWhere(
+                        (CreatureModel c) => c.id == creatureSummaries[index].id
+                      );
+
+                      widget.onCreatureDeleted(creature);
                       setState(() {
-                        _selectedId = null;
+                        creatureSummaries.removeAt(index);
+                        _selectedModel = null;
                       });
                     }
                     catch(e) {

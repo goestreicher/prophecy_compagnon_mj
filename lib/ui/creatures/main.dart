@@ -67,13 +67,15 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
         name: newCreatureName!,
         creatureId: selectedEdit,
         creature: selectedEditModel,
-        onEditDone: (CreatureModel? creature) {
+        onEditDone: (CreatureModel? creature) async {
+          if(creature != null) {
+            await CreatureModel.saveLocalModel(creature);
+            selectedDisplay = creature.id;
+            creatureCategory = creature.category;
+            creatureSourceType = creature.source.type;
+          }
+
           setState(() {
-            if(creature != null) {
-              selectedDisplay = creature.id;
-              creatureCategory = creature.category;
-              creatureSourceType = creature.source.type;
-            }
             newCreatureName = null;
             selectedEdit = null;
             selectedEditModel = null;

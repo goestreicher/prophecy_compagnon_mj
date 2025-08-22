@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:prophecy_compagnon_mj/classes/creature.dart';
 import 'package:prophecy_compagnon_mj/classes/non_player_character.dart';
 
 import '../../classes/faction.dart';
@@ -32,7 +33,6 @@ class ScenarioEditPage extends StatefulWidget {
 
 class _ScenarioEditPageState extends State<ScenarioEditPage> {
   bool _isWorking = false;
-  bool _canCancel = true;
   late Future<Scenario?> _scenarioFuture;
   late Scenario _scenario;
   void Function()? tabGeneralPreSaveCallback;
@@ -40,6 +40,9 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   List<NonPlayerCharacter> uncommittedNPCsCreation = <NonPlayerCharacter>[];
   List<NonPlayerCharacter> uncommittedNPCsModification = <NonPlayerCharacter>[];
   List<NonPlayerCharacter> uncommittedNPCsDeletion = <NonPlayerCharacter>[];
+  List<CreatureModel> uncommittedCreaturesCreation = <CreatureModel>[];
+  List<CreatureModel> uncommittedCreaturesModification = <CreatureModel>[];
+  List<CreatureModel> uncommittedCreaturesDeletion = <CreatureModel>[];
   List<Place> uncommittedPlacesCreation = <Place>[];
   List<Place> uncommittedPlacesModification = <Place>[];
   List<Place> uncommittedPlacesDeletion = <Place>[];
@@ -60,6 +63,16 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
       await NonPlayerCharacter.deleteLocalModel(n.id);
     }
     uncommittedNPCsDeletion.clear();
+
+    /*
+        Creatures
+     */
+    uncommittedCreaturesCreation.clear();
+    uncommittedCreaturesModification.clear();
+    for(var c in uncommittedCreaturesDeletion) {
+      await CreatureModel.deleteLocalModel(c.id);
+    }
+    uncommittedCreaturesDeletion.clear();
 
     /*
         Places
@@ -93,6 +106,19 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   }
 
   Future<void> cancelPendingChanges() async {
+    /*
+        Creatures
+     */
+    for(var c in uncommittedCreaturesCreation) {
+      CreatureModel.removeFromCache(c.id);
+    }
+    uncommittedCreaturesCreation.clear();
+    for(var c in uncommittedCreaturesModification) {
+      CreatureModel.reloadFromStore(c.id);
+    }
+    uncommittedCreaturesModification.clear();
+    uncommittedCreaturesDeletion.clear();
+
     /*
         NPCs
      */
@@ -193,7 +219,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     IconButton(
                       icon: const Icon(Icons.close),
                       tooltip: 'Annuler',
-                      onPressed: !_canCancel ? null : () async {
+                      onPressed: () async {
                         await cancelPendingChanges();
                         if(!context.mounted) return;
                         Navigator.of(context).pop(false);
@@ -260,9 +286,19 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     ScenarioEditCreaturesPage(
                       creatures: _scenario.creatures,
                       scenarioSource: _scenario.source,
-                      onCreatureCommitted: () {
+                      onCreatureCreated: (CreatureModel c) {
+                        uncommittedCreaturesCreation.add(c);
                         setState(() {
-                          _canCancel = false;
+                          _scenario.creatures.add(c);
+                        });
+                      },
+                      onCreatureModified: (CreatureModel c) {
+                        uncommittedCreaturesModification.add(c);
+                      },
+                      onCreatureDeleted: (CreatureModel c) {
+                        uncommittedCreaturesDeletion.add(c);
+                        setState(() {
+                          _scenario.creatures.remove(c);
                         });
                       },
                     ),

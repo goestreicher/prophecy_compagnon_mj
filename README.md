@@ -8,22 +8,22 @@ Pretty much a WiP, not stable at the moment
 
 ## Creation part
 
-- [x] Migrate to MarkdownFleatherToolbar
-  - [x] Migrate the resource selector from ScenarioFleatherToolbar
 - [ ] Migrate places to GenericTreeWidget
-- [ ] Do not commit resources to the store when editing a scenario (use Factions as an example)
-  - [x] Places
-  - [x] Maps
-  - [ ] Creatures
-    - Require using a static instance cache?
-  - [x] NPCs
-    - Same as for creatures
 - [ ] Rewrite UUIDs when importing factions to prevent conflicts?
 - [ ] Use UUIDs everywhere in the assets and make UUID mandatory in constructors
-- [x] Add an optional UUID in ObjectSource to prevent conflicts in case of names collision
 - [ ] Add dates in the factions leaders and members?
 - [ ] Add artifacts resources?
 - [ ] Fill in more places from the official docs
+- [x] Add an optional UUID in ObjectSource to prevent conflicts in case of names collision
+- [x] Do not commit resources to the store when editing a scenario (use Factions as an example)
+  - [x] Places
+  - [x] Maps
+  - [x] Creatures
+    - Require using a static instance cache?
+  - [x] NPCs
+    - Same as for creatures
+- [x] Migrate to MarkdownFleatherToolbar
+  - [x] Migrate the resource selector from ScenarioFleatherToolbar
 
 ## Play part
 

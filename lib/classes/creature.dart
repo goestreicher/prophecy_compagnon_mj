@@ -286,6 +286,16 @@ class CreatureModelSummary {
         .toList();
   }
 
+  static Future<void> _reloadFromStore(String id) async {
+    _removeFromCache(id);
+    var summary = await CreatureModelSummaryStore().get(id);
+    if(summary != null) {
+      _summaries[id] = summary;
+    }
+  }
+
+  static void _removeFromCache(String id) => _summaries.remove(id);
+
   static void _defaultAssetLoaded(CreatureModelSummary summary) {
     _summaries[summary.id] = summary;
   }
@@ -318,7 +328,65 @@ class CreatureModelSummary {
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @CreatureCategoryJsonConverter()
 class CreatureModel with EncounterEntityModel {
-  CreatureModel(
+  factory CreatureModel({
+    String? uuid,
+    ObjectLocation location = ObjectLocation.memory,
+    required ObjectSource source,
+    required String name,
+    bool unique = false,
+    required CreatureCategory category,
+    String description = '',
+    required String biome,
+    required String size,
+    required String weight,
+    double? mapSize,
+    required Map<Ability, int> abilities,
+    required Map<Attribute, int> attributes,
+    required int initiative,
+    required List<InjuryLevel> injuries,
+    required int naturalArmor,
+    String naturalArmorDescription = '',
+    List<SkillInstance>? skills,
+    List<NaturalWeaponModel>? naturalWeapons,
+    List<String>? equipment,
+    String specialCapability = '',
+    ExportableBinaryData? image,
+    ExportableBinaryData? icon,
+  }) {
+    bool isDefault = (location.type == ObjectLocationType.assets);
+    String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
+    if(!_models.containsKey(id)) {
+      var model = CreatureModel._create(
+        uuid: uuid,
+        location: location,
+        source: source,
+        name: name,
+        unique: unique,
+        category: category,
+        description: description,
+        biome: biome,
+        size: size,
+        weight: weight,
+        mapSize: mapSize,
+        abilities: abilities,
+        attributes: attributes,
+        initiative: initiative,
+        injuries: injuries,
+        naturalArmor: naturalArmor,
+        naturalArmorDescription: naturalArmorDescription,
+        skills: skills,
+        naturalWeapons: naturalWeapons,
+        equipment: equipment,
+        specialCapability: specialCapability,
+        image: image,
+        icon: icon,
+      );
+      _models[id] = model;
+    }
+    return _models[id]!;
+  }
+
+  CreatureModel._create(
       {
         String? uuid,
         required this.name,
@@ -575,6 +643,16 @@ class CreatureModel with EncounterEntityModel {
       CreatureModelSummary._defaultAssetLoaded(instance.summary);
       _models[instance.id] = instance;
     }
+  }
+
+  static Future<void> reloadFromStore(String id) async {
+    _models.remove(id);
+    CreatureModelSummary._reloadFromStore(id);
+  }
+
+  static void removeFromCache(String id) {
+    _models.remove(id);
+    CreatureModelSummary._removeFromCache(id);
   }
 
   static Future<void> loadStoreAssets() async {
