@@ -160,6 +160,27 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                 const SizedBox(width: 8.0),
                 ElevatedButton.icon(
                   icon: const Icon(Icons.add),
+                  label: const Text('Créer une faction'),
+                  onPressed: () async {
+                    var faction = await showDialog<Faction>(
+                      context: context,
+                      builder: (BuildContext context) => adapter.getItemCreationWidget(context, null),
+                    );
+                    if(faction == null) return;
+
+                    await FactionStore().save(faction);
+
+                    setState(() {
+                      treeFilter.sourceType = ObjectSourceType.original;
+                      treeFilter.source = ObjectSource.local;
+                      selectedFaction = faction;
+                      rebuildTree();
+                    });
+                  },
+                ),
+                const SizedBox(width: 8.0),
+                ElevatedButton.icon(
+                  icon: const Icon(Icons.add),
                   label: const Text('Importer une faction'),
                   onPressed: () async {
                     var result = await FilePicker.platform.pickFiles(
