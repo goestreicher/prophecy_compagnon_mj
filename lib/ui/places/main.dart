@@ -80,10 +80,15 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
     var theme = Theme.of(context);
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
+          child: Wrap(
+            direction: Axis.horizontal,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 16.0,
+            runSpacing: 8.0,
             children: [
               DropdownMenu(
                 controller: sourceTypeController,
@@ -120,7 +125,6 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                     .map((ObjectSourceType s) => DropdownMenuEntry(value: s, label: s.title))
                     .toList(),
               ),
-              const SizedBox(width: 8.0),
               DropdownMenu(
                 key: UniqueKey(),
                 controller: sourceController,
@@ -156,10 +160,11 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                         .map((ObjectSource s) => DropdownMenuEntry(value: s, label: s.name))
                         .toList(),
               ),
-              const SizedBox(width: 8.0),
-              ElevatedButton.icon(
-                icon: const Icon(Icons.add),
-                label: const Text('Importer un lieu'),
+              IconButton.filled(
+                icon: const Icon(Icons.publish),
+                iconSize: 24.0,
+                padding: const EdgeInsets.all(4.0),
+                tooltip: 'Importer un lieu',
                 onPressed: () async {
                   var result = await FilePicker.platform.pickFiles(
                     type: FileType.custom,

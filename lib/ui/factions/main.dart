@@ -81,134 +81,167 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
     var theme = Theme.of(context);
 
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
-              children: [
-                DropdownMenu(
-                  controller: sourceTypeController,
-                  label: Text(
-                    'Type de source',
-                    style: theme.textTheme.bodySmall,
-                  ),
-                  textStyle: theme.textTheme.bodySmall,
-                  leadingIcon: treeFilter.sourceType == null
-                      ? null
-                      : GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          treeFilter.sourceType = null;
-                          sourceTypeController.clear();
-                          treeFilter.source = null;
-                          sourceController.clear();
-                          rebuildTree();
-                        });
-                        FocusScope.of(context).unfocus();
-                      },
-                      child: Icon(Icons.cancel, size: 16.0,)
-                  ),
-                  initialSelection: treeFilter.sourceType,
-                  onSelected: (ObjectSourceType? sourceType) {
-                    setState(() {
-                      treeFilter.sourceType = sourceType;
-                      sourceController.clear();
-                      treeFilter.source = null;
-                      rebuildTree();
-                    });
-                  },
-                  dropdownMenuEntries: ObjectSourceType.values
-                      .map((ObjectSourceType s) => DropdownMenuEntry(value: s, label: s.title))
-                      .toList(),
+          child: Wrap(
+            direction: Axis.horizontal,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 16.0,
+            runSpacing: 8.0,
+            children: [
+              DropdownMenu(
+                controller: sourceTypeController,
+                label: Text(
+                  'Type de source',
+                  style: theme.textTheme.bodySmall,
                 ),
-                const SizedBox(width: 8.0),
-                DropdownMenu(
-                  key: UniqueKey(),
-                  controller: sourceController,
-                  enabled: treeFilter.sourceType != null,
-                  label: Text(
-                    'Source',
-                    style: theme.textTheme.bodySmall,
-                  ),
-                  textStyle: theme.textTheme.bodySmall,
-                  leadingIcon: treeFilter.source == null
-                      ? null
-                      : GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          treeFilter.source = null;
-                          sourceController.clear();
-                          rebuildTree();
-                        });
-                        FocusScope.of(context).unfocus();
-                      },
-                      child: Icon(Icons.cancel, size: 16.0,)
-                  ),
-                  initialSelection: treeFilter.source,
-                  onSelected: (ObjectSource? source) {
-                    setState(() {
-                      treeFilter.source = source;
-                      rebuildTree();
-                    });
-                  },
-                  dropdownMenuEntries: treeFilter.sourceType == null
-                      ? <DropdownMenuEntry<ObjectSource>>[]
-                      : ObjectSource.forType(treeFilter.sourceType!)
-                      .map((ObjectSource s) => DropdownMenuEntry(value: s, label: s.name))
-                      .toList(),
-                ),
-                const SizedBox(width: 8.0),
-                ElevatedButton.icon(
-                  icon: const Icon(Icons.add),
-                  label: const Text('Créer une faction'),
-                  onPressed: () async {
-                    var faction = await showDialog<Faction>(
-                      context: context,
-                      builder: (BuildContext context) => adapter.getItemCreationWidget(context, null),
-                    );
-                    if(faction == null) return;
-
-                    await FactionStore().save(faction);
-
-                    setState(() {
-                      treeFilter.sourceType = ObjectSourceType.original;
-                      treeFilter.source = ObjectSource.local;
-                      selectedFaction = faction;
-                      rebuildTree();
-                    });
-                  },
-                ),
-                const SizedBox(width: 8.0),
-                ElevatedButton.icon(
-                  icon: const Icon(Icons.add),
-                  label: const Text('Importer une faction'),
-                  onPressed: () async {
-                    var result = await FilePicker.platform.pickFiles(
-                      type: FileType.custom,
-                      allowedExtensions: ['json'],
-                    );
-                    if(!context.mounted) return;
-                    if(result == null) return;
-
-                    try {
-                      var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
-                      List<dynamic> j = json.decode(jsonStr);
-                      await Faction.import(j);
+                textStyle: theme.textTheme.bodySmall,
+                leadingIcon: treeFilter.sourceType == null
+                    ? null
+                    : GestureDetector(
+                    onTap: () {
                       setState(() {
+                        treeFilter.sourceType = null;
+                        sourceTypeController.clear();
+                        treeFilter.source = null;
+                        sourceController.clear();
                         rebuildTree();
                       });
-                    } catch (e) {
-                      if(!context.mounted) return;
-
-                      displayErrorDialog(
-                          context,
-                          "Échec de l'import",
-                          e.toString()
-                      );
-                    }
-                  },
+                      FocusScope.of(context).unfocus();
+                    },
+                    child: Icon(Icons.cancel, size: 16.0,)
                 ),
-              ]
+                initialSelection: treeFilter.sourceType,
+                onSelected: (ObjectSourceType? sourceType) {
+                  setState(() {
+                    treeFilter.sourceType = sourceType;
+                    sourceController.clear();
+                    treeFilter.source = null;
+                    rebuildTree();
+                  });
+                },
+                dropdownMenuEntries: ObjectSourceType.values
+                    .map((ObjectSourceType s) => DropdownMenuEntry(value: s, label: s.title))
+                    .toList(),
+              ),
+              DropdownMenu(
+                key: UniqueKey(),
+                controller: sourceController,
+                enabled: treeFilter.sourceType != null,
+                label: Text(
+                  'Source',
+                  style: theme.textTheme.bodySmall,
+                ),
+                textStyle: theme.textTheme.bodySmall,
+                leadingIcon: treeFilter.source == null
+                    ? null
+                    : GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        treeFilter.source = null;
+                        sourceController.clear();
+                        rebuildTree();
+                      });
+                      FocusScope.of(context).unfocus();
+                    },
+                    child: Icon(Icons.cancel, size: 16.0,)
+                ),
+                initialSelection: treeFilter.source,
+                onSelected: (ObjectSource? source) {
+                  setState(() {
+                    treeFilter.source = source;
+                    rebuildTree();
+                  });
+                },
+                dropdownMenuEntries: treeFilter.sourceType == null
+                    ? <DropdownMenuEntry<ObjectSource>>[]
+                    : ObjectSource.forType(treeFilter.sourceType!)
+                    .map((ObjectSource s) => DropdownMenuEntry(value: s, label: s.name))
+                    .toList(),
+              ),
+              MenuAnchor(
+                alignmentOffset: const Offset(0, 4),
+                builder: (BuildContext context, MenuController controller, Widget? child) {
+                  return IconButton.filled(
+                    icon: const Icon(Icons.add),
+                    iconSize: 24.0,
+                    padding: const EdgeInsets.all(4.0),
+                    tooltip: 'Créer / Importer',
+                    onPressed: () {
+                      if(controller.isOpen) {
+                        controller.close();
+                      }
+                      else {
+                        controller.open();
+                      }
+                    },
+                  );
+                },
+                menuChildren: [
+                  MenuItemButton(
+                    child: const Row(
+                      children: [
+                        Icon(Icons.create),
+                        SizedBox(width: 4.0),
+                        Text('Créer une faction'),
+                      ],
+                    ),
+                    onPressed: () async {
+                      var faction = await showDialog<Faction>(
+                        context: context,
+                        builder: (BuildContext context) => adapter.getItemCreationWidget(context, null),
+                      );
+                      if(faction == null) return;
+
+                      await FactionStore().save(faction);
+
+                      setState(() {
+                        treeFilter.sourceType = ObjectSourceType.original;
+                        treeFilter.source = ObjectSource.local;
+                        selectedFaction = faction;
+                        rebuildTree();
+                      });
+                    },
+                  ),
+                  MenuItemButton(
+                    child: const Row(
+                      children: [
+                        Icon(Icons.publish),
+                        SizedBox(width: 4.0),
+                        Text('Importer une faction'),
+                      ],
+                    ),
+                    onPressed: () async {
+                      var result = await FilePicker.platform.pickFiles(
+                        type: FileType.custom,
+                        allowedExtensions: ['json'],
+                      );
+                      if(!context.mounted) return;
+                      if(result == null) return;
+
+                      try {
+                        var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
+                        List<dynamic> j = json.decode(jsonStr);
+                        await Faction.import(j);
+                        setState(() {
+                          rebuildTree();
+                        });
+                      } catch (e) {
+                        if(!context.mounted) return;
+
+                        displayErrorDialog(
+                            context,
+                            "Échec de l'import",
+                            e.toString()
+                        );
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ]
           ),
         ),
         Expanded(
