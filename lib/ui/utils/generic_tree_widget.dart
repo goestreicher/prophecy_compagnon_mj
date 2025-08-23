@@ -78,8 +78,10 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
   void getNodesToExpand(TreeNode<GenericTreeData<T>> root) {
     if(widget.filter != null && !widget.filter!.isNull() && widget.filter!.hasChildMatchingFilter(root)) {
       nodesToExpand.add(root);
-      for(var child in root.childrenAsList) {
-        getNodesToExpand(child as TreeNode<GenericTreeData<T>>);
+      if(root.data != null && !root.data!.matchesCurrentFilter) {
+        for (var child in root.childrenAsList) {
+          getNodesToExpand(child as TreeNode<GenericTreeData<T>>);
+        }
       }
     }
   }
