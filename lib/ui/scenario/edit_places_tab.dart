@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
+import '../utils/generic_tree_widget.dart';
 import '../utils/place_display_widget.dart';
-import '../utils/place_tree_widget.dart';
+import '../utils/place_tree_widget_utils.dart';
 
 class ScenarioEditPlacesPage extends StatefulWidget {
   const ScenarioEditPlacesPage({
@@ -26,9 +27,11 @@ class ScenarioEditPlacesPage extends StatefulWidget {
 }
 
 class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
-  late final TreeNode<PlaceTreeData> tree;
+  late final TreeNode<GenericTreeData<Place>> tree;
   late UniqueKey treeKey;
-  final PlaceTreeFilter treeFilter = PlaceTreeFilter();
+  final GenericTreeFilter<Place> treeFilter = GenericTreeFilter<Place>();
+  late PlaceTreeWidgetAdapter adapter;
+
   Place? selectedPlace;
 
   void buildSubTree(TreeNode root, Place place) {
@@ -36,8 +39,8 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
       bool match = treeFilter.matchesFilter(child);
       var node = TreeNode(
           key: child.id,
-          data: PlaceTreeData(
-              place: child,
+          data: GenericTreeData<Place>(
+              item: child,
               matchesCurrentFilter: match
           )
       );
@@ -57,6 +60,18 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
   @override
   void initState() {
     super.initState();
+
+    adapter = PlaceTreeWidgetAdapter(
+      newPlaceSource: widget.scenarioSource,
+      itemSelectionCallback: (Place p) {
+        setState(() {
+          selectedPlace = p;
+        });
+      },
+      itemCreationCallback: (Place p) async {
+        widget.onPlaceCreated(p);
+      },
+    );
 
     tree = TreeNode.root();
     treeFilter.source = widget.scenarioSource;
@@ -80,15 +95,11 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
               slivers: [
                 SliverPadding(
                   padding: const EdgeInsets.only(right: 8.0),
-                  sliver: PlaceTreeWidget(
+                  sliver: GenericTreeWidget<Place>(
                     key: treeKey,
                     tree: tree,
                     filter: treeFilter,
-                    onPlaceSelected: (Place p) => setState(() {
-                      selectedPlace = p;
-                    }),
-                    newPlaceSource: widget.scenarioSource,
-                    onPlaceCreated: (Place p) => widget.onPlaceCreated(p),
+                    adapter: adapter,
                   )
                 )
               ],

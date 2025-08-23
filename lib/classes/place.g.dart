@@ -85,16 +85,16 @@ Place _$PlaceFromJson(Map<String, dynamic> json) => Place(
 );
 
 Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
+  'source': instance.source.toJson(),
+  'name': instance.name,
   'uuid': ?instance.uuid,
   'parent_id': instance.parentId,
   'type': _$PlaceTypeEnumMap[instance.type]!,
-  'name': instance.name,
   'government': instance.government,
   'leader': instance.leader,
   'motto': instance.motto,
   'climate': instance.climate,
   'description': instance.description.toJson(),
-  'source': instance.source.toJson(),
   'map': instance.map?.toJson(),
 };
 

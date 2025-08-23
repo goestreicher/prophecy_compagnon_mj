@@ -8,8 +8,9 @@ import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
 import '../utils/error_feedback.dart';
+import '../utils/generic_tree_widget.dart';
 import '../utils/place_display_widget.dart';
-import '../utils/place_tree_widget.dart';
+import '../utils/place_tree_widget_utils.dart';
 
 class PlacesMainPage extends StatefulWidget {
   const PlacesMainPage({ super.key });
@@ -19,9 +20,10 @@ class PlacesMainPage extends StatefulWidget {
 }
 
 class _PlacesMainPageState extends State<PlacesMainPage> {
-  late final TreeNode<PlaceTreeData> tree;
+  late final TreeNode<GenericTreeData<Place>> tree;
   late UniqueKey treeKey;
-  final PlaceTreeFilter treeFilter = PlaceTreeFilter();
+  final GenericTreeFilter<Place> treeFilter = GenericTreeFilter<Place>();
+  late PlaceTreeWidgetAdapter adapter;
   final TextEditingController sourceTypeController = TextEditingController();
   final TextEditingController sourceController = TextEditingController();
 
@@ -32,8 +34,8 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
       bool match = treeFilter.matchesFilter(child);
       var node = TreeNode(
         key: child.id,
-        data: PlaceTreeData(
-          place: child,
+        data: GenericTreeData<Place>(
+          item: child,
           matchesCurrentFilter: match
         )
       );
@@ -53,6 +55,18 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
   @override
   void initState() {
     super.initState();
+
+    adapter = PlaceTreeWidgetAdapter(
+      itemSelectionCallback: (Place p) {
+        setState(() {
+          selectedPlace = p;
+        });
+      },
+      itemCreationCallback: (Place p) async {
+        await PlaceStore().save(p);
+      },
+    );
+
     tree = TreeNode.root();
     rebuildTree();
   }
@@ -176,13 +190,11 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                   slivers: [
                     SliverPadding(
                       padding: const EdgeInsets.only(right: 8.0),
-                      sliver: PlaceTreeWidget(
+                      sliver: GenericTreeWidget<Place>(
                         key: treeKey,
                         tree: tree,
                         filter: treeFilter,
-                        onPlaceSelected: (Place p) => setState(() {
-                          selectedPlace = p;
-                        }),
+                        adapter: adapter,
                       )
                     )
                   ],

@@ -5,6 +5,7 @@ import 'package:uuid/uuid.dart';
 import 'exportable_binary_data.dart';
 import 'object_location.dart';
 import 'object_source.dart';
+import 'resource_base_class.dart';
 import 'storage/default_assets_store.dart';
 import 'storage/storable.dart';
 import '../../text_utils.dart';
@@ -189,7 +190,7 @@ class PlaceDescription {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class Place {
+class Place extends ResourceBaseClass {
   factory Place({
     String? uuid,
     String? parentId,
@@ -230,31 +231,28 @@ class Place {
     String? uuid,
     this.parentId,
     required this.type,
-    required this.name,
+    required super.name,
     this.government,
     this.leader,
     this.motto,
     this.climate,
     required this.description,
-    required this.location,
-    required this.source,
+    super.location,
+    required super.source,
     this.map,
   }) : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4().toString());
 
+  @override
   String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
   @JsonKey(includeIfNull: false)
     final String? uuid;
   final String? parentId;
   PlaceType type;
-  String name;
   String? government;
   String? leader;
   String? motto;
   String? climate;
   PlaceDescription description;
-  @JsonKey(includeFromJson: true, includeToJson: false)
-    ObjectLocation location;
-  final ObjectSource source;
   PlaceMap? map;
 
   final List<String> _previousMapsDataHashes = <String>[];
