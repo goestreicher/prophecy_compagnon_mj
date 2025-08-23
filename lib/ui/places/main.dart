@@ -87,7 +87,10 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
             children: [
               DropdownMenu(
                 controller: sourceTypeController,
-                label: const Text('Type de source'),
+                label: Text(
+                  'Type de source',
+                  style: theme.textTheme.bodySmall,
+                ),
                 textStyle: theme.textTheme.bodySmall,
                 leadingIcon: treeFilter.sourceType == null
                   ? null
@@ -119,9 +122,13 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
               ),
               const SizedBox(width: 8.0),
               DropdownMenu(
+                key: UniqueKey(),
                 controller: sourceController,
                 enabled: treeFilter.sourceType != null,
-                label: const Text('Source'),
+                label: Text(
+                  'Source',
+                  style: theme.textTheme.bodySmall,
+                ),
                 textStyle: theme.textTheme.bodySmall,
                 leadingIcon: treeFilter.source == null
                     ? null
