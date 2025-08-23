@@ -63,6 +63,10 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
             item: child,
             matchesCurrentFilter: match,
             showInfo: !child.displayOnly,
+            canCreateChildren: (
+                child.location.type == ObjectLocationType.assets
+                || child.source == ObjectSource.local
+            ),
           )
       );
       buildSubTree(node, child);

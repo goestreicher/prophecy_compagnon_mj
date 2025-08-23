@@ -36,7 +36,11 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
         key: child.id,
         data: GenericTreeData<Place>(
           item: child,
-          matchesCurrentFilter: match
+          matchesCurrentFilter: match,
+          canCreateChildren: (
+              child.location.type == ObjectLocationType.assets
+              || child.source == ObjectSource.local
+          ),
         )
       );
       buildSubTree(node, child);
