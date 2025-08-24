@@ -260,6 +260,7 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                         tree: filteredTree ?? fullTree,
                         filter: treeFilter,
                         adapter: adapter,
+                        autoExpandLevel: 1,
                       )
                     )
                   ],

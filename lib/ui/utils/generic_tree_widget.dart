@@ -111,11 +111,13 @@ class GenericTreeWidget<T extends ResourceBaseClass> extends StatefulWidget {
     required this.tree,
     this.filter,
     required this.adapter,
+    this.autoExpandLevel = 0,
   });
 
   final TreeNode<GenericTreeData<T>> tree;
   final GenericTreeFilter<T>? filter;
   final GenericTreeWidgetAdapter<T> adapter;
+  final int autoExpandLevel;
 
   @override
   State<GenericTreeWidget<T>> createState() => _GenericTreeWidgetState<T>();
@@ -124,8 +126,14 @@ class GenericTreeWidget<T extends ResourceBaseClass> extends StatefulWidget {
 class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<GenericTreeWidget<T>> {
   List<TreeNode<GenericTreeData<T>>> nodesToExpand = <TreeNode<GenericTreeData<T>>>[];
 
-  void getNodesToExpand(TreeNode<GenericTreeData<T>> root) {
-    if(widget.filter != null && !widget.filter!.isNull()) {
+  void getNodesToExpand(TreeNode<GenericTreeData<T>> root, int forceExpansionLevel) {
+    if(forceExpansionLevel > 0) {
+      nodesToExpand.add(root);
+      for(var child in root.childrenAsList) {
+        getNodesToExpand(child as TreeNode<GenericTreeData<T>>, forceExpansionLevel - 1);
+      }
+    }
+    else if(widget.filter != null && !widget.filter!.isNull()) {
       if(root.data == null) return;
 
       if(root.data!.matchesCurrentFilter) {
@@ -134,7 +142,7 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
       else if(root.data!.descendantMatchesCurrentFilter) {
         nodesToExpand.add(root);
         for (var child in root.childrenAsList) {
-          getNodesToExpand(child as TreeNode<GenericTreeData<T>>);
+          getNodesToExpand(child as TreeNode<GenericTreeData<T>>, 0);
         }
       }
     }
@@ -145,7 +153,7 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
     super.initState();
     nodesToExpand.clear();
     for(var n in widget.tree.root.childrenAsList) {
-      getNodesToExpand(n as TreeNode<GenericTreeData<T>>);
+      getNodesToExpand(n as TreeNode<GenericTreeData<T>>, widget.autoExpandLevel);
     }
   }
 
