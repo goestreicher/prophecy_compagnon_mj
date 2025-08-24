@@ -72,6 +72,7 @@ flutter:
     - assets/armor.json
     - assets/creature-ldb2e.json
     - assets/factions-castes.json
+    - assets/factions-secretes.json
     - assets/npc-ldb2e.json
     - assets/places-ldb2e.json
     - assets/shield.json

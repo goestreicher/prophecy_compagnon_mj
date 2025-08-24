@@ -137,9 +137,11 @@ class Faction extends ResourceBaseClass {
     if(_defaultAssetsLoaded) return;
     _defaultAssetsLoaded = true;
 
-    for(var a in await loadJSONAssetObjectList('factions-castes.json')) {
-      // ignore:unused_local_variable
-      var f = Faction.fromJson(a);
+    for(var f in ['factions-castes.json', 'factions-secretes.json']) {
+      for(var a in await loadJSONAssetObjectList(f)) {
+        // ignore:unused_local_variable
+        var f = Faction.fromJson(a);
+      }
     }
   }
 
