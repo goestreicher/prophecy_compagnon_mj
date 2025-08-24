@@ -120,7 +120,10 @@ class _NPCMainPageState extends State<NPCMainPage> {
                   children: [
                     DropdownMenu(
                       controller: sourceTypeController,
-                      label: const Text('Type de source'),
+                      label: Text(
+                        'Type de source',
+                        style: theme.textTheme.bodySmall,
+                      ),
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: npcSourceType,
                       leadingIcon: npcSourceType == null
@@ -148,7 +151,10 @@ class _NPCMainPageState extends State<NPCMainPage> {
                     DropdownMenu(
                       controller: sourceController,
                       enabled: npcSourceType != null,
-                      label: const Text('Source'),
+                      label: Text(
+                        'Source',
+                        style: theme.textTheme.bodySmall,
+                      ),
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: npcSource,
                       leadingIcon: npcSource == null
@@ -175,7 +181,10 @@ class _NPCMainPageState extends State<NPCMainPage> {
                     ),
                     DropdownMenu(
                       controller: categoryController,
-                      label: const Text('Catégorie'),
+                      label: Text(
+                        'Catégorie',
+                        style: theme.textTheme.bodySmall,
+                      ),
                       textStyle: theme.textTheme.bodySmall,
                       initialSelection: npcCategory,
                       leadingIcon: npcCategory == null
@@ -204,7 +213,10 @@ class _NPCMainPageState extends State<NPCMainPage> {
                     if(npcCategory != null)
                       DropdownMenu(
                         controller: subCategoryController,
-                        label: const Text('Sous-catégorie'),
+                        label: Text(
+                          'Sous-catégorie',
+                          style: theme.textTheme.bodySmall,
+                        ),
                         requestFocusOnTap: true,
                         textStyle: theme.textTheme.bodySmall,
                         initialSelection: npcSubCategory,
@@ -238,6 +250,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                         style: theme.textTheme.bodySmall,
                         decoration: InputDecoration(
                           labelText: 'Recherche',
+                          labelStyle: theme.textTheme.bodySmall,
                           border: OutlineInputBorder(),
                           suffixIcon: Icon(Icons.search),
                           prefixIcon: search == null
@@ -267,7 +280,8 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       builder: (BuildContext context, MenuController controller, Widget? child) {
                         return IconButton.filled(
                           icon: const Icon(Icons.add),
-                          padding: const EdgeInsets.all(12.0),
+                          iconSize: 24.0,
+                          padding: const EdgeInsets.all(4.0),
                           tooltip: 'Créer / Importer',
                           onPressed: () {
                             if(controller.isOpen) {
