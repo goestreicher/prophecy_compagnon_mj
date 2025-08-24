@@ -34,29 +34,6 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
 
   Place? selectedPlace;
 
-  void buildSubTree(TreeNode root, Place place) {
-    for(var child in Place.withParent(place.id)..sort(Place.sortComparator)) {
-      bool match = treeFilter.matchesFilter(child);
-      var node = TreeNode(
-          key: child.id,
-          data: GenericTreeData<Place>(
-              item: child,
-              matchesCurrentFilter: match
-          )
-      );
-      buildSubTree(node, child);
-      if(treeFilter.hasChildMatchingFilter(node) || child.location.type == ObjectLocationType.assets) {
-        root.add(node);
-      }
-    }
-  }
-
-  void rebuildTree() {
-    tree.clear();
-    treeKey = UniqueKey();
-    buildSubTree(tree, Place.byId('monde')!);
-  }
-
   @override
   void initState() {
     super.initState();
@@ -76,6 +53,44 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
     tree = TreeNode.root();
     treeFilter.source = widget.scenarioSource;
     rebuildTree();
+  }
+
+  void rebuildTree() {
+    tree.clear();
+    treeKey = UniqueKey();
+    buildSubTree(tree, Place.byId('monde')!);
+  }
+
+  void buildSubTree(TreeNode root, Place place) {
+    for(var child in Place.withParent(place.id)..sort(Place.sortComparator)) {
+      var node = TreeNode<GenericTreeData<Place>>(
+        key: child.id,
+      );
+      buildSubTree(node, child);
+
+      bool match = treeFilter.matchesFilter(child);
+      bool descendantMatch = node.childrenAsList
+        .any(
+          (ListenableNode n) {
+            if(n.isRoot) return true;
+            var tn = n as TreeNode<GenericTreeData<Place>>;
+            return tn.data != null
+                && (
+                    tn.data!.matchesCurrentFilter
+                    || tn.data!.descendantMatchesCurrentFilter
+                );
+          }
+      );
+      node.data = GenericTreeData<Place>(
+        item: child,
+        matchesCurrentFilter: match,
+        descendantMatchesCurrentFilter: descendantMatch,
+      );
+
+      if(match || descendantMatch || child.location.type == ObjectLocationType.assets) {
+        root.add(node);
+      }
+    }
   }
 
   @override
@@ -149,10 +164,10 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
                       path = '${current!.id}.$path';
                     }
                     var n = tree.elementAt(path);
+                    n.parent?.remove(n);
                     widget.onPlaceDeleted(p);
                     setState(() {
                       selectedPlace = null;
-                      n.parent?.remove(n);
                     });
                   },
                 ),

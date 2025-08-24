@@ -22,19 +22,21 @@ class FactionsMainPage extends StatefulWidget {
 }
 
 class _FactionsMainPageState extends State<FactionsMainPage> {
-  late final TreeNode<GenericTreeData<Faction>> tree;
+  late final TreeNode<GenericTreeData<Faction>> fullTree;
+  TreeNode<GenericTreeData<Faction>>? filteredTree;
   late UniqueKey treeKey;
   final GenericTreeFilter<Faction> treeFilter = GenericTreeFilter<Faction>();
   late FactionTreeWidgetAdapter adapter;
   final TextEditingController sourceTypeController = TextEditingController();
   final TextEditingController sourceController = TextEditingController();
+  final TextEditingController searchController = TextEditingController();
 
   Faction? selectedFaction;
 
   @override
   void initState() {
     super.initState();
-    tree = TreeNode.root();
+
     adapter = FactionTreeWidgetAdapter(
       itemSelectionCallback: (Faction f) {
         setState(() {
@@ -45,23 +47,23 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
         await FactionStore().save(f);
       }
     );
-    rebuildTree();
+
+    fullTree = TreeNode.root();
+    rebuildFullTree();
   }
 
-  void rebuildTree() {
-    tree.clear();
+  void rebuildFullTree() {
+    fullTree.clear();
     treeKey = UniqueKey();
-    buildSubTree(tree, null);
+    buildSubTree(fullTree, null);
   }
 
   void buildSubTree(TreeNode root, Faction? faction) {
     for(var child in Faction.withParent(faction?.id).toList()..sort(Faction.sortComparator)) {
-      bool match = treeFilter.matchesFilter(child);
       var node = TreeNode(
           key: child.id,
           data: GenericTreeData<Faction>(
             item: child,
-            matchesCurrentFilter: match,
             showInfo: !child.displayOnly,
             canCreateChildren: (
                 child.location.type == ObjectLocationType.assets
@@ -70,9 +72,23 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
           )
       );
       buildSubTree(node, child);
-      if(treeFilter.hasChildMatchingFilter(node) || child.location.type == ObjectLocationType.assets) {
-        root.add(node);
-      }
+      root.add(node);
+    }
+  }
+
+  void updateFilteredTree() {
+    if(treeFilter.isNull()) {
+      setState(() {
+        filteredTree = null;
+        treeKey = UniqueKey();
+      });
+    }
+    else {
+      var tree = treeFilter.createFilteredTree(fullTree);
+      setState(() {
+        filteredTree = tree;
+        treeKey = UniqueKey();
+      });
     }
   }
 
@@ -107,8 +123,8 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                         sourceTypeController.clear();
                         treeFilter.source = null;
                         sourceController.clear();
-                        rebuildTree();
                       });
+                      updateFilteredTree();
                       FocusScope.of(context).unfocus();
                     },
                     child: Icon(Icons.cancel, size: 16.0,)
@@ -119,8 +135,8 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                     treeFilter.sourceType = sourceType;
                     sourceController.clear();
                     treeFilter.source = null;
-                    rebuildTree();
                   });
+                  updateFilteredTree();
                 },
                 dropdownMenuEntries: ObjectSourceType.values
                     .map((ObjectSourceType s) => DropdownMenuEntry(value: s, label: s.title))
@@ -142,8 +158,8 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                       setState(() {
                         treeFilter.source = null;
                         sourceController.clear();
-                        rebuildTree();
                       });
+                      updateFilteredTree();
                       FocusScope.of(context).unfocus();
                     },
                     child: Icon(Icons.cancel, size: 16.0,)
@@ -152,14 +168,48 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                 onSelected: (ObjectSource? source) {
                   setState(() {
                     treeFilter.source = source;
-                    rebuildTree();
                   });
+                  updateFilteredTree();
                 },
                 dropdownMenuEntries: treeFilter.sourceType == null
                     ? <DropdownMenuEntry<ObjectSource>>[]
                     : ObjectSource.forType(treeFilter.sourceType!)
                     .map((ObjectSource s) => DropdownMenuEntry(value: s, label: s.name))
                     .toList(),
+              ),
+              SizedBox(
+                width: 200.0,
+                child: TextField(
+                  controller: searchController,
+                  style: theme.textTheme.bodySmall,
+                  decoration: InputDecoration(
+                    labelText: 'Recherche',
+                    labelStyle: theme.textTheme.bodySmall,
+                    border: OutlineInputBorder(),
+                    suffixIcon: Icon(Icons.search),
+                    prefixIcon: treeFilter.nameFilter == null
+                      ? null
+                      : GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              searchController.clear();
+                              treeFilter.nameFilter = null;
+                            });
+                            updateFilteredTree();
+                            FocusScope.of(context).unfocus();
+                          },
+                          child: Icon(Icons.cancel, size: 16.0,)
+                    ),
+                  ),
+                  onSubmitted: (String? value) {
+                    if(value == null || value.length >= 3) {
+                      setState(() {
+                        treeFilter.nameFilter = value;
+                      });
+                      updateFilteredTree();
+                    }
+                  },
+                ),
               ),
               MenuAnchor(
                 alignmentOffset: const Offset(0, 4),
@@ -201,8 +251,9 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                         treeFilter.sourceType = ObjectSourceType.original;
                         treeFilter.source = ObjectSource.local;
                         selectedFaction = faction;
-                        rebuildTree();
                       });
+                      rebuildFullTree();
+                      updateFilteredTree();
                     },
                   ),
                   MenuItemButton(
@@ -225,8 +276,11 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                         var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                         List<dynamic> j = json.decode(jsonStr);
                         await Faction.import(j);
+
                         setState(() {
-                          rebuildTree();
+                          treeFilter.sourceType = ObjectSource.local.type;
+                          treeFilter.source = ObjectSource.local;
+                          rebuildFullTree();
                         });
                       } catch (e) {
                         if(!context.mounted) return;
@@ -256,7 +310,7 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                         padding: const EdgeInsets.only(right: 8.0),
                         sliver: GenericTreeWidget<Faction>(
                           key: treeKey,
-                          tree: tree,
+                          tree: filteredTree ?? fullTree,
                           filter: treeFilter,
                           adapter: adapter,
                         )
@@ -308,13 +362,20 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                           current = Faction.byId(current.parentId!);
                           path = '${current!.id}.$path';
                         }
-                        var n = tree.elementAt(path);
-                        setState(() {
-                          selectedFaction = null;
-                          tree.root.remove(n);
-                        });
 
                         await Faction.delete(f);
+
+                        var fullTreeNode = fullTree.elementAt(path);
+                        fullTreeNode.parent?.remove(fullTreeNode);
+
+                        if(filteredTree != null) {
+                          var filteredTreeNode = filteredTree!.elementAt(path);
+                          filteredTreeNode.parent?.remove(filteredTreeNode);
+                        }
+
+                        setState(() {
+                          selectedFaction = null;
+                        });
                       },
                     ),
                   )

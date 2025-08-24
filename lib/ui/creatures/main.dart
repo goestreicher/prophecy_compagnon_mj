@@ -52,7 +52,10 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
       return CreatureModelSummary.forSourceType(creatureSourceType!, creatureCategory, nameFilter: search);
     }
     else if(creatureCategory != null) {
-      return CreatureModelSummary.forCategory(creatureCategory!);
+      return CreatureModelSummary.forCategory(creatureCategory!, nameFilter: search);
+    }
+    else if(search != null && search!.isNotEmpty) {
+      return CreatureModelSummary.getAll(nameFilter: search);
     }
 
     return <CreatureModelSummary>[];

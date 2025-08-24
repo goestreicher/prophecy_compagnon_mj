@@ -8,12 +8,14 @@ class GenericTreeData<T extends ResourceBaseClass> {
   GenericTreeData({
     required this.item,
     this.matchesCurrentFilter = true,
+    this.descendantMatchesCurrentFilter = true,
     this.showInfo = true,
     this.canCreateChildren = true,
   });
 
   T item;
   bool matchesCurrentFilter;
+  bool descendantMatchesCurrentFilter;
   bool showInfo;
   bool canCreateChildren;
 }
@@ -21,8 +23,55 @@ class GenericTreeData<T extends ResourceBaseClass> {
 class GenericTreeFilter<T extends ResourceBaseClass> {
   ObjectSourceType? sourceType;
   ObjectSource? source;
+  String? nameFilter;
 
-  bool isNull() => sourceType == null && source == null;
+  bool isNull() => sourceType == null && source == null && nameFilter == null;
+
+  TreeNode<GenericTreeData<T>>? createFilteredTree(TreeNode<GenericTreeData<T>> root) {
+    if(root.data == null && !root.isRoot) {
+      return null;
+    }
+
+    TreeNode<GenericTreeData<T>>? filteredRoot;
+    List<TreeNode<GenericTreeData<T>>> filteredChildren = <TreeNode<GenericTreeData<T>>>[];
+
+    for(var child in root.childrenAsList) {
+      var cast = child as TreeNode<GenericTreeData<T>>;
+
+      if(cast.data == null) {
+        continue;
+      }
+
+      var filteredChild = createFilteredTree(child);
+      if(filteredChild != null) filteredChildren.add(filteredChild);
+    }
+
+    bool filteredRootMatches = root.isRoot || matchesFilter(root.data!.item);
+
+    if(filteredRootMatches || filteredChildren.isNotEmpty) {
+      if(root.isRoot) {
+        filteredRoot = TreeNode.root();
+      }
+      else {
+        filteredRoot = TreeNode(
+          key: root.data!.item.id,
+          data: GenericTreeData(
+            item: root.data!.item,
+            showInfo: root.data!.showInfo,
+            canCreateChildren: root.data!.canCreateChildren,
+            matchesCurrentFilter: filteredRootMatches,
+            descendantMatchesCurrentFilter: filteredChildren.isNotEmpty,
+          ),
+        );
+      }
+
+      for(var filteredChild in filteredChildren) {
+        filteredRoot.add(filteredChild);
+      }
+    }
+
+    return filteredRoot;
+  }
 
   bool matchesFilter(T t) {
     if(source != null && t.source != source) {
@@ -33,17 +82,17 @@ class GenericTreeFilter<T extends ResourceBaseClass> {
       return false;
     }
 
+    if(nameFilter != null && !t.name.toLowerCase().contains(nameFilter!.toLowerCase())) {
+      return false;
+    }
+
     return true;
   }
 
   bool hasChildMatchingFilter(TreeNode<GenericTreeData<T>> node) {
-    var data = node.data as GenericTreeData<T>;
-    if(data.matchesCurrentFilter) return true;
-
     for(var child in node.childrenAsList) {
-      if(hasChildMatchingFilter(child as TreeNode<GenericTreeData<T>>)) {
-        return true;
-      }
+      var data = (child as TreeNode<GenericTreeData<T>>).data;
+      if(data != null && data.matchesCurrentFilter) return true;
     }
 
     return false;
@@ -76,9 +125,14 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
   List<TreeNode<GenericTreeData<T>>> nodesToExpand = <TreeNode<GenericTreeData<T>>>[];
 
   void getNodesToExpand(TreeNode<GenericTreeData<T>> root) {
-    if(widget.filter != null && !widget.filter!.isNull() && widget.filter!.hasChildMatchingFilter(root)) {
-      nodesToExpand.add(root);
-      if(root.data != null && !root.data!.matchesCurrentFilter) {
+    if(widget.filter != null && !widget.filter!.isNull()) {
+      if(root.data == null) return;
+
+      if(root.data!.matchesCurrentFilter) {
+        nodesToExpand.add(root);
+      }
+      else if(root.data!.descendantMatchesCurrentFilter) {
+        nodesToExpand.add(root);
         for (var child in root.childrenAsList) {
           getNodesToExpand(child as TreeNode<GenericTreeData<T>>);
         }
@@ -162,16 +216,14 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
                       );
                       if(item == null) return;
 
-                      setState(() {
-                        node.add(
-                          TreeNode(
-                            key: item.id,
-                            data: GenericTreeData<T>(item: item),
-                          )
-                        );
-                        widget.adapter.onItemCreated(item);
-                        widget.adapter.onItemSelected(item);
-                      });
+                      node.add(
+                        TreeNode(
+                          key: item.id,
+                          data: GenericTreeData<T>(item: item),
+                        )
+                      );
+                      widget.adapter.onItemCreated(item);
+                      widget.adapter.onItemSelected(item);
                     },
                   ),
               ],

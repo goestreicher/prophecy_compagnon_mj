@@ -20,41 +20,16 @@ class PlacesMainPage extends StatefulWidget {
 }
 
 class _PlacesMainPageState extends State<PlacesMainPage> {
-  late final TreeNode<GenericTreeData<Place>> tree;
+  late final TreeNode<GenericTreeData<Place>> fullTree;
+  TreeNode<GenericTreeData<Place>>? filteredTree;
   late UniqueKey treeKey;
   final GenericTreeFilter<Place> treeFilter = GenericTreeFilter<Place>();
   late PlaceTreeWidgetAdapter adapter;
   final TextEditingController sourceTypeController = TextEditingController();
   final TextEditingController sourceController = TextEditingController();
+  final TextEditingController searchController = TextEditingController();
 
   Place? selectedPlace;
-
-  void buildSubTree(TreeNode root, Place place) {
-    for(var child in Place.withParent(place.id)..sort(Place.sortComparator)) {
-      bool match = treeFilter.matchesFilter(child);
-      var node = TreeNode(
-        key: child.id,
-        data: GenericTreeData<Place>(
-          item: child,
-          matchesCurrentFilter: match,
-          canCreateChildren: (
-              child.location.type == ObjectLocationType.assets
-              || child.source == ObjectSource.local
-          ),
-        )
-      );
-      buildSubTree(node, child);
-      if(treeFilter.hasChildMatchingFilter(node) || child.location.type == ObjectLocationType.assets) {
-        root.add(node);
-      }
-    }
-  }
-
-  void rebuildTree() {
-    tree.clear();
-    treeKey = UniqueKey();
-    buildSubTree(tree, Place.byId('monde')!);
-  }
 
   @override
   void initState() {
@@ -71,8 +46,47 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
       },
     );
 
-    tree = TreeNode.root();
-    rebuildTree();
+    fullTree = TreeNode.root();
+    rebuildFullTree();
+  }
+
+  void rebuildFullTree() {
+    fullTree.clear();
+    treeKey = UniqueKey();
+    buildSubTree(fullTree, Place.byId('monde')!);
+  }
+
+  void buildSubTree(TreeNode root, Place place) {
+    for(var child in Place.withParent(place.id)..sort(Place.sortComparator)) {
+      var node = TreeNode(
+          key: child.id,
+          data: GenericTreeData<Place>(
+            item: child,
+            canCreateChildren: (
+                child.location.type == ObjectLocationType.assets
+                || child.source == ObjectSource.local
+            ),
+          )
+      );
+      buildSubTree(node, child);
+      root.add(node);
+    }
+  }
+
+  void updateFilteredTree() {
+    if(treeFilter.isNull()) {
+      setState(() {
+        filteredTree = null;
+        treeKey = UniqueKey();
+      });
+    }
+    else {
+      var tree = treeFilter.createFilteredTree(fullTree);
+      setState(() {
+        filteredTree = tree;
+        treeKey = UniqueKey();
+      });
+    }
   }
 
   @override
@@ -106,8 +120,8 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                           sourceTypeController.clear();
                           treeFilter.source = null;
                           sourceController.clear();
-                          rebuildTree();
                         });
+                        updateFilteredTree();
                         FocusScope.of(context).unfocus();
                       },
                       child: Icon(Icons.cancel, size: 16.0,)
@@ -118,8 +132,8 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                     treeFilter.sourceType = sourceType;
                     sourceController.clear();
                     treeFilter.source = null;
-                    rebuildTree();
                   });
+                  updateFilteredTree();
                 },
                 dropdownMenuEntries: ObjectSourceType.values
                     .map((ObjectSourceType s) => DropdownMenuEntry(value: s, label: s.title))
@@ -141,8 +155,8 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                           setState(() {
                             treeFilter.source = null;
                             sourceController.clear();
-                            rebuildTree();
                           });
+                          updateFilteredTree();
                           FocusScope.of(context).unfocus();
                         },
                         child: Icon(Icons.cancel, size: 16.0,)
@@ -151,14 +165,48 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                 onSelected: (ObjectSource? source) {
                   setState(() {
                     treeFilter.source = source;
-                    rebuildTree();
                   });
+                  updateFilteredTree();
                 },
                 dropdownMenuEntries: treeFilter.sourceType == null
                     ? <DropdownMenuEntry<ObjectSource>>[]
                     : ObjectSource.forType(treeFilter.sourceType!)
                         .map((ObjectSource s) => DropdownMenuEntry(value: s, label: s.name))
                         .toList(),
+              ),
+              SizedBox(
+                width: 200.0,
+                child: TextField(
+                  controller: searchController,
+                  style: theme.textTheme.bodySmall,
+                  decoration: InputDecoration(
+                    labelText: 'Recherche',
+                    labelStyle: theme.textTheme.bodySmall,
+                    border: OutlineInputBorder(),
+                    suffixIcon: Icon(Icons.search),
+                    prefixIcon: treeFilter.nameFilter == null
+                        ? null
+                        : GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                searchController.clear();
+                                treeFilter.nameFilter = null;
+                              });
+                              updateFilteredTree();
+                              FocusScope.of(context).unfocus();
+                            },
+                            child: Icon(Icons.cancel, size: 16.0,)
+                    ),
+                  ),
+                  onSubmitted: (String? value) {
+                    if(value == null || value.length >= 3) {
+                      setState(() {
+                        treeFilter.nameFilter = value;
+                      });
+                      updateFilteredTree();
+                    }
+                  },
+                ),
               ),
               IconButton.filled(
                 icon: const Icon(Icons.publish),
@@ -177,10 +225,11 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                     var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                     List<dynamic> j = json.decode(jsonStr);
                     await Place.import(j);
+
                     setState(() {
                       treeFilter.sourceType = ObjectSource.local.type;
                       treeFilter.source = ObjectSource.local;
-                      rebuildTree();
+                      rebuildFullTree();
                     });
                   } catch (e) {
                     if(!context.mounted) return;
@@ -208,7 +257,7 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                       padding: const EdgeInsets.only(right: 8.0),
                       sliver: GenericTreeWidget<Place>(
                         key: treeKey,
-                        tree: tree,
+                        tree: filteredTree ?? fullTree,
                         filter: treeFilter,
                         adapter: adapter,
                       )
@@ -257,13 +306,20 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                           current = Place.byId(current.parentId!);
                           path = '${current!.id}.$path';
                         }
-                        var n = tree.elementAt(path);
+
+                        await Place.delete(p);
+
+                        var fullTreeNode = fullTree.elementAt(path);
+                        fullTreeNode.parent?.remove(fullTreeNode);
+
+                        if(filteredTree != null) {
+                          var filteredTreeNode = filteredTree!.elementAt(path);
+                          filteredTreeNode.parent?.remove(filteredTreeNode);
+                        }
+
                         setState(() {
                           selectedPlace = null;
-                          n.parent?.remove(n);
                         });
-          
-                        await Place.delete(p);
                       },
                     ),
                   )

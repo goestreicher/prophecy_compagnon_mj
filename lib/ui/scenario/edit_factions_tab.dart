@@ -59,17 +59,32 @@ class _ScenarioEditFactionsPageState extends State<ScenarioEditFactionsPage> {
 
   void buildSubTree(TreeNode root, Faction? faction) {
     for(var child in Faction.withParent(faction?.id).toList()..sort(Faction.sortComparator)) {
-      bool match = treeFilter.matchesFilter(child);
-      var node = TreeNode(
+      var node = TreeNode<GenericTreeData<Faction>>(
           key: child.id,
-          data: GenericTreeData<Faction>(
-            item: child,
-            matchesCurrentFilter: match,
-            showInfo: !child.displayOnly,
-          )
       );
       buildSubTree(node, child);
-      if(treeFilter.hasChildMatchingFilter(node) || child.location.type == ObjectLocationType.assets) {
+
+      bool match = treeFilter.matchesFilter(child);
+      bool descendantMatch = node.childrenAsList
+        .any(
+          (ListenableNode n) {
+            if(n.isRoot) return true;
+            var tn = n as TreeNode<GenericTreeData<Faction>>;
+            return tn.data != null
+              && (
+                    tn.data!.matchesCurrentFilter
+                    || tn.data!.descendantMatchesCurrentFilter
+                );
+          }
+        );
+      node.data = GenericTreeData<Faction>(
+        item: child,
+        matchesCurrentFilter: match,
+        descendantMatchesCurrentFilter: descendantMatch,
+        showInfo: !child.displayOnly,
+      );
+
+      if(match || descendantMatch || child.location.type == ObjectLocationType.assets) {
         root.add(node);
       }
     }
@@ -148,10 +163,10 @@ class _ScenarioEditFactionsPageState extends State<ScenarioEditFactionsPage> {
                       path = '${current!.id}.$path';
                     }
                     var n = tree.elementAt(path);
+                    n.parent?.remove(n);
+                    widget.onFactionDeleted(f);
                     setState(() {
-                      widget.onFactionDeleted(f);
                       selectedFaction = null;
-                      tree.root.remove(n);
                     });
                   },
                 ),
