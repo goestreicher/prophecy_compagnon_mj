@@ -1,0 +1,138 @@
+[
+  {
+    "name": "Drillon - Chenille Géante",
+    "category": "animauxSauvages",
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e"
+    },
+    "description": "Les drillons sont des chenilles de monte, permettant de chasser en s'accrochant dans les arbres pour se laisser tomber sur les proies au sol ou pour permettre aux chasseurs de s'embusquer de manière originale. Leur épaisse fourrure hérissée, allant du marron au vert foncé en passant par le grisâtre, en fait un animal peu discernable et parfois chassé pour son pelage.",
+    "biome": "Forêts tempérées",
+    "size": "2 m de long, 1 m de diamètre",
+    "weight": "180 kg",
+    "map_size": 1.2,
+    "abilities": {
+      "force":        10,
+      "intelligence": 2,
+      "coordination": 5,
+      "presence":     0,
+      "resistance":   6,
+      "volonte":      4,
+      "perception":   4,
+      "empathie":     3
+    },
+    "attributes": {
+      "physique": 6,
+      "mental":   2,
+      "manuel":   2,
+      "social":   0
+    },
+    "initiative": 2,
+    "natural_armor": 3,
+    "natural_armor_description": "fourrure hérissée",
+    "injuries": [
+      {
+        "rank": 0,
+        "title": "Blessé",
+        "start": 0,
+        "end": 25,
+        "malus": 0,
+        "capacity": 3
+      },
+      {
+        "rank": 1,
+        "title": "Mort",
+        "start": 25,
+        "end": -1,
+        "malus": 0,
+        "capacity": 1
+      }
+    ],
+    "skills": [
+      {
+        "skill": "escalade",
+        "value": 12
+      },
+      {
+        "skill": "discretion",
+        "value": 14
+      }
+    ],
+    "natural_weapons": [
+      { "name": "Morsure", "ranges": { "contact": 0.0 }, "skill": 3, "damage": 3 }
+    ],
+    "special_capability": "Adhérence - les drillons peuvent se maintenir sur n'importe quel support, y compris une branche verticale ou tête en bas. Cette capacité est utilisable avec un cavalier dont le poids n'excède pas la moitié du leur.\nPacifisme - le drillon ne nécessite qu'un jet d'Équitation à 10 pour être monté en combat, mais n'attaque que sur commande (Social + Équitation, diff. 20) ou pour se défendre si elle est acculée."
+  },
+  {
+    "name": "Vulture de Sinise",
+    "category": "creaturesElementaires",
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e"
+    },
+    "description": "Les vultures sont des oiseaux élémentaires datant d'avant l'Âge des Fondations. Façonnés par Szyl et Kroryn il y a des lustres, ces volatiles sont pour ainis dire transparents et leurs plumes sont comme des miroirs reflétant les couleurs du ciel.",
+    "biome": "Chaînes de montagne de moyenne altitude, régions volcaniques",
+    "size": "1m20 d'envergure",
+    "weight": "10 kg",
+    "map_size": 0.7,
+    "abilities": {
+      "force":        5,
+      "intelligence": 5,
+      "coordination": 8,
+      "presence":     0,
+      "resistance":   5,
+      "volonte":      3,
+      "perception":   10,
+      "empathie":     0
+    },
+    "attributes": {
+      "physique": 6,
+      "mental":   3,
+      "manuel":   0,
+      "social":   0
+    },
+    "initiative": 5,
+    "natural_armor": 0,
+    "injuries": [
+      {
+        "rank": 0,
+        "title": "Blessé",
+        "start": 0,
+        "end": 20,
+        "malus": 0,
+        "capacity": 2
+      },
+      {
+        "rank": 1,
+        "title": "Mort",
+        "start": 20,
+        "end": -1,
+        "malus": 0,
+        "capacity": 1
+      }
+    ],
+    "skills": [
+      {
+        "skill": "esquive",
+        "value": 5
+      },
+      {
+        "skill": "athletisme",
+        "value": 0,
+        "specializations": [
+          {
+            "name": "creature:vultureDeSinise:specialized:misc:athletisme:voler",
+            "title": "Voler",
+            "value": 7,
+            "reserved": true
+          }
+        ]
+      }
+    ],
+    "natural_weapons": [
+      { "name": "Bec", "ranges": { "contact": 0.0 }, "skill": 5, "damage": 13 },
+      { "name": "Serres", "ranges": { "contact": 0.0 }, "skill": 7, "damage": 11 }
+    ],
+    "special_capability": "Transparence - les vultures sont invisibles tant qu'ils demeurent dans les cieux à planer, reflétant parfaitement les couleurs du ciel.\nPiqué - cette attaque se résout comme une charge avec deux actions d'élan."
+  }
+]

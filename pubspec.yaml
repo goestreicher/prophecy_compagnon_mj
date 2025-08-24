@@ -70,7 +70,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/armor.json
-    - assets/creature-ldb2e.json
+    - assets/creatures-ldb2e.json
+    - assets/creatures-ecran2e.json
     - assets/factions-castes.json
     - assets/factions-secretes.json
     - assets/npc-ldb2e.json

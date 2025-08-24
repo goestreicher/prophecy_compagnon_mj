@@ -45,6 +45,7 @@ class CreatureCategory {
   static CreatureCategory animauxSauvages = CreatureCategory(title: "Animaux sauvages", isDefault: true);
   static CreatureCategory peuplesAnciens = CreatureCategory(title: "Peuples anciens", isDefault: true);
   static CreatureCategory creaturesDraconiques = CreatureCategory(title: "Créatures draconiques", isDefault: true);
+  static CreatureCategory creaturesElementaires = CreatureCategory(title: "Créatures élémentaires", isDefault: true);
 
   static CreatureCategory createNewCreatureCategory = CreatureCategory._create(title: "Créer cette catégorie", isDefault: true);
 
@@ -644,10 +645,17 @@ class CreatureModel with EncounterEntityModel {
         _modelFactory,
         _creatureFactory);
 
-    for(var model in await loadJSONAssetObjectList('creature-ldb2e.json')) {
-      var instance = CreatureModel.fromJson(model);
-      CreatureModelSummary._defaultAssetLoaded(instance.summary);
-      _models[instance.id] = instance;
+    var assetFiles = [
+      'creatures-ldb2e.json',
+      'creatures-ecran2e.json',
+    ];
+
+    for(var f in assetFiles) {
+      for (var model in await loadJSONAssetObjectList(f)) {
+        var instance = CreatureModel.fromJson(model);
+        CreatureModelSummary._defaultAssetLoaded(instance.summary);
+        _models[instance.id] = instance;
+      }
     }
   }
 
