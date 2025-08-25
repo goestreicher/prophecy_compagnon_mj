@@ -761,7 +761,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                       initialValue: _luck,
                                       label: 'Chance',
                                       minValue: 0,
-                                      maxValue: 6,
+                                      maxValue: 10,
                                       onChanged: (int value) {
                                         _luck = value;
                                       }
@@ -774,7 +774,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                       initialValue: _proficiency,
                                       label: 'Maîtrise',
                                       minValue: 0,
-                                      maxValue: 6,
+                                      maxValue: 10,
                                       onChanged: (int value) {
                                         _proficiency = value;
                                       }

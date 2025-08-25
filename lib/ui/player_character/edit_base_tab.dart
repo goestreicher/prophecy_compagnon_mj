@@ -562,7 +562,7 @@ class _SecondaryAttributesEditWidgetState extends State<_SecondaryAttributesEdit
                   child: CharacterDigitInputWidget(
                     initialValue: widget.character.luck,
                     minValue: 0,
-                    maxValue: 5,
+                    maxValue: 10,
                     onChanged: (int value) {
                       widget.character.luck = value;
                     },
@@ -574,7 +574,7 @@ class _SecondaryAttributesEditWidgetState extends State<_SecondaryAttributesEdit
                   child: CharacterDigitInputWidget(
                     initialValue: widget.character.proficiency,
                     minValue: 0,
-                    maxValue: 5,
+                    maxValue: 10,
                     onChanged: (int value) {
                       widget.character.proficiency = value;
                     },
