@@ -13,6 +13,9 @@ Pretty much a WiP, not stable at the moment
 - [ ] Add dates in the factions leaders and members?
 - [ ] Add artifacts resources?
 - [ ] Fill in more places from the official docs
+- [ ] Use the same leaders mechanism for places as exists for factions
+- [ ] Link factions (and places) titles to NPCs
+- [ ] Add draconic link
 
 - [x] Migrate places to GenericTreeWidget
 - [x] Add an optional UUID in ObjectSource to prevent conflicts in case of names collision
