@@ -234,7 +234,7 @@ class HumanCharacter extends EntityBase with MagicUser {
         super.weight = 60.0,
         Place? origin,
         List<Interdict>? interdicts,
-        List<CastePrivilege>? castePrivileges,
+        List<CharacterCastePrivilege>? castePrivileges,
         List<CharacterDisadvantage>? disadvantages,
         List<CharacterAdvantage>? advantages,
         CharacterTendencies? tendencies,
@@ -244,7 +244,7 @@ class HumanCharacter extends EntityBase with MagicUser {
       })
     : origin = origin ?? Place.byId('empireDeSolyr')!,
       interdicts = interdicts ?? <Interdict>[],
-      castePrivileges = castePrivileges ?? <CastePrivilege>[],
+      castePrivileges = castePrivileges ?? <CharacterCastePrivilege>[],
       disadvantages = disadvantages ?? <CharacterDisadvantage>[],
       advantages = advantages ?? <CharacterAdvantage>[],
       tendencies = tendencies ?? CharacterTendencies.empty()
@@ -264,8 +264,8 @@ class HumanCharacter extends EntityBase with MagicUser {
   int renown;
   @JsonKey(defaultValue: <Interdict>[])
     List<Interdict> interdicts;
-  @JsonKey(defaultValue: <CastePrivilege>[])
-    List<CastePrivilege> castePrivileges;
+  @JsonKey(defaultValue: <CharacterCastePrivilege>[])
+    List<CharacterCastePrivilege> castePrivileges;
   List<CharacterDisadvantage> disadvantages;
   List<CharacterAdvantage> advantages;
   CharacterTendencies tendencies;

@@ -1121,7 +1121,7 @@ class _CastePrivilegeEditWidgetState extends State<_CastePrivilegeEditWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                '${p.title} (${p.cost})',
+                                '${p.privilege.title} (${p.privilege.cost})${p.description == null ? "" : " : ${p.description}"}',
                                 style: theme.textTheme.bodySmall!.copyWith(
                                   fontWeight: FontWeight.bold,
                                 )
@@ -1139,7 +1139,7 @@ class _CastePrivilegeEditWidgetState extends State<_CastePrivilegeEditWidget> {
                       textStyle: theme.textTheme.bodySmall,
                     ),
                     onPressed: () async {
-                      var result = await showDialog<CastePrivilege>(
+                      var result = await showDialog<CharacterCastePrivilege>(
                         context: context,
                         builder: (BuildContext context) => CastePrivilegePickerDialog(
                           defaultCaste: widget.character.caste != Caste.sansCaste ?

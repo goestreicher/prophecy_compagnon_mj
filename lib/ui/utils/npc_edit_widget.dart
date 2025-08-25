@@ -78,7 +78,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
   int _proficiency = 0;
   int _renown = 0;
   final List<Interdict> _interdicts = <Interdict>[];
-  final List<CastePrivilege> _castePrivileges = <CastePrivilege>[];
+  final List<CharacterCastePrivilege> _castePrivileges = <CharacterCastePrivilege>[];
   final List<CharacterDisadvantage> _disadvantages = <CharacterDisadvantage>[];
   final List<CharacterAdvantage> _advantages = <CharacterAdvantage>[];
   final List<SkillInstance> _skills = <SkillInstance>[];
@@ -872,7 +872,12 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                         });
                                       },
                                     ),
-                                    SizedBox(width: 200, child: Text('${p.title} (${p.cost})')),
+                                    SizedBox(
+                                      width: 200,
+                                      child: Text(
+                                        '${p.privilege.title} (${p.privilege.cost})${p.description == null ? "" : " : ${p.description}"}',
+                                      )
+                                    ),
                                   ],
                                 ),
                               const SizedBox(height: 16.0),
@@ -886,12 +891,13 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                 ),
                                 label: const Text('Nouveau privilège'),
                                 onPressed: () async {
-                                  var result = await showDialog<CastePrivilege>(
+                                  var result = await showDialog<CharacterCastePrivilege>(
                                     context: context,
                                     builder: (BuildContext context) => CastePrivilegePickerDialog(
-                                      defaultCaste: _caste != Caste.sansCaste ?
-                                      _caste :
-                                      null,
+                                      defaultCaste: _caste != Caste.sansCaste
+                                        ? _caste
+                                        : null,
+                                      currentPrivileges: _castePrivileges,
                                     ),
                                   );
                                   if(!context.mounted) return;

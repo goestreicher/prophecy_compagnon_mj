@@ -3,37 +3,50 @@ import 'package:flutter/material.dart';
 import '../../classes/character/base.dart';
 
 class CastePrivilegePickerDialog extends StatefulWidget {
-  const CastePrivilegePickerDialog({ super.key, this.defaultCaste });
+  const CastePrivilegePickerDialog({
+    super.key,
+    this.defaultCaste,
+    this.currentPrivileges = const <CharacterCastePrivilege>[],
+  });
 
   final Caste? defaultCaste;
+  final List<CharacterCastePrivilege> currentPrivileges;
 
   @override
   State<CastePrivilegePickerDialog> createState() => _CastePrivilegePickerDialogState();
 }
 
 class _CastePrivilegePickerDialogState extends State<CastePrivilegePickerDialog> {
-  final TextEditingController _casteController = TextEditingController();
-  final TextEditingController _privilegeController = TextEditingController();
+  final TextEditingController casteController = TextEditingController();
+  final TextEditingController privilegeController = TextEditingController();
+  final TextEditingController descriptionController = TextEditingController();
 
-  Caste? _currentCaste;
-  final List<CastePrivilege> _privilegesForCurrentCaste = <CastePrivilege>[];
-  CastePrivilege? _privilege;
+  Set<CastePrivilege> assignedPrivileges = <CastePrivilege>{};
+  Caste? currentCaste;
+  final List<CastePrivilege> privilegesForCurrentCaste = <CastePrivilege>[];
+  CastePrivilege? privilege;
+  String? currentDescription;
 
-  void _updateForCurrentCaste() {
-    _privilege = null;
-    _privilegesForCurrentCaste.clear();
-    _privilegeController.clear();
-    if(_currentCaste == null) return;
-    _privilegesForCurrentCaste.addAll(
-      CastePrivilege.values.where((CastePrivilege p) => p.caste == _currentCaste)
+  void updateForCurrentCaste() {
+    privilege = null;
+    privilegesForCurrentCaste.clear();
+    privilegeController.clear();
+    if(currentCaste == null) return;
+    privilegesForCurrentCaste.addAll(
+      CastePrivilege.values.where(
+        (CastePrivilege p) => (p.caste == currentCaste) && (p.unique == false || !assignedPrivileges.contains(p))
+      )
     );
   }
 
   @override
   void initState() {
     super.initState();
-    _currentCaste = widget.defaultCaste;
-    _updateForCurrentCaste();
+    assignedPrivileges = widget.currentPrivileges
+        .map((CharacterCastePrivilege p) => p.privilege)
+        .toSet();
+    currentCaste = widget.defaultCaste;
+    updateForCurrentCaste();
   }
 
   @override
@@ -46,15 +59,15 @@ class _CastePrivilegePickerDialogState extends State<CastePrivilegePickerDialog>
           mainAxisSize: MainAxisSize.min,
           children: [
             DropdownMenu(
-              controller: _casteController,
-              initialSelection: _currentCaste,
+              controller: casteController,
+              initialSelection: currentCaste,
               label: const Text('Caste'),
               requestFocusOnTap: true,
               expandedInsets: EdgeInsets.zero,
               onSelected: (Caste? caste) {
                 setState(() {
-                  _currentCaste = caste;
-                  _updateForCurrentCaste();
+                  currentCaste = caste;
+                  updateForCurrentCaste();
                 });
               },
               dropdownMenuEntries: Caste.values
@@ -64,43 +77,70 @@ class _CastePrivilegePickerDialogState extends State<CastePrivilegePickerDialog>
             ),
             const SizedBox(height: 16.0),
             DropdownMenu(
-              controller: _privilegeController,
+              controller: privilegeController,
               label: const Text('Privilège'),
               requestFocusOnTap: true,
               expandedInsets: EdgeInsets.zero,
               onSelected: (CastePrivilege? i) {
-                _privilege = i;
+                setState(() {
+                  privilege = i;
+                });
               },
-              dropdownMenuEntries: _privilegesForCurrentCaste
+              dropdownMenuEntries: privilegesForCurrentCaste
                 .map((CastePrivilege p) => DropdownMenuEntry(value: p, label: p.title))
                 .toList(),
             ),
+            if(privilege != null && privilege!.requireDescription)
+              const SizedBox(height: 16.0),
+            if(privilege != null && privilege!.requireDescription)
+              TextFormField(
+                controller: descriptionController,
+                decoration: const InputDecoration(
+                  label: Text('Description'),
+                  border: OutlineInputBorder(),
+                ),
+                validator: (String? value) {
+                  if(value == null || value.isEmpty) {
+                    return 'Valeur manquante';
+                  }
+                  return null;
+                },
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                onChanged: (String value) => setState(() {
+                  currentDescription = value;
+                }),
+              ),
             const SizedBox(height: 16.0),
             Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('Annuler'),
+              padding: const EdgeInsets.symmetric(vertical: 12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: const Text('Annuler'),
+                  ),
+                  const SizedBox(width: 12.0),
+                  ElevatedButton(
+                    onPressed: privilege == null || (privilege!.requireDescription && descriptionController.text.isEmpty)
+                      ? null
+                      : () {
+                      var priv = CharacterCastePrivilege(privilege: privilege!);
+                      if(privilege!.requireDescription) {
+                        priv.description = descriptionController.text;
+                      }
+                      Navigator.of(context).pop(priv);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: theme.colorScheme.primary,
+                      foregroundColor: theme.colorScheme.onPrimary,
                     ),
-                    const SizedBox(width: 12.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        if(_privilege == null) return;
-                        Navigator.of(context).pop(_privilege);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: theme.colorScheme.primary,
-                        foregroundColor: theme.colorScheme.onPrimary,
-                      ),
-                      child: const Text('OK'),
-                    )
-                  ],
-                )
+                    child: const Text('OK'),
+                  )
+                ],
+              )
             ),
           ],
         )

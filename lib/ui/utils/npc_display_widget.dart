@@ -431,7 +431,9 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                                       ),
                                     ),
                                   for(var p in npc.castePrivileges)
-                                    Text('${p.title} / ${p.caste.title} (${p.cost})'),
+                                    Text(
+                                      '${p.privilege.caste.title} / ${p.privilege.title} (${p.privilege.cost})${p.description == null ? "" : " : ${p.description!}"}',
+                                    ),
                                 ],
                               ),
                             ],
