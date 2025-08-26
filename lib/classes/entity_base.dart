@@ -369,6 +369,16 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem {
     return (dominantHandInitiatives, weakHandInitiative);
   }
 
+  static void preImportFilter(Map<String, dynamic> json) {
+    if(json.containsKey('image') && json['image'] != null) {
+      json['image'].remove('is_new');
+    }
+
+    if(json.containsKey('icon') && json['icon'] != null) {
+      json['icon'].remove('is_new');
+    }
+  }
+
   @override
   Map<String, dynamic> toJson() {
     var j = _$EntityBaseToJson(this);

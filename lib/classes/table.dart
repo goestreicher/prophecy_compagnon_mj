@@ -16,6 +16,7 @@ Future<void> importGameTable(Map<String, dynamic> json) async {
   // Re-create all characters
   var summaries = <Map<String, dynamic>>[];
   for(var pcJson in json['players']) {
+    PlayerCharacter.preImportFilter(pcJson);
     pcJson['location'] = ObjectLocation.memory.toJson();
     var pc = PlayerCharacter.fromJson(pcJson);
     await PlayerCharacterStore().save(pc);

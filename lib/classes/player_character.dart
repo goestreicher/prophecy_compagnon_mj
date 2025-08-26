@@ -164,6 +164,7 @@ class PlayerCharacter extends HumanCharacter {
       });
 
   factory PlayerCharacter.import(Map<String, dynamic> json) {
+    preImportFilter(json);
     if(json.containsKey('uuid')) {
       // Just replace the existing UUID to prevent any conflicts
       json['uuid'] = const Uuid().v4().toString();
@@ -183,6 +184,10 @@ class PlayerCharacter extends HumanCharacter {
     icon: icon?.clone(),
     location: location,
   );
+
+  static void preImportFilter(Map<String, dynamic> json) {
+    EntityBase.preImportFilter(json);
+  }
 
   @override
   Map<String, dynamic> toJson() {
