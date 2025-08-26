@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../classes/character/base.dart';
 import '../../classes/human_character.dart';
 
 class DisadvantagePickerDialog extends StatefulWidget {
-  const DisadvantagePickerDialog({ super.key });
+  const DisadvantagePickerDialog({ super.key, this.includeReservedForCaste });
+
+  final Caste? includeReservedForCaste;
 
   @override
   State<DisadvantagePickerDialog> createState() => _DisadvantagePickerDialogState();
@@ -29,7 +32,14 @@ class _DisadvantagePickerDialogState extends State<DisadvantagePickerDialog> {
 
     setState(() {
       _forType.addAll(
-        Disadvantage.values.where((Disadvantage d) => d.type == _type)
+        Disadvantage.values.where((Disadvantage d) =>
+            (d.type == _type)
+            && (
+                d.reservedCastes.isEmpty
+                || widget.includeReservedForCaste == null
+                || d.reservedCastes.contains(widget.includeReservedForCaste)
+            )
+        )
       );
     });
   }

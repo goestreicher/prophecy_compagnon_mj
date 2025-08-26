@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:prophecy_compagnon_mj/text_utils.dart';
 
+import '../../classes/character/base.dart';
 import '../../classes/character/skill.dart';
 
 class FamilyAndSkillPickerDialog extends StatefulWidget {
-  const FamilyAndSkillPickerDialog({ super.key, this.excluded = const <Skill>[] });
+  const FamilyAndSkillPickerDialog({
+    super.key,
+    this.excluded = const <Skill>[],
+    this.includeReservedCaste,
+  });
 
   final List<Skill> excluded;
+  final Caste? includeReservedCaste;
 
   @override
   State<FamilyAndSkillPickerDialog> createState() => _FamilyAndSkillPickerDialogState();
@@ -23,7 +29,7 @@ class _FamilyAndSkillPickerDialogState extends State<FamilyAndSkillPickerDialog>
     _skillList.clear();
     if(_currentFamily == null) return;
     _skillList.addAll(
-      Skill.fromFamily(_currentFamily!)
+      Skill.fromFamily(_currentFamily!, forCaste: widget.includeReservedCaste)
           .where((Skill s) => !widget.excluded.contains(s) && s.canInstantiate && !s.requireSpecialization)
     );
   }
@@ -104,11 +110,17 @@ class _FamilyAndSkillPickerDialogState extends State<FamilyAndSkillPickerDialog>
 }
 
 class SkillPickerDialog extends StatelessWidget {
-  SkillPickerDialog({super.key, required this.family, this.excluded = const <Skill>[]})
-    : _skillList = Skill.fromFamily(family).where((Skill s) => !excluded.contains(s)).toList();
+  SkillPickerDialog({
+    super.key,
+    required this.family,
+    this.excluded = const <Skill>[],
+    this.includeReservedCaste,
+  })
+    : _skillList = Skill.fromFamily(family, forCaste: includeReservedCaste).where((Skill s) => !excluded.contains(s)).toList();
 
   final SkillFamily family;
   final List<Skill> excluded;
+  final Caste? includeReservedCaste;
   final List<Skill> _skillList;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _skillController = TextEditingController();

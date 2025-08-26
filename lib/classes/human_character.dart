@@ -44,17 +44,26 @@ enum Disadvantage {
   serment(title: 'Serment', cost: [2], type: DisadvantageType.commun),
   amnesie(title: 'Amnésie', cost: [3], type: DisadvantageType.rare),
   appelDeLaBete(title: 'Appel de la bête', cost: [5], type: DisadvantageType.rare),
+  autocrate(title: 'Autocrate (Mage de l\'Ombre)', cost: [5], type: DisadvantageType.rare, reservedCastes: [Caste.mage]),
   blessure(title: 'Blessure', cost: [5], type: DisadvantageType.rare),
+  curiositeMageVents(title: 'Curiosité (Mage des Vents)', cost: [0], type: DisadvantageType.rare, reservedCastes: [Caste.voyageur]),
   dependance(title: 'Dépendance', cost: [3], type: DisadvantageType.rare),
   deviance(title: 'Déviance', cost: [3], type: DisadvantageType.rare),
   echecRare(title: 'Échec', cost: [5], type: DisadvantageType.rare),
   ennemiRare(title: 'Ennemi', cost: [5], type: DisadvantageType.rare),
   incompetence(title: 'Incompétence', cost: [5], type: DisadvantageType.rare),
   infirmite(title: 'Infirmité', cost: [1,3,5], type: DisadvantageType.rare),
+  instinctSuperieur(title: 'Instinct supérieur (Mage des Océans)', cost: [0], type: DisadvantageType.rare),
+  interditsDeBrorne(title: 'Interdits de Brorne (Mage de la Pierre)', cost: [0], type: DisadvantageType.rare, reservedCastes: [Caste.mage]),
   maladresse(title: 'Maladresse', cost: [2], type: DisadvantageType.rare),
+  marqueDeNenya(title: 'Marque de Nenya (Mage des Rêves)', cost: [0], type: DisadvantageType.rare, reservedCastes: [Caste.mage]),
+  maledictionDeKezyr(title: 'Malédiction de Kezyr (Mage du Métal)', cost: [0], type: DisadvantageType.rare, reservedCastes: [Caste.mage]),
+  maledictionDeNenya(title: 'Malédiction de Nenya (Mage du Feu)', cost: [0], type: DisadvantageType.rare, reservedCastes: [Caste.mage]),
+  mauvaiseReputation(title: 'Mauvaise réputation (Mage des Cités)', cost: [0], type: DisadvantageType.rare, reservedCastes: [Caste.mage]),
   marqueAuFer(title: 'Marqué au fer', cost: [3], type: DisadvantageType.rare),
   mauvaisOeil(title: 'Mauvais œil', cost: [3], type: DisadvantageType.rare),
   personneACharge(title: 'Personne à charge', cost: [2], type: DisadvantageType.rare),
+  phobieDesCites(title: 'Phobie des cités (Mage de la Nature)', cost: [4], type: DisadvantageType.rare, reservedCastes: [Caste.mage]),
   regardDesDragons(title: 'Regard des Dragons', cost: [3,5], type: DisadvantageType.rare),
   troubleMental(title: 'Trouble mental', cost: [3], type: DisadvantageType.rare),
   chetif(title: 'Chétif', cost: [5], type: DisadvantageType.enfant),
@@ -82,11 +91,13 @@ enum Disadvantage {
   final String title;
   final List<int> cost;
   final DisadvantageType type;
+  final List<Caste> reservedCastes;
 
   const Disadvantage({
     required this.title,
     required this.cost,
     required this.type,
+    this.reservedCastes = const <Caste>[],
   });
 }
 
@@ -120,25 +131,34 @@ enum Advantage {
   agilite(title: 'Agilité', cost: [3], type: AdvantageType.general),
   allie(title: 'Allié', cost: [3,5], type: AdvantageType.general),
   ambidextre(title: 'Ambidextre', cost: [3], type: AdvantageType.general),
+  anticipation(title: 'Anticipation', cost: [5], type: AdvantageType.general, reservedCastes: [Caste.combattant]),
   armeDuMaitre(title: 'Arme du maître', cost: [2], type: AdvantageType.general),
   augureFavorable(title: 'Augure favorable', cost: [3], type: AdvantageType.general),
   chance(title: 'Chance', cost: [2], type: AdvantageType.general),
   charme(title: 'Charme', cost: [1], type: AdvantageType.general),
   confidences(title: 'Confidences', cost: [3], type: AdvantageType.general),
+  convictionSuperieure(title: 'Conviction supérieure', cost: [5], type: AdvantageType.general, reservedCastes: [Caste.combattant]),
   corpsAguerri(title: 'Corps aguerri', cost: [3], type: AdvantageType.general),
   droiture(title: 'Droiture', cost: [1], type: AdvantageType.general),
+  enigmatique(title: 'Énigmatique', cost: [3], type: AdvantageType.general, reservedCastes: [Caste.voyageur]),
   fortunePersonnelle(title: 'Fortune personnelle', cost: [], type: AdvantageType.general),
   heritageDraconique(title: 'Héritage draconique', cost: [6], type: AdvantageType.general),
+  illumine(title: 'Illuminé', cost: [4], type: AdvantageType.general, reservedCastes: [Caste.erudit]),
+  intellectualisation(title: 'Intellectualisation (Mage des Océans)', cost: [2], type: AdvantageType.general, reservedCastes: [Caste.mage]),
   magieNaturelle(title: 'Magie naturelle', cost: [4], type: AdvantageType.general),
   mentor(title: 'Mentor', cost: [4], type: AdvantageType.general),
+  present(title: 'Présent', cost: [1,2,3,4,5,6], type: AdvantageType.general, reservedCastes: [Caste.artisan]),
   prestance(title: 'Prestance', cost: [2], type: AdvantageType.general),
   pressentiment(title: 'Pressentiment', cost: [3], type: AdvantageType.general),
+  recuperation(title: 'Récupération', cost: [6], type: AdvantageType.general, reservedCastes: [Caste.combattant]),
   resistanceALaMagie(title: 'Résistance à la magie', cost: [5], type: AdvantageType.general),
   santeDeFer(title: 'Santé de fer', cost: [4], type: AdvantageType.general),
   sensAccru(title: 'Sens accru', cost: [2], type: AdvantageType.general),
   sensDeLOrientation(title: "Sens de l'orientation", cost: [], type: AdvantageType.general),
   sensEnAlerte(title: 'Sens en alerte', cost: [3], type: AdvantageType.general),
+  sommeilLeger(title: 'Sommeil léger', cost: [3], type: AdvantageType.general, reservedCastes: [Caste.combattant]),
   statutSocial(title: 'Statut social', cost: [2], type: AdvantageType.general),
+  surprise(title: 'Surprise', cost: [6], type: AdvantageType.general, reservedCastes: [Caste.commercant]),
   chanceInouie(title: 'Chance inouïe', cost: [3], type: AdvantageType.enfant),
   empathieNaturelle(title: 'Empathie naturelle', cost: [4], type: AdvantageType.enfant),
   fetiche(title: 'Fétiche', cost: [1], type: AdvantageType.enfant),
@@ -155,8 +175,14 @@ enum Advantage {
   final String title;
   final List<int> cost;
   final AdvantageType type;
+  final List<Caste> reservedCastes;
 
-  const Advantage({ required this.title, required this.cost, required this.type });
+  const Advantage({
+    required this.title,
+    required this.cost,
+    required this.type,
+    this.reservedCastes = const <Caste>[],
+  });
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)

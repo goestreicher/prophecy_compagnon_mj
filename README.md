@@ -16,6 +16,7 @@ Pretty much a WiP, not stable at the moment
 - [ ] Use the same leaders mechanism for places as exists for factions
 - [ ] Link factions (and places) titles to NPCs
 - [ ] Add draconic link
+- [ ] Limit skills, specialized skills, advantage and disadvantages to their reserved caste
 
 - [x] Migrate places to GenericTreeWidget
 - [x] Add an optional UUID in ObjectSource to prevent conflicts in case of names collision
