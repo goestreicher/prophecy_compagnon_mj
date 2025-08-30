@@ -74,6 +74,9 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                 widget.onNPCModified(selectedNPC!);
               }
             }
+            else {
+              NonPlayerCharacter.removeFromCache(selectedNPC!.id);
+            }
 
             setState(() {
               creatingNewNPC = false;

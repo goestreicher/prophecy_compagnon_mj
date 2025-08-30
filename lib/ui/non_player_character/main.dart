@@ -71,6 +71,9 @@ class _NPCMainPageState extends State<NPCMainPage> {
             npcCategory = selectedEditNPC!.category;
             npcSubCategory = selectedEditNPC!.subCategory;
           }
+          else {
+            NonPlayerCharacter.removeFromCache(selectedEditNPC!.id);
+          }
 
           setState(() {
             selectedEditNPC = null;
