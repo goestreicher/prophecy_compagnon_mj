@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/entity_base.dart';
-import '../../classes/equipment.dart';
-import '../../classes/weapon.dart';
+import '../../../../classes/entity_base.dart';
+import '../../../../classes/equipment.dart';
+import '../../../../classes/weapon.dart';
 
 enum EquipHands {
   dominant,

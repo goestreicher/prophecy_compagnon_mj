@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/character/base.dart';
+import '../../../../classes/character/base.dart';
 
 class AbilityListDisplayWidget extends StatelessWidget {
   const AbilityListDisplayWidget({ super.key, required this.abilities });

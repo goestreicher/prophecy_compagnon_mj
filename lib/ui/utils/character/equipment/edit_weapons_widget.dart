@@ -6,11 +6,11 @@ import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
 import '../../../../classes/shield.dart';
 import '../../../../classes/weapon.dart';
-import '../../shield_equip_widget.dart';
-import '../../shield_picker_dialog.dart';
-import '../../weapon_picker_dialog.dart';
+import 'shield_equip_widget.dart';
+import 'shield_picker_dialog.dart';
+import 'weapon_picker_dialog.dart';
 import '../change_stream.dart';
-import '../../weapon_equip_widget.dart';
+import 'weapon_equip_widget.dart';
 import '../widget_group_container.dart';
 
 class CharacterEditWeaponsWidget extends StatefulWidget {

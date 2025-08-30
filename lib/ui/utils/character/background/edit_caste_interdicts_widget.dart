@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
-import '../../interdict_picker_dialog.dart';
+import 'interdict_picker_dialog.dart';
 import '../change_stream.dart';
 import '../widget_group_container.dart';
 

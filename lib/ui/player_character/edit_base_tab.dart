@@ -8,15 +8,15 @@ import '../../classes/object_location.dart';
 import '../../classes/place.dart';
 import '../../classes/player_character.dart';
 import '../../classes/character/base.dart';
-import '../utils/ability_list_edit_widget.dart';
-import '../utils/attribute_list_edit_widget.dart';
+import '../utils/character/base/ability_list_edit_widget.dart';
+import '../utils/character/base/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
-import '../utils/advantage_picker_dialog.dart';
-import '../utils/caste_privilege_picker_dialog.dart';
-import '../utils/disadvantage_picker_dialog.dart';
+import '../utils/character/background/advantage_picker_dialog.dart';
+import '../utils/character/background/caste_privilege_picker_dialog.dart';
+import '../utils/character/background/disadvantage_picker_dialog.dart';
 import '../utils/illustration_edit_widget.dart';
-import '../utils/interdict_picker_dialog.dart';
-import '../utils/tendencies_edit_widget.dart';
+import '../utils/character/background/interdict_picker_dialog.dart';
+import '../utils/character/base/tendencies_edit_widget.dart';
 
 class EditBaseTab extends StatefulWidget {
   const EditBaseTab({ super.key, required this.character });

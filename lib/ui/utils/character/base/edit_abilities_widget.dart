@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
-import '../../ability_list_edit_widget.dart';
+import 'ability_list_edit_widget.dart';
 import '../change_stream.dart';
 import '../widget_group_container.dart';
 

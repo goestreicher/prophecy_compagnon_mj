@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
-import '../../advantage_picker_dialog.dart';
-import '../../disadvantage_picker_dialog.dart';
+import 'advantage_picker_dialog.dart';
+import 'disadvantage_picker_dialog.dart';
 import '../change_stream.dart';
 import '../widget_group_container.dart';
 

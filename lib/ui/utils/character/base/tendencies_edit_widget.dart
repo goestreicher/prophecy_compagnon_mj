@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../classes/human_character.dart';
-import 'measure_widget_offscreen.dart';
+import '../../../../classes/human_character.dart';
+import '../../measure_widget_offscreen.dart';
 
 /*
     Some data about the full-size tendencies background image

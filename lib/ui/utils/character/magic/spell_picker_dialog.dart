@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/magic.dart';
+import '../../../../classes/magic.dart';
 
 class MagicSpellPickerDialog extends StatefulWidget {
   const MagicSpellPickerDialog({ super.key });

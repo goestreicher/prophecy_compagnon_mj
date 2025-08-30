@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/character/base.dart';
-import '../../classes/human_character.dart';
+import '../../../../classes/character/base.dart';
+import '../../../../classes/human_character.dart';
 
 class AdvantagePickerDialog extends StatefulWidget {
   const AdvantagePickerDialog({ super.key, this.includeReservedForCaste });

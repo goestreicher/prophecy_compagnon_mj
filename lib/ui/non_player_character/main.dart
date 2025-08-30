@@ -9,7 +9,7 @@ import '../utils/character/edit_widget.dart';
 import '../utils/character/npc_create_dialog.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
-import '../utils/npc_list_widget.dart';
+import '../utils/character/npc_list_widget.dart';
 
 class NPCMainPage extends StatefulWidget {
   const NPCMainPage({ super.key });

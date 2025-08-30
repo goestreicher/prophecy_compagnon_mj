@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/character/base.dart';
+import '../../../../classes/character/base.dart';
 
 class CastePrivilegePickerDialog extends StatefulWidget {
   const CastePrivilegePickerDialog({

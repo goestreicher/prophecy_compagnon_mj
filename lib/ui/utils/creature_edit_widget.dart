@@ -12,16 +12,16 @@ import '../../classes/equipment.dart';
 import '../../classes/object_source.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
-import '../utils/ability_list_edit_widget.dart';
-import '../utils/armor_picker_dialog.dart';
-import '../utils/attribute_list_edit_widget.dart';
+import 'character/base/ability_list_edit_widget.dart';
+import 'character/equipment/armor_picker_dialog.dart';
+import 'character/base/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 import '../utils/injuries_edit_widget.dart';
-import '../utils/shield_picker_dialog.dart';
-import '../utils/skill_picker_dialog.dart';
-import '../utils/weapon_picker_dialog.dart';
+import 'character/equipment/shield_picker_dialog.dart';
+import 'character/base/skill_picker_dialog.dart';
+import 'character/equipment/weapon_picker_dialog.dart';
 import '../../text_utils.dart';
 
 class CreatureEditWidget extends StatefulWidget {

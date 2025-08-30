@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
-import '../../magic_sphere_edit_widget.dart';
+import 'magic_sphere_edit_widget.dart';
 import '../widget_group_container.dart';
 
 class CharacterEditMagicSpheresWidget extends StatelessWidget {

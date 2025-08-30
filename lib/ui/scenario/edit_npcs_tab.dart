@@ -4,7 +4,7 @@ import '../../classes/non_player_character.dart';
 import '../../classes/object_source.dart';
 import '../utils/character/edit_widget.dart';
 import '../utils/character/npc_create_dialog.dart';
-import '../utils/npc_list_widget.dart';
+import '../utils/character/npc_list_widget.dart';
 
 class ScenarioEditNPCsPage extends StatefulWidget {
   const ScenarioEditNPCsPage({

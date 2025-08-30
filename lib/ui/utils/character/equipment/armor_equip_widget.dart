@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/entity_base.dart';
-import '../../classes/equipment.dart';
-import '../../classes/shield.dart';
+import '../../../../classes/armor.dart';
+import '../../../../classes/equipment.dart';
+import '../../../../classes/human_character.dart';
 
-class ShieldEquipWidget extends StatefulWidget {
-  const ShieldEquipWidget({
+class ArmorEquipWidget extends StatefulWidget {
+  const ArmorEquipWidget({
     super.key,
     required this.character,
-    required this.shield,
+    required this.armor,
     required this.onEquipedStateChanged,
     this.allowDelete = true,
   });
 
-  final EntityBase character;
-  final Shield shield;
+  final HumanCharacter character;
+  final Armor armor;
   final VoidCallback onEquipedStateChanged;
   final bool allowDelete;
 
   @override
-  State<ShieldEquipWidget> createState() => _ShieldEquipWidgetState();
+  State<ArmorEquipWidget> createState() => _ArmorEquipWidgetState();
 }
 
-class _ShieldEquipWidgetState extends State<ShieldEquipWidget> {
+class _ArmorEquipWidgetState extends State<ArmorEquipWidget> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -30,17 +30,16 @@ class _ShieldEquipWidgetState extends State<ShieldEquipWidget> {
     var leading = <Widget>[];
     if(widget.allowDelete) {
       leading.add(
-        IconButton(
-          icon: const Icon(Icons.delete),
-          onPressed: () {
-            setState(() {
-              widget.character.removeEquipment(widget.shield);
-              widget.onEquipedStateChanged();
-            });
-          },
-        )
+          IconButton(
+            icon: const Icon(Icons.delete),
+            onPressed: () {
+              setState(() {
+                widget.character.removeEquipment(widget.armor);
+                widget.onEquipedStateChanged();
+              });
+            },
+          )
       );
-      leading.add(const SizedBox(width: 12.0));
     }
 
     return Card(
@@ -52,6 +51,7 @@ class _ShieldEquipWidgetState extends State<ShieldEquipWidget> {
       Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
+          spacing: 8.0,
           children: [
             for(var w in leading)
               w,
@@ -59,46 +59,49 @@ class _ShieldEquipWidgetState extends State<ShieldEquipWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '\u{1F6E1} ${widget.shield.name()}',
+                  widget.armor.name(),
                   style: theme.textTheme.titleMedium,
                 ),
                 Text(
-                  'Protection ${widget.shield.protection()}',
+                  'Protection ${widget.armor.protection()}',
                   style: theme.textTheme.bodyMedium,
                 ),
                 Text(
-                  'Pénalité ${widget.shield.model.penalty}',
+                  'Pénalite ${widget.armor.model.penalty}',
                   style: theme.textTheme.bodySmall,
                 ),
+                Text(
+                  widget.armor.model.type.title,
+                  style: theme.textTheme.bodySmall,
+                )
               ],
             ),
             const Spacer(),
-            if(!widget.character.meetsEquipableRequirements(widget.shield))
+            if(!widget.character.meetsEquipableRequirements(widget.armor))
               Text(
-                'Pré-requis\n${widget.character.unmetEquipableRequirementsDescription(widget.shield)}',
+                'Pré-requis\n${widget.character.unmetEquipableRequirementsDescription(widget.armor)}',
                 textAlign: TextAlign.right,
                 style: theme.textTheme.bodySmall,
               ),
-            const SizedBox(width: 8.0),
             Column(
               children: [
                 Switch(
-                  value: widget.character.isEquiped(widget.shield),
-                  onChanged: !widget.character.meetsEquipableRequirements(widget.shield)
+                  value: widget.character.isEquiped(widget.armor),
+                  onChanged: !widget.character.meetsEquipableRequirements(widget.armor)
                       ? null
                       : (bool value) {
                     if(value) {
-                      widget.character.replaceEquiped(widget.shield, target: EquipableItemTarget.weakHand);
+                      widget.character.replaceEquiped(widget.armor, target: EquipableItemTarget.body);
                       widget.onEquipedStateChanged();
                     }
-                    else if(!value && widget.character.isEquiped(widget.shield)) {
-                      widget.character.unequip(widget.shield);
+                    else if(!value && widget.character.isEquiped(widget.armor)) {
+                      widget.character.unequip(widget.armor);
                       widget.onEquipedStateChanged();
                     }
                   },
                 ),
                 Text(
-                  widget.character.isEquiped(widget.shield) ? 'Déséquiper' : 'Équiper',
+                  widget.character.isEquiped(widget.armor) ? 'Déséquiper' : 'Équiper',
                   style: theme.textTheme.bodySmall,
                 )
               ],

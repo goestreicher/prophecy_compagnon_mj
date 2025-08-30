@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/character/base.dart';
-import 'character_digit_input_widget.dart';
+import '../../../../classes/character/base.dart';
+import '../../character_digit_input_widget.dart';
 
 class AbilityListEditWidget extends StatelessWidget {
   const AbilityListEditWidget({

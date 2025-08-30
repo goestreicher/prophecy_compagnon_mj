@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/shield.dart';
+import '../../../../classes/shield.dart';
 
 class ShieldPickerDialog extends StatefulWidget {
   const ShieldPickerDialog({ super.key });

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../classes/entity_base.dart';
 import '../../classes/equipment.dart';
 import '../../classes/armor.dart';
-import '../utils/armor_picker_dialog.dart';
+import '../utils/character/equipment/armor_picker_dialog.dart';
 
 class ArmorListWidget extends StatefulWidget {
   const ArmorListWidget({

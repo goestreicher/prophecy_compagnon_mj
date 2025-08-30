@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/character/base.dart';
+import '../../../../classes/character/base.dart';
 
 class AttributeListDisplayWidget extends StatelessWidget {
   const AttributeListDisplayWidget({ super.key, required this.attributes });

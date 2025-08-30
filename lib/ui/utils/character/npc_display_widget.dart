@@ -3,17 +3,17 @@ import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
-import '../../classes/character/base.dart';
-import '../../classes/magic.dart';
-import '../../classes/non_player_character.dart';
-import '../../classes/object_source.dart';
-import 'ability_list_display_widget.dart';
-import 'attribute_list_display_widget.dart';
-import 'error_feedback.dart';
-import 'full_page_loading.dart';
-import 'injuries_display_widget.dart';
-import 'tendencies_display_widget.dart';
-import '../utils/uniform_height_wrap.dart';
+import '../../../classes/character/base.dart';
+import '../../../classes/magic.dart';
+import '../../../classes/non_player_character.dart';
+import '../../../classes/object_source.dart';
+import 'base/ability_list_display_widget.dart';
+import 'base/attribute_list_display_widget.dart';
+import '../error_feedback.dart';
+import '../full_page_loading.dart';
+import '../injuries_display_widget.dart';
+import '../tendencies_display_widget.dart';
+import '../uniform_height_wrap.dart';
 
 class NPCActionButtons extends StatelessWidget {
   const NPCActionButtons({

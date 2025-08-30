@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/magic.dart';
-import 'character_digit_input_widget.dart';
+import '../../../../classes/magic.dart';
+import '../../character_digit_input_widget.dart';
 
 class MagicSphereEditWidget extends StatefulWidget {
   const MagicSphereEditWidget({

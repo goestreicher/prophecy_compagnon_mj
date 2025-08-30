@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prophecy_compagnon_mj/text_utils.dart';
 
-import '../../classes/character/base.dart';
-import '../../classes/character/skill.dart';
+import '../../../../classes/character/base.dart';
+import '../../../../classes/character/skill.dart';
 
 class FamilyAndSkillPickerDialog extends StatefulWidget {
   const FamilyAndSkillPickerDialog({

@@ -6,7 +6,7 @@ import 'package:material_symbols_icons/symbols.dart';
 import '../../../../classes/character/skill.dart';
 import '../../../../classes/entity_base.dart';
 import '../../character_digit_input_widget.dart';
-import '../../skill_picker_dialog.dart';
+import 'skill_picker_dialog.dart';
 import '../change_stream.dart';
 import '../widget_group_container.dart';
 

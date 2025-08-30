@@ -4,7 +4,7 @@ import 'package:material_symbols_icons/symbols.dart';
 
 import '../../classes/entity_base.dart';
 import '../../classes/character/skill.dart';
-import '../utils/skill_picker_dialog.dart';
+import '../utils/character/base/skill_picker_dialog.dart';
 
 class EditSkillsTab extends StatelessWidget {
   const EditSkillsTab({ super.key, required this.character });

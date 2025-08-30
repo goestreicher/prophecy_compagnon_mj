@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import '../../../../classes/armor.dart';
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
-import '../../armor_equip_widget.dart';
-import '../../armor_picker_dialog.dart';
+import 'armor_equip_widget.dart';
+import 'armor_picker_dialog.dart';
 import '../change_stream.dart';
 import '../widget_group_container.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/non_player_character.dart';
-import '../../classes/object_source.dart';
+import '../../../classes/non_player_character.dart';
+import '../../../classes/object_source.dart';
 import 'npc_display_widget.dart';
 
 class NPCListWidget extends StatefulWidget {
