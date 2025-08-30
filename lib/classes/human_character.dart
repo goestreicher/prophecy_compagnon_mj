@@ -247,7 +247,7 @@ class HumanCharacter extends EntityBase with MagicUser {
         super.location = ObjectLocation.memory,
         required super.name,
         super.initiative,
-        super.injuryProvider = _humanCharacterDefaultInjuries,
+        super.injuryProvider = humanCharacterDefaultInjuries,
         this.caste = Caste.sansCaste,
         this.casteStatus = CasteStatus.none,
         this.career,
@@ -430,11 +430,11 @@ class HumanCharacter extends EntityBase with MagicUser {
   }
 }
 
-InjuryManager _humanCharacterDefaultInjuries(EntityBase? entity, InjuryManager? source) =>
+InjuryManager humanCharacterDefaultInjuries(EntityBase? entity, InjuryManager? source) =>
     InjuryManager.simple(injuredCeiling: 40, injuredCount: 3, deathCount: 1, source: source);
 
 InjuryManager fullCharacterDefaultInjuries(EntityBase? entity, InjuryManager? source) {
-  if(entity == null) return _humanCharacterDefaultInjuries(entity, source);
+  if(entity == null) return humanCharacterDefaultInjuries(entity, source);
 
   return InjuryManager.getInjuryManagerForAbilities(
     resistance: entity.ability(Ability.resistance),
