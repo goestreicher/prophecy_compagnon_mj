@@ -75,7 +75,12 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
               }
             }
             else {
-              NonPlayerCharacter.removeFromCache(selectedNPC!.id);
+              if(creatingNewNPC) {
+                NonPlayerCharacter.removeFromCache(selectedNPC!.id);
+              }
+              else {
+                await NonPlayerCharacter.reloadFromStore(selectedNPC!.id);
+              }
             }
 
             setState(() {

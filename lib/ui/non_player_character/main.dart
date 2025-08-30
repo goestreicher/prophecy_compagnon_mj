@@ -32,6 +32,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
   String? search;
   final GlobalKey<FormState> newNPCFormKey = GlobalKey();
   bool editing = false;
+  bool creatingNewNPC = false;
   String? selectedDisplay;
   NonPlayerCharacter? selectedEditNPC;
 
@@ -72,12 +73,18 @@ class _NPCMainPageState extends State<NPCMainPage> {
             npcSubCategory = selectedEditNPC!.subCategory;
           }
           else {
-            NonPlayerCharacter.removeFromCache(selectedEditNPC!.id);
+            if(creatingNewNPC) {
+              NonPlayerCharacter.removeFromCache(selectedEditNPC!.id);
+            }
+            else {
+              await NonPlayerCharacter.reloadFromStore(selectedEditNPC!.id);
+            }
           }
 
           setState(() {
             selectedEditNPC = null;
             editing = false;
+            creatingNewNPC = false;
           });
         }
       );
@@ -307,6 +314,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                             if(!context.mounted) return;
                             if(npc == null) return;
 
+                            creatingNewNPC = true;
                             _startEditing(npc);
                           },
                         ),
@@ -404,6 +412,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
                       if(!context.mounted) return;
                       if(clone == null) return;
 
+                      creatingNewNPC = false;
                       _startEditing(clone);
                     },
                     onDeleteRequested: (String id) async {

@@ -595,7 +595,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
   static Future<void> reloadFromStore(String id) async {
     _instances.remove(id);
-    NonPlayerCharacterSummary._reloadFromStore(id);
+    await NonPlayerCharacterSummary._reloadFromStore(id);
   }
 
   static void removeFromCache(String id) {
