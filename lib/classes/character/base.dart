@@ -388,7 +388,7 @@ enum CastePrivilege {
   immuniteContreLElectricite(caste: Caste.mage, title: 'Immunité contre l\'électricité (Mage du Feu)', cost: 4),
   insensibiliteALaChaleur(caste: Caste.mage, title: 'Insensibilité à la chaleur', cost: 4),
   laboratoire(caste: Caste.mage, title: 'Laboratoire', cost: 5),
-  langageTechnique(caste: Caste.mage, title: 'Langage technique (Mage du Métal', cost: 2),
+  langageTechnique(caste: Caste.mage, title: 'Langage technique (Mage du Métal)', cost: 2),
   leurre(caste: Caste.mage, title: 'Leurre', cost: 3),
   messager(caste: Caste.mage, title: 'Messager', cost: 2, unique: false, requireDescription: true),
   messagerOnirique(caste: Caste.mage, title: 'Messager onirique (Mage des Rêves)', cost: 5),

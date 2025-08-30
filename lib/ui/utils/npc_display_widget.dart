@@ -12,10 +12,8 @@ import 'attribute_list_display_widget.dart';
 import 'error_feedback.dart';
 import 'full_page_loading.dart';
 import 'injuries_display_widget.dart';
-import 'single_line_input_dialog.dart';
 import 'tendencies_display_widget.dart';
 import '../utils/uniform_height_wrap.dart';
-import '../../text_utils.dart';
 
 class NPCActionButtons extends StatelessWidget {
   const NPCActionButtons({
@@ -29,7 +27,7 @@ class NPCActionButtons extends StatelessWidget {
 
   final NonPlayerCharacterSummary npc;
   final void Function() onEdit;
-  final void Function(String) onClone;
+  final void Function() onClone;
   final void Function() onDelete;
   final List<ObjectSourceType>? restrictModificationToSourceTypes;
 
@@ -62,32 +60,7 @@ class NPCActionButtons extends StatelessWidget {
         IconButton(
           icon: const Icon(Icons.content_copy_outlined),
           tooltip: 'Cloner',
-          onPressed: () async {
-            var name = await showDialog(
-              context: context,
-              builder: (BuildContext context) => SingleLineInputDialog(
-                title: 'Nom du PNJ',
-                hintText: 'Nom',
-                formKey: GlobalKey<FormState>(),
-              ),
-            );
-            if(!context.mounted) return;
-            if(name == null) return;
-
-            var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
-            var model = await NonPlayerCharacter.get(id);
-            if(!context.mounted) return;
-            if(model != null) {
-              displayErrorDialog(
-                context,
-                'Clonage impossible',
-                'Un PNJ avec ce nom (ou un nom similaire) existe déjà'
-              );
-              return;
-            }
-
-            onClone(name);
-          },
+          onPressed: () => onClone(),
         ),
         IconButton(
           icon: const Icon(Icons.delete),
@@ -120,13 +93,15 @@ class NPCDisplayWidget extends StatefulWidget {
     super.key,
     required this.id,
     required this.onEditRequested,
-    required this.onDelete,
+    required this.onCloneRequested,
+    required this.onDeleteRequested,
     this.restrictModificationToSourceTypes,
   });
 
   final String id;
-  final void Function(NonPlayerCharacter) onEditRequested;
-  final void Function() onDelete;
+  final void Function() onEditRequested;
+  final void Function() onCloneRequested;
+  final void Function() onDeleteRequested;
   final List<ObjectSourceType>? restrictModificationToSourceTypes;
 
   @override
@@ -200,11 +175,9 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                     SizedBox(width: 8.0),
                     NPCActionButtons(
                       npc: npc.summary,
-                      onEdit: () => widget.onEditRequested(npc),
-                      onClone: (String newName) {
-                        widget.onEditRequested(npc.clone(newName));
-                      },
-                      onDelete: () => widget.onDelete(),
+                      onEdit: () => widget.onEditRequested(),
+                      onClone: () => widget.onCloneRequested(),
+                      onDelete: () => widget.onDeleteRequested(),
                       restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
                     ),
                   ]

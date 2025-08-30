@@ -143,49 +143,46 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
             ),
             const SizedBox(height: 12.0),
             Expanded(
-              child: ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 800),
-                child: CreaturesListWidget(
-                  creatures: creatureSummaries,
-                  initialSelection: _selectedModel?.id,
-                  onEditRequested: (int index) async {
-                    var model = await CreatureModel.get(creatureSummaries[index].id);
-                    if(model == null) return;
-                    creatingNewCreature = false;
-                    _startEditing(model);
-                  },
-                  onCloneRequested: (int index, String newName) async {
-                    var model = await CreatureModel.get(creatureSummaries[index].id);
-                    if(model == null) return;
+              child: CreaturesListWidget(
+                creatures: creatureSummaries,
+                initialSelection: _selectedModel?.id,
+                onEditRequested: (int index) async {
+                  var model = await CreatureModel.get(creatureSummaries[index].id);
+                  if(model == null) return;
+                  creatingNewCreature = false;
+                  _startEditing(model);
+                },
+                onCloneRequested: (int index, String newName) async {
+                  var model = await CreatureModel.get(creatureSummaries[index].id);
+                  if(model == null) return;
 
-                    CreatureModel clone = model.clone(newName);
-                    clone.source = ObjectSource.local;
+                  CreatureModel clone = model.clone(newName);
+                  clone.source = ObjectSource.local;
 
-                    creatingNewCreature = true;
-                    _startEditing(clone);
-                  },
-                  onDeleteRequested: (int index) async {
-                    try {
-                      var creature = widget.creatures.firstWhere(
-                        (CreatureModel c) => c.id == creatureSummaries[index].id
-                      );
+                  creatingNewCreature = true;
+                  _startEditing(clone);
+                },
+                onDeleteRequested: (int index) async {
+                  try {
+                    var creature = widget.creatures.firstWhere(
+                      (CreatureModel c) => c.id == creatureSummaries[index].id
+                    );
 
-                      widget.onCreatureDeleted(creature);
-                      setState(() {
-                        creatureSummaries.removeAt(index);
-                        _selectedModel = null;
-                      });
-                    }
-                    catch(e) {
-                      if(!context.mounted) return;
-                      displayErrorDialog(
-                        context,
-                        "Suppression impossible",
-                        e.toString()
-                      );
-                    }
-                  },
-                ),
+                    widget.onCreatureDeleted(creature);
+                    setState(() {
+                      creatureSummaries.removeAt(index);
+                      _selectedModel = null;
+                    });
+                  }
+                  catch(e) {
+                    if(!context.mounted) return;
+                    displayErrorDialog(
+                      context,
+                      "Suppression impossible",
+                      e.toString()
+                    );
+                  }
+                },
               ),
             ),
           ],

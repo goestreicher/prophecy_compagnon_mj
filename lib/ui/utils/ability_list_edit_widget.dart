@@ -9,23 +9,21 @@ class AbilityListEditWidget extends StatelessWidget {
     required this.abilities,
     this.minValue = 1,
     this.maxValue = 15,
-    required this.onAbilityChanged,
+    required this.onChanged,
+    this.onSaved,
   });
 
   final Map<Ability, int> abilities;
   final int minValue;
   final int maxValue;
-  final void Function(Ability, int) onAbilityChanged;
+  final void Function(Ability, int) onChanged;
+  final void Function(Ability, int)? onSaved;
 
   @override
   Widget build(BuildContext context) {
     var widgetRows = <Widget>[];
 
     for(var i = 0; (i+4) < Ability.values.length; ++i) {
-      if(widgetRows.isNotEmpty) {
-        widgetRows.add(const SizedBox(height: 16.0));
-      }
-
       var currentRow = <Widget>[
         Expanded(
           child: CharacterDigitInputWidget(
@@ -33,7 +31,10 @@ class AbilityListEditWidget extends StatelessWidget {
             minValue: minValue,
             maxValue: maxValue,
             onChanged: (int value) {
-              onAbilityChanged(Ability.values[i], value);
+              onChanged(Ability.values[i], value);
+            },
+            onSaved: (int value) {
+              onSaved?.call(Ability.values[i], value);
             },
             label: '${Ability.values[i].title.substring(0, 3).toUpperCase()}${Ability.values[i].title.substring(3)}',
           ),
@@ -41,7 +42,6 @@ class AbilityListEditWidget extends StatelessWidget {
       ];
 
       if(i + 4 < Ability.values.length) {
-        currentRow.add(const SizedBox(width: 8.0));
         currentRow.add(
           Expanded(
             child: CharacterDigitInputWidget(
@@ -49,7 +49,10 @@ class AbilityListEditWidget extends StatelessWidget {
               minValue: minValue,
               maxValue: maxValue,
               onChanged: (int value) {
-                onAbilityChanged(Ability.values[i+4], value);
+                onChanged(Ability.values[i+4], value);
+              },
+              onSaved: (int value) {
+                onSaved?.call(Ability.values[i+4], value);
               },
               label: '${Ability.values[i+4].title.substring(0, 3).toUpperCase()}${Ability.values[i+4].title.substring(3)}',
             ),
@@ -59,6 +62,7 @@ class AbilityListEditWidget extends StatelessWidget {
 
       widgetRows.add(
         Row(
+          spacing: 8.0,
           children: [
             ...currentRow,
           ],
@@ -69,6 +73,7 @@ class AbilityListEditWidget extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
+      spacing: 12.0,
       children: [
         ...widgetRows
       ],

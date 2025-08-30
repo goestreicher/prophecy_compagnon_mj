@@ -61,7 +61,7 @@ class EntityStatus {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class EntityBase extends ChangeNotifier with SupportsEquipableItem {
+class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: remove ChangeNotifier once migrated to StreamController in the edit UI
   EntityBase(
       {
         String? uuid,

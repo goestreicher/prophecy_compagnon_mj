@@ -537,6 +537,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
   NonPlayerCharacter clone(String newName) {
     var j = toJson();
+    j.remove('uuid');
     j['name'] = newName;
     var cloned = NonPlayerCharacter.fromJson(j);
     cloned.location = ObjectLocation.memory;

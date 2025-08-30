@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
 import '../../classes/object_source.dart';
+import '../utils/character/edit_widget.dart';
+import '../utils/character/npc_create_dialog.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
-import '../utils/npc_edit_widget.dart';
 import '../utils/npc_list_widget.dart';
-import '../utils/single_line_input_dialog.dart';
-import '../../text_utils.dart';
 
 class NPCMainPage extends StatefulWidget {
   const NPCMainPage({ super.key });
@@ -35,7 +34,6 @@ class _NPCMainPageState extends State<NPCMainPage> {
   bool editing = false;
   String? selectedDisplay;
   NonPlayerCharacter? selectedEditNPC;
-  String? newNPCName;
 
   Future<List<NonPlayerCharacterSummary>> _updateNPCsList() async {
     if(npcSource != null) {
@@ -53,7 +51,6 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
   void _startEditing(NonPlayerCharacter npc) {
     setState(() {
-      newNPCName = npc.name;
       selectedEditNPC = npc;
       editing = true;
     });
@@ -63,28 +60,23 @@ class _NPCMainPageState extends State<NPCMainPage> {
   Widget build(BuildContext context) {
     Widget mainArea;
 
-    if(editing && newNPCName != null) {
-      mainArea = NPCEditWidget(
-        name: newNPCName!,
-        npc: selectedEditNPC,
-        onEditDone: (NonPlayerCharacter? npc) async {
-          if(newNPCName != null) {
-            newNPCName = null;
-          }
-
-          if(npc != null) {
-            await NonPlayerCharacter.saveLocalModel(npc);
-            selectedDisplay = npc.id;
-            npcSourceType = npc.source.type;
-            npcCategory = npc.category;
-            npcSubCategory = npc.subCategory;
+    if(editing && selectedEditNPC != null) {
+      mainArea = CharacterEditWidget(
+        character: selectedEditNPC!,
+        onEditDone: (bool result) async {
+          if(result) {
+            await NonPlayerCharacter.saveLocalModel(selectedEditNPC!);
+            selectedDisplay = selectedEditNPC!.id;
+            npcSourceType = selectedEditNPC!.source.type;
+            npcCategory = selectedEditNPC!.category;
+            npcSubCategory = selectedEditNPC!.subCategory;
           }
 
           setState(() {
             selectedEditNPC = null;
             editing = false;
           });
-        },
+        }
       );
     }
     else {
@@ -303,34 +295,16 @@ class _NPCMainPageState extends State<NPCMainPage> {
                             ],
                           ),
                           onPressed: () async {
-                            var name = await showDialog(
+                            var npc = await showDialog(
                               context: context,
-                              builder: (BuildContext context) => SingleLineInputDialog(
-                                title: 'Nom du PNJ',
-                                formKey: newNPCFormKey,
-                                hintText: 'Nom',
+                              builder: (BuildContext context) => NPCCreateDialog(
+                                source: ObjectSource.local,
                               ),
                             );
                             if(!context.mounted) return;
-                            if(name == null) return;
+                            if(npc == null) return;
 
-                            var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
-                            var model = await NonPlayerCharacter.get(id);
-                            if(!context.mounted) return;
-                            if(model != null) {
-                              displayErrorDialog(
-                                context,
-                                'PNJ existant',
-                                'Un PNJ avec ce nom (ou un nom similaire) existe déjà'
-                              );
-                              return;
-                            }
-
-                            setState(() {
-                              selectedEditNPC = null;
-                              newNPCName = name;
-                              editing = true;
-                            });
+                            _startEditing(npc);
                           },
                         ),
                         MenuItemButton(
@@ -407,23 +381,31 @@ class _NPCMainPageState extends State<NPCMainPage> {
                   child: NPCListWidget(
                     npcs: npcs,
                     initialSelection: selectedDisplay,
-                    onEditRequested: (int index) async {
-                      var npc = await NonPlayerCharacter.get(npcs[index].id);
+                    onEditRequested: (String id) async {
+                      var npc = await NonPlayerCharacter.get(id);
                       if(npc == null) return;
                       _startEditing(npc);
                     },
-                    onCloneRequested: (int index, String newName) async {
-                      var npc = await NonPlayerCharacter.get(npcs[index].id);
+                    onCloneRequested: (String id) async {
+                      var npc = await NonPlayerCharacter.get(id);
+                      if(!context.mounted) return;
                       if(npc == null) return;
 
-                      var clone = npc.clone(newName);
-                      clone.source = ObjectSource.local;
+                      var clone = await showDialog<NonPlayerCharacter>(
+                        context: context,
+                        builder: (BuildContext context) => NPCCreateDialog(
+                          source: ObjectSource.local,
+                          cloneFrom: npc,
+                        ),
+                      );
+                      if(!context.mounted) return;
+                      if(clone == null) return;
 
                       _startEditing(clone);
                     },
-                    onDeleteRequested: (int index) async {
+                    onDeleteRequested: (String id) async {
                       try {
-                        await NonPlayerCharacter.deleteLocalModel(npcs[index].id);
+                        await NonPlayerCharacter.deleteLocalModel(id);
                         setState(() {
                           selectedDisplay = null;
                         });

@@ -102,18 +102,18 @@ class WeaponModel {
       }
 
       AttributeBasedCalculator dmg = AttributeBasedCalculator(
-          static: model['damage']['static'],
+          static: (model['damage']['static'] as num).toDouble(),
           multiply: model['damage']['multiply'],
           add: model['damage']['add'],
           dice: model['damage']['dice']);
 
       AttributeBasedCalculator rEff = AttributeBasedCalculator(
-          static: model['range']['eff']['static'],
+          static: (model['range']['eff']['static'] as num).toDouble(),
           multiply: model['range']['eff']['multiply'],
           add: model['range']['eff']['add'],
           dice: model['range']['eff']['dice']);
       AttributeBasedCalculator rMax = AttributeBasedCalculator(
-          static: model['range']['max']['static'],
+          static: (model['range']['max']['static'] as num).toDouble(),
           multiply: model['range']['max']['multiply'],
           add: model['range']['max']['add'],
           dice: model['range']['max']['dice']);

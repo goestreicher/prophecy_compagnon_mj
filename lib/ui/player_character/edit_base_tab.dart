@@ -438,7 +438,7 @@ class _AbilitiesEditWidget extends StatelessWidget {
             abilities: character.abilities,
             minValue: 1,
             maxValue: 15,
-            onAbilityChanged: (Ability ability, int value) {
+            onChanged: (Ability ability, int value) {
               character.setAbility(ability, value);
             },
           ),
@@ -483,7 +483,7 @@ class _AttributesEditWidget extends StatelessWidget {
           ),
           child: AttributeListEditWidget(
             attributes: character.attributes,
-            onAttributeChanged: (Attribute attribute, int value) {
+            onChanged: (Attribute attribute, int value) {
               character.setAttribute(attribute, value);
             },
           )

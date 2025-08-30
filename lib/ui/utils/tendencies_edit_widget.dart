@@ -2,15 +2,38 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../classes/human_character.dart';
+import 'measure_widget_offscreen.dart';
+
+/*
+    Some data about the full-size tendencies background image
+      - width: 490
+      - height: 486
+      - center of the dragon circle: 245,158
+      - center of the fatality circle: 146,332
+      - center of the human circle: 346,332
+ */
+
+const _backgroundSize = Size(490, 486);
+const _dragonCenter = Size(245,158);
+const _fatalityCenter = Size(146,332);
+const _humanCenter = Size(346,332);
+const _widgetPadding = 8.0;
+// 12.0 on top, 8.0 on bottom, because TextFormField decoration is dense and has a border
+//   source: https://api.flutter.dev/flutter/material/InputDecoration/contentPadding.html
+const _valuesEditVerticalPadding = 20.0;
 
 class TendenciesEditWidget extends StatefulWidget {
   const TendenciesEditWidget({
     super.key,
     required this.tendencies,
+    this.backgroundWidth = 260,
+    this.editValues = true,
     this.showCircles = false,
   });
 
   final CharacterTendencies tendencies;
+  final int backgroundWidth;
+  final bool editValues;
   final bool showCircles;
 
   @override
@@ -18,21 +41,87 @@ class TendenciesEditWidget extends StatefulWidget {
 }
 
 class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
-  final TextEditingController _tendencyDragonController = TextEditingController();
-  final TextEditingController _tendencyFatalityController = TextEditingController();
-  final TextEditingController _tendencyHumanController = TextEditingController();
+  final TextEditingController tendencyDragonController = TextEditingController();
+  final TextEditingController tendencyFatalityController = TextEditingController();
+  final TextEditingController tendencyHumanController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _tendencyDragonController.text = widget.tendencies.dragon.value.toString();
-    _tendencyFatalityController.text = widget.tendencies.fatality.value.toString();
-    _tendencyHumanController.text = widget.tendencies.human.value.toString();
+
+    tendencyDragonController.text = widget.tendencies.dragon.value.toString();
+    tendencyFatalityController.text = widget.tendencies.fatality.value.toString();
+    tendencyHumanController.text = widget.tendencies.human.value.toString();
+  }
+
+  Widget getValueWidget({
+    required TextEditingController controller,
+    required TextStyle textStyle,
+    required void Function(String?) onChanged,
+  }) {
+    if(widget.editValues) {
+      return SizedBox(
+        width: 40,
+        child: TextFormField(
+          controller: controller,
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            isDense: true,
+            // isCollapsed: true,
+            // contentPadding: EdgeInsets.all(_valuesEditPadding),
+            error: null,
+            errorText: null,
+          ),
+          style: textStyle,
+          textAlign: TextAlign.center,
+          keyboardType: TextInputType.number,
+          inputFormatters: [
+            FilteringTextInputFormatter.digitsOnly,
+          ],
+          validator: (String? value) {
+            if(value == null || value.isEmpty) return 'Valeur manquante';
+            int? input = int.tryParse(value);
+            if(input == null) return 'Pas un nombre';
+            if(input < 0) return 'Nombre >= 0';
+            if(input > 5) return 'Nombre <= 5';
+            return null;
+          },
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          onChanged: (String? value) => onChanged(value),
+        ),
+      );
+    }
+    else {
+      return Text(
+        controller.text,
+        style: textStyle,
+      );
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+
+    var valueTextStyle = theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold);
+    var backgroundDisplayRatio = widget.backgroundWidth / _backgroundSize.width;
+
+    var textWidgetSize = measureWidgetOffscreen(
+      Text('5', style: valueTextStyle)
+    );
+    if(widget.editValues) {
+      // add padding only once, and +2 for the borders
+      textWidgetSize = Size(40.0, textWidgetSize.height + _valuesEditVerticalPadding + 2);
+    }
+
+    var circlesWidgetSize = measureWidgetOffscreen(
+      _TendencyCirclesInputWidget(
+        count: 0,
+        onChanged: (int count) {},
+        onTendencyIncreased: () {},
+        onTendencyDecreased: () {},
+      )
+    );
 
     var circlesVerticalOffset = 0.0;
     var circlesHorizontalOffset = 0.0;
@@ -44,10 +133,10 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
     }
 
     return SizedBox(
-      width: 260 + 2 * circlesHorizontalOffset,
-      height: 260 + 2 * circlesVerticalOffset - bottomExtraPadding,
+      width: widget.backgroundWidth + 2 * _widgetPadding + 2 * circlesHorizontalOffset,
+      height: widget.backgroundWidth + 2 * _widgetPadding + 2 * circlesVerticalOffset - bottomExtraPadding,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(_widgetPadding),
         child: Stack(
           children: [
             Positioned(
@@ -55,39 +144,17 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
               left: circlesHorizontalOffset,
               child: Image.asset(
                 'assets/images/tendencies/background_tendencies.png',
-                width: 244,
+                width: widget.backgroundWidth.toDouble(),
               )
             ),
             Positioned(
-              top: 59 + circlesVerticalOffset,
-              left: 103 + circlesHorizontalOffset,
+              top: (_dragonCenter.height * backgroundDisplayRatio) + circlesVerticalOffset - textWidgetSize.height / 2,
+              left: (_dragonCenter.width * backgroundDisplayRatio) + circlesHorizontalOffset - textWidgetSize.width / 2,
               child: SizedBox(
                 width: 40,
-                child: TextFormField(
-                  controller: _tendencyDragonController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    isCollapsed: true,
-                    contentPadding: EdgeInsets.all(12.0),
-                    error: null,
-                    errorText: null,
-                  ),
-                  style: theme.textTheme.bodySmall!
-                      .copyWith(fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  validator: (String? value) {
-                    if(value == null || value.isEmpty) return 'Valeur manquante';
-                    int? input = int.tryParse(value);
-                    if(input == null) return 'Pas un nombre';
-                    if(input < 0) return 'Nombre >= 0';
-                    if(input > 5) return 'Nombre <= 5';
-                    return null;
-                  },
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                child: getValueWidget(
+                  controller: tendencyDragonController,
+                  textStyle: valueTextStyle,
                   onChanged: (String? value) {
                     if(value == null) return;
                     int? input = int.tryParse(value);
@@ -100,7 +167,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
             if(widget.showCircles)
               Positioned(
                 top: 0,
-                left: 54 + circlesHorizontalOffset,
+                left: (widget.backgroundWidth - circlesWidgetSize.width) / 2 + circlesHorizontalOffset,
                 child: _TendencyCirclesInputWidget(
                   count: widget.tendencies.dragon.circles,
                   onChanged: (int count) {
@@ -112,7 +179,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
                     if(widget.tendencies.dragon.value < 5) {
                       setState(() {
                         widget.tendencies.dragon.value += 1;
-                        _tendencyDragonController.text = widget.tendencies.dragon.value.toString();
+                        tendencyDragonController.text = widget.tendencies.dragon.value.toString();
                         widget.tendencies.dragon.circles = 0;
                       });
                     }
@@ -121,7 +188,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
                     if(widget.tendencies.dragon.value > 0) {
                       setState(() {
                         widget.tendencies.dragon.value -= 1;
-                        _tendencyDragonController.text = widget.tendencies.dragon.value.toString();
+                        tendencyDragonController.text = widget.tendencies.dragon.value.toString();
                         widget.tendencies.dragon.circles = 10;
                       });
                     }
@@ -129,35 +196,13 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
                 ),
               ),
             Positioned(
-              bottom: 65 + circlesVerticalOffset - bottomExtraPadding,
-              left: 53 + circlesHorizontalOffset,
+              top: (_fatalityCenter.height * backgroundDisplayRatio) + circlesVerticalOffset - textWidgetSize.height / 2,
+              left: (_fatalityCenter.width * backgroundDisplayRatio) + circlesHorizontalOffset - textWidgetSize.width / 2,
               child: SizedBox(
                 width: 40,
-                child: TextFormField(
-                  controller: _tendencyFatalityController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    isCollapsed: true,
-                    contentPadding: EdgeInsets.all(12.0),
-                    error: null,
-                    errorText: null,
-                  ),
-                  style: theme.textTheme.bodySmall!
-                      .copyWith(fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  validator: (String? value) {
-                    if(value == null || value.isEmpty) return 'Valeur manquante';
-                    int? input = int.tryParse(value);
-                    if(input == null) return 'Pas un nombre';
-                    if(input < 0) return 'Nombre >= 0';
-                    if(input > 5) return 'Nombre <= 5';
-                    return null;
-                  },
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                child: getValueWidget(
+                  controller: tendencyFatalityController,
+                  textStyle: valueTextStyle,
                   onChanged: (String? value) {
                     if(value == null) return;
                     int? input = int.tryParse(value);
@@ -182,7 +227,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
                     if(widget.tendencies.fatality.value < 5) {
                       setState(() {
                         widget.tendencies.fatality.value += 1;
-                        _tendencyFatalityController.text = widget.tendencies.fatality.value.toString();
+                        tendencyFatalityController.text = widget.tendencies.fatality.value.toString();
                         widget.tendencies.fatality.circles = 0;
                       });
                     }
@@ -191,7 +236,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
                     if(widget.tendencies.fatality.value > 0) {
                       setState(() {
                         widget.tendencies.fatality.value -= 1;
-                        _tendencyFatalityController.text = widget.tendencies.fatality.value.toString();
+                        tendencyFatalityController.text = widget.tendencies.fatality.value.toString();
                         widget.tendencies.fatality.circles = 10;
                       });
                     }
@@ -199,35 +244,13 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
                 ),
               ),
             Positioned(
-              bottom: 65 + circlesVerticalOffset - bottomExtraPadding,
-              right: 51 + circlesHorizontalOffset,
+              top: (_humanCenter.height * backgroundDisplayRatio) + circlesVerticalOffset - textWidgetSize.height / 2,
+              left: (_humanCenter.width * backgroundDisplayRatio) + circlesHorizontalOffset - textWidgetSize.width / 2,
               child: SizedBox(
                 width: 40,
-                child: TextFormField(
-                  controller: _tendencyHumanController,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    isCollapsed: true,
-                    contentPadding: EdgeInsets.all(12.0),
-                    error: null,
-                    errorText: null,
-                  ),
-                  style: theme.textTheme.bodySmall!
-                      .copyWith(fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  validator: (String? value) {
-                    if(value == null || value.isEmpty) return 'Valeur manquante';
-                    int? input = int.tryParse(value);
-                    if(input == null) return 'Pas un nombre';
-                    if(input < 0) return 'Nombre >= 0';
-                    if(input > 5) return 'Nombre <= 5';
-                    return null;
-                  },
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                child: getValueWidget(
+                  controller: tendencyHumanController,
+                  textStyle: valueTextStyle,
                   onChanged: (String? value) {
                     if(value == null) return;
                     int? input = int.tryParse(value);
@@ -240,7 +263,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
             if(widget.showCircles)
               Positioned(
                 bottom: 0,
-                right: 0,
+                left: widget.backgroundWidth + circlesHorizontalOffset - circlesWidgetSize.width / 2,
                 child: _TendencyCirclesInputWidget(
                   count: widget.tendencies.human.circles,
                   onChanged: (int count) {
@@ -252,7 +275,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
                     if(widget.tendencies.human.value < 5) {
                       setState(() {
                         widget.tendencies.human.value += 1;
-                        _tendencyHumanController.text = widget.tendencies.human.value.toString();
+                        tendencyHumanController.text = widget.tendencies.human.value.toString();
                         widget.tendencies.human.circles = 0;
                       });
                     }
@@ -261,7 +284,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
                     if(widget.tendencies.human.value > 0) {
                       setState(() {
                         widget.tendencies.human.value -= 1;
-                        _tendencyHumanController.text = widget.tendencies.human.value.toString();
+                        tendencyHumanController.text = widget.tendencies.human.value.toString();
                         widget.tendencies.human.circles = 10;
                       });
                     }

@@ -72,7 +72,7 @@ class ShieldModel {
       }
 
       AttributeBasedCalculator dmg = AttributeBasedCalculator(
-        static: model['damage']['static'],
+        static: (model['damage']['static'] as num).toDouble(),
         multiply: model['damage']['multiply'],
         add: model['damage']['add'],
         dice: model['damage']['dice']

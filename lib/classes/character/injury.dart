@@ -56,10 +56,6 @@ class _InjuryRange implements Comparable<_InjuryRange> {
   int compareTo(_InjuryRange other) => min - other.min;
 }
 
-class InjuryManagerNext {
-  InjuryManagerNext();
-}
-
 class InjuryManager {
   InjuryManager({
       required List<InjuryLevel> levels,
@@ -86,7 +82,7 @@ class InjuryManager {
     }
 
     if(source != null) {
-      _injuries = source._injuries;
+      _injuries = Map.from(source._injuries);
     }
   }
 
@@ -123,7 +119,7 @@ class InjuryManager {
     );
   }
 
-  factory InjuryManager.human({
+  factory InjuryManager.full({
       required int scratchCount,
       required int lightCount,
       required int graveCount,
@@ -179,6 +175,53 @@ class InjuryManager {
     );
   }
 
+  static InjuryManager getInjuryManagerForAbilities({ required int resistance, required int volonte, InjuryManager? source }) {
+    int scratchCount = 0;
+    int lightCount = 0;
+    int graveCount = 0;
+    int fatalCount = 0;
+    int sum = resistance + volonte;
+
+    if(sum < 5) {
+      scratchCount = 2;
+      lightCount = 1;
+      graveCount = 1;
+      fatalCount = 1;
+    }
+    else if(sum < 10) {
+      scratchCount = 3;
+      lightCount = 2;
+      graveCount = 1;
+      fatalCount = 1;
+    }
+    else if(sum < 15) {
+      scratchCount = 3;
+      lightCount = 2;
+      graveCount = 2;
+      fatalCount = 1;
+    }
+    else if(sum < 20) {
+      scratchCount = 3;
+      lightCount = 3;
+      graveCount = 2;
+      fatalCount = 2;
+    }
+    else {
+      scratchCount = 3;
+      lightCount = 4;
+      graveCount = 3;
+      fatalCount = 2;
+    }
+
+    return InjuryManager.full(
+      scratchCount: scratchCount,
+      lightCount: lightCount,
+      graveCount: graveCount,
+      fatalCount: fatalCount,
+      source: source,
+    );
+  }
+
   List<InjuryLevel> levels() => _injuryLevels.values.toList();
   int count(InjuryLevel level) => _injuries.containsKey(level.rank) ? _injuries[level.rank]! : 0;
 
@@ -202,7 +245,7 @@ class InjuryManager {
     }
 
     var count = (_injuries[level.rank] ?? 0) + 1;
-    _injuries[level.rank] = count;
+    if(count <= level.capacity) _injuries[level.rank] = count;
     return level;
   }
 

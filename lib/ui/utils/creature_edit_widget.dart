@@ -16,7 +16,6 @@ import '../utils/ability_list_edit_widget.dart';
 import '../utils/armor_picker_dialog.dart';
 import '../utils/attribute_list_edit_widget.dart';
 import '../utils/character_digit_input_widget.dart';
-import '../utils/dropdown_menu_form_field.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 import '../utils/injuries_edit_widget.dart';
@@ -513,7 +512,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                                   abilities: _abilities,
                                   minValue: 0,
                                   maxValue: 30,
-                                  onAbilityChanged: (Ability ability, int value) {
+                                  onChanged: (Ability ability, int value) {
                                     _abilities[ability] = value;
                                   }
                                 ),
@@ -525,7 +524,7 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                                   attributes: _attributes,
                                   minValue: 0,
                                   maxValue: 30,
-                                  onAttributeChanged: (Attribute attribute, int value) {
+                                  onChanged: (Attribute attribute, int value) {
                                     _attributes[attribute] = value;
                                   },
                                 ),

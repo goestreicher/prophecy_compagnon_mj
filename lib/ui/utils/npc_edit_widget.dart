@@ -20,7 +20,6 @@ import '../utils/armor_picker_dialog.dart';
 import '../utils/attribute_list_edit_widget.dart';
 import '../utils/caste_privilege_picker_dialog.dart';
 import '../utils/disadvantage_picker_dialog.dart';
-import '../utils/dropdown_menu_form_field.dart';
 import '../utils/character_digit_input_widget.dart';
 import '../utils/injuries_edit_widget.dart';
 import '../utils/interdict_picker_dialog.dart';
@@ -707,7 +706,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                                 abilities: _abilities,
                                 minValue: 0,
                                 maxValue: 30,
-                                onAbilityChanged: (Ability ability, int value) {
+                                onChanged: (Ability ability, int value) {
                                   _abilities[ability] = value;
                                 }
                             ),
@@ -719,7 +718,7 @@ class _NPCEditWidgetState extends State<NPCEditWidget> {
                               attributes: _attributes,
                               minValue: 0,
                               maxValue: 30,
-                              onAttributeChanged: (Attribute attribute, int value) {
+                              onChanged: (Attribute attribute, int value) {
                                 _attributes[attribute] = value;
                               },
                             ),

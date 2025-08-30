@@ -7,7 +7,6 @@ import 'package:flutter/services.dart';
 import '../../classes/exportable_binary_data.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
-import 'dropdown_menu_form_field.dart';
 
 class PlaceEditDialog extends StatefulWidget {
   const PlaceEditDialog({

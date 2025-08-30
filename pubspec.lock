@@ -285,10 +285,10 @@ packages:
     dependency: "direct main"
     description:
       name: fleather
-      sha256: "58d182192ee41aea828aa8a1911d99fb15685accd92bf57df0d8da812864e88f"
+      sha256: f3ed6f6cf2f4d76a50756b1ce7644a8ac040853f615370200ed26ae4b9154d37
       url: "https://pub.dev"
     source: hosted
-    version: "1.25.0"
+    version: "1.25.1"
   float_column:
     dependency: "direct main"
     description:
@@ -319,10 +319,10 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_markdown_plus
-      sha256: fe74214c5ac2f850d93efda290dcde3f18006e90a87caa9e3e6c13222a5db4de
+      sha256: "7f349c075157816da399216a4127096108fd08e1ac931e34e72899281db4113c"
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.5"
   flutter_plugin_android_lifecycle:
     dependency: transitive
     description:
@@ -357,6 +357,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.3"
+  gradient_borders:
+    dependency: "direct main"
+    description:
+      name: gradient_borders
+      sha256: b1cd969552c83f458ff755aa68e13a0327d09f06c3f42f471b423b01427f21f8
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.1"
   graphs:
     dependency: transitive
     description:
@@ -553,10 +561,10 @@ packages:
     dependency: "direct main"
     description:
       name: parchment
-      sha256: f08e8ac95ac5e27a0d14399f2f0a0183ae79326fb4151fa0152f00ad20bcc60c
+      sha256: a11ddc00d5158ad728c49bc81fcd595dc983012fc3513b0ee8fde906c214bbdb
       url: "https://pub.dev"
     source: hosted
-    version: "1.25.0"
+    version: "1.25.1"
   parchment_delta:
     dependency: transitive
     description:

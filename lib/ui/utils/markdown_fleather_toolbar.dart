@@ -1,5 +1,6 @@
 import 'package:fleather/fleather.dart';
 import 'package:flutter/material.dart';
+import 'package:parchment/codecs.dart';
 
 import '../../classes/creature.dart';
 import '../../classes/non_player_character.dart';
@@ -7,17 +8,37 @@ import '../../classes/object_location.dart';
 import '../../classes/place.dart';
 import '../../classes/resource_link.dart';
 
-class MarkdownFleatherToolbar extends StatelessWidget {
+class MarkdownFleatherToolbar extends StatefulWidget {
   const MarkdownFleatherToolbar({
     super.key,
     required this.controller,
     this.showResourcePicker = false,
     this.openResourceLinkPickerDialog = openBaseResourceLinkPickerDialog,
+    this.onSaved,
   });
 
   final FleatherController controller;
   final bool showResourcePicker;
   final Widget Function() openResourceLinkPickerDialog;
+  final void Function(String)? onSaved;
+
+  @override
+  State<MarkdownFleatherToolbar> createState() => _MarkdownFleatherToolbarState();
+}
+
+class _MarkdownFleatherToolbarState extends State<MarkdownFleatherToolbar> {
+  bool hasPendingChanges = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    widget.controller.document.changes.listen((ParchmentChange c) {
+      setState(() {
+        hasPendingChanges = true;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +46,7 @@ class MarkdownFleatherToolbar extends StatelessWidget {
 
     var trailing = <Widget>[];
 
-    if(showResourcePicker) {
+    if(widget.showResourcePicker) {
       trailing.addAll([
         VerticalDivider(
           indent: 16,
@@ -35,28 +56,28 @@ class MarkdownFleatherToolbar extends StatelessWidget {
           onPressed: () async {
             var result = await showDialog<ResourceLink>(
               context: context,
-              builder: (BuildContext context) => openResourceLinkPickerDialog(),
+              builder: (BuildContext context) => widget.openResourceLinkPickerDialog(),
             );
             if(result == null) return;
 
-            controller.replaceText(
-              controller.selection.baseOffset,
+            widget.controller.replaceText(
+              widget.controller.selection.baseOffset,
               0,
               result.name
             );
-            controller.updateSelection(
+            widget.controller.updateSelection(
               TextSelection(
-                baseOffset: controller.selection.baseOffset,
-                extentOffset: controller.selection.baseOffset + result.name.length,
+                baseOffset: widget.controller.selection.baseOffset,
+                extentOffset: widget.controller.selection.baseOffset + result.name.length,
               )
             );
-            controller.formatSelection(
+            widget.controller.formatSelection(
               ParchmentAttribute.link.fromString(result.link),
             );
-            controller.updateSelection(
+            widget.controller.updateSelection(
               TextSelection(
-                baseOffset: controller.selection.baseOffset + result.name.length,
-                extentOffset: controller.selection.baseOffset + result.name.length,
+                baseOffset: widget.controller.selection.baseOffset + result.name.length,
+                extentOffset: widget.controller.selection.baseOffset + result.name.length,
               )
             );
           },
@@ -65,9 +86,32 @@ class MarkdownFleatherToolbar extends StatelessWidget {
             Icons.book_outlined,
             size: 20,
           ),
-        )
+        ),
       ]);
     }
+
+    trailing.addAll([
+      VerticalDivider(
+        indent: 16,
+        endIndent: 16,
+      ),
+      FLIconButton(
+        onPressed: !hasPendingChanges ? null : () {
+          widget.onSaved?.call(
+            ParchmentMarkdownCodec().encode(widget.controller.document)
+          );
+          setState(() {
+            hasPendingChanges = false;
+          });
+        },
+        size: 32,
+        icon: Icon(
+          Icons.check_circle_rounded,
+          size: 20,
+          color: hasPendingChanges ? theme.iconTheme.color : theme.disabledColor,
+        ),
+      ),
+    ]);
 
     return Container(
       decoration: BoxDecoration(
@@ -75,7 +119,7 @@ class MarkdownFleatherToolbar extends StatelessWidget {
         borderRadius: BorderRadius.circular(3.0),
       ),
       child: FleatherToolbar.basic(
-        controller: controller,
+        controller: widget.controller,
         hideUnderLineButton: true, // Not supported by markdown
         hideForegroundColor: true, // Not supported by markdown
         hideBackgroundColor: true, // Not supported by markdown

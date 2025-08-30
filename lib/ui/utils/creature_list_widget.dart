@@ -42,57 +42,64 @@ class _CreaturesListWidgetState extends State<CreaturesListWidget> {
     return ListView.builder(
       itemCount: widget.creatures.length,
       itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-          onTap: () {
-            setState(() {
-              if(selected == widget.creatures[index].id) {
-                selected = null;
-              }
-              else {
-                selected = widget.creatures[index].id;
-              }
-            });
-          },
-          child: MouseRegion(
-            cursor: SystemMouseCursors.click,
-            child: Card(
-              clipBehavior: Clip.hardEdge,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(4.0),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    if(selected != widget.creatures[index].id)
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            widget.creatures[index].name,
-                            style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                            overflow: TextOverflow.fade,
+        return Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(
+              maxWidth: 800,
+            ),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  if(selected == widget.creatures[index].id) {
+                    selected = null;
+                  }
+                  else {
+                    selected = widget.creatures[index].id;
+                  }
+                });
+              },
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: Card(
+                  clipBehavior: Clip.hardEdge,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4.0),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        if(selected != widget.creatures[index].id)
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                widget.creatures[index].name,
+                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                overflow: TextOverflow.fade,
+                              ),
+                              CreatureActionButtons(
+                                creature: widget.creatures[index],
+                                onEdit: () => widget.onEditRequested(index),
+                                onClone: (String newName) => widget.onCloneRequested(index, newName),
+                                onDelete: () => widget.onDeleteRequested(index),
+                                restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
+                              )
+                            ],
                           ),
-                          CreatureActionButtons(
-                            creature: widget.creatures[index],
-                            onEdit: () => widget.onEditRequested(index),
-                            onClone: (String newName) => widget.onCloneRequested(index, newName),
+                        if(selected == widget.creatures[index].id)
+                          CreatureDisplayWidget(
+                            creature: selected!,
+                            onEditRequested: (CreatureModel model) => widget.onEditRequested(index),
                             onDelete: () => widget.onDeleteRequested(index),
                             restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
-                          )
-                        ],
-                      ),
-                    if(selected == widget.creatures[index].id)
-                      CreatureDisplayWidget(
-                        creature: selected!,
-                        onEditRequested: (CreatureModel model) => widget.onEditRequested(index),
-                        onDelete: () => widget.onDeleteRequested(index),
-                        restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
-                      ),
-                  ],
+                          ),
+                      ],
+                    ),
+                  )
                 ),
-              )
+              ),
             ),
           ),
         );

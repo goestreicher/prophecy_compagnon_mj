@@ -149,6 +149,7 @@ class _FactionEditDialogState extends State<FactionEditDialog> {
               Expanded(
                 child: FleatherField(
                   controller: descriptionController,
+                  focusNode: descriptionFocusNode,
                   expands: true,
                   decoration: const InputDecoration(
                     labelText: "Description",

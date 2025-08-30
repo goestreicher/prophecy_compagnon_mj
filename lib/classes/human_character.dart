@@ -436,48 +436,9 @@ InjuryManager _humanCharacterDefaultInjuries(EntityBase? entity, InjuryManager? 
 InjuryManager fullCharacterDefaultInjuries(EntityBase? entity, InjuryManager? source) {
   if(entity == null) return _humanCharacterDefaultInjuries(entity, source);
 
-  int scratchCount = 0;
-  int lightCount = 0;
-  int graveCount = 0;
-  int fatalCount = 0;
-  int sum = entity.ability(Ability.resistance) + entity.ability(Ability.volonte);
-
-  if(sum < 5) {
-    scratchCount = 2;
-    lightCount = 1;
-    graveCount = 1;
-    fatalCount = 1;
-  }
-  else if(sum < 10) {
-    scratchCount = 3;
-    lightCount = 2;
-    graveCount = 1;
-    fatalCount = 1;
-  }
-  else if(sum < 15) {
-    scratchCount = 3;
-    lightCount = 2;
-    graveCount = 2;
-    fatalCount = 1;
-  }
-  else if(sum < 20) {
-    scratchCount = 3;
-    lightCount = 3;
-    graveCount = 2;
-    fatalCount = 2;
-  }
-  else {
-    scratchCount = 3;
-    lightCount = 4;
-    graveCount = 3;
-    fatalCount = 2;
-  }
-
-  return InjuryManager.human(
-    scratchCount: scratchCount,
-    lightCount: lightCount,
-    graveCount: graveCount,
-    fatalCount: fatalCount,
+  return InjuryManager.getInjuryManagerForAbilities(
+    resistance: entity.ability(Ability.resistance),
+    volonte: entity.ability(Ability.volonte),
     source: source,
   );
 }

@@ -37,6 +37,8 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
     return Container(
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black54),
@@ -44,15 +46,25 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
       ),
       padding: const EdgeInsets.all(8.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        spacing: 12.0,
         children: [
-          SizedBox(
-            width: 32,
-            height: 48,
-            child: Image.asset(
-              'assets/images/magic/sphere-${widget.sphere.name}-icon.png',
-            ),
+          Column(
+            spacing: 8.0,
+            children: [
+              SizedBox(
+                width: 32,
+                height: 48,
+                child: Image.asset(
+                  'assets/images/magic/sphere-${widget.sphere.name}-icon.png',
+                ),
+              ),
+              Text(
+                widget.sphere.title,
+                style: theme.textTheme.bodySmall,
+              )
+            ],
           ),
-          const SizedBox(width: 12.0),
           Column(
             children: [
               SizedBox(

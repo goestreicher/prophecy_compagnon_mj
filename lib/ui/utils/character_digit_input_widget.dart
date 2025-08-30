@@ -6,6 +6,7 @@ class CharacterDigitInputWidget extends StatefulWidget {
     super.key,
     required this.initialValue,
     required this.onChanged,
+    this.onSaved,
     this.minValue = 1,
     this.maxValue = 15,
     this.label,
@@ -15,6 +16,7 @@ class CharacterDigitInputWidget extends StatefulWidget {
 
   final int initialValue;
   final void Function(int) onChanged;
+  final void Function(int)? onSaved;
   final int minValue;
   final int maxValue;
   final String? label;
@@ -42,12 +44,18 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
     return TextFormField(
       controller: _controller,
       decoration: InputDecoration(
-        label: widget.label == null ? null : Text(widget.label!),
+        label: widget.label == null
+          ? null
+          : Text(
+              widget.label!,
+              maxLines: 1,
+              overflow: TextOverflow.clip,
+            ),
         labelStyle: theme.textTheme.labelSmall,
         floatingLabelStyle: theme.textTheme.labelLarge,
         border: const OutlineInputBorder(),
         isCollapsed: widget.collapsed,
-        contentPadding: const EdgeInsets.all(12.0),
+        contentPadding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 12.0),
         error: null,
         errorText: null,
         prefix: InkWell(
@@ -109,6 +117,9 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
         int? input = int.tryParse(value);
         if(input == null) return;
         widget.onChanged(input);
+      },
+      onSaved: (String? value) {
+        widget.onSaved?.call(int.parse(value!));
       },
     );
   }
