@@ -16,6 +16,8 @@ class ScenarioEditCreaturesPage extends StatefulWidget {
     required this.onCreatureCreated,
     required this.onCreatureModified,
     required this.onCreatureDeleted,
+    this.onEditStarted,
+    this.onEditFinished,
   });
 
   final List<CreatureModel> creatures;
@@ -23,6 +25,8 @@ class ScenarioEditCreaturesPage extends StatefulWidget {
   final void Function(CreatureModel) onCreatureCreated;
   final void Function(CreatureModel) onCreatureModified;
   final void Function(CreatureModel) onCreatureDeleted;
+  final void Function()? onEditStarted;
+  final void Function()? onEditFinished;
 
   @override
   State<ScenarioEditCreaturesPage> createState() => _ScenarioEditCreaturesPageState();
@@ -38,6 +42,8 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
   bool creatingNewCreature = false;
 
   void _startEditing(CreatureModel model) {
+    widget.onEditStarted?.call();
+
     setState(() {
       _newCreatureName = model.name;
       _selectedModel = model;
@@ -83,6 +89,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                 }
               }
 
+              widget.onEditFinished?.call();
               _editing = false;
               creatingNewCreature = false;
             });
@@ -130,6 +137,8 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                   );
                   return;
                 }
+
+                widget.onEditStarted?.call();
 
                 setState(() {
                   _selectedModel = null;

@@ -32,6 +32,7 @@ class ScenarioEditPage extends StatefulWidget {
 }
 
 class _ScenarioEditPageState extends State<ScenarioEditPage> {
+  bool mainButtonsLocked = false;
   bool _isWorking = false;
   late Future<Scenario?> _scenarioFuture;
   late Scenario _scenario;
@@ -207,7 +208,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     IconButton(
                       icon: const Icon(Icons.download),
                       tooltip: 'Exporter le scénario',
-                      onPressed: () async {
+                      onPressed: mainButtonsLocked ? null : () async {
                         tabGeneralPreSaveCallback?.call();
                         var jsonStr = json.encode(_scenario.toJson());
                         await FilePicker.platform.saveFile(
@@ -219,7 +220,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     IconButton(
                       icon: const Icon(Icons.close),
                       tooltip: 'Annuler',
-                      onPressed: () async {
+                      onPressed: mainButtonsLocked ? null : () async {
                         await cancelPendingChanges();
                         if(!context.mounted) return;
                         Navigator.of(context).pop(false);
@@ -228,7 +229,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     IconButton(
                       icon: const Icon(Icons.check),
                       tooltip: 'Valider',
-                      onPressed: () async {
+                      onPressed: mainButtonsLocked ? null : () async {
                         setState(() {
                           _isWorking = true;
                         });
@@ -282,6 +283,12 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                           _scenario.npcs.remove(n);
                         });
                       },
+                      onEditStarted: () => setState(() {
+                        mainButtonsLocked = true;
+                      }),
+                      onEditFinished: () => setState(() {
+                        mainButtonsLocked = false;
+                      }),
                     ),
                     ScenarioEditCreaturesPage(
                       creatures: _scenario.creatures,
@@ -301,6 +308,12 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                           _scenario.creatures.remove(c);
                         });
                       },
+                      onEditStarted: () => setState(() {
+                        mainButtonsLocked = true;
+                      }),
+                      onEditFinished: () => setState(() {
+                        mainButtonsLocked = false;
+                      }),
                     ),
                     ScenarioEditPlacesPage(
                       scenarioSource: _scenario.source,

@@ -14,6 +14,8 @@ class ScenarioEditNPCsPage extends StatefulWidget {
     required this.onNPCCreated,
     required this.onNPCModified,
     required this.onNPCDeleted,
+    this.onEditStarted,
+    this.onEditFinished,
   });
 
   final List<NonPlayerCharacter> npcs;
@@ -21,6 +23,8 @@ class ScenarioEditNPCsPage extends StatefulWidget {
   final void Function(NonPlayerCharacter) onNPCCreated;
   final void Function(NonPlayerCharacter) onNPCModified;
   final void Function(NonPlayerCharacter) onNPCDeleted;
+  final void Function()? onEditStarted;
+  final void Function()? onEditFinished;
 
   @override
   State<ScenarioEditNPCsPage> createState() => _ScenarioEditNPCsPageState();
@@ -34,6 +38,8 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
   bool creatingNewNPC = false;
 
   void _startEditing(NonPlayerCharacter npc) {
+    widget.onEditStarted?.call();
+
     setState(() {
       selectedNPC = npc;
       editing = true;
@@ -83,6 +89,7 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
               }
             }
 
+            widget.onEditFinished?.call();
             setState(() {
               creatingNewNPC = false;
               editing = false;
