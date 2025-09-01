@@ -5,11 +5,11 @@ import 'package:flutter/material.dart';
 
 import '../../classes/table.dart' as pc;
 import '../../classes/player_character.dart';
-import '../../classes/character/base.dart';
-import '../player_character/edit.dart';
 import '../player_character/new_character_dialog.dart';
+import '../utils/character/edit_widget.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
+import 'characters_list_widget.dart';
 
 class TableEditPage extends StatefulWidget {
   const TableEditPage({super.key, required this.uuid}) : table = null;
@@ -27,6 +27,8 @@ class _TableEditPageState extends State<TableEditPage> {
   bool _canCancel = true;
   late Future<pc.GameTable?> _tableFuture;
   late pc.GameTable _table;
+  String? selectedId;
+  PlayerCharacter? newPC;
   final GlobalKey<FormState> _newPlayerCharacterForm = GlobalKey<FormState>();
 
   @override
@@ -42,8 +44,6 @@ class _TableEditPageState extends State<TableEditPage> {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
     return FutureBuilder(
       future: _tableFuture,
       builder: (BuildContext context, AsyncSnapshot<pc.GameTable?> snapshot) {
@@ -61,111 +61,149 @@ class _TableEditPageState extends State<TableEditPage> {
 
         _table = snapshot.data!;
 
-        Widget mainArea;
-        if(_table.playerSummaries.isEmpty) {
-          mainArea = const Center(
-            child: Text('On va rajouter des PJs, hein'),
-          );
-        }
-        else {
-          mainArea = Stack(
-            children: [
-              ListView.builder(
-                padding: const EdgeInsets.all(12),
-                itemCount: _table.playerSummaries.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Card(
-                    clipBehavior: Clip.hardEdge,
-                    child: InkWell(
-                      splashColor: theme.colorScheme.surface,
-                      onTap: () async {
-                        var saved = await Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) => PlayerCharacterEditPage(id: _table.playerSummaries[index].id)),
-                        );
-                        if(saved != null && saved) {
-                          setState(() {
-                            _isWorking = true;
-                          });
-                          await pc.GameTableStore().save(_table);
-                          setState(() {
-                            _isWorking = false;
-                          });
-                        }
-                      },
-                      child: ListTile(
-                        title: Text(_table.playerSummaries[index].name),
-                        leading: _table.playerSummaries[index].icon == null
-                          ? null
-                          : Container(
-                              width: 48,
-                              height: 48,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(24.0),
-                                image: DecorationImage(
-                                  image: MemoryImage(
-                                    _table.playerSummaries[index].icon!.data
-                                  )
-                                ),
-                              ),
-                            ),
-                        subtitle: Text(
-                            'Joueur: ${_table.playerSummaries[index].player} / '
-                            'Caste: ${_table.playerSummaries[index].caste.title} '
-                            '(${Caste.statusName(_table.playerSummaries[index].caste, _table.playerSummaries[index].casteStatus)})'
-                        ),
-                        trailing: IconButton(
-                          icon: const Icon(Icons.delete),
-                          onPressed: () async {
-                            var confirm = await showDialog<bool>(
-                              context: context,
-                              builder: (BuildContext context) => AlertDialog(
-                                title: const Text('Confirmer la suppression'),
-                                content: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text('Supprimer ce personnage ?'),
-                                    const SizedBox(height: 8.0),
-                                    const Text('Cette action ne peut pas être annulée.'),
-                                  ],
-                                ),
-                                actions: <Widget>[
-                                  TextButton(
-                                    onPressed: () => Navigator.of(context).pop(false),
-                                    child: const Text('Annuler'),
-                                  ),
-                                  TextButton(
-                                    onPressed: () => Navigator.of(context).pop(true),
-                                    child: const Text('Supprimer'),
-                                  ),
-                                ]
-                              )
-                            );
-                            if(confirm == null || !confirm) return;
-
-                            setState(() {
-                              _canCancel = false;
-                              _isWorking = true;
-                            });
-                            var character = await PlayerCharacterStore().get(_table.playerSummaries[index].id);
-                            if(character != null) {
-                              await PlayerCharacterStore().delete(character);
-                            }
-                            _table.playerSummaries.removeAt(index);
-                            await pc.GameTableStore().save(_table);
-                            setState(() {
-                              _isWorking = false;
-                            });
-                          },
-                        )
-                      ),
-                    )
-                  );
-                }
+        var listWidget = TableCharactersListWidget(
+          summaries: _table.playerSummaries,
+          selected: selectedId,
+          onCharacterSelected: (String? id) async {
+            setState(() {
+              selectedId = id;
+            });
+          },
+          onCharacterEdited: (String id) async {
+            setState(() {
+              _isWorking = true;
+            });
+            await pc.GameTableStore().save(_table);
+            setState(() {
+              _isWorking = false;
+            });
+          },
+          onCharacterDeleted: (String id) async {
+            setState(() {
+              _canCancel = false;
+              _isWorking = true;
+            });
+            var character = await PlayerCharacterStore().get(id);
+            if(character != null) {
+              await PlayerCharacterStore().delete(character);
+            }
+            await pc.GameTableStore().save(_table);
+            setState(() {
+              _isWorking = false;
+            });
+          },
+          onCharacterCreationRequested: () async {
+            PlayerCharacter? character = await showDialog(
+              context: context,
+              builder: (context) => NewPlayerCharacterDialog(
+                formKey: _newPlayerCharacterForm,
               ),
-            ],
-          );
-        }
+            );
+            // User canceled the pop-up dialog
+            if(character == null) return;
+            if(!context.mounted) return;
+
+            setState(() {
+              selectedId = character.id;
+              newPC = character;
+            });
+          },
+          onCharacterImportRequested: () async {
+            var result = await FilePicker.platform.pickFiles(
+              type: FileType.custom,
+              allowedExtensions: ['json'],
+            );
+            if(result == null) return;
+
+            try {
+              setState(() {
+                _isWorking = true;
+              });
+
+              var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
+              var character = PlayerCharacter.import(json.decode(jsonStr));
+              await PlayerCharacterStore().save(character);
+
+              setState(() {
+                _table.playerSummaries.add(character.summary);
+              });
+
+              await pc.GameTableStore().save(_table);
+
+              setState(() {
+                _isWorking = false;
+                _canCancel = false;
+              });
+            } catch (e) {
+              setState(() {
+                _isWorking = false;
+              });
+
+              if(!context.mounted) return;
+
+              showDialog(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                    title: const Text("Échec de l'import"),
+                    content: Text(e.toString()),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () => Navigator.of(context).pop(),
+                        child: const Text('OK'),
+                      )
+                    ]
+                )
+              );
+            }
+          },
+        );
+
+        Widget mainArea = Row(
+          children: [
+            if(selectedId == null)
+              Expanded(child: listWidget),
+            if(selectedId != null)
+              SizedBox(
+                width: 300,
+                child: listWidget,
+              ),
+            if(selectedId != null)
+              Expanded(
+                child: _TableCharacterEditWidget(
+                  id: selectedId!,
+                  character: newPC,
+                  onCharacterLoaded: (PlayerCharacter? p) {
+                    if(p != null) _table.players.add(p);
+                  },
+                  onEditDone: (bool result) async {
+                    if(result) {
+                      if(newPC != null) {
+                        await PlayerCharacterStore().save(newPC!);
+
+                        _table.playerSummaries.add(newPC!.summary);
+                        _table.players.add(newPC!);
+                      }
+                      else {
+                        var summaryIndex = _table.playerSummaries
+                          .indexWhere((PlayerCharacterSummary s) => s.id == selectedId);
+                        var pcIndex = _table.players
+                          .indexWhere((PlayerCharacter p) => p.id == selectedId);
+
+                        if(summaryIndex != -1 && pcIndex != -1) {
+                          await PlayerCharacterStore().save(_table.players[pcIndex]);
+                          _table.playerSummaries[summaryIndex] = _table.players[pcIndex].summary;
+                        }
+                      }
+                    }
+                    setState(() {
+                      selectedId = null;
+                      newPC = null;
+                    });
+                  }
+                ),
+              )
+          ],
+        );
 
         return Stack(
           children: [
@@ -176,7 +214,7 @@ class _TableEditPageState extends State<TableEditPage> {
                   IconButton(
                     icon: const Icon(Icons.download),
                     tooltip: 'Exporter la table',
-                    onPressed: () async {
+                    onPressed: selectedId != null ? null : () async {
                       setState(() {
                         _isWorking = true;
                       });
@@ -194,16 +232,14 @@ class _TableEditPageState extends State<TableEditPage> {
                   IconButton(
                     icon: const Icon(Icons.close),
                     tooltip: 'Annuler',
-                    onPressed: !_canCancel
-                      ? null
-                      : () {
+                    onPressed: (selectedId != null || !_canCancel) ? null : () async {
                       Navigator.of(context).pop(false);
                     },
                   ),
                   IconButton(
                     icon: const Icon(Icons.check),
                     tooltip: 'Valider',
-                    onPressed: () async {
+                    onPressed: selectedId != null ? null : () async {
                       setState(() {
                         _isWorking = true;
                       });
@@ -220,127 +256,6 @@ class _TableEditPageState extends State<TableEditPage> {
               ),
               body: mainArea,
             ),
-            Positioned(
-              bottom: 16.0,
-              right: 16.0,
-              child: Directionality(
-                textDirection: TextDirection.rtl,
-                child: MenuAnchor(
-                  alignmentOffset: const Offset(0, 4),
-                  builder: (BuildContext context, MenuController controller, Widget? child) {
-                    return IconButton.filled(
-                      icon: const Icon(Icons.add),
-                      padding: const EdgeInsets.all(12.0),
-                      tooltip: 'Créer / Importer',
-                      onPressed: () {
-                        if(controller.isOpen) {
-                          controller.close();
-                        }
-                        else {
-                          controller.open();
-                        }
-                      },
-                    );
-                  },
-                  menuChildren: [
-                    Directionality(
-                      textDirection: TextDirection.ltr,
-                      child: MenuItemButton(
-                        child: const Row(
-                          children: [
-                            Icon(Icons.create),
-                            SizedBox(width: 4.0),
-                            Text('Nouveau PJ'),
-                          ],
-                        ),
-                        onPressed: () async {
-                          PlayerCharacter? character = await showDialog(
-                            context: context,
-                            builder: (context) => NewPlayerCharacterDialog(
-                              formKey: _newPlayerCharacterForm,
-                            ),
-                          );
-                          // User canceled the pop-up dialog
-                          if(character == null) return;
-
-
-                          if(!context.mounted) return;
-                          var saved = await Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) => PlayerCharacterEditPage.immediate(character: character)),
-                          );
-                          if(saved != null && saved) {
-                            setState(() {
-                              _canCancel = false;
-                              _isWorking = true;
-                            });
-                            _table.playerSummaries.add(character.summary);
-                            await pc.GameTableStore().save(_table);
-                            setState(() {
-                              _isWorking = false;
-                            });
-                          }
-                        },
-                      ),
-                    ),
-                    Directionality(
-                      textDirection: TextDirection.ltr,
-                      child: MenuItemButton(
-                        child: const Row(
-                          children: [
-                            Icon(Icons.publish),
-                            SizedBox(width: 4.0),
-                            Text('Importer un PJ'),
-                          ],
-                        ),
-                        onPressed: () async {
-                          var result = await FilePicker.platform.pickFiles(
-                            type: FileType.custom,
-                            allowedExtensions: ['json'],
-                          );
-                          if(result == null) return;
-                          try {
-                            setState(() {
-                              _isWorking = true;
-                            });
-                            var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
-                            var character = PlayerCharacter.import(json.decode(jsonStr));
-                            await PlayerCharacterStore().save(character);
-                            setState(() {
-                              _table.playerSummaries.add(character.summary);
-                            });
-                            await pc.GameTableStore().save(_table);
-                            setState(() {
-                              _isWorking = false;
-                              _canCancel = false;
-                            });
-                          } catch (e) {
-                            setState(() {
-                              _isWorking = false;
-                            });
-
-                            if(!context.mounted) return;
-
-                            showDialog(
-                              context: context,
-                              builder: (BuildContext context) => AlertDialog(
-                                  title: const Text("Échec de l'import"),
-                                  content: Text(e.toString()),
-                                  actions: <Widget>[
-                                    TextButton(
-                                      onPressed: () => Navigator.of(context).pop(),
-                                      child: const Text('OK'),
-                                    )
-                                  ]
-                              )
-                            );
-                          }
-                        },
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
             if(_isWorking)
               const Opacity(
                   opacity: 0.6,
@@ -356,6 +271,66 @@ class _TableEditPageState extends State<TableEditPage> {
           ],
         );
       },
+    );
+  }
+}
+
+class _TableCharacterEditWidget extends StatelessWidget {
+  const _TableCharacterEditWidget({
+    required this.id,
+    required this.onEditDone,
+    this.character,
+    this.onCharacterLoaded,
+  });
+
+  final String id;
+  final void Function(bool) onEditDone;
+  final PlayerCharacter? character;
+  final void Function(PlayerCharacter?)? onCharacterLoaded;
+
+  Future<PlayerCharacter?> _loadCharacter() async {
+    if(character != null) {
+      return Future<PlayerCharacter?>.sync(() => character);
+    }
+    else {
+      return PlayerCharacterStore().get(id)
+        .then((PlayerCharacter? p) {
+          onCharacterLoaded?.call(p);
+          return p;
+        });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder(
+      future: _loadCharacter(),
+      builder: (BuildContext context, AsyncSnapshot<PlayerCharacter?> snapshot) {
+        if(snapshot.connectionState != ConnectionState.done) {
+          return Center(child: CircularProgressIndicator());
+        }
+
+        if(snapshot.hasError) {
+          return Center(
+            child: Text(
+              'Erreur en récupérant le PJ : ${snapshot.error!.toString()}',
+            ),
+          );
+        }
+
+        if(!snapshot.hasData || snapshot.data == null) {
+          return Center(
+            child: Text(
+              'Aucune donnée reçue, PJ non trouvé',
+            ),
+          );
+        }
+
+        return CharacterEditWidget(
+          character: snapshot.data!,
+          onEditDone: (bool result) => onEditDone(result),
+        );
+      }
     );
   }
 }

@@ -153,9 +153,12 @@ class GameTable {
 
   Future<void> loadPlayers() async {
     for(var pcSummary in playerSummaries) {
-      var pcFull = await PlayerCharacterStore().get(pcSummary.id);
-      if(pcFull != null) {
-        players.add(pcFull);
+      var index = players.indexWhere((PlayerCharacter p) => p.id == pcSummary.id);
+      if(index == -1) {
+        var pcFull = await PlayerCharacterStore().get(pcSummary.id);
+        if (pcFull != null) {
+          players.add(pcFull);
+        }
       }
     }
   }

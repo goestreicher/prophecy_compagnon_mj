@@ -146,9 +146,11 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
                 Expanded(
                   child: DropdownMenuFormField<Augure>(
                     controller: augureController,
+                    enabled: false,
                     initialSelection: (widget.character as PlayerCharacter).augure,
                     requestFocusOnTap: true,
                     label: const Text('Augure'),
+                    expandedInsets: EdgeInsets.zero,
                     textStyle: theme.textTheme.bodySmall,
                     inputDecorationTheme: const InputDecorationTheme(
                       border: OutlineInputBorder(),

@@ -55,6 +55,7 @@ class NewPlayerCharacterDialog extends StatelessWidget {
               requestFocusOnTap: true,
               label: const Text('Augure'),
               initialSelection: Augure.pierre,
+              expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries:
                 Augure.values.map<DropdownMenuEntry<Augure>>((Augure augure) {
                   return DropdownMenuEntry<Augure>(
