@@ -312,6 +312,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                             var result = await FilePicker.platform.pickFiles(
                               type: FileType.custom,
                               allowedExtensions: ['json'],
+                              withData: true,
                             );
                             if(!context.mounted) return;
                             if(result == null) return;

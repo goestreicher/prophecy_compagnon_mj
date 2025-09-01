@@ -42,7 +42,10 @@ class _MapBackgroundPickerDialogState extends State<PlaceMapPickerDialog> {
               children: [
                 ElevatedButton(
                   onPressed: () async {
-                    var fpResult = await FilePicker.platform.pickFiles(type: FileType.image);
+                    var fpResult = await FilePicker.platform.pickFiles(
+                      type: FileType.image,
+                      withData: true,
+                    );
                     if(fpResult == null) return;
 
                     try {

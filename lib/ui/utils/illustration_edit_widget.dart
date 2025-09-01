@@ -136,7 +136,10 @@ class _IllustrationEditWidgetState extends State<IllustrationEditWidget> {
       return Center(
         child: TextButton(
           onPressed: () async {
-            var fpResult = await FilePicker.platform.pickFiles(type: FileType.image);
+            var fpResult = await FilePicker.platform.pickFiles(
+              type: FileType.image,
+              withData: true,
+            );
             if(fpResult == null) return;
 
             try {

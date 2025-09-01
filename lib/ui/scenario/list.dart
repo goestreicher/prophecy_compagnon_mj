@@ -231,6 +231,7 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                             var result = await FilePicker.platform.pickFiles(
                               type: FileType.custom,
                               allowedExtensions: ['json'],
+                              withData: true,
                             );
                             if(result == null) return;
                             try {

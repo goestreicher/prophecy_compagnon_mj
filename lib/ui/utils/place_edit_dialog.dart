@@ -150,7 +150,10 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                         child: Center(
                           child: ElevatedButton(
                             onPressed: () async {
-                              var fpResult = await FilePicker.platform.pickFiles(type: FileType.image);
+                              var fpResult = await FilePicker.platform.pickFiles(
+                                type: FileType.image,
+                                withData: true,
+                              );
                               if(fpResult == null) return;
 
                               try {

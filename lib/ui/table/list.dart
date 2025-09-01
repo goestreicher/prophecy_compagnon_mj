@@ -210,6 +210,7 @@ class _TablesListPageState extends State<TablesListPage> {
                             var result = await FilePicker.platform.pickFiles(
                               type: FileType.custom,
                               allowedExtensions: ['json'],
+                              withData: true,
                             );
                             if(!context.mounted) return;
                             if(result == null) return;

@@ -112,6 +112,7 @@ class _TableEditPageState extends State<TableEditPage> {
             var result = await FilePicker.platform.pickFiles(
               type: FileType.custom,
               allowedExtensions: ['json'],
+              withData: true,
             );
             if(result == null) return;
 
