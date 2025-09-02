@@ -35,10 +35,18 @@ class _TableEditPageState extends State<TableEditPage> {
   void initState() {
     super.initState();
     if(widget.table != null) {
-      _tableFuture = Future<pc.GameTable?>.sync(() => widget.table!);
+      _tableFuture = Future<pc.GameTable?>.sync(() => widget.table!)
+        .then((pc.GameTable? t) async {
+          await t?.loadPlayers();
+          return t;
+        });
     }
     else {
-      _tableFuture = pc.GameTableStore().get(widget.uuid);
+      _tableFuture = pc.GameTableStore().get(widget.uuid)
+          .then((pc.GameTable? t) async {
+        await t?.loadPlayers();
+        return t;
+      });
     }
   }
 
@@ -170,12 +178,8 @@ class _TableEditPageState extends State<TableEditPage> {
               ),
             if(selectedId != null)
               Expanded(
-                child: _TableCharacterEditWidget(
-                  id: selectedId!,
-                  character: newPC,
-                  onCharacterLoaded: (PlayerCharacter? p) {
-                    if(p != null) _table.players.add(p);
-                  },
+                child: CharacterEditWidget(
+                  character: newPC ?? _table.players.firstWhere((PlayerCharacter p) => p.id == selectedId!),
                   onEditDone: (bool result) async {
                     if(result) {
                       if(newPC != null) {
@@ -272,66 +276,6 @@ class _TableEditPageState extends State<TableEditPage> {
           ],
         );
       },
-    );
-  }
-}
-
-class _TableCharacterEditWidget extends StatelessWidget {
-  const _TableCharacterEditWidget({
-    required this.id,
-    required this.onEditDone,
-    this.character,
-    this.onCharacterLoaded,
-  });
-
-  final String id;
-  final void Function(bool) onEditDone;
-  final PlayerCharacter? character;
-  final void Function(PlayerCharacter?)? onCharacterLoaded;
-
-  Future<PlayerCharacter?> _loadCharacter() async {
-    if(character != null) {
-      return Future<PlayerCharacter?>.sync(() => character);
-    }
-    else {
-      return PlayerCharacterStore().get(id)
-        .then((PlayerCharacter? p) {
-          onCharacterLoaded?.call(p);
-          return p;
-        });
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: _loadCharacter(),
-      builder: (BuildContext context, AsyncSnapshot<PlayerCharacter?> snapshot) {
-        if(snapshot.connectionState != ConnectionState.done) {
-          return Center(child: CircularProgressIndicator());
-        }
-
-        if(snapshot.hasError) {
-          return Center(
-            child: Text(
-              'Erreur en récupérant le PJ : ${snapshot.error!.toString()}',
-            ),
-          );
-        }
-
-        if(!snapshot.hasData || snapshot.data == null) {
-          return Center(
-            child: Text(
-              'Aucune donnée reçue, PJ non trouvé',
-            ),
-          );
-        }
-
-        return CharacterEditWidget(
-          character: snapshot.data!,
-          onEditDone: (bool result) => onEditDone(result),
-        );
-      }
     );
   }
 }
