@@ -97,6 +97,7 @@ class _CharacterEditInjuriesWidgetState extends State<CharacterEditInjuriesWidge
     if(widget.character is NonPlayerCharacter) {
       widgets.add(
         Row(
+          mainAxisSize: MainAxisSize.min,
           spacing: 8.0,
           children: [
             Switch(
@@ -153,7 +154,7 @@ class _CharacterEditInjuriesWidgetState extends State<CharacterEditInjuriesWidge
     }
 
     widgets.add(
-      _InjuryManagerEditWidget(manager: currentManager)
+      Center(child: _InjuryManagerEditWidget(manager: currentManager))
     );
 
     return WidgetGroupContainer(
@@ -321,9 +322,16 @@ class _InjuryManagerEditWidget extends StatefulWidget {
 class _InjuryManagerEditWidgetState extends State<_InjuryManagerEditWidget> {
   @override
   Widget build(BuildContext context) {
-    List<Widget> levelWidgets = <Widget>[];
+    var levelNames = <Widget>[];
+    var levelInputs = <Widget>[];
     for(var level in widget.manager.levels()) {
-      levelWidgets.add(
+      levelNames.add(
+        Text(
+          level.title,
+        )
+      );
+
+      levelInputs.add(
         _InjuryLevelInputWidget(
           level: level,
           count: widget.manager.count(level),
@@ -341,10 +349,24 @@ class _InjuryManagerEditWidgetState extends State<_InjuryManagerEditWidget> {
       );
     }
 
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      spacing: 4.0,
-      children: levelWidgets,
+    return IntrinsicHeight(
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        spacing: 8.0,
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: levelNames,
+          ),
+          Flexible(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: levelInputs,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -373,13 +395,15 @@ class _InjuryLevelInputWidget extends StatelessWidget {
     for(var i = 0; i < level.capacity; ++i) {
       if(colored < count) {
         circles.add(
-            Container(
-              width: circlesDiameter,
-              height: circlesDiameter,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                border: Border.all(color: Colors.black),
-                borderRadius: BorderRadius.circular(circlesDiameter / 2),
+            UnconstrainedBox(
+              child: Container(
+                width: circlesDiameter,
+                height: circlesDiameter,
+                decoration: BoxDecoration(
+                  color: Colors.black,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.black),
+                ),
               ),
             )
         );
@@ -387,57 +411,65 @@ class _InjuryLevelInputWidget extends StatelessWidget {
       }
       else {
         circles.add(
-            Container(
+          UnconstrainedBox(
+            child: Container(
               width: circlesDiameter,
               height: circlesDiameter,
               decoration: BoxDecoration(
                 color: theme.colorScheme.surfaceBright,
+                shape: BoxShape.circle,
                 border: Border.all(color: Colors.black),
-                borderRadius: BorderRadius.circular(circlesDiameter / 2),
               ),
-            )
+            ),
+          )
         );
       }
     }
 
+    var minWidth = circlesDiameter * 2 + 2.0;
+
     return Row(
+      spacing: 4.0,
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SizedBox(
-          width: 80.0,
-          child: Align(
-            alignment: Alignment.centerRight,
-            child: Text(
-              level.title,
-              style: theme.textTheme.bodyMedium,
-              textAlign: TextAlign.end,
-            ),
-          ),
-        ),
-        const SizedBox(width: 8.0),
         IconButton(
           icon: const Icon(Icons.remove),
           style: IconButton.styleFrom(
-            minimumSize: const Size.square(28.0),
-            maximumSize: const Size.square(28.0),
+            minimumSize: Size.square(28.0),
+            maximumSize: Size.square(28.0),
             iconSize: 12.0,
           ),
           onPressed: () => decrease(),
         ),
-        const SizedBox(width: 4.0),
-        Expanded(
-          child: Wrap(
-            spacing: 2.0,
-            runSpacing: 2.0,
-            children: circles,
+        Flexible(
+          child: ConstraintsTransformBox(
+            clipBehavior: Clip.hardEdge,
+            constraintsTransform: (BoxConstraints constraints) {
+              if(constraints.maxWidth < minWidth) {
+                return BoxConstraints(
+                  minWidth: minWidth,
+                  maxWidth: minWidth,
+                  minHeight: constraints.minHeight,
+                  maxHeight: constraints.maxHeight,
+                );
+              }
+              else {
+                return constraints;
+              }
+            },
+            child: Wrap(
+              spacing: 2.0,
+              runSpacing: 2.0,
+              children: circles,
+            ),
           ),
         ),
-        const SizedBox(width: 4.0),
         IconButton(
           icon: const Icon(Icons.add),
           style: IconButton.styleFrom(
-            minimumSize: const Size.square(28.0),
-            maximumSize: const Size.square(28.0),
+            minimumSize: Size.square(28.0),
+            maximumSize: Size.square(28.0),
             iconSize: 12.0,
           ),
           onPressed: () => increase(),

@@ -24,8 +24,7 @@ class CharacterEditBaseWidget extends StatelessWidget {
   final HumanCharacter character;
   final StreamController<CharacterChange> changeStreamController;
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _twoColumnsLayout() {
     return Column(
       spacing: 12.0,
       children: [
@@ -34,97 +33,177 @@ class CharacterEditBaseWidget extends StatelessWidget {
           spacing: 16.0,
           children: [
             Expanded(
-              flex: 2,
-              child: Column(
-                spacing: 12.0,
-                children: [
-                  CharacterEditGeneralWidget(
-                    character: character,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 16.0,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          spacing: 12.0,
-                          children: [
-                            CharacterEditCasteWidget(
-                              character: character,
-                              changeStreamController: changeStreamController,
-                            ),
-                            CharacterEditInjuriesWidget(
-                              character: character,
-                              changeStreamController: changeStreamController,
-                            ),
-                          ],
-                        ),
-                      ),
-                      CharacterEditTendenciesWidget(
-                        character: character,
-                      ),
-                    ],
-                  )
-                ],
+              flex: 3,
+              child: CharacterEditGeneralWidget(
+                character: character,
               ),
             ),
             Expanded(
-              child: Column(
-                spacing: 12.0,
-                children: [
-                  CharacterEditAbilitiesWidget(
-                    character: character,
-                    changeStreamController: changeStreamController
-                  ),
-                  Row(
-                    spacing: 16.0,
-                    children: [
-                      Expanded(
-                        child: CharacterEditAttributesWidget(
-                          character: character,
-                          changeStreamController: changeStreamController
-                        ),
-                      ),
-                      Expanded(
-                        child: CharacterEditSecondaryAttributesWidget(
-                          character: character,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+              flex: 1,
+              child: CharacterEditCasteWidget(
+                character: character,
+                changeStreamController: changeStreamController,
               ),
             ),
           ],
         ),
-        Divider(),
-        Wrap(
-          spacing: 20.0,
-          runSpacing: 12.0,
+        Row(
+          spacing: 16.0,
           children: [
-            CharacterEditSkillGroupContainer(
-              character: character,
-              changeStreamController: changeStreamController,
-              attribute: Attribute.physique,
+            Expanded(
+              child: CharacterEditAbilitiesWidget(
+                character: character,
+                changeStreamController: changeStreamController,
+              ),
             ),
-            CharacterEditSkillGroupContainer(
-              character: character,
-              changeStreamController: changeStreamController,
-              attribute: Attribute.mental,
+            Expanded(
+              child: CharacterEditAttributesWidget(
+                  character: character,
+                  changeStreamController: changeStreamController
+              ),
             ),
-            CharacterEditSkillGroupContainer(
-              character: character,
-              changeStreamController: changeStreamController,
-              attribute: Attribute.manuel,
+            Expanded(
+              child: CharacterEditSecondaryAttributesWidget(
+                character: character,
+              ),
             ),
-            CharacterEditSkillGroupContainer(
+          ],
+        ),
+        Row(
+          children: [
+            Flexible(
+              child: CharacterEditInjuriesWidget(
+                character: character,
+                changeStreamController: changeStreamController,
+              ),
+            ),
+            CharacterEditTendenciesWidget(
               character: character,
-              changeStreamController: changeStreamController,
-              attribute: Attribute.social,
             ),
           ],
         ),
       ],
+    );
+  }
+
+  Widget _threeColumnsLayout() {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      spacing: 16.0,
+      children: [
+        Expanded(
+          child: Column(
+            spacing: 12.0,
+            children: [
+              CharacterEditGeneralWidget(
+                character: character,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 16.0,
+                children: [
+                  Expanded(
+                    child: Column(
+                      spacing: 12.0,
+                      children: [
+                        CharacterEditCasteWidget(
+                          character: character,
+                          changeStreamController: changeStreamController,
+                        ),
+                        CharacterEditInjuriesWidget(
+                          character: character,
+                          changeStreamController: changeStreamController,
+                        ),
+                      ],
+                    ),
+                  ),
+                  CharacterEditTendenciesWidget(
+                    character: character,
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+        SizedBox(
+          width: 220,
+          child: Column(
+            spacing: 12.0,
+            children: [
+              CharacterEditAbilitiesWidget(
+                character: character,
+                changeStreamController: changeStreamController
+              ),
+              Row(
+                spacing: 16.0,
+                children: [
+                  Expanded(
+                    child: CharacterEditAttributesWidget(
+                      character: character,
+                      changeStreamController: changeStreamController
+                    ),
+                  ),
+                  Expanded(
+                    child: CharacterEditSecondaryAttributesWidget(
+                      character: character,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        Widget topWidget;
+
+        if(constraints.maxWidth < 850) {
+          topWidget = _twoColumnsLayout();
+        }
+        else {
+          topWidget = _threeColumnsLayout();
+        }
+
+        return Column(
+          spacing: 12.0,
+          children: [
+            topWidget,
+            Divider(),
+            Wrap(
+              spacing: 20.0,
+              runSpacing: 12.0,
+              children: [
+                CharacterEditSkillGroupContainer(
+                  character: character,
+                  changeStreamController: changeStreamController,
+                  attribute: Attribute.physique,
+                ),
+                CharacterEditSkillGroupContainer(
+                  character: character,
+                  changeStreamController: changeStreamController,
+                  attribute: Attribute.mental,
+                ),
+                CharacterEditSkillGroupContainer(
+                  character: character,
+                  changeStreamController: changeStreamController,
+                  attribute: Attribute.manuel,
+                ),
+                CharacterEditSkillGroupContainer(
+                  character: character,
+                  changeStreamController: changeStreamController,
+                  attribute: Attribute.social,
+                ),
+              ],
+            ),
+          ],
+        );
+      }
     );
   }
 }
