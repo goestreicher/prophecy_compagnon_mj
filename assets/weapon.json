@@ -460,8 +460,8 @@
         "initiative": { "melee": 0 },
         "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 5 },
         "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
+            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
+            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
         }
     },
     {
