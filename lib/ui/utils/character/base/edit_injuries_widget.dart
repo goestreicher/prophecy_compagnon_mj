@@ -11,6 +11,7 @@ import '../../../../classes/player_character.dart';
 import '../../character_digit_input_widget.dart';
 import '../change_stream.dart';
 import '../widget_group_container.dart';
+import 'injury_manager_widget.dart';
 
 class CharacterEditInjuriesWidget extends StatefulWidget {
   const CharacterEditInjuriesWidget({
@@ -154,7 +155,7 @@ class _CharacterEditInjuriesWidgetState extends State<CharacterEditInjuriesWidge
     }
 
     widgets.add(
-      Center(child: _InjuryManagerEditWidget(manager: currentManager))
+      Center(child: CharacterInjuryManagerWidget(manager: currentManager))
     );
 
     return WidgetGroupContainer(
@@ -304,177 +305,6 @@ class _EditSimpleInjuryManagerLevelsDialogState extends State<_EditSimpleInjuryM
           ],
         ),
       )
-    );
-  }
-}
-
-class _InjuryManagerEditWidget extends StatefulWidget {
-  const _InjuryManagerEditWidget({
-    required this.manager,
-  });
-
-  final InjuryManager manager;
-
-  @override
-  State<_InjuryManagerEditWidget> createState() => _InjuryManagerEditWidgetState();
-}
-
-class _InjuryManagerEditWidgetState extends State<_InjuryManagerEditWidget> {
-  @override
-  Widget build(BuildContext context) {
-    var levelNames = <Widget>[];
-    var levelInputs = <Widget>[];
-    for(var level in widget.manager.levels()) {
-      levelNames.add(
-        Text(
-          level.title,
-        )
-      );
-
-      levelInputs.add(
-        _InjuryLevelInputWidget(
-          level: level,
-          count: widget.manager.count(level),
-          increase: () {
-            setState(() {
-              widget.manager.setDamage(level.start + 1);
-            });
-          },
-          decrease: () {
-            setState(() {
-              widget.manager.heal(level);
-            });
-          },
-        )
-      );
-    }
-
-    return IntrinsicHeight(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        spacing: 8.0,
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: levelNames,
-          ),
-          Flexible(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: levelInputs,
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class _InjuryLevelInputWidget extends StatelessWidget {
-  const _InjuryLevelInputWidget({
-    required this.level,
-    required this.count,
-    required this.increase,
-    required this.decrease,
-    this.circlesDiameter = 12.0,
-  });
-
-  final InjuryLevel level;
-  final int count;
-  final void Function() increase;
-  final void Function() decrease;
-  final double circlesDiameter;
-
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-    List<Widget> circles = <Widget>[];
-    var colored = 0;
-
-    for(var i = 0; i < level.capacity; ++i) {
-      if(colored < count) {
-        circles.add(
-            UnconstrainedBox(
-              child: Container(
-                width: circlesDiameter,
-                height: circlesDiameter,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  shape: BoxShape.circle,
-                  border: Border.all(color: Colors.black),
-                ),
-              ),
-            )
-        );
-        ++colored;
-      }
-      else {
-        circles.add(
-          UnconstrainedBox(
-            child: Container(
-              width: circlesDiameter,
-              height: circlesDiameter,
-              decoration: BoxDecoration(
-                color: theme.colorScheme.surfaceBright,
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.black),
-              ),
-            ),
-          )
-        );
-      }
-    }
-
-    var minWidth = circlesDiameter * 2 + 2.0;
-
-    return Row(
-      spacing: 4.0,
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        IconButton(
-          icon: const Icon(Icons.remove),
-          style: IconButton.styleFrom(
-            minimumSize: Size.square(28.0),
-            maximumSize: Size.square(28.0),
-            iconSize: 12.0,
-          ),
-          onPressed: () => decrease(),
-        ),
-        Flexible(
-          child: ConstraintsTransformBox(
-            clipBehavior: Clip.hardEdge,
-            constraintsTransform: (BoxConstraints constraints) {
-              if(constraints.maxWidth < minWidth) {
-                return BoxConstraints(
-                  minWidth: minWidth,
-                  maxWidth: minWidth,
-                  minHeight: constraints.minHeight,
-                  maxHeight: constraints.maxHeight,
-                );
-              }
-              else {
-                return constraints;
-              }
-            },
-            child: Wrap(
-              spacing: 2.0,
-              runSpacing: 2.0,
-              children: circles,
-            ),
-          ),
-        ),
-        IconButton(
-          icon: const Icon(Icons.add),
-          style: IconButton.styleFrom(
-            minimumSize: Size.square(28.0),
-            maximumSize: Size.square(28.0),
-            iconSize: 12.0,
-          ),
-          onPressed: () => increase(),
-        ),
-      ],
     );
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/entity_base.dart';
 import '../../../../classes/equipment.dart';
 import '../../../../classes/weapon.dart';
+import 'equipment_info_widgets.dart';
 
 enum EquipHands {
   dominant,
@@ -11,33 +12,16 @@ enum EquipHands {
 }
 
 class WeaponEquipWidget extends StatefulWidget {
-  WeaponEquipWidget({
+  const WeaponEquipWidget({
     super.key,
     required this.character,
     required this.weapon,
     required this.onEquipedStateChanged,
     this.allowDelete = true,
-  }) {
-    if(weapon.model.damage.static > 0) {
-      damage = weapon.model.damage.static.toString();
-    }
-    else {
-      var buffer = StringBuffer(weapon.model.damage.multiply > 1
-          ? '(FOR x ${weapon.model.damage.multiply})'
-          : 'FOR');
-      if(weapon.model.damage.add > 0) {
-        buffer.write(' + ${weapon.model.damage.add}');
-      }
-      if(weapon.model.damage.dice > 0) {
-        buffer.write(' + ${weapon.model.damage.dice}D10');
-      }
-      damage = buffer.toString();
-    }
-  }
+  });
 
   final EntityBase character;
   final Weapon weapon;
-  late final String damage;
   final VoidCallback onEquipedStateChanged;
   final bool allowDelete;
 
@@ -93,26 +77,13 @@ class _WeaponEquipWidgetState extends State<WeaponEquipWidget> {
       shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0)
       ),
-      child:
-      Padding(
+      child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: [
             for(var w in leading)
               w,
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '\u{2694} ${widget.weapon.name()}',
-                  style: theme.textTheme.titleMedium,
-                ),
-                Text(
-                  'Dégats ${widget.damage}',
-                  style: theme.textTheme.bodySmall,
-                ),
-              ],
-            ),
+            WeaponInfoWidget(weapon: widget.weapon),
             const Spacer(),
             if(!widget.character.meetsEquipableRequirements(widget.weapon))
               Text(

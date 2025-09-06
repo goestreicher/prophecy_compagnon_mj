@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/armor.dart';
 import '../../../../classes/equipment.dart';
 import '../../../../classes/human_character.dart';
+import 'equipment_info_widgets.dart';
 
 class ArmorEquipWidget extends StatefulWidget {
   const ArmorEquipWidget({
@@ -55,27 +56,7 @@ class _ArmorEquipWidgetState extends State<ArmorEquipWidget> {
           children: [
             for(var w in leading)
               w,
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  widget.armor.name(),
-                  style: theme.textTheme.titleMedium,
-                ),
-                Text(
-                  'Protection ${widget.armor.protection()}',
-                  style: theme.textTheme.bodyMedium,
-                ),
-                Text(
-                  'Pénalite ${widget.armor.model.penalty}',
-                  style: theme.textTheme.bodySmall,
-                ),
-                Text(
-                  widget.armor.model.type.title,
-                  style: theme.textTheme.bodySmall,
-                )
-              ],
-            ),
+            ArmorInfoWidget(armor: widget.armor),
             const Spacer(),
             if(!widget.character.meetsEquipableRequirements(widget.armor))
               Text(

@@ -47,7 +47,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
       return NonPlayerCharacterSummary.forCategory(npcCategory!, npcSubCategory, nameFilter: search);
     }
 
-    return <NonPlayerCharacterSummary>[];
+    return NonPlayerCharacterSummary.getAll(nameFilter: search);
   }
 
   void _startEditing(NonPlayerCharacter npc) {

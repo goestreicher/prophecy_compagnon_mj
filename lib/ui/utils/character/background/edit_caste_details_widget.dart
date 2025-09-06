@@ -48,11 +48,11 @@ class CharacterEditCasteDetailsWidget extends StatelessWidget {
             character: character,
             changeStreamController: changeStreamController,
           ),
-          CharacterViewCasteBenefitsWidget(
+          CharacterViewCasteTechniquesWidget(
             character: character,
             changeStreamController: changeStreamController,
           ),
-          CharacterViewCasteTechniquesWidget(
+          CharacterViewCasteBenefitsWidget(
             character: character,
             changeStreamController: changeStreamController,
           ),

@@ -3,17 +3,31 @@ import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
+import '../../../classes/armor.dart';
 import '../../../classes/character/base.dart';
+import '../../../classes/character/skill.dart';
+import '../../../classes/equipment.dart';
 import '../../../classes/magic.dart';
 import '../../../classes/non_player_character.dart';
 import '../../../classes/object_source.dart';
-import 'base/ability_list_display_widget.dart';
-import 'base/attribute_list_display_widget.dart';
+import '../../../classes/shield.dart';
+import '../../../classes/weapon.dart';
 import '../error_feedback.dart';
 import '../full_page_loading.dart';
-import '../injuries_display_widget.dart';
-import '../tendencies_display_widget.dart';
-import '../uniform_height_wrap.dart';
+import 'background/display_advantages_widget.dart';
+import 'background/display_caste_details.dart';
+import 'base/display_abilities_widget.dart';
+import 'base/display_attributes_widget.dart';
+import 'base/display_general_widget.dart';
+import 'base/display_injuries_widget.dart';
+import 'base/display_secondary_attributes_widget.dart';
+import 'base/display_skill_group_widget.dart';
+import 'base/tendencies_edit_widget.dart';
+import 'equipment/display_armor_widget.dart';
+import 'equipment/display_weapons_widget.dart';
+import 'magic/display_magic_skills_widget.dart';
+import 'magic/display_magic_spheres_widget.dart';
+import 'widget_group_container.dart';
 
 class NPCActionButtons extends StatelessWidget {
   const NPCActionButtons({
@@ -142,633 +156,242 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
 
         NonPlayerCharacter npc = snapshot.data!;
         var theme = Theme.of(context);
+        const skillGroupWidth = 280.0;
 
-        Map<String, int> skills = <String, int>{};
-        for(var s in npc.skills) {
-          if(s.value > 0) {
-            skills[s.skill.title] = s.value;
-          }
-          for(var sp in s.specializations.keys) {
-            skills['${s.skill.title} (${sp.title})'] = s.specializations[sp]!;
-          }
-        }
-        var skillsOrder = skills.keys.toList()..sort((a, b) => a.compareTo(b));
+        var hasPhysicalSkills = SkillFamily.values.any(
+            (SkillFamily f) => (f.defaultAttribute == Attribute.physique && npc.skillsForFamily(f).isNotEmpty)
+          );
+        var hasManualSkills = SkillFamily.values.any(
+                (SkillFamily f) => (f.defaultAttribute == Attribute.manuel && npc.skillsForFamily(f).isNotEmpty)
+        );
+        var hasMentalSkills = SkillFamily.values.any(
+                (SkillFamily f) => (f.defaultAttribute == Attribute.mental && npc.skillsForFamily(f).isNotEmpty)
+        );
+        var hasSocialSkills = SkillFamily.values.any(
+                (SkillFamily f) => (f.defaultAttribute == Attribute.social && npc.skillsForFamily(f).isNotEmpty)
+        );
 
-        return SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(12.0, 12.0, 20.0, 12.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+        var isMagicUser = MagicSkill.values.any(
+            (MagicSkill s) => npc.magicSkill(s) > 0
+          );
+
+        var hasWeapon = npc.equipment.any(
+            (Equipment eq) => (eq is Weapon || eq is Shield),
+          );
+        var hasArmor = npc.equipment.any(
+              (Equipment eq) => (eq is Armor),
+        );
+
+        return Column(
+          children: [
+            Row(
               children: [
-                UniformHeightWrap(
-                  spacing: 8.0,
-                  runSpacing: 4.0,
-                  allocation: UniformHeightWrapAllocation.expandSpacing,
-                  children: [
-                    Text(
-                      npc.name,
-                      softWrap: true,
-                      style: theme.textTheme.headlineMedium!.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(width: 8.0),
-                    NPCActionButtons(
-                      npc: npc.summary,
-                      onEdit: () => widget.onEditRequested(),
-                      onClone: () => widget.onCloneRequested(),
-                      onDelete: () => widget.onDeleteRequested(),
-                      restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
-                    ),
-                  ]
-                ),
-                const SizedBox(height: 16.0),
-                Wrap(
-                  direction: Axis.horizontal,
-                  spacing: 12.0,
-                  runSpacing: 4.0,
-                  children: [
-                    RichText(
-                      text: TextSpan(
-                        text: 'Unique : ',
-                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                        children: [
-                          TextSpan(
-                            text: npc.unique ? 'Oui' : 'Non',
-                            style: theme.textTheme.bodyLarge,
-                          )
-                        ]
-                      )
-                    ),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Caste : ',
-                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                        children: [
-                          TextSpan(
-                            text: npc.caste.title,
-                            style: theme.textTheme.bodyLarge,
-                          )
-                        ]
-                      )
-                    ),
-                    RichText(
-                      text: TextSpan(
-                        text: 'Statut : ',
-                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                        children: [
-                          TextSpan(
-                            text: Caste.statusName(npc.caste, npc.casteStatus),
-                            style: theme.textTheme.bodyLarge,
-                          )
-                        ]
-                      )
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8.0),
-                UniformHeightWrap(
-                  spacing: 16.0,
-                  runSpacing: 8.0,
-                  allocation: UniformHeightWrapAllocation.resizeChildren,
-                  children: [
-                    AbilityListDisplayWidget(abilities: npc.abilities),
-                    TendenciesDisplayWidget(tendencies: npc.tendencies),
-                    AttributeListDisplayWidget(attributes: npc.attributes),
-                  ],
-                ),
-                const SizedBox(height: 8.0),
-                UniformHeightWrap(
-                  spacing: 16.0,
-                  runSpacing: 8.0,
-                  allocation: UniformHeightWrapAllocation.resizeChildren,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black87),
-                        borderRadius: BorderRadius.circular(4.0),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              RichText(
-                                  text: TextSpan(
-                                      text: 'Initiative : ',
-                                      style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: npc.initiative.toString(),
-                                          style: theme.textTheme.bodyMedium,
-                                        )
-                                      ]
-                                  )
-                              ),
-                              const SizedBox(height: 8.0),
-                              RichText(
-                                  text: TextSpan(
-                                      text: 'Chance : ',
-                                      style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: npc.luck.toString(),
-                                          style: theme.textTheme.bodyMedium,
-                                        )
-                                      ]
-                                  )
-                              ),
-                              const SizedBox(height: 8.0),
-                              RichText(
-                                  text: TextSpan(
-                                      text: 'Maîtrise : ',
-                                      style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: npc.proficiency.toString(),
-                                          style: theme.textTheme.bodyMedium,
-                                        )
-                                      ]
-                                  )
-                              ),
-                              const SizedBox(height: 8.0),
-                              RichText(
-                                  text: TextSpan(
-                                      text: 'Renommée : ',
-                                      style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                                      children: [
-                                        TextSpan(
-                                          text: npc.renown.toString(),
-                                          style: theme.textTheme.bodyMedium,
-                                        )
-                                      ]
-                                  )
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black87),
-                        borderRadius: BorderRadius.circular(4.0),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Seuils de blessure',
-                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                              ),
-                              InjuriesDisplayWidget(injuries: npc.injuries.levels()),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                if(npc.interdicts.isNotEmpty || npc.castePrivileges.isNotEmpty)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 0.0),
-                    child: UniformHeightWrap(
-                      spacing: 16.0,
-                      runSpacing: 8.0,
-                      allocation: UniformHeightWrapAllocation.resizeChildren,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black87),
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Interdits',
-                                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                                  ),
-                                  if(npc.interdicts.isEmpty)
-                                    Text(
-                                      "Pas d'interdits",
-                                      style: theme.textTheme.bodyMedium!.copyWith(
-                                        color: Colors.black54,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                    ),
-                                  for(var i in npc.interdicts)
-                                    Text('${i.title} (${i.caste.title})'),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black87),
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Privilèges',
-                                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                                  ),
-                                  if(npc.castePrivileges.isEmpty)
-                                    Text(
-                                      "Pas de privilèges",
-                                      style: theme.textTheme.bodyMedium!.copyWith(
-                                        color: Colors.black54,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                    ),
-                                  for(var p in npc.castePrivileges)
-                                    Text(
-                                      '${p.privilege.caste.title} / ${p.privilege.title} (${p.privilege.cost})${p.description == null ? "" : " : ${p.description!}"}',
-                                    ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                if(npc.disadvantages.isNotEmpty || npc.advantages.isNotEmpty)
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 0.0),
-                    child: UniformHeightWrap(
-                      spacing: 16.0,
-                      runSpacing: 8.0,
-                      allocation: UniformHeightWrapAllocation.resizeChildren,
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black87),
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Désavantages',
-                                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                                  ),
-                                  if(npc.disadvantages.isEmpty)
-                                    Text(
-                                      'Pas de désavantages',
-                                      style: theme.textTheme.bodyMedium!.copyWith(
-                                        color: Colors.black54,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                    ),
-                                  for(var d in npc.disadvantages)
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('${d.disadvantage.title} (${d.cost})'),
-                                        if(d.details.isNotEmpty)
-                                          SizedBox(
-                                            width: 140,
-                                            child: Text(
-                                              d.details,
-                                              style: theme.textTheme.bodySmall,
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                        Container(
-                          decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black87),
-                            borderRadius: BorderRadius.circular(4.0),
-                          ),
-                          padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Avantages',
-                                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                                  ),
-                                  if(npc.advantages.isEmpty)
-                                    Text(
-                                      "Pas d'avantages",
-                                      style: theme.textTheme.bodyMedium!.copyWith(
-                                        color: Colors.black54,
-                                        fontStyle: FontStyle.italic,
-                                      ),
-                                    ),
-                                  for(var a in npc.advantages)
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        Text('${a.advantage.title} (${a.cost})'),
-                                        if(a.details.isNotEmpty)
-                                          SizedBox(
-                                            width: 140,
-                                            child: Text(
-                                              a.details,
-                                              style: theme.textTheme.bodySmall,
-                                            ),
-                                          ),
-                                      ],
-                                    ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                const SizedBox(height: 8.0),
-                UniformHeightWrap(
-                  spacing: 16.0,
-                  runSpacing: 8.0,
-                  allocation: UniformHeightWrapAllocation.resizeChildren,
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black87),
-                        borderRadius: BorderRadius.circular(4.0),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Compétences',
-                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                              ),
-                              for(var skill in skillsOrder)
-                                Text('$skill ${skills[skill]}'),
-                            ],
-                          ),
-                        ]
-                      ),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black87),
-                        borderRadius: BorderRadius.circular(4.0),
-                      ),
-                      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-                      child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Équipement',
-                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                                ),
-                                for(var e in npc.equipment)
-                                  Text(e.name()),
-                              ],
-                            ),
-                          ]
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8.0),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.black87),
-                    borderRadius: BorderRadius.circular(4.0),
-                  ),
-                  padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 12.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Magie',
-                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 0.0),
-                        child: Wrap(
-                          spacing: 8.0,
-                          runSpacing: 4.0,
-                          children: [
-                            RichText(
-                                text: TextSpan(
-                                    text: 'Instinctive : ',
-                                    style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                                    children: [
-                                      TextSpan(
-                                        text: npc.magicSkill(MagicSkill.instinctive).toString(),
-                                        style: theme.textTheme.bodyMedium,
-                                      )
-                                    ]
-                                )
-                            ),
-                            RichText(
-                                text: TextSpan(
-                                    text: 'Invocatoire : ',
-                                    style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                                    children: [
-                                      TextSpan(
-                                        text: npc.magicSkill(MagicSkill.invocatoire).toString(),
-                                        style: theme.textTheme.bodyMedium,
-                                      )
-                                    ]
-                                )
-                            ),
-                            RichText(
-                                text: TextSpan(
-                                    text: 'Sorcellerie : ',
-                                    style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                                    children: [
-                                      TextSpan(
-                                        text: npc.magicSkill(MagicSkill.sorcellerie).toString(),
-                                        style: theme.textTheme.bodyMedium,
-                                      )
-                                    ]
-                                )
-                            ),
-                            RichText(
-                                text: TextSpan(
-                                    text: 'Réserve : ',
-                                    style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                                    children: [
-                                      TextSpan(
-                                        text: npc.magicPool.toString(),
-                                        style: theme.textTheme.bodyMedium,
-                                      )
-                                    ]
-                                )
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(0.0, 8.0, 0.0, 0.0),
-                        child: UniformHeightWrap(
-                          spacing: 16.0,
-                          runSpacing: 8.0,
-                          allocation: UniformHeightWrapAllocation.resizeChildren,
-                          maxRunCount: 3,
-                          children: [
-                            for(var i = 0; i < 3; ++i)
-                              for(var j = 0; j < 3; ++j)
-                                _MagicSphereDisplayWidget(
-                                  sphere: MagicSphere.values[i+j*3],
-                                  value: npc.magicSphere(MagicSphere.values[i+j*3]),
-                                  pool: npc.magicSpherePool(MagicSphere.values[i+j*3]),
-                                ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 8.0),
-                      Text(
-                        'Sorts connus',
-                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                      ),
-                      for(var sphere in MagicSphere.values)
-                        for(var spell in npc.spells(sphere)..sort((a, b) => a.name.compareTo(b.name)))
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
-                            child: Row(
-                              children: [
-                                SizedBox(
-                                  width: 24,
-                                  height: 24,
-                                  child: Image.asset('assets/images/magic/sphere-${sphere.name}-icon.png'),
-                                ),
-                                const SizedBox(width: 8.0),
-                                Text('${spell.name} (niveau ${spell.level})'),
-                              ],
-                            ),
-                          ),
-                    ],
-                  ),
-                ),
-                const SizedBox(height: 8.0),
                 Text(
-                  'Description',
+                  npc.name,
                   style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                  overflow: TextOverflow.fade,
                 ),
-                Text(
-                  npc.description,
-                  style: theme.textTheme.bodyLarge,
+                Spacer(),
+                NPCActionButtons(
+                  npc: npc.summary,
+                  onEdit: () => widget.onEditRequested(),
+                  onClone: () => widget.onCloneRequested(),
+                  onDelete: () => widget.onDeleteRequested(),
+                  restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
                 ),
-                const SizedBox(height: 8.0),
               ],
             ),
-          ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 16.0,
+              children: [
+                if(npc.image != null)
+                  WidgetGroupContainer(
+                    child: Text('IMAAAAGE'),
+                  ),
+                Expanded(
+                  child: WidgetGroupContainer(
+                    title: Text(
+                      'Description',
+                      style: theme.textTheme.bodySmall!.copyWith(
+                        fontWeight: FontWeight.bold
+                      )
+                    ),
+                    child: Align(
+                      alignment: AlignmentGeometry.topLeft,
+                      child: Text(
+                        npc.description.isNotEmpty
+                            ? npc.description
+                            : 'Pas de description'
+                      )
+                    ),
+                  ),
+                ),
+                if(npc.disadvantages.isNotEmpty || npc.advantages.isNotEmpty)
+                  SizedBox(
+                    width: 150.0,
+                    child: Column(
+                      spacing: 12.0,
+                      children: [
+                        if(npc.disadvantages.isNotEmpty)
+                          CharacterDisplayDisadvantagesWidget(character: npc),
+                        if(npc.advantages.isNotEmpty)
+                          CharacterDisplayAdvantagesWidget(character: npc)
+                      ],
+                    )
+                  ),
+              ],
+            ),
+            const SizedBox(height: 16.0),
+            ExpansionTile(
+              title: const Text('Général'),
+              controlAffinity: ListTileControlAffinity.leading,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 16.0,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        spacing: 12.0,
+                        children: [
+                          CharacterDisplayGeneralWidget(character: npc),
+                          Row(
+                            spacing: 16.0,
+                            children: [
+                              CharacterDisplayInjuriesWidget(character: npc),
+                              Expanded(
+                                child: Center(
+                                  child: TendenciesEditWidget(
+                                    tendencies: npc.tendencies,
+                                    editValues: false,
+                                    showCircles: false,
+                                    backgroundWidth: 180,
+                                  ),
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      )
+                    ),
+                    SizedBox(
+                      width: 200.0,
+                      child: Column(
+                        spacing: 12.0,
+                        children: [
+                          CharacterDisplayAbilitiesWidget(character: npc),
+                          Row(
+                            spacing: 8.0,
+                            children: [
+                              Expanded(child: CharacterDisplayAttributesWidget(character: npc)),
+                              Expanded(child: CharacterDisplaySecondaryAttributesWidget(character: npc)),
+                            ],
+                          ),
+                        ],
+                      )
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            ExpansionTile(
+              title: const Text('Compétences'),
+              controlAffinity: ListTileControlAffinity.leading,
+              children: [
+                Wrap(
+                  spacing: 12.0,
+                  children: [
+                    if(hasPhysicalSkills)
+                      ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: skillGroupWidth,
+                        ),
+                        child: CharacterDisplaySkillGroupWidget(
+                          character: npc,
+                          attribute: Attribute.physique,
+                        ),
+                      ),
+                    if(hasManualSkills)
+                      ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: skillGroupWidth,
+                        ),
+                        child: CharacterDisplaySkillGroupWidget(
+                          character: npc,
+                          attribute: Attribute.manuel,
+                        ),
+                      ),
+                    if(hasMentalSkills)
+                      ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: skillGroupWidth,
+                        ),
+                        child: CharacterDisplaySkillGroupWidget(
+                          character: npc,
+                          attribute: Attribute.mental,
+                        ),
+                      ),
+                    if(hasSocialSkills)
+                      ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: skillGroupWidth,
+                        ),
+                        child: CharacterDisplaySkillGroupWidget(
+                          character: npc,
+                          attribute: Attribute.social,
+                        ),
+                      ),
+                  ],
+                ),
+              ],
+            ),
+            if(isMagicUser)
+              ExpansionTile(
+                title: const Text('Magie'),
+                controlAffinity: ListTileControlAffinity.leading,
+                children: [
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 16.0,
+                    children: [
+                      ConstrainedBox(
+                        constraints: BoxConstraints(
+                          maxWidth: 160,
+                        ),
+                        child: CharacterDisplayMagicSkillsWidget(character: npc)
+                      ),
+                      Expanded(
+                        child: CharacterDisplayMagicSpheresWidget(character: npc)
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            if(npc.caste != Caste.sansCaste)
+              ExpansionTile(
+                title: const Text('Caste'),
+                controlAffinity: ListTileControlAffinity.leading,
+                children: [
+                  CharacterDisplayCasteDetailsWidget(
+                    character: npc,
+                  ),
+                ],
+              ),
+            if(hasWeapon || hasArmor)
+              ExpansionTile(
+                title: const Text('Équipement'),
+                controlAffinity: ListTileControlAffinity.leading,
+                children: [
+                  if(hasWeapon)
+                    DisplayWeaponsWidget(character: npc),
+                  if(hasArmor)
+                    DisplayArmorWidget(character: npc),
+                ],
+              )
+          ],
         );
       },
-    );
-  }
-}
-
-class _MagicSphereDisplayWidget extends StatelessWidget {
-  const _MagicSphereDisplayWidget({
-    required this.sphere,
-    required this.value,
-    required this.pool,
-  });
-
-  final MagicSphere sphere;
-  final int value;
-  final int pool;
-
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
-    return Container(
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.black),
-        borderRadius: BorderRadius.circular(8.0),
-      ),
-      padding: const EdgeInsets.all(8.0),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            width: 32,
-            height: 48,
-            child: Image.asset(
-              'assets/images/magic/sphere-${sphere.name}-icon.png',
-            ),
-          ),
-          const SizedBox(width: 12.0),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              RichText(
-                  text: TextSpan(
-                      text: 'Niveau : ',
-                      style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                      children: [
-                        TextSpan(
-                          text: value.toString(),
-                          style: theme.textTheme.bodyMedium,
-                        )
-                      ]
-                  )
-              ),
-              const SizedBox(height: 8.0),
-              RichText(
-                  text: TextSpan(
-                      text: 'Réserve : ',
-                      style: theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold),
-                      children: [
-                        TextSpan(
-                          text: pool.toString(),
-                          style: theme.textTheme.bodyMedium,
-                        )
-                      ]
-                  )
-              ),
-            ],
-          )
-        ],
-      ),
     );
   }
 }

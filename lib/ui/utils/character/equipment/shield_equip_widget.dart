@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/entity_base.dart';
 import '../../../../classes/equipment.dart';
 import '../../../../classes/shield.dart';
+import 'equipment_info_widgets.dart';
 
 class ShieldEquipWidget extends StatefulWidget {
   const ShieldEquipWidget({
@@ -55,23 +56,7 @@ class _ShieldEquipWidgetState extends State<ShieldEquipWidget> {
           children: [
             for(var w in leading)
               w,
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  '\u{1F6E1} ${widget.shield.name()}',
-                  style: theme.textTheme.titleMedium,
-                ),
-                Text(
-                  'Protection ${widget.shield.protection()}',
-                  style: theme.textTheme.bodyMedium,
-                ),
-                Text(
-                  'Pénalité ${widget.shield.model.penalty}',
-                  style: theme.textTheme.bodySmall,
-                ),
-              ],
-            ),
+            ShieldInfoWidget(shield: widget.shield),
             const Spacer(),
             if(!widget.character.meetsEquipableRequirements(widget.shield))
               Text(

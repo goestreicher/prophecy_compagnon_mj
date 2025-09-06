@@ -59,6 +59,71 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
         mainAxisAlignment: MainAxisAlignment.start,
         spacing: 12.0,
         children: [
+          if(widget.character is PlayerCharacter)
+            Row(
+              spacing: 12.0,
+              children: [
+                Expanded(
+                  child: TextFormField(
+                    controller: playerController,
+                    decoration: const InputDecoration(
+                      label: Text('Joueur'),
+                      border: OutlineInputBorder(),
+                      isCollapsed: true,
+                      contentPadding: EdgeInsets.all(12.0),
+                      // error: null,
+                      // errorText: null,
+                    ),
+                    style: theme.textTheme.bodySmall,
+                    validator: (String? value) {
+                      if(value == null || value.isEmpty) {
+                        return 'Valeur manquante';
+                      }
+                      return null;
+                    },
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    onChanged: (String? value) => widget.character.name = nameController.text,
+                  ),
+                ),
+                Expanded(
+                  child: DropdownMenuFormField<Augure>(
+                    controller: augureController,
+                    enabled: false,
+                    initialSelection: (widget.character as PlayerCharacter).augure,
+                    requestFocusOnTap: true,
+                    label: const Text('Augure'),
+                    expandedInsets: EdgeInsets.zero,
+                    textStyle: theme.textTheme.bodySmall,
+                    inputDecorationTheme: const InputDecorationTheme(
+                      border: OutlineInputBorder(),
+                      isCollapsed: true,
+                      constraints: BoxConstraints(maxHeight: 36.0),
+                      contentPadding: EdgeInsets.all(12.0),
+                    ),
+                    dropdownMenuEntries: Augure.values
+                        .map(
+                            (Augure augure) => DropdownMenuEntry<Augure>(
+                            value: augure,
+                            label: augure.title
+                        )
+                    )
+                        .toList(),
+                    validator: (Augure? augure) {
+                      if(augure == null) {
+                        return 'Valeur manquante';
+                      }
+                      return null;
+                    },
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    onSelected: (Augure? augure) {
+                      if(augure == null) return;
+                      // If at some point I decide that the augure can be changed
+                      //(widget.character as PlayerCharacter).augure = augure;
+                    },
+                  ),
+                ),
+              ],
+            ),
           Row(
             spacing: 12.0,
             children: [
@@ -117,71 +182,6 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
               ),
             ],
           ),
-          if(widget.character is PlayerCharacter)
-            Row(
-              spacing: 12.0,
-              children: [
-                Expanded(
-                  child: TextFormField(
-                    controller: playerController,
-                    decoration: const InputDecoration(
-                      label: Text('Joueur'),
-                      border: OutlineInputBorder(),
-                      isCollapsed: true,
-                      contentPadding: EdgeInsets.all(12.0),
-                      // error: null,
-                      // errorText: null,
-                    ),
-                    style: theme.textTheme.bodySmall,
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) {
-                        return 'Valeur manquante';
-                      }
-                      return null;
-                    },
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    onChanged: (String? value) => widget.character.name = nameController.text,
-                  ),
-                ),
-                Expanded(
-                  child: DropdownMenuFormField<Augure>(
-                    controller: augureController,
-                    enabled: false,
-                    initialSelection: (widget.character as PlayerCharacter).augure,
-                    requestFocusOnTap: true,
-                    label: const Text('Augure'),
-                    expandedInsets: EdgeInsets.zero,
-                    textStyle: theme.textTheme.bodySmall,
-                    inputDecorationTheme: const InputDecorationTheme(
-                      border: OutlineInputBorder(),
-                      isCollapsed: true,
-                      constraints: BoxConstraints(maxHeight: 36.0),
-                      contentPadding: EdgeInsets.all(12.0),
-                    ),
-                    dropdownMenuEntries: Augure.values
-                      .map(
-                        (Augure augure) => DropdownMenuEntry<Augure>(
-                          value: augure,
-                          label: augure.title
-                        )
-                      )
-                      .toList(),
-                    validator: (Augure? augure) {
-                      if(augure == null) {
-                        return 'Valeur manquante';
-                      }
-                      return null;
-                    },
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    onSelected: (Augure? augure) {
-                      if(augure == null) return;
-                      // If at some point I decide that the augure can be changed
-                      //(widget.character as PlayerCharacter).augure = augure;
-                    },
-                  ),
-                ),
-              ],
-            ),
           Row(
             spacing: 8.0,
             children: [

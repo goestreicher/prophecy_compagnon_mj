@@ -70,10 +70,7 @@ class _CharacterEditWeaponsWidgetState extends State<CharacterEditWeaponsWidget>
           )
         );
       }
-    }
-
-    for(var eq in widget.character.equipment) {
-      if (eq is Shield && (widget.character.meetsEquipableRequirements(eq) || widget.showUnequipable)) {
+      else if (eq is Shield && (widget.character.meetsEquipableRequirements(eq) || widget.showUnequipable)) {
         widgets.add(
           ShieldEquipWidget(
             character: widget.character,

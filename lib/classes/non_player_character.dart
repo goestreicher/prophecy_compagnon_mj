@@ -340,6 +340,12 @@ class NonPlayerCharacterSummary {
   final ExportableBinaryData? icon;
 
   static bool exists(String id) => _summaries.containsKey(id);
+
+  static List<NonPlayerCharacterSummary> getAll({String? nameFilter}) {
+    return _summaries.values
+        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .toList();
+  }
   
   static List<NonPlayerCharacterSummary> forLocationType(ObjectLocationType type, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
     return _summaries.values
