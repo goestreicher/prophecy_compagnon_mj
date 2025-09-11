@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
-import 'interdict_picker_dialog.dart';
+import '../../widget_group_container.dart';
 import '../change_stream.dart';
-import '../widget_group_container.dart';
+import 'interdict_picker_dialog.dart';
 
 class CharacterEditCasteInterdictsWidget extends StatefulWidget {
   const CharacterEditCasteInterdictsWidget({

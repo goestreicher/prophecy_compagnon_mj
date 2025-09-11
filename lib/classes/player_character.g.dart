@@ -88,7 +88,6 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
           ? EntityStatus.empty()
           : EntityStatus.fromJson(json['status'] as Map<String, dynamic>)
       ..size = (json['size'] as num).toDouble()
-      ..weight = (json['weight'] as num).toDouble()
       ..skills = (json['skills'] as List<dynamic>)
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList()
@@ -104,6 +103,7 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
       ..career = $enumDecodeNullable(_$CareerEnumMap, json['career'])
       ..age = (json['age'] as num).toInt()
       ..height = (json['height'] as num).toDouble()
+      ..weight = (json['weight'] as num).toDouble()
       ..origin = Place.fromJson(json['origin'] as Map<String, dynamic>)
       ..renown = (json['renown'] as num).toInt()
       ..interdicts =
@@ -140,7 +140,6 @@ Map<String, dynamic> _$PlayerCharacterToJson(
   'icon': instance.icon?.toJson(),
   'status': instance.status.toJson(),
   'size': instance.size,
-  'weight': instance.weight,
   'initiative': instance.initiative,
   'abilities': enumKeyedMapToJson(instance.abilities),
   'attributes': enumKeyedMapToJson(instance.attributes),
@@ -155,6 +154,7 @@ Map<String, dynamic> _$PlayerCharacterToJson(
   'career': _$CareerEnumMap[instance.career],
   'age': instance.age,
   'height': instance.height,
+  'weight': instance.weight,
   'origin': instance.origin.toJson(),
   'luck': instance.luck,
   'proficiency': instance.proficiency,

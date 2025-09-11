@@ -8,9 +8,9 @@
     },
     "description": "Les drillons sont des chenilles de monte, permettant de chasser en s'accrochant dans les arbres pour se laisser tomber sur les proies au sol ou pour permettre aux chasseurs de s'embusquer de manière originale. Leur épaisse fourrure hérissée, allant du marron au vert foncé en passant par le grisâtre, en fait un animal peu discernable et parfois chassé pour son pelage.",
     "biome": "Forêts tempérées",
-    "size": "2 m de long, 1 m de diamètre",
+    "real_size": "2 m de long, 1 m de diamètre",
     "weight": "180 kg",
-    "map_size": 1.2,
+    "size": 1.2,
     "abilities": {
       "force":        10,
       "intelligence": 2,
@@ -30,24 +30,26 @@
     "initiative": 2,
     "natural_armor": 3,
     "natural_armor_description": "fourrure hérissée",
-    "injuries": [
-      {
-        "rank": 0,
-        "title": "Blessé",
-        "start": 0,
-        "end": 25,
-        "malus": 0,
-        "capacity": 3
-      },
-      {
-        "rank": 1,
-        "title": "Mort",
-        "start": 25,
-        "end": -1,
-        "malus": 0,
-        "capacity": 1
-      }
-    ],
+    "injuries": {
+      "levels": [
+        {
+          "rank": 0,
+          "title": "Blessé",
+          "start": 0,
+          "end": 25,
+          "malus": 0,
+          "capacity": 3
+        },
+        {
+          "rank": 1,
+          "title": "Mort",
+          "start": 25,
+          "end": -1,
+          "malus": 0,
+          "capacity": 1
+        }
+      ]
+    },
     "skills": [
       {
         "skill": "escalade",
@@ -72,9 +74,9 @@
     },
     "description": "Les vultures sont des oiseaux élémentaires datant d'avant l'Âge des Fondations. Façonnés par Szyl et Kroryn il y a des lustres, ces volatiles sont pour ainis dire transparents et leurs plumes sont comme des miroirs reflétant les couleurs du ciel.",
     "biome": "Chaînes de montagne de moyenne altitude, régions volcaniques",
-    "size": "1m20 d'envergure",
+    "real_size": "1m20 d'envergure",
     "weight": "10 kg",
-    "map_size": 0.7,
+    "size": 0.7,
     "abilities": {
       "force":        5,
       "intelligence": 5,
@@ -93,24 +95,26 @@
     },
     "initiative": 5,
     "natural_armor": 0,
-    "injuries": [
-      {
-        "rank": 0,
-        "title": "Blessé",
-        "start": 0,
-        "end": 20,
-        "malus": 0,
-        "capacity": 2
-      },
-      {
-        "rank": 1,
-        "title": "Mort",
-        "start": 20,
-        "end": -1,
-        "malus": 0,
-        "capacity": 1
-      }
-    ],
+    "injuries": {
+      "levels": [
+        {
+          "rank": 0,
+          "title": "Blessé",
+          "start": 0,
+          "end": 20,
+          "malus": 0,
+          "capacity": 2
+        },
+        {
+          "rank": 1,
+          "title": "Mort",
+          "start": 20,
+          "end": -1,
+          "malus": 0,
+          "capacity": 1
+        }
+      ]
+    },
     "skills": [
       {
         "skill": "esquive",

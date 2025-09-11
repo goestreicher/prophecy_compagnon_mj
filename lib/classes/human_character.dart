@@ -248,6 +248,10 @@ class HumanCharacter extends EntityBase with MagicUser {
         required super.name,
         super.initiative,
         super.injuryProvider = humanCharacterDefaultInjuries,
+        super.size,
+        super.description,
+        super.image,
+        super.icon,
         this.caste = Caste.sansCaste,
         this.casteStatus = CasteStatus.none,
         this.career,
@@ -256,17 +260,13 @@ class HumanCharacter extends EntityBase with MagicUser {
         this.renown = 0,
         this.age = 25,
         this.height = 1.7,
-        super.size,
-        super.weight = 60.0,
+        this.weight = 60.0,
         Place? origin,
         List<Interdict>? interdicts,
         List<CharacterCastePrivilege>? castePrivileges,
         List<CharacterDisadvantage>? disadvantages,
         List<CharacterAdvantage>? advantages,
         CharacterTendencies? tendencies,
-        super.description,
-        super.image,
-        super.icon,
       })
     : origin = origin ?? Place.byId('empireDeSolyr')!,
       interdicts = interdicts ?? <Interdict>[],
@@ -284,6 +284,7 @@ class HumanCharacter extends EntityBase with MagicUser {
     Career? career;
   int age;
   double height;
+  double weight;
   Place origin;
   int luck;
   int proficiency;

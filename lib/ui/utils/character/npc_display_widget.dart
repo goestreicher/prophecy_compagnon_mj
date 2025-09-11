@@ -12,22 +12,22 @@ import '../../../classes/non_player_character.dart';
 import '../../../classes/object_source.dart';
 import '../../../classes/shield.dart';
 import '../../../classes/weapon.dart';
+import '../entity/base/display_abilities_widget.dart';
+import '../entity/base/display_attributes_widget.dart';
+import '../entity/base/display_injuries_widget.dart';
+import '../entity/base/display_skill_group_widget.dart';
+import '../entity/equipment/display_armor_widget.dart';
+import '../entity/equipment/display_weapons_widget.dart';
 import '../error_feedback.dart';
 import '../full_page_loading.dart';
+import '../widget_group_container.dart';
 import 'background/display_advantages_widget.dart';
 import 'background/display_caste_details.dart';
-import 'base/display_abilities_widget.dart';
-import 'base/display_attributes_widget.dart';
 import 'base/display_general_widget.dart';
-import 'base/display_injuries_widget.dart';
 import 'base/display_secondary_attributes_widget.dart';
-import 'base/display_skill_group_widget.dart';
 import 'base/tendencies_edit_widget.dart';
-import 'equipment/display_armor_widget.dart';
-import 'equipment/display_weapons_widget.dart';
 import 'magic/display_magic_skills_widget.dart';
 import 'magic/display_magic_spheres_widget.dart';
-import 'widget_group_container.dart';
 
 class NPCActionButtons extends StatelessWidget {
   const NPCActionButtons({
@@ -162,13 +162,13 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
             (SkillFamily f) => (f.defaultAttribute == Attribute.physique && npc.skillsForFamily(f).isNotEmpty)
           );
         var hasManualSkills = SkillFamily.values.any(
-                (SkillFamily f) => (f.defaultAttribute == Attribute.manuel && npc.skillsForFamily(f).isNotEmpty)
+            (SkillFamily f) => (f.defaultAttribute == Attribute.manuel && npc.skillsForFamily(f).isNotEmpty)
         );
         var hasMentalSkills = SkillFamily.values.any(
-                (SkillFamily f) => (f.defaultAttribute == Attribute.mental && npc.skillsForFamily(f).isNotEmpty)
+            (SkillFamily f) => (f.defaultAttribute == Attribute.mental && npc.skillsForFamily(f).isNotEmpty)
         );
         var hasSocialSkills = SkillFamily.values.any(
-                (SkillFamily f) => (f.defaultAttribute == Attribute.social && npc.skillsForFamily(f).isNotEmpty)
+            (SkillFamily f) => (f.defaultAttribute == Attribute.social && npc.skillsForFamily(f).isNotEmpty)
         );
 
         var isMagicUser = MagicSkill.values.any(
@@ -205,18 +205,18 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 16.0,
               children: [
-                if(npc.image != null)
-                  WidgetGroupContainer(
-                    child: Text('IMAAAAGE'),
+                if(npc.image != null && npc.image?.data != null)
+                  SizedBox(
+                    width: 250,
+                    child: WidgetGroupContainer(
+                      child: Image.memory(
+                        npc.image!.data,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
                   ),
                 Expanded(
                   child: WidgetGroupContainer(
-                    title: Text(
-                      'Description',
-                      style: theme.textTheme.bodySmall!.copyWith(
-                        fontWeight: FontWeight.bold
-                      )
-                    ),
                     child: Align(
                       alignment: AlignmentGeometry.topLeft,
                       child: Text(
@@ -259,7 +259,7 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                           Row(
                             spacing: 16.0,
                             children: [
-                              CharacterDisplayInjuriesWidget(character: npc),
+                              EntityDisplayInjuriesWidget(injuries: npc.injuries),
                               Expanded(
                                 child: Center(
                                   child: TendenciesEditWidget(
@@ -280,11 +280,11 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                       child: Column(
                         spacing: 12.0,
                         children: [
-                          CharacterDisplayAbilitiesWidget(character: npc),
+                          EntityDisplayAbilitiesWidget(entity: npc),
                           Row(
                             spacing: 8.0,
                             children: [
-                              Expanded(child: CharacterDisplayAttributesWidget(character: npc)),
+                              Expanded(child: EntityDisplayAttributesWidget(entity: npc)),
                               Expanded(child: CharacterDisplaySecondaryAttributesWidget(character: npc)),
                             ],
                           ),
@@ -307,8 +307,8 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                         constraints: BoxConstraints(
                           maxWidth: skillGroupWidth,
                         ),
-                        child: CharacterDisplaySkillGroupWidget(
-                          character: npc,
+                        child: EntityDisplaySkillGroupWidget(
+                          entity: npc,
                           attribute: Attribute.physique,
                         ),
                       ),
@@ -317,8 +317,8 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                         constraints: BoxConstraints(
                           maxWidth: skillGroupWidth,
                         ),
-                        child: CharacterDisplaySkillGroupWidget(
-                          character: npc,
+                        child: EntityDisplaySkillGroupWidget(
+                          entity: npc,
                           attribute: Attribute.manuel,
                         ),
                       ),
@@ -327,8 +327,8 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                         constraints: BoxConstraints(
                           maxWidth: skillGroupWidth,
                         ),
-                        child: CharacterDisplaySkillGroupWidget(
-                          character: npc,
+                        child: EntityDisplaySkillGroupWidget(
+                          entity: npc,
                           attribute: Attribute.mental,
                         ),
                       ),
@@ -337,8 +337,8 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                         constraints: BoxConstraints(
                           maxWidth: skillGroupWidth,
                         ),
-                        child: CharacterDisplaySkillGroupWidget(
-                          character: npc,
+                        child: EntityDisplaySkillGroupWidget(
+                          entity: npc,
                           attribute: Attribute.social,
                         ),
                       ),
@@ -384,9 +384,9 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                 controlAffinity: ListTileControlAffinity.leading,
                 children: [
                   if(hasWeapon)
-                    DisplayWeaponsWidget(character: npc),
+                    DisplayWeaponsWidget(entity: npc),
                   if(hasArmor)
-                    DisplayArmorWidget(character: npc),
+                    DisplayArmorWidget(entity: npc),
                 ],
               )
           ],

@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
+import '../../widget_group_container.dart';
 import '../change_stream.dart';
-import '../widget_group_container.dart';
 import 'edit_caste_career_widget.dart';
 import 'edit_caste_privileges_widget.dart';
 import 'edit_caste_interdicts_widget.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
-import '../widget_group_container.dart';
+import '../../widget_group_container.dart';
 
 class CharacterDisplayDisadvantagesWidget extends StatelessWidget {
   const CharacterDisplayDisadvantagesWidget({ super.key, required this.character });

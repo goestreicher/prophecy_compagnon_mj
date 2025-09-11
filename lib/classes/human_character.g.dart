@@ -179,6 +179,18 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
             : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
         name: json['name'] as String,
         initiative: (json['initiative'] as num?)?.toInt() ?? 1,
+        size: (json['size'] as num?)?.toDouble(),
+        description: json['description'] as String?,
+        image: json['image'] == null
+            ? null
+            : ExportableBinaryData.fromJson(
+                json['image'] as Map<String, dynamic>,
+              ),
+        icon: json['icon'] == null
+            ? null
+            : ExportableBinaryData.fromJson(
+                json['icon'] as Map<String, dynamic>,
+              ),
         caste:
             $enumDecodeNullable(_$CasteEnumMap, json['caste']) ??
             Caste.sansCaste,
@@ -191,7 +203,6 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
         renown: (json['renown'] as num?)?.toInt() ?? 0,
         age: (json['age'] as num?)?.toInt() ?? 25,
         height: (json['height'] as num?)?.toDouble() ?? 1.7,
-        size: (json['size'] as num?)?.toDouble(),
         weight: (json['weight'] as num?)?.toDouble() ?? 60.0,
         origin: json['origin'] == null
             ? null
@@ -223,17 +234,6 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
             : CharacterTendencies.fromJson(
                 json['tendencies'] as Map<String, dynamic>,
               ),
-        description: json['description'] as String?,
-        image: json['image'] == null
-            ? null
-            : ExportableBinaryData.fromJson(
-                json['image'] as Map<String, dynamic>,
-              ),
-        icon: json['icon'] == null
-            ? null
-            : ExportableBinaryData.fromJson(
-                json['icon'] as Map<String, dynamic>,
-              ),
       )
       ..status = json['status'] == null
           ? EntityStatus.empty()
@@ -262,7 +262,6 @@ Map<String, dynamic> _$HumanCharacterToJson(
   'icon': instance.icon?.toJson(),
   'status': instance.status.toJson(),
   'size': instance.size,
-  'weight': instance.weight,
   'initiative': instance.initiative,
   'abilities': enumKeyedMapToJson(instance.abilities),
   'attributes': enumKeyedMapToJson(instance.attributes),
@@ -277,6 +276,7 @@ Map<String, dynamic> _$HumanCharacterToJson(
   'career': _$CareerEnumMap[instance.career],
   'age': instance.age,
   'height': instance.height,
+  'weight': instance.weight,
   'origin': instance.origin.toJson(),
   'luck': instance.luck,
   'proficiency': instance.proficiency,

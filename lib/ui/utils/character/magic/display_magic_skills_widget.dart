@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
-import '../widget_group_container.dart';
+import '../../widget_group_container.dart';
 
 class CharacterDisplayMagicSkillsWidget extends StatelessWidget {
   const CharacterDisplayMagicSkillsWidget({ super.key, required this.character });

@@ -68,9 +68,8 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
         this.location = ObjectLocation.memory,
         required this.name,
         this.initiative = 1,
-        InjuryManager Function(EntityBase?, InjuryManager?) injuryProvider = _entityBaseDefaultInjuries,
+        InjuryManager Function(EntityBase?, InjuryManager?) injuryProvider = entityBaseDefaultInjuries,
         double? size,
-        double? weight,
         String? description,
         List<SkillInstance>? skills,
         ExportableBinaryData? image,
@@ -80,7 +79,6 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
     : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4().toString()),
       _injuryProvider = injuryProvider,
       size = size ?? 0.8,
-      weight = weight ?? 15.0,
       description = description ?? '',
       skills = skills ?? <SkillInstance>[],
       _image = image,
@@ -126,7 +124,6 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
   }
 
   double size;
-  double weight;
   double get attackMovementDistance => size * 1.2;
   double get contactCombatRange => size / 2;
 
@@ -445,7 +442,7 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
   }
 }
 
-InjuryManager _entityBaseDefaultInjuries(EntityBase? entity, InjuryManager? source) =>
+InjuryManager entityBaseDefaultInjuries(EntityBase? entity, InjuryManager? source) =>
     InjuryManager.simple(injuredCeiling: 30, injuredCount: 3, deathCount: 1, source: source);
 
 Map<String, dynamic> enumKeyedMapToJson(Map<Enum, dynamic> m) {

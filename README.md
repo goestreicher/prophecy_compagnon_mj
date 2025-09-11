@@ -8,6 +8,8 @@ Pretty much a WiP, not stable at the moment
 
 ## Creation part
 
+- [ ] Rework creatures instanciation so that instances can be saved
+- [ ] Rework the NPC instanciation to match creatures
 - [ ] Rewrite UUIDs when importing factions to prevent conflicts?
 - [ ] Use UUIDs everywhere in the assets and make UUID mandatory in constructors
 - [ ] Add dates in the factions leaders and members?

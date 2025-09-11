@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
+import '../../widget_group_container.dart';
 import 'spell_picker_dialog.dart';
-import '../widget_group_container.dart';
 
 class CharacterEditMagicSpellsWidget extends StatefulWidget {
   const CharacterEditMagicSpellsWidget({

@@ -58,7 +58,6 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
             IconButton(
               icon: const Icon(Icons.check_circle_outline),
               onPressed: () {
-                // TODO
                 if(formKey.currentState!.validate()) {
                   formKey.currentState!.save();
                   widget.onEditDone(true);

@@ -6,7 +6,7 @@ import '../../../../classes/human_character.dart';
 import '../../../../classes/object_location.dart';
 import '../../../../classes/place.dart';
 import '../../../../classes/player_character.dart';
-import '../widget_group_container.dart';
+import '../../widget_group_container.dart';
 
 class CharacterEditGeneralWidget extends StatefulWidget {
   const CharacterEditGeneralWidget({
@@ -135,8 +135,6 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
                     border: OutlineInputBorder(),
                     isCollapsed: true,
                     contentPadding: EdgeInsets.all(12.0),
-                    // error: null,
-                    // errorText: null,
                   ),
                   style: theme.textTheme.bodySmall,
                   validator: (String? value) {

@@ -5,12 +5,11 @@ import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
 import '../../classes/object_source.dart';
-import '../utils/creature_edit_widget.dart';
-import '../utils/creature_list_widget.dart';
+import '../utils/creature/create_dialog.dart';
+import '../utils/creature/edit_widget.dart';
+import '../utils/creature/list_widget.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
-import '../utils/single_line_input_dialog.dart';
-import '../../text_utils.dart';
 
 class CreaturesMainPage extends StatefulWidget {
   const CreaturesMainPage({ super.key });
@@ -28,17 +27,14 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
   CreatureCategory? creatureCategory;
   final TextEditingController searchController = TextEditingController();
   String? search;
-  final GlobalKey<FormState> newCreatureFormKey = GlobalKey();
+
   bool editing = false;
+  bool creatingNewModel = false;
   String? selectedDisplay;
-  String? selectedEdit;
   CreatureModel? selectedEditModel;
-  String? newCreatureName;
 
   void _startEditing(CreatureModel model) {
     setState(() {
-      newCreatureName = model.name;
-      selectedEdit = model.id;
       selectedEditModel = model;
       editing = true;
     });
@@ -54,35 +50,37 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
     else if(creatureCategory != null) {
       return CreatureModelSummary.forCategory(creatureCategory!, nameFilter: search);
     }
-    else if(search != null && search!.isNotEmpty) {
-      return CreatureModelSummary.getAll(nameFilter: search);
-    }
 
-    return <CreatureModelSummary>[];
+    return CreatureModelSummary.getAll(nameFilter: search);
   }
 
   @override
   Widget build(BuildContext context) {
     Widget mainArea;
 
-    if(editing && newCreatureName != null) {
+    if(editing && selectedEditModel != null) {
       mainArea = CreatureEditWidget(
-        name: newCreatureName!,
-        creatureId: selectedEdit,
-        creature: selectedEditModel,
-        onEditDone: (CreatureModel? creature) async {
-          if(creature != null) {
-            await CreatureModel.saveLocalModel(creature);
-            selectedDisplay = creature.id;
-            creatureCategory = creature.category;
-            creatureSourceType = creature.source.type;
+        creature: selectedEditModel!,
+        onEditDone: (bool result) async {
+          if(result) {
+            await CreatureModel.saveLocalModel(selectedEditModel!);
+            selectedDisplay = selectedEditModel!.id;
+            creatureCategory = selectedEditModel!.category;
+            creatureSourceType = selectedEditModel!.source.type;
+          }
+          else {
+            if(creatingNewModel) {
+              CreatureModel.removeFromCache(selectedEditModel!.id);
+            }
+            else {
+              await CreatureModel.reloadFromStore(selectedEditModel!.id);
+            }
           }
 
           setState(() {
-            newCreatureName = null;
-            selectedEdit = null;
             selectedEditModel = null;
             editing = false;
+            creatingNewModel = false;
           });
         },
       );
@@ -270,34 +268,17 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                             ],
                           ),
                           onPressed: () async {
-                            var name = await showDialog(
+                            var creature = await showDialog<CreatureModel>(
                               context: context,
-                              builder: (BuildContext context) => SingleLineInputDialog(
-                                title: 'Nom de la créature',
-                                formKey: newCreatureFormKey,
-                                hintText: 'Nom',
+                              builder: (BuildContext context) => CreatureCreateDialog(
+                                source: ObjectSource.local,
                               ),
                             );
                             if(!context.mounted) return;
-                            if(name == null) return;
+                            if(creature == null) return;
 
-                            var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
-                            var model = await CreatureModel.get(id);
-                            if(!context.mounted) return;
-                            if(model != null) {
-                              displayErrorDialog(
-                                context,
-                                'Créature existante',
-                                'Une créature avec ce nom (ou un nom similaire) existe déjà'
-                              );
-                              return;
-                            }
-
-                            setState(() {
-                              selectedEdit = null;
-                              newCreatureName = name;
-                              editing = true;
-                            });
+                            creatingNewModel = true;
+                            _startEditing(creature);
                           },
                         ),
                         MenuItemButton(
@@ -359,23 +340,32 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                   child: CreaturesListWidget(
                     creatures: creatures,
                     initialSelection: selectedDisplay,
-                    onEditRequested: (int index) async {
-                      var model = await CreatureModel.get(creatures[index].id);
+                    onEditRequested: (String id) async {
+                      var model = await CreatureModel.get(id);
                       if(model == null) return;
                       _startEditing(model);
                     },
-                    onCloneRequested: (int index, String newName) async {
-                      var model = await CreatureModel.get(creatures[index].id);
+                    onCloneRequested: (String id) async {
+                      var model = await CreatureModel.get(id);
+                      if(!context.mounted) return;
                       if(model == null) return;
 
-                      CreatureModel clone = model.clone(newName);
-                      clone.source = ObjectSource.local;
+                      var clone = await showDialog<CreatureModel>(
+                        context: context,
+                        builder: (BuildContext context) => CreatureCreateDialog(
+                          source: ObjectSource.local,
+                          cloneFrom: model,
+                        ),
+                      );
+                      if(!context.mounted) return;
+                      if(clone == null) return;
 
+                      creatingNewModel = true;
                       _startEditing(clone);
                     },
-                    onDeleteRequested: (int index) async {
+                    onDeleteRequested: (String id) async {
                       try {
-                        await CreatureModel.deleteLocalModel(creatures[index].id);
+                        await CreatureModel.deleteLocalModel(id);
                         setState(() {
                           selectedDisplay = null;
                         });

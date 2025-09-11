@@ -33,7 +33,6 @@ class ScenarioEditNPCsPage extends StatefulWidget {
 class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
   late List<NonPlayerCharacterSummary> npcSummaries;
   NonPlayerCharacter? selectedNPC;
-  final GlobalKey<FormState> newNPCNameKey = GlobalKey<FormState>();
   bool editing = false;
   bool creatingNewNPC = false;
 
@@ -128,7 +127,7 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
               child: NPCListWidget(
                 npcs: npcSummaries,
                 initialSelection: selectedNPC?.id,
-                onEditRequested: (String id) async {
+                onEditRequested: (String id) {
                   var npc = widget.npcs.firstWhere(
                     (NonPlayerCharacter n) => n.id == id
                   );
@@ -154,14 +153,17 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
                   creatingNewNPC = true;
                   _startEditing(clone);
                 },
-                onDeleteRequested: (String id) async {
+                onDeleteRequested: (String id) {
                   var index = widget.npcs.indexWhere(
                     (NonPlayerCharacter n) => n.id == id
                   );
+                  var summaryIndex = npcSummaries.indexWhere(
+                      (NonPlayerCharacterSummary n) => n.id == id
+                  );
 
                   setState(() {
-                    npcSummaries.removeAt(index);
-                    if(selectedNPC == widget.npcs[index]) selectedNPC = null;
+                    npcSummaries.removeAt(summaryIndex);
+                    if(selectedNPC?.id == id) selectedNPC = null;
                     widget.onNPCDeleted(widget.npcs[index]);
                   });
                 },

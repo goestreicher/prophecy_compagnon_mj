@@ -61,15 +61,15 @@ Future<void> _loadAssets() async {
   await Place.loadDefaultAssets();
   await Place.loadStoreAssets();
   await ArmorModel.loadDefaultAssets();
+  await ShieldModel.loadDefaultAssets();
+  await WeaponModel.loadDefaultAssets();
+  await MagicSpell.loadDefaultAssets();
   await CreatureModel.loadDefaultAssets();
   await CreatureModel.loadStoreAssets();
-  await MagicSpell.loadDefaultAssets();
   await NonPlayerCharacter.loadDefaultAssets();
   await NonPlayerCharacter.loadStoreAssets();
   await Faction.loadDefaultAssets();
   await Faction.loadStoreAssets();
-  await ShieldModel.loadDefaultAssets();
-  await WeaponModel.loadDefaultAssets();
 }
 
 class MainAppPage extends StatefulWidget {

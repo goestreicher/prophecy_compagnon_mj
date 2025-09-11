@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
 import '../../../../classes/player_character.dart';
-import '../widget_group_container.dart';
+import '../../widget_group_container.dart';
 
 class CharacterDisplayGeneralWidget extends StatelessWidget {
   const CharacterDisplayGeneralWidget({ super.key, required this.character });

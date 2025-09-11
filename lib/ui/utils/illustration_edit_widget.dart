@@ -288,7 +288,14 @@ class _IllustrationEditWidgetState extends State<IllustrationEditWidget> {
         return Stack(
           children: [
             Positioned(
-                child: Image.memory(image!.data)
+                child: SizedBox(
+                  width: displayWidth,
+                  height: displayHeight,
+                  child: Image.memory(
+                    image!.data,
+                    fit: BoxFit.fill,
+                  ),
+                )
             ),
             Positioned(
               child: ClipPath(

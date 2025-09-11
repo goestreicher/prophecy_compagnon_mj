@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../classes/human_character.dart';
+import '../entity/background/edit_description_widget.dart';
+import '../entity/background/edit_illustration_widget.dart';
 import 'background/edit_advantages_widget.dart';
 import 'background/edit_caste_details_widget.dart';
-import 'background/edit_description_widget.dart';
-import 'background/edit_illustration_widget.dart';
 import 'change_stream.dart';
 
 class CharacterEditBackgroundWidget extends StatelessWidget {
@@ -47,11 +47,11 @@ class CharacterEditBackgroundWidget extends StatelessWidget {
           flex: 2,
           child: Column(
             children: [
-              CharacterEditDescriptionWidget(
-                character: character,
+              EntityEditDescriptionWidget(
+                entity: character,
               ),
-              CharacterEditIllustrationWidget(
-                character: character,
+              EntityEditIllustrationWidget(
+                entity: character,
               ),
             ],
           ),

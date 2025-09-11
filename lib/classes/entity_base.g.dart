@@ -21,7 +21,6 @@ EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) =>
         name: json['name'] as String,
         initiative: (json['initiative'] as num?)?.toInt() ?? 1,
         size: (json['size'] as num?)?.toDouble(),
-        weight: (json['weight'] as num?)?.toDouble(),
         description: json['description'] as String?,
         skills: (json['skills'] as List<dynamic>?)
             ?.map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
@@ -51,7 +50,6 @@ Map<String, dynamic> _$EntityBaseToJson(EntityBase instance) =>
       'icon': instance.icon?.toJson(),
       'status': instance.status.toJson(),
       'size': instance.size,
-      'weight': instance.weight,
       'initiative': instance.initiative,
       'abilities': enumKeyedMapToJson(instance.abilities),
       'attributes': enumKeyedMapToJson(instance.attributes),

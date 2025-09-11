@@ -63,99 +63,73 @@ Map<String, dynamic> _$CreatureModelSummaryToJson(
   'icon': instance.icon?.toJson(),
 };
 
-CreatureModel _$CreatureModelFromJson(
-  Map<String, dynamic> json,
-) => CreatureModel(
-  uuid: json['uuid'] as String?,
-  location: json['location'] == null
-      ? ObjectLocation.memory
-      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
-  source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
-  name: json['name'] as String,
-  unique: json['unique'] as bool? ?? false,
-  category: const CreatureCategoryJsonConverter().fromJson(
-    json['category'] as String,
-  ),
-  description: json['description'] as String? ?? '',
-  biome: json['biome'] as String,
-  size: json['size'] as String,
-  weight: json['weight'] as String,
-  mapSize: (json['map_size'] as num?)?.toDouble(),
-  abilities: (json['abilities'] as Map<String, dynamic>).map(
-    (k, e) => MapEntry($enumDecode(_$AbilityEnumMap, k), (e as num).toInt()),
-  ),
-  attributes: (json['attributes'] as Map<String, dynamic>).map(
-    (k, e) => MapEntry($enumDecode(_$AttributeEnumMap, k), (e as num).toInt()),
-  ),
-  initiative: (json['initiative'] as num).toInt(),
-  injuries: (json['injuries'] as List<dynamic>)
-      .map((e) => InjuryLevel.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  naturalArmor: (json['natural_armor'] as num).toInt(),
-  naturalArmorDescription: json['natural_armor_description'] as String? ?? '',
-  skills: (json['skills'] as List<dynamic>?)
-      ?.map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  naturalWeapons: (json['natural_weapons'] as List<dynamic>?)
-      ?.map((e) => NaturalWeaponModel.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  equipment: (json['equipment'] as List<dynamic>?)
-      ?.map((e) => e as String)
-      .toList(),
-  specialCapability: json['special_capability'] as String? ?? '',
-  image: json['image'] == null
-      ? null
-      : ExportableBinaryData.fromJson(json['image'] as Map<String, dynamic>),
-  icon: json['icon'] == null
-      ? null
-      : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
-);
+CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
+    CreatureModel(
+        uuid: json['uuid'] as String?,
+        location: json['location'] == null
+            ? ObjectLocation.memory
+            : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+        source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+        name: json['name'] as String,
+        initiative: (json['initiative'] as num).toInt(),
+        size: (json['size'] as num).toDouble(),
+        description: json['description'] as String?,
+        image: json['image'] == null
+            ? null
+            : ExportableBinaryData.fromJson(
+                json['image'] as Map<String, dynamic>,
+              ),
+        icon: json['icon'] == null
+            ? null
+            : ExportableBinaryData.fromJson(
+                json['icon'] as Map<String, dynamic>,
+              ),
+        unique: json['unique'] as bool? ?? false,
+        category: const CreatureCategoryJsonConverter().fromJson(
+          json['category'] as String,
+        ),
+        biome: json['biome'] as String,
+        realSize: json['real_size'] as String,
+        weight: json['weight'] as String,
+        naturalArmor: (json['natural_armor'] as num).toInt(),
+        naturalArmorDescription:
+            json['natural_armor_description'] as String? ?? '',
+        naturalWeapons: (json['natural_weapons'] as List<dynamic>?)
+            ?.map((e) => NaturalWeaponModel.fromJson(e as Map<String, dynamic>))
+            .toList(),
+        specialCapability: json['special_capability'] as String? ?? '',
+      )
+      ..status = json['status'] == null
+          ? EntityStatus.empty()
+          : EntityStatus.fromJson(json['status'] as Map<String, dynamic>)
+      ..skills = (json['skills'] as List<dynamic>)
+          .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
+          .toList();
 
 Map<String, dynamic> _$CreatureModelToJson(
   CreatureModel instance,
 ) => <String, dynamic>{
+  'equiped': equipedToJson(instance.equiped),
   'uuid': ?instance.uuid,
   'name': instance.name,
+  'description': instance.description,
+  'image': instance.image?.toJson(),
+  'icon': instance.icon?.toJson(),
+  'status': instance.status.toJson(),
+  'size': instance.size,
+  'initiative': instance.initiative,
+  'abilities': enumKeyedMapToJson(instance.abilities),
+  'attributes': enumKeyedMapToJson(instance.attributes),
+  'skills': instance.skills.map((e) => e.toJson()).toList(),
+  'equipment': equipmentToJson(instance.equipment),
   'unique': instance.unique,
   'category': const CreatureCategoryJsonConverter().toJson(instance.category),
   'source': instance.source.toJson(),
-  'description': instance.description,
   'biome': instance.biome,
-  'size': instance.size,
+  'real_size': instance.realSize,
   'weight': instance.weight,
-  'map_size': instance.mapSize,
-  'abilities': instance.abilities.map(
-    (k, e) => MapEntry(_$AbilityEnumMap[k]!, e),
-  ),
-  'attributes': instance.attributes.map(
-    (k, e) => MapEntry(_$AttributeEnumMap[k]!, e),
-  ),
-  'initiative': instance.initiative,
-  'injuries': instance.injuries.map((e) => e.toJson()).toList(),
   'natural_armor': instance.naturalArmor,
   'natural_armor_description': instance.naturalArmorDescription,
-  'skills': instance.skills.map((e) => e.toJson()).toList(),
   'natural_weapons': instance.naturalWeapons.map((e) => e.toJson()).toList(),
-  'equipment': instance.equipment,
   'special_capability': instance.specialCapability,
-  'image': instance.image?.toJson(),
-  'icon': instance.icon?.toJson(),
-};
-
-const _$AbilityEnumMap = {
-  Ability.force: 'force',
-  Ability.intelligence: 'intelligence',
-  Ability.coordination: 'coordination',
-  Ability.presence: 'presence',
-  Ability.resistance: 'resistance',
-  Ability.volonte: 'volonte',
-  Ability.perception: 'perception',
-  Ability.empathie: 'empathie',
-};
-
-const _$AttributeEnumMap = {
-  Attribute.physique: 'physique',
-  Attribute.mental: 'mental',
-  Attribute.manuel: 'manuel',
-  Attribute.social: 'social',
 };

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
 import '../../character_digit_input_widget.dart';
-import '../widget_group_container.dart';
+import '../../widget_group_container.dart';
 
 class CharacterEditSecondaryAttributesWidget extends StatelessWidget {
   const CharacterEditSecondaryAttributesWidget({

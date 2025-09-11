@@ -454,7 +454,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   }) {
     bool isDefault = (location.type == ObjectLocationType.assets);
     String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
-    if(!_instances.containsKey(id)) {
+    if(!_models.containsKey(id)) {
       var npc = NonPlayerCharacter._create(
         uuid: uuid,
         location: location,
@@ -484,9 +484,9 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
         image: image,
         icon: icon,
       );
-      _instances[id] = npc;
+      _models[id] = npc;
     }
-    return _instances[id]!;
+    return _models[id]!;
   }
 
   NonPlayerCharacter._create(
@@ -551,7 +551,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   }
 
   static bool _defaultAssetsLoaded = false;
-  static final Map<String, NonPlayerCharacter> _instances = <String, NonPlayerCharacter>{};
+  static final Map<String, NonPlayerCharacter> _models = <String, NonPlayerCharacter>{};
 
   static Future<NonPlayerCharacter?> get(String id) async {
     if(!_defaultAssetsLoaded) await loadDefaultAssets();
@@ -560,15 +560,15 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       return null;
     }
 
-    if(!_instances.containsKey(id)) {
+    if(!_models.containsKey(id)) {
       var model = await NonPlayerCharacterStore().get(id);
       if(model == null) {
         return null;
       }
-      _instances[id] = model;
+      _models[id] = model;
     }
 
-    return _instances[id];
+    return _models[id];
   }
 
   @override
@@ -579,6 +579,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
   @override
   List<EntityBase> instantiate({ int count = 1 }) {
+    // TODO: rework this at it will create duplicates in _instances
     var ret = <NonPlayerCharacter>[];
 
     for(var i=0; i<count; ++i) {
@@ -591,21 +592,21 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   }
 
   static EncounterEntityModel? _modelFactory(String id) {
-    return _instances[id];
+    return _models[id];
   }
 
   static List<EntityBase> _npcFactory(String id, int count) {
-    if(!_instances.containsKey(id)) return <EntityBase>[];
-    return _instances[id]!.instantiate(count: count);
+    if(!_models.containsKey(id)) return <EntityBase>[];
+    return _models[id]!.instantiate(count: count);
   }
 
   static Future<void> reloadFromStore(String id) async {
-    _instances.remove(id);
+    _models.remove(id);
     await NonPlayerCharacterSummary._reloadFromStore(id);
   }
 
   static void removeFromCache(String id) {
-    _instances.remove(id);
+    _models.remove(id);
     NonPlayerCharacterSummary._removeFromCache(id);
   }
 
@@ -621,7 +622,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     for(var model in await loadJSONAssetObjectList('npc-ldb2e.json')) {
       var instance = NonPlayerCharacter.fromJson(model);
       NonPlayerCharacterSummary._defaultAssetLoaded(instance.summary);
-      _instances[instance.id] = instance;
+      _models[instance.id] = instance;
     }
   }
 
@@ -632,7 +633,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   static Future<void> saveLocalModel(NonPlayerCharacter npc) async {
     await NonPlayerCharacterStore().save(npc);
     await NonPlayerCharacterSummary._saveLocalModel(npc.summary);
-    _instances[npc.id] = npc;
+    _models[npc.id] = npc;
   }
 
   static Future<void> deleteLocalModel(String id) async {
@@ -641,7 +642,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       await NonPlayerCharacterStore().delete(npc);
       await NonPlayerCharacterSummary._deleteLocalModel(id);
     }
-    _instances.remove(id);
+    _models.remove(id);
   }
 
   factory NonPlayerCharacter.fromJson(Map<String, dynamic> json) {

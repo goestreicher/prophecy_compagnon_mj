@@ -58,6 +58,8 @@ class CreatureCategory {
     var peu = peuplesAnciens;
     // ignore: unused_local_variable
     var crea = creaturesDraconiques;
+    // ignore: unused_local_variable
+    var ele = creaturesElementaires;
   }
 
   factory CreatureCategory({ required String title, bool isDefault = false }) {
@@ -334,31 +336,27 @@ class CreatureModelSummary {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @CreatureCategoryJsonConverter()
-class CreatureModel with EncounterEntityModel {
+class CreatureModel extends EntityBase with EncounterEntityModel {
   factory CreatureModel({
     String? uuid,
     ObjectLocation location = ObjectLocation.memory,
     required ObjectSource source,
     required String name,
-    bool unique = false,
-    required CreatureCategory category,
-    String description = '',
-    required String biome,
-    required String size,
-    required String weight,
-    double? mapSize,
-    required Map<Ability, int> abilities,
-    required Map<Attribute, int> attributes,
     required int initiative,
-    required List<InjuryLevel> injuries,
-    required int naturalArmor,
-    String naturalArmorDescription = '',
-    List<SkillInstance>? skills,
-    List<NaturalWeaponModel>? naturalWeapons,
-    List<String>? equipment,
-    String specialCapability = '',
+    InjuryManager Function(EntityBase?, InjuryManager?) injuryProvider = entityBaseDefaultInjuries,
+    required double size,
+    String? description,
     ExportableBinaryData? image,
     ExportableBinaryData? icon,
+    bool unique = false,
+    required CreatureCategory category,
+    required String biome,
+    required String realSize,
+    required String weight,
+    required int naturalArmor,
+    String naturalArmorDescription = '',
+    List<NaturalWeaponModel>? naturalWeapons,
+    String specialCapability = '',
   }) {
     bool isDefault = (location.type == ObjectLocationType.assets);
     String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
@@ -368,25 +366,21 @@ class CreatureModel with EncounterEntityModel {
         location: location,
         source: source,
         name: name,
-        unique: unique,
-        category: category,
-        description: description,
-        biome: biome,
+        initiative: initiative,
+        injuryProvider: injuryProvider,
         size: size,
         weight: weight,
-        mapSize: mapSize,
-        abilities: abilities,
-        attributes: attributes,
-        initiative: initiative,
-        injuries: injuries,
-        naturalArmor: naturalArmor,
-        naturalArmorDescription: naturalArmorDescription,
-        skills: skills,
-        naturalWeapons: naturalWeapons,
-        equipment: equipment,
-        specialCapability: specialCapability,
+        description: description,
         image: image,
         icon: icon,
+        unique: unique,
+        category: category,
+        biome: biome,
+        realSize: realSize,
+        naturalArmor: naturalArmor,
+        naturalArmorDescription: naturalArmorDescription,
+        naturalWeapons: naturalWeapons,
+        specialCapability: specialCapability,
       );
       _models[id] = model;
     }
@@ -395,61 +389,37 @@ class CreatureModel with EncounterEntityModel {
 
   CreatureModel._create(
       {
-        String? uuid,
-        required this.name,
+        super.uuid,
+        super.location = ObjectLocation.memory,
+        required super.name,
+        super.initiative,
+        super.injuryProvider = entityBaseDefaultInjuries,
+        super.size,
+        super.description,
+        super.image,
+        super.icon,
         this.unique = false,
         required this.category,
-        this.location = ObjectLocation.memory,
         required this.source,
-        this.description = '',
         required this.biome,
-        required this.size,
+        required this.realSize,
         required this.weight,
-        double? mapSize,
-        required this.abilities,
-        required this.attributes,
-        required this.initiative,
-        required this.injuries,
         required this.naturalArmor,
         this.naturalArmorDescription = '',
-        List<SkillInstance>? skills,
         List<NaturalWeaponModel>? naturalWeapons,
-        List<String>? equipment,
         this.specialCapability = '',
-        ExportableBinaryData? image,
-        ExportableBinaryData? icon,
       })
-    : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4().toString()),
-      mapSize = mapSize ?? 0.8,
-      skills = skills ?? <SkillInstance>[],
-      naturalWeapons = naturalWeapons ?? <NaturalWeaponModel>[],
-      equipment = equipment ?? <String>[],
-      _image = image,
-      _icon = icon;
+    : naturalWeapons = naturalWeapons ?? <NaturalWeaponModel>[];
 
-  String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
-  @JsonKey(includeIfNull: false)
-    final String? uuid;
-  final String name;
   bool unique;
   CreatureCategory category;
-  @JsonKey(includeFromJson: true, includeToJson: false)
-    ObjectLocation location;
   ObjectSource source;
-  String description;
   String biome;
-  String size;
+  String realSize;
   String weight;
-  double mapSize;
-  final Map<Ability, int> abilities;
-  final Map<Attribute, int> attributes;
-  int initiative;
-  final List<InjuryLevel> injuries;
   int naturalArmor;
   String naturalArmorDescription;
-  final List<SkillInstance> skills;
   List<NaturalWeaponModel> naturalWeapons;
-  List<String> equipment = <String>[];
   String specialCapability;
 
   CreatureModelSummary get summary => CreatureModelSummary(
@@ -461,20 +431,6 @@ class CreatureModel with EncounterEntityModel {
       icon: icon?.clone(),
     );
 
-  ExportableBinaryData? get image => _image;
-  set image(ExportableBinaryData? i) {
-    if(_image != null && (i == null || _image!.hash != i.hash)) BinaryDataStore().delete(_image!);
-    _image = i;
-  }
-  ExportableBinaryData? _image;
-
-  ExportableBinaryData? get icon => _icon;
-  set icon(ExportableBinaryData? i) {
-    if(_icon != null && (i == null || _icon!.hash != i.hash)) BinaryDataStore().delete(_icon!);
-    _icon = i;
-  }
-  ExportableBinaryData? _icon;
-
   @override
   String displayName() => name;
 
@@ -483,6 +439,7 @@ class CreatureModel with EncounterEntityModel {
 
   @override
   List<EntityBase> instantiate({ int count = 1 }) {
+    // TODO: rework this
     var ret = <Creature>[];
 
     for(var idx = 0; idx < count; ++idx) {
@@ -492,9 +449,9 @@ class CreatureModel with EncounterEntityModel {
         initiative: initiative,
         injuryProvider: (EntityBase? e, InjuryManager? i) =>
             InjuryManager(
-              levels: injuries,
+              levels: injuries.levels(),
             ),
-        size: mapSize,
+        size: size,
         image: image,
         icon: icon,
       );
@@ -593,13 +550,8 @@ class CreatureModel with EncounterEntityModel {
       }
 
       for(var e in equipment) {
-        var ids = e.split(':');
-        if (ids.length < 2) continue;
-        var factory = EquipmentFactory.instance.getFactory(ids[0]);
-        if (factory == null) continue;
-
-        var eq = factory(ids[1], const Uuid().v4().toString());
-        if (eq != null) {
+        var eq = EquipmentFactory.instance.forgeEquipment(e.type());
+        if(eq != null) {
           creature.addEquipment(eq);
         }
       }
@@ -661,7 +613,7 @@ class CreatureModel with EncounterEntityModel {
 
   static Future<void> reloadFromStore(String id) async {
     _models.remove(id);
-    CreatureModelSummary._reloadFromStore(id);
+    await CreatureModelSummary._reloadFromStore(id);
   }
 
   static void removeFromCache(String id) {
@@ -693,13 +645,24 @@ class CreatureModel with EncounterEntityModel {
 
   CreatureModel clone(String newName) {
     var j = toJson();
+    j.remove('uuid');
     j['location'] = ObjectLocation.memory.toJson();
     j['name'] = newName;
     return CreatureModel.fromJson(j);
   }
 
-  factory CreatureModel.fromJson(Map<String, dynamic> json) => _$CreatureModelFromJson(json);
-  Map<String, dynamic> toJson() => _$CreatureModelToJson(this);
+  factory CreatureModel.fromJson(Map<String, dynamic> json) {
+    CreatureModel c = _$CreatureModelFromJson(json);
+    c.loadNonRestorableJson(json);
+    return c;
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    var j = _$CreatureModelToJson(this);
+    saveNonExportableJson(j);
+    return j;
+  }
 }
 
 class Creature extends EntityBase {

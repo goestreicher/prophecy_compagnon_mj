@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
+import '../../widget_group_container.dart';
 import '../change_stream.dart';
-import '../widget_group_container.dart';
 
 class CharacterViewCasteBenefitsWidget extends StatefulWidget {
   const CharacterViewCasteBenefitsWidget({

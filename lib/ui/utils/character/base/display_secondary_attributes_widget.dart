@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
-import '../widget_group_container.dart';
-import 'attribute_display_widget.dart';
+import '../../entity/base/attribute_display_widget.dart';
+import '../../widget_group_container.dart';
 
 class CharacterDisplaySecondaryAttributesWidget extends StatelessWidget {
   const CharacterDisplaySecondaryAttributesWidget({ super.key, required this.character });

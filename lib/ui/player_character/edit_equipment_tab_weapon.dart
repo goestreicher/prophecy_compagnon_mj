@@ -4,8 +4,8 @@ import '../../classes/entity_base.dart';
 import '../../classes/equipment.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
-import '../utils/character/equipment/shield_picker_dialog.dart';
-import '../utils/character/equipment/weapon_picker_dialog.dart';
+import '../utils/entity/equipment/shield_picker_dialog.dart';
+import '../utils/entity/equipment/weapon_picker_dialog.dart';
 
 enum EquipHands { dominant, weak, both }
 

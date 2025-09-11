@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../classes/human_character.dart';
+import '../entity/equipment/edit_armor_widget.dart';
+import '../entity/equipment/edit_weapons_widget.dart';
 import 'change_stream.dart';
-import 'equipment/edit_armor_widget.dart';
-import 'equipment/edit_weapons_widget.dart';
 
 class CharacterEditEquipmentWidget extends StatelessWidget {
   const CharacterEditEquipmentWidget({
@@ -22,12 +22,12 @@ class CharacterEditEquipmentWidget extends StatelessWidget {
     return Column(
       spacing: 16.0,
       children: [
-        CharacterEditWeaponsWidget(
-          character: character,
+        EntityEditWeaponsWidget(
+          entity: character,
           changeStreamController: changeStreamController,
         ),
-        CharacterEditArmorWidget(
-          character: character,
+        EntityEditArmorWidget(
+          entity: character,
           changeStreamController: changeStreamController,
         ),
       ],

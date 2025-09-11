@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:prophecy_compagnon_mj/ui/utils/character/widget_group_container.dart';
+import 'package:prophecy_compagnon_mj/ui/utils/widget_group_container.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';

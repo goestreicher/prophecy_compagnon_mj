@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
-import '../widget_group_container.dart';
+import '../../widget_group_container.dart';
 
 class CharacterDisplayCasteDetailsWidget extends StatelessWidget {
   const CharacterDisplayCasteDetailsWidget({ super.key, required this.character });

@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
 import '../../classes/object_source.dart';
-import '../utils/creature_edit_widget.dart';
-import '../utils/creature_list_widget.dart';
-import '../utils/error_feedback.dart';
-import '../utils/single_line_input_dialog.dart';
-import '../../text_utils.dart';
+import '../utils/creature/create_dialog.dart';
+import '../utils/creature/edit_widget.dart';
+import '../utils/creature/list_widget.dart';
 
 class ScenarioEditCreaturesPage extends StatefulWidget {
   const ScenarioEditCreaturesPage({
@@ -33,21 +31,17 @@ class ScenarioEditCreaturesPage extends StatefulWidget {
 }
 
 class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
-  final GlobalKey<FormState> _newCreatureNameKey = GlobalKey<FormState>();
-
   late List<CreatureModelSummary> creatureSummaries;
-  String? _newCreatureName;
-  CreatureModel? _selectedModel;
-  bool _editing = false;
+  CreatureModel? selectedModel;
+  bool editing = false;
   bool creatingNewCreature = false;
 
   void _startEditing(CreatureModel model) {
     widget.onEditStarted?.call();
 
     setState(() {
-      _newCreatureName = model.name;
-      _selectedModel = model;
-      _editing = true;
+      selectedModel = model;
+      editing = true;
     });
   }
 
@@ -63,35 +57,42 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
     var theme = Theme.of(context);
 
     Widget mainArea;
-    if(_editing == true && _newCreatureName != null) {
+    if(editing == true && selectedModel != null) {
       mainArea = Container(
         color: theme.colorScheme.surfaceContainerHighest,
         child: CreatureEditWidget(
-          name: _newCreatureName!,
-          creatureId: _selectedModel?.id,
-          creature: _selectedModel,
-          source: widget.scenarioSource,
-          onEditDone: (CreatureModel? creature) {
-            setState(() {
-              if(creature != null) {
-                if(widget.creatures.indexWhere((CreatureModel m) => m.id == creature.id) == -1) {
-                  creatureSummaries.add(creature.summary);
-                  widget.creatures.add(creature);
-                }
-                _newCreatureName = null;
-                _selectedModel = creature;
-
-                if(creatingNewCreature) {
-                  widget.onCreatureCreated(creature);
-                }
-                else {
-                  widget.onCreatureModified(creature);
-                }
+          creature: selectedModel!,
+          onEditDone: (bool result) async {
+            if(result) {
+              var summaryIndex = creatureSummaries.indexWhere((CreatureModelSummary s) => s.id == selectedModel!.id);
+              if(summaryIndex == -1) {
+                creatureSummaries.add(selectedModel!.summary);
+                widget.creatures.add(selectedModel!);
+              }
+              else {
+                creatureSummaries[summaryIndex] = selectedModel!.summary;
               }
 
-              widget.onEditFinished?.call();
-              _editing = false;
+              if(creatingNewCreature) {
+                widget.onCreatureCreated(selectedModel!);
+              }
+              else {
+                widget.onCreatureModified(selectedModel!);
+              }
+            }
+            else {
+              if(creatingNewCreature) {
+                CreatureModel.removeFromCache(selectedModel!.id);
+              }
+              else {
+                await CreatureModel.reloadFromStore(selectedModel!.id);
+              }
+            }
+
+            widget.onEditFinished?.call();
+            setState(() {
               creatingNewCreature = false;
+              editing = false;
             });
           },
         ),
@@ -107,45 +108,17 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
           children: [
             ElevatedButton.icon(
               onPressed: () async {
-                var name = await showDialog(
+                var creature = await showDialog<CreatureModel>(
                   context: context,
-                  builder: (BuildContext context) => SingleLineInputDialog(
-                    title: 'Nom de la créature',
-                    formKey: _newCreatureNameKey,
-                    hintText: 'Nom',
+                  builder: (BuildContext context) => CreatureCreateDialog(
+                    source: ObjectSource.local,
                   ),
                 );
                 if(!context.mounted) return;
-                if(name == null) return;
+                if(creature == null) return;
 
-                var id = sentenceToCamelCase(transliterateFrenchToAscii(name));
-                var model = await CreatureModel.get(id);
-                if(!context.mounted) return;
-                if(model != null) {
-                  await showDialog(
-                    context: context,
-                    builder: (BuildContext context) => AlertDialog(
-                      title: const Text('Créature existante'),
-                      content: const Text('Une créature avec ce nom (ou un nom similaire) existe déjà'),
-                      actions: [
-                        TextButton(
-                          child: const Text('OK'),
-                          onPressed: () => Navigator.of(context).pop(),
-                        ),
-                      ],
-                    ),
-                  );
-                  return;
-                }
-
-                widget.onEditStarted?.call();
-
-                setState(() {
-                  _selectedModel = null;
-                  _newCreatureName = name;
-                  _editing = true;
-                  creatingNewCreature = true;
-                });
+                creatingNewCreature = true;
+                _startEditing(creature);
               },
               icon: const Icon(Icons.add),
               label: const Text('Nouvelle créature'),
@@ -154,43 +127,46 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
             Expanded(
               child: CreaturesListWidget(
                 creatures: creatureSummaries,
-                initialSelection: _selectedModel?.id,
-                onEditRequested: (int index) async {
-                  var model = await CreatureModel.get(creatureSummaries[index].id);
-                  if(model == null) return;
+                initialSelection: selectedModel?.id,
+                onEditRequested: (String id) async {
+                  var model = widget.creatures.firstWhere(
+                      (CreatureModel c) => c.id == id
+                  );
+
                   creatingNewCreature = false;
                   _startEditing(model);
                 },
-                onCloneRequested: (int index, String newName) async {
-                  var model = await CreatureModel.get(creatureSummaries[index].id);
-                  if(model == null) return;
+                onCloneRequested: (String id) async {
+                  var model = widget.creatures.firstWhere(
+                      (CreatureModel c) => c.id == id
+                  );
 
-                  CreatureModel clone = model.clone(newName);
-                  clone.source = ObjectSource.local;
+                  var clone = await showDialog<CreatureModel>(
+                    context: context,
+                    builder: (BuildContext context) => CreatureCreateDialog(
+                      source: widget.scenarioSource,
+                      cloneFrom: model,
+                    ),
+                  );
+                  if(!context.mounted) return;
+                  if(clone == null) return;
 
                   creatingNewCreature = true;
                   _startEditing(clone);
                 },
-                onDeleteRequested: (int index) async {
-                  try {
-                    var creature = widget.creatures.firstWhere(
-                      (CreatureModel c) => c.id == creatureSummaries[index].id
-                    );
+                onDeleteRequested: (String id) async {
+                  var index = widget.creatures.indexWhere(
+                      (CreatureModel c) => c.id == id
+                  );
+                  var summaryIndex = creatureSummaries.indexWhere(
+                      (CreatureModelSummary c) => c.id == id
+                  );
 
-                    widget.onCreatureDeleted(creature);
-                    setState(() {
-                      creatureSummaries.removeAt(index);
-                      _selectedModel = null;
-                    });
-                  }
-                  catch(e) {
-                    if(!context.mounted) return;
-                    displayErrorDialog(
-                      context,
-                      "Suppression impossible",
-                      e.toString()
-                    );
-                  }
+                  setState(() {
+                    creatureSummaries.removeAt(summaryIndex);
+                    if(selectedModel?.id == id) selectedModel = null;
+                    widget.onCreatureDeleted(widget.creatures[index]);
+                  });
                 },
               ),
             ),

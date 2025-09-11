@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
-import 'caste_privilege_picker_dialog.dart';
+import '../../widget_group_container.dart';
 import '../change_stream.dart';
-import '../widget_group_container.dart';
+import 'caste_privilege_picker_dialog.dart';
 
 class CharacterEditCastePrivilegesWidget extends StatefulWidget {
   const CharacterEditCastePrivilegesWidget({
