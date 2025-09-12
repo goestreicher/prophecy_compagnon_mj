@@ -645,6 +645,33 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     _models.remove(id);
   }
 
+  static void preImportFilter(Map<String, dynamic> json) {
+    json.remove('source');
+
+    if(json.containsKey('unique') && json['unique'] && json.containsKey('equipment') && json['equipment'] is List) {
+      for(Map<String, dynamic> e in json['equipment']) {
+        e.remove('uuid');
+      }
+    }
+  }
+
+  static Future<NonPlayerCharacter> import(Map<String, dynamic> json) async {
+    preImportFilter(json);
+    json['source'] = ObjectSource.local.toJson();
+
+    /*
+        Trying to find if this NPC shadows a default one
+     */
+    var defaultId = sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
+    if(NonPlayerCharacterSummary.exists(defaultId)) {
+      throw(NonPlayerCharacterExistsException(id: defaultId));
+    }
+
+    var model = NonPlayerCharacter.fromJson(json);
+    await NonPlayerCharacter.saveLocalModel(model);
+    return model;
+  }
+
   factory NonPlayerCharacter.fromJson(Map<String, dynamic> json) {
     NonPlayerCharacter npc = _$NonPlayerCharacterFromJson(json);
     npc.loadNonRestorableJson(json);
@@ -656,5 +683,16 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     var j = _$NonPlayerCharacterToJson(this);
     saveNonExportableJson(j);
     return j;
+  }
+}
+
+class NonPlayerCharacterExistsException implements Exception {
+  const NonPlayerCharacterExistsException({ required this.id });
+
+  final String id;
+
+  @override
+  String toString() {
+    return 'Un PNJ avec ce nom (ou un nom similaire existe déjà), ID: $id';
   }
 }

@@ -301,19 +301,8 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                             try {
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                               var j = json.decode(jsonStr);
-                              var creature = CreatureModel.fromJson(j);
-                              var model = await CreatureModel.get(creature.id);
-                              if(!context.mounted) return;
-                              if(model != null) {
-                                displayErrorDialog(
-                                  context,
-                                  'Créature existante',
-                                  'Une créature avec ce nom (ou un nom similaire) existe déjà'
-                                );
-                                return;
-                              }
+                              var creature = await CreatureModel.import(j);
 
-                              await CreatureModel.saveLocalModel(creature);
                               setState(() {
                                 creatureCategory = creature.category;
                                 selectedDisplay = creature.id;

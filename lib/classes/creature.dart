@@ -651,6 +651,33 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
     return CreatureModel.fromJson(j);
   }
 
+  static void preImportFilter(Map<String, dynamic> json) {
+    json.remove('source');
+
+    if(json.containsKey('unique') && json['unique'] && json.containsKey('equipment') && json['equipment'] is List) {
+      for(Map<String, dynamic> e in json['equipment']) {
+        e.remove('uuid');
+      }
+    }
+  }
+
+  static Future<CreatureModel> import(Map<String, dynamic> json) async {
+    preImportFilter(json);
+    json['source'] = ObjectSource.local.toJson();
+
+    /*
+        Trying to find if this creature shadows one of the default creatures
+     */
+    var defaultId = sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
+    if(CreatureModelSummary.exists(defaultId)) {
+      throw(CreatureExistsException(id: defaultId));
+    }
+
+    var model = CreatureModel.fromJson(json);
+    await CreatureModel.saveLocalModel(model);
+    return model;
+  }
+
   factory CreatureModel.fromJson(Map<String, dynamic> json) {
     CreatureModel c = _$CreatureModelFromJson(json);
     c.loadNonRestorableJson(json);
@@ -662,6 +689,17 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
     var j = _$CreatureModelToJson(this);
     saveNonExportableJson(j);
     return j;
+  }
+}
+
+class CreatureExistsException implements Exception {
+  const CreatureExistsException({ required this.id });
+
+  final String id;
+
+  @override
+  String toString() {
+    return 'Une créature avec ce nom (ou un nom similaire existe déjà), ID: $id';
   }
 }
 

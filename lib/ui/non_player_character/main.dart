@@ -342,23 +342,8 @@ class _NPCMainPageState extends State<NPCMainPage> {
 
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                               var j = json.decode(jsonStr);
-                              var npc = NonPlayerCharacter.fromJson(j);
-                              var model = await NonPlayerCharacter.get(npc.id);
-                              if(!context.mounted) return;
-                              if(model != null) {
-                                setState(() {
-                                  _isWorking = false;
-                                });
+                              var npc = await NonPlayerCharacter.import(j);
 
-                                displayErrorDialog(
-                                  context,
-                                  'PNJ existant',
-                                  'Un PNJ avec ce nom (ou un nom similaire) existe déjà'
-                                );
-                                return;
-                              }
-
-                              await NonPlayerCharacter.saveLocalModel(npc);
                               setState(() {
                                 selectedDisplay = npc.id;
                                 npcCategory = npc.category;
