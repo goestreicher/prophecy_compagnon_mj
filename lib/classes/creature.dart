@@ -667,7 +667,15 @@ class Creature extends EntityBase with EncounterEntityModel {
   @override
   Map<String, dynamic> toJson() {
     var j = _$CreatureToJson(this);
+
     saveNonExportableJson(j);
+
+    if(j.containsKey('unique') && j['unique'] && j.containsKey('equipment') && j['equipment'] is List) {
+      for(Map<String, dynamic> e in j['equipment']) {
+        e.remove('uuid');
+      }
+    }
+
     return j;
   }
 }
