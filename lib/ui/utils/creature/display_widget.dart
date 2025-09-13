@@ -34,7 +34,7 @@ class CreatureActionButtons extends StatelessWidget {
     this.restrictModificationToSourceTypes,
   });
 
-  final CreatureModelSummary creature;
+  final CreatureSummary creature;
   final void Function() onEdit;
   final void Function() onClone;
   final void Function() onDelete;
@@ -84,7 +84,7 @@ class CreatureActionButtons extends StatelessWidget {
           icon: const Icon(Icons.download),
           tooltip: 'Télécharger (JSON)',
           onPressed: () async {
-            var model = await CreatureModel.get(creature.id);
+            var model = await Creature.get(creature.id);
             var jsonStr = json.encode(model!.toJson());
             await FilePicker.platform.saveFile(
               fileName: 'creature-${creature.id}.json',
@@ -118,25 +118,25 @@ class CreatureDisplayWidget extends StatefulWidget {
 }
 
 class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
-  late Future<CreatureModel?> creatureFuture;
+  late Future<Creature?> creatureFuture;
   
   @override
   void initState() {
     super.initState();
-    creatureFuture = CreatureModel.get(widget.creature);
+    creatureFuture = Creature.get(widget.creature);
   }
 
   @override
   void didUpdateWidget(CreatureDisplayWidget old) {
     super.didUpdateWidget(old);
-    creatureFuture = CreatureModel.get(widget.creature);
+    creatureFuture = Creature.get(widget.creature);
   }
   
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
       future: creatureFuture,
-      builder: (BuildContext context, AsyncSnapshot<CreatureModel?> snapshot) {
+      builder: (BuildContext context, AsyncSnapshot<Creature?> snapshot) {
         if(snapshot.connectionState == ConnectionState.waiting) {
           return FullPageLoadingWidget();
         }
@@ -149,7 +149,7 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
           return FullPageErrorWidget(message: 'Créature non trouvée', canPop: false);
         }
 
-        CreatureModel creature = snapshot.data!;
+        Creature creature = snapshot.data!;
         var theme = Theme.of(context);
         const skillGroupWidth = 280.0;
 

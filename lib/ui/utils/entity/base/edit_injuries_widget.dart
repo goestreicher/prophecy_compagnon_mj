@@ -89,7 +89,7 @@ class _EntityEditInjuriesWidgetState extends State<EntityEditInjuriesWidget> {
     var theme = Theme.of(context);
 
     var useSimpleInjuryManager =
-        widget.entity is CreatureModel
+        widget.entity is Creature
         || (widget.entity is! PlayerCharacter
             && (
                 widget.entity is NonPlayerCharacter

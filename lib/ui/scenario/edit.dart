@@ -41,9 +41,9 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   List<NonPlayerCharacter> uncommittedNPCsCreation = <NonPlayerCharacter>[];
   List<NonPlayerCharacter> uncommittedNPCsModification = <NonPlayerCharacter>[];
   List<NonPlayerCharacter> uncommittedNPCsDeletion = <NonPlayerCharacter>[];
-  List<CreatureModel> uncommittedCreaturesCreation = <CreatureModel>[];
-  List<CreatureModel> uncommittedCreaturesModification = <CreatureModel>[];
-  List<CreatureModel> uncommittedCreaturesDeletion = <CreatureModel>[];
+  List<Creature> uncommittedCreaturesCreation = <Creature>[];
+  List<Creature> uncommittedCreaturesModification = <Creature>[];
+  List<Creature> uncommittedCreaturesDeletion = <Creature>[];
   List<Place> uncommittedPlacesCreation = <Place>[];
   List<Place> uncommittedPlacesModification = <Place>[];
   List<Place> uncommittedPlacesDeletion = <Place>[];
@@ -71,7 +71,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
     uncommittedCreaturesCreation.clear();
     uncommittedCreaturesModification.clear();
     for(var c in uncommittedCreaturesDeletion) {
-      await CreatureModel.deleteLocalModel(c.id);
+      await Creature.deleteLocalModel(c.id);
     }
     uncommittedCreaturesDeletion.clear();
 
@@ -111,11 +111,11 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
         Creatures
      */
     for(var c in uncommittedCreaturesCreation) {
-      CreatureModel.removeFromCache(c.id);
+      Creature.removeFromCache(c.id);
     }
     uncommittedCreaturesCreation.clear();
     for(var c in uncommittedCreaturesModification) {
-      CreatureModel.reloadFromStore(c.id);
+      Creature.reloadFromStore(c.id);
     }
     uncommittedCreaturesModification.clear();
     uncommittedCreaturesDeletion.clear();
@@ -293,16 +293,16 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                     ScenarioEditCreaturesPage(
                       creatures: _scenario.creatures,
                       scenarioSource: _scenario.source,
-                      onCreatureCreated: (CreatureModel c) {
+                      onCreatureCreated: (Creature c) {
                         uncommittedCreaturesCreation.add(c);
                         setState(() {
                           _scenario.creatures.add(c);
                         });
                       },
-                      onCreatureModified: (CreatureModel c) {
+                      onCreatureModified: (Creature c) {
                         uncommittedCreaturesModification.add(c);
                       },
-                      onCreatureDeleted: (CreatureModel c) {
+                      onCreatureDeleted: (Creature c) {
                         uncommittedCreaturesDeletion.add(c);
                         setState(() {
                           _scenario.creatures.remove(c);

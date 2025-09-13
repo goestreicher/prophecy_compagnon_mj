@@ -51,7 +51,7 @@ class _EncounterEditWidgetState extends State<EncounterEditWidget> {
               ElevatedButton(
                 child: const Text('\u{1F9CC} Ajouter une créature'),
                 onPressed: () async {
-                  var selected = await showDialog<CreatureModelSummary>(
+                  var selected = await showDialog<CreatureSummary>(
                     context: context,
                     builder: (BuildContext context) => const CreaturePickerDialog(),
                   );

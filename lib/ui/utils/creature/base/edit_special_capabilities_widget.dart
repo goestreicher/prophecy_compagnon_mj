@@ -6,7 +6,7 @@ import '../../widget_group_container.dart';
 class CreatureEditSpecialCapabilitiesWidget extends StatelessWidget {
   const CreatureEditSpecialCapabilitiesWidget({ super.key, required this.creature });
 
-  final CreatureModel creature;
+  final Creature creature;
 
   @override
   Widget build(BuildContext context) {

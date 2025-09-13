@@ -5,6 +5,7 @@ import 'character/base.dart';
 import 'character/skill.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
+import 'entity_instance.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
@@ -579,13 +580,18 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
   @override
   List<EntityBase> instantiate({ int count = 1 }) {
-    // TODO: rework this at it will create duplicates in _instances
-    var ret = <NonPlayerCharacter>[];
+    var ret = <EntityBase>[];
 
-    for(var i=0; i<count; ++i) {
-      var j = toJson();
-      j['name'] = '$name #${i+1}';
-      ret.add(NonPlayerCharacter.fromJson(j));
+    var modelSpecification = 'npc:$id';
+
+    for(var idx=0; idx<count; ++idx) {
+      var instance = EntityInstance.prepareInstantiation(
+        entity: this,
+        name: '$name #${idx+1}',
+        modelSpecification: modelSpecification,
+      );
+
+      ret.add(instance);
     }
 
     return ret;
@@ -614,10 +620,16 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     if(_defaultAssetsLoaded) return;
     _defaultAssetsLoaded = true;
 
+    EntityInstanceModelRetriever.instance.registerRetriever(
+      'npc',
+      NonPlayerCharacter.get,
+    );
+
     EncounterEntityFactory.instance.registerFactory(
-        'npc',
-        _modelFactory,
-        _npcFactory);
+      'npc',
+      _modelFactory,
+      _npcFactory
+    );
 
     for(var model in await loadJSONAssetObjectList('npc-ldb2e.json')) {
       var instance = NonPlayerCharacter.fromJson(model);

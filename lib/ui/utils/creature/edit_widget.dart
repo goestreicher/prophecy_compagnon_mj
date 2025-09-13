@@ -22,7 +22,7 @@ class CreatureEditWidget extends StatefulWidget {
     required this.onEditDone,
   });
 
-  final CreatureModel creature;
+  final Creature creature;
   final void Function(bool) onEditDone;
 
   @override

@@ -8,7 +8,7 @@ import '../../widget_group_container.dart';
 class CreatureEditNaturalWeapons extends StatefulWidget {
   const CreatureEditNaturalWeapons({ super.key, required this.creature });
   
-  final CreatureModel creature;
+  final Creature creature;
 
   @override
   State<CreatureEditNaturalWeapons> createState() => _CreatureEditNaturalWeaponsState();

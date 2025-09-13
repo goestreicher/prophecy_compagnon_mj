@@ -9,7 +9,7 @@ class CreatureCreateDialog extends StatefulWidget {
   const CreatureCreateDialog({ super.key, required this.source, this.cloneFrom });
 
   final ObjectSource source;
-  final CreatureModel? cloneFrom;
+  final Creature? cloneFrom;
 
   @override
   State<CreatureCreateDialog> createState() => _CreatureCreateDialogState();
@@ -128,7 +128,7 @@ class _CreatureCreateDialogState extends State<CreatureCreateDialog> {
                         }
 
                         var id = sentenceToCamelCase(transliterateFrenchToAscii(nameController.text));
-                        var model = await CreatureModel.get(id);
+                        var model = await Creature.get(id);
                         if(!context.mounted) return;
                         if(model != null) {
                           displayErrorDialog(
@@ -139,10 +139,10 @@ class _CreatureCreateDialogState extends State<CreatureCreateDialog> {
                           return;
                         }
 
-                        CreatureModel creature;
+                        Creature creature;
 
                         if(widget.cloneFrom == null) {
-                          creature = CreatureModel(
+                          creature = Creature(
                             source: widget.source,
                             name: nameController.text,
                             category: currentCategory!,

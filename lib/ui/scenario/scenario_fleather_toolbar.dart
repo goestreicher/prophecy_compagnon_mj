@@ -13,7 +13,7 @@ List<ResourceLink> generateScenarioResourceLinks(ResourceLinkType type, Scenario
         ret.add(ResourceLink.createLinkForResource(type, true, n.name, n.id));
       }
     case ResourceLinkType.creature:
-      for(var c in CreatureModelSummary.forSource(scenario.source, null)) {
+      for(var c in CreatureSummary.forSource(scenario.source, null)) {
         ret.add(ResourceLink.createLinkForResource(type, true, c.name, c.id));
       }
     case ResourceLinkType.place:

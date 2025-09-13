@@ -56,7 +56,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     if(j.containsKey('creatures')) {
       var creaturesJson = <Map<String, dynamic>>[];
       for(var creatureId in j['creatures']) {
-        var creature = await CreatureModel.get(creatureId);
+        var creature = await Creature.get(creatureId);
         if(creature != null) {
           var creatureJson = creature.toJson();
           // Same here, we have to set the location manually
@@ -148,7 +148,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     }
 
     for(var creature in object.creatures) {
-      await CreatureModel.saveLocalModel(creature);
+      await Creature.saveLocalModel(creature);
     }
 
     for(var map in object.maps) {
@@ -173,7 +173,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     }
 
     for(var creature in object.creatures) {
-      await CreatureModel.deleteLocalModel(creature.id);
+      await Creature.deleteLocalModel(creature.id);
     }
 
     for(var map in object.maps) {
@@ -221,7 +221,7 @@ class Scenario {
         this.story = '',
         List<ScenarioMap>? maps,
         List<NonPlayerCharacter>? npcs,
-        List<CreatureModel>? creatures,
+        List<Creature>? creatures,
         List<ScenarioEncounter>? encounters,
         Map<DayRange, ScenarioDayEvents>? events,
         List<Place>? places,
@@ -230,7 +230,7 @@ class Scenario {
     : uuid = uuid ?? const Uuid().v4().toString(),
       maps = maps ?? <ScenarioMap>[],
       npcs = npcs ?? <NonPlayerCharacter>[],
-      creatures = creatures ?? <CreatureModel>[],
+      creatures = creatures ?? <Creature>[],
       encounters = encounters ?? <ScenarioEncounter>[],
       events = events ?? <DayRange, ScenarioDayEvents>{},
       places = places ?? <Place>[],
@@ -282,7 +282,7 @@ class Scenario {
   String story;
   final List<ScenarioMap> maps;
   final List<NonPlayerCharacter> npcs;
-  final List<CreatureModel> creatures;
+  final List<Creature> creatures;
   final List<ScenarioEncounter> encounters;
   final List<Place> places;
   final List<Faction> factions;

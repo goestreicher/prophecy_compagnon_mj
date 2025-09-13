@@ -36,25 +36,24 @@ const _$WeaponRangeEnumMap = {
   WeaponRange.ranged: 'ranged',
 };
 
-CreatureModelSummary _$CreatureModelSummaryFromJson(
-  Map<String, dynamic> json,
-) => CreatureModelSummary(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  category: const CreatureCategoryJsonConverter().fromJson(
-    json['category'] as String,
-  ),
-  location: json['location'] == null
-      ? ObjectLocation.memory
-      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
-  source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
-  icon: json['icon'] == null
-      ? null
-      : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
-);
+CreatureSummary _$CreatureSummaryFromJson(Map<String, dynamic> json) =>
+    CreatureSummary(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      category: const CreatureCategoryJsonConverter().fromJson(
+        json['category'] as String,
+      ),
+      location: json['location'] == null
+          ? ObjectLocation.memory
+          : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+      icon: json['icon'] == null
+          ? null
+          : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$CreatureModelSummaryToJson(
-  CreatureModelSummary instance,
+Map<String, dynamic> _$CreatureSummaryToJson(
+  CreatureSummary instance,
 ) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
@@ -63,8 +62,8 @@ Map<String, dynamic> _$CreatureModelSummaryToJson(
   'icon': instance.icon?.toJson(),
 };
 
-CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
-    CreatureModel(
+Creature _$CreatureFromJson(Map<String, dynamic> json) =>
+    Creature(
         uuid: json['uuid'] as String?,
         location: json['location'] == null
             ? ObjectLocation.memory
@@ -106,9 +105,7 @@ CreatureModel _$CreatureModelFromJson(Map<String, dynamic> json) =>
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList();
 
-Map<String, dynamic> _$CreatureModelToJson(
-  CreatureModel instance,
-) => <String, dynamic>{
+Map<String, dynamic> _$CreatureToJson(Creature instance) => <String, dynamic>{
   'equiped': equipedToJson(instance.equiped),
   'uuid': ?instance.uuid,
   'name': instance.name,

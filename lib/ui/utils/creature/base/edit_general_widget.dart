@@ -7,7 +7,7 @@ import '../../widget_group_container.dart';
 class CreatureEditGeneralWidget extends StatefulWidget {
   const CreatureEditGeneralWidget({ super.key, required this.creature });
 
-  final CreatureModel creature;
+  final Creature creature;
 
   @override
   State<CreatureEditGeneralWidget> createState() => _CreatureEditGeneralWidgetState();

@@ -18,11 +18,11 @@ class ScenarioEditCreaturesPage extends StatefulWidget {
     this.onEditFinished,
   });
 
-  final List<CreatureModel> creatures;
+  final List<Creature> creatures;
   final ObjectSource scenarioSource;
-  final void Function(CreatureModel) onCreatureCreated;
-  final void Function(CreatureModel) onCreatureModified;
-  final void Function(CreatureModel) onCreatureDeleted;
+  final void Function(Creature) onCreatureCreated;
+  final void Function(Creature) onCreatureModified;
+  final void Function(Creature) onCreatureDeleted;
   final void Function()? onEditStarted;
   final void Function()? onEditFinished;
 
@@ -31,12 +31,12 @@ class ScenarioEditCreaturesPage extends StatefulWidget {
 }
 
 class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
-  late List<CreatureModelSummary> creatureSummaries;
-  CreatureModel? selectedModel;
+  late List<CreatureSummary> creatureSummaries;
+  Creature? selectedModel;
   bool editing = false;
   bool creatingNewCreature = false;
 
-  void _startEditing(CreatureModel model) {
+  void _startEditing(Creature model) {
     widget.onEditStarted?.call();
 
     setState(() {
@@ -64,7 +64,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
           creature: selectedModel!,
           onEditDone: (bool result) async {
             if(result) {
-              var summaryIndex = creatureSummaries.indexWhere((CreatureModelSummary s) => s.id == selectedModel!.id);
+              var summaryIndex = creatureSummaries.indexWhere((CreatureSummary s) => s.id == selectedModel!.id);
               if(summaryIndex == -1) {
                 creatureSummaries.add(selectedModel!.summary);
                 widget.creatures.add(selectedModel!);
@@ -82,10 +82,10 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
             }
             else {
               if(creatingNewCreature) {
-                CreatureModel.removeFromCache(selectedModel!.id);
+                Creature.removeFromCache(selectedModel!.id);
               }
               else {
-                await CreatureModel.reloadFromStore(selectedModel!.id);
+                await Creature.reloadFromStore(selectedModel!.id);
               }
             }
 
@@ -108,7 +108,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
           children: [
             ElevatedButton.icon(
               onPressed: () async {
-                var creature = await showDialog<CreatureModel>(
+                var creature = await showDialog<Creature>(
                   context: context,
                   builder: (BuildContext context) => CreatureCreateDialog(
                     source: ObjectSource.local,
@@ -130,7 +130,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                 initialSelection: selectedModel?.id,
                 onEditRequested: (String id) async {
                   var model = widget.creatures.firstWhere(
-                      (CreatureModel c) => c.id == id
+                      (Creature c) => c.id == id
                   );
 
                   creatingNewCreature = false;
@@ -138,10 +138,10 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                 },
                 onCloneRequested: (String id) async {
                   var model = widget.creatures.firstWhere(
-                      (CreatureModel c) => c.id == id
+                      (Creature c) => c.id == id
                   );
 
-                  var clone = await showDialog<CreatureModel>(
+                  var clone = await showDialog<Creature>(
                     context: context,
                     builder: (BuildContext context) => CreatureCreateDialog(
                       source: widget.scenarioSource,
@@ -156,10 +156,10 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                 },
                 onDeleteRequested: (String id) async {
                   var index = widget.creatures.indexWhere(
-                      (CreatureModel c) => c.id == id
+                      (Creature c) => c.id == id
                   );
                   var summaryIndex = creatureSummaries.indexWhere(
-                      (CreatureModelSummary c) => c.id == id
+                      (CreatureSummary c) => c.id == id
                   );
 
                   setState(() {

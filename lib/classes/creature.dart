@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
+import 'entity_instance.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
@@ -135,19 +136,19 @@ class NaturalArmor implements ProtectionProvider {
   int protection() => value;
 }
 
-class CreatureModelSummaryStore extends JsonStoreAdapter<CreatureModelSummary> {
-  CreatureModelSummaryStore();
+class CreatureSummaryStore extends JsonStoreAdapter<CreatureSummary> {
+  CreatureSummaryStore();
 
   @override
   String storeCategory() => 'creatureSummaries';
 
   @override
-  String key(CreatureModelSummary object) => object.id;
+  String key(CreatureSummary object) => object.id;
 
   @override
-  Future<CreatureModelSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
+  Future<CreatureSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    var summary = CreatureModelSummary.fromJson(j);
+    var summary = CreatureSummary.fromJson(j);
     summary.location = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: '${getUriBase()}/${storeCategory()}',
@@ -156,14 +157,14 @@ class CreatureModelSummaryStore extends JsonStoreAdapter<CreatureModelSummary> {
   }
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(CreatureModelSummary object) async {
+  Future<Map<String, dynamic>> toJsonRepresentation(CreatureSummary object) async {
     var j = object.toJson();
     if(object.icon != null) j['icon'] = object.icon!.hash;
     return j;
   }
 
   @override
-  Future<void> willSave(CreatureModelSummary object) async {
+  Future<void> willSave(CreatureSummary object) async {
     if(object.icon != null) await BinaryDataStore().save(object.icon!);
 
     // Force-set the location here in case the object is used after being saved,
@@ -176,25 +177,25 @@ class CreatureModelSummaryStore extends JsonStoreAdapter<CreatureModelSummary> {
   }
 
   @override
-  Future<void> willDelete(CreatureModelSummary object) async {
+  Future<void> willDelete(CreatureSummary object) async {
     if(object.icon != null) await BinaryDataStore().delete(object.icon!);
   }
 }
 
-class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
-  CreatureModelStore();
+class CreatureStore extends JsonStoreAdapter<Creature> {
+  CreatureStore();
 
   @override
   String storeCategory() => 'creatures';
 
   @override
-  String key(CreatureModel object) => object.id;
+  String key(Creature object) => object.id;
 
   @override
-  Future<CreatureModel> fromJsonRepresentation(Map<String, dynamic> j) async {
+  Future<Creature> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    var model = CreatureModel.fromJson(j);
+    var model = Creature.fromJson(j);
     model.location = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: '${getUriBase()}/${storeCategory()}',
@@ -203,7 +204,7 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
   }
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(CreatureModel object) async {
+  Future<Map<String, dynamic>> toJsonRepresentation(Creature object) async {
     var j = object.toJson();
     if(object.image != null) j['image'] = object.image!.hash;
     if(object.icon != null) j['icon'] = object.icon!.hash;
@@ -211,7 +212,7 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
   }
 
   @override
-  Future<void> willSave(CreatureModel object) async {
+  Future<void> willSave(Creature object) async {
     if(object.image != null) await BinaryDataStore().save(object.image!);
     if(object.icon != null) await BinaryDataStore().save(object.icon!);
 
@@ -225,7 +226,7 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
   }
 
   @override
-  Future<void> willDelete(CreatureModel object) async {
+  Future<void> willDelete(Creature object) async {
     if(object.icon != null) await BinaryDataStore().delete(object.icon!);
     if(object.image != null) await BinaryDataStore().delete(object.image!);
   }
@@ -233,8 +234,8 @@ class CreatureModelStore extends JsonStoreAdapter<CreatureModel> {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @CreatureCategoryJsonConverter()
-class CreatureModelSummary {
-  CreatureModelSummary({
+class CreatureSummary {
+  CreatureSummary({
     required this.id,
     required this.name,
     required this.category,
@@ -257,47 +258,47 @@ class CreatureModelSummary {
 
   static bool exists(String id) => _summaries.containsKey(id);
 
-  static Future<CreatureModelSummary?> get(String id) async {
+  static Future<CreatureSummary?> get(String id) async {
     return _summaries[id];
   }
 
-  static List<CreatureModelSummary> getAll({String? nameFilter}) {
+  static List<CreatureSummary> getAll({String? nameFilter}) {
     return _summaries.values
-        .where((CreatureModelSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .where((CreatureSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
         .toList();
   }
 
-  static List<CreatureModelSummary> forLocationType(ObjectLocationType type, CreatureCategory? category, {String? nameFilter}) {
+  static List<CreatureSummary> forLocationType(ObjectLocationType type, CreatureCategory? category, {String? nameFilter}) {
     return _summaries.values
-        .where((CreatureModelSummary c) => c.location.type == type && (category == null || c.category == category))
-        .where((CreatureModelSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .where((CreatureSummary c) => c.location.type == type && (category == null || c.category == category))
+        .where((CreatureSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
         .toList();
   }
 
-  static List<CreatureModelSummary> forCategory(CreatureCategory category, {String? nameFilter}) {
+  static List<CreatureSummary> forCategory(CreatureCategory category, {String? nameFilter}) {
     return _summaries.values
-        .where((CreatureModelSummary c) => c.category == category)
-        .where((CreatureModelSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .where((CreatureSummary c) => c.category == category)
+        .where((CreatureSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
         .toList();
   }
 
-  static List<CreatureModelSummary> forSourceType(ObjectSourceType type, CreatureCategory? category, {String? nameFilter}) {
+  static List<CreatureSummary> forSourceType(ObjectSourceType type, CreatureCategory? category, {String? nameFilter}) {
     return _summaries.values
-        .where((CreatureModelSummary c) => c.source.type == type && (category == null || c.category == category))
-        .where((CreatureModelSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .where((CreatureSummary c) => c.source.type == type && (category == null || c.category == category))
+        .where((CreatureSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
         .toList();
   }
 
-  static List<CreatureModelSummary> forSource(ObjectSource source, CreatureCategory? category, {String? nameFilter}) {
+  static List<CreatureSummary> forSource(ObjectSource source, CreatureCategory? category, {String? nameFilter}) {
     return _summaries.values
-        .where((CreatureModelSummary c) => c.source == source && (category == null || c.category == category))
-        .where((CreatureModelSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
+        .where((CreatureSummary c) => c.source == source && (category == null || c.category == category))
+        .where((CreatureSummary c) => nameFilter == null || c.name.toLowerCase().contains(nameFilter.toLowerCase()))
         .toList();
   }
 
   static Future<void> _reloadFromStore(String id) async {
     _removeFromCache(id);
-    var summary = await CreatureModelSummaryStore().get(id);
+    var summary = await CreatureSummaryStore().get(id);
     if(summary != null) {
       _summaries[id] = summary;
     }
@@ -305,39 +306,39 @@ class CreatureModelSummary {
 
   static void _removeFromCache(String id) => _summaries.remove(id);
 
-  static void _defaultAssetLoaded(CreatureModelSummary summary) {
+  static void _defaultAssetLoaded(CreatureSummary summary) {
     _summaries[summary.id] = summary;
   }
 
   static Future<void> _loadStoreAssets() async {
-    for(var summary in await CreatureModelSummaryStore().getAll()) {
+    for(var summary in await CreatureSummaryStore().getAll()) {
       _summaries[summary.id] = summary;
     }
   }
 
-  static Future<void> _saveLocalModel(CreatureModelSummary summary) async {
-    await CreatureModelSummaryStore().save(summary);
+  static Future<void> _saveLocalModel(CreatureSummary summary) async {
+    await CreatureSummaryStore().save(summary);
     _summaries[summary.id] = summary;
   }
 
   static Future<void> _deleteLocalModel(String id) async {
-    var summary = await CreatureModelSummaryStore().get(id);
+    var summary = await CreatureSummaryStore().get(id);
     if(summary != null) {
-      CreatureModelSummaryStore().delete(summary);
+      CreatureSummaryStore().delete(summary);
     }
     _summaries.remove(id);
   }
 
-  static final Map<String, CreatureModelSummary> _summaries = <String, CreatureModelSummary>{};
+  static final Map<String, CreatureSummary> _summaries = <String, CreatureSummary>{};
 
-  factory CreatureModelSummary.fromJson(Map<String, dynamic> j) => _$CreatureModelSummaryFromJson(j);
-  Map<String, dynamic> toJson() => _$CreatureModelSummaryToJson(this);
+  factory CreatureSummary.fromJson(Map<String, dynamic> j) => _$CreatureSummaryFromJson(j);
+  Map<String, dynamic> toJson() => _$CreatureSummaryToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @CreatureCategoryJsonConverter()
-class CreatureModel extends EntityBase with EncounterEntityModel {
-  factory CreatureModel({
+class Creature extends EntityBase with EncounterEntityModel {
+  factory Creature({
     String? uuid,
     ObjectLocation location = ObjectLocation.memory,
     required ObjectSource source,
@@ -361,7 +362,7 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
     bool isDefault = (location.type == ObjectLocationType.assets);
     String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
     if(!_models.containsKey(id)) {
-      var model = CreatureModel._create(
+      var model = Creature._create(
         uuid: uuid,
         location: location,
         source: source,
@@ -387,7 +388,7 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
     return _models[id]!;
   }
 
-  CreatureModel._create(
+  Creature._create(
       {
         super.uuid,
         super.location = ObjectLocation.memory,
@@ -422,7 +423,7 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
   List<NaturalWeaponModel> naturalWeapons;
   String specialCapability;
 
-  CreatureModelSummary get summary => CreatureModelSummary(
+  CreatureSummary get summary => CreatureSummary(
       id: id,
       name: name,
       category: category,
@@ -439,38 +440,18 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
 
   @override
   List<EntityBase> instantiate({ int count = 1 }) {
-    // TODO: rework this
-    var ret = <Creature>[];
+    var ret = <EntityInstance>[];
+
+    var modelSpecification = 'creature:$id';
 
     for(var idx = 0; idx < count; ++idx) {
-      var creature = Creature(
-        location: location,
+      var instance = EntityInstance.prepareInstantiation(
+        entity: this,
         name: '$name #${idx+1}',
-        initiative: initiative,
-        injuryProvider: (EntityBase? e, InjuryManager? i) =>
-            InjuryManager(
-              levels: injuries.levels(),
-            ),
-        size: size,
-        image: image,
-        icon: icon,
+        modelSpecification: modelSpecification,
       );
 
-      creature.addProtectionProvider(NaturalArmor(value: naturalArmor));
-
-      for(var a in abilities.keys) {
-        creature.setAbility(a, abilities[a]!);
-      }
-      for(var a in attributes.keys) {
-        creature.setAttribute(a, attributes[a]!);
-      }
-      for(var s in skills) {
-        creature.setSkill(s.skill, s.value);
-
-        for(var sp in s.specializations.keys) {
-          creature.setSpecializedSkill(sp, s.specializations[sp]!);
-        }
-      }
+      instance.addProtectionProvider(NaturalArmor(value: naturalArmor));
 
       var contactRange = AttributeBasedCalculator(
           static: 0.5,
@@ -481,7 +462,7 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
       for(var weapon in naturalWeapons) {
         var spSkillId = 'creature:$id:specialized:combat:${weapon.id}';
         var spSkill = SpecializedSkill.create(spSkillId, Skill.creatureNaturalWeapon, title: weapon.name, reserved: true);
-        creature.setSpecializedSkill(spSkill, weapon.skill);
+        instance.setSpecializedSkill(spSkill, weapon.skill);
 
         AttributeBasedCalculator? effective;
         AttributeBasedCalculator? max;
@@ -543,34 +524,27 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
             rangeEffective: effective ?? contactRange,
             rangeMax: max ?? contactRange);
 
-        var instance = wm.instantiate();
+        var weaponInstance = wm.instantiate();
         for(var range in weapon.ranges.keys) {
-          creature.addNaturalWeapon(range, instance);
+          instance.addNaturalWeapon(range, weaponInstance);
         }
       }
 
-      for(var e in equipment) {
-        var eq = EquipmentFactory.instance.forgeEquipment(e.type());
-        if(eq != null) {
-          creature.addEquipment(eq);
-        }
-      }
-
-      ret.add(creature);
+      ret.add(instance);
     }
 
     return ret;
   }
 
-  static Future<CreatureModel?> get(String id) async {
+  static Future<Creature?> get(String id) async {
     if(!_defaultAssetsLoaded) await loadDefaultAssets();
 
-    if(CreatureModelSummary.exists(id) == false) {
+    if(CreatureSummary.exists(id) == false) {
       return null;
     }
 
     if(!_models.containsKey(id)) {
-      var model = await CreatureModelStore().get(id);
+      var model = await CreatureStore().get(id);
       if(model == null) {
         return null;
       }
@@ -592,10 +566,16 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
     if(_defaultAssetsLoaded) return;
     _defaultAssetsLoaded = true;
 
+    EntityInstanceModelRetriever.instance.registerRetriever(
+      'creature',
+      Creature.get,
+    );
+
     EncounterEntityFactory.instance.registerFactory(
-        'creature',
-        _modelFactory,
-        _creatureFactory);
+      'creature',
+      _modelFactory,
+      _creatureFactory
+    );
 
     var assetFiles = [
       'creatures-ldb2e.json',
@@ -604,8 +584,8 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
 
     for(var f in assetFiles) {
       for (var model in await loadJSONAssetObjectList(f)) {
-        var instance = CreatureModel.fromJson(model);
-        CreatureModelSummary._defaultAssetLoaded(instance.summary);
+        var instance = Creature.fromJson(model);
+        CreatureSummary._defaultAssetLoaded(instance.summary);
         _models[instance.id] = instance;
       }
     }
@@ -613,42 +593,42 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
 
   static Future<void> reloadFromStore(String id) async {
     _models.remove(id);
-    await CreatureModelSummary._reloadFromStore(id);
+    await CreatureSummary._reloadFromStore(id);
   }
 
   static void removeFromCache(String id) {
     _models.remove(id);
-    CreatureModelSummary._removeFromCache(id);
+    CreatureSummary._removeFromCache(id);
   }
 
   static Future<void> loadStoreAssets() async {
-    await CreatureModelSummary._loadStoreAssets();
+    await CreatureSummary._loadStoreAssets();
   }
 
-  static Future<void> saveLocalModel(CreatureModel model) async {
-    await CreatureModelStore().save(model);
-    await CreatureModelSummary._saveLocalModel(model.summary);
+  static Future<void> saveLocalModel(Creature model) async {
+    await CreatureStore().save(model);
+    await CreatureSummary._saveLocalModel(model.summary);
     _models[model.id] = model;
   }
 
   static Future<void> deleteLocalModel(String id) async {
-    var model = await CreatureModelStore().get(id);
+    var model = await CreatureStore().get(id);
     if(model != null) {
-      await CreatureModelStore().delete(model);
-      await CreatureModelSummary._deleteLocalModel(id);
+      await CreatureStore().delete(model);
+      await CreatureSummary._deleteLocalModel(id);
     }
     _models.remove(id);
   }
 
   static bool _defaultAssetsLoaded = false;
-  static final Map<String, CreatureModel> _models = <String, CreatureModel>{};
+  static final Map<String, Creature> _models = <String, Creature>{};
 
-  CreatureModel clone(String newName) {
+  Creature clone(String newName) {
     var j = toJson();
     j.remove('uuid');
     j['location'] = ObjectLocation.memory.toJson();
     j['name'] = newName;
-    return CreatureModel.fromJson(j);
+    return Creature.fromJson(j);
   }
 
   static void preImportFilter(Map<String, dynamic> json) {
@@ -661,7 +641,7 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
     }
   }
 
-  static Future<CreatureModel> import(Map<String, dynamic> json) async {
+  static Future<Creature> import(Map<String, dynamic> json) async {
     preImportFilter(json);
     json['source'] = ObjectSource.local.toJson();
 
@@ -669,24 +649,24 @@ class CreatureModel extends EntityBase with EncounterEntityModel {
         Trying to find if this creature shadows one of the default creatures
      */
     var defaultId = sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
-    if(CreatureModelSummary.exists(defaultId)) {
+    if(CreatureSummary.exists(defaultId)) {
       throw(CreatureExistsException(id: defaultId));
     }
 
-    var model = CreatureModel.fromJson(json);
-    await CreatureModel.saveLocalModel(model);
+    var model = Creature.fromJson(json);
+    await Creature.saveLocalModel(model);
     return model;
   }
 
-  factory CreatureModel.fromJson(Map<String, dynamic> json) {
-    CreatureModel c = _$CreatureModelFromJson(json);
+  factory Creature.fromJson(Map<String, dynamic> json) {
+    Creature c = _$CreatureFromJson(json);
     c.loadNonRestorableJson(json);
     return c;
   }
 
   @override
   Map<String, dynamic> toJson() {
-    var j = _$CreatureModelToJson(this);
+    var j = _$CreatureToJson(this);
     saveNonExportableJson(j);
     return j;
   }
@@ -701,19 +681,4 @@ class CreatureExistsException implements Exception {
   String toString() {
     return 'Une créature avec ce nom (ou un nom similaire existe déjà), ID: $id';
   }
-}
-
-class Creature extends EntityBase {
-  Creature(
-      {
-        super.uuid,
-        super.location = ObjectLocation.memory,
-        required super.name,
-        super.initiative,
-        super.injuryProvider,
-        super.size,
-        super.image,
-        super.icon,
-      }
-  );
 }

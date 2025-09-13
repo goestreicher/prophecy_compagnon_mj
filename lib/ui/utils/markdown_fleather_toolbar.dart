@@ -194,7 +194,7 @@ class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
             links.add(ResourceLink.createLinkForResource(type!, useLocalResources, npc.name, npc.id));
           }
         case ResourceLinkType.creature:
-          for(var creature in CreatureModelSummary.forLocationType(ObjectLocationType.assets, null)) {
+          for(var creature in CreatureSummary.forLocationType(ObjectLocationType.assets, null)) {
             links.add(ResourceLink.createLinkForResource(type!, useLocalResources, creature.name, creature.id));
           }
         case ResourceLinkType.place:

@@ -15,7 +15,7 @@ class CreaturesListWidget extends StatefulWidget {
     this.restrictModificationToSourceTypes,
   });
 
-  final List<CreatureModelSummary> creatures;
+  final List<CreatureSummary> creatures;
   final String? initialSelection;
   final void Function(String) onEditRequested;
   final void Function(String) onCloneRequested;

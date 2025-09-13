@@ -6,7 +6,7 @@ import '../../widget_group_container.dart';
 class CreatureDisplaySecondaryAttributes extends StatelessWidget {
   const CreatureDisplaySecondaryAttributes({ super.key, required this.creature });
 
-  final CreatureModel creature;
+  final Creature creature;
 
   @override
   Widget build(BuildContext context) {

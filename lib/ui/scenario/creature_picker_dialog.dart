@@ -19,21 +19,21 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
   final TextEditingController categoryController = TextEditingController();
   CreatureCategory? selectedCategory;
   final TextEditingController creatureController = TextEditingController();
-  List<CreatureModelSummary> creatures = <CreatureModelSummary>[];
-  CreatureModelSummary? selectedCreatureSummary;
+  List<CreatureSummary> creatures = <CreatureSummary>[];
+  CreatureSummary? selectedCreatureSummary;
 
   void _applyCurrentFilter() {
     if(selectedSource != null) {
-      creatures = CreatureModelSummary.forSource(selectedSource!, selectedCategory);
+      creatures = CreatureSummary.forSource(selectedSource!, selectedCategory);
     }
     else if(selectedSourceType != null) {
-      creatures = CreatureModelSummary.forSourceType(selectedSourceType!, selectedCategory);
+      creatures = CreatureSummary.forSourceType(selectedSourceType!, selectedCategory);
     }
     else if(selectedCategory != null) {
-      creatures = CreatureModelSummary.forCategory(selectedCategory!);
+      creatures = CreatureSummary.forCategory(selectedCategory!);
     }
     else {
-      creatures = <CreatureModelSummary>[];
+      creatures = <CreatureSummary>[];
     }
   }
 
@@ -118,10 +118,10 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
               label: const Text('Créature'),
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries:
-                creatures.map((CreatureModelSummary c) =>
-                  DropdownMenuEntry<CreatureModelSummary>(value: c, label: c.name)
+                creatures.map((CreatureSummary c) =>
+                  DropdownMenuEntry<CreatureSummary>(value: c, label: c.name)
                 ).toList(),
-              onSelected: (CreatureModelSummary? c) {
+              onSelected: (CreatureSummary? c) {
                 selectedCreatureSummary = c;
               },
             ),

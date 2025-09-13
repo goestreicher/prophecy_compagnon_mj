@@ -31,27 +31,27 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
   bool editing = false;
   bool creatingNewModel = false;
   String? selectedDisplay;
-  CreatureModel? selectedEditModel;
+  Creature? selectedEditModel;
 
-  void _startEditing(CreatureModel model) {
+  void _startEditing(Creature model) {
     setState(() {
       selectedEditModel = model;
       editing = true;
     });
   }
 
-  Future<List<CreatureModelSummary>> _updateCreaturesList() async {
+  Future<List<CreatureSummary>> _updateCreaturesList() async {
     if(creatureSource != null) {
-      return CreatureModelSummary.forSource(creatureSource!, creatureCategory, nameFilter: search);
+      return CreatureSummary.forSource(creatureSource!, creatureCategory, nameFilter: search);
     }
     else if(creatureSourceType != null) {
-      return CreatureModelSummary.forSourceType(creatureSourceType!, creatureCategory, nameFilter: search);
+      return CreatureSummary.forSourceType(creatureSourceType!, creatureCategory, nameFilter: search);
     }
     else if(creatureCategory != null) {
-      return CreatureModelSummary.forCategory(creatureCategory!, nameFilter: search);
+      return CreatureSummary.forCategory(creatureCategory!, nameFilter: search);
     }
 
-    return CreatureModelSummary.getAll(nameFilter: search);
+    return CreatureSummary.getAll(nameFilter: search);
   }
 
   @override
@@ -63,17 +63,17 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
         creature: selectedEditModel!,
         onEditDone: (bool result) async {
           if(result) {
-            await CreatureModel.saveLocalModel(selectedEditModel!);
+            await Creature.saveLocalModel(selectedEditModel!);
             selectedDisplay = selectedEditModel!.id;
             creatureCategory = selectedEditModel!.category;
             creatureSourceType = selectedEditModel!.source.type;
           }
           else {
             if(creatingNewModel) {
-              CreatureModel.removeFromCache(selectedEditModel!.id);
+              Creature.removeFromCache(selectedEditModel!.id);
             }
             else {
-              await CreatureModel.reloadFromStore(selectedEditModel!.id);
+              await Creature.reloadFromStore(selectedEditModel!.id);
             }
           }
 
@@ -88,7 +88,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
     else {
       mainArea = FutureBuilder(
         future: _updateCreaturesList(),
-        builder: (BuildContext context, AsyncSnapshot<List<CreatureModelSummary>> snapshot) {
+        builder: (BuildContext context, AsyncSnapshot<List<CreatureSummary>> snapshot) {
           if(snapshot.connectionState == ConnectionState.waiting) {
             return FullPageLoadingWidget();
           }
@@ -268,7 +268,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                             ],
                           ),
                           onPressed: () async {
-                            var creature = await showDialog<CreatureModel>(
+                            var creature = await showDialog<Creature>(
                               context: context,
                               builder: (BuildContext context) => CreatureCreateDialog(
                                 source: ObjectSource.local,
@@ -301,7 +301,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                             try {
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                               var j = json.decode(jsonStr);
-                              var creature = await CreatureModel.import(j);
+                              var creature = await Creature.import(j);
 
                               setState(() {
                                 creatureCategory = creature.category;
@@ -330,16 +330,16 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                     creatures: creatures,
                     initialSelection: selectedDisplay,
                     onEditRequested: (String id) async {
-                      var model = await CreatureModel.get(id);
+                      var model = await Creature.get(id);
                       if(model == null) return;
                       _startEditing(model);
                     },
                     onCloneRequested: (String id) async {
-                      var model = await CreatureModel.get(id);
+                      var model = await Creature.get(id);
                       if(!context.mounted) return;
                       if(model == null) return;
 
-                      var clone = await showDialog<CreatureModel>(
+                      var clone = await showDialog<Creature>(
                         context: context,
                         builder: (BuildContext context) => CreatureCreateDialog(
                           source: ObjectSource.local,
@@ -354,7 +354,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
                     },
                     onDeleteRequested: (String id) async {
                       try {
-                        await CreatureModel.deleteLocalModel(id);
+                        await Creature.deleteLocalModel(id);
                         setState(() {
                           selectedDisplay = null;
                         });
