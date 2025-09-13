@@ -8,8 +8,6 @@ Pretty much a WiP, not stable at the moment
 
 ## Creation part
 
-- [ ] Rework creatures instanciation so that instances can be saved
-- [ ] Rework the NPC instanciation to match creatures
 - [ ] Rewrite UUIDs when importing factions to prevent conflicts?
 - [ ] Use UUIDs everywhere in the assets and make UUID mandatory in constructors
 - [ ] Add dates in the factions leaders and members?
@@ -20,6 +18,8 @@ Pretty much a WiP, not stable at the moment
 - [ ] Add draconic link
 - [ ] Limit skills, specialized skills, advantage and disadvantages to their reserved caste
 
+- [x] Rework creatures instanciation so that instances can be saved
+- [x] Rework the NPC instanciation to match creatures
 - [x] Migrate places to GenericTreeWidget
 - [x] Add an optional UUID in ObjectSource to prevent conflicts in case of names collision
 - [x] Do not commit resources to the store when editing a scenario (use Factions as an example)
