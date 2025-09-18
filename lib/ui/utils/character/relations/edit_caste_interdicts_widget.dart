@@ -9,7 +9,7 @@ import '../../../../classes/human_character.dart';
 import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
 import '../change_stream.dart';
-import 'interdict_picker_dialog.dart';
+import '../background/interdict_picker_dialog.dart';
 
 class CharacterEditCasteInterdictsWidget extends StatefulWidget {
   const CharacterEditCasteInterdictsWidget({
@@ -89,7 +89,10 @@ class _CharacterEditCasteInterdictsWidgetState extends State<CharacterEditCasteI
     return WidgetGroupContainer(
       title: Text(
         'Interdits',
-        style: theme.textTheme.bodySmall
+        style: theme.textTheme.bodyMedium!.copyWith(
+          color: Colors.black87,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       child: Column(
         spacing: 12.0,

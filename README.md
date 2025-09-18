@@ -15,9 +15,10 @@ Pretty much a WiP, not stable at the moment
 - [ ] Fill in more places from the official docs
 - [ ] Use the same leaders mechanism for places as exists for factions
 - [ ] Link factions (and places) titles to NPCs
-- [ ] Add draconic link
 - [ ] Limit skills, specialized skills, advantage and disadvantages to their reserved caste
 
+
+- [x] Add draconic link
 - [x] Rework creatures instanciation so that instances can be saved
 - [x] Rework the NPC instanciation to match creatures
 - [x] Migrate places to GenericTreeWidget

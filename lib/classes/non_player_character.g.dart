@@ -143,7 +143,12 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
           ) ??
           {}
       ..extraMagicPool = (json['extra_magic_pool'] as num?)?.toInt() ?? 0
-      ..career = $enumDecodeNullable(_$CareerEnumMap, json['career']);
+      ..career = $enumDecodeNullable(_$CareerEnumMap, json['career'])
+      ..draconicLink = json['draconic_link'] == null
+          ? null
+          : DraconicLink.fromJson(
+              json['draconic_link'] as Map<String, dynamic>,
+            );
 
 Map<String, dynamic> _$NonPlayerCharacterToJson(
   NonPlayerCharacter instance,
@@ -182,6 +187,7 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(
   'disadvantages': instance.disadvantages.map((e) => e.toJson()).toList(),
   'advantages': instance.advantages.map((e) => e.toJson()).toList(),
   'tendencies': instance.tendencies.toJson(),
+  'draconic_link': instance.draconicLink?.toJson(),
   'category': const NPCCategoryJsonConverter().toJson(instance.category),
   'sub_category': const NPCSubcategoryJsonConverter().toJson(
     instance.subCategory,

@@ -23,12 +23,13 @@ import '../error_feedback.dart';
 import '../full_page_loading.dart';
 import '../widget_group_container.dart';
 import 'background/display_advantages_widget.dart';
-import 'background/display_caste_details.dart';
+import 'relations/display_caste_details_widget.dart';
 import 'base/display_general_widget.dart';
 import 'base/display_secondary_attributes_widget.dart';
 import 'base/tendencies_edit_widget.dart';
 import 'magic/display_magic_skills_widget.dart';
 import 'magic/display_magic_spheres_widget.dart';
+import 'relations/display_draconic_link_widget.dart';
 
 class NPCActionButtons extends StatelessWidget {
   const NPCActionButtons({
@@ -375,6 +376,16 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                 controlAffinity: ListTileControlAffinity.leading,
                 children: [
                   CharacterDisplayCasteDetailsWidget(
+                    character: npc,
+                  ),
+                ],
+              ),
+            if(npc.draconicLink != null)
+              ExpansionTile(
+                title: const Text('Lien'),
+                controlAffinity: ListTileControlAffinity.leading,
+                children: [
+                  CharacterDisplayDraconicLinkWidget(
                     character: npc,
                   ),
                 ],

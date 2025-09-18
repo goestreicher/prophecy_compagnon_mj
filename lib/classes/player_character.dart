@@ -5,6 +5,7 @@ import 'calendar.dart';
 import 'caste/base.dart';
 import 'caste/career.dart';
 import 'caste/interdicts.dart';
+import 'draconic_link.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';

@@ -127,7 +127,12 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
           .toList()
       ..tendencies = CharacterTendencies.fromJson(
         json['tendencies'] as Map<String, dynamic>,
-      );
+      )
+      ..draconicLink = json['draconic_link'] == null
+          ? null
+          : DraconicLink.fromJson(
+              json['draconic_link'] as Map<String, dynamic>,
+            );
 
 Map<String, dynamic> _$PlayerCharacterToJson(
   PlayerCharacter instance,
@@ -166,6 +171,7 @@ Map<String, dynamic> _$PlayerCharacterToJson(
   'disadvantages': instance.disadvantages.map((e) => e.toJson()).toList(),
   'advantages': instance.advantages.map((e) => e.toJson()).toList(),
   'tendencies': instance.tendencies.toJson(),
+  'draconic_link': instance.draconicLink?.toJson(),
   'player': instance.player,
   'augure': _$AugureEnumMap[instance.augure]!,
 };

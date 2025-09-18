@@ -8,6 +8,7 @@ import 'character/base.dart';
 import 'character/disadvantages.dart';
 import 'character/injury.dart';
 import 'character/skill.dart';
+import 'draconic_link.dart';
 import 'entity_base.dart';
 import 'combat.dart';
 import 'equipment.dart';
@@ -118,6 +119,7 @@ class HumanCharacter extends EntityBase with MagicUser {
         List<CharacterDisadvantage>? disadvantages,
         List<CharacterAdvantage>? advantages,
         CharacterTendencies? tendencies,
+        this.draconicLink,
       })
     : origin = origin ?? Place.byId('empireDeSolyr')!,
       interdicts = interdicts ?? <CasteInterdict>[],
@@ -147,6 +149,7 @@ class HumanCharacter extends EntityBase with MagicUser {
   List<CharacterDisadvantage> disadvantages;
   List<CharacterAdvantage> advantages;
   CharacterTendencies tendencies;
+  DraconicLink? draconicLink;
 
   static bool _staticInitialized = false;
   static late final Weapon _naturalWeaponFists;

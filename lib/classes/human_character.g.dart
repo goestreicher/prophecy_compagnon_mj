@@ -228,6 +228,11 @@ HumanCharacter _$HumanCharacterFromJson(Map<String, dynamic> json) =>
             : CharacterTendencies.fromJson(
                 json['tendencies'] as Map<String, dynamic>,
               ),
+        draconicLink: json['draconic_link'] == null
+            ? null
+            : DraconicLink.fromJson(
+                json['draconic_link'] as Map<String, dynamic>,
+              ),
       )
       ..status = json['status'] == null
           ? EntityStatus.empty()
@@ -282,6 +287,7 @@ Map<String, dynamic> _$HumanCharacterToJson(
   'disadvantages': instance.disadvantages.map((e) => e.toJson()).toList(),
   'advantages': instance.advantages.map((e) => e.toJson()).toList(),
   'tendencies': instance.tendencies.toJson(),
+  'draconic_link': instance.draconicLink?.toJson(),
 };
 
 const _$CasteEnumMap = {

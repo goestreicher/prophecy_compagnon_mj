@@ -6,6 +6,7 @@ import 'caste/career.dart';
 import 'caste/interdicts.dart';
 import 'character/base.dart';
 import 'character/skill.dart';
+import 'draconic_link.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
 import 'entity_instance.dart';

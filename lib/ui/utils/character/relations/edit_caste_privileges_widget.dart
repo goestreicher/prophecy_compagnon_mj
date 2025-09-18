@@ -8,7 +8,7 @@ import '../../../../classes/human_character.dart';
 import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
 import '../change_stream.dart';
-import 'caste_privilege_picker_dialog.dart';
+import '../background/caste_privilege_picker_dialog.dart';
 
 class CharacterEditCastePrivilegesWidget extends StatefulWidget {
   const CharacterEditCastePrivilegesWidget({
@@ -127,7 +127,10 @@ class _CharacterEditCastePrivilegesWidgetState extends State<CharacterEditCasteP
     return WidgetGroupContainer(
       title: Text(
         'Privilèges',
-        style: theme.textTheme.bodySmall
+        style: theme.textTheme.bodyMedium!.copyWith(
+          color: Colors.black87,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       child: Column(
         spacing: 12.0,

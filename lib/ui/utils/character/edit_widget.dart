@@ -8,6 +8,7 @@ import 'edit_background_widget.dart';
 import 'edit_base_widget.dart';
 import 'edit_equipment_widget.dart';
 import 'edit_magic_widget.dart';
+import 'edit_relations_widget.dart';
 
 class CharacterEditWidget extends StatefulWidget {
   const CharacterEditWidget({
@@ -32,7 +33,7 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
   void initState() {
     super.initState();
     changeStreamController = StreamController<CharacterChange>.broadcast();
-    tabController = TabController(length: 4, vsync: this);
+    tabController = TabController(length: 5, vsync: this);
   }
 
   @override
@@ -70,6 +71,7 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
           controller: tabController,
           tabs: const [
             Tab(text: 'Base'),
+            Tab(text: 'Caste & Lien'),
             Tab(text: 'Background'),
             Tab(text: 'Équipement'),
             Tab(text: 'Magie'),
@@ -86,6 +88,12 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
                     character: widget.character,
                     changeStreamController: changeStreamController,
                   )
+                ),
+                _CharacterEditTabWidget(
+                  child: CharacterEditRelationsWidget(
+                    character: widget.character,
+                    changeStreamController: changeStreamController,
+                  ),
                 ),
                 _CharacterEditTabWidget(
                   child: CharacterEditBackgroundWidget(
