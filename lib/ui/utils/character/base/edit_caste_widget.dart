@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/base.dart';
+import '../../../../classes/caste/base.dart';
 import '../../../../classes/human_character.dart';
 import '../../widget_group_container.dart';
 import '../change_stream.dart';

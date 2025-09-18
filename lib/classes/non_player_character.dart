@@ -1,6 +1,9 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+import 'caste/base.dart';
+import 'caste/career.dart';
+import 'caste/interdicts.dart';
 import 'character/base.dart';
 import 'character/skill.dart';
 import 'encounter_entity_factory.dart';

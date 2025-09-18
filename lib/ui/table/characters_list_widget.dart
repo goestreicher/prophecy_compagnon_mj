@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/character/base.dart';
+import '../../classes/caste/base.dart';
 import '../../classes/player_character.dart';
 
 class TableCharactersListWidget extends StatelessWidget {

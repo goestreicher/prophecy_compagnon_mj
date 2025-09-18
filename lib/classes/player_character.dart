@@ -2,6 +2,9 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'calendar.dart';
+import 'caste/base.dart';
+import 'caste/career.dart';
+import 'caste/interdicts.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';

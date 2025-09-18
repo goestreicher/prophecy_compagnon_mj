@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../../classes/armor.dart';
+import '../../../classes/caste/base.dart';
 import '../../../classes/character/base.dart';
 import '../../../classes/character/skill.dart';
 import '../../../classes/equipment.dart';

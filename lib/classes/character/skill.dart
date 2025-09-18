@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import '../caste/base.dart';
 import 'base.dart';
 
 part 'skill.g.dart';

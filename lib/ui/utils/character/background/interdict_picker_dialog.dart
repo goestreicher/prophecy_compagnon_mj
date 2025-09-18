@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/base.dart';
+import '../../../../classes/caste/base.dart';
+import '../../../../classes/caste/interdicts.dart';
 
 class InterdictPickerDialog extends StatefulWidget {
   const InterdictPickerDialog({ super.key, this.defaultCaste });
