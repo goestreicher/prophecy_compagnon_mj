@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
 import '../../widget_group_container.dart';
+import 'display_sphere_magic_spells_widget.dart';
 import 'spell_picker_dialog.dart';
 
 class CharacterEditMagicSpellsWidget extends StatefulWidget {
@@ -54,7 +55,7 @@ class _CharacterEditMagicSpellsWidgetState extends State<CharacterEditMagicSpell
         spacing: 12.0,
         children: [
           for(var sphere in spells.keys)
-            _SphereMagicSpellsEditWidget(
+            DisplaySphereMagicSpellsWidget(
               sphere: sphere,
               spells: spells[sphere]!,
               onDelete: (String name) {
@@ -88,123 +89,6 @@ class _CharacterEditMagicSpellsWidgetState extends State<CharacterEditMagicSpell
             ),
           )
         ],
-      )
-    );
-  }
-}
-
-class _SphereMagicSpellsEditWidget extends StatelessWidget {
-  const _SphereMagicSpellsEditWidget({
-    required this.sphere,
-    required this.spells,
-    required this.onDelete,
-  });
-
-  final MagicSphere sphere;
-  final List<MagicSpell> spells;
-  final void Function(String) onDelete;
-
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
-    return Column(
-      children: [
-        for(var spell in spells)
-          Card(
-            child: Stack(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 12.0,
-                    children: [
-                      Text(
-                        spell.name,
-                        style: theme.textTheme.bodyMedium!.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Wrap(
-                        spacing: 12.0,
-                        children: [
-                          _SpellHeaderDetail(
-                            title: 'Discipline',
-                            value: spell.skill.title,
-                          ),
-                          _SpellHeaderDetail(
-                            title: 'Coût',
-                            value: spell.cost.toString(),
-                          ),
-                          _SpellHeaderDetail(
-                            title: 'Difficulté',
-                            value: spell.difficulty.toString(),
-                          ),
-                          _SpellHeaderDetail(
-                            title: "Temps d'incantation",
-                            value: '${spell.castingDuration.toString()} ${spell.castingDurationUnit.title}${spell.castingDuration > 1 ? "s" : ""}',
-                          ),
-                          _SpellHeaderDetail(
-                            title: 'Complexité',
-                            value: spell.complexity.toString(),
-                          ),
-                          _SpellHeaderDetail(
-                            title: 'Clés',
-                            value: spell.keys.join(', '),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        spell.description,
-                        style: theme.textTheme.bodySmall,
-                      ),
-                    ],
-                  ),
-                ),
-                Positioned(
-                  top: 4,
-                  right: 4,
-                  child: IconButton(
-                    onPressed: () {
-                      onDelete(spell.name);
-                    },
-                    style: IconButton.styleFrom(
-                      iconSize: 16.0,
-                    ),
-                    icon: const Icon(Icons.delete),
-                  ),
-                )
-              ],
-            )
-          )
-      ],
-    );
-  }
-}
-
-class _SpellHeaderDetail extends StatelessWidget {
-  const _SpellHeaderDetail({ required this.title, required this.value });
-  
-  final String title;
-  final String value;
-  
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-    
-    return RichText(
-      text: TextSpan(
-        text: '$title : ',
-        style: theme.textTheme.bodySmall!.copyWith(
-          fontWeight: FontWeight.bold,
-        ),
-        children: [
-          TextSpan(
-            text: value,
-            style: theme.textTheme.bodySmall,
-          )
-        ]
       )
     );
   }

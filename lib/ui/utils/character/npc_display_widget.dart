@@ -23,6 +23,7 @@ import '../error_feedback.dart';
 import '../full_page_loading.dart';
 import '../widget_group_container.dart';
 import 'background/display_advantages_widget.dart';
+import 'magic/display_magic_spells_widget.dart';
 import 'relations/display_caste_details_widget.dart';
 import 'base/display_general_widget.dart';
 import 'base/display_secondary_attributes_widget.dart';
@@ -353,19 +354,25 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                 title: const Text('Magie'),
                 controlAffinity: ListTileControlAffinity.leading,
                 children: [
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 16.0,
+                  Column(
+                    spacing: 12.0,
                     children: [
-                      ConstrainedBox(
-                        constraints: BoxConstraints(
-                          maxWidth: 160,
-                        ),
-                        child: CharacterDisplayMagicSkillsWidget(character: npc)
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        spacing: 16.0,
+                        children: [
+                          ConstrainedBox(
+                            constraints: BoxConstraints(
+                              maxWidth: 160,
+                            ),
+                            child: CharacterDisplayMagicSkillsWidget(character: npc)
+                          ),
+                          Expanded(
+                            child: CharacterDisplayMagicSpheresWidget(character: npc)
+                          ),
+                        ],
                       ),
-                      Expanded(
-                        child: CharacterDisplayMagicSpheresWidget(character: npc)
-                      ),
+                      CharacterDisplayMagicSpellsWidget(character: npc)
                     ],
                   ),
                 ],

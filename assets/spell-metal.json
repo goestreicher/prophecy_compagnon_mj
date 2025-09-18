@@ -49,7 +49,7 @@
       "chant du forgeron"
     ],
     "source": "Livre de base 2e édition",
-    "description": "En apposant la marque de Kezyr sur un objet, le mage en augmente définitivement la qualité de (1 + 1 par 3NR) niveaux (de bonne à très bonne, etc.). Un objet ne peut porter qu'une marque de Kezyr et l'augmentation de la qualité de procure aucune capacité spéciale."
+    "description": "En apposant la marque de Kezyr sur un objet, le mage en augmente définitivement la qualité de (1 + 1 par 3NR) niveaux (de bonne à très bonne, etc.). Un objet ne peut porter qu'une marque de Kezyr et l'augmentation de la qualité ne procure aucune capacité spéciale."
   },
   {
     "name": "Force du forgeron",
