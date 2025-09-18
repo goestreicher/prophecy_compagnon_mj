@@ -444,7 +444,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     int proficiency = 0,
     int renown = 0,
     Place? origin,
-    List<Interdict>? interdicts,
+    List<CasteInterdict>? interdicts,
     List<CharacterCastePrivilege>? castePrivileges,
     List<CharacterDisadvantage>? disadvantages,
     List<CharacterAdvantage>? advantages,

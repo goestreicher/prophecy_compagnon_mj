@@ -119,27 +119,28 @@ class TableCharactersListWidget extends StatelessWidget {
                               ),
                             ),
                           ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            Text(
-                              summaries[index].name,
-                              style: theme.textTheme.bodyMedium!.copyWith(
-                                fontWeight: FontWeight.bold,
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Text(
+                                summaries[index].name,
+                                style: theme.textTheme.bodyMedium!.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                            Text(
-                              'Joueur : ${summaries[index].player}',
-                              style: theme.textTheme.bodySmall,
-                            ),
-                            Text(
-                              '${summaries[index].caste.title} (${Caste.statusName(summaries[index].caste, summaries[index].casteStatus)})',
-                              style: theme.textTheme.bodySmall,
-                            ),
-                          ],
+                              Text(
+                                'Joueur : ${summaries[index].player}',
+                                style: theme.textTheme.bodySmall,
+                              ),
+                              Text(
+                                '${summaries[index].caste.title} (${Caste.statusName(summaries[index].caste, summaries[index].casteStatus)})',
+                                style: theme.textTheme.bodySmall,
+                              ),
+                            ],
+                          ),
                         ),
-                        Spacer(),
                         IconButton(
                           icon: const Icon(Icons.delete),
                           onPressed: () async {

@@ -71,6 +71,7 @@ class _TablesListPageState extends State<TablesListPage> {
                     bool? changeConfirmed = await Navigator.of(context).push(
                       MaterialPageRoute(builder: (context) => TableEditPage(uuid: tableSummaries[index].uuid))
                     );
+                    if(!context.mounted || !mounted) return;
                     if(changeConfirmed != null && changeConfirmed) {
                       setState((){ loadTableSummaries(); });
                     }

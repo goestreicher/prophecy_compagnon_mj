@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
+import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
 
 class CharacterDisplayDisadvantagesWidget extends StatelessWidget {
@@ -29,6 +30,7 @@ class CharacterDisplayDisadvantagesWidget extends StatelessWidget {
           _CommonContentWidget(
             title: d.disadvantage.title,
             details: d.details.isNotEmpty ? d.details : null,
+            description: d.disadvantage.description,
           )
         );
       }
@@ -74,6 +76,7 @@ class CharacterDisplayAdvantagesWidget extends StatelessWidget {
             _CommonContentWidget(
               title: a.advantage.title,
               details: a.details.isNotEmpty ? a.details : null,
+              description: a.advantage.description,
             )
         );
       }
@@ -94,10 +97,11 @@ class CharacterDisplayAdvantagesWidget extends StatelessWidget {
 }
 
 class _CommonContentWidget extends StatelessWidget {
-  const _CommonContentWidget({ required this.title, this.details });
+  const _CommonContentWidget({ required this.title, this.details, this.description });
 
   final String title;
   final String? details;
+  final String? description;
 
   @override
   Widget build(BuildContext context) {
@@ -108,20 +112,55 @@ class _CommonContentWidget extends StatelessWidget {
         alignment: AlignmentGeometry.topLeft,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            spacing: 4.0,
+          child: Row(
+            spacing: 8.0,
             children: [
-              Text(
-                title,
-                style: theme.textTheme.bodySmall!.copyWith(
-                  fontWeight: FontWeight.bold,
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 4.0,
+                  children: [
+                    Text(
+                      title,
+                      style: theme.textTheme.bodySmall!.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    if(details != null)
+                      Text(
+                        details!,
+                        style: theme.textTheme.bodySmall,
+                      ),
+                  ],
                 ),
               ),
-              if(details != null)
-                Text(
-                  details!,
-                  style: theme.textTheme.bodySmall,
+              if(description != null && description!.isNotEmpty)
+                IconButton(
+                  style: IconButton.styleFrom(
+                    iconSize: 16.0,
+                  ),
+                  padding: const EdgeInsets.all(8.0),
+                  constraints: const BoxConstraints(),
+                  icon: const Icon(Icons.info_outlined),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      DismissibleDialog<void>(
+                        title: title,
+                        content: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minWidth: 400,
+                            maxWidth: 400,
+                            maxHeight: 400,
+                          ),
+                          child: SingleChildScrollView(
+                            child: Text(
+                              description!,
+                            ),
+                          )
+                        )
+                      )
+                    );
+                  },
                 ),
             ],
           ),

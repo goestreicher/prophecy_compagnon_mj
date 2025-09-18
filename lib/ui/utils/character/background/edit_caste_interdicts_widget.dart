@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
+import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
 import '../change_stream.dart';
 import 'interdict_picker_dialog.dart';
@@ -65,7 +66,8 @@ class _CharacterEditCasteInterdictsWidgetState extends State<CharacterEditCasteI
     for(var i in widget.character.interdicts) {
       widgets.add(
         _InterdictWidget(
-          interdict: i.title,
+          title: i.title,
+          description: i.description,
           onDeleted: () => setState(() {
             widget.character.interdicts.remove(i);
           }),
@@ -74,7 +76,12 @@ class _CharacterEditCasteInterdictsWidgetState extends State<CharacterEditCasteI
     }
 
     if(lastCareer != null && lastCareer!.interdict != null) {
-      widgets.add(_InterdictWidget(interdict: '${lastCareer!.interdict!} (carrière)'));
+      widgets.add(
+        _InterdictWidget(
+          title: '${lastCareer!.interdict!.title} (carrière)',
+          description: lastCareer!.interdict!.description,
+        )
+      );
     }
 
     return WidgetGroupContainer(
@@ -92,7 +99,7 @@ class _CharacterEditCasteInterdictsWidgetState extends State<CharacterEditCasteI
                 textStyle: theme.textTheme.bodySmall,
               ),
               onPressed: () async {
-                var result = await showDialog<Interdict>(
+                var result = await showDialog<CasteInterdict>(
                   context: context,
                   builder: (BuildContext context) => InterdictPickerDialog(
                     defaultCaste: widget.character.caste != Caste.sansCaste
@@ -118,11 +125,13 @@ class _CharacterEditCasteInterdictsWidgetState extends State<CharacterEditCasteI
 
 class _InterdictWidget extends StatelessWidget {
   const _InterdictWidget({
-    required this.interdict,
+    required this.title,
+    required this.description,
     this.onDeleted,
   });
 
-  final String interdict;
+  final String title;
+  final String description;
   final void Function()? onDeleted;
 
   @override
@@ -136,6 +145,7 @@ class _InterdictWidget extends StatelessWidget {
       ),
       padding: const EdgeInsets.all(4.0),
       child: Row(
+        spacing: 8.0,
         children: [
           IconButton(
             icon: const Icon(Icons.delete),
@@ -143,13 +153,12 @@ class _InterdictWidget extends StatelessWidget {
               ? null
               : () => onDeleted!(),
           ),
-          const SizedBox(width: 8.0),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  interdict,
+                  title,
                   style: theme.textTheme.bodySmall!.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -157,7 +166,35 @@ class _InterdictWidget extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+          if(description.isNotEmpty)
+            IconButton(
+              style: IconButton.styleFrom(
+                iconSize: 16.0,
+              ),
+              padding: const EdgeInsets.all(8.0),
+              constraints: const BoxConstraints(),
+              icon: const Icon(Icons.info_outlined),
+              onPressed: () {
+                Navigator.of(context).push(
+                  DismissibleDialog<void>(
+                    title: title,
+                    content: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minWidth: 400,
+                          maxWidth: 400,
+                          maxHeight: 400,
+                        ),
+                        child: SingleChildScrollView(
+                          child: Text(
+                            description,
+                          ),
+                        )
+                    )
+                  )
+                );
+              },
+            ),
         ],
       ),
     );

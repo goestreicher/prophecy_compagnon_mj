@@ -65,7 +65,7 @@ class _CharacterViewCasteBenefitsWidgetState extends State<CharacterViewCasteBen
     }
 
     if(lastCareer != null) {
-      widgets.add(_CasteBenefitWidget(benefit: 'Bénéfice de carrière : ${lastCareer!.benefit}'));
+      widgets.add(_CasteBenefitWidget(benefit: 'Bénéfice de carrière : ${lastCareer!.benefit.title}\n${lastCareer!.benefit.description}'));
     }
 
     if(widgets.isEmpty) {

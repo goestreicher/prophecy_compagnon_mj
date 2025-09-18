@@ -182,6 +182,10 @@ class _TableEditPageState extends State<TableEditPage> {
                   character: newPC ?? _table.players.firstWhere((PlayerCharacter p) => p.id == selectedId!),
                   onEditDone: (bool result) async {
                     if(result) {
+                      setState(() {
+                        _canCancel = false;
+                      });
+
                       if(newPC != null) {
                         await PlayerCharacterStore().save(newPC!);
 
@@ -215,6 +219,7 @@ class _TableEditPageState extends State<TableEditPage> {
             Scaffold(
               appBar: AppBar(
                 title: Text('Table: ${_table.name}'),
+                automaticallyImplyLeading: false,
                 actions: <Widget>[
                   IconButton(
                     icon: const Icon(Icons.download),

@@ -3,32 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
+import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
 import '../change_stream.dart';
 import 'advantage_picker_dialog.dart';
 import 'disadvantage_picker_dialog.dart';
-
-class CharacterEditDisadvantagesFormField extends FormField<List<CharacterDisadvantage>> {
-  CharacterEditDisadvantagesFormField({
-    super.key,
-    required HumanCharacter character,
-    required StreamController<CharacterChange> changeStreamController,
-    FormFieldSetter<List<CharacterDisadvantage>>? onSaved,
-  })
-  : super(
-    initialValue: List.from(character.disadvantages),
-    builder: (FormFieldState<List<CharacterDisadvantage>> state) {
-      return CharacterEditDisadvantagesWidget(
-        character: character,
-        changeStreamController: changeStreamController,
-        initialDisadvantages: state.value,
-        onChanged: (List<CharacterDisadvantage> l) {
-          state.didChange(l);
-        },
-      );
-    }
-  );
-}
 
 class CharacterEditDisadvantagesWidget extends StatefulWidget {
   const CharacterEditDisadvantagesWidget({
@@ -79,6 +58,7 @@ class _CharacterEditDisadvantagesWidgetState extends State<CharacterEditDisadvan
               child: Container(
                 padding: const EdgeInsets.all(4.0),
                 child: Row(
+                  spacing: 8.0,
                   children: [
                     IconButton(
                       style: IconButton.styleFrom(
@@ -93,24 +73,52 @@ class _CharacterEditDisadvantagesWidgetState extends State<CharacterEditDisadvan
                       },
                       icon: const Icon(Icons.delete),
                     ),
-                    const SizedBox(width: 8.0),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      spacing: 4.0,
-                      children: [
-                        Text(
-                          '${d.disadvantage.title} (${d.cost})',
-                          style: theme.textTheme.bodyMedium!.copyWith(
-                            fontWeight: FontWeight.bold,
-                          )
-                        ),
-                        if(d.details.isNotEmpty)
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        spacing: 4.0,
+                        children: [
                           Text(
-                            d.details,
-                            style: theme.textTheme.bodySmall,
+                            '${d.disadvantage.title} (${d.cost})',
+                            style: theme.textTheme.bodyMedium!.copyWith(
+                              fontWeight: FontWeight.bold,
+                            )
                           ),
-                      ],
-                    )
+                          if(d.details.isNotEmpty)
+                            Text(
+                              d.details,
+                              style: theme.textTheme.bodySmall,
+                            ),
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      style: IconButton.styleFrom(
+                        iconSize: 16.0,
+                      ),
+                      padding: const EdgeInsets.all(8.0),
+                      constraints: const BoxConstraints(),
+                      icon: const Icon(Icons.info_outlined),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                            DismissibleDialog<void>(
+                              title: d.disadvantage.title,
+                              content: ConstrainedBox(
+                                constraints: BoxConstraints(
+                                  minWidth: 400,
+                                  maxWidth: 400,
+                                  maxHeight: 400,
+                                ),
+                                child: SingleChildScrollView(
+                                  child: Text(
+                                    d.disadvantage.description,
+                                  ),
+                                )
+                              )
+                            )
+                        );
+                      },
+                    ),
                   ],
                 ),
               )
@@ -141,28 +149,6 @@ class _CharacterEditDisadvantagesWidgetState extends State<CharacterEditDisadvan
   }
 }
 
-class CharacterEditAdvantagesFormField extends FormField<List<CharacterAdvantage>> {
-  CharacterEditAdvantagesFormField({
-    super.key,
-    required HumanCharacter character,
-    required StreamController<CharacterChange> changeStreamController,
-    FormFieldSetter<List<CharacterAdvantage>>? onSaved,
-  })
-  : super(
-    initialValue: List.from(character.advantages),
-    builder: (FormFieldState<List<CharacterAdvantage>> state) {
-      return CharacterEditAdvantagesWidget(
-        character: character,
-        changeStreamController: changeStreamController,
-        initialAdvantages: state.value,
-        onChanged: (List<CharacterAdvantage> l) {
-          state.didChange(l);
-        },
-      );
-    }
-  );
-}
-
 class CharacterEditAdvantagesWidget extends StatefulWidget {
   const CharacterEditAdvantagesWidget({
     super.key,
@@ -188,7 +174,7 @@ class _CharacterEditAdvantagesWidgetState extends State<CharacterEditAdvantagesW
   void initState() {
     super.initState();
 
-    currentAdvantages = widget.initialAdvantages ?? List.from(widget.character.advantages);
+    currentAdvantages = widget.initialAdvantages ?? widget.character.advantages;
   }
 
   @override
@@ -212,6 +198,7 @@ class _CharacterEditAdvantagesWidgetState extends State<CharacterEditAdvantagesW
               child: Container(
                 padding: const EdgeInsets.all(4.0),
                 child: Row(
+                  spacing: 8.0,
                   children: [
                     IconButton(
                       style: IconButton.styleFrom(
@@ -226,24 +213,52 @@ class _CharacterEditAdvantagesWidgetState extends State<CharacterEditAdvantagesW
                       },
                       icon: const Icon(Icons.delete),
                     ),
-                    const SizedBox(width: 8.0),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      spacing: 4.0,
-                      children: [
-                        Text(
-                          '${a.advantage.title} (${a.cost})',
-                          style: theme.textTheme.bodyMedium!.copyWith(
-                            fontWeight: FontWeight.bold,
-                          )
-                        ),
-                        if(a.details.isNotEmpty)
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        spacing: 4.0,
+                        children: [
                           Text(
-                            a.details,
-                            style: theme.textTheme.bodySmall,
+                            '${a.advantage.title} (${a.cost})',
+                            style: theme.textTheme.bodyMedium!.copyWith(
+                              fontWeight: FontWeight.bold,
+                            )
                           ),
-                      ],
-                    )
+                          if(a.details.isNotEmpty)
+                            Text(
+                              a.details,
+                              style: theme.textTheme.bodySmall,
+                            ),
+                        ],
+                      ),
+                    ),
+                    IconButton(
+                      style: IconButton.styleFrom(
+                        iconSize: 16.0,
+                      ),
+                      padding: const EdgeInsets.all(8.0),
+                      constraints: const BoxConstraints(),
+                      icon: const Icon(Icons.info_outlined),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          DismissibleDialog<void>(
+                            title: a.advantage.title,
+                            content: ConstrainedBox(
+                              constraints: BoxConstraints(
+                                minWidth: 400,
+                                maxWidth: 400,
+                                maxHeight: 400,
+                              ),
+                              child: SingleChildScrollView(
+                                child: Text(
+                                  a.advantage.description,
+                                ),
+                              )
+                            )
+                          )
+                        );
+                      },
+                    ),
                   ],
                 ),
               )

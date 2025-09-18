@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
+import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
 import '../change_stream.dart';
 
@@ -51,7 +52,7 @@ class _CharacterViewCasteTechniquesWidgetState extends State<CharacterViewCasteT
     var widgets = <Widget>[];
 
     for(var t in Caste.techniques(widget.character.caste, widget.character.casteStatus)) {
-      widgets.add(_CasteTechniqueWidget(technique: t));
+      widgets.add(_CasteTechniqueWidget(technique: t.title, description: t.description,));
     }
 
     if(widgets.isEmpty) {
@@ -85,9 +86,10 @@ class _CharacterViewCasteTechniquesWidgetState extends State<CharacterViewCasteT
 }
 
 class _CasteTechniqueWidget extends StatelessWidget {
-  const _CasteTechniqueWidget({ required this.technique });
+  const _CasteTechniqueWidget({ required this.technique, this.description });
 
   final String technique;
+  final String? description;
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +100,7 @@ class _CasteTechniqueWidget extends StatelessWidget {
         color: theme.colorScheme.surface,
         borderRadius: BorderRadius.circular(8.0),
       ),
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 0.0),
       child: Row(
         children: [
           Expanded(
@@ -112,7 +114,35 @@ class _CasteTechniqueWidget extends StatelessWidget {
                 ),
               ],
             ),
-          )
+          ),
+          if(description != null && description!.isNotEmpty)
+            IconButton(
+              style: IconButton.styleFrom(
+                iconSize: 16.0,
+              ),
+              padding: const EdgeInsets.all(8.0),
+              constraints: const BoxConstraints(),
+              icon: const Icon(Icons.info_outlined),
+              onPressed: () {
+                Navigator.of(context).push(
+                  DismissibleDialog<void>(
+                    title: technique,
+                    content: ConstrainedBox(
+                      constraints: BoxConstraints(
+                        minWidth: 400,
+                        maxWidth: 400,
+                        maxHeight: 400,
+                      ),
+                      child: SingleChildScrollView(
+                        child: Text(
+                          description!,
+                        ),
+                      )
+                    )
+                  )
+                );
+              },
+            ),
         ],
       ),
     );

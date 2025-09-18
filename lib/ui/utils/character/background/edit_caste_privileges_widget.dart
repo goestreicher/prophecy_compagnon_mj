@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
+import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
 import '../change_stream.dart';
 import 'caste_privilege_picker_dialog.dart';
@@ -70,22 +71,52 @@ class _CharacterEditCastePrivilegesWidgetState extends State<CharacterEditCasteP
                   });
                 },
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    '${p.privilege.title} (${p.privilege.cost})',
-                    style: theme.textTheme.bodySmall!.copyWith(
-                      fontWeight: FontWeight.bold,
-                    )
-                  ),
-                  if(p.description != null)
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
                     Text(
-                      p.description!,
-                      style: theme.textTheme.bodySmall,
-                    )
-                ],
-              )
+                      '${p.privilege.title} (${p.privilege.cost})',
+                      style: theme.textTheme.bodySmall!.copyWith(
+                        fontWeight: FontWeight.bold,
+                      )
+                    ),
+                    if(p.description != null)
+                      Text(
+                        p.description!,
+                        style: theme.textTheme.bodySmall,
+                      )
+                  ],
+                ),
+              ),
+              if(p.privilege.description.isNotEmpty)
+                IconButton(
+                  style: IconButton.styleFrom(
+                    iconSize: 16.0,
+                  ),
+                  padding: const EdgeInsets.all(8.0),
+                  constraints: const BoxConstraints(),
+                  icon: const Icon(Icons.info_outlined),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      DismissibleDialog<void>(
+                        title: p.privilege.title,
+                        content: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minWidth: 400,
+                            maxWidth: 400,
+                            maxHeight: 400,
+                          ),
+                          child: SingleChildScrollView(
+                            child: Text(
+                              p.privilege.description,
+                            ),
+                          )
+                        )
+                      )
+                    );
+                  },
+                ),
             ],
           ),
         )
