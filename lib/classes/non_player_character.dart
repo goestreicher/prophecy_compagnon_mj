@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
@@ -47,20 +50,21 @@ class NPCCategoryJsonConverter extends JsonConverter<NPCCategory, String> {
 }
 
 class NPCCategory {
-  static NPCCategory generique = NPCCategory(title: 'Générique', isDefault: true);
-
   static NPCCategory createNewCategory = NPCCategory._create(title: "Créer cette catégorie", isDefault: true);
+  
+  static Future<void> loadDefaultAssets() async {
+    if(_defaultAssetsLoaded) return;
+    _defaultAssetsLoaded = true;
 
-  static void _doStaticInit() {
-    if(_staticInitDone) return;
-    _staticInitDone = true;
-    // ignore: unused_local_variable
-    var gen = generique;
+    var jsonStr = await rootBundle.loadString('assets/npc-categories.json');
+    var categories = json.decode(jsonStr);
+    for(var c in categories) {
+      // ignore: unused_local_variable
+      var category = NPCCategory(title: c, isDefault: true);
+    }
   }
 
   factory NPCCategory({required String title, bool isDefault = false}) {
-    _doStaticInit();
-
     var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
     if(!_categories.containsKey(name)) {
       var c = NPCCategory._create(title: title, isDefault: isDefault);
@@ -80,12 +84,10 @@ class NPCCategory {
   String get name => sentenceToCamelCase(transliterateFrenchToAscii(title));
 
   static List<NPCCategory> get values {
-    _doStaticInit();
     return _categories.values.toList();
   }
 
   static NPCCategory byName(String name) {
-    _doStaticInit();
     return _categories.values.firstWhere((NPCCategory c) => c.name == name);
   }
 
@@ -99,7 +101,7 @@ class NPCCategory {
   }
 
   static final Map<String, NPCCategory> _categories = <String, NPCCategory>{};
-  static bool _staticInitDone = false;
+  static bool _defaultAssetsLoaded = false;
 }
 
 class NPCSubcategoryJsonConverter extends JsonConverter<NPCSubCategory, Map<String, dynamic>> {
@@ -136,24 +138,20 @@ class NPCSubcategoryJsonConverter extends JsonConverter<NPCSubCategory, Map<Stri
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @NPCCategoryJsonConverter()
 class NPCSubCategory {
-  static NPCSubCategory sansCaste = NPCSubCategory(
-    title: 'Sans Caste',
-    categories: [NPCCategory.generique],
-    isDefault: true,
-  );
-
   static NPCSubCategory createNewSubCategory = NPCSubCategory._create(
     title: 'Créer une sous-catégorie',
     categories: [],
     isDefault: true,
   );
 
-  static void _doStaticInit() {
-    if(_staticInitDone) return;
-    _staticInitDone = true;
-    // ignore: unused_local_variable
-    var san = sansCaste;
-    return;
+  static Future<void> loadDefaultAssets() async {
+    if(_defaultAssetsLoaded) return;
+    _defaultAssetsLoaded = true;
+
+    for (var sc in await loadJSONAssetObjectList('npc-subcategories.json')) {
+      // ignore: unused_local_variable
+      var subCategory = NPCSubCategory.fromJson(sc);
+    }
   }
 
   factory NPCSubCategory({
@@ -161,8 +159,6 @@ class NPCSubCategory {
     required List<NPCCategory> categories,
     bool isDefault = false,
   }) {
-    _doStaticInit();
-
     var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
     if(_subCategories.containsKey(name)) {
       return _subCategories[name]!;
@@ -177,24 +173,20 @@ class NPCSubCategory {
   NPCSubCategory._create({ required this.title, required this.categories, this.isDefault = false });
 
   static List<NPCSubCategory> subCategoriesForCategory(NPCCategory category) {
-    _doStaticInit();
     return _subCategories.values
         .where((NPCSubCategory s) => s.categories.contains(category))
         .toList();
   }
 
   static List<NPCSubCategory> get values {
-    _doStaticInit();
     return _subCategories.values.toList();
   }
 
   static NPCSubCategory byName(String name) {
-    _doStaticInit();
     return _subCategories[name]!;
   }
 
   static NPCSubCategory? byTitle(String title) {
-    _doStaticInit();
     String? key;
     _subCategories.forEach((k, v) {
       if (v.title == title) key = k;
@@ -219,7 +211,7 @@ class NPCSubCategory {
   }
 
   static final Map<String, NPCSubCategory> _subCategories = <String, NPCSubCategory>{};
-  static bool _staticInitDone = false;
+  static bool _defaultAssetsLoaded = false;
 
   factory NPCSubCategory.fromJson(Map<String, dynamic> j) => _$NPCSubCategoryFromJson(j);
   Map<String, dynamic> toJson() => _$NPCSubCategoryToJson(this);
@@ -635,7 +627,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       _npcFactory
     );
 
-    for(var model in await loadJSONAssetObjectList('npc-ldb2e.json')) {
+    for(var model in await loadJSONAssetObjectList('npcs-ldb2e.json')) {
       var instance = NonPlayerCharacter.fromJson(model);
       NonPlayerCharacterSummary._defaultAssetLoaded(instance.summary);
       _models[instance.id] = instance;

@@ -71,11 +71,14 @@ flutter:
   uses-material-design: true
   assets:
     - assets/armor.json
+    - assets/creature-categories.json
     - assets/creatures-ldb2e.json
     - assets/creatures-ecran2e.json
     - assets/factions-castes.json
     - assets/factions-secretes.json
-    - assets/npc-ldb2e.json
+    - assets/npc-categories.json
+    - assets/npc-subcategories.json
+    - assets/npcs-ldb2e.json
     - assets/places-ldb2e.json
     - assets/shield.json
     - assets/spell-pierre.json

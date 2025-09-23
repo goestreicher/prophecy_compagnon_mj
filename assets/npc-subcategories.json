@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Empire de Solyr",
+    "categories": [
+      "dirigeants"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Kezyr",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Sans Caste",
+    "categories": [
+      "generique"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des artisans",
+    "categories": [
+      "personnalites"
+    ],
+    "is_default": true
+  }
+]

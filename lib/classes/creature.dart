@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
@@ -43,29 +46,21 @@ class CreatureCategoryJsonConverter extends JsonConverter<CreatureCategory, Stri
 }
 
 class CreatureCategory {
-  static CreatureCategory animauxSauvages = CreatureCategory(title: "Animaux sauvages", isDefault: true);
-  static CreatureCategory peuplesAnciens = CreatureCategory(title: "Peuples anciens", isDefault: true);
-  static CreatureCategory creaturesDraconiques = CreatureCategory(title: "Créatures draconiques", isDefault: true);
-  static CreatureCategory creaturesElementaires = CreatureCategory(title: "Créatures élémentaires", isDefault: true);
-
   static CreatureCategory createNewCreatureCategory = CreatureCategory._create(title: "Créer cette catégorie", isDefault: true);
 
-  static void _doStaticInit() {
-    if(_staticInitDone) return;
-    _staticInitDone = true;
-    // ignore: unused_local_variable
-    var ani = animauxSauvages;
-    // ignore: unused_local_variable
-    var peu = peuplesAnciens;
-    // ignore: unused_local_variable
-    var crea = creaturesDraconiques;
-    // ignore: unused_local_variable
-    var ele = creaturesElementaires;
+  static Future<void> loadDefaultAssets() async {
+    if(_defaultAssetsLoaded) return;
+    _defaultAssetsLoaded = true;
+
+    var jsonStr = await rootBundle.loadString('assets/creature-categories.json');
+    var categories = json.decode(jsonStr);
+    for(var c in categories) {
+      // ignore: unused_local_variable
+      var category = CreatureCategory(title: c, isDefault: true);
+    }
   }
 
   factory CreatureCategory({ required String title, bool isDefault = false }) {
-    _doStaticInit();
-
     var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
     if(!_categories.containsKey(name)) {
       var c = CreatureCategory._create(title: title, isDefault: isDefault);
@@ -85,12 +80,10 @@ class CreatureCategory {
   String get name => sentenceToCamelCase(transliterateFrenchToAscii(title));
 
   static List<CreatureCategory> get values {
-    _doStaticInit();
     return _categories.values.toList();
   }
 
   static CreatureCategory byName(String name) {
-    _doStaticInit();
     return _categories.values.firstWhere((CreatureCategory c) => c.name == name);
   }
 
@@ -104,7 +97,7 @@ class CreatureCategory {
   }
 
   static final Map<String, CreatureCategory> _categories = <String, CreatureCategory>{};
-  static bool _staticInitDone = false;
+  static bool _defaultAssetsLoaded = false;
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
