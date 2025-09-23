@@ -51,7 +51,7 @@ class _EntityEditDescriptionWidgetState extends State<EntityEditDescriptionWidge
       child: Column(
         spacing: 8.0,
         children: [
-          MarkdownFleatherToolbar(
+          MarkdownFleatherToolbarFormField(
             controller: descriptionController,
             onSaved: (String value) {
               widget.entity.description = value;

@@ -8,6 +8,33 @@ import '../../classes/object_location.dart';
 import '../../classes/place.dart';
 import '../../classes/resource_link.dart';
 
+class MarkdownFleatherToolbarFormField extends FormField<bool> {
+  MarkdownFleatherToolbarFormField({
+    super.key,
+    required this.controller,
+    bool showResourcePicker = false,
+    Widget Function() openResourceLinkPickerDialog = openBaseResourceLinkPickerDialog,
+    void Function(String)? onSaved,
+  })
+    : super(
+        initialValue: false,
+        onSaved: (bool? hasChanges) {
+          onSaved?.call(
+            ParchmentMarkdownCodec().encode(controller.document)
+          );
+        },
+        builder: (FormFieldState<bool> s) {
+          return MarkdownFleatherToolbar(
+            controller: controller,
+            showResourcePicker: showResourcePicker,
+            openResourceLinkPickerDialog: openResourceLinkPickerDialog,
+          );
+        }
+    );
+
+  final FleatherController controller;
+}
+
 class MarkdownFleatherToolbar extends StatefulWidget {
   const MarkdownFleatherToolbar({
     super.key,

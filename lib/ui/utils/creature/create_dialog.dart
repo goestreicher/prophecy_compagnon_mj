@@ -24,6 +24,13 @@ class _CreatureCreateDialogState extends State<CreatureCreateDialog> {
   String? createCategoryName;
 
   @override
+  void initState() {
+    super.initState();
+
+    currentCategory = widget.cloneFrom?.category;
+  }
+
+  @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
@@ -53,7 +60,7 @@ class _CreatureCreateDialogState extends State<CreatureCreateDialog> {
               ),
               DropdownMenuFormField(
                 controller: categoryController,
-                initialSelection: widget.cloneFrom?.category,
+                initialSelection: currentCategory,
                 requestFocusOnTap: true,
                 label: const Text('Catégorie'),
                 textStyle: theme.textTheme.bodySmall,
