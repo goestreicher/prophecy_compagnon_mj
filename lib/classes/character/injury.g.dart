@@ -7,20 +7,25 @@ part of 'injury.dart';
 // **************************************************************************
 
 InjuryLevel _$InjuryLevelFromJson(Map<String, dynamic> json) => InjuryLevel(
-  rank: (json['rank'] as num).toInt(),
-  title: json['title'] as String,
+  type: $enumDecode(_$InjuryEnumMap, json['type']),
   start: (json['start'] as num).toInt(),
   end: (json['end'] as num).toInt(),
-  malus: (json['malus'] as num).toInt(),
   capacity: (json['capacity'] as num).toInt(),
 );
 
 Map<String, dynamic> _$InjuryLevelToJson(InjuryLevel instance) =>
     <String, dynamic>{
-      'rank': instance.rank,
-      'title': instance.title,
+      'type': _$InjuryEnumMap[instance.type]!,
       'start': instance.start,
       'end': instance.end,
-      'malus': instance.malus,
       'capacity': instance.capacity,
     };
+
+const _$InjuryEnumMap = {
+  Injury.scratch: 'scratch',
+  Injury.injured: 'injured',
+  Injury.light: 'light',
+  Injury.grave: 'grave',
+  Injury.fatal: 'fatal',
+  Injury.death: 'death',
+};

@@ -1,38 +1,69 @@
 import 'dart:collection';
+import 'dart:math';
 
 import 'package:json_annotation/json_annotation.dart';
 
 part 'injury.g.dart';
 
 enum Injury {
-  injured(title: 'Blessé'),
-  scratch(title: 'Égratignure'),
-  light(title: 'Légère'),
-  grave(title: 'Grave'),
-  fatal(title: 'Fatale'),
-  death(title: 'Mort');
+  scratch(
+    title: 'Égratignure',
+    rank: 0,
+    malus: 0,
+  ),
+  injured(
+    title: 'Blessé',
+    rank: 1,
+    malus: 0,
+  ),
+  light(
+    title: 'Légère',
+    rank: 1,
+    malus: 1,
+  ),
+  grave(
+    title: 'Grave',
+    rank: 2,
+    malus: 3,
+  ),
+  fatal(
+    title: 'Fatale',
+    rank: 3,
+    malus: 5,
+  ),
+  death(
+    title: 'Mort',
+    rank: 4,
+    malus: 10,
+    isFinal: true,
+  ),
+  ;
 
   final String title;
+  final int rank;
+  final int malus;
+  final bool isFinal;
 
-  const Injury({ required this.title });
+  const Injury({
+    required this.title,
+    required this.rank,
+    required this.malus,
+    this.isFinal = false,
+  });
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class InjuryLevel {
   InjuryLevel({
-    required this.rank,
-    required this.title,
+    required this.type,
     required this.start,
     required this.end,
-    required this.malus,
     required this.capacity,
   });
 
-  final int rank;
-  final String title;
+  Injury type;
   int start;
   int end;
-  final int malus;
   int capacity;
 
   factory InjuryLevel.fromJson(Map<String, dynamic> json) => _$InjuryLevelFromJson(json);
@@ -79,15 +110,25 @@ class InjuryManager {
     for(var i = 0; i < levels.length; ++i) {
       var range = _InjuryRange(min: levels[i].start, max: levels[i].end);
       _injuryLevels[range] = levels[i];
+      _injuryLevels[range] = InjuryLevel(
+        type: levels[i].type,
+        start: levels[i].start,
+        end: levels[i].end,
+        capacity: levels[i].capacity,
+      );
     }
 
     if(source != null) {
-      _injuries = Map.from(source._injuries);
+      for(var level in levels) {
+        if(source._injuries.containsKey(level.type)) {
+          _injuries[level.type] = source._injuries[level.type]!;
+        }
+      }
     }
   }
 
   final SplayTreeMap<_InjuryRange, InjuryLevel> _injuryLevels = SplayTreeMap<_InjuryRange, InjuryLevel>();
-  Map<int, int> _injuries = <int, int>{};
+  Map<Injury, int> _injuries = <Injury, int>{};
 
   factory InjuryManager.simple({
       required int injuredCeiling,
@@ -100,19 +141,15 @@ class InjuryManager {
       source: source,
       levels: [
         InjuryLevel(
-          rank: 0,
-          title: 'Blessé',
+          type: Injury.injured,
           start: 0,
           end: injuredCeiling,
-          malus: 0,
           capacity: injuredCount,
         ),
         InjuryLevel(
-          rank: 1,
-          title: 'Mort',
+          type: Injury.death,
           start: injuredCeiling,
           end: -1,
-          malus: 0,
           capacity: deathCount,
         ),
       ],
@@ -132,43 +169,33 @@ class InjuryManager {
       source: source,
       levels: [
         InjuryLevel(
-          rank: 0,
-          title: 'Égratignure',
+          type: Injury.scratch,
           start: 0,
           end: 10,
-          malus: 0,
           capacity: scratchCount,
         ),
         InjuryLevel(
-          rank: 1,
-          title: 'Légère',
+          type: Injury.light,
           start: 10,
           end: 20,
-          malus: 1,
           capacity: lightCount,
         ),
         InjuryLevel(
-          rank: 2,
-          title: 'Grave',
+          type: Injury.grave,
           start: 20,
           end: 30,
-          malus: 3,
           capacity: graveCount,
         ),
         InjuryLevel(
-          rank: 3,
-          title: 'Fatale',
+          type: Injury.fatal,
           start: 30,
           end: 40,
-          malus: 5,
           capacity: fatalCount,
         ),
         InjuryLevel(
-          rank: 4,
-          title: 'Mort',
+          type: Injury.death,
           start: 40,
           end: -1,
-          malus: 10,
           capacity: deathCount,
         ),
       ]
@@ -223,7 +250,7 @@ class InjuryManager {
   }
 
   List<InjuryLevel> levels() => _injuryLevels.values.toList();
-  int count(InjuryLevel level) => _injuries.containsKey(level.rank) ? _injuries[level.rank]! : 0;
+  int count(InjuryLevel level) => _injuries.containsKey(level.type) ? _injuries[level.type]! : 0;
 
   InjuryLevel setDamage(int amount) {
     var range = _injuryLevels.lastKeyBefore(_InjuryRange(min: amount, max: 99999));
@@ -231,11 +258,11 @@ class InjuryManager {
     var level = _injuryLevels[range]!;
 
     while(level.end != -1) {
-      var targetLevelCount = _injuries[level.rank] ?? 0;
+      var targetLevelCount = _injuries[level.type] ?? 0;
       if(targetLevelCount >= level.capacity) {
         range = _injuryLevels.firstKeyAfter(range!);
         if(range == null) {
-          throw ArgumentError('Pas de niveau de blessure trouvé après ${level.title} (rang ${level.rank})');
+          throw ArgumentError('Pas de niveau de blessure trouvé après ${level.type.title} (rang ${level.type.rank})');
         }
         level = _injuryLevels[range]!;
       }
@@ -244,32 +271,53 @@ class InjuryManager {
       }
     }
 
-    var count = (_injuries[level.rank] ?? 0) + 1;
-    if(count <= level.capacity) _injuries[level.rank] = count;
+    var count = (_injuries[level.type] ?? 0) + 1;
+    if(count <= level.capacity) _injuries[level.type] = count;
     return level;
   }
 
+  void dealInjuries(Injury injury, int count) {
+    var capacity = 0;
+    for(var level in _injuryLevels.values) {
+      if(level.type == injury) {
+        capacity = level.capacity;
+      }
+    }
+
+    // TODO: manage injury overflows
+    if(capacity > 0) {
+      if(!_injuries.containsKey(injury)) {
+        _injuries[injury] = min(capacity, count);
+      }
+      else {
+        _injuries[injury] = min(capacity, _injuries[injury]! + count);
+      }
+    }
+  }
+
   void heal(InjuryLevel level) {
-    if(!_injuries.containsKey(level.rank)) return;
-    if(_injuries[level.rank]! == 0) return;
-    _injuries[level.rank] = _injuries[level.rank]! - 1;
+    if(!_injuries.containsKey(level.type)) return;
+    if(_injuries[level.type]! == 0) return;
+    _injuries[level.type] = _injuries[level.type]! - 1;
   }
 
   bool isDead() {
     var deathLevel = _injuryLevels[_injuryLevels.lastKey()!]!;
-    var deathCount = _injuries[deathLevel.rank] ?? 0;
+    var deathCount = _injuries[deathLevel.type] ?? 0;
     return deathCount >= deathLevel.capacity;
   }
 
   int getMalus() {
     var malus = 0;
-    var currentInjuryRanks = _injuries.keys.toList()..sort();
+    var currentInjuryRanks = _injuries.keys.toList()..sort(
+        (Injury a, Injury b) => a.rank - b.rank
+    );
 
     if(currentInjuryRanks.isNotEmpty) {
       var highestRank = currentInjuryRanks.last;
       InjuryLevel? highestLevel;
       for(var level in _injuryLevels.values) {
-        if(level.rank == highestRank) {
+        if(level.type == highestRank) {
           highestLevel = level;
           break;
         }
@@ -277,7 +325,7 @@ class InjuryManager {
       if(highestLevel == null) {
         throw ArgumentError('Pas de niveau de blessure trouvé pour le rang infligé $highestRank');
       }
-      malus = highestLevel.malus;
+      malus = highestLevel.type.malus;
     }
 
     return malus;
@@ -317,9 +365,9 @@ class InjuryManager {
 
     var ret = InjuryManager(levels: levels);
     if(json.containsKey('injuries') && json['injuries']! is Map) {
-      var injuries = <int, int>{};
+      var injuries = <Injury, int>{};
       for(var k in json['injuries'].keys) {
-        injuries[int.parse(k)] = json['injuries']![k];
+        injuries[Injury.values.byName(k)] = json['injuries']![k];
       }
       ret._injuries = injuries;
     }

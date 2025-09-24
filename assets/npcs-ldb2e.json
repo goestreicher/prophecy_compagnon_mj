@@ -31,19 +31,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 40,
-          "malus": 0,
           "capacity": 3
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 40,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]

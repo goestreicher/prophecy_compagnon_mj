@@ -26,7 +26,7 @@ class _EntityInjuryManagerWidgetState extends State<EntityInjuryManagerWidget> {
     for(var level in widget.manager.levels()) {
       levelNames.add(
         Text(
-          '${level.title} (${level.start + 1}${level.end == -1 ? "+" : "-${level.end}"})',
+          '${level.type.title} (${level.start + 1}${level.end == -1 ? "+" : "-${level.end}"})',
         )
       );
 

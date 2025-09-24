@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../classes/character/base.dart';
+import '../../../classes/character/injury.dart';
 import '../../../classes/human_character.dart';
 import '../entity/base/edit_abilities_widget.dart';
 import '../entity/base/edit_attributes_widget.dart';
@@ -75,6 +76,7 @@ class CharacterEditBaseWidget extends StatelessWidget {
               child: EntityEditInjuriesWidget(
                 entity: character,
                 changeStreamController: changeStreamController,
+                onChanged: (InjuryManager manager) => character.injuries = manager,
               ),
             ),
             CharacterEditTendenciesWidget(
@@ -113,6 +115,7 @@ class CharacterEditBaseWidget extends StatelessWidget {
                         EntityEditInjuriesWidget(
                           entity: character,
                           changeStreamController: changeStreamController,
+                          onChanged: (InjuryManager manager) => character.injuries = manager,
                         ),
                       ],
                     ),

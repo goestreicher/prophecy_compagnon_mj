@@ -32,19 +32,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 20,
-          "malus": 0,
           "capacity": 2
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 20,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -106,21 +102,17 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 35,
           "count": 2,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 35,
           "end": -1,
           "count": 1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -192,21 +184,17 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 30,
           "count": 2,
-          "malus": 0,
           "capacity": 2
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 30,
           "end": -1,
           "count": 1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -268,21 +256,17 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 30,
           "count": 2,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 30,
           "end": -1,
           "count": 1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -352,21 +336,17 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 35,
           "count": 2,
-          "malus": 0,
           "capacity": 3
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 35,
           "end": -1,
           "count": 1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -432,19 +412,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 50,
-          "malus": 0,
           "capacity": 3
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 50,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -515,19 +491,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 50,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 50,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -598,19 +570,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 50,
-          "malus": 0,
           "capacity": 5
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 50,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -681,19 +649,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 50,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 50,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -739,19 +703,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 55,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 55,
           "end": -1,
-          "malus": 0,
           "capacity": 2
         }
       ]
@@ -802,19 +762,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 55,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 55,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -890,19 +846,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 40,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 40,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -979,19 +931,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 40,
-          "malus": 0,
           "capacity": 3
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 40,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -1072,19 +1020,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 65,
-          "malus": 0,
           "capacity": 5
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 65,
           "end": -1,
-          "malus": 0,
           "capacity": 2
         }
       ]
@@ -1156,19 +1100,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 45,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 45,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -1231,19 +1171,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 35,
-          "malus": 0,
           "capacity": 3
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 35,
           "end": -1,
-          "malus": 0,
           "capacity": 1
         }
       ]
@@ -1302,19 +1238,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 60,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 60,
           "end": -1,
-          "malus": 0,
           "capacity": 2
         }
       ]
@@ -1376,19 +1308,15 @@
     "injuries": {
       "levels": [
         {
-          "rank": 0,
-          "title": "Blessé",
+          "type": "injured",
           "start": 0,
           "end": 50,
-          "malus": 0,
           "capacity": 4
         },
         {
-          "rank": 1,
-          "title": "Mort",
+          "type": "death",
           "start": 50,
           "end": -1,
-          "malus": 0,
           "capacity": 2
         }
       ]

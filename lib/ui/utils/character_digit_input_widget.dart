@@ -11,6 +11,7 @@ class CharacterDigitInputWidget extends StatefulWidget {
     this.maxValue = 15,
     this.label,
     this.collapsed = true,
+    this.enabled = true,
     this.controller,
   });
 
@@ -21,6 +22,7 @@ class CharacterDigitInputWidget extends StatefulWidget {
   final int maxValue;
   final String? label;
   final bool collapsed;
+  final bool enabled;
   final TextEditingController? controller;
 
   @override
@@ -43,6 +45,7 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
 
     return TextFormField(
       controller: _controller,
+      enabled: widget.enabled,
       decoration: InputDecoration(
         label: widget.label == null
           ? null
@@ -59,7 +62,7 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
         error: null,
         errorText: null,
         prefix: InkWell(
-          onTap: () {
+          onTap: !widget.enabled ? null : () {
             FocusScope.of(context).unfocus();
             if(_controller.text.isEmpty) return;
             int? input = int.tryParse(_controller.text);
@@ -78,7 +81,7 @@ class _CharacterDigitInputWidgetState extends State<CharacterDigitInputWidget> {
           ),
         ),
         suffix: InkWell(
-          onTap: () {
+          onTap: !widget.enabled ? null : () {
             FocusScope.of(context).unfocus();
             if(_controller.text.isEmpty) return;
             int? input = int.tryParse(_controller.text);
