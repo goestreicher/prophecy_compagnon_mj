@@ -31,12 +31,6 @@ class CreatureEditSpecialCapabilitiesWidget extends StatelessWidget {
         minLines: 3,
         maxLines: 3,
         style: theme.textTheme.bodySmall,
-        validator: (String? value) {
-          if(value == null || value.isEmpty) {
-            return 'Valeur manquante';
-          }
-          return null;
-        },
         onChanged: (String value) => creature.specialCapability = value,
       ),
     );
