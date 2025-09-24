@@ -442,8 +442,22 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
   }
 }
 
-InjuryManager entityBaseDefaultInjuries(EntityBase? entity, InjuryManager? source) =>
-    InjuryManager.simple(injuredCeiling: 30, injuredCount: 3, deathCount: 1, source: source);
+InjuryManager entityBaseDefaultInjuries(EntityBase? entity, InjuryManager? source) {
+  if(source == null) {
+    return InjuryManager.simple(
+      injuredCeiling: 30,
+      injuredCount: 3,
+      deathCount: 1,
+      source: source
+    );
+  }
+  else {
+    return InjuryManager(
+      levels: source.levels(),
+      source: source,
+    );
+  }
+}
 
 Map<String, dynamic> enumKeyedMapToJson(Map<Enum, dynamic> m) {
   return <String, dynamic>{for(var k in m.keys) k.name: m[k]};
