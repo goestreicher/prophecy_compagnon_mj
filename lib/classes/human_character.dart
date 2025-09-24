@@ -285,8 +285,22 @@ class HumanCharacter extends EntityBase with MagicUser {
   }
 }
 
-InjuryManager humanCharacterDefaultInjuries(EntityBase? entity, InjuryManager? source) =>
-    InjuryManager.simple(injuredCeiling: 40, injuredCount: 3, deathCount: 1, source: source);
+InjuryManager humanCharacterDefaultInjuries(EntityBase? entity, InjuryManager? source) {
+  if(source == null) {
+    return InjuryManager.simple(
+      injuredCeiling: 40,
+      injuredCount: 3,
+      deathCount: 1,
+      source: source
+    );
+  }
+  else {
+    return InjuryManager(
+      levels: source.levels(),
+      source: source,
+    );
+  }
+}
 
 InjuryManager fullCharacterDefaultInjuries(EntityBase? entity, InjuryManager? source) {
   if(entity == null) return humanCharacterDefaultInjuries(entity, source);
