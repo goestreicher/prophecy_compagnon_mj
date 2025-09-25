@@ -1,0 +1,702 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les collines de fer",
+    "uuid": "5c087163-3c71-42ce-b47d-2bff40e05717",
+    "parent_id": "empireDeSolyr",
+    "type": "region",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": "Tempéré sec",
+    "description": {
+      "general": "Les Collines de Fer sont les contreforts du sud des Écailles de Moryagorn. Naturellement riches en minerais, leur potentiel est exacerbé par la présence de Kezyr.\n\nC’est une région tempérée dont le dénivelé atteint cinq cent mètres. Le sol caillouteux et l'irrigation défaillante rendent l’agriculture délicate et spécifique, basée sur la vigne naine, l'olivier et la châtaigne. Cette terre minière, faiblement peuplée au regard du reste de l’Empire, est garante de la frontière militaire avec les Zûls et dispose donc de nombreuses garnisons impériales. Si les patrouilles sont régulières, il ne fait pas bon s’y perdre de nuit. Les animaux sauvages, les abominations descendues des montagnes et les pillards en font une région dangereuse.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Dungard",
+    "uuid": "0824a0bd-4fec-4be7-97c8-607018f04854",
+    "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
+    "type": "cite",
+    "government": null,
+    "leader": "Florimelle de Dungard",
+    "motto": null,
+    "climate": "Tempéré sec",
+    "description": {
+      "general": "Dungard est construite à la pointe du sud des Écailles de Moryagorn. Entre les plaines de Solyr et les profondes vallées des Écailles, les Collines de Fer sont une région stupéfiante dévoilant de nombreuses veines sédimentaires. Dungard s’est développée au pied de la Marche des Géants.\n\nSes quartiers s’étendent, tentaculaires, sur les collines alors que le cœur historique de la cité compose un flot architectural au pied de la falaise.\n\nDungard présente un aspect déroutant pour le voyageur. Seul le centre - le Noyau - abrite des bâtiments anciens, alors que les faubourgs, qui représentent les neuf dixièmes de la surface, sont des assemblages d’habitations légères. Peu d'habitants logent dans le Noyau, où ne se trouvent que les sièges des différentes guildes, les temples, les académies et quelques palais. Le reste de la cité se compose de maisons basses et longues, sans étage, abritant les innombrables échoppes et les habitations des Dungaris.\n\nDungard semble anarchique dans son organisation, les incessantes rotations des constructions bouleversant le tracé des rues et des places. Très étendue, Dungard dispose de vastes esplanades, souvent utilisées comme aires de stockage, et de larges artères dont résulte une très faible densité de population.\n\nBien que le Noyau soit la partie majeure de la cité pour la politique et l’histoire, les faubourgs représentent la quasi-totalité de la ville et font sa réputation. C’est au sein de ces quartiers tentaculaires que se trouvent les centaines d’artisans qui font la renommée de la ville. Si les Maîtres travaillent dans les halls, leurs travaux sont rares, chers et difficiles à obtenir. Pour la majorité des gens, les artisans des faubourgs sont plus accessibles et plus aimables. Les visiteurs les plus exigeants refoulés hors du Noyau seront surpris de la compétence de certains de ces artisans nichés au fond des faubourgs.\n\n",
+      "history": null,
+      "ethnology": "## Les mines\n\nDepuis toujours, Dungard est un site minier. Même si d’aucuns ont pu croire que Kezyr s’était retiré sur ce site pour son abondance en métal, les mineurs des premiers siècles découvrirent que certaines mines épuisées recelaient encore du minerai. Ils comprirent alors que la simple présence de Kezyr générait de nouvelles veines.\n\nCe dernier n’a jamais nié ce fait et ne voit aucun inconvénient à l’exploitation des gisements nés de sa présence. Il est usuel à Dungard de creuser sous la ville, les rejets d’une mine en comblant une autre.\n\nLes maisons sont donc bâties pour un siècle au maximum et ne comptent pas d’étage, les formes rectangulaires longues et les toits d'ardoises à deux plans étant caractéristiques de l’architecture éphémère de la cité.\n\nLes maisons ne sont jamais très décorées et l'attachement sentimental à une demeure de famille n’existe pas ici.\n\n## Les halls\n\nLa position sociale des Dungaris repose principalement sur la reconnaissance de leur savoir-faire. Comme les livres et traités théoriques ne les ont jamais emballés, il est devenu courant d’exposer ses travaux. De nombreux commerçants louent ainsi des halls à des confréries ou à des maîtres afin d’exposer et vendre leur marchandise. Ces expositions sont gratuites et ouvertes tard le soir, donnant à la cité une vie sociale très intense.\n\n## Coutumes vestimentaires\n\nLa coutume de Dungard veut que l’on différencie soigneusement ses vêtements de travail de ses habits de sortie. Tout habitant de la ville porte une tenue simple et solide pour son travail et des habits plus travaillés - et propres - pour sa vie publique. Un artisan veillera à disposer d’un tablier de sortie, brodé et impeccable qu’il n’utilisera pas pour travailler. Cette coutume rejaillit sur les lieux publics comme les tavernes et les auberges divisées en établissements “de travail” et “de sortie”.\n\n## La vie et la mort\n\nLors d’une naissance, les parents font frapper des “écus de naissance” par un orfèvre. Ces écus sont métalliques, mais la richesse et la rareté de la matière varient en fonction de la position sociale des habitants. La face intérieure porte l’augure, le jour et l’année de naissance et la face extérieure est ornée d’un sceau familial, des armoiries ou de la rune du métal. L’un de ces écus est accroché au cou de l’enfant, les autres étant envoyés aux proches pour les avertir de la naissance. Il est de coutume que les patriarches portent tous les écus de leur descendance, donnant parfois de pesants colliers.\n\nLes morts à Dungard sont vécues avec beaucoup d’émotion. Il est de coutume d’organiser une veillée funèbre durant laquelle les proches viennent se recueillir devant le corps. Au matin, les participants récitent une prière maudissant Kalimsshar pour avoir donné la mort aux hommes. Les corps sont ensuite placés dans des sarcophages de pierre où on leur ajuste un masque de métal battu. Les sarcophages sont alors positionnés dans l’Œil de métal, une gigantesque mine de cuivre à ciel ouvert, reconvertie en nécropole et située à deux heures au sud de la cité.\n\n",
+      "society": "## Les humains\n\nDungard compte plus de 200 000 habitants, tous situés dans les faubourgs, et quelques centaines résidant dans le Noyau. La proportion de citoyens est d’environ 50%. La moitié de la population vit de l’artisanat, soit en tant qu'artisan, soit comme ouvrier. Un tiers tire ses revenus du commerce des marchandises produites, tandis que le reste, à peine plus d’une personne sur dix, consacre sa vie à des activités radicalement différentes de l’artisanat - magie, guerre, politique. Les Dungaris sont des gens appliqués, réfléchis et consciencieux.\n\n## \n\n## Les dragons\n\nLes dragons de Dungard sont nombreux et souvent très liés au peuple. Environ la moitié sont des dragons du métal et un quart seraient des dragons des cités. Le dernier quart s’équilibre entre dragons de pierre, dragons de feu et chimères. Il n’existe qu’une dizaine de dragons des vents, tous impliqués dans le comptoir des vents. Les fils de Heyra ou d’Ozyr se comptent sur les doigts d’une main et Kezyr a interdit Dungard aux dragons de l’ombre…\n\n",
+      "politics": "## Organisation\n\nDungard est un fief majeur de l’Empire de Solyr, même si nul n’oserait imposer une quelconque loi impériale au Dragon du Métal. Ce fief des Collines de Fer est celui de la duchesse Florimelle de Dungard. Elle est la veuve du duc Cellustan, tué en 1299 par Mor-Mar-Zûl alors qu’il défendait la cité contre un raid. Elle est en charge de la justice, de l'armée et des lois. Pour les affaires de caste, elle traite directement avec Sir Tharen, le Grand Maître de la caste ou son suppléant, s’il est absent. Pour les affaires impériales, elle compose avec Hylmann Grût, Maître des orfèvres et représentant de la caste au Conseil des Provins.\n\n## Politique extérieure\n\nDungard dépend de l’Empire de Solyr, mais son statut de cité draconique lui procure une autonomie totale. Dungard entretient d’excellentes relations avec Ankar par leur alliance militaire. Les relations avec Havre et Yris, basées tant sur les liens des Dragons que sur le commerce, sont très bonnes. L'Empire Zûl est considéré comme un dangereux voisin et les raids incessants dévastant le sud de Solyr anéantissent toute diplomatie. Dungard mène en ce moment un mouvement apaisant vis-à-vis de l’Empire Nésora, tentant de modérer les attitudes radicales de Kern et Oforia en ce qui concerne les méthodes de rappel à l’ordre.\n\n",
+      "judicial": "La loi de Dungard dépend des postes de garde des faubourgs et des tribunaux impériaux.\n\nLes lois de la cité punissant le vol et la contrefaçon sont les plus strictes de tout Kor. L’esclavage y est interdit et passible de lourdes peines. Les châtiments les plus usuels sont l’emprisonnement, les travaux forcés et les marques d’infamie appliquées au fer rouge. La peine capitale est peu utilisée, Kezyr ayant amendé les lois impériales de façon à laisser aux criminels une chance de se racheter.\n\n",
+      "economy": "Dungard est le premier centre de production de Kor. Ses ressources minières sont infinies et ses produits manufacturés sont les plus recherchés. Dungard exporte minerais, armes, armures, vêtements, poteries et autres produits finis. La cité importe de la nourriture, de la laine, du coton brut, du lin et des animaux herbivores. L'habitude d’excavation permanente des Dungaris n’a jamais permis la mise en place d’une agriculture durable. Les cités blanches de Solyr constituent leur principal fournisseur agricole. Il est à noter que Dungard frappe la majorité des dracs de Kor - d’où son poids économique considérable.\n\n",
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le Noyau",
+    "uuid": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "parent_id": "0824a0bd-4fec-4be7-97c8-607018f04854",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les halls mineurs",
+    "uuid": "19497148-114c-425d-a9d0-ced65a1caa2a",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Une poignée de bâtiments plongés dans l’ombre des halls majeurs accueille les corps de métier n’étant rattachés à aucune guilde. Souvent conçus autour d’une trentaine de pièces, ils sont décorés selon le savoir-faire de ses membres. Citons pour exemple la stupéfiante toiture du hall des couvreurs, surmontée de plus de quarante tourelles ou bien les incessantes mélodies du hall des luthiers et de ses harpes éoliennes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le hall des tisserands",
+    "uuid": "1eebf6d4-157f-40c1-8973-fcf5546ca702",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce hall est situé en hauteur et se compose d’un grand bâtiment carré doté d’une vaste cour intérieure. Des balcons s’ouvrent dedans et en dehors du bâtiment, tendus de bannières et de tapisseries régulièrement changées. Dans la cour se dressent de nombreux mâts destinés à suspendre les plus belles tapisseries et des statues de pierre, afin d’exposer des vêtements. Des marchands se sont installés dans le hall et les arcades de la cour abritent un immense marché aux tissus.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le hall des tanneurs",
+    "uuid": "295c4a06-20a6-4eb2-b4d7-d8704dad7501",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce hall est l’un des plus anciens mais l’un des plus petits du Noyau. Construit en paliers adossés à la Marche des Géants, le hall est devenu le point de ralliement des chasseurs et trappeurs venus des quatre coins de Kor afin de négocier leurs marchandises auprès des Maîtres Tanneurs. Situé non loin du hall des mineurs, il est à l’origine de troubles réguliers opposant les notables résidents du Noyau aux frustres chasseurs revenus des régions isolées.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le hall des menuisiers",
+    "uuid": "45819ed1-a9f6-48af-b586-a0e8344fac4d",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Entièrement érigé en bois sculpté et laqué, ce hall s’articule autour d’une nef voûtée sur laquelle s’ouvrent plusieurs salles. À l’opposé de l’entrée se trouve un sanctuaire de Heyra ainsi que les accès aux quartiers mis à disposition des Prodiges de passage. Elle est administrée par une dizaine de Prodiges résidents.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le hall de la forge",
+    "uuid": "61d02448-71ea-499e-aad1-d6f79375d31d",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce bâtiment est le plus massif et le plus impressionnant. Construit uniquement dans les métaux les plus purs, il est circulaire et possède une coupole étincelante hérissée de tourelles et de cheminées de fourneaux. On trouve à l’intérieur les plus belles forges du monde, des salles dévolues à l’enseignement, un sanctuaire de Kezyr et une bibliothèque consacrée à l’art du métal. Ce hall inclut dans son enceinte la caste des artisans, les amphithéâtres de leurs réunions, leurs archives et les appartements du Grand Maître.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le hall des mineurs",
+    "uuid": "8cb8c1a5-e0dd-419a-adda-aeea283371cd",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce hall est le siège d’une intense activité. C’est ici que les mineurs viennent s'informer chaque matin de leurs attributions dans les différentes mines de la cité. Le bâtiment est construit en longueur et selon de strictes règles métriques. Le long d’un large couloir central, on trouve ateliers d’outils de mineurs, bains, tavernes et salles de massage, ainsi qu’un sanctuaire de Brorne à la mémoire des disparus.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les académies du métal",
+    "uuid": "8e1ccde4-fda3-4010-9a76-73590f6440d9",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Les académies du métal rassemblent les académies des guildes. Certaines ne sont pas les plus célèbres, mais toute guilde se doit d’avoir une académie à Dungard. Parmi les meilleures, on trouve l’académie des forges, celle des orfèvres, des verriers, des tanneurs et des charpentiers.\n\nLes Forges élémentaires, près du centre du Noyau, sont l’académie des mages du métal. Dans ces tours tronquées reliées entre elles par des arches, des mages - mais aussi des artisans émérites - s’initient à la magie du métal dans une ambiance plus détendue que dans les autres académies magiques.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les palais",
+    "uuid": "be615373-7234-4958-9f62-745fa70a586f",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au nombre d’une cinquantaine, les palais du Noyau sont les demeures des vieilles familles de Dungard. Outre le palais ducal, qui abrite les tribunaux et les administrations impériales, nombre d’entre eux sont les résidences saisonnières des nobles de la région. Les autres sont habités par d’opulentes familles marchandes installées à Dungard depuis des générations. Magnifiques et très bien entretenus, ces palais sont une des fiertés des Dungaris et les rares changements de propriétaire donnent lieu à des festivités.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le hall des scribes",
+    "uuid": "c0635325-60ce-474f-a8f0-856ef82a83e5",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce hall est aussi étendu que celui du métal, mais moins haut. C’est un bâtiment à colombages, résultat d’ajouts successifs d'ailes et de dépendances. Il regroupe les halls des papetiers, des pigmentiers, des encreurs, des enlumineurs et des peintres. Cette diversité donne au bâtiment une décoration sous forme de fresques et de parchemins enluminés fixés le long des couloirs, mais une ambiance studieuse presque monastique fait de ce hall le moins populaire de tous. Bien qu’une salle soit consacrée aux écrivains publics, les Dungaris illettrés préfèrent souvent s’adresser aux écrivains de leur quartier.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le hall des alchimistes",
+    "uuid": "c8e3b094-3e82-44e9-a54a-1a988c46749a",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situé entre le hall des menuisiers et celui des verriers, ce bâtiment est le plus récent du Noyau. C’est un cloître octogonal dont le jardin intérieur, entretenu par quelques Prodiges, sert essentiellement à la culture d’herbes médicinales. À chaque angle, une tour de trois étages au toit pointu abrite les laboratoires et les bibliothèques des Maîtres Alchimistes. Les étages inférieurs servent à l’enseignement, au stockage et aux macérations. Il flotte une odeur camphrée autour de ce hall.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le hall des orfèvres",
+    "uuid": "dbad845c-9c1e-4a99-ab69-8b985f0e4b21",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "De forme trapézoïdale, ce bâtiment de bois recouvert de feuilles de métal ciselées est surmonté de bulbes scintillants abritant les appartements des Maîtres Orfèvres. L’on trouve ici les ateliers des Maîtres, des salles renfermant les plus beaux bijoux et parures, ainsi qu’une bibliothèque de croquis traitant des meilleures techniques. Il est constamment surveillé par une escouade de protecteurs payés par les orfèvres.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le hall des verriers",
+    "uuid": "edf8a014-30f0-4289-b595-a999e9cf3fa6",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Drapée dans une ambiance feutrée, la grande tour carrée des artisans du verre est l’un des bâtiments les plus lumineux. Ses murs sont des vitraux magistraux et l’immense escalier en colimaçon qui le traverse sur sa hauteur est illuminé d’une rosace creusée dans le toit. Des lustres et sculptures de verre parsèment les couloirs en une féerie de couleurs. Peu d’endroits y sont ouverts au public, la majorité des pièces étant dévolues à l’archivage, au logement des Maîtres et à leurs ateliers personnels.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Temple de Kezyr",
+    "uuid": "b90ea17b-3e0e-4851-a812-608376ee9eac",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Temple de Brorne",
+    "uuid": "b30c0e7e-0754-4042-85cd-62555c9623c8",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Temple d'Heyra",
+    "uuid": "f3ba4dbc-7f13-4fee-b3b4-47196777897b",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Temple de Nenya",
+    "uuid": "49e4b40b-594b-4565-9169-b62dcc3689e2",
+    "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Une étoile de métal ensorcelée, construite par Kezyr en signe de contrition, abrite un sanctuaire flamboyant de couleurs, régulièrement nimbé de lueurs magiques.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les faubourgs",
+    "uuid": "97ae1099-2672-4c03-a462-2e687fc72080",
+    "parent_id": "0824a0bd-4fec-4be7-97c8-607018f04854",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le comptoir des vents",
+    "uuid": "543aa179-dc8d-402d-b154-0577713f96cb",
+    "parent_id": "97ae1099-2672-4c03-a462-2e687fc72080",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cette vaste esplanade pavée est l’un des plus célèbres points de départ des caravanes de Kor. De jour comme de nuit, des dizaines de chariots se remplissent ou se vident et les dizaines d’écuries, d'ateliers et d’entrepôts bordant l’esplanade sont le siège d’une activité intense. On trouve ici les comptoirs des compagnies marchandes, des tavernes de mercenaires et les résidences de plusieurs dragons des vents. Une statue de Szyl de six mètres de haut se dresse au centre de la place longue de cinq cents pas et large de plus de trois cents.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le marché",
+    "uuid": "642d01cb-3b1d-4458-8679-b6c36cb3f067",
+    "parent_id": "97ae1099-2672-4c03-a462-2e687fc72080",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "À la différence des autres cités, Dungard ne possède pas de véritable place du marché en raison de son urbanisme anarchique. Le marché de Dungard est une très ancienne institution qui ne s’est jamais arrêtée depuis des siècles. Étalé sur plusieurs rues et avenues, il déplace chaque jour une petite partie de ses étals afin de rentabiliser les espaces et libérer les sites sollicités par les mineurs.\n\nLe résultat est une sorte de caravane marchande perpétuelle qui se déplace de quelques mètres par jour, sans aucune logique. La légende veut que si le marché s'arrête un jour, ce sera la fin de Dungard car le sol en sera alors devenu stérile…\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Temple de Kroryn",
+    "uuid": "08801534-5b35-467b-8179-8818f5add065",
+    "parent_id": "97ae1099-2672-4c03-a462-2e687fc72080",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Plusieurs arènes de bois parsèment les faubourgs et l'une d’entre elles abrite, par rotation, une statue de lave élémentaire du Dragon du Feu. Son transport donne lieu à une procession annuelle menée par des mages du feu.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "La Marche des Géants",
+    "uuid": "2107a25a-fe4f-4a20-ac7f-94d664363b0a",
+    "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": "Tempéré sec",
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le Tunnel d'acier",
+    "uuid": "f88784f4-6d6b-42ec-bf12-f66757a00963",
+    "parent_id": "2107a25a-fe4f-4a20-ac7f-94d664363b0a",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le Tunnel d’acier est une colossale grotte allongée, profondément engoncée dans la Marche des Géants. Ses parois sont entièrement devenues métalliques et son accès en est presque facile. Bien que peu osent y pénétrer, il est rare que Kezyr ou ses proches fils refoulent les visiteurs.\n\nLe Tunnel d’acier est connu pour être en grande partie aménagé à l’échelle humaine. L’on y trouve des appartements réservés aux dragons du métal visitant leur père, ainsi que les forges personnelles de Kezyr. Au fond d’un tunnel voûté de briques de métal, un fourneau de lave élémentaite et des outils ancestraux sont les témoins muets des chefs-d’œuvre du Dragon du Métal, même si celui-ci ne les utilise que rarement, préférant forger à mains mues le métal, qui lui obéit miraculeusement.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les cavernes écailleuses",
+    "uuid": "26701d6d-2fd0-44c2-b1c7-48aee84bd9ec",
+    "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
+    "type": "region",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": "Tempéré sec",
+    "description": {
+      "general": "Partout dans les collines, de profondes cavernes abritent des colonies de lézards géants. Relativement peu belliqueux, ils sont depuis longtemps considérés comme d’excellentes bêtes de somme, idéalement adaptées aux travaux de la mine. Plusieurs communautés se livrent de nos jours à leur élevage et à leur dressage, d'autant plus que leur acclimatation à l’air libre est assez aisée et qu’ils constituent des montures adaptées aux régions montagneuses et arides où les chevaux s’avèrent mal à l’aise.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les collines de rouille",
+    "uuid": "92d20195-c042-46c2-818d-97f47ff4d1d7",
+    "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
+    "type": "region",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": "Tempéré sec",
+    "description": {
+      "general": "Au cœur des Collines de fer, une vaste région de collines rousses se dresse comme une cicatrice sur le domaine de Kezyr. Là où autrefois le Dragon du Métal érigea sa majestueuse Tour d’éternité, les collines sont couvertes d’une épaisse couche de rouille suintante que nulle tempête n’a jamais balayée.\n\nC’est un lieu déserté de tous, où l'empreinte de Kalimsshar reste puissante. On la dit hantée par des molosses issus de la rouille environnante, des bêtes féroces et malignes que ni les patrouilles impériales, ni les plus téméraires aventuriers n’ont jamais réussi à défaire.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Temple d'Ozyr",
+    "uuid": "77eb7ea6-4b11-46f7-a3cd-5511fc5002a8",
+    "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Une cascade à deux kilomètres à l’est a été circonscrite dans un amphithéâtre de pierre et accueille chaque matin une cérémonie rituelle peu fréquentée.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]

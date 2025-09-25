@@ -122,18 +122,6 @@
     }
   },
   {
-    "name": "Dungard",
-    "parent_id": "empireDeSolyr",
-    "type": "cite",
-    "description": {
-      "general": ""
-    },
-    "source": {
-      "type": "officiel",
-      "name": "LdB 2e"
-    }
-  },
-  {
     "name": "Havre",
     "parent_id": "empireDeSolyr",
     "type": "cite",

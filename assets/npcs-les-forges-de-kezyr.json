@@ -1,0 +1,842 @@
+[
+  {
+    "equiped": [],
+    "uuid": "b54f698c-874b-4153-a00b-fd9954a6c51f",
+    "name": "Cis de Myriand",
+    "description": "Cis − prononcez Ciz − est un artiste libre, un sculpteur voyageant de ville en ville, pour servir dans les cours les plus prestigieuses. Son art est aussi célèbre que ses frasques amoureuses et ses fuites sur les toits.\n\nIl sculpte aussi bien les bronzes qu'il sait couler l'or et l'argent. Mais surtout, mage du métal, il travaille pour le service d'espionnage de Kezyr. Ses œuvres sont autant de machinations destinées à espionner, écouter, voire assassiner ses clients. À trente-cinq ans, ce Parrain est au sommet de son art. Une seule pensée le trouble : une femme. Et quelle femme ! Cymbaline, la Rêveuse Illuminée.\n\nIl serait prêt à tout trahir, tout abandonner pour son simple sourire. Malgré ses nombreuses conquêtes, son cœur est pris\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 6,
+      "intelligence": 6,
+      "coordination": 8,
+      "presence": 6,
+      "resistance": 7,
+      "volonte": 6,
+      "perception": 8,
+      "empathie": 5
+    },
+    "attributes": {
+      "physique": 3,
+      "mental": 5,
+      "manuel": 4,
+      "social": 4
+    },
+    "skills": [
+      {
+        "skill": "acrobatie",
+        "value": 7
+      },
+      {
+        "skill": "armesContondantes",
+        "value": 2
+      },
+      {
+        "skill": "armesDeJet",
+        "value": 4
+      },
+      {
+        "skill": "athletisme",
+        "value": 4
+      },
+      {
+        "skill": "baratin",
+        "value": 8
+      },
+      {
+        "skill": "castes",
+        "value": 2
+      },
+      {
+        "skill": "connaissanceDeLaMagie",
+        "value": 8
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 1
+      },
+      {
+        "skill": "contrefacon",
+        "value": 9
+      },
+      {
+        "skill": "corpsACorps",
+        "value": 6
+      },
+      {
+        "skill": "diplomatie",
+        "value": 3
+      },
+      {
+        "skill": "discretion",
+        "value": 9
+      },
+      {
+        "skill": "donArtistique",
+        "value": 0,
+        "specializations": [
+          {
+            "name": "donArtistique:sculpture",
+            "title": "Sculpture",
+            "value": 8,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "deguisement",
+        "value": 9
+      },
+      {
+        "skill": "deverrouillage",
+        "value": 9
+      },
+      {
+        "skill": "escalade",
+        "value": 8
+      },
+      {
+        "skill": "esquive",
+        "value": 9
+      },
+      {
+        "skill": "estimation",
+        "value": 7
+      },
+      {
+        "skill": "faireLesPoches",
+        "value": 7
+      },
+      {
+        "skill": "geographie",
+        "value": 8
+      },
+      {
+        "skill": "lireEtEcrire",
+        "value": 5
+      },
+      {
+        "skill": "marchandage",
+        "value": 6
+      },
+      {
+        "skill": "orientation",
+        "value": 8
+      },
+      {
+        "skill": "pieges",
+        "value": 7
+      },
+      {
+        "skill": "psychologie",
+        "value": 8
+      },
+      {
+        "skill": "eloquence",
+        "value": 8
+      },
+      {
+        "skill": "artisanat",
+        "value": 0,
+        "specializations": [
+          {
+            "name": "artisanat:orfevrerie",
+            "title": "Orfèvrerie",
+            "value": 8,
+            "reserved": false
+          }
+        ]
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "mage",
+    "caste_status": "expert",
+    "career": null,
+    "age": 35,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "empireDeSolyr"
+    },
+    "luck": 4,
+    "proficiency": 6,
+    "renown": 5,
+    "interdicts": [
+      "loiDeLaPrudence"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "leurre",
+        "description": null
+      },
+      {
+        "privilege": "prevoyance",
+        "description": null
+      },
+      {
+        "privilege": "style",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "dette",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "disadvantage": "manie",
+        "cost": 1,
+        "details": ""
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "charme",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "empathieNaturelle",
+        "cost": 4,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 4,
+        "circles": 0
+      },
+      "human": {
+        "value": 1,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 2
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 1
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 7,
+      "invocatoire": 3,
+      "sorcellerie": 8
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 7,
+      "metal": 8,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 6,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 7,
+      "metal": 8,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 6,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "35f75cf6-53fa-4563-8800-51368845f83e",
+    "name": "Florimelle de Dungard",
+    "description": "Duchesse de Dungard, elle est en charge de la justice, de l'armée et des lois. Pour les affaires de caste, elle traite directement avec Sir Tharen, le Grand Maître de la caste ou son suppléant, s'il est absent. Pour les affaires impériales, elle compose avec Hylmann Grût, Maître des orfèvres et représentant de la caste au Conseil des Provins.\n\nElle est la veuve du Duc Cellustan, tué en 1299 par Mor-Mar-Zûl alors qu'il défendait la cité contre un raid.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 6,
+      "intelligence": 8,
+      "coordination": 6,
+      "presence": 9,
+      "resistance": 6,
+      "volonte": 8,
+      "perception": 9,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 7,
+      "manuel": 5,
+      "social": 8
+    },
+    "skills": [
+      {
+        "skill": "armesDHast",
+        "value": 7
+      },
+      {
+        "skill": "armesDeSiege",
+        "value": 6
+      },
+      {
+        "skill": "armesTranchantes",
+        "value": 9,
+        "specializations": [
+          {
+            "name": "armesTranchantes:epeeDeDuel",
+            "title": "Épée de duel",
+            "value": 11,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "baratin",
+        "value": 7
+      },
+      {
+        "skill": "bouclier",
+        "value": 9
+      },
+      {
+        "skill": "cartographie",
+        "value": 7
+      },
+      {
+        "skill": "castes",
+        "value": 10
+      },
+      {
+        "skill": "commandement",
+        "value": 9
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 5
+      },
+      {
+        "skill": "diplomatie",
+        "value": 10
+      },
+      {
+        "skill": "esquive",
+        "value": 7
+      },
+      {
+        "skill": "histoire",
+        "value": 6
+      },
+      {
+        "skill": "lireEtEcrire",
+        "value": 8
+      },
+      {
+        "skill": "lois",
+        "value": 11
+      },
+      {
+        "skill": "marchandage",
+        "value": 5
+      },
+      {
+        "skill": "psychologie",
+        "value": 8
+      },
+      {
+        "skill": "strategie",
+        "value": 9
+      },
+      {
+        "skill": "seduction",
+        "value": 8
+      },
+      {
+        "skill": "vieEnCite",
+        "value": 9
+      },
+      {
+        "skill": "eloquence",
+        "value": 8
+      },
+      {
+        "skill": "equitation",
+        "value": 8
+      }
+    ],
+    "equipment": [
+      {
+        "type": "armor:cotteDeMailles"
+      },
+      {
+        "type": "weapon:epeeDeDuel"
+      }
+    ],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "combattant",
+    "caste_status": "expert",
+    "career": "duelliste",
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "empireDeSolyr"
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 8,
+    "interdicts": [
+      "loiDeLArme"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "botteSecrete",
+        "description": "Crève-œil, Diff. +5"
+      },
+      {
+        "privilege": "feinte",
+        "description": null
+      },
+      {
+        "privilege": "riposte",
+        "description": null
+      },
+      {
+        "privilege": "vigilanceCombattant",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "ennemiRare",
+        "cost": 5,
+        "details": "Mor-Mar-Zûl"
+      },
+      {
+        "disadvantage": "echec",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "conviction",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "prestance",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "statutSocial",
+        "cost": 2,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 2,
+        "circles": 0
+      },
+      "human": {
+        "value": 3,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "Eyerdhâll",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "Dirigeants",
+    "sub_category": {
+      "name": "empireDeSolyr"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 2
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 1
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "9ffea416-f905-4434-ba65-2e855dae0bee",
+    "name": "Yeerigo",
+    "description": "Yeerigo est méticuleux et ne laisse rien au hasard. Il dort peu, se nourrit chichement et n'est pas très causant. Mais derrière sa longue barbe blanche se cache un esprit brillant doublé d'une loyauté à toute épreuve. Yeerigo est un sage blessé par la trahison d'un de ses “fils”.\n\nYeerigo était le mentor d'Argomir et fut très affecté par la “désertion” de ce dernier, car il avait mis beaucoup d'espoir dans son jeune apprenti. Plus encore, le soir fatidique, il s'était rendu chez Argomir pour lui parler et l'aider à retrouver la foi dans le travail bien fait. C'est ainsi qu'il assista à la fuite de son protégé et au traquenard tendu à Kwizz, le jeune fils de Kezyr qui protégeait celui-ci. Suite à ces événements, Yeerigo jura de se venger des Inquisiteurs qui sont, selon lui, responsables de la défection d'Argomir et de la mort de Kwizz.\n\nConvaincu que la vengeance est un plat qui se mange froid, il réfléchit de longs mois avant de préparer les ébauches d’un plan qu’il veut parfait. Depuis lors, avec l’aide d’Ekhyt, son compagnon draconique, il s’est constitué un réseau d’informateurs et d’artisans en vue de porter, le moment venu, un coup fatal aux Inquisiteurs. Chaque jour, il glane un peu plus d’informations sur les habitudes de ses ennemis, sur leurs retraites, sur leurs forteresses, sur leurs alliés et leurs opérations. Chaque jour, il analyse, étudie, dissèque ces informations et peaufine le plan de sa vengeance !\n\nFasciné par tant d’abnégation et de méticulosité, le Grand Dragon du Métal suit de très près la progression du plan de Yeerigo. Conscient que ce genre d'initiative lui permettrait de porter un coup, sinon fatal, du moins handicapant, à l’Inquisition, Kezyr a demandé à ses espions de soutenir le Maître Artisan dans son entreprise.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 5,
+    "abilities": {
+      "force": 4,
+      "intelligence": 10,
+      "coordination": 10,
+      "presence": 3,
+      "resistance": 5,
+      "volonte": 8,
+      "perception": 7,
+      "empathie": 3
+    },
+    "attributes": {
+      "physique": 2,
+      "mental": 8,
+      "manuel": 8,
+      "social": 1
+    },
+    "skills": [
+      {
+        "skill": "lois",
+        "value": 4
+      },
+      {
+        "skill": "alchimie",
+        "value": 8
+      },
+      {
+        "skill": "armesDeSiege",
+        "value": 1,
+        "specializations": [
+          {
+            "name": "armesDeSiege:baliste",
+            "title": "Baliste",
+            "value": 8,
+            "reserved": false
+          },
+          {
+            "name": "armesDeSiege:eventreurs",
+            "title": "Éventreurs",
+            "value": 7,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "artisanat",
+        "value": 0,
+        "specializations": [
+          {
+            "name": "artisanat:forge",
+            "title": "Forge",
+            "value": 10,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "contrefacon",
+        "value": 6
+      },
+      {
+        "skill": "pieges",
+        "value": 7
+      },
+      {
+        "skill": "deguisement",
+        "value": 5
+      },
+      {
+        "skill": "vieEnCite",
+        "value": 4
+      },
+      {
+        "skill": "castes",
+        "value": 5
+      },
+      {
+        "skill": "commandement",
+        "value": 2
+      },
+      {
+        "skill": "diplomatie",
+        "value": 2
+      },
+      {
+        "skill": "explosifs",
+        "value": 4
+      },
+      {
+        "skill": "armesMecaniques",
+        "value": 1,
+        "specializations": [
+          {
+            "name": "armesMecaniques:harpons",
+            "title": "Harpons",
+            "value": 6,
+            "reserved": false
+          }
+        ]
+      }
+    ],
+    "equipment": [
+      {
+        "type": "weapon:arbaleteLegere",
+        "uuid": "45397ba4-b8b0-45b7-9e4e-35360efed566"
+      }
+    ],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "artisan",
+    "caste_status": "maitre",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "empireDeSolyr"
+    },
+    "luck": 0,
+    "proficiency": 10,
+    "renown": 0,
+    "interdicts": [
+      "loiDeLaPerfection"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "apprenti",
+        "description": null
+      },
+      {
+        "privilege": "autorisation",
+        "description": null
+      },
+      {
+        "privilege": "outils",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "infirmite",
+        "cost": 5,
+        "details": "Jambe gauche"
+      },
+      {
+        "disadvantage": "manie",
+        "cost": 1,
+        "details": "La propreté est reine"
+      },
+      {
+        "disadvantage": "obsession",
+        "cost": 2,
+        "details": "Vengeance"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "conviction",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "droiture",
+        "cost": 1,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 1,
+        "circles": 0
+      },
+      "human": {
+        "value": 4,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "metal",
+      "dragon": "Ekhyt",
+      "progress": "deuxiemeNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeKezyr"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "unique": false,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "levels": [
+        {
+          "type": "injured",
+          "start": 0,
+          "end": 40,
+          "capacity": 4
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  }
+]

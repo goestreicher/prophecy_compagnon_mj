@@ -627,10 +627,17 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       _npcFactory
     );
 
-    for(var model in await loadJSONAssetObjectList('npcs-ldb2e.json')) {
-      var instance = NonPlayerCharacter.fromJson(model);
-      NonPlayerCharacterSummary._defaultAssetLoaded(instance.summary);
-      _models[instance.id] = instance;
+    var assetFiles = [
+      'npcs-ldb2e.json',
+      'npcs-les-forges-de-kezyr.json',
+    ];
+
+    for(var f in assetFiles) {
+      for (var model in await loadJSONAssetObjectList(f)) {
+        var instance = NonPlayerCharacter.fromJson(model);
+        NonPlayerCharacterSummary._defaultAssetLoaded(instance.summary);
+        _models[instance.id] = instance;
+      }
     }
   }
 

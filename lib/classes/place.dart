@@ -330,9 +330,16 @@ class Place extends ResourceBaseClass {
     if(_defaultAssetsLoaded) return;
     _defaultAssetsLoaded = true;
 
-    for(var a in await loadJSONAssetObjectList('places-ldb2e.json')) {
-      // ignore:unused_local_variable
-      var p = Place.fromJson(a);
+    var assetFiles = [
+      'places-ldb2e.json',
+      'places-les-forges-de-kezyr.json',
+    ];
+
+    for(var f in assetFiles) {
+      for (var a in await loadJSONAssetObjectList(f)) {
+        // ignore:unused_local_variable
+        var p = Place.fromJson(a);
+      }
     }
   }
 
