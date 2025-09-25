@@ -171,7 +171,7 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
     }
 
     if(finalDamage > 0) {
-      injuries.setDamage(finalDamage);
+      injuries.dealDamage(finalDamage);
       if(injuries.isDead()) {
         status |= EntityStatus.dead;
       }

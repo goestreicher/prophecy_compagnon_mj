@@ -252,7 +252,7 @@ class InjuryManager {
   List<InjuryLevel> levels() => _injuryLevels.values.toList();
   int count(InjuryLevel level) => _injuries.containsKey(level.type) ? _injuries[level.type]! : 0;
 
-  InjuryLevel setDamage(int amount) {
+  InjuryLevel dealDamage(int amount) {
     var range = _injuryLevels.lastKeyBefore(_InjuryRange(min: amount, max: 99999));
     if(range == null) throw ArgumentError('Impossible de trouver le niveau de blessures pour $amount dégats');
     var level = _injuryLevels[range]!;
@@ -278,20 +278,39 @@ class InjuryManager {
 
   void dealInjuries(Injury injury, int count) {
     var capacity = 0;
+    InjuryLevel? currentLevel;
     for(var level in _injuryLevels.values) {
-      if(level.type == injury) {
+      if (level.type == injury) {
+        currentLevel = level;
         capacity = level.capacity;
       }
     }
+    if(currentLevel == null || capacity == 0) {
+      throw ArgumentError('Pas de niveau de blessure trouvé pour ${injury.name} (capacité $capacity)');
+    }
 
-    // TODO: manage injury overflows
-    if(capacity > 0) {
-      if(!_injuries.containsKey(injury)) {
-        _injuries[injury] = min(capacity, count);
+    var toDeal = count;
+    while(toDeal > 0 && currentLevel != null) {
+      var currentLevelInjuries = _injuries[currentLevel.type] ?? 0;
+      var dealt = min(count, currentLevel.capacity - currentLevelInjuries);
+      _injuries[currentLevel.type] = currentLevelInjuries + dealt;
+      toDeal -= dealt;
+
+      if(currentLevel.type.isFinal) {
+        break;
       }
-      else {
-        _injuries[injury] = min(capacity, _injuries[injury]! + count);
+
+      InjuryLevel? nextLevel;
+      for(var level in _injuryLevels.values) {
+        if(level.type.rank > currentLevel.type.rank) {
+          nextLevel = level;
+          break;
+        }
       }
+      if(nextLevel == null) {
+        throw ArgumentError('Pas de niveau de blessure trouvé après ${currentLevel.type.name}');
+      }
+      currentLevel = nextLevel;
     }
   }
 

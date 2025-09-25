@@ -37,7 +37,7 @@ class _EntityInjuryManagerWidgetState extends State<EntityInjuryManagerWidget> {
           circlesDiameter: widget.circlesDiameter,
           increase: !widget.allowChanges ? null : () {
             setState(() {
-              widget.manager.setDamage(level.start + 1);
+              widget.manager.dealInjuries(level.type, 1);
             });
           },
           decrease: !widget.allowChanges ? null : () {
