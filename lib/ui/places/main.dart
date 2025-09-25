@@ -273,9 +273,12 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                     padding: EdgeInsets.fromLTRB(4.0, 16.0, 0.0, 16.0),
                     child: PlaceDisplayWidget(
                       place: selectedPlace!,
-                      onEdited: (Place p) => setState(() {
-                        selectedPlace = p;
-                      }),
+                      onEdited: (Place p) {
+                        PlaceStore().save(p);
+                        setState(() {
+                          selectedPlace = p;
+                        });
+                      },
                       onDelete: (Place p) async {
                         var confirm = await showDialog<bool>(
                           context: context,

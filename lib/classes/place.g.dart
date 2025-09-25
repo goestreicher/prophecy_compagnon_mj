@@ -101,6 +101,8 @@ Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
 const _$PlaceTypeEnumMap = {
   PlaceType.monde: 'monde',
   PlaceType.continent: 'continent',
+  PlaceType.region: 'region',
+  PlaceType.lieuUnique: 'lieuUnique',
   PlaceType.nation: 'nation',
   PlaceType.citeEtat: 'citeEtat',
   PlaceType.capitale: 'capitale',
@@ -115,4 +117,5 @@ const _$PlaceTypeEnumMap = {
   PlaceType.ville: 'ville',
   PlaceType.village: 'village',
   PlaceType.quartier: 'quartier',
+  PlaceType.batiment: 'batiment',
 };

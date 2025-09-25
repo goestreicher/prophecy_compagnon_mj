@@ -41,11 +41,11 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
   int? mapImageHeight;
   final TextEditingController mapRealWidthController = TextEditingController();
   final TextEditingController mapRealHeightController = TextEditingController();
-  final TextEditingController descriptionController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
+
     selectedPlaceType = widget.place?.type;
     nameController.text = widget.place?.name ?? '';
     governmentController.text = widget.place?.government ?? '';
@@ -54,7 +54,6 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
     climateController.text = widget.place?.climate ?? '';
     selectedMapSourceType = widget.place?.map?.sourceType;
     mapSourceLocalFileName = widget.place?.map?.source;
-    descriptionController.text = widget.place?.description.general ?? '';
   }
 
   @override
@@ -68,7 +67,19 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
             key: formKey,
             child: Column(
               mainAxisSize: MainAxisSize.min,
+              spacing: 8.0,
               children: [
+                const SizedBox(height: 4.0),
+                TextFormField(
+                  controller: nameController,
+                  decoration: InputDecoration(
+                    labelText: 'Nom du lieu',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator: (String? value) => value == null || value.isEmpty
+                      ? 'Valeur manquante'
+                      : null,
+                ),
                 DropdownMenuFormField(
                   controller: placeTypeController,
                   requestFocusOnTap: true,
@@ -83,18 +94,6 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                       ? 'Valeur manquante'
                       : null,
                 ),
-                const SizedBox(height: 8.0),
-                TextFormField(
-                  controller: nameController,
-                  decoration: InputDecoration(
-                    labelText: 'Nom du lieu',
-                    border: OutlineInputBorder(),
-                  ),
-                  validator: (String? value) => value == null || value.isEmpty
-                      ? 'Valeur manquante'
-                      : null,
-                ),
-                const SizedBox(height: 8.0),
                 TextField(
                   controller: governmentController,
                   decoration: InputDecoration(
@@ -102,7 +101,6 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                const SizedBox(height: 8.0),
                 TextField(
                   controller: leaderController,
                   decoration: InputDecoration(
@@ -110,7 +108,6 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                const SizedBox(height: 8.0),
                 TextField(
                   controller: climateController,
                   decoration: InputDecoration(
@@ -118,8 +115,8 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                const SizedBox(height: 8.0),
                 Row(
+                  spacing: 12.0,
                   children: [
                     DropdownMenu(
                       controller: mapSourceTypeController,
@@ -188,15 +185,15 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                             child: Text(
                               mapSourceLocalFileName == null
                                   ? "Choisir l'image"
-                                  : mapSourceLocalFileName!
+                                  : "Remplacer l'image ${mapSourceLocalFileName!}",
+                              softWrap: false,
+                              overflow: TextOverflow.ellipsis,
                             )
                           )
                         )
                       ),
                   ],
                 ),
-                if(mapSourceLocalFileData != null)
-                  const SizedBox(height: 8.0),
                 if(mapSourceLocalFileData != null)
                   Row(
                     children: [
@@ -265,16 +262,6 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                       ),
                     ],
                   ),
-                const SizedBox(height: 8.0),
-                TextField(
-                  controller: descriptionController,
-                  minLines: 10,
-                  maxLines: 10,
-                  decoration: InputDecoration(
-                    labelText: 'Description',
-                    border: OutlineInputBorder(),
-                  ),
-                )
               ],
             ),
           )
@@ -333,7 +320,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                   ? climateController.text
                   : null,
                 description: PlaceDescription(
-                  general: descriptionController.text,
+                  general: '',
                 ),
                 source: widget.source ?? ObjectSource.local,
                 map: map,
@@ -359,9 +346,6 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
               }
               if(climateController.text.isNotEmpty) {
                 widget.place!.climate = climateController.text;
-              }
-              if(descriptionController.text.isNotEmpty) {
-                widget.place!.description.general = descriptionController.text;
               }
 
               if(selectedMapSourceType == null) {

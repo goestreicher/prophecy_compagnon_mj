@@ -15,6 +15,8 @@ part 'place.g.dart';
 enum PlaceType {
   monde(title: 'Monde', sort: -1),
   continent(title: 'Continent', sort: 0),
+  region(title: 'Région', sort: 2),
+  lieuUnique(title: 'Lieu unique', sort: 4),
   nation(title: 'Nation', sort: 5),
   citeEtat(title: 'Cité-État', sort: 5),
   capitale(title: 'Capitale', sort: 6),
@@ -29,6 +31,7 @@ enum PlaceType {
   ville(title: 'Ville', sort: 50),
   village(title: 'Village', sort: 55),
   quartier(title: 'Quartier', sort: 60),
+  batiment(title: 'Bâtiment', sort: 65),
   ;
 
   final String title;
@@ -209,7 +212,7 @@ class Place extends ResourceBaseClass {
     String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
     if(!_instances.containsKey(id)) {
       var place = Place._create(
-        uuid: isDefault ? null : id,
+        uuid: uuid,
         parentId: parentId,
         type: type,
         name: name,
