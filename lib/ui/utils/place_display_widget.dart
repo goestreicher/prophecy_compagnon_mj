@@ -176,54 +176,58 @@ class PlaceDisplayWidget extends StatelessWidget {
                             ]
                           ),
                         ),
-                        RichText(
-                          text: TextSpan(
-                            text: 'Régime : ',
-                            style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                            children: [
-                              TextSpan(
-                                text: place.government ?? 'aucun',
-                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                              )
-                            ]
+                        if(place.government != null && place.government!.isNotEmpty)
+                          RichText(
+                            text: TextSpan(
+                              text: 'Régime : ',
+                              style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                              children: [
+                                TextSpan(
+                                  text: place.government ?? 'aucun',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
+                                )
+                              ]
+                            ),
                           ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            text: 'Dirigeant : ',
-                            style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                            children: [
-                              TextSpan(
-                                text: place.leader ?? 'aucun',
-                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                              )
-                            ]
+                        if(place.leader != null && place.leader!.isNotEmpty)
+                          RichText(
+                            text: TextSpan(
+                              text: 'Dirigeant : ',
+                              style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                              children: [
+                                TextSpan(
+                                  text: place.leader ?? 'aucun',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
+                                )
+                              ]
+                            ),
                           ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            text: 'Valeurs : ',
-                            style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                            children: [
-                              TextSpan(
-                                text: place.motto ?? 'non renseigné',
-                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                              )
-                            ]
+                        if(place.motto != null && place.motto!.isNotEmpty)
+                          RichText(
+                            text: TextSpan(
+                              text: 'Valeurs : ',
+                              style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                              children: [
+                                TextSpan(
+                                  text: place.motto ?? 'non renseigné',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
+                                )
+                              ]
+                            ),
                           ),
-                        ),
-                        RichText(
-                          text: TextSpan(
-                            text: 'Climat : ',
-                            style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                            children: [
-                              TextSpan(
-                                text: place.climate ?? 'non renseigné',
-                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                              )
-                            ]
+                        if(place.climate != null && place.climate!.isNotEmpty)
+                          RichText(
+                            text: TextSpan(
+                              text: 'Climat : ',
+                              style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                              children: [
+                                TextSpan(
+                                  text: place.climate ?? 'non renseigné',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
+                                )
+                              ]
+                            ),
                           ),
-                        ),
                       ],
                     ),
                   ),

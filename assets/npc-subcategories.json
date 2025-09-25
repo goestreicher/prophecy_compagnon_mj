@@ -1,5 +1,12 @@
 [
   {
+    "title": "Kar",
+    "categories": [
+      "dirigeants"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Empire de Solyr",
     "categories": [
       "dirigeants"
@@ -14,6 +21,13 @@
     "is_default": true
   },
   {
+    "title": "Élus de Kroryn",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Sans Caste",
     "categories": [
       "generique"
@@ -22,6 +36,13 @@
   },
   {
     "title": "Caste des artisans",
+    "categories": [
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des mages",
     "categories": [
       "personnalites"
     ],

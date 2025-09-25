@@ -330,41 +330,6 @@
     }
   },
   {
-    "name": "Kar",
-    "parent_id": "kor",
-    "type": "nation",
-    "government": "autorité draconique",
-    "leader": "Kroryn, Grand Dragon du Feu",
-    "motto": "fougue, énergie, honneur",
-    "climate": "océanique à l'ouest, tempéré à l'est",
-    "description": {
-      "general": "essentiellement constitué d’une toundra rocailleuse, Kar n'est pas une terre prédisposée à l'agriculture mais plutôt une nation d’anarchie. En effet, royaume de la guerre et du mercenariat, Kar attire tous les guerriers qui rêvent de démontrer leur valeur par les armes. Ankar, la Cité du Feu, est d'ailleurs le seul endroit qui ne soit pas entièrement livré au chaos. Dans ce contexte, trois cités sont assez bien établies pour n'avoir que très rarement à subir un état de siège. Il s'agit de Maurore, la cité des arènes, où les meilleurs gladiateurs s'affrontent quotidiennement, d'Arkhel, port marchand côtier réputé pour ses pirates et ses tavernes, et de Kendyr, la cité des mages du feu. Le reste des territoires est laissé aux mains d'hommes qui luttent pour le pouvoir, la fortune et la gloire. Ces contrées se résument à d'immenses champs de bataille où le fer, les cris et le sang font triompher les héros - et disparaître les plus faibles. Nul ne se soucie de ceux qui mordent un jour la poussière. Dans cette partie de Kor, la réputation se mérite à grands renforts de guerres et de combats épiques.",
-      "history": "les terres de Kar ont toujours servi de barrage aux incursions venues de Kali. Son histoire est jalonnée de batailles sanglantes de faits d'armes incroyables et de sortilèges fabuleux ayant changé le cours d'une guerre.",
-      "ethnology": "les habitants de la province sont généralement plus entraînés physiquement, ne serait-ce que pour vivre correctement dans une région où l'exploit, la prouesse physique et l’aspect extérieur athlétique sont un véritable mode de pensée.",
-      "society": "de tradition mercenaire, les Kariens se rallient souvent à un groupe de combattants désireux de se mesurer dans une nouvelle guerre. Tous ceux qui ont déjà séjourné à Kar se souviennent de l'ambiance de conflit perpétuel qui y règne. Nul n’est jamais à l’abri d'une embuscade ou d’un défi. Les combattants forment la base de la société et toutes leurs coutumes et leurs valeurs influencent la mentalité populaire.",
-      "politics": "le régime de Kar est féodal militaire. Les seigneurs règnent selon leur bon vouloir sur leurs terres qu'ils cherchent toujours à agrandir en envahissant les fiefs voisins.",
-      "judicial": "la loi a pour avantage d’être claire et franche. Les seigneurs de guerre en place dans leur fief ont le droit de justice, adaptant les Lois draconiques selon leur bon vouloir. La seule loi relativement constante est que l’Humanisme est hérétique et que ses membres sont exécutés sans autre forme de procès.",
-      "economy": "Kar est une terre de tradition essentiellement militaire qui vit pour et par les armées sur lesquelles repose une bonne partie de son économie. La caste des combattants est donc un client de choix qui fait régulièrement appel à nombre de fournisseurs pour équiper et nourrir ses membres regroupés en troupes. Les importations sont évidemment colossales. Les armées ont également besoin de grandes quantités de dracs pour payer les nombreux mercenaires. Les ressources financières proviennent essentiellement des mines et du pillage des caravanes provenant des cités blanches de l’Empire de Solyr. Sur la côte, d’incroyables troupeaux de chevaux sauvages offrent un spectacle réputé. Après un dressage intensif, ces nobles coursiers ont la réputation d’être les meilleures montures terrestres de tout Kor.\nLa paysannerie est faiblement répandue à Kar, où la majeure partie de l’activité organisée se situe dans les villes ou autour des châteaux fortifiés qui parsèment le pays.",
-      "military": "les autres villes et villages ne sont que provisoires ou à moitié en ruine. Des incursions de l’Empire nomade Zûl ou du Royaume de l'Ombre sont fréquentes et donnent aux guerriers de très bons prétextes pour ne pas se battre entre eux mais, pour une fois, contre un ennemi commun. Les combattants parcourent les routes à la recherche d’adversaires, une ambiance de guerre civile permanente soumet les moindres ruelles à un climat de tension extrême et aucun ordre, aucune caste, ne donne l’impression de vouloir maîtriser quoi que ce soit. Seule la capitale dément cette généralité. Les rues y sont − à peine − plus sûres et les combats strictement surveillés, ou limités aux seules arènes."
-    },
-    "source": {
-      "type": "officiel",
-      "name": "LdB 2e"
-    }
-  },
-  {
-    "name": "Ankar",
-    "parent_id": "kar",
-    "type": "capitale",
-    "description": {
-      "general": ""
-    },
-    "source": {
-      "type": "officiel",
-      "name": "LdB 2e"
-    }
-  },
-  {
     "name": "Kern",
     "parent_id": "kor",
     "type": "nation",

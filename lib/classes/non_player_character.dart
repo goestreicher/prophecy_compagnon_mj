@@ -630,6 +630,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     var assetFiles = [
       'npcs-ldb2e.json',
       'npcs-les-forges-de-kezyr.json',
+      'npcs-les-foudres-de-kroryn.json',
     ];
 
     for(var f in assetFiles) {

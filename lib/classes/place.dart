@@ -15,9 +15,9 @@ part 'place.g.dart';
 enum PlaceType {
   monde(title: 'Monde', sort: -1),
   continent(title: 'Continent', sort: 0),
+  nation(title: 'Nation', sort: 1),
   region(title: 'Région', sort: 2),
   lieuUnique(title: 'Lieu unique', sort: 4),
-  nation(title: 'Nation', sort: 5),
   citeEtat(title: 'Cité-État', sort: 5),
   capitale(title: 'Capitale', sort: 6),
   archiduche(title: 'Archiduché', sort: 10),
@@ -333,6 +333,7 @@ class Place extends ResourceBaseClass {
     var assetFiles = [
       'places-ldb2e.json',
       'places-les-forges-de-kezyr.json',
+      'places-les-foudres-de-kroryn.json',
     ];
 
     for(var f in assetFiles) {
@@ -350,6 +351,7 @@ class Place extends ResourceBaseClass {
   static void preImportFilter(Map<String, dynamic> j) {
     if(
         j.containsKey('map')
+        && j['map'] != null
         && j['map'].containsKey('exportable_binary_data')
         && j['map']['exportable_binary_data'] != null
     ) {

@@ -792,7 +792,7 @@
       "type": "officiel",
       "name": "Les Forges de Kezyr"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": false,
     "injuries": {
       "levels": [

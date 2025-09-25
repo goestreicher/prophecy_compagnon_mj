@@ -1,0 +1,849 @@
+[
+  {
+    "equiped": [],
+    "uuid": "9795d32a-cda4-403c-8742-6eb381fd3c10",
+    "name": "Alde Baran",
+    "description": "Alde Baran (prononcer Aldeu Barann) est sans doute le Duelliste le plus connu et le plus respecté de tout le Royaume de Kor. Après avoir mené plusieurs armées au combat, il est apprécié pour son efficacité et sa ruse. Charismatique et dynamique, il perd une bonne part de son crédit hors du royaume de Kar où sa fougue, son impétuosité et sa nature sanguine l’empêchent d'avoir une politique diplomatique cohérente. Quatre fois dans sa vie, Kroryn lui-même l’a fait convoquer. À chaque fois, Alde a refusé d’expliquer le motif de la rencontre. On sait que le magicien entretient des rapports houleux mais durables avec le connétable Mélean Sarn.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 9,
+      "intelligence": 11,
+      "coordination": 8,
+      "presence": 8,
+      "resistance": 11,
+      "volonte": 12,
+      "perception": 7,
+      "empathie": 10
+    },
+    "attributes": {
+      "physique": 7,
+      "mental": 10,
+      "manuel": 6,
+      "social": 5
+    },
+    "skills": [
+      {
+        "skill": "armesContondantes",
+        "value": 10
+      },
+      {
+        "skill": "armesDoubles",
+        "value": 9
+      },
+      {
+        "skill": "armesTranchantes",
+        "value": 9
+      },
+      {
+        "skill": "corpsACorps",
+        "value": 8
+      },
+      {
+        "skill": "equitation",
+        "value": 7
+      },
+      {
+        "skill": "escalade",
+        "value": 7
+      },
+      {
+        "skill": "connaissanceDeLaMagie",
+        "value": 12
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 9
+      },
+      {
+        "skill": "lireEtEcrire",
+        "value": 9
+      },
+      {
+        "skill": "vieEnCite",
+        "value": 7
+      },
+      {
+        "skill": "castes",
+        "value": 9
+      },
+      {
+        "skill": "commandement",
+        "value": 9
+      },
+      {
+        "skill": "intimidation",
+        "value": 8
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "mage",
+    "caste_status": "grandMaitre",
+    "career": "mageDeCombat",
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "3f414562-cea5-4dfd-ac2d-0570ff889f11"
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 0,
+    "interdicts": [
+      "loiDuPacte",
+      "loiDuSangCombattant"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "messager",
+        "description": "Non précisé"
+      },
+      {
+        "privilege": "prevoyance",
+        "description": null
+      },
+      {
+        "privilege": "leurre",
+        "description": null
+      },
+      {
+        "privilege": "tuteurSpecialise",
+        "description": "Kroryn"
+      },
+      {
+        "privilege": "style",
+        "description": null
+      },
+      {
+        "privilege": "engagement",
+        "description": null
+      },
+      {
+        "privilege": "botteSecrete",
+        "description": "Non précisée"
+      },
+      {
+        "privilege": "feinte",
+        "description": null
+      },
+      {
+        "privilege": "riposte",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "maledictionDeNenya",
+        "cost": 0,
+        "details": ""
+      },
+      {
+        "disadvantage": "traumatismeMental",
+        "cost": 4,
+        "details": ""
+      },
+      {
+        "disadvantage": "ennemiRare",
+        "cost": 5,
+        "details": "Ghôm, dragon ancien de Brorne"
+      },
+      {
+        "disadvantage": "incompetence",
+        "cost": 5,
+        "details": "Technologie"
+      },
+      {
+        "disadvantage": "regardDesDragons",
+        "cost": 5,
+        "details": "Brorne"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "magieNaturelle",
+        "cost": 4,
+        "details": "Feu"
+      },
+      {
+        "advantage": "augureFavorable",
+        "cost": 3,
+        "details": "Chimère"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 5,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesMages"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 4
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 3
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 2
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 10,
+      "invocatoire": 7,
+      "sorcellerie": 4
+    },
+    "magic_spheres": {
+      "pierre": 7,
+      "feu": 12,
+      "oceans": 0,
+      "metal": 8,
+      "nature": 0,
+      "reves": 0,
+      "cite": 6,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 7,
+      "feu": 12,
+      "oceans": 0,
+      "metal": 8,
+      "nature": 0,
+      "reves": 0,
+      "cite": 6,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "2d1559e7-4065-4a99-9e44-d84a50b457bc",
+    "name": "Mélean Sarn",
+    "description": "Mélean Sarn est un stratège réputé et Général hors du commun, membre de la caste des combattants au titre de Capitaine. Ses qualités de gestionnaire sont fort appréciées, et ses exploits contre Kali et les hordes Zûl ont fait de lui un héros populaire.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 8,
+      "intelligence": 10,
+      "coordination": 7,
+      "presence": 9,
+      "resistance": 7,
+      "volonte": 8,
+      "perception": 9,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 8,
+      "mental": 7,
+      "manuel": 5,
+      "social": 7
+    },
+    "skills": [
+      {
+        "skill": "armesTranchantes",
+        "value": 9
+      },
+      {
+        "skill": "armesDeSiege",
+        "value": 10
+      },
+      {
+        "skill": "castes",
+        "value": 6
+      },
+      {
+        "skill": "commandement",
+        "value": 9
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 6
+      },
+      {
+        "skill": "diplomatie",
+        "value": 6
+      },
+      {
+        "skill": "eloquence",
+        "value": 8
+      },
+      {
+        "skill": "strategie",
+        "value": 10
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "combattant",
+    "caste_status": "expert",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "3f414562-cea5-4dfd-ac2d-0570ff889f11"
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 0,
+    "interdicts": [
+      "loiDeLArme"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "argotCombattant",
+        "description": null
+      },
+      {
+        "privilege": "botteSecrete",
+        "description": "Non précisée"
+      },
+      {
+        "privilege": "doubleAttaque",
+        "description": null
+      },
+      {
+        "privilege": "feinte",
+        "description": null
+      },
+      {
+        "privilege": "riposte",
+        "description": null
+      },
+      {
+        "privilege": "vigilanceCombattant",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "blessure",
+        "cost": 5,
+        "details": ""
+      },
+      {
+        "disadvantage": "obsession",
+        "cost": 2,
+        "details": "Non précisée"
+      }
+    ],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 3,
+        "circles": 0
+      },
+      "human": {
+        "value": 2,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 1,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "cite",
+      "dragon": "Fendill",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "kar"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 3
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 2
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "5b0dd392-4f59-475e-9103-831efb003c11",
+    "name": "Org Horkyn",
+    "description": "Une des légendes qui circule dans les rangs de la Caste des Combattants évoque un jeune dragon capricieux, désireux de se démarquer de ses congénères en se liant à deux humains. Kroryn, amusé par tant de forgue, accepta et l’autorisa à tenter l’expérience du Lien avec deux Élus. Fougueux et courageux, le jeune dragon partit en quête de deux compagnons humains. Après moult péripéties, il découvrit deux guerriers charismatiques, Veerl et Org, dont la valeur n’avait d’égal que le courage. Après les avoir vus combattre, il porta son dévolu sur eux sans la moindre hésitation. Les humains passèrent tous deux la première épreuve et la réussirent brillamment, fiers de devenir des Élus et de représenter les intérêts du feu qui coulait dans leurs veines. Malheureusement, Kalimsshar vit dans cette situation étonnante l’occasion de distiller son venin.\n\nSous forme humaine, il contacta les deux hommes afin de faire naître doute et jalousie au plus profond de leurs cœurs. Ainsi, Veerl et Org, alors les plus heureux des hommes, devinrent les pires ennemis du monde — à la plus grande tristesse du fils de Kroryn auquel ils étaient liés. Quand vint le moment de prouver leur valeur en vue de faire progresser le Lien qui les unissait au dragon, ils décidèrent de se défier mutuellement. Malheureusement, d’égale valeur et mus par des sentiments contradictoires, les deux combattants durent, exsangues, constater l'absence de vainqueur lors de ce premier affrontement. Soucieux de préserver l'intégrité de ses humains, le jeune dragon décida de les séparer de force et les conduisit aux extrémités opposées de Kor. Depuis lors, les deux humains, qui refusent de rompre leur Lien draconique, se cherchent et s'affrontent violemment à chacune de leurs rencontres.\n\nAujourd’hui, le fils de Kroryn continue de se morfondre et tente tant bien que mal d’éviter les rencontres entre ses deux protégés. Kroryn se passionne pour ce combat sans fin, qui prouve à ses yeux que deux combattants orgueilleux peuvent rivaliser de courage et d’audace sans jamais s’anéantir ; quant à Kalimsshar, il suit avec avidité l’évolution de l'œuvre du Fatalisme, guide et maître incontesté de ce combat perpétuel.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 7,
+      "intelligence": 4,
+      "coordination": 6,
+      "presence": 4,
+      "resistance": 5,
+      "volonte": 5,
+      "perception": 6,
+      "empathie": 3
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 2,
+      "manuel": 4,
+      "social": 1
+    },
+    "skills": [
+      {
+        "skill": "armesTranchantes",
+        "value": 8
+      },
+      {
+        "skill": "corpsACorps",
+        "value": 6
+      },
+      {
+        "skill": "athletisme",
+        "value": 5
+      },
+      {
+        "skill": "equitation",
+        "value": 5
+      },
+      {
+        "skill": "esquive",
+        "value": 5
+      },
+      {
+        "skill": "bouclier",
+        "value": 4
+      }
+    ],
+    "equipment": [
+      {
+        "type": "weapon:epeeLongue",
+        "uuid": "070ed4e6-402c-42a3-91aa-f4561827511e"
+      },
+      {
+        "type": "armor:armureDeDemiPlaques",
+        "uuid": "715953d3-7792-4c5b-8818-732a321f311a"
+      }
+    ],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "combattant",
+    "caste_status": "initie",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "3f414562-cea5-4dfd-ac2d-0570ff889f11"
+    },
+    "luck": 0,
+    "proficiency": 6,
+    "renown": 0,
+    "interdicts": [
+      "loiDuSangCombattant"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "doubleAttaque",
+        "description": null
+      },
+      {
+        "privilege": "riposte",
+        "description": null
+      },
+      {
+        "privilege": "botteSecrete",
+        "description": "Non précisée"
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "ennemi",
+        "cost": 3,
+        "details": "Veerl Varag"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "sensEnAlerte",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 3,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 2,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Fils de Kroryn",
+      "progress": "premierNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeKroryn"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "unique": true,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "levels": [
+        {
+          "type": "injured",
+          "start": 0,
+          "end": 50,
+          "capacity": 3
+        },
+        {
+          "type": "death",
+          "start": 50,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "065c5c54-6eae-4356-b6f2-786a20fd4db0",
+    "name": "Veerl Varag",
+    "description": "Une des légendes qui circule dans les rangs de la Caste des Combattants évoque un jeune dragon capricieux, désireux de se démarquer de ses congénères en se liant à deux humains. Kroryn, amusé par tant de forgue, accepta et l’autorisa à tenter l’expérience du Lien avec deux Élus. Fougueux et courageux, le jeune dragon partit en quête de deux compagnons humains. Après moult péripéties, il découvrit deux guerriers charismatiques, Veerl et Org, dont la valeur n’avait d’égal que le courage. Après les avoir vus combattre, il porta son dévolu sur eux sans la moindre hésitation. Les humains passèrent tous deux la première épreuve et la réussirent brillamment, fiers de devenir des Élus et de représenter les intérêts du feu qui coulait dans leurs veines. Malheureusement, Kalimsshar vit dans cette situation étonnante l’occasion de distiller son venin.\n\nSous forme humaine, il contacta les deux hommes afin de faire naître doute et jalousie au plus profond de leurs cœurs. Ainsi, Veerl et Org, alors les plus heureux des hommes, devinrent les pires ennemis du monde — à la plus grande tristesse du fils de Kroryn auquel ils étaient liés. Quand vint le moment de prouver leur valeur en vue de faire progresser le Lien qui les unissait au dragon, ils décidèrent de se défier mutuellement. Malheureusement, d’égale valeur et mus par des sentiments contradictoires, les deux combattants durent, exsangues, constater l'absence de vainqueur lors de ce premier affrontement. Soucieux de préserver l'intégrité de ses humains, le jeune dragon décida de les séparer de force et les conduisit aux extrémités opposées de Kor. Depuis lors, les deux humains, qui refusent de rompre leur Lien draconique, se cherchent et s'affrontent violemment à chacune de leurs rencontres.\n\nAujourd’hui, le fils de Kroryn continue de se morfondre et tente tant bien que mal d’éviter les rencontres entre ses deux protégés. Kroryn se passionne pour ce combat sans fin, qui prouve à ses yeux que deux combattants orgueilleux peuvent rivaliser de courage et d’audace sans jamais s’anéantir ; quant à Kalimsshar, il suit avec avidité l’évolution de l'œuvre du Fatalisme, guide et maître incontesté de ce combat perpétuel.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 7,
+      "intelligence": 4,
+      "coordination": 6,
+      "presence": 4,
+      "resistance": 5,
+      "volonte": 5,
+      "perception": 6,
+      "empathie": 3
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 2,
+      "manuel": 4,
+      "social": 1
+    },
+    "skills": [
+      {
+        "skill": "armesTranchantes",
+        "value": 8
+      },
+      {
+        "skill": "corpsACorps",
+        "value": 6
+      },
+      {
+        "skill": "athletisme",
+        "value": 5
+      },
+      {
+        "skill": "equitation",
+        "value": 5
+      },
+      {
+        "skill": "esquive",
+        "value": 5
+      },
+      {
+        "skill": "bouclier",
+        "value": 4
+      }
+    ],
+    "equipment": [
+      {
+        "type": "weapon:epeeLongue",
+        "uuid": "070ed4e6-402c-42a3-91aa-f4561827511e"
+      },
+      {
+        "type": "armor:armureDeDemiPlaques",
+        "uuid": "715953d3-7792-4c5b-8818-732a321f311a"
+      }
+    ],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "combattant",
+    "caste_status": "initie",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "3f414562-cea5-4dfd-ac2d-0570ff889f11"
+    },
+    "luck": 0,
+    "proficiency": 6,
+    "renown": 0,
+    "interdicts": [
+      "loiDuSangCombattant"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "doubleAttaque",
+        "description": null
+      },
+      {
+        "privilege": "riposte",
+        "description": null
+      },
+      {
+        "privilege": "botteSecrete",
+        "description": "Non précisée"
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "ennemi",
+        "cost": 3,
+        "details": "Org Horkyn"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "sensEnAlerte",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 3,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 2,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Fils de Kroryn",
+      "progress": "premierNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeKroryn"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "unique": true,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "levels": [
+        {
+          "type": "injured",
+          "start": 0,
+          "end": 50,
+          "capacity": 3
+        },
+        {
+          "type": "death",
+          "start": 50,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  }
+]

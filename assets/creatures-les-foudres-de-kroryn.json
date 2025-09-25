@@ -1,0 +1,107 @@
+[
+  {
+    "equiped": [],
+    "uuid": "618f4d4c-4cb5-4476-88a7-73c6649d9c82",
+    "name": "Destrier karien",
+    "description": "D'un caractère fougueux, les destriers kariens sont de superbes montures à la robe rousse et à la crinière d’un noir bleuté. Leur puissance et leur résistance en font des bêtes de guerre fort recherchées. Leur prix (environ 20 000 df) reflète leur rareté et leur délicat dressage.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 1,
+    "initiative": 4,
+    "abilities": {
+      "force": 12,
+      "intelligence": 4,
+      "coordination": 7,
+      "presence": 0,
+      "resistance": 12,
+      "volonte": 7,
+      "perception": 7,
+      "empathie": 5
+    },
+    "attributes": {
+      "physique": 7,
+      "mental": 2,
+      "manuel": 0,
+      "social": 1
+    },
+    "skills": [
+      {
+        "skill": "athletisme",
+        "value": 1,
+        "specializations": [
+          {
+            "name": "athletisme:course",
+            "title": "Course",
+            "value": 8,
+            "reserved": false
+          },
+          {
+            "name": "athletisme:sauter",
+            "title": "Sauter",
+            "value": 6,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "natation",
+        "value": 3
+      },
+      {
+        "skill": "esquive",
+        "value": 4
+      }
+    ],
+    "equipment": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "biome": "La côte des chevauchées",
+    "real_size": "2m au garrot",
+    "weight": "800 kg",
+    "natural_armor": 6,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Ruade",
+        "skill": 4,
+        "damage": 20,
+        "ranges": {
+          "contact": 0
+        }
+      },
+      {
+        "name": "Morsure",
+        "skill": 3,
+        "damage": 17,
+        "ranges": {
+          "contact": 0
+        }
+      }
+    ],
+    "special_capability": "",
+    "injuries": {
+      "levels": [
+        {
+          "type": "injured",
+          "start": 0,
+          "end": 40,
+          "capacity": 4
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    }
+  }
+]

@@ -1,0 +1,577 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Kar",
+    "uuid": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
+    "parent_id": "kor",
+    "type": "nation",
+    "government": "autorité draconique",
+    "leader": "Kroryn, Grand Dragon du Feu",
+    "motto": "fougue, énergie, honneur",
+    "climate": "océanique à l'ouest, tempéré à l'est",
+    "description": {
+      "general": "Les terres de Kar sont un fouillis incessant de luttes pour le pouvoir, le prestige, la vengeance et l'honneur. Même si le pays n’est pas un champ de bataille permanent, il ne se passe pas une semaine sans qu’une escarmouche ne vienne perturber la quiétude des lieux. Kar n’est pas une terre agricole, et les rares paysans qui y vivent produisent à peine de quoi subvenir à leurs besoins - en raison des colossales taxes que les seigneurs locaux font prélever afin de nourrir leurs troupes. Le pays est essentiellement constitué d’une toundra rocailleuse, où des villages forment des taches de culture organisée. Régulièrement, la silhouette d’une forteresse rappelle la guerre permanente, et l’on ne voyage pas un jour sans entrevoir un champ de bataille frais de moins d’un mois.\n\n",
+      "history": "Les terres de Kar ont toujours servi de barrage aux incursions venues de Kali. Son histoire est jalonnée de batailles sanglantes de faits d'armes incroyables et de sortilèges fabuleux ayant changé le cours d'une guerre.\n\n",
+      "ethnology": "Les habitants de la province sont généralement plus entraînés physiquement, ne serait-ce que pour vivre correctement dans une région où l'exploit, la prouesse physique et l’aspect extérieur athlétique sont un véritable mode de pensée.\n\n",
+      "society": "De tradition mercenaire, les Kariens se rallient souvent à un groupe de combattants désireux de se mesurer dans une nouvelle guerre. Tous ceux qui ont déjà séjourné à Kar se souviennent de l'ambiance de conflit perpétuel qui y règne. Nul n’est jamais à l’abri d'une embuscade ou d’un défi. Les combattants forment la base de la société et toutes leurs coutumes et leurs valeurs influencent la mentalité populaire.\n\n",
+      "politics": "Le régime de Kar est féodal militaire. Les seigneurs règnent selon leur bon vouloir sur leurs terres qu'ils cherchent toujours à agrandir en envahissant les fiefs voisins.\n\nLes luttes incessantes des seigneurs de guerre locaux interdisent toute structure officielle permanente. Ankar ne fait valoir aucune loi particulière dans la province, bien que les serments des combattants fassent état de règle officielle.\n\nAu-delà, les seigneurs règnent sur leur fief comme bon leur semble. Il n’y a pas de notion de droit héréditaire ou de titre familial. N’importe qui peut envahir son voisin, charge à lui de réussir.\n\n",
+      "judicial": "La loi a pour avantage d’être claire et franche. Les seigneurs de guerre en place dans leur fief ont le droit de justice, adaptant les Lois draconiques selon leur bon vouloir. La seule loi relativement constante est que l’Humanisme est hérétique et que ses membres sont exécutés sans autre forme de procès.\n\n",
+      "economy": "Kar est une terre de tradition essentiellement militaire qui vit pour et par les armées sur lesquelles repose une bonne partie de son économie. La caste des combattants est donc un client de choix qui fait régulièrement appel à nombre de fournisseurs pour équiper et nourrir ses membres regroupés en troupes. Les importations sont évidemment colossales. Les armées ont également besoin de grandes quantités de dracs pour payer les nombreux mercenaires. Les ressources financières proviennent essentiellement des mines et du pillage des caravanes provenant des cités blanches de l’Empire de Solyr. Sur la côte, d’incroyables troupeaux de chevaux sauvages offrent un spectacle réputé. Après un dressage intensif, ces nobles coursiers ont la réputation d’être les meilleures montures terrestres de tout Kor.\n\nLa paysannerie est faiblement répandue à Kar, où la majeure partie de l’activité organisée se situe dans les villes ou autour des châteaux fortifiés qui parsèment le pays.\n\n## Les caravanes\n\nSi Kar n’est pas une terre agricole, elle doit pourtant subvenir aux imposants besoins alimentaires de la population combattante. De ce fait, un commerce régulier s’est instauré avec les Cités Blanches de Solyr, à l’agriculture prospère et rentable, afin de faire venir des convois de nourriture dans tout Kar. Ces caravanes sont généralement de véritables villes ambulantes, transportant des tonnes de vivres dans des chariots renforcés. Les escortes sont impressionnantes à l'excès, les seigneurs assurant à grands frais la protection de la pitance de leurs troupes.\n\nDe nombreux combats émaillent le passage des convois et il n’est pas rare qu’un seigneur en guerre cherche à attaquer les convois de son adversaire afin d’affamer l’armée ennemie. Seuls les convois des Crocs sont relativement respectés, même si les seigneurs n’hésitent pas à exiger des droits de passage sur leurs terres, souvent en nature.\n\n",
+      "military": "Les autres villes et villages ne sont que provisoires ou à moitié en ruine. Des incursions de l’Empire nomade Zûl ou du Royaume de l'Ombre sont fréquentes et donnent aux guerriers de très bons prétextes pour ne pas se battre entre eux mais, pour une fois, contre un ennemi commun. Les combattants parcourent les routes à la recherche d’adversaires, une ambiance de guerre civile permanente soumet les moindres ruelles à un climat de tension extrême et aucun ordre, aucune caste, ne donne l’impression de vouloir maîtriser quoi que ce soit. Seule la capitale dément cette généralité. Les rues y sont − à peine − plus sûres et les combats strictement surveillés, ou limités aux seules arènes.\n\nLa seule loi immuable en ces terres est celle de l’Appel. Lorsque Kroryn décide qu’une armée doit se mobiliser, il procède à l’Appel et envoie ses hérauts lever des troupes. Cette convocation est sans excuse et jamais l’on n’a vuun seigneur refuser — ou même rechigner — à rejoindre l’organisation du contingent demandé. Bien sûr, toute attaque contre un seigneur démuni est très mal vue et il est rare qu’un envahisseur ose se déshonorer par une invasion aussi lâche.\n\n"
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Les Crocs",
+    "uuid": "0583dd5c-7d69-4774-ad2f-e915901c2e49",
+    "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Les Crocs sont les trois forts qui marquent la frontière avec la Plaine Pétrifiée. Chargés de protéger l’empire de Solyr des invasions de Kali, ils sont rapidement devenus des bases de raids contre les forces corrompues massées de l’autre côté de la Plaine. Les trois forteresses sont construite sur des collines, mais des ajouts successifs ont changé les châteaux d’origine en citadelles surchargées de tours, de murailles, de fossés et de meurtrières.\n\nChacune abrite plusieurs milliers de guerriers, organisés en compagnies aux noms effrayants.\n\nEntre elles, des tours forment un maillage irrégulier, où les ruines côtoient les fortins impeccables. Servir dans les Crocs peut aussi bien être un honneur qu’une punition, selon le lieu où l’on se trouve. Certains guerriers sont des mercenaires, d'autre des volontaires et beaucoup ont été envoyés ici par la caste. Il en résulte diverses notions de “défense”, ce qui amène à une désorganisation complète. On voit parfois des raids présomptueux au travers de la Plaine ou des escarmouches au pied même des tours de guet. Ce système reste très efficace contre les incursions périodiques des seigneurs de Kali, mais également contre toute force organisée. Mais il existe des failles et, par les nuits sans lune, il n’est pas rare qu’un monstre égaré arrive à entrer dans Kar.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Arkhel",
+    "uuid": "07895b4c-bebd-4d9b-89fd-1cef3f8df7d7",
+    "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
+    "type": "cite",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situé à l’embouchure du fleuve frontalier de la Daloise, Arkhel est un port brumeux à l’activité sporadique. Principalement faites de pierres arrachées aux falaises voisines, les habitations sont blotties les unes contre les autres, transformant les rues en tunnels tortueux et boueux. Il y plane d’ailleurs une forte odeur de poisson séché et de fumée froide.\n\nArkhel compte près de cent vingt mille âmes, et les mouvements de population y sont importants. Port fluvial avant tout, la cité vit de la pêche, du commerce de denrées alimentaires et d’un peu de piraterie, ce qui lui donne un assez bon niveau de vie. En revanche, sa réputation laisse à désirer, car les “marins” du cru sont plus des brigands barboteurs, avides de tavernes enfumées et de beuveries bruyantes, que de nobles arpenteurs des mers, fidèles aux traditions d’Ozyr. Un proverbe oforien dit d’ailleurs “Arkhelien aux poches pleines, capitaine en peine”.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Maurore",
+    "uuid": "206357db-d7d8-4f33-b75e-5a6d39925ac9",
+    "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
+    "type": "cite",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Avec environ cent cinquante mille habitants, Maurore est la deuxième cité de Kar par sa taille. Fortifiée, elle bénéficie d’une surface étendue qui la rend un peu plus agréable à vivre que la capitale, Ankar. Mais les combats y sont aussi nombreux - et souvent même plus violents.\n\nMaurore est célèbre pour ses arènes - elle n'en compte pas moins de trente - sans parler des tavernes qui disposent souvent d’une fosse sablée. La cité est le siège de plusieurs sectes et guildes d’assassins, qui profitent du chaos ambiant pour assurer leur anonymat par des meurtres déguisés. Autour de ces organisations secrètes, les jeux d’argent et les paris sont florissants, de même que le commerce de la chair. Véritable poumon économique de Kar, Maurore est populaire car elle offre aux guerriers fatigués des plaisirs francs et virils.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "La côte des chevauchées",
+    "uuid": "3dcaa3dc-6df2-4d36-bc69-efdfee8ee136",
+    "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
+    "type": "region",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le bord de mer est relativement peuplé, car la présence des troupeaux de chevaux sauvages a permis le développement d’une économie fondée sur le dressage et le commerce de ces montures. La région est un peu plus stable, les seigneurs en place ayant les moyens de payer des troupes conséquentes, souvent montées. Mais cette richesse excite les convoitises et les escarmouches sont parfois violentes à l’occasion de vols de troupeaux. Les villes n’excèdent pas cinquante mille âmes, avec une architecture simple à base de bois et d’enclos.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Ankar",
+    "uuid": "63e4fd18-1411-4415-831b-f9c3095c023d",
+    "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
+    "type": "capitale",
+    "government": null,
+    "leader": "Méléan Sarn, Connétable d'Ankar",
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ankar est construite dans les contreforts du sud des Écailles de Moryagorn. À l’ombre du cratère du Kurghal, la cité s'accroche à la falaise, débordant largement du plateau volcanique d’origine, et une partie des bâtiments sont construits le long de la route, hors des imposantes murailles qui séparent Ankar du vide.\n\nPar son aspect, Ankar rappelle clairement sa vocation martiale. De nombreuses structures massives abritent écoles, gymnases, arènes et académies. Les bâtiments y sont en majorité faits de pierre, avec des toits d’ardoise grenat de tous styles, et l’ensemble de l’architecture locale privilégie les cours intérieures, les tourelles d’angle et les porches solides. La maison typique d’Ankar est souvent organisée autour d’une cour, sur laquelle s'ouvrent la plupart des fenêtres. Les rues sont sinueuses, rarement longues de plus de cent pas, mais des avenues irrégulières, souvent obtenues par démolition, permettent de voyager rapidement d’une partie à l’autre de la cité.\n\nAnkar est un site volcanique et, à part dans les quelques quartiers qui sont pavés, le sol est poudreux et assez sec, couleur argile. De plus, la cité jouit d'un climat tiède toute l’année, même si les nuits sont fraîches en raison de l’altitude. Il n’est pas rare que des brises soufrées tourbillonnent dans les ruelles. La majorité des puits de la ville donnent d’ailleurs une eau fort riche, mais tiède et assez peu agréable au goût.\n\n",
+      "history": "Au XVIe siècle de l’Âge des Fondations, les premiers pèlerins arrivèrent au repaire de Kroryn, sur les contreforts du volcan de Kurghal, désireux d’implorer le savoir du Dragon. Sceptique, Kroryn les laissa longtemps affronter les conditions infernales du Kurghal pour tester leur détermination. Certains moururent, d’autres partirent, mais ils furent une centaine à s’acharner et à construire des huttes de pierre, prêts à attendre le bon vouloir du Grand Dragon. Après dix ans, Kroryn fit entendre sa volonté et décréta qu’un seul homme serait choisi pour suivre sa voie.\n\nQuelques années plus tard, Ankar se présenta devant le Seigneur du Feu et lui prouva sa valeur. Investi du pouvoir de Kroryn, il fit bâtir une citadelle à la gloire du Grand Dragon et devint le premier Grand Maître de la Caste des Combattants — fondant par là même les bases de la Cité du Feu.\n\nAujourd’hui, les années ont passé, marquant de leurs affres les remparts naturels de l’antre de Kroryn, mais la cité d'Ankar n’a rien perdu de sa splendeur sauvage. Dressée tel un défi aux ombres de Kali, le Royaume de l’Ombre et du Neuvième Dragon, elle embrase les montagnes de ses torchères éternelles et envoûte les combattants des clameurs de ses arènes…\n\n",
+      "ethnology": "Fortement influencés par l’héritage martial de Kroryn et de sa caste, les habitants de la Cité du Feu respectent un certain nombre de coutumes et de comportements qui, sous des allures folkloriques, possèdent un caractère presque rituel.\n\n## Les duels\n\nAncune cité ne reflète mieux qu'Ankar l’ambiance de compétition que se livrent les combattants. À chaque instant, un défi peut mener à un duel spectaculaire, à l'ombre des ruelles ou sur les places publiques. Dans la moiteur ambiante, les esprits s’échauffent vite et la ville entière semble frénétique. Toutefois, derrière ce chaos apparent règne un système de valeurs très précis. Les serments des combaitants sont la base même de la vie. Nul duel n’est lancé envers un adversaire plus faible, et un certain honneur régule les combats. Même si parfois la situation dégénère, la limite des combats est rarement la mort mais plutôt le premier sang. Ces duels sont tolérés par les autorités, qui n'interviennent qu’en cas de déséquilibre flagrant.\n\n## L'eau\n\nOutre les habitudes martiales de ses habitants, Ankar est célèbre pour sa nature volcanique. La chaleur ambiante a donné naissance à une coutume de salut inspirée de celles des tribus du désert. Lorsqu'un homme est invité chez un autre, il se doit d’amener en présent de l’eau fraîche, qu’il offre avec ses salutations. Cette eau est alors consommée par tous avant toute discussion. Dans 1e cas où un homme reçoit une femme, c’est alors à lui d’offrir l’eau. Parfois, une visiteuse amène elle-même l’eau, ce qui signifie qu'elle se considère comme l’égale d’un homme. Chez les combattants, cette audace est très respectée.\n\n## Coutumes vestimentaires\n\nAnkar subissant de fréquentes variations de température, ses habitants ont pris l'habitude de porter avec eux une ample cape tissée appelée kiffa, pratique et facilement repliable. Le jour, les habitants portent des vêtements légers, de couleurs assez vives - pourpre, safran, azur, jaune. Le kiffa est porté en bandouilière, noué par un lacet. La nuit, il se porte comme cache-poussière, traditionnellement dans des tons froids et unis. Pour ce qui est des bijoux, les torques et les larges bracelets de métal sont les plus courants. Aussi surprenant que cela puisse paraître, tout le monde ne porte pas une arme au côté, car le fait de revêtir une armure ou des armes apparentes implique l'acceptation des duels qui peuvent survenir…\n\n## La vie et la mort\n\nÀ Ankar et dans la majorité de Kar, une naissance est un événement qui se fait connaître. Pour cela, les parents placent une longue torche devant leur porte. Du côté gauche, c'est une fille, du droit, un garçon. Toutes les maisons, même les plus modestes, disposent de deux anneaux de fer de chaque coté de la porte afin de satisfaire à cette coutume.\n\nLors d’un décès, les citoyens ankariens sont pris en charge par les autorités de la ville, qui incinèrent les corps en les plongeant dans les torrents de lave qui sillonnent la montagne dans les souterrains d'Ankar, parfois en présence des membres les plus proches de la famille. Il n’existe pas de cimetière à Ankar, mis à part un champ réduit au fond de la vallée, où quelques irréductibles Prodiges et autres naturalistes ont tenu à être enterrés. En revanche, dans les provinces de Kar, les coutumes diffèrent et les bûchers funéraires sont rares en raison de l’énorme quantité de bois qu’il faudrait abattre.\n\n",
+      "society": "Ankar compte environ 180 000 habitants, dont deux tiers dans le Vieux Quartier et quelques centaines dans le Haut. La proportion de citoyens est d'environ 70 %. On estime que deux personnes sur trois vivent de la culture guerrière — combattants, instructeurs, artisans, loueurs de mercenaires, dresseurs, etc. — et le reste de la population occupe des tâches plus générales et communautaires — aubergistes, marchands, ouvriers, érudits, mages… La mentalité ankarienne est fougueuse, entreprenante et énergique.\n\nAssez mystérieuse, car mouvante et très autonome, la population draconique compte entre mille et deux mille individus. La moitié est formée de Dragons du Feu, un quart de fils de Brorne, et le reste se divise entre Dragons des Vents, des Cités et du Métal. Seule une poignée de dragons de Nenya, de Heyra et d'Ozyr y sont régulièrement aperçus. Personne n’a jamais vu ici de Dragon de l'Ombre — mais qui s’en vanterait ?\n\n",
+      "politics": "Le pouvoir dans la cité se divise entre le Grand Maître de la caste et le Connétable, sorte de maire élu tous les dix ans par deux conseils - le Conseil Rouge, qui regroupe les dix membres locaux les plus importants de chaque caste, et le Conseil de Fer, qui rassemble les Seigneurs de Kar. On compte environ quatre-vingts membres dans le premier, pour une centaine dans le second.\n\nLe Connétable actuel est Mélean Sarn, stratège réputé et Général hors du commun, membre de la caste des combattants au titre de Capitaine. Ses qualités de gestionnaire sont fort appréciées, et ses exploits contre Kali et les hordes Zûl ont fait de lui un héros populaire.\n\n## Liens avec l'extérieur\n\nLa politique de Kar étant inexistante, Ankar est la seule référence et ses positions font office de loi pour l’ensemble de la province. À la frontière sud, Ankar livre une guerre statique, mais impitoyable, contre Kali et les sujets de Kalimsshar. Les côtes sont peut sûres, en raison des boucaniers locaux et des combats contre les forces d’Hasran. Les relations avec Solyr sont très contrastées. Irrégulièrement, Kar évite à Solyr un raid maritime d’Hasran, mais il arrive également aux armées kariennes de piller les riches plaines de Solyr afin de combler leur déficit agricole. La situation n’a jamais vraiment changé ni dégénéré. Les relations avec Kern sont rivales, mais Dungard entretient de très bons rapports et un traité militaire lie les deux cités draconiques. Outre ceci, Ankar est considérée comme la capitale d’un pays de “fous furieux” qu’il vaut mieux ne pas froisser et, dans la mesure du possible, éviter de trop côtoyer. La diplomatie reste donc frileuse.\n\n",
+      "judicial": "La loi est claire et franche à Ankar : les serments des combattants s’appliquent à tous en ville. L'Humanisme est déclaré hérésie et ses membres sont souvent exécutés. Tout débordement ou acte illégal est sévèrement réprimé par la milice, formée d’un millier de guerriers endurcis que Mélean dirige avec fermeté et sagesse. L'exécution de la loi est rapide, dure et sans appel. Les amendes sont quasiment inconnues ; les châtiments corporels, l’emprisonnement et la mort sont plus courants.\n\n",
+      "economy": "L'économie ankarienne est simple : un colossal savoir-faire à vendre où à louer, mais peu de ressources naturelles. Elle doit donc importer une grande partie de sa nourriture, ainsi que du tissu et du bois, depuis l’ouest de l’Empire de Solyr. De ses montagnes, Ankar tire du minerai qui lui permet d’avoir un artisanat d'armes et d’armures important. Ankar tire surtout sa richesse de ses guildes de mercenaires et de ses écoles de combat, absolument sans égal dans tout Kor.\n\n",
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Les Murailles",
+    "uuid": "8e4ae248-5195-4dd3-965b-be1f3f5f7efc",
+    "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Larges de plusieurs dizaines de mètres, les murailles sont utilisées par les dragons qui, incapables de se poser dans la cité même, fondent du ciel pour atterrir sur les plus hauts remparts. S'il est de notoriété publique que l’intérieur en est partellement évidé, cette partie de la ville est toujours interdite aux hommes. Dans l’ombre de ces tunnels cyclopéens, les dragons cultivent leur art de vivre — et les rares invités n’en sont jamais ressortis pour en parler. Personne n’ose passer outre cette barrière, et ceux qui s’y sont aventurés sans autorisation n’ont jamais refait surface…\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Le Bas Quartier",
+    "uuid": "953169c6-a0c8-4f32-913f-f3088c2815d8",
+    "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Bien qu’un peu péjorative, cette appellation désigne les faubourgs qui ont fleuri le long de la route montagneuse qui mène à Ankar. Beaucoup plus populaire, ce quartier abrite nombre d’auberges, de guildes de mercenaires, de souks et d’échoppes minuscules. L'ambiance y est un peu plus calme que dans le Vieux Quartier, mais les venelles sont parfois des lieux plus dangereux qu’il n’y paraît. Là-bas, tous les combats ne sont pas aussi honorables.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Temple d'Ozyr",
+    "uuid": "449b0ffe-e354-4736-b8d7-fb1c07a1b936",
+    "parent_id": "953169c6-a0c8-4f32-913f-f3088c2815d8",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans le Bas Quartier, ce Temple rond est construit autour d’un geyser qui jaillit irrégulièrement. Des bassins recueillent l’eau tiède et forment des cascades artificielles.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "La Cité ou Vieux Quartier",
+    "uuid": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le Vieux Quartier désigne la partie qui occupe le plateau, délimitée par les murailles. Les bâtiments y sont souvent assez anciens. Ce quartier regroupe la majorité de la population, les bâtiments de la Caste des Combattants, les différents Temples Draconiques, les deux arènes et le marché. Les rues sont souvent encombrées et agitées et il n’est pas rare d’y rencontrer les plus prestigieux bretteurs de Kor en maraude ou engagés dans un duel fracassant.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "La Grande Arène",
+    "uuid": "0fd9a4e0-679e-49c9-8104-596749b7108a",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au cœur du Vieux Quartier, les hautes murailles de ce coliseum abritent la plus célèbre arène de Kor baptisée, à juste Litre, l’Arène. Les combats y ont lieu tous les après-midi et c’est là qu’ils sont les plus spectaculaires : combats de gladiateurs, duels de maîtres, concours de force ou d'adresse, dressage d’animaux de combat… Parfois, les gladiateurs affrontent des monstres ou des bêtes féroces caplurées dans les régions les plus reculées du monde. Kroryn honore parfois l’arène de sa présence et une tribune titanesque lui est consacrée. Sous l’arène, des tunnels moites abritent les cages des fauves, les salles de préparation et les bains des gladiateurs.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Temple de Kroryn",
+    "uuid": "4b068852-eba7-4eae-b32a-bd50a73e763e",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans la partie nord de la Citadelle, décorée de vitraux et de tentures flamboyantes, une colossale cathédrale garnie de brandons et de braseros sert de lieu de rencontre et de vénération à tous les combattants. On y trouve également une arène de purification.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Le Marché",
+    "uuid": "5a2a3592-4c6e-4f5c-bb01-f7c2d0a6e845",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le marché d’Ankar est célèbre dans le monde entier pour la diversité des armes et des armures qu'on y trouve. La proportion de ces étals y est deux fois plus importante que partout ailleurs.\n\nSitué sur une place poudreuse, le marché est en plein air et vit perpétuellement. Des tavernes de toile y existent même pour pouvoir se nourrir sur place. Même si l’ambiance y est nerveuse, le marché connaît un fonctionnement sans trop de heurts. Les combats y sont rares, faute de place, et les voleurs se font discrets vu la proportion de guerriers.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "La Nouvelle Arène",
+    "uuid": "5e498a1c-c82f-4741-96ad-cb9c05a3e6bf",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Plus petite d’un tiers que son aînée, cette arène a été construite il y a trois siècles, alors que la grande ne suffisait plus à accueillir tous les programmes prévus. Elle accueille maintenant la majorité des combats de petite envergure, moins prestigieux que ceux de l’Arène. En revanche, elle fonctionne du lever au coucher du soleil et sa fréquentation est nettement moins onéreuse.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Temple de Kezyr",
+    "uuid": "60cdde19-6862-4edf-b86d-f4aa34e7d829",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce Temple est une large chapelle basse, ornée de nombreuses statues de métal. Au fond, une petit cascade de lave contrôlée permet une prière par l’art de la forge.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Les Thermes",
+    "uuid": "7da9d7b7-96e2-49f0-8407-1c34e7617901",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Bien que plusieurs établissements existent dans la cité, les Thermes désignent le plus vaste, établi au sud-est de la ville. De forme carrée et surmonté d’une coupole cristalline, il abrite plusieurs bassins de températures différentes, des salles de vapeur et des gymnases. On y trouve une foule de masseurs et de baladins qui se chargent de distraire et de soigner les clients.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Temple de Brorne",
+    "uuid": "c3834085-a7dd-4b31-aefb-ca91a9e5d2e7",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans la paroi sud s’ouvre un réseau de cavernes et de couloirs anguleux. Au cœur, on trouve une salle de méditation avec une statue de cristal de l’avatar de Brorne.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Temple de Nenya",
+    "uuid": "d698017f-7a7a-4701-9c74-5a0b22d17fa6",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La chapelle dédiée à la Chimère paraît minuscule à côté de la Grande Arène. Mais l’intérieur est une déformation de la réalité, de surface cent fois supérieure, construite en une cathédrale scintillante, parcourue d’éclairs et de vagues de brume colorées.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "La Citadelle",
+    "uuid": "e4251b27-813f-4c6e-a026-5855202c843d",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cette appellation désigne le quartier général de la Caste des Combattants. Elle est formée d’un imposant ensemble de bâtiments dans l’est de la cité. Dans un style assez anguleux, ses longs édifices sont imbriqués les uns dans les autres, formant des dizaines de cours utilisées pour les entraînements. On y trouve la bibliothèque des stratèges, célèbre pour ses cartes et ses traités de combat, les halls de vapeur, gigantesques hammams réservés à la caste, ainsi que l’arène où les combattants achèvent leur instruction par un combat public, sous l'œil attentif de leurs maîtres.\n\nL'ambiance y est rude, et des élèves suent perpétuellement sang et eau sous les ordres des maîtres.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Le Kurghal",
+    "uuid": "863223be-983b-4e4f-8169-67d94b43cb28",
+    "parent_id": "e4251b27-813f-4c6e-a026-5855202c843d",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le repaire de Kroryn consistait initialement en un vaste réseau de grottes et de cavernes au bord du cratère du Kurghal. Depuis l’arrivée des premiers pionniers et l'intérêt porté par les hommes, Kroryn a dû en réguler l’accès.\n\nLa Citadelle a remplacé l’entrée initiale de la caverne, et il est désormais impossible de pénétrer dans le repaire sans une autorisation préalable des Maîtres de la caste. Dans les cas rarissimes où la demande est jugée suffisamment importante pour être examinée, il faut encore que ceite dernière soit acceptée par les anciens fils de Kroryn, puis par le Dragon lui-même.\n\nInutile de dire que seuls les dragons et une dizaine de mortels peuvent accéder facilement au repaire. Au-delà, Kroryn ne reçoit bien souvent que ceux qu’il convoque, et encore plus rarement dans son antre, car les audiences qu’il donne se font souvent à la Citadelle.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Les Hautes Portes",
+    "uuid": "a104687f-c02c-4ea8-8a0f-3b3dff9395f1",
+    "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Conçu à la base pour être LA porte de la cité, ce colossal bâtiment en “T” abrite aujourd’hui une véritable petite communauté. On y trouve des scribes, des commerçants et des guides qui ont transformé les halls en de véritables lieux de rencontre et de commerce. Des tavernes se sont même montées dans les secteurs administratifs et la bureaucratie s’exerce maintenant dans une véritable auberge, où l'on parle des dizaines de dialectes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Le Haut Quartier",
+    "uuid": "f69bddf3-a3f0-4023-8cf3-fe52a93a075e",
+    "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Sur toute la hauteur de la falaise qui surplombe Ankar, d’amples corniches ont été utilisées pour construire des villas appartenant aux plus riches familles. On dénombre ainsi plusieurs dizaines de minuscules enclaves, dont certaines comportent deux ou trois rues. Les accès sont souvent de larges escaliers en lacet à même la montagne quand il ne s’agit pas de tunnels en spirale. Bien sûr, aucune de ces habitations ne dispose d’installation humaniste, telle que treuil ou monte-charges, et l'on n’y accède jamais par le vol.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Kendyr",
+    "uuid": "e43eb555-3057-4209-b62b-a707a9c2296e",
+    "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
+    "type": "cite",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cité des Mages du Feu, Kendyr jouit d’une ambiance électrique. Son architecture chargée compte beaucoup de tours et de donjons, au sommet souvent illuminés par des brasiers ardents. Toute la région aux alentours est sous le coup d’un enchantement colossal, qui donne l’impression que le soleil est perpétuellement en train de se coucher. Kendyr vit donc sous un ciel bariolé d’orange et de mauve, sillonné de fumée grasse qui provient des milLiers de brasier dispersés dans la ville. Ici, le jour et la nuit ne sont que des mots, et les habitants de Kendyr vivent selon un rythme chaotique, complètement décalés du reste du monde.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]
