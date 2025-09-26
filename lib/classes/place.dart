@@ -332,6 +332,7 @@ class Place extends ResourceBaseClass {
 
     var assetFiles = [
       'places-ldb2e.json',
+      'places-les-ecailles-de-brorne.json',
       'places-les-forges-de-kezyr.json',
       'places-les-foudres-de-kroryn.json',
     ];

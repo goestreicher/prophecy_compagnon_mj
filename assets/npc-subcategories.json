@@ -1,5 +1,12 @@
 [
   {
+    "title": "Empire de Solyr",
+    "categories": [
+      "dirigeants"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Kar",
     "categories": [
       "dirigeants"
@@ -7,9 +14,16 @@
     "is_default": true
   },
   {
-    "title": "Empire de Solyr",
+    "title": "Kern",
     "categories": [
       "dirigeants"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Brorne",
+    "categories": [
+      "elus"
     ],
     "is_default": true
   },

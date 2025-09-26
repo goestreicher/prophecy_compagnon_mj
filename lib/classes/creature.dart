@@ -573,6 +573,7 @@ class Creature extends EntityBase with EncounterEntityModel {
     var assetFiles = [
       'creatures-ldb2e.json',
       'creatures-ecran2e.json',
+      'creatures-les-ecailles-de-brorne.json',
       'creatures-les-foudres-de-kroryn.json',
     ];
 

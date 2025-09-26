@@ -1,0 +1,173 @@
+[
+  {
+    "equiped": [],
+    "uuid": "a42b7b29-2554-4530-a319-f88b378fc6f0",
+    "name": "Squelette de pierre",
+    "description": "Le Peuple des Montagnes a pour habitude d’arracher les dents de ses défunts et de les enchanter grâce à la magie de la pierre. Il rend ainsi hommage à Brorne en offrant ses morts au Grand Dragon. Ces dents permettent d’invoquer des esprits de la pierre particulièrement redoutables.\n\nLes dents ont une teinte grisâtre et sont couvertes de symboles cabalistiques complexes.\n\nQuand une dent est jetée à terre, volontairement ou non, elle invoque un esprit de la pierre qui prend la forme du squelette de la personne décédée. Ce squelette est fait en pierre. Il combat pour celui qui l’a appelé jusqu’à ce qu’il soit détruit ou qu’il n’y ait plus d’ennemis à affronter. Une dent utilisée est détruite.\n\nLes squelettes peuvent utiliser armes et boucliers si on leur en fournit.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 9,
+      "intelligence": 1,
+      "coordination": 8,
+      "presence": 1,
+      "resistance": 10,
+      "volonte": 10,
+      "perception": 6,
+      "empathie": 1
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 4,
+      "manuel": 1,
+      "social": 1
+    },
+    "skills": [
+      {
+        "skill": "armesTranchantes",
+        "value": 7
+      },
+      {
+        "skill": "armesContondantes",
+        "value": 7
+      },
+      {
+        "skill": "esquive",
+        "value": 6
+      }
+    ],
+    "equipment": [],
+    "unique": false,
+    "category": "creaturesElementaires",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "biome": "Là où le squelette est invoqué",
+    "real_size": "Taille d'un humain",
+    "weight": "de 80 à 150 kg",
+    "natural_armor": 10,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capability": "",
+    "injuries": {
+      "levels": [
+        {
+          "type": "injured",
+          "start": 0,
+          "end": 40,
+          "capacity": 2
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "fc459c70-46b9-4cf3-82ec-55265bb443e7",
+    "name": "Gargouille",
+    "description": "Les gargouilles sont les seules survivantes de l’époque où Brorne créait des êtres de pierre. Quand ses domaines furent détruits lors des grandes batailles draconiques ou contre Kalimsshar, elles se réfugièrent dans les entrailles de la terre où elles furent enfermées pendant des éons. Elles retournèrent à l’état animal et c’est Brorne lui-même qui les retrouva et les confia aux magiciens.\n\nIl doit exister un millier de ces créatures dont une bonne moitié reste avec les dragons de pierre. Les autres servent de gardiennes dans les laboratoires et aident parfois les magiciens lors de leurs expériences (ou lors de l’entraînement mais c’est un exercice dangereux pour un homme normalement constitué).\n\nLes gargouilles sont plutôt pacifiques sauf dans un cas précis : lorsqu'elles rencontrent une créature de Kalimsshar ou un de ses serviteurs (un homme avec 4 ou plus en Fatalisme). Dans ce cas, elles attaquent et se battent jusqu’à la mort. Dotées d'ailes, elles ne volent plus depuis l’époque de leur réclusion sous terre.\n\nNote : la gargouille cherchera toujours à se placer au-dessus de sa cible pour se laisser tomber et tenter une attaque par écrasement. Si la gargouille assomme ou immobilise sa victime, elle se fige sur elle et attend soit qu’elle meurt, soit que son maître ne lui donne l’ordre de lâcher sa proie. Une gargouille ne cherchera à tuer qu’un serviteur de Kalimsshar.\n\nLes attaques infligeant des dommages inférieurs à 16 ne lui font aucun effet et ne sont pas pris en compte dans les blessures.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 2,
+    "abilities": {
+      "force": 10,
+      "intelligence": 1,
+      "coordination": 3,
+      "presence": 0,
+      "resistance": 15,
+      "volonte": 10,
+      "perception": 4,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 9,
+      "mental": 2,
+      "manuel": 2,
+      "social": 1
+    },
+    "skills": [
+      {
+        "skill": "discretion",
+        "value": 9
+      }
+    ],
+    "equipment": [],
+    "unique": false,
+    "category": "creaturesElementaires",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "biome": "Toujours en intérieur, la gargouille ne supporte pas longtemps le grand air et le soleil",
+    "real_size": "de 50cm à 2m",
+    "weight": "de 6kg à 2t",
+    "natural_armor": 20,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Charge",
+        "skill": 9,
+        "damage": 23,
+        "ranges": {
+          "contact": 0
+        }
+      },
+      {
+        "name": "Griffes",
+        "skill": 7,
+        "damage": 13,
+        "ranges": {
+          "contact": 0
+        }
+      },
+      {
+        "name": "Morsure",
+        "skill": 6,
+        "damage": 15,
+        "ranges": {
+          "contact": 0
+        }
+      }
+    ],
+    "special_capability": "",
+    "injuries": {
+      "levels": [
+        {
+          "type": "ignore",
+          "start": 0,
+          "end": 16,
+          "capacity": 1
+        },
+        {
+          "type": "injured",
+          "start": 16,
+          "end": 50,
+          "capacity": 4
+        },
+        {
+          "type": "death",
+          "start": 50,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    }
+  }
+]

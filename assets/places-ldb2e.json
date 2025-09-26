@@ -330,41 +330,6 @@
     }
   },
   {
-    "name": "Kern",
-    "parent_id": "kor",
-    "type": "nation",
-    "government": "autorité draconique",
-    "leader": "Brorne, Grand Dragon de la Pierre",
-    "motto": "courage, rigueur, dragons",
-    "climate": "continental frais",
-    "description": {
-      "general": "Kern est le Royaume de la Pierre. À l’image de Brorne, il n’est constitué que de reliefs escarpés : hautes montagnes et vallées profondes. C’est une terre aux paysages superbes mais aussi hostiles. Les remparts protégeant les villes sont constamment survolés par des dragons de la pierre. Outre Kern, la gigantesque forteresse militaire de Brorne, deux cités majeures sont à signaler. Tout d’abord, Gix, la cité des mages de la pierre et Dorkholm, réputée pour le talent de ses nombreux artisans. Siège de la caste des protecteurs, la capitale, offre à de très nombreux visiteurs l'hospitalité de ses immenses remparts. Dans le même ordre d'idées, l'architecture se veut à la fois fonctionnelle et grandiose. Une grande majorité des bâtisses sont construites en pierre de taille - quand elles ne sont pas directement creusées à flanc de montagne, soudées à la roche par les rituels magiques des adeptes de Brorne.",
-      "history": "autrefois, la capitale s'appelait Caern, nom inspiré par les monticules de pierres édifiés par les voyageurs pour marquer un repère, indiquer un passage. Elle accueillait en son sein bon nombre de serviteurs de Kroryn ou d'artisans respectueusement déçus de l’enseignement du Dragon du Feu et de Kezyr. Caern finit par prendre le nom de la province et devint Kern.",
-      "ethnology": "les habitants de Kern ont tendance à considérer toute marque physique anormale ou toute malformation comme une marque de corruption. De ce fait, la population présente une certaine homogénéité due à l'exil des malchanceux.",
-      "society": "tout ce qui a trait aux dragons est sacré. Les habitants de la province de Kern respectent un code de l’honneur rigide (parfois contraignant) et sont fidèles aux Édits draconiques. La société de Kern est profondément influencée par la caste des protecteurs et son organisation hautement hiérarchisée. À Kern, chaque famille, chaque village, chaque groupuscule possède ses chefs, ses officiers et ses simples soldats. Les tatouages, qui sont pourtant monnaie courante dans la majorité des autres royaumes, sont ici assimilés à des marques de corruption. Kern est le seul royaume où tout est véritablement conditionné autour du Grand Dragon tutélaire de la région. L'esprit de Brorne y est omniprésent. Il inspire la confiance et le courage, guidant les combattants et décourageant les rares ennemis - que les Inquisiteurs n'hésitent pas à nommer “infidèles” ou “hérétiques”. Les Inquisiteurs ont la réputation d’être purs, incorruptibles, intègres face aux tentations terrestres et surnaturelles. Au fil des siècles, leur autorité morale s’est répandue à travers tout Kor, conférant aux protecteurs et aux fidèles de Brorne une profonde emprise sur les populations. Kern est très fier d’être le berceau de l’ordre. Chaque village comporte une stèle où sont gravés les noms des enfants qui ont réussi à rejoindre l’ordre prestigieux. Ceux qui sont morts dignement voient leur nom recouvert d’une couche de métal précieux, tandis que ceux qui ont failli en trahissant l'idéal de Brorne sont effacés des mémoires et gommés sans ménagement des stèles mortuaires - quand leur village natal ne subit pas le même sort. La région des vallées au nord est infestée de peuplades dégénérées, cachées dans les fosses et les galeries souterraines, auxquelles les Inquisiteurs livrent une guerre sans merci depuis des siècles.",
-      "politics": "chaque village vit en totale autarcie et dispose de sa propre hiérarchie.",
-      "judicial": "la Loi est assimilée à la morale ; elle a donc une valeur sacrée et ceux qui sont chargés de la faire respecter sont à la fois considérés comme des juges et des saints.",
-      "economy": "relativement peu peuplé par rapport à sa superficie, Kern comprend principalement des villages montagnards qui fournissent de très nombreuses ressources, grâce à une ingénieuse agriculture par paliers instaurée sur les flancs inférieurs des grands monts.",
-      "military": "l'académie militaire peut accueillir jusqu'à trois mille étudiants et il n’est pas rare que les maîtres d'armes, instructeurs et lieutenants de la garnison soient obligés de refuser des candidatures. Par sa grande puissance militaire, C’est un des rares endroits où les nobles et les chefs d'armées n’occupent pas leur temps libre à attaquer leurs voisins. Siège de l'Inquisition, la Forteresse des Neuf Pics se dresse dans une région reculée, très délicate d'accès par la route : Seuls ceux qui ont vraiment une bonne raison de s’y rendre entreprennent le voyage, qui constitue à lui seul une quête ardue et incertaine."
-    },
-    "source": {
-      "type": "officiel",
-      "name": "LdB 2e"
-    }
-  },
-  {
-    "name": "Kern (cité)",
-    "parent_id": "kern",
-    "type": "capitale",
-    "description": {
-      "general": ""
-    },
-    "source": {
-      "type": "officiel",
-      "name": "LdB 2e"
-    }
-  },
-  {
     "name": "Lacs Sanglants",
     "parent_id": "kor",
     "type": "nation",

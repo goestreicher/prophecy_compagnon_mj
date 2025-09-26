@@ -6,6 +6,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'injury.g.dart';
 
 enum Injury {
+  ignore(
+    title: 'Ignoré',
+    rank: -1,
+    malus: 0,
+  ),
   scratch(
     title: 'Égratignure',
     rank: 0,
@@ -257,6 +262,8 @@ class InjuryManager {
     if(range == null) throw ArgumentError('Impossible de trouver le niveau de blessures pour $amount dégats');
     var level = _injuryLevels[range]!;
 
+    if(level.type == Injury.ignore) return level;
+
     while(level.end != -1) {
       var targetLevelCount = _injuries[level.type] ?? 0;
       if(targetLevelCount >= level.capacity) {
@@ -277,6 +284,8 @@ class InjuryManager {
   }
 
   void dealInjuries(Injury injury, int count) {
+    if(injury == Injury.ignore) return;
+
     var capacity = 0;
     InjuryLevel? currentLevel;
     for(var level in _injuryLevels.values) {

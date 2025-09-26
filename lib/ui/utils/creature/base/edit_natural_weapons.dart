@@ -38,32 +38,35 @@ class _CreatureEditNaturalWeaponsState extends State<CreatureEditNaturalWeapons>
           fontWeight: FontWeight.bold,
         )
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 12.0,
-        children: [
-          ...widgets,
-          ElevatedButton.icon(
-            icon: const Icon(
-              Icons.add,
-              size: 16.0,
+      child: Center(
+        //alignment: AlignmentGeometry.topLeft,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 12.0,
+          children: [
+            ...widgets,
+            ElevatedButton.icon(
+              icon: const Icon(
+                Icons.add,
+                size: 16.0,
+              ),
+              style: ElevatedButton.styleFrom(
+                textStyle: theme.textTheme.bodySmall,
+              ),
+              label: const Text('Nouvelle arme naturelle'),
+              onPressed: () async {
+                NaturalWeaponModel? weapon = await showDialog(
+                  context: context,
+                  builder: (BuildContext context) => _NaturalWeaponCreateDialog(),
+                );
+                if(weapon == null) return;
+                setState(() {
+                  widget.creature.naturalWeapons.add(weapon);
+                });
+              },
             ),
-            style: ElevatedButton.styleFrom(
-              textStyle: theme.textTheme.bodySmall,
-            ),
-            label: const Text('Nouvelle arme naturelle'),
-            onPressed: () async {
-              NaturalWeaponModel? weapon = await showDialog(
-                context: context,
-                builder: (BuildContext context) => _NaturalWeaponCreateDialog(),
-              );
-              if(weapon == null) return;
-              setState(() {
-                widget.creature.naturalWeapons.add(weapon);
-              });
-            },
-          ),
-        ],
+          ],
+        ),
       )
     );
   }

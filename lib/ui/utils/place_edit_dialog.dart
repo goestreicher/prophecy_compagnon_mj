@@ -109,6 +109,13 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                   ),
                 ),
                 TextField(
+                  controller: mottoController,
+                  decoration: InputDecoration(
+                    labelText: 'Valeurs',
+                    border: OutlineInputBorder(),
+                  ),
+                ),
+                TextField(
                   controller: climateController,
                   decoration: InputDecoration(
                     labelText: 'Climat',

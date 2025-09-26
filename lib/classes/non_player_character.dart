@@ -196,7 +196,7 @@ class NPCSubCategory {
 
   final String title;
   final List<NPCCategory> categories;
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(includeFromJson: true, includeToJson: false)
     final bool isDefault;
 
   String get name => sentenceToCamelCase(transliterateFrenchToAscii(title));
@@ -629,6 +629,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
     var assetFiles = [
       'npcs-ldb2e.json',
+      'npcs-les-ecailles-de-brorne.json',
       'npcs-les-forges-de-kezyr.json',
       'npcs-les-foudres-de-kroryn.json',
     ];

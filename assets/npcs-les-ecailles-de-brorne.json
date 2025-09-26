@@ -1,0 +1,757 @@
+[
+  {
+    "equiped": [],
+    "uuid": "889c48b0-1209-46ef-b82e-89cda64c1747",
+    "name": "Gallân-Bred d'Arkis",
+    "description": "D'un naturel froid et pragmatique, son énorme capacité de travail le fait paraître comme une tortue gigantesque, surnom qu'on utilise parfois dans son dos pour se moquer de son manque de chaleur humaine.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 7,
+      "intelligence": 8,
+      "coordination": 8,
+      "presence": 9,
+      "resistance": 7,
+      "volonte": 8,
+      "perception": 4,
+      "empathie": 5
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 5,
+      "manuel": 4,
+      "social": 7
+    },
+    "skills": [
+      {
+        "skill": "armesContondantes",
+        "value": 4
+      },
+      {
+        "skill": "armesDHast",
+        "value": 6
+      },
+      {
+        "skill": "armesDeSiege",
+        "value": 6
+      },
+      {
+        "skill": "armesTranchantes",
+        "value": 8
+      },
+      {
+        "skill": "athletisme",
+        "value": 4
+      },
+      {
+        "skill": "bouclier",
+        "value": 8
+      },
+      {
+        "skill": "castes",
+        "value": 9
+      },
+      {
+        "skill": "commandement",
+        "value": 10
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 5
+      },
+      {
+        "skill": "corpsACorps",
+        "value": 5
+      },
+      {
+        "skill": "diplomatie",
+        "value": 4
+      },
+      {
+        "skill": "eloquence",
+        "value": 7
+      },
+      {
+        "skill": "equitation",
+        "value": 6
+      },
+      {
+        "skill": "esquive",
+        "value": 5
+      },
+      {
+        "skill": "histoire",
+        "value": 5
+      },
+      {
+        "skill": "intimidation",
+        "value": 7
+      },
+      {
+        "skill": "investigation",
+        "value": 6
+      },
+      {
+        "skill": "lireEtEcrire",
+        "value": 6
+      },
+      {
+        "skill": "lois",
+        "value": 10
+      },
+      {
+        "skill": "natation",
+        "value": 3
+      },
+      {
+        "skill": "premiersSoins",
+        "value": 5
+      },
+      {
+        "skill": "psychologie",
+        "value": 5
+      },
+      {
+        "skill": "strategie",
+        "value": 6,
+        "specializations": [
+          {
+            "name": "strategie:manoeuvre",
+            "title": "Manœuvre",
+            "value": 8,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "vieEnCite",
+        "value": 7
+      }
+    ],
+    "equipment": [
+      {
+        "type": "armor:armureDePlaques"
+      }
+    ],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "protecteur",
+    "caste_status": "maitre",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "18be0592-2dcf-4559-b681-c98876b74602"
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 0,
+    "interdicts": [
+      "loiDeLArme"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "adopte",
+        "description": null
+      },
+      {
+        "privilege": "autorite",
+        "description": null
+      },
+      {
+        "privilege": "cuirasse",
+        "description": null
+      },
+      {
+        "privilege": "influences",
+        "description": "Non précisé"
+      },
+      {
+        "privilege": "renseignement",
+        "description": null
+      },
+      {
+        "privilege": "requisition",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "obsession",
+        "cost": 2,
+        "details": "défendre Kern"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "corpsAguerri",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 5,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "kern"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 3
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 2
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "f1c11373-8257-4863-bb0b-e0ff0d4ba8a9",
+    "name": "Sir Agathorn, le Roc",
+    "description": "Un homme d’une cinquantaine d’années, massif, martial, au sourire rare et à l’œil perçant. Ancien protecteur, ancien Inquisiteur, il voue sa vie à servir Brorne, ce qui ne se résume pas à traquer les Fatalistes et les Humanistes. C’est un homme qui écoute et analyse. Il ne parle jamais pour ne rien dire. Il n’a aucun mépris pour les autres Grands Maîtres, même s’il s’oppose toujours à Mina Therian. De même, il considère la petite Omadawn comme son égale car si les Dragons l’ont choisie, c’est qu’ils devaient avoir une bonne raison.\n\nQuand il parle avec ses subordonnés, une fois les salutations d’usage passées, il se comporte avant tout en professionnel, pas en petit chef. Il sait écouter les conseils des spécialistes et se ranger à un avis s’il semble cohérent. Par contre, il déteste perdre son temps et abhorre les incapables ou les parvenus. Il n’hésite pas à donner la mort mais ne le fera jamais sans raison. Il n’a plus de famille depuis que sa femme et ses enfants ont été enlevés et tués par des terroristes humanistes.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 9,
+      "intelligence": 7,
+      "coordination": 7,
+      "presence": 7,
+      "resistance": 9,
+      "volonte": 9,
+      "perception": 5,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 7,
+      "mental": 6,
+      "manuel": 3,
+      "social": 4
+    },
+    "skills": [
+      {
+        "skill": "armesContondantes",
+        "value": 8
+      },
+      {
+        "skill": "armesDeSiege",
+        "value": 6
+      },
+      {
+        "skill": "armesTranchantes",
+        "value": 7
+      },
+      {
+        "skill": "bouclier",
+        "value": 8
+      },
+      {
+        "skill": "connaissanceDeLaMagie",
+        "value": 15
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 10
+      },
+      {
+        "skill": "diplomatie",
+        "value": 12
+      },
+      {
+        "skill": "equitation",
+        "value": 9
+      },
+      {
+        "skill": "explosifsDeBrorne",
+        "value": 8
+      },
+      {
+        "skill": "intimidation",
+        "value": 8
+      },
+      {
+        "skill": "lireEtEcrire",
+        "value": 10
+      },
+      {
+        "skill": "lois",
+        "value": 10
+      },
+      {
+        "skill": "strategie",
+        "value": 10
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "mage",
+    "caste_status": "grandMaitre",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "18be0592-2dcf-4559-b681-c98876b74602"
+    },
+    "luck": 3,
+    "proficiency": 7,
+    "renown": 0,
+    "interdicts": [
+      "loiDeLaPrudence"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "laboratoire",
+        "description": null
+      },
+      {
+        "privilege": "leurre",
+        "description": null
+      },
+      {
+        "privilege": "messager",
+        "description": "Non précisé"
+      },
+      {
+        "privilege": "prevoyance",
+        "description": null
+      },
+      {
+        "privilege": "sortilegeFetiche",
+        "description": "Non précisé"
+      },
+      {
+        "privilege": "style",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "interditsDeBrorne",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "disadvantage": "echec",
+        "cost": 3,
+        "details": "Enlèvement de sa famille par des Humanistes"
+      },
+      {
+        "disadvantage": "troubleMental",
+        "cost": 3,
+        "details": "Non précisé"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "corpsAguerri",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesMages"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 3
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 2
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 10,
+      "invocatoire": 7,
+      "sorcellerie": 7
+    },
+    "magic_spheres": {
+      "pierre": 10,
+      "feu": 8,
+      "oceans": 0,
+      "metal": 7,
+      "nature": 0,
+      "reves": 6,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 10,
+      "feu": 8,
+      "oceans": 0,
+      "metal": 7,
+      "nature": 0,
+      "reves": 6,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "8b07df1a-a88e-49cd-9203-6af57ae63cb5",
+    "name": "Argomir",
+    "description": "Argomir est l’illuminé typique que les adeptes de Brorne vénèrent et les autres humains haïssent. Né au sein des sans castes, Argomir a, par son labeur et son abnégation, attiré l’attention d’Albaldur, l'un des Maîtres Artisans de Kern, forgeron de son état. Après un apprentissage durant lequel il démontra toute sa maîtrise et sa volonté, il put intégrer la caste des artisans. Tout allait pour le mieux dans le meilleur des mondes, au point que Kwizz, un jeune dragon de Kezyr, envisagea même de lui “transmettre” le Lien. C’est alors que Argomir fut frappé de stupeur à la vue d’un exercice de déploiement des protecteurs de la caserne principale. Dès ce jour, l’artisanat lui sembla bien fade et ses pensées se portèrent constamment sur l’uniforme et la rigueur des représentants de Brorne. Les jours passèrent, Kwizz se faisait de plus en plus pressant tandis que Argomir s’éloignait de plus en plus de ses pairs. Une nuit fatidique, lassé des pressions que le fils de Kezyr exerçait sur lui, Argomir décida de traverser Kern et de demander “l’asile” aux protecteurs. Ce qui lui fut accordé, mais dans la manœuvre Kwizz perdit la vie !\n\nFace aux officiers de la caserne, Argomir expliqua son geste et accepta le jugement qui serait porté à son encontre. Or, ce soir-là, Brorne était présent, car il participait au Haut Conseil de l’Inquisition. Il fut admiratif devant tant de courage et de volonté et fut amusé par le tour joué à la lignée de Kezyr. Dès lors, il intervint en faveur de Argomir. Depuis ce jour, il le manipule dans l’ombre en vue de faire de lui le plus rigide des Inquisiteurs. Il paraîtrait même que Brorne pense à lui pour mener des actions contre certains groupuscules montés en secret par ses frères.\n\nMystère…\n\nArgomir est un maniaque. Il adore l'ordre et la rigueur. Il ne peut concevoir la vie sans se fixer de buts quasiment hors de portée. C’est un exemple pour les uns, car rien ne peut ébranler sa volonté. C’est un parasite pour les autres, car il ne lâche jamais sa proie. Peu de protecteurs l’apprécient mais nombre d’Inquisiteurs lui vouent un culte.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 6,
+      "intelligence": 4,
+      "coordination": 5,
+      "presence": 6,
+      "resistance": 6,
+      "volonte": 10,
+      "perception": 5,
+      "empathie": 3
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 4,
+      "manuel": 3,
+      "social": 2
+    },
+    "skills": [
+      {
+        "skill": "armesContondantes",
+        "value": 6
+      },
+      {
+        "skill": "armesAProjectiles",
+        "value": 4
+      },
+      {
+        "skill": "armesTranchantes",
+        "value": 8
+      },
+      {
+        "skill": "artisanat",
+        "value": 0,
+        "specializations": [
+          {
+            "name": "artisanat:armurerie",
+            "title": "Armurerie",
+            "value": 6,
+            "reserved": false
+          },
+          {
+            "name": "artisanat:forge",
+            "title": "Forge",
+            "value": 5,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "bouclier",
+        "value": 6
+      },
+      {
+        "skill": "castes",
+        "value": 3
+      },
+      {
+        "skill": "commandement",
+        "value": 5
+      },
+      {
+        "skill": "corpsACorps",
+        "value": 6
+      },
+      {
+        "skill": "diplomatie",
+        "value": 3
+      },
+      {
+        "skill": "equitation",
+        "value": 5
+      },
+      {
+        "skill": "intimidation",
+        "value": 5
+      },
+      {
+        "skill": "lois",
+        "value": 7
+      }
+    ],
+    "equipment": [
+      {
+        "type": "weapon:epeeADeuxMains"
+      },
+      {
+        "type": "armor:armureDEcailles"
+      }
+    ],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "protecteur",
+    "caste_status": "initie",
+    "career": "inquisiteur",
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "18be0592-2dcf-4559-b681-c98876b74602"
+    },
+    "luck": 0,
+    "proficiency": 6,
+    "renown": 0,
+    "interdicts": [
+      "loiDuLien"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "autorite",
+        "description": null
+      },
+      {
+        "privilege": "requisition",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "obsession",
+        "cost": 2,
+        "details": "ordre et rigueur"
+      },
+      {
+        "disadvantage": "regardDesDragons",
+        "cost": 5,
+        "details": "Brorne"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "pressentiment",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "droiture",
+        "cost": 1,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 4,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "Non précisé",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeBrorne"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "unique": true,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "levels": [
+        {
+          "type": "injured",
+          "start": 0,
+          "end": 40,
+          "capacity": 4
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  }
+]

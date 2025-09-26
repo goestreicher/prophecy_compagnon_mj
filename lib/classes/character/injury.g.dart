@@ -22,6 +22,7 @@ Map<String, dynamic> _$InjuryLevelToJson(InjuryLevel instance) =>
     };
 
 const _$InjuryEnumMap = {
+  Injury.ignore: 'ignore',
   Injury.scratch: 'scratch',
   Injury.injured: 'injured',
   Injury.light: 'light',

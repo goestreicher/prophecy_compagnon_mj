@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 
 import '../../../../classes/calendar.dart';
 import '../../../../classes/human_character.dart';
+import '../../../../classes/non_player_character.dart';
 import '../../../../classes/object_location.dart';
 import '../../../../classes/place.dart';
 import '../../../../classes/player_character.dart';
@@ -261,6 +262,24 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
                   onChanged: (String? value) => widget.character.weight = double.parse(value!),
                 ),
               ),
+              if(widget.character is NonPlayerCharacter)
+                Row(
+                  spacing: 4.0,
+                  children: [
+                    Switch(
+                      value: (widget.character as NonPlayerCharacter).unique,
+                      onChanged: (bool value) {
+                        setState(() {
+                          (widget.character as NonPlayerCharacter).unique = value;
+                        });
+                      },
+                    ),
+                    Text(
+                      'Unique',
+                      style: theme.textTheme.bodySmall,
+                    ),
+                  ],
+                ),
             ],
           ),
         ],

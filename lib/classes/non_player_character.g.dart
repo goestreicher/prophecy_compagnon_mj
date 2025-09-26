@@ -12,6 +12,7 @@ NPCSubCategory _$NPCSubCategoryFromJson(Map<String, dynamic> json) =>
       categories: (json['categories'] as List<dynamic>)
           .map((e) => const NPCCategoryJsonConverter().fromJson(e as String))
           .toList(),
+      isDefault: json['is_default'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$NPCSubCategoryToJson(NPCSubCategory instance) =>

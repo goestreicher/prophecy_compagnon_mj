@@ -294,20 +294,20 @@ class PlaceDisplayWidget extends StatelessWidget {
               },
             ),
             _PlaceDescriptionItemDisplayWidget(
-              item: 'Ethnologie',
-              value: place.description.ethnology,
-              canEdit: canEdit,
-              onChanged: (String value) {
-                place.description.ethnology = value;
-                onEdited(place);
-              },
-            ),
-            _PlaceDescriptionItemDisplayWidget(
               item: 'Mentalité et société',
               value: place.description.society,
               canEdit: canEdit,
               onChanged: (String value) {
                 place.description.society = value;
+                onEdited(place);
+              },
+            ),
+            _PlaceDescriptionItemDisplayWidget(
+              item: 'Ethnologie',
+              value: place.description.ethnology,
+              canEdit: canEdit,
+              onChanged: (String value) {
+                place.description.ethnology = value;
                 onEdited(place);
               },
             ),

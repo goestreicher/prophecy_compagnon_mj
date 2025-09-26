@@ -74,15 +74,18 @@ flutter:
     - assets/creature-categories.json
     - assets/creatures-ldb2e.json
     - assets/creatures-ecran2e.json
+    - assets/creatures-les-ecailles-de-brorne.json
     - assets/creatures-les-foudres-de-kroryn.json
     - assets/factions-castes.json
     - assets/factions-secretes.json
     - assets/npc-categories.json
     - assets/npc-subcategories.json
     - assets/npcs-ldb2e.json
+    - assets/npcs-les-ecailles-de-brorne.json
     - assets/npcs-les-forges-de-kezyr.json
     - assets/npcs-les-foudres-de-kroryn.json
     - assets/places-ldb2e.json
+    - assets/places-les-ecailles-de-brorne.json
     - assets/places-les-forges-de-kezyr.json
     - assets/places-les-foudres-de-kroryn.json
     - assets/shield.json

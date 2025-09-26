@@ -1,0 +1,627 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Kern",
+    "uuid": "18be0592-2dcf-4559-b681-c98876b74602",
+    "parent_id": "kor",
+    "type": "nation",
+    "government": "autorité draconique",
+    "leader": "Brorne, Grand Dragon de la Pierre",
+    "motto": "courage, rigueur, dragons",
+    "climate": "continental frais",
+    "description": {
+      "general": "Kern est le Royaume de la Pierre. À l’image de Brorne, il n’est constitué que de reliefs escarpés : hautes montagnes et vallées profondes. C’est une terre aux paysages superbes mais aussi hostiles.\n\nLes remparts protégeant les villes sont constamment survolés par des dragons de la pierre. Outre Kern, la gigantesque forteresse militaire de Brorne, deux cités majeures sont à signaler. Tout d’abord, Gix, la cité des mages de la pierre et Dorkholm, réputée pour le talent de ses nombreux artisans.\n\nSiège de la caste des protecteurs, la capitale, offre à de très nombreux visiteurs l'hospitalité de ses immenses remparts. Dans le même ordre d'idées, l'architecture se veut à la fois fonctionnelle et grandiose. Une grande majorité des bâtisses sont construites en pierre de taille - quand elles ne sont pas directement creusées à flanc de montagne, soudées à la roche par les rituels magiques des adeptes de Brorne.\n\n",
+      "history": "La fin de l’Âge des Fondations fut la rupture d’une solitude méditative pour le premier fils de Moryagorn. Les vallées des Écailles furent alors investies par de nombreux humains désireux de sa sagesse.\n\nCe n’est pas sans un peu d'agacement qu’il vit arriver ces artisans et ces guerriers en une troupe désordonnée et bruyante. Brorne lui-même consentit à rencontrer les émissaires de ces pèlerins et se trouva tiraillé entre deux voies. D'un côté des artisans avaient vu en lui le Dragon de la Pierre, matériau noble, recelant les gemmes les plus pures et les métaux les plus rares. De l’autre, des guerriers voyaient en Brorne la réflexion et la sagesse d’un guerrier puissant.\n\nAlors que ces deux courants s’affrontaient pour bénéficier du savoir du Dragon, de nombreux autres pèlerins arrivèrent. Déçus de l'accueil de Kroryn, bon nombre de guerriers venaient chercher dans ces montagnes un maître plus attentif et accueillant que le Dragon du Feu. Ce dernier point de vue mit un terme rapide aux réflexions de Brorne. Détestant le chaos qui commençait à régner en ses vallées, il décréta que l’ordre, la rigueur et l’obéissance seraient les clés de vote de ses enseignements.\n\nIl renvoya une partie des artisans vers son frère Kezyr, peu enclin à supporter leur créativité incessante et préférant garder avec lui les architectes, tailleurs et maçons plus aptes à honorer la pierre dans une stricte organisation.\n\nEn tant que premier-né, Brorne avait toujours eu l'impression d’un devoir moral envers ses frères et sœurs et leurs créations. Il décida donc que l’art de la guerre qu’il incarnerait serait noble et équitable, puissant et juste afin de protéger le faible et de châtier le bourreau.\n\nTous les combattants qui n’adhéreraient pas à cette vision devraient partir, n’étant plus bienvenus. Il décida de nommer sa cité Caern, du nom des signes de piste destinés à guider les hommes. Avec le temps, la ville a grandi et la tradition orale a déformé son nom en Kern.\n\n",
+      "ethnology": "Les habitants de Kern ont tendance à considérer toute marque physique anormale ou toute malformation comme une marque de corruption. De ce fait, la population présente une certaine homogénéité due à l'exil des malchanceux.\n\n",
+      "society": "Tout ce qui a trait aux dragons est sacré. Les habitants de la province de Kern respectent un code de l’honneur rigide (parfois contraignant) et sont fidèles aux Édits draconiques.\n\nLa société de Kern est profondément influencée par la caste des protecteurs et son organisation hautement hiérarchisée. À Kern, chaque famille, chaque village, chaque groupuscule possède ses chefs, ses officiers et ses simples soldats. Les tatouages, qui sont pourtant monnaie courante dans la majorité des autres royaumes, sont ici assimilés à des marques de corruption.\n\nKern est le seul royaume où tout est véritablement conditionné autour du Grand Dragon tutélaire de la région. L'esprit de Brorne y est omniprésent. Il inspire la confiance et le courage, guidant les combattants et décourageant les rares ennemis - que les Inquisiteurs n'hésitent pas à nommer “infidèles” ou “hérétiques”.\n\nLes Inquisiteurs ont la réputation d’être purs, incorruptibles, intègres face aux tentations terrestres et surnaturelles. Au fil des siècles, leur autorité morale s’est répandue à travers tout Kor, conférant aux protecteurs et aux fidèles de Brorne une profonde emprise sur les populations. Kern est très fier d’être le berceau de l’ordre. Chaque village comporte une stèle où sont gravés les noms des enfants qui ont réussi à rejoindre l’ordre prestigieux. Ceux qui sont morts dignement voient leur nom recouvert d’une couche de métal précieux, tandis que ceux qui ont failli en trahissant l'idéal de Brorne sont effacés des mémoires et gommés sans ménagement des stèles mortuaires - quand leur village natal ne subit pas le même sort.\n\nLa région des vallées au nord est infestée de peuplades dégénérées, cachées dans les fosses et les galeries souterraines, auxquelles les Inquisiteurs livrent une guerre sans merci depuis des siècles.\n\n",
+      "politics": "Chaque village vit en totale autarcie et dispose de sa propre hiérarchie.\n\n",
+      "judicial": "La Loi est assimilée à la morale ; elle a donc une valeur sacrée et ceux qui sont chargés de la faire respecter sont à la fois considérés comme des juges et des saints.\n\n",
+      "economy": "Relativement peu peuplé par rapport à sa superficie, Kern comprend principalement des villages montagnards qui fournissent de très nombreuses ressources, grâce à une ingénieuse agriculture par paliers instaurée sur les flancs inférieurs des grands monts.\n\n",
+      "military": "L'académie militaire peut accueillir jusqu'à trois mille étudiants et il n’est pas rare que les maîtres d'armes, instructeurs et lieutenants de la garnison soient obligés de refuser des candidatures. Par sa grande puissance militaire, C’est un des rares endroits où les nobles et les chefs d'armées n’occupent pas leur temps libre à attaquer leurs voisins. Siège de l'Inquisition, la Forteresse des Neuf Pics se dresse dans une région reculée, très délicate d'accès par la route : Seuls ceux qui ont vraiment une bonne raison de s’y rendre entreprennent le voyage, qui constitue à lui seul une quête ardue et incertaine.\n\n"
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Kern (cité)",
+    "uuid": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
+    "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
+    "type": "capitale",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Construite au pied d’un des plus hauts pics des Écailles, la cité originelle est maintenant engoncée dans une chape de pierre formée de murailles, donjons et remparts qui en font une véritable forteresse. Au dehors de ces murailles, bon nombre d’hommes ont choisi de s’installer sur les barres rocheuses ou des versant praticables. La ville est entièrement faite de pierres taillées. Les rues de la forteresse opposent leurs ténèbres à la lumière des artères des districts extérieurs. Toutes les rues sont pavées, régulièrement nettoyées et sévèrement patrouillées. L'architecture kerne est massive, privilégiant les parois épaisses, les ouvertures rares et la hauteur. La maison typique compte un seul étage mais les voûtes sont si bautes qu’elles en paraissent deux. La verdure et les cultures sont rares à Kern et le sol rocailleux ne permet pas beaucoup de cultures.\n\nKern est organisée en districts portant chacun le nom d’un minéral adapté à sa population. Dès sa création, le pouvoir en place a décidé que les districts seraient attribués par profession selon leur fonctionnalité. Il n’est pas interdit de s’en séparer mais la ville refuse tout aménagement hors de son quartier attribué.\n\nIl est ainsi interdit de construire une forge dans le district de cristal ou une tour d’observation hors des quartiers prévus pour ce style d’architecture.\n\nKern compte deux parties : la forteresse, la partie de la ville dans les murailles originelles, plus sombre et ancienne et la ville extérieure qui est le fruit de l'expansion des hommes et de leur désir de vie à l’air libre.\n\n",
+      "history": null,
+      "ethnology": "## La voix du héraut\n\nChaque midi, l’activité de la ville ralentit et les citoyens écoutent les édits officiels proclamés par le Héraut de Kern. Il est installé au sommet d’une tour du Temple de Pierre, mais de colossaux enchantements sont tissés dans toute la vallée et ses paroles sont démesurément amplifiées. Ces annonces tonitruantes proclament les nouvelles lois, les châtiments, les volontés de Brorne et les informations concernant la bonne marche de la cité. Cet instant solennel est vécu avec recueillement par de nombreux habitants, mais les étrangers vivront peut-être mal ces annonces assourdissantes. Il est mal vu de se boucher les oreilles durant les édits et on risque la lapidation en pleine rue pour peu que des fanatiques passent par là. En cas d'urgence comme les épidémies, les incendies ou les guerres, des annonces peuvent être faites à tout moment.\n\n## Le Seigneur dragon\n\nÀ Kern, tout ce qui touche à la commumication avec un dragon est sacré. Regarder un dragon dans les yeux ou lui adresser la parole en premier sont des actes interdits. Les habitants utilisent le terme de Seigneur pour leur adresser la parole et jamais leur nom. De même, un habitant de Kern ne rentrera jamais dans la demeure d’un dragon sauf sur ordre de celui-ci. Les seules personnes passant outre cette tradition sont les Élus que le peuple laisse parler aux dragons comme ils l’entendent.\n\n## Coutumes vestimentaires\n\nKern est une cité rigide et les codes vestimentaires sont ici très compartimentés. De nombreuses branches des castes disposent de tenues proches d’uniformes, qui permettent une cohésion esthétique. Les protecteurs, les divers corps d'artisanat, les mages et les marchands ont des tenues du même style, sobres et bien découpées. Les matières privilégiées sont la laine, le cuir et la cotte de maille fine.\n\nLes couleurs sont ternes et froides (gris, noir, brun, bleu marine ou violet). Les bijoux se limitent souvent aux colliers, lourds, magnifiquement ciselés et rehaussés de gemmes.\n\n## La vie et la mort\n\nUne naissance est saluée par une cérémonie familiale. Il est de coutume de faire surveiller l’accouchement par le membre le plus âgé de la famille, en mémoire de Brorne qui en tant qu’aîné assista à la naissance de tous les autres Dragons. Il est de plus obligatoire de déclarer une naissance, la cité tenant un compte précis de la démographie.\n\nLors d’un décès, le corps est signalé aux autorités de la cité, qui prévoient le lieu de la sépulture. Il existe à l’intérieur de la montagne un imposant réseau de galeries utilisé comme nécropole depuis des siècles. Les corps sont enfermés dans des sarcophages de pierre, alignés de biais dans des niches le long des tunnels. Les frais sont à la charge de la famille, mais les artisans proposent des prix pour toutes les bourses. Il est normal de venir régulièrement se recueillir sur la tombe de ses proches, les croyances locales restant persuadées que l’âme est permanente et peut s’exprimer si le contact reste maintenu entre les personnes.\n\n",
+      "society": "Kern rassemble 160 000 habitants, répartis à raison de 45 000 dans la forteresse et de 115 000 dans les quartiers extérieurs. 70% de la population est citoyenne. On estime que la moitié de la population vit de la culiure guerrière (combattants, forgerons, armuriers, etc.), un quart de l'artisanat (tailleurs, architectes, sculpteurs) et le dernier quart du commerce et de la magie. La mentalité des habitants de Kern est stricte, organisée, volontaire et respectueuse de l’ordre établi.\n\nLes dragons de Kern sont considérés par les habitants comme des êtres supérieurs qu’ils sont indignes de déranger. On compte 6 000 dragons à Kern bien connus et honorés et environ un millier qui ont une existence plus discrète. Les dragons de cette cité sont des êtres fiers et ombrageux qui attendent des hommes tranquillité et obéissance. La moitié sont des dragons de pierre, un sixième des dragons du métal, un sixième des dragons du feu et le reste des dragons des océans et des cités. On compte en outre quelques dragons des vents, de la magie ou de la nature, qui sont une centaine au total.\n\n",
+      "politics": "Le pouvoir à Kern est entre les mains de Brorne, qui s’appuie sur plusieurs de ses fils et de leurs Élus pour assurer une pyramide de décision efficace mais pesante. Une douzaine d’hommes contrôlent les différents pouvoirs, se réunissant tous les jours du Roc afin de présenter leurs travaux à Brorne. Ils agissent plus comme des conseillers quecomme des chefs, toute décision d’importance restant le privilège du Grand Dragon.\n\nLes membres importants de ce conseil sont :\n\n* Ugmar Kast, Grand Maître de la caste des protecteurs\n* Catherine Kerntyt, régente de l’Inquisition\n* Thorbal d’Ulmir, Premier bâtisseur\n* Eildrin Magbur, Premier armurier\n* Gallân-Bred d’Arkis, gouverneur de Kern\n\nDeux conseillers sont en charge du commerce, deux se consacrent à la diplomatie, un à l’agriculture, un à la justice et un à la magie. Il est à noter que seuls deux de ces conseillers ne sont pas des Élus. Il s’agit du diplomate Pellenphar Hôrn et de Gallân-Bred d’Arkis.\n\nBrorne a toujours voulu que Kern soit dirigée par un homme, non Élu, afin de parler au nom de tous ceux qui vivent sans Lien. Depuis six ans, Gallân-Bred remplit cette fonction après avoir quitté celle de Commandeur. Il est d’un naturel froid et pragmatique, son énorme capacité de travail et sa sagesse lui faisant paraître comme une tortue gigantesque, surnom qu’on utilise parfois dans son dos pour se moquer de son manque de chaleur humaine.\n\n## Liens avec l'extérieur\n\nKern occupe une position centrale et abrite le siège d’une caste dont les membres sont présents dans toutes les villes selon une organisation pyramidale très efficace. La diplomatie y est donc active. Kern entretient de bons rapports avec les Marches Alyzées et se félicite de leur unification, gage de stabilité. Les rapports avec Havre sont froids en raison de l’animosité de Brorne envers Szyl. Les autres cités draconiques jouissent de bons rapports, surtout Dungard et Ankar.\n\nL’Empire de Solyr est un allié militaire et le commerce entre les deux cités est important. Des rumeurs récentes font état de colères terribles de Brorne à propos de l’Empire Nésora. Rien n’est officiel mais des croisades pourraient bien être déclarées contre les villes du nord, les plus extrémistes des Inquisiteurs se voyant même partir en guerre contre l’Empire…\n\n",
+      "judicial": "À Kern, la loi est un colossal couperet qui peut tomber à tout moment. Les édits sont nombreux, stricts et lourdement rappelés. Les protecteurs font régner une discipline de fer dans la ville et tout écart est brutalement sanctionné. La justice est rapide, sans appel et parfois un peu excessive. Les châtiments usuels sont l’emprisonnement dans les immenses oubliettes de la ville, le bagne minier, les châtiments publics et la peine capitale.\n\n",
+      "economy": "L'économie de Kern repose sur deux piliers : l’artisanat et la caste des protecteurs. L’artisanat est à l’origine de produits manufacturés et d’un savoir-faire sans égal dans le domaine de l'architecture. La caste, avec ses services de police et d’administration, constitue une manne d’argent. Le commerce est équilibré et intense. Kern importe de la nourriture, du bois et du tissu tandis qu’elle exporte du charbon, de la pierre de taille, des objets manufacturés et des armes. Kern subvient à ses propres besoins en fer, les montagnes avoisinantes couvrant les énormes exigences de ses armuriers et forgerons.\n\n",
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le district de granit",
+    "uuid": "6faeaf2f-3379-4c72-b9cb-16d8e6cd5aaa",
+    "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La forteresse",
+    "uuid": "82b4261f-034c-4bb9-a651-ec846d144d59",
+    "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le district de granit",
+    "uuid": "97cf9927-ce1a-4730-91b1-857a63db2b04",
+    "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce district de la forteresse comprend les bâtiments militaires, les salles d’entraînement et le Château, bastion des protecteurs. Les rues de ce district sont un peu plus larges afin de permettre les manœuvres des troupes. L’architecture y est martiale, fonctionnelle et oppressante.\n\nLes commerces qui s’y trouvent sont des auberges et des tavernes ainsi que le siège de quelques compagnies de mercenaires.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "L'ancien district de fer",
+    "uuid": "6df5b505-e971-4514-b357-9eb03519b1fa",
+    "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce district était originellement enclavé dans la forteresse mais il a dû se scinder devant son agrandissement. On distingue donc l’Ancien, dans la forteresse et le Nouveau, dans la ville extérieure.\n\nL’Ancien abrite les vendeurs et les négociants d’armes. Il est constitué de petites échoppes serrées dans l’ombre des venelles. Les rues sont sillonnées de guerriers et de protecteurs en quête d’une arme ou d’une armure particulière.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Temple de Kezyr",
+    "uuid": "cc7a60dd-afef-4615-a21c-ee85689c07ee",
+    "parent_id": "6df5b505-e971-4514-b357-9eb03519b1fa",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans l’ancien district de fer se dresse une tour ronde de fer forgé, qui rassemble de superbes statues de métal de toutes tailles.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le district de saphir",
+    "uuid": "eac4e747-7d41-4973-b7b0-cd1b32641ca6",
+    "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce district de la forteresse est dédié aux travaux d’eau. Il y coule un énorme torrent de montagne qui se divise largement en plusieurs petites cascades. On y trouve les blanchisseurs, tanneurs et porteurs d’eau. Avec le temps, ce quartier artisan est devenu le repaire des adeptes d’Ozyr qui ont obtenu de construire une petite chapelle au milieu de la cascade. On y trouve donc de nombreuses académies, bibliothèques et échoppes d’écrivains publics. C’est un quartier d’escaliers et de rues en échelle, serrés le long de la cascade.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Temple d'Ozyr",
+    "uuid": "c7cbd15a-5e6e-4b1a-9e95-01bca050e0cd",
+    "parent_id": "eac4e747-7d41-4973-b7b0-cd1b32641ca6",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "À mi-hauteur du torrent, trois tours de forme inégale sont soudées à la paroi. Leur toit est percé en de gigantesques entonnoirs, qui permettent de créer à l’intérieur de surprenantes colonnes d’eau.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le district de cristal",
+    "uuid": "65bce2de-82a0-459e-9c5c-ec943f040364",
+    "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce petit district de la forteresse compte quelques-uns des bâtiments les plus extravagants de la cité. Certains sont moulés à même la montagne, d’autres scintillent de mille cristaux mouvants montés en murs et certains sont même faits de verre enchanté.\n\nC’est le quartier des mages, des enchanteurs et des érudits de l’art de Nenya. On y trouve de nombreuses statues de la Chimère mais aucun sanctuaire.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le Château",
+    "uuid": "3e80db01-8788-4f83-8edb-87c8e2762354",
+    "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cette colossale citadelle forme le sommet de la forteresse. Elle compte cinq tours en cône tronqué, une à chaque angle des murailles et une énorme sur la façade formant l’entrée principale. On trouve ici l’académie militaire, les forges de la caste, les casernes et les administrations de la colossale organisation de Brorne.\n\nL'accès en est réglementé et normalement interdit aux civils. Le Château est le sanctuaire ultime de la caste et ses principes sont appliqués au pied de la lettre dans une ambiance légionnaire.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le Temple de Pierre",
+    "uuid": "ebdbb161-8559-4278-8998-6eddf5e51baf",
+    "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situé près de l'entrée, ce temple comporte trois parties : un monastère où l’on trouve des Prodiges attachés à Brorne, des mages reclus et des mystiques qui choisissent de vénérer le Dragon de la Pierre.\n\nLe Temple, une tour ronde très large et légèrement conique, qui contient un double hémicycle autour d’une statue de Brorne de près de dix mètres de haut, chef-d'œuvre d’un sculpteur Élu.\n\nLa tour du Héraut se dresse au dessus du Temple. Son sommet est une plate-forme circulaire où se trouve un portique de pierre protégeant un pupitre de marbre.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La haute cour de justice",
+    "uuid": "c9fb221d-ebc2-4a3a-9832-5ab7e5dd2db8",
+    "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce vaste édifice juridique est le seul de son type dans tout Kor. Sous ses voûtes silencieuses se trouve la quintessence de la justice. La Cour, qui compte les meilleurs juges et dont le verdict surpasse en général ceux des autres tribunaux du monde, la Bibliothèque des lois qui possède un exemplaire de chaque loi du monde et l’Académie de justice, qui forme les protecteurs aux rudiments de la loi et inculque aux Inquisiteurs un enseignement très poussé.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les halls des splendeurs",
+    "uuid": "fc3bea25-52cc-4df4-953b-d03a678a9f65",
+    "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce vaste édifice rassemble les meilleures formes d’art minéral du monde. On y trouve les plus belles statuettes, maquettes de bâtiments, frises et bas-reliefs de Kor. Tout ce qui est artistique et constitué de pierres est présent ici.\n\nOn trouve des modèles réduits des plus célèbres bâtiments du monde et des copies d’œuvres immobiles.\n\nCe bâtiment est la fierté de la branche architecturale de la caste des artisans, dont de nombreux membres déambulent ici afin d’enrichir leur savoir.\n\nC’est un édifice public et l’un des rares “musées” du monde.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La ville extérieure",
+    "uuid": "3508bb47-7d06-44f7-91f8-6d436a951b29",
+    "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le nouveau district de fer",
+    "uuid": "5d18e9df-0783-4030-803f-0ecb0c627fd6",
+    "parent_id": "3508bb47-7d06-44f7-91f8-6d436a951b29",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce district était originellement enclavé dans la forteresse mais il a dû se scinder devant son agrandissement. On distingue donc l’Ancien, dans la forteresse et le Nouveau, dans la ville extérieure.\n\nLe Nouveau district de fer est situé dans le haut de la ville extérieure, noir de la suie des fours et souvent parcouru de fumées grasses. Il accueille les forges et les fourneaux des artisans du métal mais aussi les verriers, potiers et autres briquetiers. On compte plusieurs entrepôts et des porteurs et charretiers vont et viennent perpétuellement.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le district de rubis",
+    "uuid": "80be5fee-c063-43b1-8ad7-6b0ce17ec250",
+    "parent_id": "3508bb47-7d06-44f7-91f8-6d436a951b29",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce petit district de la ville extérieure rassemble les tavernes les plus bruyantes, les tripots et les bordels. Il est le seul lieu de Kern où l’ambiance se relâche un peu et où il règne de l’animation. On trouve ici les guerriers les moins disciplinés, les voyageurs et certains marchands. Sans être un coupe-gorge, c’est un quartier où sont rassemblés les citoyens les plus discutables et où règne le danger. Les protecteurs patrouillent de façon irrégulière, semblant préférer un quartier chaud unique bien surveillé qu’une nuée de fauteurs de troubles disséminés.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Temple de Kroryn",
+    "uuid": "e71efac9-2ed8-40ca-a0cc-4a1d8bfccec6",
+    "parent_id": "80be5fee-c063-43b1-8ad7-6b0ce17ec250",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans le district de rubis se dresse une tour à la forme torturée, taillée dans un geyser de lave figée. Il est décoré de mille oriflammes et glorifie les plus grands généraux du monde, représentés par des statuettes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le district d'émeraude",
+    "uuid": "73379d7c-b65a-4b1d-9ea7-e9677d73905e",
+    "parent_id": "3508bb47-7d06-44f7-91f8-6d436a951b29",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce district de la ville extérieure se consacre au commerce alimentaire et à l’agriculture. On trouve ici de nombreux négociants en grains, viandes et fruits. Les résidents sont des artisans, des paysans de montagne et des porteurs. Ce quartier est vaste et sûr, de nombreuses milices patrouillant entre les entrepôts et les atellers. Une partie du district se compose de longs tunnels où se trouvent des champignonnières et où l’on fait vieillir un fromage, le bleu de Kern.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le district de diamant",
+    "uuid": "aa1f5d3d-3146-4200-a592-c65c84e65e34",
+    "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce district est à cheval sur les deux parties de la ville. Il rassemble une bonne partie de la population, des servileurs et des auberges. Il est dédié au commerce et le marché qui s’y trouve propose toutes les marchandises.\n\nQuantité d’échoppes s’y assemblent, mais les meilleurs armuriers et forgerons sont dans l’ancien district de fer. II n’y a pas ici d’ateliers ou de manufacture, toute fabrication se déroulant dans les autres districts. C’est le quartier le plus animé et le plus riche, agréable par sa population mais toujours oppressant dans son architecture figée.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le district d'obsidienne",
+    "uuid": "b870a1df-5b73-43d7-9b8e-0d1403fd72aa",
+    "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Il existe une rumeur à Kern comme quoi ce petit district serait constitué des pires bouges, des sombres guildes d’assassins et des trafiquants les plus innommables. On le dit caché sous Kern, abrité dans de sinistres galeries où se mêleraient voleurs, tueurs et contrebandiers. Ce serait un lieu de sinistres pratiques, où des membres corrompus des castes rendraient grâce au Fataliste par de macabres orgies.\n\nFruit de tous les fantasmes et de toutes les exagérations, ce district n'existe probablement pas, se résumant sûrement à quelques tripots de cave et à un ou deux tunnels protégeant des receleurs.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les Écailles",
+    "uuid": "aab5f7a3-b8c0-42b8-8094-8e45440b0926",
+    "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Fier et puissant, Brorne sait se souvenir de son père. Lorsqu’est venu pour lui le temps de trouver un refuge afin de méditer et de trouver le repos, il sentit d’instinct le besoin de la proximité de Moryagorn. Le premier fils a donc élu domicile dans les plus hautes montagnes des Écailles, dans un profond réseau de cavernes et de grottes. Ce repaire est immense et nul mis à part Brorne n’en connaît tous les secrets. On dit que ce refuge communique avec des lieux fabuleux, des cavernes pleines de joyaux, des cascades de cristal figé et des vallées immaculées où jamais l’homme n’a porté le regard.\n\nLe repaire de Brorne dispose d’une entrée connue, un peu au-dessus de Kern et à flanc de falaise. Il faut voler pour y accéder et nul n’a jamais osé braver le repos du Dragon de la Pierre. On dit que plusieurs tunnels communiquent avec le Château. Rencontrer Brorne en son repaire est impossible, mais ses fréquentes incursions en ville ou sa présence régulière au Château permettent de solliciter une audience. Les délais sont variables en fonction de la demande, tout comme la réponse.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Gix",
+    "uuid": "94de7847-6cad-4968-91f4-ed593ec53cca",
+    "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
+    "type": "cite",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cité des mages de la pierre, Gix est située à deux cents kilomètres au nord de Kern. Une route sinueuse et pavée y conduit. Gix est semi-troglodyte, construite dans une faille asymétrique. La falaise est barrée d’une fissure colossale et son bord est n’atteint que la moitié de la hauteur de l’ouest. Contre la paroi ouest, sur le plateau est et au long de l’abîme, la cité dresse ses tours et ses maisons de pierre brute entièrement modelés dans la roche par la magie. Des arches magnifiquement sculptées rejoignent les deux lèvres de la faille au fond de laquelle gronde une résurgence d’eau qui forme le torrent de Gsardeth.\n\nLa gravité est magiquement modifiée à Gix et les visiteurs devront s’habituer à évoluer lourdement durant les premiers temps de leur séjour. Gix est célèbre pour son Académie de la pierre. Sir Agathorn, Grand Mage de la Pierre, en est le magistrat, mais il se fait souvent représenter par son régent, le seigneur Bram Pardeyn.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Dorkholm",
+    "uuid": "61497388-1d2a-4e7d-bc6a-693f9d9f82d4",
+    "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
+    "type": "cite",
+    "government": null,
+    "leader": "Thorbal d’Ulmir",
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Véritable ambassade de Dungard, dirigée par Thorbal d’Ulmir, Dorkholm est située à soixante-dix kilomètres au sud-ouest de Kern. Elle abrite la branche architecturale de la caste des artisans, regroupant les ordres des maçons, architectes, tailleurs et sculpteurs. Dorlsholm est une cité classique dans sa conception, largement fortifiée, et abritant une population majoritairement citoyenne. Les ressources de la ville reposent essentiellement sur ses exportations d’œuvres, la présence de la guilde des bâtisseurs et la vente de minéraux rares et de gemmes dont les montagnes alentours sont porteuses. Dorkholm est une cité riche, où règne une ambiance studieuse et bon enfant, les artistes vivant entre eux avec leurs codes et leurs usages, ce qui leur permet de donner la pleine mesure de leur talent.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La forteresse des neuf pics",
+    "uuid": "cc72562d-01e9-4742-aeac-140da24e75ad",
+    "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La Forteresse des Neufs Pics est le siège mythique de l’Inquisition. Nombre de ses membres n’en ont même jamais contemplé les murailles tellement le lieu est difficile d’accès. À plus de cinq cents kilomètres de Kern, bien après la fin des routes, la forteresse se dresse entre neufs éperons rocheux, suspendue au-dessus d’un gouffre par des arcs-boutants hauts comme deux hommes. Ses tours en sont courtes et massives, ses créneaux polis, rendus brillants par le gel. L'air est raréfié et blesse les poumons, mais au cœur de cet enfer glacé, les plus féroces et les plus intelligents des Inquisiteurs de Kor tracent les plans d’une lutte acharnée contre le désordre, les déviances, le Fatalisme et l’'Humanisme… La vie y est cloîtrée à la manière des moines, la robe de cuir formant l’uniforme de tous. La forteresse n’est référencée sur aucune carte et le voyage pour l’atteindre est dit-on une quête unique.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]
