@@ -1,0 +1,661 @@
+[
+  {
+    "equiped": [],
+    "uuid": "88408d5c-b58a-40bf-a6f6-dd1e581c1eb7",
+    "name": "Sung",
+    "description": "\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 6,
+      "intelligence": 7,
+      "coordination": 7,
+      "presence": 10,
+      "resistance": 9,
+      "volonte": 12,
+      "perception": 9,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 7,
+      "manuel": 5,
+      "social": 5
+    },
+    "skills": [
+      {
+        "skill": "armesContondantes",
+        "value": 5
+      },
+      {
+        "skill": "corpsACorps",
+        "value": 8
+      },
+      {
+        "skill": "armesDoubles",
+        "value": 8,
+        "specializations": [
+          {
+            "name": "armesDoubles:shaadukT",
+            "title": "Shaaduk't",
+            "value": 10,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "castes",
+        "value": 7
+      },
+      {
+        "skill": "acrobatie",
+        "value": 7
+      },
+      {
+        "skill": "athletisme",
+        "value": 9
+      },
+      {
+        "skill": "esquive",
+        "value": 9
+      },
+      {
+        "skill": "natation",
+        "value": 6
+      },
+      {
+        "skill": "connaissanceDesAnimaux",
+        "value": 9
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 10
+      },
+      {
+        "skill": "histoire",
+        "value": 5
+      },
+      {
+        "skill": "herboristerie",
+        "value": 8
+      },
+      {
+        "skill": "lireEtEcrire",
+        "value": 7
+      },
+      {
+        "skill": "medecine",
+        "value": 9
+      },
+      {
+        "skill": "premiersSoins",
+        "value": 10
+      },
+      {
+        "skill": "conte",
+        "value": 6
+      },
+      {
+        "skill": "psychologie",
+        "value": 4
+      },
+      {
+        "skill": "dressage",
+        "value": 8
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "prodige",
+    "caste_status": "grandMaitre",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "05241904-b3d5-4146-8895-08a8487da233"
+    },
+    "luck": 5,
+    "proficiency": 5,
+    "renown": 0,
+    "interdicts": [
+      "loiDuSangProdige"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "donDeBrorne",
+        "description": null
+      },
+      {
+        "privilege": "donDeHeyra",
+        "description": null
+      },
+      {
+        "privilege": "donDeKali",
+        "description": null
+      },
+      {
+        "privilege": "donDeKalimsshar",
+        "description": null
+      },
+      {
+        "privilege": "donDeKezyr",
+        "description": null
+      },
+      {
+        "privilege": "donDeKhy",
+        "description": null
+      },
+      {
+        "privilege": "donDeKhymera",
+        "description": null
+      },
+      {
+        "privilege": "donDeKroryn",
+        "description": null
+      },
+      {
+        "privilege": "donDeMoryagorn",
+        "description": null
+      },
+      {
+        "privilege": "donDeNenya",
+        "description": null
+      },
+      {
+        "privilege": "donDOzyr",
+        "description": null
+      },
+      {
+        "privilege": "donDeSolyr",
+        "description": null
+      },
+      {
+        "privilege": "donDeSzyl",
+        "description": null
+      }
+    ],
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 5,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "nature",
+      "dragon": "Madënthield",
+      "progress": "cinquiemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesProdiges"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "unique": false,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 4
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 3
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 2
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "aae1a469-28be-4413-b648-8c91dbf8cb64",
+    "name": "Omadawn",
+    "description": "Omadawn est une petite fille de 12 ans, blondinette et assez remuante. Parfois, elle s’ennuie dans la capitale alors elle s’échappe pour jouer avec les gamins de son âge, provoquant un branle-bas de combat général. La seule chose que les directeurs des Refuges ont remarqué, c’est que la petite a une singulière emnpathie avec les dragons et toutes les créatures.\n\nLes insectes dangereux ne la piquent pas, les loups ne l’attaquent pas et les dragons — de toutes les origines, même ceux de Kalimsshar, acceptent de jouer avec elle. Pour le moment, cette gamine est un véritable mystère.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 3,
+      "intelligence": 5,
+      "coordination": 8,
+      "presence": 4,
+      "resistance": 4,
+      "volonte": 9,
+      "perception": 7,
+      "empathie": 9
+    },
+    "attributes": {
+      "physique": 1,
+      "mental": 6,
+      "manuel": 2,
+      "social": 4
+    },
+    "skills": [
+      {
+        "skill": "acrobatie",
+        "value": 5
+      },
+      {
+        "skill": "discretion",
+        "value": 4
+      },
+      {
+        "skill": "esquive",
+        "value": 5
+      },
+      {
+        "skill": "escalade",
+        "value": 5
+      },
+      {
+        "skill": "connaissanceDesAnimaux",
+        "value": 15
+      },
+      {
+        "skill": "orientation",
+        "value": 3
+      },
+      {
+        "skill": "deguisement",
+        "value": 6
+      },
+      {
+        "skill": "conte",
+        "value": 10
+      },
+      {
+        "skill": "commandement",
+        "value": 2
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {
+      "nature": [
+        "Entraves verdoyantes",
+        "Fruits sauvages"
+      ]
+    },
+    "extra_magic_pool": 0,
+    "caste": "mage",
+    "caste_status": "apprenti",
+    "career": null,
+    "age": 12,
+    "height": 1.4,
+    "weight": 25,
+    "origin": {
+      "id": "05241904-b3d5-4146-8895-08a8487da233"
+    },
+    "luck": 10,
+    "proficiency": 0,
+    "renown": 0,
+    "interdicts": [],
+    "caste_privileges": [
+      {
+        "privilege": "anonymat",
+        "description": null
+      },
+      {
+        "privilege": "tuteurSpecialise",
+        "description": "Heyra"
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "chetif",
+        "cost": 5,
+        "details": ""
+      },
+      {
+        "disadvantage": "naivete",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "disadvantage": "illusions",
+        "cost": 2,
+        "details": ""
+      }
+    ],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesMages"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 2
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 1
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 1,
+      "invocatoire": 1,
+      "sorcellerie": 1
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 1,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 1,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "75c556a8-038c-4f67-bfbf-194fe6d6dc9e",
+    "name": "Olbam Aktayr",
+    "description": "Moins connu que Solyr, le premier d’entre les premiers, Olbam Aktayr a marqué les imaginations de nombreux Prodiges. Alors qu’il était encore un enfant plein de fougue et d’insouciance, il rencontra un jeune fils de Heyra blessé, répondant au nom d’Hykam. Pris de compassion et désireux de sauver la vie d’un être vivant, il tenta de sauver l'être d’écailles. Malheureusement pour eux, le dragon était chassé par une troupe sanguinaire de Belgoriens des Lacs Sanglants. Au péril de sa vie, Olbam cacha le jeune dragon, le soigna et tissa avec lui un Lien indéfectible. On raconte que cet échec aux Belgoriens a eu une double implication politique. D’une part, ce peuple rugueux s’apprêtait, semble-t-il, à partir à la conquête des principautés voisines. N’ayant pu retrouver le corps d’Hykam, Vargund, le commandant en chef des troupes belgoriennes, préféra remettre son invasion, persuadé que le jeune dragon avait averti ses ennemis de ses intentions. D'autre part, la maturité aidant, et poussé par un désir de redonner équilibre et harmonie à la région, Olbam, accompagné de son partenaire ailé, a manœuvré durant de nombreuses années dans l’entourage de Jard. Depuis lors, Jard, poussé par sa fougue et inspiré par les étoiles — et Olbam - a rendu lustre, calme et prospérité aux Marches Alyzées tandis que les Belgoriens se morfondent aux abords des Lacs Sanglants.\n\nOn ne sait trop ce que sont devenus Hykam et son Élu mais de nombreux voyageurs parlent d’un Prodige dans la force de l’âge, accompagné de son dragon, qui surgirait en diverses occasions auprès des faibles et des opprimés pour les aider à organiser leur résistance. Certains murmurent que cet Élu serait le Héraut des Humanistes, d’autres pensent qu’il est le symbole de l’intérêt que les dragons portent à l'humain. D’autres, enfin, voient en lui un nouveau Solyr dont la mission serait d’apaiser les conflits et de rendre à chacun sa dignité dans la paix et l’harmonie.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 4,
+      "intelligence": 5,
+      "coordination": 4,
+      "presence": 4,
+      "resistance": 6,
+      "volonte": 4,
+      "perception": 7,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 3,
+      "mental": 3,
+      "manuel": 3,
+      "social": 4
+    },
+    "skills": [
+      {
+        "skill": "armesDoubles",
+        "value": 7
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 6
+      },
+      {
+        "skill": "herboristerie",
+        "value": 5
+      },
+      {
+        "skill": "conte",
+        "value": 5
+      },
+      {
+        "skill": "premiersSoins",
+        "value": 7
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "prodige",
+    "caste_status": "expert",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "05241904-b3d5-4146-8895-08a8487da233"
+    },
+    "luck": 2,
+    "proficiency": 4,
+    "renown": 0,
+    "interdicts": [
+      "loiDeLaMeditation"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "donDOzyr",
+        "description": null
+      },
+      {
+        "privilege": "donDeHeyra",
+        "description": null
+      },
+      {
+        "privilege": "donDeKhy",
+        "description": null
+      }
+    ],
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "nature",
+      "dragon": "Hykam",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeHeyra"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "unique": false,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 2
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 1
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  }
+]

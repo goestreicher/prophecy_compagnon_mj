@@ -225,41 +225,6 @@
     }
   },
   {
-    "name": "Forêt Mère",
-    "parent_id": "kor",
-    "type": "nation",
-    "government": "autorité draconique",
-    "leader": "Heyra, Grand Dragon de la Nature",
-    "motto": "paix, simplicité, coexistence",
-    "climate": "de continental doux à tropical",
-    "description": {
-      "general": "la Forêt Mère occupe ce qui fut, quelques millénaires auparavant, une zone d'intense activité volcanique. Sans constituer un véritable royaume, la Forêt Mère passe pour le domaine originel de Heyra, Mère de la Nature. C’est un véritable océan de verdure et d'essences végétales. Nombreux sont les ambitieux à y avoir élu domicile par le passé et à avoir choisi d’y construire une puissante civilisation. Des ruines et d'immenses cités témoignent de ces tentatives. Elles sont à présent entièrement recouvertes par la végétation luxuriante qui, comme animée d’une vie propre, recouvre patiemment toute trace d'existence humaine. Pour preuve, certaines essences de lierre ont la particularité de se coller à la pierre, puis de la recouvrir intégralement avant de la faire littéralement éclater. Seules les parties souterraines des bâtiments perdurent plus de quelques dizaines d’années. Généralement, ces havres de paix sont occupés par des familles, de petites communautés ou des créatures sauvages de taille variable. Seuls quelques rares monuments se dressent dans cette infinie verdure. La forêt abrite tout de même en son sein de nombreuses agglomérations de petite taille.",
-      "history": "non contents d’être tombés en désuétude, les royaumes du passé ont aujourd'hui sombré dans l'oubli, recouverts par les racines grimpantes et les feuillages omniprésents. Depuis la nuit des temps, le Grand Dragon et ses enfants ont favorisé l'avènement des nations de paix et ont agi pour accélérer la déchéance des royaumes guerriers qui ont tenté de s'y installer.",
-      "ethnology": "tout comme les habitants du Royaume des Fleurs, ceux de la Forêt Mère sont légèrement différents de la population de Kor. Ils sont en moyenne un peu plus petits d’un ou deux pouces, et assez minces, la vie en forêt ayant modifié leur musculature pour la rendre plus agile.",
-      "society": "dépourvus de toute organisation, les habitants des profondeurs de la Forêt Mère sont contraints de lutter pour survivre aux agressions quotidiennes de leur environnement. La plupart d’entre eux vivent comme des primitifs errants, se contentant de chasse et de cueillette, tandis que d’autres ont réussi à investir les vestiges d’anciennes civilisations. Ils constituent un peuple indépendant qui se rassemble dans des communautés restreintes, à l'écart des autres peuples et des habitants des cités.",
-      "politics": "la Forêt Mère n’a pas de structure politique formelle et serait plutôt modérée. Heyra délègue ses pouvoirs à la caste des Prodiges en leur faisant régulièrement part de ses avis.",
-      "judicial": "la justice est entre les mains du Prodige le plus ancien de chaque village qui veille sur l’harmonie de cette partie de Kor.",
-      "economy": "les villes, construites autour d’anciens bâtiments ou directement dans les arbres, exploitent les grandes ressources naturelles de cette région où la culture des terres est très difficile. Cependant, telle une mère, la forêt nourrit ses enfants en leur offrant de très vastes ressources issues de la faune et de la flore. Les chasseurs sont nombreux et le gibier abondant. Hors des villes, les prédateurs sont rois. C’est pourquoi il est recommandé de voyager avec un guide. De très nombreuses collines recèlent de véritables trésors minéraux, pierres précieuses et autres matériaux rares. Plusieurs petites cités minières tentent d’en exploiter les fruits, mais le travail y est pénible, et il est extrêmement difficile de trouver une main-d'œuvre compétente et motivée. Aussi les commerçants qui décident de tenter l’aventure trouvent-ils différentes solutions pour leurs expéditions. Certains engagent des mages, capables de creuser la terre et de tenir la végétation à distance, d’autres achètent des prisonniers dans les bagnes de Kern, engagent des indigènes ou dressent des créatures capturées dans la jungle. Il semble cependant que la plupart de ces expéditions, qui comptent peu de survivants, ne servent qu’à renforcer davantage la réputation de cruauté naturelle de la région.",
-      "military": "les Prodiges privilégient la défense à l’attaque et la Forêt Mère n’a jamais été attaquée de front, le respect des hommes pour les Prodiges empêchant tout assaut. De toute façon, lianes, chênes et ronces protègent activement la demeure du Dragon de la Nature."
-    },
-    "source": {
-      "type": "officiel",
-      "name": "LdB 2e"
-    }
-  },
-  {
-    "name": "Témeth",
-    "parent_id": "foretMere",
-    "type": "capitale",
-    "description": {
-      "general": ""
-    },
-    "source": {
-      "type": "officiel",
-      "name": "LdB 2e"
-    }
-  },
-  {
     "name": "Jaspor",
     "parent_id": "kor",
     "type": "nation",

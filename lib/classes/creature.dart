@@ -574,6 +574,7 @@ class Creature extends EntityBase with EncounterEntityModel {
       'creatures-ldb2e.json',
       'creatures-ecran2e.json',
       'creatures-les-ecailles-de-brorne.json',
+      'creatures-les-enfants-de-heyra.json',
       'creatures-les-foudres-de-kroryn.json',
     ];
 

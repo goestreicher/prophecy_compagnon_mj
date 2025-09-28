@@ -1,0 +1,577 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Forêt Mère",
+    "uuid": "05241904-b3d5-4146-8895-08a8487da233",
+    "parent_id": "kor",
+    "type": "nation",
+    "government": "autorité draconique",
+    "leader": "Heyra, Grand Dragon de la Nature",
+    "motto": "paix, simplicité, coexistence",
+    "climate": "de continental doux à tropical",
+    "description": {
+      "general": "La Forêt Mère occupe ce qui fut, quelques millénaires auparavant, une zone d'intense activité volcanique. Sans constituer un véritable royaume, la Forêt Mère passe pour le domaine originel de Heyra, Mère de la Nature.\n\nC’est un véritable océan de verdure et d'essences végétales. Nombreux sont les ambitieux à y avoir élu domicile par le passé et à avoir choisi d’y construire une puissante civilisation. Des ruines et d'immenses cités témoignent de ces tentatives. Elles sont à présent entièrement recouvertes par la végétation luxuriante qui, comme animée d’une vie propre, recouvre patiemment toute trace d'existence humaine. Pour preuve, certaines essences de lierre ont la particularité de se coller à la pierre, puis de la recouvrir intégralement avant de la faire littéralement éclater. Seules les parties souterraines des bâtiments perdurent plus de quelques dizaines d’années. Généralement, ces havres de paix sont occupés par des familles, de petites communautés ou des créatures sauvages de taille variable. Seuls quelques rares monuments se dressent dans cette infinie verdure. La forêt abrite tout de même en son sein de nombreuses agglomérations de petite taille.\n\n",
+      "history": "Des profondeurs de son refuge de la Forêt Mère, Heyra surveillait avec curiosité les hommes qui, forts des dons des Dragons, bravaient les méandres de son empire végétal. Leur fougue et leur inventivité n’avait que de courtes existences pour s'exprimer, ce qui l’intriguait encore plus.\n\nAu fur et à mesure des ans, les hommes apprirent toutefois à éviter le sanctuaire d’Heyra à cause de son statut de Grand Dragon. Mais parfois un enfant s‘aventurant trop loin, se perdait, et sa famille effondrée le pleurait longtemps. Certains de ces enfants survivaient en trouvant le repaire d’Heyra, qui loin de massacrer ces petits explorateurs, les gardait près d’elle en accréditant la thèse de leur mort auprès des familles. Heyra se constitua bientôt ne jeune communauté avec laquelle elle ressentait une étrange affinité.\n\nFrustrée de ne plus pouvoir créer de nouvelles formes de vie, Heyra se découvrit une nouvelle passion : comprendre les vies et leur harmonie plutôt que d'en créer indéfiniment. Elle modela alors ces enfants, leur inculquant le respect de la vie et les secrets de la nature.\n\nElle les fit se reproduire et obtint un village de quelques centaines d'habitants, élevés dans l’harmonie naturelle. Lorsque les hommes cherchèrent à se rapprocher du savoir des Dragons, les adoptés d’Heyra les accueillirent à bras ouverts, heureux de pouvoir partager leur savoir avec des hommes d’autres régions. Heyra se réjouit de cet afflux, mais décréta que les nouveaux arrivants devraient se plier aux règles de la Forêt et non la plier à leurs habitudes.\n\nLes adoptés d’Heyra prirent le nom de Prodiges en raison de leur origine infantile et apprirent aux pèlerins à se créer une place, Ils profitèrent des arbres et de leur solidité pour construire une cité arboricole peu envahissante au sol.\n\n",
+      "ethnology": "Tout comme les habitants du Royaume des Fleurs, ceux de la Forêt Mère sont légèrement différents de la population de Kor. Ils sont en moyenne un peu plus petits d’un ou deux pouces, et assez minces, la vie en forêt ayant modifié leur musculature pour la rendre plus agile.\n\n",
+      "society": "Dépourvus de toute organisation, les habitants des profondeurs de la Forêt Mère sont contraints de lutter pour survivre aux agressions quotidiennes de leur environnement. La plupart d’entre eux vivent comme des primitifs errants, se contentant de chasse et de cueillette, tandis que d’autres ont réussi à investir les vestiges d’anciennes civilisations. Ils constituent un peuple indépendant qui se rassemble dans des communautés restreintes, à l'écart des autres peuples et des habitants des cités.\n\n",
+      "politics": "La Forêt Mère n’a pas de structure politique formelle et serait plutôt modérée. Heyra délègue ses pouvoirs à la caste des Prodiges en leur faisant régulièrement part de ses avis.\n\n",
+      "judicial": "La justice est entre les mains du Prodige le plus ancien de chaque village qui veille sur l’harmonie de cette partie de Kor.\n\n",
+      "economy": "Les villes, construites autour d’anciens bâtiments ou directement dans les arbres, exploitent les grandes ressources naturelles de cette région où la culture des terres est très difficile. Cependant, telle une mère, la forêt nourrit ses enfants en leur offrant de très vastes ressources issues de la faune et de la flore. Les chasseurs sont nombreux et le gibier abondant.\n\nHors des villes, les prédateurs sont rois. C’est pourquoi il est recommandé de voyager avec un guide.\n\nDe très nombreuses collines recèlent de véritables trésors minéraux, pierres précieuses et autres matériaux rares. Plusieurs petites cités minières tentent d’en exploiter les fruits, mais le travail y est pénible, et il est extrêmement difficile de trouver une main-d'œuvre compétente et motivée. Aussi les commerçants qui décident de tenter l’aventure trouvent-ils différentes solutions pour leurs expéditions. Certains engagent des mages, capables de creuser la terre et de tenir la végétation à distance, d’autres achètent des prisonniers dans les bagnes de Kern, engagent des indigènes ou dressent des créatures capturées dans la jungle. Il semble cependant que la plupart de ces expéditions, qui comptent peu de survivants, ne servent qu’à renforcer davantage la réputation de cruauté naturelle de la région.\n\n",
+      "military": "Les Prodiges privilégient la défense à l’attaque et la Forêt Mère n’a jamais été attaquée de front, le respect des hommes pour les Prodiges empêchant tout assaut. De toute façon, lianes, chênes et ronces protègent activement la demeure du Dragon de la Nature.\n\n"
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Témeth",
+    "uuid": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "capitale",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Témeth est une cité étendue construite autour d'arbres gigantesques. Les deux tiers de ses bâtiments sont construits entre les branches ou autour des troncs. Quelques-uns sont même inclus dans des séquoias immenses, fruits d’un artisanat élémentaire magistral et non d’une excavation. Le tiers restant se situe au sol, souvent entre des racines noueuses ou les souches pétrifiées.\n\nLe sol de Témeth est légèrement vallonné et herbeux, ce qui donne à la cité l’apparence d’un immense campement. Sa population très nombreuse se disperse sur une surface de plusieurs kilomètres carrés, en faisant la cité la plus vaste du monde par sa superficie.\n\nTémeth s’insère naturellement dans la forêt. Ses avenues sont des sentiers balisés de fleurs ou des passerelles de bois recouvertes de lierre. Les animaux sauvages y sont parfois visibles, ce qui ne va pas sans poser de problèmes lors des nuits de pleine lune où les loups entrent parfois en ville.\n\nL'architecture de Témeth est axée sur la menuiserie, donnant une cité régulièrement renouvelée où des bâtiments neufs remplacent les plus usés comme un écho au cycle de la vie. Les formes des habitations sont douces, pleines de courbes et rarement hautes de plus d’un étage. Les maisons arboricoles ont souvent des balcons et des terrasses familiales. Les fleurs et les gravures constituent les principales formes de décoration.\n\n## Les quartiers\n\nTémeth s'organise selon un concept original d’arbres-quartiers, nommés szayïns, où chaque communauté arboricole et ses membres au sol partagent une identité. Ces quartiers ont des noms évocateurs et poétiques, comme le Chêne aux écureuils, la Source des cent-joncs ou le Rameau d’ivoire. Ces szayïns ont tendance à se rassembler géographiquement et à former des Bouquets, sortes de villages dont l’ensemble forme la cité.\n\n",
+      "history": null,
+      "ethnology": "## L'Œil de Heyra\n\nCette coutume domestique reflète typiquement l’esprit naturaliste de Témeth. Pour un habitant de la Cité de la Nature, il est normal d'avoir en son foyer un petit animal apprivoisé considèré comme l’Œil de Heyra. Il incarne la présence du Dragon et sa bienveillance protectrice.\n\nLes animaux ne sont généralement pas gardés en captivité, mais plutôt hébergés selon un principe de semi-liberté. Lorsqu'un animal décide de s’en aller, ses hôtes ne font rien pour l'en empêcher. S'il veut revenir, il saura retrouver le chemin ; une théorie qui se vérifie d’ailleurs à Témeth. Les animaux les plus variés sont représentés : marsupiaux, rongeurs, félins, oiseaux, etc. Les plus courants sont les écureuils, les petits singes, les chats et les perroquets.\n\n## Les enfants naturels\n\nUne des coutumes les plus caractéristiques de Témeth est son interprétation du mariage et de la vie conjugale. Un couple témethite ne gère pas la notion d’adultère comme dans d’autres cités, et il est courant pour un couple d'élever un enfant qui n’est pas du mari. La bâtardise ne subit aucun ostracisme et les enfants nés de ces unions en sont avertis et n’en tirent aucune honte. Témeth entretient cette coutume depuis des siècles.\n\n## Coutumes vestimentaires\n\nTémeth est relativement simple dans son style de vie et l’aspect pratique l'emporte sur l’esthétique. Les vêtements sont issus des matières de la forêt, à savoir le lin, la soie, la laine, le cuir et la fourrure.\n\nLe costume typique se compose d’un pantalon — ou d’une robe - solide, d’une chemise à manches longues, d’une tunique et de sandales de cuir. Les Prodiges sont les seuls à porter la toge, souvent autour de la taille, toujours en lin blanc.\n\n## La vie et la mort\n\nÀ Témeth, une naissance est un bonheur communautaire. Dans ces moments, il est de coutume de venir présenter l’enfant à ses voisins d’arbre et éventuellement à ceux des arbres voisins. À la fin de ce circuit, l’enfant est souvent présenté à un dragon afin de recevoir se bénédiction. Un acte purement symbolique, mais des rumeurs prétendent que bon nombre d’enfants évitent maladies et infirmités s’il ont été bénis. En cas de décès parental, un orphelin est toujours adopté par la famille de l’arbre ayant le moins d'enfants.\n\nUn décès à Témeth est un événement triste, l’esprit étant ici intimement associé au corps. Passé le chagrin, les gens réagissent avec philosophie dans une logique de cycle de vie. Le folklore témethite n’assure aucun avenir à l'âme, qui disparaît avec la mort. Les corps sont enterrés au loin dans la forêt, de façon assez sommaire, avec une simple pierre gravée de la rune de la nature et parfois le nom ou l’augure du défunt. Les cérémonies sont familiales et assez courtes.\n\n",
+      "society": "Témeth est une cité de près de 500 000 âmes, mais personne ne se soucie d’un recensement. Environ 50% de la population est citoyenne, l’autre se contentant de vivre paisiblement sous l'aile d’Heyra sans chercher à suivre une caste en particulier. Les quatre cinquièmes de cette population vivent de la forêt (bûcherons, chasseurs, cueilleurs, pêcheurs), les autres se livrant à des activités plus matérielles comme l'artisanat, le commerce ou la magie. La mentalité témethite est paisible, observatrice et pratique, cherchant le calme et le bon sens dans toute situation.\n\nLes dragons de Témeth sont nombreux et connus, complètement mêlés à la société humaine. Il jouissent bien sûr d’un prestige énorme et font office d’autorités morales reconnues. Il n’est d’ailleurs pas rare qu’un dragon conseille plusieurs familles ou même un quartier, se créant une petite communauté à côtoyer et où, parfois, choisir un Élu. Les dragons sont près de 5 000 à Témeth, et parmi les plus sociables. On estime que trois cinquièmes sont des dragons des Forêts, un cinquième des dragons des Cités et le reste se répartit entre dragons de l'Air, du Métal et de Pierre. Il existe très peu de dragons du feu, des océans ou des rêves, mais ces rares résidents sont assez connus.\n\n",
+      "politics": "Le pouvoir à Témeth est tenu par les dragons. Heyra dicte ses opinions à ses enfants et eux-mêmes se chargent de les répercuter aux Prodiges. Certains de ces moines ont en effet des responsabilités civiles. Mais tout avis draconique surpasse celui d’un homme et les Prodiges n’ont pas une énorme influence. Témeth est aussi le siège du Grand Ordre et plusieurs de ses membres y vivent. Bien que détachés de toute fonction, les vieux bonzes de cette autorité font souvent figure de sages conseillers vers qui se tourner si les protagonistes préféraient éviter de déranger un Ailé. Le plus vénérable de ces ascètes est Sung, un vieillard maintenant aveugle, que l’on sait clairement être Élu d’un fils d’Heyra. Sans être le chef de quoi que ce soit, il est une figure honorée et systématiquement consultée avec respect.\n\n## Politique extérieure\n\nTémeth est une cité géographiquement isolée et ses relations avec l’extérieur sont marquées de délais importants. Le principal allié de Témeth est le Royaume des Fleurs avec qui les relations sont très étroites. Les deux provinces partagent un milieu, des coutumes, des cérémonies et un style de vie. Les rapports avec l’Empire de Solyr et ses Cités Draconiques sont bons mais irréguliers.\n\nTémeth surveille de près la frontière montagneuse avec l’Empire Nésora, ces terres libertaires étant assez mal vues par Heyra. Onyr est parfaitement intégrée lors de son passage estival, mais peu contactée le reste de l’année. En résumé, la diplomatie témethite est puissante, car souvent menée par de respectables Prodiges, mais épisodique car régulièrement inexistante.\n\n",
+      "judicial": "La loi est assez lente à s’appliquer, en raison de l’ambiance champêtre et la taille de la cité. Il n’existe d’ailleurs pas réellement de forces de l’ordre. Une poignée de Prodiges, une centaine de protecteurs et quelques Inquisiteurs se chargent de traquer les coupables. En revanche, il n’est pas rare qu’un dragon s’implique si un délit touche un quartier ou des familles lui tenant à cœur. Dès lors, de redoutables forces sont alors mises en œuvre, l’Ailé usant de toute sa magie et de ses frères dragons pour exercer une justice foudroyante. Les sentences humaines privilégient l’exil, les corvées pénibles et la déchéance de caste. La loi de Témeth prône la rédemption et applique peu la peine capitale.\n\n",
+      "economy": "L'économie de Témeth dispose d’un formidable potentiel de matières premières et de nourriture mais qui, pour des raisons religieuses, ne sont pas exploitées à outrance. Le respect d’Heyra évite tout abus ou pillage de la nature. Témeth exporte de la nourriture, du bois, des peaux et des herbes médicinales ainsi que quelques métaux rares ou gemmes.\n\nElle importe peu, et surtout des produits manufacturés. L'argent est très peu utilisé dans l’économie locale et il est rare de voir les habitants renoncer au troc.\n\n",
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Le Bouquet d’Argent",
+    "uuid": "5fcf60ac-2ffd-4974-b761-378a23187b52",
+    "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
+    "type": "village",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce village comporte des szayïns religieux et intellectuels. On retrouve ici une forte proportion de Prodiges, d’érudits et de mages. Le style des habitations est assez élaboré et certaines maisons arboricoles comptent jusqu’à deux étages. De petites tours de bois sculptées se dressent au long des troncs et de nombreuses cascades de fleurs claires égayent ce secteur paisible et recueilli.\n\nSzayïns typiques : la Rose de nacre, le Saule scintillant, les Soies de cristal.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Temple de Nenya",
+    "uuid": "c060212f-4da9-4361-ae02-f475d4c19f5d",
+    "parent_id": "5fcf60ac-2ffd-4974-b761-378a23187b52",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Les adeptes de la Chimère ont décidé de construire leur Temple au milieu d’un bosquet d’énormes bouleaux, l’installant sur une plateforme fixée aux arbres. Il s’agit d’un assemblage de pièces sphériques, faites de bois, qui communiquent par des escaliers en colimaçon. L'endroit est humide et un brouillard permanent semble flotter alentour.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Temple de Szyl",
+    "uuid": "4d90933f-5461-4537-820d-5b92bcea8d65",
+    "parent_id": "5fcf60ac-2ffd-4974-b761-378a23187b52",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce Temple est le plus haut bâtiment de la cité, après le Temple des Prodiges. Construit au-dessus de la ramure d’un noisetier, il se dresse sur des pylônes posés sur les branches terminales. Il porte deux tours coniques qui offrent une vue époustouflante sur la canopée.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Le Bouquet du Bourgeon",
+    "uuid": "9ee4b342-b193-4aa9-ab8b-43fec649dbc9",
+    "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
+    "type": "village",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce vaste quartier abrite les lieux de rencontre, de spectacle et de plaisir de la ville. On y trouve le marché du Levant, des théâtres, des tavernes et des esplanades d’exhibition. Perpétuellement, des baladins et des dresseurs d’animaux savants s’y produisent pour le plaisir de tous. Les bâtiments sont ici plutôt vastes et d’un seul niveau, juchés sur des arbres aux ramures étendues ou solidement ancrés au flanc des troncs.\n\nSzayïns typiques : l’Arbre creux, le Terrier des vents, l’Ivresse des baies.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "La Fosse",
+    "uuid": "282800ee-2d1b-45bc-ae98-68f05f376213",
+    "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
+    "type": "village",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au bord du Bouquet du Bourgeon, ce domaine guerrier regroupe les szayïns les plus animés. Il est particulier car délimité au sol par une haute barricade de bois circulaire qui lui donne l'aspect d’un fort primitif. Diverses poternes s’y trouvent, permettant d’accéder aux nombreux bâtiments au sol et à la base d’une trentaine de szayïns. Tavernes agitées, salles d’entraînement et guildes mercenaires sont regroupées ici et forment le quartier le plus chaud. Au centre de l’oppidum se dresse une arène de gladiateurs connue pour son exotisme.\n\nSzayins typiques : la Branche des pendus, le Roncier en fleurs, les Vignes abondantes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Temple de Kroryn",
+    "uuid": "e88f0c65-4283-445e-9bda-40fb3f7ccf11",
+    "parent_id": "282800ee-2d1b-45bc-ae98-68f05f376213",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situé dans la Fosse, le Temple de Kroryn est un bâtiment carré, organisé à la manière d’un cloître où la partie centrale sert de champ d’entraînement.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les Greniers",
+    "uuid": "6219bc0c-b333-44f9-804e-af29be998fe4",
+    "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
+    "type": "village",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ces quartiers regroupent des szayïns populaires, principalement non-citoyens, qui abritent la population agricole de la cité. On y trouve les bûcherons, cultivateurs et cueilleurs dont dépend la cité pour la collecte de sa nourriture. Il en existe 7, irrégulièrement répartis. Ils comptent aussi d’importants entrepôts et ateliers de préparation des denrées, ce qui en fait un lieu régulièrement fréquenté par les marchands venus d’autres villes.\n\nSzayins typiques : la Tour aux noix, les Blés ondulants, le Fumoir au thym.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Temple de Khy",
+    "uuid": "69ea8f59-7f6d-40e3-a172-ba0e55faf5aa",
+    "parent_id": "6219bc0c-b333-44f9-804e-af29be998fe4",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Modestement situé dans le Grenier du Couchant, il est placé au milieu d’un frêne. Sa forme hémicyclique épouse le tronc et abrite une salle de prière décorée de multiples maquettes en bois de maisons des quatre coins de Kor.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Le Ciseau",
+    "uuid": "7524589a-168b-4271-8ae2-170a4c96e852",
+    "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
+    "type": "village",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce village longiligne a vu au fil des ans ses szayïns se peupler de mineurs, d’artisans et de boutiquiers. L'origine de sa disposition tient au fait qu’une épaisse veine volcanique ait figé profondément. Tout ce que la cité comptait de mineurs et d'artisans y vit alors un signe des Dragons et de déplaça sur toute sa longueur. Le Ciseau est le seul village à compter une portion souterraine par son réseau de mines et de petites carrières. De plus, sa densité d’habitats terrestres égale presque celle des maisons arboricoles. Des installations massives comme les forges et les ateliers des tailleurs de pierres ont été édifiés au mépris des dangers du sol par des artisans très têtus. Par certains côtés, le Ciseau rappelle Kern ou Dungard et l’obstination des artisans à résider au sol devient chaque jour un peu plus problématique. Certains Prodiges estiment en effet que cet entêtement défie les Édits d’Heyra et la situation est encore plus tendue depuis que des dragons débattent entre eux du bien fondé de ce quartier.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Temple de Brorne",
+    "uuid": "5632478f-9509-42fb-ab63-dbaca723bb4c",
+    "parent_id": "7524589a-168b-4271-8ae2-170a4c96e852",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le Temple est souterrain et s’ouvre dans les premiers niveaux des mines, désaffectées et converties en habitations troglodytes. Il s’agit d’une profonde veine de granit, abondamment décorée de fresques et de statues à la gloire du Dragon de la Pierre.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Temple de Kezyr",
+    "uuid": "dbaf99ea-0d2f-4e80-b2af-901007643936",
+    "parent_id": "7524589a-168b-4271-8ae2-170a4c96e852",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au milieu du Ciseau, un arbre mort a été taillé et sculpté en une tour pentagonale qui abrite le Temple du Dragon du Métal. L'intérieur est décoré de dizaines de lampes suspendues au sommet de la tour par des chaînes de tailles variables. Le sol est une mosaïque de bois avec en son centre un arbre de métal d’un mètre de haut, superbement ciselé.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Weïan",
+    "uuid": "63315b81-3fd3-4aee-8f18-e14f1600e177",
+    "parent_id": "5fcf60ac-2ffd-4974-b761-378a23187b52",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Heyra a situé son repaire entre les racines d’un arbre colossal, Weïan, croisement entre un séquoia et un cèdre. Il atteint un diamètre de plus de trente mètres, ses racines sont comme des troncs et serpentent sur le sol à plus de cent pas à la ronde. À sa base, le tronc est renfoncé et les racines forment un berceau protégeant le repaire du Dragon. Ce refuge est semi enterré et constitué d’une seule cavité, à la manière d’un terrier. Une foule d’animaux vont et viennent en permanence autour de l’endroit et des plantes multicolores ont germé anarchiquement à même les racines.\n\nAccéder au repaire est. facile. Il suffit d’oser aller déranger un Grand Dragon. De nombreux pèlerins sont régulièrement alignés devant, attendant le bon vouloir de la Dame qui n’est même pas toujours présente. Heyra a la réputation d’être dure à intéresser, mais s’enflamme parfois pour des causes insignifiantes. Il faut aussi savoir que des colères l’on parfois poussée à tuer des visiteurs pour des raisons mystérieuses et que ses enfants sont souvent plus faciles à rencontrer.\n\nWeïan porte à son sommet le Temple des Prodiges mais les nombreux dragons et Prodiges y résidant interviennent rarement sur l’accès au repaire.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Le Temple des Prodiges",
+    "uuid": "9f7d6ebc-4b28-4185-a38e-946f8208d3c8",
+    "parent_id": "63315b81-3fd3-4aee-8f18-e14f1600e177",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situé au sommet de l'arbre le plus majestueux de la forêt, ce splendide édifice de bois sculpté et ciselé dresse vers le ciel de nombreuses tours effilées. De forme irrégulière, le Temple n’est pas un édifice très large ; sa longueur maximale ne dépasse pas les cent mètres. Il est en hauteur et compte plusieurs étages traversés par des cours à ciel ouvert, ceinturées d’arcades et de balcons, permettant une circulation très libre. Il existe toutes sortes de pièces facilement accessibles, depuis la salle de méditation au dojo, en passant par des jardins fleuris de couleurs uniformes, sensés aider au cheminement spirituel. Les pièces réservées sont les seules à disposer de portes et les Prodiges aiguillent généralement les visiteurs curieux vers d’autres pièces. Le Temple est, au final, un dédale de petites cloisons et d’escaliers dérobés où rien ne laisse présumer des mystères de la salle suivante.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les vergers",
+    "uuid": "9d7e7362-51c8-4881-ab07-1436b524fcb4",
+    "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
+    "type": "region",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce nom désigne les zones agricoles autour de Témeth. À l’origine, les hommes se contentaient en effet de quelques arbres fruitiers pour assurer leur subsistance, mais l’afflux de population a nécessité une organisation. Ces zones sont maintenant entretenues et exploitées par tout une population paysanne qui applique un principe d'utilisation du milieu et non de sa modification. Les arbres fruitiers sont exploités là où ils poussent, les blés rares germent seulement dans des clairières naturelles à ciel ouvert et aucun champ ou parcelle n’est clairement défini. Il n’est bien sûr pas question de labours, de déboisement ou d’irrigation. Les volontés d’Heyra sont le pilier de la survie de l'énorme Témeth au sein de la forêt. Si l’équilibre entre consommation et renouvellement venait à être rompu par une culture intensive, Témeth consommerait des hectares de forêt chaque année et mourrait de sa propre ambition.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Le lac des cigognes",
+    "uuid": "4c40273f-8de6-49b9-8f81-85d769d304b6",
+    "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au nord de la cité, le lac des cigognes est devenu un lieu de détente pour tous les citoyens de Témeth. Ses bordures abritent de nombreuses tavernes et auberges. Il est courant de fixer des rendez-vous galants dans les parties sauvages des rives. Bon nombre de citoyens y nagent à l’aube, de même que certains dragons. L'eau y est d’une pureté assez exceptionnelle, régulièrement renouvelée par une résurgence. Le nom vient du fait que, lors des migrations, les cigognes passent par le lac afin de faire halte. Cette période est souvent l’occasion de fêtes et de cérémonies vénérant la régularité des saisons et le cycle naturel. Une légende dit que, si un jour les cigognes ne venaient plus, les pires malheurs seraient à craindre pour la cité.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Temple d'Ozyr",
+    "uuid": "0e7eb457-ec9f-46bf-ac9e-f4175dca4e0a",
+    "parent_id": "4c40273f-8de6-49b9-8f81-85d769d304b6",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situé au bord du lac des cigognes, ce Temple rond et bas est accroché aux ramures des arbres du rivages, flottant à un mètre de la surface. Des chaînes de bois et de lianes centenaires le soutiennent et une passerelle permet d’y accéder par la rive ouest.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les jardins de Solyr",
+    "uuid": "4faec7cb-1ba5-41cb-a5f0-2719256903dd",
+    "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ces jardins suspendus sont l’un des lieux les plus merveilleux de Kor. Construits entre plusieurs chênes et ormes majestueux, ils dressent au-dessus du vide des passerelles de teck permettant de déambuler entre les massifs fleuris dessinés par Solyr à l’époque de son illumination.\n\nLes jardins alternent les essences et les couleurs en une harmonie parfaite, touchant chacun au plus profond de son âme. Les Jardins sont une véritable légende et de nombreux visiteurs bravent tous les dangers des routes de Kor afin de contempler cette féerie. Rien ni personne n’entretient les Jardins. Ils semblent vivre et se réguler sans intervention et nul n’a jamais osé en déranger l'agencement par peur du blasphème et peut-être d’une malédiction ancestrale.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "La clairière d'Heyra",
+    "uuid": "36a718a7-2d47-45e9-913a-e536e94ce260",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "À quelques kilomètres à l’Est de la cité, la Clairière d’Heyra est un étang asséché depuis des siècles, tapissé d’une herbe grasse. Ce lieu n’est pas ouvert aux hommes car c’est là que la Maîtresse de la Nature vient méditer ou profiter du soleil sous ses diverses formes. En de rares exceptions, Heyra donne ici ses audiences humaines, mais elle reçoit le plus souvent des dragons. Une légende voudrait que les unions consommées aux abords de cette clairière sacrée soient bénies, même si bon nombre de disparitions sont à signaler lors des nuits de noces.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Le bayou",
+    "uuid": "ddda5193-fa5e-4ed5-80e2-24216b28e460",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "region",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au sud-ouest de la Forêt, le bord de mer est indéfini. Un immense bayou moite et ténébreux masque les contours de la Source et les îles de l’Archipel de Marne. Les prédateurs et les intempéries qui redessinent les cours d’eau de façon incessante en font un labyrinthe inondé, semé d’embûches et de dangers propres à décourager toute visite. Toutefois, on trouve ici nombre de vestiges d'anciennes civilisations inhumaines issues des premiers âges. Des peuplades dégénérées y vivent encore. L'endroit est également connu pour ses plantes rares, ce qui explique que des expéditions y soient parfois tentées.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "La mangrove",
+    "uuid": "7997d321-2ca3-4f32-8820-45d234ddc832",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "region",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La partie ouest de la côte constitue une large mangrove où les racines des arbres centenaires plongent brutalement dans les eaux ocres des Mouvantes. Du côté de la terre, des rivières et des étangs stagnants rendent la région peu accueillante ; la barrière impénétrable des palétuviers interdit tout accostage.\n\nLes alluvions ont rendu les eaux opaques et de nombreux prédateurs comme les crabes carnassiers et les boas à collier y trouvent un refuge discret. Cette côte est parcourue par de nombreux navires commerçants entre Flore et Hyelle et des pirates font parfois régner la terreur dans la région, quand le milieu ne les absorbe pas discrètement.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les crinières de cristal",
+    "uuid": "3325fbc5-6612-4438-b5f9-25bbe90b402d",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "region",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Les sources de l’Oubli sont constituées de nombreuses cascades cristallines dévalant les falaises du nord des Écailles de Moryagorn. Elles donnent naissance à une région agréable et hospitalière où plusieurs villages anciens subsistent. Le climat y est tiède et la culture du riz est majoritaire car de larges terrasses inondées le permettent de manière intensive. On trouve ici de nombreuses troupes frontalières surveillant régulièrement le versant est et l’Empire Nésora.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]

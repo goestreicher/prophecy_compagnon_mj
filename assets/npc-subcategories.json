@@ -28,6 +28,13 @@
     "is_default": true
   },
   {
+    "title": "Élus de Heyra",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Élus de Kezyr",
     "categories": [
       "elus"
@@ -57,6 +64,13 @@
   },
   {
     "title": "Caste des mages",
+    "categories": [
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des prodiges",
     "categories": [
       "personnalites"
     ],
