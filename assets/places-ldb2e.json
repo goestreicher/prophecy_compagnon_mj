@@ -514,17 +514,5 @@
       "type": "officiel",
       "name": "LdB 2e"
     }
-  },
-  {
-    "name": "Oforia",
-    "parent_id": "ysmir",
-    "type": "capitale",
-    "description": {
-      "general": ""
-    },
-    "source": {
-      "type": "officiel",
-      "name": "LdB 2e"
-    }
   }
 ]

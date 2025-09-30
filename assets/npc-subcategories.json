@@ -49,6 +49,13 @@
     "is_default": true
   },
   {
+    "title": "Élus d'Ozyr",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Élus de Szyl",
     "categories": [
       "elus"
@@ -65,6 +72,13 @@
   },
   {
     "title": "Caste des artisans",
+    "categories": [
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des érudits",
     "categories": [
       "personnalites"
     ],

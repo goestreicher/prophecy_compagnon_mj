@@ -337,6 +337,7 @@ class Place extends ResourceBaseClass {
       'places-les-forges-de-kezyr.json',
       'places-les-foudres-de-kroryn.json',
       'places-les-orphelins-de-szyl.json',
+      'places-les-versets-d-ozyr.json',
     ];
 
     for(var f in assetFiles) {

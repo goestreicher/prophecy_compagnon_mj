@@ -1,0 +1,537 @@
+[
+  {
+    "equiped": [],
+    "uuid": "20005403-7147-4e1c-be62-316187999853",
+    "name": "Erfoon",
+    "description": "Erfoon, alors jeune érudit ambitieux, a, lors d’une discussion un peu houleuse, assassiné l’un de ses collègues pour lui prouver manu militari le bien-fondé de ses théories. Pourchassé par la loi des hommes, Erfoon a fui sa ville d’origine, au cœur des Marches Alyzées, pour se réfugier dans l’anonymat d’Oforia la magnifique. Il vécut, ainsi, heureux de nombreuses années, fondant même une famille et oubliant, si ce n’est l’espace de terribles cauchemars, la folie meurtrière qui avait guidé sa main.\n\nMalheureusement pour lui, ce passé trouble refait surface et met à mal la petite vie rangée qu’il s’était confectionnée. Sous le coup d’un odieux chantage, Erfoon reprend les armes et tue pour la seconde fois de son existence. Ce meurtre ne passe pas inaperçu car l’un des fils d’Ozyr (Vouarg) est témoin de la scène. Ce dernier suit Erfoon et lui permet d’expliquer son acte. Fasciné par un humain capable de meurtre pour défendre ses idées, Vouarg offre le Lien à Erfoon. Ainsi commence le second exil de l’érudit qui, du jour au lendemain, abandonne famille et biens pour prendre la route.\n\nD’escale en escale, Erfoon poursuit ses recherches jusqu’au jour où il est convaincu que les réponses que recherche l’Humanité ne peuvent se trouver qu’au-delà des océans, là où les mers sont générées par des terres lustrales. Inquiet pour son protégé, Vouarg s’en remet à sa mère et… perd la vie pour son incompétence ! Depuis, Erfoon erre aux abords des côtes et se cache du courroux des hommes et… du Grand Dragon des Océans !\n\nErfoon a le regard fou du fugitif et le sourire carnassier du prédateur. Il survit de rapines et en vendant ses connaissances aux plus offrants. Complètement paranoïaque, il ne croit personne, ne tourne jamais le dos et préfère la fuite à une trop longue discussion.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 5,
+      "intelligence": 9,
+      "coordination": 4,
+      "presence": 2,
+      "resistance": 7,
+      "volonte": 10,
+      "perception": 9,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 4,
+      "mental": 9,
+      "manuel": 5,
+      "social": 1
+    },
+    "skills": [
+      {
+        "skill": "armesAProjectiles",
+        "value": 3
+      },
+      {
+        "skill": "corpsACorps",
+        "value": 7
+      },
+      {
+        "skill": "discretion",
+        "value": 9
+      },
+      {
+        "skill": "esquive",
+        "value": 10
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 7
+      },
+      {
+        "skill": "connaissanceDeLaMagie",
+        "value": 5
+      },
+      {
+        "skill": "geographie",
+        "value": 7
+      },
+      {
+        "skill": "histoire",
+        "value": 5
+      },
+      {
+        "skill": "orientation",
+        "value": 9
+      },
+      {
+        "skill": "astrologie",
+        "value": 5
+      },
+      {
+        "skill": "cartographie",
+        "value": 8
+      },
+      {
+        "skill": "estimation",
+        "value": 8
+      },
+      {
+        "skill": "herboristerie",
+        "value": 6
+      },
+      {
+        "skill": "lireEtEcrire",
+        "value": 8
+      },
+      {
+        "skill": "medecine",
+        "value": 6
+      },
+      {
+        "skill": "premiersSoins",
+        "value": 8
+      },
+      {
+        "skill": "alchimie",
+        "value": 4
+      },
+      {
+        "skill": "armesMecaniques",
+        "value": 1,
+        "specializations": [
+          {
+            "name": "armesMecaniques:arbalete",
+            "title": "Arbalète",
+            "value": 6,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "pieges",
+        "value": 7
+      },
+      {
+        "skill": "explosifs",
+        "value": 4
+      }
+    ],
+    "equipment": [
+      {
+        "type": "armor:cuirBouilli",
+        "uuid": "719a7d3d-3675-45d0-a57e-fa454ec553ae"
+      },
+      {
+        "type": "weapon:arbaleteLegere",
+        "uuid": "356e09ac-d6e7-4b18-a7a2-a70cdabe7cd9"
+      }
+    ],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "erudit",
+    "caste_status": "expert",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "empireDeSolyr"
+    },
+    "luck": 2,
+    "proficiency": 4,
+    "renown": 0,
+    "interdicts": [
+      "loiDuSavoir"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "aplomb",
+        "description": null
+      },
+      {
+        "privilege": "calligraphieOfficielle",
+        "description": null
+      },
+      {
+        "privilege": "linguistique",
+        "description": null
+      },
+      {
+        "privilege": "memoire",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "appelDeLaBete",
+        "cost": 5,
+        "details": ""
+      },
+      {
+        "disadvantage": "deviance",
+        "cost": 3,
+        "details": "Paranoïaque"
+      },
+      {
+        "disadvantage": "ennemiRare",
+        "cost": 5,
+        "details": "Recherché par les autorités"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "ambidextre",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "pressentiment",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "resistanceALaMagie",
+        "cost": 5,
+        "details": "Toutes les sphères"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 3,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 2,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDOzyr"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "unique": false,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 3
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 2
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "9b84a597-6fce-4fde-b093-da3ef8437fe1",
+    "name": "Pier",
+    "description": "Pier est un vieil homme maigre d’une bonne cinquantaine d’années, aux cheveux gris coupés au bol. Il est vêtu d’une large toge grise de voyage et porte des sandales de cuir fatigué. Droit et sec, il est assez grand et dégage une impression de majesté surannée. Il porte ses affaires dans une large musette de cuir et un gros étui de bois garni de feutre, passé dans le dos, renferme son précieux télescope.\n\nPier est un astronome déviant sillonnant les routes de Kor afin d’expliquer aux hommes le pouvoir des Étoiles. Souvent pris pour un vieillard fêlé, il provoque parfois des réactions violentes lorsqu’il se risque à prendre part à des discussions oiseuses portant sur la comparaison entre Étoiles et Dragons. Ceci lui vaut d'être vaguement surveillé par l’Inquisition, qui se demande s’il ne prêche pas pour les Humanistes. Complètement inapte au combat, Pier est un Inspiré de T'lan et l’Archiviste de sa Compagnie. Il ne doit d’ailleurs qu’à ses compagnons le fait de pouvoir se sortir du pétrin où il se fourre régulièrement. Repéré aux côtés du célèbre contrebandier Lark d’Astir, il persiste à étudier les Éoiles, tout en parcourant le monde et en instruisant les hommes au sujet de leurs “protecteurs célestes”.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 2,
+      "intelligence": 8,
+      "coordination": 3,
+      "presence": 6,
+      "resistance": 3,
+      "volonte": 8,
+      "perception": 7,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 1,
+      "mental": 8,
+      "manuel": 3,
+      "social": 5
+    },
+    "skills": [
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 5
+      },
+      {
+        "skill": "geographie",
+        "value": 7
+      },
+      {
+        "skill": "histoire",
+        "value": 9
+      },
+      {
+        "skill": "lois",
+        "value": 7
+      },
+      {
+        "skill": "orientation",
+        "value": 4
+      },
+      {
+        "skill": "astrologie",
+        "value": 8,
+        "specializations": [
+          {
+            "name": "astrologie:recensement",
+            "title": "Recensement",
+            "value": 10,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "cartographie",
+        "value": 5
+      },
+      {
+        "skill": "lireEtEcrire",
+        "value": 7
+      },
+      {
+        "skill": "mecanismes",
+        "value": 5
+      },
+      {
+        "skill": "conte",
+        "value": 6
+      },
+      {
+        "skill": "psychologie",
+        "value": 6
+      },
+      {
+        "skill": "vieEnCite",
+        "value": 7
+      },
+      {
+        "skill": "castes",
+        "value": 5
+      },
+      {
+        "skill": "diplomatie",
+        "value": 6
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "erudit",
+    "caste_status": "expert",
+    "career": null,
+    "age": 57,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "empireDeSolyr"
+    },
+    "luck": 3,
+    "proficiency": 7,
+    "renown": 0,
+    "interdicts": [
+      "loiDuSavoir"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "aplomb",
+        "description": null
+      },
+      {
+        "privilege": "avalDraconique",
+        "description": "posséder une lunette astronomique"
+      },
+      {
+        "privilege": "calligraphieOfficielle",
+        "description": null
+      },
+      {
+        "privilege": "linguistique",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "ennemiRare",
+        "cost": 5,
+        "details": "Compagnie opposée"
+      },
+      {
+        "disadvantage": "incompetence",
+        "cost": 5,
+        "details": "Combat"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "objetDePredilection",
+        "cost": 3,
+        "details": "lunette astronomique"
+      },
+      {
+        "advantage": "prestance",
+        "cost": 2,
+        "details": "influence et pouvoirs d'Archiviste"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 4,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 1,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesErudits"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 2
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 1
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  }
+]

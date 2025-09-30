@@ -634,6 +634,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       'npcs-les-forges-de-kezyr.json',
       'npcs-les-foudres-de-kroryn.json',
       'npcs-les-orphelins-de-szyl.json',
+      'npcs-les-versets-d-ozyr.json',
     ];
 
     for(var f in assetFiles) {

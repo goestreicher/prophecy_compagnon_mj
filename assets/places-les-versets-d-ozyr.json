@@ -1,0 +1,402 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Oforia",
+    "uuid": "e91722bd-49a0-47fe-b928-b76e7c841229",
+    "parent_id": "ysmir",
+    "type": "capitale",
+    "government": "autorité draconique",
+    "leader": "Ozyr, Grand Dragon des Océans",
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Construite sur la rive nord de l’embouchure de l’Odieux, Oforia est une cité qui empiète largement sur la mer. Près de la moitié de la ville est bâtie sur pilotis et une grande partie de la vie se déroule sur l’eau. Du fait des avancées sur la mer, bon nombre de quartiers s’articulent autour de canaux. Les nombreux bancs de sable et affleurements rocheux de la baie ont permis de donner à une autre partie de la ville une architecture plus solide, où les tours et les bâtiments cyclopéens aux larges verrières forment un contrepoint spectaculaire aux quartiers maritimes de bois patiné. Au centre de la baie, une île minuscule permet d’accéder au sanctuaire sous-marin d’Ozyr et au temple qui lui est dédié.\n\nLes quartiers d’Oforia ne sont pas officiellement délimités. Au fil du temps, les corps de métier ou activités se sont simplement regroupés en certaines zones de la ville. La cité ne traduit aucune volonté d'organisation véritable, laissant les contraintes naturelles s’appliquer. On distingue trois grandes parties dans Oforia. Le quartier flottant, littoral et sur pilotis, le quartier des récifs, dont les bâtiments de maçonnerie sont construits sur des affleurements rocheux ou des bancs de sable sédimentés et le quartier côtier, édifié intégralement en dur entre les roches du bord de mer. Aucune séparation ne délimite ces quartiers, certaines zones s'étendant d’un quartier à l’autre.\n\n",
+      "history": "Durant les siècles qui précédèrent la fondation des cités, Oforia était une créature élémentaire d’Ozyr, créée par le Dragon des Océans avant de collaborer avec ses pairs pour façonner les Immortels. Créature des rivières, elle avait la capacité de prendre toutes les formes, sculptant l’eau par sa seule volonté. Lorsque les hommes commencèrent à parcourir le monde, Oforia fut séduite par leur forme et choisit de leur apparaître comme une femme ciselée dans l’eau des rivières et des lacs. Elle devint, au cours des âges, une protectrice des voyageurs en quête de points d’eau. Szyl fut séduit et le Dragon des Vents se prit d’affection pour elle.\n\nLorsque les premiers pèlerins parcoururent les routes de Kor, Oforia veilla sur eux. Alors qu'ils s’étaient égarés dans leur recherche du refuge d’Ozyr, dissimulé dans 1e secret des côtes, Oforia voulut se montrer agréable aux yeux de Szyl et guida ces premiers érudits à l’embouchure de l’Odieux. Là, réjouie, elle appela sa maîtresse et lui montra les humains avides de son enseignement. Ozyr, qui hésitait à accueillir les hommes près de son repaire, accepta toutefois leur installation. La légende veut qu’Ozyr décidât de contraindre Oforia à poursuivre son œuvre de protectrice en se fondant dans le rivage et en devenant la conscience de la côte.\n\nOn dit qu’Oforia accepta la décision d’Ozyr, la mort dans l’âme, et renonça à ses voyages pour devenir la gardienne de la cité.\n\n",
+      "ethnology": "## La gardienne\n\nChaque semaine, au jour de l’Eau, il est de coutume de remercier l’océan pour son hospitalité. À cette occasion, les habitants de la cité se rendent sur les quais et méditent un moment, avant de s’immerger entièrement. À leur sortie, ils psalmodient une prière rituelle, louant la Gardienne pour sa protection. Beaucoup pensent qu’il s’agit d’Ozyr, mais nombre d'habitants croient fermement à la légende d’Oforia et sont convaincus de s’immerger dans cette entité bienveillante durant leurs prières. Ce courant du “culte” d’Ozyr se renforce beaucoup ces derniers temps, arguant du fait que les raz-de-marée de Szyl épargnent Oforia parce que ce dernier se refuse à faire souffrir la créature qui l’a tant charmé.\n\n\n\n## La vue du père\n\nSeule cité draconique côtière, Oforia est le plus grand port de tout le Royaume de Kor. Les bateaux y sont un moyen de transport omniprésent et tous les Oforiens connaissent l’art de la rame. Toutefois, il est une règle que tous respectent et qui a depuis longtemps passé les frontières d’Oforia : tu ne quitteras jamais des yeux le corps de l'Être Primordial.\n\nTous les voyages en bateau sont donc assujettis à une navigation à vue de la côte. Au-delà, il est dit qu’Ozyr châtie ceux qui violent son domaine et fait sombrer corps et biens les navires. De fait, la navigation se pratique presque exclusivement de jour, les navires jetant l'ancre pour la nuit. Les seuls voyageurs nocturnes sont les contrebandiers, aussi appelés “marins des deux lunes”.\n\n\n\n## Coutumes vestimentaires\n\nOforia est une cité où l’omniprésence de l’eau incite à ne porter que des vêtements légers, faciles à retirer ou à faire sécher. Le milieu océanique, couplé à la présence du Désert du Souffle Brûlant à quelques centaines de kilomètres, préserve un climat très doux. Les toges unies sont les plus courantes, les couleurs variant selon le métier pratiqué. En général, on ne porte par-dessous qu’un simple pagne et des sandales. Il est très rare de voir des combattants ou des protecteurs en armure métallique. Oforia dispose d’une milice vêtue d’armures de bois laqué de bleu et de gris.\n\nPresque tous les hommes d’armes copient cette précaution. Il est à noter qu’Oforia est la seule ville où l’on trouve des armures de bois, pour environ 900 dracs (disponibilité peu commune au lieu de introuvable).\n\n\n\n## La vie et la mort\n\nLa naissance est saluée par une cérémonie religieuse. On fait appel aux femmes érudites en matière de médecine, science douteuse, mais qui trouve dans ces circonstances un accueil plus favorable. L’accouchement se pratique près d’un des canaux de la ville. L'enfant est plongé dans l’eau par son père, qui effectue avec lui quelques brasses. Tous les bébés savent instinctivement nager et cette cérémonie a pour but de montrer la prééminence de l’eau dans la vie.\n\nLorsqu'une personne meurt, il faut prévenir les autorités de la ville pour pouvoir organiser une procession funéraire. Le corps est placé dans un linceul, sur un brancard. Il est porté par les hommes de la famille le long du chemin des larmes, un sentier côtier qui mène à la crique des trépassés. Là, le corps est pris en charge par des marins qui l’emmènent au milieu de la baie. Il est ensuite immergé tandis que la famille, restée sur le rivage, récite des prières. Le linceul est ensuite rendu à la famille. La croyance populaire veut que l’esprit du défunt rejoigne Ozyr dans son océan de savoir. Le corps est sans importance et livré aux crabes. Il est strictement défendu d’immerger les morts ailleurs que dans cette crique.\n\n",
+      "society": "Oforia compte environ 300 000 habitants. Le recensement de la population, dont 80% est citoyenne, est effectué tous les cinq ans. Le reste se compose de pêcheurs, de cultivateurs et de manœuvriers employés par les commerçants. En effet, près de la moitié des habitants tire ses revenus du commerce. Un tiers se consacre à l’étude de la magie et à la connaissance. La majorité de la population restante (15% sur les 17% restants) constitue Lne communauté d'artisans dont la papeterie, l’alchimie et la charpenterie navale sont les domaines de prédilection. La mentalité oforienne est curieuse, persévérante et respectueuse des aînés.\n\nLes dragons d’Oforia sont souvent des créatures réfléchies, promptes à guider les hommes comme à leur rappeler fermement les limites tolérables. De ce fait, un tiers est constitué de dragons des océans, un sixième de dragons de la pierre, un autre de dragons du métal et un dernier de chimères. Le sixième restant se divise entre de probables dragons des cités, dragons de la nature fièrement reconnus et dragons de l’ombre discrètement infiltrés. Les dragons du feu et des vents sont les plus mal acceptés et peu d’entre eux y sont des résidents permanents.\n\n",
+      "politics": "Oforia est placée directement sous le contrôle d’Ozyr. Elle y prend toutes les décisions d’importance et personne n’oserait les discuter. En effet, elle garde toujours à l’esprit l’avis de ses prélats et maintient ainsi sa popularité. Afin de gérer les affaires courantes de la cité et assurer une incarnation permanente du pouvoir, elle dispose de sa Voix. La Voix est un des premiers enfants d’Ozyr, qui se charge d’appliquer les volontés du Dragon des Océans. Ozyr décide, la Voix applique.\n\nAncienne fille d’Ozyr, Lindraÿs incarne la seconde Voix, depuis neuf cents ans. Tilmanestis, précédente Voix, s’est retiré en 386, lorsque son Élue, Alya, s’est éteinte après avoir énoncé les Prophéties et dirigé la caste des érudits durant ses dernières années. Tilmanestis a emporté son corps dans l’Interdit et a déclaré qu’il ne serait plus la Voix. Ozyr nomma quelques jours plus tard Lindraÿs pour le remplacer. On dit que Tilmanestis vit toujours, reclus dans une fosse abyssale.\n\nLindraÿs passe près d’un tiers de son temps sous forme humaine dans la tour de corail. Le reste du temps, elle s’isole dans les niveaux inondés de la tour et ne reçoit que les scribes les plus indispensables. Sous sa forme humaine, Lindraÿs s’incarne en deux sœurs jumelles. Âgées d’environ trente ans, elles mesurent un mètre soixante-quinze, arborent une taille fine et élégante et de fins cheveux gris et nacrés. L'une est vêtue d’une robe grise et verte, brodée aux manches, au col et au bas d’un feston de symboles entrelacés en fil d’émeraude. L'autre porte une robe bleu marine, incrustée de dentelle blanche. Elles se montrent froides, cérébrales et protectrices.\n\n## Liens avec l’extérieur\n\nOforia compte parmi ses résidents les esprits les plus brillants et les meilleurs orateurs de Kor. Les érudits sont des diplomates reconnus et Oforia se révèle une cité diplomatique aussi active qu’Yris. Chaque nation de Kor y est représentée par le biais d’une ambassade, à l’exception de Kali. Les rapports d’Oforia avec Kern sont excellents en raison des mentalités rigides et structurées qu'elles partagent. L'Empire de Solyr, la Pomyrie, les Marches Alyzées et Jaspor sont des partenaires commerciaux privilégiés.\n\nLes Zûls s’aventurent parfois en Ysmir, mais Oforia n’a jamais en à subir leurs assauts. Les rapports sont d’ailleurs très sporadiques entre la cité et Koran-Rogh. Les relations commerciales entretenues avec Dungard sont multiples, mais la dégradation des rapports entre la caste des artisans et celle des érudits, suite à la polémique portant sur les sciences interdites, envenime leurs rapports de manière globale. Les échanges avec Havre et Ankar sont maintenus à leur strict minimum en raison de l’animosité de leurs Dragons tutélaires.\n\n",
+      "judicial": "À Oforia, la loi est d’une telle complexité que les habitants s’en remettent aux érudits. Les juristes sont nombreux et font preuve d’une éloquence sans pareille lorsqu'ils s'affrontent pour régler un litige. Toutes les affaires sont jugées par un érudit spécialiste de la loi. Il écoute les explications des juristes des deux parties, souvent plus jeunes. Il donne ensuite son verdict. Il ne peut être supplanté que par un autre érudit, dont le Statut ou la fonction officielle dépasse la sienne. La justice est rapide, au vu du nombre de juristes disponibles, mais parfois ralentie par les avis successifs rendus par des érudits de plus en plus respectables.\n\nLa milice est prompte à intervenir et use largement de magie pour accélérer ses enquêtes. Les travaux forcés, les galères, les amendes et les actes de contrition religieux font partie des peines les plus couramment encourues. La peine de mort est régulièrement appliquée, en réponse à l’Humanisme, au Fatalisme, aux meurtres ou sacrilèges religieux. La pendaison, le supplice du bûcher ou la décapitation sont monnaie courante, mais la noyade reste proscrite.\n\n",
+      "economy": "L'économie d’Oforia repose majoritairement sur le commerce et, dans une moindre mesure, sur les activités liées au savoir. Le port réceptionne des marchandises de toutes les côtes de l’est et parfois même des côtes sud des Terres galyrs. Des caravanes venant ou allant vers l’Empire de Solyr ou du Désert du Souffle Brûlant y transitent chaque jour, suscitant une importante activité artisanale et mercenaire.\n\nTrès développé, l’artisanat est stimulé par les arrivages de matières premières maritimes rares et une demande commerciale ou académique substantielle (livres, encres, bibliothèques, outils, etc). La production motivée par des besoins internes est rare à Oforia, hormis l’imprimerie, les chantiers navals et la vente des produits maritimes. Sa position centrale autorise toutes les importations, même si une grande partie de la nourriture qui y est consommée provient de la mer et des plaines cultivées d’Ysmir.\n\n",
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les bassins",
+    "uuid": "10e86156-f029-4044-a417-e791e573a79b",
+    "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situés sur les côtes nord, aux confins de la ville, ces installations sont de grandes fermes d'élevage maritime. Autour de bassins rocheux taillés directement dans la côte, des huttes et appentis à matériel ont été aménagés.\n\nTous se trouvent reliés à l’océan, mais certains sont, de plus, alimentés par des sources se jetant dans la mer et canalisées par des rigoles de pierre. Les bassins sont assez vastes, couvrant une surface égale à près d’un cinquième de la cité. On y élève des crustacés, des coquillages et certains poissons d’eau douce ou de mer. On y trouve aussi des poulpes, dont on utilise l’encre. Il s’agit de propriétés privées, mais bien peu de barrières résistent au climat côtier.\n\nC’est un lieu relativement dangereux pour les visiteurs, les abords des bassins ruisselants et les planches branlantes qui les traversent pouvant occasionner des chutes, dont les conséquences sont fonction des créatures s’ébattant dans les cuves.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Le quartier flottant",
+    "uuid": "260857f3-ac4e-4a20-8e04-b32e6cf810a1",
+    "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le quartier flottant occupe environ la moitié de la cité. Il est formé d’une large bande d’habitations tout au long de la côte. L’empiétement sur la mer peut atteindre le kilomètre, avec une moyenne d’environ sept cents pas. Construit en bois et sur pilotis, il s’organise autour de plates-formes de quelques dizaines de mètres carrés reliées entre elles par de larges passerelles incurvées. Les maisons se ferment par une plaque de bois. Plusieurs centaines de poissons, nourris régulièrement par leurs propriétaires, peuvent vivre sous chaque maison. Il s’agit de poissons-chats ou de carpes de mer, péchés au filet. Environ un tiers des vivres de la ville provient de ces élevages domestiques.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "original",
+      "name": "LOCAL_CREATED"
+    },
+    "name": "Le quartier des récifs",
+    "uuid": "1d095ed1-7e36-4172-a428-227761de3f12",
+    "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dispersés au cœur du quartier flottant, les bâtiments du quartier des récifs forment de petits îlots de constructions solides, au milieu du bois frêle. Dans leur majorité, il s’agit de bâtiments à l’architeciure aérée et élégante, s'appuyant sur les fondations minimales exigées. Certains se présentent même comme de vastes ensembles vitrés, ensorcelés pour acquérir la solidité de la pierre, tout en conservant leur légèreté d’apparence. Nombre de petites tours taillées dans de délicats marbres clairs et percées de larges baies ponctuent le quartier. Les logements de nombreux mages et négociants opulents jalonnent les récifs et beaucoup de bibliothèques prestigieuses, d’académies dédiées à toutes les connaissances et quantité de demeures d’érudits y ont trouvé environnement à leur convenance. Une partie de l'artisanat lié à la pêche et à la poissomnerie y est localisée, ainsi que certaines des échoppes les plus exotiques de la ville.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les fontaines",
+    "uuid": "4aeacbf3-3cee-4510-b88c-fdf6685812b2",
+    "parent_id": "1d095ed1-7e36-4172-a428-227761de3f12",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La base des bâtiments du quartier des récifs s’avère souvent être constituée de rochers émergés, gris sombre, devenus le terrain d’expression de nombreux mages. En effet, il n’en reste presque plus un seul qui n’ait été enchanté pour former une fontaine à la gloire d'Ozyr. Lieux de cultes aussi bien qu’œuvres d’art, les multiples jets de ces fontaines tissent des motifs fécriques au pied des tours.\n\nUne grande partie d’entre elles sont décorées ou disposées autour de statues, chefs-d’œuvre pour la plupart créés par des artisans de haut rang de Kezyr ou de Borne. Ces statues représentent des sujets variés (personnages, créatures élémentaires diverses, dragons ou paysages), mais ont toutes été enchantées avec maîtrise, lorsqu'elles ne sont pas directement issues d’un artisanat élémentaire.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Temple de Nenya",
+    "uuid": "04f6d851-e788-4e09-a33a-03eacacadbe6",
+    "parent_id": "1d095ed1-7e36-4172-a428-227761de3f12",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Résultat d’un travail élémentaire magistral, ce temple est entièrement construit à base d’eau opaque ensorcelée. Une structure de coraux multicolores soutient une tour de trois étages, abritant chacun une statue de matière élémentaire de rêve de la Chimère, sous toutes ses formes connues. Il permet de vénérer Nenya en tant que Dragon, femme ou conscience magique du monde. Il est situé dans le quartier des récifs.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Temple de Kezyr",
+    "uuid": "9f079032-570d-422e-822e-ff7e1c043d57",
+    "parent_id": "1d095ed1-7e36-4172-a428-227761de3f12",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "En travers des rochers de la côte se dresse une arche titanesque de métal brut. À peine corrodée par le temps, elle dresse depuis des milliers d’années sa silhouette de plus de cinquante mètres au-dessus des flots. Il s’agit de l’arche originelle que Brorne sculpta et jeta dans l’océan, car Kroryn l'avait embrasée. C’est un lieu de pèlerinage où les plus fervents adeptes de Kezyr prouvent leur foi en l’escaladant et en plongeant dans l’océan depuis son sommet, reproduisant symboliquement l'immersion qui donna vie à leur Maître.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Le quartier côtier",
+    "uuid": "976e5500-e2d1-4b4e-a782-b82a563c8b0c",
+    "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le quartier côtier se situe sur le rivage lui-même. C’est là que se trouvent les plus vieux bâtiments d’Oforia et ses quartiers les plus anciens, dont certains sont presque délabrés.\n\nToutefois, cette zone bénéficie régulièrement de travaux de réhabilitation. En effet, c’est dans ces ruelles pavées, étroites et ombragées que se trouve la majorité des artisans et des échoppes marchandes. Toutes les marchandises pesantes comme les minerais, les denrées agricoles et les objets manufacturés y aboutissent. Comme il est impossible de faite descendre des chariots dans les deux autres quartiers, c’est ici qu’ont été établis les entrepôts, les forges et les scieries. Ce quartier abrite le marché officiel d’Oforia, où l’on vend de tout, même si le marché flottant est mieux achalandé en denrées alimentaires. Les commerçants et les artisans réclament régulièrement l’autorisation d’aménager de nouveaux pâtés de maisons, ce qui aura entiêrement renouvelé les bâtiments d’ici un siècle ou deux.\n\nDans ce qui reste de la partie ancienne, soit un tiers de la surface, se succèdent des académies d’érudits, certaines bibliothèques anciennes, des logements de classe moyenne, des tavernes et des quartiers parfois malfamés. La partie réhabilitée regorge d’échoppes, de maisons familiales, d'ateliers et d’auberges pour toutes les bourses. C’est un lieu vivant et cosmopolite, très apprécié des visiteurs.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les tours de corail",
+    "uuid": "d26711a9-3ea6-403b-9db9-cef192bb7871",
+    "parent_id": "976e5500-e2d1-4b4e-a782-b82a563c8b0c",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "S’élançant depuis un éperon rocheux, les tours servent à la fois de siège à la caste des érudits et de palais à la Voix. Construites à fleur d’eau dans de la rhodopsite, sorte de marbre tendre rouge veiné de blanc, les tours sont au nombre de treize, leurs bases se confondant en un bâtiment bas à l’architecture délicate. Plusieurs terrasses ornées de fontaines et de jardins lui donnent un aspect accueillant, qui dissimule en fait une machinerie administrative fort complexe. De nombreuses structures officielles sont en effet regroupées ici et l’obtention d’entrevues et d’autorisations (comme les Avals draconiques) dépend largement du Statut du demandeur et de ses relations.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Temple de Heyra",
+    "uuid": "e6ff8b86-35ae-4ee2-84fe-d259852717e4",
+    "parent_id": "976e5500-e2d1-4b4e-a782-b82a563c8b0c",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au cœur du quartier côtier, un ancien parc abrite plusieurs huttes de Prodiges, chargés d’entretenir l’endroit. En son centre, un cèdre majestueux délimite un lieu de prière majoritairement fréquenté par les médecins et les herboristes-alchimistes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Temple de Khy",
+    "uuid": "f839fdc8-6932-4b7f-a918-a8ba16cdaa06",
+    "parent_id": "976e5500-e2d1-4b4e-a782-b82a563c8b0c",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Datant d’à peine un siècle, ce nouveau sanctuaire dresse trois tours pyramidales en triangle autour d’une statue dorée du Dragon sous sa forme humaine. C’est un espace à ciel ouvert, qui ne comporte aucune partie intérieure, résultant d’un réaménagement du quartier.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Temple de Brorne",
+    "uuid": "11700e1d-5154-4eab-8045-5ea3404ae876",
+    "parent_id": "976e5500-e2d1-4b4e-a782-b82a563c8b0c",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le sanctuaire de Brorne se trouve dans le quartier côtier. Sur une place carrée, une colossale agate ovale bleu-vert, fendue par le gel, laisse voir des couches chromatiques de toute beauté. Haute de plus de trois mètres, on y prie en silence, une main posée contre sa surface. Tout autour de la place, les bâtiments accueillent des artisans de Brorne, des auberges pour les protecteurs venus étudier les écrits juridiques et les bâtiments de la milice.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Temple d'Ozyr",
+    "uuid": "e6ce25b8-2e6d-44bd-b7c8-64efbafa7292",
+    "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Érigé au fond de la baie, le temple d’Ozyr est à la fois un lieu de culte ouvert aux plus hauts dignitaires de la caste des érudits et un sanctuaire renfermant certains des secrets les plus dangereux de Kor. S’il ne présente à la surface qu’une île minuscule ornée d’une tour-phare signalant le port par des lueurs magiques, sa partie sous-marine est époustouflante. S’enfonçant en colimaçon autour d’un pilier naturel, des escaliers ensorcelés mènent vers un ensemble de larges coupoles basses qui tapissent le fond sablonneux. Percées de rosaces et de verrières, elles piègent l’air et permettent de respirer normalement.\n\nCertaines parties du temple sont consacrées au culte d’Ozyr et à l’habitation des dignitaires de la Loge Théologique, mais près des trois quarts en sont dédiés à la conservation de connaissances dangereuses, soustraites aux yeux du grand public. L'accession au temple n’est autorisée qu’aux érudits de troisième Statut ou aux citoyens de quatrième ou cinquième Statut des autres castes, après examen d’une demande officielle.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les Abysses",
+    "uuid": "0d8a0774-b272-4bbd-90a3-7506c9e1b38c",
+    "parent_id": "e6ce25b8-2e6d-44bd-b7c8-64efbafa7292",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ozyr a, depuis la nuit des temps, choisi de préserver jalousement sa tranquillité et s’avère le Dragon le plus difficile à rencontrer. Isolée dans les profondeurs des Abysses, ces fosses insondables qui transforment le fond des océans en dédale, Ozyr ne reçoit personne dans son sanctuaire.\n\nÀ l’occasion, l’un de ses premiers enfants parviendra à la trouver, mais rien ne lui assure un accueil agréable. Tous ceux qui désirent rencontrer Ozyr doivent se rendre aux jardins de nacre et risquer une entrevue. Bien sûr, il est rare que les rares humains connaissant ce lieu révèlent sa localisation ou abusent de ce privilège.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Le port",
+    "uuid": "ec657956-6670-4238-baa3-bba69d6a3747",
+    "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "À la jonction entre la côte nord et le quartier flottant, le port d’Oforia est le premier complexe maritime de Kor. Une vingtaine de quais de pierre et une cinquantaine de pontons flottants permettent d’accueillir en permanence une flotte marchande d’environ cinquante navires, trois cents bateaux de pêche de petite taille et une dizaine de navires de guerre utilisés pour traquer les contrebandiers et les rares pirates de la côte est. Le port dispose de trois cales sèches, uniques en leur genre, utilisant des portes à rouages actionnées par des cabestans. Ils sont mus par des condamnés, placés ici pour des délits mineurs. Elles sont vidées par magie. Chaque midi, un marché aux poissons permet aux habitants de se fournir parmi les prises de la matinée. Le port est le siège d’une intense activité commerciale, régulée par une capitainerie dépendant de l’ordre marin. Toute cette partie de la ville ressent encore l’influence de Szyl, ce qui provoque son isolement et des tensions avec les autres quartiers.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Temple de Szyl",
+    "uuid": "4aed2644-45b4-4340-9e4d-3b8ecb8bc006",
+    "parent_id": "ec657956-6670-4238-baa3-bba69d6a3747",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Placé sur le port, ce temple a été fermé durant quelques mois, lors des premiers raz-de-marée de Szyl, mais a été rouvert suite à la vindicte populaire (relayée par les prélats) et l’indignation de certaines autres cités. Il s’agit d’une haute bâtisse ovale de basalte décorée de bas-reliefs en lapis-lazuli et surmontée de plusieurs tours, dont la plus haute fait office de phare secondaire.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]
