@@ -86,11 +86,13 @@ flutter:
     - assets/npcs-les-enfants-de-heyra.json
     - assets/npcs-les-forges-de-kezyr.json
     - assets/npcs-les-foudres-de-kroryn.json
+    - assets/npcs-les-orphelins-de-szyl.json
     - assets/places-ldb2e.json
     - assets/places-les-ecailles-de-brorne.json
     - assets/places-les-enfants-de-heyra.json
     - assets/places-les-forges-de-kezyr.json
     - assets/places-les-foudres-de-kroryn.json
+    - assets/places-les-orphelins-de-szyl.json
     - assets/shield.json
     - assets/spell-pierre.json
     - assets/spell-feu.json

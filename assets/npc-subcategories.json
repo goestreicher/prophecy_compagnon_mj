@@ -49,9 +49,17 @@
     "is_default": true
   },
   {
+    "title": "Élus de Szyl",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Sans Caste",
     "categories": [
-      "generique"
+      "generique",
+      "personnalites"
     ],
     "is_default": true
   },
@@ -71,6 +79,13 @@
   },
   {
     "title": "Caste des prodiges",
+    "categories": [
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des voyageurs",
     "categories": [
       "personnalites"
     ],

@@ -439,6 +439,10 @@
       {
         "skill": "faireLesPoches",
         "value": 7
+      },
+      {
+        "skill": "langueDesSignes",
+        "value": 8
       }
     ],
     "equipment": [],

@@ -1,0 +1,352 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Havre",
+    "uuid": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "parent_id": "empireDeSolyr",
+    "type": "cite",
+    "government": "autorité draconique",
+    "leader": "Lauralendyl, Orphelin draconique",
+    "motto": null,
+    "climate": "chaud et ensoleillé en permanence",
+    "description": {
+      "general": "L'on ne peut pas réellement qualifier Havre de cité. Szyl avait dit aux premiers voyageurs : “Mais que ferez-vous si je décide un jour de partir d’ici ?” D’un haussement d’épaules, les hommes avaient répondu “Mais, nous partirons avec vous, Seigneur, c’est tout !”\n\nDepuis cette époque, Havre ne fut jamais considérée comme une véritable ville destinée à perdurer au fil des âges. C’est une sorte d’immense campement, où des centaines de tentes multicolores se massent autour de quelques bâtiments en dur. Havre se dresse au milieu d’une plaine d'herbe rase, où l’élevage et l’agriculture sont aisés ; le climat y est très particulier. Une brise tiède souffle en permanence et le rend plus doux que dans les contrées voisines de seulement quelques lieues. Szyl use de sa magie pour rendre l'endroit agréable.\n\nHavre n’a rien d’une réelle “ville”. Elle n’a pas de quartier, peu de rues fixes, n’est pas pavée et compte moins de 10% de constructions durables sur l’ensemble de ses aménagements. C’est un immense assemblage de tentes et de huttes temporaires, ponctué de quelques places, fontaines, bâtiments et tours qui sont les seuls points de repère, en plus des points cardinaux. De ce fait, les Havriens localisent les endroits de la manière suivante : “c’est près de la fontaine des trois cygnes, à quelques pas vers le sud, une tente verte avec un auvent brodé”. On se perd presque systématiquement à Havre si l’on ne possède pas un sens aigu de l’orientation - et la Compétence Vie en cité. Heureusement, les Havriens, très aimables, et surtout habitués à ce fait, ont pour coutume d’aider les nouveaux venus à se repérer.\n\n",
+      "history": "Si les hommes, mortels ou immortels, ont toujours été attirés par le voyage, il se passa de nombreux siècles avant qu’un point de repère fixe ne vienne jalonner leur route. Ozyr, en créant les castes, donna une certaine forme de légitimité aux cités draconiques en en faisant les quartiers généraux. Szyl accepta par politesse et se plia au principe qui prévalait chez les Dragons, à savoir ouvrir son repaire aux hommes. N’en ayant pas, il se résolut à un temps de sédentarité afin de ne pas froisser ses pairs, tout en restant convaincu que les hommes ne se précipiteraient pas pour le voir. Après tout, ils n’avaient pas été réceptifs à ses discrètes influences, et le fait de créer soudainement une organisation rigide avec une cité tutélaire ne risquait pas de les enchanter.\n\nIl planta symboliquement sa tente à la lisière de la Forêt Mère et eut peu à peu la surprise de voir les hommes affluer, heureux de pouvoir trouver un lieu où échanger leurs connaissances. Szyl comprit alors que, dans l’esprit des hommes, la curiosité et la soif de découverte se doublaient d’un besoin de cohésion et de fraternité.\n\nMême si les voyageurs ne se rencontraient pas souvent, ils avaient besoin de se sentir membres d’une grande famille et la caste des voyageurs devint cet immense réseau fraternel qui les relie les uns aux autres.\n\nIl fallut quatre ans pour que Szyl nomme la cité qui était en train de se créer. Il choisit “Havre”, qui fut l’un des premiers termes utilisés par les voyageurs pour désigner ce lieu convivial et serein où ils pouvaient se retrouver.\n\n",
+      "ethnology": "## L'Hospitalité\n\nEn raison de la grande mobilité de la population, il est de coutume d'offrir le gîte et le couvert aux voyageurs fatigués qui ne souhaitent pas s’épuiser plus en cherchant un logis. Le plus souvent, on propose une place à la table familiale, une bonne soupe ou un repas chaud et une paillasse propre derrière une tenture afin de prendre un peu de repos. Bien sûr, un Havrien abritant déjà une personne ou deux ne pourra pas accueillir plus de voyageurs, mais il mettra un point d'honneur à leur indiquer un ami ou un voisin qui pourrait leur ouvrir sa porte. Il est admis que le voyageur se comporte cordialement et n’abuse pas de la situation. Les Havriens ne reconnaissent aucun grade, Statut ou titre de noblesse lorsqu’ils ouvrent leur porte - ils estiment accueillir un simple voyageur. Tout abus de cette coutume est sévèrement réprimandé par la milice et conduit irrémédiablement à une marque d’infamie. Le malappris est traîné en place publique où on lui entaille les lobes des deux oreilles, qui resteront à jamais fendus. Cette marque refuse à son porteur la coutume de l’Hospitalité pour le restant de ses jours.\n\n## Les nuits\n\nHavre est une ville sans heurt et tous ceux qui y vivent profitent autant de la nuit que du jour. De nombreuses fêtes animent communément la nuit en différents endroits de la Cité. Sans aucune organisation officielle, elles rassemblent entre quelques personnes autour d’un feu de camp, qui se content des histoires, et plusieurs dizaines de citoyens et de serviteurs qui chantent, dansent et boivent jusqu’au matin. Certaines fêtes durent même plusieurs jours - les participants se renouvelant en fonction des arrivées de visiteurs. Le repos au calme est, de ce fait, un peu difficile pour les nouveaux arrivants, mais de nombreux mages de la cité peuvent ensorceler les tentes afin de les rendre plus hermétiques au bruit. Leur compétence est variable, mais leurs prix sont souvent élevés.\n\n## Coutumes vestimentaires\n\nLes coutumes vestimentaires de Havre reposent beaucoup sur le côté pratique et le style des vêtements de voyage. Il est très malvenu de se promener casqué ou coiffé d’un chapeau, surtout si l’on porte les cheveux longs. Il est d’ailleurs peu courant ici de se natter ou de tresser ses cheveux. La cape et le chèche sont des accessoires très courants et déclinés dans une diversité étonnante. Les bottes et étriers sont courants, comme tous les vêtements à l’aspect pratique et solide évoquant l’appel de l’aventure.\n\n## Les colères de szyl\n\nLe climat à Havre est toujours chaud et ensoleillé. Les nuits sont tièdes et il ne pleut jamais à l’aplomb de la cité. Ses environs, à plus d’une lieue, sont en revanche soumis à un climat plus habituel pour la région - continental doux. Ceci est dû à l'influence de Szyl, qui a enchanté le climat depuis qu’il a fondé Havre. Toutefois, on note des épisodes climatiques cauchemardesques connus sous le nom de Colères de Szyl. Lorsque le Dragon des Vents est furieux, le ciel de Havre se couvre d’épais nuages noirs, un vent violent se lève et, en moins d’une heure, un orage abominable s’abat sur la ville, comme sur toute la région environnante. Ces épisodes sont brefs et transforment Havre en un campement silencieux, où les habitants se terrent en attendant que le Dragon se calme. Personne ne se plaint jamais et au bout de quelques heures, le temps redevient clément. Comme si de rien n’était.\n\n## La vie et la mort\n\nUne naissance à Havre est un événement qui justifie des festivités spéciales. La famille ouvre alors son logis à tous, chacun amenant ce qu’il désire pour participer à la fête. En général, la famille, les amis, les relations d’affaires et les compagnons de caste sont traditionnellement invités. Toute personne se présentant pour venir fêter le nouveau-né se voit accueillie comme un ami. Aux yeux des Havriens et des voyageurs en général, il paraît inconcevable d’abuser de cette coutume. Les sanctions sont identiques à celles ayant trait à l’Hospitalité, à ceci près qu’au lieu de fendre les oreilles, on les coupe…\n\nLors d’un décès, le corps est à la charge de la famille, de sa caste, de ses amis, voire de ses associés en affaires. Au pire, il sera confié aux soins d’un mécène qui pourvoira aux frais funéraires. Le corps est porté hors de la ville en une procession rassemblant les proches. S'il n’y a personne, un voyageur se dévoue toujours pour accompagner le défunt dans cet ultime trajet. À quelques lieues de la ville, à la lisière de la Forêt Mère, un bûcher est alors dressé et le corps incinéré en silence. Ainsi, il rejoint le ciel et les vents et reste à jamais présent en Kor.\n\n",
+      "society": "Havre compte entre cent et cent cinquante mille habitants - personne ne le sait vraiment avec exactitude. Environ la moitié de la population serait citoyenne, ce qui ne signifie pas grand-chose ici, les serviteurs ayant les mêmes droits que les citoyens. Plus de la moitié des habitants tire ses revenus du commerce, un quart de l’artisanat et des métiers liés au voyage - dresseurs de montures, manufacturiers d’équipement, charretiers - et le dernier quart vit d’activités aussi variées que la magie, la guerre, l’érudition, etc. La mentalité des Havriens est très ouverte, accueillante et familiale.\n\nLes dragons de Havre sont largement favorables aux hommes, tant dans leur mentalité que dans leurs actes. On en dénombre entre deux et cinq mille. Une moitié rassemble les dragons des vents, un petit quart est supposé être composé de dragons des cités, et le reste se divise - en proportions déclinantes - entre dragons du métal, chimères, dragons du feu et dragons de la nature. Les dragons de la pierre et des océans sont assez rares car, si les castes coexistent aimablement, il n’en va pas de même pour les ailés, dont les querelles parentales teintent les rapports d’une animosité palpable. Des dragons de l’ombre y transiteraient parfois, discrètement, de nuit, mais personne ne se souvient en avoir rencontré un de jour.\n\nSzyl ne tient d’ailleurs pas à voir ses cousins semer le trouble dans sa cité.\n\n",
+      "politics": "Le pouvoir à Havre est entre les mains d'un Orphelin draconique. Il porte le nom de Lauralendyl et, de mémoire d’Havrien, il en a toujours été le Gardien.\n\nHavre étant un carrefour commercial, elle entretient des rapports plutôt favorables avec les autres pays et les cités draconiques - qu’elles soient proches ou lointaines.\n\nBien sûr, Ankar et Kern ne sont pas réellement ses alliées, mais sa puissance marchande aplanit les conflits. Ses meilleurs rapports sont soigneusement entretenus avec Témeth, Onyr et Yris. Bien que Havre soit située sur les terres de l’Empire de Solyr, elle n’est le fief d’aucun Provin. Les terres alentours sont sous la coupe du duc-Provin Balthus d’Arvendell, qui entretient de très respectueux rapports avec Lauralendyl. Il paraîtrait même que le duc, veuf, courtiserait Daana Toriser à chacun de ses passages. Les rapports avec Kali sont en revanche inexistants, cette terre dangereuse et éloignée n’ayant jamais favorisé des liens d’aucune sorte avec Havre.\n\n",
+      "judicial": "À Havre, la loi est appliquée par une milice aux larges effectifs patrouillant par groupe de quatre. Les crimes les plus sévèrement châtiés sont le vol, la dégradation des biens et le meurtre. La loi peut sembler laxiste au sein de cet immense bazar coloré, mais les protecteurs n’hésitent pas à requérir l’aide de mages et les coupables ont souvent de mauvaises surprises alors qu'ils se croyaient hors d'atteinte. En effet, la caste des voyageurs peut envoyer certains de ses membres les plus aguerris pourchasser un criminel jusqu'aux confins du Royaume de Kor - et même au-delà, murmure-t-on en évoquant le nom d’anciens hors-la-loi. Les châtiments les plus courants sont les amendes, la saisie des biens, les altérations magiques du comportement, l’exil - souvent définitif - et la mort. La peine capitale est rare, mais toujours spectaculaire, et donnée en place publique par suffocation magique - d’où un effet dissuasif majeur.\n\n",
+      "economy": "L'économie de Havre est presque entièrement basée sur le commerce. 80% de l’argent circulant en est issu, sous une forme ou une autre. 15% proviennent d'activités mercenaires et des gages des voyageurs, et les 5% restant sont générés par les services magiques, les cachets d'artistes et autres services liés à l’esprit. Havre ne peut être résumée en termes d’importations et d’exportations. La Cité des Vents dispose de tout et de rien, au sens où la ville n’est qu’un immense marché. On trouve de tout à Havre ; il suffit de chercher et d’y mettre le prix - pas toujours élevé d’ailleurs.\n\n",
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "La place de la mosaïque",
+    "uuid": "c913ef78-8147-4b0e-9775-3350d06b822a",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cette place est l’une des rares de Havre à être pavée. De forme circulaire, elle fait cinquante pas de rayon et son accès est interdit aux chariots et montures. En effet, seul le bord de la place est pavé, car en son centre se trouve une grande mosaïque circulaire construite aux premiers temps de Havre. Elle représente une grande rose des vents, dont chaque branche est décorée de végétation, animaux et dragons constitués de milliers de petits morceaux de céramique - parfois de la taille d’un gravillon. En plus des quatre flèches cardinalés, elle compte sept autres branches, plus petites, désignant la direction des autres cités draconiques, décorées selon l’élément de leur Dragon tutélaire. La huitième désigne Onyr et la mosaïque a été enchantée de façon à se recomposer en une nouvelle flèche décorée selon le milieu de sa localisation présente.\n\nOn dit que Szyl lui-même aurait construit cette œuvre merveilleuse. Elle est considérée comme sacrée par les voyageurs et il est de coutume de sceller l’engagement d’un maître de caravane par une poignée de mains sur la mosaïque, gage de bon voyage. Assez étrangement, la guilde des bâtisseurs de Kern a inscrit la mosaïque de Havre comme un passage obligé pour tous ses apprentis lors de leur fin d’études - tout comme les mages bâtisseurs d’Onyr, pour qui elle représente une merveille de sorcellerie architecturale.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Le marché aux bestiaux",
+    "uuid": "c863a224-631d-49d2-b45b-a8d33cee54c5",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situé à l’extrême nord-est de la cité, le marché aux bestiaux est le plus grand du monde. On y trouve toutes sortes de bêtes de monte, de trait ou destinées à la boucherie. Bœufs, vaches laitières, chèvres, lézards géants, dromadaires, chameaux, chevaux, buffles et moutons se massent dans de grands enclos qui débordent hors de la ville.\n\nOn y trouve quelquefois d’autres montures plus exotiques, comme des destriers kars, des éléphants, des autruches des steppes ou l'un des gigantesques scarabées géants de la Forêt Mère, de la taille d’un mammouth, ainsi que les terribles saurydes zûls - des lézards bipèdes à la monstrueuse mâchoire.\n\nOn y trouve également des guides de montagne louant leurs yaks, restés dans les Écailles à l’est, afin de rejoindre les Marches Alyzées ou l’Empire Nésora. C’est un lieu riche en odeurs, en bruits et qui ne connaît jamais le calme.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Le temple du vent",
+    "uuid": "a1117d9a-4b5e-4c3b-a221-e8a699e6a1ca",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le temple du vent est en fait un gigantesque caravansérail percé de multiples portes, au-dessus duquel se dresse la tour des mages du vent. Toujours animé et lieu de marchandages permanents, le temple n’a pas la connotation religieuse de ceux des autres cités.\n\nLoin d’être un site de recueillement, c’est un lieu de rencontre et de retrouvailles, très apprécié des voyageurs. À chacune des six portes, deux grandes vasques contiennent du sable fin, qu’il est d’usage de jeter par-dessus son épaule lorsqu’on entame un voyage important, afin de s’attirer les bonnes grâces du Dragon des Vents.\n\nLa tour est d’un diamètre frôlant les vingt pas, alternant les sections rondes et carrées pour finir en une pointe pyramidale à quatre faces. Son accès est normalement réservé aux mages, mais aucun contrôle réel n’y est effectué. C’est ici que se trouvent des bibliothèques, des salles d’étude et des scriptoriums à l’usage des mages des vents. On y trouve au sommet les appartements des Maîtres et celui de Tadd Lankel, lorsqu’il délaisse Onyr et quitte ses montagnes pour passer quelques jours à Havre.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Le palais des quatre vents",
+    "uuid": "88429ff9-33c8-41c6-9795-9d49bf0c3ffd",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le palais des quatre vents est la demeure officielle du Grand Maître et se transmet avec ce titre. En ce moment, Daana Toriser en est la résidente, même si elle est plus souvent sur les routes qu’à Havre. Le bâtiment est un grand manoir au toit en coupole, d’environ trois étages. Il est doté de quatre tours angulaires rondes, au toit également en coupole, de cinq étages.\n\nIl est construit en une pierre brun-orangé très finement sculptée et percée de très nombreuses fenêtres. Il est possible d’accéder au hall d’entrée, qui est occupé par les clercs de la Grande Maîtresse, les rares érudits dévoués aux voyageurs et qui sont les seuls administrateurs de la caste. On dit que l’intérieur du palais est un véritable musée, regorgeant d’objets insolites ramenés par les Maîtres précédents durant leurs voyages.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les tours cardinales",
+    "uuid": "138a8b79-9758-454e-b254-d8a05effcbdb",
+    "parent_id": "4eedbbe5-05a4-4fda-a847-5f614aea8967",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situées autour de la place du Dragon, ces tours sont de grands édifices construits dans des styles architecturaux tous différents. Elles marquent le début des routes cardinales et portent les noms des quatre points cardinaux. Toutes servent à entreposer les biens, archives, trésors et objets divers appartenant à la caste des voyageurs. Pour y avoir accès, il faut obligatoirement être accompagné d’un Solitaire ou d’un Orphelin, voire d’un proche fils de Szyl.\n\nÀ l’intérieur, elles sont dans un état indescriptible de désordre, trop peu de voyageurs ayant à cœur d’organiser ces montagnes de parchemins, coffrets et objets divers.\n\nLa tour du Nord est un édifice circulaire en olivine, une pierre grise, mouchetée de noir et de vert. Elle est décorée de gravures qui la font ressembler à un immense tronc pétrifié.\n\nLa tour de l’Est est carrée, taillée dans un solide granit incrusté de lapis-lazuli, et ornée de scènes de montagnes et de sommets enneigés.\n\nLa tour du Sud est triangulaire, construite dans une pierre argileuse tirant sur le beige. De multiples bas-reliefs la décorent, représentant des scènes urbaines et des cités fabuleuses, issues de légendes.\n\nLa tour de l’Onest est octogonale et faite de mercure solidifié. Aucune décoration extérieure ne l’égaye, mais son éclat incomparable suffit à sa beauté. Lorsque le soleil se couche, elle jette alors mille feux irisés sur les alentours, véritable phare visible à des kilomètres à la ronde.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les routes cardinales",
+    "uuid": "6e28dcc8-5141-425f-a0c0-18b9988bb44d",
+    "parent_id": "4eedbbe5-05a4-4fda-a847-5f614aea8967",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Droites et délimitées par des bornes placées tous les vingt pas, ces voies rectilignes partent de la place du Dragon, aux pieds de chacune des tours, et constituent les seules artères fixes de la ville. Elles sont larges d’environ quinze pas et il n’est pas toléré d’en déborder. Mais, à part ces axes, Havre n’est absolument pas quadrillée de rues et le tracé des voies de circulation se modifie à mesure de l’installation et du départ des habitants.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "La fontaine d’Ozyr",
+    "uuid": "3ce11750-7f8a-47c9-b952-e98b741cba89",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La fontaine est un lieu de rencontre et de discussion pour les érudits et les poètes de Havre. Au centre d’une place d’une trentaine de pas de diamètre se dresse une statue du Dragon des Océans, comme émergeant des eaux. De nombreux bancs y sont disposés un peu partout et on y entretient toujours un débat intéressant.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "L'anneau d’or",
+    "uuid": "51e4529e-8e99-462d-b29b-b4a125a6743d",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cette taverne est bien connue des commerçants, car c’est l’une des plus grandes de la ville. Construite en dur, à la manière impériale, elle offre une vingtaine de chambres et un dortoir de près de cinquante places. Sa salle principale au vieux parquet patiné est divisée en deux parties, la première faisant office de taverne, la seconde disposant de quelques alcôves discrètes et d’une scène conçue pour les troubadours. Ouverte tard le soir, elle accueille souvent une centaine de personnes, venues de tous horizons, mais à la bourse bien garnie.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Le nid des compagnons",
+    "uuid": "a5c5e38f-6636-441f-9f8b-ca8a272afe93",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cette large tente rectangulaire de lourd velours vert foncé abrite l’une des meilleures boutiques d’animaux de compagnie de Kor. Tenu par Fidulien, un mage de la nature spécialiste du dressage, cet établissement existe depuis vingt ans et jouit d’une réputation inégalée. Fidulien est en effet connu pour dresser ses animaux avec douceur et leur insuffler par magie le goût de la compagnie humaine. Il est particulièrement réputé pour ses oiseaux et ses compagnons à fourrure. Il achète souvent cher de bons spécimens ramenés par des trappeurs et des chasseurs revenant de tout Kor. On trouve ici les plus beaux fluix, ainsi que les rats gris et les zokoïs les plus doux.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "La lanterne grise",
+    "uuid": "b0ee15e0-17a8-458d-ad28-34f164a182f8",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce belvédère est l’un des lieux favoris de tous les amoureux de Havre. On le dit béni par Nenya et les mariages célébrés sous sa coupole de bois blanc gravé de runes mystiques seraient les plus heureux et les plus fertiles.\n\nLa nuit, il est souvent le lieu de rencontres clandestines, son mauvais éclairage apportant une touche romantique qui séduit souvent les jeunes couples avides de sensations.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les temples draconiques",
+    "uuid": "e95727e5-4c02-44c4-b87b-7c305c51789a",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Selon les habitants, chaque partie de la ville dispose d’une tente, d’une hutte ou d’un petit autel dédié à l’un des Dragons. Tous sauf Kalimsshar sont ainsi vénérés, sans aucune forme de rite ou de protocole. Des fidèles se livrent à divers rites en pleine rue sans que cela ne choque. Ainsi, devant un de ces sanctuaires, on voit parfois des guerriers se battre pour l'honneur, des mages méditer ou s’entraîner à des Clés corporelles. Des érudits instruisent les auditeurs, les Prodiges philosophent sur la nature ou effectuent leurs entraînements quotidiens. Toutes ces activités animent la ville et nourrissent sa grande tolérance religieuse.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "La place du Dragon",
+    "uuid": "4eedbbe5-05a4-4fda-a847-5f614aea8967",
+    "parent_id": "56a8e426-8014-4efc-a026-95933f13cc87",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au centre de Havre s’étend la place du Dragon, entièrement vide. De plus de cent pas de rayon, elle laisse comme un trou béant au sein de ce capharnaüm de tentes et de huttes. En son centre se dresse une seule tente : celle de Szyl. Même si sa taille importante évoque le fait qu’elle soit divisée en plusieurs espaces par des tentures et que les matériaux soient souvent renouvelés, c’est bien la même que Szyl planta symboliquement pour attendre les hommes. La large place sablonneuse qui l’entoure est considérée comme sacrée, personne n’ayant osé s’installer plus près d’un Dragon.\n\nIl n’est pas très difficile d’accéder au “repaire” de Szyl - il suffit d’oser traverser la place et demander à voir le Dragon. En général, le silence accompagne tout téméraire qui oserait tenter la traversée. Arrivé à la tente, il peut être ignoré, accueilli par Lauralendyl, qui vit ici, ou par vu fils de Szyl.\n\nLes réactions varient selon la demande, mais si la réponse est négative, elle sera polie. En cas d’insistance, une réaction beaucoup plus violente s’en suivra.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Duché d’Arvendell",
+    "uuid": "df183768-e5d4-43f1-9410-81a5b7ead2b3",
+    "parent_id": "empireDeSolyr",
+    "type": "duche",
+    "government": null,
+    "leader": "Balthus d'Arvendell",
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La pointe nord de l’Empire de Solyr est le fief du duc d’Arvendell. En fait, son territoire s’arrête implicitement à deux ou trois lieues de Havre, considérée comme une terre draconique. Le duché est une province opulente, jouissant pleinement du commerce de Havre sous la forme de relais, auberge et écuries disposées le long de la route et même jusqu’à la lisière de la Forêt Mère. Principalement rural, ce fief dispose d’une solide économie basée sur l’exportation de son bétail et de ses produits, vendus à Havre, mais aussi expédiés aux quatre coins de l’Empire.\n\nLe duché, s’il ne compte qu’une trentaine de villes de plus de dix mille habitants en plus de sa capitale Tumistriel, rassemble 12% de la population de l’Empire. De très nombreux comtes et chevaliers sont donc vassaux du duc et font régner sa loi avec efficacité. Le duché dispose de forces militaires très importantes, dont plusieurs compagnies de cavalerie lourde et plusieurs régiments de piquiers et de fantassins entraînés. La lisière de la Forêt Mère est surveillée conjointement par des éclaireurs mercenaires de Havre et des Prodiges gardiens qui assurent la sécurité de la route de Témeth.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]
