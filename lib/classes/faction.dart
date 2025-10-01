@@ -140,6 +140,7 @@ class Faction extends ResourceBaseClass {
     var assetFiles = [
       'factions-castes.json',
       'factions-secretes.json',
+      'factions-les-voiles-de-nenya.json',
     ];
 
     for(var f in assetFiles) {

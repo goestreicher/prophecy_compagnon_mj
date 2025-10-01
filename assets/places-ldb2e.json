@@ -376,18 +376,6 @@
     }
   },
   {
-    "name": "Onyr",
-    "parent_id": "pomyrie",
-    "type": "capitale",
-    "description": {
-      "general": ""
-    },
-    "source": {
-      "type": "officiel",
-      "name": "LdB 2e"
-    }
-  },
-  {
     "name": "Principauté de Marne",
     "parent_id": "kor",
     "type": "nation",

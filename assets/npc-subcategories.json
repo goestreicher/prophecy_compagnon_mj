@@ -21,6 +21,13 @@
     "is_default": true
   },
   {
+    "title": "Pomyrie",
+    "categories": [
+      "dirigeants"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Élus de Brorne",
     "categories": [
       "elus"
@@ -43,6 +50,13 @@
   },
   {
     "title": "Élus de Kroryn",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Nenya",
     "categories": [
       "elus"
     ],

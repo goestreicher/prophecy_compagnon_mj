@@ -79,6 +79,7 @@ flutter:
     - assets/creatures-les-foudres-de-kroryn.json
     - assets/factions-castes.json
     - assets/factions-secretes.json
+    - assets/factions-les-voiles-de-nenya.json
     - assets/npc-categories.json
     - assets/npc-subcategories.json
     - assets/npcs-ldb2e.json
@@ -88,6 +89,7 @@ flutter:
     - assets/npcs-les-foudres-de-kroryn.json
     - assets/npcs-les-orphelins-de-szyl.json
     - assets/npcs-les-versets-d-ozyr.json
+    - assets/npcs-les-voiles-de-nenya.json
     - assets/places-ldb2e.json
     - assets/places-les-ecailles-de-brorne.json
     - assets/places-les-enfants-de-heyra.json
@@ -95,6 +97,7 @@ flutter:
     - assets/places-les-foudres-de-kroryn.json
     - assets/places-les-orphelins-de-szyl.json
     - assets/places-les-versets-d-ozyr.json
+    - assets/places-les-voiles-de-nenya.json
     - assets/shield.json
     - assets/spell-pierre.json
     - assets/spell-feu.json

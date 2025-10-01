@@ -136,7 +136,7 @@
     "height": 1.7,
     "weight": 60,
     "origin": {
-      "id": "empireDeSolyr"
+      "id": "marchesAlyzees"
     },
     "luck": 2,
     "proficiency": 4,
@@ -223,7 +223,7 @@
       "type": "officiel",
       "name": "Les Versets d'Ozyr"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
       "levels": [

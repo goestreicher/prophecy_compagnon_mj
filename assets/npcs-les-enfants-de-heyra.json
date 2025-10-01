@@ -210,7 +210,7 @@
       "type": "officiel",
       "name": "Les Enfants de Heyra"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
       "levels": [
@@ -593,7 +593,7 @@
       "type": "officiel",
       "name": "Les Enfants de Heyra"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
       "levels": [

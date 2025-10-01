@@ -1,0 +1,640 @@
+[
+  {
+    "equiped": [],
+    "uuid": "f5bd8434-0619-4ee1-9ddf-7f07fdad5970",
+    "name": "Cymbaline",
+    "description": "Cymbaline, la Rêveuse Illuminée, a tout pour séduire Nenya. Elle aime la poésie et les arts, elle apprécie ce qui est beau et ne prend jamais rien au sérieux. Nenya elle-même l’observe souvent quand elle se rend en pleine nature en compagnie de son amie, Loreena Asselya, pour des balles aériens en compagnie des petits êtres de la forêt. Ses rêves seraient magnifiques. Mais sa légèreté est son point faible. Elle reste sourde aux conseils de ceux qui l’entourent. Elle refuse de voir la moindre malice dans les créatures vivantes et se met souvent en danger par son inconscience. Heureusement pour elle, elle est entourée d’amis fidèles, dont plusieurs aventuriers, qui veillent sur elle. Elle est liée à un splendide dragon des rêves (tendance femelle), Assyanata, dont la beauté est presque égale à celle de Nenya.\n\nCette femme d’une trentaine d'années n’a pas toujours été dans le système. Quand Nenya l’a choisie, beaucoup de maîtres ont été surpris, et certains déçus, car elle ne correspondait pas vraiment aux critères habituels. Cette rouquine à la peau laiteuse et toujours habillée de grandes robes colorées passe son temps à chanter et danser. Sa première décision (autre choc pour les conservateurs) fut de faire venir des danseurs, initiés des écoles de Kroryn, pour égayer un peu les rues d'Onyr.\n\nLa seconde fut de disparaître deux semaines complètes, avant de revenir les bras couverts de tatouages d'origine inconnue.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 5,
+    "abilities": {
+      "force": 6,
+      "intelligence": 9,
+      "coordination": 9,
+      "presence": 9,
+      "resistance": 7,
+      "volonte": 9,
+      "perception": 6,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 9,
+      "mental": 8,
+      "manuel": 7,
+      "social": 7
+    },
+    "skills": [
+      {
+        "skill": "armesAProjectiles",
+        "value": 6
+      },
+      {
+        "skill": "armesContondantes",
+        "value": 7
+      },
+      {
+        "skill": "acrobatie",
+        "value": 9
+      },
+      {
+        "skill": "discretion",
+        "value": 9
+      },
+      {
+        "skill": "esquive",
+        "value": 9
+      },
+      {
+        "skill": "pister",
+        "value": 7
+      },
+      {
+        "skill": "connaissanceDeLaMagie",
+        "value": 13
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 12
+      },
+      {
+        "skill": "geographie",
+        "value": 9
+      },
+      {
+        "skill": "histoire",
+        "value": 8
+      },
+      {
+        "skill": "orientation",
+        "value": 9
+      },
+      {
+        "skill": "astrologie",
+        "value": 7
+      },
+      {
+        "skill": "lireEtEcrire",
+        "value": 9
+      },
+      {
+        "skill": "alchimie",
+        "value": 5
+      },
+      {
+        "skill": "deguisement",
+        "value": 8
+      },
+      {
+        "skill": "donArtistique",
+        "value": 0,
+        "specializations": [
+          {
+            "name": "donArtistique:danse",
+            "title": "Danse",
+            "value": 13,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "jongler",
+        "value": 10
+      },
+      {
+        "skill": "conte",
+        "value": 13
+      },
+      {
+        "skill": "eloquence",
+        "value": 11
+      },
+      {
+        "skill": "cartographierLesReves",
+        "value": 10
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "mage",
+    "caste_status": "grandMaitre",
+    "career": null,
+    "age": 30,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "pomyrie"
+    },
+    "luck": 5,
+    "proficiency": 5,
+    "renown": 0,
+    "interdicts": [],
+    "caste_privileges": [
+      {
+        "privilege": "anonymat",
+        "description": null
+      },
+      {
+        "privilege": "laboratoire",
+        "description": null
+      },
+      {
+        "privilege": "messager",
+        "description": "Non précisé"
+      },
+      {
+        "privilege": "tuteurSpecialise",
+        "description": "Nenya"
+      },
+      {
+        "privilege": "protectionDesEeries",
+        "description": null
+      },
+      {
+        "privilege": "messagerOnirique",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "marqueDeNenya",
+        "cost": 0,
+        "details": ""
+      },
+      {
+        "disadvantage": "emotif",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 4,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 1,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "reves",
+      "dragon": "Assyanata",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesMages"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 3
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 2
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 7,
+      "invocatoire": 13,
+      "sorcellerie": 6
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 8,
+      "metal": 0,
+      "nature": 7,
+      "reves": 10,
+      "cite": 0,
+      "vents": 6,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 8,
+      "metal": 0,
+      "nature": 7,
+      "reves": 10,
+      "cite": 0,
+      "vents": 6,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "8398e5f1-3250-4130-826d-3ce20989667c",
+    "name": "Illina Endyna",
+    "description": "Alors que Nenya survolait la partie septentrionale de Kern, son esprit fut attiré par une petite forme gémissante et agonisante. Intriguée, la Chimère plongea et atterrit en plein milieu des restes d’un carnage vieux de plusieurs jours. La frêle forme sanglotante n’était autre qu’une enfant de cinq ans qui avait assisté au massacre des siens par on ne sait quelle troupe de guerriers. Émue par le spectacle et intriguée par la force d’âme qui poussait ce petit être à survire malgré le malheur qui s'était abattu, Nenya décida de faire don du Lien à la petite Illina Endyna. En échange, l’enfant fut contrainte de conserver sa pureté d’âme et son innocence. Ainsi, depuis lors, une enfant de cinq ans parcourt, sans relâche, le Royaume de Kor et sensibilise les humains réceptifs aux mystères de la magie. De nombreux sans classe affirment avoir déjà croisé la première Élue et qu’une telle rencontre ne peut être qu’un bon présage. Une autre version de la légende précise que Nenya aurait remplacé le cœur de l'enfant par une pierre onirique lui permettant de vivre continuellement dans le Monde des Songes et de ne plus souffrir des périls du monde des vivants.\n\nCertains pensent, sans oser l’affirmer, que Nenya a choisi cette Élue afin de prouver à Brorne et Kroryn que la valeur et le courage ne sont pas toujours là où on les attend.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 2,
+      "intelligence": 8,
+      "coordination": 5,
+      "presence": 6,
+      "resistance": 2,
+      "volonte": 7,
+      "perception": 7,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 1,
+      "mental": 7,
+      "manuel": 4,
+      "social": 6
+    },
+    "skills": [
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 7
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "mage",
+    "caste_status": "grandMaitre",
+    "career": null,
+    "age": 5,
+    "height": 1.2,
+    "weight": 17,
+    "origin": {
+      "id": "18be0592-2dcf-4559-b681-c98876b74602"
+    },
+    "luck": 1,
+    "proficiency": 6,
+    "renown": 0,
+    "interdicts": [
+      "loiDuPartage"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "anonymat",
+        "description": null
+      },
+      {
+        "privilege": "prevoyance",
+        "description": null
+      },
+      {
+        "privilege": "style",
+        "description": null
+      },
+      {
+        "privilege": "leurre",
+        "description": null
+      },
+      {
+        "privilege": "sortilegeFetiche",
+        "description": "Arc-en-ciel des passions"
+      },
+      {
+        "privilege": "sortilegeFetiche",
+        "description": "Somme du bienheureux"
+      }
+    ],
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 5,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "reves",
+      "dragon": "Nenya",
+      "progress": "cinquiemeNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeNenya"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 2
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 1
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 1
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 10,
+      "invocatoire": 8,
+      "sorcellerie": 7
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 12,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 12,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  },
+  {
+    "equiped": [],
+    "uuid": "1e5511ed-4752-42f0-b4cc-35b639b9884a",
+    "name": "Nathiaël, Seigneur-Chimère",
+    "description": "",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 7,
+      "intelligence": 10,
+      "coordination": 8,
+      "presence": 13,
+      "resistance": 6,
+      "volonte": 11,
+      "perception": 9,
+      "empathie": 12
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 10,
+      "manuel": 7,
+      "social": 8
+    },
+    "skills": [
+      {
+        "skill": "armesTranchantes",
+        "value": 5
+      },
+      {
+        "skill": "connaissanceDeLaMagie",
+        "value": 11
+      },
+      {
+        "skill": "connaissanceDesDragons",
+        "value": 8
+      },
+      {
+        "skill": "histoire",
+        "value": 6
+      },
+      {
+        "skill": "lois",
+        "value": 8
+      },
+      {
+        "skill": "artisanat",
+        "value": 0,
+        "specializations": [
+          {
+            "name": "artisanat:forge",
+            "title": "Forge",
+            "value": 6,
+            "reserved": false
+          },
+          {
+            "name": "artisanat:gravure",
+            "title": "Gravure",
+            "value": 7,
+            "reserved": false
+          }
+        ]
+      },
+      {
+        "skill": "psychologie",
+        "value": 10
+      },
+      {
+        "skill": "castes",
+        "value": 6
+      },
+      {
+        "skill": "diplomatie",
+        "value": 8
+      },
+      {
+        "skill": "meditation",
+        "value": 8
+      },
+      {
+        "skill": "astrologie",
+        "value": 4
+      }
+    ],
+    "equipment": [],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "mage",
+    "caste_status": "grandMaitre",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "pomyrie"
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 0,
+    "interdicts": [
+      "loiDuPartage"
+    ],
+    "caste_privileges": [],
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 4,
+        "circles": 0
+      },
+      "human": {
+        "value": 1,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "reves",
+      "dragon": "Inconnu",
+      "progress": "cinquiemeNiveau"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "pomyrie"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "levels": [
+        {
+          "type": "scratch",
+          "start": 0,
+          "end": 10,
+          "capacity": 3
+        },
+        {
+          "type": "light",
+          "start": 10,
+          "end": 20,
+          "capacity": 3
+        },
+        {
+          "type": "grave",
+          "start": 20,
+          "end": 30,
+          "capacity": 2
+        },
+        {
+          "type": "fatal",
+          "start": 30,
+          "end": 40,
+          "capacity": 2
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 7,
+      "invocatoire": 10,
+      "sorcellerie": 9
+    },
+    "magic_spheres": {
+      "pierre": 6,
+      "feu": 4,
+      "oceans": 0,
+      "metal": 8,
+      "nature": 3,
+      "reves": 9,
+      "cite": 5,
+      "vents": 7,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 6,
+      "feu": 4,
+      "oceans": 0,
+      "metal": 8,
+      "nature": 3,
+      "reves": 9,
+      "cite": 5,
+      "vents": 7,
+      "ombre": 0
+    }
+  }
+]

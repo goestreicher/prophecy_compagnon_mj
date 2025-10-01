@@ -338,6 +338,7 @@ class Place extends ResourceBaseClass {
       'places-les-foudres-de-kroryn.json',
       'places-les-orphelins-de-szyl.json',
       'places-les-versets-d-ozyr.json',
+      'places-les-voiles-de-nenya.json',
     ];
 
     for(var f in assetFiles) {

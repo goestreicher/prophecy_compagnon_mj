@@ -1,0 +1,377 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Onyr",
+    "uuid": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "parent_id": "pomyrie",
+    "type": "capitale",
+    "government": null,
+    "leader": "Nathiaël, Seigneur-Chimère",
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Onyr est la cité la plus impressionnante et la plus irréelle de Kor. Constituée de centaines de tours, mélant styles et matières dans une féerie de couleurs, elle flotte à plusieurs dizaines de mètres du sol. Les tours sont reliées entres elles par d'élégantes arches ciselées, des balustrades et des arcs-boutants qui tressent une véritable dentelle architecturale. Toutes les matières entrent dans la composition des spires : pierre, marbre, bois précieux, métaux, mais aussi verre, liquides solidifiés par magie ou encore brumes densifiées. Toutes les tours sont rehaussées de bas-reliefs, gravures, frises et colonnades. Des brumes multicolores glissent paresseusement entre les tours, comme des serpentins de lumière. La nuit, Onyr est un véritable phare chatoyant, environnée de milliers de lucioles.\n\nOnyr connaît une totale variété de climats au cours de l'année, mais il n'a jamais été question de plier le climat à la magie. Il y pleut, neige, vente, mais toutes ces conditions sont altérées de façon à rester supportables par la population. La canicule estivale comme la bise d'hiver autorisent à tous une activité régulière.\n\nOnyr ne disposant pas de rues classiques, deux contraintes régulent la vie. D'abord, il est impossible de s'y déplacer autrement qu'à pied, les montures ne trouvant ici aucun usage. Ensuite, il n'y a pas dé délimitation précise entre les quartiers. Chacun porte un nom mais certains s'interpénètrent et ne se situent que vaguement.\n\nL'architecture aérienne constitue un risque majeur. Il n'existe aucun enchantement destiné à protéger le maladroit qui tomberait d’une passerelle. Soit il tombe en contrebas sur une autre balustrade, soit il chute jusqu’à tomber sous Onyr, où un Transbordeur vigilant pourra peut-être lancer un sort avant qu’il ne s'écrase lamentablement.\n\nLes tours d'Onyr sont des bâtiments colossaux, régulièrement construits par la Caste des Mages et des Artisans. Elles comptent souvent plusieurs escaliers, habitations ou boutiques regroupées dans une spire comme dans un quartier autonome. Les accès en sont libres et tout trajet en ville implique l’usage de nombreuses passerelles et plusieurs tours à traverser.\n\n## Localisations\n\nL'hiver, Onyr devient la capitale de Pomyrie et apparaît au dessus d'une vaste plaine où se rejoignent les principales routes du pays. Au sol, il existe une petite bourgade, Onyria, comptant quelques centaines d'habitants.\n\nAu printemps, elle se déplace sur l'île d’Ayendorl, au large de la Principauté de Marne. Cette île abrite les installations portuaires qu'utilisent les visiteurs pour venir, mais est inoccupée le reste de l'année.\n\nEn été, Onyr est située au-dessus d'un des bras du fleuve Lom. Personne ne réside en ces lieux sauvages à l'année.\n\nL'automne est une période d'installation sur la presqu'île de Jasp. Mis à part les villages côtiers, il n'y a pas d'implantation au sol, en raison de conditions magiques difficiles.\n\n",
+      "history": "Bien que les hommes aient reçu de Nenya le don de la magie, leur pratique de l'art restait fragmentaire. Apprenant l'installation de leurs semblables autour des repaires de nombreux Grands Dragons, les mages se lancèrent à la recherche du sanctuaire de Nenya, réputée pour ses mystères. Indifférente à son environnement, la Maîtresse des Rêves changeait irrégulièrement de site. Les mages décidèrent alors de conjuguer leurs pouvoirs afin de forcer la Chimère à les remarquer. Ils travaillèrent depuis leurs tours, aux quatre coins du Royaume de Kor. Ils recoupèrent leurs informations et les témoignages de nombreux voyageurs et finirent par la localiser.\n\nIls accomplirent alors leur projet le plus spectaculaire : téléporter simultanément toutes leurs tours auprès de Nenya. De puissants enchantements furent convoqués et, une nuit, plus d'une centaine de tours de tous les pays s'évanouirent, réapparaissant devant la Maîtresse de la Magie. Surprise, cette dernière se téléporta à l'autre bout du monde et attendit. Sans se démonter, les mages pistèrent l’aura magique de Nenya et recommencèrent leur spectaculaire voyage. Par trois fois, la Chimère se transporta à l'autre bout du monde et par trois fois les hommes se matérialisèrent quelques secondes après elle. Dubitative, elle décida d'écouter leur demande. Les mages la convainquirent de les instruire, mais se rendirent à l'évidence : leurs tours étaient devenues bien trop ensorcelées et menaçaient de se téléporter à nouveau de façon anarchique. Nenya accepta alors de stabiliser les tours et décida que les prodiges accomplis resteraient éternels.\n\nElle stabilisa le trajet de la nouvelle cité aux quatre points de sa trajectoire et les échelonna dans l'année.\n\n",
+      "ethnology": "## L'Élément\n\nSelon la caste, il est de coutumes chez les habitants d'Ouyr de conserver un peu d'un élément magique dans leur logis. En général, l'élément en question est valorisé par des artifices magiques (une fontaine perpétuelle, un bonsaï à croissance cyclique, etc.). Pour les plus riches, il n'est pas rare de voir les éléments varier d'une pièce à l'autre, rivalisant d'ingéniosité.\n\n## Les marches\n\nOnyr est parcourue par de véritables torrents magiques, ce qui fui confère des propriétés étonnantes. Un utilisateur de la magie peut ainsi se libérer des contraintes de déplacement par les arches et les ponts et créer ses propres chemins. En se concentrant, un mage peut faire apparaître une marche magique sous ses pieds, formée d'un élément particulier qui lui permettra de déambuler à sa guise entre les tours. Ce spectacle époustouflant est devenu monnaie courante à Onyr, mais ébahit toujours les nouveaux visiteurs.\n\n## Le voyage\n\nÀ date fixe, lorsqu'Onyr va se déplacer, les habitants se préparent paisiblement à la téléportation. Ils ferment portes et fenêtres et jeûnent le soir. Lorsque la nuit tombe, nulle lumière n'est allumée et personne ne sort. Les rues désertes ne sont plus parcourues d'aucune brume. Les habitants se couchent et attendent tranquillement l'aube suivante, à laquelle il reprendront normalement leur activité. La semaine de l'arrivée est souvent l'occasion de grandes fêtes. Durant la nuit en elle-même, nul ne sait ce qui se passe.\n\nLes fous qui ont tenté d'assister au transfert ont purement et simplement disparu. Certains murmurent que Nenya elle-même prend la cité dans ses griffes et la déplace ; d'autres disent que la Chimère distord le temps et l'espace afin de détruire puis recréer la ville à sa nouvelle localisation. Bon nombre de gens pensent que la cité se transpose sur un claquement de doigts, mais seuls les vingt-quatre Maîtres Élémentalistes savent réellement ce qui se passe.\n\n## La vie et la mort\n\nLors d'une naissance, il est d'usage de faire tatouer l'enfant à son augure et au jour de sa naissance. Bien sûr, les parents choisissent l'endroit, mais le front et le torse sont privilégiés. Ce tatouage est souvent entretenu à l'âge adulte et ne donne lieu à aucun ostracisme. Bien sûr, les femmes prévoient leurs naissances et évitent d'accoucher sous l'augure du Fataliste ou les jours du Serpent…\n\nDe même, la mort est régie par l’augure. Une cérémonie plus ou moins fastueuse est organisée tous les soir par le Passeur, un mage mortuaire désigné par la ville pour une durée de huit ans. Les corps sont disposés devant des niches où l’on pose une gemme. La cérémonie détacherait l'esprit du corps pour le lier à la gemme que la famille conservera. Le choix de la gemme dépend de l'augure de naissance du défunt ou, à défaut, du jour de sa mort. Le corps est ensuite détruit magiquement. Une fois la cérémonie passée, un cadavre est considéré comme “vide” et dénué de tout intérêt ou charge affective.\n\n## Coutumes vestimentaires\n\nOnyr est sans conteste la cité à la mode la plus opulente. Les vêtements bouffants et flottants, toges, capes et habits longs sont les plus portés. Il est de coutume de rehausser ses vêtements de broderies, dentelles, perles, lacets colorés, boutons et rubans. Les couleurs sont généralement vives, mais un citoyen onyrien porte rarement plus de trois couleurs. Les utilisateurs de magie accordent bien sûr leurs atours à leurs Sphères. Les bijoux sont omniprésents et comportent beaucoup de cristaux multicolores.\n\n",
+      "society": "## Population humaine\n\nLa cité de Nenya compte un peu plus de 90 000 habitants. La proportion de citoyens y avoisine les 80%. La population est très liée aux castes et peu de serviteurs sont nécessaires, vu l'usage intensif de la magie. Si les trois-quarts de la population vivent de la magie, on estime que seul un cinquième de la population est réellement composée de mages. Le reste est forme d'une foule d'artisans et de professions complémentaires qui fournissent aux mages tous ce dont ils ont besoin. La mentalité onyrienne est réfléchie, optimiste et inventive.\n\n## Population draconique\n\nUn demi-millier de dragons seulement vit à Onyr, mais nombreux sont ceux qui y font de brèves apparition. Il ne se passe pas un jour sans qu'un ailé vienne à la cité. Leur population peut atteindre alors douze à treize cents membres. Un tiers des résidents sont des chimères et un tiers sont des Dragons des Vents. Le tiers restant fluctue en fonction des saisons et des localisations, mais les Dragons du Métal et des Océans ont souvent parmi les plus représentés.\n\n## Les guildes\n\nLes guildes, indépendantes du pouvoir politique, constituent la majorité des organisations sociales d’Onyr. Elles se focalisent souvent autour d’un idéal académique mais certaines se consacrent à l'influence politique ou au commerce.\n\n",
+      "politics": "Le pouvoir légal de la cité est entre les mains du Seigneur Chimère, désigné par Nenya elle-même, et qui gouverne avec l'aval des Maîtres Élémentalistes. Le Seigneur Chimère est en charge de la loi, des impôts, de la défense et de la diplomatie. Il ne gère ni l'éducation ni l'aménagement de la cité, qui sont à la charge de la Caste des Mages. Le Seigneur Chimère est théoriquement indépendant, mais l'aval des Maîtres est incontournable.\n\nLe Seigneur Chimère actuel est Nathiaël. C'est un puissant Archi Mage, réputé pour sa maîtrise de la Sorcellerie et des Portails. Il est d'un naturel mystérieux, créatif et artiste, ce qui fait de lui un gouvemeur inhabituel. Sa grande force réside dans sa connaissance des hommes et de leurs aspirations. Il est en place depuis dix ans et dispose d'une vitalité étonnante.\n\n## Politique extérieure de la cité\n\nEn tant que capitale de la Pomyrie, Onyr tend à réagir fermement contre les incursions Zûl, jouant de son statut de Cité Draconique (par respect, les Zûls n'attaquent en général pas en hiver). Elle dirige un effort de guerre contre les forces de Kali qui tenteraient de franchir les montagnes et dresse un cordon magique entre Solor et le reste du pays. Ses rapports avec les Terres Galyr sont bons et le commerce entre les deux nations est intense.\n\nLe reste de l'année, Onyr cultive une autarcie politique quelle que soit son implantation. Elle n'a d'ailleurs pas grand compte à rendre sur l'île d’Ayendorl ou dans la Forêt Mère, car ces terres sont quasiment sans contrôle. Ses rares rapports avec Témeth sont excellents, en raison de l'entente des deux maîtresses des cités. Lors de l'implantation sur la presqu'ile de Jasp, les rapports avec les Marches Alyzées sont plus variables car Onyr mène une politique indépendante depuis des siècles. On dit que Jard considère cette ville comme indépendante, mais brûlerait de pouvoir la rallier à sa politique durant son passage d'automne.\n\n",
+      "judicial": "Les lois d'Onyr sont appliquées avec d'importants moyens et une fermeté réfléchie. Les troubles de l'ordre public sont souvent réglés par magie et il n'est pas rare de voir des citoyens aider spontanément les vigiles de la cité. Les sanctions privilégient l'exil, la déchéance sociale et les altérations mentales magiques.\n\nIl est à noter que des lois de la cité interdisent de rendre fixes des marches ou de créer des escaliers d'Ombre.\n\n",
+      "economy": "Onyr est une cité riche. Sa population use énormément de la magie afin de subvenir à ses besoins. De nombreux objets mineurs existent dans la vie courante, ce qui réduit les besoins. Onyr exporte des objets enchantés de toutes natures, des écrits ésotériques et un savoir-faire incomparable. Les services des mages sont chers et entraînent des flux financiers conséquents. Onyr importe des tissus, de la nourriture et des matières premières (gemmes, papier, métaux rares…) qui entrent dans un vaste commerce de Clés de sorts. La majorité des commerçants de la cité ont recours à la magie des Portails, comme une part importante de la population. Les importations sont faibles, car les gens vont plus souvent chercher directement ce qu'il leur faut plutôt que de le faire importer physiquement.\n\n",
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Les tours inférieures",
+    "uuid": "57d0eb66-feae-47ef-900f-d873cabf4490",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ces tours sont les premières accessibles lorsqu'on arrive par la terre. Elles forment le “bas” de la ville et sont dévolues au stockage des marchandises, au logement des visiteurs et au commerce de masse. Les passerelles y sont larges et fonctionnelles, conçues pour les vastes mouvements. L'architecture est massive et solide et les tours de ce secteur ont souvent un diamètre important et des hauteurs réduites.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Les tours de Szyl",
+    "uuid": "6c1755ed-d528-4bf5-b60a-a17472a40ae0",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ces tours regroupent les habitations et guildes des Mages de l'Air. Elles sont situées à la périphérie de la cité et forment une couronne médiane. Ce quartier est très animé en raison de la forte proportion de voyageurs qui préfèrent y loger afin de garder un œil sur l'horizon. Les tours sont fines et gracieuses, souvent riches en balcons et fenêtres, faites le plus souvent de pierre recouverte de mosaïques claires.\n\nC'est dans ce quartier que se trouvent le plus grand nombre de tavernes et de boutiques exotiques.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Les Doigts de Brorne",
+    "uuid": "b1f628de-c7cf-4399-8162-4c39a11690f3",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Massifs et sobres, ces imposants donjons carrés sont présents un peu partout dans la Cité. Tels des falaises taillées, ils donnent l'impression d'être de véritables points d'ancrage pour les tours avoisinantes, irrévocablement plus fluettes. Il n'en est pourtant rien, car elles flottent comme les autres. Ces tours sont souvent prisées par les nouveaux résidents, ces habitats solides et rassurants permettant de s'habituer peu à peu à vivre dans des tours aériennes. On trouve ici de nombreux artisans, appréciant l'ambiance des bons ateliers aux murs épais.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "L'Écheveau d'acier",
+    "uuid": "a6faad99-db1e-4bf7-86db-bdd9836bb2ed",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'Écheveau est un réseau tentaculaire de tours métalliques baroques aux formes chargés de dentelle de fer. Comme coulées dans un seul bloc d’acier sombre, elles dressent vers le haut et le bas ume véritable forêt de pointes, aiguillons et autres statues hérissées de piquants. On trouve dans ces édifices une population guerrière, violente et virile. Les guerriers comme certains artisans et protecteurs apprécient l'ambiance martiale qui y règne. Le nom de ce quartier vient du fait que chacune de ces tours communique directement avec ses jumelles par des arcs-boutants métalliques surchargés de frises acérées et sculptures déchiquetées. Pour ceux qui prennent le risque de traverser ces tours, l'Écheveau est certainement le moyen le plus rapide de circuler à Onyr.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "La Ruche",
+    "uuid": "70576850-9321-4a2e-9c36-c0e6caf5fd17",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce quartier est situé entre les tours inférieures et le Temple. Il s'agit de la partie la plus commerçante de la ville. Ici, tout s'achète et tout se vend. De jour comme de nuit, une foule bigarrée se presse autour et dans ces tours bruissantes qui forment le poumon économique d'Onyr. Les balcons sont larges et les tours sont souvent déformées par d'épais étais qui jaillissent de leurs flancs afin de soutenir une plate forme particulièrement imposante. Les couleurs de ce quartier vont du jaune au marron, avec une grande proportion de tours octogonales.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Le Temple de la Magie",
+    "uuid": "ea81a4c0-5ecc-4ff9-a3b9-e87e35566abb",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Situé dans le centre supérieur de la cité, cet ensemble de plusieurs dizaines de tours est une cité dans la cité. Relié aux tours populaires par de longues passerelles, il donne l'impression de disposer d'une enceinte vide le coupant du reste de la ville. Ses tours sont les plus belles de la cité, comme si chaque élément avait été sculpté brut. Les Tours de Kroryn dressent les formes déchiquetées de leurs murs de lave mouvante vers les cascades ondulantes des murs des Tours d'Ozyr. Le vent porte la senteur des espèces multiples qui forment les Tours végétales d'Heyra… Où que se porte le regard, une matière élémentaire est taillée, sculptée ou tissée pour donner des spires magnifiques.\n\nDans le secret de ces murs, les mages les plus talentueux enseignent, conçoivent et explorent les secrets de Nenya. Chaque Sphère dispose de bâtiments et d'une organisation semi autonome, mais dépendant toutes de leurs trois Maîtres Élémentalistes. Accéder au Temple est facile, mais le mystère général et l'absence totale de guides font de son exploration une véritable aventure.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Temple d'Ozyr",
+    "uuid": "bf90e0d5-1f3c-4249-b756-2673c3d9b95c",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La Tour d'Ozyr est une tour asymétrique aux murs d’eau, située dans la partie supérieure nord de la cité. On y trouve de nombreuses salles inondées, séparées par des murs de force de pièces absolument sèches.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Temple de Kezyr",
+    "uuid": "1e9cc799-9adb-43d6-9195-3f6f3a3af9f1",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La Tour du Dragon du Métal est faite de dizaines de matières différentes, assemblées en une mosaïque de textures. Des sculptures, vitraux, frises, et tentures le décorent, en faisant le plus riche de tous les Temples.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Temple d'Heyra",
+    "uuid": "3edc14d0-04ff-442a-b3ed-8e7fa70506a5",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Taillée dans le tronc d’un arbre colossal, cette écharde de bois couverte de lierre et de chèvrefeuille offre un havre naturel dans cet environnement chaotique. Ce bâtiment est une immense entité vivante qui se dresse au sommet de la cité, laissant pendre des dizaines de mètres de lianes fleuries entre les tours en contrebas.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Temple de Szyl",
+    "uuid": "46fc1fba-d7ab-4a00-9b98-20b346053ac5",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Son Temple est formée de sept tours élancées de tailles irrégulières, reliées entre elles par des centaines de fils d’argent. On circule à la manière d'un funambule entre ces tours de dentelle où des dizaines de corniches et terrasses sont à ciel ouvert.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Le repaire de Nenya",
+    "uuid": "aa2232b8-03e0-4775-8fad-f0b4d27d3484",
+    "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "À l’époque de la fondation des Cité Draconiques, Nenya fut la plus difficile à trouver en raison de sa mobilité constante. Incapable de se fixer, elle dut se résoudre à constater les capacités de ces mages obstinés qui réussissait à la suivre. Acceptant de les former et de protéger leur assemblage de tours ensorcelées, elle fut séduite par la débrouillardise de ces hommes qui l’avaient pourchassée. Elle décida alors de modifier la configuration des tours et de se créer un repaire au cœur de la Cité de la Magie.\n\nEntre les tours du Temple de la Magie flotte une bulle lumineuse irisée qui protège l’antre de Nenya. On y distingue des formes fugaces, des mouvements vaporeux ou liquides, comme si une épaisse tempête évoluait au ralenti à l’intérieur. Aucune passerelle ne mène à ce cocon d’énergie. Ceux qui désirent s’y rendre doivent s’en donner les moyens. On dit que l’intérieur est une gigantesque déformation de la réalité, une zone brumeuse et tourbillonnaute où Nenya se plaît à perdre les impudents ou les visiteurs inintéressants. Certains disent y avoir rêvé ou volé en compagnie de la Chimère, mais toutes ces versions sont fragmentaires et s’effilochent dans les mémoires.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "L'île d'Ayendorl",
+    "uuid": "077c986e-8308-4083-8d6a-97c624743204",
+    "parent_id": "principauteDeMarne",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Entre le continent et la Principauté de Marne, cet îlot rocheux dresse ses falaises comme un défi aux intempéries. Pourvue de deux criques encaissées, Ayendorl abrite le port d’Onyr, entièrement fait de bois, actif durant le printemps. Des escaliers et des sentiers pavés permettent d’accéder à un plateau surplombant la mer de plus de trente mètres. À cet endroit, le sol est érodé par les intempéries et, en l'absence d’Onyr, aucune habitation solide n’y résiste longtemps. Seule une borne se dresse face à la mer. Lorsqu'Onyr est présente, les transbordeurs investissent le plateau et effectuent des noria entre la cité, le plateau et le port.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Le fleuve Lom",
+    "uuid": "8e1c99c8-8214-43e0-a232-3c8f11fa7127",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au coeur de la Forêt Mère, le fleuve serpente comme un ruban, perpétuellement couvert d’une couche de mousse et de nénuphars. Lorsqu'Onyr flotte au-dessus, quelques rares voyageurs guident des caravanes au travers de la forêt en suivant un ancien sentier. Ils ouvrent alors une piste saisonnière, à grand renfort de magie et d’esclaves. Un ponton moussu accueille les rares barges qui se risquent à remonter le fleuve. Il est réputé pour être plus dangereux encore que la voie terrestre, bien que plus direct. Cette implantation est de loin la plus solitaire, et les rares visiteurs y viennent souvent par magie.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "La presqu'île de Jasp",
+    "uuid": "9485ae05-973f-4203-ab08-dccbe55ddc68",
+    "parent_id": "marchesAlyzees",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'avancée de la presqu'île dans la Tourmente est une zone marécageuse, parsemée de vastes plaques de sel étincelant. Elle est le lieu d’une activité surnaturelle chaotique ponctuée d’éruptions magiques aux effets cataclysmiques ou insignifiants. Le marécage semble connaître une période de calme lors de l’installation d’Onyr, ce qui permet aux villages de pêcheurs côtiers de procéder à l’exploitation des veines de sel.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]

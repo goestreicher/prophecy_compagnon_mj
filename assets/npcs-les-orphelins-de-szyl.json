@@ -239,7 +239,7 @@
       "type": "officiel",
       "name": "Les Orphelins de Szyl"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
       "levels": [
@@ -469,7 +469,7 @@
       "type": "officiel",
       "name": "Les Orphelins de Szyl"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": false,
     "injuries": {
       "levels": [
@@ -724,7 +724,7 @@
       "type": "officiel",
       "name": "Les Orphelins de Szyl"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
       "levels": [
@@ -936,7 +936,7 @@
       "type": "officiel",
       "name": "Les Orphelins de Szyl"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
       "levels": [
@@ -1150,7 +1150,7 @@
       "type": "officiel",
       "name": "Les Orphelins de Szyl"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": false,
     "injuries": {
       "levels": [
@@ -1430,7 +1430,7 @@
       "type": "officiel",
       "name": "Les Orphelins de Szyl"
     },
-    "unique": false,
+    "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
       "levels": [
