@@ -1,0 +1,219 @@
+[
+  {
+    "equiped": [],
+    "uuid": "3e78e4a3-2785-475e-99be-5653d3305b6d",
+    "name": "Nakash",
+    "description": "Nakash est un gamin des rues d’Ankar. Orphelin, il a toujours tout mis en œuvre pour se débrouiller et survivre. Sa vie bascula lorsque Hymel Darmor, le gardien des clés de la nouvelle arène, le “recueillit” et le prit à son service. Recueillir est un bien grand mot, car Nakash s’était fait attraper au cours d’une de ces rafles d’enfants des rues qui servent à fournir en chair fraîche les animaux des arènes. Toujours est-il que par un heureux concours de circonstances, Hymel Darmor le prit sous sa protection et lui confia des tâches de nettoyage. Au fil des mois, l’orphelin sentait que sa vraie place n’était pas là, qu’un autre destin l’attendait. De jour en jour, il fourbissait son plan de fuite loin d’Ankar lorsque, par une nuit claire, une Étoile attira son attention et lui parla. Lui, le gamin des rues, était voué à un grand avenir à condition de, dès maintenant, montrer sa valeur. Qu'il fut réel ou rêvé de toutes pièces, ce message modifia sa vie.\n\nDès cette nuit-là, il développa un réseau au sein de l’arène afin de permettre l’évasion des pauvres bougres - orphelins, esclaves, etc. - qui attendaient de finir leurs jours sous les lames des gladiateurs. Cette initiative interpella Nargyss, un dragon des cités qui, dans un premier temps, aida le jeune inconscient à tromper la vigilance des gardes de Kroryn. Après plusieurs mois d’activité et sentant le vent tourner, Nargyss prit l'initiative de se révéler à Nakash. Le Lien ainst établi permit au fils de Khy d’emporter son jeune protégé loin des arènes avant qu'il ne soit trop tard. Il le conduisit donc à Yris et mit en œuvre toute sa science du verbe pour le faire admettre dans la caste des commerçants. Depuis cette fuite, de jeunes orphelins continuent de disparaître dans les rues d’Ankar, alors que Nakash est devenu l'un des mendiants les plus célèbres de la capitale. Toujours souriant, et quelque peu manipulateur, il ne rechigne jamais à donner un coup de main de-ci de-là et s'est fait une fameuse réputation au sein de la population. Une réputation peut-être devenue encombrante, car la rumeur affirme que des mercenaires mandatés ar Humal Darmor recherchent le jeune “traître”.\n\nNakash est plutôt résistant pour sa taille et son âge. Toujours couvert de poussière et de saletés, il a franchement mauvaise allure. De plus, émane de lui une odeur fétide. Malgré toutes ces “qualités”, il est adoré par les citoyens d'Yris qui l'ont surnommé “Nakash-les-bons-coups”\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 5,
+      "intelligence": 3,
+      "coordination": 7,
+      "presence": 6,
+      "resistance": 6,
+      "volonte": 5,
+      "perception": 6,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 4,
+      "mental": 1,
+      "manuel": 4,
+      "social": 5
+    },
+    "skills": [
+      {
+        "skill": "armesTranchantes",
+        "value": 3
+      },
+      {
+        "skill": "acrobatie",
+        "value": 5
+      },
+      {
+        "skill": "discretion",
+        "value": 8
+      },
+      {
+        "skill": "esquive",
+        "value": 9
+      },
+      {
+        "skill": "premiersSoins",
+        "value": 2
+      },
+      {
+        "skill": "deverrouillage",
+        "value": 6
+      },
+      {
+        "skill": "jongler",
+        "value": 4
+      },
+      {
+        "skill": "faireLesPoches",
+        "value": 5
+      },
+      {
+        "skill": "baratin",
+        "value": 6
+      },
+      {
+        "skill": "marchandage",
+        "value": 6
+      },
+      {
+        "skill": "psychologie",
+        "value": 8
+      },
+      {
+        "skill": "vieEnCite",
+        "value": 8
+      },
+      {
+        "skill": "seduction",
+        "value": 7
+      }
+    ],
+    "equipment": [
+      {
+        "type": "weapon:dague",
+        "uuid": "a70bcaef-6f05-4f12-be2f-451162b5db0f"
+      }
+    ],
+    "magic_spells": {},
+    "extra_magic_pool": 0,
+    "caste": "commercant",
+    "caste_status": "apprenti",
+    "career": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "3f414562-cea5-4dfd-ac2d-0570ff889f11"
+    },
+    "luck": 6,
+    "proficiency": 0,
+    "renown": 0,
+    "interdicts": [
+      "loiDuCoeur"
+    ],
+    "caste_privileges": [
+      {
+        "privilege": "bonneFortune",
+        "description": null
+      },
+      {
+        "privilege": "notorieteCommercant",
+        "description": "Yris"
+      },
+      {
+        "privilege": "psychologie",
+        "description": null
+      }
+    ],
+    "disadvantages": [
+      {
+        "disadvantage": "curiosite",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "disadvantage": "phobie",
+        "cost": 3,
+        "details": "Peur du noir"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "santeDeFer",
+        "cost": 4,
+        "details": ""
+      },
+      {
+        "advantage": "empathieNaturelle",
+        "cost": 4,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 2,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "cite",
+      "dragon": "Nargyss",
+      "progress": "premierNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeKhy"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "unique": false,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "levels": [
+        {
+          "type": "injured",
+          "start": 0,
+          "end": 40,
+          "capacity": 4
+        },
+        {
+          "type": "death",
+          "start": 40,
+          "end": -1,
+          "capacity": 1
+        }
+      ],
+      "injuries": {}
+    },
+    "magic_skills": {
+      "instinctive": 0,
+      "invocatoire": 0,
+      "sorcellerie": 0
+    },
+    "magic_spheres": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    },
+    "magic_sphere_pools": {
+      "pierre": 0,
+      "feu": 0,
+      "oceans": 0,
+      "metal": 0,
+      "nature": 0,
+      "reves": 0,
+      "cite": 0,
+      "vents": 0,
+      "ombre": 0
+    }
+  }
+]

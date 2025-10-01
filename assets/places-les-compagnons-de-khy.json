@@ -1,0 +1,652 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Khy, la Cité Blanche",
+    "uuid": "e0a74f8c-2335-4d7f-bcda-945b56f81763",
+    "parent_id": "empireNesora",
+    "type": "cite",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Même si Khy prend toujours la forme d’une cité, il ne se cantonne pas toujours à une taille, une architecture ou un genre défini. Lorsque Khy devient cité, il devient une coquille vide, une ville désertée qui n'attend que des habitants pour s’égayer des cris des enfants, des chants des bardes et de clameurs des marchés.\n\nToutes sortes de bâtiments y existent, parfois récents, parfois anciens. Il y a des auberges, des écuries, des marchés, des palais, des maisons et des tours. Tous sont vides. Pas d’habitant, pas de mobilier, rien que les éléments d’un décor prêt à être amené à la vie.\n\nDécouvrir la Cité Blanche est une véritable quête en soi. De nombreux aventuriers ont vainement tenté de s’approcher de cette cité idéale et plus d’un est mort sans avoir pu concrétiser ce rêve de toute une vie. Khy garde jalousement l’accès à sa cité et les résidents qu’il y accepte sont en général loin de constituer l’élite draconique de Kor. Bien au contraire, Khy n’apprécie pas réellement que des fanatiques puissent venir s'installer dans sa cité. Ils amènent toujours avec eux le lourd fardeau des Édits, des Lois, du respect des ailés et un obscurantisme religieux qui exaspère Khy. Il préfère laisser les hommes construire eux-mêmes un modèle éphémère de société, selon leur propre volonté, plutôt que d’avoir à s’engoncer dans un carcan draconique que Khy considère sans aménité.\n\nPour parvenir à la cité de Khy, un personnage doit entamer une quête souvent méticuleuse. Même si on lui indique précisément l'endroit, la volonté de Khy est si forte qu’il pourrait bien passer à quelques kilomètres du lieu sans jamais réussir à retrouver son chemin.\n\nLursque Khy devient cité, il fait apparaître en son sein divers types de bêtiments, de structures et de styles architecturaux. Certains éléments sont presque toujours présents, sous une forme ou un autre, d'autres n'étant que rarement inclus dans l'organisation de la Cité Blanche. Lorsque Khy s'incarne, il appartient au meneur de jeu de définir quels sont ceux que le Grand Dragon des Cités juge bon de créer et ceux qu'il ignore.\n\n",
+      "history": "Depuis la nuit des temps les Dragons ont été l'incarnation d'un élément et d’une force. Selon leur volonté, ils ont la possibilité de prendre leur forme élémentaire, une forme terrifiante et titanesque, qui n'a alors plus rien du Dragon mais reflète le fait qu'il soit l'élément et que sans lui, cet élément n'existerait pas, dénué de sens. Khy fut créé par Kezyr sans élément. Convaincu de sa maîtrise, le Dragon du Métal pensait que la relation à l'élément était spontanée et qu’il en serait de même pour son fils. Khy n’eut pas cette chance et conserva durant des siècles sa forme de Dragon, souffrant de cette différence avec ses frères. Lorsqu'il fit créer l'Homme, Khy trouva son élément mais il était encore loin d’avoir complètement assumé cette part de lui-même: il fallut la période la plus sombre des guerres fratricides pour qu'il parvienne enfin à trouver sa forme élémentaire. En ces temps de chaos et de violence, les Immortels qu’il avait réussi à isoler ne recherchaient qu’une chose : la certitude que, quelque part dans le monde, il y aurait toujours un lieu où aller, un abri où se réfugier. Khy comprit alors. Lui qui avait créé Khytann pour tous les Immortels, qui avait fondé Yris pour sauver ses protégés, il devait devenir la vivante incarnation du refuge, de la sécurité.\n\nEn un mot, un foyer, une cité.\n\nKhy se força alors à oublier sa nature, ainsi que son environnement, et en appela à son essence profonde, son élément et sa volonté. Peu à peu il sentit son corps devenir inconstant et se réduire à une énergie brute. Il plia sa volonté et recomposa cette énergie de façon à lui donner la forme de la plus parfaite cité dont les hommes pourraient rêver.\n\nAinsi naquit Khy, une ville éphémère venue du corps de Khy lui-même. Une cité intemporelle, mouvante, qui pourrait accueillir les hommes pour un moment ou pour des années. Khy n’a jamais voulu régulariser ses incarnations. Lorsqu'il en ressent le besoin, il s’installe pour un moment dans une plaine et attend les hommes. Nul ne s'étonne plus de voir à un endroit précis une cité qui ne s’y trouvait pas quelques jours auparavant. Les hommes y viennent et se réjouissent simplement de pouvoir y vivre aux côtés de leur Dragon tutélaire.\n\n",
+      "ethnology": "## Le respect du Dragon\n\nPour les habitants de la Cité Blanche, le fait de résider à l’intérieur d’un Dragon n’est plus guère dérangeant. En fait, il semble que Khy laisse régner en sa cité une douce ambiance accueillante qui brise la glace et évite les interrogations des résidents. En retour, les hommes gardent toujours à l’esprit le fait que leur logis, les rues, les arbres des parcs et tout ce qui les entoure fait partie d’un Dragon.\n\nIl ne leur vient donc pas à l’idée de modifier la structure d’un bâtiment, d’en détruire un ou d’en élever un autre. Si un bâtiment est nécessaire, Khy le saura et le créera si ce besoin est justifié. Les résidents ne s’étonnent donc pas excessivement de l'apparition matinale d’un bâtiment qui n’était pas là la veille. Ces changements sont très rares et surviennent toujours de nuit. Personne n'a jamais réussi à les voir, les regards étant toujours dirigés vers d’autres lieux que celui où le bâtiment apparaît.\n\n## Le Départ\n\nLorsque Khy décide de partir, il le fait sentir quelques heures à l’avance - jamais plus. Il se produit alors dans la cité un nombre incroyable de petits signes qui ne laissent pas de doute sur les intentions du Dragon. Les fontaines cessent de couler en même temps, les feux de cheminée perdent soudain de leur intensité, les oiseaux migrent spontanément vers d’autres horizons, les chevaux se découvrent une nouvelle vigueur et dans le cœur de tous les hommes éclôt la sensation persistante que leur séjour s'achève. Tous les résidents emballent alors leurs affaires et prennent là route vers d’autres cités. Au fur et à mesure des heures, les bâtiments semblent se fondre dans le sol et disparaissent les uns après les autres. Nul n’a jamais vu Khy partir, ce dernier prenant toujours discrètement forme humaine pour se mêler aux départs. Personne n’a jamais pu résister à ce sentiment impérieux de départ et rien ne subsiste jamais sur la plaine qui puisse laisser à penser que quelques heures plus tôt se dressait là une majestueuse cité.\n\n## Coutumes vestimentaires\n\nIl n’existe aucune coutume strictement définie à Khy. Dans les faits, il est généralement bien vu d’arborer les insignes de certaines castes et plutôt rare d’en porter certains autres. Les castes prestigieuses et fièrement déclarées à Khy sont les commerçants, les voyageurs et les artisans. Les combattants et les érudits sont parfois assez bien intégrés mais tout dépend de leur Tendance. Les Prodiges et les protecteurs sont rares et porter leurs attributs usuels est presque un signe de mauvais goût. Mis à part ces considérations sur les insignes de caste, aucun code ne prévaut à Khy.\n\n## La vie et la mort\n\nRares et prestigieuses, les naissances sont considérées comme de bon augure et l'enfant prend une place centrale dans la famille, même s’il est le cadet d’une importante fratrie. Il est dit que les enfants nés dans le giron de Khy sont promis à un avenir glorieux - et que le Dragon veille sur eux à chaque instant. Il est tatoué d’une rune de l’homme, souvent dans le dos ou sur les mains. Les tatoueurs pratiquent toujours gratuitement la réalisation de cet ouvrage, honorant à leur manière le Dragon d’avoir abrité cette naissance. Les tatoueurs qui exécutent cette marque de naissance se plongent dans une transe hallucinée en inhalant des herbes rituelles qui les mettent, dit-on, en relation avec l’esprit de Khy, lequel guide alors leur main.\n\nMourir dans la Cité Blanche est considéré par les résidents comme une fin heureuse. Ils pensent que l’esprit du Mort va rejoindre celui de Khy et qu’il sera à jamais vivant aux côtés du Dragon. Il est courant que les mourants soient la proie d'hallucinations, prétendant qu’un homme barbu aux yeux vairons les regarde de loin alors que les témoins affirment n'avoir jamais vu cet être. Cette légende renforce encore la croyance que Khy viendrait pour guider les âmes des morts au-delà de leur décès. Les corps des défunts sont alors déposés dans un cimetière, présent à chaque nouvelle incarnation. Le corps est mis en terre et une plaquette d'argile rappelle son nom et la date de sa mort. Assez bizarrement, lors du Départ, ces tombes disparaissent et nul n'a jamais su si les corps étaient emportés par Khy ou restaient inhumés dans la plaine après son départ.\n\n",
+      "society": "## Population humaine\n\nLa Cité Blanche peut accueillir entre cinq cent et vingt mille personnes. Cela peut paraître peu au regard des autres cités draconiques, mais Khy ne prend jamais sa forme de cité pour une très longue période. Au mieux, les érudits ont pu retrouver des écrits relatant l’existence de la Cité Blanche durant trois ans, alors qu’elle était située à trois jours de marche au sud-ouest de Férune. Les habitants de la ville sont pour la majorité des gens qui se rendent bien compte que leur séjour sera bref et qu’ils ne construiront pas leur vie ici.\n\n## Population draconique\n\nLes dragons sont extrêmement rares au sein de la cité de Khy et ce pour deux raisons. La première repose sur le fait que les dragons semblent incapables de trouver Khy lorsqu’il prend sa forme élémentaire. Ils se lancent toujours sur de fausses pistes et ne se présentent au bon endroit que lorsque Khy est déjà parti.\n\nDe plus, même s’ils parviennent jusqu’à elle, la Cité Blanche est toujours une cité radicalement conçue pour les humains et il n’existe jamais la moindre installation à la taille des dragons sous leur forme draconique. Les portes de la cité sont trop petites, aucun espace dégagé où se poser et ils sont systématiquement contraints à prendre forme humaine. Seuls les dragons des cités semblent insensibles à tous ces désagréments.\n\nCeux qui le désirent arrivent toujours à retrouver la trace de leur ancêtre et la conformation de la cité ne leur pose évidement aucun problème. De ce fait, les quelques dragons qui se trouvent à la Cité Blanche sont essentiellement des dragons des cités, mais personne n’en est jamais vraiment conscient, car ils cachent toujours leur nature. Les autres dragons sont souvent accompagnés de leurs Élus qui ont réussi à les emmener jusqu’à Khy - mais une fois entrés en la cité les dragons se plaignent toujours d’atmosphère hostile et ne supportent pas d’y séjourner plus de quelques jours.\n\n",
+      "politics": "Il n'existe aucune sturcture politique fix au sein de la Cité Blanche, les résidents reconstruisant toujours un système lors de leur arrivée. Le régime, en revanche, est toujours le même : une démocratie totale et complète. Unique en son genre, ce régime est totalement indépendant des castes, de la noblesse ou de toute autre étiquette. Décrié par les fidèles des Grands Dragons, il donne aux hommes l'égalité devant la quête du pouvoir, qu'ils soient citoyens ou serviteurs. Les systèmes d'élection sont divers, proportionnels, partiels ou par fraction et observent une régularité variable comptée en mois ou en semaines, mais ils débouchent toujours sur une assemblée représentative du peuple. Sénat, conseil, assemblée ou autre − le nom change, mais pas les attirbutions. Les “élus” composent les lois, lèvent les impôts, assurent l'éducation et la sécurité − le terme “élus”, utilisé pour désigner ces représentants, prête d'ailleurs à confusion… Nul dragon n'a jamais fait partie des élus du peuple, souhaitant toujours observer comment les hommes arrivaient à créer de leur propre chef un système politique nouveau à partir de rien.\n\n## Politique extérieure de la cité\n\nÀ chaque fois que Khy s'incarne, la cité devient une exception aux lois en vigueur dans la région. La notion de fief ou de territoire n'existe plus, la ville étant une terre draconique. Khy entetient des relations brèves et diffuses avec ses voisins temporaires. Elles sont souvent basées sur la cordialité et une certaine indifférence par rapport aux problèmes locaux. Khy passe, sans réellement tisser de relation durable avec le pays d'accueil. Khy n'a jamais été en proie à la guerre ou publiquement dénigrée pour son exstence. Même dans les régions où des Dragons hostiles à Khy ont une large influuence, il a toujours régné un certain respect mêlé de crainte pour celui qui a connu tant de secrets et qui reste une sorte mystère ambigu.\n\n",
+      "judicial": "L'application de la loi dépend principalement de la ténacité des élus qui en sont responsables. Il n'y a jamais de constante ou de code pénal fixe, pas plus que de milice régulière. Tout est redéfini à chaque incarnation. En général, la milice se compose de citoyens soucieux de la sécurité générale et de quelques combattants payés par les autorités − les rares protecteurs présents sont souvent jeunes et inexpérimentés. Cela conduit souvent à une certaine fraîcheur dans le système judiciaire, dont certains abusent parfois. Khy n'est jamais le théâtre d'actes criminels récurrents. L'on dit que Khy surveille ses résidents et que les pires crimes sont souvent impossibles à commettre sous le regard d'un Dragon.\n\n",
+      "economy": "L'économie est toujours florissante, que ce soit à cause du nombre important de commerçants qui décident toujours de s'établir à la Cité Blanche, lorsqu'ils la trouvent ou par une sorte d'aura bénéfique que Khy laisse planer sur la ville. Les sources de revenus varient toujours avec la localisation, mais il existe toujours une activité artisanale importante, liée aux matières premières de l'endroit, ainsi qu'une plaque tournante de divers trafics, une activité agricole et une zone d'échange de connaissances assez fructueuse.\n\n",
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Lieux très courants",
+    "uuid": "49f2aad6-e271-4f73-98f6-adc102a4a0a8",
+    "parent_id": "e0a74f8c-2335-4d7f-bcda-945b56f81763",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "original",
+      "name": "LOCAL_CREATED"
+    },
+    "name": "Port",
+    "uuid": "0e648435-d5b6-40ab-bd5f-5858cdce9405",
+    "parent_id": "49f2aad6-e271-4f73-98f6-adc102a4a0a8",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Lorsque Khy s'agrément d'un port, il y crée souvent de nombreuses installations évoluées qui font le bonheur des navigateurs de passage. Le port de la Cité Blanche est souvent dédié à la pêche côtière et il existe souvent une place à la criée pour vendre le poisson.\n\nIl sert aussi de lieu de halte pour les rares caboteurs qui longent les rivages de Kor. Ses larges quais permettent un débarquement facile et il n'est pas rare de voir des péniches décharger plusieurs tonnes de marchandise sous la direction de commerçants exultant de joie à l'idée de marchander à la Cité Blanche. Le port comporte souvent des installations étranges qui semblent résulter de connaissances interdites, comme des bassins de radoub aux étranges vannes de remplissage et de vidange ou encore ses phares aux curieuses vitres épaisses qui renvoient à des lieues des lueurs vives.\n\nDe telles constructions sont très courantes aux abords de fleuves et des lacs et courantes en bord de mer.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Lavoirs",
+    "uuid": "1f51073c-c943-41a7-927d-c5b9e488b0c9",
+    "parent_id": "49f2aad6-e271-4f73-98f6-adc102a4a0a8",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Lieux conviviaux, toujours occups de nombreuses femmes discutant et travaillant à la fois, les lavoirs sont les endroit de la Cité Blanche où l'on rencontre le plus d'enfants, du fait de la présence de leurs mères. L'eau y est toujours renouvelée par d'astucieux systèmes de tuyaux, parfois amenée par aqueducs dans les sites montagneux.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Le marché",
+    "uuid": "332d6e13-163f-48b7-8eaf-f837780a619a",
+    "parent_id": "49f2aad6-e271-4f73-98f6-adc102a4a0a8",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Parfois répartis sur plusieurs places ou regroupes rur une large esplanade, Khy est presque toujours équipée de lieux de commerce larges et faciles d'accès afin de permettre à tous de venir commercer.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Les tours des Étoiles",
+    "uuid": "8b29cab8-9112-466c-b55a-e5fe74781f84",
+    "parent_id": "49f2aad6-e271-4f73-98f6-adc102a4a0a8",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Souvent construites en corolles, ces tours sont généralement vides et traversées par un solide escalier menant à la plate-forme d'observation. Chaque nuit, des érudits viennent s'y isoler des lumières de la ville pour pouvoir pratiquer l'astronomie à l'aide d'instruments parfois très évolués, comme des lunettes téléscopiques ou des astrolabes. Qu'ils en aient l'autorisation ou non, ils ont ici le droit d'en user à leur guise.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Puits",
+    "uuid": "cc30948a-7b11-42f9-b68c-08d1249c3416",
+    "parent_id": "49f2aad6-e271-4f73-98f6-adc102a4a0a8",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ces puits sont actionnés par des roues à engrenages, mues elles-mêmes par des roues que font tourner des animaux ou par des sortes de voiles éoliennes évitant aux hommes d'avoir à haler des seaux pesants.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "L'académie du savoir",
+    "uuid": "dee2edaa-e545-4f09-9c8f-eac4b1a15c95",
+    "parent_id": "49f2aad6-e271-4f73-98f6-adc102a4a0a8",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ces bâtiments sont souvent de larges ensembles permettant à plusieurs groupes d'étudiants de venir profiter des connaissances d'autres résidents plus érudits. Tous les sujets sont abordés, depuis l'histoire jusqu'à la dplomatie, mais aussi les sciences interdites comme la mécanique, la médecine ou la chimie. Ils possèdent souvent de nombreuses entrées dérobées et il n'est pas rare que les maîtres de conférence y viennent masqués de peur d'avoir à subir les sanctions de l'Inquisition hors des murs de la Cité Blanche.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Auberges",
+    "uuid": "e972b50e-ae6a-4a3a-a3c3-933dbf5a4981",
+    "parent_id": "49f2aad6-e271-4f73-98f6-adc102a4a0a8",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Les auberges sont réparties un peu partout dans la Cité Blanche. Les aubergistes sont souvent des résidents qui choisissent d'exercer cette profession pour un temps et s'avèrent rarement des professionnels. Les prix sont modiques pour les services les plus divers, et une bonne partie d'entre elles sont gratuites, subventionnées par les autorités à partir des taxes légères que celles-ci prélèvent sur les transactions des marchés.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Lieux systématiques",
+    "uuid": "5862291f-1b28-4efe-8ce0-ab17c0dc153d",
+    "parent_id": "e0a74f8c-2335-4d7f-bcda-945b56f81763",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "L'amphithéâtre",
+    "uuid": "0815bb74-e4c7-4e56-b392-50f1b3195b87",
+    "parent_id": "5862291f-1b28-4efe-8ce0-ab17c0dc153d",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Souvent situé au centre de la cité, la fonction de ce bâtiment est d’abriter l’assemblée des élus de la ville. Il prend l’aspect d’un vaste hémicycle, parfois à ciel ouvert, parfois profondément enfoncé dans un bâtiment. Il compte parfois des dépendances pour les services qui seront liés à son fonctionnement, mais la seule partie constante est l’hémicycle, bien que le nombre de places assises y soit variable.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "La muraille",
+    "uuid": "7bb94bcf-3797-427a-91ff-d464dd97c28d",
+    "parent_id": "5862291f-1b28-4efe-8ce0-ab17c0dc153d",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La muraille est un des deux éléments qui apparaissent toujours dans la forme élémentaire de Khy. Elle est généralement formée d’une seule enceinte de pierre lisse, toujours claire, dont les blocs massifs sont imbriqués finement. Régulièrement, des contreforts renforcent le mur et s’achèvent parfois par des structures et tourelles qui permettent de placer des sentinelles à l’abri. À son faîte, un chemin de ronde large et protégé par une bordure solide permet d'effectuer des patrouilles de plusieurs hommes. Des sculptures sont placées à intervalles réguliers sur les murailles, représentant une tête de dragon ou un dragon entier, selon un style inimitable et très fin. Nul ne sait ce que représentent ces dragons, car leur aspect ne ressemble en rien à ceux que les hommes ont eu le loisir de contempler. Certains murmurent qu’il s'agirait là de l’ancien visage de Khy, celui qu’il a abandonné pour se faire homme.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Lieux courants",
+    "uuid": "684df23b-f3cd-4799-9c12-9ca92fb4a1ef",
+    "parent_id": "e0a74f8c-2335-4d7f-bcda-945b56f81763",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Postes de garde",
+    "uuid": "25036c9f-5ae4-4144-9d59-0a114ec92c9b",
+    "parent_id": "684df23b-f3cd-4799-9c12-9ca92fb4a1ef",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Khy veille toujours à ce que les hommes qui choisissent d'assurer la sécurité de leurs compatriotes aient toujours une bâtisse confortable afin de se loger, parfois avec leur famille. Ce sont souvent des édifices de pierre bien identifiés, dont le sommet permet à une sentinelle de surveiller les maisons avoisinantes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Parcs",
+    "uuid": "7a5b9c21-5b72-4829-80c0-0955fecaae4d",
+    "parent_id": "684df23b-f3cd-4799-9c12-9ca92fb4a1ef",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Que ce soit sous la forme de simples parcs à peine débroussaillés ou de complexes jardins et terrasses, Khy agrémente parfois sa cité de ces espaces de tranquilité, très prisés des artistes et des amoureux. Les rares Prodiges qui font le déplacement les visitent souvent avec étonnement, surpris de trouver une portion de nature à l'intérieur d'une cité si prestigieuse.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Dispensaire",
+    "uuid": "aeaf70f1-5064-48fa-afee-2c418d377730",
+    "parent_id": "684df23b-f3cd-4799-9c12-9ca92fb4a1ef",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Souvent construit sous la forme d'un manoir doté de dépendances, le dispensaire est une maladrerie qui accueille les blessés et les malades de la ville. Les soigneurs qui y officient disposent souvent d'un jardin d'herboriste, mais il n'est pas rare d'y voir pratiquer des chirurgiens humanistes qui sont ici parfaitement libres d'exercer leur art.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Quartiers chauds",
+    "uuid": "f93ac0f4-9f91-4e42-8964-acb6f36e895f",
+    "parent_id": "684df23b-f3cd-4799-9c12-9ca92fb4a1ef",
+    "type": "quartier",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ruelles sombres, tavernes malfamées et trafics en tout genre sont le lot commun de toutes les cités. Khy ne rechigne pas à laisser ces quartiers se développer en lui car il sait que ce type d'endroit sera toujours le lieu privilégié où les hommes sauront laisser parler leurs penchants. On dit parfois que ces quartiers sont les préférés des contrebandiers et des pires agents de Kalimsshar. On dit aussi que s'y trament des complots sordides visant à instaurer un réseau humaniste dans Kor et qu'il est courant d'y retrouver des malheureux égorgés pour quelques dracs de cuivre. Si certaines de ces rumeurs sont vraies, plusieurs d'entre elles sont surtout le fait de détracteurs draconiques et de moralistes qui n'acceptent pas certains aspects de la nature humaine que Khy n'hésite pas à héberger.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Lieux rares",
+    "uuid": "d3f03b63-004d-48df-9821-0c0de2c419f2",
+    "parent_id": "e0a74f8c-2335-4d7f-bcda-945b56f81763",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Places d'armes",
+    "uuid": "9176cdbe-f1a0-4d7d-83e3-e52f599da706",
+    "parent_id": "d3f03b63-004d-48df-9821-0c0de2c419f2",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dédiées à la pratique des armes et à l'entraînement extérieur, ces places sont souvent fréquentées par les guerriers et miliciens, mais aussi par ceux qui désirent travailler leur corps sous la direction d'athlètes plus accomplis. Les bâtiments qui les jouxtent sont souvent des lieux d'habitation occupés par les hommes d'armes de tous types qui vivent en ville.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "L'arène",
+    "uuid": "a2f92e1c-cdd1-448e-be6a-cea6ad478deb",
+    "parent_id": "d3f03b63-004d-48df-9821-0c0de2c419f2",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Une arène attire souvent de nombreux combattants. Les combats qui s'y déroulent sont gratuits et opposent des guerriers pour la maîtrise de leurs armes. On n'y pratique jamais de combat à mort. Toutes les armes y sont autorisées, même celles communément interdites ou mal considérées − comme l'arc ou les arbalètes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Prison",
+    "uuid": "b1ff47d7-0266-4163-bee6-cc9142e9bfd6",
+    "parent_id": "d3f03b63-004d-48df-9821-0c0de2c419f2",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La justice au sein de la Cité Blanche se rend prestement et la faible criminalité permet la résolution rapide des affaires pénales. Il est donc peu courant de trouver des geôles à Khy. Ce sont souvent des cellules sombres, aux murs épais, qui servent à enfermer les criminels durant les quelques jours qui les séparent de leur procès, souvent devant une cour populaire.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Forges",
+    "uuid": "e6df78c2-980c-4908-bde0-50362b54d68d",
+    "parent_id": "d3f03b63-004d-48df-9821-0c0de2c419f2",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Les forges et toutes les installations lourdes sont peu nombreuses au sein de la Cité Blanche. Elles sont souvent présentes en faible quantité, toutes localisées en un endroit précis. De ce fait, les forgerons, potiers, verriers et armuriers sont souvent localisés autour de ces hauts fourneaux dégageant une chaleur terrible, fruits d’une conception très particulière que les hommes ne s'expliquent pas vraiment, mais utilisent avec la plus grande joie.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Château",
+    "uuid": "e7280a06-91ff-463f-966d-1246d12f0184",
+    "parent_id": "d3f03b63-004d-48df-9821-0c0de2c419f2",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Qu'il soit dédié à la guerre ou au logement des nobles, Khy fait parfois apparaître un château en son enceinte. Percé de meurtrières ou constellé de fenêtres de verre, le château est toujours un lieu occupé par les élites et leurs cohortes de serviteurs, ce qui permet au peuple de disposer à sa guise des chaumières familiales et des chambres d'auberge. Il reste toutefois un simple lieu de logement et nulle salle du trône n'a jamais été découverte dans le dédale qu'il forme parfois.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Lieux très rares",
+    "uuid": "d4950a9a-c65a-40e7-a06e-077eed0bdb37",
+    "parent_id": "e0a74f8c-2335-4d7f-bcda-945b56f81763",
+    "type": "lieuUnique",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Temples draconiques",
+    "uuid": "37f15fd5-3b93-4e23-887a-1e26cc0fe80a",
+    "parent_id": "d4950a9a-c65a-40e7-a06e-077eed0bdb37",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "De façon tout à fait aléatoire, il est possible que Khy ait jugé bon d’édifier un lieu de culte à l’un ou l'autre de ses pairs afin de permettre aux résidents de prier. Leur apparition dépend du lieu d’incarnation et du type de population résidente. Khy n’érige jamais de lieu de culte à son effigie mais est l'une des rares villes à parfois posséder un sanctuaire de Kalimsshar.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Les maisons de castes",
+    "uuid": "47e97e11-ba55-4294-a30e-67eed36d012f",
+    "parent_id": "d4950a9a-c65a-40e7-a06e-077eed0bdb37",
+    "type": "batiment",
+    "government": null,
+    "leader": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Plus ou moins identifiables par le biais des gravures les décorant, Khy fait parfois apparaître des lieux dédiés aux structures d’une caste particulière. Il peut s’agir de casernements, de bureaux administratifs ou autre, mais ils ne sont occupés que par des citoyens qui désirent en assurer le fonctionnement. Bien sûr, il est beaucoup plus rare de rencontrer une caserne de protecteurs ou un monastère Prodige qu’un relais de voyageurs ou un comptoir commerçant.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]

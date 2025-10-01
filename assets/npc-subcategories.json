@@ -49,6 +49,13 @@
     "is_default": true
   },
   {
+    "title": "Élus de Khy",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Élus de Kroryn",
     "categories": [
       "elus"

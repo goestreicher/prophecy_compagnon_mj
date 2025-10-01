@@ -629,6 +629,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
     var assetFiles = [
       'npcs-ldb2e.json',
+      'npcs-les-compagnons-de-khy.json',
       'npcs-les-ecailles-de-brorne.json',
       'npcs-les-enfants-de-heyra.json',
       'npcs-les-forges-de-kezyr.json',
