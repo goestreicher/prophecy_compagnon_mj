@@ -189,6 +189,7 @@ class _EditSimpleInjuryManagerLevelsDialog extends StatefulWidget {
 class _EditSimpleInjuryManagerLevelsDialogState extends State<_EditSimpleInjuryManagerLevelsDialog> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   InjuryManager? currentSourceManager;
+  Map<Injury, UniqueKey> levelWidgetKeys = <Injury, UniqueKey>{};
 
   @override
   void initState() {
@@ -196,6 +197,10 @@ class _EditSimpleInjuryManagerLevelsDialogState extends State<_EditSimpleInjuryM
 
     if(widget.source != null) {
       currentSourceManager = InjuryManager(levels: widget.levels, source: widget.source);
+    }
+
+    for(var level in widget.levels) {
+      levelWidgetKeys[level.type] = UniqueKey();
     }
   }
 
@@ -207,7 +212,7 @@ class _EditSimpleInjuryManagerLevelsDialogState extends State<_EditSimpleInjuryM
     for(var i = 0; i < widget.levels.length; ++i) {
       levelsWidgets.add(
         _InjuryLevelEditWidget(
-          key: UniqueKey(),
+          key: levelWidgetKeys[widget.levels[i].type],
           level: widget.levels[i],
           previous: i == 0 ? null : widget.levels[i-1],
           next: i == widget.levels.length - 1 ? null : widget.levels[i+1],
@@ -215,6 +220,8 @@ class _EditSimpleInjuryManagerLevelsDialogState extends State<_EditSimpleInjuryM
             var prevCount = currentSourceManager?.count(widget.levels[i]) ?? 0;
 
             setState(() {
+              levelWidgetKeys[type] = levelWidgetKeys[widget.levels[i].type]!;
+              levelWidgetKeys.remove(widget.levels[i].type);
               widget.levels[i].type = type;
             });
 
@@ -236,6 +243,7 @@ class _EditSimpleInjuryManagerLevelsDialogState extends State<_EditSimpleInjuryM
             setState(() {
               widget.levels[i].start = value;
               widget.levels[i-1].end = value;
+              levelWidgetKeys[widget.levels[i-1].type] = UniqueKey();
             });
           },
           onEndChanged: (int value) {
@@ -243,17 +251,20 @@ class _EditSimpleInjuryManagerLevelsDialogState extends State<_EditSimpleInjuryM
             setState(() {
               widget.levels[i].end = value;
               widget.levels[i+1].start = value;
+              levelWidgetKeys[widget.levels[i+1].type] = UniqueKey();
             });
           },
           onInsertBefore: (InjuryLevel level) {
             if(widget.levels[i].type.rank == 0) return;
 
+            levelWidgetKeys[level.type] = UniqueKey();
             var levelSpread = level.end - level.start;
             var currentSpread = widget.levels[i].end - widget.levels[i].start;
 
             // If the current level can shrink with enough space left (10), simply do it
             if(currentSpread - levelSpread >= 10) {
               setState(() {
+                levelWidgetKeys[widget.levels[i].type] = UniqueKey();
                 widget.levels[i].start = level.end;
                 widget.levels.insert(i, level);
               });
@@ -262,6 +273,7 @@ class _EditSimpleInjuryManagerLevelsDialogState extends State<_EditSimpleInjuryM
             else {
               for(var j = i; j < widget.levels.length; ++j) {
                 widget.levels[j].start += levelSpread;
+                levelWidgetKeys[widget.levels[j].type] = UniqueKey();
                 if(!widget.levels[j].type.isFinal) {
                   widget.levels[j].end += levelSpread;
                 }
@@ -274,9 +286,11 @@ class _EditSimpleInjuryManagerLevelsDialogState extends State<_EditSimpleInjuryM
           onInsertAfter: (InjuryLevel level) {
             if(widget.levels[i].type.isFinal) return;
 
+            levelWidgetKeys[level.type] = UniqueKey();
             var levelSpread = level.end - level.start;
             // Shift all following levels by the new level spread
             for(var j = i+1; j < widget.levels.length; ++j) {
+              levelWidgetKeys[widget.levels[j].type] = UniqueKey();
               widget.levels[j].start += levelSpread;
               if(!widget.levels[j].type.isFinal) {
                 widget.levels[j].end += levelSpread;
