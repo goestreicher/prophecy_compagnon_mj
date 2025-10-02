@@ -54,7 +54,6 @@
     "natural_armor": 10,
     "natural_armor_description": "",
     "natural_weapons": [],
-    "special_capability": "",
     "injuries": {
       "levels": [
         {
@@ -162,7 +161,6 @@
         }
       }
     ],
-    "special_capability": "",
     "injuries": {
       "levels": [
         {

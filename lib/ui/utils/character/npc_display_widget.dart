@@ -19,17 +19,17 @@ import '../entity/base/display_injuries_widget.dart';
 import '../entity/base/display_skill_group_widget.dart';
 import '../entity/equipment/display_armor_widget.dart';
 import '../entity/equipment/display_weapons_widget.dart';
+import '../entity/magic/display_magic_skills_widget.dart';
+import '../entity/magic/display_magic_spells_widget.dart';
+import '../entity/magic/display_magic_spheres_widget.dart';
 import '../error_feedback.dart';
 import '../full_page_loading.dart';
 import '../widget_group_container.dart';
 import 'background/display_advantages_widget.dart';
-import 'magic/display_magic_spells_widget.dart';
 import 'relations/display_caste_details_widget.dart';
 import 'base/display_general_widget.dart';
 import 'base/display_secondary_attributes_widget.dart';
 import 'base/tendencies_edit_widget.dart';
-import 'magic/display_magic_skills_widget.dart';
-import 'magic/display_magic_spheres_widget.dart';
 import 'relations/display_draconic_link_widget.dart';
 
 class NPCActionButtons extends StatelessWidget {
@@ -365,14 +365,14 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                             constraints: BoxConstraints(
                               maxWidth: 160,
                             ),
-                            child: CharacterDisplayMagicSkillsWidget(character: npc)
+                            child: EntityDisplayMagicSkillsWidget(entity: npc)
                           ),
                           Expanded(
-                            child: CharacterDisplayMagicSpheresWidget(character: npc)
+                            child: EntityDisplayMagicSpheresWidget(entity: npc)
                           ),
                         ],
                       ),
-                      CharacterDisplayMagicSpellsWidget(character: npc)
+                      EntityDisplayMagicSpellsWidget(entity: npc)
                     ],
                   ),
                 ],

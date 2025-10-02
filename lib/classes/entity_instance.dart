@@ -4,6 +4,8 @@ import 'character/injury.dart';
 import 'equipment.dart';
 import 'entity_base.dart';
 import 'exportable_binary_data.dart';
+import 'magic.dart';
+import 'magic_user.dart';
 import 'object_location.dart';
 import 'character/skill.dart';
 import 'storage/storable.dart';
@@ -79,7 +81,7 @@ class EntityInstanceStore extends JsonStoreAdapter<EntityInstance> {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class EntityInstance extends EntityBase {
+class EntityInstance extends EntityBase with MagicUser {
   EntityInstance(
     {
       super.uuid,
@@ -140,6 +142,22 @@ class EntityInstance extends EntityBase {
       var eq = EquipmentFactory.instance.forgeEquipment(e.type());
       if(eq != null) {
         instance.addEquipment(eq);
+      }
+    }
+
+    if(entity is MagicUser) {
+      for(var s in MagicSkill.values) {
+        instance.setMagicSkill(s, entity.magicSkill(s));
+      }
+
+      instance.magicPool = entity.magicPool;
+
+      for(var s in MagicSphere.values) {
+        instance.setMagicSphere(s, entity.magicSphere(s));
+        instance.setMagicSpherePool(s, entity.magicSpherePool(s));
+        for(var sp in entity.spells(s)) {
+          instance.addSpell(sp);
+        }
       }
     }
 

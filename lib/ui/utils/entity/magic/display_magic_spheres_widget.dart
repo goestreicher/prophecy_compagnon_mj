@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
+import '../../../../classes/magic_user.dart';
 import '../../widget_group_container.dart';
 
-class CharacterDisplayMagicSpheresWidget extends StatelessWidget {
-  const CharacterDisplayMagicSpheresWidget({ super.key, required this.character });
+class EntityDisplayMagicSpheresWidget extends StatelessWidget {
+  const EntityDisplayMagicSpheresWidget({ super.key, required this.entity });
 
-  final HumanCharacter character;
+  final MagicUser entity;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +24,8 @@ class CharacterDisplayMagicSpheresWidget extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
                       child: _MagicSphereDisplayWidget(
                         sphere: MagicSphere.values[j+i*3],
-                        value: character.magicSphere(MagicSphere.values[j+i*3]),
-                        pool: character.magicSpherePool(MagicSphere.values[j+i*3]),
+                        value: entity.magicSphere(MagicSphere.values[j+i*3]),
+                        pool: entity.magicSpherePool(MagicSphere.values[j+i*3]),
                       ),
                     ),
                   ),

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
+import '../../../../classes/magic_user.dart';
 import '../../widget_group_container.dart';
 
-class CharacterDisplayMagicSkillsWidget extends StatelessWidget {
-  const CharacterDisplayMagicSkillsWidget({ super.key, required this.character });
+class EntityDisplayMagicSkillsWidget extends StatelessWidget {
+  const EntityDisplayMagicSkillsWidget({ super.key, required this.entity });
 
-  final HumanCharacter character;
+  final MagicUser entity;
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +17,19 @@ class CharacterDisplayMagicSkillsWidget extends StatelessWidget {
         children: [
           _SingleSkillWidget(
             name: 'Instinctive',
-            value: character.magicSkill(MagicSkill.instinctive),
+            value: entity.magicSkill(MagicSkill.instinctive),
           ),
           _SingleSkillWidget(
             name: 'Invocatoire',
-            value: character.magicSkill(MagicSkill.invocatoire),
+            value: entity.magicSkill(MagicSkill.invocatoire),
           ),
           _SingleSkillWidget(
             name: 'Sorcellerie',
-            value: character.magicSkill(MagicSkill.sorcellerie),
+            value: entity.magicSkill(MagicSkill.sorcellerie),
           ),
           _SingleSkillWidget(
             name: 'Réserve',
-            value: character.magicPool,
+            value: entity.magicPool,
           ),
         ]
       )

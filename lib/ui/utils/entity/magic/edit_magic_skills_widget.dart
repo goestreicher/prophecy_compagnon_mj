@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:prophecy_compagnon_mj/ui/utils/widget_group_container.dart';
 
 import '../../../../classes/character/base.dart';
-import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
+import '../../../../classes/magic_user.dart';
 import '../../num_input_widget.dart';
 
-class CharacterEditMagicSkillsWidget extends StatelessWidget {
-  const CharacterEditMagicSkillsWidget({
+class EntityEditMagicSkillsWidget extends StatelessWidget {
+  const EntityEditMagicSkillsWidget({
     super.key,
-    required this.character,
+    required this.entity,
   });
 
-  final HumanCharacter character;
+  final MagicUser entity;
 
   @override
   Widget build(BuildContext context) {
@@ -31,32 +31,32 @@ class CharacterEditMagicSkillsWidget extends StatelessWidget {
         children: [
           _EditMagicSkillWidget(
             name: 'Magie instinctive',
-            initialValue: character.magicSkill(MagicSkill.instinctive),
+            initialValue: entity.magicSkill(MagicSkill.instinctive),
             onChanged: (int value) {
-              character.setMagicSkill(MagicSkill.instinctive, value);
+              entity.setMagicSkill(MagicSkill.instinctive, value);
             },
           ),
           _EditMagicSkillWidget(
             name: 'Magie invocatoire',
-            initialValue: character.magicSkill(MagicSkill.invocatoire),
+            initialValue: entity.magicSkill(MagicSkill.invocatoire),
             onChanged: (int value) {
-              character.setMagicSkill(MagicSkill.invocatoire, value);
+              entity.setMagicSkill(MagicSkill.invocatoire, value);
             },
           ),
           _EditMagicSkillWidget(
             name: 'Sorcellerie',
-            initialValue: character.magicSkill(MagicSkill.sorcellerie),
+            initialValue: entity.magicSkill(MagicSkill.sorcellerie),
             onChanged: (int value) {
-              character.setMagicSkill(MagicSkill.sorcellerie, value);
+              entity.setMagicSkill(MagicSkill.sorcellerie, value);
             },
           ),
           _EditMagicSkillWidget(
             name: 'Réserve de magie',
-            initialValue: character.magicPool,
-            minValue: character.ability(Ability.volonte),
+            initialValue: entity.magicPool,
+            minValue: entity.ability(Ability.volonte),
             maxValue: 30,
             onChanged: (int value) {
-              character.magicPool = value;
+              entity.magicPool = value;
             },
           ),
         ],

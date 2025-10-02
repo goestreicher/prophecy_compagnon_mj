@@ -11,6 +11,9 @@ import '../entity/base/edit_injuries_widget.dart';
 import '../entity/base/edit_skill_group_container.dart';
 import '../entity/equipment/edit_armor_widget.dart';
 import '../entity/equipment/edit_weapons_widget.dart';
+import '../entity/magic/edit_magic_skills_widget.dart';
+import '../entity/magic/edit_magic_spells_widget.dart';
+import '../entity/magic/edit_magic_spheres_widget.dart';
 import 'base/edit_general_widget.dart';
 import 'base/edit_natural_weapons.dart';
 import 'base/edit_secondary_attributes.dart';
@@ -177,6 +180,16 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                       attribute: Attribute.social,
                     ),
                   ],
+                ),
+                Divider(),
+                EntityEditMagicSkillsWidget(
+                  entity: widget.creature,
+                ),
+                EntityEditMagicSpheresWidget(
+                  entity: widget.creature,
+                ),
+                EntityEditMagicSpellsWidget(
+                  entity: widget.creature,
                 ),
               ],
             ),

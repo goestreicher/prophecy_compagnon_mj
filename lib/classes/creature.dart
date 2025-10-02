@@ -10,6 +10,8 @@ import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
+import 'magic.dart';
+import 'magic_user.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'weapon.dart';
@@ -145,6 +147,19 @@ class NaturalArmor implements ProtectionProvider {
 
   @override
   int protection() => value;
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class CreatureSpecialCapability {
+  CreatureSpecialCapability({ required this.name, required this.description });
+
+  String name;
+  String description;
+
+  factory CreatureSpecialCapability.fromJson(Map<String, dynamic> json)
+      => _$CreatureSpecialCapabilityFromJson(json);
+  Map<String, dynamic> toJson()
+      => _$CreatureSpecialCapabilityToJson(this);
 }
 
 class CreatureSummaryStore extends JsonStoreAdapter<CreatureSummary> {
@@ -348,7 +363,7 @@ class CreatureSummary {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @CreatureCategoryJsonConverter()
-class Creature extends EntityBase with EncounterEntityModel {
+class Creature extends EntityBase with EncounterEntityModel, MagicUser {
   factory Creature({
     String? uuid,
     ObjectLocation location = ObjectLocation.memory,
@@ -368,7 +383,7 @@ class Creature extends EntityBase with EncounterEntityModel {
     required int naturalArmor,
     String naturalArmorDescription = '',
     List<NaturalWeaponModel>? naturalWeapons,
-    String specialCapability = '',
+    List<CreatureSpecialCapability>? specialCapabilities,
   }) {
     bool isDefault = (location.type == ObjectLocationType.assets);
     String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
@@ -392,7 +407,7 @@ class Creature extends EntityBase with EncounterEntityModel {
         naturalArmor: naturalArmor,
         naturalArmorDescription: naturalArmorDescription,
         naturalWeapons: naturalWeapons,
-        specialCapability: specialCapability,
+        specialCapabilities: specialCapabilities,
       );
       _models[id] = model;
     }
@@ -419,9 +434,10 @@ class Creature extends EntityBase with EncounterEntityModel {
         required this.naturalArmor,
         this.naturalArmorDescription = '',
         List<NaturalWeaponModel>? naturalWeapons,
-        this.specialCapability = '',
+        List<CreatureSpecialCapability>? specialCapabilities,
       })
-    : naturalWeapons = naturalWeapons ?? <NaturalWeaponModel>[];
+    : naturalWeapons = naturalWeapons ?? <NaturalWeaponModel>[],
+      specialCapabilities = specialCapabilities ?? <CreatureSpecialCapability>[];
 
   bool unique;
   CreatureCategory category;
@@ -432,7 +448,7 @@ class Creature extends EntityBase with EncounterEntityModel {
   int naturalArmor;
   String naturalArmorDescription;
   List<NaturalWeaponModel> naturalWeapons;
-  String specialCapability;
+  List<CreatureSpecialCapability> specialCapabilities;
 
   CreatureSummary get summary => CreatureSummary(
       id: id,
@@ -672,6 +688,12 @@ class Creature extends EntityBase with EncounterEntityModel {
     var model = Creature.fromJson(json);
     await Creature.saveLocalModel(model);
     return model;
+  }
+
+  @override
+  void loadNonRestorableJson(Map<String, dynamic> json) {
+    super.loadNonRestorableJson(json);
+    magicUserLoadNonRestorableJson(json);
   }
 
   factory Creature.fromJson(Map<String, dynamic> json) {

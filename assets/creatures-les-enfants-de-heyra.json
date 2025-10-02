@@ -85,7 +85,12 @@
         }
       }
     ],
-    "special_capability": "Les compétences de l'eyrok ne peuvent être développées par le dressage, mais cet animal est capable, une fois par jour, de lancer “Regain d'énergie” comme s'il maîtrisait Sphère de la Nature à 4 et Magie instinctive à 5",
+    "special_capabilities": [
+      {
+        "name": "Regain d'énergie",
+        "description": "Les compétences de l'eyrok ne peuvent être développées par le dressage, mais cet animal est capable, une fois par jour, de lancer “Regain d'énergie” comme s'il maîtrisait Sphère de la Nature à 4 et Magie instinctive à 5"
+      }
+    ],
     "injuries": {
       "levels": [
         {
@@ -218,7 +223,12 @@
         }
       }
     ],
-    "special_capability": "La Compétence Empathie des rats gris peut être développée grâce à un jet de Social + Dressage contre une Difficulté de 20. Elle permet, en réussissant un jet de Mental + Empathie contre une Difficulté de 15, de sentir la présence d’une vie ou d’un objet fortement imprégné par l’une des trois Tendances dans un rayon de 100 mètres. Cette Difficulté est augmentée de 5 pour un rayon d’un kilomètre, mais peut être réduite de 5 si l'élément est particulièrement teintée. Dans un rayon de 10 mètres, la réussite est automatique.",
+    "special_capabilities": [
+      {
+        "name": "Empathie",
+        "description": "La Compétence Empathie des rats gris peut être développée grâce à un jet de Social + Dressage contre une Difficulté de 20. Elle permet, en réussissant un jet de Mental + Empathie contre une Difficulté de 15, de sentir la présence d’une vie ou d’un objet fortement imprégné par l’une des trois Tendances dans un rayon de 100 mètres. Cette Difficulté est augmentée de 5 pour un rayon d’un kilomètre, mais peut être réduite de 5 si l'élément est particulièrement teintée. Dans un rayon de 10 mètres, la réussite est automatique."
+      }
+    ],
     "injuries": {
       "levels": [
         {
@@ -316,7 +326,12 @@
         }
       }
     ],
-    "special_capability": "Les Compétences Pister et Esquive du hurleur peuvent être développées grâce à un jet de Dressage contre une Difficulté de 15, jusqu’à un niveau maximum de 18 pour Pister et 9 pour Esquive. Pour développer sa Compétence Morsure, la Difficulté est de 20 et le niveau maximum de 8.",
+    "special_capabilities": [
+      {
+        "name": "Dressage",
+        "description": "Les Compétences Pister et Esquive du hurleur peuvent être développées grâce à un jet de Dressage contre une Difficulté de 15, jusqu’à un niveau maximum de 18 pour Pister et 9 pour Esquive. Pour développer sa Compétence Morsure, la Difficulté est de 20 et le niveau maximum de 8."
+      }
+    ],
     "injuries": {
       "levels": [
         {
@@ -425,7 +440,12 @@
         }
       }
     ],
-    "special_capability": "Particulièrement dociles, les chevalins se prêtent volontiers au dressage et peuvent apprendre toutes sortes de manœuvres. Leur Compétence Acrobatie peut être développée grâce à un jet de Dressage contre une Difficulté de 15, jusqu’à un niveau maximum de 8. De plus, au bout de quelques mois, un simple jet de Social + Empathie contre une Difficulté de 15 permet au cavalier d'appeler sa monture et même de comprendre certaines de ses émotions.",
+    "special_capabilities": [
+      {
+        "name": "Dressage",
+        "description": "Particulièrement dociles, les chevalins se prêtent volontiers au dressage et peuvent apprendre toutes sortes de manœuvres. Leur Compétence Acrobatie peut être développée grâce à un jet de Dressage contre une Difficulté de 15, jusqu’à un niveau maximum de 8. De plus, au bout de quelques mois, un simple jet de Social + Empathie contre une Difficulté de 15 permet au cavalier d'appeler sa monture et même de comprendre certaines de ses émotions."
+      }
+    ],
     "injuries": {
       "levels": [
         {
@@ -507,7 +527,12 @@
     "natural_armor": 0,
     "natural_armor_description": "",
     "natural_weapons": [],
-    "special_capability": "Toutes les Compétences du zokoï peuvent être développées grâce à un jet de Dressage - Discrétion, Esquive et Pickpocket contre une Difficulté de 15 et jusqu’à un niveau maximum de 10, Langage des signes contre une Difficulté de 20 et jusqu’à un niveau maximum de 6, Mécanismes contre une Difficulté de 25 et jusqu’à un niveau maximum de 4.\nIl est également possible de lui apprendre des Compétences de Manipulation jusqu’à un niveau maximum de 5. La Difficulté est de 20 pour un jet d'apprentissage, de 15 pour le développement de ces Compétences.",
+    "special_capabilities": [
+      {
+        "name": "Dressage",
+        "description": "Toutes les Compétences du zokoï peuvent être développées grâce à un jet de Dressage - Discrétion, Esquive et Pickpocket contre une Difficulté de 15 et jusqu’à un niveau maximum de 10, Langage des signes contre une Difficulté de 20 et jusqu’à un niveau maximum de 6, Mécanismes contre une Difficulté de 25 et jusqu’à un niveau maximum de 4.\nIl est également possible de lui apprendre des Compétences de Manipulation jusqu’à un niveau maximum de 5. La Difficulté est de 20 pour un jet d'apprentissage, de 15 pour le développement de ces Compétences."
+      }
+    ],
     "injuries": {
       "levels": [
         {

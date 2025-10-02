@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 import '../../../classes/human_character.dart';
+import '../entity/magic/edit_magic_skills_widget.dart';
+import '../entity/magic/edit_magic_spells_widget.dart';
+import '../entity/magic/edit_magic_spheres_widget.dart';
 import 'change_stream.dart';
-import 'magic/edit_magic_skills_widget.dart';
-import 'magic/edit_magic_spells_widget.dart';
-import 'magic/edit_magic_spheres_widget.dart';
 
 class CharacterEditMagicWidget extends StatelessWidget {
   const CharacterEditMagicWidget({
@@ -23,14 +23,14 @@ class CharacterEditMagicWidget extends StatelessWidget {
     return Column(
       spacing: 16.0,
       children: [
-        CharacterEditMagicSkillsWidget(
-          character: character,
+        EntityEditMagicSkillsWidget(
+          entity: character,
         ),
-        CharacterEditMagicSpheresWidget(
-          character: character,
+        EntityEditMagicSpheresWidget(
+          entity: character,
         ),
-        CharacterEditMagicSpellsWidget(
-          character: character,
+        EntityEditMagicSpellsWidget(
+          entity: character,
         ),
       ],
     );

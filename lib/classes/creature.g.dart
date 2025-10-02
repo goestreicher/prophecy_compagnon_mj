@@ -54,6 +54,20 @@ const _$WeaponRangeEnumMap = {
   WeaponRange.ranged: 'ranged',
 };
 
+CreatureSpecialCapability _$CreatureSpecialCapabilityFromJson(
+  Map<String, dynamic> json,
+) => CreatureSpecialCapability(
+  name: json['name'] as String,
+  description: json['description'] as String,
+);
+
+Map<String, dynamic> _$CreatureSpecialCapabilityToJson(
+  CreatureSpecialCapability instance,
+) => <String, dynamic>{
+  'name': instance.name,
+  'description': instance.description,
+};
+
 CreatureSummary _$CreatureSummaryFromJson(Map<String, dynamic> json) =>
     CreatureSummary(
       id: json['id'] as String,
@@ -114,14 +128,28 @@ Creature _$CreatureFromJson(Map<String, dynamic> json) =>
         naturalWeapons: (json['natural_weapons'] as List<dynamic>?)
             ?.map((e) => NaturalWeaponModel.fromJson(e as Map<String, dynamic>))
             .toList(),
-        specialCapability: json['special_capability'] as String? ?? '',
+        specialCapabilities: (json['special_capabilities'] as List<dynamic>?)
+            ?.map(
+              (e) =>
+                  CreatureSpecialCapability.fromJson(e as Map<String, dynamic>),
+            )
+            .toList(),
       )
       ..status = json['status'] == null
           ? EntityStatus.empty()
           : EntityStatus.fromJson(json['status'] as Map<String, dynamic>)
       ..skills = (json['skills'] as List<dynamic>)
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
-          .toList();
+          .toList()
+      ..magicSpells =
+          (json['magic_spells'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(
+              $enumDecode(_$MagicSphereEnumMap, k),
+              (e as List<dynamic>).map((e) => e as String).toList(),
+            ),
+          ) ??
+          {}
+      ..extraMagicPool = (json['extra_magic_pool'] as num?)?.toInt() ?? 0;
 
 Map<String, dynamic> _$CreatureToJson(Creature instance) => <String, dynamic>{
   'equiped': equipedToJson(instance.equiped),
@@ -137,6 +165,10 @@ Map<String, dynamic> _$CreatureToJson(Creature instance) => <String, dynamic>{
   'attributes': enumKeyedMapToJson(instance.attributes),
   'skills': instance.skills.map((e) => e.toJson()).toList(),
   'equipment': equipmentToJson(instance.equipment),
+  'magic_spells': instance.magicSpells.map(
+    (k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e),
+  ),
+  'extra_magic_pool': instance.extraMagicPool,
   'unique': instance.unique,
   'category': const CreatureCategoryJsonConverter().toJson(instance.category),
   'source': instance.source.toJson(),
@@ -146,5 +178,19 @@ Map<String, dynamic> _$CreatureToJson(Creature instance) => <String, dynamic>{
   'natural_armor': instance.naturalArmor,
   'natural_armor_description': instance.naturalArmorDescription,
   'natural_weapons': instance.naturalWeapons.map((e) => e.toJson()).toList(),
-  'special_capability': instance.specialCapability,
+  'special_capabilities': instance.specialCapabilities
+      .map((e) => e.toJson())
+      .toList(),
+};
+
+const _$MagicSphereEnumMap = {
+  MagicSphere.pierre: 'pierre',
+  MagicSphere.feu: 'feu',
+  MagicSphere.oceans: 'oceans',
+  MagicSphere.metal: 'metal',
+  MagicSphere.nature: 'nature',
+  MagicSphere.reves: 'reves',
+  MagicSphere.cite: 'cite',
+  MagicSphere.vents: 'vents',
+  MagicSphere.ombre: 'ombre',
 };

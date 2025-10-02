@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
+import '../../../../classes/magic_user.dart';
 import '../../widget_group_container.dart';
 import 'display_sphere_magic_spells_widget.dart';
 import 'spell_picker_dialog.dart';
 
-class CharacterEditMagicSpellsWidget extends StatefulWidget {
-  const CharacterEditMagicSpellsWidget({
+class EntityEditMagicSpellsWidget extends StatefulWidget {
+  const EntityEditMagicSpellsWidget({
     super.key,
-    required this.character,
+    required this.entity,
   });
 
-  final HumanCharacter character;
+  final MagicUser entity;
 
   @override
-  State<CharacterEditMagicSpellsWidget> createState() => _CharacterEditMagicSpellsWidgetState();
+  State<EntityEditMagicSpellsWidget> createState() => _EntityEditMagicSpellsWidgetState();
 }
 
-class _CharacterEditMagicSpellsWidgetState extends State<CharacterEditMagicSpellsWidget> {
+class _EntityEditMagicSpellsWidgetState extends State<EntityEditMagicSpellsWidget> {
   final Map<MagicSphere, List<MagicSpell>> spells = <MagicSphere, List<MagicSpell>>{};
 
   @override
@@ -29,7 +29,7 @@ class _CharacterEditMagicSpellsWidgetState extends State<CharacterEditMagicSpell
 
   void updateSpellsList() {
     for(var sphere in MagicSphere.values) {
-      var spells = widget.character.spells(sphere);
+      var spells = widget.entity.spells(sphere);
       if(spells.isNotEmpty) {
         this.spells[sphere] = spells;
       }
@@ -60,7 +60,7 @@ class _CharacterEditMagicSpellsWidgetState extends State<CharacterEditMagicSpell
               spells: spells[sphere]!,
               onDelete: (String name) {
                 setState(() {
-                  widget.character.deleteSpellByName(name);
+                  widget.entity.deleteSpellByName(name);
                   updateSpellsList();
                 });
               },
@@ -82,7 +82,7 @@ class _CharacterEditMagicSpellsWidgetState extends State<CharacterEditMagicSpell
                 );
                 if(result == null) return;
                 setState(() {
-                  widget.character.addSpell(result);
+                  widget.entity.addSpell(result);
                   updateSpellsList();
                 });
               },

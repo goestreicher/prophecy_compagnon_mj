@@ -73,7 +73,16 @@
         "damage": 3
       }
     ],
-    "special_capability": "Adhérence - les drillons peuvent se maintenir sur n'importe quel support, y compris une branche verticale ou tête en bas. Cette capacité est utilisable avec un cavalier dont le poids n'excède pas la moitié du leur.\nPacifisme - le drillon ne nécessite qu'un jet d'Équitation à 10 pour être monté en combat, mais n'attaque que sur commande (Social + Équitation, diff. 20) ou pour se défendre si elle est acculée."
+    "special_capabilities": [
+      {
+        "name": "Adhérence",
+        "description": "Les drillons peuvent se maintenir sur n'importe quel support, y compris une branche verticale ou tête en bas. Cette capacité est utilisable avec un cavalier dont le poids n'excède pas la moitié du leur."
+      },
+      {
+        "name": "Pacifisme",
+        "description": "Le drillon ne nécessite qu'un jet d'Équitation à 10 pour être monté en combat, mais n'attaque que sur commande (Social + Équitation, diff. 20) ou pour se défendre si elle est acculée."
+      }
+    ]
   },
   {
     "name": "Vulture de Sinise",
@@ -171,6 +180,15 @@
         "damage": 11
       }
     ],
-    "special_capability": "Transparence - les vultures sont invisibles tant qu'ils demeurent dans les cieux à planer, reflétant parfaitement les couleurs du ciel.\nPiqué - cette attaque se résout comme une charge avec deux actions d'élan."
+    "special_capabilities": [
+      {
+        "name": "Transparence",
+        "description": "Les vultures sont invisibles tant qu'ils demeurent dans les cieux à planer, reflétant parfaitement les couleurs du ciel."
+      },
+      {
+        "name": "Piqué",
+        "description": "Cette attaque se résout comme une charge avec deux actions d'élan."
+      }
+    ]
   }
 ]

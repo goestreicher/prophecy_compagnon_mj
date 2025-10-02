@@ -24,6 +24,15 @@ EntityInstance _$EntityInstanceFromJson(Map<String, dynamic> json) =>
       ..skills = (json['skills'] as List<dynamic>)
           .map((e) => SkillInstance.fromJson(e as Map<String, dynamic>))
           .toList()
+      ..magicSpells =
+          (json['magic_spells'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(
+              $enumDecode(_$MagicSphereEnumMap, k),
+              (e as List<dynamic>).map((e) => e as String).toList(),
+            ),
+          ) ??
+          {}
+      ..extraMagicPool = (json['extra_magic_pool'] as num?)?.toInt() ?? 0
       ..image = json['image'] == null
           ? null
           : ExportableBinaryData.fromJson(json['image'] as Map<String, dynamic>)
@@ -44,7 +53,23 @@ Map<String, dynamic> _$EntityInstanceToJson(EntityInstance instance) =>
       'attributes': enumKeyedMapToJson(instance.attributes),
       'skills': instance.skills.map((e) => e.toJson()).toList(),
       'equipment': equipmentToJson(instance.equipment),
+      'magic_spells': instance.magicSpells.map(
+        (k, e) => MapEntry(_$MagicSphereEnumMap[k]!, e),
+      ),
+      'extra_magic_pool': instance.extraMagicPool,
       'model_specification': instance.modelSpecification,
       'image': instance.image?.toJson(),
       'icon': instance.icon?.toJson(),
     };
+
+const _$MagicSphereEnumMap = {
+  MagicSphere.pierre: 'pierre',
+  MagicSphere.feu: 'feu',
+  MagicSphere.oceans: 'oceans',
+  MagicSphere.metal: 'metal',
+  MagicSphere.nature: 'nature',
+  MagicSphere.reves: 'reves',
+  MagicSphere.cite: 'cite',
+  MagicSphere.vents: 'vents',
+  MagicSphere.ombre: 'ombre',
+};

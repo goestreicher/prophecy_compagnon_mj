@@ -56,6 +56,26 @@ mixin MagicUser on EntityBase {
   @JsonKey(defaultValue: 0)
     int extraMagicPool = 0;
 
+  void magicUserLoadNonRestorableJson(Map<String, dynamic> json) {
+    if(json.containsKey('magic_skills') && json['magic_skills']! is Map) {
+      for(var s in json['magic_skills']!.keys) {
+        setMagicSkill(MagicSkill.values.byName(s), json['magic_skills']![s]!);
+      }
+    }
+
+    if(json.containsKey('magic_spheres') && json['magic_spheres']! is Map) {
+      for(var s in json['magic_spheres']!.keys) {
+        setMagicSphere(MagicSphere.values.byName(s), json['magic_spheres']![s]!);
+      }
+    }
+
+    if(json.containsKey('magic_sphere_pools') && json['magic_sphere_pools']! is Map) {
+      for(var s in json['magic_sphere_pools']!.keys) {
+        setMagicSpherePool(MagicSphere.values.byName(s), json['magic_sphere_pools']![s]!);
+      }
+    }
+  }
+
   final Map<MagicSkill, int> _magicSkills = <MagicSkill, int>{
     MagicSkill.instinctive: 0,
     MagicSkill.invocatoire: 0,
