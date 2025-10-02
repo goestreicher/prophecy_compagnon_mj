@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
-import '../../character_digit_input_widget.dart';
+import '../../num_input_widget.dart';
 import '../../widget_group_container.dart';
 
 class CharacterEditSecondaryAttributesWidget extends StatelessWidget {
@@ -20,7 +20,7 @@ class CharacterEditSecondaryAttributesWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 12.0,
         children: [
-          CharacterDigitInputWidget(
+          NumIntInputWidget(
             initialValue: character.initiative,
             maxValue: 6,
             onChanged: (int value) {
@@ -28,7 +28,7 @@ class CharacterEditSecondaryAttributesWidget extends StatelessWidget {
             },
             label: 'INItiative',
           ),
-          CharacterDigitInputWidget(
+          NumIntInputWidget(
             initialValue: character.luck,
             minValue: 0,
             maxValue: 10,
@@ -37,7 +37,7 @@ class CharacterEditSecondaryAttributesWidget extends StatelessWidget {
             },
             label: 'CHAnce',
           ),
-          CharacterDigitInputWidget(
+          NumIntInputWidget(
             initialValue: character.proficiency,
             minValue: 0,
             maxValue: 10,
@@ -46,7 +46,7 @@ class CharacterEditSecondaryAttributesWidget extends StatelessWidget {
             },
             label: 'MAÎtrise',
           ),
-          CharacterDigitInputWidget(
+          NumIntInputWidget(
             initialValue: character.renown,
             minValue: 0,
             maxValue: 10,

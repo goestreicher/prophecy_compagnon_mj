@@ -7,7 +7,7 @@ import 'package:prophecy_compagnon_mj/ui/utils/entity/base/skill_picker_dialog.d
 import '../../../../classes/character/skill.dart';
 import '../../../../classes/entity_base.dart';
 import '../../character/change_stream.dart';
-import '../../character_digit_input_widget.dart';
+import '../../num_input_widget.dart';
 import '../../widget_group_container.dart';
 
 class EntityEditSkillFamilyContainer extends StatefulWidget {
@@ -205,7 +205,7 @@ class SkillEditWidget extends StatelessWidget {
                     padding: const EdgeInsets.only(right: 8.0),
                     child: SizedBox(
                       width: 80,
-                      child: CharacterDigitInputWidget(
+                      child: NumIntInputWidget(
                         initialValue: character.skill(skill),
                         onChanged: (int value) => onChanged(value),
                         onSaved: (int value) => character.setSkill(skill, value),
@@ -282,7 +282,7 @@ class SpecializedSkillEditWidget extends StatelessWidget {
               const Spacer(),
               SizedBox(
                 width: 80,
-                child: CharacterDigitInputWidget(
+                child: NumIntInputWidget(
                   initialValue: character.specializedSkill(skill),
                   onChanged: (int value) {
                     onChanged(value);

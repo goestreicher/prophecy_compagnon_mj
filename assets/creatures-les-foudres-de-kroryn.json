@@ -73,7 +73,14 @@
         "skill": 4,
         "damage": 20,
         "ranges": {
-          "contact": 0
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.0
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.8
+          }
         }
       },
       {
@@ -81,7 +88,14 @@
         "skill": 3,
         "damage": 17,
         "ranges": {
-          "contact": 0
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.0
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.4
+          }
         }
       }
     ],

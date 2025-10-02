@@ -4,7 +4,7 @@ import 'package:prophecy_compagnon_mj/ui/utils/widget_group_container.dart';
 import '../../../../classes/character/base.dart';
 import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
-import '../../character_digit_input_widget.dart';
+import '../../num_input_widget.dart';
 
 class CharacterEditMagicSkillsWidget extends StatelessWidget {
   const CharacterEditMagicSkillsWidget({
@@ -94,7 +94,7 @@ class _EditMagicSkillWidget extends StatelessWidget {
         ),
         SizedBox(
           width: 80.0,
-          child: CharacterDigitInputWidget(
+          child: NumIntInputWidget(
             initialValue: initialValue,
             minValue: minValue,
             maxValue: maxValue,

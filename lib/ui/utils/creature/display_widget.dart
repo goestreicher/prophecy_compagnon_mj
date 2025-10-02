@@ -270,12 +270,9 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               spacing: 16.0,
               children: [
-                SizedBox(
-                  width: 200,
-                  child: Center(
-                    child: CreatureDisplayNaturalWeaponsWidget(
-                      creature: creature,
-                    ),
+                Center(
+                  child: CreatureDisplayNaturalWeaponsWidget(
+                    creature: creature,
                   ),
                 ),
                 Expanded(

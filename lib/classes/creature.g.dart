@@ -6,6 +6,22 @@ part of 'creature.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+NaturalWeaponModelRangeSpecification
+_$NaturalWeaponModelRangeSpecificationFromJson(Map<String, dynamic> json) =>
+    NaturalWeaponModelRangeSpecification(
+      initiative: (json['initiative'] as num).toInt(),
+      effectiveDistance: (json['effective_distance'] as num).toDouble(),
+      maximumDistance: (json['maximum_distance'] as num?)?.toDouble(),
+    );
+
+Map<String, dynamic> _$NaturalWeaponModelRangeSpecificationToJson(
+  NaturalWeaponModelRangeSpecification instance,
+) => <String, dynamic>{
+  'initiative': instance.initiative,
+  'effective_distance': instance.effectiveDistance,
+  'maximum_distance': instance.maximumDistance,
+};
+
 NaturalWeaponModel _$NaturalWeaponModelFromJson(Map<String, dynamic> json) =>
     NaturalWeaponModel(
       name: json['name'] as String,
@@ -14,7 +30,9 @@ NaturalWeaponModel _$NaturalWeaponModelFromJson(Map<String, dynamic> json) =>
       ranges: (json['ranges'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(
           $enumDecode(_$WeaponRangeEnumMap, k),
-          (e as num).toDouble(),
+          NaturalWeaponModelRangeSpecification.fromJson(
+            e as Map<String, dynamic>,
+          ),
         ),
       ),
     );
@@ -25,7 +43,7 @@ Map<String, dynamic> _$NaturalWeaponModelToJson(NaturalWeaponModel instance) =>
       'skill': instance.skill,
       'damage': instance.damage,
       'ranges': instance.ranges.map(
-        (k, e) => MapEntry(_$WeaponRangeEnumMap[k]!, e),
+        (k, e) => MapEntry(_$WeaponRangeEnumMap[k]!, e.toJson()),
       ),
     };
 

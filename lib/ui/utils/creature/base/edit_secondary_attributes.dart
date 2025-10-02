@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/creature.dart';
-import '../../character_digit_input_widget.dart';
+import '../../num_input_widget.dart';
 import '../../widget_group_container.dart';
 
 class CreatureEditSecondaryAttributes extends StatefulWidget {
@@ -28,7 +28,7 @@ class _CreatureEditSecondaryAttributesState extends State<CreatureEditSecondaryA
             spacing: 16.0,
             children: [
               Expanded(
-                child: CharacterDigitInputWidget(
+                child: NumIntInputWidget(
                   initialValue: widget.creature.initiative,
                   maxValue: 10,
                   onChanged: (int value) {
@@ -38,7 +38,7 @@ class _CreatureEditSecondaryAttributesState extends State<CreatureEditSecondaryA
                 ),
               ),
               Expanded(
-                child: CharacterDigitInputWidget(
+                child: NumIntInputWidget(
                   initialValue: widget.creature.naturalArmor,
                   minValue: 0,
                   maxValue: 30,

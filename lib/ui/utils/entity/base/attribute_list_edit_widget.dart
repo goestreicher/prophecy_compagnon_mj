@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
-import '../../character_digit_input_widget.dart';
+import '../../num_input_widget.dart';
 
 class AttributeListEditWidget extends StatelessWidget {
   const AttributeListEditWidget({
@@ -26,7 +26,7 @@ class AttributeListEditWidget extends StatelessWidget {
 
     for(var attribute in attributes.keys) {
       widgets.add(
-        CharacterDigitInputWidget(
+        NumIntInputWidget(
           initialValue: attributes[attribute]!,
           minValue: minValue,
           maxValue: maxValue,

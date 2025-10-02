@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/magic.dart';
-import '../../character_digit_input_widget.dart';
+import '../../num_input_widget.dart';
 
 class MagicSphereEditWidget extends StatefulWidget {
   const MagicSphereEditWidget({
@@ -69,7 +69,7 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
             children: [
               SizedBox(
                 width: 96,
-                child: CharacterDigitInputWidget(
+                child: NumIntInputWidget(
                     label: 'Niveau',
                     initialValue: _value,
                     minValue: 0,
@@ -95,7 +95,7 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
               const SizedBox(height: 8.0),
               SizedBox(
                 width: 96,
-                child: CharacterDigitInputWidget(
+                child: NumIntInputWidget(
                     label: 'Réserve',
                     initialValue: _pool,
                     minValue: 0,

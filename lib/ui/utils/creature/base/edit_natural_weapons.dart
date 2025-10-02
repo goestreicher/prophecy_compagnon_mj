@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/combat.dart';
 import '../../../../classes/creature.dart';
-import '../../character_digit_input_widget.dart';
+import '../../num_input_widget.dart';
 import '../../widget_group_container.dart';
+import 'display_natural_weapon_widget.dart';
 
 class CreatureEditNaturalWeapons extends StatefulWidget {
   const CreatureEditNaturalWeapons({ super.key, required this.creature });
@@ -22,12 +23,13 @@ class _CreatureEditNaturalWeaponsState extends State<CreatureEditNaturalWeapons>
     var widgets = <Widget>[];
     for(var (index, nw) in widget.creature.naturalWeapons.indexed) {
       widgets.add(_NaturalWeaponEditWidget(
-        key: UniqueKey(),
         weapon: nw,
-        onDelete: () =>
-            setState(() {
-              widget.creature.naturalWeapons.removeAt(index);
-            }),
+        onChanged: (NaturalWeaponModel w) => setState(() {
+          widget.creature.naturalWeapons[index] = w;
+        }),
+        onDelete: () => setState(() {
+          widget.creature.naturalWeapons.removeAt(index);
+        }),
       ));
     }
 
@@ -39,7 +41,6 @@ class _CreatureEditNaturalWeaponsState extends State<CreatureEditNaturalWeapons>
         )
       ),
       child: Center(
-        //alignment: AlignmentGeometry.topLeft,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 12.0,
@@ -57,7 +58,7 @@ class _CreatureEditNaturalWeaponsState extends State<CreatureEditNaturalWeapons>
               onPressed: () async {
                 NaturalWeaponModel? weapon = await showDialog(
                   context: context,
-                  builder: (BuildContext context) => _NaturalWeaponCreateDialog(),
+                  builder: (BuildContext context) => _NaturalWeaponEditDialog(),
                 );
                 if(weapon == null) return;
                 setState(() {
@@ -72,147 +73,178 @@ class _CreatureEditNaturalWeaponsState extends State<CreatureEditNaturalWeapons>
   }
 }
 
-class _NaturalWeaponEditWidget extends StatefulWidget {
+class _NaturalWeaponEditWidget extends StatelessWidget {
   const _NaturalWeaponEditWidget({
-    super.key,
     required this.weapon,
+    required this.onChanged,
     required this.onDelete,
   });
 
   final NaturalWeaponModel weapon;
+  final void Function(NaturalWeaponModel) onChanged;
   final void Function() onDelete;
 
   @override
-  State<_NaturalWeaponEditWidget> createState() => _NaturalWeaponEditWidgetState();
+  Widget build(BuildContext context) {
+    return Card(
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Row(
+          spacing: 16.0,
+          children: [
+            NaturalWeaponDisplayWidget(
+              weapon: weapon,
+            ),
+            Spacer(),
+            IconButton(
+              style: IconButton.styleFrom(
+                iconSize: 24.0,
+              ),
+              padding: const EdgeInsets.all(8.0),
+              constraints: const BoxConstraints(),
+              onPressed: () async {
+                NaturalWeaponModel? model = await showDialog(
+                  context: context,
+                  builder: (BuildContext context) => _NaturalWeaponEditDialog(
+                    source: weapon,
+                  ),
+                );
+                if(model == null) return;
+                onChanged(model);
+              },
+              icon: const Icon(Icons.edit),
+            ),
+            IconButton(
+              style: IconButton.styleFrom(
+                iconSize: 24.0,
+              ),
+              padding: const EdgeInsets.all(8.0),
+              constraints: const BoxConstraints(),
+              onPressed: () => onDelete(),
+              icon: const Icon(Icons.delete),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
-class _NaturalWeaponEditWidgetState extends State<_NaturalWeaponEditWidget> {
+class _NaturalWeaponEditDialog extends StatefulWidget {
+  const _NaturalWeaponEditDialog({ this.source });
+
+  final NaturalWeaponModel? source;
+
+  @override
+  State<_NaturalWeaponEditDialog> createState() => _NaturalWeaponEditDialogState();
+}
+
+class _NaturalWeaponEditDialogState extends State<_NaturalWeaponEditDialog> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
-  late int currentSkill;
-  late int currentDamage;
+
+  int skill = 0;
+  int damage = 0;
+  final Map<WeaponRange, NaturalWeaponModelRangeSpecification> ranges =
+      <WeaponRange, NaturalWeaponModelRangeSpecification>{};
 
   @override
   void initState() {
     super.initState();
 
-    nameController.text = widget.weapon.name;
-    currentSkill = widget.weapon.skill;
-    currentDamage = widget.weapon.damage;
+    if(widget.source != null) {
+      nameController.text = widget.source!.name;
+      skill = widget.source!.skill;
+      damage = widget.source!.damage;
+      for(var r in widget.source!.ranges.keys) {
+        ranges[r] = NaturalWeaponModelRangeSpecification(
+          initiative: widget.source!.ranges[r]!.initiative,
+          effectiveDistance: widget.source!.ranges[r]!.effectiveDistance,
+          maximumDistance: widget.source!.ranges[r]!.maximumDistance,
+        );
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
-    return Row(
-      spacing: 8.0,
-      children: [
-        Expanded(
-          child: TextFormField(
-            controller: nameController,
-            decoration: InputDecoration(
-              label: const Text('Nom'),
-              labelStyle: theme.textTheme.labelSmall,
-              floatingLabelStyle: theme.textTheme.labelLarge,
-              border: const OutlineInputBorder(),
-              contentPadding: const EdgeInsets.all(12.0),
-              error: null,
-              errorText: null,
-              isDense: true,
-            ),
-            style: theme.textTheme.bodySmall,
-            validator: (String? value) {
-              if(value == null || value.isEmpty) {
-                return 'Valeur manquante';
+    var rangeWidgets = <Widget>[];
+    for(var r in WeaponRange.values) {
+      rangeWidgets.add(
+        _NaturalWeaponRangeEditWidget(
+          enabled: ranges.containsKey(r),
+          range: r,
+          specification: ranges[r],
+          onEnableChanged: (bool enabled) {
+            setState(() {
+              if(enabled) {
+                ranges[r] = NaturalWeaponModelRangeSpecification(
+                  initiative: 0,
+                  effectiveDistance: 0.0,
+                  maximumDistance: 0.0,
+                );
               }
-              return null;
-            },
-          ),
-        ),
-        SizedBox(
-          width: 90,
-          child: CharacterDigitInputWidget(
-            label: 'Compétence',
-            initialValue: currentSkill,
-            minValue: 1,
-            maxValue: 30,
-            onChanged: (int value) {
-              widget.weapon.skill = value;
-            },
-          )
-        ),
-        SizedBox(
-          width: 90,
-          child: CharacterDigitInputWidget(
-            label: 'Dégats',
-            initialValue: currentDamage,
-            minValue: 1,
-            maxValue: 9999,
-            onChanged: (int value) {
-              widget.weapon.damage = value;
-            },
-          )
-        ),
-        // TODO: add range management
-        IconButton(
-          style: IconButton.styleFrom(
-            iconSize: 16.0,
-          ),
-          padding: const EdgeInsets.all(8.0),
-          constraints: const BoxConstraints(),
-          onPressed: () => widget.onDelete(),
-          icon: const Icon(Icons.delete),
-        ),
-      ],
-    );
-  }
-}
+              else {
+                ranges.remove(r);
+              }
+            });
+          },
+          onInitiativeChanged: (int initiative) {
+            if(!ranges.containsKey(r)) return;
+            ranges[r]!.initiative = initiative;
+          },
+          onEffectiveDistanceChanged: (double distance) {
+            if(!ranges.containsKey(r)) return;
+            ranges[r]!.effectiveDistance = distance;
+          },
+          onMaximumDistanceChanged: (double distance) {
+            if(!ranges.containsKey(r)) return;
+            ranges[r]!.maximumDistance = distance;
+          },
+        )
+      );
+    }
 
-class _NaturalWeaponCreateDialog extends StatefulWidget {
-  const _NaturalWeaponCreateDialog();
-
-  @override
-  State<_NaturalWeaponCreateDialog> createState() => _NaturalWeaponCreateDialogState();
-}
-
-class _NaturalWeaponCreateDialogState extends State<_NaturalWeaponCreateDialog> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController nameController = TextEditingController();
-  int skill = 0;
-  int damage = 0;
-
-  @override
-  Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text('Nouvelle arme naturelle'),
+      title: const Text('Éditer une arme naturelle'),
       content: Form(
-        key: _formKey,
+        key: formKey,
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          spacing: 12.0,
+          spacing: 16.0,
           children: [
-            TextFormField(
-              controller: nameController,
-              decoration: InputDecoration(
-                label: const Text('Nom'),
-                border: const OutlineInputBorder(),
-              ),
-              validator: (String? value) {
-                if(value == null || value.isEmpty) {
-                  return 'Valeur manquante';
-                }
-                return null;
-              },
-            ),
             Row(
-              spacing: 16.0,
+              spacing: 12.0,
               children: [
-                Spacer(),
+                Expanded(
+                  child: TextFormField(
+                    controller: nameController,
+                    decoration: InputDecoration(
+                      label: const Text('Nom'),
+                      labelStyle: theme.textTheme.labelSmall,
+                      floatingLabelStyle: theme.textTheme.labelLarge,
+                      border: const OutlineInputBorder(),
+                      contentPadding: const EdgeInsets.all(12.0),
+                      error: null,
+                      errorText: null,
+                      isDense: true,
+                    ),
+                    style: theme.textTheme.bodySmall,
+                    validator: (String? value) {
+                      if(value == null || value.isEmpty) {
+                        return 'Valeur manquante';
+                      }
+                      return null;
+                    },
+                  ),
+                ),
                 SizedBox(
                   width: 90,
-                  child: CharacterDigitInputWidget(
+                  child: NumIntInputWidget(
                     label: 'Compétence',
-                    initialValue: 0,
+                    initialValue: skill,
                     minValue: 1,
                     maxValue: 30,
                     onChanged: (int value) => skill = value,
@@ -220,17 +252,17 @@ class _NaturalWeaponCreateDialogState extends State<_NaturalWeaponCreateDialog> 
                 ),
                 SizedBox(
                   width: 90,
-                  child: CharacterDigitInputWidget(
+                  child: NumIntInputWidget(
                     label: 'Dégats',
-                    initialValue: 0,
+                    initialValue: damage,
                     minValue: 1,
                     maxValue: 9999,
                     onChanged: (int value) => damage = value,
                   ),
                 ),
-                Spacer(),
               ],
-            )
+            ),
+            ...rangeWidgets,
           ],
         ),
       ),
@@ -240,19 +272,116 @@ class _NaturalWeaponCreateDialogState extends State<_NaturalWeaponCreateDialog> 
           child: const Text('Annuler'),
         ),
         TextButton(
-          onPressed: () {
-            if(!_formKey.currentState!.validate()) return;
+          onPressed: ranges.isEmpty ? null : () {
+            if(!formKey.currentState!.validate()) return;
             var model = NaturalWeaponModel(
               name: nameController.text,
               skill: skill,
               damage: damage,
-              // TODO: add range management
-              ranges: {WeaponRange.contact: 0.0},
+              ranges: ranges,
             );
             Navigator.of(context).pop(model);
           },
           child: const Text('OK'),
         )
+      ],
+    );
+  }
+}
+
+class _NaturalWeaponRangeEditWidget extends StatefulWidget {
+  const _NaturalWeaponRangeEditWidget({
+    required this.enabled,
+    required this.range,
+    this.specification,
+    required this.onEnableChanged,
+    required this.onInitiativeChanged,
+    required this.onEffectiveDistanceChanged,
+    required this.onMaximumDistanceChanged,
+  });
+
+  final bool enabled;
+  final WeaponRange range;
+  final NaturalWeaponModelRangeSpecification? specification;
+  final void Function(bool) onEnableChanged;
+  final void Function(int) onInitiativeChanged;
+  final void Function(double) onEffectiveDistanceChanged;
+  final void Function(double) onMaximumDistanceChanged;
+
+  @override
+  State<_NaturalWeaponRangeEditWidget> createState() => _NaturalWeaponRangeEditWidgetState();
+}
+
+class _NaturalWeaponRangeEditWidgetState extends State<_NaturalWeaponRangeEditWidget> {
+  late bool enabled;
+
+  @override
+  void initState() {
+    super.initState();
+
+    enabled = widget.enabled;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    return Row(
+      spacing: 12.0,
+      children: [
+        Switch(
+          value: enabled,
+          onChanged: (bool v) {
+            setState(() {
+              enabled = v;
+            });
+            widget.onEnableChanged(v);
+          },
+        ),
+        SizedBox(
+          width: 90,
+          child: Text(
+            widget.range.title,
+            style: theme.textTheme.bodySmall,
+          ),
+        ),
+        SizedBox(
+          width: 70,
+          child: NumIntInputWidget(
+            enabled: enabled,
+            label: 'Initiative',
+            initialValue: widget.specification?.initiative ?? 0,
+            minValue: -20,
+            maxValue: 20,
+            onChanged: (int value) => widget.onInitiativeChanged(value),
+          ),
+        ),
+        if(widget.range != WeaponRange.contact)
+          SizedBox(
+            width: 90,
+            child: NumDoubleInputWidget(
+              enabled: enabled,
+              label: widget.range == WeaponRange.ranged
+                ? 'Distance Eff.'
+                : 'Distance',
+              initialValue: widget.specification?.effectiveDistance ?? 0.0,
+              minValue: 0.0,
+              maxValue: 9999.0,
+              onChanged: (double value) => widget.onEffectiveDistanceChanged(value),
+            ),
+          ),
+        if(widget.range == WeaponRange.ranged)
+          SizedBox(
+            width: 90,
+            child: NumDoubleInputWidget(
+              enabled: enabled,
+              label: 'Distance Max.',
+              initialValue: widget.specification?.maximumDistance ?? 0.0,
+              minValue: 0.0,
+              maxValue: 99999.0,
+              onChanged: (double value) => widget.onMaximumDistanceChanged(value),
+            ),
+          ),
       ],
     );
   }

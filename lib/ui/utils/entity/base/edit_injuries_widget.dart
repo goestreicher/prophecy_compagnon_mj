@@ -11,7 +11,7 @@ import '../../../../classes/human_character.dart';
 import '../../../../classes/non_player_character.dart';
 import '../../../../classes/player_character.dart';
 import '../../character/change_stream.dart';
-import '../../character_digit_input_widget.dart';
+import '../../num_input_widget.dart';
 import '../../widget_group_container.dart';
 import 'injury_manager_widget.dart';
 
@@ -414,7 +414,7 @@ class _InjuryLevelEditWidget extends StatelessWidget {
         ),
         SizedBox(
             width: 80,
-            child: CharacterDigitInputWidget(
+            child: NumIntInputWidget(
               label: 'Cases',
               initialValue: level.capacity,
               minValue: 1,
@@ -424,7 +424,7 @@ class _InjuryLevelEditWidget extends StatelessWidget {
         ),
         SizedBox(
             width: 80,
-            child: CharacterDigitInputWidget(
+            child: NumIntInputWidget(
               enabled: previous != null,
               label: 'Début',
               initialValue: level.start + 1,
@@ -436,7 +436,7 @@ class _InjuryLevelEditWidget extends StatelessWidget {
         if(!level.type.isFinal)
           SizedBox(
               width: 80,
-              child: CharacterDigitInputWidget(
+              child: NumIntInputWidget(
                 label: 'Fin',
                 initialValue: level.end,
                 minValue: 1,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/character/base.dart';
-import '../../character_digit_input_widget.dart';
+import '../../num_input_widget.dart';
 
 class AbilityListEditWidget extends StatelessWidget {
   const AbilityListEditWidget({
@@ -26,7 +26,7 @@ class AbilityListEditWidget extends StatelessWidget {
     for(var i = 0; (i+4) < Ability.values.length; ++i) {
       var currentRow = <Widget>[
         Expanded(
-          child: CharacterDigitInputWidget(
+          child: NumIntInputWidget(
             initialValue: abilities[Ability.values[i]] ?? 0,
             minValue: minValue,
             maxValue: maxValue,
@@ -44,7 +44,7 @@ class AbilityListEditWidget extends StatelessWidget {
       if(i + 4 < Ability.values.length) {
         currentRow.add(
           Expanded(
-            child: CharacterDigitInputWidget(
+            child: NumIntInputWidget(
               initialValue: abilities[Ability.values[i+4]] ?? 0,
               minValue: minValue,
               maxValue: maxValue,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/creature.dart';
 import '../../widget_group_container.dart';
+import 'display_natural_weapon_widget.dart';
 
 class CreatureDisplayNaturalWeaponsWidget extends StatelessWidget {
   const CreatureDisplayNaturalWeaponsWidget({ super.key, required this.creature });
@@ -24,9 +25,8 @@ class CreatureDisplayNaturalWeaponsWidget extends StatelessWidget {
     else {
       for(var w in creature.naturalWeapons) {
         widgets.add(
-          Text(
-            '${w.name} (${w.skill}), Dommages ${w.damage}',
-            style: theme.textTheme.bodySmall,
+          NaturalWeaponDisplayWidget(
+            weapon: w,
           )
         );
       }
@@ -40,7 +40,6 @@ class CreatureDisplayNaturalWeaponsWidget extends StatelessWidget {
         )
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
         spacing: 8.0,
         children: widgets,
       )

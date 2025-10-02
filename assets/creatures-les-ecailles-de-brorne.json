@@ -125,7 +125,10 @@
         "skill": 9,
         "damage": 23,
         "ranges": {
-          "contact": 0
+          "distance": {
+            "initiative": 0,
+            "effective_distance": 2.0
+          }
         }
       },
       {
@@ -133,7 +136,14 @@
         "skill": 7,
         "damage": 13,
         "ranges": {
-          "contact": 0
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.0
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.4
+          }
         }
       },
       {
@@ -141,7 +151,14 @@
         "skill": 6,
         "damage": 15,
         "ranges": {
-          "contact": 0
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.0
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.4
+          }
         }
       }
     ],
