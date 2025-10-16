@@ -16,12 +16,12 @@ class EntityDisplayMagicSpellsWidget extends StatelessWidget {
 
     var spellWidgets = <Widget>[];
     for(var sphere in MagicSphere.values) {
-      var s = entity.spells(sphere);
+      var s = entity.magic.spells.forSphere(sphere);
       if(s.isNotEmpty) {
         spellWidgets.add(
           DisplaySphereMagicSpellsWidget(
             sphere: sphere,
-            spells: s,
+            spells: s.toList(),
           )
         );
       }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/caste/base.dart';
 import '../../../../classes/human_character.dart';
+import '../../../../classes/place.dart';
 import '../../../../classes/player_character.dart';
 import '../../widget_group_container.dart';
 
@@ -35,7 +36,30 @@ class CharacterDisplayGeneralWidget extends StatelessWidget {
                 child: _GeneralWidgetHeader(title: 'Nom', value: character.name),
               ),
               Expanded(
-                  child: _GeneralWidgetHeader(title: 'Origine', value: character.origin.name)
+                child: FutureBuilder(
+                  future: character.origin.place,
+                  builder: (BuildContext context, AsyncSnapshot<Place?> snapshot) {
+                    if(snapshot.connectionState == ConnectionState.waiting) {
+                      return _GeneralWidgetHeader(
+                        title: 'Origine',
+                        value: 'Chargement...',
+                      );
+                    }
+
+                    if(!snapshot.hasData || snapshot.data == null) {
+                      return _GeneralWidgetHeader(
+                        title: 'Origine',
+                        value: 'Erreur de chargement',
+                      );
+                    }
+
+                    var place = snapshot.data!;
+                    return _GeneralWidgetHeader(
+                      title: 'Origine',
+                      value: place.name
+                    );
+                  }
+                )
               ),
             ],
           ),
@@ -43,17 +67,17 @@ class CharacterDisplayGeneralWidget extends StatelessWidget {
             spacing: 16.0,
             children: [
               Expanded(
-                child: _GeneralWidgetHeader(title: 'Caste', value: character.caste.title)
+                child: _GeneralWidgetHeader(title: 'Caste', value: character.caste.caste.title)
               ),
               Expanded(
-                child: _GeneralWidgetHeader(title: 'Statut', value: Caste.statusName(character.caste, character.casteStatus))
+                child: _GeneralWidgetHeader(title: 'Statut', value: Caste.statusName(character.caste.caste, character.caste.status))
               ),
               Expanded(
                 child: _GeneralWidgetHeader(
                   title: 'Carrière',
-                  value: character.career == null
+                  value: character.caste.career == null
                     ? 'Aucune'
-                    : character.career!.title
+                    : character.caste.career!.title
                 )
               ),
             ],

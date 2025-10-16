@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import 'magic.dart';
@@ -29,14 +30,29 @@ class DraconicLinkFavor {
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class DraconicLink {
   DraconicLink({
-    required this.sphere,
+    required DraconicLinkProgress progress,
     required this.dragon,
-    required this.progress,
-  });
+    required MagicSphere sphere,
+  })
+    : progressNotifier = ValueNotifier<DraconicLinkProgress>(progress),
+      sphereNotifier = ValueNotifier<MagicSphere>(sphere);
 
-  MagicSphere sphere;
+  DraconicLink.empty()
+    : progressNotifier = ValueNotifier<DraconicLinkProgress>(DraconicLinkProgress.aucunLien),
+      dragon = '',
+      sphereNotifier = ValueNotifier<MagicSphere>(MagicSphere.pierre);
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  ValueNotifier<MagicSphere> sphereNotifier;
+  MagicSphere get sphere => sphereNotifier.value;
+  set sphere(MagicSphere s) => sphereNotifier.value = s;
+
   String dragon;
-  DraconicLinkProgress progress;
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  ValueNotifier<DraconicLinkProgress> progressNotifier;
+  DraconicLinkProgress get progress => progressNotifier.value;
+  set progress(DraconicLinkProgress p) => progressNotifier.value = p;
 
   static List<DraconicLinkFavor> favors({ required DraconicLinkProgress progress, required MagicSphere sphere }) {
     var ret = <DraconicLinkFavor>[];

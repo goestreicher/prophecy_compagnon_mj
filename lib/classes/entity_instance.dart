@@ -1,13 +1,16 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'character/injury.dart';
+import 'entity/injury.dart';
+import 'entity/abilities.dart';
+import 'entity/attributes.dart';
+import 'entity/skills.dart';
+import 'entity/status.dart';
 import 'equipment.dart';
 import 'entity_base.dart';
 import 'exportable_binary_data.dart';
 import 'magic.dart';
 import 'magic_user.dart';
 import 'object_location.dart';
-import 'character/skill.dart';
 import 'storage/storable.dart';
 
 part 'entity_instance.g.dart';
@@ -118,23 +121,24 @@ class EntityInstance extends EntityBase with MagicUser {
       initiative: entity.initiative,
       injuryProvider: (EntityBase? e, InjuryManager? i) =>
           InjuryManager(
-            levels: entity.injuries.levels(),
+            levels: entity.injuries.manager.levels(),
           ),
       size: entity.size,
       modelSpecification: modelSpecification,
     );
 
-    for(var a in entity.abilities.keys) {
-      instance.setAbility(a, entity.abilities[a]!);
+    for(var a in Ability.values) {
+      instance.abilities.setAbility(a, entity.abilities.ability(a));
     }
-    for(var a in entity.attributes.keys) {
-      instance.setAttribute(a, entity.attributes[a]!);
+    for(var a in Attribute.values) {
+      instance.attributes.setAttribute(a, entity.attributes.attribute(a));
     }
-    for(var s in entity.skills) {
-      instance.setSkill(s.skill, s.value);
+    for(var s in entity.skills.all) {
+      var i = instance.skills.add(s.skill);
+      i.value = s.value;
 
-      for(var sp in s.specializations.keys) {
-        instance.setSpecializedSkill(sp, s.specializations[sp]!);
+      for(var sp in s.specializations) {
+        i.addSpecialization(sp.skill).value = sp.value;
       }
     }
 
@@ -147,17 +151,18 @@ class EntityInstance extends EntityBase with MagicUser {
 
     if(entity is MagicUser) {
       for(var s in MagicSkill.values) {
-        instance.setMagicSkill(s, entity.magicSkill(s));
+        instance.magic.skills.set(s, entity.magic.skills.get(s));
       }
 
       instance.magicPool = entity.magicPool;
 
       for(var s in MagicSphere.values) {
-        instance.setMagicSphere(s, entity.magicSphere(s));
-        instance.setMagicSpherePool(s, entity.magicSpherePool(s));
-        for(var sp in entity.spells(s)) {
-          instance.addSpell(sp);
-        }
+        instance.magic.spheres.set(s, entity.magic.spheres.get(s));
+        instance.magic.pools.set(s, entity.magic.pools.get(s));
+      }
+
+      for(var s in entity.magic.spells) {
+        instance.magic.spells.add(s);
       }
     }
 

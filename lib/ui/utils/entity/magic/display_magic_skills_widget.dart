@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/magic.dart';
 import '../../../../classes/magic_user.dart';
 import '../../widget_group_container.dart';
+import '../base/single_skill_widget.dart';
 
 class EntityDisplayMagicSkillsWidget extends StatelessWidget {
   const EntityDisplayMagicSkillsWidget({ super.key, required this.entity });
@@ -15,54 +16,24 @@ class EntityDisplayMagicSkillsWidget extends StatelessWidget {
       child: Column(
         spacing: 12.0,
         children: [
-          _SingleSkillWidget(
+          SingleSkillWidget(
             name: 'Instinctive',
-            value: entity.magicSkill(MagicSkill.instinctive),
+            value: entity.magic.skills.get(MagicSkill.instinctive),
           ),
-          _SingleSkillWidget(
+          SingleSkillWidget(
             name: 'Invocatoire',
-            value: entity.magicSkill(MagicSkill.invocatoire),
+            value: entity.magic.skills.get(MagicSkill.invocatoire),
           ),
-          _SingleSkillWidget(
+          SingleSkillWidget(
             name: 'Sorcellerie',
-            value: entity.magicSkill(MagicSkill.sorcellerie),
+            value: entity.magic.skills.get(MagicSkill.sorcellerie),
           ),
-          _SingleSkillWidget(
+          SingleSkillWidget(
             name: 'Réserve',
             value: entity.magicPool,
           ),
         ]
       )
-    );
-  }
-}
-
-// TODO: factor this out
-// This is taken from display_skill_family_widget.dart
-class _SingleSkillWidget extends StatelessWidget {
-  const _SingleSkillWidget({ required this.name, required this.value });
-
-  final String name;
-  final int value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Text(name),
-        Expanded(
-            child: Container(
-              margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 6.0),
-              decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(color: Colors.black12),
-                  )
-              ),
-            )
-        ),
-        Text(value.toString()),
-      ],
     );
   }
 }

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../classes/character/base.dart';
-import '../../../classes/character/injury.dart';
 import '../../../classes/creature.dart';
+import '../../../classes/entity/attributes.dart';
 import '../entity/background/edit_description_widget.dart';
 import '../entity/background/edit_illustration_widget.dart';
 import '../entity/base/edit_abilities_widget.dart';
@@ -110,7 +109,6 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                               Expanded(
                                 child: EntityEditInjuriesWidget(
                                   entity: widget.creature,
-                                  onChanged: (InjuryManager manager) => widget.creature.injuries = manager,
                                 )
                               ),
                             ],

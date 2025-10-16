@@ -40,7 +40,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
     });
   }
 
-  Future<List<CreatureSummary>> _updateCreaturesList() async {
+  Future<Iterable<CreatureSummary>> _updateCreaturesList() async {
     if(creatureSource != null) {
       return CreatureSummary.forSource(creatureSource!, creatureCategory, nameFilter: search);
     }
@@ -88,7 +88,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
     else {
       mainArea = FutureBuilder(
         future: _updateCreaturesList(),
-        builder: (BuildContext context, AsyncSnapshot<List<CreatureSummary>> snapshot) {
+        builder: (BuildContext context, AsyncSnapshot<Iterable<CreatureSummary>> snapshot) {
           if(snapshot.connectionState == ConnectionState.waiting) {
             return FullPageLoadingWidget();
           }
@@ -101,7 +101,7 @@ class _CreaturesMainPageState extends State<CreaturesMainPage> {
             return FullPageErrorWidget(message: 'Aucune donnée retournée', canPop: true);
           }
 
-          var creatures = snapshot.data!;
+          var creatures = snapshot.data!.toList();
           creatures.sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
           var theme = Theme.of(context);
 

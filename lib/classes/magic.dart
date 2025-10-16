@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'entity/abilities.dart';
 import 'object_location.dart';
-import 'character/base.dart';
 import 'storage/default_assets_store.dart';
 
 part 'magic.g.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../../classes/human_character.dart';
+import '../../../../classes/character/tendencies.dart';
 import '../../measure_widget_offscreen.dart';
 
 /*
@@ -22,7 +22,7 @@ const _widgetPadding = 8.0;
 //   source: https://api.flutter.dev/flutter/material/InputDecoration/contentPadding.html
 const _valuesEditVerticalPadding = 20.0;
 
-class TendenciesEditWidget extends StatefulWidget {
+class TendenciesEditWidget extends StatelessWidget {
   const TendenciesEditWidget({
     super.key,
     required this.tendencies,
@@ -37,79 +37,16 @@ class TendenciesEditWidget extends StatefulWidget {
   final bool showCircles;
 
   @override
-  State<TendenciesEditWidget> createState() => _TendenciesEditWidgetState();
-}
-
-class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
-  final TextEditingController tendencyDragonController = TextEditingController();
-  final TextEditingController tendencyFatalityController = TextEditingController();
-  final TextEditingController tendencyHumanController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-
-    tendencyDragonController.text = widget.tendencies.dragon.value.toString();
-    tendencyFatalityController.text = widget.tendencies.fatality.value.toString();
-    tendencyHumanController.text = widget.tendencies.human.value.toString();
-  }
-
-  Widget getValueWidget({
-    required TextEditingController controller,
-    required TextStyle textStyle,
-    required void Function(String?) onChanged,
-  }) {
-    if(widget.editValues) {
-      return SizedBox(
-        width: 40,
-        child: TextFormField(
-          controller: controller,
-          decoration: const InputDecoration(
-            border: OutlineInputBorder(),
-            isDense: true,
-            // isCollapsed: true,
-            // contentPadding: EdgeInsets.all(_valuesEditPadding),
-            error: null,
-            errorText: null,
-          ),
-          style: textStyle,
-          textAlign: TextAlign.center,
-          keyboardType: TextInputType.number,
-          inputFormatters: [
-            FilteringTextInputFormatter.digitsOnly,
-          ],
-          validator: (String? value) {
-            if(value == null || value.isEmpty) return 'Valeur manquante';
-            int? input = int.tryParse(value);
-            if(input == null) return 'Pas un nombre';
-            if(input < 0) return 'Nombre >= 0';
-            if(input > 5) return 'Nombre <= 5';
-            return null;
-          },
-          autovalidateMode: AutovalidateMode.onUserInteraction,
-          onChanged: (String? value) => onChanged(value),
-        ),
-      );
-    }
-    else {
-      return Text(
-        controller.text,
-        style: textStyle,
-      );
-    }
-  }
-
-  @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
     var valueTextStyle = theme.textTheme.bodyMedium!.copyWith(fontWeight: FontWeight.bold);
-    var backgroundDisplayRatio = widget.backgroundWidth / _backgroundSize.width;
+    var backgroundDisplayRatio = backgroundWidth / _backgroundSize.width;
 
     var textWidgetSize = measureWidgetOffscreen(
       Text('5', style: valueTextStyle)
     );
-    if(widget.editValues) {
+    if(editValues) {
       // add padding only once, and +2 for the borders
       textWidgetSize = Size(40.0, textWidgetSize.height + _valuesEditVerticalPadding + 2);
     }
@@ -126,15 +63,15 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
     var circlesVerticalOffset = 0.0;
     var circlesHorizontalOffset = 0.0;
     var bottomExtraPadding = 0.0;
-    if(widget.showCircles) {
+    if(showCircles) {
       circlesVerticalOffset = 34.0;
       circlesHorizontalOffset = 60.0;
       bottomExtraPadding = 16.0;
     }
 
     return SizedBox(
-      width: widget.backgroundWidth + 2 * _widgetPadding + 2 * circlesHorizontalOffset,
-      height: widget.backgroundWidth + 2 * _widgetPadding + 2 * circlesVerticalOffset - bottomExtraPadding,
+      width: backgroundWidth + 2 * _widgetPadding + 2 * circlesHorizontalOffset,
+      height: backgroundWidth + 2 * _widgetPadding + 2 * circlesVerticalOffset - bottomExtraPadding,
       child: Padding(
         padding: const EdgeInsets.all(_widgetPadding),
         child: Stack(
@@ -144,7 +81,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
               left: circlesHorizontalOffset,
               child: Image.asset(
                 'assets/images/tendencies/background_tendencies.png',
-                width: widget.backgroundWidth.toDouble(),
+                width: backgroundWidth.toDouble(),
               )
             ),
             Positioned(
@@ -152,47 +89,45 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
               left: (_dragonCenter.width * backgroundDisplayRatio) + circlesHorizontalOffset - textWidgetSize.width / 2,
               child: SizedBox(
                 width: 40,
-                child: getValueWidget(
-                  controller: tendencyDragonController,
-                  textStyle: valueTextStyle,
-                  onChanged: (String? value) {
-                    if(value == null) return;
-                    int? input = int.tryParse(value);
-                    if(input == null) return;
-                    widget.tendencies.dragon.value = input;
-                  },
+                child: ValueListenableBuilder(
+                  valueListenable: tendencies.dragon.valueNotifier,
+                  builder: (BuildContext context, int value, _) {
+                    return _TendencyValueInputWidget(
+                      value: value,
+                      valueTextStyle: valueTextStyle,
+                      editable: editValues,
+                      onChanged: (int v) => tendencies.dragon.value = v,
+                    );
+                  }
                 ),
               ),
             ),
-            if(widget.showCircles)
+            if(showCircles)
               Positioned(
                 top: 0,
-                left: (widget.backgroundWidth - circlesWidgetSize.width) / 2 + circlesHorizontalOffset,
-                child: _TendencyCirclesInputWidget(
-                  count: widget.tendencies.dragon.circles,
-                  onChanged: (int count) {
-                    setState(() {
-                      widget.tendencies.dragon.circles = count;
-                    });
-                  },
-                  onTendencyIncreased: () {
-                    if(widget.tendencies.dragon.value < 5) {
-                      setState(() {
-                        widget.tendencies.dragon.value += 1;
-                        tendencyDragonController.text = widget.tendencies.dragon.value.toString();
-                        widget.tendencies.dragon.circles = 0;
-                      });
-                    }
-                  },
-                  onTendencyDecreased: () {
-                    if(widget.tendencies.dragon.value > 0) {
-                      setState(() {
-                        widget.tendencies.dragon.value -= 1;
-                        tendencyDragonController.text = widget.tendencies.dragon.value.toString();
-                        widget.tendencies.dragon.circles = 10;
-                      });
-                    }
-                  },
+                left: (backgroundWidth - circlesWidgetSize.width) / 2 + circlesHorizontalOffset,
+                child: ValueListenableBuilder(
+                  valueListenable: tendencies.dragon.circlesNotifier,
+                  builder: (BuildContext context, int value, _) {
+                    return _TendencyCirclesInputWidget(
+                      count: value,
+                      onChanged: (int count) {
+                        tendencies.dragon.circles = count;
+                      },
+                      onTendencyIncreased: () {
+                        if(tendencies.dragon.value < 5) {
+                          tendencies.dragon.value += 1;
+                          tendencies.dragon.circles = 0;
+                        }
+                      },
+                      onTendencyDecreased: () {
+                        if(tendencies.dragon.value > 0) {
+                          tendencies.dragon.value -= 1;
+                          tendencies.dragon.circles = 10;
+                        }
+                      },
+                    );
+                  }
                 ),
               ),
             Positioned(
@@ -200,47 +135,45 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
               left: (_fatalityCenter.width * backgroundDisplayRatio) + circlesHorizontalOffset - textWidgetSize.width / 2,
               child: SizedBox(
                 width: 40,
-                child: getValueWidget(
-                  controller: tendencyFatalityController,
-                  textStyle: valueTextStyle,
-                  onChanged: (String? value) {
-                    if(value == null) return;
-                    int? input = int.tryParse(value);
-                    if(input == null) return;
-                    widget.tendencies.fatality.value = input;
-                  },
+                child: ValueListenableBuilder(
+                  valueListenable: tendencies.fatality.valueNotifier,
+                  builder: (BuildContext context, int value, _) {
+                    return _TendencyValueInputWidget(
+                      value: value,
+                      valueTextStyle: valueTextStyle,
+                      editable: editValues,
+                      onChanged: (int v) => tendencies.fatality.value = v,
+                    );
+                  }
                 ),
               ),
             ),
-            if(widget.showCircles)
+            if(showCircles)
               Positioned(
                 bottom: 0,
                 left: 0,
-                child: _TendencyCirclesInputWidget(
-                  count: widget.tendencies.fatality.circles,
-                  onChanged: (int count) {
-                    setState(() {
-                      widget.tendencies.fatality.circles = count;
-                    });
-                  },
-                  onTendencyIncreased: () {
-                    if(widget.tendencies.fatality.value < 5) {
-                      setState(() {
-                        widget.tendencies.fatality.value += 1;
-                        tendencyFatalityController.text = widget.tendencies.fatality.value.toString();
-                        widget.tendencies.fatality.circles = 0;
-                      });
-                    }
-                  },
-                  onTendencyDecreased: () {
-                    if(widget.tendencies.fatality.value > 0) {
-                      setState(() {
-                        widget.tendencies.fatality.value -= 1;
-                        tendencyFatalityController.text = widget.tendencies.fatality.value.toString();
-                        widget.tendencies.fatality.circles = 10;
-                      });
-                    }
-                  },
+                child: ValueListenableBuilder(
+                  valueListenable: tendencies.fatality.circlesNotifier,
+                  builder: (BuildContext context, int value, _) {
+                    return _TendencyCirclesInputWidget(
+                      count: value,
+                      onChanged: (int count) {
+                        tendencies.fatality.circles = count;
+                      },
+                      onTendencyIncreased: () {
+                        if(tendencies.fatality.value < 5) {
+                          tendencies.fatality.value += 1;
+                          tendencies.fatality.circles = 0;
+                        }
+                      },
+                      onTendencyDecreased: () {
+                        if(tendencies.fatality.value > 0) {
+                          tendencies.fatality.value -= 1;
+                          tendencies.fatality.circles = 10;
+                        }
+                      },
+                    );
+                  }
                 ),
               ),
             Positioned(
@@ -248,52 +181,113 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
               left: (_humanCenter.width * backgroundDisplayRatio) + circlesHorizontalOffset - textWidgetSize.width / 2,
               child: SizedBox(
                 width: 40,
-                child: getValueWidget(
-                  controller: tendencyHumanController,
-                  textStyle: valueTextStyle,
-                  onChanged: (String? value) {
-                    if(value == null) return;
-                    int? input = int.tryParse(value);
-                    if(input == null) return;
-                    widget.tendencies.human.value = input;
-                  },
+                child: ValueListenableBuilder(
+                  valueListenable: tendencies.human.valueNotifier,
+                  builder: (BuildContext context, int value, _) {
+                    return _TendencyValueInputWidget(
+                      value: value,
+                      valueTextStyle: valueTextStyle,
+                      editable: editValues,
+                      onChanged: (int v) => tendencies.human.value = v,
+                    );
+                  }
                 ),
               ),
             ),
-            if(widget.showCircles)
+            if(showCircles)
               Positioned(
                 bottom: 0,
-                left: widget.backgroundWidth + circlesHorizontalOffset - circlesWidgetSize.width / 2,
-                child: _TendencyCirclesInputWidget(
-                  count: widget.tendencies.human.circles,
-                  onChanged: (int count) {
-                    setState(() {
-                      widget.tendencies.human.circles = count;
-                    });
-                  },
-                  onTendencyIncreased: () {
-                    if(widget.tendencies.human.value < 5) {
-                      setState(() {
-                        widget.tendencies.human.value += 1;
-                        tendencyHumanController.text = widget.tendencies.human.value.toString();
-                        widget.tendencies.human.circles = 0;
-                      });
-                    }
-                  },
-                  onTendencyDecreased: () {
-                    if(widget.tendencies.human.value > 0) {
-                      setState(() {
-                        widget.tendencies.human.value -= 1;
-                        tendencyHumanController.text = widget.tendencies.human.value.toString();
-                        widget.tendencies.human.circles = 10;
-                      });
-                    }
-                  },
+                left: backgroundWidth + circlesHorizontalOffset - circlesWidgetSize.width / 2,
+                child: ValueListenableBuilder(
+                  valueListenable: tendencies.human.circlesNotifier,
+                  builder: (BuildContext context, int value, _) {
+                    return _TendencyCirclesInputWidget(
+                      count: value,
+                      onChanged: (int count) {
+                        tendencies.human.circles = count;
+                      },
+                      onTendencyIncreased: () {
+                        if(tendencies.human.value < 5) {
+                          tendencies.human.value += 1;
+                          tendencies.human.circles = 0;
+                        }
+                      },
+                      onTendencyDecreased: () {
+                        if(tendencies.human.value > 0) {
+                          tendencies.human.value -= 1;
+                          tendencies.human.circles = 10;
+                        }
+                      },
+                    );
+                  }
                 ),
               ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class _TendencyValueInputWidget extends StatelessWidget {
+  const _TendencyValueInputWidget({
+    required this.value,
+    required this.valueTextStyle,
+    required this.editable,
+    required this.onChanged,
+  });
+
+  final int value;
+  final TextStyle valueTextStyle;
+  final bool editable;
+  final void Function(int) onChanged;
+
+  Widget getValueWidget() {
+    if(editable) {
+      return SizedBox(
+        width: 40,
+        child: TextFormField(
+          key: UniqueKey(),
+          initialValue: value.toString(),
+          decoration: const InputDecoration(
+            border: OutlineInputBorder(),
+            isDense: true,
+            error: null,
+            errorText: null,
+            contentPadding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 8.0),
+          ),
+          style: valueTextStyle,
+          textAlign: TextAlign.center,
+          keyboardType: TextInputType.number,
+          inputFormatters: [
+            FilteringTextInputFormatter.digitsOnly,
+          ],
+          validator: (String? value) {
+            if(value == null || value.isEmpty) return 'Valeur manquante';
+            int? input = int.tryParse(value);
+            if(input == null) return 'Pas un nombre';
+            if(input < 0) return 'Nombre >= 0';
+            if(input > 5) return 'Nombre <= 5';
+            return null;
+          },
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          onChanged: (String value) => onChanged(int.parse(value)),
+        ),
+      );
+    }
+    else {
+      return Text(
+        value.toString(),
+        style: valueTextStyle,
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 40,
+      child: getValueWidget(),
     );
   }
 }

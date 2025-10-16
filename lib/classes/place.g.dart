@@ -63,6 +63,50 @@ Map<String, dynamic> _$PlaceDescriptionToJson(PlaceDescription instance) =>
       'military': instance.military,
     };
 
+PlaceSummary _$PlaceSummaryFromJson(Map<String, dynamic> json) => PlaceSummary(
+  uuid: json['uuid'] as String,
+  source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+  location: json['location'] == null
+      ? ObjectLocation.memory
+      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+  name: json['name'] as String,
+  type: $enumDecode(_$PlaceTypeEnumMap, json['type']),
+  parentId: json['parent_id'] as String?,
+  canCache: json['can_cache'] as bool? ?? true,
+);
+
+Map<String, dynamic> _$PlaceSummaryToJson(PlaceSummary instance) =>
+    <String, dynamic>{
+      'source': instance.source.toJson(),
+      'name': instance.name,
+      'uuid': instance.uuid,
+      'type': _$PlaceTypeEnumMap[instance.type]!,
+      'parent_id': instance.parentId,
+      'can_cache': instance.canCache,
+    };
+
+const _$PlaceTypeEnumMap = {
+  PlaceType.monde: 'monde',
+  PlaceType.continent: 'continent',
+  PlaceType.nation: 'nation',
+  PlaceType.region: 'region',
+  PlaceType.lieuUnique: 'lieuUnique',
+  PlaceType.citeEtat: 'citeEtat',
+  PlaceType.capitale: 'capitale',
+  PlaceType.archiduche: 'archiduche',
+  PlaceType.principaute: 'principaute',
+  PlaceType.duche: 'duche',
+  PlaceType.marche: 'marche',
+  PlaceType.comte: 'comte',
+  PlaceType.baronnie: 'baronnie',
+  PlaceType.citeLibre: 'citeLibre',
+  PlaceType.cite: 'cite',
+  PlaceType.ville: 'ville',
+  PlaceType.village: 'village',
+  PlaceType.quartier: 'quartier',
+  PlaceType.batiment: 'batiment',
+};
+
 Place _$PlaceFromJson(Map<String, dynamic> json) => Place(
   uuid: json['uuid'] as String?,
   parentId: json['parent_id'] as String?,
@@ -87,7 +131,7 @@ Place _$PlaceFromJson(Map<String, dynamic> json) => Place(
 Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
   'source': instance.source.toJson(),
   'name': instance.name,
-  'uuid': ?instance.uuid,
+  'uuid': instance.uuid,
   'parent_id': instance.parentId,
   'type': _$PlaceTypeEnumMap[instance.type]!,
   'government': instance.government,
@@ -96,26 +140,4 @@ Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
   'climate': instance.climate,
   'description': instance.description.toJson(),
   'map': instance.map?.toJson(),
-};
-
-const _$PlaceTypeEnumMap = {
-  PlaceType.monde: 'monde',
-  PlaceType.continent: 'continent',
-  PlaceType.nation: 'nation',
-  PlaceType.region: 'region',
-  PlaceType.lieuUnique: 'lieuUnique',
-  PlaceType.citeEtat: 'citeEtat',
-  PlaceType.capitale: 'capitale',
-  PlaceType.archiduche: 'archiduche',
-  PlaceType.principaute: 'principaute',
-  PlaceType.duche: 'duche',
-  PlaceType.marche: 'marche',
-  PlaceType.comte: 'comte',
-  PlaceType.baronnie: 'baronnie',
-  PlaceType.citeLibre: 'citeLibre',
-  PlaceType.cite: 'cite',
-  PlaceType.ville: 'ville',
-  PlaceType.village: 'village',
-  PlaceType.quartier: 'quartier',
-  PlaceType.batiment: 'batiment',
 };

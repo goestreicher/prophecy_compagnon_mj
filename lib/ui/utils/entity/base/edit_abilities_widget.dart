@@ -1,10 +1,7 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/base.dart';
+import '../../../../classes/entity/abilities.dart';
 import '../../../../classes/entity_base.dart';
-import '../../character/change_stream.dart';
 import '../../widget_group_container.dart';
 import 'ability_list_edit_widget.dart';
 
@@ -12,13 +9,11 @@ class EntityEditAbilitiesWidget extends StatelessWidget {
   const EntityEditAbilitiesWidget({
     super.key,
     required this.entity,
-    this.changeStreamController,
     this.minValue = 1,
     this.maxValue = 15,
   });
 
   final EntityBase entity;
-  final StreamController<CharacterChange>? changeStreamController;
   final int minValue;
   final int maxValue;
 
@@ -35,18 +30,10 @@ class EntityEditAbilitiesWidget extends StatelessWidget {
         )
       ),
       child: AbilityListEditWidget(
-        abilities: entity.abilities,
+        abilities: entity.abilities.all,
         minValue: minValue,
         maxValue: maxValue,
-        onChanged: (Ability a, int v) {
-          entity.setAbility(a, v);
-          changeStreamController?.add(
-            CharacterChange(
-              item: CharacterChangeItem.ability,
-              value: CharacterAbilityChangeValue(ability: a, value: v),
-            ),
-          );
-        },
+        onChanged: (Ability a, int v) => entity.abilities.setAbility(a, v),
       ),
     );
   }

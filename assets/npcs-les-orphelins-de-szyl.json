@@ -1,6 +1,5 @@
 [
   {
-    "equiped": [],
     "uuid": "753349e3-aae7-4051-a6a4-06dc7eba2992",
     "name": "Bred Fejud",
     "description": "Bred est le maître des explorateurs. C’est l’ancien lieutenant de Yhann Fragorn et son plus fidèle ami. C’est un homme d'environ trente-cinq ans, de taille moyenne, originaire d’Ysmir. C’est un Solitaire de haut rang, spécialisé en histoire et réputé pour sa connaissance de la géographie et sa maîtrise du javelot. Toujours en partance sur les routes, il consacre le plus clair de son temps à longer les frontières de Kor, rencontrant, au hasard des routes, ses subordonnés. Soucieux de leur sécurité, il n’hésite pas à leur prodiguer ses conseils et à les charger de messages ou d’objets importants à rapatrier vers le centre de Kor, quand il ne décide pas simplement de les accompagner.\n\n",
@@ -27,162 +26,194 @@
       "manuel": 6,
       "social": 5
     },
-    "skills": [
-      {
-        "skill": "armesAProjectiles",
-        "value": 10
-      },
-      {
-        "skill": "armesTranchantes",
-        "value": 7
-      },
-      {
-        "skill": "athletisme",
-        "value": 5
-      },
-      {
-        "skill": "equitation",
-        "value": 6
-      },
-      {
-        "skill": "escalade",
-        "value": 7
-      },
-      {
-        "skill": "esquive",
-        "value": 6
-      },
-      {
-        "skill": "natation",
-        "value": 5
-      },
-      {
-        "skill": "pister",
-        "value": 4
-      },
-      {
-        "skill": "connaissanceDesAnimaux",
-        "value": 5
-      },
-      {
-        "skill": "geographie",
-        "value": 8
-      },
-      {
-        "skill": "histoire",
-        "value": 9,
-        "specializations": [
-          {
-            "name": "histoire:civilisationsAnciennes",
-            "title": "Civilisations anciennes",
-            "value": 11,
-            "reserved": false
-          }
-        ]
-      },
-      {
-        "skill": "orientation",
-        "value": 9
-      },
-      {
-        "skill": "astrologie",
-        "value": 6
-      },
-      {
-        "skill": "cartographie",
-        "value": 8
-      },
-      {
-        "skill": "lireEtEcrire",
-        "value": 7
-      },
-      {
-        "skill": "premiersSoins",
-        "value": 7
-      },
-      {
-        "skill": "mecanismes",
-        "value": 5
-      },
-      {
-        "skill": "pieges",
-        "value": 6
-      },
-      {
-        "skill": "attelages",
-        "value": 5
-      },
-      {
-        "skill": "conte",
-        "value": 4
-      },
-      {
-        "skill": "marchandage",
-        "value": 5
-      },
-      {
-        "skill": "vieEnCite",
-        "value": 4
-      },
-      {
-        "skill": "castes",
-        "value": 5
-      },
-      {
-        "skill": "commandement",
-        "value": 4
-      },
-      {
-        "skill": "diplomatie",
-        "value": 4
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 7
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 5
+            },
+            {
+              "skill": "equitation",
+              "value": 6
+            },
+            {
+              "skill": "escalade",
+              "value": 7
+            },
+            {
+              "skill": "esquive",
+              "value": 6
+            },
+            {
+              "skill": "natation",
+              "value": 5
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 5
+            },
+            {
+              "skill": "connaissanceDesAnimaux",
+              "value": 5
+            },
+            {
+              "skill": "geographie",
+              "value": 8
+            },
+            {
+              "skill": "histoire",
+              "value": 9,
+              "specializations": [
+                {
+                  "name": "Civilisations anciennes",
+                  "value": 11,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "orientation",
+              "value": 9
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "astrologie",
+              "value": 6
+            },
+            {
+              "skill": "cartographie",
+              "value": 8
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 7
+            },
+            {
+              "skill": "premiersSoins",
+              "value": 7
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 4
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "mecanismes",
+              "value": 5
+            },
+            {
+              "skill": "pieges",
+              "value": 6
+            },
+            {
+              "skill": "pister",
+              "value": 4
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "armesAProjectiles",
+              "value": 10
+            },
+            {
+              "skill": "attelages",
+              "value": 5
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "conte",
+              "value": 4
+            },
+            {
+              "skill": "marchandage",
+              "value": 5
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 4
+            },
+            {
+              "skill": "diplomatie",
+              "value": 4
+            }
+          ]
+        }
       }
-    ],
+    },
     "equipment": [
       {
-        "type": "armor:cotteLegere",
-        "uuid": "8e881cfc-e367-49a3-9906-302df7aa7fc1"
+        "type": "armor:cotteLegere"
       }
     ],
-    "magic_spells": {},
-    "extra_magic_pool": 0,
-    "caste": "voyageur",
-    "caste_status": "maitre",
-    "career": null,
+    "caste": {
+      "caste": "voyageur",
+      "status": "maitre",
+      "career": null,
+      "interdicts": [
+        "loiDeLAmitie",
+        "loiDeLaDecouverte"
+      ],
+      "privileges": [
+        {
+          "privilege": "compagnons",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "connaissanceDuMonde",
+          "description": null
+        },
+        {
+          "privilege": "filsDeLaTerre",
+          "description": null
+        },
+        {
+          "privilege": "logistique",
+          "description": null
+        },
+        {
+          "privilege": "rancune",
+          "description": "Mérogs"
+        }
+      ]
+    },
     "age": 35,
     "height": 1.7,
     "weight": 60,
     "origin": {
-      "id": "ysmir"
+      "uuid": "6b275174-2f30-4697-a266-531d1883a60d"
     },
     "luck": 7,
     "proficiency": 3,
     "renown": 0,
-    "interdicts": [
-      "loiDeLAmitie",
-      "loiDeLaDecouverte"
-    ],
-    "caste_privileges": [
-      {
-        "privilege": "compagnons",
-        "description": "Non précisé"
-      },
-      {
-        "privilege": "connaissanceDuMonde",
-        "description": null
-      },
-      {
-        "privilege": "filsDeLaTerre",
-        "description": null
-      },
-      {
-        "privilege": "logistique",
-        "description": null
-      },
-      {
-        "privilege": "rancune",
-        "description": "Mérogs"
-      }
-    ],
     "disadvantages": [
       {
         "disadvantage": "deviance",
@@ -242,70 +273,76 @@
     "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
-      "levels": [
-        {
-          "type": "scratch",
-          "start": 0,
-          "end": 10,
-          "capacity": 3
-        },
-        {
-          "type": "light",
-          "start": 10,
-          "end": 20,
-          "capacity": 3
-        },
-        {
-          "type": "grave",
-          "start": 20,
-          "end": 30,
-          "capacity": 2
-        },
-        {
-          "type": "fatal",
-          "start": 30,
-          "end": 40,
-          "capacity": 2
-        },
-        {
-          "type": "death",
-          "start": 40,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     },
-    "magic_skills": {
-      "instinctive": 0,
-      "invocatoire": 0,
-      "sorcellerie": 0
-    },
-    "magic_spheres": {
-      "pierre": 0,
-      "feu": 0,
-      "oceans": 0,
-      "metal": 0,
-      "nature": 0,
-      "reves": 0,
-      "cite": 0,
-      "vents": 0,
-      "ombre": 0
-    },
-    "magic_sphere_pools": {
-      "pierre": 0,
-      "feu": 0,
-      "oceans": 0,
-      "metal": 0,
-      "nature": 0,
-      "reves": 0,
-      "cite": 0,
-      "vents": 0,
-      "ombre": 0
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
     }
   },
   {
-    "equiped": [],
     "uuid": "868bdbc3-5bb5-4d5b-828b-ed83b1e6cc91",
     "name": "Faraffel",
     "description": "Faraffel était un sans-caste, fermier de son état, qui vivait aux abords d’Yris. Lorsque son épouse, Adrahil, donna naissance à trois beaux gaillards, il ne se tint plus de joie et décida de lui faire le plus beau cadeau qu’une femme pouvait recevoir.\n\nDès lors, il partit pour Yris en quête d’un bien précieux symbolisant son amour et sa fierté. D’échoppes en étals, il ne trouva rien qui ressembla à ses attentes. Sans se démonter, il prit la route dans l’espoir de trouver, enfin, ce qu’il cherchait. D’escale en escale, il s’éloignait de plus en plus de son logis et son cœur saignait de ne pouvoir honorer son amour. Alors qu’il traversait la Pomyrie, Faraffel découvrit une femelle mérog blessée qui était sur le point de “mettre bas”. Avec l’aide du fermier, elle donna naissance à trois “beaux” mâles, mais mourut en couches. Pris de pitié et se souvenant des trois fils qu’il avait abandonnés pour une quête impossible, Faraffel entreprit de protéger et d’élever ses enfants adoptifs. Un tel acte ne put qu’éveiller la curiosité des dragons. Nombreux sont ceux qui s’intéressèrent à ce sans-caste, mais seul Dolzyl, enfant du Grand Dragon des Vents, vit en cet humain un être d’exception.\n\nAu fil des ans, une drôle de troupe - un dragon, un fermier et trois jeunes Mérogs - parcourut le Royaume de long en large à la recherche d’un présent idéal. Mais, un jour, las et fatigué, Faraffel décida de retrouver les siens. Son retour fut fêté avec faste par ses fils, alors adultes et pères de beaux enfants, car Faraffel avait réussi sa quête : son retour était le plus beau présent qu’il pouvait faire aux siens.\n\nDepuis lors, Faraffel le fermier et sa drôle de troupe sont souvent cités en exemple par les voyageurs qui voient en eux le symbole de l’amour et de la liberté.\n\n",
@@ -332,82 +369,115 @@
       "manuel": 6,
       "social": 8
     },
-    "skills": [
-      {
-        "skill": "armesAProjectiles",
-        "value": 4
-      },
-      {
-        "skill": "athletisme",
-        "value": 6
-      },
-      {
-        "skill": "esquive",
-        "value": 8
-      },
-      {
-        "skill": "pister",
-        "value": 7
-      },
-      {
-        "skill": "geographie",
-        "value": 8
-      },
-      {
-        "skill": "astrologie",
-        "value": 4
-      },
-      {
-        "skill": "estimation",
-        "value": 3
-      },
-      {
-        "skill": "herboristerie",
-        "value": 6
-      },
-      {
-        "skill": "premiersSoins",
-        "value": 7
-      },
-      {
-        "skill": "attelages",
-        "value": 5
-      },
-      {
-        "skill": "conte",
-        "value": 10
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 6
+            },
+            {
+              "skill": "esquive",
+              "value": 8
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "geographie",
+              "value": 8
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "astrologie",
+              "value": 4
+            },
+            {
+              "skill": "estimation",
+              "value": 3
+            },
+            {
+              "skill": "herboristerie",
+              "value": 6
+            },
+            {
+              "skill": "premiersSoins",
+              "value": 7
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "pister",
+              "value": 7
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "armesAProjectiles",
+              "value": 4
+            },
+            {
+              "skill": "attelages",
+              "value": 5
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "conte",
+              "value": 10
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
       }
-    ],
+    },
     "equipment": [
       {
-        "type": "armor:cuirSouple",
-        "uuid": "c40a5853-8a0b-49de-a895-c0f6792dd32f"
+        "type": "armor:cuirSouple"
       },
       {
-        "type": "weapon:dague",
-        "uuid": "8c51daf4-8464-4dab-94f2-091f144f28e3"
+        "type": "weapon:dague"
       },
       {
-        "type": "weapon:arcCommun",
-        "uuid": "6eaeaee5-9b99-4a13-bdcf-4d408e875b9a"
+        "type": "weapon:arcCommun"
       }
     ],
-    "magic_spells": {},
-    "extra_magic_pool": 0,
-    "caste": "sansCaste",
-    "caste_status": "none",
-    "career": null,
+    "caste": {
+      "caste": "sansCaste",
+      "status": "none",
+      "career": null,
+      "interdicts": [
+      ],
+      "privileges": [
+      ]
+    },
     "age": 25,
     "height": 1.7,
     "weight": 60,
     "origin": {
-      "id": "empireDeSolyr"
+      "uuid": "6b275174-2f30-4697-a266-531d1883a60d"
     },
     "luck": 5,
     "proficiency": 1,
     "renown": 0,
-    "interdicts": [],
-    "caste_privileges": [],
     "disadvantages": [
       {
         "disadvantage": "fragilite",
@@ -472,52 +542,58 @@
     "unique": true,
     "use_human_injury_manager": false,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 40,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 40,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     },
-    "magic_skills": {
-      "instinctive": 0,
-      "invocatoire": 0,
-      "sorcellerie": 0
-    },
-    "magic_spheres": {
-      "pierre": 0,
-      "feu": 0,
-      "oceans": 0,
-      "metal": 0,
-      "nature": 0,
-      "reves": 0,
-      "cite": 0,
-      "vents": 0,
-      "ombre": 0
-    },
-    "magic_sphere_pools": {
-      "pierre": 0,
-      "feu": 0,
-      "oceans": 0,
-      "metal": 0,
-      "nature": 0,
-      "reves": 0,
-      "cite": 0,
-      "vents": 0,
-      "ombre": 0
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
     }
   },
   {
-    "equiped": [],
     "uuid": "b85aa74b-fed7-4c8d-89bf-fb514ceb95ef",
     "name": "Gaugric",
     "description": "Gaugric est l’un des principaux lieutenants de Ganaël. C’est un impitoyable combattant connu pour avoir éliminé un certain nombre d’ennemis de Szyl ou traqué sans répit des voyageurs indignes de leur caste. Vêtu d’une armure anthracite rehaussée d’incrustations d’émail bleu, deux yeux bleus à peine luminescents brillent par les fentes de son heaume toujours baissé. Il ne montre jamais son visage, considérant cela comme une preuve de faiblesse. Les rares qui l’on vu parlent d’un visage angélique aux longs cheveux violacés. Il ne se sépare jamais d’une épée bâtarde dont il use sans pitié et n’est guère connu pour sa chaleur humaine.\n\nNote : Instruit par les mystérieux Aëshims, Gaugric est considéré comme jouissant des bénéfices de chacune de ses castes simultanément.\n\n",
@@ -544,130 +620,162 @@
       "manuel": 4,
       "social": 2
     },
-    "skills": [
-      {
-        "skill": "armesAProjectiles",
-        "value": 8
-      },
-      {
-        "skill": "armesDHast",
-        "value": 6
-      },
-      {
-        "skill": "armesTranchantes",
-        "value": 9
-      },
-      {
-        "skill": "discretion",
-        "value": 7
-      },
-      {
-        "skill": "equitation",
-        "value": 5
-      },
-      {
-        "skill": "esquive",
-        "value": 7
-      },
-      {
-        "skill": "pister",
-        "value": 6
-      },
-      {
-        "skill": "connaissanceDeLaMagie",
-        "value": 6
-      },
-      {
-        "skill": "connaissanceDesDragons",
-        "value": 4
-      },
-      {
-        "skill": "lois",
-        "value": 3
-      },
-      {
-        "skill": "orientation",
-        "value": 6
-      },
-      {
-        "skill": "lireEtEcrire",
-        "value": 5
-      },
-      {
-        "skill": "deverrouillage",
-        "value": 4
-      },
-      {
-        "skill": "vieEnCite",
-        "value": 5
-      },
-      {
-        "skill": "castes",
-        "value": 3
-      },
-      {
-        "skill": "intimidation",
-        "value": 8
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesDHast",
+              "value": 6
+            },
+            {
+              "skill": "armesTranchantes",
+              "value": 9
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "equitation",
+              "value": 5
+            },
+            {
+              "skill": "esquive",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 3
+            },
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 6
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 4
+            },
+            {
+              "skill": "lois",
+              "value": 3
+            },
+            {
+              "skill": "orientation",
+              "value": 6
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "lireEtEcrire",
+              "value": 5
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 5
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 7
+            },
+            {
+              "skill": "pister",
+              "value": 6
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "armesAProjectiles",
+              "value": 8
+            },
+            {
+              "skill": "deverrouillage",
+              "value": 4
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "intimidation",
+              "value": 8
+            }
+          ]
+        }
       }
-    ],
+    },
     "equipment": [
       {
-        "type": "armor:armureDeDemiPlaques",
-        "uuid": "c69466a1-fb99-4839-96b7-d1142795167c"
+        "type": "armor:armureDeDemiPlaques"
       },
       {
-        "type": "weapon:epeeBatarde",
-        "uuid": "af348ec6-4ee4-4519-bdfa-f1be04385b20"
+        "type": "weapon:epeeBatarde"
       }
     ],
-    "magic_spells": {},
-    "extra_magic_pool": 0,
-    "caste": "combattant",
-    "caste_status": "initie",
-    "career": null,
+    "caste": {
+      "caste": "combattant",
+      "status": "initie",
+      "career": null,
+      "interdicts": [
+        "loiDeLArme",
+        "loiDeLaPrudence"
+      ],
+      "privileges": [
+        {
+          "privilege": "doubleAttaque",
+          "description": null
+        },
+        {
+          "privilege": "engagement",
+          "description": null
+        },
+        {
+          "privilege": "riposte",
+          "description": null
+        },
+        {
+          "privilege": "vigilanceCombattant",
+          "description": null
+        },
+        {
+          "privilege": "anonymat",
+          "description": null
+        },
+        {
+          "privilege": "sortilegeFetiche",
+          "description": "Foudre de Szyl"
+        },
+        {
+          "privilege": "style",
+          "description": null
+        }
+      ]
+    },
     "age": 25,
     "height": 1.7,
     "weight": 60,
     "origin": {
-      "id": "empireDeSolyr"
+      "uuid": "unknown"
     },
     "luck": 1,
     "proficiency": 9,
     "renown": 0,
-    "interdicts": [
-      "loiDeLArme",
-      "loiDeLaPrudence"
-    ],
-    "caste_privileges": [
-      {
-        "privilege": "doubleAttaque",
-        "description": null
-      },
-      {
-        "privilege": "engagement",
-        "description": null
-      },
-      {
-        "privilege": "riposte",
-        "description": null
-      },
-      {
-        "privilege": "vigilanceCombattant",
-        "description": null
-      },
-      {
-        "privilege": "anonymat",
-        "description": null
-      },
-      {
-        "privilege": "sortilegeFetiche",
-        "description": "Foudre de Szyl"
-      },
-      {
-        "privilege": "style",
-        "description": null
-      }
-    ],
     "disadvantages": [
       {
         "disadvantage": "interdit",
@@ -727,70 +835,76 @@
     "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
-      "levels": [
-        {
-          "type": "scratch",
-          "start": 0,
-          "end": 10,
-          "capacity": 3
-        },
-        {
-          "type": "light",
-          "start": 10,
-          "end": 20,
-          "capacity": 2
-        },
-        {
-          "type": "grave",
-          "start": 20,
-          "end": 30,
-          "capacity": 2
-        },
-        {
-          "type": "fatal",
-          "start": 30,
-          "end": 40,
-          "capacity": 1
-        },
-        {
-          "type": "death",
-          "start": 40,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 1
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     },
-    "magic_skills": {
-      "instinctive": 7,
-      "invocatoire": 6,
-      "sorcellerie": 3
-    },
-    "magic_spheres": {
-      "pierre": 4,
-      "feu": 0,
-      "oceans": 0,
-      "metal": 4,
-      "nature": 0,
-      "reves": 0,
-      "cite": 0,
-      "vents": 7,
-      "ombre": 0
-    },
-    "magic_sphere_pools": {
-      "pierre": 4,
-      "feu": 0,
-      "oceans": 0,
-      "metal": 4,
-      "nature": 0,
-      "reves": 0,
-      "cite": 0,
-      "vents": 7,
-      "ombre": 0
+    "magic": {
+      "skills": {
+        "instinctive": 7,
+        "invocatoire": 6,
+        "sorcellerie": 3
+      },
+      "spheres": {
+        "pierre": 4,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 4,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 7,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 4,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 4,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 7,
+        "ombre": 0
+      },
+      "spells": [
+      ]
     }
   },
   {
-    "equiped": [],
     "uuid": "d1b7d366-92b3-4159-bbea-bb2b4c20e48b",
     "name": "Lauralendyl",
     "description": "On dit que Lauralendyl serait né de l'union de Szyl et de la première voyageuse de la caste, à l'époque de la fondation de celle-ci. De cette époque, nul n’a jamais réussi à découvrir la moindre mention écrite - et pas plus le nom de cette femme que les circonstances de son idylle supposée avec le Dragon des Venis. Lauralendyl n’en parle jamais et nul n’a jamais osé questionner directement le fils de Nenya à ce sujet. Agé de plus de deux mille ans, Lauralendyl semble inaltérable depuis des siècles. Entièrement dévoué à son père, il n'a pas besoin de le rencontrer souvent, ayant toujours gardé un lien spirituel avec lui. Alors que Szyl se plaît à s’éloigner régulièrement de Havre pour des raisons personnelles, Lauralendyl n’a jamais quitté la ville où il est né. Tout ce qu’il connaît de Kor, c’est par les yeux de son père qu’il l’a appris.\n\nD’un naturel triste et mélancolique, il est pour les voyageurs comme un enfant chagrin que rien ne peut égayer - symbole vivant de l'Orphelin et du plus haut Statut de la caste des voyageurs. Il leur rappelle à chaque instant le poids de la sédentarité et la tristesse qui en découle. Lauralendyl ne dort que quelques heures par semaine, mange à la même table que les voyageurs et dispose d’un mémoire prodigieuse, qui lui permet de tout suivre en ville. Szyl ne lui témoigne jamais d’affection en public, mais ses fils traitent Lauralendyl comme leur égal. Pour bon nombre de Dragons d’autres éléments, l’Orphelin est une abomination indigne de diriger les hommes et qui devrait être détruite ou emprisonnée. toutes ces évocations, Szyl n’a toujours répondu que par un rictus haineux, à peine moins inquiétant que les Colères qui suivirent.\n\n",
@@ -817,85 +931,121 @@
       "manuel": 9,
       "social": 3
     },
-    "skills": [
-      {
-        "skill": "armesAProjectiles",
-        "value": 13
-      },
-      {
-        "skill": "armesTranchantes",
-        "value": 10
-      },
-      {
-        "skill": "corpsACorps",
-        "value": 8
-      },
-      {
-        "skill": "acrobatie",
-        "value": 10
-      },
-      {
-        "skill": "discretion",
-        "value": 7
-      },
-      {
-        "skill": "esquive",
-        "value": 11
-      },
-      {
-        "skill": "connaissanceDeLaMagie",
-        "value": 8
-      },
-      {
-        "skill": "connaissanceDesDragons",
-        "value": 9
-      },
-      {
-        "skill": "lois",
-        "value": 8
-      },
-      {
-        "skill": "estimation",
-        "value": 10
-      },
-      {
-        "skill": "lireEtEcrire",
-        "value": 10
-      },
-      {
-        "skill": "castes",
-        "value": 6
-      },
-      {
-        "skill": "vieEnCite",
-        "value": 12
-      },
-      {
-        "skill": "commandement",
-        "value": 10
-      },
-      {
-        "skill": "intimidation",
-        "value": 15
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 10
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 8
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 10
+            },
+            {
+              "skill": "esquive",
+              "value": 11
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 6
+            },
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 8
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 9
+            },
+            {
+              "skill": "lois",
+              "value": 8
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "estimation",
+              "value": 10
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 10
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 12
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 7
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "armesAProjectiles",
+              "value": 13
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 10
+            },
+            {
+              "skill": "intimidation",
+              "value": 15
+            }
+          ]
+        }
       }
-    ],
+    },
     "equipment": [],
-    "magic_spells": {},
-    "extra_magic_pool": 19,
-    "caste": "sansCaste",
-    "caste_status": "none",
-    "career": null,
+    "caste": {
+      "caste": "sansCaste",
+      "status": "none",
+      "career": null,
+      "interdicts": [
+      ],
+      "privileges": [
+      ]
+    },
     "age": 25,
     "height": 1.7,
     "weight": 60,
     "origin": {
-      "id": "empireDeSolyr"
+      "id": "unknown"
     },
     "luck": 5,
     "proficiency": 5,
     "renown": 0,
-    "interdicts": [],
-    "caste_privileges": [],
     "disadvantages": [
       {
         "disadvantage": "regardDesDragons",
@@ -939,70 +1089,76 @@
     "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
-      "levels": [
-        {
-          "type": "scratch",
-          "start": 0,
-          "end": 10,
-          "capacity": 3
-        },
-        {
-          "type": "light",
-          "start": 10,
-          "end": 20,
-          "capacity": 4
-        },
-        {
-          "type": "grave",
-          "start": 20,
-          "end": 30,
-          "capacity": 3
-        },
-        {
-          "type": "fatal",
-          "start": 30,
-          "end": 40,
-          "capacity": 2
-        },
-        {
-          "type": "death",
-          "start": 40,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 4
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     },
-    "magic_skills": {
-      "instinctive": 8,
-      "invocatoire": 8,
-      "sorcellerie": 7
-    },
-    "magic_spheres": {
-      "pierre": 6,
-      "feu": 6,
-      "oceans": 6,
-      "metal": 6,
-      "nature": 6,
-      "reves": 8,
-      "cite": 10,
-      "vents": 12,
-      "ombre": 0
-    },
-    "magic_sphere_pools": {
-      "pierre": 6,
-      "feu": 6,
-      "oceans": 6,
-      "metal": 6,
-      "nature": 6,
-      "reves": 8,
-      "cite": 10,
-      "vents": 12,
-      "ombre": 0
+    "magic": {
+      "skills": {
+        "instinctive": 8,
+        "invocatoire": 8,
+        "sorcellerie": 7
+      },
+      "spheres": {
+        "pierre": 6,
+        "feu": 6,
+        "oceans": 6,
+        "metal": 6,
+        "nature": 6,
+        "reves": 8,
+        "cite": 10,
+        "vents": 12,
+        "ombre": 0
+      },
+      "pool": 19,
+      "pools": {
+        "pierre": 6,
+        "feu": 6,
+        "oceans": 6,
+        "metal": 6,
+        "nature": 6,
+        "reves": 8,
+        "cite": 10,
+        "vents": 12,
+        "ombre": 0
+      },
+      "spells": [
+      ]
     }
   },
   {
-    "equiped": [],
     "uuid": "7b858775-aa62-4796-b501-a172c547bbd5",
     "name": "Linvert Leyt",
     "description": "Encadré par de longs cheveux blancs, parfois noués à l’aide d’une fine cordelette, le visage de cet homme marqué par la vie ne s’est pas démuni de son sourire énigmatique, presque inquiétant, et rehaussé par l’éclat d’un regard lumineux. Âgé de soixante-trois ans, cet archer d’exception est encore étonnamment vif et porte l’armure de cuir avec une rare prestance.\n\nDémis de ses fonctions d’éducateur de jeunes archers suite à une accusation de compromission avec l’Humanisme, cet ancien Solitaire a conservé de son enseignement une maîtrise hors du commun de l’arc et de diverses armes de distance. Considéré comme l’un des maîtres absolus de la discipline, il sillonne aujourd’hui les routes du Royaume de Kor, accompagné d’une petite communauté de vagabonds, jongleurs, artistes et baladins dont le seul point commun est de n’appartenir à aucune caste. Cette impressionnante troupe nomade - communément appelée la Compagnie ou la Compagnie de Linvert - compte plus d’une cinquantaine d'hommes et de femmes, ainsi que de nombreux enfants. Aucun des compagnons de Leyt n’est Élu, mage ou citoyen, par quelque biais que ce soit.\n\nEmbarquée dans des roulottes, la Compagnie s’installe périodiquement, au gré des saisons et des aléas du voyage, pour gagner subsistance en donnant des représentations, des spectacles et des démonstrations d’archerie, qui ont assuré sa réputation. Mais l’essentiel des ressources de la communauté provient des leçons de maniement d’arc que Linvert et ses meilleurs élèves vendent à prix d’or.\n\nÉtrangement, l’archer se voit contraint de refuser des demandes, en raison de l'affluence, mais rares sont ceux qui avouent avoir eu recours aux services de ce paria…\n\nNote : La Compétence Enseignement de Linvert s’ajoute au score de base de tout jet visant à transmettre sa maîtrise des armes de distance -\n\n",
@@ -1029,102 +1185,134 @@
       "manuel": 7,
       "social": 4
     },
-    "skills": [
-      {
-        "skill": "armesAProjectiles",
-        "value": 12,
-        "specializations": [
-          {
-            "name": "armesAProjectiles:arcLong",
-            "title": "Arc long",
-            "value": 14,
-            "reserved": false
-          }
-        ]
-      },
-      {
-        "skill": "armesTranchantes",
-        "value": 7
-      },
-      {
-        "skill": "acrobatie",
-        "value": 6
-      },
-      {
-        "skill": "athletisme",
-        "value": 6
-      },
-      {
-        "skill": "equitation",
-        "value": 8
-      },
-      {
-        "skill": "geographie",
-        "value": 9
-      },
-      {
-        "skill": "histoire",
-        "value": 6
-      },
-      {
-        "skill": "armesMecaniques",
-        "value": 6
-      },
-      {
-        "skill": "mecanismes",
-        "value": 5
-      },
-      {
-        "skill": "jongler",
-        "value": 7
-      },
-      {
-        "skill": "psychologie",
-        "value": 8
-      },
-      {
-        "skill": "castes",
-        "value": 7
-      },
-      {
-        "skill": "langueDesSignes",
-        "value": 8
-      },
-      {
-        "skill": "enseignement",
-        "value": 9
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 7
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 6
+            },
+            {
+              "skill": "athletisme",
+              "value": 6
+            },
+            {
+              "skill": "equitation",
+              "value": 8
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "geographie",
+              "value": 9
+            },
+            {
+              "skill": "histoire",
+              "value": 6
+            },
+            {
+              "skill": "castes",
+              "value": 7
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "langueDesSignes",
+              "value": 8
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "armesMecaniques",
+              "value": 6
+            },
+            {
+              "skill": "mecanismes",
+              "value": 5
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "armesAProjectiles",
+              "value": 12,
+              "specializations": [
+                {
+                  "name": "Arc long",
+                  "value": 14,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "jongler",
+              "value": 7
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "psychologie",
+              "value": 8
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "enseignement",
+              "value": 9
+            }
+          ]
+        }
       }
-    ],
+    },
     "equipment": [
       {
-        "type": "armor:cuirBouilli",
-        "uuid": "fde5e5ca-bd77-457e-9bfd-1986e4ebef18"
+        "type": "armor:cuirBouilli"
       },
       {
-        "type": "weapon:arcLong",
-        "uuid": "92389379-dc9c-435e-864f-23c217212014"
+        "type": "weapon:arcLong"
       },
       {
-        "type": "weapon:epeeLongue",
-        "uuid": "0550d5bd-ad4a-4edf-a791-6ac759ceab2c"
+        "type": "weapon:epeeLongue"
       }
     ],
-    "magic_spells": {},
-    "extra_magic_pool": 0,
-    "caste": "sansCaste",
-    "caste_status": "none",
-    "career": null,
+    "caste": {
+      "caste": "sansCaste",
+      "status": "none",
+      "career": null,
+      "interdicts": [
+      ],
+      "privileges": [
+      ]
+    },
     "age": 63,
     "height": 1.7,
     "weight": 60,
     "origin": {
-      "id": "empireDeSolyr"
+      "id": "unknown"
     },
     "luck": 6,
     "proficiency": 4,
     "renown": 0,
-    "interdicts": [],
-    "caste_privileges": [],
     "disadvantages": [],
     "advantages": [],
     "tendencies": {
@@ -1141,7 +1329,11 @@
         "circles": 0
       }
     },
-    "draconic_link": null,
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
     "category": "personnalites",
     "sub_category": {
       "name": "sansCaste"
@@ -1153,52 +1345,58 @@
     "unique": true,
     "use_human_injury_manager": false,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 60,
-          "capacity": 3
-        },
-        {
-          "type": "death",
-          "start": 60,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 60,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 60,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     },
-    "magic_skills": {
-      "instinctive": 0,
-      "invocatoire": 0,
-      "sorcellerie": 0
-    },
-    "magic_spheres": {
-      "pierre": 0,
-      "feu": 0,
-      "oceans": 0,
-      "metal": 0,
-      "nature": 0,
-      "reves": 0,
-      "cite": 0,
-      "vents": 0,
-      "ombre": 0
-    },
-    "magic_sphere_pools": {
-      "pierre": 0,
-      "feu": 0,
-      "oceans": 0,
-      "metal": 0,
-      "nature": 0,
-      "reves": 0,
-      "cite": 0,
-      "vents": 0,
-      "ombre": 0
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
     }
   },
   {
-    "equiped": [],
     "uuid": "78360624-475d-4a62-95a3-651620be4f5f",
     "name": "Synn'Tanna, la fille des Vents",
     "description": "Cette femme a connu les geôles de l’Inquisition, les tortionnaires déments de Kalimsshar et les pièges des assassins de la faction secrète des Historiens. Et pourtant, elle s’est relevée à chaque fois pour reprendre son voyage. Cette mage est connue de tous les voyageurs comme une légende. On ne sait pas ce qu’elle cherche, ni pourquoi elle relève tous les défis possibles, mais elle symbolise la liberté partout où elle passe et cela gêne les puissants et les obtus. Elle a été de toutes les révolutions, de tous les procès et de tous les changements, triomphant ou chutant pour toujours s’échapper et reprendre sa course. Selon la rumeur, elle longerait actuellement la côte, s’arrêtant tous les cent pas pour défier et insulter Ozyr elle-même.\n\nDescription : Une femme d’une trentaine d’années, brune, les cheveux en brosse, le visage carré et l’air martial, Elle porte sur elle les marques de ses déboires, mais n’en parle pas. La nuit, elle se réveille souvent en hurlant et en pleurant et c’est le seul moment où elle redevient humaine.\n\n",
@@ -1225,145 +1423,179 @@
       "manuel": 3,
       "social": 5
     },
-    "skills": [
-      {
-        "skill": "armesAProjectiles",
-        "value": 5
-      },
-      {
-        "skill": "armesTranchantes",
-        "value": 5
-      },
-      {
-        "skill": "corpsACorps",
-        "value": 8
-      },
-      {
-        "skill": "acrobatie",
-        "value": 9
-      },
-      {
-        "skill": "discretion",
-        "value": 8
-      },
-      {
-        "skill": "equitation",
-        "value": 10
-      },
-      {
-        "skill": "escalade",
-        "value": 8
-      },
-      {
-        "skill": "esquive",
-        "value": 7
-      },
-      {
-        "skill": "natation",
-        "value": 7
-      },
-      {
-        "skill": "pister",
-        "value": 10
-      },
-      {
-        "skill": "connaissanceDeLaMagie",
-        "value": 7
-      },
-      {
-        "skill": "connaissanceDesAnimaux",
-        "value": 6
-      },
-      {
-        "skill": "connaissanceDesDragons",
-        "value": 6
-      },
-      {
-        "skill": "geographie",
-        "value": 10
-      },
-      {
-        "skill": "orientation",
-        "value": 10
-      },
-      {
-        "skill": "cartographie",
-        "value": 9
-      },
-      {
-        "skill": "herboristerie",
-        "value": 4
-      },
-      {
-        "skill": "lireEtEcrire",
-        "value": 4
-      },
-      {
-        "skill": "premiersSoins",
-        "value": 8
-      },
-      {
-        "skill": "pieges",
-        "value": 5
-      },
-      {
-        "skill": "conte",
-        "value": 11
-      },
-      {
-        "skill": "eloquence",
-        "value": 6
-      },
-      {
-        "skill": "castes",
-        "value": 6
-      },
-      {
-        "skill": "dressage",
-        "value": 9
-      },
-      {
-        "skill": "intimidation",
-        "value": 5
-      },
-      {
-        "skill": "seduction",
-        "value": 8
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 5
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 8
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 9
+            },
+            {
+              "skill": "equitation",
+              "value": 10
+            },
+            {
+              "skill": "escalade",
+              "value": 8
+            },
+            {
+              "skill": "esquive",
+              "value": 7
+            },
+            {
+              "skill": "natation",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 6
+            },
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 7
+            },
+            {
+              "skill": "connaissanceDesAnimaux",
+              "value": 6
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 6
+            },
+            {
+              "skill": "geographie",
+              "value": 10
+            },
+            {
+              "skill": "orientation",
+              "value": 10
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "cartographie",
+              "value": 9
+            },
+            {
+              "skill": "herboristerie",
+              "value": 4
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 4
+            },
+            {
+              "skill": "premiersSoins",
+              "value": 8
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 8
+            },
+            {
+              "skill": "pieges",
+              "value": 5
+            },
+            {
+              "skill": "pister",
+              "value": 10
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "armesAProjectiles",
+              "value": 5
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "conte",
+              "value": 11
+            },
+            {
+              "skill": "eloquence",
+              "value": 6
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "dressage",
+              "value": 9
+            },
+            {
+              "skill": "intimidation",
+              "value": 5
+            },
+            {
+              "skill": "seduction",
+              "value": 8
+            }
+          ]
+        }
       }
-    ],
+    },
     "equipment": [],
-    "magic_spells": {},
-    "extra_magic_pool": 0,
-    "caste": "voyageur",
-    "caste_status": "expert",
-    "career": null,
+    "caste": {
+      "caste": "voyageur",
+      "status": "expert",
+      "career": null,
+      "interdicts": [
+        "loiDeLaDecouverte",
+        "loiDeLaLiberte"
+      ],
+      "privileges": [
+        {
+          "privilege": "archer",
+          "description": null
+        },
+        {
+          "privilege": "connaissanceDuMonde",
+          "description": null
+        },
+        {
+          "privilege": "solitaire",
+          "description": null
+        }
+      ]
+    },
     "age": 30,
     "height": 1.7,
     "weight": 60,
     "origin": {
-      "id": "empireDeSolyr"
+      "id": "unknown"
     },
     "luck": 5,
     "proficiency": 5,
     "renown": 0,
-    "interdicts": [
-      "loiDeLaDecouverte",
-      "loiDeLaLiberte"
-    ],
-    "caste_privileges": [
-      {
-        "privilege": "archer",
-        "description": null
-      },
-      {
-        "privilege": "connaissanceDuMonde",
-        "description": null
-      },
-      {
-        "privilege": "solitaire",
-        "description": null
-      }
-    ],
     "disadvantages": [
       {
         "disadvantage": "obsession",
@@ -1433,66 +1665,73 @@
     "unique": true,
     "use_human_injury_manager": true,
     "injuries": {
-      "levels": [
-        {
-          "type": "scratch",
-          "start": 0,
-          "end": 10,
-          "capacity": 3
-        },
-        {
-          "type": "light",
-          "start": 10,
-          "end": 20,
-          "capacity": 3
-        },
-        {
-          "type": "grave",
-          "start": 20,
-          "end": 30,
-          "capacity": 2
-        },
-        {
-          "type": "fatal",
-          "start": 30,
-          "end": 40,
-          "capacity": 2
-        },
-        {
-          "type": "death",
-          "start": 40,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     },
-    "magic_skills": {
-      "instinctive": 7,
-      "invocatoire": 4,
-      "sorcellerie": 5
-    },
-    "magic_spheres": {
-      "pierre": 0,
-      "feu": 5,
-      "oceans": 0,
-      "metal": 8,
-      "nature": 0,
-      "reves": 5,
-      "cite": 0,
-      "vents": 8,
-      "ombre": 0
-    },
-    "magic_sphere_pools": {
-      "pierre": 0,
-      "feu": 5,
-      "oceans": 0,
-      "metal": 8,
-      "nature": 0,
-      "reves": 5,
-      "cite": 0,
-      "vents": 8,
-      "ombre": 0
+    "magic": {
+      "skills": {
+        "instinctive": 7,
+        "invocatoire": 4,
+        "sorcellerie": 5
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 5,
+        "oceans": 0,
+        "metal": 8,
+        "nature": 0,
+        "reves": 5,
+        "cite": 0,
+        "vents": 8,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 5,
+        "oceans": 0,
+        "metal": 8,
+        "nature": 0,
+        "reves": 5,
+        "cite": 0,
+        "vents": 8,
+        "ombre": 0
+      },
+      "spells": [
+      ]
     }
   }
 ]

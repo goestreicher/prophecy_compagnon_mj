@@ -16,7 +16,7 @@ class CharacterDisplayCasteDetailsWidget extends StatelessWidget {
     var theme = Theme.of(context);
 
     var interdictsWidgets = <Widget>[];
-    for(var i in character.interdicts) {
+    for(var i in character.caste.interdicts) {
       interdictsWidgets.add(
         _CasteInfoWidget(
           title: i.title,
@@ -26,7 +26,7 @@ class CharacterDisplayCasteDetailsWidget extends StatelessWidget {
     }
 
     var privilegesWidgets = <Widget>[];
-    for(var p in character.castePrivileges) {
+    for(var p in character.caste.privileges) {
       privilegesWidgets.add(
         _CasteInfoWidget(
           title: p.privilege.title,
@@ -37,7 +37,7 @@ class CharacterDisplayCasteDetailsWidget extends StatelessWidget {
     }
 
     var benefitsWidgets = <Widget>[];
-    for(var b in Caste.benefits(character.caste, character.casteStatus)) {
+    for(var b in Caste.benefits(character.caste.caste, character.caste.status)) {
       benefitsWidgets.add(
         _CasteInfoWidget(
           title: b
@@ -46,7 +46,7 @@ class CharacterDisplayCasteDetailsWidget extends StatelessWidget {
     }
 
     var techniquesWidgets = <Widget>[];
-    for(var t in Caste.techniques(character.caste, character.casteStatus)) {
+    for(var t in Caste.techniques(character.caste.caste, character.caste.status)) {
       techniquesWidgets.add(
         _CasteInfoWidget(
           title: t.title,
@@ -55,19 +55,19 @@ class CharacterDisplayCasteDetailsWidget extends StatelessWidget {
       );
     }
 
-    if(character.career != null) {
-      if(character.career!.interdict != null) {
+    if(character.caste.career != null) {
+      if(character.caste.career!.interdict != null) {
         interdictsWidgets.add(
           _CasteInfoWidget(
-            title: '${character.career!.interdict!.title} (carrière)'
+            title: '${character.caste.career!.interdict!.title} (carrière)'
           )
         );
       }
 
       benefitsWidgets.add(
         _CasteInfoWidget(
-          title: '${character.career!.benefit.title} (carrière)',
-          description: character.career!.benefit.description,
+          title: '${character.caste.career!.benefit.title} (carrière)',
+          description: character.caste.career!.benefit.description,
         )
       );
     }

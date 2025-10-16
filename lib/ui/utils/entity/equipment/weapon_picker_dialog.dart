@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/skill.dart';
+import '../../../../classes/entity/skill.dart';
+import '../../../../classes/entity/skill_family.dart';
 import '../../../../classes/weapon.dart';
 
 class WeaponPickerDialog extends StatefulWidget {
@@ -33,12 +34,12 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
             dropdownMenuEntries: Skill.fromFamily(SkillFamily.combat)
                 // TODO: this static filtering is a bit dirty...
                 .where((Skill s) => s.canInstantiate && s != Skill.bouclier)
-                .map((Skill s) => DropdownMenuEntry(value: s, label: s.title))
+                .map((Skill s) => DropdownMenuEntry(value: s, label: s.name))
                 .toList()
                 ..add(
                   DropdownMenuEntry(
                     value: Skill.armesAProjectiles,
-                    label: Skill.armesAProjectiles.title
+                    label: Skill.armesAProjectiles.name
                   )
                 ),
             onSelected: (Skill? s) {

@@ -1,19 +1,26 @@
+import 'dart:collection';
+
+import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-import 'caste/base.dart';
-import 'caste/career.dart';
-import 'caste/interdicts.dart';
+import 'caste/character_caste.dart';
 import 'character/advantages.dart';
 import 'character/base.dart';
 import 'character/disadvantages.dart';
-import 'character/injury.dart';
-import 'character/skill.dart';
+import 'entity/injury.dart';
+import 'character/tendencies.dart';
 import 'draconic_link.dart';
+import 'entity/abilities.dart';
+import 'entity/attributes.dart';
+import 'entity/magic.dart';
+import 'entity/skill.dart';
+import 'entity/skills.dart';
+import 'entity/specialized_skill.dart';
+import 'entity/status.dart';
 import 'entity_base.dart';
 import 'combat.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
-import 'magic.dart';
 import 'magic_user.dart';
 import 'object_location.dart';
 import 'place.dart';
@@ -37,6 +44,35 @@ class CharacterDisadvantage {
   Map<String, dynamic> toJson() => _$CharacterDisadvantageToJson(this);
 }
 
+class CharacterDisadvantages with IterableMixin<CharacterDisadvantage>, ChangeNotifier {
+  CharacterDisadvantages(List<CharacterDisadvantage>? d)
+    : _all = d ?? <CharacterDisadvantage>[];
+
+  @override
+  Iterator<CharacterDisadvantage> get iterator => _all.iterator;
+
+  void add(CharacterDisadvantage d) {
+    _all.add(d);
+    notifyListeners();
+  }
+
+  void remove(CharacterDisadvantage d) {
+    if(_all.remove(d)) notifyListeners();
+  }
+
+  static CharacterDisadvantages fromJson(List<dynamic>? json) =>
+      CharacterDisadvantages(
+        json?.map<CharacterDisadvantage>(
+          (d) => CharacterDisadvantage.fromJson(d as Map<String, dynamic>)
+        ).toList()
+      );
+
+  static List<Map<String, dynamic>> toJson(CharacterDisadvantages all) =>
+      all.map((CharacterDisadvantage d) => d.toJson()).toList();
+
+  final List<CharacterDisadvantage> _all;
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class CharacterAdvantage {
   CharacterAdvantage({
@@ -53,103 +89,120 @@ class CharacterAdvantage {
   Map<String, dynamic> toJson() => _$CharacterAdvantageToJson(this);
 }
 
-enum Tendency {
-  dragon,
-  human,
-  fatality,
+class CharacterAdvantages with IterableMixin<CharacterAdvantage>, ChangeNotifier {
+  CharacterAdvantages(List<CharacterAdvantage>? a)
+      : _all = a ?? <CharacterAdvantage>[];
+
+  @override
+  Iterator<CharacterAdvantage> get iterator => _all.iterator;
+
+  void add(CharacterAdvantage a) {
+    _all.add(a);
+    notifyListeners();
+  }
+
+  void remove(CharacterAdvantage a) {
+    if(_all.remove(a)) notifyListeners();
+  }
+
+  static CharacterAdvantages fromJson(List<dynamic>? json) =>
+      CharacterAdvantages(
+          json?.map<CharacterAdvantage>(
+                  (a) => CharacterAdvantage.fromJson(a as Map<String, dynamic>)
+          ).toList()
+      );
+
+  static List<Map<String, dynamic>> toJson(CharacterAdvantages all) =>
+      all.map((CharacterAdvantage a) => a.toJson()).toList();
+
+  final List<CharacterAdvantage> _all;
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class TendencyAttribute {
-  TendencyAttribute({ required this.value, required this.circles });
+class CharacterOrigin {
+  CharacterOrigin({ this.uuid, Place? place }) : _place = place;
 
-  int value;
-  int circles;
+  static CharacterOrigin unknown = CharacterOrigin(place: Place.unknown);
 
-  factory TendencyAttribute.fromJson(Map<String, dynamic> json) => _$TendencyAttributeFromJson(json);
-  Map<String, dynamic> toJson() => _$TendencyAttributeToJson(this);
-}
+  String? uuid;
 
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class CharacterTendencies {
-  CharacterTendencies.empty()
-    : dragon = TendencyAttribute(value: 0, circles: 0),
-      human = TendencyAttribute(value: 0, circles: 0),
-      fatality = TendencyAttribute(value: 0, circles: 0);
+  @JsonKey(includeToJson: false)
+  Future<Place?> get place async {
+    if(_place != null) {
+      return _place;
+    }
+    else if(uuid == null || uuid == Place.unknown.uuid) {
+      return Place.unknown;
+    }
+    else {
+      return await Place.byId(uuid!);
+    }
+  }
+  Place? _place;
 
-  CharacterTendencies({
-    required this.dragon,
-    required this.human,
-    required this.fatality,
-  });
+  factory CharacterOrigin.fromJson(Map<String, dynamic> json) =>
+      _$CharacterOriginFromJson(json);
 
-  TendencyAttribute dragon;
-  TendencyAttribute human;
-  TendencyAttribute fatality;
-
-  factory CharacterTendencies.fromJson(Map<String, dynamic> json) => _$CharacterTendenciesFromJson(json);
-  Map<String, dynamic> toJson() => _$CharacterTendenciesToJson(this);
+  Map<String, dynamic> toJson() =>
+      _$CharacterOriginToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class HumanCharacter extends EntityBase with MagicUser {
-  HumanCharacter(
-      {
-        super.uuid,
-        super.location = ObjectLocation.memory,
-        required super.name,
-        super.initiative,
-        super.injuryProvider = humanCharacterDefaultInjuries,
-        super.size,
-        super.description,
-        super.image,
-        super.icon,
-        this.caste = Caste.sansCaste,
-        this.casteStatus = CasteStatus.none,
-        this.career,
-        this.luck = 0,
-        this.proficiency = 0,
-        this.renown = 0,
-        this.age = 25,
-        this.height = 1.7,
-        this.weight = 60.0,
-        Place? origin,
-        List<CasteInterdict>? interdicts,
-        List<CharacterCastePrivilege>? castePrivileges,
-        List<CharacterDisadvantage>? disadvantages,
-        List<CharacterAdvantage>? advantages,
-        CharacterTendencies? tendencies,
-        this.draconicLink,
-      })
-    : origin = origin ?? Place.byId('empireDeSolyr')!,
-      interdicts = interdicts ?? <CasteInterdict>[],
-      castePrivileges = castePrivileges ?? <CharacterCastePrivilege>[],
-      disadvantages = disadvantages ?? <CharacterDisadvantage>[],
-      advantages = advantages ?? <CharacterAdvantage>[],
-      tendencies = tendencies ?? CharacterTendencies.empty()
+  HumanCharacter({
+    super.uuid,
+    super.location = ObjectLocation.memory,
+    required super.name,
+    super.abilities,
+    super.attributes,
+    super.initiative,
+    super.injuries,
+    super.injuryProvider = humanCharacterDefaultInjuries,
+    super.size,
+    super.description,
+    super.skills,
+    super.status,
+    super.equipment,
+    super.magic,
+    super.image,
+    super.icon,
+    CharacterCaste? caste,
+    this.luck = 0,
+    this.proficiency = 0,
+    this.renown = 0,
+    this.age = 25,
+    this.height = 1.7,
+    this.weight = 60.0,
+    CharacterOrigin? origin,
+    CharacterDisadvantages? disadvantages,
+    CharacterAdvantages? advantages,
+    CharacterTendencies? tendencies,
+    DraconicLink? draconicLink,
+  })
+    : caste = caste ?? CharacterCaste.empty(),
+      origin = origin ?? CharacterOrigin.unknown,
+      disadvantages = disadvantages ?? CharacterDisadvantages(null),
+      advantages = advantages ?? CharacterAdvantages(null),
+      tendencies = tendencies ?? CharacterTendencies.empty(),
+      draconicLink = draconicLink ?? DraconicLink.empty()
   {
     _initialize();
   }
 
-  Caste caste;
-  CasteStatus casteStatus;
-  @JsonKey(defaultValue: null)
-    Career? career;
+  CharacterCaste caste;
   int age;
   double height;
   double weight;
-  Place origin;
+  CharacterOrigin origin;
   int luck;
   int proficiency;
   int renown;
-  @JsonKey(defaultValue: <CasteInterdict>[])
-    List<CasteInterdict> interdicts;
-  @JsonKey(defaultValue: <CharacterCastePrivilege>[])
-    List<CharacterCastePrivilege> castePrivileges;
-  List<CharacterDisadvantage> disadvantages;
-  List<CharacterAdvantage> advantages;
+  @JsonKey(fromJson: CharacterDisadvantages.fromJson, toJson: CharacterDisadvantages.toJson)
+  CharacterDisadvantages disadvantages;
+  @JsonKey(fromJson: CharacterAdvantages.fromJson, toJson: CharacterAdvantages.toJson)
+  CharacterAdvantages advantages;
   CharacterTendencies tendencies;
-  DraconicLink? draconicLink;
+  DraconicLink draconicLink;
 
   static bool _staticInitialized = false;
   static late final Weapon _naturalWeaponFists;
@@ -173,9 +226,9 @@ class HumanCharacter extends EntityBase with MagicUser {
         dice: 0);
 
     var sk = SpecializedSkill.create(
-        'corpsACorps:naturalWeaponFists',
-        Skill.corpsACorps,
-        title: 'Coup de poing');
+      parent: Skill.corpsACorps,
+      name: 'Coup de poing',
+    );
     var wm = WeaponModel(
         name: 'Poings',
         id: 'poings',
@@ -199,9 +252,9 @@ class HumanCharacter extends EntityBase with MagicUser {
     _naturalWeaponFists = wm.instantiate();
 
     sk = SpecializedSkill.create(
-        'corpsACorps:naturalWeaponFeet',
-        Skill.corpsACorps,
-        title: 'Coup de pied');
+      parent: Skill.corpsACorps,
+      name: 'Coup de pied'
+    );
     wm = WeaponModel(
         name: 'Pieds',
         id: 'pieds',
@@ -223,35 +276,6 @@ class HumanCharacter extends EntityBase with MagicUser {
         rangeEffective: contactRange,
         rangeMax: contactRange);
     _naturalWeaponFeet = wm.instantiate();
-  }
-
-  @override
-  void saveNonExportableJson(Map<String, dynamic> json) {
-    super.saveNonExportableJson(json);
-
-    json['magic_skills'] = Map<String, int>.fromEntries(
-      MagicSkill.values.map(
-        (MagicSkill s) => MapEntry<String, int>(s.name, magicSkill(s))
-      )
-    );
-
-    json['magic_spheres'] = Map<String, int>.fromEntries(
-      MagicSphere.values.map(
-        (MagicSphere s) => MapEntry<String, int>(s.name, magicSphere(s))
-      )
-    );
-
-    json['magic_sphere_pools'] = Map<String, int>.fromEntries(
-        MagicSphere.values.map(
-                (MagicSphere s) => MapEntry<String, int>(s.name, magicSpherePool(s))
-        )
-    );
-  }
-
-  @override
-  void loadNonRestorableJson(Map<String, dynamic> json) {
-    super.loadNonRestorableJson(json);
-    magicUserLoadNonRestorableJson(json);
   }
 
   @override
@@ -289,8 +313,8 @@ InjuryManager fullCharacterDefaultInjuries(EntityBase? entity, InjuryManager? so
   if(entity == null) return humanCharacterDefaultInjuries(entity, source);
 
   return InjuryManager.getInjuryManagerForAbilities(
-    resistance: entity.ability(Ability.resistance),
-    volonte: entity.ability(Ability.volonte),
+    resistance: entity.abilities.resistance,
+    volonte: entity.abilities.volonte,
     source: source,
   );
 }

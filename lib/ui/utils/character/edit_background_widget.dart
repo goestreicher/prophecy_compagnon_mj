@@ -29,11 +29,9 @@ class CharacterEditBackgroundWidget extends StatelessWidget {
             children: [
               CharacterEditDisadvantagesWidget(
                 character: character,
-                changeStreamController: changeStreamController,
               ),
               CharacterEditAdvantagesWidget(
                 character: character,
-                changeStreamController: changeStreamController,
               ),
             ],
           ),

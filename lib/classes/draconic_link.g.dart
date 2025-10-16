@@ -7,9 +7,9 @@ part of 'draconic_link.dart';
 // **************************************************************************
 
 DraconicLink _$DraconicLinkFromJson(Map<String, dynamic> json) => DraconicLink(
-  sphere: $enumDecode(_$MagicSphereEnumMap, json['sphere']),
-  dragon: json['dragon'] as String,
   progress: $enumDecode(_$DraconicLinkProgressEnumMap, json['progress']),
+  dragon: json['dragon'] as String,
+  sphere: $enumDecode(_$MagicSphereEnumMap, json['sphere']),
 );
 
 Map<String, dynamic> _$DraconicLinkToJson(DraconicLink instance) =>
@@ -18,6 +18,16 @@ Map<String, dynamic> _$DraconicLinkToJson(DraconicLink instance) =>
       'dragon': instance.dragon,
       'progress': _$DraconicLinkProgressEnumMap[instance.progress]!,
     };
+
+const _$DraconicLinkProgressEnumMap = {
+  DraconicLinkProgress.aucunLien: 'aucunLien',
+  DraconicLinkProgress.prelude: 'prelude',
+  DraconicLinkProgress.premierNiveau: 'premierNiveau',
+  DraconicLinkProgress.deuxiemeNiveau: 'deuxiemeNiveau',
+  DraconicLinkProgress.troisiemeNiveau: 'troisiemeNiveau',
+  DraconicLinkProgress.quatriemeNiveau: 'quatriemeNiveau',
+  DraconicLinkProgress.cinquiemeNiveau: 'cinquiemeNiveau',
+};
 
 const _$MagicSphereEnumMap = {
   MagicSphere.pierre: 'pierre',
@@ -29,14 +39,4 @@ const _$MagicSphereEnumMap = {
   MagicSphere.cite: 'cite',
   MagicSphere.vents: 'vents',
   MagicSphere.ombre: 'ombre',
-};
-
-const _$DraconicLinkProgressEnumMap = {
-  DraconicLinkProgress.aucunLien: 'aucunLien',
-  DraconicLinkProgress.prelude: 'prelude',
-  DraconicLinkProgress.premierNiveau: 'premierNiveau',
-  DraconicLinkProgress.deuxiemeNiveau: 'deuxiemeNiveau',
-  DraconicLinkProgress.troisiemeNiveau: 'troisiemeNiveau',
-  DraconicLinkProgress.quatriemeNiveau: 'quatriemeNiveau',
-  DraconicLinkProgress.cinquiemeNiveau: 'cinquiemeNiveau',
 };

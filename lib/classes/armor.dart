@@ -3,9 +3,9 @@ import 'package:uuid/uuid.dart';
 
 import 'dart:convert';
 
+import 'entity/abilities.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
-import 'character/base.dart';
 import '../text_utils.dart';
 
 enum ArmorType {
@@ -128,7 +128,9 @@ class Armor extends EquipableItem implements ProtectionProvider {
   List<(Ability, int)> equipRequirements() => model.requirements;
 
   @override
-  void equiped(SupportsEquipableItem owner) {
+  void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
+    super.equiped(owner, target);
+
     if(owner is EntityBase) {
       owner.addProtectionProvider(this);
     }
@@ -136,6 +138,8 @@ class Armor extends EquipableItem implements ProtectionProvider {
 
   @override
   void unequiped(SupportsEquipableItem owner) {
+    super.unequiped(owner);
+
     if(owner is EntityBase) {
       owner.removeProtectionProvider(this);
     }

@@ -24,19 +24,19 @@ class CharacterDisplayDraconicLinkWidget extends StatelessWidget {
               Expanded(
                 child: _DraconicLinkHeaderDetail(
                   title: 'Niveau',
-                  value: character.draconicLink!.progress.title,
+                  value: character.draconicLink.progress.title,
                 ),
               ),
               Expanded(
                 child: _DraconicLinkHeaderDetail(
                   title: 'Dragon',
-                  value: character.draconicLink!.dragon,
+                  value: character.draconicLink.dragon,
                 ),
               ),
               Expanded(
                 child: _DraconicLinkHeaderDetail(
                   title: 'Sphère',
-                  value: character.draconicLink!.sphere.title,
+                  value: character.draconicLink.sphere.title,
                 ),
               ),
             ],
@@ -58,7 +58,7 @@ class CharacterDisplayDraconicLinkWidget extends StatelessWidget {
                   spacing: 4.0,
                   runSpacing: 4.0,
                   children: [
-                    for(var f in DraconicLink.favors(progress: character.draconicLink!.progress, sphere: character.draconicLink!.sphere))
+                    for(var f in DraconicLink.favors(progress: character.draconicLink.progress, sphere: character.draconicLink.sphere))
                       _DraconicFavorInfoWidget(title: f.title, description: f.description)
                   ],
                 ),

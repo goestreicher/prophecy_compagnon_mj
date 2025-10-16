@@ -170,7 +170,7 @@ class ResourceLinkPickerDialog extends StatefulWidget {
     this.localResourcesLinkGenerator,
   });
 
-  final List<ResourceLink> Function(ResourceLinkType)? localResourcesLinkGenerator;
+  final Future<List<ResourceLink>> Function(ResourceLinkType)? localResourcesLinkGenerator;
 
   @override
   State<ResourceLinkPickerDialog> createState() => _ResourceLinkPickerDialogState();
@@ -207,25 +207,25 @@ class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
     }
   }
 
-  void refreshLinks() {
+  Future<void> refreshLinks() async {
     links.clear();
     if(type == null) return;
 
     if(widget.localResourcesLinkGenerator != null && useLocalResources) {
-      links.addAll(widget.localResourcesLinkGenerator!(type!));
+      links.addAll(await widget.localResourcesLinkGenerator!(type!));
     }
     else {
       switch(type!) {
         case ResourceLinkType.npc:
-          for(var npc in NonPlayerCharacterSummary.forLocationType(ObjectLocationType.assets, null, null)) {
+          for(var npc in await NonPlayerCharacterSummary.forLocationType(ObjectLocationType.assets, null, null)) {
             links.add(ResourceLink.createLinkForResource(type!, useLocalResources, npc.name, npc.id));
           }
         case ResourceLinkType.creature:
-          for(var creature in CreatureSummary.forLocationType(ObjectLocationType.assets, null)) {
+          for(var creature in await CreatureSummary.forLocationType(ObjectLocationType.assets, null)) {
             links.add(ResourceLink.createLinkForResource(type!, useLocalResources, creature.name, creature.id));
           }
         case ResourceLinkType.place:
-          for(var place in Place.forLocationType(ObjectLocationType.assets)) {
+          for(var place in await PlaceSummary.forLocationType(ObjectLocationType.assets)) {
             links.add(ResourceLink.createLinkForResource(type!, useLocalResources, place.name, place.id));
           }
         case ResourceLinkType.encounter:
@@ -233,6 +233,10 @@ class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
           break;
       }
     }
+
+    setState(() {
+      // no-op
+    });
   }
 
   @override
@@ -274,8 +278,8 @@ class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
                         type = t;
                         selectionController.clear();
                         selected = null;
-                        refreshLinks();
                       });
+                      refreshLinks();
                     },
                   ),
                 ),
@@ -295,8 +299,8 @@ class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
                         useLocalResources = value;
                         selectionController.clear();
                         selected = null;
-                        refreshLinks();
                       });
+                      refreshLinks();
                     },
                 ),
               ],
@@ -321,8 +325,8 @@ class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
                 if(l == null) return;
                 setState(() {
                   selected = l;
-                  refreshLinks();
                 });
+                refreshLinks();
               },
             ),
             Padding(

@@ -4,10 +4,148 @@ import 'package:uuid/uuid.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'resource_base_class.dart';
+import 'resource_memory_cache.dart';
 import 'storage/default_assets_store.dart';
 import 'storage/storable.dart';
 
 part 'faction.g.dart';
+
+class FactionSummaryStore extends JsonStoreAdapter<FactionSummary> {
+  @override
+  String storeCategory() => 'factionSummaries';
+
+  @override
+  String key(FactionSummary object) => object.id;
+
+  @override
+  Future<FactionSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
+    var faction = FactionSummary.fromJson(j);
+    faction.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
+    return faction;
+  }
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(FactionSummary object) async
+      => _$FactionSummaryToJson(object);
+
+  @override
+  Future<void> willSave(FactionSummary object) async {
+    // Force-set the location here in case the object is used after being saved,
+    // even if the location is not saved in the store (excluded from the
+    // JSON representation).
+    object.location = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: '${getUriBase()}/${storeCategory()}',
+    );
+  }
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class FactionSummary extends ResourceBaseClass {
+  factory FactionSummary({
+    required String uuid,
+    required ObjectSource source,
+    ObjectLocation location = ObjectLocation.memory,
+    required String name,
+    String? parentId,
+    bool displayOnly = false,
+  })
+  {
+    var f = _cache.entry(uuid)
+      ?? FactionSummary._create(
+          uuid: uuid,
+          source: source,
+          location: location,
+          name: name,
+          parentId: parentId,
+          displayOnly: displayOnly,
+        );
+    _cache.add(f.id, f);
+    return f;
+  }
+
+  FactionSummary._create({
+    required this.uuid,
+    required super.source,
+    super.location,
+    required super.name,
+    this.parentId,
+    this.displayOnly = false,
+  });
+
+  final String uuid;
+  final String? parentId;
+  bool displayOnly;
+
+  @override
+  String get id => uuid;
+
+  static int sortComparator(FactionSummary a, FactionSummary b)
+      => a.name.toLowerCase().compareTo(b.name.toLowerCase());
+
+  static Future<FactionSummary?> byId(String id) async {
+    await loadAll();
+    return _cache.entry(id);
+  }
+
+  static Future<Iterable<FactionSummary>> withParent(String? parentId) async {
+    await loadAll();
+    return _cache.values
+      .where((FactionSummary f) => f.parentId == parentId);
+  }
+
+  static Future<void> init() async {
+    // ignore:unused_local_variable
+    var c = _cache;
+  }
+
+  static Future<void> loadAll() async {
+    if(_cache.isEmpty || _cache.purged) {
+      var assetFiles = [
+        'factions-castes.json',
+        'factions-secretes.json',
+        'factions-les-voiles-de-nenya.json',
+      ];
+      for(var f in assetFiles) {
+        for(var a in await loadJSONAssetObjectList(f)) {
+          // ignore:unused_local_variable
+          var f = FactionSummary.fromJson(a);
+        }
+      }
+
+      await FactionSummaryStore().getAll();
+
+      _cache.purged = false;
+    }
+  }
+
+  static final _cache = ResourceMemoryCache<FactionSummary>();
+
+  static void _factionDeleted(String id) => _cache.del(id);
+
+  factory FactionSummary.fromJson(Map<String, dynamic> json)
+      => _$FactionSummaryFromJson(json);
+
+  Map<String, dynamic> toJson()
+      => _$FactionSummaryToJson(this);
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class FactionMember {
+  FactionMember({
+    required this.name,
+    required this.title,
+  });
+
+  String name;
+  String title;
+
+  factory FactionMember.fromJson(Map<String, dynamic> j) => _$FactionMemberFromJson(j);
+  Map<String, dynamic> toJson() => _$FactionMemberToJson(this);
+}
 
 class FactionStore extends JsonStoreAdapter<Faction> {
   @override
@@ -31,6 +169,9 @@ class FactionStore extends JsonStoreAdapter<Faction> {
 
   @override
   Future<void> willSave(Faction object) async {
+    // Ensure that the summary is saved too
+    await FactionSummaryStore().save(object.summary);
+
     // Force-set the location here in case the object is used after being saved,
     // even if the location is not saved in the store (excluded from the
     // JSON representation).
@@ -39,20 +180,11 @@ class FactionStore extends JsonStoreAdapter<Faction> {
       collectionUri: '${getUriBase()}/${storeCategory()}',
     );
   }
-}
 
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class FactionMember {
-  FactionMember({
-    required this.name,
-    required this.title,
-  });
-
-  String name;
-  String title;
-
-  factory FactionMember.fromJson(Map<String, dynamic> j) => _$FactionMemberFromJson(j);
-  Map<String, dynamic> toJson() => _$FactionMemberToJson(this);
+  @override
+  Future<void> willDelete(Faction object) async {
+    await FactionSummaryStore().delete(object.summary);
+  }
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -69,21 +201,23 @@ class Faction extends ResourceBaseClass {
     required ObjectSource source,
   }) {
     var id = uuid ?? Uuid().v4().toString();
-    if(!_instances.containsKey(id)) {
-      var faction = Faction._create(
-        uuid: id,
-        parentId: parentId,
-        displayOnly: displayOnly,
-        name: name,
-        leaders: leaders,
-        members: members,
-        description: description,
-        location: location,
-        source: source,
-      );
-      _instances[id] = faction;
-    }
-    return _instances[id]!;
+    var f = _cache.entry(id)
+        ?? Faction._create(
+            uuid: id,
+            parentId: parentId,
+            displayOnly: displayOnly,
+            name: name,
+            leaders: leaders,
+            members: members,
+            description: description,
+            location: location,
+            source: source,
+          );
+    _cache.add(f.id, f);
+    // Force insertion of the summary in FactionSummary's cache
+    // ignore:unused_local_variable
+    var s = f.summary;
+    return f;
   }
 
   Faction._create({
@@ -107,52 +241,77 @@ class Faction extends ResourceBaseClass {
   List<FactionMember> members;
   String description;
 
-  static final Map<String, Faction> _instances = <String, Faction>{};
-  static bool _defaultAssetsLoaded = false;
+  FactionSummary get summary => FactionSummary(
+    uuid: uuid,
+    source: source,
+    location: location,
+    name: name,
+    parentId: parentId,
+    displayOnly: displayOnly,
+  );
 
-  static int sortComparator(Faction a, Faction b) => a.name.toLowerCase().compareTo(b.name.toLowerCase());
+  static int sortComparator(Faction a, Faction b)
+      => a.name.toLowerCase().compareTo(b.name.toLowerCase());
 
-  static Iterable<Faction> withParent(String? parentId) => _instances.values
-      .where((Faction f) => f.parentId == parentId);
+  static Future<Iterable<Faction>> withParent(String? parentId) async {
+    var ret = <Faction>[];
+    for(var summ in await FactionSummary.withParent(parentId)) {
+      ret.add((await byId(summ.id))!);
+    }
+    return ret;
+  }
 
-  static Faction? byId(String id) => _instances[id];
+  static Future<Faction?> byId(String id) async {
+    Faction? ret = _cache.entry(id);
+    if(ret != null) return ret;
+
+    FactionSummary? summ = await FactionSummary.byId(id);
+    if(summ == null) return null;
+
+    if(summ.location.type == ObjectLocationType.assets) {
+      ret = await loadFromAssets(summ.location.collectionUri, id);
+    }
+    else if(summ.location.type == ObjectLocationType.store) {
+      ret = await FactionStore().get(id);
+    }
+
+    return ret;
+  }
+
+  static Future<Faction?> loadFromAssets(String file, String id) async {
+    for(var a in await loadJSONAssetObjectList(file)) {
+      if((a as Map<String, dynamic>)['uuid'] == id) {
+        return Faction.fromJson(a);
+      }
+    }
+    return null;
+  }
 
   static Future<void> reloadFromStore(Faction f) async {
-    _instances.remove(f.id);
+    FactionSummary._factionDeleted(f.id);
+    _cache.del(f.id);
     // ignore:unused_local_variable
     var prev = await FactionStore().get(f.id);
   }
 
-  static Faction? removeFromCache(Faction f) => _instances.remove(f.id);
+  static void removeFromCache(Faction f) {
+    FactionSummary._factionDeleted(f.id);
+    _cache.del(f.id);
+  }
 
   static Future<void> delete(Faction f) async {
-    for(var child in withParent(f.id).toList()) {
+    for(var child in (await withParent(f.id)).toList()) {
       await delete(child);
     }
-    _instances.remove(f.id);
     await FactionStore().delete(f);
+    FactionSummary._factionDeleted(f.id);
+    _cache.del(f.id);
   }
 
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    var assetFiles = [
-      'factions-castes.json',
-      'factions-secretes.json',
-      'factions-les-voiles-de-nenya.json',
-    ];
-
-    for(var f in assetFiles) {
-      for(var a in await loadJSONAssetObjectList(f)) {
-        // ignore:unused_local_variable
-        var f = Faction.fromJson(a);
-      }
-    }
-  }
-
-  static Future<void> loadStoreAssets() async {
-    await FactionStore().getAll();
+  static Future<void> init() async {
+    // ignore:unused_local_variable
+    var c = _cache;
+    await FactionSummary.init();
   }
 
   static Future<void> import(List<dynamic> j) async {
@@ -162,14 +321,17 @@ class Faction extends ResourceBaseClass {
     }
   }
 
+  static final _cache = ResourceMemoryCache<Faction>();
+
   factory Faction.fromJson(Map<String, dynamic> json) {
-    if(json.containsKey('id') && _instances.containsKey(json['id']!) && _instances[json['id']]!.location.type == ObjectLocationType.assets) {
-      return _instances[json['id']]!;
-    } else if(json.containsKey('uuid') && _instances.containsKey(json['uuid'])) {
-      return _instances[json['uuid']]!;
-    } else {
-      return _$FactionFromJson(json);
+    Faction? cached;
+    if(json.containsKey('id')) {
+      cached = _cache.entry(json['id']);
     }
+    else if(json.containsKey('uuid')) {
+      cached = _cache.entry(json['uuid']);
+    }
+    return cached ?? _$FactionFromJson(json);
   }
 
   Map<String, dynamic> toJson() {

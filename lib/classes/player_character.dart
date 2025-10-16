@@ -2,19 +2,20 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'calendar.dart';
-import 'caste/base.dart';
-import 'caste/career.dart';
-import 'caste/interdicts.dart';
+import 'caste/character_caste.dart';
+import 'character/tendencies.dart';
+import 'entity/abilities.dart';
+import 'entity/attributes.dart';
+import 'entity/injury.dart';
+import 'entity/magic.dart';
+import 'entity/skills.dart';
+import 'entity/status.dart';
 import 'draconic_link.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
-import 'magic.dart';
 import 'object_location.dart';
-import 'place.dart';
-import 'character/base.dart';
-import 'character/skill.dart';
 import 'storage/storable.dart';
 
 part 'player_character.g.dart';
@@ -130,7 +131,6 @@ class PlayerCharacterSummary {
     required this.name,
     required this.player,
     required this.caste,
-    required this.casteStatus,
     this.icon,
     this.location = ObjectLocation.memory,
   });
@@ -138,8 +138,7 @@ class PlayerCharacterSummary {
   final String id;
   final String name;
   final String player;
-  final Caste caste;
-  final CasteStatus casteStatus;
+  final CharacterCaste caste;
   final ExportableBinaryData? icon;
   @JsonKey(includeFromJson: true, includeToJson: false)
     ObjectLocation location;
@@ -150,22 +149,37 @@ class PlayerCharacterSummary {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class PlayerCharacter extends HumanCharacter {
-  PlayerCharacter(
-      {
-        super.uuid,
-        super.location = ObjectLocation.memory,
-        required this.player,
-        required this.augure,
-        required super.name,
-        super.caste,
-        super.casteStatus,
-        super.initiative,
-        super.injuryProvider = fullCharacterDefaultInjuries,
-        super.luck,
-        super.proficiency,
-        super.image,
-        super.icon,
-      });
+  PlayerCharacter({
+    super.uuid,
+    super.location = ObjectLocation.memory,
+    required this.player,
+    required this.augure,
+    required super.name,
+    super.abilities,
+    super.attributes,
+    super.initiative,
+    super.injuries,
+    super.injuryProvider = fullCharacterDefaultInjuries,
+    super.skills,
+    super.status,
+    super.equipment,
+    super.magic,
+    super.caste,
+    super.age,
+    super.height,
+    super.size,
+    super.weight,
+    super.luck,
+    super.proficiency,
+    super.renown,
+    super.origin,
+    super.disadvantages,
+    super.advantages,
+    super.tendencies,
+    super.description,
+    super.image,
+    super.icon,
+  });
 
   factory PlayerCharacter.import(Map<String, dynamic> json) {
     preImportFilter(json);
@@ -184,7 +198,6 @@ class PlayerCharacter extends HumanCharacter {
     name: name,
     player: player,
     caste: caste,
-    casteStatus: casteStatus,
     icon: icon?.clone(),
     location: location,
   );

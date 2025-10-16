@@ -33,7 +33,7 @@ class ScenarioEncounter {
   final String name;
   final List<EncounterEntity> entities;
 
-  Encounter instantiate(List<PlayerCharacter> characters) {
+  Future<Encounter> instantiate(List<PlayerCharacter> characters) async {
     var npcs = <EntityBase>[];
 
     for(var entity in entities) {
@@ -47,7 +47,7 @@ class ScenarioEncounter {
       if(!EncounterEntityFactory.instance.hasFactory(split[0])) continue;
 
       var factory = EncounterEntityFactory.instance.getInstanceFactory(split[0])!;
-      npcs.addAll(factory(split[1], count));
+      npcs.addAll(await factory(split[1], count));
     }
 
     return Encounter(name: name, characters: characters, npcs: npcs);

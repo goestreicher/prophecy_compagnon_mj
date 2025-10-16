@@ -1,49 +1,33 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'skill.dart';
+part of 'specialized_skill.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
 SpecializedSkill _$SpecializedSkillFromJson(Map<String, dynamic> json) =>
-    SpecializedSkill(json['name'] as String)
-      ..reserved = json['reserved'] as bool
-      ..reservedCastes = (json['reserved_castes'] as List<dynamic>)
-          .map((e) => $enumDecode(_$CasteEnumMap, e))
-          .toList();
+    SpecializedSkill.create(
+      parent: $enumDecode(_$SkillEnumMap, json['parent']),
+      name: json['name'] as String,
+      reserved: json['reserved'] as bool? ?? false,
+      reservedPrefix: json['reserved_prefix'] as String?,
+      reservedCastes:
+          (json['reserved_castes'] as List<dynamic>?)
+              ?.map((e) => $enumDecode(_$CasteEnumMap, e))
+              .toList() ??
+          const <Caste>[],
+    );
 
 Map<String, dynamic> _$SpecializedSkillToJson(SpecializedSkill instance) =>
     <String, dynamic>{
+      'parent': _$SkillEnumMap[instance.parent]!,
       'name': instance.name,
       'reserved': instance.reserved,
+      'reserved_prefix': instance.reservedPrefix,
       'reserved_castes': instance.reservedCastes
           .map((e) => _$CasteEnumMap[e]!)
           .toList(),
-    };
-
-const _$CasteEnumMap = {
-  Caste.sansCaste: 'sansCaste',
-  Caste.artisan: 'artisan',
-  Caste.combattant: 'combattant',
-  Caste.commercant: 'commercant',
-  Caste.erudit: 'erudit',
-  Caste.mage: 'mage',
-  Caste.prodige: 'prodige',
-  Caste.protecteur: 'protecteur',
-  Caste.voyageur: 'voyageur',
-};
-
-SkillInstance _$SkillInstanceFromJson(Map<String, dynamic> json) =>
-    SkillInstance(
-      skill: $enumDecode(_$SkillEnumMap, json['skill']),
-      value: (json['value'] as num).toInt(),
-    );
-
-Map<String, dynamic> _$SkillInstanceToJson(SkillInstance instance) =>
-    <String, dynamic>{
-      'skill': _$SkillEnumMap[instance.skill]!,
-      'value': instance.value,
     };
 
 const _$SkillEnumMap = {
@@ -151,4 +135,16 @@ const _$SkillEnumMap = {
   Skill.interrogatoire: 'interrogatoire',
   Skill.intimidation: 'intimidation',
   Skill.seduction: 'seduction',
+};
+
+const _$CasteEnumMap = {
+  Caste.sansCaste: 'sansCaste',
+  Caste.artisan: 'artisan',
+  Caste.combattant: 'combattant',
+  Caste.commercant: 'commercant',
+  Caste.erudit: 'erudit',
+  Caste.mage: 'mage',
+  Caste.prodige: 'prodige',
+  Caste.protecteur: 'protecteur',
+  Caste.voyageur: 'voyageur',
 };

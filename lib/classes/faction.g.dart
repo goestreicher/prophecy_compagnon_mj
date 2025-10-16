@@ -6,6 +6,27 @@ part of 'faction.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
+FactionSummary _$FactionSummaryFromJson(Map<String, dynamic> json) =>
+    FactionSummary(
+      uuid: json['uuid'] as String,
+      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+      location: json['location'] == null
+          ? ObjectLocation.memory
+          : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+      name: json['name'] as String,
+      parentId: json['parent_id'] as String?,
+      displayOnly: json['display_only'] as bool? ?? false,
+    );
+
+Map<String, dynamic> _$FactionSummaryToJson(FactionSummary instance) =>
+    <String, dynamic>{
+      'source': instance.source.toJson(),
+      'name': instance.name,
+      'uuid': instance.uuid,
+      'parent_id': instance.parentId,
+      'display_only': instance.displayOnly,
+    };
+
 FactionMember _$FactionMemberFromJson(Map<String, dynamic> json) =>
     FactionMember(name: json['name'] as String, title: json['title'] as String);
 

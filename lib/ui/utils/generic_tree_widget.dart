@@ -99,13 +99,14 @@ class GenericTreeFilter<T extends ResourceBaseClass> {
   }
 }
 
-abstract interface class GenericTreeWidgetAdapter<T extends ResourceBaseClass> {
-  void onItemSelected(T item);
-  void onItemCreated(T item);
-  Widget getItemCreationWidget(BuildContext context, T? parent);
+abstract interface class GenericTreeWidgetAdapter<TreeDataType extends ResourceBaseClass, ItemDataType extends ResourceBaseClass> {
+  TreeDataType toTreeDataType(ItemDataType item);
+  void onItemSelected(TreeDataType item);
+  void onItemCreated(ItemDataType item);
+  Widget getItemCreationWidget(BuildContext context, TreeDataType? parent);
 }
 
-class GenericTreeWidget<T extends ResourceBaseClass> extends StatefulWidget {
+class GenericTreeWidget<TreeDataType extends ResourceBaseClass, ItemDataType extends ResourceBaseClass> extends StatefulWidget {
   const GenericTreeWidget({
     super.key,
     required this.tree,
@@ -114,23 +115,23 @@ class GenericTreeWidget<T extends ResourceBaseClass> extends StatefulWidget {
     this.autoExpandLevel = 0,
   });
 
-  final TreeNode<GenericTreeData<T>> tree;
-  final GenericTreeFilter<T>? filter;
-  final GenericTreeWidgetAdapter<T> adapter;
+  final TreeNode<GenericTreeData<TreeDataType>> tree;
+  final GenericTreeFilter<TreeDataType>? filter;
+  final GenericTreeWidgetAdapter<TreeDataType, ItemDataType> adapter;
   final int autoExpandLevel;
 
   @override
-  State<GenericTreeWidget<T>> createState() => _GenericTreeWidgetState<T>();
+  State<GenericTreeWidget<TreeDataType, ItemDataType>> createState() => _GenericTreeWidgetState<TreeDataType, ItemDataType>();
 }
 
-class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<GenericTreeWidget<T>> {
-  List<TreeNode<GenericTreeData<T>>> nodesToExpand = <TreeNode<GenericTreeData<T>>>[];
+class _GenericTreeWidgetState<TreeDataType extends ResourceBaseClass, ItemDataType extends ResourceBaseClass> extends State<GenericTreeWidget<TreeDataType, ItemDataType>> {
+  List<TreeNode<GenericTreeData<TreeDataType>>> nodesToExpand = <TreeNode<GenericTreeData<TreeDataType>>>[];
 
-  void getNodesToExpand(TreeNode<GenericTreeData<T>> root, int forceExpansionLevel) {
+  void getNodesToExpand(TreeNode<GenericTreeData<TreeDataType>> root, int forceExpansionLevel) {
     if(forceExpansionLevel > 0) {
       nodesToExpand.add(root);
       for(var child in root.childrenAsList) {
-        getNodesToExpand(child as TreeNode<GenericTreeData<T>>, forceExpansionLevel - 1);
+        getNodesToExpand(child as TreeNode<GenericTreeData<TreeDataType>>, forceExpansionLevel - 1);
       }
     }
     else if(widget.filter != null && !widget.filter!.isNull()) {
@@ -142,7 +143,7 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
       else if(root.data!.descendantMatchesCurrentFilter) {
         nodesToExpand.add(root);
         for (var child in root.childrenAsList) {
-          getNodesToExpand(child as TreeNode<GenericTreeData<T>>, 0);
+          getNodesToExpand(child as TreeNode<GenericTreeData<TreeDataType>>, 0);
         }
       }
     }
@@ -153,7 +154,7 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
     super.initState();
     nodesToExpand.clear();
     for(var n in widget.tree.root.childrenAsList) {
-      getNodesToExpand(n as TreeNode<GenericTreeData<T>>, widget.autoExpandLevel);
+      getNodesToExpand(n as TreeNode<GenericTreeData<TreeDataType>>, widget.autoExpandLevel);
     }
   }
 
@@ -168,7 +169,7 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
         }
       },
       expansionIndicatorBuilder: (BuildContext context, node) {
-        var data = node.data as GenericTreeData<T>;
+        var data = node.data as GenericTreeData<TreeDataType>;
         return ChevronIndicator.rightDown(
             tree: node,
             alignment: Alignment.centerLeft,
@@ -185,7 +186,7 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
           leftPad = 24.0;
         }
 
-        var data = node.data as GenericTreeData<T>;
+        var data = node.data as GenericTreeData<TreeDataType>;
 
         return Card(
           child: Padding(
@@ -217,21 +218,22 @@ class _GenericTreeWidgetState<T extends ResourceBaseClass> extends State<Generic
                     iconSize: 18.0,
                     tooltip: 'Ajouter',
                     onPressed: () async {
-                      var item = await showDialog<T>(
+                      var item = await showDialog<ItemDataType>(
                         context: context,
                         barrierDismissible: false,
                         builder: (BuildContext context) => widget.adapter.getItemCreationWidget(context, data.item),
                       );
                       if(item == null) return;
 
+                      var treeDataItem = widget.adapter.toTreeDataType(item);
                       node.add(
                         TreeNode(
                           key: item.id,
-                          data: GenericTreeData<T>(item: item),
+                          data: GenericTreeData<TreeDataType>(item: treeDataItem),
                         )
                       );
                       widget.adapter.onItemCreated(item);
-                      widget.adapter.onItemSelected(item);
+                      widget.adapter.onItemSelected(treeDataItem);
                     },
                   ),
               ],

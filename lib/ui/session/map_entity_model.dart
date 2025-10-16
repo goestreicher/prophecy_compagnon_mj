@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-import '../../classes/character/base.dart';
 import '../../classes/combat.dart';
+import '../../classes/entity/status.dart';
 import '../../classes/entity_base.dart';
 import '../../classes/equipment.dart';
 import '../../classes/weapon.dart';
@@ -33,14 +33,14 @@ class MapEntityModel extends MapModelMovableItem {
   double get movementLimit {
     var ret = 0.0;
 
-    if(entity.status & EntityStatus.moving != EntityStatus.none) {
-      ret = entity.attribute(Attribute.physique).toDouble();
+    if(entity.status.value & EntityStatusValue.moving != EntityStatusValue.none) {
+      ret = entity.attributes.physique.toDouble();
     }
-    else if(entity.status & EntityStatus.running != EntityStatus.none) {
-      ret = entity.attribute(Attribute.physique) * 2.0;
+    else if(entity.status.value & EntityStatusValue.running != EntityStatusValue.none) {
+      ret = entity.attributes.physique * 2.0;
     }
     // TODO: manage the sprinting case, this requires a dice throw
-    else if(entity.status & EntityStatus.attacking != EntityStatus.none) {
+    else if(entity.status.value & EntityStatusValue.attacking != EntityStatusValue.none) {
       ret = entity.attackMovementDistance;
     }
 
@@ -54,9 +54,9 @@ class MapEntityModel extends MapModelMovableItem {
     showCombatRange = active;
   }
 
-  EntityStatus get status => entity.status;
-  set status(EntityStatus st) {
-    entity.status = st;
+  EntityStatusValue get status => entity.status.value;
+  set status(EntityStatusValue st) {
+    entity.status.value = st;
     notifyListeners();
   }
 
@@ -79,7 +79,7 @@ class MapEntityModel extends MapModelMovableItem {
 
     for(var dp in entity.damageProviderForHand(eqTarget)) {
       if(dp is Weapon && dp.model.range != WeaponRange.contact) {
-        var dist = dp.model.rangeMax.calculate(entity.ability(Ability.force));
+        var dist = dp.model.rangeMax.calculate(entity.abilities.force);
         if(dist > ret) ret = dist;
       }
     }
@@ -165,11 +165,11 @@ class _MapEntityWidgetState extends State<MapEntityWidget> {
 
     var movable = true;
     Color borderColor = Colors.green;
-    if(model.entity.status & EntityStatus.dead != EntityStatus.none) {
+    if(model.entity.status.value & EntityStatusValue.dead != EntityStatusValue.none) {
       movable = false;
       borderColor = Colors.black;
     }
-    else if(model.entity.status & EntityStatus.unconscious != EntityStatus.none) {
+    else if(model.entity.status.value & EntityStatusValue.unconscious != EntityStatusValue.none) {
       movable = false;
       borderColor = Colors.black45;
     }

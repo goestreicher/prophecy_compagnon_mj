@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../../classes/combat.dart';
 import '../../classes/combat_turn.dart';
 import '../../classes/encounter.dart';
-import '../../classes/entity_base.dart';
+import '../../classes/entity/status.dart';
 import '../../classes/weapon.dart';
 import 'map_entity_model.dart';
 import 'map_model.dart';
@@ -412,19 +412,19 @@ class CommandDispatcher extends ChangeNotifier {
 
     if(_session.encounter!.currentTurn!.activeAction!.type == CombatActionType.move) {
       if(_session.encounter!.currentTurn!.activeAction!.subtype.specification == CombatActionSpecification.none) {
-        entityModel.status = entityModel.status | EntityStatus.moving;
+        entityModel.status = entityModel.status | EntityStatusValue.moving;
       }
       else if(_session.encounter!.currentTurn!.activeAction!.subtype.specification == CombatActionSpecification.run) {
-        entityModel.status = entityModel.status | EntityStatus.running;
+        entityModel.status = entityModel.status | EntityStatusValue.running;
       }
       else if(_session.encounter!.currentTurn!.activeAction!.subtype.specification == CombatActionSpecification.run) {
-        entityModel.status = entityModel.status | EntityStatus.sprinting;
+        entityModel.status = entityModel.status | EntityStatusValue.sprinting;
       }
     }
     else if(_session.encounter!.currentTurn!.activeAction!.type == CombatActionType.attack &&
         _session.encounter!.currentTurn!.activeAction!.subtype.isValidFor(_session.encounter!.currentTurn!.activeAction!.type)
     ) {
-      entityModel.status = entityModel.status | EntityStatus.attacking;
+      entityModel.status = entityModel.status | EntityStatusValue.attacking;
       _updateCurrentActionSelectableEntities();
     }
     // TODO
@@ -438,19 +438,19 @@ class CommandDispatcher extends ChangeNotifier {
 
     if(_session.encounter!.currentTurn!.activeAction!.type == CombatActionType.move) {
       if(_session.encounter!.currentTurn!.activeAction!.subtype.specification == CombatActionSpecification.none) {
-        entityModel.status = entityModel.status & ~EntityStatus.moving;
+        entityModel.status = entityModel.status & ~EntityStatusValue.moving;
       }
       else if(_session.encounter!.currentTurn!.activeAction!.subtype.specification == CombatActionSpecification.run) {
-        entityModel.status = entityModel.status & ~EntityStatus.running;
+        entityModel.status = entityModel.status & ~EntityStatusValue.running;
       }
       else if(_session.encounter!.currentTurn!.activeAction!.subtype.specification == CombatActionSpecification.run) {
-        entityModel.status = entityModel.status & ~EntityStatus.sprinting;
+        entityModel.status = entityModel.status & ~EntityStatusValue.sprinting;
       }
     }
     else if(_session.encounter!.currentTurn!.activeAction!.type == CombatActionType.attack &&
         _session.encounter!.currentTurn!.activeAction!.subtype.isValidFor(_session.encounter!.currentTurn!.activeAction!.type)
     ) {
-      entityModel.status = entityModel.status & ~EntityStatus.attacking;
+      entityModel.status = entityModel.status & ~EntityStatusValue.attacking;
       _clearCurrentActionSelectableEntities();
     }
     // TODO

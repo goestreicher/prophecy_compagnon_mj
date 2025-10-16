@@ -5,19 +5,22 @@ import '../../classes/object_source.dart';
 import 'faction_edit_dialog.dart';
 import 'generic_tree_widget.dart';
 
-class FactionTreeWidgetAdapter implements GenericTreeWidgetAdapter<Faction> {
+class FactionTreeWidgetAdapter implements GenericTreeWidgetAdapter<FactionSummary, Faction> {
   const FactionTreeWidgetAdapter({
     this.itemSelectionCallback,
     this.itemCreationCallback,
     this.newFactionSource,
   });
 
-  final void Function(Faction)? itemSelectionCallback;
+  final void Function(FactionSummary)? itemSelectionCallback;
   final void Function(Faction)? itemCreationCallback;
   final ObjectSource? newFactionSource;
 
   @override
-  void onItemSelected(Faction item) {
+  FactionSummary toTreeDataType(Faction f) => f.summary;
+
+  @override
+  void onItemSelected(FactionSummary item) {
     itemSelectionCallback?.call(item);
   }
 
@@ -27,7 +30,7 @@ class FactionTreeWidgetAdapter implements GenericTreeWidgetAdapter<Faction> {
   }
 
   @override
-  Widget getItemCreationWidget(BuildContext context, Faction? parent) {
+  Widget getItemCreationWidget(BuildContext context, FactionSummary? parent) {
     return FactionEditDialog(
       parentId: parent?.id,
       source: newFactionSource,

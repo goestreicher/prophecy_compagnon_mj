@@ -41,6 +41,7 @@ class ScenarioMapStore extends JsonStoreAdapter<ScenarioMap> {
 
   @override
   Future<void> willSave(ScenarioMap object) async {
+    _deletePreviousData(object);
     if(object.placeMap.exportableBinaryData != null) {
       await BinaryDataStore().save(object.placeMap.exportableBinaryData!);
     }
@@ -48,8 +49,15 @@ class ScenarioMapStore extends JsonStoreAdapter<ScenarioMap> {
 
   @override
   Future<void> willDelete(ScenarioMap object) async {
+    _deletePreviousData(object);
     if(object.placeMap.exportableBinaryData != null) {
       await BinaryDataStore().delete(object.placeMap.exportableBinaryData!);
+    }
+  }
+
+  Future<void> _deletePreviousData(ScenarioMap object) async {
+    for(var h in object._previousMapsDataHashes) {
+      await BinaryDataStore().deleteByHash(h);
     }
   }
 }
@@ -67,9 +75,17 @@ class ScenarioMap {
 
   String uuid;
   String name;
-  // TODO: create a replaceMap function to keep track of previous data objects, as in Place
   PlaceMap placeMap;
   bool isDefault;
+
+  final List<String> _previousMapsDataHashes = <String>[];
+
+  void replaceMap(PlaceMap newMap) {
+    if(placeMap.exportableBinaryData != null) {
+      _previousMapsDataHashes.add(placeMap.exportableBinaryData!.hash);
+    }
+    placeMap = newMap;
+  }
 
   static void preImportFilter(Map<String, dynamic> j) {
     if(

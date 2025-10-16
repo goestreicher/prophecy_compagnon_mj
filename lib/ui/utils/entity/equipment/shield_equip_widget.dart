@@ -5,39 +5,30 @@ import '../../../../classes/equipment.dart';
 import '../../../../classes/shield.dart';
 import 'equipment_info_widgets.dart';
 
-class ShieldEquipWidget extends StatefulWidget {
+class ShieldEquipWidget extends StatelessWidget {
   const ShieldEquipWidget({
     super.key,
     required this.entity,
     required this.shield,
-    required this.onEquipedStateChanged,
     this.allowDelete = true,
   });
 
   final EntityBase entity;
   final Shield shield;
-  final VoidCallback onEquipedStateChanged;
   final bool allowDelete;
 
-  @override
-  State<ShieldEquipWidget> createState() => _ShieldEquipWidgetState();
-}
-
-class _ShieldEquipWidgetState extends State<ShieldEquipWidget> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
     var leading = <Widget>[];
-    if(widget.allowDelete) {
+    if(allowDelete) {
       leading.add(
         IconButton(
           icon: const Icon(Icons.delete),
           onPressed: () {
-            setState(() {
-              widget.entity.removeEquipment(widget.shield);
-              widget.onEquipedStateChanged();
-            });
+            entity.unequip(shield);
+            entity.equipment.remove(shield);
           },
         )
       );
@@ -56,11 +47,11 @@ class _ShieldEquipWidgetState extends State<ShieldEquipWidget> {
           children: [
             for(var w in leading)
               w,
-            ShieldInfoWidget(shield: widget.shield),
+            ShieldInfoWidget(shield: shield),
             const Spacer(),
-            if(!widget.entity.meetsEquipableRequirements(widget.shield))
+            if(!entity.meetsEquipableRequirements(shield))
               Text(
-                'Pré-requis\n${widget.entity.unmetEquipableRequirementsDescription(widget.shield)}',
+                'Pré-requis\n${entity.unmetEquipableRequirementsDescription(shield)}',
                 textAlign: TextAlign.right,
                 style: theme.textTheme.bodySmall,
               ),
@@ -68,22 +59,23 @@ class _ShieldEquipWidgetState extends State<ShieldEquipWidget> {
             Column(
               children: [
                 Switch(
-                  value: widget.entity.isEquiped(widget.shield),
-                  onChanged: !widget.entity.meetsEquipableRequirements(widget.shield)
+                  value: entity.isEquiped(shield),
+                  onChanged: !entity.meetsEquipableRequirements(shield)
                       ? null
                       : (bool value) {
                     if(value) {
-                      widget.entity.replaceEquiped(widget.shield, target: EquipableItemTarget.weakHand);
-                      widget.onEquipedStateChanged();
+                      entity.replaceEquiped(
+                        shield,
+                        target: EquipableItemTarget.weakHand
+                      );
                     }
-                    else if(!value && widget.entity.isEquiped(widget.shield)) {
-                      widget.entity.unequip(widget.shield);
-                      widget.onEquipedStateChanged();
+                    else if(!value && entity.isEquiped(shield)) {
+                      entity.unequip(shield);
                     }
                   },
                 ),
                 Text(
-                  widget.entity.isEquiped(widget.shield) ? 'Déséquiper' : 'Équiper',
+                  entity.isEquiped(shield) ? 'Déséquiper' : 'Équiper',
                   style: theme.textTheme.bodySmall,
                 )
               ],

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/base.dart';
-import '../../../../classes/character/skill.dart';
+import '../../../../classes/entity/attributes.dart';
+import '../../../../classes/entity/skill_family.dart';
 import '../../../../classes/entity_base.dart';
 import '../../widget_group_container.dart';
 import 'display_skill_family_widget.dart';
@@ -17,7 +17,7 @@ class EntityDisplaySkillGroupWidget extends StatelessWidget {
     var theme = Theme.of(context);
 
     var familyWidgets = SkillFamily.values
-      .where((SkillFamily f) => (f.defaultAttribute == attribute && entity.skillsForFamily(f).isNotEmpty))
+      .where((SkillFamily f) => (f.defaultAttribute == attribute && entity.skills.forFamily(f).isNotEmpty))
       .map(
             (SkillFamily f) => EntityDisplaySkillFamilyWidget(
               entity: entity,
@@ -27,7 +27,7 @@ class EntityDisplaySkillGroupWidget extends StatelessWidget {
 
     return WidgetGroupContainer(
       title: Text(
-        '${attribute.title} : ${entity.attribute(attribute).toString()}',
+        '${attribute.name} : ${entity.attributes.attribute(attribute).toString()}',
         style: theme.textTheme.titleMedium!.copyWith(
           color: Colors.black87,
           fontWeight: FontWeight.bold,

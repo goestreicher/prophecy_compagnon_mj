@@ -1,49 +1,49 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import '../../../../classes/caste/base.dart';
 import '../../../../classes/human_character.dart';
 import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
-import '../change_stream.dart';
 
-class CharacterViewCasteTechniquesWidget extends StatefulWidget {
+class CharacterViewCasteTechniquesWidget extends StatelessWidget {
   const CharacterViewCasteTechniquesWidget({
     super.key,
     required this.character,
-    required this.changeStreamController,
   });
 
   final HumanCharacter character;
-  final StreamController<CharacterChange> changeStreamController;
 
   @override
-  State<CharacterViewCasteTechniquesWidget> createState() => _CharacterViewCasteTechniquesWidgetState();
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    return WidgetGroupContainer(
+      title: Text(
+        'Techniques de Caste',
+        style: theme.textTheme.bodyMedium!.copyWith(
+          color: Colors.black87,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      child: ValueListenableBuilder(
+        valueListenable: character.caste.casteNotifier,
+        builder: (BuildContext context, Caste value, _) {
+          return ValueListenableBuilder(
+            valueListenable: character.caste.statusNotifier,
+            builder: (BuildContext context, CasteStatus status, _) {
+              return _CasteTechniquesWidget(character: character);
+            }
+          );
+        }
+      )
+    );
+  }
 }
 
-class _CharacterViewCasteTechniquesWidgetState extends State<CharacterViewCasteTechniquesWidget> {
-  late Caste lastCaste;
+class _CasteTechniquesWidget extends StatelessWidget {
+  const _CasteTechniquesWidget({ required this.character });
 
-  @override
-  void initState() {
-    super.initState();
-
-    lastCaste = widget.character.caste;
-
-    widget.changeStreamController.stream.listen((CharacterChange change) {
-      if(change.item == CharacterChangeItem.caste) {
-        if(change.value == null) return;
-
-        var v = change.value as Caste;
-        if(v != lastCaste) {
-          setState(() {
-            lastCaste = v;
-          });
-        }
-      }
-    });
-  }
+  final HumanCharacter character;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class _CharacterViewCasteTechniquesWidgetState extends State<CharacterViewCasteT
 
     var widgets = <Widget>[];
 
-    for(var t in Caste.techniques(widget.character.caste, widget.character.casteStatus)) {
+    for(var t in Caste.techniques(character.caste.caste, character.caste.status)) {
       widgets.add(_CasteTechniqueWidget(technique: t.title, description: t.description,));
     }
 
@@ -69,18 +69,9 @@ class _CharacterViewCasteTechniquesWidgetState extends State<CharacterViewCasteT
       );
     }
 
-    return WidgetGroupContainer(
-      title: Text(
-        'Techniques de Caste',
-        style: theme.textTheme.bodyMedium!.copyWith(
-          color: Colors.black87,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      child: Column(
-        spacing: 12.0,
-        children: widgets,
-      )
+    return Column(
+      spacing: 12.0,
+      children: widgets,
     );
   }
 }

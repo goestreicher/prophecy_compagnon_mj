@@ -3,10 +3,11 @@ import 'package:uuid/uuid.dart';
 
 import 'dart:convert';
 
+import 'character/base.dart';
 import 'combat.dart';
+import 'entity/abilities.dart';
 import 'equipment.dart';
 import 'entity_base.dart';
-import 'character/base.dart';
 import '../text_utils.dart';
 
 class ShieldModel {
@@ -121,7 +122,9 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
   List<(Ability, int)> equipRequirements() => model.requirements;
 
   @override
-  void equiped(SupportsEquipableItem owner) {
+  void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
+    super.equiped(owner, target);
+
     if(owner is EntityBase) {
       owner.addProtectionProvider(this);
       owner.addDamageProvider(WeaponRange.contact, this);
@@ -131,6 +134,8 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
 
   @override
   void unequiped(SupportsEquipableItem owner) {
+    super.unequiped(owner);
+
     if(owner is EntityBase) {
       owner.removeProtectionProvider(this);
       owner.removeDamageProvider(this);
@@ -142,5 +147,5 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
 
   @override
   int damage(EntityBase owner, {List<int>? throws })
-    => model.damage.calculate(owner.ability(Ability.force), throws: throws).toInt();
+    => model.damage.calculate(owner.abilities.force, throws: throws).toInt();
 }

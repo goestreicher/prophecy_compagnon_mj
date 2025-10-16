@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import '../../../../classes/caste/base.dart';
@@ -8,83 +6,19 @@ import '../../../../classes/caste/interdicts.dart';
 import '../../../../classes/human_character.dart';
 import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
-import '../change_stream.dart';
 import '../background/interdict_picker_dialog.dart';
 
-class CharacterEditCasteInterdictsWidget extends StatefulWidget {
+class CharacterEditCasteInterdictsWidget extends StatelessWidget {
   const CharacterEditCasteInterdictsWidget({
     super.key,
     required this.character,
-    required this.changeStreamController,
   });
 
   final HumanCharacter character;
-  final StreamController<CharacterChange> changeStreamController;
-
-  @override
-  State<CharacterEditCasteInterdictsWidget> createState() => _CharacterEditCasteInterdictsWidgetState();
-}
-
-class _CharacterEditCasteInterdictsWidgetState extends State<CharacterEditCasteInterdictsWidget> {
-  late Caste lastCaste;
-  late Career? lastCareer;
-
-  @override
-  void initState() {
-    super.initState();
-
-    lastCaste = widget.character.caste;
-    lastCareer = widget.character.career;
-
-    widget.changeStreamController.stream.listen((CharacterChange change) {
-      if(change.item == CharacterChangeItem.caste) {
-        if(change.value == null) return;
-
-        var v = change.value as Caste;
-        if(v != lastCaste) {
-          setState(() {
-            lastCaste = v;
-            widget.character.interdicts.clear();
-          });
-        }
-      }
-      else if(change.item == CharacterChangeItem.career) {
-        var v = change.value as Career?;
-        if(v != lastCareer) {
-          setState(() {
-            lastCareer = v;
-          });
-        }
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-
-    var widgets = <Widget>[];
-
-    for(var i in widget.character.interdicts) {
-      widgets.add(
-        _InterdictWidget(
-          title: i.title,
-          description: i.description,
-          onDeleted: () => setState(() {
-            widget.character.interdicts.remove(i);
-          }),
-        )
-      );
-    }
-
-    if(lastCareer != null && lastCareer!.interdict != null) {
-      widgets.add(
-        _InterdictWidget(
-          title: '${lastCareer!.interdict!.title} (carrière)',
-          description: lastCareer!.interdict!.description,
-        )
-      );
-    }
 
     return WidgetGroupContainer(
       title: Text(
@@ -94,36 +28,80 @@ class _CharacterEditCasteInterdictsWidgetState extends State<CharacterEditCasteI
           fontWeight: FontWeight.bold,
         ),
       ),
-      child: Column(
-        spacing: 12.0,
-        children: [
-          ...widgets,
-          Center(
-            child: TextButton(
-              style: TextButton.styleFrom(
-                textStyle: theme.textTheme.bodySmall,
-              ),
-              onPressed: () async {
-                var result = await showDialog<CasteInterdict>(
-                  context: context,
-                  builder: (BuildContext context) => InterdictPickerDialog(
-                    defaultCaste: widget.character.caste != Caste.sansCaste
-                      ? widget.character.caste
-                      : null,
-                  ),
-                );
-                if(!context.mounted) return;
-                if(result == null) return;
-
-                setState(() {
-                  widget.character.interdicts.add(result);
-                });
-              },
-              child: const Text('Nouvel interdit'),
-            ),
-          )
-        ],
+      child: ListenableBuilder(
+        listenable: character.caste.interdicts,
+        builder: (BuildContext context, _) {
+          return _InterdictsWidget(character: character);
+        }
       )
+    );
+  }
+}
+
+class _InterdictsWidget extends StatelessWidget {
+  const _InterdictsWidget({ required this.character });
+
+  final HumanCharacter character;
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+    var widgets = <Widget>[];
+
+    for(var i in character.caste.interdicts) {
+      widgets.add(
+        _InterdictWidget(
+          title: i.title,
+          description: i.description,
+          onDeleted: () => character.caste.interdicts.remove(i),
+        )
+      );
+    }
+
+    widgets.add(
+      ValueListenableBuilder(
+        valueListenable: character.caste.careerNotifier,
+        builder: (BuildContext context, Career? value, _) {
+          if(value == null) {
+            return SizedBox.shrink();
+          }
+          else {
+            return _InterdictWidget(
+              title: '${character.caste.career!.interdict!.title} (carrière)',
+              description: character.caste.career!.interdict!.description,
+            );
+          }
+        }
+      )
+    );
+
+    return Column(
+      spacing: 12.0,
+      children: [
+        ...widgets,
+        Center(
+          child: TextButton(
+            style: TextButton.styleFrom(
+              textStyle: theme.textTheme.bodySmall,
+            ),
+            onPressed: () async {
+              var result = await showDialog<CasteInterdict>(
+                context: context,
+                builder: (BuildContext context) => InterdictPickerDialog(
+                  defaultCaste: character.caste.caste != Caste.sansCaste
+                    ? character.caste.caste
+                    : null,
+                ),
+              );
+              if(!context.mounted) return;
+              if(result == null) return;
+
+              character.caste.interdicts.add(result);
+            },
+            child: const Text('Nouvel interdit'),
+          ),
+        )
+      ],
     );
   }
 }

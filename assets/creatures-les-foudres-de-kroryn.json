@@ -1,6 +1,5 @@
 [
   {
-    "equiped": [],
     "uuid": "618f4d4c-4cb5-4476-88a7-73c6649d9c82",
     "name": "Destrier karien",
     "description": "D'un caractère fougueux, les destriers kariens sont de superbes montures à la robe rousse et à la crinière d’un noir bleuté. Leur puissance et leur résistance en font des bêtes de guerre fort recherchées. Leur prix (environ 20 000 df) reflète leur rareté et leur délicat dressage.\n\n",
@@ -27,34 +26,66 @@
       "manuel": 0,
       "social": 1
     },
-    "skills": [
-      {
-        "skill": "athletisme",
-        "value": 1,
-        "specializations": [
-          {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 8,
-            "reserved": false
-          },
-          {
-            "name": "athletisme:sauter",
-            "title": "Sauter",
-            "value": 6,
-            "reserved": false
-          }
-        ]
-      },
-      {
-        "skill": "natation",
-        "value": 3
-      },
-      {
-        "skill": "esquive",
-        "value": 4
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 8,
+                  "reserved": false
+                },
+                {
+                  "name": "Sauter",
+                  "value": 6,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 4
+            },
+            {
+              "skill": "natation",
+              "value": 3
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
       }
-    ],
+    },
     "equipment": [],
     "unique": false,
     "category": "animauxSauvages",
@@ -100,21 +131,23 @@
       }
     ],
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 40,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 40,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     }
   }
 ]

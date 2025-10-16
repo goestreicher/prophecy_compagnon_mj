@@ -1,9 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
-import '../../../classes/character/base.dart';
-import '../../../classes/character/injury.dart';
+import '../../../classes/entity/attributes.dart';
 import '../../../classes/human_character.dart';
 import '../entity/base/edit_abilities_widget.dart';
 import '../entity/base/edit_attributes_widget.dart';
@@ -13,17 +10,14 @@ import 'base/edit_caste_widget.dart';
 import 'base/edit_general_widget.dart';
 import 'base/edit_secondary_attributes_widget.dart';
 import 'base/edit_tendencies_widget.dart';
-import 'change_stream.dart';
 
 class CharacterEditBaseWidget extends StatelessWidget {
   const CharacterEditBaseWidget({
     super.key,
     required this.character,
-    required this.changeStreamController,
   });
 
   final HumanCharacter character;
-  final StreamController<CharacterChange> changeStreamController;
 
   Widget _twoColumnsLayout() {
     return Column(
@@ -43,7 +37,6 @@ class CharacterEditBaseWidget extends StatelessWidget {
               flex: 1,
               child: CharacterEditCasteWidget(
                 character: character,
-                changeStreamController: changeStreamController,
               ),
             ),
           ],
@@ -54,13 +47,11 @@ class CharacterEditBaseWidget extends StatelessWidget {
             Expanded(
               child: EntityEditAbilitiesWidget(
                 entity: character,
-                changeStreamController: changeStreamController,
               ),
             ),
             Expanded(
               child: EntityEditAttributesWidget(
                   entity: character,
-                  changeStreamController: changeStreamController
               ),
             ),
             Expanded(
@@ -75,8 +66,6 @@ class CharacterEditBaseWidget extends StatelessWidget {
             Flexible(
               child: EntityEditInjuriesWidget(
                 entity: character,
-                changeStreamController: changeStreamController,
-                onChanged: (InjuryManager manager) => character.injuries = manager,
               ),
             ),
             CharacterEditTendenciesWidget(
@@ -110,12 +99,9 @@ class CharacterEditBaseWidget extends StatelessWidget {
                       children: [
                         CharacterEditCasteWidget(
                           character: character,
-                          changeStreamController: changeStreamController,
                         ),
                         EntityEditInjuriesWidget(
                           entity: character,
-                          changeStreamController: changeStreamController,
-                          onChanged: (InjuryManager manager) => character.injuries = manager,
                         ),
                       ],
                     ),
@@ -135,7 +121,6 @@ class CharacterEditBaseWidget extends StatelessWidget {
             children: [
               EntityEditAbilitiesWidget(
                 entity: character,
-                changeStreamController: changeStreamController
               ),
               Row(
                 spacing: 16.0,
@@ -143,7 +128,6 @@ class CharacterEditBaseWidget extends StatelessWidget {
                   Expanded(
                     child: EntityEditAttributesWidget(
                       entity: character,
-                      changeStreamController: changeStreamController
                     ),
                   ),
                   Expanded(
@@ -184,22 +168,18 @@ class CharacterEditBaseWidget extends StatelessWidget {
               children: [
                 EntityEditSkillGroupContainer(
                   entity: character,
-                  changeStreamController: changeStreamController,
                   attribute: Attribute.physique,
                 ),
                 EntityEditSkillGroupContainer(
                   entity: character,
-                  changeStreamController: changeStreamController,
                   attribute: Attribute.mental,
                 ),
                 EntityEditSkillGroupContainer(
                   entity: character,
-                  changeStreamController: changeStreamController,
                   attribute: Attribute.manuel,
                 ),
                 EntityEditSkillGroupContainer(
                   entity: character,
-                  changeStreamController: changeStreamController,
                   attribute: Attribute.social,
                 ),
               ],

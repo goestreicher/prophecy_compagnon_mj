@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 
-import 'character/base.dart';
 import 'combat.dart';
 import 'encounter.dart';
 import 'entity_base.dart';
@@ -401,9 +400,9 @@ Map<CombatTurnActionEnvironmentKey, dynamic> _attackBrutalEnvironment = {
   CombatTurnActionEnvironmentKey.damageCallback:
     (Map<CombatTurnActionEnvironmentKey, dynamic> env) {
       var initialDamage = env[CombatTurnActionEnvironmentKey.damage] as int;
-      var finalDamage = initialDamage + (env[CombatTurnActionEnvironmentKey.attacker] as EntityBase).ability(Ability.force);
+      var finalDamage = initialDamage + (env[CombatTurnActionEnvironmentKey.attacker] as EntityBase).abilities.force;
       if((env[CombatTurnActionEnvironmentKey.weapon] as Weapon).handiness == 2) {
-        finalDamage += (env[CombatTurnActionEnvironmentKey.attacker] as EntityBase).ability(Ability.force);
+        finalDamage += (env[CombatTurnActionEnvironmentKey.attacker] as EntityBase).abilities.force;
       }
       return finalDamage;
     },

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prophecy_compagnon_mj/ui/utils/widget_group_container.dart';
 
-import '../../../../classes/character/base.dart';
 import '../../../../classes/magic.dart';
 import '../../../../classes/magic_user.dart';
 import '../../num_input_widget.dart';
@@ -31,33 +30,38 @@ class EntityEditMagicSkillsWidget extends StatelessWidget {
         children: [
           _EditMagicSkillWidget(
             name: 'Magie instinctive',
-            initialValue: entity.magicSkill(MagicSkill.instinctive),
+            initialValue: entity.magic.skills.get(MagicSkill.instinctive),
             onChanged: (int value) {
-              entity.setMagicSkill(MagicSkill.instinctive, value);
+              entity.magic.skills.set(MagicSkill.instinctive, value);
             },
           ),
           _EditMagicSkillWidget(
             name: 'Magie invocatoire',
-            initialValue: entity.magicSkill(MagicSkill.invocatoire),
+            initialValue: entity.magic.skills.get(MagicSkill.invocatoire),
             onChanged: (int value) {
-              entity.setMagicSkill(MagicSkill.invocatoire, value);
+              entity.magic.skills.set(MagicSkill.invocatoire, value);
             },
           ),
           _EditMagicSkillWidget(
             name: 'Sorcellerie',
-            initialValue: entity.magicSkill(MagicSkill.sorcellerie),
+            initialValue: entity.magic.skills.get(MagicSkill.sorcellerie),
             onChanged: (int value) {
-              entity.setMagicSkill(MagicSkill.sorcellerie, value);
+              entity.magic.skills.set(MagicSkill.sorcellerie, value);
             },
           ),
-          _EditMagicSkillWidget(
-            name: 'Réserve de magie',
-            initialValue: entity.magicPool,
-            minValue: entity.ability(Ability.volonte),
-            maxValue: 30,
-            onChanged: (int value) {
-              entity.magicPool = value;
-            },
+          StreamBuilder(
+            stream: entity.abilities.streamController.stream,
+            builder: (BuildContext context, _) {
+              return _EditMagicSkillWidget(
+                name: 'Réserve de magie',
+                initialValue: entity.magicPool,
+                minValue: entity.abilities.volonte,
+                maxValue: 30,
+                onChanged: (int value) {
+                  entity.magicPool = value;
+                },
+              );
+            }
           ),
         ],
       )
@@ -95,6 +99,7 @@ class _EditMagicSkillWidget extends StatelessWidget {
         SizedBox(
           width: 80.0,
           child: NumIntInputWidget(
+            key: UniqueKey(),
             initialValue: initialValue,
             minValue: minValue,
             maxValue: maxValue,

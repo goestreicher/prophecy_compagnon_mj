@@ -1,4 +1,5 @@
-import '../../../classes/character/base.dart';
+import '../../../classes/entity/abilities.dart';
+import '../../../classes/entity/attributes.dart';
 
 enum CharacterChangeItem {
   caste,

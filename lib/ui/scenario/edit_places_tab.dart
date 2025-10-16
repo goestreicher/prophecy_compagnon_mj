@@ -1,10 +1,12 @@
 import 'package:animated_tree_view/animated_tree_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
 import '../utils/generic_tree_widget.dart';
+import '../utils/place/place_selection_model.dart';
 import '../utils/place_display_widget.dart';
 import '../utils/place_tree_widget_utils.dart';
 
@@ -27,12 +29,12 @@ class ScenarioEditPlacesPage extends StatefulWidget {
 }
 
 class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
-  late final TreeNode<GenericTreeData<Place>> tree;
+  late final TreeNode<GenericTreeData<PlaceSummary>> tree;
   late UniqueKey treeKey;
-  final GenericTreeFilter<Place> treeFilter = GenericTreeFilter<Place>();
+  final GenericTreeFilter<PlaceSummary> treeFilter = GenericTreeFilter<PlaceSummary>();
   late PlaceTreeWidgetAdapter adapter;
 
-  Place? selectedPlace;
+  PlaceSelectionModel placeSelectionModel = PlaceSelectionModel();
 
   @override
   void initState() {
@@ -40,10 +42,8 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
 
     adapter = PlaceTreeWidgetAdapter(
       newPlaceSource: widget.scenarioSource,
-      itemSelectionCallback: (Place p) {
-        setState(() {
-          selectedPlace = p;
-        });
+      itemSelectionCallback: (PlaceSummary p) {
+        placeSelectionModel.id = p.id;
       },
       itemCreationCallback: (Place p) async {
         widget.onPlaceCreated(p);
@@ -52,28 +52,32 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
 
     tree = TreeNode.root();
     treeFilter.source = widget.scenarioSource;
-    rebuildTree();
   }
 
-  void rebuildTree() {
+  Future<void> load() async {
+    await PlaceSummary.loadAll();
+    await rebuildTree();
+  }
+
+  Future<void> rebuildTree() async {
     tree.clear();
     treeKey = UniqueKey();
-    buildSubTree(tree, Place.byId('monde')!);
+    await buildSubTree(tree, (await PlaceSummary.byId('monde'))!);
   }
 
-  void buildSubTree(TreeNode root, Place place) {
-    for(var child in Place.withParent(place.id)..sort(Place.sortComparator)) {
-      var node = TreeNode<GenericTreeData<Place>>(
+  Future<void> buildSubTree(TreeNode root, PlaceSummary place) async {
+    for(var child in (await PlaceSummary.withParent(place.id)).toList()..sort(PlaceSummary.sortComparator)) {
+      var node = TreeNode<GenericTreeData<PlaceSummary>>(
         key: child.id,
       );
-      buildSubTree(node, child);
+      await buildSubTree(node, child);
 
       bool match = treeFilter.matchesFilter(child);
       bool descendantMatch = node.childrenAsList
         .any(
           (ListenableNode n) {
             if(n.isRoot) return true;
-            var tn = n as TreeNode<GenericTreeData<Place>>;
+            var tn = n as TreeNode<GenericTreeData<PlaceSummary>>;
             return tn.data != null
                 && (
                     tn.data!.matchesCurrentFilter
@@ -81,7 +85,8 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
                 );
           }
       );
-      node.data = GenericTreeData<Place>(
+
+      node.data = GenericTreeData<PlaceSummary>(
         item: child,
         matchesCurrentFilter: match,
         descendantMatchesCurrentFilter: descendantMatch,
@@ -106,73 +111,90 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
         children: [
           SizedBox(
             width: 350,
-            child: CustomScrollView(
-              slivers: [
-                SliverPadding(
-                  padding: const EdgeInsets.only(right: 8.0),
-                  sliver: GenericTreeWidget<Place>(
-                    key: treeKey,
-                    tree: tree,
-                    filter: treeFilter,
-                    adapter: adapter,
-                  )
-                )
-              ],
+            child: FutureBuilder(
+              future: load(),
+              builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+                if(snapshot.connectionState == ConnectionState.waiting) {
+                  return Center(child: CircularProgressIndicator());
+                }
+
+                if(snapshot.hasError) {
+                  return ErrorWidget(snapshot.error!);
+                }
+
+                return CustomScrollView(
+                  slivers: [
+                    SliverPadding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      sliver: GenericTreeWidget<PlaceSummary, Place>(
+                        key: treeKey,
+                        tree: tree,
+                        filter: treeFilter,
+                        adapter: adapter,
+                      )
+                    )
+                  ],
+                );
+              }
             ),
           ),
-          if(selectedPlace != null)
-            Expanded(
+          ChangeNotifierProvider.value(
+            value: placeSelectionModel,
+            child: Expanded(
               child: Padding(
                 padding: EdgeInsets.fromLTRB(4.0, 16.0, 0.0, 16.0),
-                child: PlaceDisplayWidget(
-                  place: selectedPlace!,
-                  modifyIfSourceMatches: widget.scenarioSource,
-                  onEdited: (Place p) => setState(() {
-                    widget.onPlaceModified(p);
-                    selectedPlace = p;
-                  }),
-                  onDelete: (Place p) async {
-                    var confirm = await showDialog<bool>(
-                      context: context,
-                      builder: (BuildContext context) => AlertDialog(
-                        title: const Text('Confirmer la suppression'),
-                        content: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text('Supprimer ce lieux et tous ses enfants ?'),
-                          ],
-                        ),
-                        actions: <Widget>[
-                          TextButton(
-                            onPressed: () => Navigator.of(context).pop(false),
-                            child: const Text('Annuler'),
-                          ),
-                          TextButton(
-                            onPressed: () => Navigator.of(context).pop(true),
-                            child: const Text('Supprimer'),
-                          ),
-                        ]
-                      )
-                    );
-                    if(confirm == null || !confirm) return;
+                child: Consumer<PlaceSelectionModel>(
+                  builder: (_, selectedPlace, _) {
+                    return PlaceDisplayWidget(
+                      placeId: selectedPlace.id,
+                      modifyIfSourceMatches: widget.scenarioSource,
+                      onEdited: (Place p) => setState(() {
+                        widget.onPlaceModified(p);
+                        selectedPlace.id = p.id;
+                      }),
+                      onDelete: (Place p) async {
+                        var confirm = await showDialog<bool>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                            title: const Text('Confirmer la suppression'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('Supprimer ce lieux et tous ses enfants ?'),
+                              ],
+                            ),
+                            actions: <Widget>[
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(false),
+                                child: const Text('Annuler'),
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.of(context).pop(true),
+                                child: const Text('Supprimer'),
+                              ),
+                            ]
+                          )
+                        );
+                        if(confirm == null || !confirm) return;
 
-                    Place? current = p;
-                    var path = p.id;
-                    while(current != null && current.parentId != null && current.parentId != 'monde') {
-                      current = Place.byId(current.parentId!);
-                      path = '${current!.id}.$path';
-                    }
-                    var n = tree.elementAt(path);
-                    n.parent?.remove(n);
-                    widget.onPlaceDeleted(p);
-                    setState(() {
-                      selectedPlace = null;
-                    });
-                  },
+                        Place? current = p;
+                        var path = p.id;
+                        while(current != null && current.parentId != null && current.parentId != 'monde') {
+                          current = await Place.byId(current.parentId!);
+                          path = '${current!.id}.$path';
+                        }
+                        var n = tree.elementAt(path);
+                        n.parent?.remove(n);
+                        widget.onPlaceDeleted(p);
+                        selectedPlace.id = null;
+                      },
+                    );
+                  }
                 ),
               )
             ),
+          ),
         ],
       ),
     );

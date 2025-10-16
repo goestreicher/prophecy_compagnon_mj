@@ -1,58 +1,43 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:prophecy_compagnon_mj/ui/utils/entity/base/skill_picker_dialog.dart';
 
-import '../../../../classes/character/skill.dart';
+import '../../../../classes/entity/skill.dart';
+import '../../../../classes/entity/skill_family.dart';
+import '../../../../classes/entity/skill_instance.dart';
+import '../../../../classes/entity/specialized_skill.dart';
+import '../../../../classes/entity/specialized_skill_instance.dart';
 import '../../../../classes/entity_base.dart';
-import '../../character/change_stream.dart';
 import '../../num_input_widget.dart';
 import '../../widget_group_container.dart';
 
-class EntityEditSkillFamilyContainer extends StatefulWidget {
+class EntityEditSkillFamilyContainer extends StatelessWidget {
   const EntityEditSkillFamilyContainer({
     super.key,
     required this.entity,
     required this.family,
-    this.changeStreamController,
   });
 
   final EntityBase entity;
-  final StreamController<CharacterChange>? changeStreamController;
   final SkillFamily family;
 
-  @override
-  State<EntityEditSkillFamilyContainer> createState() => _EntityEditSkillFamilyContainerState();
-}
-
-class _EntityEditSkillFamilyContainerState extends State<EntityEditSkillFamilyContainer> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
     var skillWidgets = <Widget>[];
-    for(var s in widget.entity.skillsForFamily(widget.family)) {
+    for(var s in entity.skills.forFamily(family)) {
       skillWidgets.add(
-        SkillEditWidget(
-          character: widget.entity,
-          skill: s.skill,
-          onChanged: (int value) {
-            // TODO
-          },
-          onDeleted: () {
-            setState(() {
-              widget.entity.deleteSkill(s.skill);
-            });
-          },
-          onSpecializationChanged: (SpecializedSkill sp, int value) {
-            // TODO
-          },
-          onSpecializationDeleted: (SpecializedSkill sp) {
-            setState(() {
-              widget.entity.deleteSpecializedSkill(sp);
-            });
-          },
+        ListenableBuilder(
+          listenable: s,
+          builder: (BuildContext context, _) {
+            return SkillEditWidget(
+              skill: s,
+              onDeleted: () {
+                entity.skills.families[family]!.del(s.skill);
+              },
+            );
+          }
         )
       );
     }
@@ -75,19 +60,16 @@ class _EntityEditSkillFamilyContainerState extends State<EntityEditSkillFamilyCo
               Skill? skill = await showDialog(
                 context: context,
                 builder: (BuildContext context) =>
-                    SkillPickerDialog(
-                      family: widget.family,
-                      excluded: widget.entity
-                          .skillsForFamily(widget.family)
-                          .map((SkillInstance s) => s.skill)
-                          .toList(),
-                    )
+                  SkillPickerDialog(
+                    family: family,
+                    excluded: entity.skills.forFamily(family)
+                      .map((SkillInstance s) => s.skill)
+                      .toList(),
+                  )
               );
               if(skill == null) return;
 
-              setState(() {
-                widget.entity.setSkill(skill, 0);
-              });
+              entity.skills.families[family]!.add(skill);
             },
           ),
           ElevatedButton.icon(
@@ -101,28 +83,24 @@ class _EntityEditSkillFamilyContainerState extends State<EntityEditSkillFamilyCo
             label: const Text('Nouvelle spécialisation'),
             onPressed: () async {
               SpecializedSkill? skill = await showDialog(
-                  context: context,
-                  builder: (BuildContext context) {
-                    var characterSkills = widget.entity
-                        .skillsForFamily(widget.family)
-                        .map((SkillInstance s) => s.skill)
-                        .toList();
-                    return SpecializedSkillPickerDialog(
-                      skills: Skill.fromFamily(widget.family)
-                          .where((Skill s) => s.requireSpecialization || characterSkills.contains(s))
-                          .toList()
-                        ..sort((Skill a, Skill b) => a.title.compareTo(b.title)),
-                    );
-                  }
+                context: context,
+                builder: (BuildContext context) {
+                  var characterSkills = entity.skills.forFamily(family)
+                    .map((SkillInstance s) => s.skill)
+                    .toList();
+                  return SpecializedSkillPickerDialog(
+                    skills: Skill.fromFamily(family)
+                        .where((Skill s) => s.requireSpecialization || characterSkills.contains(s))
+                        .toList()
+                      ..sort((Skill a, Skill b) => a.name.compareTo(b.name)),
+                  );
+                }
               );
               if(skill == null) return;
 
-              setState(() {
-                if(skill.parent.requireSpecialization) {
-                  widget.entity.setSkill(skill.parent, 0);
-                }
-                widget.entity.setSpecializedSkill(skill, widget.entity.skill(skill.parent));
-              });
+              SkillInstance i = entity.skills.families[family]!.add(skill.parent);
+              SpecializedSkillInstance si = i.addSpecialization(skill);
+              si.value = i.value;
             },
           ),
         ],
@@ -131,7 +109,7 @@ class _EntityEditSkillFamilyContainerState extends State<EntityEditSkillFamilyCo
 
     return WidgetGroupContainer(
       title: Text(
-        widget.family.title,
+        family.name,
         style: theme.textTheme.bodyMedium!.copyWith(
           color: Colors.black87,
           fontWeight: FontWeight.bold,
@@ -149,30 +127,18 @@ class _EntityEditSkillFamilyContainerState extends State<EntityEditSkillFamilyCo
 }
 
 class SkillEditWidget extends StatelessWidget {
-  SkillEditWidget({
+  const SkillEditWidget({
     super.key,
-    required this.character,
     required this.skill,
-    required this.onChanged,
     required this.onDeleted,
-    required this.onSpecializationChanged,
-    required this.onSpecializationDeleted,
   });
 
-  final EntityBase character;
-  final Skill skill;
-  final void Function(int) onChanged;
+  final SkillInstance skill;
   final void Function() onDeleted;
-  final void Function(SpecializedSkill, int) onSpecializationChanged;
-  final void Function(SpecializedSkill) onSpecializationDeleted;
-
-  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    _controller.text = character.skill(skill).toString();
-
     return Container(
       decoration: BoxDecoration(
         color: theme.colorScheme.surface,
@@ -196,30 +162,27 @@ class SkillEditWidget extends StatelessWidget {
                   },
                 ),
                 Text(
-                  skill.title,
+                  skill.skill.name,
                   style: theme.textTheme.bodySmall,
                 ),
                 Spacer(),
-                if(!skill.requireSpecialization)
+                if(!skill.skill.requireSpecialization)
                   Padding(
                     padding: const EdgeInsets.only(right: 8.0),
                     child: SizedBox(
                       width: 80,
                       child: NumIntInputWidget(
-                        initialValue: character.skill(skill),
-                        onChanged: (int value) => onChanged(value),
-                        onSaved: (int value) => character.setSkill(skill, value),
+                        initialValue: skill.value,
+                        onChanged: (int value) => skill.value = value,
                       ),
                     ),
                   ),
               ]
             ),
-            for(var sp in character.allSpecializedSkills(skill))
+            for(var sp in skill.specializations)
               SpecializedSkillEditWidget(
-                  character: character,
                   skill: sp,
-                  onChanged: (int value) => onSpecializationChanged(sp, value),
-                  onDeleted: () => onSpecializationDeleted(sp),
+                  onDeleted: () => skill.delSpecialization(sp.skill)
               ),
           ],
         ),
@@ -229,24 +192,18 @@ class SkillEditWidget extends StatelessWidget {
 }
 
 class SpecializedSkillEditWidget extends StatelessWidget {
-  SpecializedSkillEditWidget({
+  const SpecializedSkillEditWidget({
     super.key,
-    required this.character,
     required this.skill,
-    required this.onChanged,
     required this.onDeleted,
   });
 
-  final EntityBase character;
-  final SpecializedSkill skill;
-  final void Function(int) onChanged;
+  final SpecializedSkillInstance skill;
   final void Function() onDeleted;
-  final TextEditingController _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    _controller.text = character.specializedSkill(skill).toString();
 
     return Padding(
       padding: const EdgeInsets.only(
@@ -276,20 +233,15 @@ class SpecializedSkillEditWidget extends StatelessWidget {
                 },
               ),
               Text(
-                skill.title,
+                skill.skill.name,
                 style: theme.textTheme.bodySmall,
               ),
               const Spacer(),
               SizedBox(
                 width: 80,
                 child: NumIntInputWidget(
-                  initialValue: character.specializedSkill(skill),
-                  onChanged: (int value) {
-                    onChanged(value);
-                  },
-                  onSaved: (int value) {
-                    character.setSpecializedSkill(skill, value);
-                  },
+                  initialValue: skill.value,
+                  onChanged: (int value) => skill.value = value,
                 ),
               ),
             ]

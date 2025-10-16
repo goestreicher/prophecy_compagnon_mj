@@ -19,21 +19,30 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
   final TextEditingController categoryController = TextEditingController();
   CreatureCategory? selectedCategory;
   final TextEditingController creatureController = TextEditingController();
-  List<CreatureSummary> creatures = <CreatureSummary>[];
+
+  late Future<Iterable<CreatureSummary>> creaturesFuture;
   CreatureSummary? selectedCreatureSummary;
 
-  void _applyCurrentFilter() {
+  @override
+  void initState() {
+    super.initState();
+    updateCreaturesFuture();
+  }
+
+  void updateCreaturesFuture() {
     if(selectedSource != null) {
-      creatures = CreatureSummary.forSource(selectedSource!, selectedCategory);
+      creaturesFuture = CreatureSummary.forSource(selectedSource!, selectedCategory);
     }
     else if(selectedSourceType != null) {
-      creatures = CreatureSummary.forSourceType(selectedSourceType!, selectedCategory);
+      creaturesFuture = CreatureSummary.forSourceType(selectedSourceType!, selectedCategory);
     }
     else if(selectedCategory != null) {
-      creatures = CreatureSummary.forCategory(selectedCategory!);
+      creaturesFuture = CreatureSummary.forCategory(selectedCategory!);
     }
     else {
-      creatures = <CreatureSummary>[];
+      creaturesFuture = Future<Iterable<CreatureSummary>>.sync(
+        () => <CreatureSummary>[]
+      );
     }
   }
 
@@ -60,7 +69,7 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
                   selectedSourceType = type;
                   selectedSource = null;
                   sourceController.clear();
-                  _applyCurrentFilter();
+                  updateCreaturesFuture();
                   creatureController.text = '';
                   selectedCreatureSummary = null;
                 });
@@ -80,7 +89,7 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
               onSelected: (ObjectSource? source) {
                 setState(() {
                   selectedSource = source;
-                  _applyCurrentFilter();
+                  updateCreaturesFuture();
                   creatureController.text = '';
                   selectedCreatureSummary = null;
                 });
@@ -105,25 +114,46 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
                   if(c == null) return;
                   setState(() {
                     selectedCategory = c;
-                    _applyCurrentFilter();
+                    updateCreaturesFuture();
                     creatureController.text = '';
                     selectedCreatureSummary = null;
                   });
                 }
             ),
             SizedBox(height: spacing),
-            DropdownMenu(
-              controller: creatureController,
-              requestFocusOnTap: true,
-              label: const Text('Créature'),
-              expandedInsets: EdgeInsets.zero,
-              dropdownMenuEntries:
-                creatures.map((CreatureSummary c) =>
-                  DropdownMenuEntry<CreatureSummary>(value: c, label: c.name)
-                ).toList(),
-              onSelected: (CreatureSummary? c) {
-                selectedCreatureSummary = c;
-              },
+            FutureBuilder(
+              future: creaturesFuture,
+              builder: (BuildContext context, AsyncSnapshot<Iterable<CreatureSummary>> snapshot) {
+                Widget? trailing;
+
+                if(snapshot.connectionState == ConnectionState.waiting) {
+                  trailing = CircularProgressIndicator();
+                }
+
+                if(snapshot.hasError) {
+                  trailing = Icon(Icons.warning);
+                }
+
+                var creatures = <CreatureSummary>[];
+                if(snapshot.hasData && snapshot.data != null) {
+                  creatures.addAll(snapshot.data!);
+                }
+
+                return DropdownMenu(
+                  controller: creatureController,
+                  requestFocusOnTap: true,
+                  label: const Text('Créature'),
+                  expandedInsets: EdgeInsets.zero,
+                  trailingIcon: trailing,
+                  dropdownMenuEntries:
+                    creatures.map((CreatureSummary c) =>
+                      DropdownMenuEntry<CreatureSummary>(value: c, label: c.name)
+                    ).toList(),
+                  onSelected: (CreatureSummary? c) {
+                    selectedCreatureSummary = c;
+                  },
+                );
+              }
             ),
             Padding(
                 padding: const EdgeInsets.symmetric(vertical: 12.0),
@@ -139,7 +169,6 @@ class CreaturePickerDialogState extends State<CreaturePickerDialog> {
                     const SizedBox(width: 12.0),
                     ElevatedButton(
                       onPressed: () {
-                        if(categoryController.text.isEmpty) return;
                         if(creatureController.text.isEmpty) return;
                         Navigator.of(context).pop(selectedCreatureSummary);
                       },

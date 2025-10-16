@@ -30,39 +30,75 @@
     "initiative": 4,
     "natural_armor": 0,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 20,
-          "capacity": 2
-        },
-        {
-          "type": "death",
-          "start": 20,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "esquive",
-        "value": 6
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "creature:aigle:specialized:misc:athletisme:voler",
-            "title": "Voler",
-            "value": 8,
-            "reserved": true
+            "type": "injured",
+            "start": 0,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 20,
+            "end": -1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 6
+            },
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "value": 8,
+                  "reserved": true,
+                  "reservedPrefix": "creature:aigle:specialized:misc:"
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Bec",
@@ -100,7 +136,8 @@
         "name": "Piqué",
         "description": "Cette attaque se résout comme une charge avec deux actions d'élan."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Cheval",
@@ -133,51 +170,85 @@
     "initiative": 4,
     "natural_armor": 0,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 35,
-          "count": 2,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 35,
-          "end": -1,
-          "count": 1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "esquive",
-        "value": 4
-      },
-      {
-        "skill": "natation",
-        "value": 3
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 6,
-            "reserved": false
+            "type": "injured",
+            "start": 0,
+            "end": 35,
+            "count": 2,
+            "capacity": 4
           },
           {
-            "name": "athletisme:sauter",
-            "title": "Sauter",
-            "value": 6,
-            "reserved": false
+            "type": "death",
+            "start": 35,
+            "end": -1,
+            "count": 1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 4
+            },
+            {
+              "skill": "natation",
+              "value": 3
+            },
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 6,
+                  "reserved": false
+                },
+                {
+                  "name": "Sauter",
+                  "value": 6,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Morsure",
@@ -209,7 +280,8 @@
         "skill": 3,
         "damage": 7
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Hyène",
@@ -243,41 +315,76 @@
     "natural_armor": 4,
     "natural_armor_description": "poils gras",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 30,
-          "count": 2,
-          "capacity": 2
-        },
-        {
-          "type": "death",
-          "start": 30,
-          "end": -1,
-          "count": 1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "pister",
-        "value": 6
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 6,
-            "reserved": false
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "count": 2,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "count": 1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 6,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "pister",
+              "value": 6
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Morsure",
@@ -300,7 +407,8 @@
         "name": "Happer",
         "description": "Si les dommages d'une morsure sont inférieurs ou égaux à 10, la hyène peut rester accrochée à sa victime et infliger alors la moitié des dommages de cette attaque à chaque tour. Il ne lui est alors pas possible de se défendre, mais elle lâchera prise si elle est touchée."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Lézard des profondeurs",
@@ -334,49 +442,84 @@
     "natural_armor": 5,
     "natural_armor_description": "fines écailles",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 30,
-          "count": 2,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 30,
-          "end": -1,
-          "count": 1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "discretion",
-        "value": 3
-      },
-      {
-        "skill": "esquive",
-        "value": 4
-      },
-      {
-        "skill": "natation",
-        "value": 6
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 4,
-            "reserved": false
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "count": 2,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "count": 1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 4
+            },
+            {
+              "skill": "natation",
+              "value": 6
+            },
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 4,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 3
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Griffes",
@@ -408,7 +551,8 @@
         "skill": 3,
         "damage": 19
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Loup",
@@ -442,45 +586,80 @@
     "natural_armor": 5,
     "natural_armor_description": "poils rêches",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 35,
-          "count": 2,
-          "capacity": 3
-        },
-        {
-          "type": "death",
-          "start": 35,
-          "end": -1,
-          "count": 1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "esquive",
-        "value": 9
-      },
-      {
-        "skill": "pister",
-        "value": 8
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 7,
-            "reserved": false
+            "type": "injured",
+            "start": 0,
+            "end": 35,
+            "count": 2,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 35,
+            "end": -1,
+            "count": 1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 7,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 9
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "pister",
+              "value": 8
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Morsure",
@@ -497,7 +676,8 @@
         "skill": 7,
         "damage": 14
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Ours - Petit",
@@ -531,47 +711,82 @@
     "natural_armor": 6,
     "natural_armor_description": "poils et cuir",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 50,
-          "capacity": 3
-        },
-        {
-          "type": "death",
-          "start": 50,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "corpsACorps",
-        "value": 6
-      },
-      {
-        "skill": "esquive",
-        "value": 5
-      },
-      {
-        "skill": "intimidation",
-        "value": 5
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 4,
-            "reserved": false
+            "type": "injured",
+            "start": 0,
+            "end": 50,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 50,
+            "end": -1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "corpsACorps",
+              "value": 6
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 4,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 5
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "intimidation",
+              "value": 5
+            }
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Griffes",
@@ -609,7 +824,8 @@
         "name": "Saisir",
         "description": "Un ours bénéficie d'un bonus de +3 sur ses manœuvres de saisir."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Ours - Moyen",
@@ -643,47 +859,82 @@
     "natural_armor": 6,
     "natural_armor_description": "poils et cuir",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 50,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 50,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "corpsACorps",
-        "value": 6
-      },
-      {
-        "skill": "esquive",
-        "value": 5
-      },
-      {
-        "skill": "intimidation",
-        "value": 5
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 4,
-            "reserved": false
+            "type": "injured",
+            "start": 0,
+            "end": 50,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 50,
+            "end": -1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "corpsACorps",
+              "value": 6
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 4,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 5
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "intimidation",
+              "value": 5
+            }
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Griffes",
@@ -721,7 +972,8 @@
         "name": "Saisir",
         "description": "Un ours bénéficie d'un bonus de +3 sur ses manœuvres de saisir."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Ours - Grand",
@@ -755,47 +1007,82 @@
     "natural_armor": 6,
     "natural_armor_description": "poils et cuir",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 50,
-          "capacity": 5
-        },
-        {
-          "type": "death",
-          "start": 50,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "corpsACorps",
-        "value": 6
-      },
-      {
-        "skill": "esquive",
-        "value": 5
-      },
-      {
-        "skill": "intimidation",
-        "value": 5
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 4,
-            "reserved": false
+            "type": "injured",
+            "start": 0,
+            "end": 50,
+            "capacity": 5
+          },
+          {
+            "type": "death",
+            "start": 50,
+            "end": -1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "corpsACorps",
+              "value": 6
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 4,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 5
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "intimidation",
+              "value": 5
+            }
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Griffes",
@@ -833,7 +1120,8 @@
         "name": "Saisir",
         "description": "Un ours bénéficie d'un bonus de +3 sur ses manœuvres de saisir."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Sanglier",
@@ -867,23 +1155,59 @@
     "natural_armor": 8,
     "natural_armor_description": "cuir et crin",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 50,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 50,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 50,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 50,
+            "end": -1,
+            "capacity": 1
+          }
+        ]
+      }
     },
-    "skills": [
-    ],
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Défenses",
@@ -921,7 +1245,8 @@
         "name": "Charge",
         "description": "Le sanglier bénéficie d'un bonus de +3 sur toutes ses attaques de charge."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Horaldiens",
@@ -954,23 +1279,59 @@
     "initiative": 3,
     "natural_armor": 0,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 55,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 55,
-          "end": -1,
-          "capacity": 2
-        }
-      ]
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 55,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 55,
+            "end": -1,
+            "capacity": 2
+          }
+        ]
+      }
     },
-    "skills": [
-    ],
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
     ],
     "equipment": [
@@ -1018,49 +1379,85 @@
     },
     "initiative": 4,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 55,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 55,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 55,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 55,
+            "end": -1,
+            "capacity": 1
+          }
+        ]
+      }
     },
     "natural_armor": 6,
     "natural_armor_description": "cuir et fourrure",
-    "skills": [
-      {
-        "skill": "armesDHast",
-        "value": 8
-      },
-      {
-        "skill": "armesDeChoc",
-        "value": 7
-      },
-      {
-        "skill": "athletisme",
-        "value": 12
-      },
-      {
-        "skill": "discretion",
-        "value": 4
-      },
-      {
-        "skill": "esquive",
-        "value": 8
-      },
-      {
-        "skill": "pister",
-        "value": 6
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesDHast",
+              "value": 8
+            },
+            {
+              "skill": "armesDeChoc",
+              "value": 7
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 12
+            },
+            {
+              "skill": "esquive",
+              "value": 8
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 4
+            },
+            {
+              "skill": "pister",
+              "value": 6
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
       }
-    ],
+    },
     "natural_weapons": [],
     "equipment": [
       {
@@ -1101,57 +1498,93 @@
     },
     "initiative": 4,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 40,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 40,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ]
+      }
     },
     "natural_armor": 0,
     "natural_armor_description": "",
-    "skills": [
-      {
-        "skill": "artisanat",
-        "value": 0,
-        "specializations": [
-          {
-            "name": "creature:sklads:specialized:misc:artisanat:divers",
-            "title": "Divers",
-            "value": 13,
-            "reserved": true
-          }
-        ]
-      },
-      {
-        "skill": "donArtistique",
-        "value": 0,
-        "specializations": [
-          {
-            "name": "creature:sklads:specialized:misc:donArtistique:divers",
-            "title": "Divers",
-            "value": 12,
-            "reserved": true
-          }
-        ]
-      },
-      {
-        "skill": "dressage",
-        "value": 14
-      },
-      {
-        "skill": "histoire",
-        "value": 8
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "histoire",
+              "value": 8
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "artisanat",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Divers",
+                  "value": 13,
+                  "reserved": true,
+                  "reservedPrefix": "creature:sklads:specialized:misc:"
+                }
+              ]
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "donArtistique",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Divers",
+                  "value": 12,
+                  "reserved": true,
+                  "reservedPrefix": "creature:sklads:specialized:misc:"
+                }
+              ]
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "dressage",
+              "value": 14
+            }
+          ]
+        }
       }
-    ],
+    },
     "natural_weapons": [],
     "equipment": []
   },
@@ -1185,53 +1618,89 @@
     },
     "initiative": 3,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 40,
-          "capacity": 3
-        },
-        {
-          "type": "death",
-          "start": 40,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ]
+      }
     },
     "natural_armor": 12,
     "natural_armor_description": "os et corne",
-    "skills": [
-      {
-        "skill": "armesContondantes",
-        "value": 8
-      },
-      {
-        "skill": "armesTranchantes",
-        "value": 6
-      },
-      {
-        "skill": "corpsACorps",
-        "value": 4
-      },
-      {
-        "skill": "discretion",
-        "value": 6
-      },
-      {
-        "skill": "esquive",
-        "value": 6
-      },
-      {
-        "skill": "natation",
-        "value": 7
-      },
-      {
-        "skill": "psychologie",
-        "value": 6
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesContondantes",
+              "value": 8
+            },
+            {
+              "skill": "armesTranchantes",
+              "value": 6
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 4
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 6
+            },
+            {
+              "skill": "natation",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 6
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "psychologie",
+              "value": 6
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
       }
-    ],
+    },
     "natural_weapons": [],
     "equipment": [
       {
@@ -1249,6 +1718,7 @@
       "type": "officiel",
       "name": "LdB 2e"
     },
+    "description": "Le dragon de Lôm est un varan d'une taille respectable, orné de deux cornes placées au-dessus et au-dessous de ses mâchoires. C'est un redoutable herbivore qui passe la plupart du temps dans les flaques boueuses. Tout animal foulant une zone qu'il considère comme sienne (c'est-à-dire la prairie et le point d'eau le plus proche de l'endroit où il se trouve) est considéré comme un ennemi à chasser. Le pacifique animal se transforme alors en un redoutable combattant, prêt à tuer pour son bien.\nCertains mercenaires réussissent parfois à dreser ces \"dragons\" pour en faire des montures de guerre. Dans ce cas, lorsqu'ils chargent, il faut tenir compte à la fois de l'attaque du monteur mais aussi du piétinement ou de l'encornement du dragon. Ce type de monture est aussi rare que recherché.",
     "biome": "Régions marécageuses",
     "real_size": "2 m au garrot",
     "weight": "2 à 3 tonnes",
@@ -1273,47 +1743,82 @@
     "natural_armor": 18,
     "natural_armor_description": "cuir écailleux",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 65,
-          "capacity": 5
-        },
-        {
-          "type": "death",
-          "start": 65,
-          "end": -1,
-          "capacity": 2
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "corpsACorps",
-        "value": 6
-      },
-      {
-        "skill": "esquive",
-        "value": 6
-      },
-      {
-        "skill": "intimidation",
-        "value": 9
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 5,
-            "reserved": false
+            "type": "injured",
+            "start": 0,
+            "end": 65,
+            "capacity": 5
+          },
+          {
+            "type": "death",
+            "start": 65,
+            "end": -1,
+            "capacity": 2
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "corpsACorps",
+              "value": 6
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 5,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 6
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "intimidation",
+              "value": 9
+            }
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Corne",
@@ -1352,7 +1857,7 @@
         "description": "Le dragon de Lôm bénéficie d'un bonus de +6 sur toutes ses attaques de charge et double les bonus de renversement."
       }
     ],
-    "description": "Le dragon de Lôm est un varan d'une taille respectable, orné de deux cornes placées au-dessus et au-dessous de ses mâchoires. C'est un redoutable herbivore qui passe la plupart du temps dans les flaques boueuses. Tout animal foulant une zone qu'il considère comme sienne (c'est-à-dire la prairie et le point d'eau le plus proche de l'endroit où il se trouve) est considéré comme un ennemi à chasser. Le pacifique animal se transforme alors en un redoutable combattant, prêt à tuer pour son bien.\nCertains mercenaires réussissent parfois à dreser ces \"dragons\" pour en faire des montures de guerre. Dans ce cas, lorsqu'ils chargent, il faut tenir compte à la fois de l'attaque du monteur mais aussi du piétinement ou de l'encornement du dragon. Ce type de monture est aussi rare que recherché."
+    "equipment": []
   },
   {
     "name": "Slyart",
@@ -1386,39 +1891,75 @@
     "natural_armor": 12,
     "natural_armor_description": "cuir écailleux",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 45,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 45,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "intimidation",
-        "value": 9
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "creature:slyart:specialized:misc:athletisme:voler",
-            "title": "Voler",
-            "value": 7,
-            "reserved": true
+            "type": "injured",
+            "start": 0,
+            "end": 45,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 45,
+            "end": -1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "value": 7,
+                  "reserved": true,
+                  "reservedPrefix": "creature:slyart:specialized:misc:"
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "intimidation",
+              "value": 9
+            }
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Griffes",
@@ -1456,7 +1997,8 @@
         "name": "Déchiquetage",
         "description": "Si un slyarth réussi deux attaques dans un même rang d’Initiative (il ne retarde jamais ses actions) avec ses griffes, il s’agrippe à sa victime et porte une attaque automatique avec ses pattes arrières en labourant sa proie. Cette attaque touche automatiquement et ses dommages sont de Force x2, non modifiés par le moindre dé. Un slyarth peut attaquer en piqué, ce qui correspond à une charge avec une action d’élan, jamais deux car il ouvre ses ailes au dernier moment."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Tark",
@@ -1490,35 +2032,70 @@
     "natural_armor": 6,
     "natural_armor_description": "cuir écailleux",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 35,
-          "capacity": 3
-        },
-        {
-          "type": "death",
-          "start": 35,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 5,
-            "reserved": false
+            "type": "injured",
+            "start": 0,
+            "end": 35,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 35,
+            "end": -1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 5,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Morsure",
@@ -1556,7 +2133,8 @@
         "name": "Happer",
         "description": "Si les dommages d’une morsure sont inférieurs ou égaux à 15, le tark peut choisir de rester accroché à sa victime et inflige alors la moitié des dommages de cette attaque à chaque tour. Il n’est alors pas possible de se défendre, mais le tark se détache s’il subit des dommages. Le tark peut effectuer une manœuvre de renversement en utilisant sa queue."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Vorok",
@@ -1590,39 +2168,75 @@
     "natural_armor": 10,
     "natural_armor_description": "peau et graisse",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 60,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 60,
-          "end": -1,
-          "capacity": 2
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "discretion",
-        "value": 11
-      },
-      {
-        "skill": "escalade",
-        "value": 7
-      },
-      {
-        "skill": "esquive",
-        "value": 8
-      },
-      {
-        "skill": "natation",
-        "value": 8
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 60,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 60,
+            "end": -1,
+            "capacity": 2
+          }
+        ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "escalade",
+              "value": 7
+            },
+            {
+              "skill": "esquive",
+              "value": 8
+            },
+            {
+              "skill": "natation",
+              "value": 8
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 11
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Morsure",
@@ -1645,7 +2259,8 @@
         "name": "Embuscade",
         "description": "Un vorok embusqué est quasiment indétectable et capable de surgir très vite. Tant que le milieu est humide et lui permet de s’enfouir partiellement, il peut doubler ses NR obtenus pour calculer les malus ou bonus obtenus sur sa prochaine action (cf. page 178). La Difficulté d’un jet de réaction face à un vorok jaillissant de sa cachette est toujours de 25."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Zaal",
@@ -1679,35 +2294,71 @@
     "natural_armor": 15,
     "natural_armor_description": "cuir et chitine",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 50,
-          "capacity": 4
-        },
-        {
-          "type": "death",
-          "start": 50,
-          "end": -1,
-          "capacity": 2
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "acrobatie",
-        "value": 8
-      },
-      {
-        "skill": "discretion",
-        "value": 10
-      },
-      {
-        "skill": "esquive",
-        "value": 6
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 50,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 50,
+            "end": -1,
+            "capacity": 2
+          }
+        ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 8
+            },
+            {
+              "skill": "esquive",
+              "value": 6
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 10
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Griffes",
@@ -1739,6 +2390,7 @@
         "skill": 7,
         "damage": 22
       }
-    ]
+    ],
+    "equipment": []
   }
 ]

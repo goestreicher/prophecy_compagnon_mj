@@ -4,20 +4,20 @@ import '../../classes/place.dart';
 import '../../classes/resource_link.dart';
 import '../../classes/scenario.dart';
 
-List<ResourceLink> generateScenarioResourceLinks(ResourceLinkType type, Scenario scenario) {
+Future<List<ResourceLink>> generateScenarioResourceLinks(ResourceLinkType type, Scenario scenario) async {
   var ret = <ResourceLink>[];
 
   switch(type) {
     case ResourceLinkType.npc:
-      for(var n in NonPlayerCharacterSummary.forSource(scenario.source, null, null)) {
+      for(var n in await NonPlayerCharacterSummary.forSource(scenario.source, null, null)) {
         ret.add(ResourceLink.createLinkForResource(type, true, n.name, n.id));
       }
     case ResourceLinkType.creature:
-      for(var c in CreatureSummary.forSource(scenario.source, null)) {
+      for(var c in await CreatureSummary.forSource(scenario.source, null)) {
         ret.add(ResourceLink.createLinkForResource(type, true, c.name, c.id));
       }
     case ResourceLinkType.place:
-      for(var p in Place.forSource(scenario.source)) {
+      for(var p in await PlaceSummary.forSource(scenario.source)) {
         ret.add(ResourceLink.createLinkForResource(type, true, p.name, p.id));
       }
     case ResourceLinkType.encounter:

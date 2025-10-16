@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/base.dart';
+import '../../../../classes/entity/attributes.dart';
 import '../../num_input_widget.dart';
 
 class AttributeListEditWidget extends StatelessWidget {

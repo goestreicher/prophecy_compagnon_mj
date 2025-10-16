@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/magic.dart';
 import '../../../../classes/magic_user.dart';
 import '../../widget_group_container.dart';
+import '../base/single_skill_widget.dart';
 
 class EntityDisplayMagicSpheresWidget extends StatelessWidget {
   const EntityDisplayMagicSpheresWidget({ super.key, required this.entity });
@@ -24,8 +25,8 @@ class EntityDisplayMagicSpheresWidget extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
                       child: _MagicSphereDisplayWidget(
                         sphere: MagicSphere.values[j+i*3],
-                        value: entity.magicSphere(MagicSphere.values[j+i*3]),
-                        pool: entity.magicSpherePool(MagicSphere.values[j+i*3]),
+                        value: entity.magic.spheres.get(MagicSphere.values[j+i*3]),
+                        pool: entity.magic.pools.get(MagicSphere.values[j+i*3]),
                       ),
                     ),
                   ),
@@ -77,43 +78,13 @@ class _MagicSphereDisplayWidget extends StatelessWidget {
           Expanded(
             child: Column(
               children: [
-                _SingleSkillWidget(name: 'Niveau', value: value),
-                _SingleSkillWidget(name: 'Réserve', value: pool),
+                SingleSkillWidget(name: 'Niveau', value: value),
+                SingleSkillWidget(name: 'Réserve', value: pool),
               ],
             ),
           )
         ],
       )
-    );
-  }
-}
-
-// TODO: factor this out
-// This is taken from display_skill_family_widget.dart
-class _SingleSkillWidget extends StatelessWidget {
-  const _SingleSkillWidget({ required this.name, required this.value });
-
-  final String name;
-  final int value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Text(name),
-        Expanded(
-            child: Container(
-              margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 6.0),
-              decoration: BoxDecoration(
-                  border: Border(
-                    bottom: BorderSide(color: Colors.black12),
-                  )
-              ),
-            )
-        ),
-        Text(value.toString()),
-      ],
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/injury.dart';
+import '../../../../classes/entity/injury.dart';
 
 class EntityInjuryManagerWidget extends StatefulWidget {
   const EntityInjuryManagerWidget({

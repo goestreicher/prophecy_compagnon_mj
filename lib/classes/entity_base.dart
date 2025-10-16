@@ -5,15 +5,20 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
+import 'entity/injury.dart';
+import 'entity/abilities.dart';
+import 'entity/attributes.dart';
+import 'entity/magic.dart';
+import 'entity/skills.dart';
+import 'entity/status.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'object_location.dart';
-import 'character/base.dart';
-import 'character/injury.dart';
-import 'character/skill.dart';
 import '../text_utils.dart';
 
 part 'entity_base.g.dart';
+
+typedef InjuryProvider = InjuryManager Function(EntityBase?, InjuryManager?);
 
 abstract interface class ProtectionProvider {
   int protection();
@@ -28,63 +33,38 @@ abstract interface class InitiativeProvider {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class EntityStatus {
-  static final none        = EntityStatus(0);
-  static final injured     = EntityStatus(1 <<  1);
-  static final dead        = EntityStatus(1 <<  2);
-  static final stunned     = EntityStatus(1 <<  3);
-  static final unconscious = EntityStatus(1 <<  4);
-  static final moving      = EntityStatus(1 << 10);
-  static final running     = EntityStatus(1 << 11);
-  static final sprinting   = EntityStatus(1 << 12);
-  static final attacking   = EntityStatus(1 << 20);
-
-  EntityStatus.empty() : bitfield = 0;
-  EntityStatus(this.bitfield);
-
-  EntityStatus operator &(EntityStatus other) =>
-      EntityStatus(other.bitfield & bitfield);
-  EntityStatus operator |(EntityStatus other) =>
-      EntityStatus(other.bitfield | bitfield);
-  EntityStatus operator ~() =>
-      EntityStatus(~bitfield);
-  @override
-  bool operator ==(Object other) =>
-      other is EntityStatus && other.bitfield == bitfield;
-  @override
-  int get hashCode => bitfield;
-
-  int bitfield;
-
-  factory EntityStatus.fromJson(Map<String, dynamic> json) => _$EntityStatusFromJson(json);
-  Map<String, dynamic> toJson() => _$EntityStatusToJson(this);
-}
-
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: remove ChangeNotifier once migrated to StreamController in the edit UI
-  EntityBase(
-      {
-        String? uuid,
-        this.location = ObjectLocation.memory,
-        required this.name,
-        this.initiative = 1,
-        InjuryManager Function(EntityBase?, InjuryManager?) injuryProvider = entityBaseDefaultInjuries,
-        double? size,
-        String? description,
-        List<SkillInstance>? skills,
-        ExportableBinaryData? image,
-        ExportableBinaryData? icon,
-      }
-    )
+class EntityBase with SupportsEquipableItem {
+  EntityBase({
+    String? uuid,
+    this.location = ObjectLocation.memory,
+    required this.name,
+    EntityAbilities? abilities,
+    EntityAttributes? attributes,
+    this.initiative = 1,
+    EntityInjuries? injuries,
+    InjuryProvider injuryProvider = entityBaseDefaultInjuries,
+    double? size,
+    String? description,
+    EntitySkills? skills,
+    EntityStatus? status,
+    EntityEquipment? equipment,
+    EntityMagic? magic,
+    ExportableBinaryData? image,
+    ExportableBinaryData? icon,
+  })
     : uuid = uuid ?? (!location.type.canWrite ? null : Uuid().v4().toString()),
-      _injuryProvider = injuryProvider,
+      abilities = abilities ?? EntityAbilities.empty(),
+      attributes = attributes ?? EntityAttributes.empty(),
       size = size ?? 0.8,
       description = description ?? '',
-      skills = skills ?? <SkillInstance>[],
+      skills = skills ?? EntitySkills.empty(),
+      status = status ?? EntityStatus.empty(),
+      equipment = equipment ?? EntityEquipment(null),
+      magic = magic ?? EntityMagic(),
       _image = image,
       _icon = icon
   {
-    injuries = injuryProvider(this, null);
+    this.injuries = injuries ?? EntityInjuries(manager: injuryProvider(this, null));
   }
 
   String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
@@ -96,71 +76,34 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
   String description;
 
   ExportableBinaryData? get image => _image;
+
   set image(ExportableBinaryData? i) {
     if(_image != null && (i == null || _image!.hash != i.hash)) BinaryDataStore().delete(_image!);
     _image = i;
   }
+
   ExportableBinaryData? _image;
 
   ExportableBinaryData? get icon => _icon;
+
   set icon(ExportableBinaryData? i) {
     if(_icon != null && (i == null || _icon!.hash != i.hash)) BinaryDataStore().delete(_icon!);
     _icon = i;
   }
+
   ExportableBinaryData? _icon;
 
-
-  @JsonKey(defaultValue: EntityStatus.empty)
-  EntityStatus get status => _status;
-  set status(EntityStatus s) {
-    _status = s;
-  }
-
-  EntityStatus _status = EntityStatus.none;
-
   bool canAct() {
-    return _status & EntityStatus.dead == EntityStatus.none &&
-           _status & EntityStatus.unconscious == EntityStatus.none;
+    return status.value & EntityStatusValue.dead == EntityStatusValue.none &&
+           status.value & EntityStatusValue.unconscious == EntityStatusValue.none;
   }
 
-  double size;
-  double get attackMovementDistance => size * 1.2;
-  double get contactCombatRange => size / 2;
+  EntityAbilities abilities;
+  EntityAttributes attributes;
 
   int initiative;
 
-  @JsonKey(includeToJson: false, includeFromJson: false)
-    late InjuryManager injuries;
-  @JsonKey(includeToJson: false, includeFromJson: false)
-    InjuryManager Function(EntityBase?, InjuryManager?) _injuryProvider;
-
-  @JsonKey(includeToJson: true, toJson: enumKeyedMapToJson)
-    final Map<Ability, int> abilities = <Ability, int>{for(var a in Ability.values) a: 0};
-
-  @JsonKey(includeToJson: true, toJson: enumKeyedMapToJson)
-    final Map<Attribute, int> attributes = <Attribute, int>{for(var a in Attribute.values) a: 0};
-
-  List<SkillInstance> skills;
-
-  @JsonKey(includeToJson: true, toJson: equipmentToJson)
-    final List<Equipment> equipment = <Equipment>[];
-
-  int ability(Ability a) {
-    return abilities[a] ?? 0;
-  }
-  void setAbility(Ability a, int v) {
-    abilities[a] = v;
-    injuries = _injuryProvider(this, injuries);
-    notifyListeners();
-  }
-
-  int attribute(Attribute a) {
-    return attributes[a] ?? 0;
-  }
-  void setAttribute(Attribute a, int v) {
-    attributes[a] = v;
-    notifyListeners();
-  }
+  late EntityInjuries injuries;
 
   int takeDamage(int amount, { int armorDivider = 1 }) {
     var finalDamage = amount;
@@ -171,101 +114,40 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
     }
 
     if(finalDamage > 0) {
-      injuries.dealDamage(finalDamage);
-      if(injuries.isDead()) {
-        status |= EntityStatus.dead;
+      injuries.manager.dealDamage(finalDamage);
+      if(injuries.manager.isDead()) {
+        status.value |= EntityStatusValue.dead;
       }
     }
 
     return finalDamage > 0 ? finalDamage : 0;
   }
 
-  int damageMalus() => injuries.getMalus();
+  int damageMalus() => injuries.manager.getMalus();
 
   int actionMalus() {
     var malus = damageMalus();
-    if(status & EntityStatus.stunned != EntityStatus.none) {
+    if(status.value & EntityStatusValue.stunned != EntityStatusValue.none) {
       malus += 10;
     }
     return malus;
   }
 
-  List<SkillInstance> skillsForFamily(SkillFamily f) {
-    return skills.where((SkillInstance s) => s.skill.family == f).toList();
-  }
-  int skill(Skill s) {
-    var idx = skills.indexWhere((element) => element.skill == s);
-    return idx == -1 ? 0 : skills[idx].value;
-  }
-  void setSkill(Skill s, int v) {
-    if(v == -1) {
-      deleteSkill(s);
-    }
-    else {
-      var idx = skills.indexWhere((element) => element.skill == s);
-      if(idx == -1) {
-        skills.add(SkillInstance(skill: s, value: v));
-      }
-      else {
-        skills[idx].value = v;
-      }
-    }
-  }
-  void deleteSkill(Skill s) {
-    skills.removeWhere((element) => element.skill == s);
-  }
+  double size;
+  double get attackMovementDistance => size * 1.2;
+  double get contactCombatRange => size / 2;
 
-  List<SpecializedSkill> allSpecializedSkills(Skill s) {
-    var idx = skills.indexWhere((element) => element.skill == s);
-    if(idx == -1) {
-      return <SpecializedSkill>[];
-    }
-    else {
-      return skills[idx].specializations.keys.toList();
-    }
-  }
-  int specializedSkill(SpecializedSkill s, { bool defaultToParent = true }) {
-    var idx = skills.indexWhere((element) => element.skill == s.parent);
-    if(idx == -1) {
-      return 0;
-    }
-
-    if(skills[idx].specializations.containsKey(s)) {
-      return skills[idx].specializations[s]!;
-    }
-    else if(defaultToParent) {
-      return skills[idx].value;
-    }
-    else {
-      return 0;
-    }
-  }
-  void setSpecializedSkill(SpecializedSkill s, int v) {
-    var idx = skills.indexWhere((element) => element.skill == s.parent);
-    if(idx == -1) {
-      return;
-    }
-
-    if(v == -1 && skills[idx].specializations.containsKey(s)) {
-      skills[idx].specializations.remove(s);
-    }
-    else {
-      skills[idx].specializations[s] = v;
-    }
-  }
-  void deleteSpecializedSkill(SpecializedSkill s) {
-    var idx = skills.indexWhere((element) => element.skill == s.parent);
-    if(idx == -1) {
-      return;
-    }
-    skills[idx].specializations.remove(s);
-  }
+  EntitySkills skills;
+  EntityStatus status;
+  @JsonKey(fromJson: EntityEquipment.fromJson, toJson: EntityEquipment.toJson)
+  final EntityEquipment equipment;
+  final EntityMagic magic;
 
   @override
   bool meetsEquipableRequirements(EquipableItem item) {
     bool meets = true;
     for(var (a, v) in item.equipRequirements()) {
-      meets = ability(a) >= v;
+      meets = abilities.ability(a) >= v;
       if(!meets) break;
     }
     return meets;
@@ -275,7 +157,7 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
   String unmetEquipableRequirementsDescription(EquipableItem item) {
     var ret = <String>[];
     for(var (a, v) in item.equipRequirements()) {
-      if(ability(a) < v) {
+      if(abilities.ability(a) < v) {
         ret.add('${a.name} ($v)');
       }
     }
@@ -389,55 +271,16 @@ class EntityBase extends ChangeNotifier with SupportsEquipableItem { // TODO: re
     return c;
   }
 
+  @mustCallSuper
   void saveNonExportableJson(Map<String, dynamic> json) {
-    json['injuries'] = injuries.toJson();
   }
 
+  @mustCallSuper
   void loadNonRestorableJson(Map<String, dynamic> json) {
-    for(var a in json['abilities'].keys) {
-      setAbility(Ability.values.byName(a), json['abilities'][a] as int);
-    }
-
-    for(var a in json['attributes'].keys) {
-      setAttribute(Attribute.values.byName(a), json['attributes'][a] as int);
-    }
-
-    if(json.containsKey('equipment')) {
-      Set<String> currentUuids = equipment.map((Equipment e) => e.uuid()).toSet();
-
-      for (Map<String, dynamic> e in json['equipment']) {
-        if(!e.containsKey('uuid')) {
-          e['uuid'] = const Uuid().v4().toString();
-        }
-        else if(currentUuids.contains(e['uuid'] as String)) {
-          continue;
-        }
-
-        var eq = EquipmentFactory.instance.forgeEquipment(e['type'], uuid: e['uuid']);
-        if (eq != null) {
-          addEquipment(eq);
-        }
+    for(var eq in equipment) {
+      if(eq is EquipableItem && eq.equipedOn != EquipableItemTarget.none) {
+        equip(eq, target: eq.equipedOn);
       }
-    }
-
-    if(json.containsKey('equiped')) {
-      for(Map<String, dynamic> e in json['equiped']) {
-        var uuid = e['uuid'];
-        for(var eq in equipment) {
-          if(eq.uuid() == uuid) {
-            var item = eq as EquipableItem;
-            var target = EquipableItemTarget.none;
-            if(e.containsKey('equiped_on')) {
-              target = EquipableItemTarget.values.byName(e['equiped_on']);
-            }
-            equip(item, target: target);
-          }
-        }
-      }
-    }
-
-    if(json.containsKey('injuries') && json['injuries'] is Map) {
-      injuries = InjuryManager.fromJson(json['injuries']);
     }
   }
 }
@@ -461,21 +304,4 @@ InjuryManager entityBaseDefaultInjuries(EntityBase? entity, InjuryManager? sourc
 
 Map<String, dynamic> enumKeyedMapToJson(Map<Enum, dynamic> m) {
   return <String, dynamic>{for(var k in m.keys) k.name: m[k]};
-}
-
-Map<String, dynamic> specializedSkillsToJson(Map<SpecializedSkill, dynamic> m) {
-  return <String, dynamic>{for(var k in m.keys) k.name: m[k]};
-}
-
-List<Map<String, dynamic>> equipmentToJson(List<Equipment> e) {
-  List<Map<String, dynamic>> ret = [];
-
-  for(var eq in e) {
-    ret.add({
-      'type': eq.type(),
-      'uuid': eq.uuid(),
-    });
-  }
-
-  return ret;
 }

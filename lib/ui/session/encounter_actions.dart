@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
 import 'package:provider/provider.dart';
 
-import '../../classes/character/base.dart';
-import '../../classes/character/skill.dart';
 import '../../classes/combat.dart';
 import '../../classes/combat_turn.dart';
 import '../../classes/dice.dart';
+import '../../classes/entity/attributes.dart';
+import '../../classes/entity/skill.dart';
+import '../../classes/entity/specialized_skill.dart';
+import '../../classes/entity/status.dart';
 import '../../classes/entity_base.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
@@ -260,7 +262,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
         const Text('Action validée'),
       ]);
     }
-    else if(widget.action.entity.status & EntityStatus.unconscious != EntityStatus.none) {
+    else if(widget.action.entity.status.value & EntityStatusValue.unconscious != EntityStatusValue.none) {
       buttonRow.add(const Text('Inconscient(e)'));
     }
     else if(!active) {
@@ -711,7 +713,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           defender: target,
           attribute: Attribute.physique,
           skill: weapon.model.skill.parent,
-          specialization: weapon.model.skill.title,
+          specialization: weapon.model.skill.name,
           difficulty: attackDifficulty,
       ),
     );
@@ -818,7 +820,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
               defender: target,
               attribute: Attribute.physique,
               skill: defenseThrowSkill!,
-              specialization: defenseThrowSpecialization?.title,
+              specialization: defenseThrowSpecialization?.name,
               difficulty: defenseDifficulty,
             ),
           );
@@ -901,18 +903,18 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           if(!context.mounted) return;
 
           var stunResist = stunResistResults.first;
-          stunResist += target.attribute(Attribute.physique);
-          stunResist += target.ability(Ability.resistance);
+          stunResist += target.attributes.physique;
+          stunResist += target.abilities.resistance;
 
           if(stunResist < damage ~/ 2) {
             // Target is unconscious for 2D10 turns and takes full damage
-            target.status = target.status | EntityStatus.unconscious;
+            target.status.value = target.status.value | EntityStatusValue.unconscious;
             var turnCount = Random().nextInt(10) + Random().nextInt(10) + 2;
             var duration = CombatActionDuration(
               entity: target,
               turns: turnCount,
               onFinished: () {
-                target.status = target.status & ~EntityStatus.unconscious;
+                target.status.value = target.status.value & ~EntityStatusValue.unconscious;
               }
             );
             action.turn.addLongRunningAction(duration);
@@ -924,14 +926,14 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           }
           else if(stunResist < damage) {
             // Target is stunned for 1D10 turns, but takes no damage
-            target.status = target.status | EntityStatus.stunned;
+            target.status.value = target.status.value | EntityStatusValue.stunned;
             damage = 0;
             var turnCount = Random().nextInt(10) + 1;
             var duration = CombatActionDuration(
                 entity: target,
                 turns: turnCount,
                 onFinished: () {
-                  target.status = target.status & ~EntityStatus.stunned;
+                  target.status.value = target.status.value & ~EntityStatusValue.stunned;
                 }
             );
             action.turn.addLongRunningAction(duration);
@@ -945,7 +947,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
 
         int finalDamage = target.takeDamage(damage);
 
-        if(target.status & EntityStatus.dead != EntityStatus.none && context.mounted) {
+        if(target.status.value & EntityStatusValue.dead != EntityStatusValue.none && context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(
               '${target.name} est mort(e)',

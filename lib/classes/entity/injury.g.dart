@@ -30,3 +30,11 @@ const _$InjuryEnumMap = {
   Injury.fatal: 'fatal',
   Injury.death: 'death',
 };
+
+EntityInjuries _$EntityInjuriesFromJson(Map<String, dynamic> json) =>
+    EntityInjuries(
+      manager: InjuryManager.fromJson(json['manager'] as Map<String, dynamic>),
+    );
+
+Map<String, dynamic> _$EntityInjuriesToJson(EntityInjuries instance) =>
+    <String, dynamic>{'manager': instance.manager.toJson()};

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:prophecy_compagnon_mj/text_utils.dart';
 
 import '../../../../classes/caste/base.dart';
-import '../../../../classes/character/skill.dart';
+import '../../../../classes/entity/skill.dart';
+import '../../../../classes/entity/skill_family.dart';
+import '../../../../classes/entity/specialized_skill.dart';
+import '../../../../text_utils.dart';
 
 class FamilyAndSkillPickerDialog extends StatefulWidget {
   const FamilyAndSkillPickerDialog({
@@ -49,7 +51,7 @@ class _FamilyAndSkillPickerDialogState extends State<FamilyAndSkillPickerDialog>
               label: const Text('Famille'),
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries: SkillFamily.values
-                  .map((SkillFamily f) => DropdownMenuEntry(value: f, label: f.title))
+                  .map((SkillFamily f) => DropdownMenuEntry(value: f, label: f.name))
                   .toList(),
               onSelected: (SkillFamily? family) {
                 setState(() {
@@ -68,7 +70,7 @@ class _FamilyAndSkillPickerDialogState extends State<FamilyAndSkillPickerDialog>
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries:
                 _skillList
-                    .map((Skill s) => DropdownMenuEntry(value: s, label: s.title))
+                    .map((Skill s) => DropdownMenuEntry(value: s, label: s.name))
                     .toList(),
               onSelected: (Skill? skill) {
                 setState(() {
@@ -145,7 +147,7 @@ class SkillPickerDialog extends StatelessWidget {
                 _skillList
                     .where((Skill s) => s.canInstantiate && !s.requireSpecialization)
                     .map<DropdownMenuEntry<Skill>>((Skill s) {
-                      return DropdownMenuEntry(value: s, label: s.title);
+                      return DropdownMenuEntry(value: s, label: s.name);
                     }).toList(),
             ),
             Padding(
@@ -163,7 +165,7 @@ class SkillPickerDialog extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       if(_skillController.text.isEmpty) return;
-                      Skill? skill = Skill.byTitle(_skillController.text);
+                      Skill? skill = Skill.byName(_skillController.text);
                       if(skill == null) return;
                       Navigator.of(context).pop(skill);
                     },
@@ -226,7 +228,7 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries:
                 widget.skills.map<DropdownMenuEntry<Skill>>((Skill s) {
-                  return DropdownMenuEntry(value: s, label: s.title);
+                  return DropdownMenuEntry(value: s, label: s.name);
                 }).toList(),
               onSelected: (Skill? s) {
                 _currentSkill = s;
@@ -240,7 +242,7 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
                         .withParent(_currentSkill!)
                         .where((SpecializedSkill s) => !s.reserved)
                         .toList()
-                        ..sort((a, b) => a.title.compareTo(b.title));
+                        ..sort((a, b) => a.name.compareTo(b.name));
                   }
                 });
               },
@@ -253,7 +255,7 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries:
                 _specializedSkills
-                    .map((SpecializedSkill s) => DropdownMenuEntry(value: s, label: s.title))
+                    .map((SpecializedSkill s) => DropdownMenuEntry(value: s, label: s.name))
                     .toList(),
               onSelected: (SpecializedSkill? s) {
                 _currentSpecializedSkill = s;
@@ -301,9 +303,8 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
                         }
                         else {
                           skill = SpecializedSkill.create(
-                            skillId,
-                            _currentSkill!,
-                            title: _specializedSkillController.text,
+                            parent: _currentSkill!,
+                            name: _specializedSkillController.text,
                             reserved: _reserved,
                           );
                         }

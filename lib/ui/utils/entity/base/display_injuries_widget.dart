@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/injury.dart';
+import '../../../../classes/entity/injury.dart';
 import '../../widget_group_container.dart';
 import 'injury_manager_widget.dart';
 

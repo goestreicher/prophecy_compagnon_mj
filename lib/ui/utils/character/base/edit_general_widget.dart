@@ -9,39 +9,13 @@ import '../../../../classes/place.dart';
 import '../../../../classes/player_character.dart';
 import '../../widget_group_container.dart';
 
-class CharacterEditGeneralWidget extends StatefulWidget {
+class CharacterEditGeneralWidget extends StatelessWidget {
   const CharacterEditGeneralWidget({
     super.key,
     required this.character,
   });
 
   final HumanCharacter character;
-
-  @override
-  State<CharacterEditGeneralWidget> createState() => _CharacterEditGeneralWidgetState();
-}
-
-class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget> {
-  final TextEditingController nameController = TextEditingController();
-  final TextEditingController playerController = TextEditingController();
-  final TextEditingController ageController = TextEditingController();
-  final TextEditingController heightController = TextEditingController();
-  final TextEditingController weightController = TextEditingController();
-  final TextEditingController augureController = TextEditingController();
-  final TextEditingController originController = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-
-    nameController.text = widget.character.name;
-    if(widget.character is PlayerCharacter) {
-      playerController.text = (widget.character as PlayerCharacter).player;
-    }
-    ageController.text = widget.character.age.toString();
-    heightController.text = widget.character.height.toStringAsFixed(2);
-    weightController.text = widget.character.weight.toStringAsFixed(2);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -60,20 +34,18 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
         mainAxisAlignment: MainAxisAlignment.start,
         spacing: 12.0,
         children: [
-          if(widget.character is PlayerCharacter)
+          if(character is PlayerCharacter)
             Row(
               spacing: 12.0,
               children: [
                 Expanded(
                   child: TextFormField(
-                    controller: playerController,
+                    initialValue: (character as PlayerCharacter).player,
                     decoration: const InputDecoration(
                       label: Text('Joueur'),
                       border: OutlineInputBorder(),
                       isCollapsed: true,
                       contentPadding: EdgeInsets.all(12.0),
-                      // error: null,
-                      // errorText: null,
                     ),
                     style: theme.textTheme.bodySmall,
                     validator: (String? value) {
@@ -83,14 +55,13 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
                       return null;
                     },
                     autovalidateMode: AutovalidateMode.onUserInteraction,
-                    onChanged: (String? value) => widget.character.name = nameController.text,
+                    onChanged: (String value) => (character as PlayerCharacter).player = value,
                   ),
                 ),
                 Expanded(
                   child: DropdownMenuFormField<Augure>(
-                    controller: augureController,
                     enabled: false,
-                    initialSelection: (widget.character as PlayerCharacter).augure,
+                    initialSelection: (character as PlayerCharacter).augure,
                     requestFocusOnTap: true,
                     label: const Text('Augure'),
                     expandedInsets: EdgeInsets.zero,
@@ -102,13 +73,13 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
                       contentPadding: EdgeInsets.all(12.0),
                     ),
                     dropdownMenuEntries: Augure.values
-                        .map(
-                            (Augure augure) => DropdownMenuEntry<Augure>(
-                            value: augure,
-                            label: augure.title
+                      .map(
+                        (Augure augure) => DropdownMenuEntry<Augure>(
+                          value: augure,
+                          label: augure.title
                         )
-                    )
-                        .toList(),
+                      )
+                      .toList(),
                     validator: (Augure? augure) {
                       if(augure == null) {
                         return 'Valeur manquante';
@@ -130,7 +101,7 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
             children: [
               Expanded(
                 child: TextFormField(
-                  controller: nameController,
+                  initialValue: character.name,
                   decoration: const InputDecoration(
                     label: Text('Nom'),
                     border: OutlineInputBorder(),
@@ -145,38 +116,76 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
                     return null;
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onChanged: (String? value) => widget.character.name = nameController.text,
+                  onChanged: (String value) => character.name = value,
                 ),
               ),
               Expanded(
-                child: DropdownMenuFormField<Place>(
-                  controller: originController,
-                  initialSelection: widget.character.origin,
-                  requestFocusOnTap: true,
-                  label: const Text("Pays d'origine"),
-                  expandedInsets: EdgeInsets.zero,
-                  textStyle: theme.textTheme.bodySmall,
-                  inputDecorationTheme: const InputDecorationTheme(
-                    border: OutlineInputBorder(),
-                    isCollapsed: true,
-                    constraints: BoxConstraints(maxHeight: 36.0),
-                    contentPadding: EdgeInsets.all(12.0),
-                  ),
-                  dropdownMenuEntries: Place.withParent('kor')
-                    .where((Place p) => p.location.type == ObjectLocationType.assets)
-                    .map((Place p) => DropdownMenuEntry(value: p, label: p.name))
-                    .toList(),
-                  validator: (Place? place) {
-                    if(place == null) {
-                      return 'Valeur manquante';
+                child: FutureBuilder(
+                  future: character.origin.place,
+                  builder: (BuildContext context, AsyncSnapshot<Place?> snapshot) {
+                    if(snapshot.connectionState == ConnectionState.waiting) {
+                      return Text('Chargement...');
                     }
-                    return null;
-                  },
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onSelected: (Place? place) {
-                    if(place == null) return;
-                    widget.character.origin = place;
-                  },
+
+                    var origin = snapshot.hasData && snapshot.data != null
+                      ? snapshot.data!
+                      : Place.unknown;
+
+                    return FutureBuilder(
+                      future: Place.withParent('e8c6ea13-f27c-4f12-8865-477305c61617'),
+                      builder: (BuildContext context, AsyncSnapshot<List<Place>> snapshot) {
+                        Widget? trailing;
+                        var places = <Place>[
+                          Place.unknown,
+                        ];
+
+                        if(snapshot.connectionState == ConnectionState.waiting) {
+                          trailing = CircularProgressIndicator();
+                        }
+
+                        if(snapshot.hasError) {
+                          trailing = Icon(Icons.warning);
+                        }
+
+                        if(snapshot.hasData && snapshot.data != null) {
+                          places.addAll(snapshot.data!);
+                        }
+
+                        return DropdownMenuFormField<Place>(
+                          initialSelection: origin,
+                          requestFocusOnTap: true,
+                          label: const Text("Pays d'origine"),
+                          expandedInsets: EdgeInsets.zero,
+                          textStyle: theme.textTheme.bodySmall,
+                          trailingIcon: trailing,
+                          inputDecorationTheme: const InputDecorationTheme(
+                            border: OutlineInputBorder(),
+                            isCollapsed: true,
+                            constraints: BoxConstraints(maxHeight: 36.0),
+                            contentPadding: EdgeInsets.all(12.0),
+                          ),
+                          dropdownMenuEntries: places
+                            .where((Place p) => p.location.type == ObjectLocationType.assets)
+                            .map((Place p) => DropdownMenuEntry(value: p, label: p.name))
+                            .toList(),
+                          validator: (Place? place) {
+                            if(place == null) {
+                              return 'Valeur manquante';
+                            }
+                            return null;
+                          },
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                          onSelected: (Place? place) {
+                            if(place == null) return;
+                            character.origin = CharacterOrigin(
+                              uuid: place.uuid,
+                              place: place,
+                            );
+                          },
+                        );
+                      }
+                    );
+                  }
                 ),
               ),
             ],
@@ -186,14 +195,12 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
             children: [
               Expanded(
                 child: TextFormField(
-                  controller: ageController,
+                  initialValue: character.age.toString(),
                   decoration: const InputDecoration(
                     label: Text('Âge'),
                     border: OutlineInputBorder(),
                     isCollapsed: true,
                     contentPadding: EdgeInsets.all(12.0),
-                    // error: null,
-                    // errorText: null,
                   ),
                   style: theme.textTheme.bodySmall,
                   keyboardType: TextInputType.number,
@@ -207,19 +214,17 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
                     return null;
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onChanged: (String? value) => widget.character.age = int.parse(value!),
+                  onChanged: (String value) => character.age = int.parse(value),
                 ),
               ),
               Expanded(
                 child: TextFormField(
-                  controller: heightController,
+                  initialValue: character.height.toStringAsFixed(2),
                   decoration: const InputDecoration(
                     label: Text('Taille (m)'),
                     border: OutlineInputBorder(),
                     isCollapsed: true,
                     contentPadding: EdgeInsets.all(12.0),
-                    // error: null,
-                    // errorText: null,
                   ),
                   style: theme.textTheme.bodySmall,
                   keyboardType: TextInputType.number,
@@ -233,19 +238,17 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
                     return null;
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onChanged: (String? value) => widget.character.height = double.parse(value!),
+                  onChanged: (String value) => character.height = double.parse(value),
                 ),
               ),
               Expanded(
                 child: TextFormField(
-                  controller: weightController,
+                  initialValue: character.weight.toStringAsFixed(2),
                   decoration: const InputDecoration(
                     label: Text('Poids (kg)'),
                     border: OutlineInputBorder(),
                     isCollapsed: true,
                     contentPadding: EdgeInsets.all(12.0),
-                    // error: null,
-                    // errorText: null,
                   ),
                   style: theme.textTheme.bodySmall,
                   keyboardType: TextInputType.number,
@@ -259,20 +262,23 @@ class _CharacterEditGeneralWidgetState extends State<CharacterEditGeneralWidget>
                     return null;
                   },
                   autovalidateMode: AutovalidateMode.onUserInteraction,
-                  onChanged: (String? value) => widget.character.weight = double.parse(value!),
+                  onChanged: (String? value) => character.weight = double.parse(value!),
                 ),
               ),
-              if(widget.character is NonPlayerCharacter)
+              if(character is NonPlayerCharacter)
                 Row(
                   spacing: 4.0,
                   children: [
-                    Switch(
-                      value: (widget.character as NonPlayerCharacter).unique,
-                      onChanged: (bool value) {
-                        setState(() {
-                          (widget.character as NonPlayerCharacter).unique = value;
-                        });
-                      },
+                    ValueListenableBuilder(
+                      valueListenable: (character as NonPlayerCharacter).uniqueNotifier,
+                      builder: (BuildContext context, bool unique, _) {
+                        return Switch(
+                          value: unique,
+                          onChanged: (bool value) {
+                            (character as NonPlayerCharacter).unique = value;
+                          },
+                        );
+                      }
                     ),
                     Text(
                       'Unique',

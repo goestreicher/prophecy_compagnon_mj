@@ -1,7 +1,10 @@
+import 'dart:collection';
+
+import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
-import 'character/base.dart';
+import 'entity/abilities.dart';
 
 part 'equipment.g.dart';
 
@@ -115,8 +118,7 @@ abstract mixin class SupportsEquipableItem {
         }
       }
 
-      item.equiped(this);
-      item._equipedOn = target;
+      item.equiped(this, target);
       equiped.add(item);
     }
   }
@@ -163,56 +165,116 @@ abstract mixin class SupportsEquipableItem {
   }
 
   void unequip(EquipableItem item) {
-    var eq = isEquiped(item);
+    if(isEquiped(item)) {
+      if(bodyEquiped == item) bodyEquiped = null;
+      if(dominantHandEquiped == item) dominantHandEquiped = null;
+      if(weakHandEquiped == item) weakHandEquiped = null;
 
-    if(bodyEquiped == item) bodyEquiped = null;
-    if(dominantHandEquiped == item) dominantHandEquiped = null;
-    if(weakHandEquiped == item) weakHandEquiped = null;
-
-    if(eq) {
       item.unequiped(this);
-      item._equipedOn = EquipableItemTarget.none;
+      item.equipedOn = EquipableItemTarget.none;
       equiped.remove(item);
     }
   }
 
   @JsonKey(includeToJson: false, includeFromJson: false)
-    EquipableItem? bodyEquiped;
+  EquipableItem? bodyEquiped;
   @JsonKey(includeToJson: false, includeFromJson: false)
-    EquipableItem? dominantHandEquiped;
+  EquipableItem? dominantHandEquiped;
   @JsonKey(includeToJson: false, includeFromJson: false)
-    EquipableItem? weakHandEquiped;
-  // Just here to keep track of equiped items during save / restore
-  @JsonKey(includeToJson: true, includeFromJson: false, toJson: equipedToJson)
-    List<EquipableItem> equiped = <EquipableItem>[];
+  EquipableItem? weakHandEquiped;
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  List<EquipableItem> equiped = <EquipableItem>[];
 
   Map<String, dynamic> toJson() => _$SupportsEquipableItemToJson(this);
-}
-
-List<Map<String, dynamic>> equipedToJson(List<EquipableItem> items) {
-  var ret = <Map<String, dynamic>>[];
-  for(var item in items) {
-    var i = <String, dynamic>{
-      'uuid': item.uuid(),
-      'equiped_on': item._equipedOn.name,
-    };
-    ret.add(i);
-  }
-  return ret;
 }
 
 abstract class EquipableItem extends Equipment {
   EquipableItem({
     required this.bodyPart,
     required this.handiness,
-  });
+    EquipableItemTarget equipedOn = EquipableItemTarget.none,
+  })
+    : equipedOnNotifier = ValueNotifier<EquipableItemTarget>(equipedOn);
 
   final EquipableItemBodyPart bodyPart;
   final int handiness;
+  EquipableItemTarget get equipedOn => equipedOnNotifier.value;
+  set equipedOn(EquipableItemTarget target) => equipedOnNotifier.value = target;
+  ValueNotifier<EquipableItemTarget> equipedOnNotifier;
 
   List<(Ability,int)> equipRequirements();
-  void equiped(SupportsEquipableItem owner);
-  void unequiped(SupportsEquipableItem owner);
 
-  EquipableItemTarget _equipedOn = EquipableItemTarget.none;
+  @mustCallSuper
+  void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
+    equipedOnNotifier.value = target;
+  }
+
+  @mustCallSuper
+  void unequiped(SupportsEquipableItem owner) {
+    equipedOnNotifier.value = EquipableItemTarget.none;
+  }
+}
+
+class EntityEquipment with IterableMixin<Equipment>, ChangeNotifier {
+  EntityEquipment(List<Equipment>? equipment)
+    : _all = equipment ?? <Equipment>[];
+
+  @override
+  Iterator<Equipment> get iterator => _all.iterator;
+
+  void add(Equipment e) {
+    _all.add(e);
+    notifyListeners();
+  }
+
+  void remove(Equipment e) {
+    _all.remove(e);
+    notifyListeners();
+  }
+
+  static EntityEquipment fromJson(List<dynamic> json) {
+    var equipment = <Equipment>[];
+    var uuids = <String>{};
+
+    for(var j in json) {
+      var e = j as Map<String, dynamic>;
+
+      if(!e.containsKey('uuid')) {
+        e['uuid'] = const Uuid().v4().toString();
+      }
+      else if(uuids.contains(e['uuid'] as String)) {
+        continue;
+      }
+
+      var eq = EquipmentFactory.instance.forgeEquipment(e['type'], uuid: e['uuid']);
+
+      if(eq is EquipableItem && j.containsKey('equiped_on')) {
+        eq.equipedOn = EquipableItemTarget.values.byName(j['equiped_on']);
+      }
+
+      if (eq != null) {
+        equipment.add(eq);
+      }
+    }
+
+    return EntityEquipment(equipment);
+  }
+
+  static List<Map<String, dynamic>> toJson(EntityEquipment ee) {
+    List<Map<String, dynamic>> ret = [];
+
+    for(var eq in ee) {
+      ret.add({
+        'type': eq.type(),
+        'uuid': eq.uuid(),
+        'equiped_on': eq is EquipableItem
+          ? eq.equipedOn.name
+          : EquipableItemTarget.none.name,
+      });
+    }
+
+    return ret;
+  }
+
+  final List<Equipment> _all;
 }

@@ -3,11 +3,13 @@ import 'dart:convert';
 import 'package:animated_tree_view/tree_view/tree_node.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../classes/faction.dart';
 import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../utils/error_feedback.dart';
+import '../utils/faction/faction_selection_model.dart';
 import '../utils/faction_display_widget.dart';
 import '../utils/faction_tree_widget_utils.dart';
 import '../utils/generic_tree_widget.dart';
@@ -22,26 +24,24 @@ class FactionsMainPage extends StatefulWidget {
 }
 
 class _FactionsMainPageState extends State<FactionsMainPage> {
-  late final TreeNode<GenericTreeData<Faction>> fullTree;
-  TreeNode<GenericTreeData<Faction>>? filteredTree;
+  late final TreeNode<GenericTreeData<FactionSummary>> fullTree;
+  TreeNode<GenericTreeData<FactionSummary>>? filteredTree;
   late UniqueKey treeKey;
-  final GenericTreeFilter<Faction> treeFilter = GenericTreeFilter<Faction>();
+  final GenericTreeFilter<FactionSummary> treeFilter = GenericTreeFilter<FactionSummary>();
   late FactionTreeWidgetAdapter adapter;
   final TextEditingController sourceTypeController = TextEditingController();
   final TextEditingController sourceController = TextEditingController();
   final TextEditingController searchController = TextEditingController();
 
-  Faction? selectedFaction;
+  FactionSelectionModel factionSelectionModel = FactionSelectionModel();
 
   @override
   void initState() {
     super.initState();
 
     adapter = FactionTreeWidgetAdapter(
-      itemSelectionCallback: (Faction f) {
-        setState(() {
-          selectedFaction = f;
-        });
+      itemSelectionCallback: (FactionSummary f) {
+        factionSelectionModel.id = f.id;
       },
       itemCreationCallback: (Faction f) async {
         await FactionStore().save(f);
@@ -49,20 +49,24 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
     );
 
     fullTree = TreeNode.root();
-    rebuildFullTree();
   }
 
-  void rebuildFullTree() {
+  Future<void> load() async {
+    await FactionSummary.loadAll();
+    await rebuildFullTree();
+  }
+
+  Future<void> rebuildFullTree() async {
     fullTree.clear();
     treeKey = UniqueKey();
-    buildSubTree(fullTree, null);
+    await buildSubTree(fullTree, null);
   }
 
-  void buildSubTree(TreeNode root, Faction? faction) {
-    for(var child in Faction.withParent(faction?.id).toList()..sort(Faction.sortComparator)) {
+  Future<void> buildSubTree(TreeNode root, FactionSummary? faction) async {
+    for(var child in (await FactionSummary.withParent(faction?.id)).toList()..sort(FactionSummary.sortComparator)) {
       var node = TreeNode(
           key: child.id,
-          data: GenericTreeData<Faction>(
+          data: GenericTreeData<FactionSummary>(
             item: child,
             showInfo: !child.displayOnly,
             canCreateChildren: (
@@ -71,7 +75,7 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
             ),
           )
       );
-      buildSubTree(node, child);
+      await buildSubTree(node, child);
       root.add(node);
     }
   }
@@ -139,8 +143,8 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                   updateFilteredTree();
                 },
                 dropdownMenuEntries: ObjectSourceType.values
-                    .map((ObjectSourceType s) => DropdownMenuEntry(value: s, label: s.title))
-                    .toList(),
+                  .map((ObjectSourceType s) => DropdownMenuEntry(value: s, label: s.title))
+                  .toList(),
               ),
               DropdownMenu(
                 key: UniqueKey(),
@@ -188,17 +192,17 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                     border: OutlineInputBorder(),
                     suffixIcon: Icon(Icons.search),
                     prefixIcon: treeFilter.nameFilter == null
-                      ? null
-                      : GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              searchController.clear();
-                              treeFilter.nameFilter = null;
-                            });
-                            updateFilteredTree();
-                            FocusScope.of(context).unfocus();
-                          },
-                          child: Icon(Icons.cancel, size: 16.0,)
+                        ? null
+                        : GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            searchController.clear();
+                            treeFilter.nameFilter = null;
+                          });
+                          updateFilteredTree();
+                          FocusScope.of(context).unfocus();
+                        },
+                        child: Icon(Icons.cancel, size: 16.0,)
                     ),
                   ),
                   onSubmitted: (String? value) {
@@ -246,11 +250,11 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                       if(faction == null) return;
 
                       await FactionStore().save(faction);
+                      factionSelectionModel.id = faction.summary.id;
 
                       setState(() {
                         treeFilter.sourceType = ObjectSourceType.original;
                         treeFilter.source = ObjectSource.local;
-                        selectedFaction = faction;
                       });
                       rebuildFullTree();
                       updateFilteredTree();
@@ -287,9 +291,9 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                         if(!context.mounted) return;
 
                         displayErrorDialog(
-                            context,
-                            "Échec de l'import",
-                            e.toString()
+                          context,
+                          "Échec de l'import",
+                          e.toString()
                         );
                       }
                     },
@@ -305,82 +309,97 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
             children: [
               SizedBox(
                 width: 350,
-                child: CustomScrollView(
-                  slivers: [
-                    SliverPadding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        sliver: GenericTreeWidget<Faction>(
-                          key: treeKey,
-                          tree: filteredTree ?? fullTree,
-                          filter: treeFilter,
-                          adapter: adapter,
+                child: FutureBuilder(
+                  future: load(),
+                  builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+                    if(snapshot.connectionState == ConnectionState.waiting) {
+                      return Center(child: CircularProgressIndicator());
+                    }
+
+                    if(snapshot.hasError) {
+                      return ErrorWidget(snapshot.error!);
+                    }
+
+                    return CustomScrollView(
+                      slivers: [
+                        SliverPadding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          sliver: GenericTreeWidget<FactionSummary, Faction>(
+                            key: treeKey,
+                            tree: filteredTree ?? fullTree,
+                            filter: treeFilter,
+                            adapter: adapter,
+                          )
                         )
-                    )
-                  ],
+                      ],
+                    );
+                  }
                 ),
               ),
-              if(selectedFaction != null)
-                Expanded(
+              ChangeNotifierProvider.value(
+                value: factionSelectionModel,
+                child: Expanded(
                   child: Padding(
                     padding: EdgeInsets.fromLTRB(4.0, 16.0, 0.0, 16.0),
-                    child: FactionDisplayWidget(
-                      faction: selectedFaction!,
-                      onEdited: (Faction f) async {
-                        await FactionStore().save(f);
-                        setState(() {
-                          selectedFaction = f;
-                        });
-                      },
-                      onDelete: (Faction f) async {
-                        var confirm = await showDialog<bool>(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                              title: const Text('Confirmer la suppression'),
-                              content: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  const Text('Supprimer cette faction et tous ses enfants ?'),
-                                ],
-                              ),
-                              actions: <Widget>[
-                                TextButton(
-                                  onPressed: () => Navigator.of(context).pop(false),
-                                  child: const Text('Annuler'),
+                    child: Consumer<FactionSelectionModel>(
+                      builder: (_, selectedFaction, _) {
+                        return FactionDisplayWidget(
+                          factionId: selectedFaction.id,
+                          onEdited: (Faction f) async {
+                            await FactionStore().save(f);
+                            selectedFaction.id = f.id;
+                          },
+                          onDelete: (Faction f) async {
+                            var confirm = await showDialog<bool>(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: const Text('Confirmer la suppression'),
+                                content: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text('Supprimer cette faction et tous ses enfants ?'),
+                                  ],
                                 ),
-                                TextButton(
-                                  onPressed: () => Navigator.of(context).pop(true),
-                                  child: const Text('Supprimer'),
-                                ),
-                              ]
-                          )
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () =>Navigator.of(context).pop(false),
+                                    child: const Text('Annuler'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () => Navigator.of(context).pop(true),
+                                    child: const Text('Supprimer'),
+                                  ),
+                                ]
+                              )
+                            );
+                            if (confirm == null || !confirm) return;
+
+                            Faction? current = f;
+                            var path = f.id;
+                            while (current != null && current.parentId != null) {
+                              current = await Faction.byId(current.parentId!);
+                              path = '${current!.id}.$path';
+                            }
+
+                            await Faction.delete(f);
+
+                            var fullTreeNode = fullTree.elementAt(path);
+                            fullTreeNode.parent?.remove(fullTreeNode);
+
+                            if (filteredTree != null) {
+                              var filteredTreeNode = filteredTree!.elementAt(path);
+                              filteredTreeNode.parent?.remove(filteredTreeNode);
+                            }
+
+                            selectedFaction.id = null;
+                          },
                         );
-                        if(confirm == null || !confirm) return;
-
-                        Faction? current = f;
-                        var path = f.id;
-                        while(current != null && current.parentId != null) {
-                          current = Faction.byId(current.parentId!);
-                          path = '${current!.id}.$path';
-                        }
-
-                        await Faction.delete(f);
-
-                        var fullTreeNode = fullTree.elementAt(path);
-                        fullTreeNode.parent?.remove(fullTreeNode);
-
-                        if(filteredTree != null) {
-                          var filteredTreeNode = filteredTree!.elementAt(path);
-                          filteredTreeNode.parent?.remove(filteredTreeNode);
-                        }
-
-                        setState(() {
-                          selectedFaction = null;
-                        });
-                      },
+                      }
                     ),
                   )
                 ),
+              ),
             ],
           ),
         ),

@@ -86,13 +86,11 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
                 _CharacterEditTabWidget(
                   child: CharacterEditBaseWidget(
                     character: widget.character,
-                    changeStreamController: changeStreamController,
                   )
                 ),
                 _CharacterEditTabWidget(
                   child: CharacterEditRelationsWidget(
                     character: widget.character,
-                    changeStreamController: changeStreamController,
                   ),
                 ),
                 _CharacterEditTabWidget(
@@ -104,13 +102,11 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
                 _CharacterEditTabWidget(
                     child: CharacterEditEquipmentWidget(
                       character: widget.character,
-                      changeStreamController: changeStreamController,
                     )
                 ),
                 _CharacterEditTabWidget(
                     child: CharacterEditMagicWidget(
                       character: widget.character,
-                      changeStreamController: changeStreamController,
                     )
                 ),
               ],

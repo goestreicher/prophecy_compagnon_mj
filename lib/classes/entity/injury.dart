@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'injury.g.dart';
@@ -71,32 +72,35 @@ class InjuryLevel {
   int end;
   int capacity;
 
-  factory InjuryLevel.fromJson(Map<String, dynamic> json) => _$InjuryLevelFromJson(json);
-  Map<String, dynamic> toJson() => _$InjuryLevelToJson(this);
+  factory InjuryLevel.fromJson(Map<String, dynamic> json) =>
+      _$InjuryLevelFromJson(json);
+
+  Map<String, dynamic> toJson() =>
+      _$InjuryLevelToJson(this);
 }
 
-class _InjuryRange implements Comparable<_InjuryRange> {
-  _InjuryRange({required this.min, required this.max});
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class EntityInjuries {
+  EntityInjuries({ required InjuryManager manager })
+    : managerNotifier = ValueNotifier<InjuryManager>(manager);
 
-  int min;
-  int max;
+  InjuryManager get manager => managerNotifier.value;
+  set manager(InjuryManager m) => managerNotifier.value = m;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  final ValueNotifier<InjuryManager> managerNotifier;
 
-  @override
-  bool operator==(Object other) =>
-      other is _InjuryRange && other.min == min && other.max == max;
+  factory EntityInjuries.fromJson(Map<String, dynamic> json) =>
+      _$EntityInjuriesFromJson(json);
 
-  @override
-  int get hashCode => Object.hash(min, max);
-
-  @override
-  int compareTo(_InjuryRange other) => min - other.min;
+  Map<String, dynamic> toJson() =>
+      _$EntityInjuriesToJson(this);
 }
 
 class InjuryManager {
   InjuryManager({
-      required List<InjuryLevel> levels,
-      InjuryManager? source,
-    })
+    required List<InjuryLevel> levels,
+    InjuryManager? source,
+  })
   {
     if(levels.isEmpty) {
       throw ArgumentError('Pas de niveaux de blessure fournis');
@@ -136,11 +140,11 @@ class InjuryManager {
   Map<Injury, int> _injuries = <Injury, int>{};
 
   factory InjuryManager.simple({
-      required int injuredCeiling,
-      required int injuredCount,
-      int deathCount = 1,
-      InjuryManager? source,
-    })
+    required int injuredCeiling,
+    required int injuredCount,
+    int deathCount = 1,
+    InjuryManager? source,
+  })
   {
     return InjuryManager(
       source: source,
@@ -402,4 +406,21 @@ class InjuryManager {
 
     return ret;
   }
+}
+
+class _InjuryRange implements Comparable<_InjuryRange> {
+  _InjuryRange({required this.min, required this.max});
+
+  int min;
+  int max;
+
+  @override
+  bool operator==(Object other) =>
+      other is _InjuryRange && other.min == min && other.max == max;
+
+  @override
+  int get hashCode => Object.hash(min, max);
+
+  @override
+  int compareTo(_InjuryRange other) => min - other.min;
 }

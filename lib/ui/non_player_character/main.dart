@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
+import '../../classes/npc_category.dart';
 import '../../classes/object_source.dart';
 import '../utils/character/edit_widget.dart';
 import '../utils/character/npc_create_dialog.dart';
@@ -36,7 +37,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
   String? selectedDisplay;
   NonPlayerCharacter? selectedEditNPC;
 
-  Future<List<NonPlayerCharacterSummary>> _updateNPCsList() async {
+  Future<Iterable<NonPlayerCharacterSummary>> _updateNPCsList() async {
     if(npcSource != null) {
       return NonPlayerCharacterSummary.forSource(npcSource!, npcCategory, npcSubCategory, nameFilter: search);
     }
@@ -92,7 +93,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
     else {
       mainArea = FutureBuilder(
         future: _updateNPCsList(),
-        builder: (BuildContext context, AsyncSnapshot<List<NonPlayerCharacterSummary>> snapshot) {
+        builder: (BuildContext context, AsyncSnapshot<Iterable<NonPlayerCharacterSummary>> snapshot) {
           if(snapshot.connectionState == ConnectionState.waiting) {
             return FullPageLoadingWidget();
           }
@@ -105,7 +106,7 @@ class _NPCMainPageState extends State<NPCMainPage> {
             return FullPageErrorWidget(message: 'Aucune donnée retournée', canPop: true);
           }
 
-          var npcs = snapshot.data!;
+          var npcs = snapshot.data!.toList();
           npcs.sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
           var theme = Theme.of(context);
 

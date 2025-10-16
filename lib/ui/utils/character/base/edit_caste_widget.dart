@@ -1,49 +1,16 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import '../../../../classes/caste/base.dart';
 import '../../../../classes/human_character.dart';
 import '../../widget_group_container.dart';
-import '../change_stream.dart';
 
-class CharacterEditCasteWidget extends StatefulWidget {
+class CharacterEditCasteWidget extends StatelessWidget {
   const CharacterEditCasteWidget({
     super.key,
     required this.character,
-    required this.changeStreamController,
   });
 
   final HumanCharacter character;
-  final StreamController<CharacterChange> changeStreamController;
-
-  @override
-  State<CharacterEditCasteWidget> createState() => _CharacterEditCasteWidgetState();
-}
-
-class _CharacterEditCasteWidgetState extends State<CharacterEditCasteWidget> {
-  final TextEditingController casteController = TextEditingController();
-  final TextEditingController casteStatusController = TextEditingController();
-  final Map<CasteStatus, String> casteStatusLabels = <CasteStatus, String>{};
-
-  @override
-  void initState() {
-    super.initState();
-
-    updateCasteStatusLabels();
-  }
-
-  void updateCasteStatusLabels() {
-    casteStatusLabels.clear();
-    if(widget.character.caste == Caste.sansCaste) {
-      casteStatusLabels[CasteStatus.none] = Caste.statusName(Caste.sansCaste, CasteStatus.none);
-    }
-    else {
-      for(var status in CasteStatus.values) {
-        casteStatusLabels[status] = Caste.statusName(widget.character.caste, status);
-      }
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +28,6 @@ class _CharacterEditCasteWidgetState extends State<CharacterEditCasteWidget> {
         spacing: 12.0,
         children: [
           DropdownMenu<Caste>(
-            controller: casteController,
             requestFocusOnTap: true,
             label: const Text('Caste'),
             expandedInsets: EdgeInsets.zero,
@@ -72,57 +38,54 @@ class _CharacterEditCasteWidgetState extends State<CharacterEditCasteWidget> {
               constraints: BoxConstraints(maxHeight: 36.0),
               contentPadding: EdgeInsets.all(12.0),
             ),
-            initialSelection: widget.character.caste,
+            initialSelection: character.caste.caste,
             onSelected: (Caste? caste) {
               if(caste == null) return;
-
-              widget.changeStreamController.add(
-                CharacterChange(
-                  item: CharacterChangeItem.caste,
-                  value: caste,
-                )
-              );
-
-              setState(() {
-                widget.character.caste = caste;
-                casteStatusController.text = Caste.statusName(caste, widget.character.casteStatus);
-                updateCasteStatusLabels();
-              });
+              if(caste != character.caste.caste) character.caste.career = null;
+              character.caste.caste = caste;
             },
             dropdownMenuEntries: Caste.values
               .map((Caste caste) => DropdownMenuEntry(value: caste, label: caste.title))
               .toList(),
           ),
-          DropdownMenu(
-            controller: casteStatusController,
-            requestFocusOnTap: true,
-            label: const Text('Statut'),
-            expandedInsets: EdgeInsets.zero,
-            textStyle: theme.textTheme.bodySmall,
-            inputDecorationTheme: const InputDecorationTheme(
-              border: OutlineInputBorder(),
-              isCollapsed: true,
-              constraints: BoxConstraints(maxHeight: 36.0),
-              contentPadding: EdgeInsets.all(12.0),
-            ),
-            initialSelection: widget.character.casteStatus,
-            onSelected: (CasteStatus? status) {
-              if(status == null) return;
+          ValueListenableBuilder(
+            valueListenable: character.caste.casteNotifier,
+            builder: (BuildContext context, Caste caste, _) {
+              final Map<CasteStatus, String> casteStatusLabels = <CasteStatus, String>{};
+              if(caste == Caste.sansCaste) {
+                casteStatusLabels[CasteStatus.none] = Caste.statusName(
+                  Caste.sansCaste, CasteStatus.none
+                );
+              }
+              else {
+                for(var status in CasteStatus.values) {
+                  casteStatusLabels[status] = Caste.statusName(
+                    caste, status
+                  );
+                }
+              }
 
-              widget.changeStreamController.add(
-                CharacterChange(
-                  item: CharacterChangeItem.casteStatus,
-                  value: status,
-                )
+              return DropdownMenu(
+                requestFocusOnTap: true,
+                label: const Text('Statut'),
+                expandedInsets: EdgeInsets.zero,
+                textStyle: theme.textTheme.bodySmall,
+                inputDecorationTheme: const InputDecorationTheme(
+                  border: OutlineInputBorder(),
+                  isCollapsed: true,
+                  constraints: BoxConstraints(maxHeight: 36.0),
+                  contentPadding: EdgeInsets.all(12.0),
+                ),
+                initialSelection: character.caste.status,
+                onSelected: (CasteStatus? status) {
+                  if(status == null) return;
+                  character.caste.status = status;
+                },
+                dropdownMenuEntries: casteStatusLabels.keys
+                  .map((CasteStatus s) => DropdownMenuEntry(value: s, label: casteStatusLabels[s]!))
+                  .toList(),
               );
-
-              setState(() {
-                widget.character.casteStatus = status;
-              });
-            },
-            dropdownMenuEntries: casteStatusLabels.keys
-              .map((CasteStatus s) => DropdownMenuEntry(value: s, label: casteStatusLabels[s]!))
-              .toList(),
+            }
           ),
         ],
       )

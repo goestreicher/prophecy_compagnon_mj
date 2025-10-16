@@ -1,5 +1,6 @@
 [
   {
+    "uuid": "monde",
     "name": "Monde",
     "type": "monde",
     "description": {
@@ -11,6 +12,7 @@
     }
   },
   {
+    "uuid": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "name": "Kor",
     "parent_id": "monde",
     "type": "continent",
@@ -31,8 +33,9 @@
     }
   },
   {
+    "uuid": "9b76a378-7cfa-49b5-874a-c93ad00cb6f5",
     "name": "Archipel de Pyr",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "motto": "terre draconique interdite aux humains",
     "climate": "tempéré",
@@ -52,8 +55,9 @@
     }
   },
   {
+    "uuid": "c93ec89f-a8ad-4dcd-ab43-69b41d28083f",
     "name": "Syrah",
-    "parent_id": "archipelDePyr",
+    "parent_id": "9b76a378-7cfa-49b5-874a-c93ad00cb6f5",
     "type": "capitale",
     "description": {
       "general": ""
@@ -64,8 +68,9 @@
     }
   },
   {
+    "uuid": "a15e4d82-7b50-4fcf-b096-db4c1a1a0555",
     "name": "Cité de Griff",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "citeEtat",
     "government": "unique. Le pouvoir est aux mains d'un seul homme reconnu pour ses exploits.",
     "leader": "Yarm, Guide de la Liberté",
@@ -87,8 +92,9 @@
     }
   },
   {
+    "uuid": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152",
     "name": "Empire de Solyr",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "empire dont le dirigeant est choisi au sein du Grand Conseil des Provins",
     "leader": "Rolan XII, Frère des Dragons",
@@ -110,8 +116,9 @@
     }
   },
   {
+    "uuid": "6b6f2d08-097e-4d57-8835-fd480947b7dc",
     "name": "Yris",
-    "parent_id": "empireDeSolyr",
+    "parent_id": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152",
     "type": "capitale",
     "description": {
       "general": ""
@@ -122,8 +129,9 @@
     }
   },
   {
+    "uuid": "477313a3-f473-4f11-b7a5-acf718cdc54a",
     "name": "Empire Nésora",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "conseil de représentants élus",
     "leader": "Ermar, le Grand Ordonnateur",
@@ -145,8 +153,9 @@
     }
   },
   {
+    "uuid": "4e33951a-7afc-4d8a-b2a9-5bc7166936a1",
     "name": "Salia",
-    "parent_id": "empireNesora",
+    "parent_id": "477313a3-f473-4f11-b7a5-acf718cdc54a",
     "type": "capitale",
     "description": {
       "general": ""
@@ -157,8 +166,9 @@
     }
   },
   {
+    "uuid": "5dfb1642-37bf-48d6-bc99-c36799e7ccf9",
     "name": "Empire Zûl",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "tribus nomades et pouvoir guerrier",
     "leader": "Mor-Mar-Zûl, Chevaucheur du Souffle du Dragon",
@@ -180,8 +190,9 @@
     }
   },
   {
+    "uuid": "7648ea74-a7af-48d4-97a1-7ae80c9d8ffe",
     "name": "Koran-Rogh",
-    "parent_id": "empireZul",
+    "parent_id": "5dfb1642-37bf-48d6-bc99-c36799e7ccf9",
     "type": "capitale",
     "description": {
       "general": ""
@@ -192,8 +203,9 @@
     }
   },
   {
+    "uuid": "bcc7e2b4-c746-4d34-8ca2-f9841664f0d9",
     "name": "Forêt de Solor",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "villages indépendants et primitifs",
     "climate": "océanique",
@@ -213,8 +225,9 @@
     }
   },
   {
+    "uuid": "c472bd09-16ce-40e4-9c74-6ebf1927280f",
     "name": "Jaspor",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "aristocratie marchande corrompue",
     "leader": "Flavien, Dragon et Prince Argentier",
@@ -236,8 +249,9 @@
     }
   },
   {
+    "uuid": "f25f8471-a35e-49b7-99f1-169458b10c2d",
     "name": "Jalad",
-    "parent_id": "jaspor",
+    "parent_id": "c472bd09-16ce-40e4-9c74-6ebf1927280f",
     "type": "capitale",
     "description": {
       "general": ""
@@ -248,8 +262,9 @@
     }
   },
   {
+    "uuid": "530f140e-d5f7-4bb0-bdf5-faf7307d856c",
     "name": "Kali",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "autorité draconique",
     "leader": "Kalimsshar, Héraut de la Fatalité",
@@ -271,8 +286,9 @@
     }
   },
   {
+    "uuid": "57ddc835-284d-4de8-88a6-30fc869bf893",
     "name": "Nadjar",
-    "parent_id": "kali",
+    "parent_id": "530f140e-d5f7-4bb0-bdf5-faf7307d856c",
     "type": "capitale",
     "description": {
       "general": ""
@@ -283,8 +299,9 @@
     }
   },
   {
+    "uuid": "2f131d2e-caa5-427a-b16e-0e242f1c6e97",
     "name": "Lacs Sanglants",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "patriarcat clanique",
     "leader": "Orode, Meneur des Guerriers",
@@ -306,8 +323,9 @@
     }
   },
   {
+    "uuid": "582a427e-b754-43d1-87ab-ca9ed018403c",
     "name": "Lacustre",
-    "parent_id": "lacsSanglants",
+    "parent_id": "2f131d2e-caa5-427a-b16e-0e242f1c6e97",
     "type": "capitale",
     "description": {
       "general": ""
@@ -318,8 +336,9 @@
     }
   },
   {
+    "uuid": "bf64abcb-62c3-4f5e-960e-7e7bcce9efda",
     "name": "Marches Alyzées",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "monarchie féodale héréditaire",
     "leader": "Jard le Bien-aimé, Prince des Marches Unifiées",
@@ -341,8 +360,9 @@
     }
   },
   {
+    "uuid": "a1cb0caf-15ea-4951-82b5-3d12a4cb6e87",
     "name": "Elia",
-    "parent_id": "marchesAlyzees",
+    "parent_id": "bf64abcb-62c3-4f5e-960e-7e7bcce9efda",
     "type": "capitale",
     "description": {
       "general": ""
@@ -353,8 +373,9 @@
     }
   },
   {
+    "uuid": "6474b3b2-0f9b-4251-896a-b6e38f51d1a6",
     "name": "Pomyrie",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "conseil de mages",
     "leader": "Lylir, Maîtresse des Sphères",
@@ -376,8 +397,9 @@
     }
   },
   {
+    "uuid": "a5d0eb56-1e8e-4ffe-a225-efe98f85af9f",
     "name": "Principauté de Marne",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "principauté marchande, dirigée par une assemblée de commerçants",
     "leader": "Rario de Zani, Prince de Maréni",
@@ -399,8 +421,9 @@
     }
   },
   {
+    "uuid": "c95aa400-c398-462b-ac43-95775645d79d",
     "name": "Hyelle",
-    "parent_id": "principauteDeMarne",
+    "parent_id": "a5d0eb56-1e8e-4ffe-a225-efe98f85af9f",
     "type": "capitale",
     "description": {
       "general": ""
@@ -411,8 +434,9 @@
     }
   },
   {
+    "uuid": "7577db35-83d3-44f3-bf3f-2c0f8b511a3c",
     "name": "Royaume des Fleurs",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "cités indépendantes",
     "leader": "Nir le Prodige",
@@ -434,8 +458,9 @@
     }
   },
   {
+    "uuid": "1b47529f-ecdd-477b-908a-d68c9fd1e2ab",
     "name": "Flore",
-    "parent_id": "royaumeDesFleurs",
+    "parent_id": "7577db35-83d3-44f3-bf3f-2c0f8b511a3c",
     "type": "capitale",
     "description": {
       "general": ""
@@ -446,8 +471,9 @@
     }
   },
   {
+    "uuid": "af49b28d-ec78-4c7d-969d-7b2254ccb58b",
     "name": "Terres Galyrs",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "tribus indépendantes",
     "leader": "Arland Poing d'acier",
@@ -469,8 +495,9 @@
     }
   },
   {
+    "uuid": "ed90eaf1-d258-45f8-b705-53c1e8b97e72",
     "name": "Keyral",
-    "parent_id": "terresGalyrs",
+    "parent_id": "af49b28d-ec78-4c7d-969d-7b2254ccb58b",
     "type": "capitale",
     "description": {
       "general": ""
@@ -481,8 +508,9 @@
     }
   },
   {
+    "uuid": "6b275174-2f30-4697-a266-531d1883a60d",
     "name": "Ysmir",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "union de cités-États",
     "leader": "Ozyr, Grand Dragon des Océans",

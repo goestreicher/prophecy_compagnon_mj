@@ -4,9 +4,9 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../../classes/armor.dart';
-import '../../../classes/character/base.dart';
-import '../../../classes/character/skill.dart';
 import '../../../classes/creature.dart';
+import '../../../classes/entity/attributes.dart';
+import '../../../classes/entity/skill_family.dart';
 import '../../../classes/magic.dart';
 import '../../../classes/object_source.dart';
 import '../../../classes/shield.dart';
@@ -158,20 +158,20 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
         const skillGroupWidth = 280.0;
 
         var hasPhysicalSkills = SkillFamily.values.any(
-            (SkillFamily f) => (f.defaultAttribute == Attribute.physique && creature.skillsForFamily(f).isNotEmpty)
+            (SkillFamily f) => (f.defaultAttribute == Attribute.physique && creature.skills.forFamily(f).isNotEmpty)
         );
         var hasManualSkills = SkillFamily.values.any(
-            (SkillFamily f) => (f.defaultAttribute == Attribute.manuel && creature.skillsForFamily(f).isNotEmpty)
+            (SkillFamily f) => (f.defaultAttribute == Attribute.manuel && creature.skills.forFamily(f).isNotEmpty)
         );
         var hasMentalSkills = SkillFamily.values.any(
-            (SkillFamily f) => (f.defaultAttribute == Attribute.mental && creature.skillsForFamily(f).isNotEmpty)
+            (SkillFamily f) => (f.defaultAttribute == Attribute.mental && creature.skills.forFamily(f).isNotEmpty)
         );
         var hasSocialSkills = SkillFamily.values.any(
-            (SkillFamily f) => (f.defaultAttribute == Attribute.social && creature.skillsForFamily(f).isNotEmpty)
+            (SkillFamily f) => (f.defaultAttribute == Attribute.social && creature.skills.forFamily(f).isNotEmpty)
         );
 
         var isMagicUser = MagicSkill.values.any(
-            (MagicSkill s) => creature.magicSkill(s) > 0
+            (MagicSkill s) => creature.magic.skills.get(s) > 0
           );
 
         var hasWeapon = false;
@@ -257,7 +257,7 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                                 ),
                               ),
                               EntityDisplayInjuriesWidget(
-                                injuries: creature.injuries,
+                                injuries: creature.injuries.manager,
                               ),
                             ],
                           ),

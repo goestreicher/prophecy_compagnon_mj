@@ -8,6 +8,7 @@ import 'classes/creature.dart';
 import 'classes/faction.dart';
 import 'classes/magic.dart';
 import 'classes/non_player_character.dart';
+import 'classes/npc_category.dart';
 import 'classes/place.dart';
 import 'classes/shield.dart';
 import 'classes/weapon.dart';
@@ -58,21 +59,17 @@ class ProphecyCompanionApp extends StatelessWidget {
 
 Future<void> _loadAssets() async {
   // TODO: some of those can throw storage exceptions, manage them
-  await Place.loadDefaultAssets();
-  await Place.loadStoreAssets();
+  await Place.init();
   await ArmorModel.loadDefaultAssets();
   await ShieldModel.loadDefaultAssets();
   await WeaponModel.loadDefaultAssets();
   await MagicSpell.loadDefaultAssets();
   await CreatureCategory.loadDefaultAssets();
-  await Creature.loadDefaultAssets();
-  await Creature.loadStoreAssets();
+  await Creature.init();
   await NPCCategory.loadDefaultAssets();
   await NPCSubCategory.loadDefaultAssets();
-  await NonPlayerCharacter.loadDefaultAssets();
-  await NonPlayerCharacter.loadStoreAssets();
-  await Faction.loadDefaultAssets();
-  await Faction.loadStoreAssets();
+  await NonPlayerCharacter.init();
+  await Faction.init();
 }
 
 class MainAppPage extends StatefulWidget {

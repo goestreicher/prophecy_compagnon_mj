@@ -8,6 +8,7 @@ import 'package:provider/provider.dart';
 
 import '../../classes/combat_turn.dart';
 import '../../classes/encounter.dart';
+import '../../classes/entity/status.dart';
 import '../../classes/entity_base.dart';
 import '../../classes/player_character.dart';
 import 'combat_turn_initiatives.dart';
@@ -504,7 +505,7 @@ class _EncounterTurnDisplayWidget extends StatelessWidget {
 
     Widget ret;
 
-    var encounterDone = encounter.deployedNpcs.isEmpty || encounter.deployedNpcs.every((e) => e.status & EntityStatus.dead == EntityStatus.dead);
+    var encounterDone = encounter.deployedNpcs.isEmpty || encounter.deployedNpcs.every((e) => e.status.value & EntityStatusValue.dead == EntityStatusValue.dead);
 
     if(encounterDone) {
       ret = ElevatedButton.icon(

@@ -6,7 +6,7 @@
     },
     "name": "Forêt Mère",
     "uuid": "05241904-b3d5-4146-8895-08a8487da233",
-    "parent_id": "kor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "autorité draconique",
     "leader": "Heyra, Grand Dragon de la Nature",

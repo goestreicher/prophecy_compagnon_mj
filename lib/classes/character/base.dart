@@ -2,50 +2,7 @@ import 'dart:math';
 
 import 'package:json_annotation/json_annotation.dart';
 
-import '../caste/privileges.dart';
-
 part 'base.g.dart';
-
-enum Ability {
-  force(title: "Force"),
-  intelligence(title: "Intelligence"),
-  coordination(title: "Coordination"),
-  presence(title: "Présence"),
-  resistance(title: "Résistance"),
-  volonte(title: "Volonté"),
-  perception(title: "Perception"),
-  empathie(title: "Empathie");
-
-  const Ability({
-    required this.title,
-  });
-
-  final String title;
-}
-
-enum Attribute {
-  physique(title: "Physique"),
-  mental(title: "Mental"),
-  manuel(title: "Manuel"),
-  social(title: "Social");
-
-  const Attribute({
-    required this.title,
-  });
-
-  final String title;
-}
-
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class CharacterCastePrivilege {
-  CharacterCastePrivilege({ required this.privilege, this.description });
-
-  CastePrivilege privilege;
-  String? description;
-
-  factory CharacterCastePrivilege.fromJson(Map<String, dynamic> j) => _$CharacterCastePrivilegeFromJson(j);
-  Map<String, dynamic> toJson() => _$CharacterCastePrivilegeToJson(this);
-}
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class AttributeBasedCalculator {

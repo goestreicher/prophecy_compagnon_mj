@@ -8,6 +8,7 @@ import 'package:prophecy_compagnon_mj/ui/scenario/scenario_fleather_toolbar.dart
 import '../../classes/resource_link.dart';
 import '../../classes/scenario.dart';
 import '../utils/markdown_fleather_toolbar.dart';
+import '../utils/num_input_widget.dart';
 
 class ScenarioEditGeneralPage extends StatefulWidget {
   const ScenarioEditGeneralPage({
@@ -24,8 +25,6 @@ class ScenarioEditGeneralPage extends StatefulWidget {
 }
 
 class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
-  final TextEditingController _subtitleController = TextEditingController();
-  final TextEditingController _synopsysController = TextEditingController();
   late final FleatherController storyController;
   late final FocusNode storyFocusNode;
 
@@ -36,9 +35,6 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
     if(kIsWeb) {
       BrowserContextMenu.disableContextMenu();
     }
-
-    _subtitleController.text = widget.scenario.subtitle;
-    _synopsysController.text = widget.scenario.synopsys;
 
     var document = ParchmentMarkdownCodec().decode(widget.scenario.story);
     storyController = FleatherController(document: document);
@@ -90,11 +86,11 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                           children: [
                             const Text('Danger'),
                             const Spacer(),
-                            DigitInputWidget(
+                            NumIntInputWidget(
                               initialValue: widget.scenario.danger,
                               minValue: 0,
                               maxValue: 5,
-                              onValueChanged: (int v) {
+                              onChanged: (int v) {
                                 widget.scenario.danger = v;
                               }
                             ),
@@ -105,13 +101,13 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                           children: [
                             const Text('Découverte'),
                             const Spacer(),
-                            DigitInputWidget(
-                                initialValue: widget.scenario.discovery,
-                                minValue: 0,
-                                maxValue: 5,
-                                onValueChanged: (int v) {
-                                  widget.scenario.discovery = v;
-                                }
+                            NumIntInputWidget(
+                              initialValue: widget.scenario.discovery,
+                              minValue: 0,
+                              maxValue: 5,
+                              onChanged: (int v) {
+                                widget.scenario.discovery = v;
+                              }
                             ),
                           ],
                         ),
@@ -120,13 +116,13 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                           children: [
                             const Text('Magie'),
                             const Spacer(),
-                            DigitInputWidget(
-                                initialValue: widget.scenario.magic,
-                                minValue: 0,
-                                maxValue: 5,
-                                onValueChanged: (int v) {
-                                  widget.scenario.magic = v;
-                                }
+                            NumIntInputWidget(
+                              initialValue: widget.scenario.magic,
+                              minValue: 0,
+                              maxValue: 5,
+                              onChanged: (int v) {
+                                widget.scenario.magic = v;
+                              }
                             ),
                           ],
                         ),
@@ -135,13 +131,13 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                           children: [
                             const Text('Implication'),
                             const Spacer(),
-                            DigitInputWidget(
-                                initialValue: widget.scenario.implication,
-                                minValue: 0,
-                                maxValue: 5,
-                                onValueChanged: (int v) {
-                                  widget.scenario.implication = v;
-                                }
+                            NumIntInputWidget(
+                              initialValue: widget.scenario.implication,
+                              minValue: 0,
+                              maxValue: 5,
+                              onChanged: (int v) {
+                                widget.scenario.implication = v;
+                              }
                             ),
                           ],
                         ),
@@ -159,8 +155,8 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  TextField(
-                    controller: _subtitleController,
+                  TextFormField(
+                    initialValue: widget.scenario.subtitle,
                     maxLength: 150,
                     onChanged: (String value) {
                       widget.scenario.subtitle = value;
@@ -171,8 +167,8 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                     ),
                   ),
                   Divider(),
-                  TextField(
-                    controller: _synopsysController,
+                  TextFormField(
+                    initialValue: widget.scenario.synopsys,
                     minLines: 5,
                     maxLines: 10,
                     onChanged: (String value) {
@@ -209,104 +205,6 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
           )
         ],
       )
-    );
-  }
-}
-
-class DigitInputWidget extends StatefulWidget {
-  const DigitInputWidget({
-    super.key,
-    initialValue,
-    required this.minValue,
-    required this.maxValue,
-    required this.onValueChanged,
-  })
-    : initialValue = initialValue ?? minValue;
-
-  final int initialValue;
-  final int minValue;
-  final int maxValue;
-  final void Function(int) onValueChanged;
-
-  @override
-  State<DigitInputWidget> createState() => _DigitInputWidgetState();
-}
-
-class _DigitInputWidgetState extends State<DigitInputWidget> {
-  final TextEditingController _controller = TextEditingController();
-
-  @override
-  void initState() {
-    super.initState();
-    _controller.text = widget.initialValue.toString();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
-    return Row(
-      children: [
-        IconButton(
-          onPressed: () {
-            if(_controller.text.isEmpty) {
-              _controller.text = widget.initialValue.toString();
-            }
-
-            var curr = int.parse(_controller.text);
-            if(curr > widget.minValue) {
-              _controller.text = (curr - 1).toString();
-              widget.onValueChanged(curr - 1);
-            }
-          },
-          icon: const Icon(Icons.remove),
-          iconSize: 12.0,
-          style: IconButton.styleFrom(
-            padding: const EdgeInsets.all(6.0),
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            minimumSize: Size.zero,
-          ),
-        ),
-        SizedBox(
-          width: 30.0,
-          child: TextField(
-            controller: _controller,
-            style: theme.textTheme.bodySmall,
-            textAlign: TextAlign.center,
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
-              isCollapsed: true,
-              contentPadding: EdgeInsets.all(8.0),
-              error: null,
-              errorText: null,
-            ),
-            keyboardType: TextInputType.number,
-            inputFormatters: [
-              FilteringTextInputFormatter.digitsOnly,
-            ],
-          ),
-        ),
-        IconButton(
-          onPressed: () {
-            if(_controller.text.isEmpty) {
-              _controller.text = widget.initialValue.toString();
-            }
-
-            var curr = int.parse(_controller.text);
-            if(curr < widget.maxValue) {
-              _controller.text = (curr + 1).toString();
-              widget.onValueChanged(curr + 1);
-            }
-          },
-          icon: const Icon(Icons.add),
-          iconSize: 12.0,
-          style: IconButton.styleFrom(
-            padding: const EdgeInsets.all(6.0),
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            minimumSize: Size.zero,
-          ),
-        )
-      ]
     );
   }
 }

@@ -135,7 +135,7 @@ class TableCharactersListWidget extends StatelessWidget {
                                 style: theme.textTheme.bodySmall,
                               ),
                               Text(
-                                '${summaries[index].caste.title} (${Caste.statusName(summaries[index].caste, summaries[index].casteStatus)})',
+                                '${summaries[index].caste.caste.title} (${Caste.statusName(summaries[index].caste.caste, summaries[index].caste.status)})',
                                 style: theme.textTheme.bodySmall,
                               ),
                             ],

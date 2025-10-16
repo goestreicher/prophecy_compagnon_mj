@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/base.dart';
+import '../../../../classes/entity/abilities.dart';
 import '../../num_input_widget.dart';
 
 class AbilityListEditWidget extends StatelessWidget {

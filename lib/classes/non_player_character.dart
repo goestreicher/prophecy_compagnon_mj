@@ -1,14 +1,15 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
+import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
-import 'caste/base.dart';
-import 'caste/career.dart';
-import 'caste/interdicts.dart';
-import 'character/base.dart';
-import 'character/skill.dart';
+import 'caste/character_caste.dart';
+import 'entity/injury.dart';
+import 'character/tendencies.dart';
+import 'entity/abilities.dart';
+import 'entity/attributes.dart';
+import 'entity/magic.dart';
+import 'entity/skills.dart';
+import 'entity/status.dart';
 import 'draconic_link.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
@@ -16,206 +17,15 @@ import 'entity_instance.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
-import 'magic.dart';
+import 'npc_category.dart';
 import 'object_location.dart';
 import 'object_source.dart';
-import 'place.dart';
 import '../text_utils.dart';
+import 'resource_memory_cache.dart';
 import 'storage/default_assets_store.dart';
 import 'storage/storable.dart';
 
 part 'non_player_character.g.dart';
-
-class NPCCategoryJsonConverter extends JsonConverter<NPCCategory, String> {
-  const NPCCategoryJsonConverter();
-
-  @override
-  NPCCategory fromJson(String json) {
-    var index = NPCCategory.values.indexWhere((NPCCategory c) => c.name == json);
-    if(index != -1) {
-      return NPCCategory.values[index];
-    }
-
-    var name = sentenceToCamelCase(transliterateFrenchToAscii(json));
-    index = NPCCategory.values.indexWhere((NPCCategory c) => c.name == name);
-    if(index != -1) {
-      return NPCCategory.values[index];
-    }
-
-    return NPCCategory(title: json);
-  }
-
-  @override
-  String toJson(NPCCategory object) => object.isDefault ? object.name : object.title;
-}
-
-class NPCCategory {
-  static NPCCategory createNewCategory = NPCCategory._create(title: "Créer cette catégorie", isDefault: true);
-  
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    var jsonStr = await rootBundle.loadString('assets/npc-categories.json');
-    var categories = json.decode(jsonStr);
-    for(var c in categories) {
-      // ignore: unused_local_variable
-      var category = NPCCategory(title: c, isDefault: true);
-    }
-  }
-
-  factory NPCCategory({required String title, bool isDefault = false}) {
-    var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
-    if(!_categories.containsKey(name)) {
-      var c = NPCCategory._create(title: title, isDefault: isDefault);
-      _categories[c.name] = c;
-      return c;
-    }
-    else {
-      return _categories[name]!;
-    }
-  }
-
-  NPCCategory._create({ required this.title, required this.isDefault });
-
-  final String title;
-  final bool isDefault;
-
-  String get name => sentenceToCamelCase(transliterateFrenchToAscii(title));
-
-  static List<NPCCategory> get values {
-    return _categories.values.toList();
-  }
-
-  static NPCCategory byName(String name) {
-    return _categories.values.firstWhere((NPCCategory c) => c.name == name);
-  }
-
-  @override
-  int get hashCode => title.hashCode;
-
-  @override
-  bool operator ==(Object other) {
-    if(other is! NPCCategory) return false;
-    return title == other.title;
-  }
-
-  static final Map<String, NPCCategory> _categories = <String, NPCCategory>{};
-  static bool _defaultAssetsLoaded = false;
-}
-
-class NPCSubcategoryJsonConverter extends JsonConverter<NPCSubCategory, Map<String, dynamic>> {
-  const NPCSubcategoryJsonConverter();
-
-  @override
-  NPCSubCategory fromJson(Map<String, dynamic> json) {
-    if(json.containsKey('name')) {
-      return NPCSubCategory.byName(json['name']);
-    }
-    else {
-      var name = sentenceToCamelCase(transliterateFrenchToAscii(json['title']));
-      var index = NPCSubCategory.values.indexWhere((NPCSubCategory s) => s.name == name);
-      if(index != -1) {
-        return NPCSubCategory.values[index];
-      }
-      else {
-        return _$NPCSubCategoryFromJson(json);
-      }
-    }
-  }
-
-  @override
-  Map<String, dynamic> toJson(NPCSubCategory object) {
-    if(object.isDefault) {
-      return <String, dynamic>{'name': object.name};
-    }
-    else {
-      return object.toJson();
-    }
-  }
-}
-
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-@NPCCategoryJsonConverter()
-class NPCSubCategory {
-  static NPCSubCategory createNewSubCategory = NPCSubCategory._create(
-    title: 'Créer une sous-catégorie',
-    categories: [],
-    isDefault: true,
-  );
-
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    for (var sc in await loadJSONAssetObjectList('npc-subcategories.json')) {
-      // ignore: unused_local_variable
-      var subCategory = NPCSubCategory.fromJson(sc);
-    }
-  }
-
-  factory NPCSubCategory({
-    required String title,
-    required List<NPCCategory> categories,
-    bool isDefault = false,
-  }) {
-    var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
-    if(_subCategories.containsKey(name)) {
-      return _subCategories[name]!;
-    }
-    else {
-      var s = NPCSubCategory._create(title: title, categories: categories, isDefault: isDefault);
-      _subCategories[s.name] = s;
-      return s;
-    }
-  }
-
-  NPCSubCategory._create({ required this.title, required this.categories, this.isDefault = false });
-
-  static List<NPCSubCategory> subCategoriesForCategory(NPCCategory category) {
-    return _subCategories.values
-        .where((NPCSubCategory s) => s.categories.contains(category))
-        .toList();
-  }
-
-  static List<NPCSubCategory> get values {
-    return _subCategories.values.toList();
-  }
-
-  static NPCSubCategory byName(String name) {
-    return _subCategories[name]!;
-  }
-
-  static NPCSubCategory? byTitle(String title) {
-    String? key;
-    _subCategories.forEach((k, v) {
-      if (v.title == title) key = k;
-    });
-    return key == null ? null : _subCategories[key]!;
-  }
-
-  final String title;
-  final List<NPCCategory> categories;
-  @JsonKey(includeFromJson: true, includeToJson: false)
-    final bool isDefault;
-
-  String get name => sentenceToCamelCase(transliterateFrenchToAscii(title));
-
-  @override
-  int get hashCode => Object.hash(title, categories);
-
-  @override
-  bool operator ==(Object other) {
-    if(other is! NPCSubCategory) return false;
-    return title == other.title;
-  }
-
-  static final Map<String, NPCSubCategory> _subCategories = <String, NPCSubCategory>{};
-  static bool _defaultAssetsLoaded = false;
-
-  factory NPCSubCategory.fromJson(Map<String, dynamic> j) => _$NPCSubCategoryFromJson(j);
-  Map<String, dynamic> toJson() => _$NPCSubCategoryToJson(this);
-}
 
 class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacterSummary> {
   NonPlayerCharacterSummaryStore();
@@ -261,6 +71,258 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
   Future<void> willDelete(NonPlayerCharacterSummary object) async {
     if(object.icon != null) await BinaryDataStore().delete(object.icon!);
   }
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+@NPCCategoryJsonConverter()
+@NPCSubcategoryJsonConverter()
+class NonPlayerCharacterSummary {
+  factory NonPlayerCharacterSummary({
+    required String id,
+    required String name,
+    required NPCCategory category,
+    required NPCSubCategory subCategory,
+    ObjectLocation location = ObjectLocation.memory,
+    required ObjectSource source,
+    ExportableBinaryData? icon,
+  })
+  {
+    var summ = _cache.entry(id)
+        ?? NonPlayerCharacterSummary._create(
+          id: id,
+          name: name,
+          category: category,
+          subCategory: subCategory,
+          location: location,
+          source: source,
+          icon: icon,
+        );
+    _cache.add(id, summ);
+    return summ;
+  }
+
+  NonPlayerCharacterSummary._create({
+    required this.id,
+    required this.name,
+    required this.category,
+    required this.subCategory,
+    this.location = ObjectLocation.memory,
+    required this.source,
+    this.icon,
+  });
+
+  final String id;
+  final String name;
+  final NPCCategory category;
+  final NPCSubCategory subCategory;
+  @JsonKey(includeFromJson: true, includeToJson: false)
+  ObjectLocation location;
+  final ObjectSource source;
+  final ExportableBinaryData? icon;
+
+  static Future<Iterable<String>> ids() async {
+    await loadAll();
+    return _cache.keys;
+  }
+
+  static Future<bool> exists(String id) async {
+    await loadAll();
+    return _cache.contains(id);
+  }
+
+  static Future<NonPlayerCharacterSummary?> get(String id) async {
+    await loadAll();
+    return _cache.entry(id);
+  }
+
+  static Future<Iterable<NonPlayerCharacterSummary>> getAll(
+    {String? nameFilter}
+  ) async {
+    await loadAll();
+    return _cache.values
+        .where(
+            (NonPlayerCharacterSummary s) =>
+                nameFilter == null
+                || s.name.toLowerCase().contains(nameFilter.toLowerCase())
+        );
+  }
+
+  static Future<Iterable<NonPlayerCharacterSummary>> forLocationType(
+    ObjectLocationType type,
+    NPCCategory? category,
+    NPCSubCategory? subCategory,
+    {String? nameFilter}
+  ) async {
+    await loadAll();
+    return _cache.values
+        .where(
+            (NonPlayerCharacterSummary s) =>
+                s.location.type == type
+                && (
+                    category == null
+                    || _matchesCategory(s, category, subCategory)
+                )
+        )
+        .where(
+            (NonPlayerCharacterSummary s) =>
+                nameFilter == null
+                || s.name.toLowerCase().contains(nameFilter.toLowerCase())
+        );
+  }
+
+  static Future<Iterable<NonPlayerCharacterSummary>> forCategory(
+    NPCCategory category,
+    NPCSubCategory? subCategory,
+    {String? nameFilter}
+  ) async {
+    await loadAll();
+    return _cache.values
+        .where(
+            (NonPlayerCharacterSummary s) =>
+                _matchesCategory(s, category, subCategory)
+        )
+        .where(
+            (NonPlayerCharacterSummary s) =>
+                nameFilter == null
+                || s.name.toLowerCase().contains(nameFilter.toLowerCase())
+        );
+  }
+
+  static Future<Iterable<NonPlayerCharacterSummary>> forSourceType(
+    ObjectSourceType type,
+    NPCCategory? category,
+    NPCSubCategory? subCategory,
+    {String? nameFilter}
+  ) async {
+    await loadAll();
+    return _cache.values
+        .where(
+            (NonPlayerCharacterSummary s) =>
+                s.source.type == type
+                && (
+                    category == null
+                    || _matchesCategory(s, category, subCategory)
+                )
+        )
+        .where(
+            (NonPlayerCharacterSummary s) =>
+                nameFilter == null
+                || s.name.toLowerCase().contains(nameFilter.toLowerCase())
+        );
+  }
+
+  static Future<Iterable<NonPlayerCharacterSummary>> forSource(
+    ObjectSource source,
+    NPCCategory? category,
+    NPCSubCategory? subCategory,
+    {String? nameFilter}
+  ) async {
+    await loadAll();
+    return _cache.values
+        .where(
+            (NonPlayerCharacterSummary s) =>
+                s.source == source
+                && (
+                    category == null
+                    || _matchesCategory(s, category, subCategory)
+                )
+        )
+        .where(
+            (NonPlayerCharacterSummary s) =>
+                nameFilter == null
+                || s.name.toLowerCase().contains(nameFilter.toLowerCase())
+        );
+  }
+
+  static bool _matchesCategory(
+    NonPlayerCharacterSummary summary,
+    NPCCategory category,
+    NPCSubCategory? subCategory
+  ) {
+    return
+        summary.category == category
+        && (
+            subCategory == null
+            || summary.subCategory == subCategory
+        );
+  }
+
+  static Future<void> init() async {
+    // ignore:unused_local_variable
+    var c = _cache;
+  }
+
+  static Future<void> loadAll() async {
+    if(_cache.isEmpty || _cache.purged) {
+      var assetFiles = [
+        'npcs-ldb2e.json',
+        'npcs-les-compagnons-de-khy.json',
+        'npcs-les-ecailles-de-brorne.json',
+        'npcs-les-enfants-de-heyra.json',
+        'npcs-les-forges-de-kezyr.json',
+        'npcs-les-foudres-de-kroryn.json',
+        'npcs-les-orphelins-de-szyl.json',
+        'npcs-les-versets-d-ozyr.json',
+        'npcs-les-voiles-de-nenya.json',
+      ];
+
+      for(var f in assetFiles) {
+        for (var model in await loadJSONAssetObjectList(f)) {
+          try {
+            // ignore:unused_local_variable
+            var instance = NonPlayerCharacterSummary.fromJson(model);
+          } catch (e, stacktrace) {
+            print('Error loading NPC ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+          }
+        }
+      }
+
+      await NonPlayerCharacterSummaryStore().getAll();
+
+      _cache.purged = false;
+    }
+  }
+
+  static Future<void> _reloadFromStore(String id) async {
+    _removeFromCache(id);
+    var summary = await NonPlayerCharacterSummaryStore().get(id);
+    if(summary != null) {
+      _cache.add(id, summary);
+    }
+  }
+
+  static void _removeFromCache(String id) =>
+      _cache.del(id);
+
+  static Future<void> _saveLocalModel(NonPlayerCharacterSummary summary) async {
+    await NonPlayerCharacterSummaryStore().save(summary);
+    _cache.add(summary.id, summary);
+  }
+
+  static Future<void> _deleteLocalModel(String id) async {
+    var summary = await NonPlayerCharacterSummaryStore().get(id);
+    if(summary != null) {
+      await NonPlayerCharacterSummaryStore().delete(summary);
+    }
+    _cache.del(id);
+  }
+
+  static final _cache = ResourceMemoryCache<NonPlayerCharacterSummary>();
+
+  factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j){
+    if(!j.containsKey('id')) {
+      if (j.containsKey('uuid')) {
+        j['id'] = j['uuid'];
+      }
+      else {
+        j['id'] = NonPlayerCharacter._getId(j['name']);
+      }
+    }
+    return _$NonPlayerCharacterSummaryFromJson(j);
+  }
+
+  Map<String, dynamic> toJson() =>
+      _$NonPlayerCharacterSummaryToJson(this);
 }
 
 class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
@@ -316,109 +378,6 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @NPCCategoryJsonConverter()
 @NPCSubcategoryJsonConverter()
-class NonPlayerCharacterSummary {
-  NonPlayerCharacterSummary({
-    required this.id,
-    required this.name,
-    required this.category,
-    required this.subCategory,
-    this.location = ObjectLocation.memory,
-    required this.source,
-    this.icon,
-  });
-
-  final String id;
-  final String name;
-  final NPCCategory category;
-  final NPCSubCategory subCategory;
-  @JsonKey(includeFromJson: true, includeToJson: false)
-    ObjectLocation location;
-  final ObjectSource source;
-  final ExportableBinaryData? icon;
-
-  static bool exists(String id) => _summaries.containsKey(id);
-
-  static List<NonPlayerCharacterSummary> getAll({String? nameFilter}) {
-    return _summaries.values
-        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
-        .toList();
-  }
-  
-  static List<NonPlayerCharacterSummary> forLocationType(ObjectLocationType type, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
-    return _summaries.values
-        .where((NonPlayerCharacterSummary s) => s.location.type == type && (category == null || _matchesCategory(s, category, subCategory)))
-        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
-        .toList();
-  }
-
-  static List<NonPlayerCharacterSummary> forCategory(NPCCategory category, NPCSubCategory? subCategory, {String? nameFilter}) {
-    return _summaries.values
-        .where((NonPlayerCharacterSummary s) => _matchesCategory(s, category, subCategory))
-        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
-        .toList();
-  }
-
-  static List<NonPlayerCharacterSummary> forSourceType(ObjectSourceType type, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
-    return _summaries.values
-        .where((NonPlayerCharacterSummary s) => s.source.type == type && (category == null || _matchesCategory(s, category, subCategory)))
-        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
-        .toList();
-  }
-
-  static List<NonPlayerCharacterSummary> forSource(ObjectSource source, NPCCategory? category, NPCSubCategory? subCategory, {String? nameFilter}) {
-    return _summaries.values
-        .where((NonPlayerCharacterSummary s) => s.source == source && (category == null || _matchesCategory(s, category, subCategory)))
-        .where((NonPlayerCharacterSummary s) => nameFilter == null || s.name.toLowerCase().contains(nameFilter.toLowerCase()))
-        .toList();
-  }
-
-  static bool _matchesCategory(NonPlayerCharacterSummary summary, NPCCategory category, NPCSubCategory? subCategory) {
-    return summary.category == category
-        && (subCategory == null || summary.subCategory == subCategory);
-  }
-
-  static Future<void> _reloadFromStore(String id) async {
-    _removeFromCache(id);
-    var summary = await NonPlayerCharacterSummaryStore().get(id);
-    if(summary != null) {
-      _summaries[id] = summary;
-    }
-  }
-
-  static void _removeFromCache(String id) => _summaries.remove(id);
-
-  static void _defaultAssetLoaded(NonPlayerCharacterSummary summary) {
-    _summaries[summary.id] = summary;
-  }
-
-  static Future<void> _loadStoreAssets() async {
-    for(var npc in await NonPlayerCharacterSummaryStore().getAll()) {
-      _summaries[npc.id] = npc;
-    }
-  }
-
-  static Future<void> _saveLocalModel(NonPlayerCharacterSummary summary) async {
-    await NonPlayerCharacterSummaryStore().save(summary);
-    _summaries[summary.id] = summary;
-  }
-
-  static Future<void> _deleteLocalModel(String id) async {
-    var summary = await NonPlayerCharacterSummaryStore().get(id);
-    if(summary != null) {
-      await NonPlayerCharacterSummaryStore().delete(summary);
-    }
-    _summaries.remove(id);
-  }
-
-  static final Map<String, NonPlayerCharacterSummary> _summaries = <String, NonPlayerCharacterSummary>{};
-
-  factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j) => _$NonPlayerCharacterSummaryFromJson(j);
-  Map<String, dynamic> toJson() => _$NonPlayerCharacterSummaryToJson(this);
-}
-
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-@NPCCategoryJsonConverter()
-@NPCSubcategoryJsonConverter()
 class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   factory NonPlayerCharacter({
     String? uuid,
@@ -428,10 +387,16 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     required NPCCategory category,
     required NPCSubCategory subCategory,
     bool unique = false,
+    EntityAbilities? abilities,
+    EntityAttributes? attributes,
     bool useHumanInjuryManager = false,
+    EntityInjuries? injuries,
+    InjuryProvider injuryProvider = humanCharacterDefaultInjuries,
     int initiative = 1,
-    Caste caste = Caste.sansCaste,
-    CasteStatus casteStatus = CasteStatus.none,
+    EntitySkills? skills,
+    EntityStatus? status,
+    EntityEquipment? equipment,
+    EntityMagic? magic,
     int age = 25,
     double height = 1.7,
     double? size,
@@ -439,84 +404,96 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     int luck = 0,
     int proficiency = 0,
     int renown = 0,
-    Place? origin,
-    List<CasteInterdict>? interdicts,
-    List<CharacterCastePrivilege>? castePrivileges,
-    List<CharacterDisadvantage>? disadvantages,
-    List<CharacterAdvantage>? advantages,
+    CharacterOrigin? origin,
+    CharacterCaste? caste,
+    CharacterDisadvantages? disadvantages,
+    CharacterAdvantages? advantages,
     CharacterTendencies? tendencies,
     String? description,
     ExportableBinaryData? image,
     ExportableBinaryData? icon,
   }) {
     bool isDefault = (location.type == ObjectLocationType.assets);
-    String id = uuid ?? (isDefault ? sentenceToCamelCase(transliterateFrenchToAscii(name)) : Uuid().v4().toString());
-    if(!_models.containsKey(id)) {
-      var npc = NonPlayerCharacter._create(
-        uuid: uuid,
-        location: location,
-        source: source,
-        name: name,
-        category: category,
-        subCategory: subCategory,
-        unique: unique,
-        useHumanInjuryManager: useHumanInjuryManager,
-        initiative: initiative,
-        caste: caste,
-        casteStatus: casteStatus,
-        age: age,
-        height: height,
-        size: size,
-        weight: weight,
-        luck: luck,
-        proficiency: proficiency,
-        renown: renown,
-        origin: origin,
-        interdicts: interdicts,
-        castePrivileges: castePrivileges,
-        disadvantages: disadvantages,
-        advantages: advantages,
-        tendencies: tendencies,
-        description: description,
-        image: image,
-        icon: icon,
-      );
-      _models[id] = npc;
-    }
-    return _models[id]!;
+    String id = uuid ?? (isDefault ? _getId(name) : Uuid().v4().toString());
+    var npc = _cache.entry(id)
+        ?? NonPlayerCharacter._create(
+            uuid: uuid,
+            location: location,
+            source: source,
+            name: name,
+            category: category,
+            subCategory: subCategory,
+            unique: unique,
+            abilities: abilities,
+            attributes: attributes,
+            useHumanInjuryManager: useHumanInjuryManager,
+            injuries: injuries,
+            injuryProvider: injuryProvider,
+            initiative: initiative,
+            skills: skills,
+            status: status,
+            equipment: equipment,
+            magic: magic,
+            caste: caste,
+            age: age,
+            height: height,
+            size: size,
+            weight: weight,
+            luck: luck,
+            proficiency: proficiency,
+            renown: renown,
+            origin: origin,
+            disadvantages: disadvantages,
+            advantages: advantages,
+            tendencies: tendencies,
+            description: description,
+            image: image,
+            icon: icon,
+          );
+    _cache.add(id, npc);
+    // Force insertion in CreatureSummary cache
+    // ignore:unused_local_variable
+    var s = npc.summary;
+    return npc;
   }
 
-  NonPlayerCharacter._create(
-    {
-      super.uuid,
-      super.location = ObjectLocation.memory,
-      required super.name,
-      required this.category,
-      required this.subCategory,
-      required this.source,
-      this.unique = false,
-      this.useHumanInjuryManager = false,
-      super.initiative,
-      super.caste,
-      super.casteStatus,
-      super.age,
-      super.height,
-      super.size,
-      super.weight,
-      super.luck,
-      super.proficiency,
-      super.renown,
-      super.origin,
-      super.interdicts,
-      super.castePrivileges,
-      super.disadvantages,
-      super.advantages,
-      super.tendencies,
-      super.description,
-      super.image,
-      super.icon,
-    }
-  ) {
+  NonPlayerCharacter._create({
+    super.uuid,
+    super.location = ObjectLocation.memory,
+    required super.name,
+    required this.category,
+    required this.subCategory,
+    required this.source,
+    bool unique = false,
+    super.abilities,
+    super.attributes,
+    bool useHumanInjuryManager = false,
+    super.injuries,
+    super.injuryProvider,
+    super.initiative,
+    super.skills,
+    super.status,
+    super.equipment,
+    super.magic,
+    super.caste,
+    super.age,
+    super.height,
+    super.size,
+    super.weight,
+    super.luck,
+    super.proficiency,
+    super.renown,
+    super.origin,
+    super.disadvantages,
+    super.advantages,
+    super.tendencies,
+    super.description,
+    super.image,
+    super.icon,
+  })
+    : uniqueNotifier = ValueNotifier<bool>(unique),
+      useHumanInjuryManagerNotifier = ValueNotifier<bool>(useHumanInjuryManager)
+  {
     if(!subCategory.categories.contains(category)) {
       throw ArgumentError('La sous-catégorie "${subCategory.title}" ne peut pas être utilisée avec la catégorie "${category.title}"');
     }
@@ -525,8 +502,16 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   NPCCategory category;
   NPCSubCategory subCategory;
   ObjectSource source;
-  bool unique;
-  bool useHumanInjuryManager;
+
+  bool get unique => uniqueNotifier.value;
+  set unique(bool b) => uniqueNotifier.value = b;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  ValueNotifier<bool> uniqueNotifier;
+
+  bool get useHumanInjuryManager => useHumanInjuryManagerNotifier.value;
+  set useHumanInjuryManager(bool b) => useHumanInjuryManagerNotifier.value = b;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  ValueNotifier<bool> useHumanInjuryManagerNotifier;
 
   NonPlayerCharacterSummary get summary => NonPlayerCharacterSummary(
       id: id,
@@ -537,36 +522,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       icon: icon?.clone(),
       location: location,
     );
-
-  NonPlayerCharacter clone(String newName) {
-    var j = toJson();
-    j.remove('uuid');
-    j['name'] = newName;
-    var cloned = NonPlayerCharacter.fromJson(j);
-    cloned.location = ObjectLocation.memory;
-    return cloned;
-  }
-
-  static bool _defaultAssetsLoaded = false;
-  static final Map<String, NonPlayerCharacter> _models = <String, NonPlayerCharacter>{};
-
-  static Future<NonPlayerCharacter?> get(String id) async {
-    if(!_defaultAssetsLoaded) await loadDefaultAssets();
-
-    if(!NonPlayerCharacterSummary.exists(id)) {
-      return null;
-    }
-
-    if(!_models.containsKey(id)) {
-      var model = await NonPlayerCharacterStore().get(id);
-      if(model == null) {
-        return null;
-      }
-      _models[id] = model;
-    }
-
-    return _models[id];
-  }
 
   @override
   String displayName() => name;
@@ -593,69 +548,63 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     return ret;
   }
 
-  static EncounterEntityModel? _modelFactory(String id) {
-    return _models[id];
+  NonPlayerCharacter clone(String newName) {
+    var j = toJson();
+    j.remove('uuid');
+    j['name'] = newName;
+    var cloned = NonPlayerCharacter.fromJson(j);
+    cloned.location = ObjectLocation.memory;
+    return cloned;
   }
 
-  static List<EntityBase> _npcFactory(String id, int count) {
-    if(!_models.containsKey(id)) return <EntityBase>[];
-    return _models[id]!.instantiate(count: count);
+  static Future<NonPlayerCharacter?> get(String id) async {
+    NonPlayerCharacter? ret = _cache.entry(id);
+    if(ret != null) return ret;
+
+    NonPlayerCharacterSummary? summ = await NonPlayerCharacterSummary.get(id);
+    if(summ == null) return null;
+
+    if(summ.location.type == ObjectLocationType.assets) {
+      ret = await loadFromAssets(summ.location.collectionUri, id);
+    }
+    else if(summ.location.type == ObjectLocationType.store) {
+      ret = await NonPlayerCharacterStore().get(id);
+    }
+
+    return ret;
+  }
+
+  static Future<NonPlayerCharacter?> loadFromAssets(String file, String id) async {
+    for(var a in await loadJSONAssetObjectList(file)) {
+      bool match = false;
+      var m = a as Map<String, dynamic>;
+
+      if(m.containsKey('uuid') && m['uuid'] == id) {
+        match = true;
+      }
+      else {
+        match = (id == _getId(m['name']));
+      }
+
+      if(match) return NonPlayerCharacter.fromJson(m);
+    }
+    return null;
   }
 
   static Future<void> reloadFromStore(String id) async {
-    _models.remove(id);
+    _cache.del(id);
     await NonPlayerCharacterSummary._reloadFromStore(id);
   }
 
   static void removeFromCache(String id) {
-    _models.remove(id);
+    _cache.del(id);
     NonPlayerCharacterSummary._removeFromCache(id);
-  }
-
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    EntityInstanceModelRetriever.instance.registerRetriever(
-      'npc',
-      NonPlayerCharacter.get,
-    );
-
-    EncounterEntityFactory.instance.registerFactory(
-      'npc',
-      _modelFactory,
-      _npcFactory
-    );
-
-    var assetFiles = [
-      'npcs-ldb2e.json',
-      'npcs-les-compagnons-de-khy.json',
-      'npcs-les-ecailles-de-brorne.json',
-      'npcs-les-enfants-de-heyra.json',
-      'npcs-les-forges-de-kezyr.json',
-      'npcs-les-foudres-de-kroryn.json',
-      'npcs-les-orphelins-de-szyl.json',
-      'npcs-les-versets-d-ozyr.json',
-      'npcs-les-voiles-de-nenya.json',
-    ];
-
-    for(var f in assetFiles) {
-      for (var model in await loadJSONAssetObjectList(f)) {
-        var instance = NonPlayerCharacter.fromJson(model);
-        NonPlayerCharacterSummary._defaultAssetLoaded(instance.summary);
-        _models[instance.id] = instance;
-      }
-    }
-  }
-
-  static Future<void> loadStoreAssets() async {
-    await NonPlayerCharacterSummary._loadStoreAssets();
   }
 
   static Future<void> saveLocalModel(NonPlayerCharacter npc) async {
     await NonPlayerCharacterStore().save(npc);
     await NonPlayerCharacterSummary._saveLocalModel(npc.summary);
-    _models[npc.id] = npc;
+    _cache.add(npc.id, npc);
   }
 
   static Future<void> deleteLocalModel(String id) async {
@@ -664,13 +613,45 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       await NonPlayerCharacterStore().delete(npc);
       await NonPlayerCharacterSummary._deleteLocalModel(id);
     }
-    _models.remove(id);
+    _cache.del(id);
+  }
+
+  static String _getId(String name) =>
+      sentenceToCamelCase(transliterateFrenchToAscii(name));
+
+  static Future<EncounterEntityModel?> _modelFactory(String id) async {
+    return get(id);
+  }
+
+  static Future<Iterable<EntityBase>> _npcFactory(String id, int count) async {
+    var m = await get(id);
+    if(m == null) return <EntityBase>[];
+    return m.instantiate(count: count);
+  }
+
+  static Future<void> init() async {
+    // ignore:unused_local_variable
+    var c = _cache;
+
+    EntityInstanceModelRetriever.instance.registerRetriever(
+      'npc',
+      NonPlayerCharacter.get,
+    );
+
+    EncounterEntityFactory.instance.registerFactory(
+        'npc',
+        _modelFactory,
+        _npcFactory
+    );
+
+    await NonPlayerCharacterSummary.init();
   }
 
   static void preImportFilter(Map<String, dynamic> json) {
+    json.remove('uuid');
     json.remove('source');
 
-    if(json.containsKey('unique') && json['unique'] && json.containsKey('equipment') && json['equipment'] is List) {
+    if(json.containsKey('unique') && !json['unique'] && json.containsKey('equipment') && json['equipment'] is List) {
       for(Map<String, dynamic> e in json['equipment']) {
         e.remove('uuid');
       }
@@ -685,7 +666,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
         Trying to find if this NPC shadows a default one
      */
     var defaultId = sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
-    if(NonPlayerCharacterSummary.exists(defaultId)) {
+    if(await NonPlayerCharacterSummary.exists(defaultId)) {
       throw(NonPlayerCharacterExistsException(id: defaultId));
     }
 
@@ -693,6 +674,8 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     await NonPlayerCharacter.saveLocalModel(model);
     return model;
   }
+
+  static final _cache = ResourceMemoryCache<NonPlayerCharacter>();
 
   factory NonPlayerCharacter.fromJson(Map<String, dynamic> json) {
     NonPlayerCharacter npc = _$NonPlayerCharacterFromJson(json);
@@ -706,9 +689,9 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
     saveNonExportableJson(j);
 
-    if(j.containsKey('unique') && j['unique'] && j.containsKey('equipment') && j['equipment'] is List) {
-      for(Map<String, dynamic> e in j['equipment']) {
-        e.remove('uuid');
+    if(j.containsKey('unique') && !j['unique'] && j.containsKey('equipment') && j['equipment'] is List) {
+      for(var e in j['equipment']) {
+        (e as Map<String, dynamic>).remove('uuid');
       }
     }
 

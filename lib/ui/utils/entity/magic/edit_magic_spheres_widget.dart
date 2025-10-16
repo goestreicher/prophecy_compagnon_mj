@@ -36,13 +36,13 @@ class EntityEditMagicSpheresWidget extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
                       child: MagicSphereEditWidget(
                         sphere: MagicSphere.values[j+i*3],
-                        value: entity.magicSphere(MagicSphere.values[j+i*3]),
-                        pool: entity.magicSpherePool(MagicSphere.values[j+i*3]),
+                        value: entity.magic.spheres.get(MagicSphere.values[j+i*3]),
+                        pool: entity.magic.pools.get(MagicSphere.values[j+i*3]),
                         onValueChanged: (int value) {
-                          entity.setMagicSphere(MagicSphere.values[j+i*3], value);
+                          entity.magic.spheres.set(MagicSphere.values[j+i*3], value);
                         },
                         onPoolChanged: (int value) {
-                          entity.setMagicSpherePool(MagicSphere.values[j+i*3], value);
+                          entity.magic.pools.set(MagicSphere.values[j+i*3], value);
                         },
                       ),
                     ),

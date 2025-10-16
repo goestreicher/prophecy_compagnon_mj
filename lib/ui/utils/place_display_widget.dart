@@ -19,16 +19,22 @@ import 'widget_group_container.dart';
 class PlaceDisplayWidget extends StatelessWidget {
   const PlaceDisplayWidget({
     super.key,
-    required this.place,
+    this.placeId,
     required this.onEdited,
     required this.onDelete,
     this.modifyIfSourceMatches,
   });
 
-  final Place place;
+  final String? placeId;
   final void Function(Place) onEdited;
   final void Function(Place) onDelete;
   final ObjectSource? modifyIfSourceMatches;
+
+  Future<Place?> load() {
+    return placeId == null
+        ? Future.sync(() => null)
+        : Place.byId(placeId!);
+  }
 
   Future<List<Map<String, dynamic>>> _export(Place p, PlaceExportConfig cfg) async {
     var ret = <Map<String, dynamic>>[];
@@ -39,17 +45,17 @@ class PlaceDisplayWidget extends StatelessWidget {
     }
     else if(p.map != null) {
       await p.map!.load();
-      if(place.map!.imageData != null) {
+      if(p.map!.imageData != null) {
         // Force inclusion of the resource by creating an ExportableBinaryData
         // and changing the source
-        var data = ExportableBinaryData(data: place.map!.imageData!);
+        var data = ExportableBinaryData(data: p.map!.imageData!);
         var map = PlaceMap(
           sourceType: PlaceMapSourceType.local,
           source: data.hash,
-          imageWidth: place.map!.imageWidth,
-          imageHeight: place.map!.imageHeight,
-          realWidth: place.map!.realWidth,
-          realHeight: place.map!.realHeight,
+          imageWidth: p.map!.imageWidth,
+          imageHeight: p.map!.imageHeight,
+          realWidth: p.map!.realWidth,
+          realHeight: p.map!.realHeight,
         );
         map.exportableBinaryData = data;
         j['map'] = map.toJson();
@@ -58,7 +64,7 @@ class PlaceDisplayWidget extends StatelessWidget {
     ret.add(j);
 
     if(cfg.recursive) {
-      for (var child in Place.withParent(p.id)) {
+      for (var child in await Place.withParent(p.id)) {
         ret.addAll(await _export(child, cfg));
       }
     }
@@ -68,288 +74,312 @@ class PlaceDisplayWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-    var paragraphSpacing = 16.0;
-    bool canEdit = modifyIfSourceMatches != null
-      ? place.source == modifyIfSourceMatches
-      : place.source == ObjectSource.local;
-
-    var actionButtons = <Widget>[];
-
-    if(place.location.type != ObjectLocationType.assets) {
-      actionButtons.add(IconButton(
-        onPressed: () async {
-          var config = await showDialog<PlaceExportConfig>(
-            context: context,
-            builder: (BuildContext context) => PlaceDownloadDialog(),
-          );
-          if(config == null) return;
-
-          var j = await _export(place, config);
-          var jStr = json.encode(j);
-          await FilePicker.platform.saveFile(
-            fileName: 'place_${place.id}.json',
-            bytes: utf8.encode(jStr),
-          );
-        },
-        icon: const Icon(Icons.download),
-      ));
+    if(placeId == null) {
+      return Text('Pas de lieu sélectionné');
     }
 
-    if(canEdit) {
-      actionButtons.addAll([
-        IconButton(
-          onPressed: () {
-            onDelete(place);
-          },
-          icon: const Icon(Icons.delete),
-        ),
-      ]);
-    }
+    return FutureBuilder(
+      future: load(),
+      builder: (BuildContext context, AsyncSnapshot<Place?> snapshot) {
+        if(snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator());
+        }
 
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.only(right: 16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 12.0,
-          children: [
-            Row(
+        if(snapshot.hasError) {
+          return ErrorWidget(snapshot.error!);
+        }
+
+        if(!snapshot.hasData || snapshot.data == null) {
+          return Center(
+            child: const Text('Faction non trouvée'),
+          );
+        }
+
+        var place = snapshot.data!;
+        var theme = Theme.of(context);
+        var paragraphSpacing = 16.0;
+        bool canEdit = modifyIfSourceMatches != null
+            ? place.source == modifyIfSourceMatches
+            : place.source == ObjectSource.local;
+
+        var actionButtons = <Widget>[];
+
+        if(place.location.type != ObjectLocationType.assets) {
+          actionButtons.add(IconButton(
+            onPressed: () async {
+              var config = await showDialog<PlaceExportConfig>(
+                context: context,
+                builder: (BuildContext context) => PlaceDownloadDialog(),
+              );
+              if(config == null) return;
+
+              var j = await _export(place, config);
+              var jStr = json.encode(j);
+              await FilePicker.platform.saveFile(
+                fileName: 'place_${place.id}.json',
+                bytes: utf8.encode(jStr),
+              );
+            },
+            icon: const Icon(Icons.download),
+          ));
+        }
+
+        if(canEdit) {
+          actionButtons.addAll([
+            IconButton(
+              onPressed: () {
+                onDelete(place);
+              },
+              icon: const Icon(Icons.delete),
+            ),
+          ]);
+        }
+
+        return SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 12.0,
               children: [
-                Text(
-                  place.name,
-                  style: theme.textTheme.headlineMedium,
+                Row(
+                  children: [
+                    Text(
+                      place.name,
+                      style: theme.textTheme.headlineMedium,
+                    ),
+                    Spacer(),
+                    ...actionButtons,
+                  ],
                 ),
-                Spacer(),
-                ...actionButtons,
+                WidgetGroupContainer(
+                  title: Row(
+                      children: [
+                        if(canEdit)
+                          Padding(
+                              padding: EdgeInsets.only(right: 4.0),
+                              child: MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: () async {
+                                    var child = await showDialog<Place>(
+                                      context: context,
+                                      barrierDismissible: false,
+                                      builder: (BuildContext context) => PlaceEditDialog(
+                                        parent: place.parentId!,
+                                        place: place
+                                      ),
+                                    );
+                                    if(child == null) return;
+                                    onEdited(place);
+                                  },
+                                  child: const Icon(Icons.edit, size: 16.0,),
+                                ),
+                              )
+                          ),
+                        Text(
+                          'Général',
+                          style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                        ),
+                      ]
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 16.0,
+                    children: [
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          spacing: paragraphSpacing,
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                text: 'Type : ',
+                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                children: [
+                                  TextSpan(
+                                    text: place.type.title,
+                                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
+                                  )
+                                ]
+                              ),
+                            ),
+                            if(place.government != null && place.government!.isNotEmpty)
+                              RichText(
+                                text: TextSpan(
+                                  text: 'Régime : ',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                  children: [
+                                    TextSpan(
+                                      text: place.government ?? 'aucun',
+                                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
+                                    )
+                                  ]
+                                ),
+                              ),
+                            if(place.leader != null && place.leader!.isNotEmpty)
+                              RichText(
+                                text: TextSpan(
+                                  text: 'Dirigeant : ',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                  children: [
+                                    TextSpan(
+                                      text: place.leader ?? 'aucun',
+                                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
+                                    )
+                                  ]
+                                ),
+                              ),
+                            if(place.motto != null && place.motto!.isNotEmpty)
+                              RichText(
+                                text: TextSpan(
+                                  text: 'Valeurs : ',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                  children: [
+                                    TextSpan(
+                                      text: place.motto ?? 'non renseigné',
+                                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
+                                    )
+                                  ]
+                                ),
+                              ),
+                            if(place.climate != null && place.climate!.isNotEmpty)
+                              RichText(
+                                text: TextSpan(
+                                  text: 'Climat : ',
+                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                                  children: [
+                                    TextSpan(
+                                      text: place.climate ?? 'non renseigné',
+                                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
+                                    )
+                                  ]
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                      if(place.map != null)
+                        ConstrainedBox(
+                          constraints: BoxConstraints(maxWidth: 200, maxHeight: 300),
+                          child: FutureBuilder(
+                            future: place.map!.load(),
+                            builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
+                              if(snapshot.connectionState == ConnectionState.waiting) {
+                                return CircularProgressIndicator();
+                              }
+
+                              if(snapshot.hasError) {
+                                return Center(child: Text(snapshot.error.toString()));
+                              }
+
+                              return MouseRegion(
+                                cursor: SystemMouseCursors.click,
+                                child: GestureDetector(
+                                  onTap: () async {
+                                    await showDialog(
+                                        context: context,
+                                        barrierColor: Colors.black87,
+                                        builder: (BuildContext context) {
+                                          return Dialog(
+                                              insetPadding: EdgeInsets.zero,
+                                              child: InteractiveViewer(
+                                                  maxScale: 4.0,
+                                                  child: Image.memory(place.map!.image!)
+                                              )
+                                          );
+                                        }
+                                    );
+                                  },
+                                  child: Image.memory(
+                                    place.map!.image!,
+                                    fit: BoxFit.contain,
+                                  ),
+                                ),
+                              );
+                            }
+                          ),
+                        ),
+                    ],
+                  ),
+                ),
+                _PlaceDescriptionItemDisplayWidget(
+                  item: 'Description',
+                  value: place.description.general,
+                  canEdit: canEdit,
+                  onChanged: (String value) {
+                    place.description.general = value;
+                    onEdited(place);
+                  },
+                ),
+                _PlaceDescriptionItemDisplayWidget(
+                  item: 'Histoire',
+                  value: place.description.history,
+                  canEdit: canEdit,
+                  onChanged: (String value) {
+                    place.description.history = value;
+                    onEdited(place);
+                  },
+                ),
+                _PlaceDescriptionItemDisplayWidget(
+                  item: 'Mentalité et société',
+                  value: place.description.society,
+                  canEdit: canEdit,
+                  onChanged: (String value) {
+                    place.description.society = value;
+                    onEdited(place);
+                  },
+                ),
+                _PlaceDescriptionItemDisplayWidget(
+                  item: 'Ethnologie',
+                  value: place.description.ethnology,
+                  canEdit: canEdit,
+                  onChanged: (String value) {
+                    place.description.ethnology = value;
+                    onEdited(place);
+                  },
+                ),
+                _PlaceDescriptionItemDisplayWidget(
+                  item: 'Politique',
+                  value: place.description.politics,
+                  canEdit: canEdit,
+                  onChanged: (String value) {
+                    place.description.politics = value;
+                    onEdited(place);
+                  },
+                ),
+                _PlaceDescriptionItemDisplayWidget(
+                  item: 'Juridique',
+                  value: place.description.judicial,
+                  canEdit: canEdit,
+                  onChanged: (String value) {
+                    place.description.judicial = value;
+                    onEdited(place);
+                  },
+                ),
+                _PlaceDescriptionItemDisplayWidget(
+                  item: 'Économie',
+                  value: place.description.economy,
+                  canEdit: canEdit,
+                  onChanged: (String value) {
+                    place.description.economy = value;
+                    onEdited(place);
+                  },
+                ),
+                _PlaceDescriptionItemDisplayWidget(
+                  item: 'Militaire',
+                  value: place.description.military,
+                  canEdit: canEdit,
+                  onChanged: (String value) {
+                    place.description.military = value;
+                    onEdited(place);
+                  },
+                ),
               ],
             ),
-            WidgetGroupContainer(
-              title: Row(
-                children: [
-                  if(canEdit)
-                    Padding(
-                      padding: EdgeInsets.only(right: 4.0),
-                      child: MouseRegion(
-                        cursor: SystemMouseCursors.click,
-                        child: GestureDetector(
-                          onTap: () async {
-                            var child = await showDialog<Place>(
-                              context: context,
-                              barrierDismissible: false,
-                              builder: (BuildContext context) => PlaceEditDialog(
-                                parent: place.parentId!,
-                                place: place
-                              ),
-                            );
-                            if(child == null) return;
-                            onEdited(place);
-                          },
-                          child: const Icon(Icons.edit, size: 16.0,),
-                        ),
-                      )
-                    ),
-                  Text(
-                    'Général',
-                    style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                  ),
-                ]
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 16.0,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      spacing: paragraphSpacing,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            text: 'Type : ',
-                            style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                            children: [
-                              TextSpan(
-                                text: place.type.title,
-                                style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                              )
-                            ]
-                          ),
-                        ),
-                        if(place.government != null && place.government!.isNotEmpty)
-                          RichText(
-                            text: TextSpan(
-                              text: 'Régime : ',
-                              style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                              children: [
-                                TextSpan(
-                                  text: place.government ?? 'aucun',
-                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                                )
-                              ]
-                            ),
-                          ),
-                        if(place.leader != null && place.leader!.isNotEmpty)
-                          RichText(
-                            text: TextSpan(
-                              text: 'Dirigeant : ',
-                              style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                              children: [
-                                TextSpan(
-                                  text: place.leader ?? 'aucun',
-                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                                )
-                              ]
-                            ),
-                          ),
-                        if(place.motto != null && place.motto!.isNotEmpty)
-                          RichText(
-                            text: TextSpan(
-                              text: 'Valeurs : ',
-                              style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                              children: [
-                                TextSpan(
-                                  text: place.motto ?? 'non renseigné',
-                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                                )
-                              ]
-                            ),
-                          ),
-                        if(place.climate != null && place.climate!.isNotEmpty)
-                          RichText(
-                            text: TextSpan(
-                              text: 'Climat : ',
-                              style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                              children: [
-                                TextSpan(
-                                  text: place.climate ?? 'non renseigné',
-                                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                                )
-                              ]
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
-                  if(place.map != null)
-                    ConstrainedBox(
-                      constraints: BoxConstraints(maxWidth: 200, maxHeight: 300),
-                      child: FutureBuilder(
-                        future: place.map!.load(),
-                        builder: (BuildContext context, AsyncSnapshot<void> snapshot) {
-                          if(snapshot.connectionState == ConnectionState.waiting) {
-                            return CircularProgressIndicator();
-                          }
-
-                          if(snapshot.hasError) {
-                            return Center(child: Text(snapshot.error.toString()));
-                          }
-
-                          return MouseRegion(
-                            cursor: SystemMouseCursors.click,
-                            child: GestureDetector(
-                              onTap: () async {
-                                await showDialog(
-                                  context: context,
-                                  barrierColor: Colors.black87,
-                                  builder: (BuildContext context) {
-                                    return Dialog(
-                                      insetPadding: EdgeInsets.zero,
-                                      child: InteractiveViewer(
-                                        maxScale: 4.0,
-                                        child: Image.memory(place.map!.image!)
-                                      )
-                                    );
-                                  }
-                                );
-                              },
-                              child: Image.memory(
-                                place.map!.image!,
-                                fit: BoxFit.contain,
-                              ),
-                            ),
-                          );
-                        }
-                      ),
-                    ),
-                ],
-              ),
-            ),
-            _PlaceDescriptionItemDisplayWidget(
-              item: 'Description',
-              value: place.description.general,
-              canEdit: canEdit,
-              onChanged: (String value) {
-                place.description.general = value;
-                onEdited(place);
-              },
-            ),
-            _PlaceDescriptionItemDisplayWidget(
-              item: 'Histoire',
-              value: place.description.history,
-              canEdit: canEdit,
-              onChanged: (String value) {
-                place.description.history = value;
-                onEdited(place);
-              },
-            ),
-            _PlaceDescriptionItemDisplayWidget(
-              item: 'Mentalité et société',
-              value: place.description.society,
-              canEdit: canEdit,
-              onChanged: (String value) {
-                place.description.society = value;
-                onEdited(place);
-              },
-            ),
-            _PlaceDescriptionItemDisplayWidget(
-              item: 'Ethnologie',
-              value: place.description.ethnology,
-              canEdit: canEdit,
-              onChanged: (String value) {
-                place.description.ethnology = value;
-                onEdited(place);
-              },
-            ),
-            _PlaceDescriptionItemDisplayWidget(
-              item: 'Politique',
-              value: place.description.politics,
-              canEdit: canEdit,
-              onChanged: (String value) {
-                place.description.politics = value;
-                onEdited(place);
-              },
-            ),
-            _PlaceDescriptionItemDisplayWidget(
-              item: 'Juridique',
-              value: place.description.judicial,
-              canEdit: canEdit,
-              onChanged: (String value) {
-                place.description.judicial = value;
-                onEdited(place);
-              },
-            ),
-            _PlaceDescriptionItemDisplayWidget(
-              item: 'Économie',
-              value: place.description.economy,
-              canEdit: canEdit,
-              onChanged: (String value) {
-                place.description.economy = value;
-                onEdited(place);
-              },
-            ),
-            _PlaceDescriptionItemDisplayWidget(
-              item: 'Militaire',
-              value: place.description.military,
-              canEdit: canEdit,
-              onChanged: (String value) {
-                place.description.military = value;
-                onEdited(place);
-              },
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      }
     );
   }
 }

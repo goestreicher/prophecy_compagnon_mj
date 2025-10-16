@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../classes/dice.dart';
-import '../../classes/character/base.dart';
-import '../../classes/character/skill.dart';
+import '../../classes/entity/attributes.dart';
+import '../../classes/entity/skill.dart';
 
 class SkillThrowDialog extends StatefulWidget {
   const SkillThrowDialog({
@@ -45,7 +45,7 @@ class _SkillThrowDialogState extends State<SkillThrowDialog> {
       ]);
     }
 
-    var description = '${widget.attribute.title} + ${widget.skill.title}';
+    var description = '${widget.attribute.title} + ${widget.skill.name}';
     if(widget.specialization != null) {
       description += ' (${widget.specialization})';
     }

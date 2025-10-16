@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 
 import '../../../classes/armor.dart';
 import '../../../classes/caste/base.dart';
-import '../../../classes/character/base.dart';
-import '../../../classes/character/skill.dart';
+import '../../../classes/draconic_link.dart';
+import '../../../classes/entity/attributes.dart';
+import '../../../classes/entity/skill_family.dart';
 import '../../../classes/equipment.dart';
 import '../../../classes/magic.dart';
 import '../../../classes/non_player_character.dart';
@@ -162,20 +163,20 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
         const skillGroupWidth = 280.0;
 
         var hasPhysicalSkills = SkillFamily.values.any(
-            (SkillFamily f) => (f.defaultAttribute == Attribute.physique && npc.skillsForFamily(f).isNotEmpty)
-          );
+          (SkillFamily f) => (f.defaultAttribute == Attribute.physique && npc.skills.forFamily(f).isNotEmpty)
+        );
         var hasManualSkills = SkillFamily.values.any(
-            (SkillFamily f) => (f.defaultAttribute == Attribute.manuel && npc.skillsForFamily(f).isNotEmpty)
+          (SkillFamily f) => (f.defaultAttribute == Attribute.manuel && npc.skills.forFamily(f).isNotEmpty)
         );
         var hasMentalSkills = SkillFamily.values.any(
-            (SkillFamily f) => (f.defaultAttribute == Attribute.mental && npc.skillsForFamily(f).isNotEmpty)
+          (SkillFamily f) => (f.defaultAttribute == Attribute.mental && npc.skills.forFamily(f).isNotEmpty)
         );
         var hasSocialSkills = SkillFamily.values.any(
-            (SkillFamily f) => (f.defaultAttribute == Attribute.social && npc.skillsForFamily(f).isNotEmpty)
+          (SkillFamily f) => (f.defaultAttribute == Attribute.social && npc.skills.forFamily(f).isNotEmpty)
         );
 
         var isMagicUser = MagicSkill.values.any(
-            (MagicSkill s) => npc.magicSkill(s) > 0
+            (MagicSkill s) => npc.magic.skills.get(s) > 0
           );
 
         var hasWeapon = npc.equipment.any(
@@ -262,7 +263,7 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                           Row(
                             spacing: 16.0,
                             children: [
-                              EntityDisplayInjuriesWidget(injuries: npc.injuries),
+                              EntityDisplayInjuriesWidget(injuries: npc.injuries.manager),
                               Expanded(
                                 child: Center(
                                   child: TendenciesEditWidget(
@@ -377,7 +378,7 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                   ),
                 ],
               ),
-            if(npc.caste != Caste.sansCaste)
+            if(npc.caste.caste != Caste.sansCaste)
               ExpansionTile(
                 title: const Text('Caste'),
                 controlAffinity: ListTileControlAffinity.leading,
@@ -387,7 +388,7 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                   ),
                 ],
               ),
-            if(npc.draconicLink != null)
+            if(npc.draconicLink.progress != DraconicLinkProgress.aucunLien)
               ExpansionTile(
                 title: const Text('Lien'),
                 controlAffinity: ListTileControlAffinity.leading,

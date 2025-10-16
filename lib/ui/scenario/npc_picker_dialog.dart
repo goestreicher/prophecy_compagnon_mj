@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/non_player_character.dart';
+import '../../classes/npc_category.dart';
 import '../../classes/object_source.dart';
 
 class NPCPickerDialog extends StatefulWidget {
@@ -22,27 +23,31 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
   List<NPCSubCategory> subcategories = <NPCSubCategory>[];
   NPCSubCategory? selectedSubCategory;
   final TextEditingController npcController = TextEditingController();
-  List<NonPlayerCharacterSummary> npcs = <NonPlayerCharacterSummary>[];
-  String? selectedNpcId;
 
-  void _applyCurrentFilter() {
-    if(selectedSource != null) {
-      npcs = NonPlayerCharacterSummary.forSource(selectedSource!, selectedCategory, selectedSubCategory);
-    }
-    else if(selectedSourceType != null) {
-      npcs = NonPlayerCharacterSummary.forSourceType(selectedSourceType!, selectedCategory, selectedSubCategory);
-    }
-    else if(selectedCategory != null) {
-      npcs = NonPlayerCharacterSummary.forCategory(selectedCategory!, selectedSubCategory);
-    }
-    else {
-      npcs = <NonPlayerCharacterSummary>[];
-    }
-  }
+  late Future<Iterable<NonPlayerCharacterSummary>> npcsFuture;
+  String? selectedNpcId;
 
   @override
   void initState() {
     super.initState();
+    updateNpcsFuture();
+  }
+
+  void updateNpcsFuture() {
+    if(selectedSource != null) {
+      npcsFuture = NonPlayerCharacterSummary.forSource(selectedSource!, selectedCategory, selectedSubCategory);
+    }
+    else if(selectedSourceType != null) {
+      npcsFuture = NonPlayerCharacterSummary.forSourceType(selectedSourceType!, selectedCategory, selectedSubCategory);
+    }
+    else if(selectedCategory != null) {
+      npcsFuture = NonPlayerCharacterSummary.forCategory(selectedCategory!, selectedSubCategory);
+    }
+    else {
+      npcsFuture = Future<Iterable<NonPlayerCharacterSummary>>.sync(
+        () => <NonPlayerCharacterSummary>[]
+      );
+    }
   }
 
   @override
@@ -67,7 +72,7 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
                   selectedSourceType = type;
                   sourceController.clear();
                   selectedSource = null;
-                  _applyCurrentFilter();
+                  updateNpcsFuture();
                   npcController.text = '';
                   selectedNpcId = null;
                 });
@@ -87,7 +92,7 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
               onSelected: (ObjectSource? source) {
                 setState(() {
                   selectedSource = source;
-                  _applyCurrentFilter();
+                  updateNpcsFuture();
                   npcController.text = '';
                   selectedNpcId = null;
                 });
@@ -116,7 +121,7 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
                   subcategories = NPCSubCategory.subCategoriesForCategory(c);
                   subCategoryController.text = '';
                   selectedSubCategory = null;
-                  _applyCurrentFilter();
+                  updateNpcsFuture();
                   npcController.text = '';
                   selectedNpcId = null;
                 });
@@ -138,27 +143,48 @@ class _NPCPickerDialogState extends State<NPCPickerDialog> {
                 if(s == null) return;
                 setState(() {
                   selectedSubCategory = s;
-                  _applyCurrentFilter();
+                  updateNpcsFuture();
                   npcController.text = '';
                   selectedNpcId = null;
                 });
               },
             ),
             SizedBox(height: spacing),
-            DropdownMenu(
-              controller: npcController,
-              requestFocusOnTap: true,
-              label: const Text('Personnage'),
-              expandedInsets: EdgeInsets.zero,
-              dropdownMenuEntries: npcs
-                .map((NonPlayerCharacterSummary npc) => DropdownMenuEntry(value: npc, label: npc.name))
-                .toList(),
-              onSelected: (NonPlayerCharacterSummary? npc) {
-                if(npc == null) return;
-                setState(() {
-                  selectedNpcId = npc.id;
-                });
-              },
+            FutureBuilder(
+              future: npcsFuture,
+              builder: (BuildContext context, AsyncSnapshot<Iterable<NonPlayerCharacterSummary>> snapshot) {
+                Widget? trailing;
+
+                if(snapshot.connectionState == ConnectionState.waiting) {
+                  trailing = CircularProgressIndicator();
+                }
+
+                if(snapshot.hasError) {
+                  trailing = Icon(Icons.warning);
+                }
+
+                var npcs = <NonPlayerCharacterSummary>[];
+                if(snapshot.hasData && snapshot.data != null) {
+                  npcs.addAll(snapshot.data!);
+                }
+
+                return DropdownMenu(
+                  controller: npcController,
+                  requestFocusOnTap: true,
+                  label: const Text('Personnage'),
+                  expandedInsets: EdgeInsets.zero,
+                  trailingIcon: trailing,
+                  dropdownMenuEntries: npcs
+                    .map((NonPlayerCharacterSummary npc) => DropdownMenuEntry(value: npc, label: npc.name))
+                    .toList(),
+                  onSelected: (NonPlayerCharacterSummary? npc) {
+                    if(npc == null) return;
+                    setState(() {
+                      selectedNpcId = npc.id;
+                    });
+                  },
+                );
+              }
             ),
           ],
         )

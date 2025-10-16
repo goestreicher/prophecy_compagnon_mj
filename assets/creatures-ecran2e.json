@@ -31,31 +31,67 @@
     "natural_armor": 3,
     "natural_armor_description": "fourrure hérissée",
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 25,
-          "capacity": 3
-        },
-        {
-          "type": "death",
-          "start": 25,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "escalade",
-        "value": 12
-      },
-      {
-        "skill": "discretion",
-        "value": 14
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 25,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 25,
+            "end": -1,
+            "capacity": 1
+          }
+        ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "escalade",
+              "value": 12
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 14
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Morsure",
@@ -82,7 +118,8 @@
         "name": "Pacifisme",
         "description": "Le drillon ne nécessite qu'un jet d'Équitation à 10 pour être monté en combat, mais n'attaque que sur commande (Social + Équitation, diff. 20) ou pour se défendre si elle est acculée."
       }
-    ]
+    ],
+    "equipment": []
   },
   {
     "name": "Vulture de Sinise",
@@ -115,39 +152,75 @@
     "initiative": 5,
     "natural_armor": 0,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 20,
-          "capacity": 2
-        },
-        {
-          "type": "death",
-          "start": 20,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "esquive",
-        "value": 5
-      },
-      {
-        "skill": "athletisme",
-        "value": 0,
-        "specializations": [
+      "manager": {
+        "levels": [
           {
-            "name": "creature:vultureDeSinise:specialized:misc:athletisme:voler",
-            "title": "Voler",
-            "value": 7,
-            "reserved": true
+            "type": "injured",
+            "start": 0,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 20,
+            "end": -1,
+            "capacity": 1
           }
         ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "value": 7,
+                  "reserved": true,
+                  "reservedPrefix": "creature:vultureDeSinise:specialized:misc:"
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 5
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
     "natural_weapons": [
       {
         "name": "Bec",
@@ -189,6 +262,7 @@
         "name": "Piqué",
         "description": "Cette attaque se résout comme une charge avec deux actions d'élan."
       }
-    ]
+    ],
+    "equipment": []
   }
 ]

@@ -4,10 +4,12 @@ import 'package:flutter/services.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
+import 'entity/abilities.dart';
+import 'entity/skill.dart';
+import 'entity/specialized_skill.dart';
 import 'equipment.dart';
 import 'entity_base.dart';
 import 'character/base.dart';
-import 'character/skill.dart';
 import '../text_utils.dart';
 
 class WeaponModel {
@@ -88,7 +90,7 @@ class WeaponModel {
     for(var model in assets) {
       var id = sentenceToCamelCase(transliterateFrenchToAscii(model['name']));
       var skill = Skill.values.byName(model['skill']);
-      var sp = SpecializedSkill.create('${skill.name}:$id', skill, title: model['name']);
+      var sp = SpecializedSkill.create(parent: skill, name: model['name']);
 
       var reqs = <(Ability,int)>[];
       for(var a in model['requirements'].keys) {
@@ -165,7 +167,9 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
   List<(Ability, int)> equipRequirements() => model.requirements;
 
   @override
-  void equiped(SupportsEquipableItem owner) {
+  void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
+    super.equiped(owner, target);
+
     if(owner is EntityBase) {
       for (var range in model.initiative.keys) {
         owner.addDamageProvider(range, this);
@@ -175,6 +179,8 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
 
   @override
   void unequiped(SupportsEquipableItem owner) {
+    super.unequiped(owner);
+
     if(owner is EntityBase) {
       owner.removeDamageProvider(this);
     }
@@ -182,7 +188,7 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
 
   @override
   int damage(EntityBase owner, {List<int>? throws })
-    => model.damage.calculate(owner.ability(Ability.force), throws: throws).toInt();
+    => model.damage.calculate(owner.abilities.force, throws: throws).toInt();
 
   @override
   int initiativeForRange(WeaponRange range) {

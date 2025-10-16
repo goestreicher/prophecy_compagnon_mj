@@ -1,6 +1,5 @@
 [
   {
-    "equiped": [],
     "uuid": "8a50e0ba-807f-449d-94af-2e8762447411",
     "name": "Eyrok",
     "description": "Ce solide bovidé au cuir parsemé de fourrure a la machoire prolongée par deux courtes défenses. Docile, particulièrement calme, il constitue une excellente monture et s'avère très efficace en combat, où il cherchera toujours à protéger son maître contre les prédateurs. De plus, son métabolisme particulier lui permet de récupérer naturellement et de cicatriser beaucoup plus rapidement qu’un être humain.\n\n",
@@ -27,20 +26,53 @@
       "manuel": 0,
       "social": 0
     },
-    "skills": [
-      {
-        "skill": "athletisme",
-        "value": 1,
-        "specializations": [
-          {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 6,
-            "reserved": false
-          }
-        ]
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 6,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
       }
-    ],
+    },
     "equipment": [],
     "unique": false,
     "category": "animauxSauvages",
@@ -92,25 +124,26 @@
       }
     ],
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 50,
-          "capacity": 3
-        },
-        {
-          "type": "death",
-          "start": 50,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 50,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 50,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     }
   },
   {
-    "equiped": [],
     "uuid": "b01e5f5d-b5de-4d2a-bfda-8194f451c24f",
     "name": "Rat gris",
     "description": "Légèrement plus fins que la moyenne, ces rats se distinguent surtout par leur fourrure grise et soyeuse, que la lumière teinte de reflets argentés à la tombée de la nuit. Incapables de survivre hors des cités humaines, ces rongeurs à l'intelligence stupéfiante communiquent grâce à une empathie sélective qu’ils peuvent déclencher entre eux, mais aussi avec d’autres espèces. Leur vivacité et leur don pour la survie urbaine en ont fait des compagnons indispensables pour tout commergant ou Élu de Khy. De plus, les rats gris sont très sensibles aux Tendances et peuvent détecter la présence d’une créature où d'une manifestation particulièrement “teintée” dans un rayon de plusieurs centaines de mètres.\n\n",
@@ -137,48 +170,79 @@
       "manuel": 1,
       "social": 4
     },
-    "skills": [
-      {
-        "skill": "discretion",
-        "value": 8
-      },
-      {
-        "skill": "orientation",
-        "value": 1,
-        "specializations": [
-          {
-            "name": "orientation:cite",
-            "title": "Cité",
-            "value": 8,
-            "reserved": false
-          }
-        ]
-      },
-      {
-        "skill": "pister",
-        "value": 1,
-        "specializations": [
-          {
-            "name": "pister:cite",
-            "title": "Cité",
-            "value": 5,
-            "reserved": false
-          }
-        ]
-      },
-      {
-        "skill": "psychologie",
-        "value": 1,
-        "specializations": [
-          {
-            "name": "psychologie:empathieTendances",
-            "title": "Empathie (Tendances)",
-            "value": 5,
-            "reserved": false
-          }
-        ]
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "orientation",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Cité",
+                  "value": 8,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 8
+            },
+            {
+              "skill": "pister",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Cité",
+                  "value": 5,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "psychologie",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Empathie (Tendances)",
+                  "value": 5,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
       }
-    ],
+    },
     "equipment": [],
     "unique": false,
     "category": "animauxSauvages",
@@ -230,25 +294,26 @@
       }
     ],
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 10,
-          "capacity": 1
-        },
-        {
-          "type": "death",
-          "start": 10,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 10,
+            "capacity": 1
+          },
+          {
+            "type": "death",
+            "start": 10,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     }
   },
   {
-    "equiped": [],
     "uuid": "3d240e37-af17-40d6-a7d8-2ea8bd8298ff",
     "name": "Hurleur",
     "description": "Ce canidé au pelage ocre possède des yeux tristes et des oreilles tombantes qui lui donnent un petit air malherreux, mais le hurleur est un excellent chien de garde et un pisteur hors pair. La particularité de ce familier, très prisé des aventuriers et des combatiants, est le cri très caractéristique qu’il pousse en cas de danger ou d’intrusion. À mi-chemin entre le grognement typiquement canin et les pleurs d'un enfant, ce cri est perceptible à plusieurs centaines de mètres à la ronde. Une fois apprivoisés, les lhurleurs restent fidèles à leur maître jusqu’à la mort.\n\n",
@@ -275,28 +340,61 @@
       "manuel": 0,
       "social": 1
     },
-    "skills": [
-      {
-        "skill": "athletisme",
-        "value": 1,
-        "specializations": [
-          {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 5,
-            "reserved": false
-          }
-        ]
-      },
-      {
-        "skill": "esquive",
-        "value": 6
-      },
-      {
-        "skill": "pister",
-        "value": 7
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 5,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 6
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "pister",
+              "value": 7
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
       }
-    ],
+    },
     "equipment": [],
     "unique": false,
     "category": "animauxSauvages",
@@ -333,25 +431,26 @@
       }
     ],
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 25,
-          "capacity": 2
-        },
-        {
-          "type": "death",
-          "start": 25,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 25,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 25,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     }
   },
   {
-    "equiped": [],
     "uuid": "5c9d74ab-6761-4e54-a339-ddd1a359815d",
     "name": "Chevalin",
     "description": "Bien que semblables à leurs ancêtres et cousins, les chevalins sont plus petits et plus légers que toutes les autres variétés de chevaux. Leur gentillesse et leur petit gabarit les prédisposent tout naturellement aux enfants, aux femmes et aux citadins - et principalement aux érudits, qui les considèrent comme une marque de noblesse.\n\n",
@@ -378,24 +477,57 @@
       "manuel": 0,
       "social": 1
     },
-    "skills": [
-      {
-        "skill": "acrobatie",
-        "value": 4
-      },
-      {
-        "skill": "athletisme",
-        "value": 1,
-        "specializations": [
-          {
-            "name": "athletisme:course",
-            "title": "Course",
-            "value": 4,
-            "reserved": false
-          }
-        ]
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 4
+            },
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 4,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
       }
-    ],
+    },
     "equipment": [],
     "unique": false,
     "category": "animauxSauvages",
@@ -447,25 +579,26 @@
       }
     ],
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 25,
-          "capacity": 2
-        },
-        {
-          "type": "death",
-          "start": 25,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 25,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 25,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     }
   },
   {
-    "equiped": [],
     "uuid": "a8f55320-bb2f-414a-810b-9634a0300281",
     "name": "Zokoï",
     "description": "Cette étonnante petite créature humanoïde a la mauvaise réputation d’être douée de malice et d’un goût très prononcé pour le vol. Son comportement agité révèle une véritable obsession pour les objets de valeur, la confection de pièges et les tours pendables - tels qu’enduire les fourreaux d’eau salée pour faire rouiller les lames, nouer les chausses pendant le sommeil, limer les rouages d’une arbalète, etc.\n\nIl ne parle que par grognements, mais la communication par gestes et par symboles s'avère possible lorsque le zokoï est relativement calme. En règle générale, les possesseurs de telles créatures sont extrêmement mal vus au sein des cités marchandes.\n\n",
@@ -492,28 +625,62 @@
       "manuel": 5,
       "social": 2
     },
-    "skills": [
-      {
-        "skill": "discretion",
-        "value": 6
-      },
-      {
-        "skill": "esquive",
-        "value": 7
-      },
-      {
-        "skill": "mecanismes",
-        "value": 1
-      },
-      {
-        "skill": "faireLesPoches",
-        "value": 7
-      },
-      {
-        "skill": "langueDesSignes",
-        "value": 8
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "langueDesSignes",
+              "value": 8
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 6
+            },
+            {
+              "skill": "mecanismes",
+              "value": 1
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "faireLesPoches",
+              "value": 7
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
       }
-    ],
+    },
     "equipment": [],
     "unique": false,
     "category": "animauxSauvages",
@@ -534,21 +701,23 @@
       }
     ],
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 20,
-          "capacity": 2
-        },
-        {
-          "type": "death",
-          "start": 20,
-          "end": -1,
-          "capacity": 1
-        }
-      ],
-      "injuries": {}
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 20,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
     }
   }
 ]

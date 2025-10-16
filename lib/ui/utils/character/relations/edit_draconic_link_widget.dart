@@ -6,49 +6,147 @@ import '../../../../classes/magic.dart';
 import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
 
-class CharacterEditDraconicLinkWidget extends StatefulWidget {
+class CharacterEditDraconicLinkWidget extends StatelessWidget {
   const CharacterEditDraconicLinkWidget({ super.key, required this.character });
 
   final HumanCharacter character;
 
   @override
-  State<CharacterEditDraconicLinkWidget> createState() => _CharacterEditDraconicLinkWidgetState();
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    return WidgetGroupContainer(
+      title: Text(
+        'Lien',
+        style: theme.textTheme.bodySmall!.copyWith(
+          color: Colors.black87,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      child: Column(
+        spacing: 12.0,
+        children: [
+          ValueListenableBuilder(
+            valueListenable: character.draconicLink.progressNotifier,
+            builder: (BuildContext context, DraconicLinkProgress progress, _) {
+              return DropdownMenu(
+                requestFocusOnTap: true,
+                expandedInsets: EdgeInsets.zero,
+                textStyle: theme.textTheme.bodySmall,
+                label: const Text('Progression'),
+                inputDecorationTheme: const InputDecorationTheme(
+                  border: OutlineInputBorder(),
+                ),
+                initialSelection: progress,
+                onSelected: (DraconicLinkProgress? p) {
+                  if(p == null) return;
+                  character.draconicLink.progress = p;
+                },
+                leadingIcon: InkWell(
+                  onTap: progress == DraconicLinkProgress.aucunLien ? null : () {
+                    character.draconicLink.progress = DraconicLinkProgress.aucunLien;
+                  },
+                  child: Opacity(
+                    opacity: progress == DraconicLinkProgress.aucunLien ? 0.4 : 1.0,
+                    child: Icon(
+                      Icons.cancel,
+                      size: 16.0,
+                      color: progress == DraconicLinkProgress.aucunLien
+                        ? theme.disabledColor
+                        : theme.iconTheme.color,
+                    ),
+                  )
+                ),
+                dropdownMenuEntries: DraconicLinkProgress.values
+                  .map((DraconicLinkProgress p) => DropdownMenuEntry(value: p, label: p.title))
+                  .toList(),
+              );
+            }
+          ),
+          ValueListenableBuilder(
+            valueListenable: character.draconicLink.progressNotifier,
+            builder: (BuildContext context, DraconicLinkProgress progress, _) {
+              return TextFormField(
+                enabled: progress != DraconicLinkProgress.aucunLien,
+                initialValue: character.draconicLink.dragon,
+                decoration: const InputDecoration(
+                  label: Text('Dragon'),
+                  border: OutlineInputBorder(),
+                ),
+                style: theme.textTheme.bodySmall,
+                validator: (String? value) {
+                  if(progress == DraconicLinkProgress.aucunLien) return null;
+                  if(value == null || value.isEmpty) return 'Valeur obligatoire';
+                  return null;
+                },
+                autovalidateMode: AutovalidateMode.disabled,
+                onChanged: (String? value) {
+                  if(value == null || value.isEmpty) return;
+                  character.draconicLink.dragon = value;
+                },
+              );
+            }
+          ),
+          ValueListenableBuilder(
+            valueListenable: character.draconicLink.progressNotifier,
+            builder: (BuildContext context, DraconicLinkProgress progress, _) {
+              return DropdownMenu(
+                enabled: progress != DraconicLinkProgress.aucunLien,
+                requestFocusOnTap: true,
+                expandedInsets: EdgeInsets.zero,
+                textStyle: theme.textTheme.bodySmall,
+                label: const Text('Sphère'),
+                inputDecorationTheme: const InputDecorationTheme(
+                  border: OutlineInputBorder(),
+                ),
+                initialSelection: character.draconicLink.sphere,
+                onSelected: (MagicSphere? sphere) {
+                  if(sphere == null) return;
+                  character.draconicLink.sphere = sphere;
+                },
+                dropdownMenuEntries: MagicSphere.values
+                  .map((MagicSphere s) => DropdownMenuEntry(value: s, label: s.title))
+                  .toList(),
+              );
+            }
+          ),
+          WidgetGroupContainer(
+            title: Text(
+              'Faveurs',
+              style: theme.textTheme.bodyMedium!.copyWith(
+                color: Colors.black87,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            child: ValueListenableBuilder(
+              valueListenable: character.draconicLink.progressNotifier,
+              builder: (BuildContext context, _, _) {
+                return ValueListenableBuilder(
+                  valueListenable: character.draconicLink.sphereNotifier,
+                  builder: (BuildContext context, _, _) {
+                    return _FavorsWidget(character: character);
+                  },
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
-class _CharacterEditDraconicLinkWidgetState extends State<CharacterEditDraconicLinkWidget> {
-  final TextEditingController dragonController = TextEditingController();
+class _FavorsWidget extends StatelessWidget {
+  const _FavorsWidget({ required this.character });
 
-  late DraconicLinkProgress currentProgress;
-  late String currentDragon;
-  late MagicSphere currentSphere;
-
-  @override
-  void initState() {
-    super.initState();
-    refreshFromCharacter();
-  }
-
-  void refreshFromCharacter() {
-    if(widget.character.draconicLink != null) {
-      currentProgress = widget.character.draconicLink!.progress;
-      currentDragon = widget.character.draconicLink!.dragon;
-      currentSphere = widget.character.draconicLink!.sphere;
-    }
-    else {
-      currentProgress = DraconicLinkProgress.aucunLien;
-      currentDragon = '';
-      currentSphere = MagicSphere.pierre;
-    }
-
-    dragonController.text = currentDragon;
-  }
+  final HumanCharacter character;
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-
     var favorWidgets = <Widget>[];
-    for(var favor in DraconicLink.favors(progress: currentProgress, sphere: currentSphere)) {
+
+    for(var favor in DraconicLink.favors(progress: character.draconicLink.progress, sphere: character.draconicLink.sphere)) {
       favorWidgets.add(
         _FavorWidget(title: favor.title, description: favor.description),
       );
@@ -67,124 +165,9 @@ class _CharacterEditDraconicLinkWidgetState extends State<CharacterEditDraconicL
       );
     }
 
-    return WidgetGroupContainer(
-      title: Text(
-        'Lien',
-        style: theme.textTheme.bodySmall!.copyWith(
-          color: Colors.black87,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      child: Column(
-        spacing: 12.0,
-        children: [
-          DropdownMenu(
-            requestFocusOnTap: true,
-            expandedInsets: EdgeInsets.zero,
-            textStyle: theme.textTheme.bodySmall,
-            label: const Text('Progression'),
-            inputDecorationTheme: const InputDecorationTheme(
-              border: OutlineInputBorder(),
-            ),
-            initialSelection: currentProgress,
-            onSelected: (DraconicLinkProgress? progress) {
-              if(progress == null) return;
-
-              if(progress == DraconicLinkProgress.aucunLien) {
-                setState(() {
-                  widget.character.draconicLink = null;
-                  refreshFromCharacter();
-                });
-              }
-              else {
-                setState(() {
-                  currentProgress = progress;
-                });
-              }
-            },
-            leadingIcon: InkWell(
-              onTap: currentProgress == DraconicLinkProgress.aucunLien ? null : () {
-                setState(() {
-                  widget.character.draconicLink = null;
-                  refreshFromCharacter();
-                });
-              },
-              child: Opacity(
-                opacity: widget.character.career == null ? 0.4 : 1.0,
-                child: Icon(
-                  Icons.cancel,
-                  size: 16.0,
-                  color: currentProgress == DraconicLinkProgress.aucunLien
-                    ? theme.disabledColor
-                    : theme.iconTheme.color,
-                ),
-              )
-            ),
-            dropdownMenuEntries: DraconicLinkProgress.values
-              .map((DraconicLinkProgress p) => DropdownMenuEntry(value: p, label: p.title))
-              .toList(),
-          ),
-          TextFormField(
-            enabled: currentProgress != DraconicLinkProgress.aucunLien,
-            controller: dragonController,
-            decoration: const InputDecoration(
-              label: Text('Dragon'),
-              border: OutlineInputBorder(),
-            ),
-            style: theme.textTheme.bodySmall,
-            validator: (String? value) {
-              if(currentProgress == DraconicLinkProgress.aucunLien) return null;
-              if(dragonController.text.isEmpty) return 'Valeur obligatoire';
-              return null;
-            },
-            autovalidateMode: AutovalidateMode.disabled,
-            onChanged: (String? value) {
-              if(value == null || value.isEmpty) return;
-              currentDragon = value;
-            },
-            onSaved: (String? value) {
-              widget.character.draconicLink = DraconicLink(
-                sphere: currentSphere,
-                dragon: currentDragon,
-                progress: currentProgress,
-              );
-            },
-          ),
-          DropdownMenu(
-            enabled: currentProgress != DraconicLinkProgress.aucunLien,
-            requestFocusOnTap: true,
-            expandedInsets: EdgeInsets.zero,
-            textStyle: theme.textTheme.bodySmall,
-            label: const Text('Sphère'),
-            inputDecorationTheme: const InputDecorationTheme(
-              border: OutlineInputBorder(),
-            ),
-            initialSelection: currentSphere,
-            onSelected: (MagicSphere? sphere) {
-              if(sphere == null) return;
-              setState(() {
-                currentSphere = sphere;
-              });
-            },
-            dropdownMenuEntries: MagicSphere.values
-              .map((MagicSphere s) => DropdownMenuEntry(value: s, label: s.title))
-              .toList(),
-          ),
-          WidgetGroupContainer(
-            title: Text(
-              'Faveurs',
-              style: theme.textTheme.bodyMedium!.copyWith(
-                color: Colors.black87,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            child: Column(
-              spacing: 8.0,
-              children: favorWidgets,
-            ),
-          ),
-        ],
-      ),
+    return Column(
+      spacing: 8.0,
+      children: favorWidgets,
     );
   }
 }

@@ -5,67 +5,33 @@ import '../../../../classes/equipment.dart';
 import '../../../../classes/weapon.dart';
 import 'equipment_info_widgets.dart';
 
-enum EquipHands {
-  dominant,
-  weak,
-  both
-}
-
-class WeaponEquipWidget extends StatefulWidget {
+class WeaponEquipWidget extends StatelessWidget {
   const WeaponEquipWidget({
     super.key,
     required this.entity,
     required this.weapon,
-    required this.onEquipedStateChanged,
     this.allowDelete = true,
   });
 
   final EntityBase entity;
   final Weapon weapon;
-  final VoidCallback onEquipedStateChanged;
   final bool allowDelete;
-
-  @override
-  State<WeaponEquipWidget> createState() => _WeaponEquipWidgetState();
-}
-
-class _WeaponEquipWidgetState extends State<WeaponEquipWidget> {
-  EquipHands? _selected;
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
-    if(widget.weapon.handiness == 2) {
-      if(widget.entity.dominantHandEquiped == widget.weapon) {
-        _selected = EquipHands.both;
-      }
-      else {
-        _selected = null;
-      }
-    }
-    else if(widget.weapon.handiness == 1) {
-      if(widget.entity.dominantHandEquiped == widget.weapon) {
-        _selected = EquipHands.dominant;
-      } else if(widget.entity.weakHandEquiped == widget.weapon) {
-        _selected = EquipHands.weak;
-      } else {
-        _selected = null;
-      }
-    }
     // TODO: manage the weapons with a handiness of zero
     //    Requires changes in SupportsEquipableItem.equip & Co
 
     var leading = <Widget>[];
-    if(widget.allowDelete) {
+    if(allowDelete) {
       leading.add(
         IconButton(
           icon: const Icon(Icons.delete),
           onPressed: () {
-            setState(() {
-              widget.entity.removeEquipment(widget.weapon);
-              widget.onEquipedStateChanged();
-            });
+            entity.unequip(weapon);
+            entity.equipment.remove(weapon);
           },
         )
       );
@@ -83,26 +49,26 @@ class _WeaponEquipWidgetState extends State<WeaponEquipWidget> {
           children: [
             for(var w in leading)
               w,
-            WeaponInfoWidget(weapon: widget.weapon),
+            WeaponInfoWidget(weapon: weapon),
             const Spacer(),
-            if(!widget.entity.meetsEquipableRequirements(widget.weapon))
+            if(!entity.meetsEquipableRequirements(weapon))
               Text(
-                'Pré-requis\n${widget.entity.unmetEquipableRequirementsDescription(widget.weapon)}',
+                'Pré-requis\n${entity.unmetEquipableRequirementsDescription(weapon)}',
                 textAlign: TextAlign.right,
                 style: theme.textTheme.bodySmall,
               ),
             const SizedBox(width: 8.0),
-            SegmentedButton<EquipHands>(
+            SegmentedButton<EquipableItemTarget>(
               segments: [
-                if(widget.weapon.handiness == 1)
-                  ButtonSegment<EquipHands>(
-                    value: EquipHands.weak,
+                if(weapon.handiness == 1)
+                  ButtonSegment<EquipableItemTarget>(
+                    value: EquipableItemTarget.weakHand,
                     tooltip: 'Main faible',
                     icon: Transform.flip(flipX: true, child: const Icon(Icons.back_hand_outlined)),
                   ),
-                if(widget.weapon.handiness == 2)
-                  ButtonSegment<EquipHands>(
-                    value: EquipHands.both,
+                if(weapon.handiness == 2)
+                  ButtonSegment<EquipableItemTarget>(
+                    value: EquipableItemTarget.bothHands,
                     tooltip: 'Deux mains',
                     icon: Row(
                       children: [
@@ -111,40 +77,33 @@ class _WeaponEquipWidgetState extends State<WeaponEquipWidget> {
                       ],
                     ),
                   ),
-                if(widget.weapon.handiness == 1)
-                  ButtonSegment<EquipHands>(
-                    enabled: widget.weapon.handiness == 1,
-                    value: EquipHands.dominant,
+                if(weapon.handiness == 1)
+                  ButtonSegment<EquipableItemTarget>(
+                    enabled: weapon.handiness == 1,
+                    value: EquipableItemTarget.dominantHand,
                     tooltip: 'Main forte',
                     icon: const Icon(Icons.back_hand_outlined),
                   ),
               ],
-              selected: _selected == null ? {} : <EquipHands>{_selected!},
+              selected: weapon.equipedOn == EquipableItemTarget.none
+                  ? {}
+                  : <EquipableItemTarget>{weapon.equipedOn},
               emptySelectionAllowed: true,
               showSelectedIcon: false,
-              onSelectionChanged: !widget.entity.meetsEquipableRequirements(widget.weapon)
+              onSelectionChanged:
+                !entity.meetsEquipableRequirements(weapon)
                   ? null
-                  : (Set<EquipHands> selection) {
-                if(selection.isEmpty) {
-                  _selected = null;
-                  widget.entity.unequip(widget.weapon);
-                  widget.onEquipedStateChanged();
-                }
-                else {
-                  var target = EquipableItemTarget.none;
-                  if(selection.first == EquipHands.both) {
-                    target = EquipableItemTarget.bothHands;
-                  }
-                  else if(selection.first == EquipHands.dominant) {
-                    target = EquipableItemTarget.dominantHand;
-                  }
-                  else if(selection.first == EquipHands.weak) {
-                    target = EquipableItemTarget.weakHand;
-                  }
-                  widget.entity.replaceEquiped(widget.weapon, target: target);
-                  widget.onEquipedStateChanged();
-                }
-              },
+                  : (Set<EquipableItemTarget> selection) {
+                      if(selection.isEmpty) {
+                        entity.unequip(weapon);
+                      }
+                      else {
+                        entity.replaceEquiped(
+                          weapon,
+                          target: selection.first
+                        );
+                      }
+                    },
             ),
           ],
         ),

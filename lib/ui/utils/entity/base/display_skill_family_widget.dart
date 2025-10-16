@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/character/skill.dart';
+import '../../../../classes/entity/skill.dart';
+import '../../../../classes/entity/skill_family.dart';
 import '../../../../classes/entity_base.dart';
 import '../../widget_group_container.dart';
+import 'single_skill_widget.dart';
 
 class EntityDisplaySkillFamilyWidget extends StatelessWidget {
   const EntityDisplaySkillFamilyWidget({
@@ -20,7 +22,7 @@ class EntityDisplaySkillFamilyWidget extends StatelessWidget {
 
     var skillWidgets = <Widget>[];
 
-    for(var skill in entity.skillsForFamily(family)) {
+    for(var skill in entity.skills.forFamily(family)) {
       skillWidgets.add(
         SkillDisplayWidget(character: entity, skill: skill.skill),
       );
@@ -58,18 +60,18 @@ class SkillDisplayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget skillWidget;
     if(skill.requireSpecialization) {
-      skillWidget = Text(skill.title);
+      skillWidget = Text(skill.name);
     }
     else {
-      skillWidget = _SingleSkillWidget(name: skill.title, value: character.skill(skill));
+      skillWidget = SingleSkillWidget(name: skill.name, value: character.skills.skill(skill)!.value);
     }
 
     var specializedSkills = <Widget>[];
-    for(var sp in character.allSpecializedSkills(skill)) {
+    for(var sp in character.skills.skill(skill)!.specializations) {
       specializedSkills.add(
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
-          child: _SingleSkillWidget(name: sp.title, value: character.specializedSkill(sp)),
+          child: SingleSkillWidget(name: sp.skill.name, value: sp.value),
         ),
       );
     }
@@ -79,34 +81,6 @@ class SkillDisplayWidget extends StatelessWidget {
       children: [
         skillWidget,
         ...specializedSkills,
-      ],
-    );
-  }
-}
-
-class _SingleSkillWidget extends StatelessWidget {
-  const _SingleSkillWidget({ required this.name, required this.value });
-
-  final String name;
-  final int value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Text(name),
-        Expanded(
-          child: Container(
-            margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 6.0),
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(color: Colors.black12),
-              )
-            ),
-          )
-        ),
-        Text(value.toString()),
       ],
     );
   }

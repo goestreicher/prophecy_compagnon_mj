@@ -29,32 +29,45 @@
     "initiative": 3,
     "use_human_injury_manager": false,
     "injuries": {
-      "levels": [
-        {
-          "type": "injured",
-          "start": 0,
-          "end": 40,
-          "capacity": 3
-        },
-        {
-          "type": "death",
-          "start": 40,
-          "end": -1,
-          "capacity": 1
-        }
-      ]
-    },
-    "skills": [
-      {
-        "skill": "armesArticulees",
-        "value": 2
-      },
-      {
-        "skill": "armesDeJet",
-        "value": 3
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ]
       }
-    ],
+    },
+    "skills": {
+      "families": {
+        "combat":{
+          "all": [
+            {
+              "skill": "armesArticulees",
+              "value": 2
+            },
+            {
+              "skill": "armesDeJet",
+              "value": 3
+            }
+          ]
+        }
+      }
+    },
     "equipment": [
-    ]
+    ],
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    }
   }
 ]
