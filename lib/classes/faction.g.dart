@@ -28,10 +28,20 @@ Map<String, dynamic> _$FactionSummaryToJson(FactionSummary instance) =>
     };
 
 FactionMember _$FactionMemberFromJson(Map<String, dynamic> json) =>
-    FactionMember(name: json['name'] as String, title: json['title'] as String);
+    FactionMember(
+      name: json['name'] as String?,
+      link: json['link'] == null
+          ? null
+          : ResourceLink.fromJson(json['link'] as Map<String, dynamic>),
+      title: json['title'] as String,
+    );
 
 Map<String, dynamic> _$FactionMemberToJson(FactionMember instance) =>
-    <String, dynamic>{'name': instance.name, 'title': instance.title};
+    <String, dynamic>{
+      'name': instance.name,
+      'link': instance.link?.toJson(),
+      'title': instance.title,
+    };
 
 Faction _$FactionFromJson(Map<String, dynamic> json) => Faction(
   uuid: json['uuid'] as String?,

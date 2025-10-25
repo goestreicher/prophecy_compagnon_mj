@@ -1,3 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
+part 'resource_link.g.dart';
+
 enum ResourceLinkType {
   npc(title: 'PNJ'),
   creature(title: 'Créature'),
@@ -11,6 +15,7 @@ enum ResourceLinkType {
   final String title;
 }
 
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ResourceLink {
   ResourceLink({
     required this.name,
@@ -26,6 +31,7 @@ class ResourceLink {
 
   String name;
   String link;
+  @JsonKey(includeFromJson: false, includeToJson: false)
   late ResourceLinkType type;
 
   static bool isValidLink(String link) {
@@ -35,10 +41,16 @@ class ResourceLink {
         && ResourceLinkType.values.asNameMap().containsKey(uri.pathSegments[0]);
   }
 
-  static ResourceLink createLinkForResource(ResourceLinkType type, bool store, String display, String id) {
+  static ResourceLink createLinkForResource(ResourceLinkType type, bool local, String display, String id) {
     return ResourceLink(
       name: display,
-      link: 'resource://${store ? "store" : "assets"}/${type.name}/${Uri.encodeComponent(id)}',
+      link: 'resource://${local ? "local-store" : "assets"}/${type.name}/${Uri.encodeComponent(id)}',
     );
   }
+
+  factory ResourceLink.fromJson(Map<String, dynamic> json) =>
+      _$ResourceLinkFromJson(json);
+
+  Map<String, dynamic> toJson() =>
+      _$ResourceLinkToJson(this);
 }

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../classes/non_player_character.dart';
 import '../../classes/object_source.dart';
 import '../utils/character/edit_widget.dart';
-import '../utils/character/npc_create_dialog.dart';
-import '../utils/character/npc_list_widget.dart';
+import '../utils/non_player_character/create_dialog.dart';
+import '../utils/non_player_character/list_widget.dart';
 
 class ScenarioEditNPCsPage extends StatefulWidget {
   const ScenarioEditNPCsPage({
@@ -126,7 +126,10 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
             Expanded(
               child: NPCListWidget(
                 npcs: npcSummaries,
-                initialSelection: selectedNPC?.id,
+                selected: selectedNPC?.id,
+                onSelected: (String? id) {
+                  // TODO
+                },
                 onEditRequested: (String id) {
                   var npc = widget.npcs.firstWhere(
                     (NonPlayerCharacter n) => n.id == id

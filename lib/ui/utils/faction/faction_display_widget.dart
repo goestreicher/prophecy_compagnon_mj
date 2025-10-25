@@ -4,10 +4,10 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 
-import '../../classes/faction.dart';
-import '../../classes/object_location.dart';
-import '../../classes/object_source.dart';
-import '../utils/faction_edit_dialog.dart';
+import '../../../classes/faction.dart';
+import '../../../classes/object_location.dart';
+import '../../../classes/object_source.dart';
+import 'faction_edit_dialog.dart';
 
 class FactionDisplayWidget extends StatelessWidget {
   const FactionDisplayWidget({

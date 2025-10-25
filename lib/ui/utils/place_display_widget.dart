@@ -91,7 +91,7 @@ class PlaceDisplayWidget extends StatelessWidget {
 
         if(!snapshot.hasData || snapshot.data == null) {
           return Center(
-            child: const Text('Faction non trouvée'),
+            child: const Text('Lieu non trouvé'),
           );
         }
 

@@ -75,10 +75,10 @@ CreatureSummary _$CreatureSummaryFromJson(Map<String, dynamic> json) =>
       category: const CreatureCategoryJsonConverter().fromJson(
         json['category'] as String,
       ),
-      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
       location: json['location'] == null
           ? ObjectLocation.memory
           : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
       icon: json['icon'] == null
           ? null
           : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),

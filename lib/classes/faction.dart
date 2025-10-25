@@ -4,6 +4,7 @@ import 'package:uuid/uuid.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'resource_base_class.dart';
+import 'resource_link.dart';
 import 'resource_memory_cache.dart';
 import 'storage/default_assets_store.dart';
 import 'storage/storable.dart';
@@ -136,11 +137,18 @@ class FactionSummary extends ResourceBaseClass {
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class FactionMember {
   FactionMember({
-    required this.name,
+    this.name,
+    this.link,
     required this.title,
-  });
+  })
+  {
+    if(name == null && link == null) {
+      throw ArgumentError('Either name or link must be provided to create a faction member');
+    }
+  }
 
-  String name;
+  String? name;
+  ResourceLink? link;
   String title;
 
   factory FactionMember.fromJson(Map<String, dynamic> j) => _$FactionMemberFromJson(j);

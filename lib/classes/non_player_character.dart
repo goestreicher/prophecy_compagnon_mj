@@ -253,34 +253,37 @@ class NonPlayerCharacterSummary {
   }
 
   static Future<void> loadAll() async {
-    if(_cache.isEmpty || _cache.purged) {
-      var assetFiles = [
-        'npcs-ldb2e.json',
-        'npcs-les-compagnons-de-khy.json',
-        'npcs-les-ecailles-de-brorne.json',
-        'npcs-les-enfants-de-heyra.json',
-        'npcs-les-forges-de-kezyr.json',
-        'npcs-les-foudres-de-kroryn.json',
-        'npcs-les-orphelins-de-szyl.json',
-        'npcs-les-versets-d-ozyr.json',
-        'npcs-les-voiles-de-nenya.json',
-      ];
+    await(_cache.lock.synchronized(() async {
+      if (_cache.isEmpty || _cache.purged) {
+        var assetFiles = [
+          'npcs-ldb2e.json',
+          'npcs-les-compagnons-de-khy.json',
+          'npcs-les-ecailles-de-brorne.json',
+          'npcs-les-enfants-de-heyra.json',
+          'npcs-les-forges-de-kezyr.json',
+          'npcs-les-foudres-de-kroryn.json',
+          'npcs-les-orphelins-de-szyl.json',
+          'npcs-les-versets-d-ozyr.json',
+          'npcs-les-voiles-de-nenya.json',
+        ];
 
-      for(var f in assetFiles) {
-        for (var model in await loadJSONAssetObjectList(f)) {
-          try {
-            // ignore:unused_local_variable
-            var instance = NonPlayerCharacterSummary.fromJson(model);
-          } catch (e, stacktrace) {
-            print('Error loading NPC ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+        for (var f in assetFiles) {
+          for (var model in await loadJSONAssetObjectList(f)) {
+            try {
+              // ignore:unused_local_variable
+              var instance = NonPlayerCharacterSummary.fromJson(model);
+            } catch (e, stacktrace) {
+              print('Error loading NPC ${model["name"]}: ${e
+                  .toString()}\n${stacktrace.toString()}');
+            }
           }
         }
+
+        await NonPlayerCharacterSummaryStore().getAll();
+
+        _cache.purged = false;
       }
-
-      await NonPlayerCharacterSummaryStore().getAll();
-
-      _cache.purged = false;
-    }
+    }));
   }
 
   static Future<void> _reloadFromStore(String id) async {
@@ -548,13 +551,13 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     return ret;
   }
 
-  NonPlayerCharacter clone(String newName) {
+  NonPlayerCharacter clone(String newName, { ObjectSource? source }) {
     var j = toJson();
     j.remove('uuid');
+    j['location'] = ObjectLocation.memory.toJson();
+    j['source'] = source?.toJson() ?? ObjectSource.local.toJson();
     j['name'] = newName;
-    var cloned = NonPlayerCharacter.fromJson(j);
-    cloned.location = ObjectLocation.memory;
-    return cloned;
+    return NonPlayerCharacter.fromJson(j);
   }
 
   static Future<NonPlayerCharacter?> get(String id) async {

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 
-import '../../classes/faction.dart';
-import '../../classes/object_source.dart';
-import '../utils/markdown_fleather_toolbar.dart';
+import '../../../classes/faction.dart';
+import '../../../classes/object_source.dart';
+import '../markdown_fleather_toolbar.dart';
 
 class FactionEditDialog extends StatefulWidget {
   const FactionEditDialog({

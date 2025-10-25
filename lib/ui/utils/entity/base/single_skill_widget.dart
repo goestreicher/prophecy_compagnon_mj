@@ -15,8 +15,8 @@ class SingleSkillWidget extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Text(name),
-        Expanded(
+        Expanded(child: Text(name)),
+        Flexible(
             child: Container(
               margin: EdgeInsets.symmetric(vertical: 4.0, horizontal: 6.0),
               decoration: BoxDecoration(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/faction.dart';
-import '../../classes/object_source.dart';
+import '../../../classes/faction.dart';
+import '../../../classes/object_source.dart';
+import '../generic_tree_widget.dart';
 import 'faction_edit_dialog.dart';
-import 'generic_tree_widget.dart';
 
 class FactionTreeWidgetAdapter implements GenericTreeWidgetAdapter<FactionSummary, Faction> {
   const FactionTreeWidgetAdapter({

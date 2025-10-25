@@ -6,8 +6,8 @@ import '../../classes/faction.dart';
 import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../utils/faction/faction_selection_model.dart';
-import '../utils/faction_display_widget.dart';
-import '../utils/faction_tree_widget_utils.dart';
+import '../utils/faction/faction_display_widget.dart';
+import '../utils/faction/faction_tree_widget_utils.dart';
 import '../utils/generic_tree_widget.dart';
 
 class ScenarioEditFactionsPage extends StatefulWidget {

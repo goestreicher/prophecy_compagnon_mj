@@ -1,6 +1,8 @@
 import 'dart:async';
 import 'dart:collection';
 
+import 'package:synchronized/synchronized.dart';
+
 class ResourceMemoryCacheEntry<T> {
   ResourceMemoryCacheEntry({ required this.entry, required this.timestamp });
 
@@ -20,6 +22,7 @@ class ResourceMemoryCache<T> {
 
   int entryTtl;
   bool purged;
+  final Lock lock = Lock();
 
   bool get isEmpty => _cache.isEmpty;
   Iterable<String> get keys =>
@@ -69,27 +72,29 @@ class ResourceMemoryCache<T> {
     _ttls[ts]?.remove(key);
   }
 
-  void _purgeCache() {
-    int now = (DateTime.timestamp().millisecondsSinceEpoch ~/ (60 * 1000)) * 60;
-    int ts = now - entryTtl;
-    int? ttlKey = _ttls.lastKeyBefore(ts);
-    Set<int> expiredTimestamps = <int>{};
-    Set<String> expiredKeys = <String>{};
+  void _purgeCache() async {
+    await(lock.synchronized(() async {
+      int now = (DateTime.timestamp().millisecondsSinceEpoch ~/ (60 * 1000)) * 60;
+      int ts = now - entryTtl;
+      int? ttlKey = _ttls.lastKeyBefore(ts);
+      Set<int> expiredTimestamps = <int>{};
+      Set<String> expiredKeys = <String>{};
 
-    while(ttlKey != null) {
-      expiredTimestamps.add(ttlKey);
-      expiredKeys.addAll(_ttls[ttlKey]!);
-      ts = ttlKey;
-      ttlKey = _ttls.lastKeyBefore(ts);
-    }
+      while(ttlKey != null) {
+        expiredTimestamps.add(ttlKey);
+        expiredKeys.addAll(_ttls[ttlKey]!);
+        ts = ttlKey;
+        ttlKey = _ttls.lastKeyBefore(ts);
+      }
 
-    purged = expiredKeys.isNotEmpty;
-    for(var ts in expiredTimestamps) {
-      _ttls.remove(ts);
-    }
-    for(var key in expiredKeys) {
-      _cache.remove(key);
-    }
+      purged = expiredKeys.isNotEmpty;
+      for(var ts in expiredTimestamps) {
+        _ttls.remove(ts);
+      }
+      for(var key in expiredKeys) {
+        _cache.remove(key);
+      }
+    }));
   }
 
   // ignore:unused_field

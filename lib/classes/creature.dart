@@ -696,10 +696,11 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
     return ret;
   }
 
-  Creature clone(String newName) {
+  Creature clone(String newName, { ObjectSource? source }) {
     var j = toJson();
     j.remove('uuid');
     j['location'] = ObjectLocation.memory.toJson();
+    j['source'] = source?.toJson() ?? ObjectSource.local.toJson();
     j['name'] = newName;
     return Creature.fromJson(j);
   }

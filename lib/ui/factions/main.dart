@@ -10,14 +10,17 @@ import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../utils/error_feedback.dart';
 import '../utils/faction/faction_selection_model.dart';
-import '../utils/faction_display_widget.dart';
-import '../utils/faction_tree_widget_utils.dart';
+import '../utils/faction/faction_display_widget.dart';
+import '../utils/faction/faction_tree_widget_utils.dart';
 import '../utils/generic_tree_widget.dart';
 
 class FactionsMainPage extends StatefulWidget {
   const FactionsMainPage({
     super.key,
+    this.selected,
   });
+
+  final String? selected;
 
   @override
   State<FactionsMainPage> createState() => _FactionsMainPageState();
@@ -33,11 +36,13 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
   final TextEditingController sourceController = TextEditingController();
   final TextEditingController searchController = TextEditingController();
 
-  FactionSelectionModel factionSelectionModel = FactionSelectionModel();
+  late FactionSelectionModel factionSelectionModel;
 
   @override
   void initState() {
     super.initState();
+
+    factionSelectionModel = FactionSelectionModel(id: widget.selected);
 
     adapter = FactionTreeWidgetAdapter(
       itemSelectionCallback: (FactionSummary f) {

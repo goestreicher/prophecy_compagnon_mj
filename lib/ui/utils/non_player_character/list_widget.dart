@@ -3,13 +3,13 @@ import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
-import '../../../classes/creature.dart';
+import '../../../classes/non_player_character.dart';
 import '../../../classes/object_source.dart';
 
-class CreatureActionButtons extends StatelessWidget {
-  const CreatureActionButtons({
+class NPCActionButtons extends StatelessWidget {
+  const NPCActionButtons({
     super.key,
-    required this.creature,
+    required this.npc,
     required this.onEdit,
     required this.onClone,
     required this.onDelete,
@@ -17,7 +17,7 @@ class CreatureActionButtons extends StatelessWidget {
     this.highlight = false,
   });
 
-  final CreatureSummary creature;
+  final NonPlayerCharacterSummary npc;
   final void Function() onEdit;
   final void Function() onClone;
   final void Function() onDelete;
@@ -30,11 +30,11 @@ class CreatureActionButtons extends StatelessWidget {
     bool canModify = true;
     String? canModifyMessage;
 
-    if(!creature.location.type.canWrite) {
+    if(!npc.location.type.canWrite) {
       canModify = false;
-      canModifyMessage = 'Modification impossible (créature en lecture seule)';
+      canModifyMessage = 'Modification impossible (PNJ en lecture seule)';
     }
-    else if(restrictModificationToSourceTypes != null && !restrictModificationToSourceTypes!.contains(creature.source.type)) {
+    else if(restrictModificationToSourceTypes != null && !restrictModificationToSourceTypes!.contains(npc.source.type)) {
       canModify = false;
       canModifyMessage = 'Modification impossible depuis cette page';
     }
@@ -75,24 +75,24 @@ class CreatureActionButtons extends StatelessWidget {
             icon: const Icon(Icons.download),
             tooltip: 'Télécharger (JSON)',
             onPressed: () async {
-              var model = await Creature.get(creature.id);
+              var model = await NonPlayerCharacter.get(npc.id);
               var jsonStr = json.encode(model!.toJson());
               await FilePicker.platform.saveFile(
-                fileName: 'creature-${creature.id}.json',
+                fileName: 'pnj-${npc.id}.json',
                 bytes: utf8.encode(jsonStr),
               );
             },
-          )
+          ),
         ],
       ),
     );
   }
 }
 
-class CreaturesListWidget extends StatelessWidget {
-  const CreaturesListWidget({
+class NPCListWidget extends StatelessWidget {
+  const NPCListWidget({
     super.key,
-    required this.creatures,
+    required this.npcs,
     this.selected,
     required this.onSelected,
     required this.onEditRequested,
@@ -101,7 +101,7 @@ class CreaturesListWidget extends StatelessWidget {
     this.restrictModificationToSourceTypes,
   });
 
-  final List<CreatureSummary> creatures;
+  final List<NonPlayerCharacterSummary> npcs;
   final String? selected;
   final void Function(String?) onSelected;
   final void Function(String) onEditRequested;
@@ -114,14 +114,14 @@ class CreaturesListWidget extends StatelessWidget {
     var theme = Theme.of(context);
 
     return ListView.builder(
-      itemCount: creatures.length,
+      itemCount: npcs.length,
       itemBuilder: (BuildContext context, int index) {
-        var isSelected = selected == creatures[index].id;
+        var isSelected = npcs[index].id == selected;
 
         return Center(
           child: GestureDetector(
             onTap: () {
-              onSelected(isSelected ? null : creatures[index].id);
+              onSelected(isSelected ? null : npcs[index].id);
             },
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
@@ -140,25 +140,26 @@ class CreaturesListWidget extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          creatures[index].name,
+                          npcs[index].name,
                           style: theme.textTheme.bodyMedium!.copyWith(
                             fontWeight: isSelected
-                              ? null
-                              : FontWeight.bold,
+                                ? null
+                                : FontWeight.bold,
                             color: isSelected
-                              ? theme.colorScheme.onPrimary
-                              : theme.colorScheme.onSurface,
+                                ? theme.colorScheme.onPrimary
+                                : theme.colorScheme.onSurface,
                           ),
+                          overflow: TextOverflow.fade,
                         ),
                       ),
-                      CreatureActionButtons(
-                        creature: creatures[index],
+                      NPCActionButtons(
+                        npc: npcs[index],
                         highlight: isSelected,
-                        onEdit: () => onEditRequested(creatures[index].id),
-                        onClone: () => onCloneRequested(creatures[index].id),
-                        onDelete: () => onDeleteRequested(creatures[index].id),
+                        onEdit: () => onEditRequested(npcs[index].id),
+                        onClone: () => onCloneRequested(npcs[index].id),
+                        onDelete: () => onDeleteRequested(npcs[index].id),
                         restrictModificationToSourceTypes: restrictModificationToSourceTypes,
-                      )
+                      ),
                     ],
                   ),
                 )

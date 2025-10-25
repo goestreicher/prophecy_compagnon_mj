@@ -15,7 +15,9 @@ import '../utils/place_display_widget.dart';
 import '../utils/place_tree_widget_utils.dart';
 
 class PlacesMainPage extends StatefulWidget {
-  const PlacesMainPage({ super.key });
+  const PlacesMainPage({ super.key, this.selected });
+
+  final String? selected;
 
   @override
   State<PlacesMainPage> createState() => _PlacesMainPageState();
@@ -31,11 +33,13 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
   final TextEditingController sourceController = TextEditingController();
   final TextEditingController searchController = TextEditingController();
 
-  PlaceSelectionModel placeSelectionModel = PlaceSelectionModel();
+  late PlaceSelectionModel placeSelectionModel;
 
   @override
   void initState() {
     super.initState();
+
+    placeSelectionModel = PlaceSelectionModel(id: widget.selected);
 
     adapter = PlaceTreeWidgetAdapter(
       itemSelectionCallback: (PlaceSummary p) {

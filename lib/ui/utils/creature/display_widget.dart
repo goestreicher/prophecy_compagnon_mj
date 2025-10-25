@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../../classes/armor.dart';
@@ -8,7 +5,6 @@ import '../../../classes/creature.dart';
 import '../../../classes/entity/attributes.dart';
 import '../../../classes/entity/skill_family.dart';
 import '../../../classes/magic.dart';
-import '../../../classes/object_source.dart';
 import '../../../classes/shield.dart';
 import '../../../classes/weapon.dart';
 import '../entity/base/display_abilities_widget.dart';
@@ -28,94 +24,13 @@ import 'base/display_natural_weapons_widget.dart';
 import 'base/display_secondary_attributes_widget.dart';
 import 'base/display_special_capabilities_widget.dart';
 
-class CreatureActionButtons extends StatelessWidget {
-  const CreatureActionButtons({
-    super.key,
-    required this.creature,
-    required this.onEdit,
-    required this.onClone,
-    required this.onDelete,
-    this.restrictModificationToSourceTypes,
-  });
-
-  final CreatureSummary creature;
-  final void Function() onEdit;
-  final void Function() onClone;
-  final void Function() onDelete;
-  final List<ObjectSourceType>? restrictModificationToSourceTypes;
-
-  @override
-  Widget build(BuildContext context) {
-    bool canModify = true;
-    String? canModifyMessage;
-
-    if(!creature.location.type.canWrite) {
-      canModify = false;
-      canModifyMessage = 'Modification impossible (créature en lecture seule)';
-    }
-    else if(restrictModificationToSourceTypes != null && !restrictModificationToSourceTypes!.contains(creature.source.type)) {
-      canModify = false;
-      canModifyMessage = 'Modification impossible depuis cette page';
-    }
-
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        IconButton(
-          icon: const Icon(Icons.edit_outlined),
-          tooltip: !canModify
-            ? canModifyMessage!
-            : 'Modifier',
-          onPressed: !canModify
-            ? null
-            : () => onEdit(),
-        ),
-        IconButton(
-          icon: const Icon(Icons.content_copy_outlined),
-          tooltip: 'Cloner',
-          onPressed: () => onClone(),
-        ),
-        IconButton(
-          icon: const Icon(Icons.delete),
-          tooltip: !canModify
-              ? canModifyMessage!
-              : 'Supprimer',
-          onPressed: !canModify
-            ? null
-            : () => onDelete(),
-        ),
-        IconButton(
-          icon: const Icon(Icons.download),
-          tooltip: 'Télécharger (JSON)',
-          onPressed: () async {
-            var model = await Creature.get(creature.id);
-            var jsonStr = json.encode(model!.toJson());
-            await FilePicker.platform.saveFile(
-              fileName: 'creature-${creature.id}.json',
-              bytes: utf8.encode(jsonStr),
-            );
-          },
-        )
-      ],
-    );
-  }
-}
-
 class CreatureDisplayWidget extends StatefulWidget {
   const CreatureDisplayWidget({
     super.key,
-    required this.creature,
-    required this.onEditRequested,
-    required this.onCloneRequested,
-    required this.onDeleteRequested,
-    this.restrictModificationToSourceTypes,
+    required this.id,
   });
 
-  final String creature;
-  final void Function() onEditRequested;
-  final void Function() onCloneRequested;
-  final void Function() onDeleteRequested;
-  final List<ObjectSourceType>? restrictModificationToSourceTypes;
+  final String id;
 
   @override
   State<CreatureDisplayWidget> createState() => _CreatureDisplayWidgetState();
@@ -127,13 +42,13 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
   @override
   void initState() {
     super.initState();
-    creatureFuture = Creature.get(widget.creature);
+    creatureFuture = Creature.get(widget.id);
   }
 
   @override
   void didUpdateWidget(CreatureDisplayWidget old) {
     super.didUpdateWidget(old);
-    creatureFuture = Creature.get(widget.creature);
+    creatureFuture = Creature.get(widget.id);
   }
   
   @override
@@ -182,24 +97,14 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
         }
 
         return Column(
-          spacing: 12.0,
+          spacing: 16.0,
           children: [
             Row(
               children: [
                 Text(
                   creature.name,
+                  style: theme.textTheme.headlineMedium!.copyWith(fontWeight: FontWeight.bold),
                   overflow: TextOverflow.fade,
-                  style: theme.textTheme.bodyLarge!.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                Spacer(),
-                CreatureActionButtons(
-                  creature: creature.summary,
-                  onEdit: () => widget.onEditRequested(),
-                  onClone: () => widget.onCloneRequested(),
-                  onDelete: () => widget.onDeleteRequested(),
-                  restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
                 ),
               ],
             ),

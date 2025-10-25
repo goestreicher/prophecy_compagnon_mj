@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../classes/game_session.dart';
 import '../../classes/scenario.dart';
@@ -10,7 +11,7 @@ import '../utils/full_page_loading.dart';
 import '../utils/single_line_input_dialog.dart';
 
 class ScenariosListPage extends StatefulWidget {
-  const ScenariosListPage({super.key});
+  const ScenariosListPage({ super.key });
 
   @override
   State<ScenariosListPage> createState() => _ScenariosListPageState();
@@ -66,19 +67,8 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                   clipBehavior: Clip.hardEdge,
                   child: InkWell(
                     splashColor: theme.colorScheme.surface,
-                    onTap: () async {
-                      bool? changeConfirmed = await Navigator.of(context).push(
-                          MaterialPageRoute(builder: (context) =>
-                              ScenarioEditPage(
-                                  uuid: scenarioSummaries[index].uuid
-                              )
-                          )
-                      );
-                      if (changeConfirmed != null && changeConfirmed) {
-                        setState(() {
-                          loadScenarioSummaries();
-                        });
-                      }
+                    onTap: () {
+                      context.go('/scenarios/${scenarioSummaries[index].uuid}');
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),

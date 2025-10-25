@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 
 import '../../../classes/armor.dart';
@@ -11,7 +8,6 @@ import '../../../classes/entity/skill_family.dart';
 import '../../../classes/equipment.dart';
 import '../../../classes/magic.dart';
 import '../../../classes/non_player_character.dart';
-import '../../../classes/object_source.dart';
 import '../../../classes/shield.dart';
 import '../../../classes/weapon.dart';
 import '../entity/base/display_abilities_widget.dart';
@@ -26,101 +22,20 @@ import '../entity/magic/display_magic_spheres_widget.dart';
 import '../error_feedback.dart';
 import '../full_page_loading.dart';
 import '../widget_group_container.dart';
-import 'background/display_advantages_widget.dart';
-import 'relations/display_caste_details_widget.dart';
-import 'base/display_general_widget.dart';
-import 'base/display_secondary_attributes_widget.dart';
-import 'base/tendencies_edit_widget.dart';
-import 'relations/display_draconic_link_widget.dart';
-
-class NPCActionButtons extends StatelessWidget {
-  const NPCActionButtons({
-    super.key,
-    required this.npc,
-    required this.onEdit,
-    required this.onClone,
-    required this.onDelete,
-    this.restrictModificationToSourceTypes,
-  });
-
-  final NonPlayerCharacterSummary npc;
-  final void Function() onEdit;
-  final void Function() onClone;
-  final void Function() onDelete;
-  final List<ObjectSourceType>? restrictModificationToSourceTypes;
-
-  @override
-  Widget build(BuildContext context) {
-    bool canModify = true;
-    String? canModifyMessage;
-
-    if(!npc.location.type.canWrite) {
-      canModify = false;
-      canModifyMessage = 'Modification impossible (créature par défaut)';
-    }
-    else if(restrictModificationToSourceTypes != null && !restrictModificationToSourceTypes!.contains(npc.source.type)) {
-      canModify = false;
-      canModifyMessage = 'Modification impossible depuis cette page';
-    }
-
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        IconButton(
-          icon: const Icon(Icons.edit_outlined),
-          tooltip: !canModify
-            ? canModifyMessage!
-            : 'Modifier',
-          onPressed: !canModify
-            ? null
-            : () => onEdit(),
-        ),
-        IconButton(
-          icon: const Icon(Icons.content_copy_outlined),
-          tooltip: 'Cloner',
-          onPressed: () => onClone(),
-        ),
-        IconButton(
-          icon: const Icon(Icons.delete),
-          tooltip: !canModify
-            ? canModifyMessage!
-            : 'Supprimer',
-          onPressed: !canModify
-            ? null
-            : () => onDelete(),
-        ),
-        IconButton(
-          icon: const Icon(Icons.download),
-          tooltip: 'Télécharger (JSON)',
-          onPressed: () async {
-            var model = await NonPlayerCharacter.get(npc.id);
-            var jsonStr = json.encode(model!.toJson());
-            await FilePicker.platform.saveFile(
-              fileName: 'pnj-${npc.id}.json',
-              bytes: utf8.encode(jsonStr),
-            );
-          },
-        ),
-      ],
-    );
-  }
-}
+import '../character/background/display_advantages_widget.dart';
+import '../character/relations/display_caste_details_widget.dart';
+import '../character/base/display_general_widget.dart';
+import '../character/base/display_secondary_attributes_widget.dart';
+import '../character/base/tendencies_edit_widget.dart';
+import '../character/relations/display_draconic_link_widget.dart';
 
 class NPCDisplayWidget extends StatefulWidget {
   const NPCDisplayWidget({
     super.key,
     required this.id,
-    required this.onEditRequested,
-    required this.onCloneRequested,
-    required this.onDeleteRequested,
-    this.restrictModificationToSourceTypes,
   });
 
   final String id;
-  final void Function() onEditRequested;
-  final void Function() onCloneRequested;
-  final void Function() onDeleteRequested;
-  final List<ObjectSourceType>? restrictModificationToSourceTypes;
 
   @override
   State<NPCDisplayWidget> createState() => _NPCDisplayWidgetState();
@@ -187,23 +102,12 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
         );
 
         return Column(
+          spacing: 16.0,
           children: [
-            Row(
-              children: [
-                Text(
-                  npc.name,
-                  style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                  overflow: TextOverflow.fade,
-                ),
-                Spacer(),
-                NPCActionButtons(
-                  npc: npc.summary,
-                  onEdit: () => widget.onEditRequested(),
-                  onClone: () => widget.onCloneRequested(),
-                  onDelete: () => widget.onDeleteRequested(),
-                  restrictModificationToSourceTypes: widget.restrictModificationToSourceTypes,
-                ),
-              ],
+            Text(
+              npc.name,
+              style: theme.textTheme.headlineMedium!.copyWith(fontWeight: FontWeight.bold),
+              overflow: TextOverflow.fade,
             ),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -231,19 +135,6 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                     ),
                   ),
                 ),
-                if(npc.disadvantages.isNotEmpty || npc.advantages.isNotEmpty)
-                  SizedBox(
-                    width: 150.0,
-                    child: Column(
-                      spacing: 12.0,
-                      children: [
-                        if(npc.disadvantages.isNotEmpty)
-                          CharacterDisplayDisadvantagesWidget(character: npc),
-                        if(npc.advantages.isNotEmpty)
-                          CharacterDisplayAdvantagesWidget(character: npc)
-                      ],
-                    )
-                  ),
               ],
             ),
             const SizedBox(height: 16.0),
@@ -288,8 +179,16 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                           Row(
                             spacing: 8.0,
                             children: [
-                              Expanded(child: EntityDisplayAttributesWidget(entity: npc)),
-                              Expanded(child: CharacterDisplaySecondaryAttributesWidget(character: npc)),
+                              Expanded(
+                                child: EntityDisplayAttributesWidget(
+                                  entity: npc
+                                )
+                              ),
+                              Expanded(
+                                child: CharacterDisplaySecondaryAttributesWidget(
+                                  character: npc
+                                )
+                              ),
                             ],
                           ),
                         ],
@@ -297,6 +196,10 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                     ),
                   ],
                 ),
+                if(npc.disadvantages.isNotEmpty)
+                  CharacterDisplayDisadvantagesWidget(character: npc),
+                if(npc.advantages.isNotEmpty)
+                  CharacterDisplayAdvantagesWidget(character: npc),
               ],
             ),
             ExpansionTile(

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/human_character.dart';
 import '../../dismissible_dialog.dart';
+import '../../uniform_height_wrap.dart';
 import '../../widget_group_container.dart';
 
 class CharacterDisplayDisadvantagesWidget extends StatelessWidget {
@@ -43,7 +44,7 @@ class CharacterDisplayDisadvantagesWidget extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      child: Column(
+      child: UniformHeightWrap(
         children: widgets,
       )
     );
@@ -89,7 +90,7 @@ class CharacterDisplayAdvantagesWidget extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        child: Column(
+        child: UniformHeightWrap(
           children: widgets,
         )
     );
@@ -108,15 +109,16 @@ class _CommonContentWidget extends StatelessWidget {
     var theme = Theme.of(context);
 
     return Card(
-      child: Align(
-        alignment: AlignmentGeometry.topLeft,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+        child: IntrinsicWidth(
           child: Row(
             spacing: 8.0,
             children: [
               Expanded(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   spacing: 4.0,
                   children: [

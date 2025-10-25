@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../classes/game_session.dart';
 import '../../classes/table.dart';
-import 'edit.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 import '../utils/single_line_input_dialog.dart';
@@ -21,7 +21,6 @@ class _TablesListPageState extends State<TablesListPage> {
   bool _isWorking = false;
   final GlobalKey<FormState> _newTableNameForm = GlobalKey<FormState>();
   late Future<List<GameTableSummary>> _tableSummariesFuture;
-  List<GameTableSummary> tableSummaries = <GameTableSummary>[];
 
   @override
   void initState() {
@@ -38,7 +37,7 @@ class _TablesListPageState extends State<TablesListPage> {
     var theme = Theme.of(context);
 
     return FutureBuilder<List<GameTableSummary>>(
-      future: _tableSummariesFuture,
+      future: GameTableSummaryStore().getAll(),
       builder: (BuildContext context, AsyncSnapshot<List<GameTableSummary>> snapshot) {
         if(snapshot.connectionState != ConnectionState.done) {
           return FullPageLoadingWidget();
@@ -48,7 +47,7 @@ class _TablesListPageState extends State<TablesListPage> {
           return FullPageErrorWidget(message: snapshot.error!.toString(), canPop: false);
         }
 
-        tableSummaries = snapshot.hasData
+        var tableSummaries = snapshot.hasData
             ? snapshot.data!
             : <GameTableSummary>[];
 
@@ -67,14 +66,8 @@ class _TablesListPageState extends State<TablesListPage> {
                 clipBehavior: Clip.hardEdge,
                 child: InkWell(
                   splashColor: theme.colorScheme.surface,
-                  onTap: () async {
-                    bool? changeConfirmed = await Navigator.of(context).push(
-                      MaterialPageRoute(builder: (context) => TableEditPage(uuid: tableSummaries[index].uuid))
-                    );
-                    if(!context.mounted || !mounted) return;
-                    if(changeConfirmed != null && changeConfirmed) {
-                      setState((){ loadTableSummaries(); });
-                    }
+                  onTap: () {
+                    context.go('/tables/${tableSummaries[index].uuid}');
                   },
                   child: ListTile(
                     title: Text(tableSummaries[index].name),
@@ -128,7 +121,6 @@ class _TablesListPageState extends State<TablesListPage> {
                         }
                         setState(() {
                           _isWorking = false;
-                          loadTableSummaries();
                         });
                       },
                     )
@@ -187,13 +179,13 @@ class _TablesListPageState extends State<TablesListPage> {
                             if(newTableName == null) return;
 
                             if(!context.mounted) return;
+                            setState(() { _isWorking = true; });
                             var table = GameTable.create(name: newTableName);
-                            bool changeConfirmed = await Navigator.of(context).push(
-                              MaterialPageRoute(builder: (context) => TableEditPage.immediate(table: table)),
-                            );
-                            if(changeConfirmed) {
-                              setState((){ loadTableSummaries(); });
-                            }
+                            await GameTableStore().save(table);
+                            setState(() { _isWorking = true; });
+
+                            if(!context.mounted) return;
+                            context.go('/tables/${table.uuid}');
                           },
                         ),
                       ),
@@ -224,7 +216,6 @@ class _TablesListPageState extends State<TablesListPage> {
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
                               await importGameTable(json.decode(jsonStr));
                               setState(() {
-                                loadTableSummaries();
                                 _isWorking = false;
                               });
                             } catch (e) {

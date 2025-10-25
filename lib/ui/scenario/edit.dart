@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:prophecy_compagnon_mj/classes/creature.dart';
 import 'package:prophecy_compagnon_mj/classes/non_player_character.dart';
 
@@ -20,15 +21,38 @@ import 'edit_places_tab.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
 
+enum ScenarioEditTab {
+  general,
+  events,
+  npcs,
+  creatures,
+  places,
+  factions,
+  encounters,
+  maps,
+}
+
 class ScenarioEditPage extends StatefulWidget {
-  const ScenarioEditPage({super.key, required this.uuid}) : scenario = null;
-  ScenarioEditPage.immediate({super.key, required this.scenario}) : uuid = scenario!.uuid;
+  const ScenarioEditPage({
+    super.key,
+    required this.uuid,
+    this.initialTab = ScenarioEditTab.general,
+  })
+    : scenario = null;
+
+  ScenarioEditPage.immediate({
+    super.key,
+    required this.scenario,
+    this.initialTab = ScenarioEditTab.general,
+  })
+    : uuid = scenario!.uuid;
 
   @override
   State<ScenarioEditPage> createState() => _ScenarioEditPageState();
 
   final String uuid;
   final Scenario? scenario;
+  final ScenarioEditTab initialTab;
 }
 
 class _ScenarioEditPageState extends State<ScenarioEditPage> {
@@ -200,10 +224,12 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
         return Stack(
           children: [
             DefaultTabController(
+              initialIndex: widget.initialTab.index,
               length: 8,
               child: Scaffold(
                 appBar: AppBar(
                   title: Text('Scénario: ${_scenario.name}'),
+                  automaticallyImplyLeading: false,
                   actions: <Widget>[
                     IconButton(
                       icon: const Icon(Icons.download),
@@ -223,7 +249,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       onPressed: mainButtonsLocked ? null : () async {
                         await cancelPendingChanges();
                         if(!context.mounted) return;
-                        Navigator.of(context).pop(false);
+                        context.go('/scenarios');
                       },
                     ),
                     IconButton(
@@ -241,7 +267,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                         });
 
                         if(!context.mounted) return;
-                        Navigator.of(context).pop(true);
+                        context.go('/scenarios');
                       },
                     )
                   ],

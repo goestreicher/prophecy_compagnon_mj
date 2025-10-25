@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../classes/table.dart' as pc;
 import '../../classes/player_character.dart';
@@ -12,14 +13,17 @@ import '../utils/full_page_loading.dart';
 import 'characters_list_widget.dart';
 
 class TableEditPage extends StatefulWidget {
-  const TableEditPage({super.key, required this.uuid}) : table = null;
-  TableEditPage.immediate({super.key, required this.table}) : uuid = table!.uuid;
+  const TableEditPage({
+    super.key,
+    required this.uuid,
+    this.selectedPcId,
+  });
 
   @override
   State<TableEditPage> createState() => _TableEditPageState();
 
   final String uuid;
-  final pc.GameTable? table;
+  final String? selectedPcId;
 }
 
 class _TableEditPageState extends State<TableEditPage> {
@@ -34,20 +38,14 @@ class _TableEditPageState extends State<TableEditPage> {
   @override
   void initState() {
     super.initState();
-    if(widget.table != null) {
-      _tableFuture = Future<pc.GameTable?>.sync(() => widget.table!)
+
+    _tableFuture = pc.GameTableStore().get(widget.uuid)
         .then((pc.GameTable? t) async {
           await t?.loadPlayers();
           return t;
         });
-    }
-    else {
-      _tableFuture = pc.GameTableStore().get(widget.uuid)
-          .then((pc.GameTable? t) async {
-        await t?.loadPlayers();
-        return t;
-      });
-    }
+
+    selectedId = widget.selectedPcId;
   }
 
   @override
@@ -243,7 +241,7 @@ class _TableEditPageState extends State<TableEditPage> {
                     icon: const Icon(Icons.close),
                     tooltip: 'Annuler',
                     onPressed: (selectedId != null || !_canCancel) ? null : () async {
-                      Navigator.of(context).pop(false);
+                      context.go('/tables');
                     },
                   ),
                   IconButton(
@@ -259,7 +257,7 @@ class _TableEditPageState extends State<TableEditPage> {
                       });
 
                       if(!context.mounted) return;
-                      Navigator.of(context).pop(true);
+                      context.go('/tables');
                     },
                   )
                 ],

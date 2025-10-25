@@ -86,13 +86,16 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                           children: [
                             const Text('Danger'),
                             const Spacer(),
-                            NumIntInputWidget(
-                              initialValue: widget.scenario.danger,
-                              minValue: 0,
-                              maxValue: 5,
-                              onChanged: (int v) {
-                                widget.scenario.danger = v;
-                              }
+                            SizedBox(
+                              width: 80,
+                              child: NumIntInputWidget(
+                                initialValue: widget.scenario.danger,
+                                minValue: 0,
+                                maxValue: 5,
+                                onChanged: (int v) {
+                                  widget.scenario.danger = v;
+                                }
+                              ),
                             ),
                           ],
                         ),
@@ -101,13 +104,16 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                           children: [
                             const Text('Découverte'),
                             const Spacer(),
-                            NumIntInputWidget(
-                              initialValue: widget.scenario.discovery,
-                              minValue: 0,
-                              maxValue: 5,
-                              onChanged: (int v) {
-                                widget.scenario.discovery = v;
-                              }
+                            SizedBox(
+                              width: 80,
+                              child: NumIntInputWidget(
+                                initialValue: widget.scenario.discovery,
+                                minValue: 0,
+                                maxValue: 5,
+                                onChanged: (int v) {
+                                  widget.scenario.discovery = v;
+                                }
+                              ),
                             ),
                           ],
                         ),
@@ -116,13 +122,16 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                           children: [
                             const Text('Magie'),
                             const Spacer(),
-                            NumIntInputWidget(
-                              initialValue: widget.scenario.magic,
-                              minValue: 0,
-                              maxValue: 5,
-                              onChanged: (int v) {
-                                widget.scenario.magic = v;
-                              }
+                            SizedBox(
+                              width: 80,
+                              child: NumIntInputWidget(
+                                initialValue: widget.scenario.magic,
+                                minValue: 0,
+                                maxValue: 5,
+                                onChanged: (int v) {
+                                  widget.scenario.magic = v;
+                                }
+                              ),
                             ),
                           ],
                         ),
@@ -131,13 +140,16 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                           children: [
                             const Text('Implication'),
                             const Spacer(),
-                            NumIntInputWidget(
-                              initialValue: widget.scenario.implication,
-                              minValue: 0,
-                              maxValue: 5,
-                              onChanged: (int v) {
-                                widget.scenario.implication = v;
-                              }
+                            SizedBox(
+                              width: 80,
+                              child: NumIntInputWidget(
+                                initialValue: widget.scenario.implication,
+                                minValue: 0,
+                                maxValue: 5,
+                                onChanged: (int v) {
+                                  widget.scenario.implication = v;
+                                }
+                              ),
                             ),
                           ],
                         ),

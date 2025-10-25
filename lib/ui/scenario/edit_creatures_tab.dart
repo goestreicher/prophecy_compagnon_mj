@@ -127,7 +127,8 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
             Expanded(
               child: CreaturesListWidget(
                 creatures: creatureSummaries,
-                initialSelection: selectedModel?.id,
+                selected: selectedModel?.id,
+                onSelected: (String? id) {},
                 onEditRequested: (String id) async {
                   var model = widget.creatures.firstWhere(
                       (Creature c) => c.id == id
