@@ -9,7 +9,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "autorité draconique",
-    "leader": "Brorne, Grand Dragon de la Pierre",
+    "leaders": [
+      {
+        "name": "Brorne",
+        "title": "Grand Dragon de la Pierre"
+      }
+    ],
     "motto": "courage, rigueur, dragons",
     "climate": "continental frais",
     "description": {
@@ -34,7 +39,6 @@
     "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
     "type": "capitale",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -59,7 +63,6 @@
     "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -84,7 +87,6 @@
     "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -109,7 +111,6 @@
     "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -134,7 +135,6 @@
     "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -159,7 +159,6 @@
     "parent_id": "6df5b505-e971-4514-b357-9eb03519b1fa",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -184,7 +183,6 @@
     "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -209,7 +207,6 @@
     "parent_id": "eac4e747-7d41-4973-b7b0-cd1b32641ca6",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -234,7 +231,6 @@
     "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -259,7 +255,6 @@
     "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -284,7 +279,6 @@
     "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -309,7 +303,6 @@
     "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -334,7 +327,6 @@
     "parent_id": "82b4261f-034c-4bb9-a651-ec846d144d59",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -359,7 +351,6 @@
     "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -384,7 +375,6 @@
     "parent_id": "3508bb47-7d06-44f7-91f8-6d436a951b29",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -409,7 +399,6 @@
     "parent_id": "3508bb47-7d06-44f7-91f8-6d436a951b29",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -434,7 +423,6 @@
     "parent_id": "80be5fee-c063-43b1-8ad7-6b0ce17ec250",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -459,7 +447,6 @@
     "parent_id": "3508bb47-7d06-44f7-91f8-6d436a951b29",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -484,7 +471,6 @@
     "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -509,7 +495,6 @@
     "parent_id": "a69ee783-bdfb-44e2-bd9a-8096a0e9a3bb",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -534,7 +519,6 @@
     "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -559,7 +543,6 @@
     "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
     "type": "cite",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -584,7 +567,12 @@
     "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
     "type": "cite",
     "government": null,
-    "leader": "Thorbal d’Ulmir",
+    "leaders": [
+      {
+        "name": "Thorbal d'Ulmir",
+        "title": ""
+      }
+    ],
     "motto": null,
     "climate": null,
     "description": {
@@ -609,7 +597,6 @@
     "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {

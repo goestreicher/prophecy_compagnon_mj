@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 import 'package:prophecy_compagnon_mj/ui/scenario/scenario_fleather_toolbar.dart';
 
-import '../../classes/resource_link.dart';
+import '../../classes/resource_link/resource_link.dart';
 import '../../classes/scenario.dart';
 import '../utils/markdown_fleather_toolbar.dart';
 import '../utils/num_input_widget.dart';

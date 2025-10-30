@@ -9,7 +9,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "autorité draconique",
-    "leader": "Kroryn, Grand Dragon du Feu",
+    "leaders": [
+      {
+        "name": "Kroryn",
+        "title": "Grand Dragon du Feu"
+      }
+    ],
     "motto": "fougue, énergie, honneur",
     "climate": "océanique à l'ouest, tempéré à l'est",
     "description": {
@@ -34,7 +39,6 @@
     "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -59,7 +63,6 @@
     "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
     "type": "cite",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -84,7 +87,6 @@
     "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
     "type": "cite",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -109,7 +111,6 @@
     "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
     "type": "region",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -134,7 +135,12 @@
     "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
     "type": "capitale",
     "government": null,
-    "leader": "Méléan Sarn, Connétable d'Ankar",
+    "leaders": [
+      {
+        "name": "Méléan Sarn",
+        "title": "Connétable d'Ankar"
+      }
+    ],
     "motto": null,
     "climate": null,
     "description": {
@@ -159,7 +165,6 @@
     "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -184,7 +189,6 @@
     "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -209,7 +213,6 @@
     "parent_id": "953169c6-a0c8-4f32-913f-f3088c2815d8",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -234,7 +237,6 @@
     "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -259,7 +261,6 @@
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -284,7 +285,6 @@
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -309,7 +309,6 @@
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -334,7 +333,6 @@
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -359,7 +357,6 @@
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -384,7 +381,6 @@
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -409,7 +405,6 @@
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -434,7 +429,6 @@
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -459,7 +453,6 @@
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -484,7 +477,6 @@
     "parent_id": "e4251b27-813f-4c6e-a026-5855202c843d",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -509,7 +501,6 @@
     "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -534,7 +525,6 @@
     "parent_id": "63e4fd18-1411-4415-831b-f9c3095c023d",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -559,7 +549,6 @@
     "parent_id": "3f414562-cea5-4dfd-ac2d-0570ff889f11",
     "type": "cite",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {

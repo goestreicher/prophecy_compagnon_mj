@@ -3,11 +3,11 @@ import 'package:json_annotation/json_annotation.dart';
 part 'resource_link.g.dart';
 
 enum ResourceLinkType {
-  npc(title: 'PNJ'),
   creature(title: 'Créature'),
-  place(title: 'Lieu'),
   encounter(title: 'Rencontre'),
   map(title: 'Carte'),
+  npc(title: 'PNJ'),
+  place(title: 'Lieu'),
   ;
 
   const ResourceLinkType({ required this.title });
@@ -53,4 +53,12 @@ class ResourceLink {
 
   Map<String, dynamic> toJson() =>
       _$ResourceLinkToJson(this);
+}
+
+abstract class ResourceLinkProvider {
+  const ResourceLinkProvider();
+
+  List<String> sourceNames();
+  List<ResourceLinkType> availableTypes();
+  Future<List<ResourceLink>> linksForType(ResourceLinkType type, { String? sourceName });
 }

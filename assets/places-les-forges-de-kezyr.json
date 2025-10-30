@@ -9,7 +9,6 @@
     "parent_id": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152",
     "type": "region",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": "Tempéré sec",
     "description": {
@@ -34,7 +33,12 @@
     "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
     "type": "cite",
     "government": null,
-    "leader": "Florimelle de Dungard",
+    "leaders": [
+      {
+        "name": "Florimelle de Dungard",
+        "title": "Duchesse de Dungard"
+      }
+    ],
     "motto": null,
     "climate": "Tempéré sec",
     "description": {
@@ -59,7 +63,6 @@
     "parent_id": "0824a0bd-4fec-4be7-97c8-607018f04854",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -84,7 +87,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -109,7 +111,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -134,7 +135,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -159,7 +159,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -184,7 +183,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -209,7 +207,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -234,7 +231,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -259,7 +255,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -284,7 +279,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -309,7 +303,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -334,7 +327,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -359,7 +351,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -384,7 +375,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -409,7 +399,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -434,7 +423,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -459,7 +447,6 @@
     "parent_id": "07f815c2-e2fa-4d69-bea3-86112bf4dca9",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -484,7 +471,6 @@
     "parent_id": "0824a0bd-4fec-4be7-97c8-607018f04854",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -509,7 +495,6 @@
     "parent_id": "97ae1099-2672-4c03-a462-2e687fc72080",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -534,7 +519,6 @@
     "parent_id": "97ae1099-2672-4c03-a462-2e687fc72080",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -559,7 +543,6 @@
     "parent_id": "97ae1099-2672-4c03-a462-2e687fc72080",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -584,7 +567,6 @@
     "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": "Tempéré sec",
     "description": {
@@ -609,7 +591,6 @@
     "parent_id": "2107a25a-fe4f-4a20-ac7f-94d664363b0a",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -634,7 +615,6 @@
     "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
     "type": "region",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": "Tempéré sec",
     "description": {
@@ -659,7 +639,6 @@
     "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
     "type": "region",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": "Tempéré sec",
     "description": {
@@ -684,7 +663,6 @@
     "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {

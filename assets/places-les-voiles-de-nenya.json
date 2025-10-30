@@ -9,7 +9,15 @@
     "parent_id": "6474b3b2-0f9b-4251-896a-b6e38f51d1a6",
     "type": "capitale",
     "government": null,
-    "leader": "Nathiaël, Seigneur-Chimère",
+    "leaders": [
+      {
+        "link": {
+          "name": "Nathiaël",
+          "link": "resource://assets/npc/1e5511ed-4752-42f0-b4cc-35b639b9884a"
+        },
+        "title": "Seigneur Chimère"
+      }
+    ],
     "motto": null,
     "climate": null,
     "description": {
@@ -34,7 +42,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -59,7 +66,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -84,7 +90,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -109,7 +114,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -134,7 +138,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -159,7 +162,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -184,7 +186,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -209,7 +210,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -234,7 +234,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -259,7 +258,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -284,7 +282,6 @@
     "parent_id": "d444bb5a-d98e-4e55-97eb-e793bb02ec2b",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -309,7 +306,6 @@
     "parent_id": "a5d0eb56-1e8e-4ffe-a225-efe98f85af9f",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -334,7 +330,6 @@
     "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -359,7 +354,6 @@
     "parent_id": "bf64abcb-62c3-4f5e-960e-7e7bcce9efda",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {

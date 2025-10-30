@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+import 'character_role.dart';
 import 'exportable_binary_data.dart';
 import 'object_location.dart';
 import 'object_source.dart';
@@ -351,6 +352,7 @@ class Place extends ResourceBaseClass {
     String? parentId,
     required PlaceType type,
     required String name,
+    List<CharacterRole>? leaders,
     String? government,
     String? leader,
     String? motto,
@@ -368,8 +370,8 @@ class Place extends ResourceBaseClass {
               parentId: parentId,
               type: type,
               name: name,
+              leaders: leaders,
               government: government,
-              leader: leader,
               motto: motto,
               climate: climate,
               description: description,
@@ -390,8 +392,8 @@ class Place extends ResourceBaseClass {
     this.parentId,
     required this.type,
     required super.name,
+    List<CharacterRole>? leaders,
     this.government,
-    this.leader,
     this.motto,
     this.climate,
     required this.description,
@@ -399,15 +401,16 @@ class Place extends ResourceBaseClass {
     required super.source,
     this.map,
     this.canCache = true,
-  });
+  })
+    : leaders = leaders ?? <CharacterRole>[];
 
   @override
   String get id => uuid;
   final String uuid;
   final String? parentId;
   PlaceType type;
+  List<CharacterRole> leaders;
   String? government;
-  String? leader;
   String? motto;
   String? climate;
   PlaceDescription description;

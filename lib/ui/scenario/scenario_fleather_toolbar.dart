@@ -1,7 +1,7 @@
 import '../../classes/creature.dart';
 import '../../classes/non_player_character.dart';
 import '../../classes/place.dart';
-import '../../classes/resource_link.dart';
+import '../../classes/resource_link/resource_link.dart';
 import '../../classes/scenario.dart';
 
 Future<List<ResourceLink>> generateScenarioResourceLinks(ResourceLinkType type, Scenario scenario) async {

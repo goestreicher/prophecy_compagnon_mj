@@ -112,8 +112,10 @@ Place _$PlaceFromJson(Map<String, dynamic> json) => Place(
   parentId: json['parent_id'] as String?,
   type: $enumDecode(_$PlaceTypeEnumMap, json['type']),
   name: json['name'] as String,
+  leaders: (json['leaders'] as List<dynamic>?)
+      ?.map((e) => CharacterRole.fromJson(e as Map<String, dynamic>))
+      .toList(),
   government: json['government'] as String?,
-  leader: json['leader'] as String?,
   motto: json['motto'] as String?,
   climate: json['climate'] as String?,
   description: PlaceDescription.fromJson(
@@ -134,8 +136,8 @@ Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
   'uuid': instance.uuid,
   'parent_id': instance.parentId,
   'type': _$PlaceTypeEnumMap[instance.type]!,
+  'leaders': instance.leaders.map((e) => e.toJson()).toList(),
   'government': instance.government,
-  'leader': instance.leader,
   'motto': instance.motto,
   'climate': instance.climate,
   'description': instance.description.toJson(),

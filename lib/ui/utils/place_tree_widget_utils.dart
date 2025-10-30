@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
+import '../../classes/resource_link/resource_link.dart';
 import 'error_feedback.dart';
 import 'generic_tree_widget.dart';
 import 'place_edit_dialog.dart';
@@ -11,11 +12,13 @@ class PlaceTreeWidgetAdapter implements GenericTreeWidgetAdapter<PlaceSummary, P
     this.itemSelectionCallback,
     this.itemCreationCallback,
     this.newPlaceSource,
+    this.resourceLinkProvider,
   });
 
   final void Function(PlaceSummary)? itemSelectionCallback;
   final void Function(Place)? itemCreationCallback;
   final ObjectSource? newPlaceSource;
+  final ResourceLinkProvider? resourceLinkProvider;
 
   @override
   PlaceSummary toTreeDataType(Place p) => p.summary;
@@ -42,6 +45,7 @@ class PlaceTreeWidgetAdapter implements GenericTreeWidgetAdapter<PlaceSummary, P
     return PlaceEditDialog(
       parent: parent.id,
       source: newPlaceSource,
+      resourceLinkProvider: resourceLinkProvider,
     );
   }
 }

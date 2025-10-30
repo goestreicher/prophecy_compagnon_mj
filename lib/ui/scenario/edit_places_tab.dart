@@ -5,6 +5,9 @@ import 'package:provider/provider.dart';
 import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
+import '../../classes/resource_link/assets_resource_link_provider.dart';
+import '../../classes/resource_link/multi_resource_link_provider.dart';
+import '../../classes/resource_link/scenario_resource_link_provider.dart';
 import '../utils/generic_tree_widget.dart';
 import '../utils/place/place_selection_model.dart';
 import '../utils/place_display_widget.dart';
@@ -42,6 +45,14 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
 
     adapter = PlaceTreeWidgetAdapter(
       newPlaceSource: widget.scenarioSource,
+      resourceLinkProvider: MultiResourceLinkProvider(
+        providers: [
+          AssetsResourceLinkProvider(),
+          ScenarioResourceLinkProvider(
+            source: widget.scenarioSource,
+          ),
+        ]
+      ),
       itemSelectionCallback: (PlaceSummary p) {
         placeSelectionModel.id = p.id;
       },
@@ -148,6 +159,14 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
                     return PlaceDisplayWidget(
                       placeId: selectedPlace.id,
                       modifyIfSourceMatches: widget.scenarioSource,
+                      resourceLinkProvider: MultiResourceLinkProvider(
+                        providers: [
+                          AssetsResourceLinkProvider(),
+                          ScenarioResourceLinkProvider(
+                            source: widget.scenarioSource,
+                          ),
+                        ]
+                      ),
                       onEdited: (Place p) => setState(() {
                         widget.onPlaceModified(p);
                         selectedPlace.id = p.id;

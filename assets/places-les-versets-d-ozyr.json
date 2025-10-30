@@ -9,7 +9,12 @@
     "parent_id": "6b275174-2f30-4697-a266-531d1883a60d",
     "type": "capitale",
     "government": "autorité draconique",
-    "leader": "Ozyr, Grand Dragon des Océans",
+    "leaders": [
+      {
+        "name": "Ozyr",
+        "title": "Grand Dragon des Océans"
+      }
+    ],
     "motto": null,
     "climate": null,
     "description": {
@@ -34,7 +39,6 @@
     "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -59,7 +63,6 @@
     "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -84,7 +87,6 @@
     "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -109,7 +111,6 @@
     "parent_id": "1d095ed1-7e36-4172-a428-227761de3f12",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -134,7 +135,6 @@
     "parent_id": "1d095ed1-7e36-4172-a428-227761de3f12",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -159,7 +159,6 @@
     "parent_id": "1d095ed1-7e36-4172-a428-227761de3f12",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -184,7 +183,6 @@
     "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -209,7 +207,6 @@
     "parent_id": "976e5500-e2d1-4b4e-a782-b82a563c8b0c",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -234,7 +231,6 @@
     "parent_id": "976e5500-e2d1-4b4e-a782-b82a563c8b0c",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -259,7 +255,6 @@
     "parent_id": "976e5500-e2d1-4b4e-a782-b82a563c8b0c",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -284,7 +279,6 @@
     "parent_id": "976e5500-e2d1-4b4e-a782-b82a563c8b0c",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -309,7 +303,6 @@
     "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -334,7 +327,6 @@
     "parent_id": "e6ce25b8-2e6d-44bd-b7c8-64efbafa7292",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -359,7 +351,6 @@
     "parent_id": "e91722bd-49a0-47fe-b928-b76e7c841229",
     "type": "quartier",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -384,7 +375,6 @@
     "parent_id": "ec657956-6670-4238-baa3-bba69d6a3747",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {

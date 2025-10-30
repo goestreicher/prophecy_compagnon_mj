@@ -27,22 +27,6 @@ Map<String, dynamic> _$FactionSummaryToJson(FactionSummary instance) =>
       'display_only': instance.displayOnly,
     };
 
-FactionMember _$FactionMemberFromJson(Map<String, dynamic> json) =>
-    FactionMember(
-      name: json['name'] as String?,
-      link: json['link'] == null
-          ? null
-          : ResourceLink.fromJson(json['link'] as Map<String, dynamic>),
-      title: json['title'] as String,
-    );
-
-Map<String, dynamic> _$FactionMemberToJson(FactionMember instance) =>
-    <String, dynamic>{
-      'name': instance.name,
-      'link': instance.link?.toJson(),
-      'title': instance.title,
-    };
-
 Faction _$FactionFromJson(Map<String, dynamic> json) => Faction(
   uuid: json['uuid'] as String?,
   parentId: json['parent_id'] as String?,
@@ -50,14 +34,14 @@ Faction _$FactionFromJson(Map<String, dynamic> json) => Faction(
   name: json['name'] as String,
   leaders:
       (json['leaders'] as List<dynamic>?)
-          ?.map((e) => FactionMember.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => CharacterRole.fromJson(e as Map<String, dynamic>))
           .toList() ??
-      const <FactionMember>[],
+      const <CharacterRole>[],
   members:
       (json['members'] as List<dynamic>?)
-          ?.map((e) => FactionMember.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => CharacterRole.fromJson(e as Map<String, dynamic>))
           .toList() ??
-      const <FactionMember>[],
+      const <CharacterRole>[],
   description: json['description'] as String,
   location: json['location'] == null
       ? ObjectLocation.memory

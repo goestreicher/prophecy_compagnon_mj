@@ -73,7 +73,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "citeEtat",
     "government": "unique. Le pouvoir est aux mains d'un seul homme reconnu pour ses exploits.",
-    "leader": "Yarm, Guide de la Liberté",
+    "leaders": [
+      {
+        "name": "Yarm",
+        "title": "Guide de la Liberté"
+      }
+    ],
     "motto": "indépendance, prospérité, audace",
     "climate": "désertique côtier",
     "description": {
@@ -97,7 +102,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "empire dont le dirigeant est choisi au sein du Grand Conseil des Provins",
-    "leader": "Rolan XII, Frère des Dragons",
+    "leaders": [
+      {
+        "name": "Rolan XII",
+        "title": "Frère des Dragons"
+      }
+    ],
     "motto": "liberté, commerce, tempérance",
     "climate": "tempéré. Le climat au nord (Havre) est toujours magiquement altéré par le Dragon des Vents pour être chaud et ensoleillé.",
     "description": {
@@ -134,7 +144,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "conseil de représentants élus",
-    "leader": "Ermar, le Grand Ordonnateur",
+    "leaders": [
+      {
+        "name": "Ermar",
+        "title": "le Grand Ordonnateur"
+      }
+    ],
     "motto": "évolution, indépendance, prospérité",
     "climate": "continental et océanique",
     "description": {
@@ -171,7 +186,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "tribus nomades et pouvoir guerrier",
-    "leader": "Mor-Mar-Zûl, Chevaucheur du Souffle du Dragon",
+    "leaders": [
+      {
+        "name": "Mor-Mar-Zûl",
+        "title": "Chevaucheur du Souffle du Dragon"
+      }
+    ],
     "motto": "honneur, famille, dragons",
     "climate": "désertique chaud",
     "description": {
@@ -230,7 +250,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "aristocratie marchande corrompue",
-    "leader": "Flavien, Dragon et Prince Argentier",
+    "leaders": [
+      {
+        "name": "Flavien",
+        "title": "Dragon et Prince Argentier"
+      }
+    ],
     "motto": "luxure, richesse, suprématie",
     "climate": "océanique doux",
     "description": {
@@ -267,7 +292,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "autorité draconique",
-    "leader": "Kalimsshar, Héraut de la Fatalité",
+    "leaders": [
+      {
+        "name": "Kalimsshar",
+        "title": "Héraut de la Fatalité"
+      }
+    ],
     "motto": "fatalisme, individualité, survie",
     "climate": "automne continental perpétuel",
     "description": {
@@ -304,7 +334,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "patriarcat clanique",
-    "leader": "Orode, Meneur des Guerriers",
+    "leaders": [
+      {
+        "name": "Orode",
+        "title": "Meneur des Guerriers"
+      }
+    ],
     "motto": "force, autarcie, lignage",
     "climate": "continental frais",
     "description": {
@@ -341,7 +376,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "monarchie féodale héréditaire",
-    "leader": "Jard le Bien-aimé, Prince des Marches Unifiées",
+    "leaders": [
+      {
+        "name": "Jard",
+        "title": "le Bien-aimé, Prince des Marches Unifiées"
+      }
+    ],
     "motto": "diverse, mais l'unité, le respect et la prospérité sont fréquemment cités",
     "climate": "multitude de climats parfois magiquement altérés d'après une base de climat océanique tempéré",
     "description": {
@@ -378,7 +418,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "conseil de mages",
-    "leader": "Lylir, Maîtresse des Sphères",
+    "leaders": [
+      {
+        "name": "Lylir",
+        "title": "Maîtresse des Sphères"
+      }
+    ],
     "motto": "spiritualité, mesure, puissance",
     "climate": "méditerranéen humide, altéré magiquement",
     "description": {
@@ -402,7 +447,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "principauté marchande, dirigée par une assemblée de commerçants",
-    "leader": "Rario de Zani, Prince de Maréni",
+    "leaders": [
+      {
+        "name": "Rario de Zani",
+        "title": "Prince de Maréni"
+      }
+    ],
     "motto": "enrichissement, survie, virilité",
     "climate": "tempéré très humide",
     "description": {
@@ -439,7 +489,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "cités indépendantes",
-    "leader": "Nir le Prodige",
+    "leaders": [
+      {
+        "name": "Nir le Prodige",
+        "title": ""
+      }
+    ],
     "motto": "harmonie, sérénité, communauté",
     "climate": "tropical",
     "description": {
@@ -476,7 +531,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "tribus indépendantes",
-    "leader": "Arland Poing d'acier",
+    "leaders": [
+      {
+        "name": "Arland Poing d'acier",
+        "title": ""
+      }
+    ],
     "motto": "tribu, spiritualité, paix",
     "climate": "hivernal modéré",
     "description": {
@@ -513,7 +573,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "union de cités-États",
-    "leader": "Ozyr, Grand Dragon des Océans",
+    "leaders": [
+      {
+        "name": "Ozyr",
+        "title": "Grand Dragon des Océans"
+      }
+    ],
     "motto": "sagesse, intelligence, modestie",
     "climate": "tropical humide",
     "description": {

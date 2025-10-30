@@ -1,10 +1,10 @@
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
+import 'character_role.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'resource_base_class.dart';
-import 'resource_link.dart';
 import 'resource_memory_cache.dart';
 import 'storage/default_assets_store.dart';
 import 'storage/storable.dart';
@@ -134,27 +134,6 @@ class FactionSummary extends ResourceBaseClass {
       => _$FactionSummaryToJson(this);
 }
 
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class FactionMember {
-  FactionMember({
-    this.name,
-    this.link,
-    required this.title,
-  })
-  {
-    if(name == null && link == null) {
-      throw ArgumentError('Either name or link must be provided to create a faction member');
-    }
-  }
-
-  String? name;
-  ResourceLink? link;
-  String title;
-
-  factory FactionMember.fromJson(Map<String, dynamic> j) => _$FactionMemberFromJson(j);
-  Map<String, dynamic> toJson() => _$FactionMemberToJson(this);
-}
-
 class FactionStore extends JsonStoreAdapter<Faction> {
   @override
   String storeCategory() => 'factions';
@@ -202,8 +181,8 @@ class Faction extends ResourceBaseClass {
     String? parentId,
     bool displayOnly = false,
     required String name,
-    List<FactionMember> leaders = const <FactionMember>[],
-    List<FactionMember> members = const <FactionMember>[],
+    List<CharacterRole> leaders = const <CharacterRole>[],
+    List<CharacterRole> members = const <CharacterRole>[],
     required String description,
     ObjectLocation location = ObjectLocation.memory,
     required ObjectSource source,
@@ -233,8 +212,8 @@ class Faction extends ResourceBaseClass {
     this.parentId,
     this.displayOnly = false,
     required super.name,
-    this.leaders = const <FactionMember>[],
-    this.members = const <FactionMember>[],
+    this.leaders = const <CharacterRole>[],
+    this.members = const <CharacterRole>[],
     required this.description,
     super.location,
     required super.source,
@@ -245,8 +224,8 @@ class Faction extends ResourceBaseClass {
   String uuid;
   String? parentId;
   bool displayOnly;
-  List<FactionMember> leaders;
-  List<FactionMember> members;
+  List<CharacterRole> leaders;
+  List<CharacterRole> members;
   String description;
 
   FactionSummary get summary => FactionSummary(

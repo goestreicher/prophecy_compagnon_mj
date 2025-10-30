@@ -4,9 +4,12 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../classes/character_role.dart';
 import '../../classes/exportable_binary_data.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
+import '../../classes/resource_link/resource_link.dart';
+import 'character_role_edit_widget.dart';
 
 class PlaceEditDialog extends StatefulWidget {
   const PlaceEditDialog({
@@ -14,11 +17,13 @@ class PlaceEditDialog extends StatefulWidget {
     required this.parent,
     this.place,
     this.source,
+    this.resourceLinkProvider,
   });
 
   final String parent;
   final Place? place;
   final ObjectSource? source;
+  final ResourceLinkProvider? resourceLinkProvider;
 
   @override
   State<PlaceEditDialog> createState() => _PlaceEditDialogState();
@@ -29,8 +34,8 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
   final TextEditingController placeTypeController = TextEditingController();
   PlaceType? selectedPlaceType;
   final TextEditingController nameController = TextEditingController();
+  late final List<CharacterRole> leaders;
   final TextEditingController governmentController = TextEditingController();
-  final TextEditingController leaderController = TextEditingController();
   final TextEditingController mottoController = TextEditingController();
   final TextEditingController climateController = TextEditingController();
   final TextEditingController mapSourceTypeController = TextEditingController();
@@ -49,7 +54,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
     selectedPlaceType = widget.place?.type;
     nameController.text = widget.place?.name ?? '';
     governmentController.text = widget.place?.government ?? '';
-    leaderController.text = widget.place?.leader ?? '';
+    leaders = widget.place?.leaders ?? <CharacterRole>[];
     mottoController.text = widget.place?.motto ?? '';
     climateController.text = widget.place?.climate ?? '';
     selectedMapSourceType = widget.place?.map?.sourceType;
@@ -66,6 +71,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
           child: Form(
             key: formKey,
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               spacing: 8.0,
               children: [
@@ -101,12 +107,20 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                     border: OutlineInputBorder(),
                   ),
                 ),
-                TextField(
-                  controller: leaderController,
-                  decoration: InputDecoration(
-                    labelText: 'Dirigeant',
-                    border: OutlineInputBorder(),
-                  ),
+                CharacterRoleListEditWidget(
+                  title: 'Dirigeants',
+                  members: leaders,
+                  resourceLinkProvider: widget.resourceLinkProvider,
+                  onAdd: (CharacterRole m) {
+                    setState(() {
+                      leaders.add(m);
+                    });
+                  },
+                  onDelete: (CharacterRole m) {
+                    setState(() {
+                      leaders.remove(m);
+                    });
+                  }
                 ),
                 TextField(
                   controller: mottoController,
@@ -317,9 +331,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
                 government: governmentController.text.isNotEmpty
                   ? governmentController.text
                   : null,
-                leader: leaderController.text.isNotEmpty
-                  ? leaderController.text
-                  : null,
+                leaders: leaders,
                 motto: mottoController.text.isNotEmpty
                   ? mottoController.text
                   : null,
@@ -345,9 +357,7 @@ class _PlaceEditDialogState extends State<PlaceEditDialog> {
               if(governmentController.text.isNotEmpty) {
                 widget.place!.government = governmentController.text;
               }
-              if(leaderController.text.isNotEmpty) {
-                widget.place!.leader = leaderController.text;
-              }
+              widget.place!.leaders = leaders;
               if(mottoController.text.isNotEmpty) {
                 widget.place!.motto = mottoController.text;
               }

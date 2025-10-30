@@ -1,6 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 
-import 'resource_link.dart';
+import 'resource_link/resource_link.dart';
 
 part 'scenario_event.g.dart';
 

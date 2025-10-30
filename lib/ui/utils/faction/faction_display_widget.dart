@@ -2,11 +2,13 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 
 import '../../../classes/faction.dart';
 import '../../../classes/object_location.dart';
 import '../../../classes/object_source.dart';
+import '../../../classes/resource_link/resource_link.dart';
+import '../character_role_display_widget.dart';
+import '../markdown_display_widget.dart';
 import 'faction_edit_dialog.dart';
 
 class FactionDisplayWidget extends StatelessWidget {
@@ -16,12 +18,14 @@ class FactionDisplayWidget extends StatelessWidget {
     required this.onEdited,
     required this.onDelete,
     this.modifyIfSourceMatches,
+    this.resourceLinkProvider,
   });
 
   final String? factionId;
   final void Function(Faction) onEdited;
   final void Function(Faction) onDelete;
   final ObjectSource? modifyIfSourceMatches;
+  final ResourceLinkProvider? resourceLinkProvider;
 
   Future<Faction?> load() {
     return factionId == null
@@ -98,7 +102,10 @@ class FactionDisplayWidget extends StatelessWidget {
                 var child = await showDialog<Faction>(
                   context: context,
                   barrierDismissible: false,
-                  builder: (BuildContext context) => FactionEditDialog(faction: faction),
+                  builder: (BuildContext context) => FactionEditDialog(
+                    faction: faction,
+                    resourceLinkProvider: resourceLinkProvider,
+                  ),
                 );
                 if(child == null) return;
                 onEdited(faction);
@@ -131,9 +138,7 @@ class FactionDisplayWidget extends StatelessWidget {
                     style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 for(var leader in faction.leaders)
-                  Text(
-                    '${leader.name}, ${leader.title}'
-                  ),
+                  CharacterRoleDisplayWidget(member: leader),
                 if(faction.leaders.isNotEmpty)
                   const SizedBox(height: 16.0),
                 if(faction.members.isNotEmpty)
@@ -142,12 +147,10 @@ class FactionDisplayWidget extends StatelessWidget {
                     style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
                   ),
                 for(var member in faction.members)
-                  Text(
-                      '${member.name}, ${member.title}'
-                  ),
+                  CharacterRoleDisplayWidget(member: member),
                 if(faction.members.isNotEmpty)
                   const SizedBox(height: 16.0),
-                MarkdownBody(data: faction.description),
+                MarkdownDisplayWidget(data: faction.description),
               ],
             ),
           ),

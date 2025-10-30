@@ -5,6 +5,9 @@ import 'package:provider/provider.dart';
 import '../../classes/faction.dart';
 import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
+import '../../classes/resource_link/assets_resource_link_provider.dart';
+import '../../classes/resource_link/multi_resource_link_provider.dart';
+import '../../classes/resource_link/scenario_resource_link_provider.dart';
 import '../utils/faction/faction_selection_model.dart';
 import '../utils/faction/faction_display_widget.dart';
 import '../utils/faction/faction_tree_widget_utils.dart';
@@ -42,6 +45,14 @@ class _ScenarioEditFactionsPageState extends State<ScenarioEditFactionsPage> {
 
     adapter = FactionTreeWidgetAdapter(
       newFactionSource: widget.scenarioSource,
+      resourceLinkProvider: MultiResourceLinkProvider(
+        providers: [
+          AssetsResourceLinkProvider(),
+          ScenarioResourceLinkProvider(
+            source: widget.scenarioSource,
+          ),
+        ]
+      ),
       itemSelectionCallback: (FactionSummary f) {
         factionSelectionModel.id = f.id;
       },
@@ -147,6 +158,14 @@ class _ScenarioEditFactionsPageState extends State<ScenarioEditFactionsPage> {
                     return FactionDisplayWidget(
                       factionId: selectedFaction.id,
                       modifyIfSourceMatches: widget.scenarioSource,
+                      resourceLinkProvider: MultiResourceLinkProvider(
+                        providers: [
+                          AssetsResourceLinkProvider(),
+                          ScenarioResourceLinkProvider(
+                            source: widget.scenarioSource,
+                          ),
+                        ]
+                      ),
                       onEdited: (Faction f) {
                         widget.onFactionModified(f);
                         selectedFaction.id = f.id;

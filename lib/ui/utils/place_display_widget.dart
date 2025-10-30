@@ -5,13 +5,15 @@ import 'package:fleather/fleather.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../classes/exportable_binary_data.dart';
 import '../../classes/object_location.dart';
 import '../../classes/object_source.dart';
 import '../../classes/place.dart';
+import '../../classes/resource_link/resource_link.dart';
+import 'character_role_display_widget.dart';
+import 'markdown_display_widget.dart';
 import 'markdown_fleather_toolbar.dart';
 import 'place_edit_dialog.dart';
 import 'widget_group_container.dart';
@@ -23,12 +25,14 @@ class PlaceDisplayWidget extends StatelessWidget {
     required this.onEdited,
     required this.onDelete,
     this.modifyIfSourceMatches,
+    this.resourceLinkProvider,
   });
 
   final String? placeId;
   final void Function(Place) onEdited;
   final void Function(Place) onDelete;
   final ObjectSource? modifyIfSourceMatches;
+  final ResourceLinkProvider? resourceLinkProvider;
 
   Future<Place?> load() {
     return placeId == null
@@ -135,6 +139,20 @@ class PlaceDisplayWidget extends StatelessWidget {
           ]);
         }
 
+        var leadersWidgets = <InlineSpan>[];
+        for(var leader in place.leaders) {
+          leadersWidgets.addAll([
+            WidgetSpan(
+              child: CharacterRoleDisplayWidget(
+                  member: leader
+              )
+            ),
+            TextSpan(
+              text: '\n',
+            ),
+          ]);
+        }
+
         return SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.only(right: 16.0),
@@ -154,34 +172,35 @@ class PlaceDisplayWidget extends StatelessWidget {
                 ),
                 WidgetGroupContainer(
                   title: Row(
-                      children: [
-                        if(canEdit)
-                          Padding(
-                              padding: EdgeInsets.only(right: 4.0),
-                              child: MouseRegion(
-                                cursor: SystemMouseCursors.click,
-                                child: GestureDetector(
-                                  onTap: () async {
-                                    var child = await showDialog<Place>(
-                                      context: context,
-                                      barrierDismissible: false,
-                                      builder: (BuildContext context) => PlaceEditDialog(
-                                        parent: place.parentId!,
-                                        place: place
-                                      ),
-                                    );
-                                    if(child == null) return;
-                                    onEdited(place);
-                                  },
-                                  child: const Icon(Icons.edit, size: 16.0,),
-                                ),
-                              )
-                          ),
-                        Text(
-                          'Général',
-                          style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                    children: [
+                      if(canEdit)
+                        Padding(
+                            padding: EdgeInsets.only(right: 4.0),
+                            child: MouseRegion(
+                              cursor: SystemMouseCursors.click,
+                              child: GestureDetector(
+                                onTap: () async {
+                                  var child = await showDialog<Place>(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext context) => PlaceEditDialog(
+                                      parent: place.parentId!,
+                                      place: place,
+                                      resourceLinkProvider: resourceLinkProvider,
+                                    ),
+                                  );
+                                  if(child == null) return;
+                                  onEdited(place);
+                                },
+                                child: const Icon(Icons.edit, size: 16.0,),
+                              ),
+                            )
                         ),
-                      ]
+                      Text(
+                        'Général',
+                        style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                      ),
+                    ]
                   ),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,17 +236,12 @@ class PlaceDisplayWidget extends StatelessWidget {
                                   ]
                                 ),
                               ),
-                            if(place.leader != null && place.leader!.isNotEmpty)
+                            if(place.leaders.isNotEmpty)
                               RichText(
                                 text: TextSpan(
-                                  text: 'Dirigeant : ',
+                                  text: 'Dirigeants :\n',
                                   style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
-                                  children: [
-                                    TextSpan(
-                                      text: place.leader ?? 'aucun',
-                                      style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.normal),
-                                    )
-                                  ]
+                                  children: leadersWidgets,
                                 ),
                               ),
                             if(place.motto != null && place.motto!.isNotEmpty)
@@ -436,7 +450,7 @@ class _PlaceDescriptionItemDisplayWidget extends StatelessWidget {
       ),
       child: Align(
         alignment: AlignmentGeometry.topLeft,
-        child: MarkdownBody(
+        child: MarkdownDisplayWidget(
           data: value == null || value!.isEmpty
               ? 'Non renseigné'
               : value!

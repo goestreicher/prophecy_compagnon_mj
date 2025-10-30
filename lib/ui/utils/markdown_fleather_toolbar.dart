@@ -3,10 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../classes/creature.dart';
+import '../../classes/faction.dart';
 import '../../classes/non_player_character.dart';
 import '../../classes/object_location.dart';
 import '../../classes/place.dart';
-import '../../classes/resource_link.dart';
+import '../../classes/resource_link/resource_link.dart';
 
 class MarkdownFleatherToolbarFormField extends FormField<bool> {
   MarkdownFleatherToolbarFormField({
@@ -216,13 +217,13 @@ class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
     }
     else {
       switch(type!) {
-        case ResourceLinkType.npc:
-          for(var npc in await NonPlayerCharacterSummary.forLocationType(ObjectLocationType.assets, null, null)) {
-            links.add(ResourceLink.createLinkForResource(type!, useLocalResources, npc.name, npc.id));
-          }
         case ResourceLinkType.creature:
           for(var creature in await CreatureSummary.forLocationType(ObjectLocationType.assets, null)) {
             links.add(ResourceLink.createLinkForResource(type!, useLocalResources, creature.name, creature.id));
+          }
+        case ResourceLinkType.npc:
+          for(var npc in await NonPlayerCharacterSummary.forLocationType(ObjectLocationType.assets, null, null)) {
+            links.add(ResourceLink.createLinkForResource(type!, useLocalResources, npc.name, npc.id));
           }
         case ResourceLinkType.place:
           for(var place in await PlaceSummary.forLocationType(ObjectLocationType.assets)) {

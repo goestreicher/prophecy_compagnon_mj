@@ -9,7 +9,12 @@
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
     "government": "autorité draconique",
-    "leader": "Heyra, Grand Dragon de la Nature",
+    "leaders": [
+      {
+        "name": "Heyra",
+        "title": "Grand Dragon de la Nature"
+      }
+    ],
     "motto": "paix, simplicité, coexistence",
     "climate": "de continental doux à tropical",
     "description": {
@@ -34,7 +39,6 @@
     "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
     "type": "capitale",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -59,7 +63,6 @@
     "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
     "type": "village",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -84,7 +87,6 @@
     "parent_id": "5fcf60ac-2ffd-4974-b761-378a23187b52",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -109,7 +111,6 @@
     "parent_id": "5fcf60ac-2ffd-4974-b761-378a23187b52",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -134,7 +135,6 @@
     "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
     "type": "village",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -159,7 +159,6 @@
     "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
     "type": "village",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -184,7 +183,6 @@
     "parent_id": "282800ee-2d1b-45bc-ae98-68f05f376213",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -209,7 +207,6 @@
     "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
     "type": "village",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -234,7 +231,6 @@
     "parent_id": "6219bc0c-b333-44f9-804e-af29be998fe4",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -259,7 +255,6 @@
     "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
     "type": "village",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -284,7 +279,6 @@
     "parent_id": "7524589a-168b-4271-8ae2-170a4c96e852",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -309,7 +303,6 @@
     "parent_id": "7524589a-168b-4271-8ae2-170a4c96e852",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -334,7 +327,6 @@
     "parent_id": "5fcf60ac-2ffd-4974-b761-378a23187b52",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -359,7 +351,6 @@
     "parent_id": "63315b81-3fd3-4aee-8f18-e14f1600e177",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -384,7 +375,6 @@
     "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
     "type": "region",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -409,7 +399,6 @@
     "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -434,7 +423,6 @@
     "parent_id": "4c40273f-8de6-49b9-8f81-85d769d304b6",
     "type": "batiment",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -459,7 +447,6 @@
     "parent_id": "bf3902c3-748b-40cb-96a0-0451b434b9ae",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -484,7 +471,6 @@
     "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
     "type": "lieuUnique",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -509,7 +495,6 @@
     "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
     "type": "region",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -534,7 +519,6 @@
     "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
     "type": "region",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {
@@ -559,7 +543,6 @@
     "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
     "type": "region",
     "government": null,
-    "leader": null,
     "motto": null,
     "climate": null,
     "description": {

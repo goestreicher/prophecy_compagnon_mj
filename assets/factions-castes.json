@@ -1141,7 +1141,10 @@
         "title": "Grand Dragon des Rêves"
       },
       {
-        "name": "Nathiaël",
+        "link": {
+          "name": "Nathiaël",
+          "link": "resource://assets/npc/1e5511ed-4752-42f0-b4cc-35b639b9884a"
+        },
         "title": "Seigneur Chimère"
       }
     ]

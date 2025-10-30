@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
-import 'package:prophecy_compagnon_mj/classes/resource_link.dart';
+import 'package:prophecy_compagnon_mj/classes/resource_link/resource_link.dart';
 import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../../classes/calendar.dart';
 import '../../classes/scenario.dart';
 import '../../classes/scenario_event.dart';
+import '../utils/markdown_display_widget.dart';
 import 'scenario_event_edit_dialog.dart';
 
 class ScenarioEditEventsPage extends StatelessWidget {
@@ -635,7 +635,7 @@ class _SingleEventWidget extends StatelessWidget {
               if(!eventModel.collapsed)
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 12.0),
-                  child: MarkdownBody(data: eventModel.event.description),
+                  child: MarkdownDisplayWidget(data: eventModel.event.description),
                 ),
               if(eventModel.event.resourceLinks.isNotEmpty)
                 _SingleEventResourcesInformationWidget(event: eventModel.event),

@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../classes/calendar.dart';
-import '../../classes/resource_link.dart';
+import '../../classes/resource_link/resource_link.dart';
 import '../../classes/scenario.dart';
 import '../../classes/scenario_event.dart';
 import '../utils/markdown_fleather_toolbar.dart';
