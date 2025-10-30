@@ -10,8 +10,8 @@ import '../../classes/resource_link/multi_resource_link_provider.dart';
 import '../../classes/resource_link/scenario_resource_link_provider.dart';
 import '../utils/generic_tree_widget.dart';
 import '../utils/place/place_selection_model.dart';
-import '../utils/place_display_widget.dart';
-import '../utils/place_tree_widget_utils.dart';
+import '../utils/place/place_display_widget.dart';
+import '../utils/place/place_tree_widget_utils.dart';
 
 class ScenarioEditPlacesPage extends StatefulWidget {
   const ScenarioEditPlacesPage({

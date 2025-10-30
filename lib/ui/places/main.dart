@@ -11,8 +11,8 @@ import '../../classes/place.dart';
 import '../utils/error_feedback.dart';
 import '../utils/generic_tree_widget.dart';
 import '../utils/place/place_selection_model.dart';
-import '../utils/place_display_widget.dart';
-import '../utils/place_tree_widget_utils.dart';
+import '../utils/place/place_display_widget.dart';
+import '../utils/place/place_tree_widget_utils.dart';
 
 class PlacesMainPage extends StatefulWidget {
   const PlacesMainPage({ super.key, this.selected });

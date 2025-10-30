@@ -7,16 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 
-import '../../classes/exportable_binary_data.dart';
-import '../../classes/object_location.dart';
-import '../../classes/object_source.dart';
-import '../../classes/place.dart';
-import '../../classes/resource_link/resource_link.dart';
-import 'character_role_display_widget.dart';
-import 'markdown_display_widget.dart';
-import 'markdown_fleather_toolbar.dart';
+import '../../../classes/exportable_binary_data.dart';
+import '../../../classes/object_location.dart';
+import '../../../classes/object_source.dart';
+import '../../../classes/place.dart';
+import '../../../classes/resource_link/resource_link.dart';
+import '../character_role_display_widget.dart';
+import '../markdown_display_widget.dart';
+import '../markdown_fleather_toolbar.dart';
 import 'place_edit_dialog.dart';
-import 'widget_group_container.dart';
+import '../widget_group_container.dart';
 
 class PlaceDisplayWidget extends StatelessWidget {
   const PlaceDisplayWidget({
