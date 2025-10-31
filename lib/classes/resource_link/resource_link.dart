@@ -27,12 +27,15 @@ class ResourceLink {
 
     var uri = Uri.parse(link);
     type = ResourceLinkType.values.asNameMap()[uri.pathSegments[0]]!;
+    id = uri.pathSegments[1];
   }
 
   String name;
   String link;
   @JsonKey(includeFromJson: false, includeToJson: false)
   late ResourceLinkType type;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  late String id;
 
   static bool isValidLink(String link) {
     var uri = Uri.tryParse(link);
@@ -44,7 +47,7 @@ class ResourceLink {
   static ResourceLink createLinkForResource(ResourceLinkType type, bool local, String display, String id) {
     return ResourceLink(
       name: display,
-      link: 'resource://${local ? "local-store" : "assets"}/${type.name}/${Uri.encodeComponent(id)}',
+      link: 'resource://${local ? "store" : "assets"}/${type.name}/${Uri.encodeComponent(id)}',
     );
   }
 

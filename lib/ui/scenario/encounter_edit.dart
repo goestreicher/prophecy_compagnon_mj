@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/creature.dart';
+import '../../classes/entity_base.dart';
+import '../../classes/non_player_character.dart';
+import '../../classes/resource_link/resource_link.dart';
 import '../../classes/scenario_encounter.dart';
 import '../../classes/encounter_entity_factory.dart';
+import '../utils/resource_link/link_handler.dart';
 import 'creature_picker_dialog.dart';
 import 'npc_picker_dialog.dart';
 
@@ -142,42 +146,86 @@ class _EncounterEntityEditWidgetState extends State<EncounterEntityEditWidget> {
             }
 
             var model = snapshot.data!;
+            ResourceLink? modelLink;
+            String? modelType;
+
+            if(model is EntityBase) {
+              if (model is Creature) {
+                modelType = 'creature';
+              }
+              else if (model is NonPlayerCharacter) {
+                modelType = 'npc';
+              }
+
+              if(modelType != null) {
+                var store = (model as EntityBase).location.type.name;
+                var id = (model as EntityBase).id;
+                modelLink = ResourceLink(
+                    name: model.displayName(),
+                    link: 'resource://$store/$modelType/$id'
+                );
+              }
+            }
 
             return Row(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      model.displayName(),
-                      style: theme.textTheme.headlineSmall,
-                    ),
-                    if(!model.isUnique())
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
                       Row(
+                        spacing: 16.0,
                         children: [
-                          SizedBox(width: 24, child: Align(alignment: Alignment.centerRight, child: Text(widget.entity.min.toString()))),
-                          RangeSlider(
-                            values: _currentRange,
-                            min: 1,
-                            max: _displayRangeMax.toDouble(),
-                            divisions: _displayRangeMax - 1,
-                            onChanged: (RangeValues range) {
-                              setState(() {
-                                _currentRange = range;
-                              });
-                            },
-                            onChangeEnd: (RangeValues range) {
-                              setState(() {
-                                widget.entity.min = range.start.round().toInt();
-                                widget.entity.max = range.end.round().toInt();
-                                _displayRangeMax = (1 + _currentRange.end.round().toInt() ~/ 10) * 10;
-                              });
-                            }
+                          Text(
+                            model.displayName(),
+                            style: theme.textTheme.headlineSmall,
                           ),
-                          SizedBox(width: 24, child: Text(widget.entity.max.toString())),
+                          if(modelLink != null)
+                            IconButton(
+                              onPressed: () {
+                                String? type;
+                                if(model is Creature) {
+                                  type = 'creature';
+                                }
+                                else if(model is NonPlayerCharacter) {
+                                  type = 'npc';
+                                }
+                                handleResourceLinkClicked(
+                                  modelLink!,
+                                  context,
+                                );
+                              },
+                              icon: const Icon(Icons.help_outline),
+                            ),
                         ],
                       ),
-                  ],
+                      if(!model.isUnique())
+                        Row(
+                          children: [
+                            SizedBox(width: 24, child: Align(alignment: Alignment.centerRight, child: Text(widget.entity.min.toString()))),
+                            RangeSlider(
+                              values: _currentRange,
+                              min: 1,
+                              max: _displayRangeMax.toDouble(),
+                              divisions: _displayRangeMax - 1,
+                              onChanged: (RangeValues range) {
+                                setState(() {
+                                  _currentRange = range;
+                                });
+                              },
+                              onChangeEnd: (RangeValues range) {
+                                setState(() {
+                                  widget.entity.min = range.start.round().toInt();
+                                  widget.entity.max = range.end.round().toInt();
+                                  _displayRangeMax = (1 + _currentRange.end.round().toInt() ~/ 10) * 10;
+                                });
+                              }
+                            ),
+                            SizedBox(width: 24, child: Text(widget.entity.max.toString())),
+                          ],
+                        ),
+                    ],
+                  ),
                 ),
                 const Spacer(),
                 IconButton(

@@ -600,6 +600,7 @@ class _SingleEventWidget extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 8.0),
           child: Column(
+            spacing: 8.0,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
@@ -630,8 +631,6 @@ class _SingleEventWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              if(!eventModel.collapsed)
-                const SizedBox(height: 4.0),
               if(!eventModel.collapsed)
                 Padding(
                   padding: const EdgeInsets.fromLTRB(8.0, 0.0, 8.0, 12.0),
@@ -709,6 +708,7 @@ class _SingleEventResourcesInformationWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 12.0),
       child: Column(
+        spacing: 8.0,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if(placeWidgets.isNotEmpty)
