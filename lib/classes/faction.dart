@@ -23,7 +23,7 @@ class FactionSummaryStore extends JsonStoreAdapter<FactionSummary> {
     var faction = FactionSummary.fromJson(j);
     faction.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return faction;
   }
@@ -39,7 +39,7 @@ class FactionSummaryStore extends JsonStoreAdapter<FactionSummary> {
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 }
@@ -104,22 +104,26 @@ class FactionSummary extends ResourceBaseClass {
   }
 
   static Future<void> loadAll() async {
-    if(_cache.isEmpty || _cache.purged) {
-      var assetFiles = [
-        'factions-castes.json',
-        'factions-secretes.json',
-        'factions-les-voiles-de-nenya.json',
-      ];
-      for(var f in assetFiles) {
-        for(var a in await loadJSONAssetObjectList(f)) {
+    var assetFiles = [
+      'factions-castes.json',
+      'factions-secretes.json',
+      'factions-les-voiles-de-nenya.json',
+    ];
+
+    for(var f in assetFiles) {
+      if(!_cache.containsCollection(f)) {
+        _cache.addCollection(f);
+
+        for (var a in await loadJSONAssetObjectList(f)) {
           // ignore:unused_local_variable
           var f = FactionSummary.fromJson(a);
         }
       }
+    }
 
+    if(!_cache.containsCollection(FactionSummaryStore().getCollectionUri())) {
+      _cache.addCollection(FactionSummaryStore().getCollectionUri());
       await FactionSummaryStore().getAll();
-
-      _cache.purged = false;
     }
   }
 
@@ -146,7 +150,7 @@ class FactionStore extends JsonStoreAdapter<Faction> {
     var faction = Faction.fromJson(j);
     faction.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return faction;
   }
@@ -164,7 +168,7 @@ class FactionStore extends JsonStoreAdapter<Faction> {
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 

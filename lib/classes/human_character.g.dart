@@ -152,10 +152,11 @@ HumanCharacter _$HumanCharacterFromJson(
   Map<String, dynamic> json,
 ) => HumanCharacter(
   uuid: json['uuid'] as String?,
+  name: json['name'] as String,
+  source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   location: json['location'] == null
       ? ObjectLocation.memory
       : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
-  name: json['name'] as String,
   abilities: json['abilities'] == null
       ? null
       : EntityAbilities.fromJson(json['abilities'] as Map<String, dynamic>),
@@ -212,8 +213,9 @@ HumanCharacter _$HumanCharacterFromJson(
 
 Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
     <String, dynamic>{
-      'uuid': ?instance.uuid,
+      'source': instance.source.toJson(),
       'name': instance.name,
+      'uuid': ?instance.uuid,
       'description': instance.description,
       'image': instance.image?.toJson(),
       'icon': instance.icon?.toJson(),

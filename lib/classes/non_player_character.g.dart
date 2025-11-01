@@ -29,13 +29,13 @@ NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
 Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
   NonPlayerCharacterSummary instance,
 ) => <String, dynamic>{
-  'id': instance.id,
+  'source': instance.source.toJson(),
   'name': instance.name,
+  'id': instance.id,
   'category': const NPCCategoryJsonConverter().toJson(instance.category),
   'sub_category': const NPCSubcategoryJsonConverter().toJson(
     instance.subCategory,
   ),
-  'source': instance.source.toJson(),
   'icon': instance.icon?.toJson(),
 };
 
@@ -120,8 +120,9 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
     <String, dynamic>{
-      'uuid': ?instance.uuid,
+      'source': instance.source.toJson(),
       'name': instance.name,
+      'uuid': ?instance.uuid,
       'description': instance.description,
       'image': instance.image?.toJson(),
       'icon': instance.icon?.toJson(),
@@ -150,7 +151,6 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
       'sub_category': const NPCSubcategoryJsonConverter().toJson(
         instance.subCategory,
       ),
-      'source': instance.source.toJson(),
       'unique': instance.unique,
       'use_human_injury_manager': instance.useHumanInjuryManager,
     };

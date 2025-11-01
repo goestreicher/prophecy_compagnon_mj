@@ -56,6 +56,10 @@ abstract class ObjectStoreAdapter<T> {
   String getUriBase() {
     return '${DataStorage.instance.uriScheme}://${DataStorage.instance.uriHost}';
   }
+
+  String getCollectionUri() {
+    return '${getUriBase()}/${storeCategory()}';
+  }
 }
 
 abstract class JsonStoreAdapter<T> extends ObjectStoreAdapter<T> {

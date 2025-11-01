@@ -23,6 +23,7 @@ import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'magic_user.dart';
 import 'object_location.dart';
+import 'object_source.dart';
 import 'place.dart';
 import 'weapon.dart';
 
@@ -151,8 +152,9 @@ class CharacterOrigin {
 class HumanCharacter extends EntityBase with MagicUser {
   HumanCharacter({
     super.uuid,
-    super.location = ObjectLocation.memory,
     required super.name,
+    required super.source,
+    super.location = ObjectLocation.memory,
     super.abilities,
     super.attributes,
     super.initiative,

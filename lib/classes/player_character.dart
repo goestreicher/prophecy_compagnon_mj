@@ -16,6 +16,7 @@ import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
 import 'object_location.dart';
+import 'object_source.dart';
 import 'storage/storable.dart';
 
 part 'player_character.g.dart';
@@ -35,7 +36,7 @@ class PlayerCharacterSummaryStore extends JsonStoreAdapter<PlayerCharacterSummar
     var summary = PlayerCharacterSummary.fromJson(j);
     summary.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return summary;
   }
@@ -56,7 +57,7 @@ class PlayerCharacterSummaryStore extends JsonStoreAdapter<PlayerCharacterSummar
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 
@@ -82,7 +83,7 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
     var pc = PlayerCharacter.fromJson(j);
     pc.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return pc;
   }
@@ -108,7 +109,7 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
 
     await PlayerCharacterSummaryStore().save(object.summary);
@@ -151,10 +152,11 @@ class PlayerCharacterSummary {
 class PlayerCharacter extends HumanCharacter {
   PlayerCharacter({
     super.uuid,
-    super.location = ObjectLocation.memory,
     required this.player,
     required this.augure,
     required super.name,
+    super.source = ObjectSource.local,
+    super.location = ObjectLocation.memory,
     super.abilities,
     super.attributes,
     super.initiative,

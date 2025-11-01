@@ -42,7 +42,7 @@ class ObjectSource {
     return _instances[type]?.values.toList() ?? <ObjectSource>[];
   }
 
-  static ObjectSource local = ObjectSource(
+  static const ObjectSource local = ObjectSource._create(
       type: ObjectSourceType.original,
       name: "LOCAL_CREATED"
   );

@@ -21,6 +21,7 @@ import 'npc_category.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import '../text_utils.dart';
+import 'resource_base_class.dart';
 import 'resource_memory_cache.dart';
 import 'storage/default_assets_store.dart';
 import 'storage/storable.dart';
@@ -42,7 +43,7 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
     var summary = NonPlayerCharacterSummary.fromJson(j);
     summary.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return summary;
   }
@@ -63,7 +64,7 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 
@@ -76,7 +77,7 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @NPCCategoryJsonConverter()
 @NPCSubcategoryJsonConverter()
-class NonPlayerCharacterSummary {
+class NonPlayerCharacterSummary extends ResourceBaseClass {
   factory NonPlayerCharacterSummary({
     required String id,
     required String name,
@@ -103,21 +104,18 @@ class NonPlayerCharacterSummary {
 
   NonPlayerCharacterSummary._create({
     required this.id,
-    required this.name,
+    required super.name,
+    required super.source,
+    super.location,
     required this.category,
     required this.subCategory,
-    this.location = ObjectLocation.memory,
-    required this.source,
     this.icon,
   });
 
+  @override
   final String id;
-  final String name;
   final NPCCategory category;
   final NPCSubCategory subCategory;
-  @JsonKey(includeFromJson: true, includeToJson: false)
-  ObjectLocation location;
-  final ObjectSource source;
   final ExportableBinaryData? icon;
 
   static Future<Iterable<String>> ids() async {
@@ -253,37 +251,37 @@ class NonPlayerCharacterSummary {
   }
 
   static Future<void> loadAll() async {
-    await(_cache.lock.synchronized(() async {
-      if (_cache.isEmpty || _cache.purged) {
-        var assetFiles = [
-          'npcs-ldb2e.json',
-          'npcs-les-compagnons-de-khy.json',
-          'npcs-les-ecailles-de-brorne.json',
-          'npcs-les-enfants-de-heyra.json',
-          'npcs-les-forges-de-kezyr.json',
-          'npcs-les-foudres-de-kroryn.json',
-          'npcs-les-orphelins-de-szyl.json',
-          'npcs-les-versets-d-ozyr.json',
-          'npcs-les-voiles-de-nenya.json',
-        ];
+    var assetFiles = [
+      'npcs-ldb2e.json',
+      'npcs-les-compagnons-de-khy.json',
+      'npcs-les-ecailles-de-brorne.json',
+      'npcs-les-enfants-de-heyra.json',
+      'npcs-les-forges-de-kezyr.json',
+      'npcs-les-foudres-de-kroryn.json',
+      'npcs-les-orphelins-de-szyl.json',
+      'npcs-les-versets-d-ozyr.json',
+      'npcs-les-voiles-de-nenya.json',
+    ];
 
-        for (var f in assetFiles) {
-          for (var model in await loadJSONAssetObjectList(f)) {
-            try {
-              // ignore:unused_local_variable
-              var instance = NonPlayerCharacterSummary.fromJson(model);
-            } catch (e, stacktrace) {
-              print('Error loading NPC ${model["name"]}: ${e
-                  .toString()}\n${stacktrace.toString()}');
-            }
+    for (var f in assetFiles) {
+      if(!_cache.containsCollection(f)) {
+        _cache.addCollection(f);
+
+        for (var model in await loadJSONAssetObjectList(f)) {
+          try {
+            // ignore:unused_local_variable
+            var instance = NonPlayerCharacterSummary.fromJson(model);
+          } catch (e, stacktrace) {
+            print('Error loading NPC ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
           }
         }
-
-        await NonPlayerCharacterSummaryStore().getAll();
-
-        _cache.purged = false;
       }
-    }));
+    }
+
+    if(!_cache.containsCollection(NonPlayerCharacterSummaryStore().getCollectionUri())) {
+      _cache.addCollection(NonPlayerCharacterSummaryStore().getCollectionUri());
+      await NonPlayerCharacterSummaryStore().getAll();
+    }
   }
 
   static Future<void> _reloadFromStore(String id) async {
@@ -344,7 +342,7 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
     var npc = NonPlayerCharacter.fromJson(j);
     npc.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return npc;
   }
@@ -367,7 +365,7 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 
@@ -462,11 +460,11 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
   NonPlayerCharacter._create({
     super.uuid,
-    super.location = ObjectLocation.memory,
     required super.name,
+    required super.source,
+    super.location = ObjectLocation.memory,
     required this.category,
     required this.subCategory,
-    required this.source,
     bool unique = false,
     super.abilities,
     super.attributes,
@@ -504,7 +502,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
   NPCCategory category;
   NPCSubCategory subCategory;
-  ObjectSource source;
 
   bool get unique => uniqueNotifier.value;
   set unique(bool b) => uniqueNotifier.value = b;

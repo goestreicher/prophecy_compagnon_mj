@@ -14,6 +14,8 @@ import 'entity/status.dart';
 import 'equipment.dart';
 import 'exportable_binary_data.dart';
 import 'object_location.dart';
+import 'object_source.dart';
+import 'resource_base_class.dart';
 import '../text_utils.dart';
 
 part 'entity_base.g.dart';
@@ -33,11 +35,12 @@ abstract interface class InitiativeProvider {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class EntityBase with SupportsEquipableItem {
+class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
   EntityBase({
     String? uuid,
-    this.location = ObjectLocation.memory,
-    required this.name,
+    required super.name,
+    required super.source,
+    super.location = ObjectLocation.memory,
     EntityAbilities? abilities,
     EntityAttributes? attributes,
     this.initiative = 1,
@@ -67,12 +70,10 @@ class EntityBase with SupportsEquipableItem {
     this.injuries = injuries ?? EntityInjuries(manager: injuryProvider(this, null));
   }
 
+  @override
   String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
   @JsonKey(includeIfNull: false)
     final String? uuid;
-  @JsonKey(includeFromJson: true, includeToJson: false)
-    ObjectLocation location;
-  String name;
   String description;
 
   ExportableBinaryData? get image => _image;

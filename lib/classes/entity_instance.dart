@@ -11,6 +11,7 @@ import 'exportable_binary_data.dart';
 import 'magic.dart';
 import 'magic_user.dart';
 import 'object_location.dart';
+import 'object_source.dart';
 import 'storage/storable.dart';
 
 part 'entity_instance.g.dart';
@@ -53,7 +54,7 @@ class EntityInstanceStore extends JsonStoreAdapter<EntityInstance> {
     var model = EntityInstance.fromJson(j);
     model.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return model;
   }
@@ -73,7 +74,7 @@ class EntityInstanceStore extends JsonStoreAdapter<EntityInstance> {
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 
@@ -88,8 +89,9 @@ class EntityInstance extends EntityBase with MagicUser {
   EntityInstance(
     {
       super.uuid,
-      super.location = ObjectLocation.memory,
       required super.name,
+      required super.source,
+      super.location = ObjectLocation.memory,
       super.initiative,
       super.injuryProvider,
       super.size,
@@ -116,8 +118,9 @@ class EntityInstance extends EntityBase with MagicUser {
     required String modelSpecification,
   }) {
     var instance = EntityInstance(
-      location: ObjectLocation.memory,
       name: name,
+      source: entity.source,
+      location: ObjectLocation.memory,
       initiative: entity.initiative,
       injuryProvider: (EntityBase? e, InjuryManager? i) =>
           InjuryManager(

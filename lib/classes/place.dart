@@ -136,7 +136,7 @@ class PlaceSummaryStore extends JsonStoreAdapter<PlaceSummary> {
     var place = PlaceSummary.fromJson(j);
     place.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return place;
   }
@@ -152,7 +152,7 @@ class PlaceSummaryStore extends JsonStoreAdapter<PlaceSummary> {
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 }
@@ -235,29 +235,32 @@ class PlaceSummary extends ResourceBaseClass {
   }
 
   static Future<void> loadAll() async {
-    if(_cache.isEmpty || _cache.purged) {
-      var assetFiles = [
-        'places-ldb2e.json',
-        'places-les-compagnons-de-khy.json',
-        'places-les-ecailles-de-brorne.json',
-        'places-les-enfants-de-heyra.json',
-        'places-les-forges-de-kezyr.json',
-        'places-les-foudres-de-kroryn.json',
-        'places-les-orphelins-de-szyl.json',
-        'places-les-versets-d-ozyr.json',
-        'places-les-voiles-de-nenya.json',
-      ];
+    var assetFiles = [
+      'places-ldb2e.json',
+      'places-les-compagnons-de-khy.json',
+      'places-les-ecailles-de-brorne.json',
+      'places-les-enfants-de-heyra.json',
+      'places-les-forges-de-kezyr.json',
+      'places-les-foudres-de-kroryn.json',
+      'places-les-orphelins-de-szyl.json',
+      'places-les-versets-d-ozyr.json',
+      'places-les-voiles-de-nenya.json',
+    ];
 
-      for(var f in assetFiles) {
+    for(var f in assetFiles) {
+      if(!_cache.containsCollection(f)) {
+        _cache.addCollection(f);
+
         for (var a in await loadJSONAssetObjectList(f)) {
           // ignore:unused_local_variable
           var p = PlaceSummary.fromJson(a);
         }
       }
+    }
 
+    if(!_cache.containsCollection(PlaceSummaryStore().getCollectionUri())) {
+      _cache.addCollection(PlaceSummaryStore().getCollectionUri());
       await PlaceSummaryStore().getAll();
-
-      _cache.purged = false;
     }
   }
 
@@ -293,7 +296,7 @@ class PlaceStore extends JsonStoreAdapter<Place> {
     var place = Place.fromJson(j);
     place.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return place;
   }
@@ -324,7 +327,7 @@ class PlaceStore extends JsonStoreAdapter<Place> {
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 

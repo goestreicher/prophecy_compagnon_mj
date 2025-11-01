@@ -20,6 +20,7 @@ import 'exportable_binary_data.dart';
 import 'magic_user.dart';
 import 'object_location.dart';
 import 'object_source.dart';
+import 'resource_base_class.dart';
 import 'resource_memory_cache.dart';
 import 'weapon.dart';
 import 'character/base.dart';
@@ -183,7 +184,7 @@ class CreatureSummaryStore extends JsonStoreAdapter<CreatureSummary> {
     var summary = CreatureSummary.fromJson(j);
     summary.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return summary;
   }
@@ -204,7 +205,7 @@ class CreatureSummaryStore extends JsonStoreAdapter<CreatureSummary> {
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 
@@ -216,13 +217,13 @@ class CreatureSummaryStore extends JsonStoreAdapter<CreatureSummary> {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @CreatureCategoryJsonConverter()
-class CreatureSummary {
+class CreatureSummary extends ResourceBaseClass {
   factory CreatureSummary({
     required String id,
     required String name,
-    required CreatureCategory category,
-    ObjectLocation location = ObjectLocation.memory,
     required ObjectSource source,
+    ObjectLocation location = ObjectLocation.memory,
+    required CreatureCategory category,
     ExportableBinaryData? icon,
   })
   {
@@ -241,19 +242,16 @@ class CreatureSummary {
 
   CreatureSummary._create({
     required this.id,
-    required this.name,
+    required super.name,
+    required super.source,
+    super.location,
     required this.category,
-    this.location = ObjectLocation.memory,
-    required this.source,
     this.icon,
   });
 
+  @override
   final String id;
-  final String name;
   final CreatureCategory category;
-  @JsonKey(includeFromJson: true, includeToJson: false)
-  ObjectLocation location;
-  final ObjectSource source;
   final ExportableBinaryData? icon;
 
   static Future<Iterable<String>> ids() async {
@@ -358,16 +356,18 @@ class CreatureSummary {
   }
 
   static Future<void> loadAll() async {
-    if(_cache.isEmpty || _cache.purged) {
-      var assetFiles = [
-        'creatures-ldb2e.json',
-        'creatures-ecran2e.json',
-        'creatures-les-ecailles-de-brorne.json',
-        'creatures-les-enfants-de-heyra.json',
-        'creatures-les-foudres-de-kroryn.json',
-      ];
+    var assetFiles = [
+      'creatures-ldb2e.json',
+      'creatures-ecran2e.json',
+      'creatures-les-ecailles-de-brorne.json',
+      'creatures-les-enfants-de-heyra.json',
+      'creatures-les-foudres-de-kroryn.json',
+    ];
 
-      for (var f in assetFiles) {
+    for (var f in assetFiles) {
+      if(!_cache.containsCollection(f)) {
+        _cache.containsCollection(f);
+
         for (var model in await loadJSONAssetObjectList(f)) {
           try {
             // ignore:unused_local_variable
@@ -377,10 +377,11 @@ class CreatureSummary {
           }
         }
       }
+    }
 
+    if(!_cache.containsCollection(CreatureSummaryStore().getCollectionUri())) {
+      _cache.addCollection(CreatureSummaryStore().getCollectionUri());
       await CreatureSummaryStore().getAll();
-
-      _cache.purged = false;
     }
   }
 
@@ -442,7 +443,7 @@ class CreatureStore extends JsonStoreAdapter<Creature> {
     var model = Creature.fromJson(j);
     model.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
     return model;
   }
@@ -465,7 +466,7 @@ class CreatureStore extends JsonStoreAdapter<Creature> {
     // JSON representation).
     object.location = ObjectLocation(
       type: ObjectLocationType.store,
-      collectionUri: '${getUriBase()}/${storeCategory()}',
+      collectionUri: getCollectionUri(),
     );
   }
 
@@ -540,8 +541,9 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
   Creature._create(
       {
         super.uuid,
-        super.location = ObjectLocation.memory,
         required super.name,
+        required super.source,
+        super.location = ObjectLocation.memory,
         super.initiative,
         super.injuryProvider = entityBaseDefaultInjuries,
         super.size,
@@ -550,7 +552,6 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
         super.icon,
         this.unique = false,
         required this.category,
-        required this.source,
         required this.biome,
         required this.realSize,
         required this.weight,
@@ -567,7 +568,6 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
 
   bool unique;
   CreatureCategory category;
-  ObjectSource source;
   String biome;
   String realSize;
   String weight;

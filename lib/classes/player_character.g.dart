@@ -34,12 +34,15 @@ Map<String, dynamic> _$PlayerCharacterSummaryToJson(
 PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
     PlayerCharacter(
         uuid: json['uuid'] as String?,
-        location: json['location'] == null
-            ? ObjectLocation.memory
-            : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
         player: json['player'] as String,
         augure: $enumDecode(_$AugureEnumMap, json['augure']),
         name: json['name'] as String,
+        source: json['source'] == null
+            ? ObjectSource.local
+            : ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+        location: json['location'] == null
+            ? ObjectLocation.memory
+            : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
         abilities: json['abilities'] == null
             ? null
             : EntityAbilities.fromJson(
@@ -104,8 +107,9 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
     <String, dynamic>{
-      'uuid': ?instance.uuid,
+      'source': instance.source.toJson(),
       'name': instance.name,
+      'uuid': ?instance.uuid,
       'description': instance.description,
       'image': instance.image?.toJson(),
       'icon': instance.icon?.toJson(),

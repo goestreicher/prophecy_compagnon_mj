@@ -72,13 +72,13 @@ CreatureSummary _$CreatureSummaryFromJson(Map<String, dynamic> json) =>
     CreatureSummary(
       id: json['id'] as String,
       name: json['name'] as String,
-      category: const CreatureCategoryJsonConverter().fromJson(
-        json['category'] as String,
-      ),
+      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
       location: json['location'] == null
           ? ObjectLocation.memory
           : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
-      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+      category: const CreatureCategoryJsonConverter().fromJson(
+        json['category'] as String,
+      ),
       icon: json['icon'] == null
           ? null
           : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
@@ -87,10 +87,10 @@ CreatureSummary _$CreatureSummaryFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$CreatureSummaryToJson(
   CreatureSummary instance,
 ) => <String, dynamic>{
-  'id': instance.id,
-  'name': instance.name,
-  'category': const CreatureCategoryJsonConverter().toJson(instance.category),
   'source': instance.source.toJson(),
+  'name': instance.name,
+  'id': instance.id,
+  'category': const CreatureCategoryJsonConverter().toJson(instance.category),
   'icon': instance.icon?.toJson(),
 };
 
@@ -154,8 +154,9 @@ Creature _$CreatureFromJson(Map<String, dynamic> json) =>
       ..skills = EntitySkills.fromJson(json['skills'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$CreatureToJson(Creature instance) => <String, dynamic>{
-  'uuid': ?instance.uuid,
+  'source': instance.source.toJson(),
   'name': instance.name,
+  'uuid': ?instance.uuid,
   'description': instance.description,
   'image': instance.image?.toJson(),
   'icon': instance.icon?.toJson(),
@@ -170,7 +171,6 @@ Map<String, dynamic> _$CreatureToJson(Creature instance) => <String, dynamic>{
   'magic': instance.magic.toJson(),
   'unique': instance.unique,
   'category': const CreatureCategoryJsonConverter().toJson(instance.category),
-  'source': instance.source.toJson(),
   'biome': instance.biome,
   'real_size': instance.realSize,
   'weight': instance.weight,

@@ -9,10 +9,11 @@ part of 'entity_instance.dart';
 EntityInstance _$EntityInstanceFromJson(Map<String, dynamic> json) =>
     EntityInstance(
         uuid: json['uuid'] as String?,
+        name: json['name'] as String,
+        source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
         location: json['location'] == null
             ? ObjectLocation.memory
             : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
-        name: json['name'] as String,
         initiative: (json['initiative'] as num?)?.toInt() ?? 1,
         size: (json['size'] as num?)?.toDouble(),
         modelSpecification: json['model_specification'] as String,
@@ -38,8 +39,9 @@ EntityInstance _$EntityInstanceFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$EntityInstanceToJson(EntityInstance instance) =>
     <String, dynamic>{
-      'uuid': ?instance.uuid,
+      'source': instance.source.toJson(),
       'name': instance.name,
+      'uuid': ?instance.uuid,
       'description': instance.description,
       'abilities': instance.abilities.toJson(),
       'attributes': instance.attributes.toJson(),
