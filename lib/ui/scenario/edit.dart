@@ -125,7 +125,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
     uncommittedMapsCreation.clear();
     uncommittedMapsModification.clear();
     for(var m in uncommittedMapsDeletion) {
-      await ScenarioMapStore().delete(m);
+      await m.willDelete();
     }
     uncommittedMapsDeletion.clear();
   }

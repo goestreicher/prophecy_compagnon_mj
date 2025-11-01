@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:prophecy_compagnon_mj/classes/place.dart';
 import 'package:provider/provider.dart';
 
+import '../../classes/place_map.dart';
 import 'command_dispatcher.dart';
 import 'map_model.dart';
 import 'play_events_tab.dart';

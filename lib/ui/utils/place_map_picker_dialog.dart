@@ -4,9 +4,9 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../classes/place_map.dart';
 import 'error_feedback.dart';
 import '../../classes/exportable_binary_data.dart';
-import '../../classes/place.dart';
 
 class PlaceMapPickerDialog extends StatefulWidget {
   const PlaceMapPickerDialog({ super.key });

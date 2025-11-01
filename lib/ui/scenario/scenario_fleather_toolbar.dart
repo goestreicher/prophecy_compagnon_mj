@@ -26,7 +26,7 @@ Future<List<ResourceLink>> generateScenarioResourceLinks(ResourceLinkType type, 
       }
     case ResourceLinkType.map:
       for(var m in scenario.maps) {
-        ret.add(ResourceLink.createLinkForResource(type, true, m.name, m.uuid));
+        ret.add(ResourceLink.createLinkForResource(type, true, m.name, m.placeMap.uuid));
       }
   }
 

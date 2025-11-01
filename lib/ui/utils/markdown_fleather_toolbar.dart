@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../classes/creature.dart';
-import '../../classes/faction.dart';
 import '../../classes/non_player_character.dart';
 import '../../classes/object_location.dart';
 import '../../classes/place.dart';

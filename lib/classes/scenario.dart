@@ -68,11 +68,10 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
 
     if(j.containsKey('maps')) {
       var mapsJson = <Map<String, dynamic>>[];
-      for(var mapId in j['maps']) {
-        var map = await ScenarioMapStore().get(mapId);
-        if(map != null) {
-          mapsJson.add(map.toJson());
-        }
+      for(var mapJson in j['maps']) {
+        var map = await ScenarioMap.fromStoreJsonRepresentation(mapJson);
+        if(map == null) continue;
+        mapsJson.add(map.toJson());
       }
       j['maps'] = mapsJson;
     }
@@ -118,11 +117,10 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     }
     j['creatures'] = creatureIds;
 
-    var mapIds = <String>[];
+    j['maps'] = <Map<String, dynamic>>[];
     for(var map in object.maps) {
-      mapIds.add(map.uuid);
+      j['maps'].add(await map.toStoreJsonRepresentation());
     }
-    j['maps'] = mapIds;
 
     var placeIds = <String>[];
     for(var place in object.places) {
@@ -152,7 +150,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     }
 
     for(var map in object.maps) {
-      await ScenarioMapStore().save(map);
+      await map.willSave();
     }
 
     for(var place in object.places) {
@@ -177,7 +175,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     }
 
     for(var map in object.maps) {
-      await ScenarioMapStore().delete(map);
+      await map.willDelete();
     }
 
     for(var place in object.places) {

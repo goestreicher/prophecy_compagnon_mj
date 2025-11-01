@@ -11,6 +11,7 @@ import '../../../classes/exportable_binary_data.dart';
 import '../../../classes/object_location.dart';
 import '../../../classes/object_source.dart';
 import '../../../classes/place.dart';
+import '../../../classes/place_map.dart';
 import '../../../classes/resource_link/resource_link.dart';
 import '../character_role_display_widget.dart';
 import '../markdown_display_widget.dart';

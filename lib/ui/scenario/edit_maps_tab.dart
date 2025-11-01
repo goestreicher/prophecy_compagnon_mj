@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../classes/place.dart';
+import '../../classes/place_map.dart';
 import '../../classes/scenario_map.dart';
 import '../utils/full_page_loading.dart';
 import '../utils/place_map_picker_dialog.dart';

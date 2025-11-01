@@ -1,4 +1,3 @@
-import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
@@ -6,6 +5,7 @@ import 'character_role.dart';
 import 'exportable_binary_data.dart';
 import 'object_location.dart';
 import 'object_source.dart';
+import 'place_map.dart';
 import 'resource_base_class.dart';
 import 'resource_memory_cache.dart';
 import 'storage/default_assets_store.dart';
@@ -39,63 +39,6 @@ enum PlaceType {
   final int sort;
 
   const PlaceType({ required this.title, required this.sort });
-}
-
-enum PlaceMapSourceType {
-  asset,
-  local,
-}
-
-@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class PlaceMap {
-  PlaceMap({
-    required this.sourceType,
-    required this.source,
-    required this.imageWidth,
-    required this.imageHeight,
-    required this.realWidth,
-    required this.realHeight,
-  });
-
-  PlaceMapSourceType sourceType;
-  String source;
-  final int imageWidth;
-  final int imageHeight;
-  double realWidth;
-  double realHeight;
-  @JsonKey(includeFromJson: false, includeToJson: false)
-    Uint8List? imageData;
-  ExportableBinaryData? exportableBinaryData;
-
-  double get pixelsPerMeter => imageWidth / realWidth;
-
-  Uint8List? get image {
-    Uint8List? ret;
-
-    if(sourceType == PlaceMapSourceType.asset) {
-      ret = imageData;
-    }
-    else if(sourceType == PlaceMapSourceType.local) {
-      ret = exportableBinaryData?.data;
-    }
-
-    return ret;
-  }
-
-  Future<void> load() async {
-    if(sourceType == PlaceMapSourceType.asset) {
-      if(imageData != null) return;
-      var data = await rootBundle.load(source);
-      imageData = data.buffer.asUint8List();
-    }
-    else if(sourceType == PlaceMapSourceType.local) {
-      if(exportableBinaryData != null) return;
-      exportableBinaryData = await BinaryDataStore().get(source);
-    }
-  }
-
-  factory PlaceMap.fromJson(Map<String, dynamic> j) => _$PlaceMapFromJson(j);
-  Map<String, dynamic> toJson() => _$PlaceMapToJson(this);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)

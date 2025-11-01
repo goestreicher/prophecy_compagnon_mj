@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/widgets.dart';
 
-import '../../classes/place.dart';
+import '../../classes/place_map.dart';
 
 abstract class MapModelItem extends ChangeNotifier {
   MapModelItem({
