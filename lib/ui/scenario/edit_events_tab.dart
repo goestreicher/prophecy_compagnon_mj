@@ -7,6 +7,7 @@ import '../../classes/calendar.dart';
 import '../../classes/scenario.dart';
 import '../../classes/scenario_event.dart';
 import '../utils/markdown_display_widget.dart';
+import '../utils/resource_link/link_handler.dart';
 import 'scenario_event_edit_dialog.dart';
 
 class ScenarioEditEventsPage extends StatelessWidget {
@@ -764,14 +765,22 @@ class _SingleEventResourceInformationPill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 6.0),
-      margin: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 4.0),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.black),
-        borderRadius: BorderRadius.circular(12.0),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: () {
+          handleResourceLinkClicked(link, context);
+        },
+        child: Container(
+          padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 6.0),
+          margin: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 4.0),
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.black),
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          child: Text(link.name),
+        ),
       ),
-      child: Text(link.name),
     );
   }
 }
