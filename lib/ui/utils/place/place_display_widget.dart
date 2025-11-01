@@ -22,15 +22,15 @@ class PlaceDisplayWidget extends StatelessWidget {
   const PlaceDisplayWidget({
     super.key,
     this.placeId,
-    required this.onEdited,
-    required this.onDelete,
+    this.onEdited,
+    this.onDelete,
     this.modifyIfSourceMatches,
     this.resourceLinkProvider,
   });
 
   final String? placeId;
-  final void Function(Place) onEdited;
-  final void Function(Place) onDelete;
+  final void Function(Place)? onEdited;
+  final void Function(Place)? onDelete;
   final ObjectSource? modifyIfSourceMatches;
   final ResourceLinkProvider? resourceLinkProvider;
 
@@ -128,11 +128,11 @@ class PlaceDisplayWidget extends StatelessWidget {
           ));
         }
 
-        if(canEdit) {
+        if(onDelete != null && canEdit) {
           actionButtons.addAll([
             IconButton(
               onPressed: () {
-                onDelete(place);
+                onDelete!(place);
               },
               icon: const Icon(Icons.delete),
             ),
@@ -173,7 +173,7 @@ class PlaceDisplayWidget extends StatelessWidget {
                 WidgetGroupContainer(
                   title: Row(
                     children: [
-                      if(canEdit)
+                      if(onEdited != null && canEdit)
                         Padding(
                             padding: EdgeInsets.only(right: 4.0),
                             child: MouseRegion(
@@ -190,7 +190,7 @@ class PlaceDisplayWidget extends StatelessWidget {
                                     ),
                                   );
                                   if(child == null) return;
-                                  onEdited(place);
+                                  onEdited!(place);
                                 },
                                 child: const Icon(Icons.edit, size: 16.0,),
                               ),
@@ -320,73 +320,73 @@ class PlaceDisplayWidget extends StatelessWidget {
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Description',
                   value: place.description.general,
-                  canEdit: canEdit,
+                  canEdit: onEdited != null && canEdit,
                   onChanged: (String value) {
                     place.description.general = value;
-                    onEdited(place);
+                    onEdited?.call(place);
                   },
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Histoire',
                   value: place.description.history,
-                  canEdit: canEdit,
+                  canEdit: onEdited != null && canEdit,
                   onChanged: (String value) {
                     place.description.history = value;
-                    onEdited(place);
+                    onEdited?.call(place);
                   },
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Mentalité et société',
                   value: place.description.society,
-                  canEdit: canEdit,
+                  canEdit: onEdited != null && canEdit,
                   onChanged: (String value) {
                     place.description.society = value;
-                    onEdited(place);
+                    onEdited?.call(place);
                   },
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Ethnologie',
                   value: place.description.ethnology,
-                  canEdit: canEdit,
+                  canEdit: onEdited != null && canEdit,
                   onChanged: (String value) {
                     place.description.ethnology = value;
-                    onEdited(place);
+                    onEdited?.call(place);
                   },
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Politique',
                   value: place.description.politics,
-                  canEdit: canEdit,
+                  canEdit: onEdited != null && canEdit,
                   onChanged: (String value) {
                     place.description.politics = value;
-                    onEdited(place);
+                    onEdited?.call(place);
                   },
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Juridique',
                   value: place.description.judicial,
-                  canEdit: canEdit,
+                  canEdit: onEdited != null && canEdit,
                   onChanged: (String value) {
                     place.description.judicial = value;
-                    onEdited(place);
+                    onEdited?.call(place);
                   },
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Économie',
                   value: place.description.economy,
-                  canEdit: canEdit,
+                  canEdit: onEdited != null && canEdit,
                   onChanged: (String value) {
                     place.description.economy = value;
-                    onEdited(place);
+                    onEdited?.call(place);
                   },
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Militaire',
                   value: place.description.military,
-                  canEdit: canEdit,
+                  canEdit: onEdited != null && canEdit,
                   onChanged: (String value) {
                     place.description.military = value;
-                    onEdited(place);
+                    onEdited?.call(place);
                   },
                 ),
               ],
