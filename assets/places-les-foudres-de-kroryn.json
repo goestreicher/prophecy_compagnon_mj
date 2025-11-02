@@ -137,7 +137,10 @@
     "government": null,
     "leaders": [
       {
-        "name": "Méléan Sarn",
+        "link": {
+          "name": "Mélean Sarn",
+          "link": "resource://assets/npc/2d1559e7-4065-4a99-9e44-d84a50b457bc"
+        },
         "title": "Connétable d'Ankar"
       }
     ],

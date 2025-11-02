@@ -39,6 +39,15 @@
     "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
     "type": "capitale",
     "government": null,
+    "leaders": [
+      {
+        "link": {
+          "name": "Gallân-Bred d'Arkis",
+          "link": "resource://assets/npc/889c48b0-1209-46ef-b82e-89cda64c1747"
+        },
+        "title": "Gouverneur de Kern"
+      }
+    ],
     "motto": null,
     "climate": null,
     "description": {
@@ -546,7 +555,7 @@
     "motto": null,
     "climate": null,
     "description": {
-      "general": "Cité des mages de la pierre, Gix est située à deux cents kilomètres au nord de Kern. Une route sinueuse et pavée y conduit. Gix est semi-troglodyte, construite dans une faille asymétrique. La falaise est barrée d’une fissure colossale et son bord est n’atteint que la moitié de la hauteur de l’ouest. Contre la paroi ouest, sur le plateau est et au long de l’abîme, la cité dresse ses tours et ses maisons de pierre brute entièrement modelés dans la roche par la magie. Des arches magnifiquement sculptées rejoignent les deux lèvres de la faille au fond de laquelle gronde une résurgence d’eau qui forme le torrent de Gsardeth.\n\nLa gravité est magiquement modifiée à Gix et les visiteurs devront s’habituer à évoluer lourdement durant les premiers temps de leur séjour. Gix est célèbre pour son Académie de la pierre. Sir Agathorn, Grand Mage de la Pierre, en est le magistrat, mais il se fait souvent représenter par son régent, le seigneur Bram Pardeyn.\n\n",
+      "general": "Cité des mages de la pierre, Gix est située à deux cents kilomètres au nord de Kern. Une route sinueuse et pavée y conduit. Gix est semi-troglodyte, construite dans une faille asymétrique. La falaise est barrée d’une fissure colossale et son bord est n’atteint que la moitié de la hauteur de l’ouest. Contre la paroi ouest, sur le plateau est et au long de l’abîme, la cité dresse ses tours et ses maisons de pierre brute entièrement modelés dans la roche par la magie. Des arches magnifiquement sculptées rejoignent les deux lèvres de la faille au fond de laquelle gronde une résurgence d’eau qui forme le torrent de Gsardeth.\n\nLa gravité est magiquement modifiée à Gix et les visiteurs devront s’habituer à évoluer lourdement durant les premiers temps de leur séjour. Gix est célèbre pour son Académie de la pierre. [Sir Agathorn](resource://assets/npc/f1c11373-8257-4863-bb0b-e0ff0d4ba8a9), Grand Mage de la Pierre, en est le magistrat, mais il se fait souvent représenter par son régent, le seigneur Bram Pardeyn.\n\n",
       "history": null,
       "ethnology": null,
       "society": null,

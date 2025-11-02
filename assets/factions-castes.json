@@ -1301,7 +1301,10 @@
     },
     "members": [
       {
-        "name": "Alde Baran",
+        "link": {
+          "name": "Alde Baran",
+          "link": "resource://assets/npc/9795d32a-cda4-403c-8742-6eb381fd3c10"
+        },
         "title": "Grand Maître du Feu"
       },
       {
@@ -1325,7 +1328,10 @@
         "title": "Grand Maître de la Pierre"
       },
       {
-        "name": "Cymballine",
+        "link": {
+          "name": "Cymbaline",
+          "link": "resource://assets/npc/f5bd8434-0619-4ee1-9ddf-7f07fdad5970"
+        },
         "title": "Grande Maîtresse des Rêves"
       },
       {
@@ -2326,7 +2332,10 @@
     },
     "leaders": [
       {
-        "name": "Bred Fejud",
+        "link": {
+          "name": "Bred Fejud",
+          "link": "resource://assets/npc/753349e3-aae7-4051-a6a4-06dc7eba2992"
+        },
         "title": "Maître des explorateurs"
       }
     ]

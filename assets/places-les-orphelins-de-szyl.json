@@ -11,7 +11,10 @@
     "government": "autorité draconique",
     "leaders": [
       {
-        "name": "Lauralendyl",
+        "link": {
+          "name": "Lauralendyl",
+          "link": "resource://assets/npc/d1b7d366-92b3-4159-bbea-bb2b4c20e48b"
+        },
         "title": "Orphelin draconique"
       }
     ],

@@ -35,7 +35,10 @@
     "government": null,
     "leaders": [
       {
-        "name": "Florimelle de Dungard",
+        "link": {
+          "name": "Florimelle de Dungard",
+          "link": "resource://assets/npc/35f75cf6-53fa-4563-8800-51368845f83e"
+        },
         "title": "Duchesse de Dungard"
       }
     ],
