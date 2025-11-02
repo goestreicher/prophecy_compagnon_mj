@@ -2,18 +2,16 @@ import 'package:fleather/fleather.dart';
 import 'package:flutter/material.dart';
 import 'package:parchment/codecs.dart';
 
-import '../../classes/creature.dart';
-import '../../classes/non_player_character.dart';
-import '../../classes/object_location.dart';
-import '../../classes/place.dart';
+import '../../classes/resource_link/assets_resource_link_provider.dart';
 import '../../classes/resource_link/resource_link.dart';
+import 'resource_link_edit_widget.dart';
 
 class MarkdownFleatherToolbarFormField extends FormField<bool> {
   MarkdownFleatherToolbarFormField({
     super.key,
     required this.controller,
     bool showResourcePicker = false,
-    Widget Function() openResourceLinkPickerDialog = openBaseResourceLinkPickerDialog,
+    ResourceLinkProvider? localResourceLinkProvider,
     void Function(String)? onSaved,
   })
     : super(
@@ -27,7 +25,7 @@ class MarkdownFleatherToolbarFormField extends FormField<bool> {
           return MarkdownFleatherToolbar(
             controller: controller,
             showResourcePicker: showResourcePicker,
-            openResourceLinkPickerDialog: openResourceLinkPickerDialog,
+            localResourceLinkProvider: localResourceLinkProvider,
           );
         }
     );
@@ -40,13 +38,13 @@ class MarkdownFleatherToolbar extends StatefulWidget {
     super.key,
     required this.controller,
     this.showResourcePicker = false,
-    this.openResourceLinkPickerDialog = openBaseResourceLinkPickerDialog,
+    this.localResourceLinkProvider,
     this.onSaved,
   });
 
   final FleatherController controller;
   final bool showResourcePicker;
-  final Widget Function() openResourceLinkPickerDialog;
+  final ResourceLinkProvider? localResourceLinkProvider;
   final void Function(String)? onSaved;
 
   @override
@@ -83,7 +81,9 @@ class _MarkdownFleatherToolbarState extends State<MarkdownFleatherToolbar> {
           onPressed: () async {
             var result = await showDialog<ResourceLink>(
               context: context,
-              builder: (BuildContext context) => widget.openResourceLinkPickerDialog(),
+              builder: (BuildContext context) => ResourceLinkPickerDialog(
+                localProvider: widget.localResourceLinkProvider,
+              ),
             );
             if(result == null) return;
 
@@ -167,76 +167,24 @@ Widget openBaseResourceLinkPickerDialog() {
 class ResourceLinkPickerDialog extends StatefulWidget {
   const ResourceLinkPickerDialog({
     super.key,
-    this.localResourcesLinkGenerator,
+    this.localProvider,
   });
 
-  final Future<List<ResourceLink>> Function(ResourceLinkType)? localResourcesLinkGenerator;
+  final ResourceLinkProvider? localProvider;
 
   @override
   State<ResourceLinkPickerDialog> createState() => _ResourceLinkPickerDialogState();
 }
 
 class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
-  TextEditingController selectionController = TextEditingController();
-
-  List<DropdownMenuEntry<ResourceLinkType>> availableResourceLinkTypes = <DropdownMenuEntry<ResourceLinkType>>[];
-  ResourceLinkType? type;
-  late bool useLocalResources;
-  bool nonLocalResourcesSelectable = true;
-  List<ResourceLink> links = <ResourceLink>[];
+  late ResourceLinkProvider selectedProvider;
   ResourceLink? selected;
 
   @override
   void initState() {
     super.initState();
 
-    for(var t in ResourceLinkType.values) {
-      if(widget.localResourcesLinkGenerator == null && (t == ResourceLinkType.encounter || t == ResourceLinkType.map)) {
-        continue;
-      }
-      availableResourceLinkTypes.add(
-        DropdownMenuEntry(value: t, label: t.title)
-      );
-    }
-
-    if(widget.localResourcesLinkGenerator == null) {
-      useLocalResources = false;
-    }
-    else {
-      useLocalResources = true;
-    }
-  }
-
-  Future<void> refreshLinks() async {
-    links.clear();
-    if(type == null) return;
-
-    if(widget.localResourcesLinkGenerator != null && useLocalResources) {
-      links.addAll(await widget.localResourcesLinkGenerator!(type!));
-    }
-    else {
-      switch(type!) {
-        case ResourceLinkType.creature:
-          for(var creature in await CreatureSummary.forLocationType(ObjectLocationType.assets, null)) {
-            links.add(ResourceLink.createLinkForResource(type!, useLocalResources, creature.name, creature.id));
-          }
-        case ResourceLinkType.npc:
-          for(var npc in await NonPlayerCharacterSummary.forLocationType(ObjectLocationType.assets, null, null)) {
-            links.add(ResourceLink.createLinkForResource(type!, useLocalResources, npc.name, npc.id));
-          }
-        case ResourceLinkType.place:
-          for(var place in await PlaceSummary.forLocationType(ObjectLocationType.assets)) {
-            links.add(ResourceLink.createLinkForResource(type!, useLocalResources, place.name, place.id));
-          }
-        case ResourceLinkType.encounter:
-        case ResourceLinkType.map:
-          break;
-      }
-    }
-
-    setState(() {
-      // no-op
-    });
+    selectedProvider = widget.localProvider ?? const AssetsResourceLinkProvider();
   }
 
   @override
@@ -249,85 +197,39 @@ class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
         width: 400,
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          spacing: 12.0,
           children: [
-            Row(
-              children: [
-                Expanded(
-                  child: DropdownMenu(
-                    initialSelection: type,
-                    label: const Text('Type'),
-                    expandedInsets: EdgeInsets.zero,
-                    inputDecorationTheme: const InputDecorationTheme(
-                      border: OutlineInputBorder(),
-                      isCollapsed: true,
-                      constraints: BoxConstraints(maxHeight: 36.0),
-                      contentPadding: EdgeInsets.all(12.0),
-                    ),
-                    textStyle: theme.textTheme.bodyMedium,
-                    dropdownMenuEntries: availableResourceLinkTypes,
-                    onSelected: (ResourceLinkType? t) {
-                      if(t == null) return;
+            if(widget.localProvider != null)
+              Row(
+                spacing: 16.0,
+                children: [
+                  Switch(
+                    value: widget.localProvider == selectedProvider,
+                    onChanged: (bool value) {
                       setState(() {
-                        if(t == ResourceLinkType.encounter || t == ResourceLinkType.map) {
-                          useLocalResources = true;
-                          nonLocalResourcesSelectable = false;
-                        }
-                        else {
-                          nonLocalResourcesSelectable = true;
-                        }
-                        type = t;
-                        selectionController.clear();
+                        selectedProvider = value
+                            ? widget.localProvider!
+                            : const AssetsResourceLinkProvider();
                         selected = null;
                       });
-                      refreshLinks();
                     },
                   ),
-                ),
-                const SizedBox(width: 16.0),
-                Text(
-                    useLocalResources
-                        ? 'des ressources locales'
-                        : 'des ressources de base'
-                ),
-                const SizedBox(width: 12.0),
-                Switch(
-                  value: useLocalResources,
-                  onChanged: (widget.localResourcesLinkGenerator != null && !nonLocalResourcesSelectable)
-                    ? null
-                    : (bool value) {
-                      setState(() {
-                        useLocalResources = value;
-                        selectionController.clear();
-                        selected = null;
-                      });
-                      refreshLinks();
-                    },
-                ),
-              ],
-            ),
-            const SizedBox(height: 12.0),
-            DropdownMenu(
-              enabled: type != null,
-              controller: selectionController,
-              label: Text(type == null ? 'Ressource' : type!.title),
-              expandedInsets: EdgeInsets.zero,
-              inputDecorationTheme: const InputDecorationTheme(
-                border: OutlineInputBorder(),
-                isCollapsed: true,
-                constraints: BoxConstraints(maxHeight: 36.0),
-                contentPadding: EdgeInsets.all(12.0),
+                  Expanded(
+                    child: Text(
+                      widget.localProvider == selectedProvider
+                        ? 'Utiliser les ressources locales (${widget.localProvider!.sourceNames()[0]}'
+                        : 'Utiliser les ressources de base'
+                    ),
+                  ),
+                ],
               ),
-              textStyle: theme.textTheme.bodyMedium,
-              dropdownMenuEntries: links
-                  .map((ResourceLink l) => DropdownMenuEntry(value: l, label: l.name))
-                  .toList(),
-              onSelected: (ResourceLink? l) {
-                if(l == null) return;
+            ResourceLinkEditWidget(
+              provider: selectedProvider,
+              onChanged: (ResourceLink? l) {
                 setState(() {
                   selected = l;
                 });
-                refreshLinks();
-              },
+              }
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(0.0, 16.0, 0.0, 0.0),

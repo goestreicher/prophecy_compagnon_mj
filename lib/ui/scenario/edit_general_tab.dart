@@ -3,9 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
-import 'package:prophecy_compagnon_mj/ui/scenario/scenario_fleather_toolbar.dart';
 
-import '../../classes/resource_link/resource_link.dart';
+import '../../classes/resource_link/scenario_resource_link_provider.dart';
 import '../../classes/scenario.dart';
 import '../utils/markdown_fleather_toolbar.dart';
 import '../utils/num_input_widget.dart';
@@ -195,9 +194,8 @@ class _ScenarioEditGeneralPageState extends State<ScenarioEditGeneralPage> {
                   MarkdownFleatherToolbar(
                     controller: storyController,
                     showResourcePicker: true,
-                    openResourceLinkPickerDialog: () => ResourceLinkPickerDialog(
-                      localResourcesLinkGenerator: (ResourceLinkType type) =>
-                          generateScenarioResourceLinks(type, widget.scenario),
+                    localResourceLinkProvider: ScenarioResourceLinkProvider(
+                      source: widget.scenario.source,
                     ),
                   ),
                   Expanded(

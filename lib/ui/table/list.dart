@@ -20,17 +20,6 @@ class TablesListPage extends StatefulWidget {
 class _TablesListPageState extends State<TablesListPage> {
   bool _isWorking = false;
   final GlobalKey<FormState> _newTableNameForm = GlobalKey<FormState>();
-  late Future<List<GameTableSummary>> _tableSummariesFuture;
-
-  @override
-  void initState() {
-    super.initState();
-    loadTableSummaries();
-  }
-
-  void loadTableSummaries() {
-    _tableSummariesFuture = GameTableSummaryStore().getAll();
-  }
 
   @override
   Widget build(BuildContext context) {

@@ -5,11 +5,10 @@ import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../classes/calendar.dart';
-import '../../classes/resource_link/resource_link.dart';
+import '../../classes/resource_link/scenario_resource_link_provider.dart';
 import '../../classes/scenario.dart';
 import '../../classes/scenario_event.dart';
 import '../utils/markdown_fleather_toolbar.dart';
-import 'scenario_fleather_toolbar.dart';
 
 class ScenarioEventEditResult {
   final DayRange dayRange;
@@ -117,9 +116,8 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
               MarkdownFleatherToolbar(
                 controller: descriptionController,
                 showResourcePicker: true,
-                openResourceLinkPickerDialog: () => ResourceLinkPickerDialog(
-                  localResourcesLinkGenerator: (ResourceLinkType type) =>
-                      generateScenarioResourceLinks(type, widget.scenario),
+                localResourceLinkProvider: ScenarioResourceLinkProvider(
+                  source: widget.scenario.source,
                 ),
               ),
               Expanded(

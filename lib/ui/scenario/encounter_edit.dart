@@ -183,13 +183,6 @@ class _EncounterEntityEditWidgetState extends State<EncounterEntityEditWidget> {
                           if(modelLink != null)
                             IconButton(
                               onPressed: () {
-                                String? type;
-                                if(model is Creature) {
-                                  type = 'creature';
-                                }
-                                else if(model is NonPlayerCharacter) {
-                                  type = 'npc';
-                                }
                                 handleResourceLinkClicked(
                                   modelLink!,
                                   context,
