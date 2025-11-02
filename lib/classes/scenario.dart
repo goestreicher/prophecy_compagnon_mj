@@ -194,11 +194,13 @@ class ScenarioSummary {
     required this.uuid,
     required this.name,
     this.subtitle = '',
+    required this.source,
   });
 
   final String uuid;
   final String name;
   final String subtitle;
+  final ObjectSource source;
 
   Map<String, dynamic> toJson() => _$ScenarioSummaryToJson(this);
   factory ScenarioSummary.fromJson(Map<String, dynamic> json) => _$ScenarioSummaryFromJson(json);
@@ -297,6 +299,7 @@ class Scenario {
     uuid: uuid,
     name: name,
     subtitle: subtitle,
+    source: source,
   );
 
   ScenarioMap? defaultMap() {

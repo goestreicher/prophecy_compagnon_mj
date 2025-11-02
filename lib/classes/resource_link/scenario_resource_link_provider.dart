@@ -2,6 +2,9 @@ import '../creature.dart';
 import '../non_player_character.dart';
 import '../object_source.dart';
 import '../place.dart';
+import '../place_map.dart';
+import '../scenario.dart';
+import '../scenario_map.dart';
 import 'resource_link.dart';
 
 class ScenarioResourceLinkProvider extends ResourceLinkProvider {
@@ -15,6 +18,7 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
   @override
   List<ResourceLinkType> availableTypes() => [
     ResourceLinkType.creature,
+    ResourceLinkType.map,
     ResourceLinkType.npc,
     ResourceLinkType.place,
   ];
@@ -29,6 +33,29 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
         .map((CreatureSummary summ) =>
           ResourceLink.createLinkForResource(type, false, summ.name, summ.id))
       );
+    }
+    else if(type == ResourceLinkType.map) {
+      Scenario? scenario;
+      var summs = await ScenarioSummaryStore().getAll();
+      for(var summ in summs) {
+        if(summ.source == source) {
+          scenario = await ScenarioStore().get(summ.uuid);
+        }
+      }
+
+      if(scenario != null) {
+        ret.addAll(
+          scenario.maps
+            .map((ScenarioMap m) =>
+              ResourceLink.createLinkForResource(
+                type,
+                false,
+                m.name,
+                m.placeMap.uuid
+              )
+            )
+        );
+      }
     }
     else if(type == ResourceLinkType.npc) {
       ret.addAll(

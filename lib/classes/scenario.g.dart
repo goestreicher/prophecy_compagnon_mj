@@ -11,6 +11,7 @@ ScenarioSummary _$ScenarioSummaryFromJson(Map<String, dynamic> json) =>
       uuid: json['uuid'] as String,
       name: json['name'] as String,
       subtitle: json['subtitle'] as String? ?? '',
+      source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ScenarioSummaryToJson(ScenarioSummary instance) =>
@@ -18,6 +19,7 @@ Map<String, dynamic> _$ScenarioSummaryToJson(ScenarioSummary instance) =>
       'uuid': instance.uuid,
       'name': instance.name,
       'subtitle': instance.subtitle,
+      'source': instance.source.toJson(),
     };
 
 Scenario _$ScenarioFromJson(Map<String, dynamic> json) => Scenario(
