@@ -25,9 +25,9 @@ class ResourceLink {
       throw(FormatException('Invalid link URI $link'));
     }
 
-    var uri = Uri.parse(link);
+    uri = Uri.parse(link);
     type = ResourceLinkType.values.asNameMap()[uri.pathSegments[0]]!;
-    id = uri.pathSegments[1];
+    id = uri.pathSegments.last;
   }
 
   String name;
@@ -36,6 +36,8 @@ class ResourceLink {
   late ResourceLinkType type;
   @JsonKey(includeFromJson: false, includeToJson: false)
   late String id;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  late Uri uri;
 
   static bool isValidLink(String link) {
     var uri = Uri.tryParse(link);
@@ -47,7 +49,7 @@ class ResourceLink {
   static ResourceLink createLinkForResource(ResourceLinkType type, bool local, String display, String id) {
     return ResourceLink(
       name: display,
-      link: 'resource://${local ? "store" : "assets"}/${type.name}/${Uri.encodeComponent(id)}',
+      link: 'resource://${local ? "store" : "assets"}/${type.name}/$id',
     );
   }
 

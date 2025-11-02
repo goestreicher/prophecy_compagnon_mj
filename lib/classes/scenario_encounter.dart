@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:uuid/uuid.dart';
 
 import 'encounter.dart';
 import 'encounter_entity_factory.dart';
@@ -23,13 +24,15 @@ class EncounterEntity {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ScenarioEncounter {
-  ScenarioEncounter(
-      {
-        required this.name,
-        List<EncounterEntity>? entities,
-      })
-    : entities = entities ?? <EncounterEntity>[];
+  ScenarioEncounter({
+    String? uuid,
+    required this.name,
+    List<EncounterEntity>? entities,
+  })
+    : uuid = uuid ?? const Uuid().v4().toString(),
+      entities = entities ?? <EncounterEntity>[];
 
+  final String uuid;
   final String name;
   final List<EncounterEntity> entities;
 

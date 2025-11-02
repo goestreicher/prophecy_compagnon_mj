@@ -2,8 +2,8 @@ import '../creature.dart';
 import '../non_player_character.dart';
 import '../object_source.dart';
 import '../place.dart';
-import '../place_map.dart';
 import '../scenario.dart';
+import '../scenario_encounter.dart';
 import '../scenario_map.dart';
 import 'resource_link.dart';
 
@@ -18,6 +18,7 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
   @override
   List<ResourceLinkType> availableTypes() => [
     ResourceLinkType.creature,
+    ResourceLinkType.encounter,
     ResourceLinkType.map,
     ResourceLinkType.npc,
     ResourceLinkType.place,
@@ -34,15 +35,24 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
           ResourceLink.createLinkForResource(type, false, summ.name, summ.id))
       );
     }
-    else if(type == ResourceLinkType.map) {
-      Scenario? scenario;
-      var summs = await ScenarioSummaryStore().getAll();
-      for(var summ in summs) {
-        if(summ.source == source) {
-          scenario = await ScenarioStore().get(summ.uuid);
-        }
+    else if(type == ResourceLinkType.encounter) {
+      var scenario = await _getScenario();
+      if(scenario != null) {
+        ret.addAll(
+          scenario.encounters
+            .map((ScenarioEncounter e) =>
+              ResourceLink.createLinkForResource(
+                type,
+                false,
+                e.name,
+                '${scenario.uuid}/${e.uuid}'
+              )
+            )
+        );
       }
-
+    }
+    else if(type == ResourceLinkType.map) {
+      var scenario = await _getScenario();
       if(scenario != null) {
         ret.addAll(
           scenario.maps
@@ -72,6 +82,18 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
       );
     }
 
+    return ret;
+  }
+
+  Future<Scenario?> _getScenario() async {
+    Scenario? ret;
+    var summs = await ScenarioSummaryStore().getAll();
+    for(var summ in summs) {
+      if(summ.source == source) {
+        ret = await ScenarioStore().get(summ.uuid);
+        break;
+      }
+    }
     return ret;
   }
 }

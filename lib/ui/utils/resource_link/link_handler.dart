@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../classes/resource_link/resource_link.dart';
 import 'creature_link_handler.dart';
+import 'encounter_link_handler.dart';
 import 'map_link_handler.dart';
 import 'npc_link_handler.dart';
 import 'place_link_handler.dart';
@@ -12,6 +13,9 @@ void handleResourceLinkClicked(ResourceLink link, BuildContext context) async {
   switch(link.type) {
     case ResourceLinkType.creature:
       dialog = await handleCreatureLinkClicked(link, context);
+      break;
+    case ResourceLinkType.encounter:
+      dialog = await handleEncounterLinkClicked(link, context);
       break;
     case ResourceLinkType.map:
       dialog = await handleMapLinkClicked(link, context);

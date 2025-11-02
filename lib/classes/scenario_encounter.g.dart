@@ -22,6 +22,7 @@ Map<String, dynamic> _$EncounterEntityToJson(EncounterEntity instance) =>
 
 ScenarioEncounter _$ScenarioEncounterFromJson(Map<String, dynamic> json) =>
     ScenarioEncounter(
+      uuid: json['uuid'] as String?,
       name: json['name'] as String,
       entities: (json['entities'] as List<dynamic>?)
           ?.map((e) => EncounterEntity.fromJson(e as Map<String, dynamic>))
@@ -30,6 +31,7 @@ ScenarioEncounter _$ScenarioEncounterFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ScenarioEncounterToJson(ScenarioEncounter instance) =>
     <String, dynamic>{
+      'uuid': instance.uuid,
       'name': instance.name,
       'entities': instance.entities.map((e) => e.toJson()).toList(),
     };
