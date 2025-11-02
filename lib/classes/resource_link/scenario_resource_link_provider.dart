@@ -32,7 +32,7 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
       ret.addAll(
         (await CreatureSummary.forSource(source, null))
         .map((CreatureSummary summ) =>
-          ResourceLink.createLinkForResource(type, false, summ.name, summ.id))
+          ResourceLink.createLinkForResource(type, true, summ.name, summ.id))
       );
     }
     else if(type == ResourceLinkType.encounter) {
@@ -43,7 +43,7 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
             .map((ScenarioEncounter e) =>
               ResourceLink.createLinkForResource(
                 type,
-                false,
+                true,
                 e.name,
                 '${scenario.uuid}/${e.uuid}'
               )
@@ -59,7 +59,7 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
             .map((ScenarioMap m) =>
               ResourceLink.createLinkForResource(
                 type,
-                false,
+                true,
                 m.name,
                 m.placeMap.uuid
               )
@@ -71,14 +71,14 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
       ret.addAll(
         (await NonPlayerCharacterSummary.forSource(source, null, null))
         .map((NonPlayerCharacterSummary summ) =>
-          ResourceLink.createLinkForResource(type, false, summ.name, summ.id))
+          ResourceLink.createLinkForResource(type, true, summ.name, summ.id))
       );
     }
     else if(type == ResourceLinkType.place) {
       ret.addAll(
         (await PlaceSummary.forSource(source))
         .map((PlaceSummary summ) =>
-          ResourceLink.createLinkForResource(type, false, summ.name, summ.id))
+          ResourceLink.createLinkForResource(type, true, summ.name, summ.id))
       );
     }
 
