@@ -95,6 +95,7 @@ flutter:
     - assets/npcs-les-orphelins-de-szyl.json
     - assets/npcs-les-versets-d-ozyr.json
     - assets/npcs-les-voiles-de-nenya.json
+    - assets/npcs-les-grands-dragons.json
     - assets/places-ldb2e.json
     - assets/places-les-compagnons-de-khy.json
     - assets/places-les-ecailles-de-brorne.json

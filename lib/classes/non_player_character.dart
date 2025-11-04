@@ -261,6 +261,7 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
       'npcs-les-orphelins-de-szyl.json',
       'npcs-les-versets-d-ozyr.json',
       'npcs-les-voiles-de-nenya.json',
+      'npcs-les-grands-dragons.json',
     ];
 
     for (var f in assetFiles) {

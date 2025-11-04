@@ -42,6 +42,7 @@ enum Skill {
   lois(name: "Lois", family: SkillFamily.theorie),
   necromancie(name: "Nécromancie (Mage de l'Ombre)", family: SkillFamily.theorie, reservedCastes: [Caste.mage]),
   orientation(name: "Orientation", family: SkillFamily.theorie),
+  philosophie(name: "Philosophie", family: SkillFamily.theorie),
   perceptionClimatique(name: "Perception climatique (Mage des Vents)", family: SkillFamily.theorie, reservedCastes: [Caste.mage]),
   strategie(name: "Stratégie", family: SkillFamily.theorie),
 
@@ -65,6 +66,7 @@ enum Skill {
   matieresPremieres(name: "Matières premières", family: SkillFamily.pratique),
   medecine(name: "Médecine", family: SkillFamily.pratique),
   meditation(name: "Méditation", family: SkillFamily.pratique, reservedCastes: [Caste.mage, Caste.prodige]),
+  oniromancie(name: "Oniromancie", family: SkillFamily.pratique),
   premiersSoins(name: "Premiers soins", family: SkillFamily.pratique),
   psychometrie(name: "Psychométrie", family: SkillFamily.pratique, reservedCastes: [Caste.mage]),
   soinsOniriques(name: "Soins oniriques (Mage des Rêves)", family: SkillFamily.pratique, reservedCastes: [Caste.mage]),

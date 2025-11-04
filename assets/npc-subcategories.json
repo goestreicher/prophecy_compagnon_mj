@@ -99,6 +99,20 @@
     "is_default": true
   },
   {
+    "title": "Caste des combattants",
+    "categories": [
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des commerçants",
+    "categories": [
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Caste des érudits",
     "categories": [
       "personnalites"
@@ -114,6 +128,13 @@
   },
   {
     "title": "Caste des prodiges",
+    "categories": [
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des protecteurs",
     "categories": [
       "personnalites"
     ],

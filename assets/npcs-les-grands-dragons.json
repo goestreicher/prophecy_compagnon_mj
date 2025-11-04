@@ -1,0 +1,3353 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "name": "Swan Armen",
+    "uuid": "4b9e99df-3803-43d7-90df-8eea5c4c272c",
+    "description": "Maître Swan Armen n'est pas un marchand ou un commerçant, il est avant tout un diplomate. Depuis qu'il se trouve à la tête de sa caste, il semble avoir sensiblement changé. Sa position au milieu de négociateurs n'est pas enviable, mais le problème ne vient pourtant pas de là…\n\n## Historique\n\nSwan Armen entra dans la caste des commerçants en tant que diplomate, suite à sa médiation réussie entre deux royaumes en guerre depuis des siècles. Sa progression fut fulgurante grâce à une série de succès qui amenèrent la paix dans de nombreuses contrées.\n\nC'est à cette époque qu'il se lia avec Annga, un dragon de Khy. Parvenu à la tête de sa caste, il reçut la visite d'un Humaniste qui lui révéla, preuves à l'appui, que tous ses succès n'étaient dus qu'aux Humanistes et non à ses “piètres talents”. Il tua de ses mains l'émissaire et n'en parla à personne. Depuis, ce secret et le doute le rongent. Parfois, il reçoit un message, découvre un objet dans son lit, qui lui rappellent les affirmations de l'émissaire.\n\n## Description\n\nSwan Armen est un homme d'une cinquantaine d'années à l'œil vif. Il est impeccablement mis mais n'affiche jamais un luxe ostentatoire. Sa voix est douce, envoûtante et jamais il ne hausse le ton. Il n'a pas d'autre arme qu'un petit stylet dissimulé dans sa robe large. Il ne l'a jamais sorti mais sait parfaitement s'en servir.\n\n## Mentalité\n\nMaître Swan n'a qu'une parole. Il peut se reprocher de nombreux crimes (diplomatie oblige) mais fondamentalement, c'est un homme bon. Il préférera toujours une solution de compromis. Du coup, il donne souvent l'impression de céder sur tout et de tout accorder sans se battre. C'est une erreur. Ce qu'il donne d'une main, il le reprend de l'autre. Il respecte tout le monde, du plus humble au plus riche, sans tenir compte de la caste ou du statut.\n\n## Alliés et ennemis\n\nLes Humanistes dans l'entourage du Grand Maître sont très actifs. Ils attendent le bon moment pour revenir à la charge et le manipuler. Ce qui concerne les succès passés de Swan est partiellement faux. C'est un très bon diplomate et seules deux ou trois affaires ont été résolues à l'aide des Humanistes.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 6,
+      "intelligence": 9,
+      "coordination": 8,
+      "presence": 10,
+      "resistance": 5,
+      "volonte": 8,
+      "perception": 6,
+      "empathie": 9
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 8,
+      "manuel": 7,
+      "social": 10
+    },
+    "initiative": 3,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 1
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 8
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 7
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "equitation",
+              "value": 5
+            },
+            {
+              "skill": "esquive",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 4
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 4
+            },
+            {
+              "skill": "geographie",
+              "value": 10
+            },
+            {
+              "skill": "histoire",
+              "value": 8
+            },
+            {
+              "skill": "lois",
+              "value": 11
+            },
+            {
+              "skill": "strategie",
+              "value": 7
+            },
+            {
+              "skill": "castes",
+              "value": 10
+            },
+            {
+              "skill": "philosophie",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Draconiste",
+                  "reserved": false,
+                  "value": 5
+                },
+                {
+                  "name": "Humaniste",
+                  "reserved": false,
+                  "value": 2
+                }
+              ]
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "astrologie",
+              "value": 3
+            },
+            {
+              "skill": "cartographie",
+              "value": 6
+            },
+            {
+              "skill": "estimation",
+              "value": 7
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 10
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 11
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 7
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "deverrouillage",
+              "value": 6
+            },
+            {
+              "skill": "deguisement",
+              "value": 6
+            },
+            {
+              "skill": "faireLesPoches",
+              "value": 8
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "baratin",
+              "value": 12
+            },
+            {
+              "skill": "eloquence",
+              "value": 11
+            },
+            {
+              "skill": "marchandage",
+              "value": 10
+            },
+            {
+              "skill": "psychologie",
+              "value": 9
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 9
+            },
+            {
+              "skill": "diplomatie",
+              "value": 13
+            },
+            {
+              "skill": "seduction",
+              "value": 9
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "grandMaitre",
+      "career": "diplomate",
+      "interdicts": [
+        "loiDuCoeur"
+      ],
+      "privileges": [
+        {
+          "privilege": "bonneFortune",
+          "description": null
+        },
+        {
+          "privilege": "psychologie",
+          "description": null
+        },
+        {
+          "privilege": "ressources",
+          "description": null
+        },
+        {
+          "privilege": "faveurPolitique",
+          "description": "Empire de Solyr"
+        },
+        {
+          "privilege": "faveurPolitique",
+          "description": "Marches Alyzées"
+        },
+        {
+          "privilege": "faveurPolitique",
+          "description": "Jaspor"
+        },
+        {
+          "privilege": "faveurPolitique",
+          "description": "Pomyrie"
+        },
+        {
+          "privilege": "faveurPolitique",
+          "description": "Kar"
+        },
+        {
+          "privilege": "faveurPolitique",
+          "description": "Griff"
+        },
+        {
+          "privilege": "faveurPolitique",
+          "description": "Ysmir"
+        },
+        {
+          "privilege": "notorieteCommercant",
+          "description": "Empire de Solyr"
+        },
+        {
+          "privilege": "notorieteCommercant",
+          "description": "Marches Alyzées"
+        },
+        {
+          "privilege": "notorieteCommercant",
+          "description": "Jaspor"
+        },
+        {
+          "privilege": "notorieteCommercant",
+          "description": "Kar"
+        },
+        {
+          "privilege": "notorieteCommercant",
+          "description": "Pomyrie"
+        },
+        {
+          "privilege": "notorieteCommercant",
+          "description": "Griff"
+        },
+        {
+          "privilege": "notorieteCommercant",
+          "description": "Ysmir"
+        },
+        {
+          "privilege": "connaissanceDuMondeCommercant",
+          "description": null
+        },
+        {
+          "privilege": "relationsDAffairesCommercant",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "bonneFoi",
+          "description": null
+        },
+        {
+          "privilege": "reseau",
+          "description": null
+        },
+        {
+          "privilege": "rumeurs",
+          "description": null
+        }
+      ]
+    },
+    "age": 50,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 10,
+    "disadvantages": [
+      {
+        "disadvantage": "ennemi",
+        "cost": 3,
+        "details": "Non précisé"
+      },
+      {
+        "disadvantage": "echec",
+        "cost": 3,
+        "details": "Complot humaniste"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "confidences",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "conviction",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "prestance",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "statutSocial",
+        "cost": 2,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 3,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 2,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "cite",
+      "dragon": "Annga",
+      "progress": "deuxiemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCommercants"
+    },
+    "unique": true,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "name": "Cymbaline",
+    "uuid": "f5bd8434-0619-4ee1-9ddf-7f07fdad5970",
+    "description": "Le Rêveuse Illuminée dirige la caste des mages et est probablement l'humain le plus proche de Nenya. Elle se doit à la fois de représenter sa caste mais de gérer l'ensemble des problèmes internes à cette dernière, ce qui n'est pas évident.\n\n## Historique\n\nQue sait-on de Cymbaline ? En fait, pas grand-chose. À l'origine, elle n'était qu'une petite aventurière sans envergure, partie très tôte de son école et faisant commerce de ses chants, de ses danses et, dans les mauvaises périodes, de son corps. Certains magesn'hésitent pas à lui reprocher ce temps pas si lointain où elle n'était qu'une fille de rien. Un soir, elle se refusa à deux aventuriers, l'un appartenant à la caste des combattants, l'autre à celle des artisans. Ils abusèrent d'elle jusqu'à l'arrivée d'un voyageur au pouvoir terrifiant. Des témoins affirmèrent qu'il ne touchait pas le sol tellement il se déplaçait rapidement. Supérieur en force et en agilité, il ne tua pas les deux hommes mais les estropia à vie avant de disparaître avec Cembaline, traumatisée. Il l'emmena auprèse de sa mère qui n'était autre que Nenya.\n\nLa Chimère lui donne une part de son pouvoir, créant un Lien si fort que la jeune mage dut rester dans les Eeries plusieurs mois avant de pouvoir le maîtriser sans danger. Ce don lui permit aussi de guérir de ses blessures morales et de reprendre goûte à la vie. Ses tatouages sont la marque de l'amitié  que lui portent tous les serviteurs de Heyra (les Fen'danns en particulier).\n\n## Description\n\nCymbaline est une jeune femme rousse au teint pâle d'une trentaine d'années. Elle est toujours souriante et n'a pas conscience du charme inné qu'elle possède.\n\n## Mentalité\n\nLa Rêveuse Illuminée parle doucement et ponctue ses phrases de petits rires. Elle semble croquer la vie à pleines dents à chaque nouvelle seconde mais parfois le masque tombe et ses interlocuteurs peuvent lire une profonde tristesse dans son regard. Face à des hommes, elle gardera ses distances tout en étant sympathique. Face à des brutes, elle feindra d'ignorer jusqu'à leur existence.\n\nL'Humanisme l'agace et le Fatalisme l'attriste. Elle respecte les hommes et non leur titre ou leur caste.\n\n## Alliés et ennemis\n\nCymbaline n'a pas d'ennemis au sein de sa caste ou en dehors, mais elle n'a pas non plus beaucoup d'amis. Loreena semble la seule à pouvoir la comprendre vraiment. Jamais elle n'a été agressée depuis sa prise en charge de sa fonction de dirigeante. Pourrait-elle se défendre ? Utiliserait-elle ses pouvoirs ? Nul ne le sait.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 6,
+      "intelligence": 10,
+      "coordination": 9,
+      "presence": 9,
+      "resistance": 7,
+      "volonte": 10,
+      "perception": 6,
+      "empathie": 8
+    },
+    "attributes": {
+      "physique": 3,
+      "mental": 8,
+      "manuel": 7,
+      "social": 7
+    },
+    "initiative": 5,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesDeJet",
+              "value": 4
+            },
+            {
+              "skill": "armesContondantes",
+              "value": 5
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 9
+            },
+            {
+              "skill": "esquive",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 13
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 12
+            },
+            {
+              "skill": "geographie",
+              "value": 7
+            },
+            {
+              "skill": "histoire",
+              "value": 6
+            },
+            {
+              "skill": "philosophie",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Draconiste",
+                  "reserved": false,
+                  "value": 7
+                }
+              ]
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "lireEtEcrire",
+              "value": 9
+            },
+            {
+              "skill": "alchimie",
+              "value": 5
+            },
+            {
+              "skill": "cartographierLesReves",
+              "value": 10
+            },
+            {
+              "skill": "oniromancie",
+              "value": 10
+            },
+            {
+              "skill": "analyse",
+              "value": 9
+            },
+            {
+              "skill": "meditation",
+              "value": 11
+            },
+            {
+              "skill": "psychometrie",
+              "value": 5
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 9
+            },
+            {
+              "skill": "enchantement",
+              "value": 7
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "deguisement",
+              "value": 8
+            },
+            {
+              "skill": "donArtistique",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Danse",
+                  "reserved": false,
+                  "value": 13
+                }
+              ]
+            },
+            {
+              "skill": "jongler",
+              "value": 10
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "eloquence",
+              "value": 11
+            }
+          ]
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 8,
+        "invocatoire": 13,
+        "sorcellerie": 9
+      },
+      "spheres": {
+        "pierre": 5,
+        "feu": 5,
+        "oceans": 5,
+        "metal": 5,
+        "nature": 10,
+        "reves": 12,
+        "cite": 5,
+        "vents": 8,
+        "ombre": 6
+      },
+      "pool": 22,
+      "pools": {
+        "pierre": 5,
+        "feu": 5,
+        "oceans": 5,
+        "metal": 5,
+        "nature": 10,
+        "reves": 12,
+        "cite": 5,
+        "vents": 8,
+        "ombre": 6
+      },
+      "spells": []
+    },
+    "caste": {
+      "caste": "mage",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [
+        "loiDuPacte"
+      ],
+      "privileges": [
+        {
+          "privilege": "anonymat",
+          "description": null
+        },
+        {
+          "privilege": "laboratoire",
+          "description": null
+        },
+        {
+          "privilege": "messager",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "style",
+          "description": null
+        },
+        {
+          "privilege": "tuteur",
+          "description": "Nenya"
+        }
+      ]
+    },
+    "age": 28,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 4,
+    "proficiency": 6,
+    "renown": 10,
+    "disadvantages": [
+      {
+        "disadvantage": "marqueDeNenya",
+        "cost": 0,
+        "details": ""
+      },
+      {
+        "disadvantage": "emotif",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "charme",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "pressentiment",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "allie",
+        "cost": 5,
+        "details": "Szyl"
+      },
+      {
+        "advantage": "allie",
+        "cost": 5,
+        "details": "Nenya"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 4,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 1,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "reves",
+      "dragon": "Assyanata",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesMages"
+    },
+    "unique": true,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "name": "Heised Lô",
+    "uuid": "7bc953b7-b03a-4b94-9462-21b51dc5fb56",
+    "description": "Heised Lô est le Grand Maître le plus respecté de l'histoire de Kor. Bien qu'il ne le souhaite pas, certains Prodiges le vénèrent comme un dieu. Comme tous les véritables sages, il semble ne pas se soucier de cette réputation et se contente de veiller sur le jardin où il reçoit les représentants des autres castes. Heised Lô ne parle jamais par énigme. Ses phrases sont claires, simples, sans mensonge, ironie ou sens caché. Les dragons le respectent autant que les humains, si ce n'est plus. Par contre, en tant que symbole, il se sait la cible du Fatalisme et de l'Humanisme.\n\n## Description\n\nRien ne distingue le vieil homme des autres Prodiges sinon son immense talent d'orateur. Il ne porte plus depuis longtemps son arme double et se déplace rarement. Heised n'est jamais armé, mais il sait se servir de nombreuses armes le cas échéant.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 6,
+      "intelligence": 12,
+      "coordination": 9,
+      "presence": 10,
+      "resistance": 8,
+      "volonte": 9,
+      "perception": 5,
+      "empathie": 11
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 6,
+      "manuel": 3,
+      "social": 7
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesContondantes",
+              "value": 9
+            },
+            {
+              "skill": "armesDHast",
+              "value": 2
+            },
+            {
+              "skill": "armesDoubles",
+              "value": 12
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 13
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 10
+            },
+            {
+              "skill": "athletisme",
+              "value": 3
+            },
+            {
+              "skill": "equitation",
+              "value": 4
+            },
+            {
+              "skill": "esquive",
+              "value": 11
+            },
+            {
+              "skill": "natation",
+              "value": 10
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 7
+            },
+            {
+              "skill": "connaissanceDesAnimaux",
+              "value": 10
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 7
+            },
+            {
+              "skill": "geographie",
+              "value": 7
+            },
+            {
+              "skill": "histoire",
+              "value": 9
+            },
+            {
+              "skill": "lois",
+              "value": 10
+            },
+            {
+              "skill": "orientation",
+              "value": 5
+            },
+            {
+              "skill": "castes",
+              "value": 10
+            },
+            {
+              "skill": "philosophie",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Draconiste",
+                  "reserved": false,
+                  "value": 14
+                }
+              ]
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "astrologie",
+              "value": 8
+            },
+            {
+              "skill": "herboristerie",
+              "value": 10
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 9
+            },
+            {
+              "skill": "medecine",
+              "value": 8
+            },
+            {
+              "skill": "premiersSoins",
+              "value": 9
+            },
+            {
+              "skill": "jardinage",
+              "value": 12
+            },
+            {
+              "skill": "meditation",
+              "value": 11
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 9
+            },
+            {
+              "skill": "pister",
+              "value": 9
+            }
+          ]
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "baratin",
+              "value": 1
+            },
+            {
+              "skill": "conte",
+              "value": 10
+            },
+            {
+              "skill": "eloquence",
+              "value": 13
+            },
+            {
+              "skill": "psychologie",
+              "value": 10
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "diplomatie",
+              "value": 10
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "caste": {
+      "caste": "prodige",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [
+        "loiDeLaMeditation",
+        "loiDeLaNature",
+        "loiDuSangProdige"
+      ],
+      "privileges": [
+        {
+          "privilege": "donDeBrorne",
+          "description": null
+        },
+        {
+          "privilege": "donDeHeyra",
+          "description": null
+        },
+        {
+          "privilege": "donDeKezyr",
+          "description": null
+        },
+        {
+          "privilege": "donDeKhy",
+          "description": null
+        },
+        {
+          "privilege": "donDeKroryn",
+          "description": null
+        },
+        {
+          "privilege": "donDeNenya",
+          "description": null
+        },
+        {
+          "privilege": "donDOzyr",
+          "description": null
+        },
+        {
+          "privilege": "donDeSolyr",
+          "description": null
+        },
+        {
+          "privilege": "donDeSzyl",
+          "description": null
+        },
+        {
+          "privilege": "aplombProdige",
+          "description": null
+        },
+        {
+          "privilege": "engagementProdige",
+          "description": null
+        },
+        {
+          "privilege": "reflexesDeDegagement",
+          "description": null
+        }
+      ]
+    },
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 10,
+    "renown": 10,
+    "disadvantages": [
+      {
+        "disadvantage": "ennemiRare",
+        "cost": 5,
+        "details": "Skykss, dragon ancien de Kalimsshar"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "charme",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "pressentiment",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "conviction",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "droiture",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "culture",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "confidences",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "santeDeFer",
+        "cost": 4,
+        "details": ""
+      },
+      {
+        "advantage": "statutSocial",
+        "cost": 2,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 5,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "nature",
+      "dragon": "Hauserwyr",
+      "progress": "cinquiemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesProdiges"
+    },
+    "unique": true,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "name": "Solana Gaïra",
+    "uuid": "edc0aa3e-0b5f-40f1-b4e1-9c590957c4b4",
+    "description": "La Grande Maîtresse de la caste des érudits dirige son monde avec un gantelet de fer recouvert d'un fin velours. Sous des airs bienveillants, elle jauge et juge ses interlocuteurs sans même s'en cacher. Si son rôle n'avait pas autant d'importance, les Grands Maîtres des autres castes auraient coupé les ponts avec elle depuis bien longtemps.\n\n## Historique\n\nOzyr a remarque Solana alors qu'elle servait activement dans la faction secrète des Historiens. Rapidement, elle remplaça un des cinq dirigeants et intensifia les actions de la faction au point de sacrifier certains de ses hommes et de faire massacrer des innocents. C'est depuis son passage à ce poste que las Assassins d'Ozyr doivent éliminer les gêneurs mais aussi toute leur famille. L'établissement de son Lien a été assez tardif mais ses convictions étaient si fortes qu'il se fit presque pour palier à un manque. Son compagnon draconique se nomme Kelios.\n\nL'âge aidant, il semble que Solana Gaïra ait compris que même si elle s'oblige à être dure, elle doit aussi rester un minimum diplomate. Mais malgré ses efforts, son jeu ne trompe personne. Elle reste la femme froide et dictatoriale qu'elle a toujours été.\n\nSa fonction de Grande Maîtresse en fait l'artchiviste de tous les conseils (officiels et officieux) des Grands Maîtres. Du coup, elle est l'historienne de son rang et seuls certains Grands Dragons en savent autant qu'elle à propos de la politique des castes dans le Royaume de Kor. Le pouvoir lié à cette tâche est tel que malgré sa mauvaise réputation, Solana Gaïra sera toujours respectée et écoutée.\n\n## Description\n\nSolana est un vieille femme rigide, à la tenue impeccable. Son visage peut passer de la grand-mère bieveillante à celui d'une impératrice outrée. Elle souffle le chaud et le froid, ses intelocuteurs ne savent jamais sur quel pied danser. Kelios n'est jamais loin et peut la transporter, le cas échéant.\n\n## Mentalité\n\nPersonne n'a jamais entendu Solana rire de bon cœur. En fait, on ignore même si elle en a un. Son comportement change cependant du tout au tout lorsqu'elle se trouve devant un enfant d'Ozyr. Elle voue une admiration sans bornes pour les dragons de l'eau − qui n'a d'égal que son mépris pour tous les autres.\n\n## Alliés et ennemis\n\nDe son passage au sein de la faction des Historiens, Dame Gaïra a gardé un réseau d'espions et d'informateurs important. Elle n'a pas véritablement d'adversaires car elle s'est arrangée pour que son entourage se batte pour être second plutôt qu'à sa place. Elle ne cache pas qu'elle fait surveiller ses amis et disparaître ses ennemis.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 4,
+      "intelligence": 10,
+      "coordination": 7,
+      "presence": 8,
+      "resistance": 6,
+      "volonte": 9,
+      "perception": 8,
+      "empathie": 4
+    },
+    "attributes": {
+      "physique": 4,
+      "mental": 10,
+      "manuel": 5,
+      "social": 8
+    },
+    "initiative": 3,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 6
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 8
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "equitation",
+              "value": 5
+            },
+            {
+              "skill": "esquive",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 6
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 8
+            },
+            {
+              "skill": "geographie",
+              "value": 10
+            },
+            {
+              "skill": "histoire",
+              "value": 12,
+              "specializations": [
+                {
+                  "name": "Ancien Temps",
+                  "reserved": false,
+                  "value": 14
+                }
+              ]
+            },
+            {
+              "skill": "lois",
+              "value": 12,
+              "specializations": [
+                {
+                  "name": "Lois draconiques",
+                  "reserved": false,
+                  "value": 14
+                }
+              ]
+            },
+            {
+              "skill": "castes",
+              "value": 10
+            },
+            {
+              "skill": "philosophie",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Draconiste",
+                  "reserved": false,
+                  "value": 12
+                },
+                {
+                  "name": "Humaniste",
+                  "reserved": false,
+                  "value": 4
+                },
+                {
+                  "name": "Fataliste",
+                  "reserved": false,
+                  "value": 5
+                }
+              ]
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "astrologie",
+              "value": 10
+            },
+            {
+              "skill": "estimation",
+              "value": 8
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 11
+            },
+            {
+              "skill": "alchimie",
+              "value": 10
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 9
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 10
+            },
+            {
+              "skill": "contrefacon",
+              "value": 8
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "deguisement",
+              "value": 10
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "baratin",
+              "value": 7
+            },
+            {
+              "skill": "eloquence",
+              "value": 9
+            },
+            {
+              "skill": "marchandage",
+              "value": 7
+            },
+            {
+              "skill": "psychologie",
+              "value": 10
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 11
+            },
+            {
+              "skill": "diplomatie",
+              "value": 11
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "caste": {
+      "caste": "erudit",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [
+        "loiDuCollege"
+      ],
+      "privileges": [
+        {
+          "privilege": "ambassade",
+          "description": "Ysmir"
+        },
+        {
+          "privilege": "aplomb",
+          "description": null
+        },
+        {
+          "privilege": "avalDraconique",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "calligraphieOfficielle",
+          "description": null
+        },
+        {
+          "privilege": "demagogie",
+          "description": null
+        },
+        {
+          "privilege": "ecritTechnique",
+          "description": null
+        },
+        {
+          "privilege": "garantErudit",
+          "description": null
+        },
+        {
+          "privilege": "illumine",
+          "description": null
+        },
+        {
+          "privilege": "linguistique",
+          "description": null
+        },
+        {
+          "privilege": "memoire",
+          "description": null
+        },
+        {
+          "privilege": "notorieteErudit",
+          "description": null
+        },
+        {
+          "privilege": "psychologieErudit",
+          "description": null
+        },
+        {
+          "privilege": "faveurPolitiqueErudit",
+          "description": "Ysmir"
+        },
+        {
+          "privilege": "faveurPolitiqueErudit",
+          "description": "Empire de Solyr"
+        },
+        {
+          "privilege": "faveurPolitiqueErudit",
+          "description": "Empire Zûl"
+        },
+        {
+          "privilege": "faveurPolitiqueErudit",
+          "description": "Jaspor"
+        },
+        {
+          "privilege": "faveurPolitiqueErudit",
+          "description": "Pomyrie"
+        },
+        {
+          "privilege": "faveurPolitiqueErudit",
+          "description": "Cité de Griff"
+        }
+      ]
+    },
+    "age": 63,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 10,
+    "renown": 9,
+    "disadvantages": [
+      {
+        "disadvantage": "mauvaisOeil",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "disadvantage": "obsession",
+        "cost": 2,
+        "details": "Non précisé"
+      },
+      {
+        "disadvantage": "grincheux",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "disadvantage": "nostalgieObsessionnelle",
+        "cost": 2,
+        "details": ""
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "confidences",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "corpsAguerri",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "culture",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "conviction",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "statutSocial",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "techniquePersonnelle",
+        "cost": 5,
+        "details": "Histoire : prévision des conséquences des événements en cours"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 5,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "oceans",
+      "dragon": "Kelios",
+      "progress": "quatriemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesErudits"
+    },
+    "unique": true,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "name": "Feyd Kar",
+    "uuid": "2b4b4b52-1d81-4800-ade6-1c6829aca81f",
+    "description": "Impitoyable, le vieux lion dirige la caste des combattants. On le dit aussi sage que prompt à sortir sa lame. Par dix fois jéjà, il a vaincu des jeunes prétendants au titre de Grand Maître. Parmi eux, son propre fils, qu'il blessa mortellement. Un acte qu'il ne pourra jamais se pardonner et que sa femme Irma Santar, d'un simple regard, lui reproche du matin au soir. On dit que si une épée ne peut faire tomber Feyd Kar, c'est la tristesse qui grignotera son cœur. On ne sait trop rien des motivations qui l'animent car il parle peu lors des conseils qu'il préside, ne prenant la parole que pour trancher et conclure un débat. Par contre, il semble particulièrement à son aise avec les dragons. Dragons qu'il n'hésite pas à combattre en entraînement.\n\nDescription\n\nFeyd Kar apparaît toujours en armure, que ce soit d'entraînement ou d'apparat. Sa haute stature et son maintien obligent au respect. Sa voix est grave et caverneuse. En général, ses couleurs sont le rouge et l'or, ce qui accentue son aspect léonin. Il n'a pas d'arme de prédilection car il les maîtrise toutes.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 10,
+      "intelligence": 7,
+      "coordination": 11,
+      "presence": 8,
+      "resistance": 9,
+      "volonte": 7,
+      "perception": 8,
+      "empathie": 8
+    },
+    "attributes": {
+      "physique": 10,
+      "mental": 7,
+      "manuel": 9,
+      "social": 7
+    },
+    "initiative": 5,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesContondantes",
+              "value": 12,
+              "specializations": [
+                {
+                  "name": "Masse d'armes",
+                  "reserved": false,
+                  "value": 14
+                }
+              ]
+            },
+            {
+              "skill": "armesDHast",
+              "value": 10
+            },
+            {
+              "skill": "armesDeJet",
+              "value": 8
+            },
+            {
+              "skill": "armesDoubles",
+              "value": 8
+            },
+            {
+              "skill": "armesArticulees",
+              "value": 10
+            },
+            {
+              "skill": "armesDeChoc",
+              "value": 8
+            },
+            {
+              "skill": "armesTranchantes",
+              "value": 12,
+              "specializations": [
+                {
+                  "name": "Épée large",
+                  "reserved": false,
+                  "value": 14
+                }
+              ]
+            },
+            {
+              "skill": "bouclier",
+              "value": 10
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 9
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 9
+            },
+            {
+              "skill": "equitation",
+              "value": 8
+            },
+            {
+              "skill": "esquive",
+              "value": 10
+            },
+            {
+              "skill": "combatMonte",
+              "value": 6
+            },
+            {
+              "skill": "endurance",
+              "value": 10
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 9
+            },
+            {
+              "skill": "geographie",
+              "value": 4
+            },
+            {
+              "skill": "histoire",
+              "value": 7
+            },
+            {
+              "skill": "lois",
+              "value": 9
+            },
+            {
+              "skill": "orientation",
+              "value": 5
+            },
+            {
+              "skill": "strategie",
+              "value": 8
+            },
+            {
+              "skill": "castes",
+              "value": 12
+            },
+            {
+              "skill": "philosophie",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Draconiste",
+                  "reserved": false,
+                  "value": 8
+                }
+              ]
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "langueDesSignes",
+              "value": 9
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 8
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 7
+            },
+            {
+              "skill": "armesDeSiege",
+              "value": 5
+            },
+            {
+              "skill": "armesMecaniques",
+              "value": 1
+            },
+            {
+              "skill": "reparation",
+              "value": 6
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "attelages",
+              "value": 6
+            }
+          ]
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 10
+            },
+            {
+              "skill": "diplomatie",
+              "value": 9
+            },
+            {
+              "skill": "intimidation",
+              "value": 9
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [
+        "loiDeLArme"
+      ],
+      "privileges": [
+        {
+          "privilege": "adaptation",
+          "description": null
+        },
+        {
+          "privilege": "argotCombattant",
+          "description": null
+        },
+        {
+          "privilege": "botteSecrete",
+          "description": "Coup à la tempe, Diff. +10"
+        },
+        {
+          "privilege": "doubleAttaque",
+          "description": null
+        },
+        {
+          "privilege": "engagement",
+          "description": null
+        },
+        {
+          "privilege": "riposte",
+          "description": null
+        },
+        {
+          "privilege": "vigilanceCombattant",
+          "description": null
+        },
+        {
+          "privilege": "alliesMercenairesCombattant",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "compagnonsDeBatailleCombattant",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "anticipation",
+          "description": null
+        },
+        {
+          "privilege": "convictionSuperieure",
+          "description": null
+        },
+        {
+          "privilege": "sommeilLeger",
+          "description": null
+        }
+      ]
+    },
+    "age": 47,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 10,
+    "proficiency": 0,
+    "renown": 10,
+    "disadvantages": [
+      {
+        "disadvantage": "echec",
+        "cost": 3,
+        "details": "A tué son fils"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "agilite",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "heritageDraconique",
+        "cost": 6,
+        "details": "Dragon des volcans"
+      },
+      {
+        "advantage": "sensEnAlerte",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "corpsAguerri",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "droiture",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "prestance",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "statutSocial",
+        "cost": 2,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 4,
+        "circles": 0
+      },
+      "human": {
+        "value": 1,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Saryskar",
+      "progress": "cinquiemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "name": "Sir Tharen",
+    "uuid": "56c6043c-97b9-40b3-aa95-dc9e1b0a3941",
+    "description": "À l'instar de Kezyr par rapport aux hommes, Theran tient toujours à être au courant de tout ce qui concerne les artisans. Une découverte ici, un malheur là, il veut en savoir un maximum pour intervenir, le cas échéant. Sir Tharen n'est pourtant pas quelqu'un de bon. Il se content d'accomplir sa tâche au mieux sans se soucier des conséquences pour tout ce qui se trouve hors de sa caste. Pour cet artisan, son œuvre, c'est son arganisation. Quiconque y touche est éliminé. Pour cela, il n'hosite pas à se servir des terribles services secrets de Kezyr. Si tous ses pairs le trouvent sympathique, il n'éprouve aucune espèce d'amitié excepté pour Andarm, le vieux dragon qui le transporte parfois.\n\n## Description\n\nSir Tharen est charismatique. Il a toujours le sourire vainqueur aux lèvres et touve généralement le bon mot pour calmer une situation houleuse. Il se déplace souvent dans les royaumes portant l'armure des artisans. Il manie une longue épée finement ciselée que l'on dit pourtant incassable.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 7,
+      "intelligence": 8,
+      "coordination": 10,
+      "presence": 9,
+      "resistance": 7,
+      "volonte": 9,
+      "perception": 8,
+      "empathie": 10
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 7,
+      "manuel": 10,
+      "social": 8
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesContondantes",
+              "value": 8
+            },
+            {
+              "skill": "armesDHast",
+              "value": 3
+            },
+            {
+              "skill": "armesDeJet",
+              "value": 7
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 7
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "equitation",
+              "value": 7
+            },
+            {
+              "skill": "esquive",
+              "value": 7
+            },
+            {
+              "skill": "natation",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 8
+            },
+            {
+              "skill": "geographie",
+              "value": 7
+            },
+            {
+              "skill": "histoire",
+              "value": 7
+            },
+            {
+              "skill": "lois",
+              "value": 8
+            },
+            {
+              "skill": "castes",
+              "value": 10
+            },
+            {
+              "skill": "conception",
+              "value": 8
+            },
+            {
+              "skill": "philosophie",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Draconiste",
+                  "reserved": false,
+                  "value": 6
+                },
+                {
+                  "name": "Humaniste",
+                  "reserved": false,
+                  "value": 7
+                }
+              ]
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "cartographie",
+              "value": 6
+            },
+            {
+              "skill": "estimation",
+              "value": 12
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 8
+            },
+            {
+              "skill": "alchimie",
+              "value": 8
+            },
+            {
+              "skill": "explosifs",
+              "value": 6
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 9
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 6
+            },
+            {
+              "skill": "armesDeSiege",
+              "value": 6
+            },
+            {
+              "skill": "armesMecaniques",
+              "value": 12
+            },
+            {
+              "skill": "artisanat",
+              "value": 0,
+              "specializations": [
+                {
+                  "name": "Sculpture",
+                  "reserved": false,
+                  "value": 15
+                },
+                {
+                  "name": "Forge",
+                  "reserved": false,
+                  "value": 15
+                }
+              ]
+            },
+            {
+              "skill": "contrefacon",
+              "value": 7
+            },
+            {
+              "skill": "mecanismes",
+              "value": 10,
+              "specializations": [
+                {
+                  "name": "Engrenages",
+                  "reserved": false,
+                  "value": 12
+                }
+              ]
+            },
+            {
+              "skill": "pieges",
+              "value": 8
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "deverrouillage",
+              "value": 8
+            },
+            {
+              "skill": "deguisement",
+              "value": 6
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "baratin",
+              "value": 9
+            },
+            {
+              "skill": "marchandage",
+              "value": 12
+            },
+            {
+              "skill": "psychologie",
+              "value": 10
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 9
+            },
+            {
+              "skill": "diplomatie",
+              "value": 9
+            },
+            {
+              "skill": "seduction",
+              "value": 8
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 4,
+        "invocatoire": 0,
+        "sorcellerie": 7
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 5,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 8,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 5,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "caste": {
+      "caste": "artisan",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [
+        "loiDuCompagnon"
+      ],
+      "privileges": [
+        {
+          "privilege": "autorisation",
+          "description": null
+        },
+        {
+          "privilege": "charteDAtelier",
+          "description": null
+        },
+        {
+          "privilege": "familier",
+          "description": "Lézard mange-pierres"
+        },
+        {
+          "privilege": "notable",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "outils",
+          "description": null
+        },
+        {
+          "privilege": "psychometrie",
+          "description": null
+        },
+        {
+          "privilege": "expertiseArtisan",
+          "description": null
+        },
+        {
+          "privilege": "faveurPolitiqueArtisan",
+          "description": "Empire de Solyr"
+        },
+        {
+          "privilege": "faveurPolitiqueArtisan",
+          "description": "Kar"
+        },
+        {
+          "privilege": "faveurPolitiqueArtisan",
+          "description": "Principauté de Marne"
+        },
+        {
+          "privilege": "faveurPolitiqueArtisan",
+          "description": "Marches Alyzées"
+        },
+        {
+          "privilege": "faveurPolitiqueArtisan",
+          "description": "Empire Nésora"
+        },
+        {
+          "privilege": "ecole",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "elementalisme",
+          "description": "Métal"
+        },
+        {
+          "privilege": "laForceDeLAme",
+          "description": null
+        },
+        {
+          "privilege": "lesCerclesDuProgres",
+          "description": null
+        }
+      ]
+    },
+    "age": 42,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 10,
+    "disadvantages": [
+      {
+        "disadvantage": "complexeDInferiorite",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "disadvantage": "obsession",
+        "cost": 2,
+        "details": "Méfiance"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "charme",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "corpsAguerri",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "prestance",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "statutSocial",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "sensAccru",
+        "cost": 2,
+        "details": "Toucher"
+      },
+      {
+        "advantage": "artInterdit",
+        "cost": 3,
+        "details": "Mécanismes"
+      },
+      {
+        "advantage": "artInterdit",
+        "cost": 3,
+        "details": "Explosifs"
+      },
+      {
+        "advantage": "objetDePredilection",
+        "cost": 3,
+        "details": "Trousse de ciseaux de graveur"
+      },
+      {
+        "advantage": "techniquePersonnelle",
+        "cost": 5,
+        "details": "Travail de l'acier"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 1,
+        "circles": 0
+      },
+      "human": {
+        "value": 4,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "cite",
+      "dragon": "Emmariânne",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "unique": true,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "original",
+      "name": "LOCAL_CREATED"
+    },
+    "name": "Daana Toriser",
+    "uuid": "bab45754-6bfc-4017-a6b5-81e3765d85eb",
+    "description": "Cette missionnaire d'une treintaine d'années dirige par défaut la caste des voyageurs. Elle avoue elle-même n'avoir cette responsabilité que grâce à une longue conversation avec le Grand Dragon. Ce dernier avouant avoir du mal à comprendre certains travers de la mentalité humaine, il souhaitait trouver en Daana un porte-parole plutôt qu'une dirigeante de caste. Du coup, la voyageuse gère au minimum les infrastructures de la caste, préférant reprendre ses activités de missionnaire. Si elle peut se faire représenter lors des conseils des Grands Maîtres, elle n'hésitera pas. Convaincue que la parole des Dragons est plus importante que tout, elle prêche le plus souvent dans des contrées reculées − ce qui la rend difficile à joindre rapidement.\n\n## Description\n\nDaana Toriser joue sur sa beauté mais aussi sur sa force de caractère. Bien qu'armée d'une fine épée, elle préfère parler plutôte que de se battre. Elle est connue pour avoir remis de nombreuses brebis égarées dans le droit chemin.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 7,
+      "intelligence": 6,
+      "coordination": 7,
+      "presence": 8,
+      "resistance": 7,
+      "volonte": 6,
+      "perception": 9,
+      "empathie": 9
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 8,
+      "manuel": 7,
+      "social": 9
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 1
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 8
+            },
+            {
+              "skill": "bouclier",
+              "value": 5
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 12
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 9
+            },
+            {
+              "skill": "equitation",
+              "value": 10
+            },
+            {
+              "skill": "escalade",
+              "value": 11
+            },
+            {
+              "skill": "esquive",
+              "value": 7
+            },
+            {
+              "skill": "natation",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 2
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 6
+            },
+            {
+              "skill": "geographie",
+              "value": 12
+            },
+            {
+              "skill": "histoire",
+              "value": 8
+            },
+            {
+              "skill": "lois",
+              "value": 8
+            },
+            {
+              "skill": "orientation",
+              "value": 11
+            },
+            {
+              "skill": "castes",
+              "value": 6
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "cartographie",
+              "value": 9
+            },
+            {
+              "skill": "herboristerie",
+              "value": 4
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 4
+            },
+            {
+              "skill": "premiersSoins",
+              "value": 8
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 12
+            },
+            {
+              "skill": "pister",
+              "value": 11
+            },
+            {
+              "skill": "pieges",
+              "value": 5
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "armesAProjectiles",
+              "value": 8
+            },
+            {
+              "skill": "attelages",
+              "value": 5
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "conte",
+              "value": 9
+            },
+            {
+              "skill": "eloquence",
+              "value": 12
+            },
+            {
+              "skill": "marchandage",
+              "value": 7
+            },
+            {
+              "skill": "psychologie",
+              "value": 9,
+              "specializations": [
+                {
+                  "name": "Draconique",
+                  "reserved": false,
+                  "value": 8
+                }
+              ]
+            },
+            {
+              "skill": "baratin",
+              "value": 10
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 8
+            },
+            {
+              "skill": "diplomatie",
+              "value": 8
+            },
+            {
+              "skill": "dressage",
+              "value": 6
+            },
+            {
+              "skill": "intimidation",
+              "value": 5
+            },
+            {
+              "skill": "seduction",
+              "value": 13
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "caste": {
+      "caste": "voyageur",
+      "status": "grandMaitre",
+      "career": "missionnaires",
+      "interdicts": [
+        "loiDeLaLiberte"
+      ],
+      "privileges": [
+        {
+          "privilege": "archer",
+          "description": null
+        },
+        {
+          "privilege": "connaissanceDuMonde",
+          "description": null
+        },
+        {
+          "privilege": "logistique",
+          "description": null
+        },
+        {
+          "privilege": "solitaire",
+          "description": null
+        },
+        {
+          "privilege": "compagnons",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "ambassadeVoyageur",
+          "description": null
+        },
+        {
+          "privilege": "linguistiqueVoyageur",
+          "description": null
+        },
+        {
+          "privilege": "garantVoyageur",
+          "description": null
+        }
+      ]
+    },
+    "age": 32,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 10,
+    "proficiency": 0,
+    "renown": 8,
+    "disadvantages": [
+      {
+        "disadvantage": "obsession",
+        "cost": 2,
+        "details": "La parole des dragons"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "agilite",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "allie",
+        "cost": 5,
+        "details": "Szyl"
+      },
+      {
+        "advantage": "prestance",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "sensDeLOrientation",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "statutSocial",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "charme",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "augureFavorable",
+        "cost": 3,
+        "details": "Homme"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 2,
+        "circles": 0
+      },
+      "human": {
+        "value": 3,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "vents",
+      "dragon": "Szyl",
+      "progress": "premierNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesVoyageurs"
+    },
+    "unique": true,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "original",
+      "name": "LOCAL_CREATED"
+    },
+    "name": "Ugmar Kast",
+    "uuid": "0c5e96e3-46fc-4867-83fe-973087bcf90d",
+    "description": "Dans le complexe échevau de la caste des protecteurs, Ugmar Kast semble avoir trouvé ses marques. Il sait où commence sa juridiction et surtout où se termine celle des autres. À plusieurs reprises, il a dû taper du poing − et pas seulement sur la table − pour rappeler à lordre des Inquisiteurs trop zélés ou des stratèges sacrifiant leurs hommes comme les pièces d'un jeu. Il n'a pas oublié son rôle de protecteur, protégeant parfois les hommes contre les folies de sa propre caste. C'est pour ce sens de la mesure que Brorne fait confiance à Ugmar Kast. Il le considère parfois comme le symbole de la raison.\n\n## Description\n\nL'homme se déplace le plus souvent en armure massive et casqué. Soarstyr, le dragon avec qui il s'est lié, accepte de se faire monter avec joie − c'est un jeune dragon fougueux se comportant comme un gamin face à un vieux maître. Ugmar porte à son côté un lourd marteau de guerre et un bouclier de Brorne.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 10,
+      "intelligence": 6,
+      "coordination": 8,
+      "presence": 10,
+      "resistance": 9,
+      "volonte": 10,
+      "perception": 5,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 10,
+      "mental": 7,
+      "manuel": 6,
+      "social": 9
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesContondantes",
+              "value": 11,
+              "specializations": [
+                {
+                  "name": "Masse d'armes",
+                  "reserved": false,
+                  "value": 13
+                }
+              ]
+            },
+            {
+              "skill": "armesDHast",
+              "value": 7
+            },
+            {
+              "skill": "armesDeJet",
+              "value": 6
+            },
+            {
+              "skill": "armesArticulees",
+              "value": 6
+            },
+            {
+              "skill": "armesDoubles",
+              "value": 6
+            },
+            {
+              "skill": "armesTranchantes",
+              "value": 11
+            },
+            {
+              "skill": "bouclier",
+              "value": 10
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 9
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 8
+            },
+            {
+              "skill": "equitation",
+              "value": 9
+            },
+            {
+              "skill": "esquive",
+              "value": 9
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDesAnimaux",
+              "value": 8
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 10
+            },
+            {
+              "skill": "geographie",
+              "value": 5
+            },
+            {
+              "skill": "histoire",
+              "value": 7
+            },
+            {
+              "skill": "lois",
+              "value": 10
+            },
+            {
+              "skill": "strategie",
+              "value": 10,
+              "specializations": [
+                {
+                  "name": "Manœuvre",
+                  "reserved": false,
+                  "value": 12
+                }
+              ]
+            },
+            {
+              "skill": "castes",
+              "value": 10
+            },
+            {
+              "skill": "philosophie",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Draconiste",
+                  "reserved": false,
+                  "value": 7
+                }
+              ]
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "langueDesSignes",
+              "value": 8
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 7
+            },
+            {
+              "skill": "premiersSoins",
+              "value": 8
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 5
+            },
+            {
+              "skill": "investigation",
+              "value": 5
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "armesDeSiege",
+              "value": 9
+            },
+            {
+              "skill": "armesMecaniques",
+              "value": 7
+            },
+            {
+              "skill": "armure",
+              "value": 10
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "attelages",
+              "value": 11
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "conte",
+              "value": 7
+            },
+            {
+              "skill": "eloquence",
+              "value": 8
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 12
+            },
+            {
+              "skill": "diplomatie",
+              "value": 10
+            },
+            {
+              "skill": "intimidation",
+              "value": 12
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "caste": {
+      "caste": "protecteur",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [
+        "loiDuSangProtecteur"
+      ],
+      "privileges": [
+        {
+          "privilege": "adopte",
+          "description": null
+        },
+        {
+          "privilege": "autorite",
+          "description": null
+        },
+        {
+          "privilege": "cuirasse",
+          "description": null
+        },
+        {
+          "privilege": "defense",
+          "description": null
+        },
+        {
+          "privilege": "influences",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "lucidite",
+          "description": null
+        },
+        {
+          "privilege": "porteParole",
+          "description": null
+        },
+        {
+          "privilege": "renseignement",
+          "description": null
+        },
+        {
+          "privilege": "requisition",
+          "description": null
+        },
+        {
+          "privilege": "suspicion",
+          "description": null
+        },
+        {
+          "privilege": "signesDeBatailleProtecteur",
+          "description": null
+        },
+        {
+          "privilege": "engagementProtecteur",
+          "description": null
+        },
+        {
+          "privilege": "notorieteProtecteur",
+          "description": "Non précisé"
+        }
+      ]
+    },
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 10,
+    "renown": 10,
+    "disadvantages": [],
+    "advantages": [
+      {
+        "advantage": "armeDuMaitre",
+        "cost": 2,
+        "details": "Marteau de guerre"
+      },
+      {
+        "advantage": "conviction",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "droiture",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "corpsAguerri",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "prestance",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "statutSocial",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "allie",
+        "cost": 5,
+        "details": "Brorne"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 5,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "Soarstyr",
+      "progress": "quatriemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesProtecteurs"
+    },
+    "unique": true,
+    "use_human_injury_manager": true
+  }
+]

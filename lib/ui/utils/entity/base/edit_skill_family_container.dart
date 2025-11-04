@@ -161,9 +161,11 @@ class SkillEditWidget extends StatelessWidget {
                     onDeleted();
                   },
                 ),
-                Text(
-                  skill.skill.name,
-                  style: theme.textTheme.bodySmall,
+                Expanded(
+                  child: Text(
+                    skill.skill.name,
+                    style: theme.textTheme.bodySmall,
+                  ),
                 ),
                 Spacer(),
                 if(!skill.skill.requireSpecialization)

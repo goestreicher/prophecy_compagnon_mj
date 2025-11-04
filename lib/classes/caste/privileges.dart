@@ -1,6 +1,18 @@
 import 'base.dart';
 
 enum CastePrivilege {
+  laForceDeLAme(
+    caste: Caste.sansCaste,
+    title: "La force de l'âme (Humaniste)",
+    description: "Grâce à ce Privilège, le personnage peut ajouter sa Tendance Homme à la valeur de base de tous ses jets de résistance face à un sortilège, un pouvoir ou une capacité d'origine draconique. Ce Privilège n'est utilisable que lorsque le personnage est directement visé par un effet de ce type, mais il peut s'agir d'une “agression” physique, mentale ou psychologique.",
+    cost: 0,
+  ),
+  lesCerclesDuProgres(
+    caste: Caste.sansCaste,
+    title: "Les cercles du progrès (Humaniste)",
+    description: "Rompu à toutes les formes de progrès, les Humanistes ignorent tous les malus et toutes les pénalités de non maîtrise lors de jets impliquant des Compétences techniques ou scientifiques. Il peuvent donc obtenir des Niveaux de Réussite et dépenser des Points de Maîtrise.",
+    cost: 0,
+  ),
   apprenti(
       caste: Caste.artisan,
       title: 'Apprenti',

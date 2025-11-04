@@ -36,7 +36,7 @@ class _CastePrivilegePickerDialogState extends State<CastePrivilegePickerDialog>
     if(currentCaste == null) return;
     privilegesForCurrentCaste.addAll(
       CastePrivilege.values.where(
-        (CastePrivilege p) => (p.caste == currentCaste) && (p.unique == false || !assignedPrivileges.contains(p))
+        (CastePrivilege p) => (p.caste == currentCaste || p.caste == Caste.sansCaste) && (p.unique == false || !assignedPrivileges.contains(p))
       )
     );
   }

@@ -56,7 +56,7 @@ class EntityEditMagicSkillsWidget extends StatelessWidget {
                 name: 'Réserve de magie',
                 initialValue: entity.magicPool,
                 minValue: entity.abilities.volonte,
-                maxValue: 30,
+                maxValue: 99,
                 onChanged: (int value) {
                   entity.magicPool = value;
                 },

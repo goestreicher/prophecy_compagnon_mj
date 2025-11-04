@@ -8,7 +8,10 @@
         "title": "Grand Dragon du Métal"
       },
       {
-        "name": "Sir Tharen",
+        "link": {
+          "name": "Sir Tharen",
+          "link": "resource://assets/npc/56c6043c-97b9-40b3-aa95-dc9e1b0a3941"
+        },
         "title": "Grand Maître de la Caste des Artisans"
       }
     ],
@@ -371,7 +374,10 @@
         "title": "Grand Dragon du Feu"
       },
       {
-        "name": "Feyd Kar",
+        "link": {
+          "name": "Feyd Kar",
+          "link": "resource://assets/npc/2b4b4b52-1d81-4800-ade6-1c6829aca81f"
+        },
         "title": "Grand Maître de la Caste des Combattants"
       }
     ]
@@ -811,8 +817,11 @@
         "title": "Grand Dragon des Océans"
       },
       {
-        "name": "La Maîtresse",
-        "title": "Maîtresse de la Caste des Érudits"
+        "link": {
+          "name": "Solana Gaïra",
+          "link": "resource://assets/npc/edc0aa3e-0b5f-40f1-b4e1-9c590957c4b4"
+        },
+        "title": "Grande Maîtresse de la Caste des Érudits"
       }
     ]
   },
@@ -1647,6 +1656,13 @@
       {
         "name": "Heyra",
         "title": "Grand Dragon de la Nature"
+      },
+      {
+        "link": {
+          "name": "Heised Lô",
+          "link": "resource://assets/npc/7bc953b7-b03a-4b94-9462-21b51dc5fb56"
+        },
+        "title": "Grand Maître de la caste des prodiges"
       }
     ]
   },
@@ -1929,7 +1945,10 @@
         "title": "Grand Dragon de la Pierre"
       },
       {
-        "name": "Ugmar Kast",
+        "link": {
+          "name": "Ugmar Kast",
+          "link": "resource://assets/npc/0c5e96e3-46fc-4867-83fe-973087bcf90d"
+        },
         "title": "Haut Protecteur de Brorne"
       }
     ]
@@ -2263,7 +2282,10 @@
         "title": "Grand Dragon des Vents"
       },
       {
-        "name": "Daana Toriser",
+        "link": {
+          "name": "Daana Toriser",
+          "link": "resource://assets/npc/bab45754-6bfc-4017-a6b5-81e3765d85eb"
+        },
         "title": "Grande Maîtresse de la Caste des Voyageurs"
       }
     ]
@@ -2494,7 +2516,10 @@
         "title": "Grand Dragon des Cités"
       },
       {
-        "name": "Swan Armen",
+        "link": {
+          "name": "Swan Armen",
+          "link": "resource://assets/npc/4b9e99df-3803-43d7-90df-8eea5c4c272c"
+        },
         "title": "Grand Maître de la Caste des Commerçants"
       }
     ]

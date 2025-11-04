@@ -21,6 +21,8 @@ Map<String, dynamic> _$CharacterCastePrivilegeToJson(
 };
 
 const _$CastePrivilegeEnumMap = {
+  CastePrivilege.laForceDeLAme: 'laForceDeLAme',
+  CastePrivilege.lesCerclesDuProgres: 'lesCerclesDuProgres',
   CastePrivilege.apprenti: 'apprenti',
   CastePrivilege.autorisation: 'autorisation',
   CastePrivilege.charteDAtelier: 'charteDAtelier',

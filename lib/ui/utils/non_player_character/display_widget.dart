@@ -21,6 +21,7 @@ import '../entity/magic/display_magic_spells_widget.dart';
 import '../entity/magic/display_magic_spheres_widget.dart';
 import '../error_feedback.dart';
 import '../full_page_loading.dart';
+import '../markdown_display_widget.dart';
 import '../widget_group_container.dart';
 import '../character/background/display_advantages_widget.dart';
 import '../character/relations/display_caste_details_widget.dart';
@@ -127,8 +128,8 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                   child: WidgetGroupContainer(
                     child: Align(
                       alignment: AlignmentGeometry.topLeft,
-                      child: Text(
-                        npc.description.isNotEmpty
+                      child: MarkdownDisplayWidget(
+                        data: npc.description.isNotEmpty
                             ? npc.description
                             : 'Pas de description'
                       )

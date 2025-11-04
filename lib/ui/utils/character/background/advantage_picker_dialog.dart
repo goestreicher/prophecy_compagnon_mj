@@ -24,6 +24,7 @@ class _AdvantagePickerDialogState extends State<AdvantagePickerDialog> {
   final List<Advantage> forType = <Advantage>[];
   Advantage? advantage;
   final List<int> costs = <int>[];
+  int? cost;
 
   void updateForCurrentType() {
     setState(() {
@@ -55,6 +56,7 @@ class _AdvantagePickerDialogState extends State<AdvantagePickerDialog> {
 
     setState(() {
       costs.addAll(advantage!.cost);
+      if(costs.length == 1) cost = costs[0];
     });
   }
 
@@ -92,6 +94,8 @@ class _AdvantagePickerDialogState extends State<AdvantagePickerDialog> {
                               costController.clear();
                               setState(() {
                                 type = t;
+                                advantage = null;
+                                cost = null;
                               });
                               updateForCurrentType();
                             },
@@ -109,6 +113,7 @@ class _AdvantagePickerDialogState extends State<AdvantagePickerDialog> {
                               costController.clear();
                               setState(() {
                                 advantage = a;
+                                cost = null;
                               });
                               updateCosts();
                             },
@@ -125,6 +130,7 @@ class _AdvantagePickerDialogState extends State<AdvantagePickerDialog> {
                             autovalidateMode: AutovalidateMode.disabled,
                           ),
                           DropdownMenuFormField(
+                            initialSelection: cost,
                             controller: costController,
                             label: const Text('Coût'),
                             requestFocusOnTap: true,
@@ -132,6 +138,11 @@ class _AdvantagePickerDialogState extends State<AdvantagePickerDialog> {
                             dropdownMenuEntries: costs.map(
                                 (int c) => DropdownMenuEntry(value: c, label: c.toString())
                               ).toList(),
+                            onSelected: (int? v) {
+                              setState(() {
+                                cost = v;
+                              });
+                            },
                             validator: (int? c) {
                               if(advantage == null) return null;
                               if(costController.text.isEmpty) return 'Valeur obligatoire';
