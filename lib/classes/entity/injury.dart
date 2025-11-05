@@ -372,7 +372,7 @@ class InjuryManager {
     }
 
     for(var injury in _injuries.entries) {
-      injuries[injury.key.toString()] = injury.value;
+      injuries[injury.key.name] = injury.value;
     }
 
     return <String, dynamic>{

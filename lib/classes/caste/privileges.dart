@@ -577,7 +577,8 @@ enum CastePrivilege {
       caste: Caste.mage,
       title: 'Prédispositions',
       description: "Permet au personnage de disposer d’une affinité particulière avec une Sphère ou une Discipline qui, lorsqu'il tente d’apprendre un sortilège de ce genre, réduit de 5 la Difficulté de l’apprentissage. Une fois la Sphère ou la Discipline choisies, il est impossible d’en changer. Ce Privilège peut être choisi deux fois, pour deux Compétences différentes.",
-      cost: 3
+      cost: 3,
+      requireDetails: true,
   ),
   prevoyance(
       caste: Caste.mage,

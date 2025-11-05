@@ -21,6 +21,13 @@
     "is_default": true
   },
   {
+    "title": "Marches Alyzées",
+    "categories": [
+      "dirigeants"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Pomyrie",
     "categories": [
       "dirigeants"
@@ -144,6 +151,62 @@
     "title": "Caste des voyageurs",
     "categories": [
       "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Artisans",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Combattants",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Commerçants",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Érudits",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Mages",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Prodiges",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Protecteurs",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Voyageurs",
+    "categories": [
+      "herosEtAventuriers"
     ],
     "is_default": true
   }

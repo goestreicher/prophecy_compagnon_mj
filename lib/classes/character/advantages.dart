@@ -166,7 +166,7 @@ enum Advantage {
   ),
   chanceInouie(
     title: 'Chance inouïe',
-    description: "La Chance inouïe permet à l’enfant de défier les lois de la probabilité et de réussir miraculeusement les actions qu’il était sur le point de rater. Que son jet soit raté ou réussi, 1e joueur peut dépenser des Points de Chance pour obtenir des NR (c’est l'exception qui confirme la règle de dépense des Points de Chance).",
+    description: "La Chance inouïe permet à l’enfant de défier les lois de la probabilité et de réussir miraculeusement les actions qu’il était sur le point de rater. Que son jet soit raté ou réussi, le joueur peut dépenser des Points de Chance pour obtenir des NR (c’est l'exception qui confirme la règle de dépense des Points de Chance).",
     cost: [3],
     type: AdvantageType.enfant
   ),

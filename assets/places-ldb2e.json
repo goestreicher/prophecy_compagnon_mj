@@ -378,7 +378,10 @@
     "government": "monarchie féodale héréditaire",
     "leaders": [
       {
-        "name": "Jard",
+        "link": {
+          "name": "Jard",
+          "link": "resource://assets/npc/f9e77653-a8ee-426a-8972-88bedb5f1bb8"
+        },
         "title": "le Bien-aimé, Prince des Marches Unifiées"
       }
     ],

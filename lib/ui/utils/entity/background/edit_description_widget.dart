@@ -53,6 +53,7 @@ class _EntityEditDescriptionWidgetState extends State<EntityEditDescriptionWidge
         children: [
           MarkdownFleatherToolbarFormField(
             controller: descriptionController,
+            showResourcePicker: true,
             onSaved: (String value) {
               widget.entity.description = value;
             },

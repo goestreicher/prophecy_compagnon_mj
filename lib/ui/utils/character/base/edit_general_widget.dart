@@ -151,6 +151,8 @@ class CharacterEditGeneralWidget extends StatelessWidget {
                           places.addAll(snapshot.data!);
                         }
 
+                        places.sort((Place a, Place b) => a.name.compareTo(b.name));
+
                         return DropdownMenuFormField<Place>(
                           initialSelection: origin,
                           requestFocusOnTap: true,

@@ -133,19 +133,19 @@
         "hands": 2,
         "requirements": { "force": 6 },
         "initiative": { "melee": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 11 },
+        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 12 },
         "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
+            "eff": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 },
+            "max": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 }
         }
     },
     {
         "name": "Cimeterre à deux mains",
         "skill": "armesTranchantes",
-        "weight": 0.0,
+        "weight": 1.2,
         "body_part": "hand",
         "hands": 2,
-        "requirements": { "force": 7, "coordination": 5 },
+        "requirements": { "force": 5 },
         "initiative": { "melee": 1 },
         "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 13 },
         "range": {
@@ -153,7 +153,20 @@
             "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
         }
     },
-
+    {
+      "name": "Glaive zangarien",
+      "skill": "armesTranchantes",
+      "weight": 0.0,
+      "body_part": "hand",
+      "hands": 2,
+      "requirements": { "force": 7, "coordination": 5 },
+      "initiative": { "melee": 1 },
+      "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 12 },
+      "range": {
+        "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
+        "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
+      }
+    },
     {
         "name": "Hachette",
         "skill": "armesDeChoc",

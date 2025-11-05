@@ -901,7 +901,16 @@
     "source": {
       "type": "officiel",
       "name": "Les Versets d'Ozyr"
-    }
+    },
+    "members": [
+      {
+        "link": {
+          "name": "Malia",
+          "link": "resource://assets/npc/b8de02c0-032f-49d2-9d71-fcea9166fdfb"
+        },
+        "title": "Membre de l'Ordre marin"
+      }
+    ]
   },
   {
     "name": "La Loge des Historiens",
