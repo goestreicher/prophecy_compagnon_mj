@@ -112,7 +112,7 @@ class CharacterEditDraconicLinkWidget extends StatelessWidget {
           ),
           WidgetGroupContainer(
             title: Text(
-              'Faveurs',
+              'Faveurs du Lien',
               style: theme.textTheme.bodyMedium!.copyWith(
                 color: Colors.black87,
                 fontWeight: FontWeight.bold,

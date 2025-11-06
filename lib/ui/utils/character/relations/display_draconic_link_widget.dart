@@ -47,7 +47,7 @@ class CharacterDisplayDraconicLinkWidget extends StatelessWidget {
               SizedBox(
                 width: 80,
                 child: Text(
-                  'Faveurs',
+                  'Faveurs du Lien',
                   style: theme.textTheme.bodySmall!.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
