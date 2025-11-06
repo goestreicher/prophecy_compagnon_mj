@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'entity/injury.dart';
 import 'entity/abilities.dart';
 import 'entity/attributes.dart';
+import 'entity/skill_instance.dart';
 import 'entity/skills.dart';
 import 'entity/status.dart';
 import 'equipment.dart';
@@ -137,8 +138,11 @@ class EntityInstance extends EntityBase with MagicUser {
       instance.attributes.setAttribute(a, entity.attributes.attribute(a));
     }
     for(var s in entity.skills.all) {
-      var i = instance.skills.add(s.skill);
-      i.value = s.value;
+      var i = SkillInstance(
+        skill: s.skill,
+        value: s.value,
+        implementation: s.implementation,
+      );
 
       for(var sp in s.specializations) {
         i.addSpecialization(sp.skill).value = sp.value;

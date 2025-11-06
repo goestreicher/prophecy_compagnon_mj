@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:prophecy_compagnon_mj/classes/entity/skill_instance.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
@@ -619,8 +620,12 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
           reserved: true,
           reservedPrefix: 'creature:$id:specialized:combat:',
         );
-        var skill = instance.skills.add(Skill.creatureNaturalWeapon);
-        skill.addSpecialization(spSkill).value = weapon.skill;
+        var i = SkillInstance(
+          skill: Skill.creatureNaturalWeapon,
+          value: 0
+        );
+        i.addSpecialization(spSkill).value = weapon.skill;
+        instance.skills.add(i);
 
         AttributeBasedCalculator? effective;
         AttributeBasedCalculator? max;

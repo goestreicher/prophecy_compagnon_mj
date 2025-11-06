@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/entity/skill.dart';
 import '../../../../classes/entity/skill_family.dart';
+import '../../../../classes/entity/skill_instance.dart';
 import '../../../../classes/entity_base.dart';
 import '../../widget_group_container.dart';
 import 'single_skill_widget.dart';
@@ -24,7 +24,7 @@ class EntityDisplaySkillFamilyWidget extends StatelessWidget {
 
     for(var skill in entity.skills.forFamily(family)) {
       skillWidgets.add(
-        SkillDisplayWidget(character: entity, skill: skill.skill),
+        SkillDisplayWidget(skill: skill),
       );
     }
 
@@ -51,27 +51,31 @@ class EntityDisplaySkillFamilyWidget extends StatelessWidget {
 }
 
 class SkillDisplayWidget extends StatelessWidget {
-  const SkillDisplayWidget({ super.key, required this.character, required this.skill });
+  const SkillDisplayWidget({
+    super.key,
+    required this.skill
+  });
 
-  final EntityBase character;
-  final Skill skill;
+  final SkillInstance skill;
 
   @override
   Widget build(BuildContext context) {
-    Widget skillWidget;
-    if(skill.requireSpecialization) {
-      skillWidget = Text(skill.name);
-    }
-    else {
-      skillWidget = SingleSkillWidget(name: skill.name, value: character.skills.skill(skill)!.value);
-    }
+    var skillWidget = SingleSkillWidget(
+      name: skill.title,
+      value: skill.value,
+      description: skill.skill.description,
+    );
 
     var specializedSkills = <Widget>[];
-    for(var sp in character.skills.skill(skill)!.specializations) {
+    for(var sp in skill.specializations) {
       specializedSkills.add(
         Padding(
           padding: const EdgeInsets.only(left: 8.0),
-          child: SingleSkillWidget(name: sp.skill.name, value: sp.value),
+          child: SingleSkillWidget(
+            name: sp.skill.name,
+            value: sp.value,
+            description: sp.skill.description,
+          ),
         ),
       );
     }

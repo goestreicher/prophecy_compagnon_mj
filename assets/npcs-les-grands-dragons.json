@@ -602,14 +602,8 @@
             },
             {
               "skill": "donArtistique",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Danse",
-                  "reserved": false,
-                  "value": 13
-                }
-              ]
+              "implementation": "Danse",
+              "value": 13
             },
             {
               "skill": "jongler",
@@ -2236,19 +2230,13 @@
             },
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Sculpture",
-                  "reserved": false,
-                  "value": 15
-                },
-                {
-                  "name": "Forge",
-                  "reserved": false,
-                  "value": 15
-                }
-              ]
+              "implementation": "Sculpture",
+              "value": 15
+            },
+            {
+              "skill": "artisanat",
+              "implementation": "Forge",
+              "value": 15
             },
             {
               "skill": "contrefacon",
@@ -3509,14 +3497,8 @@
             },
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Maçonnerie",
-                  "reserved": false,
-                  "value": 12
-                }
-              ]
+              "implementation": "Maçonnerie",
+              "value": 12
             },
             {
               "skill": "mecanismes",
@@ -5156,19 +5138,13 @@
             },
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Pigments",
-                  "reserved": false,
-                  "value": 10
-                },
-                {
-                  "name": "Tatouage",
-                  "reserved": false,
-                  "value": 12
-                }
-              ]
+              "implementation": "Pigments",
+              "value": 10
+            },
+            {
+              "skill": "artisanat",
+              "implementation": "Tatouage",
+              "value": 12
             },
             {
               "skill": "mecanismes",
@@ -5184,14 +5160,8 @@
             },
             {
               "skill": "donArtistique",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Dessin",
-                  "reserved": false,
-                  "value": 10
-                }
-              ]
+              "implementation": "Dessin",
+              "value": 10
             },
             {
               "skill": "jongler",
@@ -5771,19 +5741,13 @@
             },
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Poterie",
-                  "reserved": false,
-                  "value": 8
-                },
-                {
-                  "name": "Sculpture",
-                  "reserved": false,
-                  "value": 10
-                }
-              ]
+              "implementation": "Poterie",
+              "value": 8
+            },
+            {
+              "skill": "artisanat",
+              "implementation": "Sculpture",
+              "value": 10
             },
             {
               "skill": "mecanismes",
@@ -7161,14 +7125,8 @@
             },
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Sculpture",
-                  "reserved": false,
-                  "value": 10
-                }
-              ]
+              "implementation": "Sculpture",
+              "value": 10
             },
             {
               "skill": "contrefacon",
@@ -7510,14 +7468,8 @@
             },
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Papeterie",
-                  "reserved": false,
-                  "value": 9
-                }
-              ]
+              "implementation": "Papeterie",
+              "value": 9
             }
           ]
         },
@@ -7540,14 +7492,8 @@
           "all": [
             {
               "skill": "artDeLaScene",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Poésie",
-                  "reserved": false,
-                  "value": 9
-                }
-              ]
+              "implementation": "Poésie",
+              "value": 9
             },
             {
               "skill": "intimidation",
@@ -8482,19 +8428,13 @@
           "all": [
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Marionnettiste",
-                  "reserved": false,
-                  "value": 9
-                },
-                {
-                  "name": "Couture",
-                  "reserved": false,
-                  "value": 7
-                }
-              ]
+              "implementation": "Marionnettiste",
+              "value": 9
+            },
+            {
+              "skill": "artisanat",
+              "implementation": "Couture",
+              "value": 7
             },
             {
               "skill": "mecanismes",
@@ -8510,19 +8450,13 @@
             },
             {
               "skill": "donArtistique",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Spectacles de marionnettes",
-                  "reserved": false,
-                  "value": 8
-                },
-                {
-                  "name": "Ventriloquie",
-                  "reserved": false,
-                  "value": 7
-                }
-              ]
+              "implementation": "Spectacles de marionnettes",
+              "value": 8
+            },
+            {
+              "skill": "donArtistique",
+              "implementation": "Ventriloquie",
+              "value": 7
             },
             {
               "skill": "jongler",

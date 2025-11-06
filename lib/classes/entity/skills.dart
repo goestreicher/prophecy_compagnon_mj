@@ -13,25 +13,31 @@ class EntitySkillFamily with ChangeNotifier {
 
   EntitySkillFamily.empty() : all = <SkillInstance>[];
 
-  SkillInstance? skill(Skill s) {
-    var idx = all.indexWhere((SkillInstance i) => i.skill == s);
+  SkillInstance? skill(Skill s, { String? implementation }) {
+    var idx = all.indexWhere(
+        (SkillInstance i) =>
+            i.skill == s
+            && (implementation == null || implementation == i.implementation)
+    );
     return idx >= 0
         ? all[idx]
         : null;
   }
 
-  SkillInstance add(Skill s) {
-    var i = skill(s);
+  void add(SkillInstance instance) {
+    var i = skill(instance.skill, implementation: instance.implementation);
     if(i == null) {
-      i = SkillInstance(skill: s, value: 0);
-      all.add(i);
+      all.add(instance);
       notifyListeners();
     }
-    return i;
   }
 
-  void del(Skill s) {
-    all.removeWhere((SkillInstance i) => i.skill == s);
+  void del(SkillInstance instance) {
+    all.removeWhere(
+        (SkillInstance i) =>
+            i.skill == instance.skill
+            && i.implementation == instance.implementation
+    );
     notifyListeners();
   }
 
@@ -87,11 +93,12 @@ class EntitySkills {
     ...influence.all,
   ];
 
-  SkillInstance? skill(Skill s) => families[s.family]!.skill(s);
+  SkillInstance? skill(Skill s, { String? implementation }) =>
+      families[s.family]!.skill(s, implementation: implementation);
 
-  SkillInstance add(Skill s) => families[s.family]!.add(s);
+  void add(SkillInstance i) => families[i.skill.family]!.add(i);
 
-  void del(Skill s) => families[s.family]!.del(s);
+  void del(SkillInstance i) => families[i.skill.family]!.del(i);
 
   Iterable<SkillInstance> forFamily(SkillFamily family) =>
       families[family]!.all;

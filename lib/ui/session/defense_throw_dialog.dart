@@ -49,7 +49,7 @@ class _DefenseThrowDialogState extends State<DefenseThrowDialog> {
       ]);
     }
 
-    var description = '${widget.attribute.title} + ${widget.skill.name}';
+    var description = '${widget.attribute.title} + ${widget.skill.title}';
     if(widget.specialization != null) {
       description += ' (${widget.specialization})';
     }

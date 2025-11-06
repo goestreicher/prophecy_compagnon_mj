@@ -116,14 +116,8 @@
             },
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Orfèvrerie",
-                  "value": 8,
-                  "reserved": false
-                }
-              ]
+              "implementation": "Orfèvrerie",
+              "value": 8
             }
           ]
         },
@@ -143,15 +137,8 @@
             },
             {
               "skill": "donArtistique",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Sculpture",
-                  "title": "",
-                  "value": 8,
-                  "reserved": false
-                }
-              ]
+              "implementation": "Sculpture",
+              "value": 8
             }
           ]
         },
@@ -762,14 +749,8 @@
             },
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Forge",
-                  "value": 10,
-                  "reserved": false
-                }
-              ]
+              "implementation": "Forge",
+              "value": 10
             },
             {
               "skill": "contrefacon",

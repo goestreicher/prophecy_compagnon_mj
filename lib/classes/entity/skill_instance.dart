@@ -12,14 +12,26 @@ class SkillInstance with ChangeNotifier {
   SkillInstance({
     required this.skill,
     required this.value,
+    this.implementation,
     List<SpecializedSkillInstance>? specializations,
   })
-    : specializations = specializations ?? <SpecializedSkillInstance>[];
+    : specializations = specializations ?? <SpecializedSkillInstance>[]
+  {
+    if(skill.requireConcreteImplementation && implementation == null) {
+      throw ArgumentError('Missing implementation name for skill ${skill.title}');
+    }
+  }
 
   final Skill skill;
   int value;
+  String? implementation;
   @JsonKey(includeFromJson: false, includeToJson: false)
   final List<SpecializedSkillInstance> specializations;
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  String get title => skill.requireConcreteImplementation
+      ? '${skill.title} ($implementation)'
+      : skill.title;
 
   SpecializedSkillInstance? specialization(SpecializedSkill s) {
     var idx = specializations.indexWhere((SpecializedSkillInstance i) => i.skill == s);

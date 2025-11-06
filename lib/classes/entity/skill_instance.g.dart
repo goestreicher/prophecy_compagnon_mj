@@ -10,12 +10,14 @@ SkillInstance _$SkillInstanceFromJson(Map<String, dynamic> json) =>
     SkillInstance(
       skill: $enumDecode(_$SkillEnumMap, json['skill']),
       value: (json['value'] as num).toInt(),
+      implementation: json['implementation'] as String?,
     );
 
 Map<String, dynamic> _$SkillInstanceToJson(SkillInstance instance) =>
     <String, dynamic>{
       'skill': _$SkillEnumMap[instance.skill]!,
       'value': instance.value,
+      'implementation': instance.implementation,
     };
 
 const _$SkillEnumMap = {
@@ -38,7 +40,6 @@ const _$SkillEnumMap = {
   Skill.escalade: 'escalade',
   Skill.esquive: 'esquive',
   Skill.natation: 'natation',
-  Skill.torture: 'torture',
   Skill.anticipationDesOrages: 'anticipationDesOrages',
   Skill.castes: 'castes',
   Skill.conception: 'conception',
@@ -88,6 +89,7 @@ const _$SkillEnumMap = {
   Skill.armesMecaniques: 'armesMecaniques',
   Skill.armure: 'armure',
   Skill.artisanat: 'artisanat',
+  Skill.artisanatElementaire: 'artisanatElementaire',
   Skill.contrefacon: 'contrefacon',
   Skill.discretion: 'discretion',
   Skill.enchantement: 'enchantement',
@@ -109,12 +111,14 @@ const _$SkillEnumMap = {
   Skill.magnetisme: 'magnetisme',
   Skill.manipulationDesPierresIrradiantes: 'manipulationDesPierresIrradiantes',
   Skill.maitriseDesIncendies: 'maitriseDesIncendies',
+  Skill.torture: 'torture',
   Skill.baratin: 'baratin',
   Skill.ceremonie: 'ceremonie',
   Skill.conte: 'conte',
   Skill.eloquence: 'eloquence',
   Skill.marchandage: 'marchandage',
   Skill.psychologie: 'psychologie',
+  Skill.usurpation: 'usurpation',
   Skill.artDeLaScene: 'artDeLaScene',
   Skill.chantsOniriques: 'chantsOniriques',
   Skill.commandement: 'commandement',

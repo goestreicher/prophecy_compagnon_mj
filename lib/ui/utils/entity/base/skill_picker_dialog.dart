@@ -3,129 +3,35 @@ import 'package:flutter/material.dart';
 import '../../../../classes/caste/base.dart';
 import '../../../../classes/entity/skill.dart';
 import '../../../../classes/entity/skill_family.dart';
+import '../../../../classes/entity/skill_instance.dart';
 import '../../../../classes/entity/specialized_skill.dart';
 import '../../../../text_utils.dart';
 
-class FamilyAndSkillPickerDialog extends StatefulWidget {
-  const FamilyAndSkillPickerDialog({
-    super.key,
-    this.excluded = const <Skill>[],
-    this.includeReservedCaste,
-  });
-
-  final List<Skill> excluded;
-  final Caste? includeReservedCaste;
-
-  @override
-  State<FamilyAndSkillPickerDialog> createState() => _FamilyAndSkillPickerDialogState();
-}
-
-class _FamilyAndSkillPickerDialogState extends State<FamilyAndSkillPickerDialog> {
-  final TextEditingController _familyController = TextEditingController();
-  SkillFamily? _currentFamily;
-  final TextEditingController _skillController = TextEditingController();
-  Skill? _currentSkill;
-  final List<Skill> _skillList = <Skill>[];
-
-  void _updateSkillsForCurrentFamily() {
-    _skillList.clear();
-    if(_currentFamily == null) return;
-    _skillList.addAll(
-      Skill.fromFamily(_currentFamily!, forCaste: widget.includeReservedCaste)
-          .where((Skill s) => !widget.excluded.contains(s) && s.canInstantiate && !s.requireSpecialization)
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
-    return AlertDialog(
-        title: const Text('Sélectionner la compétence'),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            DropdownMenu(
-              controller: _familyController,
-              requestFocusOnTap: true,
-              label: const Text('Famille'),
-              expandedInsets: EdgeInsets.zero,
-              dropdownMenuEntries: SkillFamily.values
-                  .map((SkillFamily f) => DropdownMenuEntry(value: f, label: f.name))
-                  .toList(),
-              onSelected: (SkillFamily? family) {
-                setState(() {
-                  _currentFamily = family;
-                  _currentSkill = null;
-                  _skillController.text = '';
-                });
-                _updateSkillsForCurrentFamily();
-              },
-            ),
-            const SizedBox(height: 16.0),
-            DropdownMenu(
-              controller: _skillController,
-              requestFocusOnTap: true,
-              label: const Text('Compétence'),
-              expandedInsets: EdgeInsets.zero,
-              dropdownMenuEntries:
-                _skillList
-                    .map((Skill s) => DropdownMenuEntry(value: s, label: s.name))
-                    .toList(),
-              onSelected: (Skill? skill) {
-                setState(() {
-                  _currentSkill = skill;
-                });
-              }
-            ),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('Annuler'),
-                    ),
-                    const SizedBox(width: 12.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        if(_currentFamily == null) return;
-                        if(_currentSkill == null) return;
-                        Navigator.of(context).pop(_currentSkill);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: theme.colorScheme.primary,
-                        foregroundColor: theme.colorScheme.onPrimary,
-                      ),
-                      child: const Text('OK'),
-                    )
-                  ],
-                )
-            ),
-          ],
-        )
-    );
-  }
-}
-
-class SkillPickerDialog extends StatelessWidget {
+class SkillPickerDialog extends StatefulWidget {
   SkillPickerDialog({
     super.key,
     required this.family,
     this.excluded = const <Skill>[],
     this.includeReservedCaste,
   })
-    : _skillList = Skill.fromFamily(family, forCaste: includeReservedCaste).where((Skill s) => !excluded.contains(s)).toList();
+    : _skillList = Skill.fromFamily(family, forCaste: includeReservedCaste)
+          .where((Skill s) => s.requireConcreteImplementation || !excluded.contains(s)).toList();
 
   final SkillFamily family;
   final List<Skill> excluded;
   final Caste? includeReservedCaste;
   final List<Skill> _skillList;
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _skillController = TextEditingController();
+
+  @override
+  State<SkillPickerDialog> createState() => _SkillPickerDialogState();
+}
+
+class _SkillPickerDialogState extends State<SkillPickerDialog> {
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController skillController = TextEditingController();
+  final TextEditingController implementationController = TextEditingController();
+  
+  Skill? currentSkill;
 
   @override
   Widget build(BuildContext context) {
@@ -133,56 +39,97 @@ class SkillPickerDialog extends StatelessWidget {
 
     return AlertDialog(
       title: const Text('Sélectionner la compétence'),
-      content: Form(
-        key: _formKey,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            DropdownMenu(
-              controller: _skillController,
-              requestFocusOnTap: true,
-              label: const Text('Compétence'),
-              expandedInsets: EdgeInsets.zero,
-              dropdownMenuEntries:
-                _skillList
-                    .where((Skill s) => s.canInstantiate && !s.requireSpecialization)
-                    .map<DropdownMenuEntry<Skill>>((Skill s) {
-                      return DropdownMenuEntry(value: s, label: s.name);
-                    }).toList(),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('Annuler'),
-                  ),
-                  const SizedBox(width: 12.0),
-                  ElevatedButton(
-                    onPressed: () {
-                      if(_skillController.text.isEmpty) return;
-                      Skill? skill = Skill.byName(_skillController.text);
-                      if(skill == null) return;
-                      Navigator.of(context).pop(skill);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: theme.colorScheme.primary,
-                      foregroundColor: theme.colorScheme.onPrimary,
+      actions: [
+        ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          child: const Text('Annuler'),
+        ),
+        ElevatedButton(
+          onPressed: () {
+            if(!formKey.currentState!.validate()) return;
+
+            var instance = SkillInstance(
+              skill: currentSkill!,
+              value: 1,
+              implementation: implementationController.text,
+            );
+
+            Navigator.of(context).pop(instance);
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: theme.colorScheme.primary,
+            foregroundColor: theme.colorScheme.onPrimary,
+          ),
+          child: const Text('OK'),
+        )
+      ],
+      content: SingleChildScrollView(
+        child: SizedBox(
+          width: 400,
+          child: Form(
+            key: formKey,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 12.0,
+              children: [
+                DropdownMenuFormField(
+                  controller: skillController,
+                  requestFocusOnTap: true,
+                  label: const Text('Compétence'),
+                  expandedInsets: EdgeInsets.zero,
+                  dropdownMenuEntries:
+                    widget._skillList
+                        .where((Skill s) => s.canInstantiate)
+                        .map<DropdownMenuEntry<Skill>>((Skill s) {
+                          return DropdownMenuEntry(
+                            value: s,
+                            label: s.title,
+                            leadingIcon: s.reservedCastes.isEmpty
+                              ? null
+                              : Icon(Icons.lock_outline)
+                          );
+                        }).toList(),
+                  onSelected: (Skill? s) => setState(() => currentSkill = s),
+                  validator: (Skill? s) {
+                    if(s == null) return 'Valeur obligatoire';
+                    return null;
+                  },
+                ),
+                if(currentSkill != null && currentSkill!.requireConcreteImplementation)
+                  TextFormField(
+                    controller: implementationController,
+                    decoration: const InputDecoration(
+                      labelText: 'Nom de la compétence',
+                      border: OutlineInputBorder(),
                     ),
-                    child: const Text('OK'),
-                  )
-                ],
-              )
+                    validator: (String? value) {
+                      if(value == null || value.isEmpty) {
+                        return 'Valeur obligatoire';
+                      }
+                      return null;
+                    },
+                  ),
+                if(currentSkill != null && currentSkill!.description.isNotEmpty)
+                  Text(currentSkill!.description),
+              ],
             ),
-          ],
+          ),
         ),
       )
     );
   }
+}
+
+class SpecializedSkillPickerDialogResult {
+  SpecializedSkillPickerDialogResult({
+    required this.selectedSkill,
+    required this.specializedSkill,
+  });
+
+  final SkillInstance selectedSkill;
+  final SpecializedSkill specializedSkill;
 }
 
 class SpecializedSkillPickerDialog extends StatefulWidget {
@@ -196,7 +143,7 @@ class SpecializedSkillPickerDialog extends StatefulWidget {
   @override
   State<SpecializedSkillPickerDialog> createState() => SpecializedSkillPickerDialogState();
 
-  final List<Skill> skills;
+  final List<SkillInstance> skills;
   final List<SpecializedSkill> excluded;
   final String? reservedPrefix;
 }
@@ -204,7 +151,7 @@ class SpecializedSkillPickerDialog extends StatefulWidget {
 class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDialog> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _skillController = TextEditingController();
-  Skill? _currentSkill;
+  SkillInstance? _currentSkill;
   final TextEditingController _specializedSkillController = TextEditingController();
   List<SpecializedSkill> _specializedSkills = <SpecializedSkill>[];
   SpecializedSkill? _currentSpecializedSkill;
@@ -227,19 +174,22 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
               label: const Text('Compétence'),
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries:
-                widget.skills.map<DropdownMenuEntry<Skill>>((Skill s) {
-                  return DropdownMenuEntry(value: s, label: s.name);
+                widget.skills.map<DropdownMenuEntry<SkillInstance>>((SkillInstance i) {
+                  return DropdownMenuEntry(value: i, label: i.title);
                 }).toList(),
-              onSelected: (Skill? s) {
-                _currentSkill = s;
+              onSelected: (SkillInstance? i) {
+                _currentSkill = i;
                 setState(() {
                   if(_currentSkill == null) {
                     _specializedSkills.clear();
                     _specializedSkillController.clear();
                   }
                   else {
+                    // TODO: for skills that require an implementation,
+                    // this will return specializations that don't match
+                    // the selected implementation.
                     _specializedSkills = SpecializedSkill
-                        .withParent(_currentSkill!)
+                        .withParent(_currentSkill!.skill)
                         .where((SpecializedSkill s) => !s.reserved)
                         .toList()
                         ..sort((a, b) => a.name.compareTo(b.name));
@@ -292,7 +242,7 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
                         if(_specializedSkillController.text.isEmpty) return;
 
                         var standardizedSpecializedSkillName = sentenceToCamelCase(transliterateFrenchToAscii(_specializedSkillController.text));
-                        var skillId = '${_currentSkill!.name}:$standardizedSpecializedSkillName';
+                        var skillId = '${_currentSkill!.title}:$standardizedSpecializedSkillName';
                         if(widget.reservedPrefix != null && _reserved) {
                           skillId = '${widget.reservedPrefix}:$skillId';
                         }
@@ -303,13 +253,18 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
                         }
                         else {
                           skill = SpecializedSkill.create(
-                            parent: _currentSkill!,
+                            parent: _currentSkill!.skill,
                             name: _specializedSkillController.text,
                             reserved: _reserved,
                           );
                         }
 
-                        Navigator.of(context).pop(skill);
+                        Navigator.of(context).pop(
+                          SpecializedSkillPickerDialogResult(
+                            selectedSkill: _currentSkill!,
+                            specializedSkill: skill,
+                          )
+                        );
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: theme.colorScheme.primary,

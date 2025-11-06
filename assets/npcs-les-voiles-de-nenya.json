@@ -290,26 +290,20 @@
         },
         "technique": {
           "all": [
+            {
+              "skill": "artisanat",
+              "implementation": "Forge",
+              "value": 6
+            },
+            {
+              "skill": "artisanat",
+              "implementation": "Gravure",
+              "value": 7
+            }
           ]
         },
         "manipulation": {
           "all": [
-            {
-              "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Forge",
-                  "value": 6,
-                  "reserved": false
-                },
-                {
-                  "name": "Gravure",
-                  "value": 7,
-                  "reserved": false
-                }
-              ]
-            }
           ]
         },
         "communication": {

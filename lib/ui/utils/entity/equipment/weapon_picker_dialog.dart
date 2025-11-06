@@ -34,12 +34,12 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
             dropdownMenuEntries: Skill.fromFamily(SkillFamily.combat)
                 // TODO: this static filtering is a bit dirty...
                 .where((Skill s) => s.canInstantiate && s != Skill.bouclier)
-                .map((Skill s) => DropdownMenuEntry(value: s, label: s.name))
+                .map((Skill s) => DropdownMenuEntry(value: s, label: s.title))
                 .toList()
                 ..add(
                   DropdownMenuEntry(
                     value: Skill.armesAProjectiles,
-                    label: Skill.armesAProjectiles.name
+                    label: Skill.armesAProjectiles.title
                   )
                 ),
             onSelected: (Skill? s) {

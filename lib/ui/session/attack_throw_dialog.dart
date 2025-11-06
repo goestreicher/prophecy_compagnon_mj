@@ -49,7 +49,7 @@ class _AttackThrowDialogState extends State<AttackThrowDialog> {
       ]);
     }
 
-    var description = '${widget.attribute.title} + ${widget.skill.name}';
+    var description = '${widget.attribute.title} + ${widget.skill.title}';
     if(widget.specialization != null) {
       description += ' (${widget.specialization})';
     }

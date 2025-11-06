@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:prophecy_compagnon_mj/ui/utils/entity/base/skill_picker_dialog.dart';
 
-import '../../../../classes/entity/skill.dart';
 import '../../../../classes/entity/skill_family.dart';
 import '../../../../classes/entity/skill_instance.dart';
-import '../../../../classes/entity/specialized_skill.dart';
 import '../../../../classes/entity/specialized_skill_instance.dart';
 import '../../../../classes/entity_base.dart';
+import '../../dismissible_dialog.dart';
 import '../../num_input_widget.dart';
 import '../../widget_group_container.dart';
 
@@ -34,7 +33,7 @@ class EntityEditSkillFamilyContainer extends StatelessWidget {
             return SkillEditWidget(
               skill: s,
               onDeleted: () {
-                entity.skills.families[family]!.del(s.skill);
+                entity.skills.families[family]!.del(s);
               },
             );
           }
@@ -57,7 +56,7 @@ class EntityEditSkillFamilyContainer extends StatelessWidget {
             ),
             label: const Text('Nouvelle compétence'),
             onPressed: () async {
-              Skill? skill = await showDialog(
+              SkillInstance? instance = await showDialog(
                 context: context,
                 builder: (BuildContext context) =>
                   SkillPickerDialog(
@@ -67,9 +66,9 @@ class EntityEditSkillFamilyContainer extends StatelessWidget {
                       .toList(),
                   )
               );
-              if(skill == null) return;
+              if(instance == null) return;
 
-              entity.skills.families[family]!.add(skill);
+              entity.skills.families[family]!.add(instance);
             },
           ),
           ElevatedButton.icon(
@@ -82,25 +81,26 @@ class EntityEditSkillFamilyContainer extends StatelessWidget {
             ),
             label: const Text('Nouvelle spécialisation'),
             onPressed: () async {
-              SpecializedSkill? skill = await showDialog(
+              var result = await showDialog<SpecializedSkillPickerDialogResult>(
                 context: context,
                 builder: (BuildContext context) {
                   var characterSkills = entity.skills.forFamily(family)
-                    .map((SkillInstance s) => s.skill)
-                    .toList();
+                    .toList()
+                    ..sort(
+                      (SkillInstance a, SkillInstance b) =>
+                        a.title.compareTo(b.title)
+                    );
                   return SpecializedSkillPickerDialog(
-                    skills: Skill.fromFamily(family)
-                        .where((Skill s) => s.requireSpecialization || characterSkills.contains(s))
-                        .toList()
-                      ..sort((Skill a, Skill b) => a.name.compareTo(b.name)),
+                    skills: characterSkills,
                   );
                 }
               );
-              if(skill == null) return;
+              if(result == null) return;
 
-              SkillInstance i = entity.skills.families[family]!.add(skill.parent);
-              SpecializedSkillInstance si = i.addSpecialization(skill);
-              si.value = i.value;
+              var si = result.selectedSkill.addSpecialization(
+                result.specializedSkill
+              );
+              si.value = result.selectedSkill.value;
             },
           ),
         ],
@@ -163,22 +163,49 @@ class SkillEditWidget extends StatelessWidget {
                 ),
                 Expanded(
                   child: Text(
-                    skill.skill.name,
+                    skill.title,
                     style: theme.textTheme.bodySmall,
                   ),
                 ),
+                if(skill.skill.description.isNotEmpty)
+                  IconButton(
+                    style: IconButton.styleFrom(
+                      iconSize: 16.0,
+                    ),
+                    padding: const EdgeInsets.all(8.0),
+                    constraints: const BoxConstraints(),
+                    icon: const Icon(Icons.help_outline),
+                    onPressed: () {
+                      Navigator.of(context).push(
+                        DismissibleDialog<void>(
+                          title: skill.title,
+                          content: ConstrainedBox(
+                            constraints: BoxConstraints(
+                              minWidth: 400,
+                              maxWidth: 400,
+                              maxHeight: 400,
+                            ),
+                            child: SingleChildScrollView(
+                              child: Text(
+                                skill.skill.description,
+                              ),
+                            )
+                          )
+                        )
+                      );
+                    },
+                  ),
                 Spacer(),
-                if(!skill.skill.requireSpecialization)
-                  Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: SizedBox(
-                      width: 80,
-                      child: NumIntInputWidget(
-                        initialValue: skill.value,
-                        onChanged: (int value) => skill.value = value,
-                      ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: SizedBox(
+                    width: 80,
+                    child: NumIntInputWidget(
+                      initialValue: skill.value,
+                      onChanged: (int value) => skill.value = value,
                     ),
                   ),
+                ),
               ]
             ),
             for(var sp in skill.specializations)

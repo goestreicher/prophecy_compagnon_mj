@@ -9,7 +9,9 @@ part of 'specialized_skill.dart';
 SpecializedSkill _$SpecializedSkillFromJson(Map<String, dynamic> json) =>
     SpecializedSkill.create(
       parent: $enumDecode(_$SkillEnumMap, json['parent']),
+      parentImplementation: json['parent_implementation'] as String?,
       name: json['name'] as String,
+      description: json['description'] as String? ?? '',
       reserved: json['reserved'] as bool? ?? false,
       reservedPrefix: json['reserved_prefix'] as String?,
       reservedCastes:
@@ -22,7 +24,9 @@ SpecializedSkill _$SpecializedSkillFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$SpecializedSkillToJson(SpecializedSkill instance) =>
     <String, dynamic>{
       'parent': _$SkillEnumMap[instance.parent]!,
+      'parent_implementation': instance.parentImplementation,
       'name': instance.name,
+      'description': instance.description,
       'reserved': instance.reserved,
       'reserved_prefix': instance.reservedPrefix,
       'reserved_castes': instance.reservedCastes
@@ -50,7 +54,6 @@ const _$SkillEnumMap = {
   Skill.escalade: 'escalade',
   Skill.esquive: 'esquive',
   Skill.natation: 'natation',
-  Skill.torture: 'torture',
   Skill.anticipationDesOrages: 'anticipationDesOrages',
   Skill.castes: 'castes',
   Skill.conception: 'conception',
@@ -100,6 +103,7 @@ const _$SkillEnumMap = {
   Skill.armesMecaniques: 'armesMecaniques',
   Skill.armure: 'armure',
   Skill.artisanat: 'artisanat',
+  Skill.artisanatElementaire: 'artisanatElementaire',
   Skill.contrefacon: 'contrefacon',
   Skill.discretion: 'discretion',
   Skill.enchantement: 'enchantement',
@@ -121,12 +125,14 @@ const _$SkillEnumMap = {
   Skill.magnetisme: 'magnetisme',
   Skill.manipulationDesPierresIrradiantes: 'manipulationDesPierresIrradiantes',
   Skill.maitriseDesIncendies: 'maitriseDesIncendies',
+  Skill.torture: 'torture',
   Skill.baratin: 'baratin',
   Skill.ceremonie: 'ceremonie',
   Skill.conte: 'conte',
   Skill.eloquence: 'eloquence',
   Skill.marchandage: 'marchandage',
   Skill.psychologie: 'psychologie',
+  Skill.usurpation: 'usurpation',
   Skill.artDeLaScene: 'artDeLaScene',
   Skill.chantsOniriques: 'chantsOniriques',
   Skill.commandement: 'commandement',

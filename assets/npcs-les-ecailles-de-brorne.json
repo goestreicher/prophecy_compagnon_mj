@@ -685,19 +685,13 @@
           "all": [
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Armurerie",
-                  "value": 6,
-                  "reserved": false
-                },
-                {
-                  "name": "Forge",
-                  "value": 5,
-                  "reserved": false
-                }
-              ]
+              "implementation": "Armurerie",
+              "value": 6
+            },
+            {
+              "skill": "artisanat",
+              "implementation": "Forge",
+              "value": 5
             }
           ]
         },

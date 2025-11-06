@@ -1543,15 +1543,8 @@
           "all": [
             {
               "skill": "artisanat",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Divers",
-                  "value": 13,
-                  "reserved": true,
-                  "reservedPrefix": "creature:sklads:specialized:misc:"
-                }
-              ]
+              "implementation": "Divers",
+              "value": 13
             }
           ]
         },
@@ -1559,15 +1552,8 @@
           "all": [
             {
               "skill": "donArtistique",
-              "value": 0,
-              "specializations": [
-                {
-                  "name": "Divers",
-                  "value": 12,
-                  "reserved": true,
-                  "reservedPrefix": "creature:sklads:specialized:misc:"
-                }
-              ]
+              "implementation": "Divers",
+              "value": 12
             }
           ]
         },
