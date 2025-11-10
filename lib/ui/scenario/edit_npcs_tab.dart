@@ -4,6 +4,7 @@ import '../../classes/non_player_character.dart';
 import '../../classes/object_source.dart';
 import '../utils/character/edit_widget.dart';
 import '../utils/non_player_character/create_dialog.dart';
+import '../utils/non_player_character/display_widget.dart';
 import '../utils/non_player_character/list_widget.dart';
 
 class ScenarioEditNPCsPage extends StatefulWidget {
@@ -32,16 +33,16 @@ class ScenarioEditNPCsPage extends StatefulWidget {
 
 class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
   late List<NonPlayerCharacterSummary> npcSummaries;
-  NonPlayerCharacter? selectedNPC;
-  bool editing = false;
+  String? selected;
+  NonPlayerCharacter? editNPC;
   bool creatingNewNPC = false;
 
   void _startEditing(NonPlayerCharacter npc) {
     widget.onEditStarted?.call();
 
     setState(() {
-      selectedNPC = npc;
-      editing = true;
+      selected = npc.id;
+      editNPC = npc;
     });
   }
 
@@ -56,42 +57,43 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
     var theme = Theme.of(context);
 
     Widget mainArea;
-    if(editing == true && selectedNPC != null) {
+    if(editNPC != null) {
       mainArea = Container(
         color: theme.colorScheme.surfaceContainerHighest,
         child: CharacterEditWidget(
-          character: selectedNPC!,
+          character: editNPC!,
           onEditDone: (bool result) async {
             if(result) {
-              var summaryIndex = npcSummaries.indexWhere((NonPlayerCharacterSummary s) => s.id == selectedNPC!.id);
+              var summaryIndex = npcSummaries.indexWhere((NonPlayerCharacterSummary s) => s.id == editNPC!.id);
               if(summaryIndex == -1) {
-                npcSummaries.add(selectedNPC!.summary);
-                widget.npcs.add(selectedNPC!);
+                npcSummaries.add(editNPC!.summary);
+                widget.npcs.add(editNPC!);
               }
               else {
-                npcSummaries[summaryIndex] = selectedNPC!.summary;
+                npcSummaries[summaryIndex] = editNPC!.summary;
               }
 
               if(creatingNewNPC) {
-                widget.onNPCCreated(selectedNPC!);
+                widget.onNPCCreated(editNPC!);
               }
               else {
-                widget.onNPCModified(selectedNPC!);
+                widget.onNPCModified(editNPC!);
               }
             }
             else {
               if(creatingNewNPC) {
-                NonPlayerCharacter.removeFromCache(selectedNPC!.id);
+                NonPlayerCharacter.removeFromCache(editNPC!.id);
+                selected = null;
               }
               else {
-                await NonPlayerCharacter.reloadFromStore(selectedNPC!.id);
+                await NonPlayerCharacter.reloadFromStore(editNPC!.id);
               }
             }
 
             widget.onEditFinished?.call();
             setState(() {
               creatingNewNPC = false;
-              editing = false;
+              editNPC = null;
             });
           }
         ),
@@ -103,75 +105,97 @@ class _ScenarioEditNPCsPageState extends State<ScenarioEditNPCsPage> {
           color: theme.colorScheme.surfaceContainerHighest,
         ),
         padding: const EdgeInsets.all(12.0),
-        child: Column(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 16.0,
           children: [
-            ElevatedButton.icon(
-              onPressed: () async {
-                var npc = await showDialog(
-                  context: context,
-                  builder: (BuildContext context) => NPCCreateDialog(
-                    source: ObjectSource.local,
-                  ),
-                );
-                if(!context.mounted) return;
-                if(npc == null) return;
-
-                creatingNewNPC = true;
-                _startEditing(npc);
-              },
-              icon: const Icon(Icons.add),
-              label: const Text('Nouveau PNJ'),
-            ),
-            const SizedBox(height: 12.0),
             Expanded(
-              child: NPCListWidget(
-                npcs: npcSummaries,
-                selected: selectedNPC?.id,
-                onSelected: (String? id) {
-                  // TODO
-                },
-                onEditRequested: (String id) {
-                  var npc = widget.npcs.firstWhere(
-                    (NonPlayerCharacter n) => n.id == id
-                  );
+              child: Column(
+                spacing: 12.0,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () async {
+                      var npc = await showDialog(
+                        context: context,
+                        builder: (BuildContext context) => NPCCreateDialog(
+                          source: ObjectSource.local,
+                        ),
+                      );
+                      if(!context.mounted) return;
+                      if(npc == null) return;
 
-                  creatingNewNPC = false;
-                  _startEditing(npc);
-                },
-                onCloneRequested: (String id) async {
-                  var npc = widget.npcs.firstWhere(
-                    (NonPlayerCharacter n) => n.id == id
-                  );
+                      creatingNewNPC = true;
+                      _startEditing(npc);
+                    },
+                    icon: const Icon(Icons.add),
+                    label: const Text('Nouveau PNJ'),
+                  ),
+                  Expanded(
+                    child: NPCListWidget(
+                      npcs: npcSummaries,
+                      selected: selected,
+                      onSelected: (String? id) {
+                        setState(() {
+                          selected = id;
+                        });
+                      },
+                      onEditRequested: (String id) {
+                        var npc = widget.npcs.firstWhere(
+                          (NonPlayerCharacter n) => n.id == id
+                        );
 
-                  var clone = await showDialog<NonPlayerCharacter>(
-                    context: context,
-                    builder: (BuildContext context) => NPCCreateDialog(
-                      source: widget.scenarioSource,
-                      cloneFrom: npc,
+                        creatingNewNPC = false;
+                        _startEditing(npc);
+                      },
+                      onCloneRequested: (String id) async {
+                        var npc = widget.npcs.firstWhere(
+                          (NonPlayerCharacter n) => n.id == id
+                        );
+
+                        var clone = await showDialog<NonPlayerCharacter>(
+                          context: context,
+                          builder: (BuildContext context) => NPCCreateDialog(
+                            source: widget.scenarioSource,
+                            cloneFrom: npc,
+                          ),
+                        );
+                        if(!context.mounted) return;
+                        if(clone == null) return;
+
+                        creatingNewNPC = true;
+                        _startEditing(clone);
+                      },
+                      onDeleteRequested: (String id) {
+                        var index = widget.npcs.indexWhere(
+                          (NonPlayerCharacter n) => n.id == id
+                        );
+                        var summaryIndex = npcSummaries.indexWhere(
+                            (NonPlayerCharacterSummary n) => n.id == id
+                        );
+
+                        setState(() {
+                          npcSummaries.removeAt(summaryIndex);
+                          if(editNPC?.id == id) editNPC = null;
+                          widget.onNPCDeleted(widget.npcs[index]);
+                        });
+                      },
                     ),
-                  );
-                  if(!context.mounted) return;
-                  if(clone == null) return;
-
-                  creatingNewNPC = true;
-                  _startEditing(clone);
-                },
-                onDeleteRequested: (String id) {
-                  var index = widget.npcs.indexWhere(
-                    (NonPlayerCharacter n) => n.id == id
-                  );
-                  var summaryIndex = npcSummaries.indexWhere(
-                      (NonPlayerCharacterSummary n) => n.id == id
-                  );
-
-                  setState(() {
-                    npcSummaries.removeAt(summaryIndex);
-                    if(selectedNPC?.id == id) selectedNPC = null;
-                    widget.onNPCDeleted(widget.npcs[index]);
-                  });
-                },
+                  ),
+                ],
               ),
             ),
+            if(selected != null)
+              Expanded(
+                flex: 3,
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(12.0, 0.0, 12.0, 8.0),
+                    child: NPCDisplayWidget(
+                      id: selected!,
+                    ),
+                  ),
+                ),
+              ),
           ],
         )
       );
