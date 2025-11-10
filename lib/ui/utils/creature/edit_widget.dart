@@ -6,6 +6,7 @@ import '../entity/background/edit_description_widget.dart';
 import '../entity/background/edit_illustration_widget.dart';
 import '../entity/base/edit_abilities_widget.dart';
 import '../entity/base/edit_attributes_widget.dart';
+import '../entity/base/draconic_favors_widget.dart';
 import '../entity/base/edit_injuries_widget.dart';
 import '../entity/base/edit_skill_group_container.dart';
 import '../entity/equipment/edit_armor_widget.dart';
@@ -155,6 +156,10 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                 ),
                 EntityEditArmorWidget(
                   entity: widget.creature,
+                ),
+                EntityDisplayDraconicFavorsWidget(
+                  entity: widget.creature,
+                  edit: true,
                 ),
                 Divider(),
                 Wrap(

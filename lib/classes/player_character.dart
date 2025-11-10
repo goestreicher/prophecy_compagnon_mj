@@ -10,6 +10,7 @@ import 'entity/injury.dart';
 import 'entity/magic.dart';
 import 'entity/skills.dart';
 import 'entity/status.dart';
+import 'draconic_favor.dart';
 import 'draconic_link.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
@@ -179,6 +180,7 @@ class PlayerCharacter extends HumanCharacter {
     super.advantages,
     super.tendencies,
     super.description,
+    super.favors,
     super.image,
     super.icon,
   });

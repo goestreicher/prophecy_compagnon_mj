@@ -65,30 +65,6 @@ class EntityEditInjuriesWidget extends StatelessWidget {
       );
     }
 
-    if(useSimpleInjuryManager) {
-      widgets.add(
-        ElevatedButton(
-          child: Text(
-            'Modifier les cases',
-            style: theme.textTheme.bodySmall,
-          ),
-          onPressed: () async {
-            var manager = await showDialog(
-              context: context,
-              builder: (BuildContext context) => _EditSimpleInjuryManagerLevelsDialog(
-                levels: InjuryManager(levels: entity.injuries.manager.levels()).levels(),
-                source: entity.injuries.manager,
-              ),
-            );
-            if(manager == null) return;
-            if(!context.mounted) return;
-
-            entity.injuries.manager = manager;
-          },
-        )
-      );
-    }
-
     widgets.add(
       Center(
         child: StreamBuilder<AbilityStreamChange>(
@@ -129,6 +105,30 @@ class EntityEditInjuriesWidget extends StatelessWidget {
         )
       )
     );
+
+    if(useSimpleInjuryManager) {
+      widgets.add(
+        ElevatedButton(
+          child: Text(
+            'Modifier les cases',
+            style: theme.textTheme.bodySmall,
+          ),
+          onPressed: () async {
+            var manager = await showDialog(
+              context: context,
+              builder: (BuildContext context) => _EditSimpleInjuryManagerLevelsDialog(
+                levels: InjuryManager(levels: entity.injuries.manager.levels()).levels(),
+                source: entity.injuries.manager,
+              ),
+            );
+            if(manager == null) return;
+            if(!context.mounted) return;
+
+            entity.injuries.manager = manager;
+          },
+        )
+      );
+    }
 
     return WidgetGroupContainer(
       child: Column(

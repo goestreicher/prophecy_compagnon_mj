@@ -3,6 +3,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'caste/character_caste.dart';
+import 'draconic_favor.dart';
 import 'entity/injury.dart';
 import 'character/tendencies.dart';
 import 'entity/abilities.dart';
@@ -412,6 +413,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     CharacterAdvantages? advantages,
     CharacterTendencies? tendencies,
     String? description,
+    EntityDraconicFavors? favors,
     ExportableBinaryData? image,
     ExportableBinaryData? icon,
   }) {
@@ -449,6 +451,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
             advantages: advantages,
             tendencies: tendencies,
             description: description,
+            favors: favors,
             image: image,
             icon: icon,
           );
@@ -490,6 +493,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     super.advantages,
     super.tendencies,
     super.description,
+    super.favors,
     super.image,
     super.icon,
   })

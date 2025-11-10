@@ -141,6 +141,9 @@ Creature _$CreatureFromJson(Map<String, dynamic> json) =>
         magic: json['magic'] == null
             ? null
             : EntityMagic.fromJson(json['magic'] as Map<String, dynamic>),
+        favors: EntityDraconicFavors.fromJson(
+          EntityDraconicFavors.readFavorsFromJson(json, 'favors') as List,
+        ),
       )
       ..abilities = EntityAbilities.fromJson(
         json['abilities'] as Map<String, dynamic>,
@@ -169,6 +172,7 @@ Map<String, dynamic> _$CreatureToJson(Creature instance) => <String, dynamic>{
   'status': instance.status.toJson(),
   'equipment': EntityEquipment.toJson(instance.equipment),
   'magic': instance.magic.toJson(),
+  'favors': EntityDraconicFavors.toJson(instance.favors),
   'unique': instance.unique,
   'category': const CreatureCategoryJsonConverter().toJson(instance.category),
   'biome': instance.biome,

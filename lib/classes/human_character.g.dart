@@ -179,6 +179,9 @@ HumanCharacter _$HumanCharacterFromJson(
   magic: json['magic'] == null
       ? null
       : EntityMagic.fromJson(json['magic'] as Map<String, dynamic>),
+  favors: EntityDraconicFavors.fromJson(
+    EntityDraconicFavors.readFavorsFromJson(json, 'favors') as List,
+  ),
   image: json['image'] == null
       ? null
       : ExportableBinaryData.fromJson(json['image'] as Map<String, dynamic>),
@@ -228,6 +231,7 @@ Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
       'status': instance.status.toJson(),
       'equipment': EntityEquipment.toJson(instance.equipment),
       'magic': instance.magic.toJson(),
+      'favors': EntityDraconicFavors.toJson(instance.favors),
       'caste': instance.caste.toJson(),
       'age': instance.age,
       'height': instance.height,

@@ -5,6 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
+import 'draconic_favor.dart';
 import 'entity/injury.dart';
 import 'entity/abilities.dart';
 import 'entity/attributes.dart';
@@ -52,6 +53,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     EntityStatus? status,
     EntityEquipment? equipment,
     EntityMagic? magic,
+    EntityDraconicFavors? favors,
     ExportableBinaryData? image,
     ExportableBinaryData? icon,
   })
@@ -64,6 +66,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
       status = status ?? EntityStatus.empty(),
       equipment = equipment ?? EntityEquipment(null),
       magic = magic ?? EntityMagic(),
+      favors = favors ?? EntityDraconicFavors(),
       _image = image,
       _icon = icon
   {
@@ -143,6 +146,12 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
   @JsonKey(fromJson: EntityEquipment.fromJson, toJson: EntityEquipment.toJson)
   final EntityEquipment equipment;
   final EntityMagic magic;
+  @JsonKey(
+    fromJson: EntityDraconicFavors.fromJson,
+    toJson: EntityDraconicFavors.toJson,
+    readValue: EntityDraconicFavors.readFavorsFromJson,
+  )
+  final EntityDraconicFavors favors;
 
   @override
   bool meetsEquipableRequirements(EquipableItem item) {

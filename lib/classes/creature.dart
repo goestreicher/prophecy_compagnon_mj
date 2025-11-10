@@ -6,6 +6,7 @@ import 'package:prophecy_compagnon_mj/classes/entity/skill_instance.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
+import 'draconic_favor.dart';
 import 'entity/abilities.dart';
 import 'entity/attributes.dart';
 import 'entity/magic.dart';
@@ -504,6 +505,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
     EntityStatus? status,
     EntityEquipment? equipment,
     EntityMagic? magic,
+    EntityDraconicFavors? favors,
   }) {
     bool isDefault = (location.type == ObjectLocationType.assets);
     String id = uuid ?? (isDefault ? _getId(name) : Uuid().v4().toString());
@@ -531,6 +533,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
             status: status,
             equipment: equipment,
             magic: magic,
+            favors: favors,
           );
     _cache.add(id, model);
     // Force insertion in CreatureSummary cache
@@ -563,6 +566,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
         super.status,
         super.equipment,
         super.magic,
+        super.favors,
       })
     : naturalWeapons = naturalWeapons ?? <NaturalWeaponModel>[],
       specialCapabilities = specialCapabilities ?? <CreatureSpecialCapability>[];

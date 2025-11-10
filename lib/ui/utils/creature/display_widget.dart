@@ -11,6 +11,7 @@ import '../entity/base/display_abilities_widget.dart';
 import '../entity/base/display_attributes_widget.dart';
 import '../entity/base/display_injuries_widget.dart';
 import '../entity/base/display_skill_group_widget.dart';
+import '../entity/base/draconic_favors_widget.dart';
 import '../entity/equipment/display_armor_widget.dart';
 import '../entity/equipment/display_weapons_widget.dart';
 import '../entity/magic/display_magic_skills_widget.dart';
@@ -183,22 +184,29 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                     ),
                   ],
                 ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: 16.0,
-                  children: [
-                    Center(
-                      child: CreatureDisplayNaturalWeaponsWidget(
-                        creature: creature,
-                      ),
-                    ),
-                    Expanded(
-                      child: CreatureDisplaySpecialCapabilities(
-                        creature: creature,
-                      ),
-                    ),
-                  ],
-                ),
+                if(creature.naturalWeapons.isNotEmpty || creature.specialCapabilities.isNotEmpty)
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 16.0,
+                    children: [
+                      if(creature.naturalWeapons.isNotEmpty)
+                        Center(
+                          child: CreatureDisplayNaturalWeaponsWidget(
+                            creature: creature,
+                          ),
+                        ),
+                      if(creature.specialCapabilities.isNotEmpty)
+                        Expanded(
+                          child: CreatureDisplaySpecialCapabilities(
+                            creature: creature,
+                          ),
+                        ),
+                    ],
+                  ),
+                if(creature.favors.isNotEmpty)
+                  EntityDisplayDraconicFavorsWidget(
+                    entity: creature,
+                  )
               ],
             ),
             if(hasWeapon || hasArmor)

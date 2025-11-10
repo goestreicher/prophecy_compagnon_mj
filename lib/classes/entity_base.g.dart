@@ -35,6 +35,9 @@ EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase(
   magic: json['magic'] == null
       ? null
       : EntityMagic.fromJson(json['magic'] as Map<String, dynamic>),
+  favors: EntityDraconicFavors.fromJson(
+    EntityDraconicFavors.readFavorsFromJson(json, 'favors') as List,
+  ),
   image: json['image'] == null
       ? null
       : ExportableBinaryData.fromJson(json['image'] as Map<String, dynamic>),
@@ -60,4 +63,5 @@ Map<String, dynamic> _$EntityBaseToJson(EntityBase instance) =>
       'status': instance.status.toJson(),
       'equipment': EntityEquipment.toJson(instance.equipment),
       'magic': instance.magic.toJson(),
+      'favors': EntityDraconicFavors.toJson(instance.favors),
     };

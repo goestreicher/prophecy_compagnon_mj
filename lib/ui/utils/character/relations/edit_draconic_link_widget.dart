@@ -4,6 +4,7 @@ import '../../../../classes/draconic_link.dart';
 import '../../../../classes/human_character.dart';
 import '../../../../classes/magic.dart';
 import '../../dismissible_dialog.dart';
+import '../../entity/base/draconic_favors_widget.dart';
 import '../../widget_group_container.dart';
 
 class CharacterEditDraconicLinkWidget extends StatelessWidget {
@@ -129,6 +130,10 @@ class CharacterEditDraconicLinkWidget extends StatelessWidget {
                 );
               },
             ),
+          ),
+          EntityDisplayDraconicFavorsWidget(
+            entity: character,
+            edit: true,
           ),
         ],
       ),

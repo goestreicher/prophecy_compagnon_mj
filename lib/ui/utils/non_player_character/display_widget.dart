@@ -14,6 +14,7 @@ import '../entity/base/display_abilities_widget.dart';
 import '../entity/base/display_attributes_widget.dart';
 import '../entity/base/display_injuries_widget.dart';
 import '../entity/base/display_skill_group_widget.dart';
+import '../entity/base/draconic_favors_widget.dart';
 import '../entity/equipment/display_armor_widget.dart';
 import '../entity/equipment/display_weapons_widget.dart';
 import '../entity/magic/display_magic_skills_widget.dart';
@@ -201,6 +202,10 @@ class _NPCDisplayWidgetState extends State<NPCDisplayWidget> {
                   CharacterDisplayDisadvantagesWidget(character: npc),
                 if(npc.advantages.isNotEmpty)
                   CharacterDisplayAdvantagesWidget(character: npc),
+                if(npc.favors.isNotEmpty)
+                  EntityDisplayDraconicFavorsWidget(
+                    entity: npc,
+                  )
               ],
             ),
             ExpansionTile(
