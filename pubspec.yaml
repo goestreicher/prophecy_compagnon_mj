@@ -81,6 +81,7 @@ flutter:
     - assets/creatures-les-ecailles-de-brorne.json
     - assets/creatures-les-enfants-de-heyra.json
     - assets/creatures-les-foudres-de-kroryn.json
+    - assets/creatures-les-secrets-de-kalimsshar.json
     - assets/factions-castes.json
     - assets/factions-secretes.json
     - assets/factions-les-voiles-de-nenya.json

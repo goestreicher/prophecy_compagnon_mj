@@ -402,6 +402,18 @@ class DraconicFavor {
       ),
       DraconicFavor(
         sphere: MagicSphere.ombre,
+        linkProgress: DraconicLinkProgress.premierNiveau,
+        title: "La marque de l'ombre",
+        description: "Cette Faveur accorde au personnage le droit de développer la Sphère de l'Ombre, qui lui ouvre les portes de la magie de Kalimsshar. Qu'il s'agisse ou non d’un mage, le personnage pourra développer cette Sphère en dépensant des Points de Compétences à la création ou des Points d’Expérience en cours de campagne.",
+      ),
+      DraconicFavor(
+        sphere: MagicSphere.ombre,
+        linkProgress: DraconicLinkProgress.deuxiemeNiveau,
+        title: "L'ombre du doute",
+        description: "Cette Faveur permet au personnage d'instaurer le doute et de provoquer la peur dans l’esprit de son adversaire. Pour l'utiliser, le joueur doit effectuer un jet d'opposition de Social + Volonté contre Mental + Volonté de sa cible. Le doute s’insinue dans l'esprit de la victime pendant un nombre de minutes égal au nombre de NR de différence.\nDurant cette période, la victime devra réussir un jet de Mental + Volonté contre une Difficulté de 15 chaque fois qu’elle tentera de s’en prendre au personnage, que ce soit par une action physique, un pouvoir magique ou une simple altercation verbale. De plus, tous ses jets basés sur le Mental voient leur Difficulté augmenter de 5. Si la victime échoue à ce jet, il lui est totalement impossible de s’en prendre au bénéficiaire de cette faveur. Ce pouvoir peut être utilisé trois fois par jour, mais il est inutile de rappeler que les manifestations des pouvoirs de l’ombre sont très mal considérées.",
+      ),
+      DraconicFavor(
+        sphere: MagicSphere.ombre,
         linkProgress: DraconicLinkProgress.deuxiemeNiveau,
         title: "L'Appel de l'Ombre",
         description: "En réussissant un jet d’opposition de Mental + Empathie contre Mental + Volonté de la cible, cette dernière avoue spontanément sa plus grande angoisse. Par Niveau de Réussite supplémentaire, elle exprimera volontairement une peur enfouie presque aussi profondément dans son inconscient.",
@@ -429,6 +441,12 @@ class DraconicFavor {
         linkProgress: DraconicLinkProgress.troisiemeNiveau,
         title: "Masque de Mort",
         description: "En réussissant un jet d’opposition de Mental + Empathie contre Mental + Volonté de la cible, l'Élu provoque chez cette dernière une expérience traumatisante : vivre sa propre mort ! Cette illusion angoissante tétanise littéralement la victime qui subit ainsi un malus de 10 à toutes ses actions durant la prochaine heure. La sensation et la vision vécues ne sont que des illusions et sont sans rapport avec une réelle projection dans le futur.",
+      ),
+      DraconicFavor(
+        sphere: MagicSphere.ombre,
+        linkProgress: DraconicLinkProgress.troisiemeNiveau,
+        title: "Le manteau de l’ombre",
+        description: "En se concentrant, l’Élu peut disparaître à la vue de ses observateurs. Cette Faveur est plus efficace de nuit, dans un endroit peu éclairé ou encore par temps sombre plutôt qu’en plein soleil. Pour que le pouvoir soit activé, le personnage ne doit pas être visible lorsqu'il le déclenche. Dans des conditions favorables, le personnage qui désire utiliser cette capacité doit effectuer un jet de Mental + Empathie contre une Difficulté de 10. S'il réussit, il disparaît dans l’ombre, la chaleur de son corps baisse pour s’adapter à la température ambiante, ses mouvements ne font plus de bruits et il ne dégage plus aucune odeur. Il est virtuellement indétectable par tout autre moyen naturel que l’écholocation d’une chauve-souris. Il ne redevient visible que s’il se manifeste physiquement, en parlant ou en réalisant une action offensive. Il peut cependant tenter de rester caché en réussissant un jet Mental + Discrétion contre une Difficulté de 25. Dans des conditions moins favorables, le jet initial est Mental + Empathie contre une Difficulté de 20, et toute action signale automatiquement la présence de l'utilisateur. Cette Faveur est utilisable trois fois par jour.",
       ),
       DraconicFavor(
         sphere: MagicSphere.ombre,

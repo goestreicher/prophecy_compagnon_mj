@@ -366,6 +366,7 @@ class CreatureSummary extends ResourceBaseClass {
       'creatures-les-ecailles-de-brorne.json',
       'creatures-les-enfants-de-heyra.json',
       'creatures-les-foudres-de-kroryn.json',
+      'creatures-les-secrets-de-kalimsshar.json',
     ];
 
     for (var f in assetFiles) {
