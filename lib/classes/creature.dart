@@ -132,6 +132,7 @@ class NaturalWeaponModelRangeSpecification {
 class NaturalWeaponModel {
   NaturalWeaponModel({
     required this.name,
+    this.special,
     required this.skill,
     required this.damage,
     required this.ranges,
@@ -140,6 +141,7 @@ class NaturalWeaponModel {
   @JsonKey(includeToJson: false, includeFromJson: false)
     late String id;
   String name;
+  String? special;
   int skill;
   int damage;
   final Map<WeaponRange, NaturalWeaponModelRangeSpecification> ranges;

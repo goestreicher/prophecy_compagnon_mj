@@ -25,6 +25,7 @@ Map<String, dynamic> _$NaturalWeaponModelRangeSpecificationToJson(
 NaturalWeaponModel _$NaturalWeaponModelFromJson(Map<String, dynamic> json) =>
     NaturalWeaponModel(
       name: json['name'] as String,
+      special: json['special'] as String?,
       skill: (json['skill'] as num).toInt(),
       damage: (json['damage'] as num).toInt(),
       ranges: (json['ranges'] as Map<String, dynamic>).map(
@@ -40,6 +41,7 @@ NaturalWeaponModel _$NaturalWeaponModelFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$NaturalWeaponModelToJson(NaturalWeaponModel instance) =>
     <String, dynamic>{
       'name': instance.name,
+      'special': instance.special,
       'skill': instance.skill,
       'damage': instance.damage,
       'ranges': instance.ranges.map(

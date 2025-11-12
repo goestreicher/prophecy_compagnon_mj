@@ -142,6 +142,7 @@ class _NaturalWeaponEditDialog extends StatefulWidget {
 class _NaturalWeaponEditDialogState extends State<_NaturalWeaponEditDialog> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
+  final TextEditingController capabilityController = TextEditingController();
 
   int skill = 0;
   int damage = 0;
@@ -154,6 +155,9 @@ class _NaturalWeaponEditDialogState extends State<_NaturalWeaponEditDialog> {
 
     if(widget.source != null) {
       nameController.text = widget.source!.name;
+      if(widget.source!.special != null) {
+        capabilityController.text = widget.source!.special!;
+      }
       skill = widget.source!.skill;
       damage = widget.source!.damage;
       for(var r in widget.source!.ranges.keys) {
@@ -262,6 +266,20 @@ class _NaturalWeaponEditDialogState extends State<_NaturalWeaponEditDialog> {
                 ),
               ],
             ),
+            TextField(
+              controller: capabilityController,
+              decoration: InputDecoration(
+                label: const Text('Capacité'),
+                labelStyle: theme.textTheme.labelSmall,
+                floatingLabelStyle: theme.textTheme.labelLarge,
+                border: const OutlineInputBorder(),
+                contentPadding: const EdgeInsets.all(12.0),
+                error: null,
+                errorText: null,
+                isDense: true,
+              ),
+              style: theme.textTheme.bodySmall,
+            ),
             ...rangeWidgets,
           ],
         ),
@@ -276,6 +294,9 @@ class _NaturalWeaponEditDialogState extends State<_NaturalWeaponEditDialog> {
             if(!formKey.currentState!.validate()) return;
             var model = NaturalWeaponModel(
               name: nameController.text,
+              special: capabilityController.text.isEmpty
+                ? null
+                : capabilityController.text,
               skill: skill,
               damage: damage,
               ranges: ranges,

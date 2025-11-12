@@ -49,6 +49,12 @@ class NaturalWeaponDisplayWidget extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
+        if(weapon.special != null)
+          Text(
+            weapon.special!,
+            softWrap: true,
+            style: theme.textTheme.bodySmall
+          ),
         DefaultTextStyle(
           style: theme.textTheme.bodySmall!,
           child: Row(
