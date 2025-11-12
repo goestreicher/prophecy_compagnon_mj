@@ -19,6 +19,7 @@ import '../entity/magic/display_magic_spells_widget.dart';
 import '../entity/magic/display_magic_spheres_widget.dart';
 import '../error_feedback.dart';
 import '../full_page_loading.dart';
+import '../markdown_display_widget.dart';
 import '../widget_group_container.dart';
 import 'base/display_general_widget.dart';
 import 'base/display_natural_weapons_widget.dart';
@@ -127,8 +128,8 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                   child: WidgetGroupContainer(
                     child: Align(
                         alignment: AlignmentGeometry.topLeft,
-                        child: Text(
-                            creature.description.isNotEmpty
+                        child: MarkdownDisplayWidget(
+                            data: creature.description.isNotEmpty
                                 ? creature.description
                                 : 'Pas de description'
                         )
@@ -190,7 +191,7 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                     spacing: 16.0,
                     children: [
                       if(creature.naturalWeapons.isNotEmpty)
-                        Center(
+                        Expanded(
                           child: CreatureDisplayNaturalWeaponsWidget(
                             creature: creature,
                           ),

@@ -60,7 +60,7 @@ class _CreatureEditSecondaryAttributesState extends State<CreatureEditSecondaryA
             ),
             style: theme.textTheme.bodySmall,
             autovalidateMode: AutovalidateMode.onUserInteraction,
-            onChanged: (String? value) => widget.creature.weight = naturalArmorDescriptionController.text,
+            onChanged: (String? value) => widget.creature.naturalArmorDescription = naturalArmorDescriptionController.text,
           ),
         ],
       ),

@@ -40,6 +40,7 @@ class CreatureDisplayNaturalWeaponsWidget extends StatelessWidget {
         )
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 8.0,
         children: widgets,
       )

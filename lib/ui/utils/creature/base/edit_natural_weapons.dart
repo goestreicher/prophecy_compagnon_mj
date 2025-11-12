@@ -92,10 +92,11 @@ class _NaturalWeaponEditWidget extends StatelessWidget {
         child: Row(
           spacing: 16.0,
           children: [
-            NaturalWeaponDisplayWidget(
-              weapon: weapon,
+            Expanded(
+              child: NaturalWeaponDisplayWidget(
+                weapon: weapon,
+              ),
             ),
-            Spacer(),
             IconButton(
               style: IconButton.styleFrom(
                 iconSize: 24.0,
@@ -259,7 +260,7 @@ class _NaturalWeaponEditDialogState extends State<_NaturalWeaponEditDialog> {
                   child: NumIntInputWidget(
                     label: 'Dégats',
                     initialValue: damage,
-                    minValue: 1,
+                    minValue: 0,
                     maxValue: 9999,
                     onChanged: (int value) => damage = value,
                   ),

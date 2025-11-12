@@ -14,26 +14,26 @@ class NaturalWeaponDisplayWidget extends StatelessWidget {
 
     var rangeWidgets = <Widget>[];
     for(var r in weapon.ranges.keys) {
+      String spec = '${r.title} - Init. ${weapon.ranges[r]!.initiative}';
+
+      if(r != WeaponRange.contact) {
+        spec += '${r != WeaponRange.ranged ? " - Distance" : " - Distance efficace"} ${weapon.ranges[r]!.effectiveDistance.toStringAsFixed(2)} m';
+        if(r == WeaponRange.ranged) {
+          spec += ' - Distance maximum ${weapon.ranges[r]!.maximumDistance!.toStringAsFixed(2)} m';
+        }
+      }
+
       rangeWidgets.add(
         DefaultTextStyle(
           style: theme.textTheme.bodySmall!,
           child: Row(
             spacing: 8.0,
             children: [
-              Text(
-                r.title,
-              ),
-              Text(
-                'Init. ${weapon.ranges[r]!.initiative}',
-              ),
-              if(r != WeaponRange.contact)
-                Text(
-                    '${r != WeaponRange.ranged ? "Distance" : "Distance efficace"} ${weapon.ranges[r]!.effectiveDistance.toStringAsFixed(2)} m'
+              Expanded(
+                child: Text(
+                  spec,
                 ),
-              if(r == WeaponRange.ranged)
-                Text(
-                    'Distance maximum ${weapon.ranges[r]!.maximumDistance!.toStringAsFixed(2)} m'
-                ),
+              ),
             ],
           ),
         )
