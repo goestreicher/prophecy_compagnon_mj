@@ -26,10 +26,17 @@ class CharacterCasteStreamChange {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class CharacterCastePrivilege {
-  CharacterCastePrivilege({ required this.privilege, this.description });
+  CharacterCastePrivilege({
+    required this.privilege,
+    this.description,
+    this.selectedCost
+  });
 
   CastePrivilege privilege;
   String? description;
+  int? selectedCost;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  int get cost => selectedCost ?? privilege.cost[0];
 
   factory CharacterCastePrivilege.fromJson(Map<String, dynamic> j) =>
       _$CharacterCastePrivilegeFromJson(j);

@@ -17,13 +17,21 @@ class CasteTechnique{
 enum Caste {
   sansCaste(title: 'Sans caste'),
   artisan(title: 'Artisan'),
+  artisanNoir(title: 'Artisan noir'),
   combattant(title: 'Combattant'),
+  combattantNoir(title: 'Combattant noir'),
   commercant(title: 'Commerçant'),
+  commercantNoir(title: 'Commerçant noir'),
   erudit(title: 'Érudit'),
+  eruditNoir(title: 'Érudit noir'),
   mage(title: 'Mage'),
+  mageNoir(title: 'Mage noir'),
   prodige(title: 'Prodige'),
   protecteur(title: 'Protecteur'),
-  voyageur(title: 'Voyageur');
+  protecteurNoir(title: 'Protecteur noir'),
+  voyageur(title: 'Voyageur'),
+  voyageurFataliste(title: 'Voyageur noir'),
+  ;
 
   const Caste({
     required this.title,
@@ -81,12 +89,26 @@ enum Caste {
       CasteStatus.maitre: 'Maître artisan',
       CasteStatus.grandMaitre: 'Grand maître artisan',
     },
+    Caste.artisanNoir: {
+      CasteStatus.apprenti: 'Apprenti noir',
+      CasteStatus.initie: 'Compagnon noir',
+      CasteStatus.expert: 'Artisan noir',
+      CasteStatus.maitre: 'Maître artisan noir (IV)',
+      CasteStatus.grandMaitre: 'Maître artisan noir (V)',
+    },
     Caste.combattant: {
       CasteStatus.apprenti: 'Apprenti',
       CasteStatus.initie: 'Spadassin',
       CasteStatus.expert: 'Combattant',
       CasteStatus.maitre: "Maître d'armes",
       CasteStatus.grandMaitre: "Grand maître d'armes",
+    },
+    Caste.combattantNoir: {
+      CasteStatus.apprenti: 'Apprenti noir',
+      CasteStatus.initie: 'Spadassin noir',
+      CasteStatus.expert: 'Combattant noir',
+      CasteStatus.maitre: "Maître d'armes noir",
+      CasteStatus.grandMaitre: "Grand maître d'armes noir",
     },
     Caste.commercant: {
       CasteStatus.apprenti: 'Marchand',
@@ -95,6 +117,13 @@ enum Caste {
       CasteStatus.maitre: 'Dignitaire',
       CasteStatus.grandMaitre: 'Prince marchand',
     },
+    Caste.commercantNoir: {
+      CasteStatus.apprenti: 'Marchand noir',
+      CasteStatus.initie: 'Commerçant noir',
+      CasteStatus.expert: 'Négociant noir',
+      CasteStatus.maitre: 'Dignitaire noir',
+      CasteStatus.grandMaitre: 'Prince marchand noir',
+    },
     Caste.erudit: {
       CasteStatus.apprenti: 'Apprenti',
       CasteStatus.initie: 'Initié',
@@ -102,12 +131,26 @@ enum Caste {
       CasteStatus.maitre: 'Sage',
       CasteStatus.grandMaitre: 'Prophète',
     },
+    Caste.eruditNoir: {
+      CasteStatus.apprenti: 'Apprenti noir',
+      CasteStatus.initie: 'Initié noir',
+      CasteStatus.expert: 'Érudit noir',
+      CasteStatus.maitre: 'Sage noir',
+      CasteStatus.grandMaitre: 'Prophète noir',
+    },
     Caste.mage: {
       CasteStatus.apprenti: 'Apprenti',
       CasteStatus.initie: 'Initié',
       CasteStatus.expert: 'Mage',
       CasteStatus.maitre: 'Grand mage',
       CasteStatus.grandMaitre: 'Grand maître',
+    },
+    Caste.mageNoir: {
+      CasteStatus.apprenti: 'Apprenti noir',
+      CasteStatus.initie: 'Initié noir',
+      CasteStatus.expert: 'Mage noir',
+      CasteStatus.maitre: 'Grand mage noir',
+      CasteStatus.grandMaitre: 'Grand maître noir',
     },
     Caste.prodige: {
       CasteStatus.apprenti: 'Premier statut',
@@ -123,7 +166,21 @@ enum Caste {
       CasteStatus.maitre: 'Commandeur',
       CasteStatus.grandMaitre: 'Commandeur-Dragon',
     },
+    Caste.protecteurNoir: {
+      CasteStatus.apprenti: 'Soldat noir',
+      CasteStatus.initie: 'Lieutenant noir',
+      CasteStatus.expert: 'Capitaine noir',
+      CasteStatus.maitre: 'Commandeur noir',
+      CasteStatus.grandMaitre: 'Dragon noir',
+    },
     Caste.voyageur: {
+      CasteStatus.apprenti: 'Marcheur',
+      CasteStatus.initie: 'Pisteur',
+      CasteStatus.expert: 'Voyageur',
+      CasteStatus.maitre: 'Solitaire',
+      CasteStatus.grandMaitre: 'Orphelin',
+    },
+    Caste.voyageurFataliste: {
       CasteStatus.apprenti: 'Marcheur',
       CasteStatus.initie: 'Pisteur',
       CasteStatus.expert: 'Voyageur',
@@ -136,11 +193,25 @@ enum Caste {
     Caste.artisan: {
       CasteStatus.apprenti: "Le personnage peut développer une Spécialisation de Technique.",
       CasteStatus.initie: "Le personnage peut développer la Discipline de magie, Sorcellerie, comme si elle lui était réservée ainsi qu'une Sphère en rapport avec son artisanat principal, du moment qu’il trouve un professeur.",
-      CasteStatus.expert: "Chaque fois qu’il fait appel aux Tendances, le personnagep eut dépenser 1 Point de Chance pour relancer le dé de l'Homme.",
+      CasteStatus.expert: "Chaque fois qu’il fait appel aux Tendances, le personnage peut dépenser 1 Point de Chance pour relancer le dé de l'Homme.",
       CasteStatus.maitre: "Le personnage peut apprendre les sorts de Magie instinctive et de Sorcellerie au même coût que les mages.",
       CasteStatus.grandMaitre: "À chacun de ses jets, le personnage lance et conserve un dé supplémentaire de l'Homme qui ne lui rapporte aucun Point de Tendance, et ce quelle que soit son affiliation.",
     },
+    Caste.artisanNoir: {
+      CasteStatus.apprenti: "Le personnage peut développer une Spécialisation de Technique.",
+      CasteStatus.initie: "Le personnage peut développer la Discipline de magie, Sorcellerie, comme si elle lui était réservée ainsi qu'une Sphère en rapport avec son artisanat principal, du moment qu’il trouve un professeur (la Sphère de l'ombre lui est alors autorisée mais il conservera un statut d'Adepte.)",
+      CasteStatus.expert: "Chaque fois qu’il fait appel aux Tendances, le personnage peut dépenser 1 Point de Chance pour relancer le dé de l'Homme ou de la Fatalité.",
+      CasteStatus.maitre: "Le personnage peut utiliser ses points de magie comme des points de Maîtrise pour toute activité de création, de réparation ou de modification (au maximum autant que son score de base d'Attribut + Compétence).",
+      CasteStatus.grandMaitre: "À chacun de ses jets, le personnage lance et conserve un dé supplémentaire de l'Homme qui ne lui rapporte aucun Point de Tendance, et ce quelle que soit son affiliation.",
+    },
     Caste.combattant: {
+      CasteStatus.apprenti: "Le personnage peut développer une Spécialisation de Combat.",
+      CasteStatus.initie: "Le personnage peut posséder jusqu’à trois Spécialisations : deux de Combat et une d’une autre catégorie.",
+      CasteStatus.expert: "Le personnage peut porter une attaque supplémentaire sans pénalité à chaque tour de combat.",
+      CasteStatus.maitre: "Lorsqu’il combat un adversaire maniant une arme utilisant la même Compétence que celle dans laquelle (ou lesquelles) il s’est spécialisé, le personnage gagne un bonus de 2 à tous ses jets d'attaque et de parade.",
+      CasteStatus.grandMaitre: "La Difficulté de tous les jets de combat est réduite de 5 lorsque le personnage utilise son arme de prédilection. De plus, il ne peut être ni désarmé, ni abusé par une feinte d’arme de la même famille que la sienne.",
+    },
+    Caste.combattantNoir: {
       CasteStatus.apprenti: "Le personnage peut développer une Spécialisation de Combat.",
       CasteStatus.initie: "Le personnage peut posséder jusqu’à trois Spécialisations : deux de Combat et une d’une autre catégorie.",
       CasteStatus.expert: "Le personnage peut porter une attaque supplémentaire sans pénalité à chaque tour de combat.",
@@ -154,6 +225,13 @@ enum Caste {
       CasteStatus.maitre: "Pour tous ses jets de Social ou de Manuel, le personnage lance un dé supplémentaire de l'Homme qu'il peut choisir de conserver à la place de n'importe quel autre. De plus, il gagne un bonus de 1 à tous ses jets de Social effectués dans sa cité d’origine, ou dans celle où se trouve son comptoir principal.",
       CasteStatus.grandMaitre: "Le personnage est à ce point psychologue qu’il sait toujours si on lui ment. En réussissant un jet de Social + Empathie contre une Difficulté de 15, ou de 20 pour un dragon, il peut également apprendre la vérité sans le montrer à son interlocuteur.",
     },
+    Caste.commercantNoir: {
+      CasteStatus.apprenti: "Le personnage débute sa carrière avec une somme de 500 dracs d'argent et peut développer une Spécialisation de Communication ou de Manipulation.",
+      CasteStatus.initie: "Le personnage dispose d’un abri secret, dans la cité de son choix, comprenant une entrée normale et au maximum deux passages secrets.",
+      CasteStatus.expert: "Le personnage connaît le nom et les principales caractéristiques de toutes les compagnies commerciales, guildes et factions marchandes de son royaume. Dans le cas d’un groupe récemment créé, il peut effectuer un jet de Social + Vie en cité contre une Difficulté de 15, ou de 20, dans le cas d'une compagnie secrète, pour obtenir ces mêmes informations.",
+      CasteStatus.maitre: "Pour tous ses jets de Social ou de Manuel, le personnage lance un dé supplémentaire de l'Homme ou Fatalité qu'il peut choisir de conserver à la place de n'importe quel autre. De plus, il gagne un bonus de 1 à tous ses jets de Social effectués dans sa cité d’origine, ou dans celle où se trouve son abri principal.",
+      CasteStatus.grandMaitre: "Le personnage est à ce point psychologue qu’il sait toujours si on lui ment. En réussissant un jet de Social + Empathie contre une Difficulté de 15, ou de 20 pour un dragon, il peut également apprendre la vérité sans le montrer à son interlocuteur.",
+    },
     Caste.erudit: {
       CasteStatus.apprenti: "Le personnage peut se spécialiser dans une Compétence Mentale de son choix.",
       CasteStatus.initie: "Le personnage dispose d'un certain prestige et peut influer sur les convictions des citoyens de statut inférieur ou égal au sien. En engageant une discussion philosophique d’une heure, il peut dépenser deux cercles d’une Tendance pour déplacer chez son interlocuteur un cercle d’une Tendance vers celle qu’il a dépensé.",
@@ -161,12 +239,26 @@ enum Caste {
       CasteStatus.maitre: "Le personnage est considéré comme un disciple d'Ozyr. À ce titre, il représente la sagesse et la connaissance du Grand Dragon des Océans, et peut être consulté lors des discussions de la plus grande importance - conseils de guerre, alliances politiques, etc.",
       CasteStatus.grandMaitre: "Le personnage est autorisé à consulter les écrits de n’importe quelle bibliothèque draconique. Lorsqu'il y fait des recherches, la Difficulté de tous les jets impliquant des Compétences Théoriques est réduite de 5.",
     },
+    Caste.eruditNoir: {
+      CasteStatus.apprenti: "Le personnage peut se spécialiser dans une Compétence Théorique de son choix.",
+      CasteStatus.initie: "Par un jet de Mental + Empathie contre une Difficulté de (Volonté de la cible x 3), le personnage peut discerner si un interlocuteur est actuellement tenté par la transgression d’Interdits, de lois ou d’Édits (ou s’il est en train de le faire).",
+      CasteStatus.expert: "Le personnage lance pour tous ses jets de Mental un dé neutre supplémentaire qu’il rajoute au résultat du dé choisi.",
+      CasteStatus.maitre: "En tant que disciple de Kalimsshar, le Sage noir ressent intuitivement les rapports de force entre individus. Il discerne automatiquement les tensions, les alliances et les intérêts des groupes d’individus.",
+      CasteStatus.grandMaitre: "En appelant à la source du pouvoir de Kalimsshar, le Prophète noir peut poser une question précise à l’auteur de n’importe quel écrit qu’il détient. Ce Bénéfice force l'esprit désincarné de l’auteur à y répondre. Il ne peut utiliser ce Bénéfice qu’une fois par jour, et une unique fois par écrit,",
+    },
     Caste.mage: {
       CasteStatus.apprenti: "Le personnage peut lire les matrices magiques et déchiffrer les bracelets de mage pour en reconnaître les domaines d’influence grâce à leurs couleurs, leurs matières, leurs gravures, etc. Il peut développer une Spécialisation de Combat ou de Théorie.",
       CasteStatus.initie: "En réussissant un jet de Mental + Intelligence contre une Difficulté de 15, le personnage peut reconnaître un sort lancé par un autre mage. Si le sort utilise sa Sphère privilégiée, la Difficulté de ce jet est réduite de 5.",
       CasteStatus.expert: "Le personnage est désormais autorisé à concevoir ses propres sorts, à les enseigner et à créer des matrices magiques pour répandre son savoir. Ce bénéfice évite ainsi que de trop jeunes mages ne s'essayent à la dangereuse conception d'un sort.",
       CasteStatus.maitre: "Le personnage ajoute le niveau de chacune de ses Sphères à tous ses jets de défense contre des sorts utilisant la Sphère correspondante.",
       CasteStatus.grandMaitre: "Le personnage est immunisé aux effets des sorts de niveau 1 de sa Sphère privilégiée (à choisir lors de son accession à ce Statut parmi les Sphères ayant le score le plus haut).",
+    },
+    Caste.mageNoir: {
+      CasteStatus.apprenti: "Le personnage peut lire les matrices magiques et déchiffrer les bracelets de mage pour en reconnaître les domaines d’influence grâce à leurs couleurs, leurs matières, leurs gravures, etc.  Il lui est possible de créer ses sorts dès ce Statut, mais en respectant les risques détaillés dans l'encadré de la page 36 de la Colère des Dragons). Si rien n'empêche légalement les mages noirs de créer des sorts à tout moment, les risques ne sont pas pour autant annulés…",
+      CasteStatus.initie: "En réussissant un jet de Mental + Intelligence contre une Difficulté de 15, le personnage peut reconnaître un sort lancé par un autre mage. Si le sort utilise sa Sphère privilégiée, la Difficulté de ce jet est réduite de 5.",
+      CasteStatus.expert: "Le personnage est peut utiliser ses cercles de Tendance Fatalité comme des points de magie d'ombre (exclusivement), à raison de 1pt de magie pour deux cercles de Fatalité. Ces points ne se régénèrent pas automatiquement comme les points de magie.",
+      CasteStatus.maitre: "Le personnage ajoute le niveau de chacune de ses Sphères à tous ses jets de défense contre des sorts utilisant la Sphère correspondante.",
+      CasteStatus.grandMaitre: "Le personnage est immunisé aux effets des sorts de niveau 1 ou 2 de sa Sphère privilégiée (à choisir lors de son accession à ce Statut parmi les Sphères ayant le score le plus haut). Ce choix est définitif.",
     },
     Caste.prodige: {
       CasteStatus.apprenti: "Le personnage est capable de communiquer par télépathie avec n'importe quelle créature draconique et peut développer une Spécialisation de son choix.",
@@ -180,9 +272,23 @@ enum Caste {
       CasteStatus.initie: "Le personnage peut donner des ordres aux protecteurs de Statut inférieur et demander l'octroi d'hommes de troupe pour effectuer des missions précises. Le nombre maximum de ces renforts est égal à deux fois la Compétence Commandement du personnage, et il ne peut s'agir que de protecteurs de Statut strictement inférieur.",
       CasteStatus.expert: "Le personnage est autorisé à prendre les mesures qu’il juge nécessaires pour faire respecter les Lois draconiques au sein d’une cité.",
       CasteStatus.maitre: "Le personnage est chargé de l'autorité draconique et peut faire appliquer la loi sur l’ensemble de Kor. De plus, lorsqu'il prend le commandement d’une unité, tous les hommes qui suivent ses ordres gagnent un bonus de 2 à toutes leurs actions de combat. Ce bonus n’est applicable que si le personnage participe activement au combat.",
-      CasteStatus.grandMaitre: "L'importance du personnage aux yeux de Brorne lui permet de monter n'importe quel dragon de pierre à qui il en fait la demande, du moment que la raison de cette demande est fondée. S'il participe à une bataille à dos de dragon, tous les hommes que compte son armée gagnent un bonus de 8 à leurs actions de combat.",
+      CasteStatus.grandMaitre: "L'importance du personnage aux yeux de Brorne lui permet de monter n'importe quel dragon de pierre à qui il en fait la demande, du moment que la raison de cette demande est fondée. S'il participe à une bataille à dos de dragon, tous les hommes que compte son armée gagnent un bonus de 3 à leurs actions de combat.",
+    },
+    Caste.protecteurNoir: {
+      CasteStatus.apprenti: "Le personnage peut porter un bouclier dragon et développer une spécialisation de Combat.",
+      CasteStatus.initie: "Le personnage peut donner des ordres aux protecteurs de Statut inférieur et demander l'octroi d'hommes de troupe pour effectuer des missions précises. Le nombre maximum de ces renforts est égal à deux fois la Compétence Commandement du personnage, et il ne peut s'agir que de protecteurs de Statut strictement inférieur.",
+      CasteStatus.expert: "Le personnage peut détourner les lois draconiques dans son sens (ou selon ses envies). En jouant de son prestige, le protecteur peut alors donner des ordres légèrement contraires aux lois aux protecteurs de Statut inférieur et dont l'Intelligence est inférieure à sa Présence. Les subordonnés suivront alors docilement ces ordres douteux sans discuter, persuadés de la sagesse de leur chef. Des entorses d'ampleur aux lois draconiques sont toutefois relativement impossibles à réaliser (massacre d'innocents draconistes, profanation de lieux sacrés)",
+      CasteStatus.maitre: "Le personnage est chargé de l'autorité de Kalimsshar et peut faire appliquer la loi sur l’ensemble de Kali. De plus, lorsqu'il prend le commandement d’une unité, tous les hommes qui suivent ses ordres gagnent un bonus de 2 à toutes leurs actions de combat mais aussi au moral ou à la résistance psychique (peur, sorts, etc...). Ce bonus n’est applicable que si le personnage participe activement au combat.",
+      CasteStatus.grandMaitre: "Le protecteur noir jouit d’une telle réputation que tous ses adversaires (au sens large) subissent en sa présence un malus de -3 pour chaque action agressive dirigée contre lui (attaques physiques, magiques, sociales, etc.)",
     },
     Caste.voyageur: {
+      CasteStatus.apprenti: "S’il dispose d’une carte, le personnage peut déterminer le meilleur itinéraire pour relier deux points, estimer la durée du voyage et la présence possible d’auberges et de haltes. Le personnage peut développer une Spécialisation de Mouvement ou de Théorie.",
+      CasteStatus.initie: "Du moment qu’il a déjà visité un endroit ou emprunté une route, le personnage est capable de se repérer sans aucun risque de se perdre - les conditions de voyage extrêmes ne feront que ralentir sa progression.",
+      CasteStatus.expert: "Chaque fois qu’il entre en territoire inconnu (cité, région, fleuve, etc.), le personnage comprend d'instinct certaines caractéristiques propres à ce lieu. En réussissant un jet de Mental + Empathie contre une Difficulté de 5, il peut apprendre une information par NR (type de gouvernement, présence de dragons, cavités souterraines, etc.). Ce bénéfice ne peut être utilisé que pour des zones géographiques relativement vastes - et non des habitations ou des structures réduites.",
+      CasteStatus.maitre: "Le personnage est tellement habitué aux voyages que sa présence n’est plus considérée comme une menace par les animaux sauvages - qui ne l’attaquent plus. Au sein d'un groupe, la présence du personnage suffira à tenir en respect des prédateurs et des meutes. Cet avantage ne concerne pas les créatures magiques et/ou intelligentes.",
+      CasteStatus.grandMaitre: "Le personnage ne dort jamais que d’un œil, mais son sommeil est incroyablement réparateur. Le moindre bruit suffit à le réveiller et une simple impression de danger mettra instantanément ses sens en alerte. Après une nuit de sommeil complète, le personnage peut dépenser des Points de Chance pour effacer autant de cases de blessure de n'importe quel type. Ces Points de Chance ne peuvent être regagnés avant d’avoir passé une seconde nuit de sommeil.",
+    },
+    Caste.voyageurFataliste: {
       CasteStatus.apprenti: "S’il dispose d’une carte, le personnage peut déterminer le meilleur itinéraire pour relier deux points, estimer la durée du voyage et la présence possible d’auberges et de haltes. Le personnage peut développer une Spécialisation de Mouvement ou de Théorie.",
       CasteStatus.initie: "Du moment qu’il a déjà visité un endroit ou emprunté une route, le personnage est capable de se repérer sans aucun risque de se perdre - les conditions de voyage extrêmes ne feront que ralentir sa progression.",
       CasteStatus.expert: "Chaque fois qu’il entre en territoire inconnu (cité, région, fleuve, etc.), le personnage comprend d'instinct certaines caractéristiques propres à ce lieu. En réussissant un jet de Mental + Empathie contre une Difficulté de 5, il peut apprendre une information par NR (type de gouvernement, présence de dragons, cavités souterraines, etc.). Ce bénéfice ne peut être utilisé que pour des zones géographiques relativement vastes - et non des habitations ou des structures réduites.",
@@ -214,6 +320,28 @@ enum Caste {
         description: "En dépensant 1 Point de Maîtrise, le personnage peut utiliser son Attribut Manuel à la place de n'importe quel autre Attribut. Si le jet est réussi, il ne regagne aucun Point de Maîtrise.",
       ),
     },
+    Caste.artisanNoir: {
+      CasteStatus.apprenti: CasteTechnique(
+        title: "D'un compagnon à l'autre",
+        description: "En réussissant un jet de Mental + Artisanat approprié contre une Difficulté de 10, le personnage peut déterminer l’âge, la qualité et le mode de fonctionnement de tout objet manufacturé. Chaque NR lui confère une information supplémentaire.",
+      ),
+      CasteStatus.initie: CasteTechnique(
+        title: "La voie du progrès",
+        description: "En réussissant un jet de Mental + Coordination contre une Difficulté de 10, le personnage peut comprendre le fonctionnement et utiliser n'importe quel objet mécanique comme s'il possédait la Compétence appropriée à un niveau égal à la moitié de son Attribut Manuel (arrondi au supérieur).",
+      ),
+      CasteStatus.expert: CasteTechnique(
+        title: "Puissance de l'émotion",
+        description: "L’artisan noir retire une émotion particulière des œuvres d’art ou d’artisanat. Si elle correspond à la situation et s’il réussit un jet de Mental + Empathie Difficulté 5, l'artisan noir gagne un bonus égal à 1 + Niveaux de Réussite pour un jet unique. Par exemple, épée et violence lors d’un combat, sculpture et charme pour un rendez-vous galant devant une fontaine de marbre taillé. Cette Technique ne peut être utilisée qu’une unique fois par objet et (niveau de Statut) fois par jour.",
+      ),
+      CasteStatus.maitre: CasteTechnique(
+        title: "Simulacre de vie",
+        description: "L’artisan noir, en sacrifiant un Point de Maîtrise (qui peut être récupéré via des Points d’Expérience), insuffle le mouvement à une œuvre. Cette Technique permet aux non-mages de réaliser des œuvres enchantées sans user de Sphères. Il n’est pas possible de créer un service ou un serviteur par ce moyen : l’œuvre agit uniquement en fonction de ce qu’elle représente. Par exemple, dans un tableau bucolique, les cygnes nagent dans le lac, tandis que les enfants jouent sur la rive, la statue d’un athlète prend des poses et effectue des mouvements typiques de son activité. Cela peut surprendre une personne non prévenue.",
+      ),
+      CasteStatus.grandMaitre: CasteTechnique(
+        title: "La force du rouage",
+        description: "En dépensant 1 Point de Maîtrise, le personnage peut utiliser son Attribut Manuel à la place de n'importe quel autre Attribut. Si le jet est réussi, il ne regagne aucun Point de Maîtrise.",
+      ),
+    },
     Caste.combattant: {
       CasteStatus.apprenti: CasteTechnique(
         title: "L'œil du maître",
@@ -236,7 +364,51 @@ enum Caste {
         description: "Le personnage ne peut subir d’échec critique lorsqu'il utilise son arme de prédilection. Tous les “1” obtenus sur un jet de combat sont donc relancés.",
       ),
     },
+    Caste.combattantNoir: {
+      CasteStatus.apprenti: CasteTechnique(
+        title: "L'œil du maître",
+        description: "En réussissant un jet de Mental + Compétence d’arme de l'adversaire contre une Difficulté de 10, le personnage peut déterminer si le niveau de Compétence de son adversaire est inférieur, supérieur où égal au sien. Chaque Niveau de Réussite peut lui donner une indication sur la technique utilisée (botte secrète, Technique spéciale, etc.).",
+      ),
+      CasteStatus.initie: CasteTechnique(
+        title: "La main du maître",
+        description: "Une fois par combat, le personnage peut ajouter la valeur de son Attribut Physique au résultat de l’un de ses dés d’Initiative, du moment qu’il annonce l’utilisation de cette Technique avant de lancer ses dés.",
+      ),
+      CasteStatus.expert: CasteTechnique(
+        title: "Le coup du maître",
+        description: "Lorsqu’il combat avec une arme dans laquelle il s’est spécialisé et qu’il obtient une réussite critique, le personnage peut dépenser des Points de Chance ou de Maîtrise pour les ajouter au jet sur la table des critiques. Il peut au maximum dépenser autant de points que son niveau de Statut et tous ces points doivent être du même Attribut mineur.",
+      ),
+      CasteStatus.maitre: CasteTechnique(
+        title: "La voie du maître",
+        description: "Lorsqu'il combat, le personnage n’est pas soumis à la règle des Tendances et peut conserver n'importe quel dé sans gagner ni perdre de Points de Tendance (sauf dans le cas d'une réussite critique).",
+      ),
+      CasteStatus.grandMaitre: CasteTechnique(
+        title: "La maîtrise parfaite",
+        description: "Le personnage ne peut subir d’échec critique lorsqu'il utilise son arme de prédilection. Tous les “1” obtenus sur un jet de combat sont donc relancés.",
+      ),
+    },
     Caste.commercant: {
+      CasteStatus.apprenti: CasteTechnique(
+        title: "Le sourire accueillant",
+        description: "En réussissant um jet de Social + Empathie contre une Difficulté de 15, le personnage peut deviner ce qui amène un individu dans la ville où il se trouve. Si cette raison est secrète, le personnage doit réussir un jet de Social + Présence contre une Difficulté de 20 pour obtenir la même information.",
+      ),
+      CasteStatus.initie: CasteTechnique(
+        title: "Reconnaître son erreur",
+        description: "Une fois par jour, en dépensant tous ses Points de Chance restants (minimum 1), le personnage peut transformer un échec critique en un échec simple.",
+      ),
+      CasteStatus.expert: CasteTechnique(
+        title: "L'examen de conscience",
+        description: "Chaque fois qu’il le désire, le personnage peut effacer tous ses cercles de Tendance, du moment qu’il vient de faire une bonne affaire.",
+      ),
+      CasteStatus.maitre: CasteTechnique(
+        title: "Une technique éprouvée",
+        description: "Une fois par jour, en dépensant 3 Points de Chance, le personnage peut doubler la valeur de son Attribut Manuel ou Social pour effectuer une action. Aucun Point de Maîtrise ou de Chance ne peut être regagné de cette façon.",
+      ),
+      CasteStatus.grandMaitre: CasteTechnique(
+        title: "Le bénéfice du doute",
+        description: "Une fois par jour, le personnage peut effacer de la mémoire d’un individu tout souvenir le concernant, du moment qu’il n'a eu aucun contact physique avec cette personne. La durée du souvenir ne peut excéder un nombre de minutes égal à la valeur de l’Attribut Social du personnage. Une fois “l’entretien” terminé, l'individu ne se doute même pas qu’il a rencontré le personnage.",
+      ),
+    },
+    Caste.commercantNoir: {
       CasteStatus.apprenti: CasteTechnique(
         title: "Le sourire accueillant",
         description: "En réussissant um jet de Social + Empathie contre une Difficulté de 15, le personnage peut deviner ce qui amène un individu dans la ville où il se trouve. Si cette raison est secrète, le personnage doit réussir un jet de Social + Présence contre une Difficulté de 20 pour obtenir la même information.",
@@ -280,6 +452,28 @@ enum Caste {
         description: "Le personnage est tellement en phase avec le monde qu'il peut lire dans le destin comme dans un livre. Une fois par jour, il peut interroger les astres pour obtenir une réponse à l'une des questions qu'il se pose sur son avenir ou celui de ses compagnons.",
       ),
     },
+    Caste.eruditNoir: {
+      CasteStatus.apprenti: CasteTechnique(
+        title: "La lettre et le nom",
+        description: "Du moment qu’il a déjà lu un écrit, le personnage est capable d’en reconnaître l'auteur sans effectuer le moindre jet.",
+      ),
+      CasteStatus.initie: CasteTechnique(
+        title: "La rune et le secret",
+        description: "En réussissant un jet de Mental + Lire et écrire contre une Difficulté de 15, le personnage peut déterminer l'origine, la date ou le sens général de n'importe quel ouvrage écrit y compris les symboles, les runes et les motifs divers). Chaque NR lui donne une de ces trois informations.",
+      ),
+      CasteStatus.expert: CasteTechnique(
+        title: "Le verbe et la tentation",
+        description: "S'il parvient à converser une demi-heure avec une ou plusieurs personnes, un érudit noir peut transférer un cercle d'une Tendance majoritaire vers la Tendance Fatalité de son ou ses auditeurs. Il peut influencer toute personne doté d'une Volonté inférieure à son Intelligence et à portée de voix. Par demi-heure supplémentaire, il peut continuer à déplacer un cercle tant que la Tendance Fatalité est minoritaire. Il peut au maximum déplacer autant de cercles de Tendance que son Statut chez une même personne et par jour.",
+      ),
+      CasteStatus.maitre: CasteTechnique(
+        title: "Le livre et le temps",
+        description: "Une fois par jour, en réussissant un jet de Mental + Chance contre une Difficulté de 15, le personnage peut se souvenir d’un texte et obtenir des informations sur n'importe quel sujet traité par l'écrit (histoire, légende, géographie, science, etc.).",
+      ),
+      CasteStatus.grandMaitre: CasteTechnique(
+        title: "L'homme et le destin",
+        description: "Le personnage est tellement en phase avec le monde qu'il peut lire dans le destin comme dans un livre. Une fois par jour, il peut interroger les astres pour obtenir une réponse à l'une des questions qu'il se pose sur son avenir ou celui de ses compagnons.",
+      ),
+    },
     Caste.mage: {
       CasteStatus.apprenti: CasteTechnique(
         title: "La matière",
@@ -300,6 +494,28 @@ enum Caste {
       CasteStatus.grandMaitre: CasteTechnique(
         title: "La source",
         description: "Une fois par jour, le personnage peut puiser dans sa Réserve personnelle de Points de Magie pour soigner des blessures, à raison d’une case de blessure par Point de Magie. Les points dépensés de cette façon ne peuvent être regagnés avant le prochain lever du soleil - quel que soit le moyen utilisé (méditation, rituel, etc.).",
+      ),
+    },
+    Caste.mageNoir: {
+      CasteStatus.apprenti: CasteTechnique(
+        title: "La matière",
+        description: "Pour chaque Sphère qu'il maîtrise, le personnage peut faire apparaître, une fois par jour, un petit volume d’élément qu’il pourra ensuite façonner ou utiliser à sa guise. Il peut s'agir d’une petite flamme, d'une poignée de terre, d’un litre d’eau pure, etc.",
+      ),
+      CasteStatus.initie: CasteTechnique(
+        title: "L'esprit",
+        description: "Chaque jour, le personnage dispose de deux NR gratuits qu’il peut utiliser pour augmenter les effets de n'importe quel sort (portée, dommages, précision, etc.). Ces bonus peuvent s'appliquer sur deux sorts différents ou pour améliorer deux effets d’un même sort. S'ils ne sont pas dépensés, ils sont tout simplement perdus.",
+      ),
+      CasteStatus.expert: CasteTechnique(
+        title: "La volonté",
+        description: "En dépensant 2 Points de Maîtrise et 2 Points de Magie, le personnage peut lancer et conserver un dé supplémentaire pour effectuer n'importe quel jet de Discipline magique. Ce dé neutre n’est pas concerné par la règle des Tendances.",
+      ),
+      CasteStatus.maitre: CasteTechnique(
+        title: "La flamme",
+        description: "Une fois par combat, le personnage peut lancer un sort de Magie instinctive sans dépenser aucun Point de Magie.",
+      ),
+      CasteStatus.grandMaitre: CasteTechnique(
+        title: "La source noire",
+        description: "Une fois par jour, le mage noir peut puiser dans sa Réserve personnelle de Points de Magie pour infliger des blessures, à raison d’une égratignure pour deux Points de Magie. Les points utilisés de cette manière ne peuvent être regagnés avant le prochain coucher de soleil - quel que soit le moyen utilisé (méditation, rituel, etc.).",
       ),
     },
     Caste.prodige: {
@@ -346,7 +562,51 @@ enum Caste {
         description: "En dépensant définitivement 1 point de Résistance, le personnage peut rappeler à la vie n'importe quel être humain possédant au moins 3 en Tendance Dragon.",
       ),
     },
+    Caste.protecteurNoir: {
+      CasteStatus.apprenti: CasteTechnique(
+        title: "L'écaille du dragon",
+        description: "Si son jet de parade au bouclier est réussi contre la Difficulté de base, le personnage gagne automatiquement un Niveau de Réussite supplémentaire.",
+      ),
+      CasteStatus.initie: CasteTechnique(
+        title: "La cuirasse du dragon",
+        description: "Chaque fois qu’il effectue une parade au bouclier, le personnage peut dépenser des Points de Maîtrise APRÈS son jet pour réussir sa défense.",
+      ),
+      CasteStatus.expert: CasteTechnique(
+        title: "Le souffle du dragon noir",
+        description: "Lorsque le personnage choisit le dé de la Fatalité au cours d'un combat, il gagne automatiquement un NR supplémentaire, et ce, quelle que soit l’action, si son jet est réussi.",
+      ),
+      CasteStatus.maitre: CasteTechnique(
+        title: "Le sang du dragon noir",
+        description: "Le protecteur noir peut prendre sur lui les blessures de tout être vivant à vue, qui se forme alors dans sa chair. Il peut diminuer chaque blessure d’un seuil par Niveau de Réussite sur un jet de Physique + Volonté Difficulté 10. Il Iui est impossible de transférer une case de Mort.",
+      ),
+      CasteStatus.grandMaitre: CasteTechnique(
+        title: "Réveil d’entre les morts",
+        description: "En dépensant définitivement un Point de Fatalité ou de Maîtrise, le protecteur noir peut transformer en mort asservi n'importe quel cadavre “frais” d’être humain (moins d’une semaine). Voir le sort Servitude de l’Ombre pour les caractéristiques de ce serviteur.",
+      ),
+    },
     Caste.voyageur: {
+      CasteStatus.apprenti: CasteTechnique(
+        title: "À la croisée des chemins",
+        description: "En réussissant un jet de Mental + Empathie contre une Difficulté de 10, le personnage peut comprendre le sens général de n'importe quelle phrase prononcée en langue inconnue. De plus, en réussissant un second jet, identique, il peut faire comprendre quelques mots à son interlocuteur et échanger de brèves informations.",
+      ),
+      CasteStatus.initie: CasteTechnique(
+        title: "Porté par le vent",
+        description: "En dépensant tous ses Points de Chance restant (minimum 1), le personnage peut se jeter à terre et éviter n'importe quelle attaque. La Difficulté de toutes ses actions pour le tour suivant sera augmentée de 5 et le personnage ne pourra regagner aucun Point de Chance durant le reste du combat.",
+      ),
+      CasteStatus.expert: CasteTechnique(
+        title: "Projectile cardinal",
+        description: "Une fois par tour, s’il utilise une arme de distance (de jet ou à projectiles), le personnage peut renoncer à ses actions pour ne lancer qu’un seul projectile, dont les dommages seront doublés. Pour bénéficier de cet avantage, le personnage doit annoncer l’utilisation de sa Technique avant de déterminer son Initiative. Il conserve ensuite ses dés d'actions devant lui jusqu’à ce qu’il décide de lancer son projectile. Aucune action de défense n’est possible durant ce tour.",
+      ),
+      CasteStatus.maitre: CasteTechnique(
+        title: "Le couvert de la nuit",
+        description: "En utilisant les éléments de décor environnants, le personnage peut se rendre si discret que nul ne remarquera sa présence. S'il reste immobile, aucun jet n’est nécessaire. S'il se déplace, sa progression est limitée à sa Coordination en mêtres par tour et tous les individus présents dans un rayon de 15 mètres ont droit à un jet de Mental + Perception contre une Difficulté de 20 pour tenter de repérer la présence du personnage. Ce jet doit être effectué à chaque tour où le personnage se déplace. La Difficulté de ce jet peut être augmentée ou diminuée de 5 en fonction du décor. Le personnage est immédiatement repéré s’il effectue une action agressive ou bruyante, mais s’il parvient à moins de 5 mètres d’un adversaire, il peut porter une attaque dont la Difficulté sera réduite de 10. Aucune défense n’est possible.",
+      ),
+      CasteStatus.grandMaitre: CasteTechnique(
+        title: "L'œil du fou",
+        description: "Sans modifier son apparence, le personnage est capable de tromper n'importe quel interlocuteur humain en se faisant passer pour un individu qu’il connaît - ou qu’il invente. La victime de l'illusion est persuadée de faire face à l’homme ou la femme incarnée par le personnage. Aucun jet n'est possible pour deviner la supercherie.",
+      ),
+    },
+    Caste.voyageurFataliste: {
       CasteStatus.apprenti: CasteTechnique(
         title: "À la croisée des chemins",
         description: "En réussissant un jet de Mental + Empathie contre une Difficulté de 10, le personnage peut comprendre le sens général de n'importe quelle phrase prononcée en langue inconnue. De plus, en réussissant un second jet, identique, il peut faire comprendre quelques mots à son interlocuteur et échanger de brèves informations.",

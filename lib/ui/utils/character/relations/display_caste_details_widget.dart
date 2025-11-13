@@ -29,7 +29,7 @@ class CharacterDisplayCasteDetailsWidget extends StatelessWidget {
     for(var p in character.caste.privileges) {
       privilegesWidgets.add(
         _CasteInfoWidget(
-          title: p.privilege.title,
+          title: '${p.privilege.title} (${p.cost})',
           details: p.description,
           description: p.privilege.description,
         )

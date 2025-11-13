@@ -148,11 +148,18 @@ const _$SkillEnumMap = {
 const _$CasteEnumMap = {
   Caste.sansCaste: 'sansCaste',
   Caste.artisan: 'artisan',
+  Caste.artisanNoir: 'artisanNoir',
   Caste.combattant: 'combattant',
+  Caste.combattantNoir: 'combattantNoir',
   Caste.commercant: 'commercant',
+  Caste.commercantNoir: 'commercantNoir',
   Caste.erudit: 'erudit',
+  Caste.eruditNoir: 'eruditNoir',
   Caste.mage: 'mage',
+  Caste.mageNoir: 'mageNoir',
   Caste.prodige: 'prodige',
   Caste.protecteur: 'protecteur',
+  Caste.protecteurNoir: 'protecteurNoir',
   Caste.voyageur: 'voyageur',
+  Caste.voyageurFataliste: 'voyageurFataliste',
 };

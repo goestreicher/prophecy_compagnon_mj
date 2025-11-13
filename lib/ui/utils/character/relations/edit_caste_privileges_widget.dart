@@ -51,8 +51,7 @@ class _PrivilegesWidget extends StatelessWidget {
     for(var p in character.caste.privileges) {
       widgets.add(
         _PrivilegeWidget(
-          privilege: p.privilege,
-          description: p.description,
+          privilege: p,
           onDeleted: () => character.caste.privileges.remove(p),
         )
       );
@@ -92,12 +91,10 @@ class _PrivilegesWidget extends StatelessWidget {
 class _PrivilegeWidget extends StatelessWidget {
   const _PrivilegeWidget({
     required this.privilege,
-    this.description,
     required this.onDeleted,
   });
 
-  final CastePrivilege privilege;
-  final String? description;
+  final CharacterCastePrivilege privilege;
   final void Function() onDeleted;
 
   @override
@@ -121,20 +118,20 @@ class _PrivilegeWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '${privilege.title} (${privilege.cost})',
+                  '${privilege.privilege.title} (${privilege.cost})',
                   style: theme.textTheme.bodySmall!.copyWith(
                     fontWeight: FontWeight.bold,
                   )
                 ),
-                if(description != null)
+                if(privilege.description != null)
                   Text(
-                    description!,
+                    privilege.description!,
                     style: theme.textTheme.bodySmall,
                   )
               ],
             ),
           ),
-          if(privilege.description.isNotEmpty)
+          if(privilege.privilege.description.isNotEmpty)
             IconButton(
               style: IconButton.styleFrom(
                 iconSize: 16.0,
@@ -145,7 +142,7 @@ class _PrivilegeWidget extends StatelessWidget {
               onPressed: () {
                 Navigator.of(context).push(
                   DismissibleDialog<void>(
-                    title: privilege.title,
+                    title: privilege.privilege.title,
                     content: ConstrainedBox(
                       constraints: BoxConstraints(
                         minWidth: 400,
@@ -154,7 +151,7 @@ class _PrivilegeWidget extends StatelessWidget {
                       ),
                       child: SingleChildScrollView(
                         child: Text(
-                          privilege.description,
+                          privilege.privilege.description,
                         ),
                       )
                     )

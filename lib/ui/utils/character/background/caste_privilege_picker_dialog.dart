@@ -21,16 +21,20 @@ class CastePrivilegePickerDialog extends StatefulWidget {
 class _CastePrivilegePickerDialogState extends State<CastePrivilegePickerDialog> {
   final TextEditingController casteController = TextEditingController();
   final TextEditingController privilegeController = TextEditingController();
+  final TextEditingController costController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
 
   Set<CastePrivilege> assignedPrivileges = <CastePrivilege>{};
   Caste? currentCaste;
   final List<CastePrivilege> privilegesForCurrentCaste = <CastePrivilege>[];
   CastePrivilege? privilege;
+  final List<int> costs = <int>[];
+  int? cost;
   String? currentDescription;
 
   void updateForCurrentCaste() {
     privilege = null;
+    cost = null;
     privilegesForCurrentCaste.clear();
     privilegeController.clear();
     if(currentCaste == null) return;
@@ -39,6 +43,19 @@ class _CastePrivilegePickerDialogState extends State<CastePrivilegePickerDialog>
         (CastePrivilege p) => (p.caste == currentCaste || p.caste == Caste.sansCaste) && (p.unique == false || !assignedPrivileges.contains(p))
       )
     );
+  }
+
+  void updateCosts() {
+    setState(() {
+      costs.clear();
+    });
+
+    if(privilege == null) return;
+
+    setState(() {
+      costs.addAll(privilege!.cost);
+      if(costs.length == 1) cost = costs[0];
+    });
   }
 
   @override
@@ -93,13 +110,37 @@ class _CastePrivilegePickerDialogState extends State<CastePrivilegePickerDialog>
                           requestFocusOnTap: true,
                           expandedInsets: EdgeInsets.zero,
                           onSelected: (CastePrivilege? i) {
+                            costController.clear();
                             setState(() {
                               privilege = i;
+                              cost = null;
                             });
+                            updateCosts();
                           },
                           dropdownMenuEntries: privilegesForCurrentCaste
                             .map((CastePrivilege p) => DropdownMenuEntry(value: p, label: p.title))
                             .toList(),
+                        ),
+                        DropdownMenuFormField(
+                          initialSelection: cost,
+                          controller: costController,
+                          label: const Text('Coût'),
+                          requestFocusOnTap: true,
+                          expandedInsets: EdgeInsets.zero,
+                          dropdownMenuEntries: costs.map(
+                              (int c) => DropdownMenuEntry(value: c, label: c.toString())
+                            ).toList(),
+                          onSelected: (int? v) {
+                            setState(() {
+                              cost = v;
+                            });
+                          },
+                          validator: (int? c) {
+                            if(privilege == null) return null;
+                            if(costController.text.isEmpty) return 'Valeur obligatoire';
+                            return null;
+                          },
+                          autovalidateMode: AutovalidateMode.disabled,
                         ),
                         if(privilege != null && privilege!.requireDetails)
                           TextFormField(

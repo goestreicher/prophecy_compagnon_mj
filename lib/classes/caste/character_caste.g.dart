@@ -11,6 +11,7 @@ CharacterCastePrivilege _$CharacterCastePrivilegeFromJson(
 ) => CharacterCastePrivilege(
   privilege: $enumDecode(_$CastePrivilegeEnumMap, json['privilege']),
   description: json['description'] as String?,
+  selectedCost: (json['selected_cost'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$CharacterCastePrivilegeToJson(
@@ -18,6 +19,7 @@ Map<String, dynamic> _$CharacterCastePrivilegeToJson(
 ) => <String, dynamic>{
   'privilege': _$CastePrivilegeEnumMap[instance.privilege]!,
   'description': instance.description,
+  'selected_cost': instance.selectedCost,
 };
 
 const _$CastePrivilegeEnumMap = {
@@ -33,12 +35,13 @@ const _$CastePrivilegeEnumMap = {
   CastePrivilege.outils: 'outils',
   CastePrivilege.psychometrie: 'psychometrie',
   CastePrivilege.reparationDeRoutine: 'reparationDeRoutine',
-  CastePrivilege.symbiose1: 'symbiose1',
-  CastePrivilege.symbiose3: 'symbiose3',
-  CastePrivilege.symbiose5: 'symbiose5',
+  CastePrivilege.symbiose: 'symbiose',
   CastePrivilege.expertiseArtisan: 'expertiseArtisan',
   CastePrivilege.faveurPolitiqueArtisan: 'faveurPolitiqueArtisan',
   CastePrivilege.tuteurArtisan: 'tuteurArtisan',
+  CastePrivilege.compagnonDuVoyage: 'compagnonDuVoyage',
+  CastePrivilege.faussaire: 'faussaire',
+  CastePrivilege.mecene: 'mecene',
   CastePrivilege.adaptation: 'adaptation',
   CastePrivilege.anticipation: 'anticipation',
   CastePrivilege.argotCombattant: 'argotCombattant',
@@ -55,6 +58,8 @@ const _$CastePrivilegeEnumMap = {
   CastePrivilege.compagnonsDeBatailleCombattant:
       'compagnonsDeBatailleCombattant',
   CastePrivilege.maitriseDArmureCombattant: 'maitriseDArmureCombattant',
+  CastePrivilege.dissimulation: 'dissimulation',
+  CastePrivilege.predateurNocture: 'predateurNocture',
   CastePrivilege.bonneFoi: 'bonneFoi',
   CastePrivilege.bonneFortune: 'bonneFortune',
   CastePrivilege.expertise: 'expertise',
@@ -71,6 +76,9 @@ const _$CastePrivilegeEnumMap = {
   CastePrivilege.connaissanceDuMondeCommercant: 'connaissanceDuMondeCommercant',
   CastePrivilege.messagerCommercant: 'messagerCommercant',
   CastePrivilege.relationsDAffairesCommercant: 'relationsDAffairesCommercant',
+  CastePrivilege.laCause: 'laCause',
+  CastePrivilege.majordome: 'majordome',
+  CastePrivilege.petitCarnet: 'petitCarnet',
   CastePrivilege.ambassade: 'ambassade',
   CastePrivilege.aplomb: 'aplomb',
   CastePrivilege.avalDraconique: 'avalDraconique',
@@ -85,6 +93,8 @@ const _$CastePrivilegeEnumMap = {
   CastePrivilege.faveurPolitiqueErudit: 'faveurPolitiqueErudit',
   CastePrivilege.messagerErudit: 'messagerErudit',
   CastePrivilege.psychologieErudit: 'psychologieErudit',
+  CastePrivilege.graphologue: 'graphologue',
+  CastePrivilege.reseauOcculte: 'reseauOcculte',
   CastePrivilege.anonymat: 'anonymat',
   CastePrivilege.approvisionnement: 'approvisionnement',
   CastePrivilege.aura: 'aura',
@@ -143,6 +153,10 @@ const _$CastePrivilegeEnumMap = {
   CastePrivilege.engagementMage: 'engagementMage',
   CastePrivilege.memoireMage: 'memoireMage',
   CastePrivilege.porteParoleMage: 'porteParoleMage',
+  CastePrivilege.discretion: 'discretion',
+  CastePrivilege.emotionsExacerbees: 'emotionsExacerbees',
+  CastePrivilege.espritEsclave: 'espritEsclave',
+  CastePrivilege.reveur: 'reveur',
   CastePrivilege.donDeBrorne: 'donDeBrorne',
   CastePrivilege.donDeHeyra: 'donDeHeyra',
   CastePrivilege.donDeKali: 'donDeKali',
@@ -173,6 +187,8 @@ const _$CastePrivilegeEnumMap = {
   CastePrivilege.signesDeBatailleProtecteur: 'signesDeBatailleProtecteur',
   CastePrivilege.engagementProtecteur: 'engagementProtecteur',
   CastePrivilege.notorieteProtecteur: 'notorieteProtecteur',
+  CastePrivilege.conviction: 'conviction',
+  CastePrivilege.sacrifice: 'sacrifice',
   CastePrivilege.archer: 'archer',
   CastePrivilege.chasseur: 'chasseur',
   CastePrivilege.compagnons: 'compagnons',
@@ -188,6 +204,9 @@ const _$CastePrivilegeEnumMap = {
   CastePrivilege.ambassadeVoyageur: 'ambassadeVoyageur',
   CastePrivilege.familierVoyageur: 'familierVoyageur',
   CastePrivilege.linguistiqueVoyageur: 'linguistiqueVoyageur',
+  CastePrivilege.compagnonDeShar: 'compagnonDeShar',
+  CastePrivilege.pionnier: 'pionnier',
+  CastePrivilege.souterrain: 'souterrain',
 };
 
 CharacterCaste _$CharacterCasteFromJson(Map<String, dynamic> json) =>
@@ -207,13 +226,20 @@ Map<String, dynamic> _$CharacterCasteToJson(CharacterCaste instance) =>
 const _$CasteEnumMap = {
   Caste.sansCaste: 'sansCaste',
   Caste.artisan: 'artisan',
+  Caste.artisanNoir: 'artisanNoir',
   Caste.combattant: 'combattant',
+  Caste.combattantNoir: 'combattantNoir',
   Caste.commercant: 'commercant',
+  Caste.commercantNoir: 'commercantNoir',
   Caste.erudit: 'erudit',
+  Caste.eruditNoir: 'eruditNoir',
   Caste.mage: 'mage',
+  Caste.mageNoir: 'mageNoir',
   Caste.prodige: 'prodige',
   Caste.protecteur: 'protecteur',
+  Caste.protecteurNoir: 'protecteurNoir',
   Caste.voyageur: 'voyageur',
+  Caste.voyageurFataliste: 'voyageurFataliste',
 };
 
 const _$CasteStatusEnumMap = {

@@ -55,7 +55,7 @@ class CharacterEditCasteCareerWidget extends StatelessWidget {
                 )
               ),
               dropdownMenuEntries: Career.values
-                .where((Career c) => c.caste == character.caste.caste)
+                .where((Career c) => c.castes.contains(character.caste.caste))
                 .map((Career c) => DropdownMenuEntry(value: c, label: c.title))
                 .toList(),
             );

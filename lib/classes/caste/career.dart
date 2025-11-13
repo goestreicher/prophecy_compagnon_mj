@@ -16,7 +16,7 @@ class CareerBenefit {
 
 enum Career {
   alchimiste(
-    caste: Caste.artisan,
+    castes: [Caste.artisan, Caste.artisanNoir],
     title: "L'alchimiste",
     interdict: CareerInterdict(
       title: "Tu ne corrompras pas les éléments fondamentaux" ,
@@ -28,7 +28,7 @@ enum Career {
     ),
   ),
   architecte(
-    caste: Caste.artisan,
+    castes: [Caste.artisan, Caste.artisanNoir],
     title: "L'architecte",
     interdict: CareerInterdict(
       title: "Tu n'entreprendras rien sans préparation",
@@ -40,7 +40,7 @@ enum Career {
     ),
   ),
   artisanElementaire(
-    caste: Caste.artisan,
+    castes: [Caste.artisan, Caste.artisanNoir],
     title: "L'artisan élémentaire",
     interdict: CareerInterdict(
       title: "Tu resteras en harmonie avec les énergies fondamentales",
@@ -52,7 +52,7 @@ enum Career {
     ),
   ),
   forgeron(
-    caste: Caste.artisan,
+    castes: [Caste.artisan, Caste.artisanNoir],
     title: 'Le forgeron',
     interdict: CareerInterdict(
       title: 'Tu ne tiendras aucune œuvre pour parfaite',
@@ -64,7 +64,7 @@ enum Career {
     ),
   ),
   mecaniste(
-    caste: Caste.artisan,
+    castes: [Caste.artisan, Caste.artisanNoir],
     title: 'Le mécaniste',
     interdict: CareerInterdict(
       title: "Tu n'auras d'autre but que l'évolution",
@@ -76,7 +76,7 @@ enum Career {
     ),
   ),
   mineur(
-    caste: Caste.artisan,
+    castes: [Caste.artisan, Caste.artisanNoir],
     title: 'Le mineur',
     interdict: CareerInterdict(
       title: "Tu ne souilleras pas le corps de l'Être Primordial",
@@ -88,7 +88,7 @@ enum Career {
     ),
   ),
   orfevre(
-    caste: Caste.artisan,
+    castes: [Caste.artisan, Caste.artisanNoir],
     title: "L'orfèvre",
     interdict: CareerInterdict(
       title: 'Tu honoreras ta caste par ton talent',
@@ -100,7 +100,7 @@ enum Career {
     ),
   ),
   tisserand(
-    caste: Caste.artisan,
+    castes: [Caste.artisan, Caste.artisanNoir],
     title: 'Le tisserand',
     interdict: CareerInterdict(
       title: "Tu magnifieras les traditions",
@@ -113,7 +113,7 @@ enum Career {
   ),
 
   aventurier(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: "L'aventurier",
     interdict: null,
     benefit: CareerBenefit(
@@ -122,7 +122,7 @@ enum Career {
     ),
   ),
   chevalier(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le chevalier',
     interdict: CareerInterdict(
       title: 'Tu feras honneur à ta caste',
@@ -134,7 +134,7 @@ enum Career {
     ),
   ),
   duelliste(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le duelliste',
     interdict: CareerInterdict(
       title: "Tu honoreras chaque adversaire",
@@ -146,7 +146,7 @@ enum Career {
     ),
   ),
   gladiateur(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le gladiateur',
     interdict: CareerInterdict(
       title: "Tu respecteras l'adversaire valeureux",
@@ -158,7 +158,7 @@ enum Career {
     ),
   ),
   guerrier(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le guerrier',
     interdict: CareerInterdict(
       title: "Tu ne feras preuve d'aucune lâcheté",
@@ -170,7 +170,7 @@ enum Career {
     ),
   ),
   lutteur(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le lutteur',
     interdict: CareerInterdict(
       title: "Tu n'useras pas d'artifice",
@@ -182,7 +182,7 @@ enum Career {
     ),
   ),
   maitreDArmes(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: "Le maître d'armes",
     interdict: CareerInterdict(
       title: "Tu ne manieras d'autre arme que la tienne",
@@ -194,7 +194,7 @@ enum Career {
     ),
   ),
   mercenaire(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le mercenaire',
     interdict: CareerInterdict(
       title: 'Tu ne trahiras point',
@@ -206,7 +206,7 @@ enum Career {
     ),
   ),
   paladin(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le paladin',
     interdict: CareerInterdict(
       title: 'Tu protégeras la vie',
@@ -218,7 +218,7 @@ enum Career {
     ),
   ),
   strategeCombattant(
-    caste: Caste.combattant,
+    castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le stratège',
     interdict: CareerInterdict(
       title: "Tu respecteras l'adversaire valeureux",
@@ -231,7 +231,7 @@ enum Career {
   ),
 
   courtisane(
-    caste: Caste.commercant,
+    castes: [Caste.commercant, Caste.commercantNoir],
     title: 'La courtisane',
     interdict: CareerInterdict(
       title: 'Tu ne renieras pas ta condition',
@@ -243,7 +243,7 @@ enum Career {
     ),
   ),
   diplomate(
-    caste: Caste.commercant,
+    castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le diplomate',
     interdict: CareerInterdict(
       title: 'Tu ne laisseras aucune situation tendre verse le meurtre',
@@ -255,7 +255,7 @@ enum Career {
     ),
   ),
   espion(
-    caste: Caste.commercant,
+    castes: [Caste.commercant, Caste.commercantNoir],
     title: "L'espion",
     interdict: CareerInterdict(
       title: 'Tu ne trahiras pas tes secrets',
@@ -267,7 +267,7 @@ enum Career {
     ),
   ),
   joueur(
-    caste: Caste.commercant,
+    castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le joueur',
     interdict: CareerInterdict(
       title: "Tu prendras les riques qui s'imposent",
@@ -279,7 +279,7 @@ enum Career {
     ),
   ),
   marchand(
-    caste: Caste.commercant,
+    castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le marchand',
     interdict: CareerInterdict(
       title: "Tu ne ruineras jamais pour t'enrichir",
@@ -291,7 +291,7 @@ enum Career {
     ),
   ),
   marchandItinerant(
-    caste: Caste.commercant,
+    castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le marchand itinérant',
     interdict: CareerInterdict(
       title: 'Tu pousseras toujours plus loin ta bourse et ta monture',
@@ -303,7 +303,7 @@ enum Career {
     ),
   ),
   mendiant(
-    caste: Caste.commercant,
+    castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le mendiant',
     interdict: CareerInterdict(
       title: 'Tu refuseras le confort et la possession matérielle',
@@ -315,7 +315,7 @@ enum Career {
     ),
   ),
   tenancier(
-    caste: Caste.commercant,
+    castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le tenancier',
     interdict: CareerInterdict(
       title: "Tu ne refuseras pas l'hospitalité",
@@ -327,7 +327,7 @@ enum Career {
     ),
   ),
   voleur(
-    caste: Caste.commercant,
+    castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le voleur',
     interdict: CareerInterdict(
       title: 'Tu ne voleras pas la vie',
@@ -339,7 +339,7 @@ enum Career {
     ),
   ),
   architectes(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les architectes',
     interdict: CareerInterdict(
       title: 'Tu ne cautionneras aucune hérésie',
@@ -351,7 +351,7 @@ enum Career {
     ),
   ),
   astronomes(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les astronomes',
     interdict: CareerInterdict(
       title: "Tu ne chercheras aucune vérité fondamentale dans les astres",
@@ -363,7 +363,7 @@ enum Career {
     ),
   ),
   cartographes(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les cartographes',
     interdict: CareerInterdict(
       title: "Tu peindras fidèlement le portrait de l'Être Primordial",
@@ -375,7 +375,7 @@ enum Career {
     ),
   ),
   conteurs(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les conteurs',
     interdict: CareerInterdict(
       title: 'Tu ne souilleras le verbe d\'aucune pensée impure',
@@ -387,7 +387,7 @@ enum Career {
     ),
   ),
   erudits(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les érudits',
     interdict: CareerInterdict(
       title: 'Tu ne laisseras aucune passion motiver ton jugement',
@@ -399,7 +399,7 @@ enum Career {
     ),
   ),
   herboristes(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les herboristes',
     interdict: CareerInterdict(
       title: 'Tu ne corrompras la tature par aucune de tes pratiques',
@@ -411,7 +411,7 @@ enum Career {
     ),
   ),
   historiens(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les historiens',
     interdict: CareerInterdict(
       title: "Tu n'occulteras aucune vérité, n'inventeras aucun mensonge",
@@ -423,7 +423,7 @@ enum Career {
     ),
   ),
   medecins(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les médecins',
     interdict: CareerInterdict(
       title: "Tu ne seras l'agent d'aucune destruction",
@@ -435,7 +435,7 @@ enum Career {
     ),
   ),
   navigateurs(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les navigateurs',
     interdict: CareerInterdict(
       title: "Tu ne brigueras d'autre liberté que celle offerte par la Mère des Océans",
@@ -447,7 +447,7 @@ enum Career {
     ),
   ),
   scientifiques(
-    caste: Caste.erudit,
+    castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les scientifiques',
     interdict: CareerInterdict(
       title: 'Tu ne créeras aucun instrument de rébellien',
@@ -460,7 +460,7 @@ enum Career {
   ),
 
   conjurateur(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Conjurateur',
     interdict: CareerInterdict(
       title: "Tu ne faibliras point.",
@@ -472,7 +472,7 @@ enum Career {
     ),
   ),
   enchanteur(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: "L'enchanteur",
     interdict: CareerInterdict(
       title: 'Tu ne créeras aucune forme de vie',
@@ -484,7 +484,7 @@ enum Career {
     ),
   ),
   fideleDeChimere(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Le fidèle de Chimère',
     interdict: CareerInterdict(
       title: 'Nenya sera ton seul maître',
@@ -496,7 +496,7 @@ enum Career {
     ),
   ),
   gardienMage(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Gardien',
     interdict: CareerInterdict(
       title: 'Tu veilleras à la pureté de la magie.',
@@ -508,7 +508,7 @@ enum Career {
     ),
   ),
   generaliste(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Le généraliste',
     interdict: CareerInterdict(
       title: "Tu ne t'opposeras à aucun élément",
@@ -520,7 +520,7 @@ enum Career {
     ),
   ),
   guerisseurMage(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Le guérisseur',
     interdict: CareerInterdict(
       title: "Tu ne refuseras pas ton aide",
@@ -532,7 +532,7 @@ enum Career {
     ),
   ),
   invocateur(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: "L'invocateur",
     interdict: CareerInterdict(
       title: "Tu ne mettras pas l'équilibre en péril",
@@ -544,7 +544,7 @@ enum Career {
     ),
   ),
   mageDeCombat(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Le mage de combat',
     interdict: CareerInterdict(
       title: "Tu ne t'opposras pas aux faibles",
@@ -556,7 +556,7 @@ enum Career {
     ),
   ),
   questeurBlanc(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Questeur blanc',
     interdict: CareerInterdict(
       title: "Tu protégeras l'homme de la magie, et la magie de l'homme",
@@ -568,7 +568,7 @@ enum Career {
     ),
   ),
   reveur(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Le rêveur',
     interdict: CareerInterdict(
       title: "Tu ne pertuberas pas l'ordre naturel",
@@ -580,7 +580,7 @@ enum Career {
     ),
   ),
   specialisteDesRituels(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Le spécialiste des rituels',
     interdict: CareerInterdict(
       title: 'Tu suivras la Voie du Secret',
@@ -592,7 +592,7 @@ enum Career {
     ),
   ),
   specialisteElementaire(
-    caste: Caste.mage,
+    castes: [Caste.mage, Caste.mageNoir],
     title: 'Le spécialiste élémentaire',
     interdict: CareerInterdict(
       title: "Tu ne vivras que pour un élément",
@@ -605,7 +605,7 @@ enum Career {
   ),
 
   gardienProdige(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le gardien',
     interdict: CareerInterdict(
       title: "Tu n'abandonneras pas ton devoir",
@@ -618,7 +618,7 @@ enum Career {
   ),
 
   fervent(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le fervent',
     interdict: CareerInterdict(
       title: 'Tu ne tueras point',
@@ -630,7 +630,7 @@ enum Career {
     ),
   ),
   guerisseurProdige(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le guérisseur',
     interdict: CareerInterdict(
       title: 'Tu ne refuseras pas ton aide',
@@ -642,7 +642,7 @@ enum Career {
     ),
   ),
   mediateur(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le médiateur',
     interdict: CareerInterdict(
       title: 'Tu ne permettras aucun conflit',
@@ -654,7 +654,7 @@ enum Career {
     ),
   ),
   missionnaire(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le missionnaire',
     interdict: CareerInterdict(
       title: 'Tu ne subiras pas le doute',
@@ -666,7 +666,7 @@ enum Career {
     ),
   ),
   poeteDeLaNature(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le poète de la nature',
     interdict: CareerInterdict(
       title: 'Tu ne briseras aucune harmonie',
@@ -678,7 +678,7 @@ enum Career {
     ),
   ),
   prodigeAnimal(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le prodige animal',
     interdict: CareerInterdict(
       title: "Tu n'enfreindras pas les lois de la nature",
@@ -690,7 +690,7 @@ enum Career {
     ),
   ),
   prophete(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le prophète',
     interdict: CareerInterdict(
       title: "Tu ne pertuberas pas l'ordre naturel",
@@ -702,7 +702,7 @@ enum Career {
     ),
   ),
   sage(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le sage',
     interdict: CareerInterdict(
       title: 'Tu ne garderas aucun secret',
@@ -714,7 +714,7 @@ enum Career {
     ),
   ),
   tuteur(
-    caste: Caste.prodige,
+    castes: [Caste.prodige],
     title: 'Le tuteur',
     interdict: CareerInterdict(
       title: "Tu n'auras d'autre maître que la voie du savoir",
@@ -727,7 +727,7 @@ enum Career {
   ),
 
   gardeDuCorps(
-    caste: Caste.protecteur,
+    castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le garde du corps',
     interdict: CareerInterdict(
       title: 'Tu accepteras tout sacrifice',
@@ -739,7 +739,7 @@ enum Career {
     ),
   ),
   ingenieurMilitaire(
-    caste: Caste.protecteur,
+    castes: [Caste.protecteur, Caste.protecteurNoir],
     title: "L'ingénieur militaire",
     interdict: CareerInterdict(
       title: 'Tu ne te détourneras pas de ta voie',
@@ -751,7 +751,7 @@ enum Career {
     ),
   ),
   inquisiteur(
-    caste: Caste.protecteur,
+    castes: [Caste.protecteur, Caste.protecteurNoir],
     title: "L'inquisiteur",
     interdict: CareerInterdict(
       title: 'Tu ne connaîtras pas le doute',
@@ -763,7 +763,7 @@ enum Career {
     ),
   ),
   instructeur(
-    caste: Caste.protecteur,
+    castes: [Caste.protecteur, Caste.protecteurNoir],
     title: "L'instructeur",
     interdict: CareerInterdict(
       title: 'Tu transmettras la tradition',
@@ -775,7 +775,7 @@ enum Career {
     ),
   ),
   legionnaire(
-    caste: Caste.protecteur,
+    castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le légionnaire',
     interdict: CareerInterdict(
       title: 'Tu feras ton devoir',
@@ -787,7 +787,7 @@ enum Career {
     ),
   ),
   milicien(
-    caste: Caste.protecteur,
+    castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le milicien',
     interdict: CareerInterdict(
       title: 'Tu respecteras la loi',
@@ -799,7 +799,7 @@ enum Career {
     ),
   ),
   protecteurItinerant(
-    caste: Caste.protecteur,
+    castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le protecteur itinérant',
     interdict: CareerInterdict(
       title: "Tu n'oublieras jamais ta condition",
@@ -811,7 +811,7 @@ enum Career {
     ),
   ),
   soldat(
-    caste: Caste.protecteur,
+    castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le soldat',
     interdict: CareerInterdict(
       title: 'Tu respecteras ton supérieur',
@@ -823,7 +823,7 @@ enum Career {
     ),
   ),
   strategeProtecteur(
-    caste: Caste.protecteur,
+    castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le stratège',
     interdict: CareerInterdict(
       title: "Tu sacrifieras l'individu à l'armée",
@@ -836,7 +836,7 @@ enum Career {
   ),
 
   chasseurs(
-    caste: Caste.voyageur,
+    castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les chasseurs',
     interdict: CareerInterdict(
       title: "Tu respecteras l'ordre naturel et le cycle de la vie",
@@ -848,7 +848,7 @@ enum Career {
     ),
   ),
   eclaireurs(
-    caste: Caste.voyageur,
+    castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les éclaireurs',
     interdict: CareerInterdict(
       title: 'Tu ne refuseras aucun périple, aucune traversée',
@@ -860,7 +860,7 @@ enum Career {
     ),
   ),
   errants(
-    caste: Caste.voyageur,
+    castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les errants',
     interdict: CareerInterdict(
       title: 'Tu ne souilleras pas la mémoire des contrées que tu visites',
@@ -872,7 +872,7 @@ enum Career {
     ),
   ),
   explorateurs(
-    caste: Caste.voyageur,
+    castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les explorateurs',
     interdict: CareerInterdict(
       title: "Tu ne garderas secrète aucune découverte d'importance",
@@ -884,7 +884,7 @@ enum Career {
     ),
   ),
   menestrels(
-    caste: Caste.voyageur,
+    castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les ménestrels',
     interdict: CareerInterdict(
       title: "Tu n'altéreras pas la vérité de l'Histoire",
@@ -896,7 +896,7 @@ enum Career {
     ),
   ),
   messagers(
-    caste: Caste.voyageur,
+    castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les messagers',
     interdict: CareerInterdict(
       title: "Tu ne priveras tes pairs d'aucune information",
@@ -908,7 +908,7 @@ enum Career {
     ),
   ),
   missionnaires(
-    caste: Caste.voyageur,
+    castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les missionnaires',
     interdict: CareerInterdict(
       title: "Tu ne détourneras pas l'enseignement draconique",
@@ -921,13 +921,13 @@ enum Career {
   )
   ;
 
-  final Caste caste;
+  final List<Caste> castes;
   final String title;
   final CareerInterdict? interdict;
   final CareerBenefit benefit;
 
   const Career({
-    required this.caste,
+    required this.castes,
     required this.title,
     this.interdict,
     required this.benefit,
