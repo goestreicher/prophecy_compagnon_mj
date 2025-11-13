@@ -849,7 +849,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
 
     saveNonExportableJson(j);
 
-    if(j.containsKey('unique') && j['unique'] && j.containsKey('equipment') && j['equipment'] is List) {
+    if((!j.containsKey('unique') || !j['unique']) && j.containsKey('equipment') && j['equipment'] is List) {
       for(Map<String, dynamic> e in j['equipment']) {
         e.remove('uuid');
       }

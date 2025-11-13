@@ -207,20 +207,20 @@ class _CreatureDisplayWidgetState extends State<CreatureDisplayWidget> {
                 if(creature.favors.isNotEmpty)
                   EntityDisplayDraconicFavorsWidget(
                     entity: creature,
-                  )
+                  ),
+                if(hasWeapon || hasArmor)
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    spacing: 16.0,
+                    children: [
+                      if(hasWeapon)
+                        Expanded(child: DisplayWeaponsWidget(entity: creature)),
+                      if(hasArmor)
+                        Expanded(child: DisplayArmorWidget(entity: creature)),
+                    ],
+                  ),
               ],
             ),
-            if(hasWeapon || hasArmor)
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 16.0,
-                children: [
-                  if(hasWeapon)
-                    Expanded(child: DisplayWeaponsWidget(entity: creature)),
-                  if(hasArmor)
-                    Expanded(child: DisplayArmorWidget(entity: creature)),
-                ],
-              ),
             ExpansionTile(
               title: const Text('Compétences'),
               controlAffinity: ListTileControlAffinity.leading,

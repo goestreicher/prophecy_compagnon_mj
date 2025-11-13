@@ -202,6 +202,7 @@ class SkillEditWidget extends StatelessWidget {
                     width: 80,
                     child: NumIntInputWidget(
                       initialValue: skill.value,
+                      maxValue: 20,
                       onChanged: (int value) => skill.value = value,
                     ),
                   ),
@@ -270,6 +271,7 @@ class SpecializedSkillEditWidget extends StatelessWidget {
                 width: 80,
                 child: NumIntInputWidget(
                   initialValue: skill.value,
+                  maxValue: 20,
                   onChanged: (int value) => skill.value = value,
                 ),
               ),

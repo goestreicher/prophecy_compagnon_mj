@@ -694,7 +694,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
 
     saveNonExportableJson(j);
 
-    if(j.containsKey('unique') && !j['unique'] && j.containsKey('equipment') && j['equipment'] is List) {
+    if((!j.containsKey('unique') || !j['unique']) && j.containsKey('equipment') && j['equipment'] is List) {
       for(var e in j['equipment']) {
         (e as Map<String, dynamic>).remove('uuid');
       }
