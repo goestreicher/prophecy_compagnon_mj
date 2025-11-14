@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/caste/base.dart';
 import '../../../../classes/caste/character_caste.dart';
-import '../../../../classes/caste/privileges.dart';
 import '../../../../classes/human_character.dart';
 import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';

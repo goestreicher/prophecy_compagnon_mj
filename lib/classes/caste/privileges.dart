@@ -600,8 +600,8 @@ enum CastePrivilege {
       cost: [3]
   ),
   nomDeKalimsshar(
-      caste: Caste.mage,
-      title: 'Nom de Kalimsshar (Mage de l\'Ombre)',
+      caste: Caste.mageNoir,
+      title: 'Nom de Kalimsshar',
       description: "En évoquant à demi mots son affiliation au Héraut de la Fatalité, le personnage peut provoquer la crainte et le respect de son interlocuteur si celui-ci est de Statut équivalent ou inférieur (ou croit l'être). Le personnage effectue un jet de Social + Intimidation contre Mental + Volonté de sa cible. Avec un jet réussi, le personnage provoque la passivité, l'hésitation et la crainte. Avec un Niveau de Réussite, la victime est effrayée et incapable d'agir à l'encontre du personnage. Elle est tremblante et hésitante. Avec deux Niveaux de Réussite, la victime est paralysée de peur et sera incapable de parler de cette expérience par peur des représailles.",
       cost: [3]
   ),
@@ -649,8 +649,8 @@ enum CastePrivilege {
       cost: [4]
   ),
   puissanceDeSang(
-      caste: Caste.mage,
-      title: 'Puissance de sang (Mage de l\'Ombre)',
+      caste: Caste.mageNoir,
+      title: 'Puissance de sang',
       description: "Lorsque l'Augure Noir décide de puiser dans ses Réserves et de se mutiler pour obtenir des Points de Magie, il obtient deux Points de Magie par case cochée au lieu d'un seul.",
       cost: [5]
   ),
@@ -810,8 +810,8 @@ enum CastePrivilege {
       cost: [4]
   ),
   voixDeKalimsshar(
-      caste: Caste.mage,
-      title: 'Voix de Kalimsshar (Mage de l\'Ombre)',
+      caste: Caste.mageNoir,
+      title: 'Voix de Kalimsshar',
       description: "Lorsque le personnage effectue un jet en rapport avec l'Attribut Social, il peut doubler cet Attribut pour un jet. Ce Privilège est utilisable une fois par jour par Point de Tendance Fatalité.",
       cost: [3]
   ),

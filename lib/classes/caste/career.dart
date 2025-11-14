@@ -555,6 +555,30 @@ enum Career {
       description: "Au début de chaque tour de combat, le personnage peut ajouter son niveau de Statut à la valeur de l'un de ses dés d’Initiative. De plus, s’il se bat sans arme et en usant de magie, il ajoute son de Statut à ses dommages et divise par deux l’indice de protection de l’armure adverse.",
     ),
   ),
+  necromant(
+    castes: [Caste.mageNoir],
+    title: 'Le nécromant',
+    interdict: CareerInterdict(
+      title: "L'Éternité n'existe pas",
+      description: "",
+    ),
+    benefit: CareerBenefit(
+      title: 'Sacrifice',
+      description: "Le nécromant peut canaliser l'énergie vitale d’un être en train de mourir, que ce soit de son fait ou d’une cause extérieure (maladie, vieillesse, combat, etc…). En se concentrant, il peut transformer cette énergie en Points de Magie. Il effectue un jet de Mental + Sphère de l’Ombre contre une Difficulté de 10. Le mage obtient 1 + 1 par Niveau de Réussite Point de Magie dans sa Sphère d’Ombre ou dans sa Réserve, jusqu'à un maximum égal au nombre de cases de blessures de la créature (cochées ou non). Il ne peut les attribuer à d’autres Sphères. Les Expert en Sphère de l'ombre sont les seuls à pouvoir utiliser ce Bénéfice sur un dragon ou une créature élémentaire (ou invoquée). Les morts vivants ne sont jamais affectés. Ces points sont durables et limités par la Sphère ou la Réserve. Ce Bénéfice doit être utilisé dans le même tour ou le tour suivant la mort de la victime.",
+    ),
+  ),
+  profanateur(
+    castes: [Caste.mageNoir],
+    title: 'Le profanateur',
+    interdict: CareerInterdict(
+      title: "Tu ne t'engageras jamais",
+      description: "",
+    ),
+    benefit: CareerBenefit(
+      title: 'Murmures des ombres',
+      description: "Lorsqu’il tente de modifier les convictions d’une personne (que ce soit par l’utilisation d’un sort ou par Baratin ou Psychologie), le personnage peut ajouter sa Tendance Fatalité au résultat de son jet. Il est alors investi de la langue mielleuse de Kalimsshar et trouve plus facilement les mots qui sèmeront le doute, provoqueront la sédition et libéreront son interlocuteur du carcan de ses convictions. Bon nombre de ces mages sont alliés avec les Tentateurs, auxquels ils fournissent une aide magique considérable.",
+    ),
+  ),
   questeurBlanc(
     castes: [Caste.mage, Caste.mageNoir],
     title: 'Questeur blanc',
@@ -601,6 +625,18 @@ enum Career {
     benefit: CareerBenefit(
       title: "Guidé par l'élément",
       description: "Chaque matin, au réveil, le personnage peut effectuer un jet de Mental + Sphère spécialisée contre une Difficulté de 10. S’il réussit, il gagne pour la journée un nombre de Points de Magie de sa Sphère égal à son niveau de Statut + le nombre de Niveaux de Réussite du jet. Les points non dépensés sont perdus le lendemain matin.",
+    ),
+  ),
+  tueurDeReves(
+    castes: [Caste.mageNoir],
+    title: 'Le tueur de rêves',
+    interdict: CareerInterdict(
+      title: "Tu ne pénètreras jamais l'esprit des dragons",
+      description: "",
+    ),
+    benefit: CareerBenefit(
+      title: 'Intrusion mentale',
+      description: "Le tueur de rêves acquiert un bonus égal à sa Tendance Fatalité lorsqu’il utilise un sort visant à entrer dans l’esprit d’une victime plongée dans un cauchemar (le meneur de jeu est libre de décider de la présence de ce cauchemar). Une fois dans l’Éther, il peut ajouter sa Tendance Fatalité à tous ses jets impliquant l’Attribut Social.",
     ),
   ),
 

@@ -209,5 +209,61 @@
       "herosEtAventuriers"
     ],
     "is_default": true
+  },
+  {
+    "title": "Compagnons de Khyméra",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Culte du Crépuscule",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Disciples de Shaddi",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Indighirka",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Légion des Ténèbres",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Maîtres de l'ombre",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Porteurs de cauchemars",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Yaminaï",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
   }
 ]
