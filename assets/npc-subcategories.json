@@ -91,6 +91,13 @@
     "is_default": true
   },
   {
+    "title": "Élus de Kalimsshar",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Sans Caste",
     "categories": [
       "generique",
