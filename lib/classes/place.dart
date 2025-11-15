@@ -186,6 +186,7 @@ class PlaceSummary extends ResourceBaseClass {
       'places-les-forges-de-kezyr.json',
       'places-les-foudres-de-kroryn.json',
       'places-les-orphelins-de-szyl.json',
+      'places-les-secrets-de-kalimsshar.json',
       'places-les-versets-d-ozyr.json',
       'places-les-voiles-de-nenya.json',
     ];
