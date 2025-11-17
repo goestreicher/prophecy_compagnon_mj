@@ -188,6 +188,7 @@ class _CreatureListFilterWidgetState extends State<CreatureListFilterWidget> {
                 setState(() {
                   currentFilter.search = value;
                 });
+                widget.onFilterChanged(currentFilter);
               }
             },
           ),
