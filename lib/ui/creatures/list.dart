@@ -91,13 +91,12 @@ class _CreaturesListPageState extends State<CreaturesListPage> {
           selected: selected,
           onSelected: (String? id) {
             if(id == null && GoRouter.of(context).state.fullPath!.endsWith('/:uuid')) {
-              context.go('/creatures');
+              context.replace('/creatures');
             }
-            else {
-              setState(() {
-                selected = id;
-              });
-            }
+
+            setState(() {
+              selected = id;
+            });
           },
           onEditRequested: (String id) async {
             context.go('/creatures/$id/edit');

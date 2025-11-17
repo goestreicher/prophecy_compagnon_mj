@@ -66,6 +66,7 @@ class _NPCCreateWidgetState extends State<NPCCreateWidget> {
         }
         else {
           NonPlayerCharacter.removeFromCache(npc!.id);
+          npc = null;
         }
 
         widget.onNPCCreated(npc);

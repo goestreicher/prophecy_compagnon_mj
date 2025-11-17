@@ -64,6 +64,7 @@ class _CreatureCreateWidgetState extends State<CreatureCreateWidget> {
         }
         else {
           Creature.removeFromCache(creature!.id);
+          creature = null;
         }
 
         widget.onCreatureCreated(creature);

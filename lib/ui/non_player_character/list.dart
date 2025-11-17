@@ -95,13 +95,12 @@ class _NPCsListPageState extends State<NPCsListPage> {
           selected: selected,
           onSelected: (String? id) {
             if(id == null && GoRouter.of(context).state.fullPath!.endsWith('/:uuid')) {
-              context.go('/npcs');
+              context.replace('/npcs');
             }
-            else {
-              setState(() {
-                selected = id;
-              });
-            }
+
+            setState(() {
+              selected = id;
+            });
           },
           onEditRequested: (String id) async {
             context.go('/npcs/$id/edit');
