@@ -10,6 +10,7 @@ import '../classes/non_player_character.dart';
 import '../classes/npc_category.dart';
 import '../classes/place.dart';
 import '../classes/shield.dart';
+import '../classes/star.dart';
 import '../classes/weapon.dart';
 import 'utils/full_page_loading.dart';
 
@@ -26,6 +27,7 @@ Future<void> _loadAssets() async {
   await NPCSubCategory.loadDefaultAssets();
   await NonPlayerCharacter.init();
   await Faction.init();
+  await Star.init();
 }
 
 class MainPage extends StatefulWidget {

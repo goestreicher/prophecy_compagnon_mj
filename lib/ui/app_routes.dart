@@ -16,6 +16,10 @@ import 'scenario/edit.dart';
 import 'scenario/list.dart';
 import 'session/list.dart';
 import 'spells/main.dart';
+import 'stars/clone.dart';
+import 'stars/create.dart';
+import 'stars/edit.dart';
+import 'stars/list.dart';
 import 'table/edit.dart';
 import 'table/list.dart';
 import 'utils/custom_icons.dart';
@@ -245,6 +249,35 @@ final mainAppRoutes = [
       const SpellsMainPage(),
     icon: Icon(Symbols.auto_fix_high),
     label: Text('Sorts'),
+  ),
+  MainAppRoute(
+    path: '/stars',
+    builder: (BuildContext context, GoRouterState state) =>
+      const StarsListPage(),
+    icon: Icon(Symbols.stars_2),
+    label: Text('Étoiles'),
+    routes: [
+      MainAppRoute(
+        path: '/create',
+        builder: (BuildContext context, GoRouterState state) =>
+        const StarCreatePage(),
+      ),
+      MainAppRoute(
+        path: '/clone/:uuid',
+        builder: (BuildContext context, GoRouterState state) =>
+          StarClonePage(from: state.pathParameters['uuid']!),
+      ),
+      MainAppRoute(
+        path: '/:uuid',
+        builder: (BuildContext context, GoRouterState state) =>
+          StarsListPage(selected: state.pathParameters['uuid']!),
+      ),
+      MainAppRoute(
+        path: '/:uuid/edit',
+        builder: (BuildContext context, GoRouterState state) =>
+          StarEditPage(id: state.pathParameters['uuid']!),
+      ),
+    ]
   ),
 ];
 

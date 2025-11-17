@@ -128,6 +128,7 @@ class CharacterRoleListEditWidget extends StatelessWidget {
     required this.onAdd,
     required this.onDelete,
     this.resourceLinkProvider,
+    this.maxCount = 0,
   });
 
   final String title;
@@ -135,6 +136,7 @@ class CharacterRoleListEditWidget extends StatelessWidget {
   final Function(CharacterRole) onAdd;
   final Function(CharacterRole) onDelete;
   final ResourceLinkProvider? resourceLinkProvider;
+  final int maxCount;
 
   @override
   Widget build(BuildContext context) {
@@ -153,29 +155,30 @@ class CharacterRoleListEditWidget extends StatelessWidget {
                 onDelete: () => onDelete(member),
               ),
             ),
-          WidgetSpan(
-            alignment: PlaceholderAlignment.middle,
-            child: IconButton(
-              icon: const Icon(Icons.add),
-              iconSize: 20,
-              padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
-              constraints: const BoxConstraints(),
-              style: IconButton.styleFrom(
-                backgroundColor: theme.colorScheme.secondary,
-                foregroundColor: theme.colorScheme.onSecondary,
-              ),
-              onPressed: () async {
-                var member = await showDialog<CharacterRole>(
-                  context: context,
-                  builder: (BuildContext context) => _CharacterRoleInputDialog(
-                    resourceLinkProvider: resourceLinkProvider,
-                  ),
-                );
-                if(member == null) return;
-                onAdd(member);
-              },
+          if(maxCount == 0 || members.length <= maxCount)
+            WidgetSpan(
+              alignment: PlaceholderAlignment.middle,
+              child: IconButton(
+                icon: const Icon(Icons.add),
+                iconSize: 20,
+                padding: const EdgeInsets.symmetric(vertical: 2.0, horizontal: 8.0),
+                constraints: const BoxConstraints(),
+                style: IconButton.styleFrom(
+                  backgroundColor: theme.colorScheme.secondary,
+                  foregroundColor: theme.colorScheme.onSecondary,
+                ),
+                onPressed: () async {
+                  var member = await showDialog<CharacterRole>(
+                    context: context,
+                    builder: (BuildContext context) => _CharacterRoleInputDialog(
+                      resourceLinkProvider: resourceLinkProvider,
+                    ),
+                  );
+                  if(member == null) return;
+                  onAdd(member);
+                },
+              )
             )
-          )
         ]
       )
     );
