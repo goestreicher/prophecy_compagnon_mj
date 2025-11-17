@@ -8,6 +8,8 @@ import '../../classes/object_source.dart';
 import '../../classes/star.dart';
 import '../utils/error_feedback.dart';
 import '../utils/star/display_widget.dart';
+import '../utils/star/list_filter.dart';
+import '../utils/star/list_filter_widget.dart';
 import '../utils/star/list_widget.dart';
 
 class StarsListPage extends StatefulWidget {
@@ -21,6 +23,7 @@ class StarsListPage extends StatefulWidget {
 
 class _StarsListPageState extends State<StarsListPage> {
   bool isWorking = false;
+  StarListFilter filter = StarListFilter();
   Future<void>? starsFuture;
   List<Star> stars = <Star>[];
   String? selected;
@@ -37,7 +40,22 @@ class _StarsListPageState extends State<StarsListPage> {
   }
 
   Future<void> updateStarsList() async {
-    stars = (await Star.getAll()).toList();
+    if(filter.source != null) {
+      stars = (await Star.forSource(
+          filter.source!,
+          nameFilter: filter.search,
+      )).toList();
+    }
+    else if(filter.sourceType != null) {
+      stars = (await Star.forSourceType(
+          filter.sourceType!,
+          nameFilter: filter.search,
+      )).toList();
+    }
+    else {
+      stars = (await Star.getAll(nameFilter: filter.search)).toList();
+    }
+
     stars.sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
   }
 
@@ -52,11 +70,23 @@ class _StarsListPageState extends State<StarsListPage> {
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(8.0, 12.0, 8.0, 0.0),
-                  child: MenuAnchor(
+            Padding(
+              padding: const EdgeInsets.fromLTRB(8.0, 12.0, 8.0, 0.0),
+              child: Wrap(
+                spacing: 16.0,
+                runSpacing: 8.0,
+                children: [
+                  StarListFilterWidget(
+                    filter: filter,
+                    onFilterChanged: (StarListFilter f) {
+                      setState(() {
+                        filter = f;
+                        resetStarsList();
+                        selected = null;
+                      });
+                    }
+                  ),
+                  MenuAnchor(
                     alignmentOffset: const Offset(0, 4),
                     builder: (BuildContext context, MenuController controller, Widget? child) {
                       return IconButton.filled(
@@ -135,8 +165,8 @@ class _StarsListPageState extends State<StarsListPage> {
                       ),
                     ],
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             const SizedBox(height: 12.0),
             Expanded(
