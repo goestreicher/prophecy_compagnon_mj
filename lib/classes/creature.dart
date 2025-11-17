@@ -371,7 +371,7 @@ class CreatureSummary extends ResourceBaseClass {
 
     for (var f in assetFiles) {
       if(!_cache.containsCollection(f)) {
-        _cache.containsCollection(f);
+        _cache.addCollection(f);
 
         for (var model in await loadJSONAssetObjectList(f)) {
           try {
