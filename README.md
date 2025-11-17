@@ -13,11 +13,11 @@ Pretty much a WiP, not stable at the moment
 - [ ] Add dates in the factions leaders and members?
 - [ ] Add artifacts resources?
 - [ ] Fill in more places from the official docs
-- [ ] Use the same leaders mechanism for places as exists for factions
 - [ ] Link factions (and places) titles to NPCs
 - [ ] Limit skills, specialized skills, advantage and disadvantages to their reserved caste
 
 
+- [x] Use the same leaders mechanism for places as exists for factions
 - [x] Add draconic link
 - [x] Rework creatures instanciation so that instances can be saved
 - [x] Rework the NPC instanciation to match creatures
