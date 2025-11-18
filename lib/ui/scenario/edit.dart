@@ -10,6 +10,7 @@ import '../../classes/faction.dart';
 import '../../classes/place.dart';
 import '../../classes/scenario.dart';
 import '../../classes/scenario_map.dart';
+import '../../classes/star.dart';
 import 'edit_creatures_tab.dart';
 import 'edit_encounters_tab.dart';
 import 'edit_events_tab.dart';
@@ -20,6 +21,7 @@ import 'edit_npcs_tab.dart';
 import 'edit_places_tab.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
+import 'edit_stars_tab.dart';
 
 enum ScenarioEditTab {
   general,
@@ -77,6 +79,9 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   List<ScenarioMap> uncommittedMapsCreation = <ScenarioMap>[];
   List<ScenarioMap> uncommittedMapsModification = <ScenarioMap>[];
   List<ScenarioMap> uncommittedMapsDeletion = <ScenarioMap>[];
+  List<Star> uncommittedStarsCreation = <Star>[];
+  List<Star> uncommittedStarsModification = <Star>[];
+  List<Star> uncommittedStarsDeletion = <Star>[];
   
   Future<void> commitPendingChanges() async {
     /*
@@ -128,6 +133,16 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
       await m.willDelete();
     }
     uncommittedMapsDeletion.clear();
+
+    /*
+        Stars
+     */
+    uncommittedStarsCreation.clear();
+    uncommittedStarsModification.clear();
+    for(var s in uncommittedStarsDeletion) {
+      await Star.deleteLocalModel(s.id);
+    }
+    uncommittedStarsDeletion.clear();
   }
 
   Future<void> cancelPendingChanges() async {
@@ -189,6 +204,19 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
     uncommittedMapsCreation.clear();
     uncommittedMapsModification.clear();
     uncommittedMapsDeletion.clear();
+
+    /*
+        Stars
+     */
+    for(var s in uncommittedStarsCreation) {
+      Star.removeFromCache(s.id);
+    }
+    uncommittedStarsCreation.clear();
+    for(var s in uncommittedStarsModification) {
+      Star.reloadFromStore(s.id);
+    }
+    uncommittedStarsModification.clear();
+    uncommittedStarsDeletion.clear();
   }
 
   @override
@@ -225,7 +253,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
           children: [
             DefaultTabController(
               initialIndex: widget.initialTab.index,
-              length: 8,
+              length: 9,
               child: Scaffold(
                 appBar: AppBar(
                   title: Text('Scénario: ${_scenario.name}'),
@@ -281,6 +309,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       Tab(text: 'Factions'),
                       Tab(text: 'Rencontres'),
                       Tab(text: 'Cartes'),
+                      Tab(text: 'Étoiles'),
                     ],
                   ),
                 ),
@@ -398,6 +427,31 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                           _scenario.maps.remove(m);
                         });
                       },
+                    ),
+                    ScenarioEditStarsPage(
+                      stars: _scenario.stars,
+                      scenarioSource: _scenario.source,
+                      onStarCreated: (Star s) {
+                        uncommittedStarsCreation.add(s);
+                        setState(() {
+                          _scenario.stars.add(s);
+                        });
+                      },
+                      onStarModified: (Star s) {
+                        uncommittedStarsModification.add(s);
+                      },
+                      onStarDeleted: (Star s) {
+                        uncommittedStarsDeletion.add(s);
+                        setState(() {
+                          _scenario.stars.remove(s);
+                        });
+                      },
+                      onEditStarted: () => setState(() {
+                        mainButtonsLocked = true;
+                      }),
+                      onEditFinished: () => setState(() {
+                        mainButtonsLocked = false;
+                      }),
                     ),
                   ],
                 ),
