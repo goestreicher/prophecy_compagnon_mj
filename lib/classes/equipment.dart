@@ -254,6 +254,7 @@ class EntityEquipment with IterableMixin<Equipment>, ChangeNotifier {
 
       if (eq != null) {
         equipment.add(eq);
+        uuids.add(eq.uuid());
       }
     }
 
