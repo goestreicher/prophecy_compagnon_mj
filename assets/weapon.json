@@ -1697,7 +1697,7 @@
   {
     "name": "Lance-harpon",
     "skill": "armesAProjectiles",
-    "weight": 0.0,
+    "weight": 2.0,
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6 },
