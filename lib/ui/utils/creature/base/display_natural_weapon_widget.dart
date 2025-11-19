@@ -12,15 +12,31 @@ class NaturalWeaponDisplayWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
+    var buffer = StringBuffer();
+    if(weapon.damage.static != null && weapon.damage.static! > 0) {
+      buffer.write(weapon.damage.static.toString());
+    }
+    else {
+      var ability = weapon.damage.ability!.short;
+      buffer.write(weapon.damage.multiply > 1
+          ? '($ability x ${weapon.damage.multiply})'
+          : ability);
+      if(weapon.damage.add > 0) {
+        buffer.write(' + ${weapon.damage.add}');
+      }
+    }
+    if(weapon.damage.dice > 0) {
+      buffer.write(' + ${weapon.damage.dice}D10');
+    }
+    var damage = buffer.toString();
+
     var rangeWidgets = <Widget>[];
     for(var r in weapon.ranges.keys) {
       String spec = '${r.title} - Init. ${weapon.ranges[r]!.initiative}';
 
-      if(r != WeaponRange.contact) {
-        spec += '${r != WeaponRange.ranged ? " - Distance" : " - Distance efficace"} ${weapon.ranges[r]!.effectiveDistance.toStringAsFixed(2)} m';
-        if(r == WeaponRange.ranged) {
-          spec += ' - Distance maximum ${weapon.ranges[r]!.maximumDistance!.toStringAsFixed(2)} m';
-        }
+      spec += '${r != WeaponRange.ranged ? " - Distance" : " - Distance efficace"} ${weapon.ranges[r]!.effectiveDistance.toStringAsFixed(2)} m';
+      if(r == WeaponRange.ranged) {
+        spec += ' - Distance maximum ${weapon.ranges[r]!.maximumDistance!.toStringAsFixed(2)} m';
       }
 
       rangeWidgets.add(
@@ -64,7 +80,7 @@ class NaturalWeaponDisplayWidget extends StatelessWidget {
                 'Compétence : ${weapon.skill.toString()}',
               ),
               Text(
-                'Dégâts : ${weapon.damage.toString()}',
+                'Dégâts : $damage',
               )
             ],
           ),

@@ -136,13 +136,14 @@ class WeaponEditWidget extends StatefulWidget {
     required this.onEquipedStateChanged,
     this.allowDelete = true,
   }) {
-    if(weapon.model.damage.static > 0) {
+    if(weapon.model.damage.static != null && weapon.model.damage.static! > 0) {
       damage = weapon.model.damage.static.toString();
     }
     else {
+      var ability = weapon.model.damage.ability!.short;
       var buffer = StringBuffer(weapon.model.damage.multiply > 1
-          ? '(FOR x ${weapon.model.damage.multiply})'
-          : 'FOR');
+          ? '($ability x ${weapon.model.damage.multiply})'
+          : ability);
       if(weapon.model.damage.add > 0) {
         buffer.write(' + ${weapon.model.damage.add}');
       }

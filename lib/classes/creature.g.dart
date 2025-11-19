@@ -27,7 +27,9 @@ NaturalWeaponModel _$NaturalWeaponModelFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       special: json['special'] as String?,
       skill: (json['skill'] as num).toInt(),
-      damage: (json['damage'] as num).toInt(),
+      damage: AttributeBasedCalculator.fromJson(
+        json['damage'] as Map<String, dynamic>,
+      ),
       ranges: (json['ranges'] as Map<String, dynamic>).map(
         (k, e) => MapEntry(
           $enumDecode(_$WeaponRangeEnumMap, k),
@@ -43,7 +45,7 @@ Map<String, dynamic> _$NaturalWeaponModelToJson(NaturalWeaponModel instance) =>
       'name': instance.name,
       'special': instance.special,
       'skill': instance.skill,
-      'damage': instance.damage,
+      'damage': instance.damage.toJson(),
       'ranges': instance.ranges.map(
         (k, e) => MapEntry(_$WeaponRangeEnumMap[k]!, e.toJson()),
       ),

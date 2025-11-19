@@ -9,7 +9,7 @@ import 'entity/skill.dart';
 import 'entity/specialized_skill.dart';
 import 'equipment.dart';
 import 'entity_base.dart';
-import 'character/base.dart';
+import 'entity/base.dart';
 import '../text_utils.dart';
 
 class WeaponModel {
@@ -103,22 +103,9 @@ class WeaponModel {
         init[r] = model['initiative'][i];
       }
 
-      AttributeBasedCalculator dmg = AttributeBasedCalculator(
-          static: (model['damage']['static'] as num).toDouble(),
-          multiply: model['damage']['multiply'],
-          add: model['damage']['add'],
-          dice: model['damage']['dice']);
-
-      AttributeBasedCalculator rEff = AttributeBasedCalculator(
-          static: (model['range']['eff']['static'] as num).toDouble(),
-          multiply: model['range']['eff']['multiply'],
-          add: model['range']['eff']['add'],
-          dice: model['range']['eff']['dice']);
-      AttributeBasedCalculator rMax = AttributeBasedCalculator(
-          static: (model['range']['max']['static'] as num).toDouble(),
-          multiply: model['range']['max']['multiply'],
-          add: model['range']['max']['add'],
-          dice: model['range']['max']['dice']);
+      AttributeBasedCalculator dmg = AttributeBasedCalculator.fromJson(model['damage']);
+      AttributeBasedCalculator rEff = AttributeBasedCalculator.fromJson(model['range']['eff']);
+      AttributeBasedCalculator rMax = AttributeBasedCalculator.fromJson(model['range']['max']);
 
       _models[id] = WeaponModel(
           name: model['name'],
@@ -187,8 +174,13 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
   }
 
   @override
-  int damage(EntityBase owner, {List<int>? throws })
-    => model.damage.calculate(owner.abilities.force, throws: throws).toInt();
+  int damage(EntityBase owner, {List<int>? throws }) =>
+      model.damage.calculate(
+          model.damage.ability != null
+              ? owner.abilities.ability(model.damage.ability!)
+              : 0,
+          throws: throws
+      ).toInt();
 
   @override
   int initiativeForRange(WeaponRange range) {

@@ -89,11 +89,11 @@
       {
         "name": "Défenses",
         "skill": 7,
-        "damage": 16,
+        "damage": { "ability": "force", "add": 5 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -104,11 +104,11 @@
       {
         "name": "Morsure",
         "skill": 4,
-        "damage": 15,
+        "damage": { "ability": "force", "add": 4 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -259,11 +259,11 @@
       {
         "name": "Griffes",
         "skill": 3,
-        "damage": 3,
+        "damage": { "ability": "force", "add": 2 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.05
           },
           "melee": {
             "initiative": 0,
@@ -274,11 +274,11 @@
       {
         "name": "Morsure",
         "skill": 3,
-        "damage": 2,
+        "damage": { "ability": "force", "add": 1 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.05
           },
           "melee": {
             "initiative": 0,
@@ -411,11 +411,11 @@
       {
         "name": "Morsure",
         "skill": 6,
-        "damage": 7,
+        "damage": { "ability": "force", "add": 4 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.15
           },
           "melee": {
             "initiative": 0,
@@ -544,11 +544,11 @@
       {
         "name": "Morsure",
         "skill": 2,
-        "damage": 4,
+        "damage": { "ability": "force", "add": 2 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.15
           },
           "melee": {
             "initiative": 0,
@@ -559,11 +559,11 @@
       {
         "name": "Ruade",
         "skill": 4,
-        "damage": 5,
+        "damage": { "ability": "force", "add": 3 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.3
           },
           "melee": {
             "initiative": 0,

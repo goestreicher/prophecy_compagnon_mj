@@ -105,7 +105,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -113,14 +113,14 @@
           }
         },
         "skill": 7,
-        "damage": 12
+        "damage": { "static": 12 }
       },
       {
         "name": "Serres",
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -128,7 +128,7 @@
           }
         },
         "skill": 6,
-        "damage": 9
+        "damage": { "static": 9 }
       }
     ],
     "special_capabilities": [
@@ -255,7 +255,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.3
           },
           "melee": {
             "initiative": 0,
@@ -263,14 +263,14 @@
           }
         },
         "skill": 2,
-        "damage": 4
+        "damage": { "static": 4 }
       },
       {
         "name": "Ruade",
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.4
           },
           "melee": {
             "initiative": 0,
@@ -278,7 +278,7 @@
           }
         },
         "skill": 3,
-        "damage": 7
+        "damage": { "static": 7 }
       }
     ],
     "equipment": []
@@ -391,7 +391,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -399,7 +399,7 @@
           }
         },
         "skill": 5,
-        "damage": 9
+        "damage": { "static": 9 }
       }
     ],
     "special_capabilities": [
@@ -526,7 +526,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.3
           },
           "melee": {
             "initiative": 0,
@@ -534,14 +534,14 @@
           }
         },
         "skill": 2,
-        "damage": 18
+        "damage": { "static": 18 }
       },
       {
         "name": "Morsure",
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.3
           },
           "melee": {
             "initiative": 0,
@@ -549,7 +549,7 @@
           }
         },
         "skill": 3,
-        "damage": 19
+        "damage": { "static": 19 }
       }
     ],
     "equipment": []
@@ -666,7 +666,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.4
           },
           "melee": {
             "initiative": 0,
@@ -674,7 +674,7 @@
           }
         },
         "skill": 7,
-        "damage": 14
+        "damage": { "static": 14 }
       }
     ],
     "equipment": []
@@ -793,7 +793,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -801,14 +801,14 @@
           }
         },
         "skill": 6,
-        "damage": 15
+        "damage": { "static": 15 }
       },
       {
         "name": "Morsure",
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -816,7 +816,7 @@
           }
         },
         "skill": 6,
-        "damage": 23
+        "damage": { "static": 23 }
       }
     ],
     "special_capabilities": [
@@ -941,7 +941,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.25
           },
           "melee": {
             "initiative": 0,
@@ -949,7 +949,7 @@
           }
         },
         "skill": 6,
-        "damage": 15
+        "damage": { "static": 15 }
       },
       {
         "name": "Morsure",
@@ -964,7 +964,7 @@
           }
         },
         "skill": 6,
-        "damage": 23
+        "damage": { "static": 23 }
       }
     ],
     "special_capabilities": [
@@ -1089,7 +1089,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.3
           },
           "melee": {
             "initiative": 0,
@@ -1097,7 +1097,7 @@
           }
         },
         "skill": 6,
-        "damage": 15
+        "damage": { "static": 15 }
       },
       {
         "name": "Morsure",
@@ -1112,7 +1112,7 @@
           }
         },
         "skill": 6,
-        "damage": 23
+        "damage": { "static": 23 }
       }
     ],
     "special_capabilities": [
@@ -1214,7 +1214,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.1
           },
           "melee": {
             "initiative": 0,
@@ -1222,7 +1222,7 @@
           }
         },
         "skill": 6,
-        "damage": 18
+        "damage": { "static": 18 }
       },
       {
         "name": "Morsure",
@@ -1237,7 +1237,7 @@
           }
         },
         "skill": 7,
-        "damage": 23
+        "damage": { "static": 23 }
       }
     ],
     "special_capabilities": [
@@ -1811,7 +1811,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.35
           },
           "melee": {
             "initiative": 0,
@@ -1819,14 +1819,14 @@
           }
         },
         "skill": 7,
-        "damage": 28
+        "damage": { "static": 28 }
       },
       {
         "name": "Morsure",
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.35
           },
           "melee": {
             "initiative": 0,
@@ -1834,7 +1834,7 @@
           }
         },
         "skill": 6,
-        "damage": 24
+        "damage": { "static": 24 }
       }
     ],
     "special_capabilities": [
@@ -1952,7 +1952,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.25
           },
           "melee": {
             "initiative": 0,
@@ -1960,14 +1960,14 @@
           }
         },
         "skill": 8,
-        "damage": 16
+        "damage": { "static": 16 }
       },
       {
         "name": "Morsure",
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.25
           },
           "melee": {
             "initiative": 0,
@@ -1975,7 +1975,7 @@
           }
         },
         "skill": 8,
-        "damage": 18
+        "damage": { "static": 18 }
       }
     ],
     "special_capabilities": [
@@ -2088,7 +2088,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.1
           },
           "melee": {
             "initiative": 0,
@@ -2096,14 +2096,14 @@
           }
         },
         "skill": 7,
-        "damage": 11
+        "damage": { "static": 11 }
       },
       {
         "name": "Queue",
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -2111,7 +2111,7 @@
           }
         },
         "skill": 6,
-        "damage": 10
+        "damage": { "static": 10 }
       }
     ],
     "special_capabilities": [
@@ -2229,7 +2229,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.35
           },
           "melee": {
             "initiative": 0,
@@ -2237,7 +2237,7 @@
           }
         },
         "skill": 8,
-        "damage": 23
+        "damage": { "static": 23 }
       }
     ],
     "special_capabilities": [
@@ -2351,7 +2351,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.25
           },
           "melee": {
             "initiative": 0,
@@ -2359,7 +2359,7 @@
           }
         },
         "skill": 8,
-        "damage": 18
+        "damage": { "static": 18 }
       },
       {
         "name": "Morsure",
@@ -2374,7 +2374,7 @@
           }
         },
         "skill": 7,
-        "damage": 22
+        "damage": { "static": 22 }
       }
     ],
     "equipment": []

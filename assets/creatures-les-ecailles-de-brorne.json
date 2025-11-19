@@ -190,7 +190,7 @@
       {
         "name": "Charge",
         "skill": 9,
-        "damage": 23,
+        "damage": { "ability": "force", "multiply": 2, "add": 3 },
         "ranges": {
           "distance": {
             "initiative": 0,
@@ -201,11 +201,11 @@
       {
         "name": "Griffes",
         "skill": 7,
-        "damage": 13,
+        "damage": { "ability": "force", "add": 3 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -216,11 +216,11 @@
       {
         "name": "Morsure",
         "skill": 6,
-        "damage": 15,
+        "damage": { "ability": "force", "add": 5 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,

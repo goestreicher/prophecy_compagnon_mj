@@ -25,7 +25,7 @@ import 'object_source.dart';
 import 'resource_base_class.dart';
 import 'resource_memory_cache.dart';
 import 'weapon.dart';
-import 'character/base.dart';
+import 'entity/base.dart';
 import 'entity/injury.dart';
 import 'storage/default_assets_store.dart';
 import 'storage/storable.dart';
@@ -143,7 +143,7 @@ class NaturalWeaponModel {
   String name;
   String? special;
   int skill;
-  int damage;
+  AttributeBasedCalculator damage;
   final Map<WeaponRange, NaturalWeaponModelRangeSpecification> ranges;
 
   Map<String, dynamic> toJson() => _$NaturalWeaponModelToJson(this);
@@ -687,12 +687,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
             initiative: Map<WeaponRange, int>.fromEntries(
               weapon.ranges.keys.map( (WeaponRange r) => MapEntry(r, 0) )
             ),
-            damage: AttributeBasedCalculator(
-                static: weapon.damage.toDouble(),
-                multiply: 1,
-                add: 0,
-                dice: 1
-            ),
+            damage: weapon.damage,
             rangeEffective: effective ?? contactRange,
             rangeMax: max ?? contactRange);
 

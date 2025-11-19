@@ -24,6 +24,20 @@ enum EquipableItemTarget {
   feet,
 }
 
+enum EquipmentScarcity {
+  tresCommun(title: 'Très commun'),
+  commun(title: 'Commun'),
+  peuCommun(title: 'Peu commun'),
+  rare(title: 'Rare'),
+  tresRare(title: 'Très rare'),
+  introuvable(title: 'Introuvable'),
+  ;
+
+  final String title;
+
+  const EquipmentScarcity({ required this.title });
+}
+
 class EquipmentFactory {
   static final EquipmentFactory instance = EquipmentFactory._create();
 

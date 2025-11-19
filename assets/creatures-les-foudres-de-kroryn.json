@@ -102,11 +102,11 @@
       {
         "name": "Ruade",
         "skill": 4,
-        "damage": 20,
+        "damage": { "ability": "force", "add": 3, "dice": 1 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.4
           },
           "melee": {
             "initiative": 0,
@@ -117,11 +117,11 @@
       {
         "name": "Morsure",
         "skill": 3,
-        "damage": 17,
+        "damage": { "ability": "force", "add": 4, "dice": 1 },
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,

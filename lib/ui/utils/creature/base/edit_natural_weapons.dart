@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/combat.dart';
 import '../../../../classes/creature.dart';
+import '../../../../classes/entity/abilities.dart';
+import '../../../../classes/entity/base.dart';
 import '../../num_input_widget.dart';
 import '../../widget_group_container.dart';
 import 'display_natural_weapon_widget.dart';
@@ -146,7 +148,7 @@ class _NaturalWeaponEditDialogState extends State<_NaturalWeaponEditDialog> {
   final TextEditingController capabilityController = TextEditingController();
 
   int skill = 0;
-  int damage = 0;
+  AttributeBasedCalculator damage = AttributeBasedCalculator(static: 0);
   final Map<WeaponRange, NaturalWeaponModelRangeSpecification> ranges =
       <WeaponRange, NaturalWeaponModelRangeSpecification>{};
 
@@ -255,17 +257,15 @@ class _NaturalWeaponEditDialogState extends State<_NaturalWeaponEditDialog> {
                     onChanged: (int value) => skill = value,
                   ),
                 ),
-                SizedBox(
-                  width: 90,
-                  child: NumIntInputWidget(
-                    label: 'Dégats',
-                    initialValue: damage,
-                    minValue: 0,
-                    maxValue: 9999,
-                    onChanged: (int value) => damage = value,
-                  ),
-                ),
               ],
+            ),
+            _NaturalWeaponDamageEditWidget(
+              damage: damage,
+              onChanged: (AttributeBasedCalculator d) {
+                setState(() {
+                  damage = d;
+                });
+              },
             ),
             TextField(
               controller: capabilityController,
@@ -306,6 +306,252 @@ class _NaturalWeaponEditDialogState extends State<_NaturalWeaponEditDialog> {
           },
           child: const Text('OK'),
         )
+      ],
+    );
+  }
+}
+
+enum _NaturalWeaponDamageType {
+  static,
+  ability,
+}
+
+class _NaturalWeaponDamageEditWidget extends StatefulWidget {
+  const _NaturalWeaponDamageEditWidget({ this.damage, required this.onChanged });
+
+  final AttributeBasedCalculator? damage;
+  final void Function(AttributeBasedCalculator) onChanged;
+
+  @override
+  State<_NaturalWeaponDamageEditWidget> createState() => _NaturalWeaponDamageEditWidgetState();
+}
+
+class _NaturalWeaponDamageEditWidgetState extends State<_NaturalWeaponDamageEditWidget> {
+  _NaturalWeaponDamageType type = _NaturalWeaponDamageType.static;
+  late AttributeBasedCalculator damage;
+
+  @override
+  void initState() {
+    super.initState();
+
+    if(widget.damage == null) {
+      damage = AttributeBasedCalculator(static: 0.0);
+    }
+    else {
+      if(widget.damage!.ability != null) {
+        type = _NaturalWeaponDamageType.ability;
+      }
+
+      damage = AttributeBasedCalculator(
+        static: widget.damage!.static,
+        ability: widget.damage!.ability,
+        multiply: widget.damage!.multiply,
+        add: widget.damage!.add,
+        dice: widget.damage!.dice,
+      );
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    return Row(
+      spacing: 12.0,
+      children: [
+        Text(
+          'Dégats :',
+          style: theme.textTheme.bodySmall,
+        ),
+        DropdownMenu(
+          initialSelection: type,
+          requestFocusOnTap: true,
+          label: const Text('Type'),
+          textStyle: theme.textTheme.bodySmall,
+          inputDecorationTheme: InputDecorationTheme(
+            border: OutlineInputBorder(),
+            isCollapsed: true,
+            constraints: BoxConstraints(maxHeight: 36.0),
+            contentPadding: EdgeInsets.all(12.0),
+          ),
+          dropdownMenuEntries: [
+            DropdownMenuEntry(value: _NaturalWeaponDamageType.static, label: 'Statique'),
+            DropdownMenuEntry(value: _NaturalWeaponDamageType.ability, label: 'Attribut'),
+          ],
+          onSelected: (_NaturalWeaponDamageType? t) {
+            if(t == null) return;
+
+            if(t == _NaturalWeaponDamageType.static && type == _NaturalWeaponDamageType.ability) {
+              damage = AttributeBasedCalculator(static: 0.0);
+              widget.onChanged(damage);
+            }
+            else if(t == _NaturalWeaponDamageType.ability && type == _NaturalWeaponDamageType.static) {
+              damage = AttributeBasedCalculator(ability: Ability.force);
+              widget.onChanged(damage);
+            }
+
+            setState(() {
+              type = t;
+            });
+          },
+        ),
+        if(type == _NaturalWeaponDamageType.static)
+          SizedBox(
+            width: 70,
+            child: NumIntInputWidget(
+              label: 'Dégats',
+              initialValue: damage.static?.floor() ?? 0,
+              minValue: 0,
+              maxValue: 9999,
+              onChanged: (int value) {
+                damage = AttributeBasedCalculator(
+                  static: value.toDouble(),
+                  dice: damage.dice,
+                );
+                widget.onChanged(damage);
+              },
+            ),
+          ),
+        if(type == _NaturalWeaponDamageType.ability)
+          _NaturalWeaponAttributeDamageEditWidget(
+            damage: damage,
+            onAbilityChanged: (Ability a) {
+              setState(() {
+                damage = AttributeBasedCalculator(
+                  ability: a,
+                  multiply: damage.multiply,
+                  add: damage.add,
+                  dice: damage.dice,
+                );
+              });
+              widget.onChanged(damage);
+            },
+            onMultiplyChanged: (int value) {
+              setState(() {
+                damage = AttributeBasedCalculator(
+                  ability: damage.ability,
+                  multiply: value,
+                  add: damage.add,
+                  dice: damage.dice,
+                );
+              });
+              widget.onChanged(damage);
+            },
+            onAddChanged: (int value) {
+              setState(() {
+                damage = AttributeBasedCalculator(
+                  ability: damage.ability,
+                  multiply: damage.multiply,
+                  add: value,
+                  dice: damage.dice,
+                );
+              });
+              widget.onChanged(damage);
+            },
+          ),
+        Text('+'),
+        SizedBox(
+          width: 70,
+          child: NumIntInputWidget(
+            initialValue: 0,
+            minValue: 0,
+            maxValue: 9999,
+            onChanged: (int value) {
+              setState(() {
+                damage = AttributeBasedCalculator(
+                  static: damage.static,
+                  ability: damage.ability,
+                  multiply: damage.multiply,
+                  add: damage.add,
+                  dice: value,
+                );
+              });
+              widget.onChanged(damage);
+            },
+          ),
+        ),
+        Text('D10'),
+      ],
+    );
+  }
+}
+
+class _NaturalWeaponAttributeDamageEditWidget extends StatefulWidget {
+  const _NaturalWeaponAttributeDamageEditWidget({
+    required this.damage,
+    required this.onAbilityChanged,
+    required this.onMultiplyChanged,
+    required this.onAddChanged,
+  });
+
+  final AttributeBasedCalculator damage;
+  final void Function(Ability) onAbilityChanged;
+  final void Function(int) onMultiplyChanged;
+  final void Function(int) onAddChanged;
+
+  @override
+  State<_NaturalWeaponAttributeDamageEditWidget> createState() => _NaturalWeaponAttributeDamageEditWidgetState();
+}
+
+class _NaturalWeaponAttributeDamageEditWidgetState extends State<_NaturalWeaponAttributeDamageEditWidget> {
+  late Ability ability;
+  late int multiply;
+  late int add;
+
+  @override
+  void initState() {
+    super.initState();
+
+    ability = widget.damage.ability!;
+    multiply = widget.damage.multiply;
+    add = widget.damage.add;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    return Row(
+      spacing: 12.0,
+      children: [
+        DropdownMenu(
+          initialSelection: widget.damage.ability!,
+          requestFocusOnTap: true,
+          textStyle: theme.textTheme.bodySmall,
+          inputDecorationTheme: InputDecorationTheme(
+            border: OutlineInputBorder(),
+            isCollapsed: true,
+            constraints: BoxConstraints(maxHeight: 36.0),
+            contentPadding: EdgeInsets.all(12.0),
+          ),
+          dropdownMenuEntries: Ability.values
+            .map((Ability a) => DropdownMenuEntry(value: a, label: a.short))
+            .toList(),
+          onSelected: (Ability? a) {
+            if(a == null) return;
+            widget.onAbilityChanged(a);
+          },
+        ),
+        Text('x'),
+        SizedBox(
+          width: 70,
+          child: NumIntInputWidget(
+            initialValue: multiply,
+            minValue: 1,
+            maxValue: 10,
+            onChanged: (int value) => widget.onMultiplyChanged(value),
+          ),
+        ),
+        Text('+'),
+        SizedBox(
+          width: 70,
+          child: NumIntInputWidget(
+            initialValue: add,
+            minValue: 0,
+            maxValue: 9999,
+            onChanged: (int value) => widget.onAddChanged(value),
+          ),
+        ),
       ],
     );
   }
@@ -378,20 +624,24 @@ class _NaturalWeaponRangeEditWidgetState extends State<_NaturalWeaponRangeEditWi
             onChanged: (int value) => widget.onInitiativeChanged(value),
           ),
         ),
-        if(widget.range != WeaponRange.contact)
-          SizedBox(
-            width: 90,
-            child: NumDoubleInputWidget(
-              enabled: enabled,
-              label: widget.range == WeaponRange.ranged
-                ? 'Distance Eff.'
-                : 'Distance',
-              initialValue: widget.specification?.effectiveDistance ?? 0.0,
-              minValue: 0.0,
-              maxValue: 9999.0,
-              onChanged: (double value) => widget.onEffectiveDistanceChanged(value),
-            ),
+        SizedBox(
+          width: 90,
+          child: NumDoubleInputWidget(
+            enabled: enabled,
+            label: widget.range == WeaponRange.ranged
+              ? 'Distance Eff.'
+              : 'Distance',
+            initialValue: widget.specification?.effectiveDistance ?? 0.0,
+            minValue: 0.0,
+            maxValue: 9999.0,
+            onChanged: (double value) {
+              widget.onEffectiveDistanceChanged(value);
+              if(widget.range != WeaponRange.ranged) {
+                widget.onMaximumDistanceChanged(value);
+              }
+            },
           ),
+        ),
         if(widget.range == WeaponRange.ranged)
           SizedBox(
             width: 90,

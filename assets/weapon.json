@@ -1,1115 +1,1735 @@
 [
-    {
-        "name": "Épée courte",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 3 },
-        "initiative": { "melee": 0, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 8 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.8, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.8, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Épée vulgaire",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 4 },
-        "initiative": { "melee": 1, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 10 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Épée Longue",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 5 },
-        "initiative": { "melee": 2, "contact": -2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 12 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Épée large",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 5 },
-        "initiative": { "melee": 0, "contact": -2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 14 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Épée de duel",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 4 },
-        "initiative": { "melee": 2, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 8 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Sabre",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 3, "coordination": 4 },
-        "initiative": { "melee": 1, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 9 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Fauchard",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {"force": 4, "coordination": 4},
-        "initiative": { "melee": 1, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 11 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Cimeterre",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {"force": 5, "coordination": 4},
-        "initiative": { "melee": 1, "contact": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 13 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Épée batarde",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5 },
-        "initiative": { "melee": 2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 8 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Épée à deux mains",
-        "skill": "armesTranchantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6 },
-        "initiative": { "melee": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 12 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Cimeterre à deux mains",
-        "skill": "armesTranchantes",
-        "weight": 1.2,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5 },
-        "initiative": { "melee": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 13 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-      "name": "Glaive zangarien",
-      "skill": "armesTranchantes",
-      "weight": 0.0,
-      "body_part": "hand",
-      "hands": 2,
-      "requirements": { "force": 7, "coordination": 5 },
-      "initiative": { "melee": 1 },
-      "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 12 },
-      "range": {
-        "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-        "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-      }
-    },
-    {
-        "name": "Hachette",
-        "skill": "armesDeChoc",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 4, "coordination": 4 },
-        "initiative": { "melee": -1, "contact": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 10 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Hache",
-        "skill": "armesDeChoc",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 5, "coordination": 5 },
-        "initiative": { "melee": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 15 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.8, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.8, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Hache double",
-        "skill": "armesDeChoc",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 5, "coordination": 6 },
-        "initiative": { "melee": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 15 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Pic de guerre",
-        "skill": "armesDeChoc",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 3, "coordination": 6 },
-        "initiative": { "melee": -1, "contact": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 6 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.8, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.8, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Bec de corbin",
-        "skill": "armesDeChoc",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 5, "coordination": 7 },
-        "initiative": { "melee": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 10 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Hache de justice",
-        "skill": "armesDeChoc",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6, "coordination": 4 },
-        "initiative": { "melee": -2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 15 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Hache à deux mains",
-        "skill": "armesDeChoc",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6, "coordination": 6 },
-        "initiative": { "melee": -2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 16 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Hache double à deux mains",
-        "skill": "armesDeChoc",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 7, "coordination": 6 },
-        "initiative": { "melee": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 17 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Pioche de guerre",
-        "skill": "armesDeChoc",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6, "coordination": 6 },
-        "initiative": { "melee": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 12 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-
-    {
-        "name": "Gourdin",
-        "skill": "armesContondantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 3 },
-        "initiative": { "melee": 0, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Gourdin ferré",
-        "skill": "armesContondantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 4 },
-        "initiative": { "melee": -1, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 2 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Masse d'armes",
-        "skill": "armesContondantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 4 },
-        "initiative": { "melee": 0, "contact": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 4 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Masse à ailettes",
-        "skill": "armesContondantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 5, "coordination": 5 },
-        "initiative": { "melee": 0, "contact": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 6 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Masse à pointes",
-        "skill": "armesContondantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 6, "coordination": 6 },
-        "initiative": { "melee": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 8 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Massue ferrée",
-        "skill": "armesContondantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5 },
-        "initiative": { "melee": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 3, "add": 5 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Masse à deux mains",
-        "skill": "armesContondantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6, "coordination": 6 },
-        "initiative": { "melee": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 3, "add": 7 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Marteau à deux mains",
-        "skill": "armesContondantes",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 7 },
-        "initiative": { "melee": -3 },
-        "damage": { "dice": 1, "static": 0, "multiply": 3, "add": 9 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-
-    {
-        "name": "Fouet",
-        "skill": "armesArticulees",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "coordination": 7 },
-        "initiative": { "melee": 3 },
-        "damage": { "dice": 0, "static": 0, "multiply": 1, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Chaîne",
-        "skill": "armesArticulees",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 4, "coordination": 7 },
-        "initiative": { "melee": 1 },
-        "damage": { "dice": 2, "static": 0, "multiply": 1, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Fléau léger",
-        "skill": "armesArticulees",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 4, "coordination": 6 },
-        "initiative": { "melee": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 1 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Fléau triple",
-        "skill": "armesArticulees",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 6, "coordination": 7 },
-        "initiative": { "melee": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 3 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Fléau lourd",
-        "skill": "armesArticulees",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 6, "coordination": 6 },
-        "initiative": { "melee": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 5 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Fléau paysan",
-        "skill": "armesArticulees",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 5 },
-        "initiative": { "melee": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 2 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Fléau à deux mains",
-        "skill": "armesArticulees",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6, "coordination": 6 },
-        "initiative": { "melee": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 3, "add": 5 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Poing de Brorne",
-        "skill": "armesArticulees",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 7, "coordination": 7 },
-        "initiative": { "melee": -2 },
-        "damage": { "dice": 2, "static": 0, "multiply": 3, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-
-    {
-        "name": "Double épée",
-        "skill": "armesDoubles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "force": 6, "coordination": 7 },
-        "initiative": { "melee": 2, "contact": -2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 10 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Lance-sabre",
-        "skill": "armesDoubles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 6 },
-        "initiative": { "melee": 2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 11 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Bâton de combat",
-        "skill": "armesDoubles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "coordination": 3 },
-        "initiative": { "melee": 1, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Shaaduk't",
-        "skill": "armesDoubles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 6 },
-        "initiative": { "melee": 2, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 4 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Nirga'k",
-        "skill": "armesDoubles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 6 },
-        "initiative": { "melee": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 6 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Croc à chaîne",
-        "skill": "armesDoubles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 7 },
-        "initiative": { "melee": 1, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 11 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Double chaîne",
-        "skill": "armesDoubles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 8 },
-        "initiative": { "melee": 2 },
-        "damage": { "dice": 2, "static": 0, "multiply": 2, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Double fléau (Fléau d'harmonie)",
-        "skill": "armesDoubles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6, "coordination": 7 },
-        "initiative": { "melee": 2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 3, "add": 4 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.5, "multiply": 1, "add": 0 }
-        }
-    },
-
-    {
-        "name": "Poing",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 0,
-        "requirements": {},
-        "initiative": { "melee": 0, "contact": 2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Pieds",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 0,
-        "requirements": {},
-        "initiative": { "melee": 0, "contact": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 2 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Gant clouté",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {},
-        "initiative": { "melee": 0, "contact": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 1 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Gant de métal",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {},
-        "initiative": { "melee": 0, "contact": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 2 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Cestus",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {},
-        "initiative": { "melee": 0, "contact": 2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 4 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Serpe",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {},
-        "initiative": { "melee": -1, "contact": -1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 5 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Couteau",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {},
-        "initiative": { "melee": 0, "contact": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 3 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Dague",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {},
-        "initiative": { "melee": 0, "contact": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 6 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Dague main gauche",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {},
-        "initiative": { "melee": 0, "contact": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 5 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Katar",
-        "skill": "corpsACorps",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {},
-        "initiative": { "melee": -1, "contact": 2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 5 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 }
-        }
-    },
-
-    {
-        "name": "Lance courte",
-        "skill": "armesDHast",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 3, "coordination": 3 },
-        "initiative": { "melee": 0, "distance": 3 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 8 },
-        "range": {
-            "eff": { "dice": 0, "static": 1.8, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 1.8, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Lance",
-        "skill": "armesDHast",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 4, "coordination": 5 },
-        "initiative": { "melee": 0, "distance": 5 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 10 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Épieu",
-        "skill": "armesDHast",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 4 },
-        "initiative": { "melee": 0, "distance": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 12 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Vouge",
-        "skill": "armesDHast",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 4 },
-        "initiative": { "melee": 0, "distance": 3 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 11 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Hallebarde",
-        "skill": "armesDHast",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 6 },
-        "initiative": { "melee": 0, "distance": 3 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 11 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Trident",
-        "skill": "armesDHast",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "coordination": 4 },
-        "initiative": { "melee": 0, "distance": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 14 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.2, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Pique",
-        "skill": "armesDHast",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6, "coordination": 5 },
-        "initiative": { "melee": 0, "distance": 10 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 10 },
-        "range": {
-            "eff": { "dice": 0, "static": 2.5, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 2.5, "multiply": 1, "add": 0 }
-        }
-    },
-
-    {
-        "name": "Bolas",
-        "skill": "armesDeJet",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "perception": 3, "coordination": 6 },
-        "initiative": { "ranged": 0 },
-        "damage": { "dice": 0, "static": 0, "multiply": 0, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 2, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 4, "add": 0 }
-        }
-    },
-    {
-        "name": "Pierre",
-        "skill": "armesDeJet",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": {},
-        "initiative": { "ranged": 3 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 2, "add": 0 }
-        }
-    },
-    {
-        "name": "Dards",
-        "skill": "armesDeJet",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "perception": 3, "coordination": 4 },
-        "initiative": { "ranged": 4 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 2, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 3, "add": 0 }
-        }
-    },
-    {
-        "name": "Poignard de lancer",
-        "skill": "armesDeJet",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "perception": 4, "coordination": 4 },
-        "initiative": { "ranged": 3 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 2 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 2, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 3, "add": 0 }
-        }
-    },
-    {
-        "name": "Couteau étoile",
-        "skill": "armesDeJet",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "perception": 4, "coordination": 6 },
-        "initiative": { "ranged": 2 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 5 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 3, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 5, "add": 0 }
-        }
-    },
-    {
-        "name": "Hachette de lancer",
-        "skill": "armesDeJet",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "perception": 5, "coordination": 4 },
-        "initiative": { "ranged": 1 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 2, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 3, "add": 0 }
-        }
-    },
-    {
-        "name": "Javelot",
-        "skill": "armesDeJet",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 1,
-        "requirements": { "perception": 6, "coordination": 4 },
-        "initiative": { "ranged": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 2 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 5, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 10, "add": 0 }
-        }
-    },
-
-    {
-        "name": "Arc commun",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 3, "perception": 4 },
-        "initiative": { "ranged": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 6 },
-        "range": {
-            "eff": { "dice": 0, "static": 40.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 100.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Arc composite",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6, "perception": 4 },
-        "initiative": { "ranged": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 10 },
-        "range": {
-            "eff": { "dice": 0, "static": 60.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 200.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Arc long",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5, "perception": 4 },
-        "initiative": { "ranged": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 8 },
-        "range": {
-            "eff": { "dice": 0, "static": 80.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 300.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Fronde",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "perception": 4, "coordination": 6 },
-        "initiative": { "ranged": -1 },
-        "damage": { "dice": 1, "static": 10, "multiply": 1, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 20.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 100.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Sarbacane",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": {},
-        "initiative": { "ranged": 3 },
-        "damage": { "dice": 1, "static": 1, "multiply": 1, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 20.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 20.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Atlat",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "perception": 5, "coordination": 5 },
-        "initiative": { "ranged": 0 },
-        "damage": { "dice": 1, "static": 0, "multiply": 2, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 0.0, "multiply": 4, "add": 0 },
-            "max": { "dice": 0, "static": 0.0, "multiply": 6, "add": 0 }
-        }
-    },
-    {
-        "name": "Arbalète légère",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 4 },
-        "initiative": { "ranged": 3 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 6 },
-        "range": {
-            "eff": { "dice": 0, "static": 40.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 140.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Arbalète moyenne",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 5 },
-        "initiative": { "ranged": 3 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 10 },
-        "range": {
-            "eff": { "dice": 0, "static": 50.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 200.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Arbalète lourde",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6 },
-        "initiative": { "ranged": 3 },
-        "damage": { "dice": 1, "static": 0, "multiply": 1, "add": 8 },
-        "range": {
-            "eff": { "dice": 0, "static": 80.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 380.0, "multiply": 1, "add": 0 }
-        }
-    },
-    {
-        "name": "Lance-harpon",
-        "skill": "armesAProjectiles",
-        "weight": 0.0,
-        "body_part": "hand",
-        "hands": 2,
-        "requirements": { "force": 6 },
-        "initiative": { "ranged": 4 },
-        "damage": { "dice": 1, "static": 25, "multiply": 1, "add": 0 },
-        "range": {
-            "eff": { "dice": 0, "static": 10.0, "multiply": 1, "add": 0 },
-            "max": { "dice": 0, "static": 40.0, "multiply": 1, "add": 0 }
-        }
+  {
+    "name": "Épée courte",
+    "skill": "armesTranchantes",
+    "weight": 0.8,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 3 },
+    "initiative": { "melee": 0, "contact": 0 },
+    "damage": { "ability": "force", "add": 8, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.8 },
+      "max": { "static": 0.8 }
     }
+  },
+  {
+    "name": "Épée vulgaire",
+    "skill": "armesTranchantes",
+    "weight": 1.0,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 4 },
+    "initiative": { "melee": 1, "contact": 0 },
+    "damage": { "ability": "force", "add": 10, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    }
+  },
+  {
+    "name": "Épée Longue",
+    "skill": "armesTranchantes",
+    "weight": 1.2,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 5 },
+    "initiative": { "melee": 2, "contact": -2 },
+    "damage": { "ability": "force", "add": 12, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+  {
+    "name": "Épée large",
+    "skill": "armesTranchantes",
+    "weight": 1.3,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 5 },
+    "initiative": { "melee": 0, "contact": -2 },
+    "damage": { "ability": "force", "add": 14, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    }
+  },
+  {
+    "name": "Épée de duel",
+    "skill": "armesTranchantes",
+    "weight": 0.7,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 4 },
+    "initiative": { "melee": 2, "contact": 0 },
+    "damage": { "ability": "force", "add": 8, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    },
+    "special": [
+      {
+        "description": "Perforation - Contre les armures légères, le jet d'attaque peut s'effectuer avec l'Attribut Manuel. Si l'attaque porte, l'armure est divisée par deux. Pour un NR et plus, l'armure est ignorée.",
+        "type": "armor_divider",
+        "properties": {
+          "armor_type": "light",
+          "value": 2
+        }
+      }
+    ]
+  },
+  {
+    "name": "Sabre",
+    "skill": "armesTranchantes",
+    "weight": 0.8,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 3, "coordination": 4 },
+    "initiative": { "melee": 1, "contact": 0 },
+    "damage": { "ability": "force", "add": 9, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    }
+  },
+  {
+    "name": "Fauchard",
+    "skill": "armesTranchantes",
+    "weight": 0.9,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {"force": 4, "coordination": 4},
+    "initiative": { "melee": 1, "contact": 0 },
+    "damage": { "ability": "force", "add": 11, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    }
+  },
+  {
+    "name": "Cimeterre",
+    "skill": "armesTranchantes",
+    "weight": 1.1,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {"force": 5, "coordination": 4},
+    "initiative": { "melee": 1, "contact": -1 },
+    "damage": { "ability": "force", "add": 13, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    }
+  },
+  {
+    "name": "Épée batarde",
+    "skill": "armesTranchantes",
+    "weight": 1.4,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5 },
+    "initiative": { "melee": 2 },
+    "damage": { "ability": "force", "multiply": 2, "add": 8, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+  {
+    "name": "Épée à deux mains",
+    "skill": "armesTranchantes",
+    "weight": 1.7,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6 },
+    "initiative": { "melee": 1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 11, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+  {
+    "name": "Cimeterre à deux mains",
+    "skill": "armesTranchantes",
+    "weight": 1.8,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5 },
+    "initiative": { "melee": 1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 13, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+  {
+    "name": "Glaive zangarien",
+    "skill": "armesTranchantes",
+    "weight": 2.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 7, "coordination": 5 },
+    "initiative": { "melee": 1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 12, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+
+  {
+    "name": "Hachette",
+    "skill": "armesDeChoc",
+    "weight": 0.9,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 4, "coordination": 4 },
+    "initiative": { "melee": -1, "contact": 1 },
+    "damage": { "ability": "force", "add": 10, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.5 },
+      "max": { "static": 0.5 }
+    }
+  },
+  {
+    "name": "Hache",
+    "skill": "armesDeChoc",
+    "weight": 1.5,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 5, "coordination": 5 },
+    "initiative": { "melee": -1 },
+    "damage": { "ability": "force", "add": 15, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.8 },
+      "max": { "static": 0.8 }
+    }
+  },
+  {
+    "name": "Hache double",
+    "skill": "armesDeChoc",
+    "weight": 1.3,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 5, "coordination": 6 },
+    "initiative": { "melee": 0 },
+    "damage": { "ability": "force", "add": 15, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    }
+  },
+  {
+    "name": "Pic de guerre",
+    "skill": "armesDeChoc",
+    "weight": 0.7,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 3, "coordination": 6 },
+    "initiative": { "melee": -1, "contact": 1 },
+    "damage": { "ability": "force", "add": 6, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.8 },
+      "max": { "static": 0.8 }
+    },
+    "special": [
+      {
+        "description": "Armures divisées par 2",
+        "type": "armor_divider",
+        "properties": {
+          "value": 2
+        }
+      }
+    ]
+  },
+  {
+    "name": "Bec de corbin",
+    "skill": "armesDeChoc",
+    "weight": 1.2,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 5, "coordination": 7 },
+    "initiative": { "melee": -1 },
+    "damage": { "ability": "force", "add": 10, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    },
+    "special": [
+      {
+        "description": "Armures divisées par 2",
+        "type": "armor_divider",
+        "properties": {
+          "value": 2
+        }
+      }
+    ]
+  },
+  {
+    "name": "Hache de justice",
+    "skill": "armesDeChoc",
+    "weight": 2.1,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6, "coordination": 4 },
+    "initiative": { "melee": -2 },
+    "damage": { "ability": "force", "multiply": 2, "add": 15, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+  {
+    "name": "Hache à deux mains",
+    "skill": "armesDeChoc",
+    "weight": 2.2,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6, "coordination": 6 },
+    "initiative": { "melee": -2 },
+    "damage": { "ability": "force", "multiply": 2, "add": 16, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+  {
+    "name": "Hache double à deux mains",
+    "skill": "armesDeChoc",
+    "weight": 2.7,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 7, "coordination": 6 },
+    "initiative": { "melee": -1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 17, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+  {
+    "name": "Pioche de guerre",
+    "skill": "armesDeChoc",
+    "weight": 2.3,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6, "coordination": 6 },
+    "initiative": { "melee": -1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 12, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    },
+    "special": [
+      {
+        "description": "Armures divisées par 2",
+        "type": "armor_divider",
+        "properties": {
+          "value": 2
+        }
+      }
+    ]
+  },
+
+  {
+    "name": "Gourdin",
+    "skill": "armesContondantes",
+    "weight": 0.6,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 3 },
+    "initiative": { "melee": 0, "contact": 0 },
+    "damage": { "ability": "force", "multiply": 2, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    },
+    "special": [
+      {
+        "description": "+10 pour assommer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "stun",
+          "value": 10
+        }
+      }
+    ]
+  },
+  {
+    "name": "Gourdin ferré",
+    "skill": "armesContondantes",
+    "weight": 0.8,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 4 },
+    "initiative": { "melee": -1, "contact": 0 },
+    "damage": { "ability": "force", "multiply": 2, "add": 2, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    },
+    "special": [
+      {
+        "description": "+5 pour assommer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "stun",
+          "value": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Masse d'armes",
+    "skill": "armesContondantes",
+    "weight": 1.0,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 4 },
+    "initiative": { "melee": 0, "contact": -1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 4, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    }
+  },
+  {
+    "name": "Masse à ailettes",
+    "skill": "armesContondantes",
+    "weight": 1.2,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 5, "coordination": 5 },
+    "initiative": { "melee": 0, "contact": -1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 6, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    }
+  },
+  {
+    "name": "Masse à pointes",
+    "skill": "armesContondantes",
+    "weight": 1.3,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 6, "coordination": 6 },
+    "initiative": { "melee": -1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 8, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    }
+  },
+  {
+    "name": "Massue ferrée",
+    "skill": "armesContondantes",
+    "weight": 1.2,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5 },
+    "initiative": { "melee": 0 },
+    "damage": { "ability": "force", "multiply": 3, "add": 5, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+  {
+    "name": "Masse à deux mains",
+    "skill": "armesContondantes",
+    "weight": 2.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6, "coordination": 6 },
+    "initiative": { "melee": -1 },
+    "damage": { "ability": "force", "multiply": 3, "add": 7, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    }
+  },
+  {
+    "name": "Marteau à deux mains",
+    "skill": "armesContondantes",
+    "weight": 2.3,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 7 },
+    "initiative": { "melee": -3 },
+    "damage": { "ability": "force", "multiply": 3, "add": 9, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    },
+    "special": [
+      {
+        "description": "Permet de renverser en mêlée"
+      }
+    ]
+  },
+
+  {
+    "name": "Fouet",
+    "skill": "armesArticulees",
+    "weight": 0.2,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "coordination": 7 },
+    "initiative": { "melee": 3 },
+    "damage": { "ability": "force" },
+    "range": {
+      "eff": { "static": 2.0 },
+      "max": { "static": 2.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut parer ou être parée"
+      },
+      {
+        "description": "Attaque d'entravement"
+      }
+    ]
+  },
+  {
+    "name": "Chaîne",
+    "skill": "armesArticulees",
+    "weight": 0.4,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 4, "coordination": 7 },
+    "initiative": { "melee": 1 },
+    "damage": { "ability": "force", "dice": 2 },
+    "range": {
+      "eff": { "static": 2.0 },
+      "max": { "static": 2.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut parer ou être parée"
+      },
+      {
+        "description": "Attaque d'entravement"
+      }
+    ]
+  },
+  {
+    "name": "Fléau léger",
+    "skill": "armesArticulees",
+    "weight": 0.6,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 4, "coordination": 6 },
+    "initiative": { "melee": 1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 1, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    },
+    "special": [
+      {
+        "description": "-5 à la parade de l'adversaire",
+        "type": "opponent_parry_malus",
+        "properties": {
+          "value": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Fléau triple",
+    "skill": "armesArticulees",
+    "weight": 0.7,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 6, "coordination": 7 },
+    "initiative": { "melee": 1 },
+    "damage": { "ability": "force", "multiply": 2, "add": 3, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    },
+    "special": [
+      {
+        "description": "-8 à la parade de l'adversaire",
+        "type": "opponent_parry_malus",
+        "properties": {
+          "value": 8
+        }
+      }
+    ]
+  },
+  {
+    "name": "Fléau lourd",
+    "skill": "armesArticulees",
+    "weight": 0.9,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 6, "coordination": 6 },
+    "initiative": { "melee": 0 },
+    "damage": { "ability": "force", "multiply": 2, "add": 5, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    },
+    "special": [
+      {
+        "description": "-5 à la parade de l'adversaire",
+        "type": "opponent_parry_malus",
+        "properties": {
+          "value": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Fléau paysan",
+    "skill": "armesArticulees",
+    "weight": 1.2,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 5 },
+    "initiative": { "melee": 0 },
+    "damage": { "ability": "force", "multiply": 2, "add": 2, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    },
+    "special": [
+      {
+        "description": "-3 à la parade de l'adversaire",
+        "type": "opponent_parry_malus",
+        "properties": {
+          "value": 3
+        }
+      },
+      {
+        "description": "+5 pour assommer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "stun",
+          "value": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Fléau à deux mains",
+    "skill": "armesArticulees",
+    "weight": 1.6,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6, "coordination": 6 },
+    "initiative": { "melee": -1 },
+    "damage": { "ability": "force", "multiply": 3, "add": 5, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    },
+    "special": [
+      {
+        "description": "-5 à la parade de l'adversaire",
+        "type": "opponent_parry_malus",
+        "properties": {
+          "value": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Poing de Brorne",
+    "skill": "armesArticulees",
+    "weight": 3.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 7, "coordination": 7 },
+    "initiative": { "melee": -2 },
+    "damage": { "ability": "force", "multiply": 3, "dice": 2 },
+    "range": {
+      "eff": { "static": 1.2 },
+      "max": { "static": 1.2 }
+    },
+    "special": [
+      {
+        "description": "-5 à la parade de l'adversaire",
+        "type": "opponent_parry_malus",
+        "properties": {
+          "value": 5
+        }
+      },
+      {
+        "description": "Permet de renverser en mêlée"
+      }
+    ]
+  },
+
+  {
+    "name": "Double épée",
+    "skill": "armesDoubles",
+    "weight": 1.6,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "force": 6, "coordination": 7 },
+    "initiative": { "melee": 2, "contact": -2 },
+    "damage": { "ability": "force", "add": 10, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.0 },
+      "max": { "static": 1.0 }
+    },
+    "special": [
+      {
+        "description": "Enchaînement - Permet d'obtenir, une fois par tour, une attaque gratuite automatique sur une attaque avec deux NR"
+      }
+    ]
+  },
+  {
+    "name": "Lance-sabre",
+    "skill": "armesDoubles",
+    "weight": 1.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 6 },
+    "initiative": { "melee": 2 },
+    "damage": { "ability": "force", "add": 11, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.5 },
+      "max": { "static": 1.5 }
+    }
+  },
+  {
+    "name": "Bâton de combat",
+    "skill": "armesDoubles",
+    "weight": 1.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "coordination": 3 },
+    "initiative": { "melee": 1, "contact": 0 },
+    "damage": { "ability": "force", "multiply": 2, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.5 },
+      "max": { "static": 1.5 }
+    },
+    "special": [
+      {
+        "description": "+5 pour assommer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "stun",
+          "value": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Shaaduk't",
+    "skill": "armesDoubles",
+    "weight": 2.5,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 6 },
+    "initiative": { "melee": 2, "contact": 0 },
+    "damage": { "ability": "force", "multiply": 2, "add": 4, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.5 },
+      "max": { "static": 1.5 }
+    },
+    "special": [
+      {
+        "description": "+5 pour assommer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "stun",
+          "value": 5
+        }
+      },
+      {
+        "description": "+5 pour déséquilibrer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "topple",
+          "value": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Nirga'k",
+    "skill": "armesDoubles",
+    "weight": 1.6,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 6 },
+    "initiative": { "melee": 0 },
+    "damage": { "ability": "force", "multiply": 2, "add": 6, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.5 },
+      "max": { "static": 1.5 }
+    },
+    "special": [
+      {
+        "description": "Enchaînement - Permet d'obtenir, une fois par tour, une attaque gratuite automatique sur une attaque avec deux NR"
+      }
+    ]
+  },
+  {
+    "name": "Croc à chaîne",
+    "skill": "armesDoubles",
+    "weight": 1.3,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 7 },
+    "initiative": { "melee": 1, "contact": 0 },
+    "damage": { "ability": "force", "add": 11, "dice": 1 },
+    "range": {
+      "eff": { "static": 2.0 },
+      "max": { "static": 2.0 }
+    },
+    "special": [
+      {
+        "description": "Attaque d'entravement"
+      },
+      {
+        "description": "-3 à la parade de l'adversaire",
+        "type": "opponent_parry_malus",
+        "properties": {
+          "value": 3
+        }
+      }
+    ]
+  },
+  {
+    "name": "Double chaîne",
+    "skill": "armesDoubles",
+    "weight": 0.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 8 },
+    "initiative": { "melee": 2 },
+    "damage": { "ability": "force", "multiply": 2, "dice": 2 },
+    "range": {
+      "eff": { "static": 2.0 },
+      "max": { "static": 2.0 }
+    },
+    "special": [
+      {
+        "description": "Pas de dégâts contre les armures lourdes",
+        "type": "armor_ineffective",
+        "properties": {
+          "armor_type": "heavy"
+        }
+      },
+      {
+        "description": "-8 à la parade de l'adversaire",
+        "type": "opponent_parry_malus",
+        "properties": {
+          "value": 8
+        }
+      }
+    ]
+  },
+  {
+    "name": "Double fléau (Fléau d'harmonie)",
+    "skill": "armesDoubles",
+    "weight": 0.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6, "coordination": 7 },
+    "initiative": { "melee": 2 },
+    "damage": { "ability": "force", "multiply": 3, "add": 4, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.5 },
+      "max": { "static": 1.5 }
+    },
+    "special": [
+      {
+        "description": "-5 à la parade de l'adversaire",
+        "type": "opponent_parry_malus",
+        "properties": {
+          "value": 5
+        }
+      }
+    ]
+  },
+
+  {
+    "name": "Poing",
+    "skill": "corpsACorps",
+    "weight": 0.0,
+    "body_part": "hand",
+    "hands": 0,
+    "requirements": {},
+    "initiative": { "melee": 0, "contact": 2 },
+    "damage": { "ability": "force", "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    },
+    "special": [
+      {
+        "description": "+3 pour assommer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "stun",
+          "value": 3
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pieds",
+    "skill": "corpsACorps",
+    "weight": 0.0,
+    "body_part": "hand",
+    "hands": 0,
+    "requirements": {},
+    "initiative": { "melee": 0, "contact": 1 },
+    "damage": { "ability": "force", "add": 2, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    },
+    "special": [
+      {
+        "description": "+3 pour assommer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "stun",
+          "value": 3
+        }
+      }
+    ]
+  },
+  {
+    "name": "Gant clouté",
+    "skill": "corpsACorps",
+    "weight": 0.1,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {},
+    "initiative": { "melee": 0, "contact": 1 },
+    "damage": { "ability": "force", "add": 1, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    },
+    "special": [
+      {
+        "description": "+3 pour assommer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "stun",
+          "value": 3
+        }
+      }
+    ]
+  },
+  {
+    "name": "Gant de métal",
+    "skill": "corpsACorps",
+    "weight": 0.3,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {},
+    "initiative": { "melee": 0, "contact": 1 },
+    "damage": { "ability": "force", "add": 2, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    },
+    "special": [
+      {
+        "description": "+3 pour assommer",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "stun",
+          "value": 3
+        }
+      }
+    ]
+  },
+  {
+    "name": "Cestus",
+    "skill": "corpsACorps",
+    "weight": 0.2,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {},
+    "initiative": { "melee": 0, "contact": 2 },
+    "damage": { "ability": "force", "add": 4, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    }
+  },
+  {
+    "name": "Serpe",
+    "skill": "corpsACorps",
+    "weight": 0.4,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {},
+    "initiative": { "melee": -1, "contact": -1 },
+    "damage": { "ability": "force", "add": 5, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    }
+  },
+  {
+    "name": "Couteau",
+    "skill": "corpsACorps",
+    "weight": 0.1,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {},
+    "initiative": { "melee": 0, "contact": 1 },
+    "damage": { "ability": "force", "add": 3, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    }
+  },
+  {
+    "name": "Dague",
+    "skill": "corpsACorps",
+    "weight": 0.3,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {},
+    "initiative": { "melee": 0, "contact": 1 },
+    "damage": { "ability": "force", "add": 6, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    }
+  },
+  {
+    "name": "Dague main gauche",
+    "skill": "corpsACorps",
+    "weight": 0.2,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {},
+    "initiative": { "melee": 0, "contact": 0 },
+    "damage": { "ability": "force", "add": 5, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    },
+    "special": [
+      {
+        "description": "+3 à la parade contre les armes tranchantes à une main",
+        "type": "parry_bonus",
+        "properties": {
+          "value": 3,
+          "weapon_skill": "armesTranchantes",
+          "handiness": 1
+        }
+      }
+    ]
+  },
+  {
+    "name": "Katar",
+    "skill": "corpsACorps",
+    "weight": 0.7,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {},
+    "initiative": { "melee": -1, "contact": 2 },
+    "damage": { "ability": "force", "add": 5, "dice": 1 },
+    "range": {
+      "eff": { "static": 0.2 },
+      "max": { "static": 0.2 }
+    },
+    "special": [
+      {
+        "description": "Armures légères divisées par 2",
+        "type": "armor_divider",
+        "properties": {
+          "armor_type": "light",
+          "value": 2
+        }
+      }
+    ]
+  },
+
+  {
+    "name": "Lance courte",
+    "skill": "armesDHast",
+    "weight": 1.3,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 3, "coordination": 3 },
+    "initiative": { "melee": 0, "distance": 3 },
+    "damage": { "ability": "force", "add": 8, "dice": 1 },
+    "range": {
+      "eff": { "static": 1.8 },
+      "max": { "static": 1.8 }
+    },
+    "special": [
+      {
+        "description": "Maintien à distance",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "keepDistance",
+          "value": 3
+        }
+      }
+    ]
+  },
+  {
+    "name": "Lance",
+    "skill": "armesDHast",
+    "weight": 1.5,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 4, "coordination": 5 },
+    "initiative": { "melee": 0, "distance": 5 },
+    "damage": { "ability": "force", "add": 10, "dice": 1 },
+    "range": {
+      "eff": { "static": 2.2 },
+      "max": { "static": 2.2 }
+    },
+    "special": [
+      {
+        "description": "Maintien à distance",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "keepDistance",
+          "value": 5
+        }
+      },
+      {
+        "description": "Contre-charge - Les dommages de cette arme sont augmentés de 15 si elle est utilisée pour contrer une charge de cavalerie."
+      }
+    ]
+  },
+  {
+    "name": "Épieu",
+    "skill": "armesDHast",
+    "weight": 1.7,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 4 },
+    "initiative": { "melee": 0, "distance": 1 },
+    "damage": { "ability": "force", "add": 12, "dice": 1 },
+    "range": {
+      "eff": { "static": 2.2 },
+      "max": { "static": 2.2 }
+    },
+    "special": [
+      {
+        "description": "Maintien à distance",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "keepDistance",
+          "value": 3
+        }
+      },
+      {
+        "description": "Contre-charge - Les dommages de cette arme sont augmentés de 15 si elle est utilisée pour contrer une charge de cavalerie."
+      }
+    ]
+  },
+  {
+    "name": "Vouge",
+    "skill": "armesDHast",
+    "weight": 2.5,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 4 },
+    "initiative": { "melee": 0, "distance": 3 },
+    "damage": { "ability": "force", "add": 11, "dice": 1 },
+    "range": {
+      "eff": { "static": 2.2 },
+      "max": { "static": 2.2 }
+    },
+    "special": [
+      {
+        "description": "Maintien à distance",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "keepDistance",
+          "value": 5
+        }
+      },
+      {
+        "description": "Contre-charge - Les dommages de cette arme sont augmentés de 15 si elle est utilisée pour contrer une charge de cavalerie."
+      }
+    ]
+  },
+  {
+    "name": "Hallebarde",
+    "skill": "armesDHast",
+    "weight": 3.2,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 6 },
+    "initiative": { "melee": 0, "distance": 3 },
+    "damage": { "ability": "force", "add": 11, "dice": 1 },
+    "range": {
+      "eff": { "static": 2.2 },
+      "max": { "static": 2.2 }
+    },
+    "special": [
+      {
+        "description": "Maintien à distance",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "keepDistance",
+          "value": 4
+        }
+      },
+      {
+        "description": "Permet de déséquilibrer en mêlée."
+      }
+    ]
+  },
+  {
+    "name": "Trident",
+    "skill": "armesDHast",
+    "weight": 2.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "coordination": 4 },
+    "initiative": { "melee": 0, "distance": 1 },
+    "damage": { "ability": "force", "add": 14, "dice": 1 },
+    "range": {
+      "eff": { "static": 2.2 },
+      "max": { "static": 2.2 }
+    },
+    "special": [
+      {
+        "description": "Maintien à distance",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "keepDistance",
+          "value": 3
+        }
+      }
+    ]
+  },
+  {
+    "name": "Pique",
+    "skill": "armesDHast",
+    "weight": 4.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6, "coordination": 5 },
+    "initiative": { "melee": 0, "distance": 10 },
+    "damage": { "ability": "force", "add": 10, "dice": 1 },
+    "range": {
+      "eff": { "static": 2.5 },
+      "max": { "static": 2.5 }
+    },
+    "special": [
+      {
+        "description": "Maintien à distance",
+        "type": "attack_bonus",
+        "properties": {
+          "attack_type": "keepDistance",
+          "value": 1
+        }
+      },
+      {
+        "description": "Une fois le premier coup porté, la pique doit être lâchée à cause de son encombrement."
+      }
+    ]
+  },
+
+  {
+    "name": "Bolas",
+    "skill": "armesDeJet",
+    "weight": 1.5,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "perception": 3, "coordination": 6 },
+    "initiative": { "ranged": 0 },
+    "damage": { "static": 0 },
+    "range": {
+      "eff": { "ability": "force", "multiply": 2 },
+      "max": { "ability": "force", "multiply": 4 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Attaque d'entravement."
+      }
+    ]
+  },
+  {
+    "name": "Pierre",
+    "skill": "armesDeJet",
+    "weight": 0.3,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": {},
+    "initiative": { "ranged": 3 },
+    "damage": { "ability": "force", "dice": 1 },
+    "range": {
+      "eff": { "ability": "force" },
+      "max": { "ability": "force", "multiply": 2 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer (sauf bouclier).",
+        "type": "opponent_no_parry_save_shield"
+      }
+    ]
+  },
+  {
+    "name": "Dards",
+    "skill": "armesDeJet",
+    "weight": 0.2,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "perception": 3, "coordination": 4 },
+    "initiative": { "ranged": 4 },
+    "damage": { "ability": "force", "dice": 1 },
+    "range": {
+      "eff": { "ability": "force", "multiply": 2 },
+      "max": { "ability": "force", "multiply": 3 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      }
+    ]
+  },
+  {
+    "name": "Poignard de lancer",
+    "skill": "armesDeJet",
+    "weight": 0.2,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "perception": 4, "coordination": 4 },
+    "initiative": { "ranged": 3 },
+    "damage": { "ability": "force", "add": 2, "dice": 1 },
+    "range": {
+      "eff": { "ability": "force", "multiply": 2 },
+      "max": { "ability": "force", "multiply": 3 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      }
+    ]
+  },
+  {
+    "name": "Couteau étoile",
+    "skill": "armesDeJet",
+    "weight": 0.6,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "perception": 4, "coordination": 6 },
+    "initiative": { "ranged": 2 },
+    "damage": { "ability": "force", "multiply": 2, "add": 5, "dice": 1 },
+    "range": {
+      "eff": { "ability": "force", "multiply": 3 },
+      "max": { "ability": "force", "multiply": 5 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer (sauf bouclier).",
+        "type": "opponent_no_parry_save_shield"
+      }
+    ]
+  },
+  {
+    "name": "Hachette de lancer",
+    "skill": "armesDeJet",
+    "weight": 0.9,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "perception": 5, "coordination": 4 },
+    "initiative": { "ranged": 1 },
+    "damage": { "ability": "force", "multiply": 2, "dice": 1 },
+    "range": {
+      "eff": { "ability": "force", "multiply": 2 },
+      "max": { "ability": "force", "multiply": 3 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer (sauf bouclier).",
+        "type": "opponent_no_parry_save_shield"
+      }
+    ]
+  },
+  {
+    "name": "Javelot",
+    "skill": "armesDeJet",
+    "weight": 1.0,
+    "body_part": "hand",
+    "hands": 1,
+    "requirements": { "perception": 6, "coordination": 4 },
+    "initiative": { "ranged": 0 },
+    "damage": { "ability": "force", "multiply": 2, "add": 2, "dice": 1 },
+    "range": {
+      "eff": { "ability": "force", "multiply": 5 },
+      "max": { "ability": "force", "multiply": 10 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer (sauf bouclier).",
+        "type": "opponent_no_parry_save_shield"
+      }
+    ]
+  },
+
+  {
+    "name": "Arc commun",
+    "skill": "armesAProjectiles",
+    "weight": 0.5,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 3, "perception": 4 },
+    "initiative": { "ranged": 0 },
+    "damage": { "ability": "force", "add": 6, "dice": 1 },
+    "range": {
+      "eff": { "static": 40.0 },
+      "max": { "static": 100.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Nécessite une action pour recharger.",
+        "type": "reload_delay",
+        "properties": {
+          "value": 1
+        }
+      }
+    ]
+  },
+  {
+    "name": "Arc composite",
+    "skill": "armesAProjectiles",
+    "weight": 0.8,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6, "perception": 4 },
+    "initiative": { "ranged": 0 },
+    "damage": { "ability": "force", "add": 10, "dice": 1 },
+    "range": {
+      "eff": { "static": 60.0 },
+      "max": { "static": 200.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Nécessite une action pour recharger.",
+        "type": "reload_delay",
+        "properties": {
+          "value": 1
+        }
+      }
+    ]
+  },
+  {
+    "name": "Arc long",
+    "skill": "armesAProjectiles",
+    "weight": 1.2,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5, "perception": 4 },
+    "initiative": { "ranged": 0 },
+    "damage": { "ability": "force", "add": 8, "dice": 1 },
+    "range": {
+      "eff": { "static": 80.0 },
+      "max": { "static": 300.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Nécessite une action pour recharger.",
+        "type": "reload_delay",
+        "properties": {
+          "value": 1
+        }
+      }
+    ]
+  },
+  {
+    "name": "Fronde",
+    "skill": "armesAProjectiles",
+    "weight": 0.2,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "perception": 4, "coordination": 6 },
+    "initiative": { "ranged": -1 },
+    "damage": { "static": 5 },
+    "range": {
+      "eff": { "static": 20.0 },
+      "max": { "static": 100.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Nécessite une action pour recharger.",
+        "type": "reload_delay",
+        "properties": {
+          "value": 1
+        }
+      },
+      {
+        "description": "Dégâts avec des billes d'acier",
+        "type": "damage_bonus",
+        "properties": {
+          "value": 5
+        }
+      }
+    ]
+  },
+  {
+    "name": "Sarbacane",
+    "skill": "armesAProjectiles",
+    "weight": 0.3,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": {},
+    "initiative": { "ranged": 3 },
+    "damage": { "static": 1 },
+    "range": {
+      "eff": { "static": 20.0 },
+      "max": { "static": 20.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Pas de dommages si la cible porte une armure.",
+        "type": "armor_ineffective"
+      }
+    ]
+  },
+  {
+    "name": "Atlat",
+    "skill": "armesAProjectiles",
+    "weight": 0.6,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "perception": 5, "coordination": 5 },
+    "initiative": { "ranged": 0 },
+    "damage": { "ability": "force", "multiply": 2, "dice": 1 },
+    "range": {
+      "eff": { "ability": "force", "multiply": 4 },
+      "max": { "ability": "force", "multiply": 6 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Nécessite une action pour recharger.",
+        "type": "reload_delay",
+        "properties": {
+          "value": 1
+        }
+      }
+    ]
+  },
+  {
+    "name": "Arbalète légère",
+    "skill": "armesAProjectiles",
+    "weight": 1.5,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 4 },
+    "initiative": { "ranged": 3 },
+    "damage": { "ability": "force", "add": 6, "dice": 1 },
+    "range": {
+      "eff": { "static": 40.0 },
+      "max": { "static": 140.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Armures divisées par 2",
+        "type": "armor_divider",
+        "properties": {
+          "value": 2
+        }
+      },
+      {
+        "description": "Nécessite deux actions pour recharger.",
+        "type": "reload_delay",
+        "properties": {
+          "value": 2
+        }
+      }
+    ]
+  },
+  {
+    "name": "Arbalète moyenne",
+    "skill": "armesAProjectiles",
+    "weight": 3.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 5 },
+    "initiative": { "ranged": 3 },
+    "damage": { "ability": "force", "add": 10, "dice": 1 },
+    "range": {
+      "eff": { "static": 50.0 },
+      "max": { "static": 200.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Armures divisées par 2",
+        "type": "armor_divider",
+        "properties": {
+          "value": 2
+        }
+      },
+      {
+        "description": "Nécessite trois actions pour recharger.",
+        "type": "reload_delay",
+        "properties": {
+          "value": 3
+        }
+      }
+    ]
+  },
+  {
+    "name": "Arbalète lourde",
+    "skill": "armesAProjectiles",
+    "weight": 4.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6 },
+    "initiative": { "ranged": 3 },
+    "damage": { "ability": "force", "add": 8, "dice": 1 },
+    "range": {
+      "eff": { "static": 80.0 },
+      "max": { "static": 380.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Armures divisées par 2",
+        "type": "armor_divider",
+        "properties": {
+          "value": 2
+        }
+      },
+      {
+        "description": "Nécessite quatre actions pour recharger.",
+        "type": "reload_delay",
+        "properties": {
+          "value": 4
+        }
+      }
+    ]
+  },
+  {
+    "name": "Lance-harpon",
+    "skill": "armesAProjectiles",
+    "weight": 0.0,
+    "body_part": "hand",
+    "hands": 2,
+    "requirements": { "force": 6 },
+    "initiative": { "ranged": 4 },
+    "damage": { "static": 25 },
+    "range": {
+      "eff": { "static": 10.0 },
+      "max": { "static": 40.0 }
+    },
+    "special": [
+      {
+        "description": "Ne peut pas se parer.",
+        "type": "opponent_no_parry"
+      },
+      {
+        "description": "Ne peut pas s'esquiver.",
+        "type": "opponent_no_dodge"
+      },
+      {
+        "description": "Armures divisées par 2",
+        "type": "armor_divider",
+        "properties": {
+          "value": 2
+        }
+      },
+      {
+        "description": "Nécessite trois actions pour recharger.",
+        "type": "reload_delay",
+        "properties": {
+          "value": 3
+        }
+      }
+    ]
+  }
 ]

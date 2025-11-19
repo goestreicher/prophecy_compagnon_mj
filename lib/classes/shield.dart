@@ -3,7 +3,7 @@ import 'package:uuid/uuid.dart';
 
 import 'dart:convert';
 
-import 'character/base.dart';
+import 'entity/base.dart';
 import 'combat.dart';
 import 'entity/abilities.dart';
 import 'equipment.dart';
@@ -72,12 +72,7 @@ class ShieldModel {
         reqs.add((Ability.values.byName(a),model['requirements'][a]));
       }
 
-      AttributeBasedCalculator dmg = AttributeBasedCalculator(
-        static: (model['damage']['static'] as num).toDouble(),
-        multiply: model['damage']['multiply'],
-        add: model['damage']['add'],
-        dice: model['damage']['dice']
-      );
+      AttributeBasedCalculator dmg = AttributeBasedCalculator.fromJson(model['damage']);
 
       _models[id] = ShieldModel(
         name: model['name'],
@@ -146,6 +141,11 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
   int protection() => model.protection;
 
   @override
-  int damage(EntityBase owner, {List<int>? throws })
-    => model.damage.calculate(owner.abilities.force, throws: throws).toInt();
+  int damage(EntityBase owner, {List<int>? throws }) =>
+      model.damage.calculate(
+        model.damage.ability != null
+            ? owner.abilities.ability(model.damage.ability!)
+            : 0,
+        throws: throws
+      ).toInt();
 }

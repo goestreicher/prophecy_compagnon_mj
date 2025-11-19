@@ -98,7 +98,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.2
           },
           "melee": {
             "initiative": 0,
@@ -106,7 +106,7 @@
           }
         },
         "skill": 3,
-        "damage": 3
+        "damage": { "static": 3 }
       }
     ],
     "special_capabilities": [
@@ -227,7 +227,7 @@
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.15
           },
           "melee": {
             "initiative": 0,
@@ -235,14 +235,15 @@
           }
         },
         "skill": 5,
-        "damage": 13
+        "damage": { "static": 13 },
+        "special": "Inflige 3 dégats de feu (déjà compté dans le total des dégats)."
       },
       {
         "name": "Serres",
         "ranges": {
           "contact": {
             "initiative": 0,
-            "effective_distance": 0.0
+            "effective_distance": 0.15
           },
           "melee": {
             "initiative": 0,
@@ -250,7 +251,8 @@
           }
         },
         "skill": 7,
-        "damage": 11
+        "damage": { "static": 11 },
+        "special": "Inflige 3 dégats de feu (déjà compté dans le total des dégats)."
       }
     ],
     "special_capabilities": [

@@ -5,20 +5,22 @@ import 'package:json_annotation/json_annotation.dart';
 part 'abilities.g.dart';
 
 enum Ability {
-  force(title: "Force"),
-  intelligence(title: "Intelligence"),
-  coordination(title: "Coordination"),
-  presence(title: "Présence"),
-  resistance(title: "Résistance"),
-  volonte(title: "Volonté"),
-  perception(title: "Perception"),
-  empathie(title: "Empathie");
+  force(title: "Force", short: 'FOR'),
+  intelligence(title: "Intelligence", short: 'INT'),
+  coordination(title: "Coordination", short: 'COO'),
+  presence(title: "Présence", short: 'PRÉ'),
+  resistance(title: "Résistance", short: 'RÉS'),
+  volonte(title: "Volonté", short: 'VOL'),
+  perception(title: "Perception", short: 'PER'),
+  empathie(title: "Empathie", short: 'EMP');
 
   const Ability({
     required this.title,
+    required this.short,
   });
 
   final String title;
+  final String short;
 }
 
 class AbilityStreamChange {

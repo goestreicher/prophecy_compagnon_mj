@@ -5,7 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import 'caste/character_caste.dart';
 import 'character/advantages.dart';
-import 'character/base.dart';
+import 'entity/base.dart';
 import 'character/disadvantages.dart';
 import 'entity/injury.dart';
 import 'character/tendencies.dart';
