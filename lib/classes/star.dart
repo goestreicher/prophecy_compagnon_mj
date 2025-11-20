@@ -131,6 +131,20 @@ class Star extends ResourceBaseClass {
             || s.name.toLowerCase().contains(nameFilter.toLowerCase()));
   }
 
+  static Future<Iterable<Star>> forLocationType(
+    ObjectLocationType type,
+    { String? nameFilter }
+  ) async {
+    await loadAll();
+    return _cache.values
+        .where((Star s) => s.location.type == type)
+        .where(
+            (Star s) =>
+                nameFilter == null
+                || s.name.toLowerCase().contains(nameFilter.toLowerCase())
+    );
+  }
+
   static Future<Iterable<Star>> forSourceType(
     ObjectSourceType type,
     {String? nameFilter}

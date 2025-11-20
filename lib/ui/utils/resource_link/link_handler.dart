@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prophecy_compagnon_mj/ui/utils/resource_link/star_link_handler.dart';
 
 import '../../../classes/resource_link/resource_link.dart';
 import 'creature_link_handler.dart';
@@ -25,6 +26,9 @@ void handleResourceLinkClicked(ResourceLink link, BuildContext context) async {
       break;
     case ResourceLinkType.place:
       dialog = await handlePlaceLinkClicked(link, context);
+      break;
+    case ResourceLinkType.star:
+      dialog = await handleStarLinkClicked(link, context);
       break;
     default:
       dialog = handleUnsupportedResourceType(link, context);

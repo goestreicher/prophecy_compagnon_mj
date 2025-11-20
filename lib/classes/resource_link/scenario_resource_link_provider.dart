@@ -5,6 +5,7 @@ import '../place.dart';
 import '../scenario.dart';
 import '../scenario_encounter.dart';
 import '../scenario_map.dart';
+import '../star.dart';
 import 'resource_link.dart';
 
 class ScenarioResourceLinkProvider extends ResourceLinkProvider {
@@ -79,6 +80,13 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
         (await PlaceSummary.forSource(source))
         .map((PlaceSummary summ) =>
           ResourceLink.createLinkForResource(type, true, summ.name, summ.id))
+      );
+    }
+    else if(type == ResourceLinkType.star) {
+      ret.addAll(
+        (await Star.forSource(source))
+        .map((Star star) =>
+          ResourceLink.createLinkForResource(type, true, star.name, star.id))
       );
     }
 

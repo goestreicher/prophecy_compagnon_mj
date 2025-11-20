@@ -8,6 +8,7 @@ enum ResourceLinkType {
   map(title: 'Carte'),
   npc(title: 'PNJ'),
   place(title: 'Lieu'),
+  star(title: 'Étoile'),
   ;
 
   const ResourceLinkType({ required this.title });

@@ -3,6 +3,7 @@ import 'package:prophecy_compagnon_mj/classes/object_location.dart';
 
 import '../creature.dart';
 import '../place.dart';
+import '../star.dart';
 import 'resource_link.dart';
 
 class AssetsResourceLinkProvider extends ResourceLinkProvider {
@@ -45,6 +46,13 @@ class AssetsResourceLinkProvider extends ResourceLinkProvider {
         (await PlaceSummary.forLocationType(ObjectLocationType.assets))
         .map((PlaceSummary summ) =>
           ResourceLink.createLinkForResource(type, false, summ.name, summ.id))
+      );
+    }
+    else if(type == ResourceLinkType.star) {
+      ret.addAll(
+        (await Star.forLocationType(ObjectLocationType.assets))
+        .map((Star star) =>
+          ResourceLink.createLinkForResource(type, false, star.name, star.id))
       );
     }
 
