@@ -127,6 +127,7 @@ class _ResourceLinkEditWidgetState extends State<ResourceLinkEditWidget> {
 
             if(snapshot.hasData && snapshot.data != null) {
               links.addAll(snapshot.data!);
+              links.sort((ResourceLink a, ResourceLink b) => a.name.compareTo(b.name));
             }
 
             return DropdownMenuFormField(
