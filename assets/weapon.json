@@ -3,71 +3,111 @@
     "name": "Épée courte",
     "skill": "armesTranchantes",
     "weight": 0.8,
+    "creation_difficulty": 15,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 60
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 55
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 3 },
     "initiative": { "melee": 0, "contact": 0 },
     "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.8 },
-      "max": { "static": 0.8 }
-    }
+    "range_effective": { "static": 0.8 },
+    "range_max": { "static": 0.8 }
   },
   {
     "name": "Épée vulgaire",
     "skill": "armesTranchantes",
     "weight": 1.0,
+    "creation_difficulty": 15,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 75
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 70
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 4 },
     "initiative": { "melee": 1, "contact": 0 },
     "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    }
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 }
   },
   {
     "name": "Épée Longue",
     "skill": "armesTranchantes",
     "weight": 1.2,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 120
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 115
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 5 },
     "initiative": { "melee": 2, "contact": -2 },
     "damage": { "ability": "force", "add": 12, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
   {
     "name": "Épée large",
     "skill": "armesTranchantes",
     "weight": 1.3,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 125
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 120
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 5 },
     "initiative": { "melee": 0, "contact": -2 },
     "damage": { "ability": "force", "add": 14, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    }
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 }
   },
   {
     "name": "Épée de duel",
     "skill": "armesTranchantes",
     "weight": 0.7,
+    "creation_difficulty": 20,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 600
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 325
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 4 },
     "initiative": { "melee": 2, "contact": 0 },
     "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    },
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 },
     "special": [
       {
         "description": "Perforation - Contre les armures légères, le jet d'attaque peut s'effectuer avec l'Attribut Manuel. Si l'attaque porte, l'armure est divisée par deux. Pour un NR et plus, l'armure est ignorée.",
@@ -83,156 +123,244 @@
     "name": "Sabre",
     "skill": "armesTranchantes",
     "weight": 0.8,
+    "creation_difficulty": 15,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 125
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 125
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 3, "coordination": 4 },
     "initiative": { "melee": 1, "contact": 0 },
     "damage": { "ability": "force", "add": 9, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    }
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 }
   },
   {
     "name": "Fauchard",
     "skill": "armesTranchantes",
     "weight": 0.9,
+    "creation_difficulty": 15,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 140
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 135
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {"force": 4, "coordination": 4},
     "initiative": { "melee": 1, "contact": 0 },
     "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    }
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 }
   },
   {
     "name": "Cimeterre",
     "skill": "armesTranchantes",
     "weight": 1.1,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 115
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 140
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {"force": 5, "coordination": 4},
     "initiative": { "melee": 1, "contact": -1 },
     "damage": { "ability": "force", "add": 13, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    }
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 }
   },
   {
     "name": "Épée batarde",
     "skill": "armesTranchantes",
     "weight": 1.4,
+    "creation_difficulty": 15,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 145
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 175
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5 },
     "initiative": { "melee": 2 },
     "damage": { "ability": "force", "multiply": 2, "add": 8, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
   {
     "name": "Épée à deux mains",
     "skill": "armesTranchantes",
     "weight": 1.7,
+    "creation_difficulty": 20,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 250
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 310
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6 },
     "initiative": { "melee": 1 },
     "damage": { "ability": "force", "multiply": 2, "add": 11, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
   {
     "name": "Cimeterre à deux mains",
     "skill": "armesTranchantes",
     "weight": 1.8,
+    "creation_difficulty": 20,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 410
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 320
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5 },
     "initiative": { "melee": 1 },
     "damage": { "ability": "force", "multiply": 2, "add": 13, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
   {
     "name": "Glaive zangarien",
     "skill": "armesTranchantes",
     "weight": 2.0,
+    "creation_difficulty": 25,
+    "creation_time": 15,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 3000
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 3000
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 7, "coordination": 5 },
     "initiative": { "melee": 1 },
     "damage": { "ability": "force", "multiply": 2, "add": 12, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
 
   {
     "name": "Hachette",
     "skill": "armesDeChoc",
     "weight": 0.9,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 65
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 4, "coordination": 4 },
     "initiative": { "melee": -1, "contact": 1 },
     "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.5 },
-      "max": { "static": 0.5 }
-    }
+    "range_effective": { "static": 0.5 },
+    "range_max": { "static": 0.5 }
   },
   {
     "name": "Hache",
     "skill": "armesDeChoc",
     "weight": 1.5,
+    "creation_difficulty": 15,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 65
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 100
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 5, "coordination": 5 },
     "initiative": { "melee": -1 },
     "damage": { "ability": "force", "add": 15, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.8 },
-      "max": { "static": 0.8 }
-    }
+    "range_effective": { "static": 0.8 },
+    "range_max": { "static": 0.8 }
   },
   {
     "name": "Hache double",
     "skill": "armesDeChoc",
     "weight": 1.3,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 120
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 145
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 5, "coordination": 6 },
     "initiative": { "melee": 0 },
     "damage": { "ability": "force", "add": 15, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    }
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 }
   },
   {
     "name": "Pic de guerre",
     "skill": "armesDeChoc",
     "weight": 0.7,
+    "creation_difficulty": 10,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 130
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 100
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 3, "coordination": 6 },
     "initiative": { "melee": -1, "contact": 1 },
     "damage": { "ability": "force", "add": 6, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.8 },
-      "max": { "static": 0.8 }
-    },
+    "range_effective": { "static": 0.8 },
+    "range_max": { "static": 0.8 },
     "special": [
       {
         "description": "Armures divisées par 2",
@@ -247,15 +375,23 @@
     "name": "Bec de corbin",
     "skill": "armesDeChoc",
     "weight": 1.2,
+    "creation_difficulty": 10,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 190
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 145
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 5, "coordination": 7 },
     "initiative": { "melee": -1 },
     "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    },
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 },
     "special": [
       {
         "description": "Armures divisées par 2",
@@ -270,57 +406,89 @@
     "name": "Hache de justice",
     "skill": "armesDeChoc",
     "weight": 2.1,
+    "creation_difficulty": 20,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "nonApplicable",
+      "price": 500
+    },
+    "city_availability": {
+      "scarcity": "nonApplicable",
+      "price": 500
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6, "coordination": 4 },
     "initiative": { "melee": -2 },
     "damage": { "ability": "force", "multiply": 2, "add": 15, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
   {
     "name": "Hache à deux mains",
     "skill": "armesDeChoc",
     "weight": 2.2,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 115
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 170
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6, "coordination": 6 },
     "initiative": { "melee": -2 },
     "damage": { "ability": "force", "multiply": 2, "add": 16, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
   {
     "name": "Hache double à deux mains",
     "skill": "armesDeChoc",
     "weight": 2.7,
+    "creation_difficulty": 20,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 450
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 345
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 7, "coordination": 6 },
     "initiative": { "melee": -1 },
     "damage": { "ability": "force", "multiply": 2, "add": 17, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
   {
     "name": "Pioche de guerre",
     "skill": "armesDeChoc",
     "weight": 2.3,
+    "creation_difficulty": 15,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 170
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 200
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6, "coordination": 6 },
     "initiative": { "melee": -1 },
     "damage": { "ability": "force", "multiply": 2, "add": 12, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    },
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 },
     "special": [
       {
         "description": "Armures divisées par 2",
@@ -336,15 +504,23 @@
     "name": "Gourdin",
     "skill": "armesContondantes",
     "weight": 0.6,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 3 },
     "initiative": { "melee": 0, "contact": 0 },
     "damage": { "ability": "force", "multiply": 2, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    },
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 },
     "special": [
       {
         "description": "+10 pour assommer",
@@ -360,15 +536,23 @@
     "name": "Gourdin ferré",
     "skill": "armesContondantes",
     "weight": 0.8,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 35
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 40
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 4 },
     "initiative": { "melee": -1, "contact": 0 },
     "damage": { "ability": "force", "multiply": 2, "add": 2, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    },
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 },
     "special": [
       {
         "description": "+5 pour assommer",
@@ -384,85 +568,133 @@
     "name": "Masse d'armes",
     "skill": "armesContondantes",
     "weight": 1.0,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 115
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 110
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 4 },
     "initiative": { "melee": 0, "contact": -1 },
     "damage": { "ability": "force", "multiply": 2, "add": 4, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    }
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 }
   },
   {
     "name": "Masse à ailettes",
     "skill": "armesContondantes",
     "weight": 1.2,
+    "creation_difficulty": 15,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 145
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 175
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 5, "coordination": 5 },
     "initiative": { "melee": 0, "contact": -1 },
     "damage": { "ability": "force", "multiply": 2, "add": 6, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    }
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 }
   },
   {
     "name": "Masse à pointes",
     "skill": "armesContondantes",
     "weight": 1.3,
+    "creation_difficulty": 15,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 140
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 170
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 6, "coordination": 6 },
     "initiative": { "melee": -1 },
     "damage": { "ability": "force", "multiply": 2, "add": 8, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    }
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 }
   },
   {
     "name": "Massue ferrée",
     "skill": "armesContondantes",
     "weight": 1.2,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 55
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 65
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5 },
     "initiative": { "melee": 0 },
     "damage": { "ability": "force", "multiply": 3, "add": 5, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
   {
     "name": "Masse à deux mains",
     "skill": "armesContondantes",
     "weight": 2.0,
+    "creation_difficulty": 15,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 290
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 220
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6, "coordination": 6 },
     "initiative": { "melee": -1 },
     "damage": { "ability": "force", "multiply": 3, "add": 7, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    }
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 }
   },
   {
     "name": "Marteau à deux mains",
     "skill": "armesContondantes",
     "weight": 2.3,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 85
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 175
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 7 },
     "initiative": { "melee": -3 },
     "damage": { "ability": "force", "multiply": 3, "add": 9, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    },
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 },
     "special": [
       {
         "description": "Permet de renverser en mêlée"
@@ -474,15 +706,23 @@
     "name": "Fouet",
     "skill": "armesArticulees",
     "weight": 0.2,
+    "creation_difficulty": 15,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 165
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "coordination": 7 },
     "initiative": { "melee": 3 },
     "damage": { "ability": "force" },
-    "range": {
-      "eff": { "static": 2.0 },
-      "max": { "static": 2.0 }
-    },
+    "range_effective": { "static": 2.0 },
+    "range_max": { "static": 2.0 },
     "special": [
       {
         "description": "Ne peut parer ou être parée"
@@ -496,15 +736,23 @@
     "name": "Chaîne",
     "skill": "armesArticulees",
     "weight": 0.4,
+    "creation_difficulty": 15,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 90
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 145
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 4, "coordination": 7 },
     "initiative": { "melee": 1 },
     "damage": { "ability": "force", "dice": 2 },
-    "range": {
-      "eff": { "static": 2.0 },
-      "max": { "static": 2.0 }
-    },
+    "range_effective": { "static": 2.0 },
+    "range_max": { "static": 2.0 },
     "special": [
       {
         "description": "Ne peut parer ou être parée"
@@ -518,15 +766,23 @@
     "name": "Fléau léger",
     "skill": "armesArticulees",
     "weight": 0.6,
+    "creation_difficulty": 20,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 265
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 350
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 4, "coordination": 6 },
     "initiative": { "melee": 1 },
     "damage": { "ability": "force", "multiply": 2, "add": 1, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    },
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -541,15 +797,23 @@
     "name": "Fléau triple",
     "skill": "armesArticulees",
     "weight": 0.7,
+    "creation_difficulty": 20,
+    "creation_time": 8,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 350
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 455
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 6, "coordination": 7 },
     "initiative": { "melee": 1 },
     "damage": { "ability": "force", "multiply": 2, "add": 3, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    },
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 },
     "special": [
       {
         "description": "-8 à la parade de l'adversaire",
@@ -564,15 +828,23 @@
     "name": "Fléau lourd",
     "skill": "armesArticulees",
     "weight": 0.9,
+    "creation_difficulty": 20,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 700
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 575
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 6, "coordination": 6 },
     "initiative": { "melee": 0 },
     "damage": { "ability": "force", "multiply": 2, "add": 5, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    },
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -587,15 +859,23 @@
     "name": "Fléau paysan",
     "skill": "armesArticulees",
     "weight": 1.2,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 45
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 140
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 5 },
     "initiative": { "melee": 0 },
     "damage": { "ability": "force", "multiply": 2, "add": 2, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    },
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 },
     "special": [
       {
         "description": "-3 à la parade de l'adversaire",
@@ -618,15 +898,23 @@
     "name": "Fléau à deux mains",
     "skill": "armesArticulees",
     "weight": 1.6,
+    "creation_difficulty": 20,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 365
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 595
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6, "coordination": 6 },
     "initiative": { "melee": -1 },
     "damage": { "ability": "force", "multiply": 3, "add": 5, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    },
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -641,15 +929,23 @@
     "name": "Poing de Brorne",
     "skill": "armesArticulees",
     "weight": 3.0,
+    "creation_difficulty": 25,
+    "creation_time": 12,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 2500
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 1700
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 7, "coordination": 7 },
     "initiative": { "melee": -2 },
     "damage": { "ability": "force", "multiply": 3, "dice": 2 },
-    "range": {
-      "eff": { "static": 1.2 },
-      "max": { "static": 1.2 }
-    },
+    "range_effective": { "static": 1.2 },
+    "range_max": { "static": 1.2 },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -668,15 +964,23 @@
     "name": "Double épée",
     "skill": "armesDoubles",
     "weight": 1.6,
+    "creation_difficulty": 20,
+    "creation_time": 7,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 530
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 430
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "force": 6, "coordination": 7 },
     "initiative": { "melee": 2, "contact": -2 },
     "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.0 },
-      "max": { "static": 1.0 }
-    },
+    "range_effective": { "static": 1.0 },
+    "range_max": { "static": 1.0 },
     "special": [
       {
         "description": "Enchaînement - Permet d'obtenir, une fois par tour, une attaque gratuite automatique sur une attaque avec deux NR"
@@ -687,29 +991,45 @@
     "name": "Lance-sabre",
     "skill": "armesDoubles",
     "weight": 1.0,
+    "creation_difficulty": 15,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 120
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 6 },
     "initiative": { "melee": 2 },
     "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.5 },
-      "max": { "static": 1.5 }
-    }
+    "range_effective": { "static": 1.5 },
+    "range_max": { "static": 1.5 }
   },
   {
     "name": "Bâton de combat",
     "skill": "armesDoubles",
     "weight": 1.0,
+    "creation_difficulty": 5,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "coordination": 3 },
     "initiative": { "melee": 1, "contact": 0 },
     "damage": { "ability": "force", "multiply": 2, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.5 },
-      "max": { "static": 1.5 }
-    },
+    "range_effective": { "static": 1.5 },
+    "range_max": { "static": 1.5 },
     "special": [
       {
         "description": "+5 pour assommer",
@@ -725,15 +1045,23 @@
     "name": "Shaaduk't",
     "skill": "armesDoubles",
     "weight": 2.5,
+    "creation_difficulty": 20,
+    "creation_time": 8,
+    "village_availability": {
+      "scarcity": "nonApplicable",
+      "price": 320
+    },
+    "city_availability": {
+      "scarcity": "nonApplicable",
+      "price": 410
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 6 },
     "initiative": { "melee": 2, "contact": 0 },
     "damage": { "ability": "force", "multiply": 2, "add": 4, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.5 },
-      "max": { "static": 1.5 }
-    },
+    "range_effective": { "static": 1.5 },
+    "range_max": { "static": 1.5 },
     "special": [
       {
         "description": "+5 pour assommer",
@@ -757,15 +1085,23 @@
     "name": "Nirga'k",
     "skill": "armesDoubles",
     "weight": 1.6,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 150
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 6 },
     "initiative": { "melee": 0 },
     "damage": { "ability": "force", "multiply": 2, "add": 6, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.5 },
-      "max": { "static": 1.5 }
-    },
+    "range_effective": { "static": 1.5 },
+    "range_max": { "static": 1.5 },
     "special": [
       {
         "description": "Enchaînement - Permet d'obtenir, une fois par tour, une attaque gratuite automatique sur une attaque avec deux NR"
@@ -776,15 +1112,23 @@
     "name": "Croc à chaîne",
     "skill": "armesDoubles",
     "weight": 1.3,
+    "creation_difficulty": 20,
+    "creation_time": 8,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 580
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 475
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 7 },
     "initiative": { "melee": 1, "contact": 0 },
     "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range": {
-      "eff": { "static": 2.0 },
-      "max": { "static": 2.0 }
-    },
+    "range_effective": { "static": 2.0 },
+    "range_max": { "static": 2.0 },
     "special": [
       {
         "description": "Attaque d'entravement"
@@ -801,16 +1145,24 @@
   {
     "name": "Double chaîne",
     "skill": "armesDoubles",
-    "weight": 0.0,
+    "weight": 1.3,
+    "creation_difficulty": 20,
+    "creation_time": 9,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 650
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 530
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 8 },
     "initiative": { "melee": 2 },
     "damage": { "ability": "force", "multiply": 2, "dice": 2 },
-    "range": {
-      "eff": { "static": 2.0 },
-      "max": { "static": 2.0 }
-    },
+    "range_effective": { "static": 2.0 },
+    "range_max": { "static": 2.0 },
     "special": [
       {
         "description": "Pas de dégâts contre les armures lourdes",
@@ -831,16 +1183,24 @@
   {
     "name": "Double fléau (Fléau d'harmonie)",
     "skill": "armesDoubles",
-    "weight": 0.0,
+    "weight": 2.2,
+    "creation_difficulty": 20,
+    "creation_time": 8,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 515
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 660
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6, "coordination": 7 },
     "initiative": { "melee": 2 },
     "damage": { "ability": "force", "multiply": 3, "add": 4, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.5 },
-      "max": { "static": 1.5 }
-    },
+    "range_effective": { "static": 1.5 },
+    "range_max": { "static": 1.5 },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -856,15 +1216,23 @@
     "name": "Poing",
     "skill": "corpsACorps",
     "weight": 0.0,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
     "body_part": "hand",
     "hands": 0,
     "requirements": {},
     "initiative": { "melee": 0, "contact": 2 },
     "damage": { "ability": "force", "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    },
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 },
     "special": [
       {
         "description": "+3 pour assommer",
@@ -880,15 +1248,23 @@
     "name": "Pieds",
     "skill": "corpsACorps",
     "weight": 0.0,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
     "body_part": "hand",
     "hands": 0,
     "requirements": {},
     "initiative": { "melee": 0, "contact": 1 },
     "damage": { "ability": "force", "add": 2, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    },
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 },
     "special": [
       {
         "description": "+3 pour assommer",
@@ -904,15 +1280,23 @@
     "name": "Gant clouté",
     "skill": "corpsACorps",
     "weight": 0.1,
+    "creation_difficulty": 10,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 65
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
     "initiative": { "melee": 0, "contact": 1 },
     "damage": { "ability": "force", "add": 1, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    },
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 },
     "special": [
       {
         "description": "+3 pour assommer",
@@ -928,15 +1312,23 @@
     "name": "Gant de métal",
     "skill": "corpsACorps",
     "weight": 0.3,
+    "creation_difficulty": 15,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 130
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 135
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
     "initiative": { "melee": 0, "contact": 1 },
     "damage": { "ability": "force", "add": 2, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    },
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 },
     "special": [
       {
         "description": "+3 pour assommer",
@@ -952,71 +1344,111 @@
     "name": "Cestus",
     "skill": "corpsACorps",
     "weight": 0.2,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 50
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
     "initiative": { "melee": 0, "contact": 2 },
     "damage": { "ability": "force", "add": 4, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    }
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 }
   },
   {
     "name": "Serpe",
     "skill": "corpsACorps",
     "weight": 0.4,
+    "creation_difficulty": 10,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 45
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 95
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
     "initiative": { "melee": -1, "contact": -1 },
     "damage": { "ability": "force", "add": 5, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    }
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 }
   },
   {
     "name": "Couteau",
     "skill": "corpsACorps",
     "weight": 0.1,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 15
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
     "initiative": { "melee": 0, "contact": 1 },
     "damage": { "ability": "force", "add": 3, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    }
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 }
   },
   {
     "name": "Dague",
     "skill": "corpsACorps",
     "weight": 0.3,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 40
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
     "initiative": { "melee": 0, "contact": 1 },
     "damage": { "ability": "force", "add": 6, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    }
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 }
   },
   {
     "name": "Dague main gauche",
     "skill": "corpsACorps",
     "weight": 0.2,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 170
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 220
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
     "initiative": { "melee": 0, "contact": 0 },
     "damage": { "ability": "force", "add": 5, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    },
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 },
     "special": [
       {
         "description": "+3 à la parade contre les armes tranchantes à une main",
@@ -1033,15 +1465,23 @@
     "name": "Katar",
     "skill": "corpsACorps",
     "weight": 0.7,
+    "creation_difficulty": 15,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 255
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 330
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
     "initiative": { "melee": -1, "contact": 2 },
     "damage": { "ability": "force", "add": 5, "dice": 1 },
-    "range": {
-      "eff": { "static": 0.2 },
-      "max": { "static": 0.2 }
-    },
+    "range_effective": { "static": 0.2 },
+    "range_max": { "static": 0.2 },
     "special": [
       {
         "description": "Armures légères divisées par 2",
@@ -1058,15 +1498,23 @@
     "name": "Lance courte",
     "skill": "armesDHast",
     "weight": 1.3,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 45
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 55
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 3, "coordination": 3 },
     "initiative": { "melee": 0, "distance": 3 },
     "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range": {
-      "eff": { "static": 1.8 },
-      "max": { "static": 1.8 }
-    },
+    "range_effective": { "static": 1.8 },
+    "range_max": { "static": 1.8 },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1082,15 +1530,23 @@
     "name": "Lance",
     "skill": "armesDHast",
     "weight": 1.5,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 65
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 80
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 4, "coordination": 5 },
     "initiative": { "melee": 0, "distance": 5 },
     "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range": {
-      "eff": { "static": 2.2 },
-      "max": { "static": 2.2 }
-    },
+    "range_effective": { "static": 2.2 },
+    "range_max": { "static": 2.2 },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1109,15 +1565,23 @@
     "name": "Épieu",
     "skill": "armesDHast",
     "weight": 1.7,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 85
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 4 },
     "initiative": { "melee": 0, "distance": 1 },
     "damage": { "ability": "force", "add": 12, "dice": 1 },
-    "range": {
-      "eff": { "static": 2.2 },
-      "max": { "static": 2.2 }
-    },
+    "range_effective": { "static": 2.2 },
+    "range_max": { "static": 2.2 },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1136,15 +1600,23 @@
     "name": "Vouge",
     "skill": "armesDHast",
     "weight": 2.5,
+    "creation_difficulty": 13,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 130
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 150
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 4 },
     "initiative": { "melee": 0, "distance": 3 },
     "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range": {
-      "eff": { "static": 2.2 },
-      "max": { "static": 2.2 }
-    },
+    "range_effective": { "static": 2.2 },
+    "range_max": { "static": 2.2 },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1163,15 +1635,23 @@
     "name": "Hallebarde",
     "skill": "armesDHast",
     "weight": 3.2,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 250
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 310
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 6 },
     "initiative": { "melee": 0, "distance": 3 },
     "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range": {
-      "eff": { "static": 2.2 },
-      "max": { "static": 2.2 }
-    },
+    "range_effective": { "static": 2.2 },
+    "range_max": { "static": 2.2 },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1190,15 +1670,23 @@
     "name": "Trident",
     "skill": "armesDHast",
     "weight": 2.0,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 140
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 165
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "coordination": 4 },
     "initiative": { "melee": 0, "distance": 1 },
     "damage": { "ability": "force", "add": 14, "dice": 1 },
-    "range": {
-      "eff": { "static": 2.2 },
-      "max": { "static": 2.2 }
-    },
+    "range_effective": { "static": 2.2 },
+    "range_max": { "static": 2.2 },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1214,15 +1702,23 @@
     "name": "Pique",
     "skill": "armesDHast",
     "weight": 4.0,
+    "creation_difficulty": 15,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 225
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 245
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6, "coordination": 5 },
     "initiative": { "melee": 0, "distance": 10 },
     "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range": {
-      "eff": { "static": 2.5 },
-      "max": { "static": 2.5 }
-    },
+    "range_effective": { "static": 2.5 },
+    "range_max": { "static": 2.5 },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1242,15 +1738,23 @@
     "name": "Bolas",
     "skill": "armesDeJet",
     "weight": 1.5,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 55
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "perception": 3, "coordination": 6 },
     "initiative": { "ranged": 0 },
     "damage": { "static": 0 },
-    "range": {
-      "eff": { "ability": "force", "multiply": 2 },
-      "max": { "ability": "force", "multiply": 4 }
-    },
+    "range_effective": { "ability": "force", "multiply": 2 },
+    "range_max": { "ability": "force", "multiply": 4 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1265,15 +1769,23 @@
     "name": "Pierre",
     "skill": "armesDeJet",
     "weight": 0.3,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
     "initiative": { "ranged": 3 },
     "damage": { "ability": "force", "dice": 1 },
-    "range": {
-      "eff": { "ability": "force" },
-      "max": { "ability": "force", "multiply": 2 }
-    },
+    "range_effective": { "ability": "force" },
+    "range_max": { "ability": "force", "multiply": 2 },
     "special": [
       {
         "description": "Ne peut pas se parer (sauf bouclier).",
@@ -1285,15 +1797,23 @@
     "name": "Dards",
     "skill": "armesDeJet",
     "weight": 0.2,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 25
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "perception": 3, "coordination": 4 },
     "initiative": { "ranged": 4 },
     "damage": { "ability": "force", "dice": 1 },
-    "range": {
-      "eff": { "ability": "force", "multiply": 2 },
-      "max": { "ability": "force", "multiply": 3 }
-    },
+    "range_effective": { "ability": "force", "multiply": 2 },
+    "range_max": { "ability": "force", "multiply": 3 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1309,15 +1829,23 @@
     "name": "Poignard de lancer",
     "skill": "armesDeJet",
     "weight": 0.2,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 25
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "perception": 4, "coordination": 4 },
     "initiative": { "ranged": 3 },
     "damage": { "ability": "force", "add": 2, "dice": 1 },
-    "range": {
-      "eff": { "ability": "force", "multiply": 2 },
-      "max": { "ability": "force", "multiply": 3 }
-    },
+    "range_effective": { "ability": "force", "multiply": 2 },
+    "range_max": { "ability": "force", "multiply": 3 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1333,15 +1861,23 @@
     "name": "Couteau étoile",
     "skill": "armesDeJet",
     "weight": 0.6,
+    "creation_difficulty": 20,
+    "creation_time": 8,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 350
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 455
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "perception": 4, "coordination": 6 },
     "initiative": { "ranged": 2 },
     "damage": { "ability": "force", "multiply": 2, "add": 5, "dice": 1 },
-    "range": {
-      "eff": { "ability": "force", "multiply": 3 },
-      "max": { "ability": "force", "multiply": 5 }
-    },
+    "range_effective": { "ability": "force", "multiply": 3 },
+    "range_max": { "ability": "force", "multiply": 5 },
     "special": [
       {
         "description": "Ne peut pas se parer (sauf bouclier).",
@@ -1353,15 +1889,23 @@
     "name": "Hachette de lancer",
     "skill": "armesDeJet",
     "weight": 0.9,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 45
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "perception": 5, "coordination": 4 },
     "initiative": { "ranged": 1 },
     "damage": { "ability": "force", "multiply": 2, "dice": 1 },
-    "range": {
-      "eff": { "ability": "force", "multiply": 2 },
-      "max": { "ability": "force", "multiply": 3 }
-    },
+    "range_effective": { "ability": "force", "multiply": 2 },
+    "range_max": { "ability": "force", "multiply": 3 },
     "special": [
       {
         "description": "Ne peut pas se parer (sauf bouclier).",
@@ -1373,15 +1917,23 @@
     "name": "Javelot",
     "skill": "armesDeJet",
     "weight": 1.0,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 25
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 30
+    },
     "body_part": "hand",
     "hands": 1,
     "requirements": { "perception": 6, "coordination": 4 },
     "initiative": { "ranged": 0 },
     "damage": { "ability": "force", "multiply": 2, "add": 2, "dice": 1 },
-    "range": {
-      "eff": { "ability": "force", "multiply": 5 },
-      "max": { "ability": "force", "multiply": 10 }
-    },
+    "range_effective": { "ability": "force", "multiply": 5 },
+    "range_max": { "ability": "force", "multiply": 10 },
     "special": [
       {
         "description": "Ne peut pas se parer (sauf bouclier).",
@@ -1394,15 +1946,23 @@
     "name": "Arc commun",
     "skill": "armesAProjectiles",
     "weight": 0.5,
+    "creation_difficulty": 15,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 220
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 290
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 3, "perception": 4 },
     "initiative": { "ranged": 0 },
     "damage": { "ability": "force", "add": 6, "dice": 1 },
-    "range": {
-      "eff": { "static": 40.0 },
-      "max": { "static": 100.0 }
-    },
+    "range_effective": { "static": 40.0 },
+    "range_max": { "static": 100.0 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1425,15 +1985,23 @@
     "name": "Arc composite",
     "skill": "armesAProjectiles",
     "weight": 0.8,
+    "creation_difficulty": 25,
+    "creation_time": 15,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 2000
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 2000
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6, "perception": 4 },
     "initiative": { "ranged": 0 },
     "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range": {
-      "eff": { "static": 60.0 },
-      "max": { "static": 200.0 }
-    },
+    "range_effective": { "static": 60.0 },
+    "range_max": { "static": 200.0 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1456,15 +2024,23 @@
     "name": "Arc long",
     "skill": "armesAProjectiles",
     "weight": 1.2,
+    "creation_difficulty": 25,
+    "creation_time": 18,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 2400
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 2400
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5, "perception": 4 },
     "initiative": { "ranged": 0 },
     "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range": {
-      "eff": { "static": 80.0 },
-      "max": { "static": 300.0 }
-    },
+    "range_effective": { "static": 80.0 },
+    "range_max": { "static": 300.0 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1487,15 +2063,23 @@
     "name": "Fronde",
     "skill": "armesAProjectiles",
     "weight": 0.2,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 55
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 90
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "perception": 4, "coordination": 6 },
     "initiative": { "ranged": -1 },
     "damage": { "static": 5 },
-    "range": {
-      "eff": { "static": 20.0 },
-      "max": { "static": 100.0 }
-    },
+    "range_effective": { "static": 20.0 },
+    "range_max": { "static": 100.0 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1525,15 +2109,23 @@
     "name": "Sarbacane",
     "skill": "armesAProjectiles",
     "weight": 0.3,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 25
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 40
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": {},
     "initiative": { "ranged": 3 },
     "damage": { "static": 1 },
-    "range": {
-      "eff": { "static": 20.0 },
-      "max": { "static": 20.0 }
-    },
+    "range_effective": { "static": 20.0 },
+    "range_max": { "static": 20.0 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1553,15 +2145,23 @@
     "name": "Atlat",
     "skill": "armesAProjectiles",
     "weight": 0.6,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 45
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "perception": 5, "coordination": 5 },
     "initiative": { "ranged": 0 },
     "damage": { "ability": "force", "multiply": 2, "dice": 1 },
-    "range": {
-      "eff": { "ability": "force", "multiply": 4 },
-      "max": { "ability": "force", "multiply": 6 }
-    },
+    "range_effective": { "ability": "force", "multiply": 4 },
+    "range_max": { "ability": "force", "multiply": 6 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1584,15 +2184,23 @@
     "name": "Arbalète légère",
     "skill": "armesAProjectiles",
     "weight": 1.5,
+    "creation_difficulty": 25,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 2700
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 4 },
     "initiative": { "ranged": 3 },
     "damage": { "ability": "force", "add": 6, "dice": 1 },
-    "range": {
-      "eff": { "static": 40.0 },
-      "max": { "static": 140.0 }
-    },
+    "range_effective": { "static": 40.0 },
+    "range_max": { "static": 140.0 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1622,15 +2230,23 @@
     "name": "Arbalète moyenne",
     "skill": "armesAProjectiles",
     "weight": 3.0,
+    "creation_difficulty": 25,
+    "creation_time": 12,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 3400
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 5 },
     "initiative": { "ranged": 3 },
     "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range": {
-      "eff": { "static": 50.0 },
-      "max": { "static": 200.0 }
-    },
+    "range_effective": { "static": 50.0 },
+    "range_max": { "static": 200.0 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1660,15 +2276,23 @@
     "name": "Arbalète lourde",
     "skill": "armesAProjectiles",
     "weight": 4.0,
+    "creation_difficulty": 30,
+    "creation_time": 15,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 8200
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6 },
     "initiative": { "ranged": 3 },
     "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range": {
-      "eff": { "static": 80.0 },
-      "max": { "static": 380.0 }
-    },
+    "range_effective": { "static": 80.0 },
+    "range_max": { "static": 380.0 },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1698,15 +2322,23 @@
     "name": "Lance-harpon",
     "skill": "armesAProjectiles",
     "weight": 2.0,
+    "creation_difficulty": 25,
+    "creation_time": 15,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 5400
+    },
     "body_part": "hand",
     "hands": 2,
     "requirements": { "force": 6 },
     "initiative": { "ranged": 4 },
     "damage": { "static": 25 },
-    "range": {
-      "eff": { "static": 10.0 },
-      "max": { "static": 40.0 }
-    },
+    "range_effective": { "static": 10.0 },
+    "range_max": { "static": 40.0 },
     "special": [
       {
         "description": "Ne peut pas se parer.",

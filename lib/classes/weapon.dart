@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
@@ -12,12 +13,19 @@ import 'entity_base.dart';
 import 'entity/base.dart';
 import '../text_utils.dart';
 
-class WeaponModel {
+part 'weapon.g.dart';
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class WeaponModel extends EquipmentModel {
   WeaponModel({
-    required this.name,
     required this.id,
+    required super.name,
+    required super.weight,
+    required super.creationDifficulty,
+    required super.creationTime,
+    required super.villageAvailability,
+    required super.cityAvailability,
     required this.skill,
-    required this.weight,
     required this.bodyPart,
     required this.hands,
     required this.requirements,
@@ -27,13 +35,16 @@ class WeaponModel {
     required this.rangeMax,
   });
 
-  final String name;
+  @override
+  String get uuid => id;
+
+  @JsonKey(includeToJson: false, readValue: _getIdFromJson)
   final String id;
+  @JsonKey(readValue: _getSkillFromJson, toJson: _setSkillToJson)
   final SpecializedSkill skill;
-  final double weight;
   final EquipableItemBodyPart bodyPart;
   final int hands;
-  final List<(Ability,int)> requirements;
+  final Map<Ability,int> requirements;
   final Map<WeaponRange, int> initiative;
   final AttributeBasedCalculator damage;
   final AttributeBasedCalculator rangeEffective;
@@ -88,52 +99,49 @@ class WeaponModel {
     var assets = json.decode(jsonStr);
 
     for(var model in assets) {
-      var id = sentenceToCamelCase(transliterateFrenchToAscii(model['name']));
-      var skill = Skill.values.byName(model['skill']);
-      var sp = SpecializedSkill.create(parent: skill, name: model['name']);
-
-      var reqs = <(Ability,int)>[];
-      for(var a in model['requirements'].keys) {
-        reqs.add((Ability.values.byName(a),model['requirements'][a]));
-      }
-
-      var init = <WeaponRange, int>{};
-      for(var i in model['initiative'].keys) {
-        var r = WeaponRange.values.byName(i);
-        init[r] = model['initiative'][i];
-      }
-
-      AttributeBasedCalculator dmg = AttributeBasedCalculator.fromJson(model['damage']);
-      AttributeBasedCalculator rEff = AttributeBasedCalculator.fromJson(model['range']['eff']);
-      AttributeBasedCalculator rMax = AttributeBasedCalculator.fromJson(model['range']['max']);
-
-      _models[id] = WeaponModel(
-          name: model['name'],
-          id: id,
-          skill: sp,
-          weight: model['weight'],
-          bodyPart: EquipableItemBodyPart.values.byName(model['body_part']),
-          hands: model['hands'],
-          requirements: reqs,
-          initiative: init,
-          damage: dmg,
-          rangeEffective: rEff,
-          rangeMax: rMax,
-      );
+      var id = _getIdFromJson(model, 'name') as String;
+      _models[id] = WeaponModel.fromJson(model);
     }
   }
 
+  static Object? _getIdFromJson(Map<dynamic, dynamic> json, _) =>
+      sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
+
+  static Object? _getSkillFromJson(Map<dynamic, dynamic> json, _) {
+    var skill = Skill.values.byName(json['skill']);
+    var sp = SpecializedSkill.create(parent: skill, name: json['name']);
+    return sp.toJson();
+  }
+
+  static String _setSkillToJson(SpecializedSkill skill) => skill.parent.name;
+
   static bool _defaultAssetsLoaded = false;
   static final Map<String, WeaponModel> _models = <String, WeaponModel>{};
+
+  factory WeaponModel.fromJson(Map<String, dynamic> json) =>
+      _$WeaponModelFromJson(json);
+
+  Map<String, dynamic> toJson() =>
+      _$WeaponModelToJson(this);
 }
 
 class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider {
   Weapon(this._uuid, { required this.model })
-    : super(bodyPart: model.bodyPart, handiness: model.hands);
+    : super(
+        name: model.name,
+        weight: model.weight,
+        bodyPart: model.bodyPart,
+        handiness: model.hands
+      );
 
   Weapon.create({ required this.model })
     : _uuid = const Uuid().v4().toString(),
-      super(bodyPart: EquipableItemBodyPart.hand, handiness: model.hands);
+      super(
+        name: model.name,
+        weight: model.weight,
+        bodyPart: EquipableItemBodyPart.hand,
+        handiness: model.hands
+      );
 
   final String _uuid;
   final WeaponModel model;
@@ -145,13 +153,7 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
   String uuid() => _uuid;
 
   @override
-  String name() => model.name;
-
-  @override
-  double weight() => model.weight;
-
-  @override
-  List<(Ability, int)> equipRequirements() => model.requirements;
+  Map<Ability, int> equipRequirements() => model.requirements;
 
   @override
   void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {

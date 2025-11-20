@@ -156,8 +156,8 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
   @override
   bool meetsEquipableRequirements(EquipableItem item) {
     bool meets = true;
-    for(var (a, v) in item.equipRequirements()) {
-      meets = abilities.ability(a) >= v;
+    for(var entry in item.equipRequirements().entries) {
+      meets = abilities.ability(entry.key) >= entry.value;
       if(!meets) break;
     }
     return meets;
@@ -166,9 +166,9 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
   @override
   String unmetEquipableRequirementsDescription(EquipableItem item) {
     var ret = <String>[];
-    for(var (a, v) in item.equipRequirements()) {
-      if(abilities.ability(a) < v) {
-        ret.add('${a.name} ($v)');
+    for(var entry in item.equipRequirements().entries) {
+      if(abilities.ability(entry.key) < entry.value) {
+        ret.add('${entry.key.name} (${entry.value})');
       }
     }
     return ret.join(', ');

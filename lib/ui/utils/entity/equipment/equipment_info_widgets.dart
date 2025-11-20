@@ -35,7 +35,7 @@ class WeaponInfoWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '\u{2694} ${weapon.name()}',
+          '\u{2694} ${weapon.name}',
           style: theme.textTheme.titleMedium,
         ),
         Text(
@@ -60,7 +60,7 @@ class ShieldInfoWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '\u{1F6E1} ${shield.name()}',
+          '\u{1F6E1} ${shield.name}',
           style: theme.textTheme.titleMedium,
         ),
         Text(
@@ -89,7 +89,7 @@ class ArmorInfoWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '\u{1FA96} ${armor.name()}',
+          '\u{1FA96} ${armor.name}',
           style: theme.textTheme.titleMedium,
         ),
         Text(

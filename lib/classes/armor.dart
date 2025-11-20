@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'dart:convert';
@@ -7,6 +8,8 @@ import 'entity/abilities.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
 import '../text_utils.dart';
+
+part 'armor.g.dart';
 
 enum ArmorType {
   light(title: "Armure légère"),
@@ -18,22 +21,29 @@ enum ArmorType {
   final String title;
 }
 
-class ArmorModel {
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class ArmorModel extends EquipmentModel {
   ArmorModel({
-    required this.name,
     required this.id,
+    required super.name,
+    required super.weight,
+    required super.creationDifficulty,
+    required super.creationTime,
+    required super.villageAvailability,
+    required super.cityAvailability,
     required this.type,
     required this.requirements,
     required this.protection,
-    required this.weight,
     required this.penalty,
   });
 
-  final String name;
+  @override
+  String get uuid => id;
+
+  @JsonKey(includeToJson: false, readValue: _getIdFromJson)
   final String id;
   final ArmorType type;
-  final int weight;
-  final List<(Ability,int)> requirements;
+  final Map<Ability,int> requirements;
   final int protection;
   final int penalty;
 
@@ -78,36 +88,41 @@ class ArmorModel {
     var assets = json.decode(jsonStr);
 
     for(var model in assets) {
-      var id = sentenceToCamelCase(transliterateFrenchToAscii(model['name']));
-
-      var reqs = <(Ability,int)>[];
-      for(var a in model['requirements'].keys) {
-        reqs.add((Ability.values.byName(a),model['requirements'][a]));
-      }
-
-      _models[id] = ArmorModel(
-          name: model['name'],
-          id: id,
-          type: ArmorType.values.byName(model['type']),
-          requirements: reqs,
-          protection: model['protection'],
-          weight: model['weight'],
-          penalty: model['penalty']
-      );
+      var id = _getIdFromJson(model, 'name') as String;
+      _models[id] = ArmorModel.fromJson(model);
     }
   }
 
+  static Object? _getIdFromJson(Map<dynamic, dynamic> json, _) =>
+      sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
+
   static bool _defaultAssetsLoaded = false;
   static final Map<String, ArmorModel> _models = <String, ArmorModel>{};
+
+  factory ArmorModel.fromJson(Map<String, dynamic> json) =>
+      _$ArmorModelFromJson(json);
+
+  Map<String, dynamic> toJson() =>
+      _$ArmorModelToJson(this);
 }
 
 class Armor extends EquipableItem implements ProtectionProvider {
   Armor(this._uuid, { required this.model })
-    : super(bodyPart: EquipableItemBodyPart.body, handiness: 0);
+    : super(
+        name: model.name,
+        weight: model.weight,
+        bodyPart: EquipableItemBodyPart.body,
+        handiness: 0
+      );
 
   Armor.create({ required this.model })
     : _uuid = const Uuid().v4().toString(),
-      super(bodyPart: EquipableItemBodyPart.body, handiness: 0);
+      super(
+        name: model.name,
+        weight: model.weight,
+        bodyPart: EquipableItemBodyPart.body,
+        handiness: 0
+      );
 
   final String _uuid;
   final ArmorModel model;
@@ -119,13 +134,7 @@ class Armor extends EquipableItem implements ProtectionProvider {
   String uuid() => _uuid;
 
   @override
-  String name() => model.name;
-
-  @override
-  double weight() => model.weight as double;
-
-  @override
-  List<(Ability, int)> equipRequirements() => model.requirements;
+  Map<Ability, int> equipRequirements() => model.requirements;
 
   @override
   void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {

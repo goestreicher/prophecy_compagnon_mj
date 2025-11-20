@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'dart:convert';
@@ -10,21 +11,30 @@ import 'equipment.dart';
 import 'entity_base.dart';
 import '../text_utils.dart';
 
-class ShieldModel {
+part 'shield.g.dart';
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class ShieldModel extends EquipmentModel {
   ShieldModel({
     required this.id,
-    required this.name,
-    required this.weight,
+    required super.name,
+    required super.weight,
+    required super.creationDifficulty,
+    required super.creationTime,
+    required super.villageAvailability,
+    required super.cityAvailability,
     required this.requirements,
     required this.protection,
     required this.penalty,
     required this.damage,
   });
 
+  @override
+  String get uuid => id;
+
+  @JsonKey(includeToJson: false, readValue: _getIdFromJson)
   final String id;
-  final String name;
-  final double weight;
-  final List<(Ability,int)> requirements;
+  final Map<Ability, int> requirements;
   final int protection;
   final int penalty;
   final AttributeBasedCalculator damage;
@@ -65,38 +75,41 @@ class ShieldModel {
     var assets = json.decode(jsonStr);
 
     for(var model in assets) {
-      var id = sentenceToCamelCase(transliterateFrenchToAscii(model['name']));
-
-      var reqs = <(Ability,int)>[];
-      for(var a in model['requirements'].keys) {
-        reqs.add((Ability.values.byName(a),model['requirements'][a]));
-      }
-
-      AttributeBasedCalculator dmg = AttributeBasedCalculator.fromJson(model['damage']);
-
-      _models[id] = ShieldModel(
-        name: model['name'],
-        id: id,
-        weight: model['weight'],
-        requirements: reqs,
-        protection: model['protection'],
-        penalty: model['penalty'],
-        damage: dmg,
-      );
+      var id = _getIdFromJson(model, 'name') as String;
+      _models[id] = ShieldModel.fromJson(model);
     }
   }
 
+  static Object? _getIdFromJson(Map<dynamic, dynamic> json, _) =>
+      sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
+
   static bool _defaultAssetsLoaded = false;
   static final Map<String, ShieldModel> _models = <String, ShieldModel>{};
+
+  factory ShieldModel.fromJson(Map<String, dynamic> json) =>
+      _$ShieldModelFromJson(json);
+
+  Map<String, dynamic> toJson() =>
+      _$ShieldModelToJson(this);
 }
 
 class Shield extends EquipableItem implements ProtectionProvider, DamageProvider {
   Shield(this._uuid, { required this.model })
-    : super(bodyPart: EquipableItemBodyPart.hand, handiness: 1);
+    : super(
+        name: model.name,
+        weight: model.weight,
+        bodyPart: EquipableItemBodyPart.hand,
+        handiness: 1
+      );
 
   Shield.create({ required this.model })
     : _uuid = const Uuid().v4().toString(),
-      super(bodyPart: EquipableItemBodyPart.hand, handiness: 1);
+      super(
+        name: model.name,
+        weight: model.weight,
+        bodyPart: EquipableItemBodyPart.hand,
+        handiness: 1
+      );
 
   final String _uuid;
   final ShieldModel model;
@@ -108,13 +121,7 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
   String uuid() => _uuid;
 
   @override
-  String name() => model.name;
-
-  @override
-  double weight() => model.weight;
-
-  @override
-  List<(Ability, int)> equipRequirements() => model.requirements;
+  Map<Ability, int> equipRequirements() => model.requirements;
 
   @override
   void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {

@@ -1,18 +1,321 @@
 [
-  { "name": "Vêtements épais", "type": "light", "weight": 2, "requirements": {}, "protection": 2, "penalty": 0 },
-  { "name": "Fourrures", "type": "light", "weight": 4, "requirements": {}, "protection": 5, "penalty": 0 },
-  { "name": "Cuir souple", "type": "light", "weight": 3, "requirements": {}, "protection": 4, "penalty": 0 },
-  { "name": "Cuir clouté", "type": "light", "weight": 6, "requirements": {}, "protection": 6, "penalty": 0 },
-  { "name": "Cuir bouilli", "type": "light", "weight": 6, "requirements": {}, "protection": 8, "penalty": -2 },
-  { "name": "Armure d'os et de corne", "type": "medium", "weight": 7, "requirements": { "force": 4 }, "protection": 12, "penalty": -2 },
-  { "name": "Cotte légère", "type": "medium", "weight": 8, "requirements": { "force": 4 }, "protection": 10, "penalty": 0 },
-  { "name": "Cotte de mailles", "type": "medium", "weight": 12, "requirements": { "force": 4, "resistance": 6 }, "protection": 15, "penalty": -2 },
-  { "name": "Armure d'anneaux", "type": "medium", "weight": 14, "requirements": { "force": 4, "resistance": 5 }, "protection": 16, "penalty": -4 },
-  { "name": "Brigandine", "type": "medium", "weight": 16, "requirements": { "force": 5, "resistance": 5 }, "protection": 17, "penalty": -5 },
-  { "name": "Armure d'écailles", "type": "heavy", "weight": 17, "requirements": { "force": 6, "resistance": 6 }, "protection": 20, "penalty": -5 },
-  { "name": "Armure de bois", "type": "heavy", "weight": 10, "requirements": { "force": 4, "resistance": 3 }, "protection": 15, "penalty": -6 },
-  { "name": "Armure de demi-plaques", "type": "heavy", "weight": 15, "requirements": { "force": 4, "resistance": 5 }, "protection": 18, "penalty": -6 },
-  { "name": "Armure de lamelles", "type": "heavy", "weight": 20, "requirements": { "force": 5, "resistance": 5 }, "protection": 22, "penalty": -8 },
-  { "name": "Armure de plaques", "type": "heavy", "weight": 25, "requirements": { "force": 6, "resistance": 7 }, "protection": 25, "penalty": -10 },
-  { "name": "Armure draconique", "type": "heavy", "weight": 30, "requirements": { "force": 7, "resistance": 7 }, "protection": 27, "penalty": -10 }
+  {
+    "name": "Vêtements épais",
+    "type": "light",
+    "weight": 2.0,
+    "creation_difficulty": 10,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 115
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 125
+    },
+    "requirements": {},
+    "protection": 2,
+    "penalty": 0
+  },
+  {
+    "name": "Fourrures",
+    "type": "light",
+    "weight": 4.0,
+    "creation_difficulty": 10,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 150
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 415
+    },
+    "requirements": {},
+    "protection": 5,
+    "penalty": 0
+  },
+  {
+    "name": "Cuir souple",
+    "type": "light",
+    "weight": 3.0,
+    "creation_difficulty": 15,
+    "creation_time": 8,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 215
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 160
+    },
+    "requirements": {},
+    "protection": 4,
+    "penalty": 0
+  },
+  {
+    "name": "Cuir clouté",
+    "type": "light",
+    "weight": 6.0,
+    "creation_difficulty": 15,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 300
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 375
+    },
+    "requirements": {},
+    "protection": 6,
+    "penalty": 0
+  },
+  {
+    "name": "Cuir bouilli",
+    "type": "light",
+    "weight": 6.0,
+    "creation_difficulty": 20,
+    "creation_time": 12,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 765
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 790
+    },
+    "requirements": {},
+    "protection": 8,
+    "penalty": -2
+  },
+  {
+    "name": "Armure d'os et de corne",
+    "type": "medium",
+    "weight": 7.0,
+    "creation_difficulty": 20,
+    "creation_time": 20,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 2400
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 3350
+    },
+    "requirements": {
+      "force": 4
+    },
+    "protection": 12,
+    "penalty": -2
+  },
+  {
+    "name": "Cotte légère",
+    "type": "medium",
+    "weight": 8.0,
+    "creation_difficulty": 15,
+    "creation_time": 15,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 550
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 550
+    },
+    "requirements": {
+      "force": 4
+    },
+    "protection": 10,
+    "penalty": 0
+  },
+  {
+    "name": "Cotte de mailles",
+    "type": "medium",
+    "weight": 12.0,
+    "creation_difficulty": 20,
+    "creation_time": 25,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 3500
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 1900
+    },
+    "requirements": {
+      "force": 4,
+      "resistance": 6
+    },
+    "protection": 15,
+    "penalty": -2
+  },
+  {
+    "name": "Armure d'anneaux",
+    "type": "medium",
+    "weight": 14.0,
+    "creation_difficulty": 15,
+    "creation_time": 30,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 1100
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 1400
+    },
+    "requirements": {
+      "force": 4,
+      "resistance": 5
+    },
+    "protection": 16,
+    "penalty": -4
+  },
+  {
+    "name": "Brigandine",
+    "type": "medium",
+    "weight": 16.0,
+    "creation_difficulty": 20,
+    "creation_time": 20,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 2300
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 1800
+    },
+    "requirements": {
+      "force": 5,
+      "resistance": 5
+    },
+    "protection": 17,
+    "penalty": -5
+  },
+  {
+    "name": "Armure d'écailles",
+    "type": "heavy",
+    "weight": 17.0,
+    "creation_difficulty": 20,
+    "creation_time": 30,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 2800
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 2800
+    },
+    "requirements": {
+      "force": 6,
+      "resistance": 6
+    },
+    "protection": 20,
+    "penalty": -5
+  },
+  {
+    "name": "Armure de bois",
+    "type": "heavy",
+    "weight": 10.0,
+    "creation_difficulty": 20,
+    "creation_time": 15,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 1200
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 1600
+    },
+    "requirements": {
+      "force": 4,
+      "resistance": 3
+    },
+    "protection": 15,
+    "penalty": -6
+  },
+  {
+    "name": "Armure de demi-plaques",
+    "type": "heavy",
+    "weight": 15.0,
+    "creation_difficulty": 20,
+    "creation_time": 25,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 2400
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 1900
+    },
+    "requirements": {
+      "force": 4,
+      "resistance": 5
+    },
+    "protection": 18,
+    "penalty": -6
+  },
+  {
+    "name": "Armure de lamelles",
+    "type": "heavy",
+    "weight": 20.0,
+    "creation_difficulty": 20,
+    "creation_time": 30,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 2800
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 2800
+    },
+    "requirements": {
+      "force": 5,
+      "resistance": 5
+    },
+    "protection": 22,
+    "penalty": -8
+  },
+  {
+    "name": "Armure de plaques",
+    "type": "heavy",
+    "weight": 25.0,
+    "creation_difficulty": 25,
+    "creation_time": 40,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 11000
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 7500
+    },
+    "requirements": {
+      "force": 6,
+      "resistance": 7
+    },
+    "protection": 25,
+    "penalty": -10
+  },
+  {
+    "name": "Armure draconique",
+    "type": "heavy",
+    "weight": 30.0,
+    "creation_difficulty": 25,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 10000
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 7000
+    },
+    "requirements": {
+      "force": 7,
+      "resistance": 7
+    },
+    "protection": 27,
+    "penalty": -10
+  }
 ]

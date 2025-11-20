@@ -25,17 +25,19 @@ enum EquipableItemTarget {
 }
 
 enum EquipmentScarcity {
-  tresCommun(title: 'Très commun'),
-  commun(title: 'Commun'),
-  peuCommun(title: 'Peu commun'),
-  rare(title: 'Rare'),
-  tresRare(title: 'Très rare'),
-  introuvable(title: 'Introuvable'),
+  tresCommun(title: 'Très commun', short: 'tc'),
+  commun(title: 'Commun', short: 'c'),
+  peuCommun(title: 'Peu commun', short: 'pc'),
+  rare(title: 'Rare', short: 'r'),
+  tresRare(title: 'Très rare', short: 'tr'),
+  introuvable(title: 'Introuvable', short: 'int'),
+  nonApplicable(title: 'Non applicable', short: 'NA'),
   ;
 
   final String title;
+  final String short;
 
-  const EquipmentScarcity({ required this.title });
+  const EquipmentScarcity({ required this.title, required this.short });
 }
 
 class EquipmentFactory {
@@ -65,11 +67,88 @@ class EquipmentFactory {
   final Map<String, Equipment? Function(String,String)> _factories = {};
 }
 
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class EquipmentAvailability {
+  EquipmentAvailability({
+    required this.scarcity,
+    required this.price,
+  });
+
+  static final EquipmentAvailability empty = EquipmentAvailability(
+      scarcity: EquipmentScarcity.nonApplicable,
+      price: 0
+  );
+
+  EquipmentScarcity scarcity;
+  int price;
+
+  factory EquipmentAvailability.fromJson(Map<String, dynamic> json) =>
+      _$EquipmentAvailabilityFromJson(json);
+
+  Map<String, dynamic> toJson() =>
+      _$EquipmentAvailabilityToJson(this);
+}
+
+abstract class EquipmentModel {
+  EquipmentModel({
+    required this.name,
+    required this.weight,
+    required this.creationDifficulty,
+    required this.creationTime,
+    required this.villageAvailability,
+    required this.cityAvailability,
+  });
+
+  String get uuid;
+
+  String name;
+  double weight;
+  int creationDifficulty;
+  int creationTime;
+  EquipmentAvailability villageAvailability;
+  EquipmentAvailability cityAvailability;
+}
+
 abstract class Equipment {
+  Equipment({
+    required this.name,
+    required this.weight
+  });
+
   String type();
   String uuid();
-  String name();
-  double weight();
+
+  String name;
+  double weight;
+}
+
+abstract class EquipableItem extends Equipment {
+  EquipableItem({
+    required super.name,
+    required super.weight,
+    required this.bodyPart,
+    required this.handiness,
+    EquipableItemTarget equipedOn = EquipableItemTarget.none,
+  })
+      : equipedOnNotifier = ValueNotifier<EquipableItemTarget>(equipedOn);
+
+  final EquipableItemBodyPart bodyPart;
+  final int handiness;
+  EquipableItemTarget get equipedOn => equipedOnNotifier.value;
+  set equipedOn(EquipableItemTarget target) => equipedOnNotifier.value = target;
+  ValueNotifier<EquipableItemTarget> equipedOnNotifier;
+
+  Map<Ability,int> equipRequirements();
+
+  @mustCallSuper
+  void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
+    equipedOnNotifier.value = target;
+  }
+
+  @mustCallSuper
+  void unequiped(SupportsEquipableItem owner) {
+    equipedOnNotifier.value = EquipableItemTarget.none;
+  }
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true, createFactory: false)
@@ -200,33 +279,6 @@ abstract mixin class SupportsEquipableItem {
   List<EquipableItem> equiped = <EquipableItem>[];
 
   Map<String, dynamic> toJson() => _$SupportsEquipableItemToJson(this);
-}
-
-abstract class EquipableItem extends Equipment {
-  EquipableItem({
-    required this.bodyPart,
-    required this.handiness,
-    EquipableItemTarget equipedOn = EquipableItemTarget.none,
-  })
-    : equipedOnNotifier = ValueNotifier<EquipableItemTarget>(equipedOn);
-
-  final EquipableItemBodyPart bodyPart;
-  final int handiness;
-  EquipableItemTarget get equipedOn => equipedOnNotifier.value;
-  set equipedOn(EquipableItemTarget target) => equipedOnNotifier.value = target;
-  ValueNotifier<EquipableItemTarget> equipedOnNotifier;
-
-  List<(Ability,int)> equipRequirements();
-
-  @mustCallSuper
-  void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
-    equipedOnNotifier.value = target;
-  }
-
-  @mustCallSuper
-  void unequiped(SupportsEquipableItem owner) {
-    equipedOnNotifier.value = EquipableItemTarget.none;
-  }
 }
 
 class EntityEquipment with IterableMixin<Equipment>, ChangeNotifier {

@@ -681,9 +681,13 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
             id: 'creature:$id:specialized:weapon:${weapon.id}',
             skill: spSkill,
             weight: 0.0,
+            creationDifficulty: 0,
+            creationTime: 0,
+            villageAvailability: EquipmentAvailability.empty,
+            cityAvailability: EquipmentAvailability.empty,
             bodyPart: EquipableItemBodyPart.hand,
             hands: 0,
-            requirements: [],
+            requirements: {},
             initiative: Map<WeaponRange, int>.fromEntries(
               weapon.ranges.keys.map( (WeaponRange r) => MapEntry(r, 0) )
             ),

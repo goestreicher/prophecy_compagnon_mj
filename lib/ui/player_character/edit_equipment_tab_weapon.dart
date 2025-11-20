@@ -223,7 +223,7 @@ class _WeaponEditWidgetState extends State<WeaponEditWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '\u{2694} ${widget.weapon.name()}',
+                  '\u{2694} ${widget.weapon.name}',
                   style: theme.textTheme.titleMedium,
                 ),
                 Text(
@@ -356,7 +356,7 @@ class _ShieldEditWidgetState extends State<ShieldEditWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '\u{1F6E1} ${widget.shield.name()}',
+                  '\u{1F6E1} ${widget.shield.name}',
                   style: theme.textTheme.titleMedium,
                 ),
                 Text(

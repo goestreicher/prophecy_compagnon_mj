@@ -148,7 +148,7 @@ class _ArmorEditWidgetState extends State<ArmorEditWidget> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.armor.name(),
+                  widget.armor.name,
                   style: theme.textTheme.titleMedium,
                 ),
                 Text(
