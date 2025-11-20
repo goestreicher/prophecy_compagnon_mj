@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../../classes/character_role.dart';
+import '../../../classes/resource_link/resource_link.dart';
 import '../../../classes/star_company.dart';
 import '../character_role_edit_widget.dart';
 
 
 class StarCompanyEditDialog extends StatefulWidget {
-  const StarCompanyEditDialog({ super.key, this.company });
+  const StarCompanyEditDialog({
+    super.key,
+    this.company,
+    this.resourceLinkProvider
+  });
 
   final StarCompany? company;
+  final ResourceLinkProvider? resourceLinkProvider;
 
   @override
   State<StarCompanyEditDialog> createState() => _StarCompanyEditDialogState();
@@ -62,6 +68,7 @@ class _StarCompanyEditDialogState extends State<StarCompanyEditDialog> {
               CharacterRoleListEditWidget(
                 title: 'Guide',
                 maxCount: 1,
+                resourceLinkProvider: widget.resourceLinkProvider,
                 members: guide == null ? [] : [guide!],
                 onAdd: (CharacterRole r) => setState(() {
                   guide = r;
@@ -73,6 +80,7 @@ class _StarCompanyEditDialogState extends State<StarCompanyEditDialog> {
               CharacterRoleListEditWidget(
                 title: 'Archiviste',
                 maxCount: 1,
+                resourceLinkProvider: widget.resourceLinkProvider,
                 members: archiviste == null ? [] : [archiviste!],
                 onAdd: (CharacterRole r) => setState(() {
                   archiviste = r;
@@ -84,6 +92,7 @@ class _StarCompanyEditDialogState extends State<StarCompanyEditDialog> {
               CharacterRoleListEditWidget(
                 title: 'Main du destin',
                 maxCount: 1,
+                resourceLinkProvider: widget.resourceLinkProvider,
                 members: mainDuDestin == null ? [] : [mainDuDestin!],
                 onAdd: (CharacterRole r) => setState(() {
                   mainDuDestin = r;

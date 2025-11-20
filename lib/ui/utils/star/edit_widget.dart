@@ -2,6 +2,7 @@ import 'package:fleather/fleather.dart';
 import 'package:flutter/material.dart';
 import 'package:parchment/codecs.dart';
 
+import '../../../classes/resource_link/resource_link.dart';
 import '../../../classes/star.dart';
 import '../../../classes/star_motivations.dart';
 import '../../../classes/star_powers.dart';
@@ -15,10 +16,12 @@ class StarEditWidget extends StatefulWidget {
     super.key,
     required this.star,
     required this.onEditDone,
+    this.resourceLinkProvider,
   });
 
   final Star star;
   final void Function(bool) onEditDone;
+  final ResourceLinkProvider? resourceLinkProvider;
 
   @override
   State<StarEditWidget> createState() => _StarEditWidgetState();
@@ -487,6 +490,7 @@ class _StarEditWidgetState extends State<StarEditWidget> {
                 StarCompaniesDisplayWidget(
                   star: widget.star,
                   edit: true,
+                  resourceLinkProvider: widget.resourceLinkProvider,
                 ),
                 WidgetGroupContainer(
                   title: Text(

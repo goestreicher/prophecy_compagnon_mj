@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../classes/resource_link/resource_link.dart';
 import '../../../classes/star.dart';
 import '../uniform_height_wrap.dart';
 import '../widget_group_container.dart';
@@ -11,10 +12,12 @@ class StarCompaniesDisplayWidget extends StatefulWidget {
     super.key,
     required this.star,
     this.edit = false,
+    this.resourceLinkProvider,
   });
 
   final Star star;
   final bool edit;
+  final ResourceLinkProvider? resourceLinkProvider;
 
   @override
   State<StarCompaniesDisplayWidget> createState() => _StarCompaniesDisplayWidgetState();
@@ -47,6 +50,7 @@ class _StarCompaniesDisplayWidgetState extends State<StarCompaniesDisplayWidget>
                       context: context,
                       builder: (BuildContext context) => StarCompanyEditDialog(
                         company: c,
+                        resourceLinkProvider: widget.resourceLinkProvider,
                       ),
                     );
                     if(!context.mounted) return;

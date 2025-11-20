@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/object_source.dart';
+import '../../classes/resource_link/assets_resource_link_provider.dart';
+import '../../classes/resource_link/multi_resource_link_provider.dart';
+import '../../classes/resource_link/scenario_resource_link_provider.dart';
 import '../../classes/star.dart';
 import '../utils/star/create_widget.dart';
 import '../utils/star/display_widget.dart';
@@ -84,6 +87,14 @@ class _ScenarioEditStarsPageState extends State<ScenarioEditStarsPage> {
         color: theme.colorScheme.surfaceContainerHighest,
         child: StarEditWidget(
           star: editing!,
+            resourceLinkProvider: MultiResourceLinkProvider(
+              providers: [
+                AssetsResourceLinkProvider(),
+                ScenarioResourceLinkProvider(
+                  source: widget.scenarioSource,
+                ),
+              ]
+            ),
           onEditDone: (bool result) async {
             if(result) {
               await Star.saveLocalModel(editing!);
