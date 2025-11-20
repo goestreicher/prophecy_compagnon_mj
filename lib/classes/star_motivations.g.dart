@@ -9,33 +9,32 @@ part of 'star_motivations.dart';
 StarMotivations _$StarMotivationsFromJson(Map<String, dynamic> json) =>
     StarMotivations(
       vertu: $enumDecode(_$MotivationVertuEnumMap, json['vertu']),
-      vertuValue: (json['vertu_value'] as num).toInt(),
       penchant: $enumDecode(_$MotivationPenchantEnumMap, json['penchant']),
-      penchantValue: (json['penchant_value'] as num).toInt(),
       ideal: $enumDecode(_$MotivationIdealEnumMap, json['ideal']),
-      idealValue: (json['ideal_value'] as num).toInt(),
       interdit: $enumDecode(_$MotivationInterditEnumMap, json['interdit']),
-      interditValue: (json['interdit_value'] as num).toInt(),
       epreuve: $enumDecode(_$MotivationEpreuveEnumMap, json['epreuve']),
-      epreuveValue: (json['epreuve_value'] as num).toInt(),
       destinee: $enumDecode(_$MotivationDestineeEnumMap, json['destinee']),
-      destineeValue: (json['destinee_value'] as num).toInt(),
+      values:
+          (json['values'] as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(
+              $enumDecode(_$MotivationTypeEnumMap, k),
+              (e as num).toInt(),
+            ),
+          ) ??
+          const <MotivationType, int>{},
     );
 
 Map<String, dynamic> _$StarMotivationsToJson(StarMotivations instance) =>
     <String, dynamic>{
       'vertu': _$MotivationVertuEnumMap[instance.vertu]!,
-      'vertu_value': instance.vertuValue,
       'penchant': _$MotivationPenchantEnumMap[instance.penchant]!,
-      'penchant_value': instance.penchantValue,
       'ideal': _$MotivationIdealEnumMap[instance.ideal]!,
-      'ideal_value': instance.idealValue,
       'interdit': _$MotivationInterditEnumMap[instance.interdit]!,
-      'interdit_value': instance.interditValue,
       'epreuve': _$MotivationEpreuveEnumMap[instance.epreuve]!,
-      'epreuve_value': instance.epreuveValue,
       'destinee': _$MotivationDestineeEnumMap[instance.destinee]!,
-      'destinee_value': instance.destineeValue,
+      'values': instance.values.map(
+        (k, e) => MapEntry(_$MotivationTypeEnumMap[k]!, e),
+      ),
     };
 
 const _$MotivationVertuEnumMap = {
@@ -114,4 +113,13 @@ const _$MotivationDestineeEnumMap = {
   MotivationDestinee.desillusion: 'desillusion',
   MotivationDestinee.puissance: 'puissance',
   MotivationDestinee.accomplissement: 'accomplissement',
+};
+
+const _$MotivationTypeEnumMap = {
+  MotivationType.vertu: 'vertu',
+  MotivationType.penchant: 'penchant',
+  MotivationType.ideal: 'ideal',
+  MotivationType.interdit: 'interdit',
+  MotivationType.epreuve: 'epreuve',
+  MotivationType.destinee: 'destinee',
 };

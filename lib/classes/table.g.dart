@@ -25,10 +25,14 @@ GameTable _$GameTableFromJson(Map<String, dynamic> json) => GameTable(
   playerSummaries: (json['players'] as List<dynamic>?)
       ?.map((e) => PlayerCharacterSummary.fromJson(e as Map<String, dynamic>))
       .toList(),
+  star: json['star'] == null
+      ? null
+      : PlayersStar.fromJson(json['star'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$GameTableToJson(GameTable instance) => <String, dynamic>{
   'uuid': instance.uuid,
   'name': instance.name,
   'players': instance.playerSummaries.map((e) => e.toJson()).toList(),
+  'star': instance.star?.toJson(),
 };

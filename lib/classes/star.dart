@@ -15,6 +15,24 @@ import 'storage/storable.dart';
 
 part 'star.g.dart';
 
+enum StarReach {
+  level0(title: 'Aucun autre inspiré'),
+  level1(title: '1 ou 2 autres inspirés'),
+  level2(title: 'de 3 à 5 autres inspirés'),
+  level3(title: 'de 6 à 10 autres inspirés'),
+  level4(title: 'de 11 à 20 autres inspirés'),
+  level5(title: 'de 21 à 50 autres inspirés'),
+  level6(title: 'de 51 à 100 autres inspirés'),
+  level7(title: 'de 101 à 200 autres inspirés'),
+  level8(title: 'de 201 à 500 autres inspirés'),
+  level9(title: 'plus de 500 autres inspirés'),
+  ;
+
+  final String title;
+
+  const StarReach({ required this.title });
+}
+
 class StarStore extends JsonStoreAdapter<Star> {
   @override
   String storeCategory() => 'stars';
@@ -40,24 +58,6 @@ class StarStore extends JsonStoreAdapter<Star> {
       collectionUri: getCollectionUri(),
     );
   }
-}
-
-enum StarReach {
-  level0(title: 'Aucun autre inspiré'),
-  level1(title: '1 ou 2 autres inspirés'),
-  level2(title: 'de 3 à 5 autres inspirés'),
-  level3(title: 'de 6 à 10 autres inspirés'),
-  level4(title: 'de 11 à 20 autres inspirés'),
-  level5(title: 'de 21 à 50 autres inspirés'),
-  level6(title: 'de 51 à 100 autres inspirés'),
-  level7(title: 'de 101 à 200 autres inspirés'),
-  level8(title: 'de 201 à 500 autres inspirés'),
-  level9(title: 'plus de 500 autres inspirés'),
-  ;
-
-  final String title;
-
-  const StarReach({ required this.title });
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -110,12 +110,12 @@ class Star extends ResourceBaseClass {
   String get id => sentenceToCamelCase(transliterateFrenchToAscii(name));
 
   int get eclat => [
-      motivations.vertuValue,
-      motivations.penchantValue,
-      motivations.idealValue,
-      motivations.interditValue,
-      motivations.epreuveValue,
-      motivations.destineeValue
+      motivations.getValue(MotivationType.vertu),
+      motivations.getValue(MotivationType.penchant),
+      motivations.getValue(MotivationType.ideal),
+      motivations.getValue(MotivationType.interdit),
+      motivations.getValue(MotivationType.epreuve),
+      motivations.getValue(MotivationType.destinee)
     ].reduce(min);
 
   static Future<Star?> get(String id) async {
@@ -290,22 +290,16 @@ class PlayersStar extends Star {
     required super.envergure,
     required super.motivations,
     super.powers,
-    this.vertuCircles = 0,
-    this.penchantCircles = 0,
-    this.idealCircles = 0,
-    this.interditCircles = 0,
-    this.epreuveCircles = 0,
-    this.destineeCircles = 0,
-    this.experiencePoints = 0,
-  }) : super._create();
+    this.experience = 0,
+    this.circles = const <MotivationType, int>{},
+  })
+    : super._create();
 
-  int vertuCircles;
-  int penchantCircles;
-  int idealCircles;
-  int interditCircles;
-  int epreuveCircles;
-  int destineeCircles;
-  int experiencePoints;
+  int experience;
+  Map<MotivationType, int> circles;
+
+  int getCircles(MotivationType motivation) => circles[motivation] ?? 0;
+  void setCircles(MotivationType motivation, int v) => circles[motivation] = v;
 
   factory PlayersStar.fromJson(Map<String, dynamic> json) =>
       _$PlayersStarFromJson(json);

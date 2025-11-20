@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../classes/star.dart';
+import '../../../classes/star_motivations.dart';
 import '../dismissible_dialog.dart';
 import '../error_feedback.dart';
 import '../full_page_loading.dart';
@@ -111,7 +112,7 @@ class _StarDisplayWidgetState extends State<StarDisplayWidget> {
                                 style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                                 children: [
                                   TextSpan(
-                                    text: '${star.motivations.vertu.title} (${star.motivations.vertuValue})',
+                                    text: '${star.motivations.vertu.title} (${star.motivations.getValue(MotivationType.vertu)})',
                                     style: theme.textTheme.bodyLarge,
                                   )
                                 ]
@@ -123,7 +124,7 @@ class _StarDisplayWidgetState extends State<StarDisplayWidget> {
                                 style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                                 children: [
                                   TextSpan(
-                                    text: '${star.motivations.penchant.title} (${star.motivations.penchantValue})',
+                                    text: '${star.motivations.penchant.title} (${star.motivations.getValue(MotivationType.penchant)})',
                                     style: theme.textTheme.bodyLarge,
                                   )
                                 ]
@@ -135,7 +136,7 @@ class _StarDisplayWidgetState extends State<StarDisplayWidget> {
                                 style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                                 children: [
                                   TextSpan(
-                                    text: '${star.motivations.ideal.title} (${star.motivations.idealValue})',
+                                    text: '${star.motivations.ideal.title} (${star.motivations.getValue(MotivationType.ideal)})',
                                     style: theme.textTheme.bodyLarge,
                                   )
                                 ]
@@ -147,7 +148,7 @@ class _StarDisplayWidgetState extends State<StarDisplayWidget> {
                                 style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                                 children: [
                                   TextSpan(
-                                    text: '${star.motivations.interdit.title} (${star.motivations.interditValue})',
+                                    text: '${star.motivations.interdit.title} (${star.motivations.getValue(MotivationType.interdit)})',
                                     style: theme.textTheme.bodyLarge,
                                   )
                                 ]
@@ -159,7 +160,7 @@ class _StarDisplayWidgetState extends State<StarDisplayWidget> {
                                 style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                                 children: [
                                   TextSpan(
-                                    text: '${star.motivations.epreuve.title} (${star.motivations.epreuveValue})',
+                                    text: '${star.motivations.epreuve.title} (${star.motivations.getValue(MotivationType.epreuve)})',
                                     style: theme.textTheme.bodyLarge,
                                   )
                                 ]
@@ -171,7 +172,7 @@ class _StarDisplayWidgetState extends State<StarDisplayWidget> {
                                 style: theme.textTheme.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
                                 children: [
                                   TextSpan(
-                                    text: '${star.motivations.destinee.title} (${star.motivations.destineeValue})',
+                                    text: '${star.motivations.destinee.title} (${star.motivations.getValue(MotivationType.destinee)})',
                                     style: theme.textTheme.bodyLarge,
                                   )
                                 ]

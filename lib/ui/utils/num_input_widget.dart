@@ -17,6 +17,8 @@ class NumDoubleInputWidget extends StatefulWidget {
     this.collapsed = true,
     this.enabled = true,
     this.controller,
+    this.onOverflow,
+    this.onUnderflow,
   });
 
   final double initialValue;
@@ -30,6 +32,8 @@ class NumDoubleInputWidget extends StatefulWidget {
   final bool collapsed;
   final bool enabled;
   final TextEditingController? controller;
+  final double Function()? onOverflow;
+  final double Function()? onUnderflow;
 
   @override
   State<NumDoubleInputWidget> createState() => _NumDoubleInputWidgetState();
@@ -42,7 +46,7 @@ class _NumDoubleInputWidgetState extends State<NumDoubleInputWidget> {
   void initState() {
     super.initState();
     controller = widget.controller ?? TextEditingController();
-    controller.text = widget.initialValue.toString();
+    controller.text = widget.initialValue.toStringAsFixed(widget.decimals);
   }
 
   double roundValue(double input) {
@@ -61,10 +65,10 @@ class _NumDoubleInputWidgetState extends State<NumDoubleInputWidget> {
         label: widget.label == null
             ? null
             : Text(
-          widget.label!,
-          maxLines: 1,
-          overflow: TextOverflow.clip,
-        ),
+                widget.label!,
+                maxLines: 1,
+                overflow: TextOverflow.clip,
+              ),
         labelStyle: theme.textTheme.labelSmall,
         floatingLabelStyle: theme.textTheme.labelLarge,
         border: const OutlineInputBorder(),
@@ -85,6 +89,12 @@ class _NumDoubleInputWidgetState extends State<NumDoubleInputWidget> {
               });
               widget.onChanged(input);
             }
+            else {
+              var next = widget.onUnderflow?.call();
+              if(next != null) {
+                controller.text = next.toStringAsFixed(widget.decimals);
+              }
+            }
           },
           child: const Icon(
             Icons.remove,
@@ -103,6 +113,12 @@ class _NumDoubleInputWidgetState extends State<NumDoubleInputWidget> {
                 controller.text = input!.toStringAsFixed(widget.decimals);
               });
               widget.onChanged(input);
+            }
+            else {
+              var next = widget.onOverflow?.call();
+              if(next != null) {
+                controller.text = next.toStringAsFixed(widget.decimals);
+              }
             }
           },
           child: const Icon(
@@ -151,6 +167,8 @@ class NumIntInputWidget extends StatelessWidget {
     this.collapsed = true,
     this.enabled = true,
     this.controller,
+    this.onOverflow,
+    this.onUnderflow,
   });
 
   final int initialValue;
@@ -162,6 +180,8 @@ class NumIntInputWidget extends StatelessWidget {
   final bool collapsed;
   final bool enabled;
   final TextEditingController? controller;
+  final int Function()? onOverflow;
+  final int Function()? onUnderflow;
 
   @override
   Widget build(BuildContext context) {
@@ -179,7 +199,13 @@ class NumIntInputWidget extends StatelessWidget {
       onChanged: (double v) => onChanged(v.ceil()),
       onSaved: onSaved == null ? null : (double v) {
         onSaved!(v.ceil());
-      }
+      },
+      onOverflow: onOverflow == null
+        ? null
+        : () => onOverflow!().toDouble(),
+      onUnderflow: onUnderflow == null
+        ? null
+        : () => onUnderflow!().toDouble(),
     );
   }
 }

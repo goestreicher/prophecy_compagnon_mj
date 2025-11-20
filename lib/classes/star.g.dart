@@ -82,13 +82,15 @@ PlayersStar _$PlayersStarFromJson(Map<String, dynamic> json) =>
         powers: (json['powers'] as Map<String, dynamic>?)?.map(
           (k, e) => MapEntry(int.parse(k), $enumDecode(_$StarPowerEnumMap, e)),
         ),
-        vertuCircles: (json['vertu_circles'] as num?)?.toInt() ?? 0,
-        penchantCircles: (json['penchant_circles'] as num?)?.toInt() ?? 0,
-        idealCircles: (json['ideal_circles'] as num?)?.toInt() ?? 0,
-        interditCircles: (json['interdit_circles'] as num?)?.toInt() ?? 0,
-        epreuveCircles: (json['epreuve_circles'] as num?)?.toInt() ?? 0,
-        destineeCircles: (json['destinee_circles'] as num?)?.toInt() ?? 0,
-        experiencePoints: (json['experience_points'] as num?)?.toInt() ?? 0,
+        experience: (json['experience'] as num?)?.toInt() ?? 0,
+        circles:
+            (json['circles'] as Map<String, dynamic>?)?.map(
+              (k, e) => MapEntry(
+                $enumDecode(_$MotivationTypeEnumMap, k),
+                (e as num).toInt(),
+              ),
+            ) ??
+            const <MotivationType, int>{},
       )
       ..companies = (json['companies'] as List<dynamic>)
           .map((e) => StarCompany.fromJson(e as Map<String, dynamic>))
@@ -105,11 +107,17 @@ Map<String, dynamic> _$PlayersStarToJson(PlayersStar instance) =>
         (k, e) => MapEntry(k.toString(), _$StarPowerEnumMap[e]!),
       ),
       'companies': instance.companies.map((e) => e.toJson()).toList(),
-      'vertu_circles': instance.vertuCircles,
-      'penchant_circles': instance.penchantCircles,
-      'ideal_circles': instance.idealCircles,
-      'interdit_circles': instance.interditCircles,
-      'epreuve_circles': instance.epreuveCircles,
-      'destinee_circles': instance.destineeCircles,
-      'experience_points': instance.experiencePoints,
+      'experience': instance.experience,
+      'circles': instance.circles.map(
+        (k, e) => MapEntry(_$MotivationTypeEnumMap[k]!, e),
+      ),
     };
+
+const _$MotivationTypeEnumMap = {
+  MotivationType.vertu: 'vertu',
+  MotivationType.penchant: 'penchant',
+  MotivationType.ideal: 'ideal',
+  MotivationType.interdit: 'interdit',
+  MotivationType.epreuve: 'epreuve',
+  MotivationType.destinee: 'destinee',
+};

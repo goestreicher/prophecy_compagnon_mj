@@ -29,6 +29,8 @@ class _StarEditWidgetState extends State<StarEditWidget> {
   final TextEditingController nameController = TextEditingController();
   late final FleatherController descriptionController;
   late final FocusNode descriptionFocusNode;
+  final Map<MotivationType, TextEditingController> valueControllers = <MotivationType, TextEditingController>{};
+  final Map<MotivationType, TextEditingController> circlesControllers = <MotivationType, TextEditingController>{};
 
   @override
   void initState() {
@@ -39,6 +41,11 @@ class _StarEditWidgetState extends State<StarEditWidget> {
     descriptionFocusNode = FocusNode();
     ParchmentDocument document = ParchmentMarkdownCodec().decode(widget.star.description);
     descriptionController = FleatherController(document: document);
+
+    for(var m in MotivationType.values) {
+      valueControllers[m] = TextEditingController();
+      circlesControllers[m] = TextEditingController();
+    }
   }
 
   @override
@@ -182,21 +189,18 @@ class _StarEditWidgetState extends State<StarEditWidget> {
                                                 widget.star.motivations.vertu = m!,
                                             ),
                                           ),
-                                          SizedBox(
-                                            width: 96,
-                                            child: NumIntInputWidget(
-                                              label: 'Valeur',
-                                              collapsed: false,
-                                              initialValue: widget.star.motivations.vertuValue,
-                                              minValue: 0,
-                                              maxValue: 10,
-                                              onChanged: (int v) {
-                                                setState(() {
-                                                  widget.star.motivations.vertuValue = v;
-                                                });
-                                              },
-                                            ),
+                                          _MotivationValueEditWidget(
+                                            star: widget.star,
+                                            motivation: MotivationType.vertu,
+                                            controller: valueControllers[MotivationType.vertu]!,
                                           ),
+                                          if(widget.star is PlayersStar)
+                                            _MotivationCirclesEditWidget(
+                                              star: (widget.star as PlayersStar),
+                                              motivation: MotivationType.vertu,
+                                              controller: circlesControllers[MotivationType.vertu]!,
+                                              valueController: valueControllers[MotivationType.vertu]!,
+                                            ),
                                         ],
                                       ),
                                       Row(
@@ -229,21 +233,18 @@ class _StarEditWidgetState extends State<StarEditWidget> {
                                                 widget.star.motivations.penchant = m!,
                                             ),
                                           ),
-                                          SizedBox(
-                                            width: 96,
-                                            child: NumIntInputWidget(
-                                              label: 'Valeur',
-                                              collapsed: false,
-                                              initialValue: widget.star.motivations.penchantValue,
-                                              minValue: 0,
-                                              maxValue: 10,
-                                              onChanged: (int v) {
-                                                setState(() {
-                                                  widget.star.motivations.penchantValue = v;
-                                                });
-                                              },
-                                            ),
+                                          _MotivationValueEditWidget(
+                                            star: widget.star,
+                                            motivation: MotivationType.penchant,
+                                            controller: valueControllers[MotivationType.penchant]!,
                                           ),
+                                          if(widget.star is PlayersStar)
+                                            _MotivationCirclesEditWidget(
+                                              star: (widget.star as PlayersStar),
+                                              motivation: MotivationType.penchant,
+                                              controller: circlesControllers[MotivationType.penchant]!,
+                                              valueController: valueControllers[MotivationType.penchant]!,
+                                            ),
                                         ],
                                       ),
                                       Row(
@@ -276,21 +277,18 @@ class _StarEditWidgetState extends State<StarEditWidget> {
                                                 widget.star.motivations.ideal = m!,
                                             ),
                                           ),
-                                          SizedBox(
-                                            width: 96,
-                                            child: NumIntInputWidget(
-                                              label: 'Valeur',
-                                              collapsed: false,
-                                              initialValue: widget.star.motivations.idealValue,
-                                              minValue: 0,
-                                              maxValue: 10,
-                                              onChanged: (int v) {
-                                                setState(() {
-                                                  widget.star.motivations.idealValue = v;
-                                                });
-                                              },
-                                            ),
+                                          _MotivationValueEditWidget(
+                                            star: widget.star,
+                                            motivation: MotivationType.ideal,
+                                            controller: valueControllers[MotivationType.ideal]!,
                                           ),
+                                          if(widget.star is PlayersStar)
+                                            _MotivationCirclesEditWidget(
+                                              star: (widget.star as PlayersStar),
+                                              motivation: MotivationType.ideal,
+                                              controller: circlesControllers[MotivationType.ideal]!,
+                                              valueController: valueControllers[MotivationType.ideal]!,
+                                            ),
                                         ],
                                       ),
                                       Row(
@@ -323,21 +321,18 @@ class _StarEditWidgetState extends State<StarEditWidget> {
                                                 widget.star.motivations.interdit = m!,
                                             ),
                                           ),
-                                          SizedBox(
-                                            width: 96,
-                                            child: NumIntInputWidget(
-                                              label: 'Valeur',
-                                              collapsed: false,
-                                              initialValue: widget.star.motivations.interditValue,
-                                              minValue: 0,
-                                              maxValue: 10,
-                                              onChanged: (int v) {
-                                                setState(() {
-                                                  widget.star.motivations.interditValue = v;
-                                                });
-                                              },
-                                            ),
+                                          _MotivationValueEditWidget(
+                                            star: widget.star,
+                                            motivation: MotivationType.interdit,
+                                            controller: valueControllers[MotivationType.interdit]!,
                                           ),
+                                          if(widget.star is PlayersStar)
+                                            _MotivationCirclesEditWidget(
+                                              star: (widget.star as PlayersStar),
+                                              motivation: MotivationType.interdit,
+                                              controller: circlesControllers[MotivationType.interdit]!,
+                                              valueController: valueControllers[MotivationType.interdit]!,
+                                            ),
                                         ],
                                       ),
                                       Row(
@@ -370,21 +365,18 @@ class _StarEditWidgetState extends State<StarEditWidget> {
                                                 widget.star.motivations.epreuve = m!,
                                             ),
                                           ),
-                                          SizedBox(
-                                            width: 96,
-                                            child: NumIntInputWidget(
-                                              label: 'Valeur',
-                                              collapsed: false,
-                                              initialValue: widget.star.motivations.epreuveValue,
-                                              minValue: 0,
-                                              maxValue: 10,
-                                              onChanged: (int v) {
-                                                setState(() {
-                                                  widget.star.motivations.epreuveValue = v;
-                                                });
-                                              },
-                                            ),
+                                          _MotivationValueEditWidget(
+                                            star: widget.star,
+                                            motivation: MotivationType.epreuve,
+                                            controller: valueControllers[MotivationType.epreuve]!,
                                           ),
+                                          if(widget.star is PlayersStar)
+                                            _MotivationCirclesEditWidget(
+                                              star: (widget.star as PlayersStar),
+                                              motivation: MotivationType.epreuve,
+                                              controller: circlesControllers[MotivationType.epreuve]!,
+                                              valueController: valueControllers[MotivationType.epreuve]!,
+                                            ),
                                         ],
                                       ),
                                       Row(
@@ -417,21 +409,18 @@ class _StarEditWidgetState extends State<StarEditWidget> {
                                                 widget.star.motivations.destinee = m!,
                                             ),
                                           ),
-                                          SizedBox(
-                                            width: 96,
-                                            child: NumIntInputWidget(
-                                              label: 'Valeur',
-                                              collapsed: false,
-                                              initialValue: widget.star.motivations.destineeValue,
-                                              minValue: 0,
-                                              maxValue: 10,
-                                              onChanged: (int v) {
-                                                setState(() {
-                                                  widget.star.motivations.destineeValue = v;
-                                                });
-                                              },
-                                            ),
+                                          _MotivationValueEditWidget(
+                                            star: widget.star,
+                                            motivation: MotivationType.destinee,
+                                            controller: valueControllers[MotivationType.destinee]!,
                                           ),
+                                          if(widget.star is PlayersStar)
+                                            _MotivationCirclesEditWidget(
+                                              star: (widget.star as PlayersStar),
+                                              motivation: MotivationType.destinee,
+                                              controller: circlesControllers[MotivationType.destinee]!,
+                                              valueController: valueControllers[MotivationType.destinee]!,
+                                            ),
                                         ],
                                       ),
                                     ],
@@ -439,6 +428,26 @@ class _StarEditWidgetState extends State<StarEditWidget> {
                                 ),
                               ],
                             ),
+                            if(widget.star is PlayersStar)
+                              Row(
+                                spacing: 12.0,
+                                children: [
+                                  Text("Points d'expérience"),
+                                  SizedBox(
+                                    width: 96,
+                                    child: NumIntInputWidget(
+                                      label: 'Valeur',
+                                      collapsed: false,
+                                      initialValue: (widget.star as PlayersStar).experience,
+                                      minValue: 0,
+                                      maxValue: 9999,
+                                      onChanged: (int v) {
+                                        (widget.star as PlayersStar).experience = v;
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
                           ],
                         )
                       ),
@@ -515,6 +524,98 @@ class _StarEditWidgetState extends State<StarEditWidget> {
           ),
         )
       )
+    );
+  }
+}
+
+class _MotivationValueEditWidget extends StatelessWidget {
+  const _MotivationValueEditWidget({
+    required this.star,
+    required this.motivation,
+    required this.controller,
+  });
+
+  final Star star;
+  final MotivationType motivation;
+  final TextEditingController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 96,
+      child: NumIntInputWidget(
+        label: 'Valeur',
+        collapsed: false,
+        controller: controller,
+        initialValue: star.motivations.getValue(motivation),
+        minValue: 0,
+        maxValue: 10,
+        onChanged: (int v) {
+          star.motivations.setValue(motivation, v);
+        },
+      ),
+    );
+  }
+}
+
+class _MotivationCirclesEditWidget extends StatelessWidget {
+  const _MotivationCirclesEditWidget({
+    required this.star,
+    required this.motivation,
+    required this.controller,
+    required this.valueController,
+  });
+
+  final PlayersStar star;
+  final MotivationType motivation;
+  final TextEditingController valueController;
+  final TextEditingController controller;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 96,
+      child: NumIntInputWidget(
+        label: 'Cercles',
+        collapsed: false,
+        initialValue: star.getCircles(motivation),
+        controller: controller,
+        minValue: 0,
+        maxValue: 10,
+        onChanged: (int v) {
+          star.setCircles(motivation, v);
+        },
+        onOverflow: () {
+          var current = star.motivations.getValue(motivation);
+          if(current < 10) {
+            star.motivations.setValue(motivation, current + 1);
+            valueController.text = (current + 1).toString();
+
+            star.setCircles(motivation, 0);
+            controller.text = '0';
+
+            return 0;
+          }
+          else {
+            return 10;
+          }
+        },
+        onUnderflow: () {
+          var current = star.motivations.getValue(motivation);
+          if(current > 1) {
+            star.motivations.setValue(motivation, current - 1);
+            valueController.text = (current - 1).toString();
+
+            star.setCircles(motivation, 10);
+            controller.text = '10';
+
+            return 10;
+          }
+          else {
+            return 0;
+          }
+        },
+      ),
     );
   }
 }

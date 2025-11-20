@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'star_motivations.g.dart';
@@ -128,65 +129,43 @@ enum MotivationDestinee {
 class StarMotivations {
   StarMotivations({
     required this.vertu,
-    required this.vertuValue,
     required this.penchant,
-    required this.penchantValue,
     required this.ideal,
-    required this.idealValue,
     required this.interdit,
-    required this.interditValue,
     required this.epreuve,
-    required this.epreuveValue,
     required this.destinee,
-    required this.destineeValue,
+    this.values = const <MotivationType, int>{},
   });
 
-  StarMotivations.empty({
-    this.vertu = MotivationVertu.loyaute,
-    this.vertuValue = 0,
-    this.penchant = MotivationPenchant.violence,
-    this.penchantValue = 0,
-    this.ideal = MotivationIdeal.decouvrir,
-    this.idealValue = 0,
-    this.interdit = MotivationInterdit.tuer,
-    this.interditValue = 0,
-    this.epreuve = MotivationEpreuve.dilemme,
-    this.epreuveValue = 0,
-    this.destinee = MotivationDestinee.triomphe,
-    this.destineeValue = 0,
-  });
+  static StarMotivations empty() => StarMotivations(
+    vertu: MotivationVertu.loyaute,
+    penchant: MotivationPenchant.violence,
+    ideal: MotivationIdeal.decouvrir,
+    interdit: MotivationInterdit.tuer,
+    epreuve: MotivationEpreuve.dilemme,
+    destinee: MotivationDestinee.triomphe,
+    values: <MotivationType, int>{},
+  );
 
   MotivationVertu vertu;
-  int vertuValue;
-
   MotivationPenchant penchant;
-  int penchantValue;
-
   MotivationIdeal ideal;
-  int idealValue;
-
   MotivationInterdit interdit;
-  int interditValue;
-
   MotivationEpreuve epreuve;
-  int epreuveValue;
-
   MotivationDestinee destinee;
-  int destineeValue;
+  Map<MotivationType, int> values;
+
+  int getValue(MotivationType motivation) => values[motivation] ?? 0;
+  void setValue(MotivationType motivation, int v) => values[motivation] = v;
 
   StarMotivations clone() => StarMotivations(
       vertu: vertu,
-      vertuValue: vertuValue,
       penchant: penchant,
-      penchantValue: penchantValue,
       ideal: ideal,
-      idealValue: idealValue,
       interdit: interdit,
-      interditValue: interditValue,
       epreuve: epreuve,
-      epreuveValue: epreuveValue,
       destinee: destinee,
-      destineeValue: destineeValue
+      values: Map.from(values),
     );
 
   factory StarMotivations.fromJson(Map<String, dynamic> json) =>

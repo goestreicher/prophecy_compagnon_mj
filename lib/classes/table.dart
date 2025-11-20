@@ -3,6 +3,7 @@ import 'package:uuid/uuid.dart';
 
 import 'object_location.dart';
 import 'player_character.dart';
+import 'star.dart';
 import 'storage/storable.dart';
 
 part 'table.g.dart';
@@ -54,10 +55,27 @@ class GameTableStore extends JsonStoreAdapter<GameTable> {
   String key(GameTable object) => object.uuid;
 
   @override
-  Future<GameTable> fromJsonRepresentation(Map<String, dynamic> j) async => GameTable.fromJson(j);
+  Future<GameTable> fromJsonRepresentation(Map<String, dynamic> j) async {
+    if(j.containsKey('star') && j['star'] != null && (j['star'] as String).isNotEmpty) {
+      var star = await PlayersStarStore().get(j['star']);
+      if(star != null) {
+        j['star'] = star.toJson();
+      }
+    }
+
+    return GameTable.fromJson(j);
+  }
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(GameTable object) async => object.toJson();
+  Future<Map<String, dynamic>> toJsonRepresentation(GameTable object) async {
+    var json = object.toJson();
+
+    if(object.star != null) {
+      json['star'] = object.star!.id;
+    }
+
+    return json;
+  }
 
   @override
   Future<void> willSave(GameTable object) async {
@@ -72,6 +90,10 @@ class GameTableStore extends JsonStoreAdapter<GameTable> {
       }
     }
 
+    if(object.star != null) {
+      await PlayersStarStore().save(object.star!);
+    }
+
     await GameTableSummaryStore().save(summary);
   }
 
@@ -84,6 +106,10 @@ class GameTableStore extends JsonStoreAdapter<GameTable> {
       if(character != null) {
         PlayerCharacterStore().delete(character);
       }
+    }
+
+    if(object.star != null) {
+      await PlayersStarStore().delete(object.star!);
     }
 
     await GameTableSummaryStore().delete(summary);
@@ -126,6 +152,7 @@ class GameTable {
         String? uuid,
         required this.name,
         List<PlayerCharacterSummary>? playerSummaries,
+        this.star,
       })
     : uuid = uuid ?? const Uuid().v4().toString(),
       playerSummaries = playerSummaries ?? <PlayerCharacterSummary>[];
@@ -144,12 +171,11 @@ class GameTable {
 
   final String uuid;
   final String name;
-
   @JsonKey(name: 'players', includeToJson: true, includeFromJson: true)
-    final List<PlayerCharacterSummary> playerSummaries;
-
+  final List<PlayerCharacterSummary> playerSummaries;
   @JsonKey(includeToJson: false, includeFromJson: false)
-    final List<PlayerCharacter> players = <PlayerCharacter>[];
+  final List<PlayerCharacter> players = <PlayerCharacter>[];
+  PlayersStar? star;
 
   Future<void> loadPlayers() async {
     for(var pcSummary in playerSummaries) {
