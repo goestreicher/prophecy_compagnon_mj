@@ -7,6 +7,7 @@ enum ResourceLinkType {
   encounter(title: 'Rencontre'),
   map(title: 'Carte'),
   npc(title: 'PNJ'),
+  pc(title: 'PJ'),
   place(title: 'Lieu'),
   star(title: 'Étoile'),
   ;

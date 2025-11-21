@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:material_symbols_icons/symbols.dart';
 
 import '../../classes/object_source.dart';
+import '../../classes/resource_link/pcs_resource_link_provider.dart';
 import '../../classes/star.dart';
 import '../../classes/star_motivations.dart';
 import '../../classes/table.dart' as pc;
@@ -321,6 +322,10 @@ class _TableEditPageState extends State<TableEditPage> {
               Expanded(
                 child: StarEditWidget(
                   star: table.star!,
+                  resourceLinkProvider: PlayerCharactersResourceLinkProvider(
+                    tableUuid: table.uuid,
+                    tableName: table.name,
+                  ),
                   onEditDone: (bool result) async {
                     if(result) {
                       await PlayersStarStore().save(table.star!);

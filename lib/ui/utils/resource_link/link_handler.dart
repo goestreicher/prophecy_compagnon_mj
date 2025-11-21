@@ -6,6 +6,7 @@ import 'creature_link_handler.dart';
 import 'encounter_link_handler.dart';
 import 'map_link_handler.dart';
 import 'npc_link_handler.dart';
+import 'pc_link_handler.dart';
 import 'place_link_handler.dart';
 
 void handleResourceLinkClicked(ResourceLink link, BuildContext context) async {
@@ -23,6 +24,9 @@ void handleResourceLinkClicked(ResourceLink link, BuildContext context) async {
       break;
     case ResourceLinkType.npc:
       dialog = await handleNPCLinkClicked(link, context);
+      break;
+    case ResourceLinkType.pc:
+      dialog = await handlePCLinkClicked(link, context);
       break;
     case ResourceLinkType.place:
       dialog = await handlePlaceLinkClicked(link, context);

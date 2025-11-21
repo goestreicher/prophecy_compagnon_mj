@@ -69,7 +69,7 @@ class _CharacterRoleEditWidgetState extends State<CharacterRoleEditWidget> {
                 updateCharacterRole();
               },
             ),
-            Text('Utiliser un PNJ existant'),
+            Text('Utiliser un personnage existant'),
           ],
         ),
         if(!useResourceLink)
@@ -92,7 +92,9 @@ class _CharacterRoleEditWidgetState extends State<CharacterRoleEditWidget> {
           ),
         if(useResourceLink)
           ResourceLinkEditWidget(
-            restrictToTypes: [ResourceLinkType.npc],
+            restrictToTypes: widget.resourceLinkProvider?.availableTypes()
+              .where((ResourceLinkType t) => [ResourceLinkType.npc, ResourceLinkType.pc].contains(t))
+              .toList(),
             provider: widget.resourceLinkProvider,
             onChanged: (ResourceLink? l) {
               link = l;
@@ -244,7 +246,7 @@ class _CharacterRoleInputDialogState extends State<_CharacterRoleInputDialog> {
     var theme = Theme.of(context);
 
     return AlertDialog(
-      title: const Text("Ajouter un PNJ"),
+      title: const Text("Ajouter un personnage"),
       content: SizedBox(
         width: 400,
         child: Form(
