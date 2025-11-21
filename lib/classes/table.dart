@@ -9,6 +9,16 @@ import 'storage/storable.dart';
 part 'table.g.dart';
 
 Future<void> importGameTable(Map<String, dynamic> json) async {
+  for(var pcJson in json['players']) {
+    var asMap = pcJson as Map<String, dynamic>;
+    if(!asMap.containsKey('uuid')) continue;
+
+    var pc = await PlayerCharacterSummaryStore().get(asMap['uuid']);
+    if(pc != null) {
+      throw(ArgumentError("Un PJ avec l'UUID ${asMap['uuid']} existe déjà"));
+    }
+  }
+
   // Just replace the UUID if it exists. If not, the Table constructor will add it
   if(json.containsKey('uuid')) {
     json['uuid'] = const Uuid().v4().toString();
