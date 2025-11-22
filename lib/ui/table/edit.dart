@@ -332,6 +332,7 @@ class _TableEditPageState extends State<TableEditPage> {
                       if(!context.mounted) return;
                       setState(() {
                         canCancel = false;
+                        starSelected = false;
                       });
                     }
                     else {
