@@ -11,19 +11,10 @@ enum Tendency {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class TendencyAttribute {
-  TendencyAttribute({ required int value, required int circles })
-    : valueNotifier = ValueNotifier<int>(value),
-      circlesNotifier = ValueNotifier<int>(circles);
+  TendencyAttribute({ required this.value, required this.circles });
 
-  int get value => valueNotifier.value;
-  set value(int v) => valueNotifier.value = v;
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  final ValueNotifier<int> valueNotifier;
-
-  int get circles => circlesNotifier.value;
-  set circles(int v) => circlesNotifier.value = v;
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  final ValueNotifier<int> circlesNotifier;
+  int value;
+  int circles;
 
   factory TendencyAttribute.fromJson(Map<String, dynamic> json) =>
       _$TendencyAttributeFromJson(json);
