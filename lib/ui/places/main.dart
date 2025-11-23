@@ -46,7 +46,7 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
         placeSelectionModel.id = p.id;
       },
       itemCreationCallback: (Place p) async {
-        await PlaceStore().save(p);
+        await Place.saveLocalModel(p);
       },
     );
 
@@ -298,7 +298,7 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                         return PlaceDisplayWidget(
                           placeId: selectedPlace.id,
                           onEdited: (Place p) {
-                            PlaceStore().save(p);
+                            Place.saveLocalModel(p);
                             selectedPlace.id = p.id;
                           },
                           onDelete: (Place p) async {

@@ -120,7 +120,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
     uncommittedFactionsCreation.clear();
     uncommittedFactionsModification.clear();
     for(var f in uncommittedFactionsDeletion) {
-      await FactionStore().delete(f);
+      await Faction.delete(f);
     }
     uncommittedFactionsDeletion.clear();
 

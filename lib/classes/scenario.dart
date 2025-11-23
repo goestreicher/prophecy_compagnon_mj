@@ -172,15 +172,15 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     }
 
     for(var place in object.places) {
-      await PlaceStore().save(place);
+      await Place.saveLocalModel(place);
     }
 
     for(var faction in object.factions) {
-      await FactionStore().save(faction);
+      await Faction.saveLocalModel(faction);
     }
 
     for(var star in object.stars) {
-      await StarStore().save(star);
+      await Star.saveLocalModel(star);
     }
   }
 
@@ -201,15 +201,15 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     }
 
     for(var place in object.places) {
-      await PlaceStore().delete(place);
+      await Place.delete(place);
     }
 
     for(var faction in object.factions) {
-      await FactionStore().delete(faction);
+      await Faction.delete(faction);
     }
 
     for(var star in object.stars) {
-      await StarStore().delete(star);
+      await Star.deleteLocalModel(star.id);
     }
   }
 }

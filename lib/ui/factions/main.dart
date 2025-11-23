@@ -49,7 +49,7 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
         factionSelectionModel.id = f.id;
       },
       itemCreationCallback: (Faction f) async {
-        await FactionStore().save(f);
+        await Faction.saveLocalModel(f);
       }
     );
 
@@ -254,7 +254,7 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                       );
                       if(faction == null) return;
 
-                      await FactionStore().save(faction);
+                      await Faction.saveLocalModel(faction);
                       factionSelectionModel.id = faction.summary.id;
 
                       setState(() {
@@ -351,7 +351,7 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                         return FactionDisplayWidget(
                           factionId: selectedFaction.id,
                           onEdited: (Faction f) async {
-                            await FactionStore().save(f);
+                            await Faction.saveLocalModel(f);
                             selectedFaction.id = f.id;
                           },
                           onDelete: (Faction f) async {

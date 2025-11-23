@@ -131,6 +131,19 @@ class FactionSummary extends ResourceBaseClass {
 
   static void _factionDeleted(String id) => _cache.del(id);
 
+  static Future<void> _saveLocalModel(FactionSummary summary) async {
+    await FactionSummaryStore().save(summary);
+    _cache.add(summary.id, summary);
+  }
+
+  static Future<void> _deleteLocalModel(String id) async {
+    var summary = await FactionSummaryStore().get(id);
+    if(summary != null) {
+      await FactionSummaryStore().delete(summary);
+    }
+    _cache.del(id);
+  }
+
   factory FactionSummary.fromJson(Map<String, dynamic> json)
       => _$FactionSummaryFromJson(json);
 
@@ -160,9 +173,6 @@ class FactionStore extends JsonStoreAdapter<Faction> {
 
   @override
   Future<void> willSave(Faction object) async {
-    // Ensure that the summary is saved too
-    await FactionSummaryStore().save(object.summary);
-
     // Force-set the location here in case the object is used after being saved,
     // even if the location is not saved in the store (excluded from the
     // JSON representation).
@@ -170,11 +180,6 @@ class FactionStore extends JsonStoreAdapter<Faction> {
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
     );
-  }
-
-  @override
-  Future<void> willDelete(Faction object) async {
-    await FactionSummaryStore().delete(object.summary);
   }
 }
 
@@ -290,12 +295,18 @@ class Faction extends ResourceBaseClass {
     _cache.del(f.id);
   }
 
+  static Future<void> saveLocalModel(Faction f) async {
+    await FactionStore().save(f);
+    await FactionSummary._saveLocalModel(f.summary);
+    _cache.add(f.id, f);
+  }
+
   static Future<void> delete(Faction f) async {
     for(var child in (await withParent(f.id)).toList()) {
       await delete(child);
     }
     await FactionStore().delete(f);
-    FactionSummary._factionDeleted(f.id);
+    await FactionSummary._deleteLocalModel(f.id);
     _cache.del(f.id);
   }
 
@@ -308,7 +319,7 @@ class Faction extends ResourceBaseClass {
   static Future<void> import(List<dynamic> j) async {
     for(Map<String, dynamic> factionJson in j) {
       Faction f = Faction.fromJson(factionJson);
-      await FactionStore().save(f);
+      await Faction.saveLocalModel(f);
     }
   }
 

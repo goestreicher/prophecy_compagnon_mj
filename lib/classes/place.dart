@@ -212,6 +212,19 @@ class PlaceSummary extends ResourceBaseClass {
 
   static void _placeDeleted(String id) => _cache.del(id);
 
+  static Future<void> _saveLocalModel(PlaceSummary summary) async {
+    await PlaceSummaryStore().save(summary);
+    _cache.add(summary.id, summary);
+  }
+
+  static Future<void> _deleteLocalModel(String id) async {
+    var summary = await PlaceSummaryStore().get(id);
+    if(summary != null) {
+      await PlaceSummaryStore().delete(summary);
+    }
+    _cache.del(id);
+  }
+
   factory PlaceSummary.fromJson(Map<String, dynamic> json)
       => _$PlaceSummaryFromJson(json);
 
@@ -259,8 +272,6 @@ class PlaceStore extends JsonStoreAdapter<Place> {
 
   @override
   Future<void> willSave(Place object) async {
-    await PlaceSummaryStore().save(object.summary);
-
     _deletePreviousData(object);
     if(object.map?.exportableBinaryData != null) {
       await BinaryDataStore().save(object.map!.exportableBinaryData!);
@@ -277,8 +288,6 @@ class PlaceStore extends JsonStoreAdapter<Place> {
 
   @override
   Future<void> willDelete(Place object) async {
-    await PlaceSummaryStore().delete(object.summary);
-
     _deletePreviousData(object);
     if(object.map?.exportableBinaryData != null) {
       await BinaryDataStore().delete(object.map!.exportableBinaryData!);
@@ -461,12 +470,18 @@ class Place extends ResourceBaseClass {
     _cache.del(p.id);
   }
 
+  static Future<void> saveLocalModel(Place p) async {
+    await PlaceStore().save(p);
+    await PlaceSummary._saveLocalModel(p.summary);
+    _cache.add(p.id, p);
+  }
+
   static Future<void> delete(Place p) async {
     for(var child in await withParent(p.id)) {
       await delete(child);
     }
     await PlaceStore().delete(p);
-    PlaceSummary._placeDeleted(p.id);
+    await PlaceSummary._deleteLocalModel(p.id);
     _cache.del(p.id);
   }
 
@@ -494,7 +509,7 @@ class Place extends ResourceBaseClass {
       preImportFilter(placeJson);
       placeJson['source'] = ObjectSource.local.toJson();
       Place p = Place.fromJson(placeJson);
-      await PlaceStore().save(p);
+      await Place.saveLocalModel(p);
     }
   }
 
