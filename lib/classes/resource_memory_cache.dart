@@ -144,16 +144,7 @@ class ResourceMemoryCache<Resource extends ResourceBaseClass, Store extends Json
     await(lock.synchronized(() async {
       int now = _getCurrentTS();
       int ts = now - entryTtl;
-      
-      int? entryTtlKey = _entryTtls.lastKeyBefore(ts);
-      Set<int> entryExpiredTimestamps = <int>{};
-      Set<String> entryExpiredKeys = <String>{};
-      while(entryTtlKey != null) {
-        entryExpiredTimestamps.add(entryTtlKey);
-        entryExpiredKeys.addAll(_entryTtls[entryTtlKey]!);
-        entryTtlKey = _entryTtls.lastKeyBefore(entryTtlKey);
-      }
-      
+
       int? collectionTtlKey = _collectionTtls.lastKeyBefore(ts);
       Set<int> collectionExpiredTimestamps = <int>{};
       Set<String> collectionExpiredKeys = <String>{};
@@ -161,6 +152,22 @@ class ResourceMemoryCache<Resource extends ResourceBaseClass, Store extends Json
         collectionExpiredTimestamps.add(collectionTtlKey);
         collectionExpiredKeys.addAll(_collectionTtls[collectionTtlKey]!);
         collectionTtlKey = _collectionTtls.lastKeyBefore(collectionTtlKey);
+      }
+      
+      int? entryTtlKey = _entryTtls.lastKeyBefore(ts);
+      Set<int> entryExpiredTimestamps = <int>{};
+      Set<String> entryExpiredKeys = <String>{};
+      while(entryTtlKey != null) {
+        entryExpiredTimestamps.add(entryTtlKey);
+        // Consider that a collection for which one entry was removed is
+        // no longer in the cache
+        for(var key in _entryTtls[entryTtlKey]!) {
+          if(_entryCache.containsKey(key)) {
+            collectionExpiredKeys.add(_entryCache[key]!.entry.location.collectionUri);
+          }
+        }
+        entryExpiredKeys.addAll(_entryTtls[entryTtlKey]!);
+        entryTtlKey = _entryTtls.lastKeyBefore(entryTtlKey);
       }
 
       purged = entryExpiredKeys.isNotEmpty || collectionExpiredKeys.isNotEmpty;
