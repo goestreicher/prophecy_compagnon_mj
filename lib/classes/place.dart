@@ -76,11 +76,11 @@ class PlaceSummaryStore extends JsonStoreAdapter<PlaceSummary> {
 
   @override
   Future<PlaceSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
-    var place = PlaceSummary.fromJson(j);
-    place.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var place = PlaceSummary.fromJson(j);
     return place;
   }
 
@@ -266,11 +266,11 @@ class PlaceStore extends JsonStoreAdapter<Place> {
       await restoreJsonBinaryData(j['map'], 'exportable_binary_data');
     }
 
-    var place = Place.fromJson(j);
-    place.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var place = Place.fromJson(j);
     return place;
   }
 

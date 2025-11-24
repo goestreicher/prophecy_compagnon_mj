@@ -34,11 +34,11 @@ class PlayerCharacterSummaryStore extends JsonStoreAdapter<PlayerCharacterSummar
   @override
   Future<PlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    var summary = PlayerCharacterSummary.fromJson(j);
-    summary.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var summary = PlayerCharacterSummary.fromJson(j);
     return summary;
   }
 
@@ -81,11 +81,11 @@ class PlayerCharacterStore extends JsonStoreAdapter<PlayerCharacter> {
   Future<PlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    var pc = PlayerCharacter.fromJson(j);
-    pc.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var pc = PlayerCharacter.fromJson(j);
     return pc;
   }
 

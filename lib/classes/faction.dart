@@ -20,11 +20,11 @@ class FactionSummaryStore extends JsonStoreAdapter<FactionSummary> {
 
   @override
   Future<FactionSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
-    var faction = FactionSummary.fromJson(j);
-    faction.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var faction = FactionSummary.fromJson(j);
     return faction;
   }
 
@@ -176,11 +176,11 @@ class FactionStore extends JsonStoreAdapter<Faction> {
 
   @override
   Future<Faction> fromJsonRepresentation(Map<String, dynamic> j) async {
-    var faction = Faction.fromJson(j);
-    faction.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var faction = Faction.fromJson(j);
     return faction;
   }
 

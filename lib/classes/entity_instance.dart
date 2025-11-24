@@ -52,11 +52,11 @@ class EntityInstanceStore extends JsonStoreAdapter<EntityInstance> {
 
   @override
   Future<EntityInstance> fromJsonRepresentation(Map<String, dynamic> j) async {
-    var model = EntityInstance.fromJson(j);
-    model.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var model = EntityInstance.fromJson(j);
     return model;
   }
 

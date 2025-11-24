@@ -41,11 +41,11 @@ class NonPlayerCharacterSummaryStore extends JsonStoreAdapter<NonPlayerCharacter
   @override
   Future<NonPlayerCharacterSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    var summary = NonPlayerCharacterSummary.fromJson(j);
-    summary.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var summary = NonPlayerCharacterSummary.fromJson(j);
     return summary;
   }
 
@@ -360,11 +360,11 @@ class NonPlayerCharacterStore extends JsonStoreAdapter<NonPlayerCharacter> {
   Future<NonPlayerCharacter> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    var npc = NonPlayerCharacter.fromJson(j);
-    npc.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var npc = NonPlayerCharacter.fromJson(j);
     return npc;
   }
 

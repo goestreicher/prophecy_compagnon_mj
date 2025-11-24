@@ -27,6 +27,10 @@ Future<Map<String, dynamic>?> loadJsonAssetObject(String file, String uuid, Stri
   for(var asset in assets) {
     if(asset is Map && uuid == getId(asset as Map<String, dynamic>)) {
       ret = asset;
+      ret['location'] = ObjectLocation(
+        type: ObjectLocationType.assets,
+        collectionUri: file,
+      ).toJson();
       break;
     }
   }

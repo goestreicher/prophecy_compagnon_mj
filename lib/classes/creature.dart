@@ -185,11 +185,11 @@ class CreatureSummaryStore extends JsonStoreAdapter<CreatureSummary> {
   @override
   Future<CreatureSummary> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    var summary = CreatureSummary.fromJson(j);
-    summary.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var summary = CreatureSummary.fromJson(j);
     return summary;
   }
 
@@ -463,11 +463,11 @@ class CreatureStore extends JsonStoreAdapter<Creature> {
   Future<Creature> fromJsonRepresentation(Map<String, dynamic> j) async {
     if(j.containsKey('image') && j['image'] is String) await restoreJsonBinaryData(j, 'image');
     if(j.containsKey('icon') && j['icon'] is String) await restoreJsonBinaryData(j, 'icon');
-    var model = Creature.fromJson(j);
-    model.location = ObjectLocation(
+    j['location'] = ObjectLocation(
       type: ObjectLocationType.store,
       collectionUri: getCollectionUri(),
-    );
+    ).toJson();
+    var model = Creature.fromJson(j);
     return model;
   }
 

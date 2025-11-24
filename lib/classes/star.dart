@@ -41,8 +41,13 @@ class StarStore extends JsonStoreAdapter<Star> {
   String key(Star object) => object.id;
 
   @override
-  Future<Star> fromJsonRepresentation(Map<String, dynamic> json) async =>
-      Star.fromJson(json);
+  Future<Star> fromJsonRepresentation(Map<String, dynamic> json) async {
+    json['location'] = ObjectLocation(
+      type: ObjectLocationType.store,
+      collectionUri: getCollectionUri(),
+    ).toJson();
+    return Star.fromJson(json);
+  }
 
   @override
   Future<Map<String, dynamic>> toJsonRepresentation(Star object) async =>
