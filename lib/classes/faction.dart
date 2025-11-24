@@ -87,8 +87,21 @@ class FactionSummary extends ResourceBaseClass {
   static int sortComparator(FactionSummary a, FactionSummary b)
       => a.name.toLowerCase().compareTo(b.name.toLowerCase());
 
-  static Future<FactionSummary?> byId(String id) async {
-    await loadAll();
+  static Future<FactionSummary?> get(String id) async {
+    if(!_cache.contains(id)) {
+      var loc = _cache.entryLocation(id);
+      if(loc == null) {
+        await loadAll();
+      }
+      else {
+        return _cache.tryLoad(
+            loc,
+            id,
+            (Map<String, dynamic> j) => j['uuid']!
+        );
+      }
+    }
+
     return _cache.entry(id);
   }
 
@@ -127,7 +140,10 @@ class FactionSummary extends ResourceBaseClass {
     }
   }
 
-  static final _cache = ResourceMemoryCache<FactionSummary>();
+  static final _cache = ResourceMemoryCache<FactionSummary, FactionSummaryStore>(
+    jsonConverter: FactionSummary.fromJson,
+    store: () => FactionSummaryStore(),
+  );
 
   static void _factionDeleted(String id) => _cache.del(id);
 
@@ -252,16 +268,16 @@ class Faction extends ResourceBaseClass {
   static Future<Iterable<Faction>> withParent(String? parentId) async {
     var ret = <Faction>[];
     for(var summ in await FactionSummary.withParent(parentId)) {
-      ret.add((await byId(summ.id))!);
+      ret.add((await get(summ.id))!);
     }
     return ret;
   }
 
-  static Future<Faction?> byId(String id) async {
+  static Future<Faction?> get(String id) async {
     Faction? ret = _cache.entry(id);
     if(ret != null) return ret;
 
-    FactionSummary? summ = await FactionSummary.byId(id);
+    FactionSummary? summ = await FactionSummary.get(id);
     if(summ == null) return null;
 
     if(summ.location.type == ObjectLocationType.assets) {
@@ -323,7 +339,10 @@ class Faction extends ResourceBaseClass {
     }
   }
 
-  static final _cache = ResourceMemoryCache<Faction>();
+  static final _cache = ResourceMemoryCache<Faction, FactionStore>(
+    jsonConverter: Faction.fromJson,
+    store: () => FactionStore(),
+  );
 
   factory Faction.fromJson(Map<String, dynamic> json) {
     Faction? cached;

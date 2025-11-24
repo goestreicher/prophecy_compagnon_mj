@@ -149,8 +149,21 @@ class PlaceSummary extends ResourceBaseClass {
           ? a.type.sort - b.type.sort
           : a.name.compareTo(b.name);
 
-  static Future<PlaceSummary?> byId(String id) async {
-    await loadAll();
+  static Future<PlaceSummary?> get(String id) async {
+    if(!_cache.contains(id)) {
+      var loc = _cache.entryLocation(id);
+      if(loc == null) {
+        await loadAll();
+      }
+      else {
+        return _cache.tryLoad(
+            loc,
+            id,
+            (Map<String, dynamic> j) => j['uuid']!
+        );
+      }
+    }
+
     return _cache.entry(id);
   }
 
@@ -208,7 +221,10 @@ class PlaceSummary extends ResourceBaseClass {
     }
   }
 
-  static final _cache = ResourceMemoryCache<PlaceSummary>();
+  static final _cache = ResourceMemoryCache<PlaceSummary, PlaceSummaryStore>(
+    jsonConverter: PlaceSummary.fromJson,
+    store: () => PlaceSummaryStore(),
+  );
 
   static void _placeDeleted(String id) => _cache.del(id);
 
@@ -409,16 +425,16 @@ class Place extends ResourceBaseClass {
   static Future<List<Place>> withParent(String id) async {
     var ret = <Place>[];
     for(var summ in await PlaceSummary.withParent(id)) {
-      ret.add((await byId(summ.id))!);
+      ret.add((await get(summ.id))!);
     }
     return ret;
   }
 
-  static Future<Place?> byId(String id) async {
+  static Future<Place?> get(String id) async {
     Place? ret = _cache.entry(id);
     if(ret != null) return ret;
 
-    PlaceSummary? summ = await PlaceSummary.byId(id);
+    PlaceSummary? summ = await PlaceSummary.get(id);
     if(summ == null) return null;
 
     if(summ.location.type == ObjectLocationType.assets) {
@@ -444,7 +460,7 @@ class Place extends ResourceBaseClass {
   static Future<List<Place>> forLocationType(ObjectLocationType type) async {
     var ret = <Place>[];
     for(var summ in await PlaceSummary.forLocationType(type)) {
-      ret.add((await byId(summ.id))!);
+      ret.add((await get(summ.id))!);
     }
     return ret;
   }
@@ -453,7 +469,7 @@ class Place extends ResourceBaseClass {
   static Future<List<Place>> forSource(ObjectSource source) async {
     var ret = <Place>[];
     for(var summ in await PlaceSummary.forSource(source)) {
-      ret.add((await byId(summ.id))!);
+      ret.add((await get(summ.id))!);
     }
     return ret;
   }
@@ -513,7 +529,10 @@ class Place extends ResourceBaseClass {
     }
   }
 
-  static final _cache = ResourceMemoryCache<Place>();
+  static final _cache = ResourceMemoryCache<Place, PlaceStore>(
+    jsonConverter: Place.fromJson,
+    store: () => PlaceStore(),
+  );
 
   factory Place.fromJson(Map<String, dynamic> json) {
     Place? cached;

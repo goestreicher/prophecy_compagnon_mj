@@ -61,7 +61,7 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
   Future<void> rebuildFullTree() async {
     fullTree.clear();
     treeKey = UniqueKey();
-    await buildSubTree(fullTree, (await PlaceSummary.byId('monde'))!);
+    await buildSubTree(fullTree, (await PlaceSummary.get('monde'))!);
   }
 
   Future<void> buildSubTree(TreeNode root, PlaceSummary place) async {
@@ -334,7 +334,7 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                                 && current.parentId != null
                                 && current.parentId != 'monde'
                             ) {
-                              current = await Place.byId(current.parentId!);
+                              current = await Place.get(current.parentId!);
                               path = '${current!.id}.$path';
                             }
 

@@ -199,7 +199,7 @@ class _ScenarioEditFactionsPageState extends State<ScenarioEditFactionsPage> {
                         Faction? current = f;
                         var path = f.id;
                         while(current != null && current.parentId != null) {
-                          current = await Faction.byId(current.parentId!);
+                          current = await Faction.get(current.parentId!);
                           path = '${current!.id}.$path';
                         }
                         var n = tree.elementAt(path);

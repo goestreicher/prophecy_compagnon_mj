@@ -125,12 +125,27 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
   }
 
   static Future<bool> exists(String id) async {
-    await loadAll();
-    return _cache.contains(id);
+    if(_cache.entryLocation(id) == null) {
+      await loadAll();
+    }
+    return _cache.entryLocation(id) != null;
   }
 
   static Future<NonPlayerCharacterSummary?> get(String id) async {
-    await loadAll();
+    if(!_cache.contains(id)) {
+      var loc = _cache.entryLocation(id);
+      if(loc == null) {
+        await loadAll();
+      }
+      else {
+        return _cache.tryLoad(
+            loc,
+            id,
+            (Map<String, dynamic> j) => j['uuid']!
+        );
+      }
+    }
+
     return _cache.entry(id);
   }
 
@@ -311,7 +326,10 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
     _cache.del(id);
   }
 
-  static final _cache = ResourceMemoryCache<NonPlayerCharacterSummary>();
+  static final _cache = ResourceMemoryCache<NonPlayerCharacterSummary, NonPlayerCharacterSummaryStore>(
+    jsonConverter: NonPlayerCharacterSummary.fromJson,
+    store: () => NonPlayerCharacterSummaryStore(),
+  );
 
   factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j){
     if(!j.containsKey('id')) {
@@ -681,7 +699,10 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     return model;
   }
 
-  static final _cache = ResourceMemoryCache<NonPlayerCharacter>();
+  static final _cache = ResourceMemoryCache<NonPlayerCharacter, NonPlayerCharacterStore>(
+    jsonConverter: NonPlayerCharacter.fromJson,
+    store: () => NonPlayerCharacterStore(),
+  );
 
   factory NonPlayerCharacter.fromJson(Map<String, dynamic> json) {
     NonPlayerCharacter npc = _$NonPlayerCharacterFromJson(json);

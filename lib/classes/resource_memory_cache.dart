@@ -1,9 +1,12 @@
 import 'dart:async';
 import 'dart:collection';
 
+import 'package:prophecy_compagnon_mj/classes/storage/storable.dart';
 import 'package:synchronized/synchronized.dart';
 
+import 'object_location.dart';
 import 'resource_base_class.dart';
+import 'storage/default_assets_store.dart';
 
 class ResourceMemoryCacheEntry<T> {
   ResourceMemoryCacheEntry({ required this.entry, required this.timestamp });
@@ -12,8 +15,8 @@ class ResourceMemoryCacheEntry<T> {
   int timestamp;
 }
 
-class ResourceMemoryCache<T extends ResourceBaseClass> {
-  ResourceMemoryCache({ this.entryTtl = 600 })
+class ResourceMemoryCache<Resource extends ResourceBaseClass, Store extends JsonStoreAdapter<Resource>> {
+  ResourceMemoryCache({ required this.jsonConverter, required this.store, this.entryTtl = 600 })
     : purged = false
   {
     _purgeTimer = Timer.periodic(
@@ -22,6 +25,8 @@ class ResourceMemoryCache<T extends ResourceBaseClass> {
     );
   }
 
+  Resource Function(Map<String, dynamic>) jsonConverter;
+  Store Function() store;
   int entryTtl;
   bool purged;
   final Lock lock = Lock();
@@ -29,10 +34,28 @@ class ResourceMemoryCache<T extends ResourceBaseClass> {
   bool get isEmpty => _entryCache.isEmpty;
   Iterable<String> get keys =>
       _entryCache.keys;
-  Iterable<T> get values =>
-      _entryCache.values.map((ResourceMemoryCacheEntry<T> v) => v.entry);
+  Iterable<Resource> get values =>
+      _entryCache.values.map((ResourceMemoryCacheEntry<Resource> v) => v.entry);
 
   bool containsCollection(String name) => _collectionCache.containsKey(name);
+
+  Future<Resource?> tryLoad(ObjectLocation location, String id, String Function(Map<String, dynamic>) extractId) async {
+    Resource? ret;
+
+    if(location.type == ObjectLocationType.assets) {
+      var json = await loadJsonAssetObject(location.collectionUri, id, extractId);
+      if(json != null) {
+        // ignore:unused_local_variable
+        ret = jsonConverter(json);
+      }
+    }
+    else if(location.type == ObjectLocationType.store) {
+      // ignore:unused_local_variable
+      ret = await store().get(id);
+    }
+
+    return ret;
+  }
   
   void addCollection(String name) {
     int ts = _getCurrentTS();
@@ -49,16 +72,23 @@ class ResourceMemoryCache<T extends ResourceBaseClass> {
 
   bool contains(String key) => _entryCache.containsKey(key);
 
-  T? entry(String key) {
+  ObjectLocation? entryLocation(String key) => _entryToLocationCache[key];
+
+  void updateLocation(String key, ObjectLocation loc) =>
+    _entryToLocationCache[key] = loc;
+
+  Resource? entry(String key) {
     if(_entryCache.containsKey(key)) {
       int now = _getCurrentTS();
       _entryTtlTouch(key, _entryCache[key]!.timestamp, now);
+      _entryCache[key]!.timestamp = now;
     }
     return _entryCache[key]?.entry;
   }
 
-  void add(String key, T entry) {
+  void add(String key, Resource entry) {
     int ts = _getCurrentTS();
+    _entryToLocationCache[key] = entry.location;
 
     if(_entryCache.containsKey(key)) {
       _entryTtlTouch(key, _entryCache[key]!.timestamp, ts);
@@ -71,7 +101,10 @@ class ResourceMemoryCache<T extends ResourceBaseClass> {
   }
 
   void del(String key) {
-    if(_entryCache.containsKey(key)) _entryTtlDel(key, _entryCache[key]!.timestamp);
+    if(_entryCache.containsKey(key)) {
+      _entryTtlDel(key, _entryCache[key]!.timestamp);
+    }
+    _entryToLocationCache.remove(key);
     _entryCache.remove(key);
   }
 
@@ -143,6 +176,11 @@ class ResourceMemoryCache<T extends ResourceBaseClass> {
         _entryTtls.remove(ts);
       }
       for(var key in entryExpiredKeys) {
+        // Save the last know location in case it was updated since the
+        // last call to add() for this entry
+        if(_entryCache.containsKey(key)) {
+          _entryToLocationCache[key] = _entryCache[key]!.entry.location;
+        }
         _entryCache.remove(key);
       }
     }));
@@ -150,8 +188,12 @@ class ResourceMemoryCache<T extends ResourceBaseClass> {
 
   // ignore:unused_field
   late final Timer _purgeTimer;
+
   final Map<String, int> _collectionCache = <String, int>{};
   final SplayTreeMap<int, Set<String>> _collectionTtls = SplayTreeMap<int, Set<String>>();
-  final Map<String, ResourceMemoryCacheEntry<T>> _entryCache = <String, ResourceMemoryCacheEntry<T>>{};
+
+  final Map<String, ResourceMemoryCacheEntry<Resource>> _entryCache = <String, ResourceMemoryCacheEntry<Resource>>{};
   final SplayTreeMap<int, Set<String>> _entryTtls = SplayTreeMap<int, Set<String>>();
+
+  final Map<String, ObjectLocation> _entryToLocationCache = <String, ObjectLocation>{};
 }

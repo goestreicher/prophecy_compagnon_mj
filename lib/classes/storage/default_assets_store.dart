@@ -19,3 +19,16 @@ Future<List<dynamic>> loadJSONAssetObjectList(String file) async {
   }
   return ret;
 }
+
+Future<Map<String, dynamic>?> loadJsonAssetObject(String file, String uuid, String Function(Map<String, dynamic>) getId) async {
+  var jsonStr = await rootBundle.loadString('assets/$file');
+  var assets = json.decode(jsonStr);
+  Map<String, dynamic>? ret;
+  for(var asset in assets) {
+    if(asset is Map && uuid == getId(asset as Map<String, dynamic>)) {
+      ret = asset;
+      break;
+    }
+  }
+  return ret;
+}

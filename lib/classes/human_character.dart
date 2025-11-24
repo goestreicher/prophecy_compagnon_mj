@@ -137,7 +137,7 @@ class CharacterOrigin {
       return Place.unknown;
     }
     else {
-      return await Place.byId(uuid!);
+      return await Place.get(uuid!);
     }
   }
   Place? _place;

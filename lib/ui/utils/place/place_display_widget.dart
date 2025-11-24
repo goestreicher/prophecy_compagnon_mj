@@ -38,7 +38,7 @@ class PlaceDisplayWidget extends StatelessWidget {
   Future<Place?> load() {
     return placeId == null
         ? Future.sync(() => null)
-        : Place.byId(placeId!);
+        : Place.get(placeId!);
   }
 
   Future<List<Map<String, dynamic>>> _export(Place p, PlaceExportConfig cfg) async {

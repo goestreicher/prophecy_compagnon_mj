@@ -30,7 +30,7 @@ class FactionDisplayWidget extends StatelessWidget {
   Future<Faction?> load() {
     return factionId == null
         ? Future.sync(() => null)
-        : Faction.byId(factionId!);
+        : Faction.get(factionId!);
   }
 
   Future<List<Map<String, dynamic>>> _export(Faction f) async {

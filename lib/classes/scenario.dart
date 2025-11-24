@@ -80,7 +80,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     if(j.containsKey('places')) {
       var placesJson = <Map<String, dynamic>>[];
       for(var placeId in j['places']) {
-        var place = await Place.byId(placeId);
+        var place = await Place.get(placeId);
         if(place != null) {
           placesJson.add(place.toJson());
         }
@@ -91,7 +91,7 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     if(j.containsKey('factions')) {
       var factionsJson = <Map<String, dynamic>>[];
       for(var factionId in j['factions']) {
-        var faction = await Faction.byId(factionId);
+        var faction = await Faction.get(factionId);
         if(faction != null) {
           factionsJson.add(faction.toJson());
         }

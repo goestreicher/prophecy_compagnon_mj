@@ -73,7 +73,7 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
   Future<void> rebuildTree() async {
     tree.clear();
     treeKey = UniqueKey();
-    await buildSubTree(tree, (await PlaceSummary.byId('monde'))!);
+    await buildSubTree(tree, (await PlaceSummary.get('monde'))!);
   }
 
   Future<void> buildSubTree(TreeNode root, PlaceSummary place) async {
@@ -200,7 +200,7 @@ class _ScenarioEditPlacesPageState extends State<ScenarioEditPlacesPage> {
                         Place? current = p;
                         var path = p.id;
                         while(current != null && current.parentId != null && current.parentId != 'monde') {
-                          current = await Place.byId(current.parentId!);
+                          current = await Place.get(current.parentId!);
                           path = '${current!.id}.$path';
                         }
                         var n = tree.elementAt(path);

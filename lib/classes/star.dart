@@ -119,7 +119,20 @@ class Star extends ResourceBaseClass {
     ].reduce(min);
 
   static Future<Star?> get(String id) async {
-    await loadAll();
+    if(!_cache.contains(id)) {
+      var loc = _cache.entryLocation(id);
+      if(loc == null) {
+        await loadAll();
+      }
+      else {
+        return _cache.tryLoad(
+            loc,
+            id,
+            (Map<String, dynamic> j) => _getId(j['name']!)
+        );
+      }
+    }
+
     return _cache.entry(id);
   }
 
@@ -244,7 +257,10 @@ class Star extends ResourceBaseClass {
   static String _getId(String name) =>
       sentenceToCamelCase(transliterateFrenchToAscii(name));
 
-  static final _cache = ResourceMemoryCache<Star>();
+  static final _cache = ResourceMemoryCache<Star, StarStore>(
+    jsonConverter: Star.fromJson,
+    store: () => StarStore()
+  );
 
   factory Star.fromJson(Map<String, dynamic> json) =>
       _$StarFromJson(json);

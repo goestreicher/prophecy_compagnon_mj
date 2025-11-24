@@ -5,7 +5,7 @@ import '../../../classes/resource_link/resource_link.dart';
 import '../place/place_display_widget.dart';
 
 Future<Widget?> handlePlaceLinkClicked(ResourceLink link, BuildContext context) async {
-  var place = await PlaceSummary.byId(link.id);
+  var place = await PlaceSummary.get(link.id);
   if(!context.mounted) return null;
 
   if(place == null) {

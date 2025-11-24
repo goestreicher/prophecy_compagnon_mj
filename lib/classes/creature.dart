@@ -264,12 +264,27 @@ class CreatureSummary extends ResourceBaseClass {
   }
 
   static Future<bool> exists(String id) async {
-    await loadAll();
-    return _cache.contains(id);
+    if(_cache.entryLocation(id) == null) {
+      await loadAll();
+    }
+    return _cache.entryLocation(id) != null;
   }
 
   static Future<CreatureSummary?> get(String id) async {
-    await loadAll();
+    if(!_cache.contains(id)) {
+      var loc = _cache.entryLocation(id);
+      if(loc == null) {
+        await loadAll();
+      }
+      else {
+        return _cache.tryLoad(
+            loc,
+            id,
+            (Map<String, dynamic> j) => j['uuid']!
+        );
+      }
+    }
+
     return _cache.entry(id);
   }
 
@@ -414,7 +429,10 @@ class CreatureSummary extends ResourceBaseClass {
     _cache.del(id);
   }
 
-  static final _cache = ResourceMemoryCache<CreatureSummary>();
+  static final _cache = ResourceMemoryCache<CreatureSummary, CreatureSummaryStore>(
+    jsonConverter: CreatureSummary.fromJson,
+    store: () => CreatureSummaryStore(),
+  );
 
   factory CreatureSummary.fromJson(Map<String, dynamic> j) {
     if(!j.containsKey('id')) {
@@ -834,7 +852,10 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
     return m.instantiate(count: count);
   }
 
-  static final _cache = ResourceMemoryCache<Creature>();
+  static final _cache = ResourceMemoryCache<Creature, CreatureStore>(
+    jsonConverter: Creature.fromJson,
+    store: () => CreatureStore(),
+  );
 
   factory Creature.fromJson(Map<String, dynamic> json) {
     Creature c = _$CreatureFromJson(json);
