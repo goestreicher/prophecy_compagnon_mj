@@ -1,5 +1,6 @@
 [
   {
+    "uuid": "eb69b59d-8aac-498e-b20f-704c9cb1da4e",
     "name": "Aigle",
     "category": "animauxSauvages",
     "source": {
@@ -140,6 +141,7 @@
     "equipment": []
   },
   {
+    "uuid": "f59c6a00-1024-4b57-9e85-6ddfbd2b25cf",
     "name": "Cheval",
     "category": "animauxSauvages",
     "source": {
@@ -284,6 +286,7 @@
     "equipment": []
   },
   {
+    "uuid": "dbc9cdae-7d59-450b-8ad4-8dc2d4b7e64e",
     "name": "Hyène",
     "category": "animauxSauvages",
     "source": {
@@ -411,6 +414,7 @@
     "equipment": []
   },
   {
+    "uuid": "6b8915ec-6f34-4c89-bcdd-b2403f54b5d5",
     "name": "Lézard des profondeurs",
     "category": "animauxSauvages",
     "source": {
@@ -555,6 +559,7 @@
     "equipment": []
   },
   {
+    "uuid": "42891a7c-285c-43d7-b80a-1c672bfb381b",
     "name": "Loup",
     "category": "animauxSauvages",
     "source": {
@@ -680,6 +685,7 @@
     "equipment": []
   },
   {
+    "uuid": "d5849bd6-d5ca-469f-afd0-bc0e96f816ff",
     "name": "Ours - Petit",
     "category": "animauxSauvages",
     "source": {
@@ -828,6 +834,7 @@
     "equipment": []
   },
   {
+    "uuid": "3dc58d2d-386d-41a0-9462-336d0d1bf28c",
     "name": "Ours - Moyen",
     "category": "animauxSauvages",
     "source": {
@@ -976,6 +983,7 @@
     "equipment": []
   },
   {
+    "uuid": "6759c075-a45a-4299-8abd-265de1aa5af8",
     "name": "Ours - Grand",
     "category": "animauxSauvages",
     "source": {
@@ -1124,6 +1132,7 @@
     "equipment": []
   },
   {
+    "uuid": "720827f9-ada4-4b74-bd47-877619a8151c",
     "name": "Sanglier",
     "category": "animauxSauvages",
     "source": {
@@ -1249,6 +1258,7 @@
     "equipment": []
   },
   {
+    "uuid": "1c86257f-7b16-4836-a74f-c17f79ffcdcb",
     "name": "Horaldiens",
     "category": "peuplesAnciens",
     "source": {
@@ -1350,6 +1360,7 @@
     ]
   },
   {
+    "uuid": "a3ae4637-309b-46a4-897e-07520098ee34",
     "name": "Mérogs",
     "category": "peuplesAnciens",
     "source": {
@@ -1469,6 +1480,7 @@
     ]
   },
   {
+    "uuid": "9d686bec-d353-437d-bd75-1f66506fb4be",
     "name": "Sklads",
     "category": "peuplesAnciens",
     "source": {
@@ -1575,6 +1587,7 @@
     "equipment": []
   },
   {
+    "uuid": "82b924cd-df5c-4ed6-9dbe-29237fface35",
     "name": "Slaynns",
     "category": "peuplesAnciens",
     "source": {
@@ -1698,6 +1711,7 @@
     ]
   },
   {
+    "uuid": "7b0e9144-6fc8-4b96-9a92-db0d2687edec",
     "name": "Dragon de Lôm",
     "category": "creaturesDraconiques",
     "source": {
@@ -1846,6 +1860,7 @@
     "equipment": []
   },
   {
+    "uuid": "03ad381e-8a8d-4b38-b9c7-ab3de52dc974",
     "name": "Slyart",
     "category": "creaturesDraconiques",
     "source": {
@@ -1987,6 +2002,7 @@
     "equipment": []
   },
   {
+    "uuid": "d1f39db3-f853-4338-9bf2-0a19c13656c5",
     "name": "Tark",
     "category": "creaturesDraconiques",
     "source": {
@@ -2123,6 +2139,7 @@
     "equipment": []
   },
   {
+    "uuid": "37c8515b-700b-47a3-934d-21bbb02b7a24",
     "name": "Vorok",
     "category": "creaturesDraconiques",
     "source": {
@@ -2249,6 +2266,7 @@
     "equipment": []
   },
   {
+    "uuid": "0ccdbaa7-61fb-4b60-ab5a-487470538cf5",
     "name": "Zaal",
     "category": "creaturesDraconiques",
     "source": {

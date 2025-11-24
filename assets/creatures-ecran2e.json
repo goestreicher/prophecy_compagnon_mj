@@ -1,5 +1,6 @@
 [
   {
+    "uuid": "15b636ee-848e-4ee6-ac45-1794edb1736d",
     "name": "Drillon - Chenille Géante",
     "category": "animauxSauvages",
     "source": {
@@ -122,6 +123,7 @@
     "equipment": []
   },
   {
+    "uuid": "8e44ed36-6348-4ce7-988c-a73e4bda305b",
     "name": "Vulture de Sinise",
     "category": "creaturesElementaires",
     "source": {
