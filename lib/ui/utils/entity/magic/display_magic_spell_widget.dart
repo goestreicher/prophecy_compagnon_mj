@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/magic.dart';
+import '../../../../classes/magic_spell.dart';
 
 class DisplayMagicSpellWidget extends StatelessWidget {
   const DisplayMagicSpellWidget({

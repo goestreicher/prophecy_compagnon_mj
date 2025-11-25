@@ -14,7 +14,10 @@
       "danse du vent",
       "prière à Szyl"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort crée pendant (10 + 10 par NR minutes) des ailes qui se déploient dans le dos du mage. Il peut alors s'envoler et se déplacer à la vitesse d'une course moyenne. Toutefois, il ne peut exécuter que des figures simples et en aucun cas recourir à la magie en vol. Ces ailes encaissent les dommages comme n'importe quelle autre partie du corps du mage. D'une envergure de trois mètres, elles ne sont pas aisées à dissimuler et ne permettent pas le port d'une armure normale."
   },
   {
@@ -32,7 +35,10 @@
       "position (assis les yeux clos, tête en arrière)",
       "chant d'appel aux vents (Mental + Don artistique : Chant, Diff. 15)"
     ],
-    "source": "Les Orphelins de Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
     "description": "Ce sortilège, utilisable uniquement en extérieur, permet au mage de faire le vide en lui et de laisser son esprit entrer en résonance avec les murmures du vents. Il confère au mage un bonus de 3 + 2/NR à n'importe quelle action basée sur le contact, la télépathie, le lancement d'un sortilège de divination ou visant à « atteindre » un être vivant ou une information. Le seul domaine inaccessible au personnage reste son propre esprit, car la Sphère des Vents n'a que peu de prise sur la psyché."
   },
   {
@@ -49,7 +55,10 @@
       "rune de vitesse",
       "saut à pieds joints"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Pendant 3 tours, ce sort permet au mage de faire des bonds impressionnants de (5 + NR) mètres dans n'importe quelle direction et d'atterrir sans dommages."
   },
   {
@@ -66,7 +75,10 @@
       "rune de vitesse",
       "mouvements très vifs et saccadés"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort augmente la vivacité du mage pendant (1 + NR) tours. Cette vitesse hors du commun réduit de 5 la Difficulté de ses jets d'esquive et augmente de 10 la Difficulté des attaques de ses adversaires."
   },
   {
@@ -84,7 +96,10 @@
       "runes",
       "plumes pour l'empennage"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort enchante 20 flèches pendant (1 + NR) jours et leur donne un bonus de +5 aux dommages de base."
   },
   {
@@ -103,7 +118,10 @@
       "voix chaude",
       "sentiment de joie"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet au porteur des gants enchantés de bénéficier d'une adhérence semblable à celle des pattes d'une mouche. Ils permettent de rester stationnaire contre une paroi ou un plafond sans aucun jet. De plus, ces gants réduisent la Difficulté des jets d'Escalade de 10. Cet enchantement dure (1 + NR) heures."
   },
   {
@@ -120,7 +138,10 @@
       "arme de jet",
       "rune des vents"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet d'enchanter une arme de jet pendant (1 + NR) heures. Une fois lancée, elle reviendra dans la main de son lanceur si elle ne s'est pas plantée."
   },
   {
@@ -138,7 +159,10 @@
       "ruban de tissu bleu et blanc brodé d'argent",
       "rune des vents"
     ],
-    "source": "Les Orphelins de Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
     "description": "Ce sortilège permet à la cible de rentrer en harmonie avec les éléments aériens afin de tenter une action physique spectaculaire. Après avoir reçu le sort, il peut ajouter sa Coordination à la valeur de n'importe quel jet concernant une Compétence de Physique, qu'il possède ou non cette Compétence. Ce bonus s'applique pour une seule action précise définie lors du lancement du sort. Il n'est donc pas possible de gagner ce bonus pour une action indéterminée. Ce bonus dure 1 + NR tours, durée au cours de laquelle il doit être utilisé. Il fonctionne dès que l'action définie est entreprise. Il est ainsi possible d'effectuer des pirouettes prodigieuses, d'escalader avec dextérité les parois les plus dangereuses, ou encore de faire danser sa lame avec une vitesse prodigieuse pour porter un coup fulgurant. Durant toute la durée du sort, le bénéficiaire semble littéralement vibrer d'énergie magique, la réalité étant légèrement distordue au contact de sa peau. Ses cheveux crépitent d'étincelles de pouvoir et ses gestes s'accompagnent de bruissements magiques. Ce sort très employé par les Prodiges et les gladiateurs de renom est souvent interdit lors des tournois ou des joutes."
   },
   {
@@ -155,7 +179,10 @@
       "un peu de l'élément correspondant",
       "posture (bras croisés, tête rentrée)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
   {
@@ -172,7 +199,10 @@
       "rune de l'air",
       "mouvement brutal de l'index"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage produit un mouvement d'air sur un objet situé à moins de (2 + NR) mètres. Il peut par exemple faire tomber un objet, lever un loquet ou toute autre action qui ne demande qu'un seul geste. La puissance de la poussée est égale à la Force du mage."
   },
   {
@@ -189,7 +219,10 @@
       "rune",
       "mouvement de main"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage crée un mur d'air devant lui de (5 + 2 par NR) m2 pendant 3 tours. Tous les projectiles qui traversent ce mur voient leurs dommages divisés par 3."
   },
   {
@@ -207,7 +240,10 @@
       "voix",
       "danse de la légèreté"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort crée un coussin d'air de taille variable qui se positionne de façon à amortir la chute de (1 + NR) personnes choisies par le mage. Quelle que soit la hauteur de la chute, elles ne subissent aucun dommage. Ce sort dure 1 tour."
   },
   {
@@ -225,7 +261,10 @@
       "rune",
       "chant vibrant"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage enchante un plateau composé d'une matière au choix du lanceur de ce sort, qui peut supporter un poids de (200 + 100 par NR) kilos pendant 1 jour. Le plateau se déplace uniquement à la verticale. Les mages des vents utilisent ce sort pour atteindre certaines écoles de magie et y acheminer leur matériel."
   },
   {
@@ -243,7 +282,10 @@
       "rune de la connaissance tracée dans l'air",
       "danse du vent"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "En invoquant la connaissance de Szyl, le mage se voit attribuer un bonus de +5 à tous ses jets d'Orientation en milieu naturel pendant (1 + NR) jours."
   },
   {
@@ -261,7 +303,10 @@
       "posture (debout sur un éminence, bras écartés, tête renversée en arrière)",
       "cercle de runes des vents formées de plumes"
     ],
-    "source": "Les Orphelins de Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
     "description": "À la fin de la méditation, le mage sort de transe alors que les runes du cercle émettent des rayons de lumière blanchâtre qui jaillissent vers le ciel. Le magicien attire alors l'attention d'un fils de Szyl (le plus proche) pour lui demander conseil ou solliciter un transport personnel vers une destination précise. Le dragon est de la seconde tranche d'âge + 1/NR. Le dragon vient par ses propres moyens (et donc peut mettre un moment à arriver), n'a aucune obligation vis à vis du mage et ne vient pas pour se battre (il a d'ailleurs probablement d'autres affaires à régler). Le magicien doit avoir une raison valable de demander de l'aide, mais il arrive que ce sort soit lancé de manière informelle pour rencontrer un Ailé et l'inviter à une veillée. Les dragons de Szyl peuvent priver l'invocateur de l'usage de sa Sphère des Vents pour une semaine par tranche d'âge s'ils estiment que sa requête est futile, mais ne le font que très rarement. Par contre, il peut arriver qu'ils mettent une volée subite à un impudent s'ils piquent une colère. Souvent peu protocolaires, les dragons des vents aiment les humains qui osent se lancer dans des entreprises audacieuses et ne jugeront pas trop durement un mortel qui leur demande de l'aide face à un défi finalement trop ardu. Les dragons des vents aiment agir vite et n'attendront pas toujours toutes les explications du mage. Ils restent hermétiques à certaines convenances sociales et leur aide pourra parfois mettre le mage en situation délicate (intrusion dans un sanctuaire de caste, déranger un notable ou un noble...). Si un dragon des vents se trouve face à une situation qui le mettrait en colère, il fera parfois preuve de témérité, et des difficultés supplémentaires pourront le toucher dans son orgueil. Si c'est le cas, il se montrera rancunier et prendra à son compte l'affaire qui impliquait le mage. Il n'hésitera pas à impliquer d'autres enfants de Szyl de sa connaissance pour faire triompher son point de vue, quitte à bousculer légèrement les institutions. Les dragons de Szyl ne rechignent pas à transporter des mortels si leur cause leur plaît, mais les conditions de voyage sont souvent difficiles (haute altitude, froid, vitesse excessive). En effet, les dragons des vents considèrent que si un mortel prétend profiter de leur domaine, il doit être prêt à le vivre pleinement..."
   },
   {
@@ -279,7 +324,10 @@
       "plume de cygne",
       "gestuelle aérienne"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet d'augmenter la force du vent d'un degré (de vent léger à vent modéré) afin de faire avancer un voilier d'une capacité de fret de 10 m3 pendant (1 + NR) heures. La capacité de fret mise en œuvre peut être multipliée par 2, 3 ou plus, mais la durée d'effet du sort est inversement réduite."
   },
   {
@@ -296,7 +344,10 @@
       "regard fixe",
       "position (mains jointes à la pointe des doigts écartés, index sous le menton)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Tout en regardant son interlocuteur droit dans les yeux (moins de 1 mètre), le mage s'interroge sur la véracité de ses propos. Quelques instants plus tard, le mage entend comme un murmure dans le vent qui lui révèle s'il a menti durant les (1 + NR) minutes précédent son lancement. L'interlocuteur peut essayer de dissimuler son mensonge. Il doit alors réussir un jet d'opposition de Social + Volonté contre le score d'incantation du mage."
   },
   {
@@ -313,7 +364,10 @@
       "rune",
       "voix (hurlement)"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage ouvre un portail sur un orage pendant (1 + NR) tours. A chaque tour, la foudre frappe une cible choisie par le mage qui subit (20 + 1D10) points de dommages. Les armures en métal n'offrent aucune protection contre la foudre, et les autres voient leur Indice de protection réduit de moitié."
   },
   {
@@ -331,7 +385,10 @@
       "rune des vents",
       "danse d'harmonie éolienne (Physique + Don artistique : Danse, Diff. 15)"
     ],
-    "source": "Les Orphelins de Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
     "description": "En pratiquant ce rituel, le mage s'attire le regard des énergies élémentaires des Vents qui, tout au long de la journée, lui prodigueront leurs bienfaits. L'Attribut Chance du personnage est multiplié par 2 et le personnage peut obtenir des NR lors de jets où il dépense des Points de Chance. En contrepartie, son Attribut Maîtrise tombe à 0 dès le lancement du sortilège (qu'il soit réussi ou raté).\nNe peut être acquis que par les personnages possédant le Désavantage « Curiosité »."
   },
   {
@@ -349,7 +406,10 @@
       "rune des vents",
       "posture (s'accroupir et se relever)"
     ],
-    "source": "Les Orphelins de Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
     "description": "C'est de ce sort que proviennent de nombreuses légendes concernant les prouesses de certains voyageurs illustres. Ce sort attire sur la cible le regard bienveillant des vents qui le protègent alors contre des dangers invisibles. Durant l'heure qui suit le lancement, le bénéficiaire peut à tout moment ressentir un souffle glacé sur la nuque, l'avertissant d'un danger une à deux secondes avant qu'il ne survienne. Il peut s'agir d'un projectile tiré dans son dos, d'un prédateur s'apprêtant à fondre sur lui du ciel ou encore d'un piège sur lequel il va poser le pied... Ce sort n'est efficace que contre les dangers cachés et ne peut interférer avec un adversaire combattu de face ou remplacer un jet de Réaction. Par contre, si ce jet de réaction était raté, le sort se déclencherait instantanément, remplaçant le piètre résultat par un jet réussi, mais avec 0 NR (quelle que soit la Difficulté du jet). Si le personnage obtient sur un de ses Dés d'Initiative un résultat plus élevé que la première action de l'agresseur (qu'il faut alors lancer pour comparer les scores, un piège inerte étant compté à 10 d'Initiative), l'agresseur ou l'effet mis en jeu doit relancer le dé de l'action et utiliser le résultat le plus faible des deux dés (en cas de Tendances ou de dés multiples, l'agresseur ne rejette que le dé qu'il conservait). Ce sort ne fait que prévenir le danger, et ne permet pas systématiquement d'y échapper..."
   },
   {
@@ -366,7 +426,10 @@
       "plume de héron cendré (consommée)",
       "danse aérienne"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Une plume à la main, le mage effectue une rapide danse aérienne. Celle-ci s'achève alors qu'un coussin d'air s'est formé au niveau de ses pieds et sur lequel il peut se déplacer comme si c'était une surface rigide. Il peut ainsi marcher en flottant légèrement au dessus du sol, ce qui lui permet de ne laisser aucune trace de son passage ou de franchir sans difficulté des obstacles tels que rivières et marais. Le sort peut affecter (1 par NR) personnes supplémentaires au choix du mage et dure 1 minute. Le mage peut prolonger la durée du sort à raison de 1 point de magie par minutes et par personne."
   },
   {
@@ -383,7 +446,10 @@
       "ficelle",
       "rune de l'air"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort protège une zone de (10 + 5 par NR) m2 délimitée par une ficelle pendant 1 jour. Toute personne tentant d'y pénétrer pour la première fois est immédiatement projetée à 2 mètres et subit 15 points de dommages. Si la ficelle est retirée, le sort prend fin prématurément."
   },
   {
@@ -401,7 +467,10 @@
       "rune de Szyl",
       "évocation épique d'un « coup de chance » fameux (Social + Conte, Diff. 20)"
     ],
-    "source": "Les Orphelins de Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
     "description": "Bien souvent, cet enchantement se lance lors des veillées (parfois à l'insu même des mages) lorsque les bardes évoquent avec force les aventures chanceuses de tel ou tel héros. Il permet au personnage de conférer à un objet une réserve de Points de Chance dont il pourra se servir par la suite. Cette réserve est égale à 2 + 2/NR points qui se dépenseront de façon classique - sans pouvoir conférer de NR. Le personnage ne peut puiser dans ces points que lorsqu'il utilise cet objet précis. Une personne ne peut détenir qu'un seul objet à la fois ayant reçu cet enchantement, qui dure une semaine ou tant qu'il reste des Points de Chance dans sa réserve."
   },
   {
@@ -418,7 +487,10 @@
       "position (chuchoter dans sa main en creux)",
       "eventail marqué d'un tourbillon"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "En agitant son éventail pour disperser les mots chuchotés au creux de sa main, le mage crée une faille invisible qui permet de parler (sans le voir) à un interlocuteur situé à moins de 1 kilomètre de lui, tant qu'il peut le localiser. Le portail reste ouvert (1 + 1 par NR) minutes."
   },
   {
@@ -436,7 +508,10 @@
       "danse des vents",
       "chant d'appel"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Prenant une poignée de sable dans chaque main, le mage entame la danse des vents. Tout en laissant s'égrainer lentement le sable, il s'adresse alors aux vents en chantonnant, leur demandant son chemin. Un esprit des vents se matérialise alors et se met à tourbillonner devant le mage, rassemblant le sable en un petit tourbillon qui prend la direction du lieu demandé. Le sable s'éparpille rapidement et le tourbillon disparaît totalement au bout de (2 + 1 par NR) tours."
   },
   {
@@ -454,7 +529,10 @@
       "encens de l'élément concerné",
       "chant des éléments (Mental + Don artistique : Chant, Diff. 15)"
     ],
-    "source": "Le sang noir de Moryargorn",
+    "source": {
+      "type": "officiel",
+      "name": "Le sang noir de Moryargorn"
+    },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },
   {
@@ -471,7 +549,10 @@
       "posture (bras écartés, tête rejetée en arrière)",
       "hurlement"
     ],
-    "source": "Les Orphelins de Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
     "description": "Alors que certains sorts de Magie Invocatoire pourraient créer des effets similaires à celui-ci, l'Œil du cyclone est considéré comme l'un des sortilèges les plus difficiles, les plus nobles et les plus dévastateurs de la Sphère des Vents car le mage puise en lui-même la force magique de créer une véritable tornade élémentaire. Au moment du lancement, le mage (et un cercle de 1m autour de lui) devient l'œil du cyclone, la dernière zone de calme dans une tempête qui se déchaîne au début du tour suivant. Dans un rayon égal à (2 x Sphère des Vents) mètres, des vents violents, des éclairs d'énergie et un sifflement assourdissant ravagent la zone. Tous les êtres et objets d'un poids inférieur à 20kg par degré de Statut du mage s'envolent en tourbillonnant et tous les êtres encore présents sont aveuglés et ballottés, subissant un malus de 3 à toutes leurs actions physiques. De plus, au début de chaque nouveau tour, ils subissent 3D10 points de dommages (imparables et non esquivables, mais comptant l'armure) en raison des objets projetés et des arcs électriques qui tourbillonnent autour du mage. Pour quitter la zone, il faut réussir un jet de Physique + Coordination contre le score d'invocation du mage (sauf pour les personnages emportés par le vent, qui tournoient sans posséder de contrôle sur leur trajectoire et restent toujours dans la zone). Un échec signifie une immobilité, un échec critique indique que le personnage est emporté par les vents. En transe, frénétique, incapable d'effectuer la moindre action, le mage doit se concentrer pour dompter l'énergie libérée. Il doit donc dépenser une grande quantité d'énergie, créant ainsi un effet qui va durer (Sphère des Vents) tours. A l'issue de l'effet normal, il est possible de maintenir les effets du sort à raison de deux points de magie par tour supplémentaire. A tout moment, le personnage peut interrompre la tornade, qui se désagrège alors en quelques instants (bien que sa transe lui interdise souvent toute perception cohérente). Les cibles emportées par la tornade retombent alors lourdement de (Sphère des Vents du lanceur) mètres de haut (voir p.194 pour les dommages des chutes).\nNe peut être acquis que par les personnages possédant le Désavantage « Curiosité »."
   },
   {
@@ -489,7 +570,10 @@
       "poudre de cristal (consommée)",
       "cri complexe (scanson de plus en plus forte)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage s'installe au centre d'un cercle tracé à l'aide de la poudre et appelle les vents par une scansion de plus en plus forte. Un brouillard épais commence alors à s'élever de la jarre et se répand à la vitesse de 30 mètres par tour. Il s'étend sur un cercle de (40 + 5 mètres par NR) de diamètre. Le sort dure jusqu'au matin suivant."
   },
   {
@@ -507,7 +591,10 @@
       "orage puissant",
       "danse de la Colère Draconique (Physique + Don artistique : Danse, Diff. 22, provoque une blessure légère)"
     ],
-    "source": "Les Orphelins de Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
     "description": "Ce sortilège puissant n'est que rarement utilisé, tant la puissance qu'il met en jeu est importante. Il fait appel à la colère de Szyl, un sentiment ancien et violent qui l'habite parfois. Ce sort doit être lancé par une nuit d'orage, lorsque la fureur des cieux est à son paroxysme. Le mage enchante alors un objet personnel lui appartenant ou confié par un compagnon, lui conférant un pouvoir surnaturel afin de causer la perte totale d'un ennemi. Au terme d'une danse épuisante et d'un appel aux forces primitives de la colère, la foudre tombe plusieurs fois sur l'objet sans l'endommager. Le choix de l'objet détermine pour beaucoup le style avec lequel le porteur va exercer sa vengeance. Une arme sera clairement destinée à tuer son ennemi, un éventail de guerre ou une bannière pourra causer la défaite de l'armée ennemie si elle est menée par la cible désignée du Nemésis. De même, un anneau de fiançailles causera l'échec du mariage dans la douleur. Ce sort n'est jamais lancé à la légère. La légende veut que chaque fois que ce sort a été utilisé, l'un des deux protagonistes y a trouvé la défaite, la mort, l'échec ou la ruine. Car d'après les récits anciens, toute vengeance consacrée par une Nemésis verra la fin de l'un et le triomphe de l'autre. Ce sort dure jusqu'à accomplissement de la vengeance. Il n'apporte de puissance qu'à la personne ayant assisté le mage dans son incantation. Lorsque la scène finale arrivera, le personnage ressentira la colère de Szyl l'habiter et lui donner de la force. Il obtient alors un bonus de +5 sur toutes ses actions liées à l'objet servant à l'accomplissement de sa vengeance. Cet effet dure environ une heure (le Mj est libre de réduire ou d'augmenter cette durée pour que le sort soit pleinement actif durant toute la scène). Durant tout ce temps, les yeux du personnage sont parcourus d'éclairs bleutés et le contact de sa peau provoque de minuscules décharges élémentaires accompagnées d'étincelles. Le Mj veillera à ce que l'utilisation de ce sort donne lieu à une scène épique et dans laquelle le personnage porteur sera l'élément central. Ses compagnons ne seront pas à même d'accomplir les mêmes exploits que lui, et s'il le désire, le Mj peut adapter ses descriptions ou les effets du sort pour donner de la grandeur à la scène (immunités, blessures supplémentaires, coups de chance imprévus, ...). Ce sort ne provoque pas forcément la victoire du personnage, mais si sa cause est juste et en accord avec les voies de Szyl, il y a fort à parier que son destin sera glorieux...\nNe peut être acquis que par les personnages possédant le Désavantage « Curiosité »."
   },
   {
@@ -525,7 +612,10 @@
       "poudre d'un rocher ou cendres d'un arbre détruit par un éclair naturel (consommées)",
       "chant rythmique"
     ],
-    "source": "Les Orphelins de Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
     "description": "Utilisé lors des combats épiques, ce sortilège très puissant confère au mage la protection, la rapidité et l'efficacité meurtrière des rafales de vent. Durant (Sphère des Vents) tours, le personnage est entouré de bourrasques sifflantes et gagne un bonus égal à sa Tendance Dragon à tous ses jets d'Initiative, d'attaque et d'esquive. Il obtient de plus un bonus égal à cette Tendance sur toutes ses attaques physiques à distance, du fait d'un vent porteur. Enfin, il ne peut être touché par des projectiles de taille humaine (hachettes, javelots, flèches, dards, jets d'acide limités, carreaux) à moins que ceux-ci ne soient ensorcelés par un effet ou une Compétence ayant obtenu un score supérieur à son jet d'incantation. Pour chaque NR obtenu, le personnage peut lancer une décharge de foudre infligeant 15 + 3D10 points de dommages. Pour cela, il doit effectuer un jet de Manuel + Coordination (comptant comme une Attaque, donc utilisant un dé d'action et d'une Difficulté définie par ses actions précédentes du tour). Cette décharge de foudre se condense dans sa main au moment du lancer et ne peut que se parer à l'aide d'un objet ensorcelé. L'armure compte normalement. En contrepartie, pour toute la durée du combat et le reste de la journée, le personnage ne peut plus faire appel aux Tendances et ne lance plus qu'un seul dé, considéré à tous point de vue comme le dé du Dragon. Aucun pouvoir, Avantage ou Privilège ne peut altérer cet effet."
   },
   {
@@ -543,7 +633,10 @@
       "danse aérienne",
       "voix coléreuse"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage crée une tornade autour de lui qui a la capacité d'emporter objets, personnes et animaux d'un poids inférieur à 500 kilos. Elle occasionne à ses victimes 70 points de dommages par tour du fait des objets volants en tout sens. Pour leur échapper, à chaque tour, un jet d'Athlétisme ou d'Acrobatie contre une Difficulté de 25. La tornade, qui peut facilement dévaster un village entier, dure (1 + NR) tours."
   },
   {
@@ -560,7 +653,10 @@
       "rune des vents brodée en fil d'or sur la voile (consommée)",
       "posture (cérémonie du souffle)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Une fois la voile du navire ensorcelée, celle ci se gonfle comme si un vent se levait. Pour contrôler la vitesse du navire, il suffit de déployer plus ou moins les voiles : lorsqu'elles sont amenées, la propulsion cesse, et lorsqu'elles sont complètement déployées, le navire se déplace comme par vent fort (cf. Les Versets d'Ozyr p.63-64). Le sort se déclenche en 4 tours et dure (1 + 1 par NR) semaines. La rune doit être visible de la proue du navire où le mage effectue l'enchantement, et se consume lors de l'incantation."
   }
 ]

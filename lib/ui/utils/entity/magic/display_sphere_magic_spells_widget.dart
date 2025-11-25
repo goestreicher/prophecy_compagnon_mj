@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/magic.dart';
+import '../../../../classes/magic_spell.dart';
 import 'display_magic_spell_widget.dart';
 
 class DisplaySphereMagicSpellsWidget extends StatelessWidget {

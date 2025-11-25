@@ -13,7 +13,10 @@
       "cri très fort « À la garde ! »",
       "une entaille sur un doigt"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage crie à l'aide et les forces de l'ordre les plus proches entendent automatiquement ce cri. Elles apprennent automatiquement la localisation du mage, sa nature de mage, et ressentent le besoin de se précipiter aussitôt à son aide. Ce sort ne fonctionne que dans les limites d'une cité. Les mages des cités ayant une réputation sulfureuse, ils n'utiliseront ce sort qu'en dernière extrémité..."
   },
   {
@@ -31,7 +34,10 @@
       "danse de la chance",
       "rune du silence"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "En jetant ce sort sur des vêtements, le mage leur donne la capacité de couvrir les bruits de celui qui les porte pendant (1 + NR) jours. Le porteur bénéficie ainsi d'un bonus de +5 à sa Compétence de Discrétion."
   },
   {
@@ -49,7 +55,10 @@
       "rune de la sagesse tracée en l'air",
       "complainte de la cité"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "En invoquant la sagesse de Khy, le mage se voit attribuer un bonus de +5 sur ses jets d'orientation en milieu urbain (Orientation ou Vie en cité) pendant (1 + NR) heures."
   },
   {
@@ -67,7 +76,10 @@
       "lime",
       "rune de la famille"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage enchante un levier qui devient capable de déverrouiller n'importe quelle porte fermée pendant (1 + NR) jours."
   },
   {
@@ -84,7 +96,10 @@
       "cape",
       "rune de Khy"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "En s'appuyant contre un mur, le mage en prend la teinte pendant (30 + 30 par NR) minutes. Il peut ainsi se soustraire au regard des autres. La Difficulté pour le repérer augmente de +15. Si le mage utilise la magie ou parle, le sort s'arrête aussitôt. Ce sort ne fonctionne qu'en milieu urbain (village, ville, cité)."
   },
   {
@@ -102,8 +117,11 @@
       "posture pensive",
       "une fenêtre"
     ],
-    "source": "Une pellicule moirée s'étire sur le cadre de la fenêtre. Regarder par cette fenêtre dévoile automatiquement au mage toute illusion visuelle ou mentale située dans son champ visuel. Il peut ensuite retrouver les illusions découvertes grâce à un jet de Mental + Perception de Difficulté 20, en bénéficiant d'un bonus égal aux NR obtenus au lancement.",
-    "description": "La colère des dragons"
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
+    "description": "Une pellicule moirée s'étire sur le cadre de la fenêtre. Regarder par cette fenêtre dévoile automatiquement au mage toute illusion visuelle ou mentale située dans son champ visuel. Il peut ensuite retrouver les illusions découvertes grâce à un jet de Mental + Perception de Difficulté 20, en bénéficiant d'un bonus égal aux NR obtenus au lancement."
   },
   {
     "name": "Flânerie passagère",
@@ -119,7 +137,10 @@
       "petits cailloux blancs",
       "murmures"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "En lançant ce sort, le mage distrait (1 + NR) cibles pendant (1 + NR) tours. Elles voient la Difficulté de leurs actions augmenter de 5 durant ce laps de temps. Ce sort est inefficace en situation de combat."
   },
   {
@@ -136,7 +157,10 @@
       "sifflement",
       "posture nonchalante"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage découvre le nom d'une personne inconnue qu'il observe. Il bénéficiera d'un bonus de (1 + NR) à ses jets de Compétence liés à l'Attribut Social pendant leur première conversation."
   },
   {
@@ -154,7 +178,10 @@
       "claquement de doigts",
       "éclat de miroir (consommé)"
     ],
-    "source": "Les Compagnons de Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
     "description": "En se focalisant sur une cible à moins de 50 mètres, le personnage va provoquer une baisse de vigilance indétectable par la victime, mais de forte puissance. Si elle échoue à un jet de Mental + Volonté contre le score d'incantation du mage, la cible subit alors un malus de Perception de (3 + 2 par NR) (sur le jet d'incantation). Ce malus s'applique à tout jet de perception active, de réaction, ou peut être interprété par le MJ à son gré (un bâillement prolongé qui lui fera fermer les yeux deux ou trois secondes, une rêverie passagère qui focalisera son attention sur un point du décor durant un moment...). En cas d'échec sur le jet d'opposition, le cible prend conscience de la présence du mage de façon intuitive et sera immédiatement sur ses gardes, même si le mage est indétectable (la cible regardera dans sa direction, croira avoir entendu un bruit, pourra s'approcher avec une torche...)."
   },
   {
@@ -171,7 +198,10 @@
       "un peu de l'élément correspondant",
       "posture (bras croisés, tête rentrée)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
   {
@@ -188,7 +218,10 @@
       "voix faible",
       "rune du silence"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage peut parler à une personne située à (75 + 10 par NR) mètres de lui pendant 3 tours comme s'il murmurait au creux de son oreille. Personne d'autre que la cible ne pourra l'entendre."
   },
   {
@@ -205,7 +238,10 @@
       "morceau de craie",
       "rune de Khy tracée sur le mur ou la porte"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "En traçant un petit cercle sur un mur ou une porte, le mage peut observer à travers, mais pas entendre ce qui se passe, pendant (10 + 10 par NR) minutes."
   },
   {
@@ -223,7 +259,10 @@
       "voix",
       "sentiment de confusion"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort ne fonctionne que dans des endroits permettant de se perdre (cité, forêt, château, etc.). Le mage peut semer (2 + NR) poursuivants pendant 1 heure."
   },
   {
@@ -241,7 +280,10 @@
       "charbon pilé",
       "voix grave"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage pose une carte sur une table et y déverse de la poudre de charbon. Les poussières s'embrasent et se rejoignent là où se trouve la personne ou l'objet que cherche le mage. La localisation reste cependant très imprécise. De plus, le charbon brûle la carte en 1 tour. La poudre de charbon reste enchantée (1 + NR) cycles."
   },
   {
@@ -258,7 +300,10 @@
       "chambranle de porte",
       "se taper légèrement le front"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage désigne une porte à moins de 20 mètres et se tape légèrement le front. La prochaine personne à passer la porte se cognera la tête (quelle que soit sa taille). La victime perd 2 actions le temps de récupérer ses esprits et de se masser le crâne (une seule si elle porte un casque d'armure moyenne ou lourde). Ce sort sert souvent à se débarrasser de poursuivants ou à se moquer de sa victime en société."
   },
   {
@@ -275,7 +320,10 @@
       "sourire",
       "fard à joue"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage augmente son Attribut Social de 3 pendant (10 + 10 par NR) minutes."
   },
   {
@@ -292,7 +340,10 @@
       "gestuelle de recherche",
       "voix murmurante"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage invoque une petite créature non agressive capable de repérer les passages dérobés, qui reste à son service pendant (10 + 10 par NR) minutes."
   },
   {
@@ -310,7 +361,10 @@
       "position (debout, bras croisés sur les épaules, tête baissée)",
       "psaume des Sanctuaires (Social + Conn. des dragons, Diff. 15)"
     ],
-    "source": "Le sang noir de Moryargorn",
+    "source": {
+      "type": "officiel",
+      "name": "Le sang noir de Moryargorn"
+    },
     "description": "Ce sort en appelle à la bienveillance de Moryagorn pour protéger l'invocateur et quelques-uns de ses alliés en les transportant dans un sanctuaire Eerique. Ce sort ne fonctionne pas sur les personnages possédant 3 ou plus en Tendance Homme (qui ne sont pas assez fervents pour attirer l'attention de l'Être Primordial). A la fin de l'incantation, le mage et (NR) compagnons (présents dans le cercle et dans la même position) sont désintégrés par les courants élémentaires et reconstitués (en un battement de cil) dans la plus proche Eerie... Mais ce sort n'octroie aucun droit de pénétrer dans l'Eerie et n'oblige ses habitants à un accueil paisible. Le plus souvent, les mages des cités utilisent ce sort pour pénétrer dans une Eerie proche dont l'accès est physiquement difficile. Enfin, il est toujours risqué de se projeter dans une Eerie au hasard, certaines d'entre elles étant mortelles pour les humains (Abysses des Océans, Veines de feu des Volcans)..."
   },
   {
@@ -328,7 +382,10 @@
       "rune des cités (servant à dessiner la rune sur la cible)",
       "sourire confiant"
     ],
-    "source": "Les Compagnons de Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
     "description": "Parfois dévoyé dans son utilisation, ce sort est une amélioration considérable du Sourire enchanteur. Il nimbe la cible d'un charisme et d'une prestance digne d'un dragon, provoquant chez ses interlocuteurs un respect et une obéissance intuitive. Ironie du sort (ou de la magie des cités ?), plus les spectateurs auront des croyances fortes et affirmées pour les Ailés, plus ils se persuaderont de l'importance du personnage. Ils peuvent soupçonner un important citoyen voyageant incognito en Kor, se persuader qu'il est un émissaire draconique secret ou même, dans les cas les plus extrêmes, croire qu'il s'agit d'un dragon sous forme humaine qui ne juge pas utile de se déclarer (seulement si le sort fait dépasser 10 au Social du personnage). Les spectateurs se font chacun leur idée, mais s'accorderont toujours à penser que \"c'est sûr, c'est un envoyé des Dragons, mais il tient à son anonymat, soyons malin et respectons son choix\"... Ce sort dure une heure par point en Sphère des Cités et octroie un bonus de Social égal à deux fois la Tendance Dragon de son interlocuteur. Dans le cas d'une foule, une Tendance moyenne devra être estimée par le Mj (voir à ce sujet le tableau de la page 79 selon les régions). Le personnage peut ainsi dépasser 10 aux yeux de ses cibles (et donc passer pour un dragon, ce qui est toutefois un crime majeur dans de nombreux pays...). Malheureusement, ce sort n'est efficace que sur les humains, les animaux ne ressentant pas la peur normalement due aux dragons et les Ailés perçant à jour le subterfuge d'un simple regard. De plus, il convient que le personnage tienne son rôle de façon crédible, car toute décision manifestement aberrante permettra aussitôt un jet de Mental + Perception de la part des victimes pour briser le charme. Si plus de la moitié des interlocuteurs du personnage sont persuadés du subterfuge à un même moment, le sort se dissipe brutalement, avec toutes les conséquences néfastes que l'on peut envisager...\nNe peut être acquis que par les personnages possédant le désavantage « Mauvaise réputation »."
   },
   {
@@ -346,7 +403,10 @@
       "rune des cités (tracée du bout du doigt)",
       "yeux fermés quelques secondes"
     ],
-    "source": "Les Compagnons de Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
     "description": "Ce sortilège courant permet au mage de rentrer en relation avec les ombres qui peuplent les ruelles des cités. En tant qu'énergies élémentaires inertes, les ombres urbaines possèdent une sorte de conscience collective que le mage parvient à appréhender pour son propre bénéfice. Il peut ainsi s'y glisser et amoindrir l'attention que l'on voudrait lui porter en jouant sur les lois de la réalité pour inciter inconsciemment les humains alentours à ne pas s'intéresser à lui. Il obtient alors un bonus de Discrétion égal à sa Sphère des Cités et peut affecter une personne en plus de lui par NR obtenu (qui doit le toucher au moment de l'incantation). Ce sort dure 5mn, puis un point de magie par tour si on souhaite le prolonger. Il ne permet pas réellement de manipuler les ombres, mais d'influencer la concentration des personnes avoisinantes. Toutefois, le mage peut décider de ne pas recourir aux ombres des rues pour se rendre insignifiant, mais au contraire pour sentir, repérer ou découvrir un élément caché ou seulement soupçonné dans le quartier où il se trouve. Il obtient un bonus égal à sa Sphère des Cités pour un unique jet de Perception ou de Vie en cité destiné à voir un individu précis dans une foule, à dénicher une ruelle si étroite qu'on passe devant sans la voir ou encore improviser un chemin rapide pour contourner un obstacle ou rejoindre un lieu. Ce sort ne fonctionne que dans les villes et dans les villages d'au moins cinquante de maisons. Si la cité est un dragon de Khy sous forme élémentaire, le personnage en prend alors confusément conscience et vivra donc un échange télépathique instantané avec le dragon avant que ce dernier ne daigne lui accorder les effets de son sort. Pour le mage, cette conversation peut durer d'une à deux minutes, mais dans la réalité, elle est instantanée et indétectable. Le dragon peut évidemment choisir de ne pas se révéler à l'humain."
   },
   {
@@ -363,7 +423,10 @@
       "voix chaleureuse",
       "rune de Khy"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage se voit accorder l'attention et la confiance d'une foule dans un rayon de 20 mètres et à portée de voix. Il conserve cet ascendant pendant (1 + NR) heures. En cas d’échec de la tentative, la foule est prise d'une haine peu commune et se retourne contre le mage."
   },
   {
@@ -381,7 +444,10 @@
       "rune des cités",
       "claquement de langue"
     ],
-    "source": "Les Compagnons de Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
     "description": "En lançant ce sort, un mage peut intuitivement localiser l'une de ses connaissances au sein de la cité où il se trouve lui-même actuellement. Il importe d'obtenir un certain nombre de NR selon le degré de familiarité avec la cible : 0 pour un ami ou un compagnon régulier, 1 NR pour un individu connu de vue ou croisé à quelques reprises, 2 NR pour un homme rencontré ou aperçu une fois, etc. La possession d'un objet appartenant à la cible peut apporter un bonus direct de 1 (pour un objet usuel impersonnel comme un gobelet ou le lit de la nuit passée), 3 (pour un objet personnel commun comme une cape ou une selle) voire 5 (pour un objet très personnel comme une marque de caste, un bijou familial ou un écu de naissance dungari). Chaque NR obtenu en plus du minimum est susceptible de donner une information supplémentaire au mage."
   },
   {
@@ -398,7 +464,10 @@
       "plume de scribe",
       "rune de la sagesse"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet de créer une plume qui oblige son utilisateur à dire la vérité pendant qu'il écrit. S'il ment, l'encre qu'il utilise change de couleur. Ce sort est utilisable même avec les analphabètes, il suffit juste de leur faire dessiner quelque chose. L'enchantement de la plume dure (1 + NR) cycles."
   },
   {
@@ -416,7 +485,10 @@
       "encens de l'élément concerné",
       "chant des éléments (Mental + Don artistique : Chant, Diff. 15)"
     ],
-    "source": "Le sang noir de Moryargorn",
+    "source": {
+      "type": "officiel",
+      "name": "Le sang noir de Moryargorn"
+    },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },
   {
@@ -434,7 +506,10 @@
       "pièce saturée de vapeurs d'encens de Khy (l'équivalent de 20 bâtons, consommés)",
       "gouttelettes d'huile de nacre (à appliquer sur les yeux, consommées)"
     ],
-    "source": "Les Compagnons de Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
     "description": "Difficile à lancer, ce sort nécessite souvent des préparatifs soignés ou une assistance extérieure pour être correctement mis en place. Juste avant de se réveiller ou de s'endormir, le personnage peut échapper aux lois de la physique humaine et devenir littéralement invisible pour toute la journée ou toute la nuit qui suit. Sous cette \"forme\", il ne peut ni parler, ni se faire entendre, ni user de magie, mais reste capable de toucher toute matière physique. Chacune de ses actions reste perceptible dans la réalité et peut le faire remarquer. La Difficulté du jet de Mental + Perception pour le repérer à ce moment est égale à son score obtenu lors de son jet d'incantation. Ce sort n'affecte pas les dragons des cités. Tant qu'il n'effectue aucune action susceptible de le faire repérer (bouger un objet, porter un coup, etc.), il n'est pas possible de tenter de jet. Une fois qu'une personne a perçu le personnage, elle n'est plus sensible au sort et le voit normalement. Elle ne peut par contre que le désigner approximativement à d'autres spectateurs, lesquels ne le voient toujours pas et doivent attendre une action réagissant avec la réalité pour tenter un jet. Une fois que le sort a été outrepassé par autant de spectateurs que la Tendance Homme du personnage, le charme se dissipe irrévocablement."
   },
   {
@@ -452,7 +527,10 @@
       "lumière de Khyméra",
       "sentiment d'amour (ressenti par quelqu'un d'autre que le mage durant tout l'enchantement)"
     ],
-    "source": "Les Compagnons de Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
     "description": "Ce sortilège permet d'enchanter une bague ou par extension, tout bijou discret pouvant être offert pour permettre à son porteur et à son enchanteur d'établir une forme singulière de communication empathique. En lançant ce sortilège, le mage doit se concentrer sur la personne à qui il souhaite l'offrir, car l'enchantement est à destination unique et ne fonctionne que si l'objet est porté par le bénéficiaire désigné au moment de l'incantation. Par la suite et durant un Cycle, en réussissant un jet de Mental + Empathie + Tendance Homme contre une Difficulté de 20, le porteur de l'objet peut provoquer une relation télépathique à double sens pour entendre l'enchanteur de l'objet et parler librement avec lui pendant 1 + 1/NR minutes (calculés sur le jet de Mental + Empathie). De son côté, l'enchanteur peut faire de même quand il le désire, mais la Difficulté de son propre jet de Mental + Empathie + Tendance Homme est de 15. Cette liaison peut être utilisée trois fois par jour, mais s'il le désire, le porteur du bijou peut l'activer artificiellement en dépensant cinq de ses points de magie par contact. Le Mj reste libre de modifier ces Difficultés en fonction de la distance et des circonstances dans lesquelles les jets sont effectués stress extrême, fatigue, proximité, disputes, etc."
   },
   {
@@ -470,7 +548,10 @@
       "fil d'argent",
       "rune de Khy"
     ],
-    "source": "Les Compagnons de Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
     "description": "Ce sortilège extrêmement populaire a fait la gloire de nombreux artisans élémentaires et sorciers des Cités. Il permet d'ensorceler un vêtement durant un an pour lui conférer plusieurs capacités mineures très utiles en ville. En premier lieu, le porteur dispose d'un bonus de +1 en Social. Il peut de plus changer les motifs et les couleurs de son vêtement une fois par jour, ce qui permet de changer de tenue en ne possédant qu'un habit. Il confère au vêtement une solidité particulière qui lui octroie un Indice de protection de 3. La résistance surnaturelle du vêtement fait disparaître toute déchirure ou accroc en une nuit, ce qui régénère les points d'armure et évite tout entretien actif. Enfin, les poches du vêtement communiquent magiquement entre elles et permettent de tirer de sa poche gauche un objet placé dans la poche droite ou encore d'accéder à sa ceinture ou sa tunique sans avoir à retirer sa robe. Dans ces circonstances, un voleur à la tire qui tenterait de faire les poches au mage subirait un malus égal à la Sphère des Cités du lanceur. Ce sort est une exception, car il peut être lancé par un artisan élémentaire des cités par un jet de Manuel + Artisanat élémentaire contre la Difficulté du sort et la dépense normale des 19 points de magie (par contre, un artisan élémentaire ne peut disposer de bonus dus à des sites élémentaires ou des Eéries, voir p.206). Un artisan élémentaire aura besoin des mêmes Clés qu'un mage, même s'il s'en servira différemment (au lieu de coudre et d'enchanter, il fusionnera les matériaux et sculptera la rune dans le tissu). Les robes de ce type font l'objet d'un commerce hautement spécialisé uniquement géré par les Négociants de la caste (III° Statut). Leur prix varie en général entre (300 à 500 x Sphère ou Artisanat élémentaire du mage) df. Ils sont indétectables en tant que tel."
   },
   {
@@ -488,7 +569,10 @@
       "huile élémentaire spéciale (poudre d'argent et de nacre mélangées à du Sange de Moryargorn)",
       "rune de Khy (tracée avec l'huile élémentaire)"
     ],
-    "source": "Les Compagnons de Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
     "description": "Ce sortilège très puissant réservé à de rares mages des cités, permet de créer un portail entre deux endroits distincts d'une cité. Ainsi, après avoir enchanté une porte, une statue, l'angle d'un bâtiment, le personnage peut choisir un autre élément (qu'il a au moins vu une fois personnellement), situé dans la même cité, où il se transportera instantanément dès qu'il entrera en contact avec le premier lieu enchanté. La distance maximale entre les deux sites ne peut dépasser 100 fois le niveau de (Sphère des Cités + Statut) du personnage en mètres. Ainsi, un mage de Statut IV possédant 8 en Sphère des Cités pourra choisir deux lieux distants de 1.200 mètres au maximum. Le personnage \"disparaît\" dès qu'il touche l'un des deux sites et se retrouve instantanément à l'autre extrémité. Si la cité est un enfant de Khy sous forme élémentaire, l'esprit du personnage peut se retrouver confronté à celui du dragon lors de son voyage qui, s'il reste immédiat, peut se prolonger dans ce monde immatériel qui sépare les deux portes (relire à ce sujet le sort \"Ombre des ruelles\"). Le personnage doit réussir un jet de Magie instinctive + Sphère des Cités contre une Difficulté de 20 pour réussir à se transporter. Si le jet est raté, il ne parvient pas à se glisser dans la faille magique constituée par la porte. Il ne peut alors pas tenter de réutiliser le Seuil durant dix minutes. Il est possible d'emmener par le Seuil des êtres possédant au moins 1 en Tendance Homme. Cette possibilité est définie à la création du Seuil, à raison d'une personne par NR sur le jet d'incantation. Chaque passage demande un point de magie du mage (plus un par allié emporté). Le seuil reste ouvert jusqu'au prochain lever ou coucher du soleil. Lancer ce sort est une tentative de gauchir la réalité en fonction de la force d'esprit du mage. Si le sort est manqué, un Seuil est toutefois créé sans que le mage se doute d'une anomalie. Ce n'est que lors du transport que des complications peuvent apparaître, comme une dépense plus importante de points de magie, un décalage avec le point d'arrivé prévu, un délai de transport de plusieurs minutes, etc. Dans tous les cas, ces désagréments sont gênants sans être très dangereux (à discrétion du Mj). Par contre, en cas d'échec critique, le Mj est libre d'inventer toutes sortes de complications réellement dangereuses (relire à ce propos les dangers liés aux voyages Eériques dans La Colère des Dragons, p.15, qui s'ils ne sont pas directement applicables, donnent de bonnes inspirations)."
   },
   {
@@ -506,7 +590,10 @@
       "rune de la cité",
       "mains et pieds nus"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Les pattes de gecko se fondent dans la main du personnage, et ses pieds et mains commencent à ressembler aux doigts de ce lézard. Il peut se déplacer sur les surfaces lisses horizontales ou verticales sans problème, même à l'envers. Ses jets d'Athlétisme liés à l'escalade bénéficient d'un bonus de +10. Ce sort dure (1 + NR) minutes."
   },
   {
@@ -524,7 +611,10 @@
       "rune d'oubli",
       "sang de dragon des Cités révélé (durable)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage doit s'isoler de toute influence extérieure et se concentrer longuement avant de mélanger le sang de dragon à la peinture. Quand le mage repeint les façades d'un édifice avec cette peinture enchantée pour un jour, ce bâtiment devient invisible pour tout autre que lui (en fait, les gens passent sans le remarquer). En cas de soupçons, on peut déceler la supercherie sur un jet de Mental + Perception à Difficulté 35 ; cette Difficulté tombe à 25 pour un dragon, et à 20 pour un dragon des Cités. Les effets de ce sortilège durent 1 cycle."
   },
   {
@@ -542,7 +632,10 @@
       "rune",
       "gestuelle"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le masque de bois est enchanté. Une fois placé sur le visage de quelqu'un, il reproduit parfaitement le visage, la voix et les mimiques d'une personne (et une seule) choisie par le porteur. Même la corpulence et la taille font partie de l'illusion. Cette illusion peut être découverte avec un jet de résistance de Mental + Empathie contre une Difficulté de 20. L'enchantement dure (1 + NR) jours."
   }
 ]

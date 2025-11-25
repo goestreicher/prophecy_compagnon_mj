@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/magic.dart';
+import '../../../../classes/magic_spell.dart';
 import '../../../../classes/magic_user.dart';
 import '../../widget_group_container.dart';
 import 'display_sphere_magic_spells_widget.dart';

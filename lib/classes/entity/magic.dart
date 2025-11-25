@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 import '../magic.dart';
+import '../magic_spell.dart';
 
 part 'magic.g.dart';
 

@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'magic.dart';
+part of 'magic_spell.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
@@ -8,6 +8,10 @@ part of 'magic.dart';
 
 MagicSpell _$MagicSpellFromJson(Map<String, dynamic> json) => MagicSpell(
   name: json['name'] as String,
+  source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+  location: json['location'] == null
+      ? ObjectLocation.memory
+      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
   sphere: $enumDecode(_$MagicSphereEnumMap, json['sphere']),
   level: (json['level'] as num).toInt(),
   skill: $enumDecode(_$MagicSkillEnumMap, json['skill']),
@@ -20,15 +24,12 @@ MagicSpell _$MagicSpellFromJson(Map<String, dynamic> json) => MagicSpell(
     json['casting_duration_unit'],
   ),
   keys: (json['keys'] as List<dynamic>).map((e) => e as String).toList(),
-  location: json['location'] == null
-      ? ObjectLocation.memory
-      : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
-  source: json['source'] as String,
   description: json['description'] as String,
 );
 
 Map<String, dynamic> _$MagicSpellToJson(MagicSpell instance) =>
     <String, dynamic>{
+      'source': instance.source.toJson(),
       'name': instance.name,
       'sphere': _$MagicSphereEnumMap[instance.sphere]!,
       'level': instance.level,
@@ -40,7 +41,6 @@ Map<String, dynamic> _$MagicSpellToJson(MagicSpell instance) =>
       'casting_duration_unit':
           _$CastingDurationUnitEnumMap[instance.castingDurationUnit]!,
       'keys': instance.keys,
-      'source': instance.source,
       'description': instance.description,
     };
 

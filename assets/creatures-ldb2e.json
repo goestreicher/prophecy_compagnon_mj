@@ -5,7 +5,7 @@
     "category": "animauxSauvages",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "S’il est l’un des plus majestueux volatiles de Kor, l'aigle est néanmoins considéré comme porteur de malheur. Beaucoup d’hommes le chassent, voyant en lui une insulte à la face des dragons. D'autres sont utilisés pour la chasse, bien que dans ce cas, les faucons leur soient préférés. Certains trappeurs disent avoir vu des spécimens d'une taille gigantesque, capables de soulever sans problème un cheval. Dans certaines régions, il semblerait que des primitifs aient réussi à en dompter certains et à les chevaucher pour observer les civilisations humaines.",
     "biome": "Zones tempérées",
@@ -146,7 +146,7 @@
     "category": "animauxSauvages",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Solide et rapide, le cheval est utilisé par la moitié des cavaliers de Kor. À l'aise en plaine et colline, il demande des soins journaliers et une alimentation riche. D’autres types de chevaux existent, utilisés dans différentes circonstances. Le cheval de trait (RÉS 14, FOR 13, COO 4, Course 2, Saut 0, Poids 800 kg) ne se rencontre quasiment qu’en zone rurale ou aux abords des marchés. Le cheval de course (RÉS 10, COO 8, Course 10, dommages de ruade 5, excessivement exigeant en soins, pas plus d’une journée sur trois de voyage) est un animal racé, recherché par les messagers ou utilisé pour des spectacles et des courses de char très populaires. Enfin, le cheval de guerre (FOR 12) est un animal puissant et habitué aux fracas et à la violence des batailles, recherché par de nombreux chevaliers bien que les légendaires destriers kariens soient préférés par les plus riches.",
     "biome": "Plaines",
@@ -291,7 +291,7 @@
     "category": "animauxSauvages",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Ce petit canidé se déplace souvent en meute et attaque toujours ses proies avec un minimum de cinq contre un. Il pousse des petits cris geignards pour attirer sa victime et communiquer avec ses compagnons. Le plus souvent, les hyènes n’attaquent que les proies blessées. Pourtant, même si elles n'ont pas une bonne image, les humains ne les chassent pas. En effet, comme elles se trouvent toujours non loin des zones habitées, elles débarrassent les alentours de tous les cadavres propagateurs de maladies. En revanche, il est dit que quiconque croise deux fois la même hyène dans la journée va bientôt courir un danger de mort.",
     "biome": "Zones chaudes ou tempérées",
@@ -419,7 +419,7 @@
     "category": "animauxSauvages",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Malgré leur caractère très rebelle, les lézards sont largement utilisés comme montures et constituent près d’un tiers des bêtes de selle de Kor. Bien qu’à demi-aveugles à plus de trois pas, ils compensent leur handicap par une perception de la chaleur par des organes près de leurs oreilles, ce qui les rend indifférents aux conditions nocturnes ou diurnes.",
     "biome": "Collines, grottes et réseaux souterrains",
@@ -564,7 +564,7 @@
     "category": "animauxSauvages",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Le loup voyage souvent en meute, mais devient vraiment imprévisible lorsqu'il est seul. Il est redouté de l’homme qui lui attribue souvent des pouvoirs légendaires. Certains primitifs utilisent les loups pour chasser, mais c’est souvent parce qu'ils vivent eux-mêmes comme des loups.",
     "biome": "Zones tempérées ou froides, plus rarement en zones très chaudes",
@@ -690,7 +690,7 @@
     "category": "animauxSauvages",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "L'ours est un animal commun des forêts. Malgré son appétit vorace, il est respecté et plutôt aimé des hommes. Sa taille peut varier considérablement à mesure qu'on s'éloigne des habitations. Les plus petits spécimens sont souvent à proximité des fermes les plus isolées. Les plus gros se cachent dans les vallées profondes au cœur des zones encore vierges. On dit que dans le domaine d’un ours, si on le respecte, un voyageur peut se réfugier. Dans les faits, c’est une légende - surtout au sortir d’une longue hibernation. Dans les zones glaciaires, les ours sont blancs. Partout ailleurs, ils sont bruns ou noirs. On les chasse parfois pour leur viande, leur fourrure et pour protéger les zones habitables.",
     "biome": "Zones tempérées, froides, généralement boisées",
@@ -839,7 +839,7 @@
     "category": "animauxSauvages",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "L'ours est un animal commun des forêts. Malgré son appétit vorace, il est respecté et plutôt aimé des hommes. Sa taille peut varier considérablement à mesure qu'on s'éloigne des habitations. Les plus petits spécimens sont souvent à proximité des fermes les plus isolées. Les plus gros se cachent dans les vallées profondes au cœur des zones encore vierges. On dit que dans le domaine d’un ours, si on le respecte, un voyageur peut se réfugier. Dans les faits, c’est une légende - surtout au sortir d’une longue hibernation. Dans les zones glaciaires, les ours sont blancs. Partout ailleurs, ils sont bruns ou noirs. On les chasse parfois pour leur viande, leur fourrure et pour protéger les zones habitables.",
     "biome": "Zones tempérées, froides, généralement boisées",
@@ -988,7 +988,7 @@
     "category": "animauxSauvages",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "L'ours est un animal commun des forêts. Malgré son appétit vorace, il est respecté et plutôt aimé des hommes. Sa taille peut varier considérablement à mesure qu'on s'éloigne des habitations. Les plus petits spécimens sont souvent à proximité des fermes les plus isolées. Les plus gros se cachent dans les vallées profondes au cœur des zones encore vierges. On dit que dans le domaine d’un ours, si on le respecte, un voyageur peut se réfugier. Dans les faits, c’est une légende - surtout au sortir d’une longue hibernation. Dans les zones glaciaires, les ours sont blancs. Partout ailleurs, ils sont bruns ou noirs. On les chasse parfois pour leur viande, leur fourrure et pour protéger les zones habitables.",
     "biome": "Zones tempérées, froides, généralement boisées",
@@ -1137,7 +1137,7 @@
     "category": "animauxSauvages",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Le poids et la taille des sangliers peuvent varier fortement suivant la région. On a observé des spécimens de plus de cinq cents kilos dans les zones froides du sud, Il semble que ces monstres rusés soient devenus omnivores pour produire une graisse suffisante afin de résister aux températures extrêmes. Le sanglier est un animal dangereux, capable de charger avec une férocité incroyable et ayant de plus la fâcheuse habitude de le faire en groupe, ce qui est assez dévastateur. La défense du sanglier est réputée aphrodisiaque. C’est une légende qui a coûté la vie à bien des amoureux.",
     "biome": "Forêts tempérées ou froides",
@@ -1263,7 +1263,7 @@
     "category": "peuplesAnciens",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Les Horaldiens sont une race de géants musculeux créés par Ozyr et Brorne dans les heures les plus sombres des Guerres fratricides. À la fin de cette période, ils furent installés par Ozyr sur un archipel bien au-delà de l'horizon. Depuis cette époque, les Horaldiens n'ont plus posé le pied sur Kor, disparaissant des mémoires pour devenir des légendes et consacrant leur vie à l’art et à la réflexion. Les Horaldiens sont assez proches des humains au niveau social mais leur connaissance de la magie est largement supérieure et la notion de technologie leur est presque étrangère. Leur physique est massif, les muscles bulbeux roulant sous leur peau bleutée leur conférant une apparence terrifiante. Assez étrangement, les Horaldiens semblent provoquer non pas la crainte mais une peur panique chez la quasi-totalité des humains. Absolument pas belliqueux, ils ne cherchent pas le contact avec l’humanité ou les dragons, seuls quelques enfants d’Ozyr ou de Nenya partageant leur vie, mais toujours de façon sédentaire. \n\nLes Horaldiens vivent dans un archipel lointain comptant une bonne centaine d'îles. Ils tirent leurs ressources de la mer, à la fois par la pêche et par l'exploitation de cultures sous-marines dans les lagons de l'archipel. Les Horaldiens déclarent être un peu moins de cinquante mille individus, mais seraient capables de fournir une troupe de dix mille guerriers, ce qui devient terrifiant lorsque l'on connaît la solidarité et la cohésion de ce peuple. Toutefois, le concept de guerre chez les Horaldiens a beaucoup évolué depuis leur exode. Lorsqu'il y a un conflit, chaque parti amène le plus de combattants possible et le plus grand nombre emporte la victoire après un décompte par les autorités. Même si les Horaldiens ne se battent pas entre eux et sont un peuple incroyablement pacifique, l’art du combat leur est bien connu et fait partie de leur nature profonde. Ainsi, en cas de conflit externe, tous se retrouvent côte à côte. Les Horaldiens n’ont pas de roi, mais un conseil des sages à peine nécessaire étant donné leur cohésion et leur civisme. Les Horaldiens ne quittent presque jamais leur archipel, mais semblent toujours étrangement au fait de toutes les informations d'importance concernant le continent. Les rares explorateurs qui résistent à leur vision et qui ont visité Talgesh, leur capitale insulaire, parlent d’une cité cyclopéenne à l'architecture démentielle. Des escaliers partent en tous sens et parfois se croisent, provoquant des trompe-l'œil au sein des voûtes tarabiscotées. Il n’y a qu’à Talgesh qu'on trouve ce genre d’architecture et pour autant, des enluminures de certains grimoires de magie humains rappellent ce style\nLe plus curieux, c’est que les chapitres ainsi illustrés concernent le plus souvent certaines Eeries…",
     "biome": "Archipel d'îles situées au-delà de l'Interdit",
@@ -1365,7 +1365,7 @@
     "category": "peuplesAnciens",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Les Mérogs sont de terrifiantes créatures de combat créées par Kroryn. Ces monstres velus, au pelage jaune-orangé, possèdent un faciès simiesque et une longue crinière flottante de cheveux gris jaillissant de leur crâne comme une traîne de cendres. Les Mérogs sont relativement inintelligents mais très rusés. Ils vivent dans des cavernes et chassent l’ours et l’homme (leurs deux mets favoris). Ils connaissent l’art du feu et savent comment confectionner des armes primitives en fer coulé, mais volent généralement celles dont ils ont besoin. Les Mérogs ne semblent pas avoir de langage mais plutôt une forme de communication corporelle innée à la manière de certains animaux. Les Mérogs vivent en tribus de trois personnes. On dit qu'ils procèdent parfois à des cérémonies autour de pierres levées et, qu'en ces occasions, ils se parent de nombreux bijoux d’or. Ce métal est d’ailleurs l’une de leurs obsessions et son obtention est souvent la première raison de leurs attaques. À ce qu’il semblerait, ils voueraient un culte à l’or en raison de son éclat et de sa liquéfaction rapide à la chaleur, ce qui le désigne À leurs yeux comme le métal de Kroryn. Les Mérogs portent des pagnes et pendant les périodes de froid (-20°C), s’emmitouflent dans des peaux d'ours.\n\nAu combat, les Mérogs sont de véritables machines à tuer. Ils se battent avec férocité, ignorant leur propre sauvegarde. Les Mérogs possèdent un métabolisme élémentaire basé sur des os, des muscles et des cartilages alimentés par un flux magique qui ne nécessite pas de flux sanguin. Les Mérogs ne subissent pas les coups critiques ou les hémorragies, leur constitution conçue pour le combat étant capable de supporter les blessures les plus graves sans trop de gêne. Lors de leurs assauts, les Mérogs utilisent principalement les coups brutaux et les charges afin de causer un maximum de dommages. ",
     "biome": "Régions montagneuses",
@@ -1485,7 +1485,7 @@
     "category": "peuplesAnciens",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Les Sklads sont des géants minces et pâles, créés par les efforts conjoints de Kezyr et de Szyl pour lutter contre Heyra et Nenya. Les Sklads sont très évolués, mais sont condamnés à vivre dans les zones les plus froides sous peine de tomber malades et de succomber dans les jours qui suivent. Il semble qu’ils soient particulièrement sensibles aux maladies qui entourent les humains et que le froid protège leur métabolisme. De ce fait, ils vivent reclus dans des citadelles de glace aussi protégées que cachées. Les Sklads sont relativement pacifiques, possédant un don inné pour dresser les animaux et les asservir à leur volonté. \nIls les utilisent donc pour protéger leurs domaines (chouettes blanches pour surveiller, oiseaux marins pour les nourrir et ours pour les défendre). On ne tombe sur un palais sklad que par hasard − ou plutôt par malheur. Terrifiés à l’idée d’être décimés par une épidémie, ces géants des glaces piègent les alentours de leur domaine et dressent les ours blancs pour qu'ils montent la garde. \n\nPar tradition, les Sklads ne se battent pas. Ils se replient vers une autre citadelle de leur domaine glaciaire, ayant engagé des mercenaires ou des magiciens pour défendre leur repli. Ils passent leur temps à chasser l'élan, à jouer de leur harpe de glace, à sculpter la banquise et de nouveaux tunnels pour relier leurs citadelles entre elles. Des voyageurs affirment avoir visité Khaïl-dalk, leur capitale, une cité flottante creusée dans un iceberg. En son centre, ils ont pu admirer huit statues de guerrières hautes de plus de trente mètres. Après analyse du récit, on peut se demander s’il ne s’agit pas d’une version humanisée des dragons ou des éléments vénérés comme totems. \n\nLe peu de contacts qu'ont eu des humains avec les Sklads permettent de savoir qu’ils ne sont pas belliqueux, qu’ils ne maîtrisent pas la magie (même si leurs citadelles semblent subsister par miracle) et que leur art est cent fois plus avancé que celui observé dans le monde connu. La légende veut que leurs sculptures, leurs chœurs et leur musique soient capables de subjuguer le plus insensible des dragons. Les Sklads sont un peuple riche, mais détaché de la notion de valeur pour privilégier celle de beauté, Ils possèdent, dit-on, des milliers de joyaux et sont parmi les plus grands fournisseurs de Sang de Kezyr, issu de leurs incessantes excavations sous le sal ou dans les sommets glaciaires. Assez paradoxalement, ces richesses qui leur permettent de payer des mercenaires pour leur défense sont aussi leur bien le plus convoité, bien que cette ambiguïté ne soit jamais apparue dans leur mode de pensée.",
     "biome": "Régions froides et désertiques. Ils ne supportent pas les températures au-dessus de 15°C",
@@ -1592,7 +1592,7 @@
     "category": "peuplesAnciens",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Les Slaynns ne sont pas réellement un peuple primitif. À l’origine, ils furent des humains pris en tenaille durant les treize siècles de guerre de l’Age des Conquêtes. N'ayant nullement envie de se battre ou de subir la fureur des batailles, ils osèrent se tourner vers Kalimsshar et lui demandèrent de les protéger. Acceptant, le Héraut de la Fatalité leur donna la maîtrise des îles situées au sud de ses noires terres de Kali, où personne ne viendrait les déranger. Les humains devraient s'engager sur plusieurs générations à s'acquitter d'une dette en sa faveur. Ils acceptèrent et Kalimsshar marqua leurs corps de nombreuses marques noires qui ondulent en arabesques. Ces tatouages en mouvement constant sont incontrôlables et ne semblent pas varier suivant des cycles ou des réactions particulières. Certains humains désireux de ressembler aux Slaynns se font tatouer, mais leurs marques ne bougeront jamais. Les Slaynns vivent dans les îles du sud de Kali, subsistant par le pillage des navires et quelques raids dans les Terres galyrs, passant par la mer et longeant les côtes. Devenus pillards pour survivre dans ces terres ingrates, les Slaynns n’ont jamais payé leur dette à Kalimsshar et certains pensent que cette perpétuelle instabilité qu'ils créent au sud pourrait bien être leur malédiction.\n\nLes Slaynns ont un langage guttural et pas d'écriture. Ils ignorent tout de la magie, de l'agriculture et de la religion. Ils ont quelques sorciers qui s’apparentent plus à des rebouteux qu'à de grands magiciens férus de savoir. En revanche, ils connaissent la métallurgie, le tissage, la tannerie et les boissons fermentées, Ils vivent en famille et se reconnaissent entre eux grâce aux couleurs des tartans qu'ils arborent fièrement. Le pouvoir est aux mains du plus vieux de la famille, tant qu’il a toutes ses capacités. \n\nLorsqu'il sent qu’il n’est plus à la hauteur, il désigne un successeur et part avec une épée attaquer un clan ennemi ou mener un dernier raid sur le continent. En général, le clan lui coupe la tête et la fait parvenir aux enfants pour prouver qu'il s’est battu jusqu'au bout. Les slaynns n’ont que des relations conflictuelles avec les humains. Par la mer (sur de petits navires plats) ou sur la terre, ils pillent les villages, s’approvisionnant pour les saisons froides.",
     "biome": "Régions froides, landes et régions côtières",
@@ -1716,7 +1716,7 @@
     "category": "creaturesDraconiques",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Le dragon de Lôm est un varan d'une taille respectable, orné de deux cornes placées au-dessus et au-dessous de ses mâchoires. C'est un redoutable herbivore qui passe la plupart du temps dans les flaques boueuses. Tout animal foulant une zone qu'il considère comme sienne (c'est-à-dire la prairie et le point d'eau le plus proche de l'endroit où il se trouve) est considéré comme un ennemi à chasser. Le pacifique animal se transforme alors en un redoutable combattant, prêt à tuer pour son bien.\nCertains mercenaires réussissent parfois à dreser ces \"dragons\" pour en faire des montures de guerre. Dans ce cas, lorsqu'ils chargent, il faut tenir compte à la fois de l'attaque du monteur mais aussi du piétinement ou de l'encornement du dragon. Ce type de monture est aussi rare que recherché.",
     "biome": "Régions marécageuses",
@@ -1865,7 +1865,7 @@
     "category": "creaturesDraconiques",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Respecté car étant une des rares créatures draconiques capables de voler, le slyarth est particulièrement inquiétant. Son corps évoque une morphologie féline, dotée de grandes ailes membraneuses mues par des membres antérieurs supplémentaires. Sa tête est large et épatée, sa gueule rappelle la forme d’un bec recouvert de peau et hérissé de crocs aiguisés. Le slyarth a de grands yeux ronds et des oreilles très sensibles. Des écailles osseuses couvrent l’épine dorsale depuis le cou jusqu'à l'extrémité de leur longue queue reptilienne. Le slyarth vit essentiellement dans les montagnes au nord des Écailles de Brorne entre la Forêt Mère et l’Empire Nésora. C'est un prédateur diurne qui est friand de chamois, La femelle pond plusieurs œufs au cours de sa vie mais rares sont ceux qui parviennent saufs jusqu'à éclosion, On raconte que les slyarth communiqueraient entre eux par télépathie et vivraient en communautés ordonnées mais aucun humain n'est revenu vivant après une rencontre avec un représentant de cette espèce pour infirmer ou confirmer les rumeurs.",
     "biome": "Régions montagneuses",
@@ -2007,7 +2007,7 @@
     "category": "creaturesDraconiques",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Le tark est un petit varan très rapide et court sur patte. Il est l’un des animaux de compagnie et de garde les plus répandus dans tout Kor. Dans certaines régions, il a complètement remplacé le chien (tant pour la guerre que pour la chasse). Il peut monter la garde sans bouger une écaille et même patrouiller seul. Certains dresseurs leur passent parfois des armures ou s’en servent pour tracter des petits véhicules. Le seul gros problème du tark est qu’il ne supporte pas les températures négatives et qu'il hiberne aux premières neiges. Les meilleurs dresseurs arrivent à les acclimater mais ces cas restent rares. De plus, le tark obéit et travaille à la condition qu’il soit bien nourri. Dans le cas contraire, il se retourne contre ses maîtres. On utilise parfois la peau du tark pour renforcer les parties souples des armures.",
     "biome": "Dans les marais à l'état sauvage, partout quand il est domestiqué",
@@ -2144,7 +2144,7 @@
     "category": "creaturesDraconiques",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Aussi appelé le varan noir, le vorok est une créature amphibie et solitaire qui représente l'ennemi naturel du dragon de Lôm. Son corps longiligne est couvert d’une épaisse cuirasse caoutchouteuse formant une armure naturelle ornée d’une crête membraneuse. Cet appendice capable de changer de couleur peut de plus imiter la végétation. Lourd et lent sur terre, le vorok est néanmoins capable d’escalader des falaises à pic pour s’aventurer jusque dans les plaines herbeuses où vivent les dragons de Lôm. À l’aise et rapide quand il nage entre deux eaux, le vorok est un prédateur discret et respecté. Il peut aussi parcourir de longues distances sans prendre un seul instant de repos. Très vorace, le vorok cherche à se nourrir dès qu'il se réveille. Comme il dort peu, il est toujours en quête de nourriture. Pratiquement aveugle, le vorok possède cependant une excellente ouïe et un odorat très développé. Sa technique de prédilection pour attraper ses proies terrestres est de rester parfaitement immobile, camouflé sous la boue, et de surgir brusquement pour saisir l'infortunée victime qui passe à sa portée. Sa morsure secrète alors un venin qui brûle sa proie et il n’a plus qu’à déchiqueter sa victime. Sinon, il se nourrit de larves géantes qu'il déterre des berges boueuses.",
     "biome": "Régions marécageuses",
@@ -2271,7 +2271,7 @@
     "category": "creaturesDraconiques",
     "source": {
       "type": "officiel",
-      "name": "LdB 2e"
+      "name": "Livre de base 2e édition"
     },
     "description": "Le zaal est une créature qui tient à la fois de l’humanoïde, du reptile et de la chauve-souris. On ne sait pas vraiment de quel animal il se rapproche le plus alors, par défaut, les sages le rangent dans la famille des créatures draconiques, voyant en lui la  marque de Kalimsshar.\nDe fait, même les dragons semblent éprouver le plus grand  dégoût face à un zaal. Il se dissimule souvent non loin des habitations (humaines ou primitives) et chasse la nuit,.Le zaal est capable de se déplacer sur des parois verticales ou même inversées, ses pattes semblant adhérer magiquement à la paroi la plus lisse. Malgré sa taille phénoménale, il est capable de se glisser dans de petits trous et d'y rester pendant plusieurs jours sans bouger. \nSa prédation a deux raisons : la nourriture et la reproduction. En effet, le zaal ne peut se reproduire que par infection d’un autre être vivant. Il le capture, le place dans un immense cocon et monte la garde pendant la transformation. Sa victime mute entièrement en quelques jours, jusqu'à devenir un zaal à son tour. En sortant du cocon, elle doit immédiatement prendre la fuite avant que son père ne la tue. Elle peut à son tour partir en chasse sur son propre domaine. La toile du cocon du zaal est, paraît-il, aussi légère que la plume et aussi résistante que l'acier. Certaines armures magiques en sont couvertes. \nCette créature ne semble craindre ni le feu, ni le froid, ni la douleur. En revanche, elle préfère éviter le contact de l’eau froide, même si ce n’est pas mortel - à l’image des chats.",
     "biome": "Forêts, ruines, douves d'un château, tous les endroits où il peut se tenir embusqué",

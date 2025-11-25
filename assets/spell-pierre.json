@@ -13,7 +13,10 @@
       "rune de l'esprit tracée sur la pierre à travailler",
       "voix aïgue puis grave"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "En invoquant l'esprit de la pierre, le mage diminue d'un palier la dureté de (1 + NR) m3 de pierre afin de pouvoir la travailler plus facilement (de granit à grès, de grès à calcaire). Au bout d'un jour, la pierre reprend sa dureté initiale."
   },
   {
@@ -31,7 +34,10 @@
       "rune de la pierre",
       "danse de la force"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet d'enchanter une arme afin de lui donner un bonus de +5 sur ses dommages de base pendant (1 + NR) jours."
   },
   {
@@ -49,7 +55,10 @@
       "cabriole souple (Physique + Acrobatie, Diff. 15)",
       "rune de la pierre"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Le magicien jette du sable vers une cible en mouvement (ou derrière lui pour couvrir sa fuite). Il peut atteindre au maximum un point situé à 10m. Ce sable gonfle et se transforme en petites billes qui rendent tout déplacement instable sur une zone de (Sphère de la Pierre x 4) m2 centrée sur le point de lancer. La cible doit réussir un jet de Physique + Coordination contre le score d'incantation du mage pour ne pas tomber. Les billes subsistent 3 + NR tours puis se retransforment en sable. Ce sort ne peut se parer, mais une esquive réussie signifie que le personnage arrive à se jeter hors de la zone de gonflement des billes, mais sans contrôle sur sa direction. Le Mj peut refuser toute esquive en espaces clos."
   },
   {
@@ -67,7 +76,10 @@
       "chant de la pierre",
       "posture accroupie"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "En invoquant la mémoire de la pierre, le mage peut remonter la piste récente (moins d'une heure) d'une personne sur une surface minérale qui normalement ne garde pas la trace des pas (pavés, rocs, etc.), et ce pendant (30 + 15 par NR) minutes. Il doit néanmoins posséder un objet appartenant à la personne recherchée."
   },
   {
@@ -85,7 +97,10 @@
       "posture (méditation à genoux, bras écartés, paumes plaquées au sol)",
       "cercle runique de pierres soigneusement disposées"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "À la fin de la méditation, le mage sort de transe alors que les runes du cercle émettent des rayons de lumière marbrée qui jaillissent vers le ciel. Le magicien attire alors l'attention d'un fils de Brorne (le plus proche) pour lui demander conseil ou solliciter un transport personnel vers une destination précise. Le dragon est de la seconde tranche d'âge + 1/NR. Le dragon vient par ses propres moyens (et donc peut mettre un moment à arriver), n'a aucune obligation vis à vis du mage et ne vient pas pour se battre (il a d'ailleurs probablement d'autres affaires en cours à régler). Le magicien doit avoir une très bonne raison de demander son aide et un présent pour service rendu est quasiment indispensable. Les dragons de Brorne peuvent priver l'invocateur de l'usage de sa Sphère de la Pierre pour une semaine par tranche d'âge s'ils estiment que sa requête est futile, tout comme ils peuvent sévèrement tancer un impudent qui les dérangerait sans raison. Les dragons de pierre sont lents à offrir leur aide et prendront souvent un long temps de réflexion après avoir posé un maximum de questions. Soucieux de se montrer le plus réfléchi dans son assistance, un dragon de pierre consacrera du temps à saisir les tenants et les aboutissants des affaires. Selon la portée des faits, il n'hésitera pas à faire appel à un de ses aînés ou à commander une intervention des forces draconistes locales, au mépris de l'avis du mage l'ayant invoqué. Biens qu'ils se battent rarement en ayant été invoqués, les dragons de la pierre se montrent impitoyables une fois en colère."
   },
   {
@@ -102,7 +117,10 @@
       "rune de la pierre",
       "posture accroupie"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage fait littéralement s'ouvrir la terre à 10 mètres de lui pendant (1 + NR) tours. La crevasse fait (30 + 5 par NR) m3. Les individus tombant dedans subissent 2D10 points de dommages sans armure. Les bâtiments se trouvant pris pour moitié dans la crevasse s'effondrent."
   },
   {
@@ -120,7 +138,10 @@
       "poudre de roche",
       "exhalation silencieuse"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Le magicien trace la rune sur une pierre et l'effrite en passant sa main enduite de poudre de roche au travers. Le mage désagrège la pierre à chaque mouvement de la main, laquelle ruisselle au sol sous forme de poussière. Le volume affecté est de Sphère m3. Si la roche est ensorcelée, le mage doit réussir un jet d'opposition contre le sort ou l'effet l'ayant rendue magique afin de pouvoir la désagréger.\nNe peut être acquis que par les personnages possédant le Désavantage « Interdits de Brorne »."
   },
   {
@@ -137,7 +158,10 @@
       "morceau de granit",
       "rune de la pierre"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet de faire apparaître une petite gargouille qui donnera l'alerte si quelqu'un s'introduit dans sa zone de surveillance (surface surveillée : 30 m2). Elle reste en poste (1 + NR) heures."
   },
   {
@@ -155,7 +179,10 @@
       "rune de vitesse",
       "posture agressive"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage lance la poignée de graviers sur une cible située à moins de 30 mètres. Cette attaque occasionne (10 + 1D10 par NR) points de dommages."
   },
   {
@@ -172,7 +199,10 @@
       "un peu de l'élément correspondant",
       "posture (bras croisés, tête rentrée)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
   {
@@ -189,7 +219,10 @@
       "voix tombante",
       "posture (manipulation d'une masse)"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Une cible à moins de 30 mètres subit une attaque de type « Assommer ». Ce sort ne peut ni s'esquiver ni se parer. Le jet de résistance du défenseur s'effectue directement contre le score d'incantation du mage qui fait alors office de score de dommages (revoir p.185 du livre de base pour la résolution de cette attaque). Si le lancement du sort échoue, le mage subit lui même les effets du sort, avec des dommages égaux à la Difficulté du sort (soit 15 dans presque tous les cas)."
   },
   {
@@ -207,7 +240,10 @@
       "rune de la pierre",
       "chant du courage"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet à la personne touchée par le mage de bénéficier d'un Indice de protection supplémentaire de +10 pendant (1 + NR) tours qui s'applique même contre les attaques ignorant les armures."
   },
   {
@@ -225,7 +261,10 @@
       "regard fixe",
       "mâchoires serrées"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage évoque la stabilité de Brorne et peut marcher, courir ou prendre appui sur des surfaces humides ou glissantes comme si elles étaient sèches. Ce sort touche le mage (+1 par NR) cibles, si ces dernières sont dans la même posture que lui. Il dure 15 minutes et permet par exemple de courir sur de la mousse humide, ou d'escalader un mur par temps de pluie."
   },
   {
@@ -243,7 +282,10 @@
       "posture du Gardien Éternel (Physique + Présence, Diff. 15)",
       "fragment de pierre de Kern (à tenir dans son poing fermé, consommé)"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Le magicien ouvre une porte sur l'écho de la voix de Brorne. Tout individu dans les 10m de rayon possédant moins de 3 en Tendance Dragon doit effectuer un jet de Mental + Volonté contre le score d'incantation du mage ou subir les effets d'une Intimidation avec 1 NR (voir Livre de base p.94) durant (Sphère de la Pierre) tours. Si la cible est interrogée (lors d'une séance de torture inquisitoriale par exemple), elle avoue tout ce qu'elle sait (à moins d'un blocage magique élaboré, auquel cas le Mj peut secrètement  comparer le jet d'incantation du sort au jet ayant créé le blocage pour déterminer si ce dernier résiste). Par contre, tout individu dans les 10m de rayon possédant plus de 3 en Tendance Dragon bénéficie d'un bonus de +3 à tous ses jets de moral, de résistance à la peur ou à l'intimidation durant (Sphère de la Pierre) tours. Ce sort ne peut briser une frayeur ou une déroute, mais captive automatiquement toutes les attentions dans la zone d'effet.\nNe peut être acquis que par les personnages possédant le Désavantage « Interdits de Brorne »."
   },
   {
@@ -261,7 +303,10 @@
       "rune de la pierre tracée sur l'armure",
       "poudre de sable"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "L'armure enchantée de la sorte n'a plus besoin d'être entretenue. Pendant (1 + NR) semaines, elle régénère chaque nuit l'ensemble des points de protection perdus, et bénéficie d'un bonus à l'Indice de protection de +10 ainsi que d'une réduction de 5 de sa pénalité d'encombrement."
   },
   {
@@ -279,7 +324,10 @@
       "nombreuses runes",
       "postures, chants et danses"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "L'armure enchantée de la sorte bénéficie d'un bonus de +20 à son Indice de protection pendant (1 + NR) semaines, qui s'applique même contre les attaques ignorant les armures. De plus, elle ignore toute pénalité d'encombrement."
   },
   {
@@ -297,7 +345,10 @@
       "sang de Moryargorn (servant à tracer la rune, consommé)",
       "cérémonie de vénération de l'Être Primordial (Social + Conn. des dragons, Diff. 20)"
     ],
-    "source": "Le sang noir de Moryargorn",
+    "source": {
+      "type": "officiel",
+      "name": "Le sang noir de Moryargorn"
+    },
     "description": "Ce sort est une cérémonie de vénération célébrée lors des nominations de hauts dignitaires Protecteurs, mages de la pierre ou Prodiges. Très spectaculaire, il insuffle dans le cœur de tous les spectateurs un sentiment de fierté et de ferveur draconique. Ce sort ne fonctionne que sur des personnages possédant 5 en Tendance Dragon et lance un appel à la sagesse de Moryagorn pour juger l'âme du postulant. Après une longue cérémonie de prière et de pieuse vénération, le personnage recevant les honneurs (qui doit impérativement être volontaire) se place en posture de méditation au centre d'un cercle formé par ses pairs. La maître de cérémonie prononce alors les derniers versets sacrés de la vénération. Quel que soit le lieu de la cérémonie, la lumière baisse brutalement et le personnage pris pour cible rayonne d'une lumière vive et tournoyante. Elle décrit lentement le spectre lumineux (du rouge au violet) tandis que les spectateurs retiennent leur souffle. Lorsque la lumière violette s'assombrit, le personnage se découpe en contrejour alors qu'une déflagration de lumière aveugle les participants. Lorsque la lueur se dissipe, le personnage a l'impression d'avoir frôlé une conscience supérieure. Les spectateurs de la cérémonie (jusqu'à 50) disposent pour l'Augure suivant d'un bonus de +3 à tout jet d'Eloquence, de Conte, de Volonté pour résister au doute ou à la peur, ainsi qu'à tout jet mettant en évidence leur fanatisme draconique. Le personnage ciblé peut effacer autant de cercles qu'il le désire dans ses Tendances et continue sa vie avec une sérénité intérieure palpable. Si sa ferveur draconique est mise en doute ou doit être prouvée durant l'Augure suivant, il dispose d'un bonus de +5."
   },
   {
@@ -314,7 +365,10 @@
       "dalle de granit",
       "mélopée"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet de créer un mur de 4 m2 maximum entre le mage est ses adversaires, qui reste en place pendant (1 + NR) tours avant de disparaître. Pour détruire cette barrière, il faut lui occasionner (50 + 2D10) points de dommages."
   },
   {
@@ -331,7 +385,10 @@
       "rune de la pierre à tracer sur les biceps",
       "rugissement de défi"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage devient capable de déplacer la pierre avec une force colossale pendant (3 + NR) tours. Il peut tripler sa force pour soulever des pierres, bouger une statue ou soutenir un pilier en chute. En revanche, ce sort n'affecte pas les dommages de mêlée. Les objets déplacés conservent leur masse initiale. Ce sort affecte aussi la terre, le sable ou la glaise."
   },
   {
@@ -349,7 +406,10 @@
       "de petits morceaux de verre",
       "sang de Moryargorn"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage transforme des morceaux de verre en (1 + NR) gemmes, identiques en tout point à la gemme originale."
   },
   {
@@ -367,7 +427,10 @@
       "eau (consommée)",
       "récipient"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage lache le diamant dans le récipient plein d'eau où il semble se dissoudre. Il plonge alors la main dans le récipient et en sort lentement une lame de cristal incolore d'un mètre de long, dure comme du diamant et munie d'une poignée sommaire. Cette arme tranchante a les caractéristiques d'une épée longue, mais avec +3 aux dommages et une résistance Exceptionnelle. Ce sort dure (5 + NR) tours, après quoi l'épée éclate en échardes de cristal. Il ne reste alors dans la main que le diamant intact."
   },
   {
@@ -384,7 +447,10 @@
       "position (poing fermé brandi vers le ciel, l'autre à plat sur le sol, un genou à terre)",
       "caillou (consommé)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le lanceur transforme sa main levée en pierre pour 5 minutes. Avec 1 NR il transforme aussi son avant-bras et avec 2 NR son bras entier. Le membre transformé est immunisé à la douleur et se compose entièrement de pierre. Il reste maniable et souple, mais dénué de toucher. La main ne possède aucun bonus d'armure et sert généralement à attraper des objets tranchants ou brûlants. Avec cette main de pierre, il est possible de parer des armes à main nue, mais les armes de choc ou contondantes infligent leurs dommages normalement."
   },
   {
@@ -402,7 +468,10 @@
       "posture (doigts pliés de façon complexe contre l'obstacle : Manuel + Conn. de la Magie, Diff. 15)",
       "murmure decrescendo"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Le magicien minéralise une porte ou une partie mobile d'un édifice et multiplie ainsi par trois sa solidité. Les éventuels loquets fonctionnent toujours mais l'obstacle est trois fois plus lourd. Le sort dure (Sphère de la Pierre) heures. Le volume affecté dépend des NR obtenus : une réussite simple permet d'affecter une porte de meuble, une fenêtre ou une trappe. Un NR permet d'affecter une porte ou une grille, deux NR une porte cochère ou l'entrée d'un entrepôt, trois NR affectent la porte d'un château ou un pont-levis."
   },
   {
@@ -420,7 +489,10 @@
       "posture de la main (signe de la montagne : Manuel + Conn. de la Magie, Diff. 15)",
       "rune de la pierre"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Ce sort est très spectaculaire car il est généralement lancé sur une personne qui tombe ou qui va percuter un élément plus dur qu'elle. Au moment de l'impact, elle devient solide comme le roc et réduit de moitié (arrondi au supérieur) les dommages subis. Si ces derniers sont encore mortels, la victime s'éparpille en petits morceaux de pierre et son corps est détruit. Visuellement, sa peau semble devenir minérale pour un instant, puis redevient normale. Il est possible de lancer ce sort sur un individu (jusqu'à 30 m) sur le point d'être percuté par un projectile (rocher, arme, tronc d'arbre...) ou de subir une attaque physique (arme, poing, charge animale, projectile solide résultant d'un sort...). * Ce sort doit être lancé au rang d'Initiative précédant le choc, et utilise un dé d'action. Bien sûr, ce dé doit avoir un rang supérieur au moment du choc. Il est impossible de lancer ce sort par avance, ses effets ne durant qu'un rang. Par contre, tous les chocs subis durant ce rang sont réduits. Il est donc primordial de pouvoir deviner les rangs d'action de ses ennemis ou de conserver un dé d'action en tant qu'action retardée pour pouvoir lancer le sort au moment où le coup s'arme. Exemple : un mage de la pierre assiste un compagnon aux prises avec un Zaal. Il a obtenu deux dé à 10 et en a utilisé un pour lancer une hachette. Il conserve l'autre pour lancer « Rigidité » au moment où le Zaal va agir. A 8, le Zaal possède trois actions simultanées (dues à un tirage d'Initiative chanceux). Il arme son coup à 9, moment auquel le mage s'alarme et lance « Rigidité ». S'il le réussit, à 8, les trois attaques enchaînées par le Zaal frapperont un corps magiquement durci. Mais si le Zaal avait feinté ou décidé de déléguer certaines de ces actions simultanées (comme de faire 8, 7 et 6), il aurait abusé le mage et son compagnon. Vu son score d'Intelligence, il risque vite d'adapter son rythme de combat..."
   },
   {
@@ -438,7 +510,10 @@
       "encens de la pierre (consommé)",
       "rune de la pierre (à tracer sur le lieu à étudier)"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Le magicien peut sentir si une créature de Kalimsshar a été présente durant la journée dans un lieu précis (15 m de rayon). Le magicien peut le sentir à raison de 1 jour dans le passé par NR. La créature doit avoir 3 ou plus en Tendance Fatalité. Le mage n'obtient pas de renseignement précis sur la nature, le nombre ou les différents types de créatures, simplement un renseignement sur la souillure du lieu. Ce sort ne permet pas de détecter sur le moment une créature de l'ombre (ou un serviteur de Kalimsshar), car il est basé sur la réaction de la trame de Kor à la présence de la Fatalité. Il ne peut donc être efficace qu'une dizaine de minutes après que la créature ait quitté les lieux."
   },
   {
@@ -456,7 +531,10 @@
       "encens de l'élément concerné",
       "chant des éléments (Mental + Don artistique : Chant, Diff. 15)"
     ],
-    "source": "Le sang noir de Moryargorn",
+    "source": {
+      "type": "officiel",
+      "name": "Le sang noir de Moryargorn"
+    },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },
   {
@@ -474,7 +552,10 @@
       "rocher brut d'au moins cent tonnes",
       "posture de méditation suprême (Manuel + Acrobatie, Diff. 15)"
     ],
-    "source": "Le sang noir de Moryargorn",
+    "source": {
+      "type": "officiel",
+      "name": "Le sang noir de Moryargorn"
+    },
     "description": "Rare et spectaculaire, ce sort permet de mobiliser un rocher naturel pour en faire un vaisseau céleste. Le mage, souvent un initié de très haut Statut, se place en méditation au sommet du rocher et se concentre intensément. Peu après, le rocher s'arrache lentement du sol et s'élève vers le ciel. Quelle que soit sa charge ou ses occupants, le rocher lévite (de quelques centimètres à plusieurs milliers de mètres) et se déplace par la seule force de la volonté du mage. La maniabilité de l'aérolithe est quasi nulle, et tout changement de cap demande plusieurs centaines de mètres. De même, l'ascension ou la descente se font très lentement (un mètre par dix secondes). Cet impressionnant équipage possède une Compétence de Vol de 1. Impossible dans ce cas de tenter des manœuvres brutales, mais le mage possède un contrôle mental si précis qu'il peut guider le rocher à quelques centimètres près, même si des points du rocher lui sont hors de vue (il sait intuitivement où sont chaque parties du rocher). Au maximum, le rocher peut atteindre une vitesse de 25 km/h, avec une accélération et une décélération très lentes. Ce sort possède une durée de (Sphère + 1/NR) heures, et à l'expiration du sort, le rocher pique doucement du nez pour se poser avec douceur au sol. Il est toujours possible de relancer le sort en cours de descente pour continuer sa route. Tant que le sorcier n'est pas concentré pour diriger le rocher, celui-ci conserve son cap et sa vitesse quelles que soient les intempéries. Peu importe aussi les modifications de charge, un ou deux dragons peuvent même se poser sans que le rocher ne pique. Par contre, les ailés peuvent pousser ou dévier le rocher avec facilité (en lévitation, la masse du rocher est quasi nulle). Les dragons tolèrent les aérolithes en raison de la grande maîtrise magique nécessaire à leur élévation, qui rend alors compte de la ferveur draconique du sorcier le contrôlant. Bien sûr, il convient que le mage révère largement les dragons qu'il pourrait rencontrer lors de son voyage céleste. Posséder la Compétence Cérémonie des mages des océans (ou en accueillir un à bord) est toujours un gage de sécurité. Ce sort sert à certains puissants mages de la pierre pour se déplacer, mais n'est jamais utilisé à la légère. Indifférent au milieu, il peut franchir toute région. On dit que ce sort a été développé lors de la formation d'Onyr, et que les rochers qui soutiennent les tours sont enchantés éternellement par ce sort."
   },
   {
@@ -492,7 +573,10 @@
       "posture du poirier (à maintenir durant l'incantation, en appui sur un mur ou une paroi : Physique + Acrobation, Diff. 15)",
       "mantra sourd"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Ce sort est sans doute l'un des plus visuels. Le magicien enchante 1 + NR paires de chaussures, bottes, chausses, sabots ou même jeux de 4 fers durant une journée. Leur porteur pourra prendre appui sur tout support minéral comme s'il s'agissait du sol, courbant la gravité pour conserver ses appuis. Il peut donc rester fixé à un mur, y prendre appui pour courir ou sauter pendant un combat. S'il réussit un jet de Physique + Acrobatie contre une Difficulté de 15, il peut même prendre le plafond pour appui (durant 1 + NR tours, ces NR étant ceux du jet d'Acrobatie). Un adversaire aura une Difficulté supplémentaire de 5 pour toucher le porteur des chaussures et ce dernier aura un bonus de 3 pour toute manœuvre à caractère acrobatique (attaque déroutante, charge, feinte, entrer au corps à corps, mais aussi renverser ou écraser)."
   },
   {
@@ -510,7 +594,10 @@
       "étendard immaculé",
       "rune de courage"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Une fois cette bannière enchantée, elle devient l'emblème de la compagnie (50 hommes environ) à laquelle elle appartient. Tant qu'elle est tenue haute sur le champ de bataille, toute personne partageant ses couleurs et son idéal dispose d'un bonus de +5 à ses jets de toucher et de dommages ainsi qu'à son Indice de protection. En revanche, si elle est capturée par l'ennemi, le bonus devient un malus d'égale valeur. Si l'ennemi la détruit mais qu'elle ne tombe pas entre ses mains, les bonus disparaissent. Cet enchantement dure pendant (1 + NR) heures."
   },
   {
@@ -528,7 +615,10 @@
       "runes de la vérité, de la fidélité, du feu et de pierre entrlacées en un motif délicat à graver sur l'emblếme (Manue + Don artistique : Gravure, Diff. 15)",
       "encens des huit Dragons (consommé)"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Ce sort est un don de Kroryn à son aîné. La cible doit empoigner la barre transversale de l'emblème à pleines mains et jurer fidélité aux Dragons. Si elle a 2 ou plus en Tendance Homme ou Fatalité, elle s'enflamme brutalement et subit des dégâts de feu égaux à 10 par point en Tendance Fatalité ou Homme (la plus haute). Cet enchantement est utilisé par les Inquisiteurs pour ensorceler, durant un Augure, les immenses emblèmes portés en tête des expéditions punitives ou des Croisades (d'où leur nom). Il est déjà arrivé que des suspects soient instantanément carbonisés au contact de la barre, attestant de leur hérésie corruptrice se retournant contre eux. Il est souvent nécessaire de protéger ces emblèmes de la fureur du peuple, qui ose parfois s'attaquer à des Inquisiteurs isolés trop prompts à les brandir...\nNe peut être acquis que par les personnages possédant le Désavantage « Interdits de Brorne »."
   },
   {
@@ -544,7 +634,10 @@
     "keys": [
       "petit caillou pointu"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort crée un monticule de 30 m3 qui jaillit du sol. Ce monticule, qui persiste pendant (1 + NR) tours, peut boucher des trous ou éventrer des fortifications."
   },
   {
@@ -562,7 +655,10 @@
       "cris de ralliement",
       "cercle de sang du mage"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Ce sort s'utilise lorsqu'une armée est en déroute ou qu'un groupe est effrayé. Le magicien se poste devant les rangs qui battent en retraite et leur redonne courage. Ce sort affecte les 5 cibles les plus proches du mage, plus 2 par NR, en s'éloignant progressivement de lui. Ce sort peut influencer des combattants jusqu'à (Sphère de la Pierre x 4) mètres, car la portée des harangues porteuses de la détermination de Brorne dépend directement de la puissance du lanceur. Ce sort n'immunise pas à la peur ultérieurement, mais peut relancer dans la bataille une troupe démoralisée. Toute perte ultérieure de moral devra être gérée séparément. Dans le cas d'un effet de peur permanent (comme un sort ou une aura de peur draconique), ce sort est efficace durant un seul tour."
   },
   {
@@ -580,7 +676,10 @@
       "posture (gest d'écrasement des deux mains)",
       "bloc de craie (à réduire en poudre, consommé)"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Lent à placer, ce sort a des effets fulgurants. Il permet d'ensorceler un pan de mur qui va alors pouvoir se désolidariser et percuter une zone située jusqu'à 30 m de son point d'attache. Le pan balaie la zone si vite qu'il est seulement possible de l'esquiver (même si certains lieux comme des couloirs ne le permettront même pas). Le pan s'anime et reprend sa place dans le même tour. Ce pan pèse plusieurs dizaines, voire centaines de kilos et peut s'animer autant de fois par heure que le score en Sphère de la Pierre du lanceur. Au lancement, la mage choisit soit d'animer le mur sur un mot de commande particulier, soit de faire s'animer le mur si un être vivant traverse une zone de déclenchement de 10 + 5/NR m2 sans prononcer le mot de commande. Les cibles frappés subissent 35 + 3D10 points de dommages et sont jetées à terre (sauf magie ou masse supérieure à 800 kg). Beaucoup de lieux sont ainsi gardés. Les magiciens de Brorne lancent même ce sort sur deux murs opposés qui compressent simultanément les intrus."
   },
   {
@@ -598,7 +697,10 @@
       "kata de la Colère de la Terre (Manue + Don artistique : Danse, Diff. 15)",
       "cri aigu"
     ],
-    "source": "Les Écailles de Brorne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
     "description": "Des pieux cristallins longs comme le bras sortent de terre sous les pieds d'une cible à moins de 50 m et infligent 25 + 1D10/NR points de dommages. On ne peut qu'esquiver, avec un malus égal à la moitié de la Sphère de la Pierre du lanceur (arrondi à l'inférieur). Si la cible meurt, elle se minéralise et les pieux l'emportent sous terre."
   },
   {
@@ -616,7 +718,10 @@
       "rune de Brorne",
       "acide (consommé)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "En versant quelques gouttes d'acide sur la rune gravée sur un rocher, le mage peut y introduire un objet donc le volume n'excède pas la taille du bloc. Ensuite, durant 24 heures et dans un rayon de (1 + NR) kilomètres, le lanceur peut dessiner une rune de Brorne sur n'importe quelle surface minérale en contact avec le sol (directement ou par continuité minérale) et y plonger la main pour ressortir l'objet dissimulé, sans se soucier cette fois de la taille du bloc. Durant tout ce temps, l'objet ne subit plus les effets du temps. Il est impossible de cacher une créature vivante, à l'exception des créatures élémentaires de la pierre (gargouilles, lézards mange- pierre, etc.)."
   },
   {
@@ -634,7 +739,10 @@
       "rune de la pierre",
       "cible immobile"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage projette la poudre enchantée depuis moins d'une heure sur la cible. Le sort pétrifie la cible consentante en une statue faite de la roche de la poudre utilisée. Sous cette forme, le personnage ne peut plus bouger que ses yeux (qu'il peut fermer pour ressembler à une vraie statue) durant (1 + NR) heures. Il devient insensible au chaud comme au froid et aux agressions extérieures. Son métabolisme est inexistant, sons corps étant considéré comme entièrement minéral. Il n'émet plus d'odeur ou de signes vitaux. Il n'est sensible qu'aux armes contondantes ou de choc, et en subit les dommages sans armure. Le personnage peut mettre fin au sort à son gré, restant conscient de son environnement."
   },
   {
@@ -651,7 +759,10 @@
       "poignée de minéraux",
       "danse de la guerre"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort destructeur provoque une tornade de sable et de pierre de plus de 50 m3. Toutes les personnes prises dans la tourmente subissent (30 + 1D10) points de dommages tous les tours pendant (1 + NR) tours. Les créatures en vol cochent le double des cases prévues par les dommages qu'elles subissent. De plus, l'ensemble des victimes sont aveuglées, et subissent un malus de -5 à toutes leurs actions."
   },
   {
@@ -668,7 +779,10 @@
       "profonde réflexion",
       "trois types de pierres différentes"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage déchaîne la colère de Brorne sur 1 km2 pendant (1 + NR) tours. Toutes les constructions dans l'aire d'effet s'effondrent. Des crevasses apparaissent et les infortunés y tombant subissent (30 + 1D10) points de dommages. Dans une région volcanique, une éruption est à craindre."
   }
 ]

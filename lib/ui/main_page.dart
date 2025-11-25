@@ -5,7 +5,7 @@ import 'package:prophecy_compagnon_mj/ui/app_routes.dart';
 import '../classes/armor.dart';
 import '../classes/creature.dart';
 import '../classes/faction.dart';
-import '../classes/magic.dart';
+import '../classes/magic_spell.dart';
 import '../classes/non_player_character.dart';
 import '../classes/npc_category.dart';
 import '../classes/place.dart';

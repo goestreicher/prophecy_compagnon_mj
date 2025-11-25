@@ -14,7 +14,10 @@
       "chant de la forêt",
       "rune de la colère tracée sur la branche"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage fait appel à la protection des arbres afin d'éviter les dangers de la nature (prédateurs, insectes venimeux, etc.) pendant 8 heures. Pour ce faire, il trace sur le sol un cercle sacré de (10 + 10 par NR) mètres."
   },
   {
@@ -32,7 +35,10 @@
       "posture (méditation allongé au sol, en posture fœtale)",
       "cercle runique formé de mousse et de fleurs"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "À la fin de la méditation, le mage sort de sa transe alors que les runes du cercle émettent des rayons de lumière verdâtres qui jaillissent vers le ciel. Le magicien attire alors l'attention d'un fils de Heyra (le plus proche) pour lui demander conseil ou solliciter un transport personnel vers une destination précise. Le dragon est de la seconde tranche d'âge + 1/NR. Le dragon vient par ses propres moyens (et donc peut mettre un moment à arriver), n'a aucune obligation vis à vis du mage et ne vient pas pour se battre (il a d'ailleurs probablement d'autres affaires en cours à régler). Le magicien doit avoir une bonne raison de demander son aide et un présent pour service rendu n'est jamais superflu. Les dragons de Heyra peuvent priver l'invocateur de l'usage de la Sphère de la Nature pour un jour par tranche d'âge s'ils estiment que sa requête est futile mais aussi corriger le mage pour lui remettre les idées en place. Les dragons de la nature sont par essence enclins à rester un moment avec les humains qu'ils rencontrent afin de veiller sur eux, interférant parfois avec leurs affaires s'ils l'estiment nécessaire. Ils auront tendance à vouloir guider les hommes et les instruire avec sagesse, et alterneront les attitudes bienveillantes et directives."
   },
   {
@@ -50,7 +56,10 @@
       "rune de la fertilité",
       "gorgée d'eau"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage double la taille, les Caractéristiques Physiques et l'Attribut Physique d'un animal ou d'une créature non draconique pendant (1 + NR) tours. Ce sort ne permet pas de contrôler l'animal."
   },
   {
@@ -67,7 +76,10 @@
       "poignée de mauvaises herbes",
       "rune de lenteur"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage fait pousser à vitesse accélérée des racines autour des jambes de (1 + NR) cibles. Les personnes ciblées voient leurs mouvements restreints. Se libérer de ces entraves prend normalement 5 minutes, mais seulement 1 minute si les victimes réussissent un jet de Physique + Coordination contre une Difficulté de 15. Entravée, une personne voit les Difficultés de toutes ses actions augmenter de +5."
   },
   {
@@ -84,7 +96,10 @@
       "feuille de laurier (consommée)",
       "posture de jet"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage lance la feuille de laurier vers une cible à moins de 40 mètres. Ce projectile végétal inflige 5 + 1D10/NR points de dégâts. Si la cible subit au moins une égratignure, un poison contenu dans la feuille lui infligera une autre Egratignure à la fin du tour suivant à moins de réussir un jet de Physique + Résistance d'une Difficulté de 20."
   },
   {
@@ -102,7 +117,10 @@
       "rune des océans",
       "chant des torrents (Mental + Don artistique : Chant, Diff. 15)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Le mage fait apparaître, là où il a tracé ses runes, une petite fontaine d'eau pure et fraîche - capable de fournir 100 + 50/NR litres d'eau cristalline en quelques minutes. Le nom du sort vient des chants d'ondines que l'on entend lorsque l'eau apparaît, en écho au chant du mage."
   },
   {
@@ -119,7 +137,10 @@
       "pépin de fruit",
       "danse de la fertilité"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage fait pousser d'énormes fruits juteux et nourrissants qui permettent de sustenter (1 + NR) personnes pour un repas. Ils se conservent éventuellement 2 jours."
   },
   {
@@ -137,7 +158,10 @@
       "danse de la nature",
       "rune de résistance"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort a pour effet de doubler l'Indice de protection des équipements en bois pendant (1 + NR) semaines."
   },
   {
@@ -155,7 +179,10 @@
       "yeux fermés",
       "œil d'animal séché (consommé)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "En serrant dans sa main l'œil séché, le mage peut effectuer un jet de Mental + Perception contre une Difficulté de 15 pour tenter de voir une scène située hors de son champ de vision, du moment qu'elle se situe sur le même type de sol que celui où se trouve le mage (terre, roche brute, marécages, plage...). Ce sort est inefficace en ville , mais fonctionne en villages. Le sort dure 2 + 1/NR tours, et son éloignement maximal est égal à 4 mètres par niveau de Sphère de la Nature du mage et il est possible de changer de scène à chaque action (chaque changement demandant un jet). Il est ainsi possible d'observer ce qui se passe dans une pièce adjacente mais, pour chaque mur ou paroi qu'il traverse ainsi, le mage doit dépenser 1 point de magie supplémentaire. Il est impossible d'entendre, de parler ou d'agir de quelque manière que ce soit."
   },
   {
@@ -173,7 +200,10 @@
       "posture (bras à l'équerre, index et majeur masquant les yeux)",
       "cri du familier imité par le mage (Social + Conn. des animaux, Diff. 15)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "En lançant ce sort avec son familier situé à moins de vingt mètre, le mage peut voir par les yeux de l'animal durant 3 + 2/NR tours. C'est une vision partagée et le familier ne perd pas la vue. L'animal peut se déplacer et agir à son gré durant les effets du sort et il est impossible de le contrôler par le biais du sort. Ce sort est généralement utilisé par les mages possédant un familier dressé qu'ils peuvent commander de façon relative. Ellorian Dorsac est le mage qui a inventé ce sort. Aveugle, il a pu continuer à combattre une créature de Kalimsshar en utilisant la vue de ses familiers."
   },
   {
@@ -191,7 +221,10 @@
       "rune de la nature",
       "danse de la fertilité"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet de faire pousser un lierre le long d'un mur, qui fait office d'échelle pendant 10 tours. Sa longueur maximum est de (5 + 5 par NR) mètres."
   },
   {
@@ -208,7 +241,10 @@
       "un peu de l'élément correspondant",
       "posture (bras croisés, tête rentrée)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
   {
@@ -226,7 +262,10 @@
       "sève végétale (pour tracer le dessin, consommée)",
       "posture (genoux à terre, mains de chaque côté du dessin"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "En entrant en contact avec la conscience du sol et de la terre, le mage peut apprendre si une créature particulière est passée par là (zone de 10 m2 environ) récemment. La durée écoulée depuis son passage varie selon le score en Sphère de la Nature à raison d'une semaine par point. Lorsqu'il lance le sort, le mage doit dessiner le type de créature qu'il recherche - dragon, humain, oiseau, rongeur, félin, etc. - et pour chaque NR, il peut obtenir une information supplémentaire - humain corrompu, dragon du feu. Ce sort ne fonctionne jamais dans les villes ou les villages et ne peut apporter des informations que sur une créature."
   },
   {
@@ -244,7 +283,10 @@
       "poignée de glaise (consommée)",
       "posture (poing brandi écrasant la glaise en un mouvement de haut en bas)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Ce sort n'est utilisable que dans un milieu naturel, sur un terrain meuble ou la terre (et donc à l'exclusion des pavés, des rues ou des montagnes rocheuses). Le magicien ouvre une faille sous les pieds de sa cible (à moins de 30 + 5/NR m), qui s'enfonce au rythme de 50cm par tour. La victime peut faire un jet de Physique + Coordination contre une Difficulté de 15 pour se libérer, mais cela nécessite de dépenser une action complète à ne faire que cela. De plus, la Difficulté du jet est augmentée de 5 par tour. Si rien n'est fait, la victime est complètement enterrée au bout de 4 tours. On applique alors les règles de l'asphyxie, p.194 du Livre de Base."
   },
   {
@@ -260,7 +302,10 @@
     "keys": [
       "graines et pétales"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage fait fleurir un parterre de fleurs aux couleurs chatoyantes dont la beauté galvanise les personnes qui le contemplent. (1 + NR) personnes bénéficient ainsi d'un bonus de (1 + NR) à un jet de Compétence lié à l'Attribut Social."
   },
   {
@@ -277,7 +322,10 @@
       "écaille de dragon",
       "rune de force"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet d'améliorer l'efficacité d'une arme pendant (1 + NR) cycles. Elle bénéficie d'un bonus de +5 aux dommages de base."
   },
   {
@@ -294,7 +342,10 @@
       "imposition des mains",
       "feuilles grasses ou herbes séchées"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort stabilise l'état de santé de (1 + NR) cibles et soigne leur plus haute case de blessure."
   },
   {
@@ -312,7 +363,10 @@
       "rune de Moryargorn (sur la cible)",
       "encens de la Nature (consommé)"
     ],
-    "source": "Le sang noir de Moryargorn",
+    "source": {
+      "type": "officiel",
+      "name": "Le sang noir de Moryargorn"
+    },
     "description": "Ce sort utilise un cataplasme de sagianor pour canaliser une étincelle de la vigueur de l'Etre primordial. Il s'utilise après un soin quelconque (ou directement sur la plaie si personne ne possède de Compétence de soins). La durée de régénération des blessures de la cible (en tenant compte des NR de soin) est alors divisée par 2 + 1/NR. Durant toute sa convalescence, le blessé doit conserver le lourd cataplasme en contact avec sa peau. La sagianor est ensuite récupérable. Si le cataplasme est ôté, la force vitale de la sagianor se dissipe et la détruit."
   },
   {
@@ -330,7 +384,10 @@
       "cercle sacré de la nature (Manuel + Conn. de la magie, Diff. 15)",
       "un peu de nourriture (consommée)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Grâce à ce sortilège, le mage peut invoquer une petite créature naturelle qui lui rendra de menus services - chercher à manger, montrer le chemin, monter la garde, etc. Le serviteur est incapable de se battre et fuira au moindre signe de danger. Il peut porter de petits objets et partager toutes les images mentales que le mage est capable de lui fournir - lui permettant ainsi de retrouver quelque chose ou quelqu'un dans une zone donnée. Le serviteur ne peut en aucun cas quitter son milieu naturel et reste présent 1 heure par point en Sphère de la Nature."
   },
   {
@@ -347,7 +404,10 @@
       "rune de la nature",
       "position du dragon accroupi"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage, ou une cible de son choix qu'il touche, bénéficie d'un bonus de +1 à l'un de ses Attributs Majeurs pendant (1 + NR) tours."
   },
   {
@@ -365,7 +425,10 @@
       "rune du Cycle du silence",
       "chant harmonique grave"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Ce sort ne fonctionne que dans un lieu boisé. Les feuilles tombent des arbres et vont tourbillonner autour de 1 + 1/NR cibles désignées par le mage, situées à moins de trente mètres de lui. Chaque fois qu'elles souhaitent agir, les victimes doivent dépenser une action supplémentaire et voient la Difficulté de toutes leurs actions physiques augmenter de 3. Ce sortilège reste actif pendant un nombre de tours égal à la Tendance Dragon du mage."
   },
   {
@@ -383,7 +446,10 @@
       "mot mystique d'appel à la bienveillance de la Nature (Social + Conn. de la Magie, Diff. 15)",
       "posture d'interposition"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Au moment où le mage va subir une blessure, il peut lancer le sort et effectuer un jet de Empathie + Magie Instinctive contre une Difficulté de 15 pour entrer en symbiose immédiate avec l'arbre ou l'animal de son choix. Ce dernier subit les dommages à sa place, mais le mage gagne immédiatement un nombre de cercles de Tendance Fatalité égal à 2 + le malus lié à la Blessure qu'il aurait dû subir. Si la créature ou le végétal meurt de cette blessure, le mage gagne immédiatement 1 point de Tendance Fatalité et perd l'usage de ce sortilège pour un Augure. Sa Sphère Nature est également réduite de 1 de façon permanente.\nCe sort peut être utilisé comme action de défense au même titre qu'une parade ou une esquive et ce en utilisant un dé d'action comme prévu au chapitre Combat. Il ne peut être utilisé que si le lanceur se trouve à moins de (Sphère de la Nature) mètres d'un arbre ou d'un animal susceptible de subir des dommages à sa place."
   },
   {
@@ -401,7 +467,10 @@
       "boue",
       "poudre d'argent (consommée)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "En mélangeant la boue à divers ingrédients élémentaires, le mage créé un onguent qui, une fois appliqué sur le corps, confère une totale immunité contre un élément particulier durant (Sphère de la Nature) heures - flammes et chaleur, froid, électricité, etc. La quantité créée est suffisante pour 1 + 1/NR personnes de taille adulte. La boue confère sa protection même si le personnage qui se l'applique porte une armure, mais seule sa peau bénéficie du pouvoir protecteur - ainsi, ses vêtements et objets fragiles subissent les dommages normaux. La boue reste efficace une journée entière, après quoi, il est nécessaire de procéder à un nouveau rituel. Elle se conserve donc très mal (elle doit de plus être gardée au sec et à l'abri de la lumière sous peine de durcir), c'est pourquoi les mages n'en font jamais de réserve..."
   },
   {
@@ -419,7 +488,10 @@
       "de la terre souillée",
       "rune de la vengeance"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort ne fonctionne pas dans les zones urbaines. Les animaux et la végétation se liguent pour agresser (5 + NR) cibles. Les attaques des arbres et des animaux aux ordres du mage occasionnent (35 + 1D10) points de dommages à ces dernières, 1 fois par tour pendant (1 + NR) tours."
   },
   {
@@ -436,7 +508,10 @@
       "flûte droite",
       "air de musique printanier"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "La flûte enchantée de la sorte permet d'attirer les représentants d'une espèce animale, et de communiquer sommairement avec eux pendant (1 + NR) tours. Le mage choisit en lançant ce sort quelle famille d'animaux est charmée par la musique (félins, rongeurs, poissons, etc.)."
   },
   {
@@ -454,7 +529,10 @@
       "du sang de la créature visée (consommé)",
       "hurlement aux lunes"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "En procédant à un rituel nocturne, le mage enduit une arme d'un mélange à base de sang pour conférer à la lame un bonus au toucher et aux dommages contre une créature naturelle animale (excluant donc les peuples anciens, les dragons ou les hommes). Le bonus est égal à 3 + 1/NR. Il doit impérativement s'agir d'un type de créature précis qui, une fois déterminé, ne peut plus être changé. Une même arme ne peut recevoir deux fois l'enchantement de ce sortilège. Le sortilège s'applique quelle que soit la taille de l'arme, de la dague à l'épée à deux mains, car il diffuse son pouvoir sur toute la lame. Il permet également d'enchanter cinq flèches ou carreaux et perdure jusqu'au prochain coucher du soleil."
   },
   {
@@ -472,7 +550,10 @@
       "goutte de sang de la créature imitée (à mélanger avec une goutte de sang de la cible)",
       "cri de la créature imitée (Présence + Conn. des animaux, Diff. 15)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Ce sortilège permet au mage de partager brièvement n'importe quelle caractéristique physique d'une créature vivante de son choix lui étant connue dragons et humains exclus. En lançant ce sortilège, le mage doit déterminer la créature et la caractéristique qu'il souhaite partager la résistance du chêne, la rapidité du loup, la vision nocturne d'un prédateur, etc. Il est impossible de voler de cette façon, car le corps du mage ne se modifie pas au point de lui faire pousser des ailes. Le sortilège dure Sphère de la Nature tours et permet de gagner une faculté ou un bonus de Caractéristique de 1 + 1/NR points. Durant cette période, les Attributs et valeurs de jeu découlant de cette Caractéristique sont temporairement réévaluées selon le tableau de calcul des Attributs ou des seuils de blessure indiqué dans le livre de base p.76-77. Dans le cas de cases de blessures acquises temporairement, ce sont d'abord les cases de blessures du personnage qui seront cochées (et qui subsisteront donc). D'éventuelles cases de blessures temporaires cochées disparaissent sans effet secondaire."
   },
   {
@@ -489,7 +570,10 @@
       "ailes d'insectes",
       "rune de l'infini"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage invoque une colonie d'insectes venimeux qui attaque la cible désignée. La nuée réalise 2 attaques automatique imparables avant de se disperser. Les dommages infligés sont de 2D10. De plus le venin des insectes entraîne un engourdissement. Ceci se traduit par un malus de -5 à toutes les actions de la victime pendant (1 + NR) tours."
   },
   {
@@ -506,7 +590,10 @@
       "goutte du poison ou du sang de la victime",
       "rune de guérison"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet de créer un remède dont la durée de conservation n'est que de (1 + NR) heures. Ingérée, cette mixture neutralise de manière définitive les effets d'un poison et rétablit une Caractéristique éventuellement atteinte. Le remède n'est valable que pour une personne."
   },
   {
@@ -523,7 +610,10 @@
       "pétale de rose ou pousse de rosier",
       "rune de fertilité"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Le magicien fait pousser devant lui un rosier dont les épines mouvantes suintent d'un poison foudroyant. La plante va grandir et former un cercle (Sphère de la Nature x 2) m2 autour de l'invocateur en 1 tour. Toute créature tentant de franchir la barrière épineuse subit immédiatement 3D10 + 1D10/NR points de dommages (avec armure ou protection surnaturelle, mais sans bouclier). Si la cible est blessée (au moins une Egratignure), elle doit réussir un jet de Physique + Résistance contre une Difficulté de 20 ou subir immédiatement une blessure Fatale. La barrière flagelle toute créature éventuellement prise dans ses tiges à chaque tour, infligeant ses dommages à la fin du tour. La barrière dure une heure au maximum, mais peut être contournée par le haut (soit par des créature volantes ou très grandes), car elle ne s'élève qu'à hauteur d'épaule."
   },
   {
@@ -541,7 +631,10 @@
       "encens de l'élément concerné",
       "chant des éléments (Mental + Don artistique : Chant, Diff. 15)"
     ],
-    "source": "Le sang noir de Moryargorn",
+    "source": {
+      "type": "officiel",
+      "name": "Le sang noir de Moryargorn"
+    },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },
   {
@@ -559,7 +652,10 @@
       "mélange de tourbe et de sciure de bois (à étaler sur l'objet ou la matière, consommé)",
       "psaume sourd"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Ce sort très puissant transforme instantanément toute matière solide en bois sur un volume de 1 + 1/NR m3 au toucher. Le métal, la pierre ou même la glace peuvent être affectés par cet effet. Si la cible est un objet manufacturé et ensorcelé (par magie, artisanat élémentaire ou fabrication Légendaire), le mage doit réussir un jet d'incantation au moins égal au jet de Compétence ou d'incantation qui a rendu l'objet enchanté. La transformation perdure une heure. A l'expiration du sort, la matière garde son état et peut donc avoir été détruite.\nNe peut être acquis que par les personnages possédant de Désavantage « Phobie des cités »."
   },
   {
@@ -577,7 +673,10 @@
       "encens de Heyra (consommé)",
       "chant féérique (Don artistique : Chant, Diff. 15)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Ce sort est à la fois une invocation et un rituel de présentation vis à vis des Fenn'dans, le peuple féerique de Heyra. Ce sort lance un appel paisible aux Fenn'dans dans les 10 km à la ronde. Ces derniers sont alors avertis de la présence du mage et de sa demande. Selon les créatures présentes, les réactions peuvent varier considérablement. Les Fenn'dans ne se montrent pas toujours, mais il y en aura toujours certains pour montrer au mage leur présence et tenter d'agir en sa faveur. Il peut s'agir de simples lumières bleutés, comme d'un arbre qui s'anime et écrase tout sur son passage. Au pire et si aucune aide n'est accordée, le refus sera justifié au mage par respect pour lui. Bien évidemment, ce sort n'oblige en rien le peuple ancien de Heyra à obéir au mage et encore moins à ses compagnons qui ne bénéficieront pas de la même tolérance. Bien souvent, ce sort est lancé en solitaire par les mages maîtrisant sa puissance. Pour en savoir plus sur les Fenn'danns et les Fenn'dreds, reportez-vous aux secrets des Grands Dragons (cf. l'écran de Prophecy).\nNe peut être acquis que par les personnages possédant de Désavante « Phobie des cités »."
   },
   {
@@ -594,7 +693,10 @@
       "hurlement bestial",
       "attitude prédatrice"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage convoque 1 + 1/NR prédateurs typiques de la région. Ils apparaissent au début du tour suivant, de derrière un arbre, un rocher, etc. Le mage ne contrôle pas ces prédateurs, qui peuvent s'avérer plutôt affamés."
   },
   {
@@ -612,7 +714,10 @@
       "rune de Heyra",
       "rune du foyer"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Une fois l'arbre enchanté, le mage peut le façonner et le déplacer à sa guise. Nombre d'Experts de la nature installent leur logis à l'intérieur des troncs. L'arbre peut se déplacer à la vitesse d'un humain, n'est pas ralenti dans les forêts, et ne peut traverser les étendues infranchissables à pied (montagnes, rivières profondes, lacs de lave, etc.). Le mage doit se concentrer pour le déplacer ou attaquer avec l'arbre ; il peut ainsi effectuer une attaque par tour, par jet de Physique + Corps à corps, infligeant 40 + 1D10/NR points de dégâts, et qui peut être esquivée avec une Difficulté +5. Si l'arbre prend feu, il devra être éteint avant 10 tours, sinon l'enchantement prendra fin (et l'arbre continuera certainement à brûler). Ce sort dure un Augure."
   },
   {
@@ -630,7 +735,10 @@
       "fruit à enchanter (consommé)",
       "soupir de puissance"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Le mage ensorcelle 1 + 1/NR fruits ou baies qui, une fois ingérées, permettent d'effectuer un jet de Physique + Résistance contre une Difficulté de 10. Si le jet est réussi, le bénéficiaire peut effacer une Egratignure. Si des NR sont obtenus à ce jet, il est alors possible de soigner une blessure plus grave (une Légère pour 1 NR, une Grave pour 2NR, etc. bien qu'il soit impossible de soigner une blessure mortelle par ce moyen). Chaque fruit ne soigne qu'une blessure. Pour chaque nouveau fruit ingéré par un même individu dans l'espace d'une journée, la Difficulté du jet est augmentée de 5. Les fruits se conservent un jour par point en Sphère de la Nature."
   },
   {
@@ -648,7 +756,10 @@
       "rune de la nature",
       "chant de la foudre"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le bâton enchanté permet de donner des ordres simples, sauf attaquer, à tous les animaux présents dans une zone d'effet de (200 + 100 par NR) m2. Pendant les orages, il peut faire appel à la foudre 1 fois par tour, chaque éclair infligeant 40 points de dommages. Enfin le bâton procure un Indice de protection supplémentaire de +15 à son porteur et l'immunise aux sorts de la Sphère de l'Ombre d'un coût inférieur à 10. Le bâton est enchanté pour (1 + NR) cycles."
   },
   {
@@ -666,7 +777,10 @@
       "rune de contrôle",
       "un licol tissé dans le pelage de l'animal (consommé)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "En passant le licol à l'animal, le mage arrive à l'ensorceler pour en faire son familier. Le mage ne peut contrôler qu'un seul animal, et cela pendant (1 + NR) semaines (il peut décider d'arrêter le sort avant que cette durée ne soit écoulée). Tous les ordres donnés à l'animal doivent être proférés de manière intelligible, en sachant que l'animal conserve son intelligence initiale. Ce sort est efficace sur des animaux de moins de 10 kg. Pour chaque multiplicateur de 10 de la masse, le temps d'effet est divisé comme suit : /2 pour 100kg, /3 pour une tonne, /4 pour 10 tonnes. Ce sort ne fonctionne pas sur les dragons ou les créatures draconiques."
   },
   {
@@ -685,7 +799,10 @@
       "bouquet de houx",
       "chant de la fertilité"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage invoque un esprit de la nature pour bénéficier de sa bénédiction. La dryade est à sa disposition pendant (1 + NR) cycles. Tant qu'elle se trouve à ses côtés (elle ne peut s'éloigner de plus de 100 mètres du mage), ce dernier ne ressent pas la faim, ne peut pas se perdre et n'est jamais attaqué par un animal sauvage. La dryade peut aussi le soigner de 3 cases de blessure par jour en commençant par à raison de 30 minutes par case. Enfin, tant qu'elle l'accompagne, le mage bénéficie d'un bonus de +5 lorsqu'il lance un sort de la sphère de la Nature. La dryade refuse catégoriquement de pénétrer dans un village ou une ville sous peine de rompre le charme."
   },
   {
@@ -703,7 +820,10 @@
       "danse de protection",
       "résine"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Le mage ensorcelle le bouclier pour une semaine. Ce dernier devient habité par une partie de la Nature et protège alors son porteur contre le feu, le froid et la foudre avec plus d'efficacité. Lorsqu'il utilise son bouclier pour parer une attaque utilisant une de ces énergies, il obtient un bonus de +4. De plus, il peut bénéficier de ce bonus lorsqu'il combat une créature animale, draconique ou élémentaire. Le bouclier permet même de parer des sorts n'autorisant pas de parade, mais sans bonus, et ce tant qu'ils utilisent une de ces énergies. De plus, le bouclier ne réduit pas son Indice de protection du fait des coups ou des sorts, ce qui lui confère une durabilité exceptionnelle. Tant qu'il porte ce bouclier, le personnage ne peut porter atteinte à la Nature de façon consciente sous peine de briser le sort. Tout porteur possédant moins de 3 en Tendance Dragon brise immédiatement le sort en empoignant le bouclier, faute de croyance solide."
   },
   {
@@ -720,7 +840,10 @@
       "un peu d'élément de Nature",
       "simulation de l'éclosion d'une fleur"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage recrée un petit coin de Nature éphémère, quel que soit l'endroit où il se trouve. La zone transformée le reste tant qu'il ne la quitte pas. Cette zone couvre (5 + 5 par NR m2) et est considérée comme un site élémentaire de la Nature pour (1 heure + 10 minutes par NR)."
   },
   {
@@ -737,7 +860,10 @@
       "posture (accroupi, mains plantées dans la terre)",
       "rugissement animal"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "La Nature confie au mage une partie de sa puissance pendant (1 + 1 par NR) minutes. Avec une réussite normale, il bénéficie d'un bonus de +5 à la Caractéristique de son choix. Pour 1 NR, il bénéficie d'un bonus de +10 à la Caractéristique de son choix ou d'un dé supplémentaire d'Initiative (conservable). Pour 2 NR, il gagne une case supplémentaire par Niveau de blessure. Ces cases de blessure supplémentaires sont cochées en premier, et quand le sort prend fin, elles disparaissent même si elles ont été cochées."
   },
   {
@@ -754,7 +880,10 @@
       "rune de la terre",
       "un peu de sang"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "En faisant couler son propre sang, le mage fait appel à la justice de Heyra pour que la fureur du Grand Dragon s'abatte sur son ennemi. Les manifestations de Heyra sont toujours différentes et, en fonction du sol et de l'environnement, peuvent prendre la forme d'une énorme racine venant enserrer sa cible, d'une salve d'énergie verdâtre jaillissant du sol, d'une nuée de créatures déchiquetant le victime, etc. La cible, située à moins de 25 + 10/NR m, subit une attaque dont elle ne peut se défendre physiquement (pas de parade, esquive ou armure) et dont les dommages sont de 20 + 1D10 par point de sa propre Tendance Fatalité. Si le mage s'en sert à mauvais escient, contre une créature bienveillante ou un Elu de Heyra par exemple, c'est lui qui subit les dommages."
   },
   {
@@ -772,7 +901,10 @@
       "sable fin",
       "rune de la nature (cercle)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Le mage doit être nu et se passer le baume sur tout le corps et les cheveux (ce qui lui prend 10 mn). Il lui suffit alors de se plaquer contre une surface pour en prendre la couleur pendant une heure par point en Sphère de la Nature. Plus la surface est plane, moins le camouflage est efficace. Sur un mur, il n'a aucun effet. Toute personne qui croisera le camouflé subira un malus de 3 + 1/NR pour le détecter. Le baume peut se conserver une semaine avant de perdre ses capacités surnaturelles."
   },
   {
@@ -790,7 +922,10 @@
       "danse d'harmonisation (Physique + Don artistique : Danse, Diff. 15)",
       "ambiance calme"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Le diapason doit être frappé contre un arbre. Ce dernier se met alors à chanter. Le son qui en sort est une sorte de grondement harmonique et très grave qui monte dans les aigus quand on arrive aux plus hautes branches. L'arbre appelle ses frères et leur demande un unique renseignement que le mage aura précisé - localisation d'une créature, témoignage sur un événement passé, rapporter des paroles prononcées au loin.... La réponse est compréhensible par toute personne proche de l'arbre qui chante. Le diapason est inutilisable durant un combat, une tempête ou un incendie de forêt (par exemple). Les arbres mis en vibration doivent appartenir à un même ensemble végétal (forêt, bois, bosquet) et il est donc impossible d'utiliser le diapason sur un arbre isolé au milieu d'une lande. Au maximum, les arbres sont mis en vibration jusqu'à 10 + 5/NR km autour de l'arbre central, mais il est impossible d'utiliser le diapason plus d'une fois par jour, la Nature n'acceptant pas d'être dérangée à outrance. Le diapason reste toutefois enchanté jusqu'au début du prochain Augure."
   },
   {
@@ -808,7 +943,10 @@
       "kata de la colère de la Nature (Physique + Don artistique : Danse, Diff. 15)",
       "rune du Flux d'Éther (Manuel + Conn. de la Magie, Diff. 15)"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "En lançant ce sortilège, le mage invoque un peu de la puissance de la Nature qui, l'espace d'un combat, prend la forme d'un colossal gourdin de bois à deux mains. Les dommages de base sont de ((FOR x 3) + Sphère de la Nature). Le marteau de chêne divise par deux l'armure de tout adversaire possédant plus de 3 en Tendance Fatalité et s'utilise avec Armes contondantes en bénéficiant d'un bonus de +1/NR. Sa taille varie selon la force et la puissance du mage et permet de plus de Renverser en mêlée. Ce marteau perdure (Sphère de la Nature x 2) tours et peut être manipulé par toute personne possédant la Sphère de la Nature."
   },
   {
@@ -826,7 +964,10 @@
       "anneau de bois précieux",
       "une partie de l'animal désiré"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "En touchant sa cible avec l'anneau ensorcelé depuis moins d'une semaine, le mage la métamorphose en 1 tour en un animal connu de son choix. Si la cible résiste, le sort se résout par un jet d'opposition de Physique + Volonté contre le score d'incantation du sort. Ce sort dure jusqu'au prochain lever ou coucher du soleil. Les NR définissent la variation de masse de la cible. Pour devenir un animal 2 fois plus gros (ou plus petit), 1 NR est nécessaire, pour 4 fois, 2 NR, etc. La cible acquiert toutes les caractéristiques de l'animal choisi, à l'exception du Mental, de l'Intelligence et de la Volonté, qui restent celles de la cible. Toutefois, seules les capacités spéciales connues du mage sont créées. Il est impossible de métamorphoser en humain ou en dragon, et seules les Experts de la Sphère de la Nature peuvent métamorphoser en créatures draconiques. Il est impossible de lancer ce sort ailleurs que dans un lieu sauvage."
   },
   {
@@ -844,7 +985,10 @@
       "montrer les crocs",
       "mastiquer un bout de viande fraîche"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage désigne sa cible à moins de 30 mètres et l'imprègne de l'odeur de la proie. Tous les prédateurs situés dans un rayon de 20 mètres autour de la cible se précipitent sur elle pour la dévorer. La cible garde cette odeur pendant (1 + NR) tours."
   },
   {
@@ -862,7 +1006,10 @@
       "morceau de bois précieux (à déposer dans le gîte)",
       "berceuse de Heyra"
     ],
-    "source": "Les Enfants de Heyra",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
     "description": "Ce sortilège permet au mage de faire d'un abri sommaire (faille rocheuse, creux sous un arbre...) un abri solide et chaud, capable d'abriter 3 + 2/NR personnes de taille humaine (l'endroit se dilate et s'étend au moment du lancement). Le refuge protège du vent et du froid et, grâce à sa nature magique, dissuade les animaux et les prédateurs de s'en approcher. La guérison est accélérée à l'intérieur du refuge car toute nuit de repos complète compte en fait pour une journée de repos total (soit deux jours de moins à la période de guérison d'éventuelles blessures en cours de régénération). De plus, au matin, tous les mages non Fatalistes regagnent l'intégralité de leurs points de Magie, quelles qu'en soient les Sphères - sauf la Sphère de l'Ombre. Les êtres vivants possédant plus de 2 en Tendance Fatalité ne peuvent pénétrer dans le refuge. Ceux qui possèdent plus de 3 ne peuvent s'en approcher à plus de cinq mètres. Le refuge subsiste un jour complet."
   }
 ]

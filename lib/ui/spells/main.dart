@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/magic.dart';
+import '../../classes/magic_spell.dart';
 
 class SpellsMainPage extends StatefulWidget {
   const SpellsMainPage({ super.key });

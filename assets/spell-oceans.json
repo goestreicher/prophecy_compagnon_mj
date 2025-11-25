@@ -13,7 +13,10 @@
       "rune de l'eau",
       "danse de protection"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage dresse un écran liquide autour de lui pendant (1 + NR) tours. Il lui procure un Indice de protection supplémentaire de +5 et divise par 4 tous les dommages dus au feu (magique ou non)."
   },
   {
@@ -31,7 +34,10 @@
       "posture (à genoux au bord d'une étendue d'eau, prosterné",
       "cercle runique des océans"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "À la fin de la méditation, le mage sort de transe alors que les runes du cercle émettent des rayons de lumière bleu-vert qui jaillissent vers le ciel. Le magicien attire alors l'attention d'un fils d'Ozyr (le plus proche) pour lui demander conseil ou solliciter un transport personnel vers une destination précise. Le dragon est de la seconde tranche d'âge + 1/NR. Le dragon vient par ses propres moyens (et donc peut mettre un moment à arriver), n'a aucune obligation vis à vis du mage et ne vient pas pour se battre (il a d'ailleurs probablement d'autres affaires à régler). Le magicien doit avoir une bonne raison de demander de l'aide, et seule une grande révérence assurera l'amabilité de l'Ailé. Les dragons d'Ozyr peuvent priver l'invocateur de l'usage de sa Sphère des Océans pour un jour par tranche d'âge s'ils estiment que sa requête est futile, mais usent peu de violence physique. Par nature, les dragons des océans seront curieux et attentifs à l'exposé du mage. Ce n'est qu'après réflexion qu'ils s'exprimeront et prendront leur décision. Ils seront souvent assez sévères envers un mage qui les sollicitera pour de l'aide, et ne se priveront pas de le tancer pour son incompétence. Toutefois, l'homme étant faible et faillible, ils accorderont leur aide contre des quêtes ou des promesses d'actes symboliques et personnels (s'impliquer dans une aventure draconique, offrir bénévolement ses services à une caste pour un temps donné, parfaire un savoir...) Les dragons d'Ozyr préfèrent donner des conseils que d'agir directement et leurs services coûteront au mage. Ils vérifient toujours les promesses et en cas de manquement, prendront des sanctions sociales très lourdes (procès, déchéance, quête expiatoire)..."
   },
   {
@@ -48,7 +54,10 @@
       "rune de l'eau",
       "rune de l'air"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet d'enchanter des vêtements pendant (1 + NR) jours de façon à ce que le porteur puisse flotter, même en armure. Ce sort n'annule aucunement la pénalité d'encombrement d'une armure."
   },
   {
@@ -66,7 +75,10 @@
       "sculpture à créer à partir du mélange (Manuel + Don artistique : Sculpture, Diff. 15)",
       "Outils gravés de la rune des océans"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "Pour procéder à ce rituel, le mage doit réunir suffisamment d'eau de mer et de coraux pour façonner, par magie et par sculpture avec des outils sacrés, une statue de la taille et de la corpulence d'un homme. La magie opérant, cet étonnant golem prend les traits, les attitudes et la pose désirés par le mage, avec une précision stupéfiante. Il est ainsi possible de façonner une statue à l'effigie de tout homme connu du mage, vêtements, couleurs et équipement compris. La statue est faite de corail dur comme de l'os et disparaît dès qu'elle est brisée. Le mage ne peut en façonner qu'une à la fois."
   },
   {
@@ -83,7 +95,10 @@
       "livre",
       "rune de l'eau"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort permet d'enchanter un livre afin de le verrouiller pendant (1 + NR) jours. Il ne répond qu'à la voix du mage (ou à une imitation magique)."
   },
   {
@@ -102,7 +117,10 @@
       "poussière ou terre",
       "rune des océans"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "En versant un peu d'eau dans le creux de sa main, le mage voit tomber à terre assez de liquide pour dessiner sur le sable les contours des sources, lacs et rivières présentes dans un rayon de 10 kilomètres par Niveau de Réussite. Une carte des cours d'eau se forme alors à ses pieds, lui permettant de localiser les plus proches."
   },
   {
@@ -120,7 +138,10 @@
       "robe ou vêtements blancs",
       "cercle runique des océans tout autour du bassin"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "En plaçant un objet ou un être vivant dans un bassin, un lac ou toute autre volume assez grand pour l'immerger totalement, le mage provoque une transe qui fera résonner des souvenirs, lui permettant d'user de psychométrie. Le mage doit avoir une idée précise de ce qu'il souhaite savoir pour « voir » (en gardant les yeux fermés) des images se former dans son esprit. Avec un Niveau de Réussite, il ressent de plus les sensations de l'objet ou de l'être vivant, et avec trois, il perçoit le contexte sonore. Les visions durent Sphère minutes, chaque minute permettant de remonter d'un siècle."
   },
   {
@@ -137,7 +158,10 @@
       "mains ouvertes, paumes vers le sol",
       "rune des océans"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "Ce sortilège très utilisé par les navigateurs et les enseignants des Sources permet de faire flotter des objets inanimés ou des personnes immobiles à la surface de l'eau. Il fait flotter 10 kg, et chaque Niveau de Réussite multiplie ce poids maximal par 10. Ce sortilège n'affecte qu'un objet ou être, pour une durée égale au niveau de la Sphère des Océans en heures. Si la personne ou l'animal bouge violemment (porte un coup, se débat ou gesticule), le sort se dissipe en un tour."
   },
   {
@@ -154,7 +178,10 @@
       "rune de l'eau",
       "claquement de doigts"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Au cours du prochain tour, la cible du sort doit effectuer un jet de Mental + Résistance contre une Difficulté de 15 pour ne pas être prise de vertiges. En cas d'échec, elle est prise d'un violent mal de mer qui lui inflige un malus de -5 à toutes ses actions pendant (1 + NR) tours."
   },
   {
@@ -171,7 +198,10 @@
       "un peu de l'élément correspondant",
       "posture (bras croisés, tête rentrée)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
   {
@@ -189,7 +219,10 @@
       "chant des vagues",
       "posture accroupie"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage invoque une petite créature aquatique qui lui rend de menus services, simples comme éteindre un feu ou apporter un message. Craintive, la nymphe de participe pas aux combats. Elle reste avec le mage pendant (30 + 10 par NR) minutes."
   },
   {
@@ -208,7 +241,10 @@
       "cire",
       "rune de l'enfance"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Cet enchantement permet au mage d'utiliser une poupée comme prolongement direct de son ouïe pendant (1 + NR) heures. Posée dans une pièce, la poupée retransmet toutes les discussions qui ont lieu autour d'elle, si le mage souhaite les entendre."
   },
   {
@@ -225,7 +261,10 @@
       "rune de l'eau",
       "danse du savoir"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage augmente une Compétence de son choix liée à l'Attribut Mental de (1 + NR) pour réaliser un unique jet."
   },
   {
@@ -243,7 +282,10 @@
       "danse de l'eau",
       "chant de l'équilibre"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage ouvre un portail lié au lac d'un glacier pendant (1 + NR) tours. L'eau s'en déversant peut déséquilibrer une personne visée. Pour éviter d'être jetée au sol, cette dernière doit réussir un jet de Coordination + Physique ou d'Acrobatie contre une Difficulté de 20. Le volume d'eau déversé est d'environ 1m3 par tour."
   },
   {
@@ -261,7 +303,10 @@
       "posture de la sentinelle",
       "écuelle d'eau fraîche"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage a une vision fugitive de l'avenir dans l'écuelle d'eau fraîche, un indice, une indication à suivre. Ce sort donne (1 + 1 par NR) informations. Avec une réussite normale, le message des dragons sera sans doute sibyllin."
   },
   {
@@ -279,7 +324,10 @@
       "rune",
       "chant d'une vierge"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Cette coupe a la capacité de détecter la dangerosité de tout liquide que l'on verse dedans pendant (1 + NR) cycles. Aucune substance ou poison ne résiste à cet enchantement. La couleur du liquide testé change si celui-ci est dangereux."
   },
   {
@@ -297,7 +345,10 @@
       "chant des Puissances Marines (Mental + Don artistique : Chant, Diff. 15)",
       "immergé dans l'eau jusqu'aux épaules"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "En plaçant une statue façonnée à l'aide De l'eau à l'os dans une large étendue d'eau naturelle (lac, cascade, mer, etc.), le mage peut invoquer la puissance des Océans et animer son œuvre, qui deviendra capable de se mouvoir et d'effectuer des actions physiques, mais non de parler. L'enchantement confère à la statue des Caractéristiques et Attributs définies ci- dessous, des Compétences Physiques et Manuelles identiques à celles du mage mais aucune faculté magique ou Capacités tels que des Faveurs, Techniques, Privilèges... Les Caractéristiques du mage sont additionnées et réparties dans celles du golem (maximum 10). Il en va de même pour les Attributs (maximum 10). Les Compétences sont par contre identiques à celles du mage (sauf en Mental et Social qui sont absentes). Le golem comprend les volontés du mage, (lui seul étant capable de le commander), et accomplira de son mieux les tâches lui étant confiées. Il reste animé un nombre de jours égaux à la Sphère des Océans et se dissipe aux premiers rayons du soleil du matin suivant le dernier jour."
   },
   {
@@ -316,7 +367,10 @@
       "respiration retenue",
       "rune des Océans"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "En lui faisant retenir sa respiration et en la faisant empoigner hermétiquement la perle, le mage ralentit le rythme cardiaque de la cible. Cette dernière peut alors se passer d'air pendant (Sphère des Océans + 3 par NR) tours. Quand les effets du sortilège se dissipent, la cible ne dispose que de quelques secondes d'oxygène... Si le mage est en contact physique avec la cible (ou s'il s'agit de lui même), il peut alors prolonger les effets du sort de (Sphère tours) en re-dépensant 4 points de magie. Cela ne compte pas comme un nouveau lancement du sort. Ce sort ne fonctionne que si le mage et sa cible sont aspergés d'eau.\nNe peut être acquis que par les personnages possédant le Désavantage « Instinct supérieur »."
   },
   {
@@ -334,7 +388,10 @@
       "posture (bras croisés devant le visage)",
       "œil de tortue (consommé)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "L'esprit du mage des océans peut s'ouvrir sur l'infinité de l'eau pour le protéger. Ce sort permet au mage de se prémunir de toutes les tentatives de pénétration psychique (attaques, contrôles, suggestions - psychologie y compris) en masquant son esprit dans la Sphère des Océans. Le mage bénéficie d'un bonus de +5 à tous ses jets de protection mentale et psychologique. Ce sort dure (3 + 1 par NR) tours."
   },
   {
@@ -352,7 +409,10 @@
       "bandeau de lin blanc marqué d'une rune des Océans",
       "position du lotus"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "Pour lancer ce sortilège, le mage ferme les yeux et s'y noue un bandeau. Puis, en conservant les mains en coupole, il médite une heure (environ 12 tours, revoir marge p.66 de la Colère des dragons) en se concentrant sur le flux des vagues. Ensuite, pendant une durée de Sphère heures, il voit ses Attributs Physique, Manuel et Social réduits à 0. Son Attribut Mental, est augmenté de la valeur cumulée des trois autres. Les rares actions physiques et manuelles du personnage sont augmentées de 10 pendant la durée du sortilège, qui se dissipe si le bandeau est ôté. Toutes les actions requérant la vision sont impossibles, et le meneur de jeu reste juge de ce que le personnage peut ou ne peut logiquement accomplir dans cette position, car il perd conscience de son propre corps. A la fin du sort, le personnage a besoin de dix minutes pour reprendre conscience et pouvoir se mouvoir normalement."
   },
   {
@@ -370,7 +430,10 @@
       "regard fixe vers le ciel",
       "soupir"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Ce sort défensif est la risée des combattants qui l'estiment acte de lâcheté par excellence. Néanmoins, beaucoup de mages des océans lui doivent la vie. Enseigné aux premiers âges de l'homme par Vessyan, un dragon des océans, ce sort n’avait pour seule utilité que de permettre aux mages les plus hardis de se familiariser avec l'élément d'Ozyr. Lorsqu'il exécute ce sort, le mage fait en sorte d'ignorer le prochain coup qui lui sera porté car son corps explosera en une gerbe d'eau (annule les dommages, seule la chair et les objets liés à la magie des océans sont liquéfiés). Il s'évapore quasi instantanément et se reconstitue à la prochaine pluie. Des mages l'utilisent parfois en combat sous une averse pour réapparaître dans le dos de leur adversaire ou pour prendre la fuite."
   },
   {
@@ -388,7 +451,10 @@
       "peau d'anguille de mer (consommée)",
       "posture (en équilibre sur un pied"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage évoque la souplesse du ruisseau et la vivacité du torrent. Il obtient un bonus de +1 par NR en Coordination, +1 en Physique, +3 en Corps à corps, Esquive et sur toutes les compétences de Mouvement durant (3 + 2 par NR) tours. Le mage voit ses yeux devenir entièrement bleus et luminescents, mais doit consacrer autant d'actions à ses attaques qu'à ses défenses. Cela signifie qu'il ne peut effectuer plus de la moitié de ses actions (arrondie au supérieur) en Attaque et que les autres actions doivent être consacrées à la Défense ou aux mouvements de combat."
   },
   {
@@ -405,7 +471,10 @@
       "rune de l'eau",
       "posture (bras tendus vers la cible)"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Un mince jet d'eau surpuissant sort des paumes du mage. Il inflige (15 + 1D10 par NR) point de dommages. La cible peut tenter d'esquiver l'attaque mais sa Difficulté est augmentée de +10. Une parade (uniquement avec un bouclier) est possible avec une Difficulté de +5, mais le bouclier perdra systématiquement 1 point de protection."
   },
   {
@@ -423,7 +492,10 @@
       "encens de l'élément concerné",
       "chant des éléments (Mental + Don artistique : Chant, Diff. 15)"
     ],
-    "source": "Le sang noir de Moryargorn",
+    "source": {
+      "type": "officiel",
+      "name": "Le sang noir de Moryargorn"
+    },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },
   {
@@ -441,7 +513,10 @@
       "posture (bras s'écartant)",
       "yeux clos"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "En intensifiant son énergie, le mage crée une aura lumineuse blanche et bleue dans un rayon de (3 + NR) mètres. L'aura gèle l'eau contenue dans l'humidité ambiante, ralentissant les mouvements des personnes situées dans son périmètre. Les assaillants subissent un malus de 1D à leur Initiative et les dommages des attaques touchant le mage sont réduits de (5 + 2 par NR)."
   },
   {
@@ -459,7 +534,10 @@
       "hymne d'Éveil Suprême (Mental + Don artistique : Chant, Diff. 22)",
       "sang du mage (provoque une Égratignure et une blessure Légère, à asperger sur le golem ; les traces de sang disparaissent immédiatement)"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "Ce sortilège constitue l'ultime étape de la création du golem des Océans et permet au mage de manipuler les énergies primordiales et de conférer à une statue créée par De l'eau à l'os des capacités physiques considérables et des Compétences de son choix. Le mage fait la somme de ses Caractéristiques et répartit ces points dans les Caractéristiques du golem dans la limite de 15 par Caractéristique. Il fait ensuite de même pour les Attributs 12 maximum et dans chacun des groupes de Compétences 15 maximum, les points d'un groupe ne s'attribuent que pour ce groupe. Chaque NR obtenu peut devenir un multiplicateur pour UN des groupes de points (Caractéristiques, Attributs, Physique, Mental, Manuel, Social). Ainsi, un NR peut permettre de multiplier un des ces groupes par 2, deux NR par trois, etc. Les NR peuvent être répartis sur plusieurs groupes (un NR pour un x2 sur un groupe et un autre pour un x2 sur un autre). Le golem peut porter et manier toutes les armes et armures que le mage est en mesure de lui fournir. Il n'est pas conscient de sa propre existence et ne possède pas de sentiments. Il est dénué d'humour, d'imagination ou d'un réel sens artistique (il ne maîtrise que les techniques, pas la flamme qui donne vie à une oeuvre). L'enchantement d'animation reste actif jusqu'au prochain matin du jour des Océans."
   },
   {
@@ -477,7 +555,10 @@
       "chant Spirituel (Mental + Don artistique : Chant, Diff. 15)",
       "robe de cérémonie brodée d'une rune des Océans en fils d'or"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "Ce sortilège permet de purifier l'esprit perturbé d'un être humain. Il chasse les traumatismes, atténue les ravages de l'âge et réinstaure l'équilibre mental. Le mage doit accomplir une cérémonie s'étendant des premières lueurs de l'aube jusqu'à la tombée de la nuit. Le est placé dans la mer et son corps se met à flotter seul. Au terme d'une journée de prières, en prononçant les mots de pouvoir du Chant Spirituel, le mage demande à Ozyr de réinsuffler l'équilibre perdu... Un homme ne peut bénéficier de ce sortilège qu'une seule fois dans sa vie, quelles que soient les circonstances. Seul un mage ne possédant aucun point en Tendances Homme et Fatalité peut lancer ce sortilège, et celui qui en bénéficie voit ces deux Tendances réduites à 0. Il peut également rayer des Désavantages mentaux à raison d'un point de Désavantage par point du mage en Sphère des Océans. Une seule tentative est possible dans toute une vie et il arrive qu'Ozyr refuse d'accorder cette faveur que le jet soit réussi ou non si le bénéficiaire est jugé indigne."
   },
   {
@@ -495,7 +576,10 @@
       "rune de paix tracée dans l'eau",
       "cours d'eau ou fontaine"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Ce sort enchante l'eau d'un cours d'eau ou d'une fontaine de façon à ce qu'elle soigne les maladies. Toute personne baignée dans cette eau miraculeuse voit ses tissus se régénérer. Selon la gravité d'une maladie, il faut compter entre 10 minutes et 3 heures de baignade pour que les chairs soient réparées. Si la maladie laissait cochées des cases de blessure, ces dernières sont soignées par l'immersion. La fontaine ne peut soigner qu'une personne à la fois. Ses propriétés demeurent actives pendant (1 + NR) jours."
   },
   {
@@ -514,7 +598,10 @@
       "rune de l'eau tracée sur le miroir",
       "danse de la tempête avec bris du miroir"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage crée un tourbillon d'eau très violent autour de lui d'un volume de 20m3. Toute personne prise dans la tourmente doit réussir un jet de Manuel + Acrobatie (ou Force) contre une Difficulté de 20 (25 dans le cas de la Force), faute de quoi elle est projetée à 10 mètres du lieu du contact et reçoit (20 + 1D10) points de dommages. Toute personne tentant de s'approcher du lanceur de sort doit résister au tourbillon. Le mage est invulnérable au feu pendant la durée du sort qui est de (1 + NR) tours. Il bénéficie enfin d'un Indice de protection supplémentaire de +10 contre toute attaque devant traverser la barrière liquide."
   },
   {
@@ -533,7 +620,10 @@
       "rune des Océans",
       "longue expiration"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "En déversant lentement le contenu d'une gourde au sol, le mage tend la main vers une créature vivante et provoque l'évaporation de ses fluides vitaux. Dès le lancement du sortilège, la victime subit 10 + 1D10/NR points de dommages sans aucune résistance possible (ni armure, ni esquive, ni parade, seules les capacités immunisant aux sort peuvent être envisagées). Les embruns de la Marée-Mère sont actifs autant de tours que la sphère des océans du mage divisée par deux (arrondie au supérieur). Les effets physiques sont visibles, la peau se dessèche à grande vitesse et une insoutenable douleur torture la victime."
   },
   {
@@ -550,7 +640,10 @@
       "une paire de chausses (sandales ou bottes)",
       "un peu de liège (consommé)"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Très courant chez les mages des océans, ce sort permet d'ensorceler des chausses pour marcher sur l'eau, quelle que soit la charge transportée. Les bottes conservent leur pouvoir pendant une semaine et permettent de marcher (1 + 1 par NR) heures par jour. Il faut une certaine habitude et un jet de Manuel + Coordination d'une Difficulté de 15 pour courir sur les vagues et les rapides sans chuter ou rouler sur le fil de l'eau. Il est à noter que, mage ou pas mage, nombreux sont les enfants d'Ozyr à ne pas apprécier l'emploi de ce sort en mer et à prendre un malin plaisir à soulever le mage pour le laisser retomber de haut sur un plancher d'eau dure..."
   },
   {
@@ -568,7 +661,10 @@
       "posture (frapper sa paume du poing)",
       "chant des glaces"
     ],
-    "source": "La colère des dragons",
+    "source": {
+      "type": "officiel",
+      "name": "La colère des dragons"
+    },
     "description": "Le mage ouvre un portail fugace vers une caverne glaciaire garnie de stalactites cristallins. Une partie d'entre eux se détachent et tombent par le portail pour dévaster une zone de 3 mètres de rayon. Les dommages sont de (20 + 1D10 par NR) et il n'est possible de se protéger qu'avec un bouclier. Ce sort peut frapper jusqu'à 25 mètres et touche toutes les personnes dans la zone."
   },
   {
@@ -586,7 +682,10 @@
       "rune de tempête",
       "posture (poing contre terre)"
     ],
-    "source": "Livre de base 2e édition",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
     "description": "Le mage crée un véritable mur d'eau capable de noyer plusieurs hommes. D'un volume de 100m3, la vague avance à une vitesse de (30 + 10 par NR) mètres par tour pendant 10 tours. Si une personne est prise dans la vague, elle subit 2D10 points de dommages sans pouvoir y soustraire son indice d'armure. Cette vague peut également détruire les bâtiments, les navires ou toute construction susceptible d'être recouverte ou balayée par la vague."
   },
   {
@@ -604,7 +703,10 @@
       "lettre soigneusement rédigée et enluminée durant l'incantation (Manue + Don artistique : Enluminures, Diff. 15)",
       "encre mêlée de cristaux de sel-gemme (consommée)"
     ],
-    "source": "Les Versets d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
     "description": "À la fin du sort, en scellant le parchemin avec ce sceau et en y apposant des enluminures sacrées, le mage prononce le nom de la seule personne capable de l'ouvrir. Si le sceau est rompu par une autre personne, une brusque vague d'eau bouillante balaie la surface du parchemin, dissolvant instantanément le texte en une tache d'encre. Ce sort dure un Augure, après quoi l'énergie élémentaire des océans imbibe le parchemin et le change en une pulpe grisâtre et illisible. * Ce sort se lance tout au long de l'écriture d'une lettre calligraphiée par le mage (ou par un scribe, auquel cas le mage doit être en contact avec lui)."
   }
 ]
