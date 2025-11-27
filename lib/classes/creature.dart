@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:prophecy_compagnon_mj/classes/entity/skill_instance.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
@@ -11,6 +10,7 @@ import 'entity/abilities.dart';
 import 'entity/attributes.dart';
 import 'entity/magic.dart';
 import 'entity/skill.dart';
+import 'entity/skill_instance.dart';
 import 'entity/skills.dart';
 import 'entity/specialized_skill.dart';
 import 'entity/status.dart';
