@@ -56,26 +56,31 @@ class CreatureCategoryJsonConverter extends JsonConverter<CreatureCategory, Stri
   String toJson(CreatureCategory object) => object.isDefault ? object.name : object.title;
 }
 
+class CreatureCategoryStore extends ObjectStoreAdapter<CreatureCategory> {
+  @override
+  String storeCategory() => 'creatureCategories';
+
+  @override
+  String key(CreatureCategory object) => object.name;
+
+  @override
+  Future<CreatureCategory> fromStoreRepresentation(String r) async =>
+      CreatureCategoryJsonConverter().fromJson(r);
+
+  @override
+  Future<String> toStoreRepresentation(CreatureCategory object) async =>
+      CreatureCategoryJsonConverter().toJson(object);
+}
+
 class CreatureCategory {
   static CreatureCategory createNewCreatureCategory = CreatureCategory._create(title: "Créer cette catégorie", isDefault: true);
-
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    var jsonStr = await rootBundle.loadString('assets/creature-categories.json');
-    var categories = json.decode(jsonStr);
-    for(var c in categories) {
-      // ignore: unused_local_variable
-      var category = CreatureCategory(title: c, isDefault: true);
-    }
-  }
 
   factory CreatureCategory({ required String title, bool isDefault = false }) {
     var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
     if(!_categories.containsKey(name)) {
       var c = CreatureCategory._create(title: title, isDefault: isDefault);
       _categories[c.name] = c;
+      if(!isDefault) CreatureCategoryStore().save(c);
       return c;
     }
     else {
@@ -105,6 +110,23 @@ class CreatureCategory {
   bool operator ==(Object other) {
     if(other is! CreatureCategory) return false;
     return title == other.title;
+  }
+
+  static Future<void> init() async {
+    await _loadDefaultAssets();
+    await CreatureCategoryStore().getAll();
+  }
+
+  static Future<void> _loadDefaultAssets() async {
+    if(_defaultAssetsLoaded) return;
+    _defaultAssetsLoaded = true;
+
+    var jsonStr = await rootBundle.loadString('assets/creature-categories.json');
+    var categories = json.decode(jsonStr);
+    for(var c in categories) {
+      // ignore: unused_local_variable
+      var category = CreatureCategory(title: c, isDefault: true);
+    }
   }
 
   static final Map<String, CreatureCategory> _categories = <String, CreatureCategory>{};
@@ -174,8 +196,6 @@ class CreatureSpecialCapability {
 }
 
 class CreatureSummaryStore extends JsonStoreAdapter<CreatureSummary> {
-  CreatureSummaryStore();
-
   @override
   String storeCategory() => 'creatureSummaries';
 

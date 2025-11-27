@@ -101,7 +101,8 @@ class _CreatureCreateDialogState extends State<CreatureCreateDialog> {
                 onSelected: (CreatureCategory? c) {
                   setState(() {
                     if(createCategoryName != null && c == CreatureCategory.createNewCreatureCategory) {
-                      c = CreatureCategory(title: createCategoryName!);
+                      var cat = CreatureCategory(title: createCategoryName!);
+                      currentCategory = cat;
                       createCategoryName = null;
                     }
                     else {

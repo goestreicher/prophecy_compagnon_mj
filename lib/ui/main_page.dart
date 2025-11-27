@@ -21,7 +21,7 @@ Future<void> _loadAssets() async {
   await ShieldModel.loadDefaultAssets();
   await WeaponModel.loadDefaultAssets();
   await MagicSpell.loadDefaultAssets();
-  await CreatureCategory.loadDefaultAssets();
+  await CreatureCategory.init();
   await Creature.init();
   await NPCCategory.loadDefaultAssets();
   await NPCSubCategory.loadDefaultAssets();

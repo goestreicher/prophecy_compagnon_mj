@@ -204,6 +204,8 @@ class _CreatureCreateFormState extends State<_CreatureCreateForm> {
               setState(() {
                 if(createCategoryName != null && c == CreatureCategory.createNewCreatureCategory) {
                   c = CreatureCategory(title: createCategoryName!);
+                  currentCategory = c;
+                  categoryController.text = createCategoryName!;
                   createCategoryName = null;
                 }
                 else {
