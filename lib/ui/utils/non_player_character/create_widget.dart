@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../classes/non_player_character.dart';
-import '../../../classes/npc_category.dart';
 import '../../../classes/object_source.dart';
-import '../../../text_utils.dart';
-import '../error_feedback.dart';
-import '../single_line_input_dialog.dart';
 import '../character/edit_widget.dart';
 import 'create_form.dart';
 
