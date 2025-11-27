@@ -18,10 +18,10 @@ class CreatureCreateForm extends StatefulWidget {
   final Creature? cloneFrom;
 
   @override
-  State<CreatureCreateForm> createState() => CreatureCreateFormState();
+  State<CreatureCreateForm> createState() => _CreatureCreateFormState();
 }
 
-class CreatureCreateFormState extends State<CreatureCreateForm> {
+class _CreatureCreateFormState extends State<CreatureCreateForm> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController nameController = TextEditingController();
   final TextEditingController categoryController = TextEditingController();
