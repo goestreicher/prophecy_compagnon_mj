@@ -20,6 +20,37 @@ enum CastingDurationUnit {
   const CastingDurationUnit({ required this.title });
 }
 
+class MagicSpellFilter {
+  MagicSpellFilter({
+    this.sourceType,
+    this.source,
+    this.sphere,
+    this.skill,
+    this.level = -1,
+    this.search,
+  });
+
+  ObjectSourceType? sourceType;
+  ObjectSource? source;
+  MagicSphere? sphere;
+  MagicSkill? skill;
+  int level;
+  String? search;
+
+  @override
+  int get hashCode => Object.hash(sourceType, source, search);
+
+  @override
+  bool operator ==(Object other) =>
+      other is MagicSpellFilter
+          && other.sourceType == sourceType
+          && other.source == source
+          && other.sphere == sphere
+          && other.skill == skill
+          && other.level == level
+          && other.search == search;
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class MagicSpell extends ResourceBaseClass {
   MagicSpell({
@@ -50,27 +81,41 @@ class MagicSpell extends ResourceBaseClass {
   final String description;
 
   @override
-  String get id => sentenceToCamelCase(transliterateFrenchToAscii(name));
+  String get id => _getId(name);
 
-  static MagicSpell? byName(String name) {
-    MagicSpell? ret;
-    for(var spells in _spells.values) {
-      if(spells.containsKey(name)) {
-        ret = spells[name]!;
-        break;
+  static MagicSpell? get(String id) {
+    for(var name in _spells.keys) {
+      if(id == _getId(name)) {
+        return _spells[name];
       }
     }
-    return ret;
+    return null;
   }
 
-  static List<MagicSpell> spells({ required MagicSphere sphere, int level = -1 }) {
-    if(level == -1) {
-      return _spells[sphere]?.values.toList() ?? <MagicSpell>[];
+  static MagicSpell? byName(String name) => _spells[name];
+
+  static Iterable<MagicSpell> filteredList(MagicSpellFilter filter) =>
+    _spells.values
+      .where((MagicSpell s) => filter.sourceType == null || s.source.type == filter.sourceType)
+      .where((MagicSpell s) => filter.source == null || s.source == filter.source)
+      .where((MagicSpell s) => filter.sphere == null || s.sphere == filter.sphere)
+      .where((MagicSpell s) => filter.skill == null || s.skill == filter.skill)
+      .where((MagicSpell s) => filter.level == -1 || s.level == filter.level)
+      .where((MagicSpell s) =>
+        filter.search == null
+        || s.name.toLowerCase().contains(filter.search!.toLowerCase()));
+
+  Iterable<MagicSpell> forSphere(MagicSphere sphere) =>
+    filteredList(MagicSpellFilter(sphere: sphere));
+
+  static Iterable<MagicSpell> forLocationType(
+    ObjectLocationType type,
+    {
+      MagicSpellFilter? filter,
     }
-    else {
-      return _spells[sphere]?.values.where((MagicSpell s) => s.level == level).toList() ?? <MagicSpell>[];
-    }
-  }
+  ) =>
+    (filter == null ? _spells.values : filteredList(filter))
+      .where((MagicSpell s) => s.location.type == type);
 
   static Future<void> loadDefaultAssets() async {
     if(_defaultAssetsLoaded) return;
@@ -94,10 +139,7 @@ class MagicSpell extends ResourceBaseClass {
 
         try {
           var spell = MagicSpell.fromJson(model);
-          if (!_spells.containsKey(spell.sphere)) {
-            _spells[spell.sphere] = <String, MagicSpell>{};
-          }
-          _spells[spell.sphere]![spell.name] = spell;
+          _spells[spell.name] = spell;
         } catch (e, stacktrace) {
           print('Error loading spell ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
         }
@@ -105,9 +147,11 @@ class MagicSpell extends ResourceBaseClass {
     }
   }
 
+  static String _getId(String name) =>
+      sentenceToCamelCase(transliterateFrenchToAscii(name));
+
   static bool _defaultAssetsLoaded = false;
-  static final Map<MagicSphere, Map<String, MagicSpell>> _spells =
-  <MagicSphere, Map<String, MagicSpell>>{};
+  static final Map<String, MagicSpell> _spells = <String, MagicSpell>{};
 
   factory MagicSpell.fromJson(Map<String, dynamic> json) =>
       _$MagicSpellFromJson(json);

@@ -15,7 +15,7 @@ import 'places/main.dart';
 import 'scenario/edit.dart';
 import 'scenario/list.dart';
 import 'session/list.dart';
-import 'spells/main.dart';
+import 'spells/list.dart';
 import 'stars/clone.dart';
 import 'stars/create.dart';
 import 'stars/edit.dart';
@@ -246,7 +246,7 @@ final mainAppRoutes = [
   MainAppRoute(
     path: '/spells',
     builder: (BuildContext context, GoRouterState state) =>
-      const SpellsMainPage(),
+      const SpellsListPage(),
     icon: Icon(Symbols.auto_fix_high),
     label: Text('Sorts'),
   ),

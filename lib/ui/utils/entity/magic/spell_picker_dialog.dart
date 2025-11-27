@@ -85,7 +85,7 @@ class _MagicSpellPickerDialogState extends State<MagicSpellPickerDialog> {
                       },
                       dropdownMenuEntries: _sphere == null || _level == null ?
                         <DropdownMenuEntry<MagicSpell>>[] :
-                        MagicSpell.spells(sphere: _sphere!, level: _level!)
+                        MagicSpell.filteredList(MagicSpellFilter(sphere: _sphere!, level: _level!))
                           .map((MagicSpell spell) => DropdownMenuEntry(value: spell, label: spell.name))
                           .toList(),
                     ),
