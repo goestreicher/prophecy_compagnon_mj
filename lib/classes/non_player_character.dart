@@ -440,7 +440,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     String id = uuid ?? (isDefault ? _getId(name) : Uuid().v4().toString());
     var npc = _cache.entry(id)
         ?? NonPlayerCharacter._create(
-            uuid: uuid,
+            uuid: id,
             location: location,
             source: source,
             name: name,
