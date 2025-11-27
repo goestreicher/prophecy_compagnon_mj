@@ -552,7 +552,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
     String id = uuid ?? (isDefault ? _getId(name) : Uuid().v4().toString());
     var model = _cache.entry(id)
         ?? Creature._create(
-            uuid: uuid,
+            uuid: id,
             location: location,
             source: source,
             name: name,

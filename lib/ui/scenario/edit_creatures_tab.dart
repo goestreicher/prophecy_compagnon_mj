@@ -119,7 +119,7 @@ class _ScenarioEditCreaturesPageState extends State<ScenarioEditCreaturesPage> {
                       var creature = await showDialog<Creature>(
                         context: context,
                         builder: (BuildContext context) => CreatureCreateDialog(
-                          source: ObjectSource.local,
+                          source: widget.scenarioSource,
                         ),
                       );
                       if(!context.mounted) return;
