@@ -101,7 +101,7 @@ class CreatureCreateFormState extends State<CreatureCreateForm> {
               if(ret.isEmpty) {
                 createCategoryName = filter;
                 ret.add(DropdownMenuEntry(
-                  value: CreatureCategory.createNewCreatureCategory,
+                  value: CreatureCategory.createNewCategory,
                   label: 'Créer "$filter"',
                   leadingIcon: const Icon(Icons.add)),
                 );
@@ -111,7 +111,7 @@ class CreatureCreateFormState extends State<CreatureCreateForm> {
             },
             onSelected: (CreatureCategory? c) {
               setState(() {
-                if(createCategoryName != null && c == CreatureCategory.createNewCreatureCategory) {
+                if(createCategoryName != null && c == CreatureCategory.createNewCategory) {
                   c = CreatureCategory(title: createCategoryName!);
                   currentCategory = c;
                   categoryController.text = createCategoryName!;

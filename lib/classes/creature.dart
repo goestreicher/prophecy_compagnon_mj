@@ -73,7 +73,7 @@ class CreatureCategoryStore extends ObjectStoreAdapter<CreatureCategory> {
 }
 
 class CreatureCategory {
-  static CreatureCategory createNewCreatureCategory = CreatureCategory._create(title: "Créer cette catégorie", isDefault: true);
+  static CreatureCategory createNewCategory = CreatureCategory._create(title: "Créer cette catégorie", isDefault: true);
 
   factory CreatureCategory({ required String title, bool isDefault = false }) {
     var name = sentenceToCamelCase(transliterateFrenchToAscii(title));

@@ -107,7 +107,7 @@ class _CreatureEditGeneralWidgetState extends State<CreatureEditGeneralWidget> {
                     if(ret.isEmpty) {
                       createCategoryName = filter;
                       ret.add(DropdownMenuEntry(
-                        value: CreatureCategory.createNewCreatureCategory,
+                        value: CreatureCategory.createNewCategory,
                         label: 'Créer "$filter"',
                         leadingIcon: const Icon(Icons.add)),
                       );
@@ -117,7 +117,7 @@ class _CreatureEditGeneralWidgetState extends State<CreatureEditGeneralWidget> {
                   },
                   onSelected: (CreatureCategory? category) {
                     setState(() {
-                      if(category == CreatureCategory.createNewCreatureCategory) {
+                      if(category == CreatureCategory.createNewCategory) {
                         widget.creature.category = CreatureCategory(title: createCategoryName!);
                       }
                       else if(category != null) {
