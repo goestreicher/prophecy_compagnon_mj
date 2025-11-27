@@ -23,8 +23,8 @@ Future<void> _loadAssets() async {
   await MagicSpell.loadDefaultAssets();
   await CreatureCategory.init();
   await Creature.init();
-  await NPCCategory.loadDefaultAssets();
-  await NPCSubCategory.loadDefaultAssets();
+  await NPCCategory.init();
+  await NPCSubCategory.init();
   await NonPlayerCharacter.init();
   await Faction.init();
   await Star.init();

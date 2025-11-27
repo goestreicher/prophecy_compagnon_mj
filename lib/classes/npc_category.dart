@@ -5,6 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../text_utils.dart';
 import 'storage/default_assets_store.dart';
+import 'storage/storable.dart';
 
 part 'npc_category.g.dart';
 
@@ -31,26 +32,31 @@ class NPCCategoryJsonConverter extends JsonConverter<NPCCategory, String> {
   String toJson(NPCCategory object) => object.isDefault ? object.name : object.title;
 }
 
+class NPCCategoryStore extends ObjectStoreAdapter<NPCCategory> {
+  @override
+  String storeCategory() => 'npcCategories';
+
+  @override
+  String key(NPCCategory object) => object.name;
+
+  @override
+  Future<NPCCategory> fromStoreRepresentation(String r) async =>
+      NPCCategoryJsonConverter().fromJson(r);
+
+  @override
+  Future<String> toStoreRepresentation(NPCCategory object) async =>
+      NPCCategoryJsonConverter().toJson(object);
+}
+
 class NPCCategory {
   static NPCCategory createNewCategory = NPCCategory._create(title: "Créer cette catégorie", isDefault: true);
-
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    var jsonStr = await rootBundle.loadString('assets/npc-categories.json');
-    var categories = json.decode(jsonStr);
-    for(var c in categories) {
-      // ignore: unused_local_variable
-      var category = NPCCategory(title: c, isDefault: true);
-    }
-  }
 
   factory NPCCategory({required String title, bool isDefault = false}) {
     var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
     if(!_categories.containsKey(name)) {
       var c = NPCCategory._create(title: title, isDefault: isDefault);
       _categories[c.name] = c;
+      if(!isDefault) NPCCategoryStore().save(c);
       return c;
     }
     else {
@@ -80,6 +86,23 @@ class NPCCategory {
   bool operator ==(Object other) {
     if(other is! NPCCategory) return false;
     return title == other.title;
+  }
+
+  static Future<void> init() async {
+    await _loadDefaultAssets();
+    await NPCCategoryStore().getAll();
+  }
+
+  static Future<void> _loadDefaultAssets() async {
+    if(_defaultAssetsLoaded) return;
+    _defaultAssetsLoaded = true;
+
+    var jsonStr = await rootBundle.loadString('assets/npc-categories.json');
+    var categories = json.decode(jsonStr);
+    for(var c in categories) {
+      // ignore: unused_local_variable
+      var category = NPCCategory(title: c, isDefault: true);
+    }
   }
 
   static final Map<String, NPCCategory> _categories = <String, NPCCategory>{};
@@ -117,6 +140,22 @@ class NPCSubcategoryJsonConverter extends JsonConverter<NPCSubCategory, Map<Stri
   }
 }
 
+class NPCSubCategoryStore extends JsonStoreAdapter<NPCSubCategory> {
+  @override
+  String storeCategory() => 'npcSubCategories';
+
+  @override
+  String key(NPCSubCategory object) => object.name;
+
+  @override
+  Future<NPCSubCategory> fromJsonRepresentation(Map<String, dynamic> j) async =>
+      NPCSubcategoryJsonConverter().fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(NPCSubCategory object) async =>
+      NPCSubcategoryJsonConverter().toJson(object);
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 @NPCCategoryJsonConverter()
 class NPCSubCategory {
@@ -126,16 +165,6 @@ class NPCSubCategory {
     isDefault: true,
   );
 
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    for (var sc in await loadJSONAssetObjectList('npc-subcategories.json')) {
-      // ignore: unused_local_variable
-      var subCategory = NPCSubCategory.fromJson(sc);
-    }
-  }
-
   factory NPCSubCategory({
     required String title,
     required List<NPCCategory> categories,
@@ -143,11 +172,21 @@ class NPCSubCategory {
   }) {
     var name = sentenceToCamelCase(transliterateFrenchToAscii(title));
     if(_subCategories.containsKey(name)) {
-      return _subCategories[name]!;
+      var sub = _subCategories[name]!;
+      var updated = false;
+      for(var c in categories) {
+        if(!sub.categories.contains(c)) {
+          sub.categories.add(c);
+          updated = true;
+        }
+      }
+      if(updated && !isDefault) NPCSubCategoryStore().save(sub);
+      return sub;
     }
     else {
       var s = NPCSubCategory._create(title: title, categories: categories, isDefault: isDefault);
       _subCategories[s.name] = s;
+      if(!isDefault) NPCSubCategoryStore().save(s);
       return s;
     }
   }
@@ -190,6 +229,21 @@ class NPCSubCategory {
   bool operator ==(Object other) {
     if(other is! NPCSubCategory) return false;
     return title == other.title;
+  }
+
+  static Future<void> init() async {
+    await _loadDefaultAssets();
+    await NPCSubCategoryStore().getAll();
+  }
+
+  static Future<void> _loadDefaultAssets() async {
+    if(_defaultAssetsLoaded) return;
+    _defaultAssetsLoaded = true;
+
+    for (var sc in await loadJSONAssetObjectList('npc-subcategories.json')) {
+      // ignore: unused_local_variable
+      var subCategory = NPCSubCategory.fromJson(sc);
+    }
   }
 
   static final Map<String, NPCSubCategory> _subCategories = <String, NPCSubCategory>{};
