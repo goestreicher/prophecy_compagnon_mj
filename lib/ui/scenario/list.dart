@@ -229,8 +229,16 @@ class _ScenariosListPageState extends State<ScenariosListPage> {
                                 _isWorking = true;
                               });
                               var jsonStr = const Utf8Decoder().convert(result.files.first.bytes!);
-                              var scenario = Scenario.import(json.decode(jsonStr));
+                              var j = json.decode(jsonStr);
+
+                              var summ = await ScenarioSummaryStore().get(j['uuid']);
+                              if(summ != null) {
+                                throw Exception('Un scénario avec le même identifiant existe déjà');
+                              }
+
+                              var scenario = Scenario.import(j);
                               await ScenarioStore().save(scenario);
+
                               setState(() {
                                 loadScenarioSummaries();
                                 _isWorking = false;

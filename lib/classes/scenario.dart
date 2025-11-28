@@ -265,9 +265,6 @@ class Scenario {
       stars = stars ?? <Star>[];
 
   factory Scenario.import(Map<String, dynamic> json) {
-    // Force-set the UUID
-    json['uuid'] = const Uuid().v4().toString();
-
     // Force source for items requiring it
     var source = ObjectSource(
       type: ObjectSourceType.scenario,
