@@ -8,7 +8,6 @@ Pretty much a WiP, not stable at the moment
 
 ## Creation part
 
-- [ ] Rewrite UUIDs when importing factions to prevent conflicts?
 - [ ] Use UUIDs everywhere in the assets and make UUID mandatory in constructors
 - [ ] Add dates in the factions leaders and members?
 - [ ] Add artifacts resources?
