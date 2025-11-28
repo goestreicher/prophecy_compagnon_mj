@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:go_router/go_router.dart';
-import 'classes/storage/storage.dart';
 
+import 'classes/storage/storage.dart';
+import 'register_store_adapters.dart';
 import 'ui/app_routes.dart';
 import 'ui/main_page.dart';
 
@@ -20,6 +21,7 @@ final _goRouter = GoRouter(
 void main() async {
   usePathUrlStrategy();
   await DataStorage.instance.init();
+  registerStoreAdapters();
   runApp(const ProphecyCompanionApp());
 }
 

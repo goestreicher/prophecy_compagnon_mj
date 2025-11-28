@@ -1,7 +1,6 @@
 import 'dart:convert';
 
-import 'package:prophecy_compagnon_mj/classes/storage/exceptions.dart';
-
+import 'exceptions.dart';
 import 'storage.dart';
 
 abstract class ObjectStoreAdapter<T> {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:prophecy_compagnon_mj/ui/app_routes.dart';
 
 import '../classes/armor.dart';
 import '../classes/creature.dart';
@@ -12,6 +11,7 @@ import '../classes/place.dart';
 import '../classes/shield.dart';
 import '../classes/star.dart';
 import '../classes/weapon.dart';
+import 'app_routes.dart';
 import 'utils/full_page_loading.dart';
 
 Future<void> _loadAssets() async {
@@ -72,11 +72,13 @@ class _MainPageState extends State<MainPage> {
         return Scaffold(
           body: LayoutBuilder(
             builder: (BuildContext context, BoxConstraints constraints) {
+              var railExtended = constraints.maxWidth >= 800;
+
               return Row(
                 children: [
                   SafeArea(
                     child: NavigationRail(
-                      extended: constraints.maxWidth >= 800,
+                      extended: railExtended,
                       selectedIndex: selectedIndex >= 0 ? selectedIndex : null,
                       onDestinationSelected: (value) {
                         context.go(navigationRailIndexToRoutePath(value));

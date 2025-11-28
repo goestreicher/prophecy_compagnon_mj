@@ -42,4 +42,10 @@ class HiveStorageEngine implements StorageEngine {
     var box = await Hive.openLazyBox('${category}Box');
     await box.delete(key);
   }
+
+  @override
+  Future<void> purge(String category) async {
+    var box = await Hive.openLazyBox('${category}Box');
+    await box.clear();
+  }
 }

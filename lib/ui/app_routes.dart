@@ -15,6 +15,7 @@ import 'places/main.dart';
 import 'scenario/edit.dart';
 import 'scenario/list.dart';
 import 'session/list.dart';
+import 'settings/main.dart';
 import 'spells/list.dart';
 import 'stars/clone.dart';
 import 'stars/create.dart';
@@ -279,6 +280,13 @@ final mainAppRoutes = [
       ),
     ]
   ),
+  MainAppRoute(
+    path: '/settings',
+    builder: (BuildContext context, GoRouterState state) =>
+      SettingsPage(),
+    icon: Icon(Icons.settings_outlined),
+    label: Text('Paramètres'),
+  )
 ];
 
 List<RouteBase> buildRouteList({ MainAppRoute? parent, bool forceFullScreen = false }) {

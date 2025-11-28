@@ -6,4 +6,5 @@ abstract interface class StorageEngine {
   Future<String> get(String category, String key);
   Future<void> save(String category, String key, String data);
   Future<void> delete(String category, String key);
+  Future<void> purge(String category);
 }

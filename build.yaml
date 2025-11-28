@@ -1,0 +1,13 @@
+targets:
+  $default:
+    sources:
+      exclude:
+        - lib/builders
+
+builders:
+  register_store_adapters:
+    import: "package:prophecy_compagnon_mj/builders/store_adapter_builders.dart"
+    builder_factories: ["registerStoreAdaptersBuilder"]
+    build_extensions: {"lib/$lib$": ["lib/register_store_adapters.dart"]}
+    auto_apply: root_package
+    build_to: source
