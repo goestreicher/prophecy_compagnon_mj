@@ -122,19 +122,13 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Draconiste",
-                  "reserved": false,
-                  "value": 5
-                },
-                {
-                  "name": "Humaniste",
-                  "reserved": false,
-                  "value": 2
-                }
-              ]
+              "implementation": "Draconiste",
+              "value": 5
+            },
+            {
+              "skill": "philosophie",
+              "implementation": "Humaniste",
+              "value": 2
             }
           ]
         },
@@ -539,14 +533,8 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Draconiste",
-                  "reserved": false,
-                  "value": 7
-                }
-              ]
+              "implementation": "Draconiste",
+              "value": 7
             }
           ]
         },
@@ -907,14 +895,8 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Draconiste",
-                  "reserved": false,
-                  "value": 14
-                }
-              ]
+              "implementation": "Draconiste",
+              "value": 14
             }
           ]
         },
@@ -1309,24 +1291,18 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Draconiste",
-                  "reserved": false,
-                  "value": 12
-                },
-                {
-                  "name": "Humaniste",
-                  "reserved": false,
-                  "value": 4
-                },
-                {
-                  "name": "Fataliste",
-                  "reserved": false,
-                  "value": 5
-                }
-              ]
+              "implementation": "Draconiste",
+              "value": 12
+            },
+            {
+              "skill": "philosophie",
+              "implementation": "Humaniste",
+              "value": 4
+            },
+            {
+              "skill": "philosophie",
+              "implementation": "Fataliste",
+              "value": 5
             }
           ]
         },
@@ -1793,14 +1769,8 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Draconiste",
-                  "reserved": false,
-                  "value": 8
-                }
-              ]
+              "implementation": "Draconiste",
+              "value": 8
             }
           ]
         },
@@ -2170,19 +2140,13 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Draconiste",
-                  "reserved": false,
-                  "value": 6
-                },
-                {
-                  "name": "Humaniste",
-                  "reserved": false,
-                  "value": 7
-                }
-              ]
+              "implementation": "Draconiste",
+              "value": 6
+            },
+            {
+              "skill": "philosophie",
+              "implementation": "Humaniste",
+              "value": 7
             }
           ]
         },
@@ -3077,14 +3041,8 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Draconiste",
-                  "reserved": false,
-                  "value": 7
-                }
-              ]
+              "implementation": "Draconiste",
+              "value": 7
             }
           ]
         },
@@ -3443,14 +3401,8 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Humaniste",
-                  "reserved": false,
-                  "value": 1
-                }
-              ]
+              "implementation": "Humaniste",
+              "value": 1
             }
           ]
         },
@@ -6333,19 +6285,13 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Draconiste",
-                  "reserved": false,
-                  "value": 5
-                },
-                {
-                  "name": "Humaniste",
-                  "reserved": false,
-                  "value": 3
-                }
-              ]
+              "implementation": "Draconiste",
+              "value": 5
+            },
+            {
+              "skill": "philosophie",
+              "implementation": "Humaniste",
+              "value": 3
             }
           ]
         },
@@ -8100,14 +8046,8 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Draconiste",
-                  "reserved": false,
-                  "value": 3
-                }
-              ]
+              "implementation": "Draconiste",
+              "value": 3
             }
           ]
         },
@@ -8401,14 +8341,8 @@
             },
             {
               "skill": "philosophie",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Humaniste",
-                  "reserved": false,
-                  "value": 8
-                }
-              ]
+              "implementation": "Humaniste",
+              "value": 8
             }
           ]
         },

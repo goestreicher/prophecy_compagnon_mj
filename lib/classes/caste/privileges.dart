@@ -1,18 +1,43 @@
 import 'base.dart';
 
 enum CastePrivilege {
+  chercheur(
+    caste: Caste.sansCaste,
+    title: "Chercheur (Humaniste)",
+    description: "Le personnage est lié à l'Ordre Secret de l'Évolution, qui rassemble les savants et inventeurs Humanistes. Sans connaître une liste de membres (il n'y en a pas), ce Privilège permet de se faire reconnaître des autres membres par l'usage de mots de passe variants selon les conjonctions stellaires. Un jet classique a une Difficulté de 15 ; le rater indique un mot de passe erroné et inutilisable. Posséder ce Privilège est un moyen sûr de retrouver des confrères cachés car l'usage des mots de passe peut se mêler à une discussion anodine.",
+    cost: [2],
+  ),
   laForceDeLAme(
     caste: Caste.sansCaste,
     title: "La force de l'âme (Humaniste)",
-    description: "Grâce à ce Privilège, le personnage peut ajouter sa Tendance Homme à la valeur de base de tous ses jets de résistance face à un sortilège, un pouvoir ou une capacité d'origine draconique. Ce Privilège n'est utilisable que lorsque le personnage est directement visé par un effet de ce type, mais il peut s'agir d'une “agression” physique, mentale ou psychologique.",
-    cost: [0],
+    description: "Grâce à ce Privilège, le personnage peut ajouter sa Tendance Homme à la valeur de base de tous ses jets de résistance face à un sortilège, un pouvoir ou une capacité d'origine draconique. Ce Privilège n'est utilisable que lorsque le personnage est directement visé par un effet de ce type, mais il peut s'agir d'une agression physique, mentale ou psychologique.",
+    cost: [4],
   ),
   lesCerclesDuProgres(
     caste: Caste.sansCaste,
     title: "Les cercles du progrès (Humaniste)",
-    description: "Rompu à toutes les formes de progrès, les Humanistes ignorent tous les malus et toutes les pénalités de non maîtrise lors de jets impliquant des Compétences techniques ou scientifiques. Il peuvent donc obtenir des Niveaux de Réussite et dépenser des Points de Maîtrise.",
-    cost: [0],
+    description: "Rompus à toutes les formes de progrès, les Humanistes ignorent la limite imposée par leur Tendance Homme dans le développement des Compétences qui y sont soumises. Pour les possesseurs de ce Privilège, la limite est de 10+TH et non plus 5+TH.",
+    cost: [3],
   ),
+  mageImperial(
+    caste: Caste.sansCaste,
+    title: "Mage impérial (Humaniste)",
+    description: "Permet de posséder une autorisation de l'Empire Nésora pour y pratiquer la magie. Le personnage fait partie du Corps des Mages Impériaux et doit y obéir. Ce Privilège est le seul moyen de pratiquer librement la magie en Nésora et d'éviter les interrogatoires sans fin des miliciens, les rixes et les pierres que les paysans jettent aux mages draconistes…",
+    cost: [4],
+  ),
+  resistantDeLOmbre(
+    caste: Caste.sansCaste,
+    title: "Résistant de l'ombre (Humaniste)",
+    description: "Le personnage a décidé de lutter secrètement contre l'hérésie draconiste. Il obtient un bonus de +1 à toutes ses actions de Discrétion, d'Orientation, de Vie en Cité et de Contrefaçon visant à agir à l'encontre de l'autorité draconique ou à en saper les bases.",
+    cost: [3],
+  ),
+  reseauHumaniste(
+    caste: Caste.sansCaste,
+    title: "Réseau (Humaniste)",
+    description: "Permet de connaître certains lieux de réunion et des signes de reconnaissance de base. Dans une cité draconiste, de personnage pourra jeter 1D10 sous sa Chance actuelle pour réussir à entrer en contact avec un sympathisant. Dans une cité nésorienne, ce jet s'affectue sous sa Chante totale + Tendance Homme. Le meneur peut accorder des bonus ou malus, voire interdire ce jet si le contact est impossible à établir ou soumis à d'autres conditions.",
+    cost: [3],
+  ),
+
   apprenti(
       caste: Caste.artisan,
       title: 'Apprenti',

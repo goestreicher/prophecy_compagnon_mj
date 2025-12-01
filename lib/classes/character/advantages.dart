@@ -85,6 +85,12 @@ enum Advantage {
     cost: [6],
     type: AdvantageType.general
   ),
+  humaniste(
+    title: 'Humaniste',
+    description: "Cet Avantage montre une véritable conversion du personnage aux thèses humanistes. En tant qu'Humaniste, le personnage peut ignorer la règle concernant l'Avantage “Art Interdit” requis avant le développement de Compétences Interdites. Il n'est donc plus obligé de l'acheter et peut accéder à ces Compétences à tout âge. De plus, il peut développer les Pouvoirs de l'esprit, une puissance psychique propre aux Humanistes qui lerr vaut les foudres des draconistes.\nLa Tendance Dragon d'un Humaniste convaincu ne peut jamais dépasser 1, tout comme sa Tendance Homme ne doit jamais descendre au-dessous de 3. Si l'une de ces conditions est brisée, le personnage perd l'usage de tous ses Pouvoirs de l'esprit, et ses points de Ferveur tombent à 0. Ses pouvoirs reviennedront à raison de un par semaine une fois ses Tendances rétablies. De même, ses points de Ferveur ne reviendront qu'à raison de un par jour suivant ce rééquilibrage de Tendances.",
+    cost: [7],
+    type: AdvantageType.general,
+  ),
   magieNaturelle(
     title: 'Magie naturelle',
     description: "Cet Avantage confère au personnage une base de 2 dans une Sphère de magie et un sort de niveau 1 gratuit de cette Sphère.\nLes limitations liées aux Sphères doivent être respectées.\nCet Avantage ne peut être choisi qu’une seule fois.",
