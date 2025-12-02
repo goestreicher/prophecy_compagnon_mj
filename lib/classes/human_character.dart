@@ -13,6 +13,7 @@ import 'draconic_favor.dart';
 import 'draconic_link.dart';
 import 'entity/abilities.dart';
 import 'entity/attributes.dart';
+import 'entity/fervor.dart';
 import 'entity/magic.dart';
 import 'entity/skill.dart';
 import 'entity/skills.dart';
@@ -168,6 +169,7 @@ class HumanCharacter extends EntityBase with MagicUser {
     super.equipment,
     super.magic,
     super.favors,
+    super.fervor,
     super.image,
     super.icon,
     CharacterCaste? caste,

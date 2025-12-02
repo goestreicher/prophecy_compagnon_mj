@@ -7,6 +7,7 @@ import 'change_stream.dart';
 import 'edit_background_widget.dart';
 import 'edit_base_widget.dart';
 import 'edit_equipment_widget.dart';
+import 'edit_fervor_widget.dart';
 import 'edit_magic_widget.dart';
 import 'edit_relations_widget.dart';
 
@@ -33,7 +34,7 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
   void initState() {
     super.initState();
     changeStreamController = StreamController<CharacterChange>.broadcast();
-    tabController = TabController(length: 5, vsync: this);
+    tabController = TabController(length: 6, vsync: this);
   }
 
   @override
@@ -75,6 +76,7 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
             Tab(text: 'Background'),
             Tab(text: 'Équipement'),
             Tab(text: 'Magie'),
+            Tab(text: "Pouvoirs de l'esprit"),
           ]
         ),
         Expanded(
@@ -100,15 +102,20 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
                   )
                 ),
                 _CharacterEditTabWidget(
-                    child: CharacterEditEquipmentWidget(
-                      character: widget.character,
-                    )
+                  child: CharacterEditEquipmentWidget(
+                    character: widget.character,
+                  )
                 ),
                 _CharacterEditTabWidget(
-                    child: CharacterEditMagicWidget(
-                      character: widget.character,
-                    )
+                  child: CharacterEditMagicWidget(
+                    character: widget.character,
+                  )
                 ),
+                _CharacterEditTabWidget(
+                  child: CharacterEditFervorWidget(
+                    character: widget.character,
+                  )
+                )
               ],
             ),
           )

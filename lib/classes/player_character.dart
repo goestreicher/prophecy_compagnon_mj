@@ -6,6 +6,7 @@ import 'caste/character_caste.dart';
 import 'character/tendencies.dart';
 import 'entity/abilities.dart';
 import 'entity/attributes.dart';
+import 'entity/fervor.dart';
 import 'entity/injury.dart';
 import 'entity/magic.dart';
 import 'entity/skills.dart';
@@ -181,6 +182,7 @@ class PlayerCharacter extends HumanCharacter {
     super.tendencies,
     super.description,
     super.favors,
+    super.fervor,
     super.image,
     super.icon,
   });

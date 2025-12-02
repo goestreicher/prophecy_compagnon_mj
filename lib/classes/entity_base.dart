@@ -6,6 +6,7 @@ import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
 import 'draconic_favor.dart';
+import 'entity/fervor.dart';
 import 'entity/injury.dart';
 import 'entity/abilities.dart';
 import 'entity/attributes.dart';
@@ -54,6 +55,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     EntityEquipment? equipment,
     EntityMagic? magic,
     EntityDraconicFavors? favors,
+    EntityFervor? fervor,
     ExportableBinaryData? image,
     ExportableBinaryData? icon,
   })
@@ -67,6 +69,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
       equipment = equipment ?? EntityEquipment(null),
       magic = magic ?? EntityMagic(),
       favors = favors ?? EntityDraconicFavors(),
+      fervor = fervor ?? EntityFervor(),
       _image = image,
       _icon = icon
   {
@@ -152,6 +155,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     readValue: EntityDraconicFavors.readFavorsFromJson,
   )
   final EntityDraconicFavors favors;
+  final EntityFervor fervor;
 
   @override
   bool meetsEquipableRequirements(EquipableItem item) {

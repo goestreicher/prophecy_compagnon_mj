@@ -93,6 +93,9 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
         favors: EntityDraconicFavors.fromJson(
           EntityDraconicFavors.readFavorsFromJson(json, 'favors') as List,
         ),
+        fervor: json['fervor'] == null
+            ? null
+            : EntityFervor.fromJson(json['fervor'] as Map<String, dynamic>),
         image: json['image'] == null
             ? null
             : ExportableBinaryData.fromJson(
@@ -126,6 +129,7 @@ Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
       'equipment': EntityEquipment.toJson(instance.equipment),
       'magic': instance.magic.toJson(),
       'favors': EntityDraconicFavors.toJson(instance.favors),
+      'fervor': instance.fervor.toJson(),
       'caste': instance.caste.toJson(),
       'age': instance.age,
       'height': instance.height,

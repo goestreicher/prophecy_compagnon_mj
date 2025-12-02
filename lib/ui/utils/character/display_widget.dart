@@ -26,6 +26,7 @@ import 'background/display_advantages_widget.dart';
 import 'base/display_general_widget.dart';
 import 'base/display_secondary_attributes_widget.dart';
 import 'base/tendencies_edit_widget.dart';
+import 'display_fervor_widget.dart';
 import 'relations/display_caste_details_widget.dart';
 import 'relations/display_draconic_link_widget.dart';
 
@@ -263,6 +264,16 @@ class CharacterDisplayWidget extends StatelessWidget {
             controlAffinity: ListTileControlAffinity.leading,
             children: [
               CharacterDisplayDraconicLinkWidget(
+                character: character,
+              ),
+            ],
+          ),
+        if(character.fervor.value > 0 || character.fervor.powers.isNotEmpty)
+          ExpansionTile(
+            title: const Text("Pouvoirs de l'esprit"),
+            controlAffinity: ListTileControlAffinity.leading,
+            children: [
+              CharacterDisplayFervorWidget(
                 character: character,
               ),
             ],
