@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:json_annotation/json_annotation.dart';
+import 'package:synchronized/synchronized.dart';
 
 import '../text_utils.dart';
 import 'object_location.dart';
@@ -220,29 +221,31 @@ class Star extends ResourceBaseClass {
   }
 
   static Future<void> loadAll() async {
-    var assetFiles = [
-      'stars-les-secrets-de-kalimsshar.json',
-    ];
+    await _loadLock.synchronized(() async {
+      var assetFiles = [
+        'stars-les-secrets-de-kalimsshar.json',
+      ];
 
-    for (var f in assetFiles) {
-      if(!_cache.containsCollection(f)) {
-        _cache.addCollection(f);
+      for (var f in assetFiles) {
+        if (!_cache.containsCollection(f)) {
+          _cache.addCollection(f);
 
-        for (var model in await loadJSONAssetObjectList(f)) {
-          try {
-            // ignore:unused_local_variable
-            var instance = Star.fromJson(model);
-          } catch (e, stacktrace) {
-            print('Error loading star ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+          for (var model in await loadJSONAssetObjectList(f)) {
+            try {
+              // ignore:unused_local_variable
+              var instance = Star.fromJson(model);
+            } catch (e, stacktrace) {
+              print('Error loading star ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+            }
           }
         }
       }
-    }
 
-    if(!_cache.containsCollection(StarStore().getCollectionUri())) {
-      _cache.addCollection(StarStore().getCollectionUri());
-      await StarStore().getAll();
-    }
+      if (!_cache.containsCollection(StarStore().getCollectionUri())) {
+        _cache.addCollection(StarStore().getCollectionUri());
+        await StarStore().getAll();
+      }
+    });
   }
 
   static void preImportFilter(Map<String, dynamic> json) {
@@ -266,6 +269,7 @@ class Star extends ResourceBaseClass {
     jsonConverter: Star.fromJson,
     store: () => StarStore()
   );
+  static final _loadLock = Lock();
 
   factory Star.fromJson(Map<String, dynamic> json) =>
       _$StarFromJson(json);

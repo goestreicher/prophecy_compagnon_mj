@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
 import 'character_role.dart';
@@ -117,33 +118,36 @@ class FactionSummary extends ResourceBaseClass {
   }
 
   static Future<void> loadAll() async {
-    var assetFiles = [
-      'factions-castes.json',
-      'factions-secretes.json',
-      'factions-les-voiles-de-nenya.json',
-    ];
+    await _loadLock.synchronized(() async {
+      var assetFiles = [
+        'factions-castes.json',
+        'factions-secretes.json',
+        'factions-les-voiles-de-nenya.json',
+      ];
 
-    for(var f in assetFiles) {
-      if(!_cache.containsCollection(f)) {
-        _cache.addCollection(f);
+      for(var f in assetFiles) {
+        if(!_cache.containsCollection(f)) {
+          _cache.addCollection(f);
 
-        for (var a in await loadJSONAssetObjectList(f)) {
-          // ignore:unused_local_variable
-          var f = FactionSummary.fromJson(a);
+          for(var a in await loadJSONAssetObjectList(f)) {
+            // ignore:unused_local_variable
+            var f = FactionSummary.fromJson(a);
+          }
         }
       }
-    }
 
-    if(!_cache.containsCollection(FactionSummaryStore().getCollectionUri())) {
-      _cache.addCollection(FactionSummaryStore().getCollectionUri());
-      await FactionSummaryStore().getAll();
-    }
+      if(!_cache.containsCollection(FactionSummaryStore().getCollectionUri())) {
+        _cache.addCollection(FactionSummaryStore().getCollectionUri());
+        await FactionSummaryStore().getAll();
+      }
+    });
   }
 
   static final _cache = ResourceMemoryCache<FactionSummary, FactionSummaryStore>(
     jsonConverter: FactionSummary.fromJson,
     store: () => FactionSummaryStore(),
   );
+  static final _loadLock = Lock();
 
   static void _factionDeleted(String id) => _cache.del(id);
 

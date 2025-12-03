@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
 import 'caste/character_caste.dart';
@@ -268,39 +269,41 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
   }
 
   static Future<void> loadAll() async {
-    var assetFiles = [
-      'npcs-ldb2e.json',
-      'npcs-les-compagnons-de-khy.json',
-      'npcs-les-ecailles-de-brorne.json',
-      'npcs-les-enfants-de-heyra.json',
-      'npcs-les-forges-de-kezyr.json',
-      'npcs-les-foudres-de-kroryn.json',
-      'npcs-les-orphelins-de-szyl.json',
-      'npcs-les-versets-d-ozyr.json',
-      'npcs-les-voiles-de-nenya.json',
-      'npcs-les-grands-dragons.json',
-      'npcs-les-secrets-de-kalimsshar.json',
-    ];
+    await _loadLock.synchronized(() async {
+      var assetFiles = [
+        'npcs-ldb2e.json',
+        'npcs-les-compagnons-de-khy.json',
+        'npcs-les-ecailles-de-brorne.json',
+        'npcs-les-enfants-de-heyra.json',
+        'npcs-les-forges-de-kezyr.json',
+        'npcs-les-foudres-de-kroryn.json',
+        'npcs-les-orphelins-de-szyl.json',
+        'npcs-les-versets-d-ozyr.json',
+        'npcs-les-voiles-de-nenya.json',
+        'npcs-les-grands-dragons.json',
+        'npcs-les-secrets-de-kalimsshar.json',
+      ];
 
-    for (var f in assetFiles) {
-      if(!_cache.containsCollection(f)) {
-        _cache.addCollection(f);
+      for (var f in assetFiles) {
+        if (!_cache.containsCollection(f)) {
+          _cache.addCollection(f);
 
-        for (var model in await loadJSONAssetObjectList(f)) {
-          try {
-            // ignore:unused_local_variable
-            var instance = NonPlayerCharacterSummary.fromJson(model);
-          } catch (e, stacktrace) {
-            print('Error loading NPC ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+          for (var model in await loadJSONAssetObjectList(f)) {
+            try {
+              // ignore:unused_local_variable
+              var instance = NonPlayerCharacterSummary.fromJson(model);
+            } catch (e, stacktrace) {
+              print('Error loading NPC ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+            }
           }
         }
       }
-    }
 
-    if(!_cache.containsCollection(NonPlayerCharacterSummaryStore().getCollectionUri())) {
-      _cache.addCollection(NonPlayerCharacterSummaryStore().getCollectionUri());
-      await NonPlayerCharacterSummaryStore().getAll();
-    }
+      if (!_cache.containsCollection(NonPlayerCharacterSummaryStore().getCollectionUri())) {
+        _cache.addCollection(NonPlayerCharacterSummaryStore().getCollectionUri());
+        await NonPlayerCharacterSummaryStore().getAll();
+      }
+    });
   }
 
   static Future<void> _reloadFromStore(String id) async {
@@ -331,6 +334,7 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
     jsonConverter: NonPlayerCharacterSummary.fromJson,
     store: () => NonPlayerCharacterSummaryStore(),
   );
+  static final _loadLock = Lock();
 
   factory NonPlayerCharacterSummary.fromJson(Map<String, dynamic> j){
     if(!j.containsKey('id')) {

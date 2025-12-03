@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
@@ -395,34 +396,36 @@ class CreatureSummary extends ResourceBaseClass {
   }
 
   static Future<void> loadAll() async {
-    var assetFiles = [
-      'creatures-ldb2e.json',
-      'creatures-ecran2e.json',
-      'creatures-les-ecailles-de-brorne.json',
-      'creatures-les-enfants-de-heyra.json',
-      'creatures-les-foudres-de-kroryn.json',
-      'creatures-les-secrets-de-kalimsshar.json',
-    ];
+    await _loadLock.synchronized(() async {
+      var assetFiles = [
+        'creatures-ldb2e.json',
+        'creatures-ecran2e.json',
+        'creatures-les-ecailles-de-brorne.json',
+        'creatures-les-enfants-de-heyra.json',
+        'creatures-les-foudres-de-kroryn.json',
+        'creatures-les-secrets-de-kalimsshar.json',
+      ];
 
-    for (var f in assetFiles) {
-      if(!_cache.containsCollection(f)) {
-        _cache.addCollection(f);
+      for (var f in assetFiles) {
+        if(!_cache.containsCollection(f)) {
+          _cache.addCollection(f);
 
-        for (var model in await loadJSONAssetObjectList(f)) {
-          try {
-            // ignore:unused_local_variable
-            var instance = CreatureSummary.fromJson(model);
-          } catch (e, stacktrace) {
-            print('Error loading creature ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+          for (var model in await loadJSONAssetObjectList(f)) {
+            try {
+              // ignore:unused_local_variable
+              var instance = CreatureSummary.fromJson(model);
+            } catch (e, stacktrace) {
+              print('Error loading creature ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+            }
           }
         }
       }
-    }
 
-    if(!_cache.containsCollection(CreatureSummaryStore().getCollectionUri())) {
-      _cache.addCollection(CreatureSummaryStore().getCollectionUri());
-      await CreatureSummaryStore().getAll();
-    }
+      if(!_cache.containsCollection(CreatureSummaryStore().getCollectionUri())) {
+        _cache.addCollection(CreatureSummaryStore().getCollectionUri());
+        await CreatureSummaryStore().getAll();
+      }
+    });
   }
 
   static Future<void> _reloadFromStore(String id) async {
@@ -453,6 +456,7 @@ class CreatureSummary extends ResourceBaseClass {
     jsonConverter: CreatureSummary.fromJson,
     store: () => CreatureSummaryStore(),
   );
+  static final _loadLock = Lock();
 
   factory CreatureSummary.fromJson(Map<String, dynamic> j) {
     if(!j.containsKey('id')) {

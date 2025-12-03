@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
 import 'character_role.dart';
@@ -191,40 +192,43 @@ class PlaceSummary extends ResourceBaseClass {
   }
 
   static Future<void> loadAll() async {
-    var assetFiles = [
-      'places-ldb2e.json',
-      'places-les-compagnons-de-khy.json',
-      'places-les-ecailles-de-brorne.json',
-      'places-les-enfants-de-heyra.json',
-      'places-les-forges-de-kezyr.json',
-      'places-les-foudres-de-kroryn.json',
-      'places-les-orphelins-de-szyl.json',
-      'places-les-secrets-de-kalimsshar.json',
-      'places-les-versets-d-ozyr.json',
-      'places-les-voiles-de-nenya.json',
-    ];
+    await _loadLock.synchronized(() async {
+      var assetFiles = [
+        'places-ldb2e.json',
+        'places-les-compagnons-de-khy.json',
+        'places-les-ecailles-de-brorne.json',
+        'places-les-enfants-de-heyra.json',
+        'places-les-forges-de-kezyr.json',
+        'places-les-foudres-de-kroryn.json',
+        'places-les-orphelins-de-szyl.json',
+        'places-les-secrets-de-kalimsshar.json',
+        'places-les-versets-d-ozyr.json',
+        'places-les-voiles-de-nenya.json',
+      ];
 
-    for(var f in assetFiles) {
-      if(!_cache.containsCollection(f)) {
-        _cache.addCollection(f);
+      for (var f in assetFiles) {
+        if (!_cache.containsCollection(f)) {
+          _cache.addCollection(f);
 
-        for (var a in await loadJSONAssetObjectList(f)) {
-          // ignore:unused_local_variable
-          var p = PlaceSummary.fromJson(a);
+          for (var a in await loadJSONAssetObjectList(f)) {
+            // ignore:unused_local_variable
+            var p = PlaceSummary.fromJson(a);
+          }
         }
       }
-    }
 
-    if(!_cache.containsCollection(PlaceSummaryStore().getCollectionUri())) {
-      _cache.addCollection(PlaceSummaryStore().getCollectionUri());
-      await PlaceSummaryStore().getAll();
-    }
+      if (!_cache.containsCollection(PlaceSummaryStore().getCollectionUri())) {
+        _cache.addCollection(PlaceSummaryStore().getCollectionUri());
+        await PlaceSummaryStore().getAll();
+      }
+    });
   }
 
   static final _cache = ResourceMemoryCache<PlaceSummary, PlaceSummaryStore>(
     jsonConverter: PlaceSummary.fromJson,
     store: () => PlaceSummaryStore(),
   );
+  static final _loadLock = Lock();
 
   static void _placeDeleted(String id) => _cache.del(id);
 
