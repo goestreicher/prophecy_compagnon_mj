@@ -9,7 +9,7 @@ class EntityEditAbilitiesWidget extends StatelessWidget {
   const EntityEditAbilitiesWidget({
     super.key,
     required this.entity,
-    this.minValue = 1,
+    this.minValue = 0,
     this.maxValue = 15,
   });
 

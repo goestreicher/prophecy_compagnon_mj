@@ -121,7 +121,6 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                       width: 220,
                       child: EntityEditAbilitiesWidget(
                         entity: widget.creature,
-                        minValue: 0,
                         maxValue: 30,
                       ),
                     ),
@@ -129,7 +128,6 @@ class _CreatureEditWidgetState extends State<CreatureEditWidget> {
                       width: 110,
                       child: EntityEditAttributesWidget(
                         entity: widget.creature,
-                        minValue: 0,
                         maxValue: 30,
                       ),
                     )
