@@ -40,22 +40,7 @@ class _StarsListPageState extends State<StarsListPage> {
   }
 
   Future<void> updateStarsList() async {
-    if(filter.source != null) {
-      stars = (await Star.forSource(
-          filter.source!,
-          nameFilter: filter.search,
-      )).toList();
-    }
-    else if(filter.sourceType != null) {
-      stars = (await Star.forSourceType(
-          filter.sourceType!,
-          nameFilter: filter.search,
-      )).toList();
-    }
-    else {
-      stars = (await Star.getAll(nameFilter: filter.search)).toList();
-    }
-
+    stars = (await Star.getAll()).toList();
     stars.sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
   }
 
@@ -81,7 +66,6 @@ class _StarsListPageState extends State<StarsListPage> {
                     onFilterChanged: (StarListFilter f) {
                       setState(() {
                         filter = f;
-                        resetStarsList();
                         selected = null;
                       });
                     }
@@ -187,6 +171,7 @@ class _StarsListPageState extends State<StarsListPage> {
 
                         return StarsListWidget(
                           stars: stars,
+                          filter: filter,
                           selected: selected,
                           onSelected: (String? id) {
                             if(id == null && GoRouter.of(context).state.fullPath!.endsWith('/:uuid')) {

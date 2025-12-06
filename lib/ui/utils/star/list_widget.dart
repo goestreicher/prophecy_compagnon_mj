@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../classes/object_source.dart';
 import '../../../classes/star.dart';
+import 'list_filter.dart';
 
 class StarActionButtons extends StatelessWidget {
   const StarActionButtons({
@@ -93,6 +94,7 @@ class StarsListWidget extends StatelessWidget {
   const StarsListWidget({
     super.key,
     required this.stars,
+    this.filter,
     this.selected,
     required this.onSelected,
     required this.onEditRequested,
@@ -103,6 +105,7 @@ class StarsListWidget extends StatelessWidget {
   });
 
   final List<Star> stars;
+  final StarListFilter? filter;
   final String? selected;
   final void Function(String?) onSelected;
   final void Function(String) onEditRequested;
@@ -114,16 +117,19 @@ class StarsListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var filtered = stars.where(
+        (Star s) => filter == null || filter!.match(s)
+      ).toList();
 
     return ListView.builder(
-      itemCount: stars.length,
+      itemCount: filtered.length,
       itemBuilder: (BuildContext context, int index) {
-        var isSelected = selected == stars[index].id;
+        var isSelected = selected == filtered[index].id;
 
         return Center(
           child: GestureDetector(
             onTap: () {
-              onSelected(isSelected ? null : stars[index].id);
+              onSelected(isSelected ? null : filtered[index].id);
             },
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
@@ -142,7 +148,7 @@ class StarsListWidget extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          stars[index].name,
+                          filtered[index].name,
                           style: theme.textTheme.bodyMedium!.copyWith(
                             fontWeight: isSelected
                                 ? null
@@ -154,11 +160,11 @@ class StarsListWidget extends StatelessWidget {
                         ),
                       ),
                       StarActionButtons(
-                        star: stars[index],
+                        star: filtered[index],
                         highlight: isSelected,
-                        onEdit: () => onEditRequested(stars[index].id),
-                        onClone: () => onCloneRequested(stars[index].id),
-                        onDelete: () => onDeleteRequested(stars[index].id),
+                        onEdit: () => onEditRequested(filtered[index].id),
+                        onClone: () => onCloneRequested(filtered[index].id),
+                        onDelete: () => onDeleteRequested(filtered[index].id),
                         restrictModificationToSourceTypes: restrictModificationToSourceTypes,
                       )
                     ],

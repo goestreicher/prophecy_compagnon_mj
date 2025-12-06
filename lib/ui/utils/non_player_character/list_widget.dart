@@ -117,7 +117,7 @@ class NPCListWidget extends StatelessWidget {
     var theme = Theme.of(context);
     var filtered = npcs.where(
         (NonPlayerCharacterSummary npc) => filter == null || filter!.match(npc)
-    ).toList();
+      ).toList();
 
     return ListView.builder(
       itemCount: filtered.length,
