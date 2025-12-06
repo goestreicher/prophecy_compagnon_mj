@@ -40,32 +40,7 @@ class _CreaturesListPageState extends State<CreaturesListPage> {
   }
 
   Future<void> updateCreaturesList() async {
-    if(filter.source != null) {
-      creatures = (await CreatureSummary.forSource(
-          filter.source!,
-          filter.category,
-          nameFilter: filter.search
-      )).toList();
-    }
-    else if(filter.sourceType != null) {
-      creatures = (await CreatureSummary.forSourceType(
-          filter.sourceType!,
-          filter.category,
-          nameFilter: filter.search
-      )).toList();
-    }
-    else if(filter.category != null) {
-      creatures = (await CreatureSummary.forCategory(
-          filter.category!,
-          nameFilter: filter.search
-      )).toList();
-    }
-    else {
-      creatures = (await CreatureSummary.getAll(
-          nameFilter: filter.search
-      )).toList();
-    }
-
+    creatures = (await CreatureSummary.getAll()).toList();
     creatures.sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
   }
 
@@ -88,6 +63,7 @@ class _CreaturesListPageState extends State<CreaturesListPage> {
 
         return CreaturesListWidget(
           creatures: creatures,
+          filter: filter,
           selected: selected,
           onSelected: (String? id) {
             if(id == null && GoRouter.of(context).state.fullPath!.endsWith('/:uuid')) {
@@ -144,7 +120,6 @@ class _CreaturesListPageState extends State<CreaturesListPage> {
                 onFilterChanged: (CreatureListFilter f) {
                   setState(() {
                     filter = f;
-                    resetCreaturesList();
                     selected = null;
                   });
                 }

@@ -14,6 +14,12 @@ class CreatureListFilter {
   CreatureCategory? category;
   String? search;
 
+  bool match(CreatureSummary c) =>
+      (sourceType == null || c.source.type == sourceType)
+      && (source == null || c.source == source)
+      && (category == null || c.category == category)
+      && (search == null || c.name.toLowerCase().contains(search!.toLowerCase()));
+
   @override
   int get hashCode => Object.hash(sourceType, source, category, search);
 

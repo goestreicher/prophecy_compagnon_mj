@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../classes/creature.dart';
 import '../../../classes/object_source.dart';
+import 'list_filter.dart';
 
 class CreatureActionButtons extends StatelessWidget {
   const CreatureActionButtons({
@@ -93,6 +94,7 @@ class CreaturesListWidget extends StatelessWidget {
   const CreaturesListWidget({
     super.key,
     required this.creatures,
+    this.filter,
     this.selected,
     required this.onSelected,
     required this.onEditRequested,
@@ -102,6 +104,7 @@ class CreaturesListWidget extends StatelessWidget {
   });
 
   final List<CreatureSummary> creatures;
+  final CreatureListFilter? filter;
   final String? selected;
   final void Function(String?) onSelected;
   final void Function(String) onEditRequested;
@@ -112,16 +115,19 @@ class CreaturesListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var filtered = creatures.where(
+        (CreatureSummary c) => filter == null || filter!.match(c)
+    ).toList();
 
     return ListView.builder(
-      itemCount: creatures.length,
+      itemCount: filtered.length,
       itemBuilder: (BuildContext context, int index) {
-        var isSelected = selected == creatures[index].id;
+        var isSelected = selected == filtered[index].id;
 
         return Center(
           child: GestureDetector(
             onTap: () {
-              onSelected(isSelected ? null : creatures[index].id);
+              onSelected(isSelected ? null : filtered[index].id);
             },
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
@@ -140,7 +146,7 @@ class CreaturesListWidget extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          creatures[index].name,
+                          filtered[index].name,
                           style: theme.textTheme.bodyMedium!.copyWith(
                             fontWeight: isSelected
                               ? null
@@ -152,11 +158,11 @@ class CreaturesListWidget extends StatelessWidget {
                         ),
                       ),
                       CreatureActionButtons(
-                        creature: creatures[index],
+                        creature: filtered[index],
                         highlight: isSelected,
-                        onEdit: () => onEditRequested(creatures[index].id),
-                        onClone: () => onCloneRequested(creatures[index].id),
-                        onDelete: () => onDeleteRequested(creatures[index].id),
+                        onEdit: () => onEditRequested(filtered[index].id),
+                        onClone: () => onCloneRequested(filtered[index].id),
+                        onDelete: () => onDeleteRequested(filtered[index].id),
                         restrictModificationToSourceTypes: restrictModificationToSourceTypes,
                       )
                     ],

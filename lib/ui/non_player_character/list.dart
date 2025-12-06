@@ -41,35 +41,7 @@ class _NPCsListPageState extends State<NPCsListPage> {
   }
 
   Future<void> updateNPCsList() async {
-    if(filter.source != null) {
-      npcs = (await NonPlayerCharacterSummary.forSource(
-                filter.source!,
-                filter.category,
-                filter.subCategory,
-                nameFilter: filter.search,
-              )).toList();
-    }
-    else if(filter.sourceType != null) {
-      npcs = (await NonPlayerCharacterSummary.forSourceType(
-                filter.sourceType!,
-                filter.category,
-                filter.subCategory,
-                nameFilter: filter.search,
-              )).toList();
-    }
-    else if(filter.category != null) {
-      npcs = (await NonPlayerCharacterSummary.forCategory(
-                filter.category!,
-                filter.subCategory,
-                nameFilter: filter.search,
-              )).toList();
-    }
-    else {
-      npcs = (await NonPlayerCharacterSummary.getAll(
-                  nameFilter: filter.search
-              )).toList();
-    }
-
+    npcs = (await NonPlayerCharacterSummary.getAll()).toList();
     npcs.sort((a, b) => a.name.toLowerCase().compareTo(b.name.toLowerCase()));
   }
 
@@ -92,6 +64,7 @@ class _NPCsListPageState extends State<NPCsListPage> {
 
         return NPCListWidget(
           npcs: npcs,
+          filter: filter,
           selected: selected,
           onSelected: (String? id) {
             if(id == null && GoRouter.of(context).state.fullPath!.endsWith('/:uuid')) {
@@ -148,7 +121,6 @@ class _NPCsListPageState extends State<NPCsListPage> {
                 onFilterChanged: (NPCListFilter f) {
                   setState(() {
                     filter = f;
-                    resetNPCsList();
                     selected = null;
                   });
                 }

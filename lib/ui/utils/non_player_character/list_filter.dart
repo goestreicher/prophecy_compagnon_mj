@@ -1,3 +1,4 @@
+import '../../../classes/non_player_character.dart';
 import '../../../classes/npc_category.dart';
 import '../../../classes/object_source.dart';
 
@@ -15,6 +16,13 @@ class NPCListFilter {
   NPCCategory? category;
   NPCSubCategory? subCategory;
   String? search;
+
+  bool match(NonPlayerCharacterSummary npc) =>
+      (sourceType == null || npc.source.type == sourceType)
+      && (source == null || npc.source == source)
+      && (category == null || npc.category == category)
+      && (subCategory == null || npc.subCategory == subCategory)
+      && (search == null || npc.name.toLowerCase().contains(search!.toLowerCase()));
 
   @override
   int get hashCode => Object.hash(sourceType, source, category, subCategory, search);

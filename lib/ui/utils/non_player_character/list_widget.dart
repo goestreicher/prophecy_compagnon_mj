@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../classes/non_player_character.dart';
 import '../../../classes/object_source.dart';
+import 'list_filter.dart';
 
 class NPCActionButtons extends StatelessWidget {
   const NPCActionButtons({
@@ -93,6 +94,7 @@ class NPCListWidget extends StatelessWidget {
   const NPCListWidget({
     super.key,
     required this.npcs,
+    this.filter,
     this.selected,
     required this.onSelected,
     required this.onEditRequested,
@@ -102,6 +104,7 @@ class NPCListWidget extends StatelessWidget {
   });
 
   final List<NonPlayerCharacterSummary> npcs;
+  final NPCListFilter? filter;
   final String? selected;
   final void Function(String?) onSelected;
   final void Function(String) onEditRequested;
@@ -112,16 +115,19 @@ class NPCListWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var filtered = npcs.where(
+        (NonPlayerCharacterSummary npc) => filter == null || filter!.match(npc)
+    ).toList();
 
     return ListView.builder(
-      itemCount: npcs.length,
+      itemCount: filtered.length,
       itemBuilder: (BuildContext context, int index) {
-        var isSelected = npcs[index].id == selected;
+        var isSelected = filtered[index].id == selected;
 
         return Center(
           child: GestureDetector(
             onTap: () {
-              onSelected(isSelected ? null : npcs[index].id);
+              onSelected(isSelected ? null : filtered[index].id);
             },
             child: MouseRegion(
               cursor: SystemMouseCursors.click,
@@ -140,7 +146,7 @@ class NPCListWidget extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          npcs[index].name,
+                          filtered[index].name,
                           style: theme.textTheme.bodyMedium!.copyWith(
                             fontWeight: isSelected
                                 ? null
@@ -153,11 +159,11 @@ class NPCListWidget extends StatelessWidget {
                         ),
                       ),
                       NPCActionButtons(
-                        npc: npcs[index],
+                        npc: filtered[index],
                         highlight: isSelected,
-                        onEdit: () => onEditRequested(npcs[index].id),
-                        onClone: () => onCloneRequested(npcs[index].id),
-                        onDelete: () => onDeleteRequested(npcs[index].id),
+                        onEdit: () => onEditRequested(filtered[index].id),
+                        onClone: () => onCloneRequested(filtered[index].id),
+                        onDelete: () => onDeleteRequested(filtered[index].id),
                         restrictModificationToSourceTypes: restrictModificationToSourceTypes,
                       ),
                     ],
