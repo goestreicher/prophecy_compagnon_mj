@@ -6,7 +6,7 @@ import '../../../../classes/caste/interdicts.dart';
 import '../../../../classes/human_character.dart';
 import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
-import '../background/interdict_picker_dialog.dart';
+import 'interdict_picker_dialog.dart';
 
 class CharacterEditCasteInterdictsWidget extends StatelessWidget {
   const CharacterEditCasteInterdictsWidget({

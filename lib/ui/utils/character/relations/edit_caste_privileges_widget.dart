@@ -5,7 +5,7 @@ import '../../../../classes/caste/character_caste.dart';
 import '../../../../classes/human_character.dart';
 import '../../dismissible_dialog.dart';
 import '../../widget_group_container.dart';
-import '../background/caste_privilege_picker_dialog.dart';
+import 'caste_privilege_picker_dialog.dart';
 
 class CharacterEditCastePrivilegesWidget extends StatelessWidget {
   const CharacterEditCastePrivilegesWidget({
