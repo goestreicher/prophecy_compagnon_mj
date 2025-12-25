@@ -70,6 +70,11 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
         caste: json['caste'] == null
             ? null
             : CharacterCaste.fromJson(json['caste'] as Map<String, dynamic>),
+        honoraryCaste: json['honorary_caste'] == null
+            ? null
+            : CharacterCaste.fromJson(
+                json['honorary_caste'] as Map<String, dynamic>,
+              ),
         age: (json['age'] as num?)?.toInt() ?? 25,
         height: (json['height'] as num?)?.toDouble() ?? 1.7,
         size: (json['size'] as num?)?.toDouble(),
@@ -131,6 +136,7 @@ Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
       'favors': EntityDraconicFavors.toJson(instance.favors),
       'fervor': instance.fervor.toJson(),
       'caste': instance.caste.toJson(),
+      'honorary_caste': instance.honoraryCaste?.toJson(),
       'age': instance.age,
       'height': instance.height,
       'weight': instance.weight,

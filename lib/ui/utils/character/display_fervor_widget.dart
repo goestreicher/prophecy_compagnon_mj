@@ -11,8 +11,6 @@ class CharacterDisplayFervorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 16.0,

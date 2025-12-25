@@ -21,6 +21,9 @@ NonPlayerCharacterSummary _$NonPlayerCharacterSummaryFromJson(
       ? ObjectLocation.memory
       : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
   source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
+  caste: json['caste'] == null
+      ? null
+      : CharacterCaste.fromJson(json['caste'] as Map<String, dynamic>),
   icon: json['icon'] == null
       ? null
       : ExportableBinaryData.fromJson(json['icon'] as Map<String, dynamic>),
@@ -36,6 +39,7 @@ Map<String, dynamic> _$NonPlayerCharacterSummaryToJson(
   'sub_category': const NPCSubcategoryJsonConverter().toJson(
     instance.subCategory,
   ),
+  'caste': instance.caste?.toJson(),
   'icon': instance.icon?.toJson(),
 };
 
@@ -93,6 +97,11 @@ NonPlayerCharacter _$NonPlayerCharacterFromJson(Map<String, dynamic> json) =>
         caste: json['caste'] == null
             ? null
             : CharacterCaste.fromJson(json['caste'] as Map<String, dynamic>),
+        honoraryCaste: json['honorary_caste'] == null
+            ? null
+            : CharacterCaste.fromJson(
+                json['honorary_caste'] as Map<String, dynamic>,
+              ),
         disadvantages: CharacterDisadvantages.fromJson(
           json['disadvantages'] as List?,
         ),
@@ -144,6 +153,7 @@ Map<String, dynamic> _$NonPlayerCharacterToJson(NonPlayerCharacter instance) =>
       'favors': EntityDraconicFavors.toJson(instance.favors),
       'fervor': instance.fervor.toJson(),
       'caste': instance.caste.toJson(),
+      'honorary_caste': instance.honoraryCaste?.toJson(),
       'age': instance.age,
       'height': instance.height,
       'weight': instance.weight,

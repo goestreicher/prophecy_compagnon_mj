@@ -88,6 +88,7 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
     required NPCSubCategory subCategory,
     ObjectLocation location = ObjectLocation.memory,
     required ObjectSource source,
+    CharacterCaste? caste,
     ExportableBinaryData? icon,
   })
   {
@@ -99,6 +100,7 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
           subCategory: subCategory,
           location: location,
           source: source,
+          caste: caste,
           icon: icon,
         );
     _cache.add(id, summ);
@@ -112,6 +114,7 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
     super.location,
     required this.category,
     required this.subCategory,
+    this.caste,
     this.icon,
   });
 
@@ -119,6 +122,7 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
   final String id;
   final NPCCategory category;
   final NPCSubCategory subCategory;
+  final CharacterCaste? caste;
   final ExportableBinaryData? icon;
 
   static Future<Iterable<String>> ids() async {
@@ -433,6 +437,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     int renown = 0,
     CharacterOrigin? origin,
     CharacterCaste? caste,
+    CharacterCaste? honoraryCaste,
     CharacterDisadvantages? disadvantages,
     CharacterAdvantages? advantages,
     CharacterTendencies? tendencies,
@@ -464,6 +469,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
             equipment: equipment,
             magic: magic,
             caste: caste,
+            honoraryCaste: honoraryCaste,
             age: age,
             height: height,
             size: size,
@@ -507,6 +513,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     super.equipment,
     super.magic,
     super.caste,
+    super.honoraryCaste,
     super.age,
     super.height,
     super.size,
@@ -551,6 +558,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
       category: category,
       subCategory: subCategory,
       source: source,
+      caste: caste,
       icon: icon?.clone(),
       location: location,
     );

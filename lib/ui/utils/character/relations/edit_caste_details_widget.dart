@@ -5,6 +5,7 @@ import '../../widget_group_container.dart';
 import 'edit_caste_career_widget.dart';
 import 'edit_caste_privileges_widget.dart';
 import 'edit_caste_interdicts_widget.dart';
+import 'edit_honorary_caste_widget.dart';
 import 'view_caste_benefits_widget.dart';
 import 'view_caste_techniques_widget.dart';
 
@@ -32,6 +33,9 @@ class CharacterEditCasteDetailsWidget extends StatelessWidget {
         spacing: 8.0,
         children: [
           CharacterEditCasteCareerWidget(
+            character: character,
+          ),
+          CharacterEditHonoraryCasteWidget(
             character: character,
           ),
           CharacterEditCasteInterdictsWidget(

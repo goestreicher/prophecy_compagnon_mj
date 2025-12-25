@@ -173,6 +173,7 @@ class HumanCharacter extends EntityBase with MagicUser {
     super.image,
     super.icon,
     CharacterCaste? caste,
+    this.honoraryCaste,
     this.luck = 0,
     this.proficiency = 0,
     this.renown = 0,
@@ -196,6 +197,7 @@ class HumanCharacter extends EntityBase with MagicUser {
   }
 
   CharacterCaste caste;
+  CharacterCaste? honoraryCaste;
   int age;
   double height;
   double weight;

@@ -82,6 +82,24 @@ class CharacterDisplayGeneralWidget extends StatelessWidget {
               ),
             ],
           ),
+          if(character.honoraryCaste != null)
+            Row(
+              spacing: 16.0,
+              children: [
+                Flexible(
+                  child: _GeneralWidgetHeader(
+                    title: 'Caste Honoraire',
+                    value: character.honoraryCaste!.caste.title
+                  )
+                ),
+                Flexible(
+                  child: _GeneralWidgetHeader(
+                    title: 'Statut Honoraire',
+                    value: Caste.statusName(character.honoraryCaste!.caste, character.honoraryCaste!.status)
+                  )
+                ),
+              ],
+            ),
           Row(
             spacing: 16.0,
             children: [

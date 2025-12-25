@@ -169,6 +169,7 @@ class PlayerCharacter extends HumanCharacter {
     super.equipment,
     super.magic,
     super.caste,
+    super.honoraryCaste,
     super.age,
     super.height,
     super.size,
