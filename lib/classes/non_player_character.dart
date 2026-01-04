@@ -688,7 +688,6 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   }
 
   static void preImportFilter(Map<String, dynamic> json) {
-    json.remove('uuid');
     json.remove('source');
 
     if(json.containsKey('unique') && !json['unique'] && json.containsKey('equipment') && json['equipment'] is List) {
@@ -707,7 +706,12 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
      */
     var defaultId = sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
     if(await NonPlayerCharacterSummary.exists(defaultId)) {
-      throw(NonPlayerCharacterExistsException(id: defaultId));
+      throw(NonPlayerCharacterNameExistsException(id: defaultId));
+    }
+    if(json.containsKey('uuid')) {
+      if(await NonPlayerCharacterSummary.exists(json['uuid']!)) {
+        throw(NonPlayerCharacterIdExistsException(id: json['uuid']));
+      }
     }
 
     var model = NonPlayerCharacter.fromJson(json);
@@ -742,13 +746,24 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   }
 }
 
-class NonPlayerCharacterExistsException implements Exception {
-  const NonPlayerCharacterExistsException({ required this.id });
+class NonPlayerCharacterNameExistsException implements Exception {
+  const NonPlayerCharacterNameExistsException({ required this.id });
 
   final String id;
 
   @override
   String toString() {
-    return 'Un PNJ avec ce nom (ou un nom similaire existe déjà), ID: $id';
+    return 'Un PNJ avec ce nom (ou un nom similaire) existe déjà, ID: $id';
+  }
+}
+
+class NonPlayerCharacterIdExistsException implements Exception {
+  const NonPlayerCharacterIdExistsException({ required this.id });
+
+  final String id;
+
+  @override
+  String toString() {
+    return 'Un PNJ avec cet identifiant existe déjà, ID: $id';
   }
 }
