@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../../../classes/entity_base.dart';
+import '../../../../classes/resource_link/assets_resource_link_provider.dart';
+import '../../../../classes/resource_link/multi_resource_link_provider.dart';
+import '../../../../classes/resource_link/resource_link.dart';
+import '../../../../classes/resource_link/sourced_resource_link_provider.dart';
 import '../../markdown_fleather_toolbar.dart';
 import '../../widget_group_container.dart';
 
@@ -54,19 +58,28 @@ class _EntityEditDescriptionWidgetState extends State<EntityEditDescriptionWidge
           MarkdownFleatherToolbarFormField(
             controller: descriptionController,
             showResourcePicker: true,
+            localResourceLinkProvider: SourcedResourceLinkProvider(source: widget.entity.source),
             onSaved: (String value) {
               widget.entity.description = value;
             },
           ),
           SizedBox(
             height: 300,
-            child: FleatherField(
-              controller: descriptionController,
-              focusNode: descriptionFocusNode,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
+            child: FleatherTheme(
+              data: FleatherThemeData.fallback(context).copyWith(
+                link: FleatherThemeData.fallback(context).link.copyWith(
+                  color: theme.colorScheme.primary,
+                  fontWeight: FontWeight.bold,
+                )
               ),
-              expands: true,
+              child: FleatherField(
+                controller: descriptionController,
+                focusNode: descriptionFocusNode,
+                decoration: const InputDecoration(
+                  border: OutlineInputBorder(),
+                ),
+                expands: true,
+              ),
             ),
           ),
         ],

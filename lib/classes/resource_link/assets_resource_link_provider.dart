@@ -1,7 +1,6 @@
-import 'package:prophecy_compagnon_mj/classes/non_player_character.dart';
-import 'package:prophecy_compagnon_mj/classes/object_location.dart';
-
 import '../creature.dart';
+import '../non_player_character.dart';
+import '../object_location.dart';
 import '../place.dart';
 import '../star.dart';
 import 'resource_link.dart';
@@ -42,11 +41,7 @@ class AssetsResourceLinkProvider extends ResourceLinkProvider {
       );
     }
     else if(type == ResourceLinkType.place) {
-      ret.addAll(
-        (await PlaceSummary.forLocationType(ObjectLocationType.assets))
-        .map((PlaceSummary summ) =>
-          ResourceLink.createLinkForResource(type, false, summ.name, summ.id))
-      );
+      await _createPlaceLinkTree('monde', ret, '');
     }
     else if(type == ResourceLinkType.star) {
       ret.addAll(
@@ -57,5 +52,15 @@ class AssetsResourceLinkProvider extends ResourceLinkProvider {
     }
 
     return ret;
+  }
+
+  Future<void> _createPlaceLinkTree(String parent, List<ResourceLink> links, String prefix) async {
+    for(PlaceSummary summ in (await PlaceSummary.withParent(parent))) {
+      if(summ.location.type != ObjectLocationType.assets) continue;
+
+      String display = '$prefix${summ.name}';
+      links.add(ResourceLink.createLinkForResource(ResourceLinkType.place, false, summ.name, summ.id, label: display));
+      await _createPlaceLinkTree(summ.id, links, '$prefix${summ.name} > ');
+    }
   }
 }

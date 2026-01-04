@@ -12,7 +12,10 @@ import '../../../classes/object_location.dart';
 import '../../../classes/object_source.dart';
 import '../../../classes/place.dart';
 import '../../../classes/place_map.dart';
+import '../../../classes/resource_link/assets_resource_link_provider.dart';
+import '../../../classes/resource_link/multi_resource_link_provider.dart';
 import '../../../classes/resource_link/resource_link.dart';
+import '../../../classes/resource_link/sourced_resource_link_provider.dart';
 import '../character_role_display_widget.dart';
 import '../markdown_display_widget.dart';
 import '../markdown_fleather_toolbar.dart';
@@ -107,6 +110,16 @@ class PlaceDisplayWidget extends StatelessWidget {
             ? place.source == modifyIfSourceMatches
             : place.source == ObjectSource.local;
 
+        ResourceLinkProvider? effectiveResourceLinkProvider = resourceLinkProvider;
+        if(effectiveResourceLinkProvider == null && canEdit) {
+          effectiveResourceLinkProvider = MultiResourceLinkProvider(
+            providers: [
+              AssetsResourceLinkProvider(),
+              SourcedResourceLinkProvider(source: ObjectSource.local),
+            ]
+          );
+        }
+
         var actionButtons = <Widget>[];
 
         if(place.location.type != ObjectLocationType.assets) {
@@ -187,7 +200,7 @@ class PlaceDisplayWidget extends StatelessWidget {
                                     builder: (BuildContext context) => PlaceEditDialog(
                                       parent: place.parentId!,
                                       place: place,
-                                      resourceLinkProvider: resourceLinkProvider,
+                                      resourceLinkProvider: effectiveResourceLinkProvider,
                                     ),
                                   );
                                   if(child == null) return;

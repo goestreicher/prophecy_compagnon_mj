@@ -22,6 +22,8 @@ class ResourceLink {
   ResourceLink({
     required this.name,
     required this.link,
+    this.label,
+    this.clickable = true,
   }) {
     if(!ResourceLink.isValidLink(link)) {
       throw(FormatException('Invalid link URI $link'));
@@ -34,6 +36,10 @@ class ResourceLink {
 
   String name;
   String link;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  String? label;
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  bool clickable;
   @JsonKey(includeFromJson: false, includeToJson: false)
   late ResourceLinkType type;
   @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,10 +54,11 @@ class ResourceLink {
         && ResourceLinkType.values.asNameMap().containsKey(uri.pathSegments[0]);
   }
 
-  static ResourceLink createLinkForResource(ResourceLinkType type, bool local, String display, String id) {
+  static ResourceLink createLinkForResource(ResourceLinkType type, bool local, String display, String id, {String? label}) {
     return ResourceLink(
       name: display,
       link: 'resource://${local ? "store" : "assets"}/${type.name}/$id',
+      label: label,
     );
   }
 

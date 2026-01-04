@@ -29,6 +29,18 @@ class _ResourceLinkEditWidgetState extends State<ResourceLinkEditWidget> {
   ResourceLink? selected;
 
   @override
+  void didUpdateWidget(covariant ResourceLinkEditWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if(oldWidget.provider.sourceNames() != widget.provider.sourceNames()) {
+      sourceName = null;
+      selected = null;
+      if(type != null) {
+        linksFuture = widget.provider.linksForType(type!, sourceName: sourceName);
+      }
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
@@ -126,12 +138,13 @@ class _ResourceLinkEditWidgetState extends State<ResourceLinkEditWidget> {
             }
 
             if(snapshot.hasData && snapshot.data != null) {
-              links.addAll(snapshot.data!);
+              links.addAll(snapshot.data!.where((ResourceLink l) => l.clickable));
               links.sort((ResourceLink a, ResourceLink b) => a.name.compareTo(b.name));
             }
 
             return DropdownMenuFormField(
               enabled: sourceName != null && type != null,
+              enableFilter: true,
               trailingIcon: trailing,
               controller: selectionController,
               label: Text(type == null ? 'Ressource' : type!.title),
@@ -140,9 +153,13 @@ class _ResourceLinkEditWidgetState extends State<ResourceLinkEditWidget> {
                 border: OutlineInputBorder(),
               ),
               textStyle: theme.textTheme.bodyMedium,
+              menuStyle: const MenuStyle(
+                alignment: Alignment.bottomLeft,
+                maximumSize: WidgetStatePropertyAll(Size.fromHeight(200.0))
+              ),
               dropdownMenuEntries: links
-                  .map((ResourceLink l) => DropdownMenuEntry(value: l, label: l.name))
-                  .toList(),
+                .map((ResourceLink l) => DropdownMenuEntry(value: l, label: l.label ?? l.name, enabled: l.clickable))
+                .toList(),
               onSelected: (ResourceLink? l) {
                 widget.onChanged(l);
               },
