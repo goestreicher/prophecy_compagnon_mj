@@ -92,7 +92,7 @@ class _CharacterRoleEditWidgetState extends State<CharacterRoleEditWidget> {
           ),
         if(useResourceLink)
           ResourceLinkEditWidget(
-            restrictToTypes: widget.resourceLinkProvider?.availableTypes()
+            restrictToTypes: (widget.resourceLinkProvider?.availableTypes() ?? [ResourceLinkType.npc, ResourceLinkType.pc])
               .where((ResourceLinkType t) => [ResourceLinkType.npc, ResourceLinkType.pc].contains(t))
               .toList(),
             provider: widget.resourceLinkProvider,
