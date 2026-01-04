@@ -3,9 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../../../classes/entity_base.dart';
-import '../../../../classes/resource_link/assets_resource_link_provider.dart';
-import '../../../../classes/resource_link/multi_resource_link_provider.dart';
-import '../../../../classes/resource_link/resource_link.dart';
 import '../../../../classes/resource_link/sourced_resource_link_provider.dart';
 import '../../markdown_fleather_toolbar.dart';
 import '../../widget_group_container.dart';
