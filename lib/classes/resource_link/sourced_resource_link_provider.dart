@@ -75,7 +75,13 @@ class SourcedResourceLinkProvider extends ResourceLinkProvider {
   Future<void> _createPlaceLinkTree(String parent, List<ResourceLink> links, String prefix) async {
     for(PlaceSummary summ in (await PlaceSummary.withParent(parent))) {
       String display = '$prefix${summ.name}';
-      var link = ResourceLink.createLinkForResource(ResourceLinkType.place, false, summ.name, summ.id, label: display);
+      var link = ResourceLink.createLinkForResource(
+        ResourceLinkType.place,
+        !(summ.location.type == ObjectLocationType.assets),
+        summ.name,
+        summ.id,
+        label: display
+      );
       if(summ.source != source) {
         link.clickable = false;
       }
