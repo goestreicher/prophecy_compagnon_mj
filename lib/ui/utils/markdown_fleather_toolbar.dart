@@ -87,24 +87,35 @@ class _MarkdownFleatherToolbarState extends State<MarkdownFleatherToolbar> {
             );
             if(result == null) return;
 
-            widget.controller.replaceText(
-              widget.controller.selection.baseOffset,
-              0,
-              result.name
-            );
-            widget.controller.updateSelection(
-              TextSelection(
-                baseOffset: widget.controller.selection.baseOffset,
-                extentOffset: widget.controller.selection.baseOffset + result.name.length,
-              )
-            );
+            String? selectedText;
+            var selection = widget.controller.selection;
+            var selectionLength = selection.extentOffset - selection.baseOffset;
+            if(selectionLength > 0) {
+              selectedText = selection.textInside(widget.controller.plainTextEditingValue.text);
+            }
+
+            if(selectionLength == 0) {
+              widget.controller.replaceText(
+                selection.baseOffset,
+                0,
+                result.name
+              );
+              widget.controller.updateSelection(
+                TextSelection(
+                  baseOffset: widget.controller.selection.baseOffset,
+                  extentOffset: widget.controller.selection.baseOffset + result.name.length,
+                )
+              );
+              selectionLength = result.name.length;
+            }
+
             widget.controller.formatSelection(
               ParchmentAttribute.link.fromString(result.link),
             );
             widget.controller.updateSelection(
               TextSelection(
-                baseOffset: widget.controller.selection.baseOffset + result.name.length,
-                extentOffset: widget.controller.selection.baseOffset + result.name.length,
+                baseOffset: widget.controller.selection.baseOffset + selectionLength,
+                extentOffset: widget.controller.selection.baseOffset + selectionLength,
               )
             );
           },
