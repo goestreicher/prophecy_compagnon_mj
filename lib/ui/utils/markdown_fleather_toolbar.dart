@@ -117,28 +117,28 @@ class _MarkdownFleatherToolbarState extends State<MarkdownFleatherToolbar> {
       ]);
     }
 
-    trailing.addAll([
-      VerticalDivider(
-        indent: 16,
-        endIndent: 16,
-      ),
-      FLIconButton(
-        onPressed: !hasPendingChanges ? null : () {
-          widget.onSaved?.call(
-            ParchmentMarkdownCodec().encode(widget.controller.document)
-          );
-          setState(() {
-            hasPendingChanges = false;
-          });
-        },
-        size: 32,
-        icon: Icon(
-          Icons.check_circle_rounded,
-          size: 20,
-          color: hasPendingChanges ? theme.iconTheme.color : theme.disabledColor,
-        ),
-      ),
-    ]);
+    // trailing.addAll([
+    //   VerticalDivider(
+    //     indent: 16,
+    //     endIndent: 16,
+    //   ),
+    //   FLIconButton(
+    //     onPressed: !hasPendingChanges ? null : () {
+    //       widget.onSaved?.call(
+    //         ParchmentMarkdownCodec().encode(widget.controller.document)
+    //       );
+    //       setState(() {
+    //         hasPendingChanges = false;
+    //       });
+    //     },
+    //     size: 32,
+    //     icon: Icon(
+    //       Icons.check_circle_rounded,
+    //       size: 20,
+    //       color: hasPendingChanges ? theme.iconTheme.color : theme.disabledColor,
+    //     ),
+    //   ),
+    // ]);
 
     return Container(
       decoration: BoxDecoration(
