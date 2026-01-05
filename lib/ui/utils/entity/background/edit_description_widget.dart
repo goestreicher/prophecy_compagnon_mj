@@ -4,6 +4,7 @@ import 'package:parchment/codecs.dart';
 
 import '../../../../classes/entity_base.dart';
 import '../../../../classes/resource_link/sourced_resource_link_provider.dart';
+import '../../markdown_fleather_field.dart';
 import '../../markdown_fleather_toolbar.dart';
 import '../../widget_group_container.dart';
 
@@ -62,21 +63,9 @@ class _EntityEditDescriptionWidgetState extends State<EntityEditDescriptionWidge
           ),
           SizedBox(
             height: 300,
-            child: FleatherTheme(
-              data: FleatherThemeData.fallback(context).copyWith(
-                link: FleatherThemeData.fallback(context).link.copyWith(
-                  color: theme.colorScheme.primary,
-                  fontWeight: FontWeight.bold,
-                )
-              ),
-              child: FleatherField(
-                controller: descriptionController,
-                focusNode: descriptionFocusNode,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                ),
-                expands: true,
-              ),
+            child: MarkdownFleatherField(
+              controller: descriptionController,
+              focusNode: descriptionFocusNode,
             ),
           ),
         ],
