@@ -18,6 +18,7 @@ import '../../../classes/resource_link/resource_link.dart';
 import '../../../classes/resource_link/sourced_resource_link_provider.dart';
 import '../character_role_display_widget.dart';
 import '../markdown_display_widget.dart';
+import '../markdown_fleather_field.dart';
 import '../markdown_fleather_toolbar.dart';
 import 'place_edit_dialog.dart';
 import '../widget_group_container.dart';
@@ -339,6 +340,9 @@ class PlaceDisplayWidget extends StatelessWidget {
                     place.description.general = value;
                     onEdited?.call(place);
                   },
+                  localResourceLinkProvider: place.location.type != ObjectLocationType.assets
+                    ? SourcedResourceLinkProvider(source: place.source)
+                    : null,
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Histoire',
@@ -418,12 +422,14 @@ class _PlaceDescriptionItemDisplayWidget extends StatelessWidget {
     this.value,
     this.canEdit = false,
     this.onChanged,
+    this.localResourceLinkProvider,
   });
 
   final String item;
   final String? value;
   final bool canEdit;
   final void Function(String)? onChanged;
+  final ResourceLinkProvider? localResourceLinkProvider;
 
   @override
   Widget build(BuildContext context) {
@@ -446,6 +452,7 @@ class _PlaceDescriptionItemDisplayWidget extends StatelessWidget {
                         return _PlaceDescriptionItemEditDialog(
                           item: item,
                           value: value,
+                          localResourceLinkProvider: localResourceLinkProvider,
                         );
                       }
                     );
@@ -475,10 +482,15 @@ class _PlaceDescriptionItemDisplayWidget extends StatelessWidget {
 }
 
 class _PlaceDescriptionItemEditDialog extends StatefulWidget {
-  const _PlaceDescriptionItemEditDialog({ required this.item, this.value });
+  const _PlaceDescriptionItemEditDialog({
+    required this.item,
+    this.value,
+    this.localResourceLinkProvider,
+  });
 
   final String item;
   final String? value;
+  final ResourceLinkProvider? localResourceLinkProvider;
 
   @override
   State<_PlaceDescriptionItemEditDialog> createState() => _PlaceDescriptionItemEditDialogState();
@@ -522,13 +534,19 @@ class _PlaceDescriptionItemEditDialogState extends State<_PlaceDescriptionItemEd
     return AlertDialog(
       title: Text(widget.item),
       content: SizedBox(
-        width: 600,
+        width: 800,
         child: Column(
-          spacing: 4.0,
+          spacing: 12.0,
           children: [
-            Center(child: MarkdownFleatherToolbar(controller: controller)),
+            Center(
+              child: MarkdownFleatherToolbar(
+                controller: controller,
+                showResourcePicker: true,
+                localResourceLinkProvider: widget.localResourceLinkProvider,
+              )
+            ),
             Expanded(
-              child: FleatherField(
+              child: MarkdownFleatherField(
                 controller: controller,
                 focusNode: documentFocusNode,
                 expands: true,
