@@ -87,12 +87,8 @@ class _MarkdownFleatherToolbarState extends State<MarkdownFleatherToolbar> {
             );
             if(result == null) return;
 
-            String? selectedText;
             var selection = widget.controller.selection;
             var selectionLength = selection.extentOffset - selection.baseOffset;
-            if(selectionLength > 0) {
-              selectedText = selection.textInside(widget.controller.plainTextEditingValue.text);
-            }
 
             if(selectionLength == 0) {
               widget.controller.replaceText(
