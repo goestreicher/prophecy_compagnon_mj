@@ -66,6 +66,7 @@ class _EntityEditDescriptionWidgetState extends State<EntityEditDescriptionWidge
             child: MarkdownFleatherField(
               controller: descriptionController,
               focusNode: descriptionFocusNode,
+              expands: true,
             ),
           ),
         ],
