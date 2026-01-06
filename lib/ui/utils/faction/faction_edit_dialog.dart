@@ -7,8 +7,12 @@ import 'package:parchment/codecs.dart';
 import '../../../classes/character_role.dart';
 import '../../../classes/faction.dart';
 import '../../../classes/object_source.dart';
+import '../../../classes/resource_link/assets_resource_link_provider.dart';
+import '../../../classes/resource_link/multi_resource_link_provider.dart';
 import '../../../classes/resource_link/resource_link.dart';
+import '../../../classes/resource_link/sourced_resource_link_provider.dart';
 import '../character_role_edit_widget.dart';
+import '../markdown_fleather_field.dart';
 import '../markdown_fleather_toolbar.dart';
 
 class FactionEditDialog extends StatefulWidget {
@@ -78,6 +82,14 @@ class _FactionEditDialogState extends State<FactionEditDialog> {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
+    ResourceLinkProvider? effectiveResourceLinkProvider = widget.resourceLinkProvider;
+    effectiveResourceLinkProvider ??= MultiResourceLinkProvider(
+        providers: [
+          AssetsResourceLinkProvider(),
+          SourcedResourceLinkProvider(source: ObjectSource.local),
+        ]
+      );
+
     return AlertDialog(
       title: Text('Éditer la faction'),
       content: SizedBox(
@@ -123,7 +135,7 @@ class _FactionEditDialogState extends State<FactionEditDialog> {
               CharacterRoleListEditWidget(
                 title: 'Dirigeants',
                 members: currentLeaders,
-                resourceLinkProvider: widget.resourceLinkProvider,
+                resourceLinkProvider: effectiveResourceLinkProvider,
                 onAdd: (CharacterRole m) {
                   setState(() {
                     currentLeaders.add(m);
@@ -139,7 +151,7 @@ class _FactionEditDialogState extends State<FactionEditDialog> {
               CharacterRoleListEditWidget(
                   title: 'Membres',
                   members: currentMembers,
-                  resourceLinkProvider: widget.resourceLinkProvider,
+                  resourceLinkProvider: effectiveResourceLinkProvider,
                   onAdd: (CharacterRole m) {
                     setState(() {
                       currentMembers.add(m);
@@ -152,9 +164,15 @@ class _FactionEditDialogState extends State<FactionEditDialog> {
                   }
               ),
               Divider(),
-              Center(child: MarkdownFleatherToolbar(controller: descriptionController)),
+              Center(
+                child: MarkdownFleatherToolbar(
+                  controller: descriptionController,
+                  showResourcePicker: true,
+                  localResourceLinkProvider: SourcedResourceLinkProvider(source: ObjectSource.local),
+                )
+              ),
               Expanded(
-                child: FleatherField(
+                child: MarkdownFleatherField(
                   controller: descriptionController,
                   focusNode: descriptionFocusNode,
                   expands: true,

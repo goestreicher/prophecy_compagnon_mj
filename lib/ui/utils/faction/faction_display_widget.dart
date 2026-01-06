@@ -80,7 +80,7 @@ class FactionDisplayWidget extends StatelessWidget {
               var j = await _export(faction);
               var jStr = json.encode(j);
               await FilePicker.platform.saveFile(
-                fileName: 'faction_${faction.id}.json',
+                fileName: 'faction-${faction.id}.json',
                 bytes: utf8.encode(jStr),
               );
             },
