@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/symbols.dart';
 import 'package:prophecy_compagnon_mj/ui/utils/entity/base/skill_picker_dialog.dart';
 
+import '../../../../classes/creature.dart';
 import '../../../../classes/entity/skill_family.dart';
 import '../../../../classes/entity/skill_instance.dart';
 import '../../../../classes/entity/specialized_skill_instance.dart';
@@ -39,6 +40,11 @@ class EntityEditSkillFamilyContainer extends StatelessWidget {
           }
         )
       );
+    }
+
+    String? reservedPrefix;
+    if(entity is Creature) {
+      reservedPrefix = 'creature:${entity.id}:specialized:misc:';
     }
 
     skillWidgets.add(
@@ -92,6 +98,7 @@ class EntityEditSkillFamilyContainer extends StatelessWidget {
                     );
                   return SpecializedSkillPickerDialog(
                     skills: characterSkills,
+                    reservedPrefix: reservedPrefix,
                   );
                 }
               );

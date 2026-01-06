@@ -5,7 +5,6 @@ import '../../../../classes/entity/skill.dart';
 import '../../../../classes/entity/skill_family.dart';
 import '../../../../classes/entity/skill_instance.dart';
 import '../../../../classes/entity/specialized_skill.dart';
-import '../../../../text_utils.dart';
 
 class SkillPickerDialog extends StatefulWidget {
   SkillPickerDialog({
@@ -241,12 +240,6 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
                         if(_currentSkill == null) return;
                         if(_specializedSkillController.text.isEmpty) return;
 
-                        var standardizedSpecializedSkillName = sentenceToCamelCase(transliterateFrenchToAscii(_specializedSkillController.text));
-                        var skillId = '${_currentSkill!.title}:$standardizedSpecializedSkillName';
-                        if(widget.reservedPrefix != null && _reserved) {
-                          skillId = '${widget.reservedPrefix}:$skillId';
-                        }
-
                         SpecializedSkill skill;
                         if(_currentSpecializedSkill != null) {
                           skill = _currentSpecializedSkill!;
@@ -256,6 +249,7 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
                             parent: _currentSkill!.skill,
                             name: _specializedSkillController.text,
                             reserved: _reserved,
+                            reservedPrefix: widget.reservedPrefix,
                           );
                         }
 

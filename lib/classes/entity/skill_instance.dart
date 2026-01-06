@@ -63,6 +63,7 @@ class SkillInstance with ChangeNotifier {
           parent: instance.skill,
           name: spec['name'],
           reserved: spec['reserved'],
+          reservedPrefix: spec.containsKey('reserved_prefix') ? spec['reserved_prefix'] : null,
         );
 
         instance.specializations.add(
@@ -78,11 +79,13 @@ class SkillInstance with ChangeNotifier {
     if(specializations.isNotEmpty) {
       ret['specializations'] = <Map<String, dynamic>>[];
       for(var sp in specializations) {
-        ret['specializations'].add(<String, dynamic>{
+        var j = <String, dynamic>{
           'name': sp.skill.name,
           'reserved': sp.skill.reserved,
           'value': sp.value,
-        });
+        };
+        if(sp.skill.reservedPrefix != null) j['reserved_prefix'] = sp.skill.reservedPrefix;
+        ret['specializations'].add(j);
       }
     }
     return ret;
