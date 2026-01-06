@@ -15,15 +15,15 @@ class FactionDisplayWidget extends StatelessWidget {
   const FactionDisplayWidget({
     super.key,
     this.factionId,
-    required this.onEdited,
-    required this.onDelete,
+    this.onEdited,
+    this.onDelete,
     this.modifyIfSourceMatches,
     this.resourceLinkProvider,
   });
 
   final String? factionId;
-  final void Function(Faction) onEdited;
-  final void Function(Faction) onDelete;
+  final void Function(Faction)? onEdited;
+  final void Function(Faction)? onDelete;
   final ObjectSource? modifyIfSourceMatches;
   final ResourceLinkProvider? resourceLinkProvider;
 
@@ -89,30 +89,37 @@ class FactionDisplayWidget extends StatelessWidget {
         }
 
         if(canEdit) {
-          actionButtons.addAll([
-            IconButton(
-              onPressed: () {
-                onDelete(faction);
-              },
-              icon: const Icon(Icons.delete),
-            ),
-            const SizedBox(width: 12.0),
-            IconButton(
-              onPressed: () async {
-                var child = await showDialog<Faction>(
-                  context: context,
-                  barrierDismissible: false,
-                  builder: (BuildContext context) => FactionEditDialog(
-                    faction: faction,
-                    resourceLinkProvider: resourceLinkProvider,
-                  ),
-                );
-                if(child == null) return;
-                onEdited(faction);
-              },
-              icon: const Icon(Icons.edit),
-            ),
-          ]);
+          if(onDelete != null) {
+            actionButtons.add(
+              IconButton(
+                onPressed: () {
+                  onDelete!(faction);
+                },
+                icon: const Icon(Icons.delete),
+              ),
+            );
+          }
+
+          if(onEdited != null) {
+            actionButtons.add(
+              IconButton(
+                onPressed: () async {
+                  var child = await showDialog<Faction>(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) =>
+                      FactionEditDialog(
+                        faction: faction,
+                        resourceLinkProvider: resourceLinkProvider,
+                      ),
+                  );
+                  if (child == null) return;
+                  onEdited!(faction);
+                },
+                icon: const Icon(Icons.edit),
+              ),
+            );
+          }
         }
 
         return SingleChildScrollView(
@@ -122,6 +129,7 @@ class FactionDisplayWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
+                  spacing: 12.0,
                   children: [
                     Text(
                       faction.name,

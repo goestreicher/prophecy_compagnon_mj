@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:prophecy_compagnon_mj/ui/utils/resource_link/star_link_handler.dart';
 
 import '../../../classes/resource_link/resource_link.dart';
 import 'creature_link_handler.dart';
 import 'encounter_link_handler.dart';
+import 'faction_link_handler.dart';
 import 'map_link_handler.dart';
 import 'npc_link_handler.dart';
 import 'pc_link_handler.dart';
 import 'place_link_handler.dart';
+import 'star_link_handler.dart';
 
 void handleResourceLinkClicked(ResourceLink link, BuildContext context) async {
   Widget? dialog;
@@ -18,6 +19,9 @@ void handleResourceLinkClicked(ResourceLink link, BuildContext context) async {
       break;
     case ResourceLinkType.encounter:
       dialog = await handleEncounterLinkClicked(link, context);
+      break;
+    case ResourceLinkType.faction:
+      dialog = await handleFactionLinkClicked(link, context);
       break;
     case ResourceLinkType.map:
       dialog = await handleMapLinkClicked(link, context);

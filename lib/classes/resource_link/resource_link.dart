@@ -5,6 +5,7 @@ part 'resource_link.g.dart';
 enum ResourceLinkType {
   creature(title: 'Créature'),
   encounter(title: 'Rencontre'),
+  faction(title: 'Faction'),
   map(title: 'Carte'),
   npc(title: 'PNJ'),
   pc(title: 'PJ'),

@@ -1,4 +1,5 @@
 import '../creature.dart';
+import '../faction.dart';
 import '../non_player_character.dart';
 import '../object_location.dart';
 import '../object_source.dart';
@@ -17,6 +18,7 @@ class SourcedResourceLinkProvider extends ResourceLinkProvider {
   @override
   List<ResourceLinkType> availableTypes() => [
     ResourceLinkType.creature,
+    ResourceLinkType.faction,
     ResourceLinkType.npc,
     ResourceLinkType.place,
     ResourceLinkType.star,
@@ -28,28 +30,31 @@ class SourcedResourceLinkProvider extends ResourceLinkProvider {
 
     if(type == ResourceLinkType.creature) {
       ret.addAll(
-          (await CreatureSummary.forSource(source, null))
-            .map((CreatureSummary summ) =>
-              ResourceLink.createLinkForResource(
-                type,
-                !(summ.location.type == ObjectLocationType.assets),
-                summ.name,
-                summ.id
-              )
-            )
+        (await CreatureSummary.forSource(source, null))
+        .map((CreatureSummary summ) =>
+          ResourceLink.createLinkForResource(
+            type,
+            !(summ.location.type == ObjectLocationType.assets),
+            summ.name,
+            summ.id
+          )
+        )
       );
+    }
+    else if(type == ResourceLinkType.faction) {
+      await _createFactionLinkTree(null, ret, '');
     }
     else if(type == ResourceLinkType.npc) {
       ret.addAll(
-          (await NonPlayerCharacterSummary.forSource(source, null, null))
-            .map((NonPlayerCharacterSummary summ) =>
-              ResourceLink.createLinkForResource(
-                  type,
-                  !(summ.location.type == ObjectLocationType.assets),
-                  summ.name,
-                  summ.id
-              )
-            )
+        (await NonPlayerCharacterSummary.forSource(source, null, null))
+        .map((NonPlayerCharacterSummary summ) =>
+          ResourceLink.createLinkForResource(
+              type,
+              !(summ.location.type == ObjectLocationType.assets),
+              summ.name,
+              summ.id
+          )
+        )
       );
     }
     else if(type == ResourceLinkType.place) {
@@ -57,19 +62,39 @@ class SourcedResourceLinkProvider extends ResourceLinkProvider {
     }
     else if(type == ResourceLinkType.star) {
       ret.addAll(
-          (await Star.forSource(source))
-            .map((Star star) =>
-              ResourceLink.createLinkForResource(
-                type,
-                !(star.location.type == ObjectLocationType.assets),
-                star.name,
-                star.id
-              )
-            )
+        (await Star.forSource(source))
+        .map((Star star) =>
+          ResourceLink.createLinkForResource(
+            type,
+            !(star.location.type == ObjectLocationType.assets),
+            star.name,
+            star.id
+          )
+        )
       );
     }
 
     return ret;
+  }
+
+  Future<void> _createFactionLinkTree(String? parent, List<ResourceLink> links, String prefix) async {
+    for(FactionSummary summ in (await FactionSummary.withParent(parent))) {
+      String display = '$prefix${summ.name}';
+      if(!summ.displayOnly) {
+        var link = ResourceLink.createLinkForResource(
+          ResourceLinkType.faction,
+          !(summ.location.type == ObjectLocationType.assets),
+          summ.name,
+          summ.id,
+          label: display
+        );
+        if (summ.source != source) {
+          link.clickable = false;
+        }
+        links.add(link);
+      }
+      await _createFactionLinkTree(summ.id, links, '$prefix${summ.name} > ');
+    }
   }
 
   Future<void> _createPlaceLinkTree(String parent, List<ResourceLink> links, String prefix) async {

@@ -112,6 +112,12 @@ class FactionSummary extends ResourceBaseClass {
       .where((FactionSummary f) => f.parentId == parentId);
   }
 
+  static Future<Iterable<FactionSummary>> forLocationType(ObjectLocationType type) async {
+    await loadAll();
+    return _cache.values
+      .where((FactionSummary p) => p.location.type == type);
+  }
+
   static Future<void> init() async {
     // ignore:unused_local_variable
     var c = _cache;
