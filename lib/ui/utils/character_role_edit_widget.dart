@@ -200,7 +200,7 @@ class _CharacterRoleDisplayPill extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(8.0, 2.0, 2.0, 2.0),
-      margin: const EdgeInsets.fromLTRB(0.0, 0.0, 12.0, 0.0),
+      margin: const EdgeInsets.fromLTRB(0.0, 4.0, 12.0, 4.0),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.black87),
         borderRadius: BorderRadius.circular(16.0),
