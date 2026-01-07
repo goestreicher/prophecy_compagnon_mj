@@ -116,7 +116,7 @@ class PlaceDisplayWidget extends StatelessWidget {
           effectiveResourceLinkProvider = MultiResourceLinkProvider(
             providers: [
               AssetsResourceLinkProvider(),
-              SourcedResourceLinkProvider(source: ObjectSource.local),
+              SourcedResourceLinkProvider(source: place.source),
             ]
           );
         }
@@ -352,6 +352,9 @@ class PlaceDisplayWidget extends StatelessWidget {
                     place.description.history = value;
                     onEdited?.call(place);
                   },
+                  localResourceLinkProvider: place.location.type != ObjectLocationType.assets
+                    ? SourcedResourceLinkProvider(source: place.source)
+                    : null,
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Mentalité et société',
@@ -361,6 +364,9 @@ class PlaceDisplayWidget extends StatelessWidget {
                     place.description.society = value;
                     onEdited?.call(place);
                   },
+                  localResourceLinkProvider: place.location.type != ObjectLocationType.assets
+                    ? SourcedResourceLinkProvider(source: place.source)
+                    : null,
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Ethnologie',
@@ -370,6 +376,9 @@ class PlaceDisplayWidget extends StatelessWidget {
                     place.description.ethnology = value;
                     onEdited?.call(place);
                   },
+                  localResourceLinkProvider: place.location.type != ObjectLocationType.assets
+                    ? SourcedResourceLinkProvider(source: place.source)
+                    : null,
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Politique',
@@ -379,6 +388,9 @@ class PlaceDisplayWidget extends StatelessWidget {
                     place.description.politics = value;
                     onEdited?.call(place);
                   },
+                  localResourceLinkProvider: place.location.type != ObjectLocationType.assets
+                    ? SourcedResourceLinkProvider(source: place.source)
+                    : null,
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Juridique',
@@ -388,6 +400,9 @@ class PlaceDisplayWidget extends StatelessWidget {
                     place.description.judicial = value;
                     onEdited?.call(place);
                   },
+                  localResourceLinkProvider: place.location.type != ObjectLocationType.assets
+                    ? SourcedResourceLinkProvider(source: place.source)
+                    : null,
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Économie',
@@ -397,6 +412,9 @@ class PlaceDisplayWidget extends StatelessWidget {
                     place.description.economy = value;
                     onEdited?.call(place);
                   },
+                  localResourceLinkProvider: place.location.type != ObjectLocationType.assets
+                    ? SourcedResourceLinkProvider(source: place.source)
+                    : null,
                 ),
                 _PlaceDescriptionItemDisplayWidget(
                   item: 'Militaire',
@@ -406,6 +424,9 @@ class PlaceDisplayWidget extends StatelessWidget {
                     place.description.military = value;
                     onEdited?.call(place);
                   },
+                  localResourceLinkProvider: place.location.type != ObjectLocationType.assets
+                    ? SourcedResourceLinkProvider(source: place.source)
+                    : null,
                 ),
               ],
             ),
