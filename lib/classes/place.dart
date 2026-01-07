@@ -204,6 +204,7 @@ class PlaceSummary extends ResourceBaseClass {
         'places-les-secrets-de-kalimsshar.json',
         'places-les-versets-d-ozyr.json',
         'places-les-voiles-de-nenya.json',
+        'places-yris-flambeau-de-l-humanite.json',
       ];
 
       for (var f in assetFiles) {

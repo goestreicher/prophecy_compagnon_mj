@@ -129,6 +129,7 @@ class FactionSummary extends ResourceBaseClass {
         'factions-castes.json',
         'factions-secretes.json',
         'factions-les-voiles-de-nenya.json',
+        'factions-yris-flambeau-de-l-humanite.json',
       ];
 
       for(var f in assetFiles) {

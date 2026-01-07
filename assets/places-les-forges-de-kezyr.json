@@ -2,24 +2,34 @@
   {
     "source": {
       "type": "officiel",
-      "name": "Les Forges de Kezyr"
+      "name": "Yris, Flambeau de l'Humanité"
     },
-    "name": "Les collines de fer",
+    "name": "Le Duché des Collines de Fer",
     "uuid": "5c087163-3c71-42ce-b47d-2bff40e05717",
     "parent_id": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152",
-    "type": "region",
+    "type": "duche",
+    "leaders": [
+      {
+        "name": null,
+        "link": {
+          "name": "Florimelle de Dungard",
+          "link": "resource://assets/npc/35f75cf6-53fa-4563-8800-51368845f83e"
+        },
+        "title": "Duchesse des Collines de Fer"
+      }
+    ],
     "government": null,
     "motto": null,
     "climate": "Tempéré sec",
     "description": {
-      "general": "Les Collines de Fer sont les contreforts du sud des Écailles de Moryagorn. Naturellement riches en minerais, leur potentiel est exacerbé par la présence de Kezyr.\n\nC’est une région tempérée dont le dénivelé atteint cinq cent mètres. Le sol caillouteux et l'irrigation défaillante rendent l’agriculture délicate et spécifique, basée sur la vigne naine, l'olivier et la châtaigne. Cette terre minière, faiblement peuplée au regard du reste de l’Empire, est garante de la frontière militaire avec les Zûls et dispose donc de nombreuses garnisons impériales. Si les patrouilles sont régulières, il ne fait pas bon s’y perdre de nuit. Les animaux sauvages, les abominations descendues des montagnes et les pillards en font une région dangereuse.\n\n",
+      "general": "Les Collines de Fer sont les contreforts du sud des Écailles de Moryagorn. Naturellement riches en minerais, leur potentiel est exacerbé par la présence de Kezyr.\n\nC’est une région tempérée dont le dénivelé atteint cinq cent mètres. Le sol caillouteux et l'irrigation défaillante rendent l’agriculture délicate et spécifique, basée sur la vigne naine, l'olivier et la châtaigne. Cette terre minière, faiblement peuplée au regard du reste de l’Empire, est garante de la frontière militaire avec les Zûls et dispose donc de nombreuses garnisons impériales. Si les patrouilles sont régulières, il ne fait pas bon s’y perdre de nuit. Les animaux sauvages, les abominations descendues des montagnes et les pillards en font une région dangereuse.\n\nLe Duché des Collines de Fer abrite près de deux millions six cent mille âmes. Ayant pour capitale ducale la Cité draconique de Dungard (à la différence de Havre, plus au nord), le duché possède un prestige calmant les ardeurs de la majorité de ses agresseurs potentiels, mis à part les Zûls. \n\nSi la famille ducale n'a qu'un pouvoir honorifique à [Dungard](resource://assets/place/0824a0bd-4fec-4be7-97c8-607018f04854), elle est souveraine dans le reste de la province, où Kezyr intervient peu et toujours discrètement. Les collois - ainsi qu'on appelle les habitants du duché - sont d'ailleurs communément renommés dungaris, qu'ils vivent en ville ou non, la Cité draconique étant indissociable du duché. [Le Noyau](resource://assets/place/07f815c2-e2fa-4d69-bea3-86112bf4dca9) abrite le palais ducal et les demeures de familles nobles, mais ce sont dans les faubourgs de la Cité que se trouvent les veines de métal qui font la puissance du duché et qui drainèrent des dizaines de milliers de prospecteurs. De plus, les dangers liés aux Collines de Fer ont accéléré le rassemblement massif de sa populace et trois cités fortifiées, érigées au centre des trois comtés de la province, comptent entre 75.000 et 100.000 habitants : Kamérie, Charbonneuse et Oliveraie. \n\nLes collois sont en majorité des paysans et des mineurs. Grégaires, ils cultivent une tradition familiale forte et un sens civique exemplaire. À la base de leur motivation, on trouve les pillards et abominations des Collines de Rouille.\n\nChez les kamériens, l'ambiance est plus froide et il ne fait pas bon s'afficher en tant qu'artiste, ou autre profession notoirement incompétente dans les arts guerriers. Le comte Hadduckt de Kamérie détient la responsabilité des patrouilles sur la Route des Vouivres. Du fait de sa grande responsabilité, il gère ses gens avec la même rigueur militaire que le Duc Zadel Tabarnasse de Férune.\n\nLes citadins de Charbonneuse, dans le comté de Rouille ont mauvaise réputation. La ville noire, qui doit son nom à la houille qu'on y extrait, est le fief laxiste du comte Bhallaq et de la plupart des pillards du duché. Il est de notoriété publique que les charbonneux n'ont pas coutume de se mêler des affaires d'autrui, trop préoccupés par leur survie. La ferveur draconique dont ils font preuve est gorgée d'augures (souvent mauvais) et de dévotions faites à Kezyr et Brorne. L'expression “poisseux comme un charbonneux” vient d'ailleurs davantage de ces superstitions que de leur condition.\n\nLes oliviens ont une mentalité paysanne plus traditionnelle que leurs compatriotes, mais ne sont pas réputés pour leurs fêtes non plus. Il n'y a guère qu'à Dungard qu'on rencontre tout ce qui fait la vie urbaine et trépidante dont se vantent les marchands et les nobles solyriens.\n\n",
       "history": null,
       "ethnology": null,
       "society": null,
       "politics": null,
       "judicial": null,
-      "economy": null,
-      "military": null
+      "economy": "L'économie locale est inégale, entre un artisanat florissant, des ressources minières colossales et une agriculture anémique. Les sols rocailleux interdisent toute agriculture massive et seules les terres du comte Inigoxis d'Oliveraie connaissent une production décente. L'essentiel du commerce vivrier provient des caravanes faisant route depuis Yris et Cormande jusqu'à Dungard ou Maurore. Charbon- neuse, la ville noire, exporte des tonnes de charbon et produit des huiles de pierre inflammables. Ses fonderies, tenues par des mages du feu, produisent des aciers réputés jusqu'à Ankar. Les lézards des profondeurs élevés et dressés par de nombreuses communautés de la province sont une part non-négligeable du commerce. Les dresseurs les plus réputés sont les kamériens et leurs montures de combat sont spécialement caparaçonnées par leurs soins. Le prix pour un harnachement complet, l'élevage et le dressage d'un tel lézard peuvent multiplier son prix par deux ou trois.\n\n",
+      "military": "Des garnisons consécutives au Grand Raid de 1299 et aux ordres de Florimelle de Dungard depuis des années ont finalement été affectées définitivement à la province par l'état major yrian. Si ce n'était le voisinage des Zûls, le duché serait suffisamment pourvu militairement pour éradiquer toute menace de la part des pillards. Les comtes et leurs barons entretiennent une chevalerie importante, en charge d'ériger des forteresses le long de la Route des Vouivres, mais aussi tout autour des Collines de Rouille qui sont une faille inconstructible sur la frontière est. Les contrôles sont nombreux et les détachements composés d'au moins une quinzaine de cavaliers-citoyens ne plaisantent pas. L'ambiance est encore plus suspicieuse près des Collines de Rouille et les bavures des patrouilles y sont courantes. Même désertées, elles portent encore l'empreinte de Kalimsshar et semblent corrompre ceux qui s'en approchent…\n\n"
     },
     "map": null
   },
@@ -613,7 +623,7 @@
       "type": "officiel",
       "name": "Les Forges de Kezyr"
     },
-    "name": "Les cavernes écailleuses",
+    "name": "Les Cavernes Écailleuses",
     "uuid": "26701d6d-2fd0-44c2-b1c7-48aee84bd9ec",
     "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
     "type": "region",
@@ -637,7 +647,7 @@
       "type": "officiel",
       "name": "Les Forges de Kezyr"
     },
-    "name": "Les collines de rouille",
+    "name": "Les Collines de Rouille",
     "uuid": "92d20195-c042-46c2-818d-97f47ff4d1d7",
     "parent_id": "5c087163-3c71-42ce-b47d-2bff40e05717",
     "type": "region",

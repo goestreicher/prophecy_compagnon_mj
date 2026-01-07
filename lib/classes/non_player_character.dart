@@ -286,6 +286,7 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
         'npcs-les-voiles-de-nenya.json',
         'npcs-les-grands-dragons.json',
         'npcs-les-secrets-de-kalimsshar.json',
+        'npcs-yris-flambeau-de-l-humanite.json',
       ];
 
       for (var f in assetFiles) {

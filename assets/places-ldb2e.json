@@ -101,41 +101,160 @@
     "name": "Empire de Solyr",
     "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
     "type": "nation",
-    "government": "empire dont le dirigeant est choisi au sein du Grand Conseil des Provins",
+    "government": "Empire dont le dirigeant est choisi au sein du Grand Conseil des Provins",
     "leaders": [
       {
-        "name": "Rolan XII",
+        "name": null,
+        "link": {
+          "name": "Rolan XII",
+          "link": "resource://assets/npc/b805eb0c-faec-4b03-972c-9e1aa7c2e19d"
+        },
         "title": "Frère des Dragons"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Humbert Castavène de Lisen",
+          "link": "resource://assets/npc/2f7662c5-b1bb-4055-8529-4f77b63e7459"
+        },
+        "title": "Provin d'Yris"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Konner An'Revor",
+          "link": "resource://assets/npc/ec2a2083-b2b5-463f-8499-871b03791e7a"
+        },
+        "title": "Provin d'Erladys"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Balthus d'Arvendell",
+          "link": "resource://assets/npc/2d9cc5b9-1afd-419a-b74e-25ffce93c3b3"
+        },
+        "title": "Provin d'Arvendell"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Erlinda de Jelm de Sermande",
+          "link": "resource://assets/npc/c989e165-bc79-4833-90b0-599974ee6952"
+        },
+        "title": "Provin de Sermande"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Florimelle de Dungard",
+          "link": "resource://assets/npc/35f75cf6-53fa-4563-8800-51368845f83e"
+        },
+        "title": "Provin des Collines de Fer"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Zadel Tabarnasse de Férune",
+          "link": "resource://assets/npc/14e43e7d-bb5b-48c0-9368-caf3c3de48df"
+        },
+        "title": "Provin de Férune"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Samhen d'Istuhrwald",
+          "link": "resource://assets/npc/0aa6e0e9-005b-47dd-a1ee-891602a7e33e"
+        },
+        "title": "Provin de Vilys"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Armadeo Fersbach de Cormande",
+          "link": "resource://assets/npc/8e354875-8eee-4c9b-bf56-332a6a3a2c1e"
+        },
+        "title": "Provin de Cormande"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Kron Balhugg",
+          "link": "resource://assets/npc/df7d875d-7a8e-4c6f-a845-ee809967ecf0"
+        },
+        "title": "Provin-Combattant"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Hylman Grût",
+          "link": "resource://assets/npc/51131565-7fa8-4ce8-99b8-a85e933e1eb1"
+        },
+        "title": "Provin-Artisan"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Mayederic d'Onyr",
+          "link": "resource://assets/npc/a8bab91b-fc83-49ab-aa2e-fc52d70f84a9"
+        },
+        "title": "Provin-Mage"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Derndoel",
+          "link": "resource://assets/npc/dc4b6015-8976-4d65-99cf-726c4a408eb3"
+        },
+        "title": "Provin-Voyageur"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Esaül d'Akriss",
+          "link": "resource://assets/npc/4b57b432-fff1-4d56-8f21-c85c30521a6c"
+        },
+        "title": "Provin-Érudit"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Commandeur-dragon Laroya",
+          "link": "resource://assets/npc/f2384c9d-72a6-493f-9ee7-dd197bfcba7c"
+        },
+        "title": "Provin-Protecteur"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Tilda Az'na",
+          "link": "resource://assets/npc/1911eed6-cffe-4f94-ab36-f56a18a47939"
+        },
+        "title": "Provin-Prodige"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Lisbeth Ounas",
+          "link": "resource://assets/npc/87c011c0-fee9-4b28-aca7-19cd286c0445"
+        },
+        "title": "Provin-Commerçant"
       }
     ],
     "motto": "liberté, commerce, tempérance",
     "climate": "tempéré. Le climat au nord (Havre) est toujours magiquement altéré par le Dragon des Vents pour être chaud et ensoleillé.",
     "description": {
-      "general": "L’Empire de Solyr a l'intérêt de présenter un très grand nombre de paysages et de sites géographiques. Ses routes sont relativement sûres et les voyages, qu'ils soient commerciaux ou d'agrément, s’y déroulent dans de très bonnes conditions. Très rurale, chaque région fourmille de petits villages et de villes fortifiées, mais elles comprennent également une capitale, qui compte entre cinquante et cent cinquante habitants, ainsi que quelques villes principales de grande taille. Ces dernières se divisent entre les villes “blanches” de l’ouest, qui doivent leur nom au crépi immaculé de leurs édifices, et les cités “boisées” de l’est, où la majorité des constructions sont décorées de bois peint, d’arches de végétation et de sculptures. Deux cités blanches, Cormande et Erladys, sont particulièrement reconnues pour leur beauté. La première, située à la croisée de nombreuses routes commerciales, constitue une sorte de berceau culturel des régions de l’ouest. C’est une ville d'échange et de commerce, particulièrement réputée pour ses musiciens et ses fêtes. Elle est d’ailleurs principalement administrée par des érudits, des commerçants et des voyageurs. La seconde, Erladys, est devenue célèbre pour son port majestueux où se dresse l’immense statue de Solyr qui en garde l’accès. Les aventuriers de tous horizons s’y retrouvent pour organiser des expéditions maritimes. Nettement plus anciennes, les villes de l'est sont des fiefs féodaux imprégnés par la tradition et le respect de la puissance draconique. Les villes du centre de l’Empire sont peu fortifiées et très richement décorées.",
+      "general": "Nation centrale de Kor, patrie draconique éclairée par la sagesse de trois Grands Dragons, l'Empire de Solyr est un pays dont l'histoire, le rayonnement et la puissance ne sont plus à évoquer. Doté d'un commerce florissant et d'une situation politique et militaire confortable, il serait irréaliste de penser que Solyr s'est fait en un jour et que rien ne vient troubler cette harmonie apparente. Derrière cette façade, une structure immense et complexe est à l'œuvre pour assurer la bonne marche et la cohésion de cette nation incontournable.\n\nL’Empire de Solyr a l'intérêt de présenter un très grand nombre de paysages et de sites géographiques. Ses routes sont relativement sûres et les voyages, qu'ils soient commerciaux ou d'agrément, s’y déroulent dans de très bonnes conditions. Très rurale, chaque région fourmille de petits villages et de villes fortifiées, mais elles comprennent également une capitale, qui compte entre cinquante et cent cinquante habitants, ainsi que quelques villes principales de grande taille. Ces dernières se divisent entre les villes “blanches” de l’ouest, qui doivent leur nom au crépi immaculé de leurs édifices, et les cités “boisées” de l’est, où la majorité des constructions sont décorées de bois peint, d’arches de végétation et de sculptures. Deux cités blanches, Cormande et Erladys, sont particulièrement reconnues pour leur beauté. La première, située à la croisée de nombreuses routes commerciales, constitue une sorte de berceau culturel des régions de l’ouest. C’est une ville d'échange et de commerce, particulièrement réputée pour ses musiciens et ses fêtes. Elle est d’ailleurs principalement administrée par des érudits, des commerçants et des voyageurs. La seconde, Erladys, est devenue célèbre pour son port majestueux où se dresse l’immense statue de Solyr qui en garde l’accès. Les aventuriers de tous horizons s’y retrouvent pour organiser des expéditions maritimes. Nettement plus anciennes, les villes de l'est sont des fiefs féodaux imprégnés par la tradition et le respect de la puissance draconique. Les villes du centre de l’Empire sont peu fortifiées et très richement décorées.",
       "history": "L’Empire est issu de la première Guerre de Souveraineté qui débuta en 2806 AdC et qui lui permit d'émerger tout puissant à la fin des combats. Première nation de Kor et lieu de vie de trois Grands Dragons, l’Empire de Solyr a toujours été au cœur de nombreuses convoitises.",
-      "ethnology": "Les habitants de l'Empire de Solyr n'ont aucune caractéristique physique déterminante. Issus de nombreux brassages de population, ils ont par tradition un grand respect pour l'ensemble des hommes.",
+      "ethnology": "Les habitants de l'Empire de Solyr n'ont aucune caractéristique physique déterminante. Issus de nombreux brassages de population, ils ont par tradition un grand respect pour l'ensemble des hommes.\n\n## Les hommes\n\nSi la population globale de l'Empire s'élève à plus de vingt six millions d'habitants selon les calculs nébuleux des érudits, toutes les régions et les populations présentent de grandes différences. L'Empire est une nation rurale, où la proportion de citoyens ne dépasse pas 20 %. Bien sûr, ses cités peuvent faire monter ce chiffre à 40 voire 50%, mais ce sont des situations ponctuelles. Les différentes tranches d'âge sont assez équilibrées, étant donné que l'agriculture florissante et les rares catastrophes naturelles permettent une bonne survie. Seules les épidémies peuvent encore être considérées comme des freins à une expansion démographique régulière. \n\nLa mentalité solyrienne varie largement d'un bout à l'autre de l'Empire, en plus des différences entre cités et campagnes. En général, les paysans sont durs à la tâche, frustres, chaleureux, fiers d'appartenir à l'Empire et respectueux des traditions draconiques. Les citadins sont plus cultivés, mais cette évolution culturelle les conduit à des comportements de plus en plus surfaits et frivoles, délaissant le sens commun pour les “modes”, sortes de courants de styles n'existant que pour un temps (ce que seuls les nobles et les citadins semblent apprécier…)\n\n## Les dragons\n\nLes quelques dix mille ailés qui vivent dans l'Empire sont souvent très proches des villes. Près de 4000 vivent à Yris, 2500 à Dungard, 2000 à Havre (si l'on ne compte que les “résidents”) et le reste s'éparpille dans les campagnes et les cités d'importance. Autant dire que si croiser un dragon est courant dans une des trois Cités draconiques, en connaître un ou deux est souvent le lot des solyriens moyens. En dehors des Cités draconiques déjà traitées, les dragons urbains de l'Empire sont souvent profondément impliqués dans la vie courante, ayant renoncé à une présence directrice pour privilégier la voie de la sagesse et du conseil. Dans les campagnes, les dragons ont un rôle différent. Seul dans une région souvent vaste, le dragon est considéré comme l'autorité ultime vers laquelle se tourner. Même les barons et les comtes se passent rarement de leurs avis, bien que bon nombre aspirent à une vie solitaire loin des hommes. En fait, c'est le peuple des campagnes qui honore les dragons et les fait participer à la vie locale malgré leurs réticences.\n\n",
       "society": "L'Empire compte un large éventail de mentalités causés par la présence des trois cités draconiques. Néanmoins, en règle générale, bien moins intéressés par le commerce et les échanges, les hommes affectionnent des valeurs nobles et chevaleresques, se considérant comme les plus fidèles serviteurs des Dragons. L'Empire constitue le cœur de Kor et la proximité des principaux sanctuaires draconiques fait que les hommes ont tout naturellement calqué leur vie sur celle des dragons. C'est pourquoi le statut d'Élu est particulièrement honorifique ici. Les grandes familles entretiennent à prix d’or des artistes qui immortalisent leurs traits et magnifient le nom de leur lignée. De nombreux villages ont ainsi la chance de disposer de très beaux bâtiments en pierre, érigés par les nobles pour le confort de tous. C’est en effet la coutume de prouver sa puissance et sa richesse en faisant édifier des palais fastueux, mais aussi en offrant à ses vassaux le plus de confort possible. Généralement, plus un seigneur veut prouver sa puissance, plus il couvre ses paysans d'or. Le luxe devient de plus en plus ostentatoire à mesure que l’on s'approche d’Yris, la capitale, offrant une véritable apothéose de splendeurs, devenues légendaires dans tout Kor grâce aux récits des bardes itinérants. Dès que l'on respecte les traditions locales, il fait bon vivre dans les contrées de l’est. Construite dans les collines voisines de Kern, Sermande a la réputation de disposer des meilleures auberges de Kor. Les plus grands cuisiniers s’y retrouvent et font venir à prix d'or tous les ingrédients nécessaires à la confection de leurs plats. Une grande école gastronomique, la Toque d'or, permet même aux meilleurs cuisiniers de s'initier à l'art de la magie culinaire, dont ils se serviront ensuite pour faire naître des goûts totalement inédits.",
       "politics": "D’un point de vue politique, le régime féodal non héréditaire paraît assez paisible alors que c’est le seul royaume humain à contenir trois cités draconiques : Dungard, la Cité du Métal, Havre, la Cité des Vents et Yris, la capitale, où se trouve le sanctuaire de Khy. Les Grands Dragons n'ont pas l'ambition de gérer le territoire dans lequel se trouve leur cité. Cette particularité fait que l'Empire n’est soumis à l'autorité directe d’aucun des trois Grands Dragons. L'Empire de Solyr est dirigé par le Grand Conseil des Provins qui regroupe un représentant de chacune des huit castes, ainsi qu'un envoyé de chacune des provinces. La tradition veut que le titre d'Empereur, Frère des Dragons, soit porté par l’un d’eux. De même, les castes exercent un plein contrôle sur leurs membres et organisent généralement toutes les activités sociales. Les Grands Dragons considèrent Solyr comme le royaume humain le plus équilibré et le plus stable. Ils laissent à Khy le soin de développer avec les hommes une civilisation riche et prospère - dans la mesure où leurs intérêts ne sont pas remis en cause.",
       "judicial": "Le système judiciaire est homogène d’une cité à l’autre. Les seigneurs locaux (barons et chevaliers) ont le droit de justice, en appelant à leur suzerain en cas de délit épineux, voire à l’Inquisition si la situation est trop grave. Les érudits sont souvent des conseillers recherchés par les seigneurs qui prêtent l'oreille à leur savoir.",
-      "economy": "L’Empire de Solyr est aujourd’hui puissant mais son centre est bien plus prospère que son pourtour. Le commerce impérial est très florissant, sa production couvrant la quasi-totalité des besoins. Il pratique le commerce avec ses proches voisins, mais également avec la plupart des territoires éloignés. De nombreux fleuves navigables favorisent le transport des marchandises. Les meilleurs artisans se retrouvent à Dungard, premier centre de production de minerai de tout Kor, pour mettre leur savoir-faire en commun. Situés sur le tracé des grands axes routiers et fluviaux, des postes de péage ont pour rôle de percevoir les taxes sur les marchandises - qui s'élèvent traditionnellement à un vingtième de la valeur des biens transportés. L'Empire frappe également sa propre monnaie.",
-      "military": "Chaque province est divisée en de très nombreux petits fiefs qui entretiennent des armées et se livrent sans cesse à des conflits privés de petite envergure. Au sud, les tribus zûls constituent une menace permanente. Il n’est pas rare qu'elles traversent la frontière pour se livrer à des raids et à des pillages. Au nord-ouest, l’unification des Marches Alyzées a rendu la situation beaucoup plus calme et sereine. Les trois cités draconiques que compte l’Empire sont d’ailleurs dédiées aux arts de la paix. Aussi, pour éviter d'être sans cesse bouleversés par les violences de la guerre, les hommes et les dragons ont conçu Solyr comme une véritable forteresse. Les marches de l’Empire sont relativement austères. Les cités frontalières étant principalement des garnisons fortifiées, destinées à repousser les menaces extérieures (invasions barbares, incursions étrangères, attaques de hordes), ces villes constituent autant de garanties de sécurité, et donc de prospérité, pour les provinces voisines. Loin au sud, le port kalishite et corrompu d’Hasran sert d'avant-poste à une incessante guerre de harcèlement contre l'Empire, ses côtes et ses navires en transit. De ce fait, rares sont ceux qui osent s’aventurer au large. Sur le continent, il arrive parfois qu'une expédition de représailles soit organisée par une province pour régler dans le sang un conflit frontalier avec Kar."
+      "economy": "L’Empire de Solyr est aujourd’hui puissant mais son centre est bien plus prospère que son pourtour. Le commerce impérial est très florissant, sa production couvrant la quasi-totalité des besoins. Il pratique le commerce avec ses proches voisins, mais également avec la plupart des territoires éloignés. De nombreux fleuves navigables favorisent le transport des marchandises. Les meilleurs artisans se retrouvent à Dungard, premier centre de production de minerai de tout Kor, pour mettre leur savoir-faire en commun. Situés sur le tracé des grands axes routiers et fluviaux, des postes de péage ont pour rôle de percevoir les taxes sur les marchandises - qui s'élèvent traditionnellement à un vingtième de la valeur des biens transportés. L'Empire frappe également sa propre monnaie.\n\nDu point de vue des productions de matières premières, l'Empire dispose de presque tous les types de biens: charbon, métaux, bois, céréales, cuirs, laine, coton, papyrus, bétail, tissus, vigne, poisson… Il n'y a guère que la pierre qui fasse défaut dans certaines régions et qui oblige à en importer de Kern. Si l'Empire dispose de telles ressources, elles proviennent souvent de régions spécifiques, ce qui crée un flux interne dense de caravanes et convois. En fait, pour approvisionner toutes les régions en matières premières, diverses compagnies marchandes se chargent de conduire des caravanes jusque dans les innombrables villages, échangeant alors les productions locales contre des ressources de provinces éloignées. Dans ces cas, si le drac est une échelle de conversion, il ne circule pas beaucoup d'argent, le troc basé sur les cours des marchandises restant fréquent. Il est donc de coutume d'échanger des stères de bois de construction contre des mesures de blé et de convertir les blocs de roche en longueurs de tissu. De plus, ce système évite l'accumulation de dracs dans les caravanes et les villages, évitant le brigandage et les raids de pillards. \n\nAu niveau des produits manufacturés, la situation est différente. Seules les grandes villes sont des centres de production de masse, les villages ne fabriquant que des objets nécessaires à leur vie courante. Certaines productions ne sont pas effectuées par les paysans, qui se contentent de les acheter aux marchands lorsque ceux-ci viennent commercer. Ainsi, les armes, armures, vêtements, objets d'art et de musique ou encore les harnachements et outils complexes ne sont-ils disponibles qu'en ville ou dans les caravanes. \n\nAu travers du flux incessant de ces exportations, un flux migratoire important se développe et dynamise l'Empire. Chaque caravane comptant au moins dix à vingt chariots, une dizaine de protecteurs, autant d'éclaireurs et une cohorte de voyageurs civils se greffant sur le convoi en plus des cochers et de leur familles, ce sont souvent des groupes de 50 à 200 personnes qui arpentent les routes. Malgré des patrouilles fréquentes, les dangers sur les routes de l'Empire sont semblables à ceux de Kor et suffisamment nombreux pour condamner à l'échec les équipées aventureuses de quelques piétons ou de cavaliers isolés.\n\n",
+      "military": "Chaque province est divisée en de très nombreux petits fiefs qui entretiennent des armées et se livrent sans cesse à des conflits privés de petite envergure. Au sud, les tribus zûls constituent une menace permanente. Il n’est pas rare qu'elles traversent la frontière pour se livrer à des raids et à des pillages. Au nord-ouest, l’unification des Marches Alyzées a rendu la situation beaucoup plus calme et sereine. Les trois cités draconiques que compte l’Empire sont d’ailleurs dédiées aux arts de la paix. Aussi, pour éviter d'être sans cesse bouleversés par les violences de la guerre, les hommes et les dragons ont conçu Solyr comme une véritable forteresse. Les marches de l’Empire sont relativement austères. Les cités frontalières étant principalement des garnisons fortifiées, destinées à repousser les menaces extérieures (invasions barbares, incursions étrangères, attaques de hordes), ces villes constituent autant de garanties de sécurité, et donc de prospérité, pour les provinces voisines. Loin au sud, le port kalishite et corrompu d’Hasran sert d'avant-poste à une incessante guerre de harcèlement contre l'Empire, ses côtes et ses navires en transit. De ce fait, rares sont ceux qui osent s’aventurer au large. Sur le continent, il arrive parfois qu'une expédition de représailles soit organisée par une province pour régler dans le sang un conflit frontalier avec Kar.\n\n## La Garde Impériale\n\nEmblématique de l'Empire de Solyr, elle constitue le noyau dur de l'armée en cas de guerre. Forte de milliers de protecteurs aguerris, elle est en temps de paix une force d'instruction et de maintien de l'ordre répartie au travers de l'Empire. Ses effectifs engagés se montent à environ dix mille hommes, répartis selon le schéma suivant : la moitié est stationnée à Yris pour former les conscrits, un tiers constitue le noyau de la milice de la Cité et le reste est en mission ou en garnison dans l'une des provinces, formant des troupes ou protégeant des convois d'hommes ou de matériel.\n\nLa conscription est une des pierres angulaires de l'esprit patriotique d'Yris. Depuis onze siècles, tous les hommes valides de l'Empire effectuent tous les six ans un service d'un cycle, formant l'host. Dans le langage populaire, l'host est devenu un terme générique désignant à la fois cette période militaire parfaitement intégrée à la mentalité et les troupes qui en résultent. En général, l'host compte 50.000 hommes: 10.000 à Yris en renfort de la milice, 20.000 à l'instruction autour de la capitale sous le commandement des engagés de la Garde impériale, le reste en garnison dans l'Empire, majoritairement à Erladys, Férune et Nivène. Quelle que soit son origine, un homme qui fait son host se retrouvera probablement bien loin de ses foyers et apprendra à connaître les autres régions de l'Empire. Cette structure, par rotation et formation autour d'un noyau de vétérans, permet à l'Empire de disposer d'une force facilement mobilisable et relativement entraînée de 60.000 hommes en quelques jours, le temps de rassembler les troupes. De plus, si le Frère des Dragons venait à déclarer la mobilisation générale (fait rare n'ayant eu lieu que pour la II° et la III° Croisade), il ne faudrait qu'une à deux semaines pour rassembler les conscrits au foyer et ainsi former la Garde impériale complète, alors forte de 700.000 hommes…\n\nSi d'aventure une telle mobilisation était reconduite, elle ne saurait perdurer. En effet, il est excessivement problématique de dépeupler la paysannerie de l'Empire, tant pour les moissons que pour la natalité et le moral populaire. De plus, même impressionnante, cette force se compose en majorité de paysans, des fantassins peu aguerris et au moral incertain qui doivent être épaulés pour ne pas subir des pertes effroyables.\n\n## Les troupes provinciales\n\nÀ côté de la Garde impériale, il convient d'ajouter les chevaliers, barons et bannerets des différents Provins, ainsi que leurs armées personnelles. En effet, chaque Provin possède un droit d'host qu'il applique en plus de l'host impériale. En général, il s'agit d'une conscription annuelle longue d'un augure, toujours effectuée dans le fief de son seigneur. Au cours de cette période, ce sont aussi bien un entraînement militaire que des travaux d'envergure qui sont effectués (construction de bâtiments, curage de douves, battues aux monstres, patrouilles, gardes...). Selon les provinces, les conscrits représentent de 20.000 à 50.000 hommes, les forces permanentes 70.000 à 150.000 hommes (300.000 en Férune, ce qui est unique) et la chevalerie de 5.000 à 20.000 preux. A cela peuvent bien sûr s'ajouter des troupes mercenaires, des détachements d'autres fiefs, les renforts de la Garde impériale et des troupes irrégulières.\n\n"
     },
     "source": {
       "type": "officiel",
-      "name": "Livre de base 2e édition"
-    }
-  },
-  {
-    "uuid": "6b6f2d08-097e-4d57-8835-fd480947b7dc",
-    "name": "Yris",
-    "parent_id": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152",
-    "type": "capitale",
-    "description": {
-      "general": ""
-    },
-    "source": {
-      "type": "officiel",
-      "name": "Livre de base 2e édition"
+      "name": "Yris, Flambeau de l'Humanité"
     }
   },
   {

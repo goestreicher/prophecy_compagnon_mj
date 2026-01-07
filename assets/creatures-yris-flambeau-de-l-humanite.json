@@ -1,0 +1,624 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Klasombre",
+    "uuid": "522f8b9a-695b-4d60-be62-40eaf572fd91",
+    "description": "Créatures d'aspect canin surgissant de la [klasis](resource://assets/place/13129d70-347d-4ec7-8a24-6cc4b8dfdd50), ces monstres sont nés de la fureur de Kezyr suite à la destruction de sa Tour d'éternité. Corrompues par Kalimsshar, les klasombres trempent dans un métal en fusion irréel, mélange du sang du seigneur du métal et de celui de son frère. Ces furies n'existent que dans le seul but de crier l'éternelle colère de Kezyr, comme une réponse au sacrilège de son frère. Les klasombres sont à l'origine des histoires courant sur des créatures de rouilles, invaincues à ce jour…\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": false,
+    "category": "creaturesElementaires",
+    "biome": "Collines de Rouille",
+    "real_size": "Inconnue",
+    "weight": "Inconnu",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capabilities": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Norak",
+    "uuid": "5007212a-d6a2-4a3f-aaea-59d781ea095b",
+    "description": "Oiseau bipède haut de plus de six pieds et porteur d'un bec corné, le norak file sur ses pattes musclées dans les forêts de Solyr. Même les ours hésitent à s'y frotter! Dotés de plumes huileuses et camouflées, ils se glissent silencieusement vers leurs proies avant de leur sauter dessus et de leur asséner des coups de boutoir afin de briser leur colonne vertébrale. Les nids sont toujours gardés par un des parents. Leur viande étant comestible et très appréciée en fumaisons, les nobles téméraires les chassent aussi pour leur bec, afin de s'y tailler un heaume. Les plumes de norak sont aussi très recherchées pour composer des vêtements aux nuances inégalables (les plumes gardent leur teinte dès qu'elles sont détachées du norak), appréciés par les mages de la nature et des rêves.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 10,
+      "intelligence": 3,
+      "coordination": 7,
+      "presence": 0,
+      "resistance": 9,
+      "volonte": 5,
+      "perception": 6,
+      "empathie": 4
+    },
+    "attributes": {
+      "physique": 9,
+      "mental": 3,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 3,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Course",
+                  "reserved": false,
+                  "value": 8
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 6,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 7,
+              "implementation": ""
+            }
+          ]
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "biome": "Forêts de Solyr",
+    "real_size": "2 m de haut",
+    "weight": "Inconnu",
+    "natural_armor": 8,
+    "natural_armor_description": "Plumes huileuses",
+    "natural_weapons": [
+      {
+        "name": "Bec",
+        "special": null,
+        "skill": 8,
+        "damage": {
+          "static": 14,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.4,
+            "maximum_distance": 0.4
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.4,
+            "maximum_distance": 0.4
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Masse",
+        "description": "Les attaques du norak ne peuvent être parées, seulement esquivées."
+      },
+      {
+        "name": "Plumage caméléon",
+        "description": "Le norak peut devenir flou et d'une nuance de couleur légèrement scintillante accordée à son environnement. Cette capacité ne se déclenche qu'en cas de stress (combat, faim, peur) et ceci involontairement. Lorsque son plumage se modifie, un norak devient invisible à plus de vingt pas (dix en forêt) et double ses NR sur tout jet d'Opposition en perception visuelle. De plus, il inflige systématiquement un malus de -3 sur les jets de réaction et d'esquive de ses adversaires."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Le Vert-Sang",
+    "uuid": "171c36bb-5fcf-4b32-8915-3204c270e647",
+    "description": "Personnage légendaire des forêts de l'est, le Vert- Sang serait un Fenn'dann ressemblant à un jouvenceau à la cuirasse de lierre et au heaume de ronces au cimier en aile de papillon. Ses cheveux semblent des épines de pin et son rire cristallin fait taire tous les bruits de la forêt. Le Vert-Sang est espiègle et joueur, jetant sur les gêneurs des pommes de pin et des glands. Ces derniers ont intérêt à rester impassibles, car ceux qui s'en sont offusqué et l'ont poursuivi ne sont jamais revenus…\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": true,
+    "category": "peuplesAnciens",
+    "biome": "Duché de Sermande",
+    "real_size": "Inconnue",
+    "weight": "Inconnu",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capabilities": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Vouivre",
+    "uuid": "86df6220-21a3-4397-b05e-f0fabecebdbb",
+    "description": "Créature draconique élémentaire, la vouivre possède un corps spectral reptilien d'environ deux mètres, composé d'un mélange de vapeur et d'ombre mouvante. La vouivre est une créature itinérante, incapable de rester statique, tout comme de percevoir les notions de relief ou de volume. Étant immatérielle, une vouivre peut ainsi traverser le sol ou les arbres, mais pas les matières organiques vivantes, qui lui paraissent solides. De plus, si les vouivres sont intelligentes, leur mode de pensée est dénué de tout sens temporel, ce qui ne va pas sans compliquer les relations. D'un naturel paisible et indifférent à son environnement, une vouivre peut devenir mortelle si elle est agressée ou si de la magie des océans, de l'ombre ou du feu est utilisée près d'elle. En général, les paysans fuient le passage des vouivres, attendant simplement que ces dernières passent leur chemin.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 5,
+      "coordination": 7,
+      "presence": 9,
+      "resistance": 0,
+      "volonte": 10,
+      "perception": 8,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 7,
+      "mental": 5,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "ignore",
+            "start": 0,
+            "end": 14,
+            "capacity": 1
+          },
+          {
+            "type": "injured",
+            "start": 14,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 2
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 9,
+              "implementation": ""
+            },
+            {
+              "skill": "natation",
+              "value": 13,
+              "implementation": ""
+            },
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "reserved": true,
+                  "value": 11,
+                  "reserved_prefix": "creature:86df6220-21a3-4397-b05e-f0fabecebdbb:specialized:misc:"
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": false,
+    "category": "creaturesElementaires",
+    "biome": "Solyr - Le lavoir des vouivres",
+    "real_size": "2 m de long",
+    "weight": "Inconnu",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "special": "Pas d'armure, sauf armures enchantées",
+        "skill": 9,
+        "damage": {
+          "static": 8,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.4,
+            "maximum_distance": 0.4
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.8,
+            "maximum_distance": 0.8
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Corps éthéré",
+        "description": "Les vouivres sont immunisées aux armes non enchantées ou résultant de la magie. Seules les armes Exceptionnelles non enchantées, en Sombre Acier ou en Sang de Kezyr peuvent les atteindre."
+      },
+      {
+        "name": "Immunité élémentaire",
+        "description": "Les effets des sorts niveau 1 de l'eau, de l'ombre et du feu visant une vouivre lui font regagner une case de blessure, produisant leurs effets mais ne l'affectant pas. Les sorts de niveau 2 ne lui font rien, mais les sorts de niveau 3 infligent double effet du fait de la perturbation élémentaire."
+      },
+      {
+        "name": "Décharge élémentaire (12)",
+        "description": "En utilisant cette capacité par un jet de Mental+Décharge contre une difficulté de 15, la vouivre émet des éclats d'énergie à 10 m à la ronde, infligeant 5+5/NR points de dommage sans armure (sauf enchantées). Ces éclairs peuvent être esquivés mais imposent de sortir de la zone. Plusieurs vouivres utilisant ensemble cette faculté ne cumulent pas leurs dommages mais additionnent leur rayon d'effet."
+      },
+      {
+        "name": "Aura élémentaire",
+        "description": "Dans un rayon de 200 m autour d'elles, les vouivres modifient les sphères élémentaires : Océans +1, Ombre + 1, Feu +1."
+      }
+    ]
+  }
+]

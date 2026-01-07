@@ -87,9 +87,11 @@ flutter:
     - assets/creatures-les-enfants-de-heyra.json
     - assets/creatures-les-foudres-de-kroryn.json
     - assets/creatures-les-secrets-de-kalimsshar.json
+    - assets/creatures-yris-flambeau-de-l-humanite.json
     - assets/factions-castes.json
     - assets/factions-secretes.json
     - assets/factions-les-voiles-de-nenya.json
+    - assets/factions-yris-flambeau-de-l-humanite.json
     - assets/npc-categories.json
     - assets/npc-subcategories.json
     - assets/npcs-ldb2e.json
@@ -103,6 +105,7 @@ flutter:
     - assets/npcs-les-secrets-de-kalimsshar.json
     - assets/npcs-les-versets-d-ozyr.json
     - assets/npcs-les-voiles-de-nenya.json
+    - assets/npcs-yris-flambeau-de-l-humanite.json
     - assets/places-ldb2e.json
     - assets/places-les-compagnons-de-khy.json
     - assets/places-les-ecailles-de-brorne.json
@@ -113,6 +116,7 @@ flutter:
     - assets/places-les-secrets-de-kalimsshar.json
     - assets/places-les-versets-d-ozyr.json
     - assets/places-les-voiles-de-nenya.json
+    - assets/places-yris-flambeau-de-l-humanite.json
     - assets/shield.json
     - assets/spell-pierre.json
     - assets/spell-feu.json

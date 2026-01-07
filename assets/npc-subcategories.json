@@ -2,7 +2,8 @@
   {
     "title": "Empire de Solyr",
     "categories": [
-      "dirigeants"
+      "dirigeants",
+      "personnalites"
     ],
     "is_default": true
   },
@@ -156,6 +157,13 @@
   },
   {
     "title": "Caste des voyageurs",
+    "categories": [
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Yris",
     "categories": [
       "personnalites"
     ],

@@ -319,35 +319,5 @@
       "military": null
     },
     "map": null
-  },
-  {
-    "source": {
-      "type": "officiel",
-      "name": "Les Orphelins de Szyl"
-    },
-    "name": "Duché d’Arvendell",
-    "uuid": "df183768-e5d4-43f1-9410-81a5b7ead2b3",
-    "parent_id": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152",
-    "type": "duche",
-    "government": null,
-    "leaders": [
-      {
-        "name": "Balthus d'Arvendell",
-        "title": "Duc d'Arvendell"
-      }
-    ],
-    "motto": null,
-    "climate": null,
-    "description": {
-      "general": "La pointe nord de l’Empire de Solyr est le fief du duc d’Arvendell. En fait, son territoire s’arrête implicitement à deux ou trois lieues de Havre, considérée comme une terre draconique. Le duché est une province opulente, jouissant pleinement du commerce de Havre sous la forme de relais, auberge et écuries disposées le long de la route et même jusqu’à la lisière de la Forêt Mère. Principalement rural, ce fief dispose d’une solide économie basée sur l’exportation de son bétail et de ses produits, vendus à Havre, mais aussi expédiés aux quatre coins de l’Empire.\n\nLe duché, s’il ne compte qu’une trentaine de villes de plus de dix mille habitants en plus de sa capitale Tumistriel, rassemble 12% de la population de l’Empire. De très nombreux comtes et chevaliers sont donc vassaux du duc et font régner sa loi avec efficacité. Le duché dispose de forces militaires très importantes, dont plusieurs compagnies de cavalerie lourde et plusieurs régiments de piquiers et de fantassins entraînés. La lisière de la Forêt Mère est surveillée conjointement par des éclaireurs mercenaires de Havre et des Prodiges gardiens qui assurent la sécurité de la route de Témeth.\n\n",
-      "history": null,
-      "ethnology": null,
-      "society": null,
-      "politics": null,
-      "judicial": null,
-      "economy": null,
-      "military": null
-    },
-    "map": null
   }
 ]

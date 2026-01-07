@@ -330,7 +330,7 @@
   {
     "uuid": "35f75cf6-53fa-4563-8800-51368845f83e",
     "name": "Florimelle de Dungard",
-    "description": "Duchesse de Dungard, elle est en charge de la justice, de l'armée et des lois. Pour les affaires de caste, elle traite directement avec Sir Tharen, le Grand Maître de la caste ou son suppléant, s'il est absent. Pour les affaires impériales, elle compose avec Hylmann Grût, Maître des orfèvres et représentant de la caste au Conseil des Provins.\n\nElle est la veuve du Duc Cellustan, tué en 1299 par Mor-Mar-Zûl alors qu'il défendait la cité contre un raid.\n\n",
+    "description": "Duchesse de Dungard, elle est en charge de la justice, de l'armée et des lois. Pour les affaires de caste, elle traite directement avec Sir Tharen, le Grand Maître de la caste ou son suppléant, s'il est absent. Pour les affaires impériales, elle compose avec Hylmann Grût, Maître des orfèvres et représentant de la caste au Conseil des Provins.\n\nElle est la veuve du Duc Cellustan, tué en 1299 par Mor-Mar-Zûl alors qu'il défendait la cité contre un raid.\n\nÀ 36 ans, cette mince femme aux cheveux blonds au carré en a imposé aux plus grands depuis plus de dix ans. Elle que l'on pensait être une mère de famille et une bonne épouse s'est révélée être une femme à poigne depuis le décès de son mari. Après avoir obtenu, par le fer, de porter son titre, elle a étudié le métier des armes et la stratégie militaire pour devenir en deux ans une bretteuse confirmée et une stratège que les zûls ont appris à redouter. Souvent vêtue d'une robe faite non de tissu, mais de fines mailles ensorcelées et ouverte sur une tenue de chasse en daim, elle est assez peu conforme aux duchesses des autres provinces. Sa personnalité complexe déroute ses amis comme ses ennemis, étant capable de se comporter en grande dame de la cour comme en grossière mercenaire. Elle possède une féminité indéniable dont elle a peu conscience et dont elle ne sait se servir.",
     "image": null,
     "icon": null,
     "status": {
@@ -515,7 +515,7 @@
         }
       ]
     },
-    "age": 25,
+    "age": 36,
     "height": 1.7,
     "weight": 60,
     "origin": {
