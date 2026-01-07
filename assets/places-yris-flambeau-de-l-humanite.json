@@ -2703,5 +2703,788 @@
       "military": null
     },
     "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "L'État de Kyosalima",
+    "uuid": "e676f56d-590a-449f-93e3-536136049d91",
+    "parent_id": "477313a3-f473-4f11-b7a5-acf718cdc54a",
+    "type": "nation",
+    "leaders": [
+      {
+        "name": null,
+        "link": {
+          "name": "Sastrace Arkovélie",
+          "link": "resource://assets/npc/874d284e-e01d-41b5-858b-d92b7b7921cf"
+        },
+        "title": "Régent de Kyosalima"
+      }
+    ],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'État de Kyosalima comprend toutes les terres frontalières du sud de Nésora, à savoir le sud de l'ancien Tandara. Charnière entre l'Empire et les Marches Alyzées, la région est délimitée à l'ouest par les Monts des Brumes où la Bordure prend sa source. Le fleuve torrentiel constitue une frontière australe jusqu'à la Tourmente. Au nord, le territoire s'étend jusqu'aux forêts septentrionales, englobant des milliers de kilomètres carrés de plaines fertiles.\n\nLa population est majoritairement sise dans la citadelle de Kyo et ses environs. Le chef-lieu abrite à lui seul trois millions d'habitants sous la tutelle du Régent Sastrace Arkovélie et de ses gouverneurs. Les campagnes de Kyosalima comptent près d'un million de paysans et d'éleveurs, réfugiés dans quelques centaines de villages fortifiés.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": "La mentalité locale est assez différente de celle du reste du pays. Étant donné leur position frontalière, les kyoséliens vivent sous une pression militaire éprouvante. Fiers et pragmatiques, ils font pourtant preuve d'une soif de mysticisme dans leur vie quotidienne et sociale. Étancher cette soif − et donc philosopher sur les questions existentielles − permet aussi de trouver des justifications dans la voie d'indépendance et de progrès que fustigent les nations draconistes. Cette réflexion existentielle est flagrante dans la citadelle de Kyo, et contribue indéniablement à la fraternité des citadins. Toutefois, l'angoisse progresse d'autant plus à travers toute la société que le spectre d'une nouvelle Croisade se fait plus distinct. Dans les campagnes, le labeur jette un voile de silence. Parler d'idéaux à défendre n'est pas la meilleure façon d'extraire les paysans de leur mutisme coutumier. Comment tiennent les fortifications de leurs villages, d'où vient leur armée, le grain de leurs champs, en qui ont-ils confiance ? Voilà leurs seules préoccupations dont la réponse est invariablement : Nésora.\n\n",
+      "politics": "[Sastrace Arkovélie](resource://assets/npc/874d284e-e01d-41b5-858b-d92b7b7921cf) est un proche du Grand Ordonnateur et s'est particulièrement investi dans la réforme sénatoriale, dont il applique les consignes à la lettre. Ses Échevins, notamment l'Argentier Jamière de Outhan, ont une influence notable sur le Sénat. Cette situation scandalise les nations draconiques, car Jamière est un sans-caste, parvenu à ce poste en refusant toute citoyenneté. Les représentants des castes de Kyo sont des draconistes purs et durs, placés ici par l'Inquisition dans l'espoir de préserver une influence régionale. Toutefois, confinés dans la citadelle sans pouvoir arpenter librement le pays ou se rendre à la capitale, ils ne sont plus que les prisonniers de leurs propres palais.\n\n",
+      "judicial": null,
+      "economy": "Derrière son apparente stabilité, la citadelle de Kyo connaît une crise économique relative. Les carrières rocheuses qui faisaient autrefois la prospérité de la ville sont désormais un fardeau. Avant que la tension ne monte au sud, des péniches transportaient de grandes quantités de blocs par le réseau fluvial très dense des Marches Alyzées. Les convois jusqu'à Veckyo réclamant une énergie trop importante les carrières sont aujourd'hui presque exclusivement mises à profit pour ériger les fortifications régionales. Les exploitations agricoles − bien qu'abondantes − nourrissent l'État et composent les réserves des greniers, sans plus.\n\n",
+      "military": "La concentration militaire de Kyo est la plus importante de l'Empire, avec près de la moitié des troupes régulières en garnison dans l'État. Ce qui échappe aux observateurs, ce sont les garnisons des villages fortifiés. Outre le fait que chacun d'entre eux dispose de réserves suffisantes pour soutenir un siège, quasiment toute la population rurale a reçu une instruction militaire complète permettant de lever près de trois cent mille soldats de fortune dans des délais très brefs.\n\n"
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Le pont d'Elia",
+    "uuid": "0791ce3d-1a11-4b4d-9df7-69b154a09fac",
+    "parent_id": "e676f56d-590a-449f-93e3-536136049d91",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Une longue route relie Elia et Kyo. Le climat politique actuel la rend malheureusement impraticable pour les caravanes marchandes qui se voient refuser tous les laissez-passer à destination de Nésora. Le pont d'Elia est la plus grande construction traversant les eaux tumultueuses de la Bordure. C'est maintenant l'un des bastions de défense les plus importants de la frontière. Les officiels étant les seuls à rejoindre encore l'empire Nésora ou à le quitter, le chemin fut surnommé “Route des ambassadeurs” voici quelques années.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Kyo",
+    "uuid": "0a6073ba-2a2d-4ecf-ade7-ce56cf6839af",
+    "parent_id": "e676f56d-590a-449f-93e3-536136049d91",
+    "type": "capitale",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Les faubourgs de Kyo",
+    "uuid": "d1dc4f81-500e-4240-a8a7-56c0c6cb478f",
+    "parent_id": "0a6073ba-2a2d-4ecf-ade7-ce56cf6839af",
+    "type": "quartier",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "La citadelle est un bastion en étoile décagonale, lourdement fortifiée. Ses rues sont couvertes et tout est construit en dur, avec une profusion de chemins de ronde. Les tourelles abritent un arsenal conçu pour faire face aux dragons et quantité d'armes de siège ingénieuses. Toutefois, Kyo est trop exiguë pour sa population et ses faubourgs chaotiques, difficilement contrôlables et foyers d'épidémies, constituent une faiblesse inquiétante. La paranoïa de l'Échevin d'État Gehen Chegok augmente considérablement la cadence des travaux d'urbanisme, créant des milliers de problèmes sociaux mineurs qui sont autant de sources de fronde ou de criminalité, en plus de ponctionner largement les caisses de l'État.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "L'État de Kоreesalima",
+    "uuid": "2fd2eaff-38c1-4051-a2ea-c9b26299e3b5",
+    "parent_id": "477313a3-f473-4f11-b7a5-acf718cdc54a",
+    "type": "nation",
+    "leaders": [
+      {
+        "name": null,
+        "link": {
+          "name": "Karadyon Ofozide",
+          "link": "resource://assets/npc/fd5aa848-b7c6-443d-bc09-c01fa71ed384"
+        },
+        "title": "Régent de Koreesalima"
+      }
+    ],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le territoire de Koree commence à la lisière de la forêt, au sud des collines vespérales, couvrant le nord de l'ancienne Neve. Partant des Monts des Brumes, sa frontière englobe la forêt morte des silicates avant de disparaître vers le nord. Les limites septentrionales de l'État sont assez floues, cette région mystérieuse étant aussi rarement parcourue que disputée.\n\nLa population de Koreesalima est presque légendaire. Loin de l'empire, on raconte parfois qu'elle ne serait pas humaine, que l'on n'y trouverait que les exilés de Kor, et que nul voyageur n'est jamais revenu de ces terres cannibales. Pourtant les koreeséliens existent bel et bien. Le chef-lieu sert de foyer à beaucoup d'entre eux (entre un tiers et la moitié des quatre millions d'habitants que compte la région) et les autres sont éparpillés en communautés entre les collines et la forêt.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": "Les allures désertiques et silencieuses de l'Etat déteignent sur ses autochtones. Beaucoup ont adopté un mode de vie nomade, voyageant au gré des errances des troupeaux sauvages et des ressources exploitables. La plupart des communautés sédentaires sont des implantations humanistes, développant leur art et leurs principes loin du regard des dragons, conscients de se trouver à la frontière du monde connu. D'un naturel plutôt chaleureux, les koreeséliens partagent avec enthousiasme leur quotidien spartiate et leurs danses festives - pour peu que l'étranger ne soit pas un fervent draconiste.\n\n",
+      "politics": "La gestion de l'État est complexe, du fait des nombreux nomades qui sillonnent la région. Si la population de Koree varie autant c'est justement en fonction du passage des caravanes. Afin de pallier à cette dispersion, le chef-lieu se doit d'être un havre de stabilité. Avec la réforme sénatoriale, il s'est doublé d'un phare de la pensée humaniste. Le courant philosophique et mystique se montre donc ouvertement au peuple et propage sa doctrine par des émissaires accompagnant les caravanes ou détachés sur les lieux de production. Koreesalima est donc comparable à un laboratoire d'expériences humanistes, ses communautés mettant en pratique leurs idéaux.\n\n",
+      "judicial": null,
+      "economy": "L'économie koreesélienne repose sur l'extraction minérale, la fabrication du verre et les troupeaux d'animaux sauvages. L'empire finance des forges et des laboratoires alchimiques pour la recherche et l'expérimentation de nouvelles armes. Avec ces fonds, les communes emploient des ouvriers périodiquement pour honorer leurs commandes. Nombreux sont les travailleurs itinérants et Koree sert de marché principal à tous les artisans isolés venus troquer ou vendre le fruit de leur production.\n\n",
+      "military": "L'armée koreesélienne est officiellement inexistante, faute d'ennemi à portée. Pourtant, les rares voyageurs n'ont pu ignorer la présence ouverte de ces guerriers sacrés représentant la quintessence du progrès humaniste en matière d'armes et d'armures. La régence tente, comme ailleurs, de former des contingents de soldats dans chaque communauté mais c'est un travail lent. A terme, c'est tout l'arsenal lourd de Nésora qui devrait être conservé et entretenu dans des caches villageoises, construit sur place en vue d'un éventuel affrontement. Les dragons ne survolent plus cette région depuis longtemps et les armes lourdes telles les balistes, les catapultes et les trébuchets sont sans cesse améliorées.\n\n"
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Les collines vespérales",
+    "uuid": "239a407b-a23c-4df7-862a-a48bf7b30120",
+    "parent_id": "2fd2eaff-38c1-4051-a2ea-c9b26299e3b5",
+    "type": "region",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "L'hécatombe de Karadyon",
+    "uuid": "4d0d1fc8-f44b-4ab5-afb6-89814f68b8ba",
+    "parent_id": "239a407b-a23c-4df7-862a-a48bf7b30120",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Sous la jolie couleur purpurine des collines vespérales, l'antre d'[Ofozide](resource://assets/npc/fd5aa848-b7c6-443d-bc09-c01fa71ed384) est précieusement gardée par une élite de prêtres sanguinaires et de guerriers sacrés. Un spectacle d'horreur s'offre à la communauté secrète du régent : plusieurs jeunes dragons et humains capturés sont torturés et dépecés dans d'atroces souffrances. Les chirurgiens de Karadyon cherchent à comprendre le fonctionnement de ces organismes afin d'en déceler de nouvelles failles ou de tester des poisons, dans un mélange malsain de déviance fataliste et d'évolutionnisme humaniste.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Koree",
+    "uuid": "04233a50-e6ff-4f6d-bad6-78e83dd9a14c",
+    "parent_id": "2fd2eaff-38c1-4051-a2ea-c9b26299e3b5",
+    "type": "capitale",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "La guilde de Meredryce",
+    "uuid": "0e163fba-e2d8-4af6-a7c1-631074fa1014",
+    "parent_id": "04233a50-e6ff-4f6d-bad6-78e83dd9a14c",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "À Koree se négocient de nombreuses espèces animales. Des aigles monstrueux capturés dans les montagnes sont ensuite dressés par les gens de la guilde pour servir de mules aériennes. Transportant des nacelles chargées d'une centaine de kilos, ces aigles dorés de sept mètres d'envergure ont de nombreux usages. L'enclos de la guilde se situe en bordure de la ville, sous des tentures flottant au vent. Ses services se négocient à la tête du client et la guilde s'assure le monopole de la capture et du dressage des aigles.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "La forêt des silicates",
+    "uuid": "0b387a20-6a6a-4878-8e73-8fe71ce883ea",
+    "parent_id": "2fd2eaff-38c1-4051-a2ea-c9b26299e3b5",
+    "type": "region",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Les bois morts qui séparent les collines des plaines sont un territoire plutôt dangereux. Beaucoup d'artisans viennent exploiter les cristaux formés par les vents sablonneux qui soufflent depuis le nord, comme s'ils voulaient balayer l'homme de ces régions trop proches de l'interdit. Bois mort et sable créent un paysage lunaire dont les lueurs nocturnes sont inquiétantes. Le principal danger demeure pourtant les dangereuses nuées d'insectes géants, toujours à l'affût de la moindre créature à sang chaud.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "L'État de Pysalima",
+    "uuid": "21c7ddf3-1697-476d-9a20-edecac20cf3b",
+    "parent_id": "477313a3-f473-4f11-b7a5-acf718cdc54a",
+    "type": "nation",
+    "leaders": [
+      {
+        "name": null,
+        "link": {
+          "name": "Laïença Gaspendale",
+          "link": "resource://assets/npc/69989ff2-e9ff-48d8-82b2-21458c58288f"
+        },
+        "title": "Régente de Pysalima"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Tomos Malchaka",
+          "link": "resource://assets/npc/9a79f0b8-53ee-431a-bf4d-540fa56f463e"
+        },
+        "title": "Échevin d'État de Pysalima"
+      }
+    ],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'État de Pysalima commence là où finissent les jungles. Il s'étend au cœur de l'ancienne Neve, depuis la côte vers l'intérieur des terres sur une bande de deux cent cinquante kilomètres. Si la majeure partie de son territoire se compose de plaines à l'herbe rase et souffreteuse, balayées par les vents septentrionaux, ses côtes sont fertiles. Un chapelet d'îles repose sur un plateau sous-marin de coraux. Ces hauts-fonds s'étendent sur tout le golfe comme si la région n'avait pas toujours été immergée. Il est techniquement possible de rejoindre la plupart des îles à pied si l'on fait fi des dangers naturels de la mer, des courants et des tourbillons, favorisés par les goulets et les crevasses qui parsèment ces hauts-fonds.\n\nLe chef-lieu de l'Etat est le port de Py, accueillant huit cent mille habitants. Environ un million deux cent mille pyséliens vivent dans les villes construites sur la côte et les îles. Le reste de la région ne compte que quelques dizaines de milliers de nomades organisés en clans civilisés, migrant au gré des troupeaux de bovins et de chevaux qui arpentent les plaines.\n\n## La laine de salamandrine\n\nLes îles du golfe de Py sont riches en cavernes et souterrains. Découvert il y a moins de dix ans, un réseau souterrain courant sous le niveau du fond marin permettrait de rallier différents points de la région. On ne sait pas si ces galeries ont un rapport avec les hauts-fonds du golfe et s'il ne s'agirait pas là des vestiges d'une ancienne race souterraine. Tout aussi importante est la découverte des propriétés d'un lézard cavernicole toxique : la salamandrine. L'animal mi-reptile mi- batracien est réputé pour se jouer des éléments que ce soit l'eau ou le feu (il est en effet capable de survivre dans l'eau bouillante). Des artisans souffleurs de verre ont remarqué qu'il était possible de tresser des mèches avec sa peau. Celles-ci mises en ampoules hermétiques et alimentées par un mélange argileux riche en émanations gazeuses deviennent des filaments incandescents. Le feu brûlant dans les brumes gazeuses de cette bulle de verre ne nécessite pas d'entretien et remplace allègrement une torche, éliminant le problème de la fumée. Les meilleurs de ces globes arrivent à conserver leur éclat plusieurs semaines, mais sont lumineux dès leur fabrication et impossibles à moduler, la bulle de verre étant scellée.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": "Les pyséliens sont des gens fiers et ombrageux. Leur sens de l'hospitalité est pour ainsi dire inexistant et leur volonté d'indépendance politique s'applique même à l'empire Nésora. Satisfaits du virage démocratique de leur société, ils n'apprécient guère qu'on les considère comme un simple fief de l'empire et pressent leurs gouverneurs de négocier des accords d'indépendance commerciale et militaire, étant probablement les moins fanatiques des nésoriens en matière d'humanisme. Pourtant, ils sont persuadés d'être les premiers à trinquer en cas de sanction draconique, croyant dur comme fer que les dragons jailliront des eaux et les attaqueront en premier si une guerre devait débuter. Ils pensent qu'en se démarquant de l'Empire, ils se protégeront du courroux des Ailés et pourront jouir de leur solitude septentrionale. S'il est vrai que les enfants d'Ozyr rôdent souvent dans les parages, ils hésitent de plus en plus à s'y aventurer seuls et à frapper les transgresseurs des Édits draconiques.\n\n",
+      "politics": "La rudesse des pyséliens est ancestrale, mais encore accrue par la régence locale. Laïença Gaspendale est à ce poste depuis seulement deux ans dans une région qui n'a pas encore perçu les avantages de son essor démocratique. Si la régente actuelle et ses Échevins sont tous des militants de la cause humaniste, c'est parce que les différents scrutins menant à leur élection ont été arrangés par Ermar lui-même. Ainsi, sous couvert de démocratie, les sans-caste n'ont obtenu le droit de vote qu'après les élections, laissant le champ libre aux meneurs de la révolution pour diriger le pays. Le peuple gronde car les relations commerciales entre Py et sa multitude de cités côtières sont très élaborées et reposent sur des traditions complexes et ancestrales, demandant plus qu'une idéaliste fanatique pour gouverner. Laïença est pourtant issue de la caste des commerçants et a donné la preuve de ses compétences en matière de gestion.\n\n",
+      "judicial": null,
+      "economy": "L'économie locale est prospère et la région négocie les produits de l'océan dans tout l'empire. Parmi ceux-ci, coquillages et nacres donnent des vaisselles luxueuses dont la réputation a depuis longtemps franchi les limites de l'empire Nésora. De l'intérieur des plaines proviennent des viandes fumées et des peaux de buffles et de bisons qui constituent des exportations conséquentes à destination de Jaspor.\n\n",
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "L'île de Séti",
+    "uuid": "64de6bf3-e43f-4cca-bdc9-4b16dffb4f8d",
+    "parent_id": "21c7ddf3-1697-476d-9a20-edecac20cf3b",
+    "type": "region",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'île de Séti se trouve au nord de Py. Bien plus petite que ses deux voisines, elle abrite tout de même près de vingt mille habitants. Ses auberges et tavernes sont combles des marins du cru.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "La tonnelle scintillante",
+    "uuid": "c0fe8539-783d-4a13-b56e-ab78d5a74fc1",
+    "parent_id": "64de6bf3-e43f-4cca-bdc9-4b16dffb4f8d",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'une des tavernes de Séti est un repaire de prédilection pour les Inspirés. Elle doit son nom au puits naturel trônant sur le sol de son atrium et dont on raconte qu'il reflète chaque nuit la lumière d'une Étoile différente. Bardes et ménestrels inspirés par le spectacle chantent alors les récits de héros méconnus du passé de Kor, tous guidés par les astres.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "La Cathédrale de Py",
+    "uuid": "e56f4685-7495-45ec-8d93-cafbb3905769",
+    "parent_id": "21c7ddf3-1697-476d-9a20-edecac20cf3b",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Sise sur un promontoire rocheux qui lui fait dominer toute la région, la Cathédrale de Py est le centre spirituel et le cœur du mouvement humaniste. Construite en triangle portant trois voûtes décorées de nacres et d'aigues-marines, elle dresse à des dizaines de mètres de haut son toit à facettes. Percées de puits de lumière, ornées de rosaces de verre peint à la manière de vitraux, les voûtes de la Cathédrale projettent des lueurs féeriques sous les pâles rayons de Khyméra, magnifiant l'éclat des Étoiles. Alors que tous l'ignorent, la Cathédrale est construite selon des plans précis permettant de mesurer la position de M'lan au travers des vitraux qui sont en fait autant de lunettes astronomiques graduées. En son centre se dresse un autel triangulaire surmonté d'un baldaquin orné. Les cérémonies de la Cathédrale sont rares et rassemblent souvent des Humanistes fervents, plongés dans la béatitude d'une prière envers une entité supérieure bienveillante qui les guiderait au-delà des ténèbres draconistes (ce qui s'apparente à un embryon de monothéisme). Irrégulièrement, et selon les événements de la Prophétie, les Inspirés de M'lan se retrouvent ici pour partager une communion spirituelle et une communication avec “l'être supérieur”. C'est le SEUL lieu de Kor qui offre un bonus (de +3) aux pouvoirs de l'Esprit et qui impose un malus à TOUTES les Sphères de magie de -5 (ce qui explique le dégoût des dragons à s'en approcher).\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "L'État de Saliasalima",
+    "uuid": "ddfbc152-9154-49c0-b3ff-9fe0b1e5b475",
+    "parent_id": "477313a3-f473-4f11-b7a5-acf718cdc54a",
+    "type": "nation",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'État impérial est le cœur de Nésora et le siège du pouvoir de l'empire. Il regroupe la péninsule de l'Orbel et le sud de l'ancienne Neve. De nos jours, ses frontières commencent au pied des Monts des Brumes, suivent le cours sinueux du fleuve Lent, débordent sur la jungle au sud de la capitale et se poursuivent jusqu'à la côte. La limite septentrionale est marquée par l'orée des forêts.\n\nMoins d'un million de saliaséliens vivent dans l'enceinte fortifiée de la ville impériale. Les cinq autres millions d'habitants sont disséminés au travers des jungles et forêts dans près d'un millier de villes et de villages. Cette profusion d'individus crée des dizaines de communautés proches d'un mode de vie clanique, marquées par une volonté d'indépendance et d'autonomie. La démocratie locale les comble parfaitement et les gouverneurs locaux peuvent se vanter d'un soutien fanatique de la part de leurs administrés.\n\nDe ce fait, la mentalité des saliaséliens est loin d'être uniforme. Beaucoup de tendances émergent au gré d'une vie quotidienne marquée par le nomadisme et l'adaptation. Fonctionnant sur une organisation de chasseurs-cueilleurs, une bonne moitié des villages ne sont pas encore sédentarisés et fréquemment déplacés. Comme en Veckyosalima, la végétation omniprésente et ses dangers sont à l'origine d'un rapport ambigu entre l'homme et la forêt, entre symbiose et rejet. Cette ambivalence marque fortement les esprits dans les cités bordant le cours du fleuve Lent et de son bras septentrional, le fleuve des Effluves.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": "La politique de l'empire a connu de nombreux changements avant de devenir une démocratie naissante. Les mains d'Ermar sont encore rouges du sang de l'ancienne dynastie. Les édifices des castes de la capitale ne sont plus que des coquilles vides et symbolisent la réforme démocratique et humaniste du pays. Les tutorats qui les remplacent dispensent leur savoir au plus grand nombre sans souci de citoyenneté. Les sièges des castes ont été déplacés dans la citadelle de Kyo, soi-disant pour des raisons politiques et sécuritaires, mais en fait pour les tenir éloignées du siège du pouvoir. Perdant leur regard sur les activités de la capitale, ce ne sont plus que des façades au pouvoir diminué - si ce n'est inexistant. Salia abrite le Sénat impérial et bon nombre de lieux de savoir fréquentés par des érudits dévoyés et des artisans pourchassés, venus y travailler des arts interdits dans les terres draconistes.\n\n",
+      "judicial": null,
+      "economy": "Les ressources de l'État proviennent de la jungle. Les communautés de chasseurs-cueilleurs assurent leur subsistance grâce aux produits de la forêt et payent un impôt en nature (aliments séchés) aux cités fluviales, lesquelles transmettent ensuite vers la capitale les viandes, plantes, peaux et tissus des communautés rurales. Le fleuve constitue l'épine dorsale de l'économie saliasélienne et son cours facile à naviguer encourage l'usage de ce moyen de transport et de communication au détriment d'une forêt trop dangereuse. Toutefois, d'amples travaux de déboisement sont en cours depuis environ une dizaine d'années, qui devraient permettre à terme de disposer de voies pavées rectilignes facilitant les échanges.\n\n",
+      "military": "Les troupes régulières de Salia sont davantage une milice qu'une armée. Issue d'un croisement entre la caste des protecteurs et le tutorat des armes qui la remplace, elle affiche pour la forme un semblant d'appartenance draconique et reste dédiée à la protection de la capitale. En-dehors de cette garde impériale, il n'existe pas de garnison. Tous les soldats de l'Etat sont fondus dans la population, formant des escouades de guérilleros mortellement adaptés au combat en milieu forestier.\n\n"
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Les volcans endormis",
+    "uuid": "3eee912b-7ea0-4542-934e-2233584edc39",
+    "parent_id": "ddfbc152-9154-49c0-b3ff-9fe0b1e5b475",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'activité sismique relativement importante de l'empire Nésora est due à des fournaises souterraines. Les éruptions, parfois grondantes, et les violents tremblements de terre sont très rares, et cette activité contribue plutôt à enrichir les sols de la région. À une exception près : les nappes gazeuses sous le lit du fleuve des Effluves sont de véritables bombes incendiaires. Leur explosion risquerait, en outre, d'ouvrir une brèche pour des remontées de lave en fusion. La rivière se transformerait en brasier, dévorant la jungle voisine, rasant littéralement la capitale.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Salia",
+    "uuid": "60bba469-3fa9-4550-8deb-daa39bf5b9da",
+    "parent_id": "ddfbc152-9154-49c0-b3ff-9fe0b1e5b475",
+    "type": "capitale",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Salia est une capitale de petite envergure en comparaison des cités draconiques ou de la citadelle de Kyo. Sa magnificence n'aura pourtant bientôt rien à leur envier. Les bâtiments historiques sont nombreux et la pierre des carrières des Monts des brumes remplace progressivement toutes les constructions ligneuses. Une partie des bâtiments officiels est érigée sur de grandes places herbeuses soigneusement entretenues alors que la majorité des habitations, plus anciennes, sont à demi enterrées.\n\nCes quartiers d'habitations sont très bas, beaucoup de rues et de places étant couvertes par de grands arbres formant une canopée destinée à masquer l'activité quotidienne au regard des ailés.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Le fleuve des Effluves",
+    "uuid": "63d762b3-4ae2-4782-beb5-0ed03f4537b5",
+    "parent_id": "ddfbc152-9154-49c0-b3ff-9fe0b1e5b475",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Son nom provient des nappes huileuses et particulièrement odoriférantes qui jaillissent régulièrement à sa surface. Ce phénomène serait dû aux poches de gaz situées sous les limons que l'activité sismique latente laisserait périodiquement s'échapper en volutes jusqu'à la surface. Ces gaz se fluidifient au contact de l'air, créant ces nappes grasses et colorées. Récoltées par les pêcheurs, elles sont employées dans la fabrication de plusieurs centaines de parfums et de teintures médicinales différentes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Les pierres de lumière",
+    "uuid": "da2b18e9-15cc-4ed4-8b44-9ce281b24308",
+    "parent_id": "ddfbc152-9154-49c0-b3ff-9fe0b1e5b475",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ces pierres sont une vision prophétique qu'eut [Ermar](resource://assets/npc/86855dbb-b53e-4d76-8e8f-a7cda43043bc) peu avant la révolution nésorienne. Treize éclats de cristal d'une facture parfaite seraient un jour tombés du ciel en de scintillantes traînées. Leur nature est sujette à caution: certains prétendent que ce ne sont que des pierres stellaires à la dérive, des philosophes draconistes y voient des éclats de l'œuf Primordial alors que les Inspirés parlent de cœurs d'étoiles tombées sur Kor pour y mourir.\n\nD'après Ermar, ces cristaux seraient la clé d'une formidable source de puissance, capable de transformer la lumière du soleil en énergie pure si les treize cristaux sont correctement alignés selon une figure géométrique complexe.\n\nTout au long de son accession au sommet du pouvoir, Ermar fit retrouver quatre d'entre elles. Une cinquième se trouverait dans le [Creuset des Brumes](resource://assets/place/751c02e3-3fee-4150-8e34-0f8aa2eb11cd) glaciales de l'Etat de Veckyosalima et il a récemment entendu parler de la [clairière stellaire](resource://assets/place/ee211653-bee3-4681-8f03-a03425cd366b) de Sermande et opère de multiples tractations en vue d'entrer en contact avec la cellule humaniste qui a découvert l'éclat. Les sept autres se trouveraient dans le grand désert ou au-delà, ce qui oblige Ermar à envisager l'envoi de caravanes, et probablement la transmission de sa vision à son successeur…\n\nCe que tous ignorent, c'est que ces treize fragments sont les restes de treize étoiles absorbées par M'lan au cours des âges, qui lui permettraient de concentrer sa lumière en une zone immense, refoulant les influences draconiques et perforant les énergies primordiales de Moryagorn comme un stylet…\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "L'État de Veckyosalima",
+    "uuid": "8cae0ba7-0d82-426b-9fa1-2bbd64d7e16b",
+    "parent_id": "477313a3-f473-4f11-b7a5-acf718cdc54a",
+    "type": "nation",
+    "leaders": [
+      {
+        "name": null,
+        "link": {
+          "name": "Tavila Veckyandosa",
+          "link": "resource://assets/npc/7f20344f-b73e-4f7f-abeb-5e4b36aed8bb"
+        },
+        "title": "Régente de Veckyosalima"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Lous Antunès",
+          "link": "resource://assets/npc/e7b65a39-e247-48c9-ac05-0052615d3c09"
+        },
+        "title": "Échevin d'État de Veckyosalima"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Yodruck",
+          "link": "resource://assets/npc/447f389b-6d6a-4c33-9b1e-b03703f4cfad"
+        },
+        "title": "Échevin Général de Veckyosalima"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Ur de Dosa",
+          "link": "resource://assets/npc/2a80ec04-c3e6-4353-b952-9ab2251212df"
+        },
+        "title": "Échevin Argentier de Veckyosalima"
+      }
+    ],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'État de Veckyosalima est un immense territoire forestier, composé du nord de l'ancien Tandara. Partant des Monts des Brumes jusqu'à la Tourmente, il est séparé de l'Etat impérial par le bras austral du fleuve Lent. En dépit du climat continental, la forêt descendant des pentes montagneuses se transforme bien vite en jungle tropicale aux températures lourdes, arrosée par les pluies quotidiennes dues aux vents océaniques.\n\nVeckyo, le chef-lieu portuaire de l'Etat, est une cité d'un million d'âmes. Malgré leur situation, les veckyoséliens ne tirent pas grand profit de la mer et près de trois millions d'individus préfèrent composer avec les dangers quotidiens de la jungle plutôt qu'avec le royaume d'Ozyr. Les villages fortifiés sont rarement séparés de plus de quelques kilomètres. Les communautés ainsi installées sont à l'abri du regard des dragons et peuvent se protéger mutuellement d'une faune abondante et souvent redoutable.\n\nL'eau n'est pas appréciée des veckyoséliens, entre l'océan (qu'ils détestent), les pluies régulières et l'humidité moite des éclaircies. Du coup, le moral de la population est assez maussade. Dans un milieu très rude réclamant une attention permanente, les évolutionnistes prêchent les évolutions humanistes avec ferveur. Même si les travaux pénibles de déboisement nécessaires aux cultures sont exténuants, le bénéfice agraire est considérable et la prospérité qui en découle assure la stabilité sociale.\n\n## Les typhons de Veckyo\n\nLa haine des veckyoséliens à l'égard de l'océan est due à certains faits historiques ayant mené la ”faiseuse de veuves” à créer tempête sur tempête ! Les veckyoséliens ont en effet tenté, il y a plus de deux siècles, de construire des navires à coque d'acier et à quille de haute mer afin de braver la fureur des dragons des océans. Si à l'époque les chantiers furent officiellement démantelés et les responsables tués, bon nombre de plans ont subsisté et la récente réforme sénatoriale les a fait ressurgir. Du coup, les ingénieurs des chantiers navals de Veckyo se penchent à nouveau sur ces écrits anciens, provoquant depuis peu une reprise préventive des typhons de la part d'Ozyr. Sans avoir pour le moment d'effet dissuasif, ces tempêtes échouent quantité d'algues et de créatures marines sur les plages, que les pêcheurs n'ont plus qu'à ramasser, assurant du coup une pitance régulière.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": "Tavila Veckyandosa (ex Érudit III°) est la régente actuelle de l'État. Issue de la noblesse locale, elle a su anticiper la réforme et adapter ses titres et richesses au nouveau régime sénatorial. Autrefois représentante peu motivée de la caste d'Ozyr, Tavila apprécie beaucoup sa nouvelle condition. A la différence des autres États où la gestion de la région est déléguée à l'intelligence des gouverneurs, Tavila a conservé des influences à tous les niveaux. Veckyo est le pivot de la pression impériale sur les Marches Alyzées et Tavila, la “femme de fer”, se montre une diplomate retorse dans ce domaine. La place politique des sans-caste est plus élevée que dans le reste de l'Empire et la citoyenneté toujours plus facile à obtenir.\n\n",
+      "judicial": null,
+      "economy": "Veckyo commerce principalement avec Jaspor. La décadence de l'île importe peu aux nésoriens qui la considèrent surtout comme un fournisseur peu regardant. Du côté de Jaspor, l'isolement relatif de l'empire Nésora assure un certain clientélisme. Les exportations comprennent bois et papier, des ressources alimentaires et plusieurs centaines de plantes aux effets intéressants. Les bazars jasporiens suppléent aux carences des veckyoséliens et plus particulièrement en huiles et farines.\n\n",
+      "military": "Les forces militaires ressentent également cette main de fer, mais pas celle de Tavila. L'Échevin Général Yodruck accapare la responsabilité de la gestion globale des forces et déploie des trésors d'administration pour s'assurer du recensement des effectifs et de l'intendance. Sa stratégie d'entraînement repose sur un fort sentiment de citoyenneté impériale, rappelant sans cesse à ses capitaines qu'ils ont à guider tout un peuple contre la barbarie draconique. Le maillage des communautés assure un réseau de guérilleros auto-disciplinés ayant appris à utiliser le terrain à leur avantage. Ils forment de petites unités temporaires qui accréditent les rumeurs draconistes d'une armée de l'ombre humaniste hantant les campagnes.\n\n"
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Le Creuset des Brumes",
+    "uuid": "751c02e3-3fee-4150-8e34-0f8aa2eb11cd",
+    "parent_id": "8cae0ba7-0d82-426b-9fa1-2bbd64d7e16b",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "À l'ouest de la région, au pied des Monts des Brumes, d'étranges cheminées naturelles laissent échapper des flots permanents de brumes glaciales. Capables, dit-on, de geler la main d'un homme, ces brumes demeurent un lieu intrigant et dangereux. Nul érudit humaniste n'en a pour le moment percé les secrets, mais des expéditions régulières y sont organisées.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Île des Deux-Lunes",
+    "uuid": "f1764c18-8d73-475a-8fdd-e993544f88d9",
+    "parent_id": "530f140e-d5f7-4bb0-bdf5-faf7307d856c",
+    "type": "region",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Amira",
+    "uuid": "2a904560-7a61-494d-89fd-184f76997484",
+    "parent_id": "f1764c18-8d73-475a-8fdd-e993544f88d9",
+    "type": "village",
+    "leaders": [
+      {
+        "name": null,
+        "link": {
+          "name": "Harv le Vindicatif",
+          "link": "resource://assets/npc/3ebe5977-3cbc-4b58-9aff-de09ad79242c"
+        },
+        "title": "Dirigeant de l'enclave d'Amira"
+      }
+    ],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "En 1271 AdE, pour échapper aux autorités draconiques, certains Humanistes se tournèrent vers Kali où les Lois draconiques n'ont pas cours. Luttant pour survivre, ils adoptèrent le mode de vie des brigands. Un jour qu'il rôdait dans les tavernes d'[Hasran](resource://assets/place/16fb5417-5cd9-4149-83e0-a36c8e94450a) à la recherche d'un refuge acceptable, leur chef, Miroslav Amira, entendit parler de l'Île des Deux-lunes, un repaire de pirates. Dès le lendemain, ses Humanistes prirent la mer en direction de l'île. L'Ile des Deux-lunes est vaste, et seule une partie de sa superficie, située à l'est, est occupée par les bandes de pirates des environs. La communauté de Miroslav explora les côtes ouest et nord de l'île pour finalement découvrir une large baie abritée par une barrière rocheuse impressionnante.\n\nCelle-ci se dresse face à la mer, telle une falaise, et redescend en pente abrupte vers la baie qu'elle abrite. La falaise est coupée en deux par un chenal assez difficile à distinguer qui mène à travers les rochers jusqu'à la baie. Selon les érudits qui ont trouvé refuge là, il s'agirait du cône d'un ancien volcan. Une végétation luxuriante recouvre les pentes de la barrière rocheuse et le rivage est jonché de roches basaltiques et de sable noir. C'est là que Miroslav établit une enclave humaniste qui, des années plus tard, fut baptisée Amira en son honneur. Aujourd'hui, la petite communauté a bien grandi et compte plusieurs centaines d'habitants, et les cabanes d'origine ont été remplacées par des constructions en pierre. \n\nLa bourgade elle-même n'est pas fortifiée et étend ses ruelles jusqu'au rivage. Une petite citadelle se dresse cependant à l'entrée du port, et le chenal comporte de nombreuses défenses. Ces dernières vont de chaînes d'acier, qui peuvent être tendues en travers du chenal en actionnant des poulies, à des balistes dissimulées dans la paroi rocheuse et qui peuvent cribler de plusieurs dizaines de harpons des embarcations intruses.\n\nDe nombreux postes de combat ont également été taillés dans la roche et sont accessibles par des galeries partant de la citadelle. Ces postes permettent de déclencher les différentes armes, ainsi que les pièges à éboulements de rochers. L'arme ultime, que les humanistes réservent pour le cas où l'invasion serait inévitable, consiste à utiliser le courant d'eau chaude qui provient du centre de la baie et qui va vers la mer, en y déversant une mixture alchimique huileuse, stockée dans de nombreux réservoirs à l'entrée de la baie. Si les vannes venaient à être ouvertes, le liquide irisé et épais se répandrait rapidement dans tout le chenal, et il ne resterait alors plus qu'à allumer le feu pour que l'enfer s'y déchaîne.\n\nJusqu'à présent, les habitants d'Amira n'ont jamais eu à défendre leur repaire dont l'accès reste secret. Tous sont prêts à se battre même si peu d'entre eux sont des hommes d'armes. Il s'agit pour l'essentiel de commerçants, d'aventuriers, d'artisans et d'érudits ainsi que de leurs familles, sans parler des simples gens qui n'ont plus foi en les dragons et qui ont choisi de suivre cette nouvelle vie qui s'offre à eux.\n\nLes deux activités principales qui font vivre l'enclave sont la construction de navires et la piraterie. L'île est en effet plutôt pauvre et ne procure que peu de vivres, le seul gibier est constitué de quelques lapins et les bois comptent peu d'arbres fruitiers ; seule la baie est riche en vie, favorisée par le courant d'eau chaude provenant de ses profondeurs. On y trouve de nombreux poissons et des algues comestibles à profusion. Pour couvrir les besoins de la communauté, les humanistes de l'enclave se livrent donc à la piraterie, abordant les vais- seaux draconistes naviguant le long des côtes de Kar et de l'Empire de Solyr en se faisant passer pour des pirates fatalistes d'Hasran... Certains capitaines téméraires se risquent même à accoster pour aller piller les villages côtiers. Ces pirates suivent cependant un code strict qui leur interdit de verser le sang inutilement, et ils ne s'attaquent qu'aux défenseurs de l'ordre draconique; leur seul but est de s'emparer de vivres, de matières premières et de produits manufacturés, le butin suprême étant constitué de dracs et de bijoux qu'il est alors aisé d'utiliser pour aller s'approvisionner le plus simplement du monde dans les cités. \n\nLes navires sont donc un enjeu important pour les humanistes de l'enclave. Les érudits et les artisans travaillent de concert afin de concevoir les meilleurs vaisseaux, capables de rattraper leurs proies, de distancer d'éventuels poursuivants, d'affronter la pleine mer, les tempêtes et les dragons des océans. C'est dans cette enclave qu'ont été conçus récemment de gros bateaux pouvant naviguer sans trop de difficultés en haute mer. Dotés d'une grande quille, d'une barre et d'un véritable gouvernail, de gréements et de voiles gigantesques, ces vaisseaux embarquent une cinquantaine de combattants, plusieurs tonnes de marchandises et surtout, cachent derrières leurs sabords de puissants harpons destinés aux enfants d'Ozyr.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "La tour de guet",
+    "uuid": "6711929a-a8a6-4108-b31b-06f1aa9f542b",
+    "parent_id": "2a904560-7a61-494d-89fd-184f76997484",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au sommet de la barre rocheuse, les humanistes ont construit une tourelle qui leur permet de surveiller l'horizon. La tour, tout comme les navires d'Amira, est équipée d'héliographes à miroirs qui leur permettent de communiquer de jour grâce aux rayons du soleil. La nuit, les vaisseaux en approche allument des feux ; dès qu'ils sont identifiés, la tour émet à son tour des signaux lumineux. Par ailleurs, les érudits d'Amira comptent de nombreux astronomes renégats qui cherchent à étudier de près les étoiles. L'un d'entre eux, Kyle Anton, voudrait faire de la tour de guet un observatoire équipé d'une bonne lunette. Avec une équipe d'artisans, il est en train d'essayer de fabriquer des lentilles pour faire un petit télescope capable d'observer les étoiles.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Katilonia",
+    "uuid": "521177b9-2d6b-4935-ac14-b61170149b75",
+    "parent_id": "6b275174-2f30-4697-a266-531d1883a60d",
+    "type": "village",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au nord-ouest d'Oforia, sur la rive nord de l'Odieux, se situe un petit village typique d'Ysmir. De nombreux canaux irriguent les grandes rizières qui s'étendent tout au long du fleuve, donnant à la région l'allure d'un immense marécage. Comprimées entre le fleuve et les champs, des maisonnettes de bois et de paille émergent des cultures, entourées d'une palissade. Au centre d'un de ces villages se dresse un bâtiment imposant: l'auberge relais de Katilonia où s'arrêtent les quelques voyageurs qui circulent entre Oforia et Sermande. Ceux-ci peuvent observer une population tout à fait banale d'ouvriers agricoles qui travaillent dans les champs comme dans tout village d'Ysmir sans se douter qu'ils ont mis le pied dans le plus important repaire humaniste de la région.\n\nCe que personne ne sait, et surtout pas les Humanistes, c'est que Katilonia est un Dragon des Cités ancien de mentalité masculine sous sa forme élémentaire. Il a été envoyé par Khy pour donner un coup de pouce aux humanistes à leur insu. Les habitants ne sont que des extensions du dragon que celui-ci créé pour donner vie au village. Les humanistes sont donc, sans le savoir, les seuls êtres vivants du village. La magie du dragon permet également aux humanistes de bénéficier de pièces secrètes à des endroits improbables − caves dans une zone marécageuse − ou impossibles à détecter. Enfin, s'il arrive qu'un Inquisiteur ou un fanatique draconiste entre dans le village et découvre des “hérétiques”, le dragon l'éliminera − ou favorisera son élimination d'une manière qui paraîtra totalement naturelle − chute malencontreuse dans des escaliers, écrasement par des tonneaux…\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "L'auberge-relais de Katilonia",
+    "uuid": "64ea8d4e-0742-4194-ad90-25623a7f30de",
+    "parent_id": "521177b9-2d6b-4935-ac14-b61170149b75",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'auberge est le quartier général des humanistes agissant dans les cités d'Ysmir. En apparence, rien ne la différencie d'une autre auberge : bâtie en forme de L, elle est composée d'une aile principale de deux étages et d'une petite aile qui abrite les écuries.\n\nOn y entre par la salle commune dans laquelle sont alignées trois longues tables auxquelles viennent s'installer des villageois à la fin de leur journée de travail. Les voyageurs, marchands itinérants et autres aventuriers qui font étape à Katilonia se joignent à eux, apportant des nouvelles du monde. Souvent, un barde entonne un chant pour réchauffer l'atmosphère tandis qu'un serveur fait circuler les choppes de bière et les plats de charcuterie sous l'œil vigilant de la propriétaire, [Elyse Grandcoeur](resource://assets/npc/4eb8327b-c7f5-4c03-8e8a-033cfa7be331). Un escalier monte directement aux chambres qui contiennent chacune des lits plutôt rudimentaires de quatre places que les voyageurs partagent, qu'ils se connaissent ou non.\n\nQui irait soupçonner que le garde-manger situé sous la cuisine dissimule un accès à un repaire humaniste ? C'est un véritable complexe qui s'étend sous l'auberge, composé de chambres, d'un réfectoire, d'une salle de réunion et du bureau d'Elyse. C'est dans ce lieu que les actions des Humanistes d'Ysmir sont coordonnées.\n\nElyse s'appuie pour cela sur son second, [Ygolan](resource://assets/npc/28d8ce66-4f6c-4fbd-826d-04ccc94ef489), et sur son équipe qui réside à Katilonia. Par ailleurs, Ygolan et son équipe jouent un rôle très important en ce qui concerne les désertions d'érudits ysmiriens. Nombre d'entre eux s'étant intéressés à des domaines jugés hérétiques, ils ont fini par passer outre les interdictions draconiques et sont recherchés par la Loge Théologique ou l'Inquisition.\n\nL'équipe d'Ygolan est utilisée pour mettre les érudits et leur famille en sécurité. La première partie de l'opération consiste à les amener à Katilonia où ils sont hébergés le temps de les faire oublier ; le sous-sol de l'auberge est équipé pour qu'une vingtaine de personnes puissent vivre dans des conditions acceptables sans avoir à se montrer à la surface de Kor. Après quelques temps, Ygolan fait sortir les fugitifs du pays et les escorte jusqu'à leur destination.\n\nLes fugitifs se rendent souvent dans l'Empire de Solyr, et les Inquisiteurs en sont parfaitement conscients. Ils surveillent particulièrement les voies de circulation vers Yris. Aussi, Ygolan a tendance à emprunter des voies moins évidentes, telle que la traversée de l'Odieux puis d'une partie des steppes Zûls pour entrer dans Solyr par les Collines de Fer.\n\nPar la suite, la majorité des fuyards est escortée vers Nésora alors qu'une minorité préfère se perdre dans la foule d'Yris. L'enclave de Katilonia n'est habitée en permanence que par une quinzaine d'humanistes qui agissent avant tout comme des agents de renseignement et qui ont souvent une formation d'érudit et de voyageur.\n\nCependant, comme tous les espions, les humanistes doivent parfois mener des opérations au cours desquelles le recours à la force n'est pas exclu. Lors de ces missions, ils renoncent alors à l'anonymat des tenues de paysans pour s'équiper des dernières innovations technologiques. Ainsi, les caves de Katilonia sont fournies en arbalètes, en dagues à lames rétractables empoisonnées… Le dernier ajout à l'arsenal n'a pas encore été testé; il s'agit d'une arquebuse à poudre noire explosive, aux effets dévastateurs.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Limarel",
+    "uuid": "1263176d-71e7-481a-9c19-a11df771e439",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "village",
+    "leaders": [
+      {
+        "name": "Paglenn",
+        "link": null,
+        "title": "Chef du village de Limarel"
+      }
+    ],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Limarel est un village situé quelque part à l'orée de la Forêt Mère, à l'embouchure du Fluet, un petit fleuve côtier qui se jette dans la Source. Son emplacement est secret et nulle carte n'indique le chemin qui permet d'y accéder. Sa population est composée de quelques centaines d'hommes et de femmes. croyant en un monde meilleur où l'homme n'aurait plus à subir l'omniprésence draconique. Limarel a donc été fondé sur un principe d'autarcie et depuis près de deux siècles qu'il existe, ses habitants n'ont jamais eu besoin du reste du monde pour vivre.\n\nLimarel n'est pas coupé de Kor pour autant, et des échanges ont lieu avec d'autres enclaves humanistes, ainsi qu'avec l'Empire Nésora. En effet, si Limarel n'a besoin de personne pour survivre, ses habitants souhaitent cependant faire évoluer la société et sont intimement convaincus que la progression passe par l'échange d'idées et la collaboration. Ainsi, ce village situé sur le territoire de Heyra est devenu, comme par défi envers la puissance des Dragons, un véritable nœud de communication entre l'Empire Nésora et certaines enclaves humanistes de l'ouest de Kor.\n\nDepuis quelques années, les érudits humanistes s'intéressent particulièrement aux propriétés de certains gaz que l'on peut trouver en grandes quantités dans les Marais de Path, dans la Principauté de Marne. Les petites communautés qui s'établirent sur place furent cependant rapidement repérées par l'Inquisition et disparurent d'elles-mêmes avant d'être prises pour cible par les fanatiques draconistes. Les Humanistes mirent alors en place des petites caravanes chargées de transporter les gaz jusqu'en Nésora où ils pourraient être étudiés puis exploités tranquillement. Mais la méthode de transport par vessies de porc gonflées n'était pas performante.\n\nA la même époque, le réseau humaniste rallia à sa cause une jeune alchimiste du nom de [Dina](resource://assets/npc/bc2e85de-12fc-4639-a9ef-f32594687a51). A Limarel, celle-ci mit au point une méthode de stockage des gaz qui permit de les transporter plus aisément et avec moins de pertes qu'auparavant.\n\nCette méthode repose sur l'utilisation de garlanne, une mousse aux étonnantes capacités d'absorption des gaz, et d'une membrane souple provenant d'un poulpe de la Source. Par phénomène d'osmose, le gaz traverse la membrane qui obture une bonbonne métallique remplie de mousse. Le gaz est alors absorbé et est retenu par la mousse. Aujourd'hui, des embarcations de contrebandiers assurent régulièrement la liaison entre Marne et Limarel pour livrer ces bonbonnes qui sont pour partie stockées au village pour les études de Dina, les autres étant acheminées jusqu'en Nésora, à travers la Forêt Mère.\n\nLes travaux de Dina occupent une vingtaine de personnes : certaines l'assistent directement tandis que d'autres sont chargées de fabriquer les bonbonnes qu'elle a conçu.\n\nPour ce qui est des autres activités, Limarel ressemble presque à un village banal : tous les matins, très tôt, des dizaines de petites embarcations partent à la pêche, tandis qu'un peu plus tard dans la journée, des cueilleurs et des chasseurs s'aventurent dans la forêt. Les victuailles sont vendues tous les jours à la criée sur le petit marché longeant le port. Rien de bien extraordinaire si ce n'est que les techniques et outils utilisés dans les différentes professions pourraient bien choquer un visiteur draconique ; à Limarel, les chasseurs n'hésitent pas à employer des pièges mécaniques et des arbalètes, les pêcheurs utilisent des filets plombés et un moulin construit sur le Fluet permet de moudre le grain.\n\nLimarel ne dispose pas à proprement parler d'une milice ou de toute autre force de combat. Bien sûr, comme dans la plupart des enclaves humanistes, l'ensemble de la population est toujours prête à prendre les armes s'il le faut. Le village est entouré d'une haute et solide palissade qui pourrait, s'il le fallait, subir un assaut de fantassins. Des tourelles situées le long de ce rempart sont dotées d'armes telles que des arbalètes lourdes, régulièrement entretenues.\n\nCependant, Limarel préfère jouer sur la discrétion car le village ne résisterait pas à l'attaque d'un bataillon de l'Inquisition ou d'une Légion des protecteurs. Des éclaireurs parcourent régulièrement la forêt pour s'assurer de la tranquillité du village, et tout visiteur est accueilli courtoisement. La population vient alors questionner le nouveau venu sur nombre de sujets anodins. Parmi les curieux, Paglenn, le chef du village, écoute les propos avec attention; s'il juge que le visiteur est un défenseur de l'ordre draconique, et donc un danger potentiel pour la sécurité de Limarel, il donne l'ordre de l'éliminer. A son grand soulagement, il n'a dû prendre cette décision qu'à deux reprises, ce qu'il n'a pas fait de gaieté de cœur.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "La Maison de la Connaissance",
+    "uuid": "ac5c526b-2e54-43f9-81ba-e5f7c79caffe",
+    "parent_id": "1263176d-71e7-481a-9c19-a11df771e439",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cette grande bâtisse de pierre à colombages recueille sur deux étages une riche bibliothèque, ainsi que des salles d'étude où les érudits de Limarel peuvent effectuer leurs recherches. Tous les domaines y sont étudiés et enseignés depuis l'histoire et la géographie jusqu'à des matières obscures telles que l'alchimie et les calculs. Le taux d'alphabétisation de Limarel est d'ailleurs proche de 100 %. Dina l'Alchimiste en est théoriquement responsable mais, préférant se consacrer à ses études, elle en a confié la gestion à son mari, Marko.\n\nLa bibliothèque de la Maison de la Connaissance est largement fournie en ouvrages récents qui lui sont apportés régulièrement, mais également en parchemins et livres anciens de toutes doctrines, sauvés des flammes destructrices des Inquisiteurs ou trouvés au cours d'expéditions archéologiques qui sont menées en particulier dans la Forêt Mère. Plusieurs antiques cités “humanistes”, construites dans les premiers siècles de l'Âge des Empires pour disparaître quelques décennies plus tard, ont en effet été découvertes récemment, et certaines reliques sont exposées dans un petit musée improvisé dans le grand hall d'entrée de la Maison de la Connaissance.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
   }
 ]

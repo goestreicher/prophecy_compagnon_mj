@@ -7182,168 +7182,6 @@
       "type": "officiel",
       "name": "Yris, Flambeau de l'Humanité"
     },
-    "name": "Tilda Az'na",
-    "uuid": "1911eed6-cffe-4f94-ab36-f56a18a47939",
-    "description": "Seule Prodige envoyée par sa caste au décès de son prédécesseur Laugrind (à l'âge de 93 ans !), cette jeune femme assume bien son rôle de Provin-Prodige de Solyr depuis huit ans, à la surprise de ses pairs qui doutaient de sa jeunesse.\n\n",
-    "image": null,
-    "icon": null,
-    "abilities": {
-      "force": 0,
-      "intelligence": 0,
-      "coordination": 0,
-      "presence": 0,
-      "resistance": 0,
-      "volonte": 0,
-      "perception": 0,
-      "empathie": 0
-    },
-    "attributes": {
-      "physique": 0,
-      "mental": 0,
-      "manuel": 0,
-      "social": 0
-    },
-    "initiative": 1,
-    "injuries": {
-      "manager": {
-        "levels": [
-          {
-            "type": "injured",
-            "start": 0,
-            "end": 40,
-            "capacity": 3
-          },
-          {
-            "type": "death",
-            "start": 40,
-            "end": -1,
-            "capacity": 1
-          }
-        ],
-        "injuries": {}
-      }
-    },
-    "size": 0.8,
-    "skills": {
-      "families": {
-        "combat": {
-          "all": []
-        },
-        "mouvement": {
-          "all": []
-        },
-        "theorie": {
-          "all": []
-        },
-        "pratique": {
-          "all": []
-        },
-        "technique": {
-          "all": []
-        },
-        "manipulation": {
-          "all": []
-        },
-        "communication": {
-          "all": []
-        },
-        "influence": {
-          "all": []
-        }
-      }
-    },
-    "status": {
-      "value": {
-        "bitfield": 0
-      }
-    },
-    "equipment": [],
-    "magic": {
-      "skills": {
-        "instinctive": 0,
-        "invocatoire": 0,
-        "sorcellerie": 0
-      },
-      "spheres": {
-        "pierre": 0,
-        "feu": 0,
-        "oceans": 0,
-        "metal": 0,
-        "nature": 0,
-        "reves": 0,
-        "cite": 0,
-        "vents": 0,
-        "ombre": 0
-      },
-      "pool": 0,
-      "pools": {
-        "pierre": 0,
-        "feu": 0,
-        "oceans": 0,
-        "metal": 0,
-        "nature": 0,
-        "reves": 0,
-        "cite": 0,
-        "vents": 0,
-        "ombre": 0
-      },
-      "spells": []
-    },
-    "favors": [],
-    "fervor": {
-      "value": 0,
-      "powers": []
-    },
-    "caste": {
-      "caste": "prodige",
-      "status": "expert",
-      "career": "mediateur",
-      "interdicts": [],
-      "privileges": []
-    },
-    "honorary_caste": null,
-    "age": 28,
-    "height": 1.7,
-    "weight": 60,
-    "origin": {
-      "uuid": null
-    },
-    "luck": 0,
-    "proficiency": 0,
-    "renown": 0,
-    "disadvantages": [],
-    "advantages": [],
-    "tendencies": {
-      "dragon": {
-        "value": 0,
-        "circles": 0
-      },
-      "human": {
-        "value": 0,
-        "circles": 0
-      },
-      "fatality": {
-        "value": 0,
-        "circles": 0
-      }
-    },
-    "draconic_link": {
-      "sphere": "pierre",
-      "dragon": "",
-      "progress": "aucunLien"
-    },
-    "category": "dirigeants",
-    "sub_category": {
-      "name": "empireDeSolyr"
-    },
-    "unique": true,
-    "use_human_injury_manager": false
-  },
-  {
-    "source": {
-      "type": "officiel",
-      "name": "Yris, Flambeau de l'Humanité"
-    },
     "name": "Tremor Magioster",
     "uuid": "1b810c49-0313-4589-8d57-64c2e9eff4a6",
     "description": "Tremor Magioster (Érudit-conteur III°) est un homme à la silhouette ravagée. Son visage défiguré porte encore les marques d'une horrible maladie, et il se déplace avec difficulté à l'aide d'une béquille, pour soulager ses pieds malades. Il hante les tavernes de Cormande en racontant des histoires merveilleuses et des légendes poignantes, jouant avec les émotions du public grâce à sa voix enchanteresse épargnée par la maladie. Ses contacts avec le reste de sa caste sont ténus, mais il connaît quantité de voyageurs et de commerçants. On dit de lui qu'il est l'un des meilleurs informateurs du duché.\n\n",
@@ -7983,6 +7821,2124 @@
     "category": "dirigeants",
     "sub_category": {
       "name": "empireDeSolyr"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Ermar",
+    "uuid": "86855dbb-b53e-4d76-8e8f-a7cda43043bc",
+    "description": "L'Empereur de [Nésora](resource://assets/place/477313a3-f473-4f11-b7a5-acf718cdc54a) et Grand Ordonnateur des alchimistes de la caste des artisans (Artisan-alchimiste V° dévoyé, secrètement Prêtre-humaniste I°) serait aujourd'hui âgé de presque cent vingt ans.\n\nSa position élevée dans la caste de Kezyr et l'intérêt suscité par le [fleuve des Effluves](resource://assets/place/63d762b3-4ae2-4782-beb5-0ed03f4537b5) s'avérèrent d'excellents prétextes pour justifier son installation dans l'empire Nésora. Son histoire est ensuite assez simple : convaincu par les idées réformatrices des humanistes, il délaissa peu à peu l'artisanat pour entrer dans la politique locale. S'il commença en doublant les castes de l'empire, il s'allia rapidement avec les dévots de l'humanisme avec lesquels il fomenta la révolution qui le mena au pouvoir. Peu carriériste et altruiste par nature, Ermar est devenu au fil des années un politicien sans honneur, prêt à tout pour sauvegarder ses projets humanistes. C'est un homme complexe, qui tente encore de préserver une façade de respectabilité draconiste afin de ménager la chèvre et le chou. Penseur et réformateur, idéologiste humaniste voué à libérer l'homme du joug draconique, Ermar est aujourd'hui Inspiré de M'lan.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "artisan",
+      "status": "grandMaitre",
+      "career": "alchimiste",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 120,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "empireNesora"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Karadyon Ofozide",
+    "uuid": "fd5aa848-b7c6-443d-bc09-c01fa71ed384",
+    "description": "Pour le régent de [Koreesalima](resource://assets/place/2fd2eaff-38c1-4051-a2ea-c9b26299e3b5), l'ambition démocratique de l'État n'est pas la priorité. Motivé par la guerre, Ofozide (ex Combattant noir III°, ex Augure noir III°) est un martyr. Accusé de fatalisme dans sa jeunesse, il fut lacéré par le fouet avant de parvenir à fuir. Son séjour à [Maran-Djaar](resource://assets/place/071bedb8-2d24-4e76-824f-5ee8254fec68) fit de lui un mercenaire spécialisé dans la magie de combat, mais il fut une fois encore au centre d'un complot et déchu. Après bien des errances, il décida de partir au-delà des limites de Kor, dégoûté par l'engeance draconique. Inspiré de T'zan, il s'arrêta à Koree après trois années d'un voyage marqué par le sang, l'infamie et la haine des dragons. Ofozide a remplacé l'ancien régent, mort accidentellement et s'acharne depuis à tout mettre en œuvre pour préparer la guerre contre l'ordre draconique.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattantNoir",
+      "status": "expert",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": {
+      "caste": "mageNoir",
+      "status": "expert",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "empireNesora"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Laïença Gaspendale",
+    "uuid": "69989ff2-e9ff-48d8-82b2-21458c58288f",
+    "description": "Anciennement affiliée à la caste des commerçants avant de se tourner vers le tutorat du commerce, la régente de [Pysalima](resource://assets/place/21c7ddf3-1697-476d-9a20-edecac20cf3b) (Commerçante-marchande IV° dévoyée) dirigeait une entreprise de coquillages servant de matière première à l'artisanat de luxe. Quand [Ermar](resource://assets/npc/86855dbb-b53e-4d76-8e8f-a7cda43043bc) lui proposa le poste de régente, Laïença fut contrainte d'abandonner la gestion de son affaire afin de se consacrer à celles de la région. Cooptée dans le giron de la religion humaniste, son double jeu consiste à contenter ses parrains fanatiques en même temps qu'elle rassure le peuple.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "maitre",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "empireNesora"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Lous Antunès",
+    "uuid": "e7b65a39-e247-48c9-ac05-0052615d3c09",
+    "description": "Échevin d'État de [Veckyosalima](resource://assets/place/8cae0ba7-0d82-426b-9fa1-2bbd64d7e16b) apprécié des sans-caste pour sa présence sur le terrain, Lous est un homme qui sait écouter et répondre aux attentes (ou en donner l'impression). Porte-parole de [la régente](resource://assets/npc/7f20344f-b73e-4f7f-abeb-5e4b36aed8bb), il maintient la cohésion entre les différents élus de l'État. On le croit originaire de la région et sans-caste mais Lous est né dans le Royaume des Fleurs et a longtemps appartenu à la caste des mages (ex Mage-enchanteur III°).\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "mage",
+      "status": "expert",
+      "career": "enchanteur",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "7577db35-83d3-44f3-bf3f-2c0f8b511a3c"
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "empireNesora"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Sastrace Arkovélie",
+    "uuid": "874d284e-e01d-41b5-858b-d92b7b7921cf",
+    "description": "Régent de l'État de [Kyosalima](resource://assets/place/e676f56d-590a-449f-93e3-536136049d91), Arkovélie (ex Combattant-duelliste IV°, ex maître d'armes noir IV°) est la clé de voûte de la politique frontalière. À quarante ans, cet ancien citoyen combattant a largement baroudé. Déçu par l'ordre draconique, il a quitté Ankar pour les Ordres noirs de Nadjar avant de repartir, toujours insatisfait, pour Nésora. S'il est au fait de manœuvres visant à déstabiliser les Marches Alyzées, Arkovélie n'y participe pas directement. Son principal souci (hormis le désamorçage des tensions frontalières) sont les castes présentes à Kyo et la pression diplomatique sordide qui y règne. Les nombreuses tentatives d'assassinat dont il est la cible et les heurts entre politique locale et droits des castes ne sont pas faits pour l'égayer.\n\nSastrace Arkovélie demeure en permanence sous le regard de [l'Ordre Noir des Combattants](resource://assets/faction/919ba0ca-db93-44ca-98d6-2739660b7770). Conscient de se trouver entre l'enclume et le marteau, le régent protège plusieurs groupes des castes noires à l'intérieur de Kyo. Cela leur permet de s'impliquer dans la lutte contre les castes, et d'apporter un savoir interdit que l'Empire entend bien exploiter. Arkovélie entretient une milice secrète composée de ces hommes que les considérations morales n'arrêtent pas. Les castes demeurent dans l'ignorance de cette alliance forcée, qui pourrait bien ajouter un prétexte à l'embrasement de la région.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattantNoir",
+      "status": "maitre",
+      "career": "duelliste",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": {
+      "caste": "combattant",
+      "status": "maitre",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "age": 40,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "empireNesora"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Tavila Veckyandosa",
+    "uuid": "7f20344f-b73e-4f7f-abeb-5e4b36aed8bb",
+    "description": "Tavila Veckyandosa (ex Érudit III°) est la régente actuelle de l'État de [Veckyosalima](resource://assets/place/8cae0ba7-0d82-426b-9fa1-2bbd64d7e16b). Issue de la noblesse locale, elle a su anticiper la réforme et adapter ses titres et richesses au nouveau régime sénatorial. Autrefois représentante peu motivée de la caste d'Ozyr, Tavila apprécie beaucoup sa nouvelle condition. A la différence des autres États où la gestion de la région est déléguée à l'intelligence des gouverneurs, Tavila a conservé des influences à tous les niveaux. Veckyo est le pivot de la pression impériale sur les Marches Alyzées et Tavila, la “femme de fer”, se montre une diplomate retorse dans ce domaine. La place politique des sans-caste est plus élevée que dans le reste de l'Empire et la citoyenneté toujours plus facile à obtenir.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "erudit",
+      "status": "expert",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "empireNesora"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Tomos Malchaka",
+    "uuid": "9a79f0b8-53ee-431a-bf4d-540fa56f463e",
+    "description": "L'Échevin d'État de [Pysalima](resource://assets/place/21c7ddf3-1697-476d-9a20-edecac20cf3b) (ex Erudit-architecte III° et Navigateur V° dévoyé) est l'une des éminences humanistes de l'État. Architecte maritime originaire d'Oforia, il a transité par [Veckyo](resource://assets/place/8cae0ba7-0d82-426b-9fa1-2bbd64d7e16b) et fait partie de l'Ordre Secret de l'Évolution où il dirige une cellule d'explorateurs maritimes. Il est venu à Py pour y implanter des chantiers navals du même type que ceux qui furent détruits à Veckyo. Fervent défenseur des libertés humaines, il est convaincu que des navires à coque de fer, armés de balistes lourdes seraient le meilleur moyen de faire entendre raison aux enfants d'Ozyr et de savoir ce qui se passe au- delà de l'horizon.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "erudit",
+      "status": "expert",
+      "career": "architectes",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "empireNesora"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Ur de Dosa",
+    "uuid": "2a80ec04-c3e6-4353-b952-9ab2251212df",
+    "description": "Jeune frère supposé de [la régente](resource://assets/npc/7f20344f-b73e-4f7f-abeb-5e4b36aed8bb), l'Échevin Argentier de [Veckyosalima](resource://assets/place/8cae0ba7-0d82-426b-9fa1-2bbd64d7e16b) est l'homme invisible ! À la tête d'administrateurs et de collecteurs d'impôts portant sa parole dans l'État, personne ne semble pouvoir s'accorder sur sa description. On raconte même que son don d'ubiquité lui permet de surveiller les moindres rouages de l'économie locale.\n\nLes trois Échevins de Veckyosalima cultivent tous, à l'insu les uns des autres, des dons exceptionnels en magie draconique. Ur est certainement le plus étrange. Ses talents lui permettent d'emprunter mille visages différents en mille lieux à la fois. En conséquence de quoi, Ur est un mage incroyable sans jamais avoir fréquenté la caste de Nenya. Demi-frère bâtard de Tavila, sa mère fut fécondée dans la douleur par un dragon des cités rendu fou par le Fléau. Traumatisée et mentalement dévastée, Ina Veckyandosa sombra dans un autisme complet et mourut en couches. Tavila éleva son frère comme un fils. Ur est une créature dangereuse dévouée à sa sœur-mère, qui l'utilise comme assassin dans ses plans machiavéliques. Puissant au point de rivaliser avec un dragon adulte, c'est un Humaniste fanatique (malgré sa nature et son usage immodéré de la magie des cités), adorant torturer les mages et les Élus qu'il peut capturer. \n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "sansCaste",
+      "status": "none",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "empireNesora"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Yodruck",
+    "uuid": "447f389b-6d6a-4c33-9b1e-b03703f4cfad",
+    "description": "Redoutable combattant d'une quarantaine d'années, cet ancien mercenaire d'origine inconnue est un athlète à la peau ambrée qui n'a jamais trouvé son égal au combat. Orateur hors pair et tacticien lucide, l'Échevin Général de [Veckyosalima](resource://assets/place/8cae0ba7-0d82-426b-9fa1-2bbd64d7e16b) est connu pour travailler du matin au soir, disparaissant toutes les nuits pour retrouver, dit-on, ses nombreuses maîtresses.\n\nLe Seigneur des Volcans est intrigué par les exploits de Yodruck. Plusieurs de ses meilleurs combattants ont été envoyés pour espionner le héros et tester ses capacités. Un seul est revenu vivant pour confirmer la légende. Kroryn hésite à s'aventurer au cœur de l'empire Nésora ; il envisage de le piéger vers les Monts des brumes dans le seul but de le rencontrer. Ce qu'il ignore, c'est que Yodruck n'est autre qu'un de ses fils, Jerrazkhûlan, ancien des [Seigneurs ardents](resource://assets/faction/9a203ede-7234-4237-8bf6-581707487609) qui a décidé d'utiliser seul ses formidables capacités pour lutter contre sa propre race. Connu seulement de Khy (qui le couvre), son secret est sa seule faiblesse, sa lucidité lui assurant une respectabilité imparable.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "sansCaste",
+      "status": "none",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 40,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "empireNesora"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Dina l'alchimiste",
+    "uuid": "bc2e85de-12fc-4639-a9ef-f32594687a51",
+    "description": "Âgée de 30 ans, Dina est une ancienne érudit formée à Yris. Elle s'est rapidement intéressée à l'alchimie, mais sa curiosité naturelle a emmené ses expériences vers des domaines interdits par Ozyr. Après que plusieurs demandes d'autorisation draconique lui eurent été refusées, elle se mit à travailler de manière occulte.\n\nRapidement, elle entra en contact avec des humanistes parmi lesquels elle rencontra Marko, un jeune fonctionnaire impérial féru d'histoire et de légendes qu'elle épousa quelques mois plus tard. Ensemble, ils entrèrent en résistance par le biais de la Confrérie humaniste d'Yris jusqu'à ce qu'on propose à Dina de travailler sur des substances gazeuses provenant de la Principauté de Marne.\n\nElle accepta aussitôt, et le couple partit pour [Limarel](resource://assets/place/1263176d-71e7-481a-9c19-a11df771e439) où la jeune femme se consacra à l'étude des réactions alchimiques sans que les autorités draconiques ne s'aperçoivent de sa disparition. Ces derniers temps, elle est parvenue à mettre en évidence les propriétés de certains gaz, ainsi que certaines réactions particulières. Au grand désespoir des responsables du mouvement Humaniste, Dina vient de mettre ses travaux de côtés pour s'occuper de Moira, son bébé.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "sansCaste",
+      "status": "none",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 30,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "humanistes"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Elyse grandcœur",
+    "uuid": "4eb8327b-c7f5-4c03-8e8a-033cfa7be331",
+    "description": "L'aubergiste de [Katilonia](resource://assets/place/64ea8d4e-0742-4194-ad90-25623a7f30de) est une femme d'une trentaine d'années au physique plutôt agréable et que nombre de voyageurs prennent pour une simple serveuse. Ils s'aperçoivent en général vite de leur erreur, car Elyse est une femme de caractère qui ne manque pas de s'indigner. Dans l'ensemble, elle est cependant très chaleureuse et accueillante.\n\nSous cet aspect anodin se cache la chef de file du réseau humaniste d'Ysmir. C'est une femme profondément sincère qui rêve d'une société juste où les hommes seraient égaux. Elle ne supporte donc pas le système des castes qui n'accorde ses Privilèges qu'à certains. Elle respecte les dragons comme tout autre être vivant, d'autant plus qu'ils vivent depuis des millénaires. Pour autant, elle n'accepte pas que l'homme soit le jouet de ces créatures. Sans être une terroriste, elle est prête à se battre pour soustraire l'homme à l'emprise des Ailés, et les Inquisiteurs sont parmi ses pires ennemis. Ces derniers n'ont aucune pitié à espérer de sa part.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "sansCaste",
+      "status": "none",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "humanistes"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Harv le Vindicatif",
+    "uuid": "3ebe5977-3cbc-4b58-9aff-de09ad79242c",
+    "description": "L'enclave humaniste d’[Amira](resource://assets/place/2a904560-7a61-494d-89fd-184f76997484) est de nos jours dirigée par un combattant charismatique qui passe la plupart de son temps en mer à bord du Maryssa, son vaisseau amiral.\n\nÂgé d'une trentaine d'années, ce géant musclé (ex-Combattant III°, Guerrier sacré II°) a été pendant une dizaine d'années un mercenaire au service d'un seigneur de Solyr. Un jour qu'il escortait des prisonniers humanistes afin qu'ils soient jugés par l'Inquisition, il discuta avec une jeune prêtresse pendant plusieurs heures. Les paroles de la jeune femme le touchèrent, mais c'est en assistant à son exécution qu'il se sentit animé par une nouvelle force. Quelques années plus tard, illuminé par M'lan, Harv est devenu un humaniste convaincu qui lutte énergiquement pour cette cause à la barre d'un vaisseau portant le nom de la prêtresse qui lui a donné la foi. Il est secondé par un petit personnage mystérieux et redouté, dont le comportement taciturne et granitique lui a valu le surnom de “Golem”. Depuis des mois, le Maryssa terrorise les défenseurs du [Grand-duché d'Erladys](resource://assets/place/326bed68-0305-4ad5-8621-0315a0b70e97) dont il écume les côtes.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "sansCaste",
+      "status": "none",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "humanistes"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "Ygolan",
+    "uuid": "28d8ce66-4f6c-4fbd-826d-04ccc94ef489",
+    "description": "Ygolan est l'un des meilleurs agents à la disposition d'[Elyse](resource://assets/npc/4eb8327b-c7f5-4c03-8e8a-033cfa7be331). Âgé d'une quarantaine d'années, cet homme au physique banal est un ancien Voyageur Élu de Szyl. Les circonstances qui entourent son changement de vocation sont floues, mais selon certains bruits, il aurait tué son compagnon draconique. La vérité est que Ygolan est un [Aëshim](resource://assets/faction/20334bca-8f2a-4a64-b8cb-217f7a061359) envoyé par Szyl lui-même pour infiltrer les Humanistes. Il est parvenu à gagner leur confiance et aujourd'hui, Ygolan est chargé d'assurer la coordination entre les agents de terrain et Elyse. Avec la chef du réseau, il est la seule personne à connaître l'ensemble des agents humanistes présents à Ysmir. Il n'a cependant pas encore communiqué ces informations à son maître ; à force de côtoyer Elyse, le doute s'est insinué en lui et il ne parvient pas à se résoudre à trahir cette femme qu'il apprécie particulièrement et qui lui fait totalement confiance.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "sansCaste",
+      "status": "none",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 40,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "humanistes"
     },
     "unique": true,
     "use_human_injury_manager": false
