@@ -719,5 +719,128 @@
         "injuries": {}
       }
     }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Jamaël Onyx",
+    "uuid": "533b5860-211d-4c4e-ab66-ff47279941e6",
+    "description": "Jamaël est un vieux dragon qui passe plus clair de son temps sous sa forme humaine. Il parcourt le monde de Kor et dirige un Refuge d'urgence au sud de la [Forêt de Solor](resource://assets/place/bcc7e2b4-c746-4d34-8ca2-f9841664f0d9) - région ravagée par une épidémie d’origine inconnue. En général, il prend l’apparence d’un colosse au visage léonin encadré d’une énorme barbe rousse. Sa force - sous forme humaine - est prodigieuse et il travaille autant comme magicien que comme simple bûcheron.\n\nMais Jamaël est aussi l'un des agents de renseignement de Heyra, et l'un de ses fils directs. La Mère Nature a observé depuis quelques années une augmentation des maladies contagieuses. Or, ayant cartographié la répartition des épidémies, elle a constaté qu’elles n’apparaissaient qu'aux frontières des royaumes.\n\nBien entendu, la réaction de la population locale est d’accuser les voisins et déjà plusieurs conflits ont éclaté au niveau local. Heyra voudrait bien savoir qui est en train de semer le chaos et, pour le moment, les mages humains qu’elle a fait enquêter n’ont rien trouvé ou ont disparu sans laisser de traces.\n\nLe mystère reste complet à ce jour.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": true,
+    "category": "dragons",
+    "biome": "Sud de la Forêt de Solor",
+    "real_size": "Inconnue",
+    "weight": "Inconnu",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capabilities": []
   }
 ]

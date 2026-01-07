@@ -1785,23 +1785,42 @@
     },
     "members": [
       {
-        "name": "Heised Lô",
+        "link": {
+          "name": "Heised Lô",
+          "link": "resource://assets/npc/7bc953b7-b03a-4b94-9462-21b51dc5fb56"
+        },
         "title": "Grand Prodige"
       },
       {
-        "name": "Iris Synomed",
+        "name": null,
+        "link": {
+          "name": "Iris Synomed",
+          "link": "resource://assets/npc/7e7c6ebb-e30e-4fea-9d2f-78ec218ccebb"
+        },
         "title": "Garante des Lois"
       },
       {
-        "name": "Velya Krorn",
+        "name": null,
+        "link": {
+          "name": "Velya Krorn",
+          "link": "resource://assets/npc/fcfc9f92-7147-4188-9233-6cba5edea48a"
+        },
         "title": "Médiatrice Suprême"
       },
       {
-        "name": "Omar Pernt",
+        "name": null,
+        "link": {
+          "name": "Omar Pernt",
+          "link": "resource://assets/npc/5ecd87b0-15f6-4983-9f0a-7bf44a3eadd9"
+        },
         "title": "Garant du Lien"
       },
       {
-        "name": "Sung",
+        "name": null,
+        "link": {
+          "name": "Sung",
+          "link": "resource://assets/npc/88408d5c-b58a-40bf-a6f6-dd1e581c1eb7"
+        },
         "title": "Patriarche du Grand Ordre"
       }
     ]

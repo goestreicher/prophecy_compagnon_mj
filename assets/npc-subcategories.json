@@ -24,6 +24,22 @@
     "is_default": true
   },
   {
+    "title": "Forêt Mère",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Témeth",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Kar",
     "categories": [
       "dirigeants",
