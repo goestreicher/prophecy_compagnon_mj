@@ -1,42 +1,32 @@
-import '../creature.dart';
-import '../non_player_character.dart';
 import '../object_source.dart';
-import '../place.dart';
 import '../scenario.dart';
 import '../scenario_encounter.dart';
 import '../scenario_map.dart';
-import '../star.dart';
 import 'resource_link.dart';
+import 'sourced_resource_link_provider.dart';
 
 class ScenarioResourceLinkProvider extends ResourceLinkProvider {
-  const ScenarioResourceLinkProvider({ required this.source });
+  ScenarioResourceLinkProvider({ required this.source })
+    : _sourcedProvider = SourcedResourceLinkProvider(source: source);
 
   final ObjectSource source;
+  final SourcedResourceLinkProvider _sourcedProvider;
 
   @override
   List<String> sourceNames() => ['Scénario: ${source.name}'];
 
   @override
   List<ResourceLinkType> availableTypes() => [
-    ResourceLinkType.creature,
     ResourceLinkType.encounter,
     ResourceLinkType.map,
-    ResourceLinkType.npc,
-    ResourceLinkType.place,
+    ..._sourcedProvider.availableTypes()
   ];
 
   @override
   Future<List<ResourceLink>> linksForType(ResourceLinkType type, { String? sourceName }) async {
     var ret = <ResourceLink>[];
 
-    if(type == ResourceLinkType.creature) {
-      ret.addAll(
-        (await CreatureSummary.forSource(source, null))
-        .map((CreatureSummary summ) =>
-          ResourceLink.createLinkForResource(type, true, summ.name, summ.id))
-      );
-    }
-    else if(type == ResourceLinkType.encounter) {
+    if(type == ResourceLinkType.encounter) {
       var scenario = await _getScenario();
       if(scenario != null) {
         ret.addAll(
@@ -68,25 +58,9 @@ class ScenarioResourceLinkProvider extends ResourceLinkProvider {
         );
       }
     }
-    else if(type == ResourceLinkType.npc) {
+    else if(_sourcedProvider.availableTypes().contains(type)) {
       ret.addAll(
-        (await NonPlayerCharacterSummary.forSource(source, null, null))
-        .map((NonPlayerCharacterSummary summ) =>
-          ResourceLink.createLinkForResource(type, true, summ.name, summ.id))
-      );
-    }
-    else if(type == ResourceLinkType.place) {
-      ret.addAll(
-        (await PlaceSummary.forSource(source))
-        .map((PlaceSummary summ) =>
-          ResourceLink.createLinkForResource(type, true, summ.name, summ.id))
-      );
-    }
-    else if(type == ResourceLinkType.star) {
-      ret.addAll(
-        (await Star.forSource(source))
-        .map((Star star) =>
-          ResourceLink.createLinkForResource(type, true, star.name, star.id))
+        (await _sourcedProvider.linksForType(type, sourceName: sourceName))
       );
     }
 
