@@ -1607,7 +1607,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "paladin",
       "interdicts": [],
       "privileges": []
@@ -1769,7 +1769,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "aventurier",
       "interdicts": [],
       "privileges": []
@@ -1931,7 +1931,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "strategeCombattant",
       "interdicts": [],
       "privileges": []
@@ -2093,7 +2093,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "maitreDArmes",
       "interdicts": [],
       "privileges": []
@@ -2255,7 +2255,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "guerrier",
       "interdicts": [],
       "privileges": []
@@ -2417,7 +2417,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "gladiateur",
       "interdicts": [],
       "privileges": []
@@ -2741,7 +2741,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "duelliste",
       "interdicts": [],
       "privileges": []
@@ -2903,7 +2903,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "lutteur",
       "interdicts": [],
       "privileges": []
@@ -3065,7 +3065,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "mercenaire",
       "interdicts": [],
       "privileges": []
@@ -3227,7 +3227,7 @@
     },
     "caste": {
       "caste": "combattant",
-      "status": "maitre",
+      "status": "grandMaitre",
       "career": "chevalier",
       "interdicts": [],
       "privileges": []
