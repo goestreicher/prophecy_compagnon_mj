@@ -2127,7 +2127,11 @@
     },
     "leaders": [
       {
-        "name": "Bégormstyr",
+        "name": null,
+        "link": {
+          "name": "Bégormstyr",
+          "link": "resource://assets/creature/33114480-2884-428a-8a87-c729e0b022fc"
+        },
         "title": "Dirigeant du Conseil des Dragons"
       }
     ]
@@ -2153,19 +2157,35 @@
     },
     "members": [
       {
-        "name": "Omstyr Fen",
+        "name": null,
+        "link": {
+          "name": "Omstyr Fen",
+          "link": "resource://assets/npc/322073ed-cd80-4826-91ee-5727820deae8"
+        },
         "title": "Heaume de Brorne"
       },
       {
-        "name": "Alssinya Kerndal",
+        "name": null,
+        "link": {
+          "name": "Alssinya Kerndal",
+          "link": "resource://assets/npc/170e87d6-df9b-42f0-b922-78a5cedb12d0"
+        },
         "title": "Bouclier de Brorne"
       },
       {
-        "name": "Melguior Sauders",
+        "name": null,
+        "link": {
+          "name": "Melguior Sauders",
+          "link": "resource://assets/npc/5dba82e1-1b5f-4599-824e-6922c045472a"
+        },
         "title": "Armure de Brorne"
       },
       {
-        "name": "Ferden Ultyrr",
+        "name": null,
+        "link": {
+          "name": "Ferden Hultyrr",
+          "link": "resource://assets/npc/1c7173c5-01a5-4aad-8b89-b93fa8cd8347"
+        },
         "title": "Épée de Brorne"
       }
     ]
@@ -2191,24 +2211,44 @@
     },
     "members": [
       {
-        "name": "Bégormstyr",
-        "title": "Commandant le la Ière Légion"
+        "name": null,
+        "link": {
+          "name": "Bégormstyr",
+          "link": "resource://assets/creature/33114480-2884-428a-8a87-c729e0b022fc"
+        },
+        "title": "Commandant de la Ière Légion, “Les Crocs de Brorne”"
       },
       {
-        "name": "Omstyr Fen",
-        "title": "Commandant le la VIe Légion"
+        "name": null,
+        "link": {
+          "name": "Omstyr Fen",
+          "link": "resource://assets/npc/322073ed-cd80-4826-91ee-5727820deae8"
+        },
+        "title": "Commandant de la VIe Légion, “Les Pourfendeurs d'Humanistes”"
       },
       {
-        "name": "Alssinya Kerndal",
-        "title": "Commandant le la XIIe Légion"
+        "name": null,
+        "link": {
+          "name": "Alssinya Kerndal",
+          "link": "resource://assets/npc/170e87d6-df9b-42f0-b922-78a5cedb12d0"
+        },
+        "title": "Commandant de la XIIe Légion, “Les Cuirassiers”"
       },
       {
-        "name": "Melguior Sauders",
-        "title": "Commandant le la IIe Légion, Commandant de la IIIe Légion"
+        "name": null,
+        "link": {
+          "name": "Melguior Sauders",
+          "link": "resource://assets/npc/5dba82e1-1b5f-4599-824e-6922c045472a"
+        },
+        "title": "Commandant de la IIe Légion, Commandant de la IIIe Légion"
       },
       {
-        "name": "Ferden Ultyrr",
-        "title": "Commandant le la XXIIIe Légion"
+        "name": null,
+        "link": {
+          "name": "Ferden Hultyrr",
+          "link": "resource://assets/npc/1c7173c5-01a5-4aad-8b89-b93fa8cd8347"
+        },
+        "title": "Commandant le la XXIIIe Légion, “Les Chasseurs d'Ombre”"
       }
     ]
   },
@@ -2283,7 +2323,11 @@
     },
     "leaders": [
       {
-        "name": "Catherine Kerntyt",
+        "name": null,
+        "link": {
+          "name": "Catherine Kerntyt",
+          "link": "resource://assets/npc/09c943dd-4743-48f5-b7bb-1037f0cdff7b"
+        },
         "title": "Régente de l'Inquisition"
       }
     ]

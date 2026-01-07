@@ -2791,7 +2791,7 @@
     },
     "name": "Titus",
     "uuid": "23ddca45-4145-464a-ba61-6d82e11a93c5",
-    "description": "Ce géant de deux mètres trente est un personnage jovial d’une grande bonté. Il est l’actuel maître de la lutte. C’est une masse de muscles débonnaire qui ne ferait pas de mal à une mouche - du moment qu’on ne provoque pas sa colère, que l’on dit terrible. On raconte qu’il aurait tué un ours à mains nues. Il hait l’injustice et surtout ceux qui s’en rendent coupables. Il vit à Maurore, entouré de tellement de jeunes fermes qu’il provoque souvent la jalousie des autres hommes. Il fréquente la célèbre Taverne des Gladiateurs où, en compagnie de son ami [Kron Bréorne](resource://store/npc/3a30f153-3535-4c47-ae25-b89ca3fbe5d4), il raconte ses exploits devant un public médusé et béat d’admiration.\n\n",
+    "description": "Ce géant de deux mètres trente est un personnage jovial d’une grande bonté. Il est l’actuel maître de la lutte. C’est une masse de muscles débonnaire qui ne ferait pas de mal à une mouche - du moment qu’on ne provoque pas sa colère, que l’on dit terrible. On raconte qu’il aurait tué un ours à mains nues. Il hait l’injustice et surtout ceux qui s’en rendent coupables. Il vit à Maurore, entouré de tellement de jeunes fermes qu’il provoque souvent la jalousie des autres hommes. Il fréquente la célèbre Taverne des Gladiateurs où, en compagnie de son ami [Kron Bréorne](resource://assets/npc/3a30f153-3535-4c47-ae25-b89ca3fbe5d4), il raconte ses exploits devant un public médusé et béat d’admiration.\n\n",
     "image": null,
     "icon": null,
     "abilities": {
