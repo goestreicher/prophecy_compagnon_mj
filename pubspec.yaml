@@ -90,6 +90,7 @@ flutter:
     - assets/creatures-yris-flambeau-de-l-humanite.json
     - assets/factions-castes.json
     - assets/factions-secretes.json
+    - assets/factions-les-secrets-de-kalimsshar.json
     - assets/factions-les-voiles-de-nenya.json
     - assets/factions-yris-flambeau-de-l-humanite.json
     - assets/npc-categories.json

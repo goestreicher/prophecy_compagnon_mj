@@ -128,6 +128,7 @@ class FactionSummary extends ResourceBaseClass {
       var assetFiles = [
         'factions-castes.json',
         'factions-secretes.json',
+        'factions-les-secrets-de-kalimsshar.json',
         'factions-les-voiles-de-nenya.json',
         'factions-yris-flambeau-de-l-humanite.json',
       ];
