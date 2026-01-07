@@ -415,7 +415,7 @@
       "dragon": "Annga",
       "progress": "deuxiemeNiveau"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
       "name": "casteDesCommercants"
     },
@@ -741,7 +741,7 @@
       "dragon": "Assyanata",
       "progress": "troisiemeNiveau"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
       "name": "casteDesMages"
     },
@@ -1151,7 +1151,7 @@
       "dragon": "Hauserwyr",
       "progress": "cinquiemeNiveau"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
       "name": "casteDesProdiges"
     },
@@ -1585,7 +1585,7 @@
       "dragon": "Kelios",
       "progress": "quatriemeNiveau"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
       "name": "casteDesErudits"
     },
@@ -1599,7 +1599,7 @@
     },
     "name": "Feyd Kar",
     "uuid": "2b4b4b52-1d81-4800-ade6-1c6829aca81f",
-    "description": "Impitoyable, le vieux lion dirige la caste des combattants. On le dit aussi sage que prompt à sortir sa lame. Par dix fois jéjà, il a vaincu des jeunes prétendants au titre de Grand Maître. Parmi eux, son propre fils, qu'il blessa mortellement. Un acte qu'il ne pourra jamais se pardonner et que sa femme Irma Santar, d'un simple regard, lui reproche du matin au soir. On dit que si une épée ne peut faire tomber Feyd Kar, c'est la tristesse qui grignotera son cœur. On ne sait trop rien des motivations qui l'animent car il parle peu lors des conseils qu'il préside, ne prenant la parole que pour trancher et conclure un débat. Par contre, il semble particulièrement à son aise avec les dragons. Dragons qu'il n'hésite pas à combattre en entraînement.\n\nDescription\n\nFeyd Kar apparaît toujours en armure, que ce soit d'entraînement ou d'apparat. Sa haute stature et son maintien obligent au respect. Sa voix est grave et caverneuse. En général, ses couleurs sont le rouge et l'or, ce qui accentue son aspect léonin. Il n'a pas d'arme de prédilection car il les maîtrise toutes.\n\n",
+    "description": "Impitoyable, le vieux lion dirige la caste des combattants. On le dit aussi sage que prompt à sortir sa lame. Par dix fois jéjà, il a vaincu des jeunes prétendants au titre de Grand Maître. Parmi eux, son propre fils, qu'il blessa mortellement. Un acte qu'il ne pourra jamais se pardonner et que sa femme Irma Santar, d'un simple regard, lui reproche du matin au soir. On dit que si une épée ne peut faire tomber Feyd Kar, c'est la tristesse qui grignotera son cœur. On ne sait trop rien des motivations qui l'animent car il parle peu lors des conseils qu'il préside, ne prenant la parole que pour trancher et conclure un débat. Par contre, il semble particulièrement à son aise avec les dragons. Dragons qu'il n'hésite pas à combattre en entraînement.\n\n## Description\n\nFeyd Kar apparaît toujours en armure, que ce soit d'entraînement ou d'apparat. Sa haute stature et son maintien obligent au respect. Sa voix est grave et caverneuse. En général, ses couleurs sont le rouge et l'or, ce qui accentue son aspect léonin. Il n'a pas d'arme de prédilection car il les maîtrise toutes.\n\n",
     "image": null,
     "icon": null,
     "abilities": {
@@ -2002,7 +2002,7 @@
       "dragon": "Saryskar",
       "progress": "cinquiemeNiveau"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
       "name": "casteDesCombattants"
     },
@@ -2016,7 +2016,7 @@
     },
     "name": "Sir Tharen",
     "uuid": "56c6043c-97b9-40b3-aa95-dc9e1b0a3941",
-    "description": "À l'instar de Kezyr par rapport aux hommes, Theran tient toujours à être au courant de tout ce qui concerne les artisans. Une découverte ici, un malheur là, il veut en savoir un maximum pour intervenir, le cas échéant. Sir Tharen n'est pourtant pas quelqu'un de bon. Il se content d'accomplir sa tâche au mieux sans se soucier des conséquences pour tout ce qui se trouve hors de sa caste. Pour cet artisan, son œuvre, c'est son arganisation. Quiconque y touche est éliminé. Pour cela, il n'hosite pas à se servir des terribles services secrets de Kezyr. Si tous ses pairs le trouvent sympathique, il n'éprouve aucune espèce d'amitié excepté pour Andarm, le vieux dragon qui le transporte parfois.\n\n## Description\n\nSir Tharen est charismatique. Il a toujours le sourire vainqueur aux lèvres et touve généralement le bon mot pour calmer une situation houleuse. Il se déplace souvent dans les royaumes portant l'armure des artisans. Il manie une longue épée finement ciselée que l'on dit pourtant incassable.\n\n",
+    "description": "À l'instar de Kezyr par rapport aux hommes, Tharen tient toujours à être au courant de tout ce qui concerne les artisans. Une découverte ici, un malheur là, il veut en savoir un maximum pour intervenir, le cas échéant. Sir Tharen n'est pourtant pas quelqu'un de bon. Il se content d'accomplir sa tâche au mieux sans se soucier des conséquences pour tout ce qui se trouve hors de sa caste. Pour cet artisan, son œuvre, c'est son arganisation. Quiconque y touche est éliminé. Pour cela, il n'hosite pas à se servir des terribles services secrets de Kezyr. Si tous ses pairs le trouvent sympathique, il n'éprouve aucune espèce d'amitié excepté pour Andarm, le vieux dragon qui le transporte parfois.\n\n## Description\n\nSir Tharen est charismatique. Il a toujours le sourire vainqueur aux lèvres et touve généralement le bon mot pour calmer une situation houleuse. Il se déplace souvent dans les royaumes portant l'armure des artisans. Il manie une longue épée finement ciselée que l'on dit pourtant incassable.\n\n",
     "image": null,
     "icon": null,
     "abilities": {
@@ -2467,7 +2467,7 @@
       "dragon": "Emmariânne",
       "progress": "troisiemeNiveau"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
       "name": "casteDesArtisans"
     },
@@ -2869,7 +2869,7 @@
       "dragon": "Szyl",
       "progress": "premierNiveau"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
       "name": "casteDesVoyageurs"
     },
@@ -3289,7 +3289,7 @@
       "dragon": "Soarstyr",
       "progress": "quatriemeNiveau"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
       "name": "casteDesProtecteurs"
     },
@@ -3979,7 +3979,7 @@
       "dragon": "",
       "progress": "aucunLien"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
       "name": "casteDesVoyageurs"
     },
@@ -4340,9 +4340,9 @@
       "dragon": "",
       "progress": "aucunLien"
     },
-    "category": "personnalites",
+    "category": "dirigeants",
     "sub_category": {
-      "name": "casteDesProdiges"
+      "name": "empireDeSolyr"
     },
     "unique": true,
     "use_human_injury_manager": true
