@@ -393,39 +393,83 @@
     },
     "members": [
       {
-        "name": "Ostyr Kern",
+        "name": null,
+        "link": {
+          "name": "Ostyr Kern",
+          "link": "resource://assets/npc/f69f8390-434c-4e75-93c0-947035a5bb06"
+        },
         "title": "Maître des faux de guerre"
       },
       {
-        "name": "Klauss Surval",
+        "name": null,
+        "link": {
+          "name": "Klauss Surval",
+          "link": "resource://assets/npc/b52362ad-e3b3-4d54-8a1c-2b815a707ca3"
+        },
         "title": "Maître des masses d'armes"
       },
       {
-        "name": "Simon Valir",
+        "name": null,
+        "link": {
+          "name": "Simon Valir",
+          "link": "resource://assets/npc/a08f0186-c897-4589-bd61-6df2fb3f048d"
+        },
         "title": "Maître des épées"
       },
       {
-        "name": "Filius Serln",
+        "name": null,
+        "link": {
+          "name": "Tylus Morg",
+          "link": "resource://assets/npc/15bcd78d-4eaf-4c15-ba10-b7932f9dbf82"
+        },
+        "title": "Maître des haches"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Filius Serln",
+          "link": "resource://assets/npc/89adbdff-7b02-4a33-a39c-a5ac1d3ebc8e"
+        },
         "title": "Maître des lances"
       },
       {
-        "name": "Filius Serln",
+        "name": null,
+        "link": {
+          "name": "Filius Serln",
+          "link": "resource://assets/npc/89adbdff-7b02-4a33-a39c-a5ac1d3ebc8e"
+        },
         "title": "Maître des dagues"
       },
       {
-        "name": "Vosgard",
+        "name": null,
+        "link": {
+          "name": "Vosgard",
+          "link": "resource://assets/npc/6f14304a-5046-4517-8360-9a2feab32379"
+        },
         "title": "Maître des marteaux"
       },
       {
-        "name": "Kron Bréorne",
+        "name": null,
+        "link": {
+          "name": "Kron Bréorne",
+          "link": "resource://assets/npc/3a30f153-3535-4c47-ae25-b89ca3fbe5d4"
+        },
         "title": "Maître des tridents"
       },
       {
-        "name": "Aldan le Preux",
+        "name": null,
+        "link": {
+          "name": "Aldan le Preux",
+          "link": "resource://assets/npc/aab05df9-e64b-47c4-8f87-5666051f1da9"
+        },
         "title": "Maître des fléaux"
       },
       {
-        "name": "Titus",
+        "name": null,
+        "link": {
+          "name": "Titus",
+          "link": "resource://assets/npc/23ddca45-4145-464a-ba61-6d82e11a93c5"
+        },
         "title": "Maître de la lutte"
       }
     ]
@@ -452,7 +496,11 @@
     },
     "leaders": [
       {
-        "name": "Anna Lestrov",
+        "name": null,
+        "link": {
+          "name": "Anna Lestrov",
+          "link": "resource://assets/npc/15be3c57-7035-44db-bdf9-de17f712cdb9"
+        },
         "title": "Maître-instructeur des aventuriers"
       }
     ]
@@ -468,7 +516,11 @@
     },
     "leaders": [
       {
-        "name": "Klauss Surval",
+        "name": null,
+        "link": {
+          "name": "Klauss Surval",
+          "link": "resource://assets/npc/b52362ad-e3b3-4d54-8a1c-2b815a707ca3"
+        },
         "title": "Maître-instructeur des guerriers"
       }
     ]
@@ -484,7 +536,11 @@
     },
     "leaders": [
       {
-        "name": "Simon Valir",
+        "name": null,
+        "link": {
+          "name": "Simon Valir",
+          "link": "resource://assets/npc/a08f0186-c897-4589-bd61-6df2fb3f048d"
+        },
         "title": "Maître-instructeur des duellistes"
       }
     ]
@@ -500,7 +556,11 @@
     },
     "leaders": [
       {
-        "name": "Tylus Morg",
+        "name": null,
+        "link": {
+          "name": "Tylus Morg",
+          "link": "resource://assets/npc/15bcd78d-4eaf-4c15-ba10-b7932f9dbf82"
+        },
         "title": "Maître-instructeur des mercenaires"
       }
     ]
@@ -516,7 +576,11 @@
     },
     "leaders": [
       {
-        "name": "Filius Serln",
+        "name": null,
+        "link": {
+          "name": "Filius Serln",
+          "link": "resource://assets/npc/89adbdff-7b02-4a33-a39c-a5ac1d3ebc8e"
+        },
         "title": "Maître-instructeur des maîtres d'armes"
       }
     ]
@@ -532,7 +596,11 @@
     },
     "leaders": [
       {
-        "name": "Devon Styr",
+        "name": null,
+        "link": {
+          "name": "Devon Styr",
+          "link": "resource://assets/npc/a1eb71a4-e3d4-49d1-8e8c-05b0ba6749db"
+        },
         "title": "Maître-instructeur des stratèges"
       }
     ]
@@ -548,7 +616,11 @@
     },
     "leaders": [
       {
-        "name": "Vosgard",
+        "name": null,
+        "link": {
+          "name": "Vosgard",
+          "link": "resource://assets/npc/6f14304a-5046-4517-8360-9a2feab32379"
+        },
         "title": "Maître-instructeur des chevaliers"
       }
     ]
@@ -564,7 +636,11 @@
     },
     "leaders": [
       {
-        "name": "Kron Bréorne",
+        "name": null,
+        "link": {
+          "name": "Kron Bréorne",
+          "link": "resource://assets/npc/3a30f153-3535-4c47-ae25-b89ca3fbe5d4"
+        },
         "title": "Maître-instructeur des gladiateurs"
       }
     ]
@@ -580,7 +656,11 @@
     },
     "leaders": [
       {
-        "name": "Aldan le Preux",
+        "name": null,
+        "link": {
+          "name": "Aldan le Preux",
+          "link": "resource://assets/npc/aab05df9-e64b-47c4-8f87-5666051f1da9"
+        },
         "title": "Maître-instructeur des paladins"
       }
     ]
@@ -596,7 +676,11 @@
     },
     "leaders": [
       {
-        "name": "Titus",
+        "name": null,
+        "link": {
+          "name": "Titus",
+          "link": "resource://assets/npc/23ddca45-4145-464a-ba61-6d82e11a93c5"
+        },
         "title": "Maître-instructeur des lutteurs"
       }
     ]
@@ -725,20 +809,14 @@
     },
     "leaders": [
       {
-        "name": "Vosgard",
+        "name": null,
+        "link": {
+          "name": "Vosgard",
+          "link": "resource://assets/npc/6f14304a-5046-4517-8360-9a2feab32379"
+        },
         "title": "Chef de la Confrérie du Cimier Rouge"
       }
     ]
-  },
-  {
-    "name": "Les bardes de Szyl",
-    "uuid": "71b8cc27-b311-4370-8b46-377c1e00f549",
-    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
-    "description": "Les bardes de Szyl sont de plus en plus souvent associés aux membres de la Caste des Combattants. Les guerriers les plus impétueux ont recours à leurs services pour les aider à respecter les enseignements de Kroryn. Les bardes de Szyl ont été nommés amis du Royaume de Kar et il y aura toujours un combattant pour prendre leur défense en cas de problème.",
-    "source": {
-      "type": "officiel",
-      "name": "Les Foudres de Kroryn"
-    }
   },
   {
     "name": "Les seigneurs ardents",
@@ -751,8 +829,12 @@
     },
     "leaders": [
       {
-        "name": "Léna Longues-Tresses",
-        "title": "Chef des seigneurs ardents"
+        "name": null,
+        "link": {
+          "name": "Léna Longues-Tresses",
+          "link": "resource://assets/npc/ace67dbb-0056-450d-9f1c-b8518004b3c1"
+        },
+        "title": "Chef des Seigneurs ardents"
       }
     ]
   },
@@ -777,7 +859,11 @@
     },
     "leaders": [
       {
-        "name": "Filius Serln",
+        "name": null,
+        "link": {
+          "name": "Filius Serln",
+          "link": "resource://assets/npc/89adbdff-7b02-4a33-a39c-a5ac1d3ebc8e"
+        },
         "title": "Chef des Rédempteurs"
       }
     ]
@@ -797,6 +883,19 @@
     "uuid": "49468986-71a1-4a35-86d1-d9e62b598d19",
     "parent_id": "06c1c896-f150-4623-826a-1d857f26ce34",
     "description": "La Confrérie du Sang de Glace est manipulée en secret par les Seigneurs Ardents. Ces assassins louent leurs services au plus offrant et ne manifestent aucune fidélité envers quiconque — ils privilégient même les actions contre les serviteurs de Kroryn. Il existe très peu d’assassins de cet acabit sur le territoire de Kar, les rédempteurs veillant à ce qu'ils ne prolifèrent pas.",
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    }
+  },
+  {
+    "name": "Ceux qui brûlent",
+    "uuid": "71a4533a-df6f-483b-90aa-1fd2ee1ed9a1",
+    "parent_id": "53ea99ff-0634-4528-bf62-e2d7ceb018ce",
+    "display_only": false,
+    "leaders": [],
+    "members": [],
+    "description": "“Ceux qui brûlent” ne sont considérés, par la plupart des gens, que comme une légende, un conte pour enfants.\n\nMalheureusement, ils existent bien. Ils comptent parmi les meilleurs combattants qui aient jamais existé, mais ils se sont laissés consumer par leur rage. Ils ont libéré le feu intérieur qui sommeillait en eux et leurs corps sont parcourus de flammes ardentes. Ce sont des fous de guerre que rien n’arrête et qui ne vivent que pour le massacre. La chaleur des flammes les rend fous, sans pour autant les réduire en cendres. Ils sont généralement solitaires et se réfugient dans les profondeurs de la terre où la fraîcheur apaise leurs tourments.\n\n",
     "source": {
       "type": "officiel",
       "name": "Les Foudres de Kroryn"
@@ -2434,7 +2533,7 @@
     "name": "Les Bardes de Szyl",
     "uuid": "d0f8331a-3b46-4cf8-9c88-7565c41aed95",
     "parent_id": "50f72ec6-d099-493b-9034-56608c7dad30",
-    "description": "Les bardes sont les dépositaires du Chant des Ombres, écrit par Kalimsshar pour apaiser Kroryn. Ils sont considérés comme les chroniqueurs attitrés de la caste des combattants, ainsi que leurs proches conseillers. Composés majoritairement de ménestrels et de quelques éclaireurs, les bardes sont connus pour leur grande sagesse, la fiabilité de leurs récits et leur peu d'intérêt pour le combat. Gardiens de la fougue des combattants, ils sont rarement animés de la passion des armes. Ils sont réputés pour leur connaissance de la magie, bien que ne la pratiquant pas eux-mêmes. Ils sont très liés avec la confrérie des bardes d’azur d’Onyr, dont beaucoup de membres font partie des deux organisations. Le siège des bardes de Szyl est à Yris, mais on les croit souvent installés à Ankar, tant ils sont nombreux à s’y retrouver. Leur chef, Emrad Uljir, est un vieil homme malade dont la fin est proche. Tous s’accordent à dire que Ken Lore, mari de la Maîtresse instructrice des aventuriers de la caste des combattants, et vivant à Ankar, sera leur prochain chef.",
+    "description": "Les bardes sont les dépositaires du Chant des Ombres, écrit par Kalimsshar pour apaiser Kroryn. Ils sont considérés comme les chroniqueurs attitrés de la caste des combattants, ainsi que leurs proches conseillers. Composés majoritairement de ménestrels et de quelques éclaireurs, les bardes sont connus pour leur grande sagesse, la fiabilité de leurs récits et leur peu d'intérêt pour le combat. Gardiens de la fougue des combattants, ils sont rarement animés de la passion des armes. Ils sont réputés pour leur connaissance de la magie, bien que ne la pratiquant pas eux-mêmes. Ils sont très liés avec la confrérie des bardes d’azur d’Onyr, dont beaucoup de membres font partie des deux organisations. Le siège des bardes de Szyl est à Yris, mais on les croit souvent installés à Ankar, tant ils sont nombreux à s’y retrouver. Leur chef, Emrad Uljir, est un vieil homme malade dont la fin est proche. Tous s’accordent à dire que Ken Lore, mari de la Maîtresse instructrice des aventuriers de la caste des combattants, et vivant à Ankar, sera leur prochain chef.\n\nLes bardes de Szyl sont de plus en plus souvent associés aux membres de la Caste des Combattants. Les guerriers les plus impétueux ont recours à leurs services pour les aider à respecter les enseignements de Kroryn. Les bardes de Szyl ont été nommés amis du Royaume de Kar et il y aura toujours un combattant pour prendre leur défense en cas de problème.",
     "source": {
       "type": "officiel",
       "name": "Les Orphelins de Szyl"
@@ -2450,7 +2549,7 @@
     "name": "Les Fils du Vent",
     "uuid": "1d97fee7-5d84-4855-806b-0f52edbde3c0",
     "parent_id": "50f72ec6-d099-493b-9034-56608c7dad30",
-    "description": "Les fils sont un puissant réseau de voyageurs de tous horizons qui ont pour vocation de faire circuler les informations et le savoir. Toujours prêts à affronter l’obscurantisme des dictatures, ils se dévouent principalement au peuple, trop souvent laissé ignorant des affaires du monde. Ils colportent toutes sortes de nouvelles et mettent un point d'honneur à séparer les rumeurs des véritables informations. Dangereux par leur tendance à ne garder aucun secret, ils sont toutefois respectés par les puissants qui ne peuvent se passer d’eux et de leurs précieuses informations. De plus, la crainte qu'ils peuvent parfois inspirer à la noblesse se fonde sur leur habileté à faire et défaire les réputations.\n\nLeur siège se situe à Havre, dans le caravansérail de l’horizon. Leur chef est Miyann Delgrand, une femme d’une quarantaine d'années, dont on dit qu’elle fut une élève de Lofyr, le barde de Kroryn. Elle porte aussi le titre de maîtresse conteuse dans la compagnie des ménestrels.",
+    "description": "Les fils sont un puissant réseau de voyageurs de tous horizons qui ont pour vocation de faire circuler les informations et le savoir. Toujours prêts à affronter l’obscurantisme des dictatures, ils se dévouent principalement au peuple, trop souvent laissé ignorant des affaires du monde. Ils colportent toutes sortes de nouvelles et mettent un point d'honneur à séparer les rumeurs des véritables informations. Dangereux par leur tendance à ne garder aucun secret, ils sont toutefois respectés par les puissants qui ne peuvent se passer d’eux et de leurs précieuses informations. De plus, la crainte qu'ils peuvent parfois inspirer à la noblesse se fonde sur leur habileté à faire et défaire les réputations.\n\nLeur siège se situe à Havre, dans le caravansérail de l’horizon. Leur chef est Miyann Delgrand, une femme d’une quarantaine d'années, dont on dit qu’elle fut une élève de [Lofyr](resource://assets/npc/b5ae5c7c-d99e-4fcf-80b9-b2f7d61ecc8a), le barde de Kroryn. Elle porte aussi le titre de maîtresse conteuse dans la compagnie des ménestrels.",
     "source": {
       "type": "officiel",
       "name": "Les Orphelins de Szyl"

@@ -259,6 +259,56 @@
       "type": "officiel",
       "name": "Les Foudres de Kroryn"
     },
+    "name": "Le Mur des Héros",
+    "uuid": "18a3a4a2-56c7-4dbc-96d2-f282845c9c70",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Sur la place centrale d’Ankar est érigé un mur d’obsidienne sur lequel sont gravés en lettres d’or les noms des plus grands héros de la Caste des Combattants. Pour la plupart des guerriers, c’est le plus grand honneur qu’on puisse leur faire. Il est cependant bien rare qu’un nom soit inscrit du vivant du héros, mais cela arrive quelquefois.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Le Hall des Hauts Faits",
+    "uuid": "0112cd67-30ca-40f2-b97e-37084eb21c17",
+    "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Il existe à Ankar, un bâtiment aux proportions cyclopéennes entièrement fait de marbre. Ce bâtiment accueille tous les membres de la caste, et même ceux des autres castes, qui veulent conter leurs exploits. Des érudits notent tout ce qui s’y dit et consignent les informations dans les sous-sols du hall. L’endroit est également fréquenté par de nombreux bardes et ménestrels qui viennent y puiser l'inspiration. Malheur à celui qui se vanterait à tort. On dit que les menteurs sont victimes d’une terrible malédiction s’ils évoquent dans ce hall de faux exploits ou les actes de bravoure d’un autre.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
     "name": "La Grande Arène",
     "uuid": "0fd9a4e0-679e-49c9-8104-596749b7108a",
     "parent_id": "983a55a7-3d86-43ee-bc5b-f9d38cc5f1ac",

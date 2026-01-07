@@ -149,5 +149,128 @@
         "injuries": {}
       }
     }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Naas-Toäl",
+    "uuid": "e309380e-1b62-454e-aa24-b65f63972252",
+    "description": "Si ce dragon dirige la moins puissante de toutes les écoles du Feu, il n’en est pas moins la discrète incarnation, sinon le symbole, de la magie de Kroryn. Il est la preuve vivante que l’on peut vivre longtemps en utilisant la Sphère du Feu et la Sorcellerie.\n\nCependant, depuis de nombreuses années, les mages soupçonnent Naas-Toäl d’avoir perdu la raison. L'affaire remonte à l’époque ou une série de crimes affreux a ensanglanté l'histoire d'Ankar. Hommes, femmes et enfants étaient retrouvés, horriblement mutilés, à tel point qu’une équipe d’Inquisiteurs fut dépêchée sur place pour découvrir l’origine des atrocités - considérées alors comme l'œuvre d'un serviteur de Kalimsshar, à n’en pas douter. L'équipe fut décimée en une nuit. Kroryn fit alors appeler Naas-Toäl en urgence et lui parla pendant deux mois complets. Deux mois sans aucun crime. Les meurtres reprirent au retour du vieux dragon. C'est alors que Kroryn le nomma directeur de l’école de Sorcellerie et qu'il lui demanda de la fonder à [Kendyr](resource://assets/place/e43eb555-3057-4209-b62b-a707a9c2296e). Si l’on n’eut jamais de preuve de la culpabilité de Naas-Toäl, il est clair que les rues de Kendyr sont nettement moins sûres depuis son arrivée…\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": true,
+    "category": "dragons",
+    "biome": "Kendyr",
+    "real_size": "Inconnue",
+    "weight": "Inconnu",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capabilities": []
   }
 ]
