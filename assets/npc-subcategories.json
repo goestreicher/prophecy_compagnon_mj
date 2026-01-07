@@ -8,30 +8,50 @@
     "is_default": true
   },
   {
+    "title": "Yris",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Empire Nésora",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Kar",
     "categories": [
-      "dirigeants"
+      "dirigeants",
+      "personnalites"
     ],
     "is_default": true
   },
   {
     "title": "Kern",
     "categories": [
-      "dirigeants"
+      "dirigeants",
+      "personnalites"
     ],
     "is_default": true
   },
   {
     "title": "Marches Alyzées",
     "categories": [
-      "dirigeants"
+      "dirigeants",
+      "personnalites"
     ],
     "is_default": true
   },
   {
     "title": "Pomyrie",
     "categories": [
-      "dirigeants"
+      "dirigeants",
+      "personnalites"
     ],
     "is_default": true
   },
@@ -109,6 +129,7 @@
   {
     "title": "Caste des artisans",
     "categories": [
+      "dirigeants",
       "personnalites"
     ],
     "is_default": true
@@ -116,6 +137,7 @@
   {
     "title": "Caste des combattants",
     "categories": [
+      "dirigeants",
       "personnalites"
     ],
     "is_default": true
@@ -123,6 +145,7 @@
   {
     "title": "Caste des commerçants",
     "categories": [
+      "dirigeants",
       "personnalites"
     ],
     "is_default": true
@@ -130,6 +153,7 @@
   {
     "title": "Caste des érudits",
     "categories": [
+      "dirigeants",
       "personnalites"
     ],
     "is_default": true
@@ -137,6 +161,7 @@
   {
     "title": "Caste des mages",
     "categories": [
+      "dirigeants",
       "personnalites"
     ],
     "is_default": true
@@ -144,6 +169,7 @@
   {
     "title": "Caste des prodiges",
     "categories": [
+      "dirigeants",
       "personnalites"
     ],
     "is_default": true
@@ -151,6 +177,7 @@
   {
     "title": "Caste des protecteurs",
     "categories": [
+      "dirigeants",
       "personnalites"
     ],
     "is_default": true
@@ -158,13 +185,7 @@
   {
     "title": "Caste des voyageurs",
     "categories": [
-      "personnalites"
-    ],
-    "is_default": true
-  },
-  {
-    "title": "Yris",
-    "categories": [
+      "dirigeants",
       "personnalites"
     ],
     "is_default": true
@@ -278,6 +299,14 @@
     "title": "Yaminaï",
     "categories": [
       "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Humanistes",
+    "categories": [
+      "dirigeants",
+      "personnalites"
     ],
     "is_default": true
   }
