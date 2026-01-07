@@ -1429,19 +1429,35 @@
         "title": "Grand Maître des Cités"
       },
       {
-        "name": "Oknar Kryll",
+        "name": null,
+        "link": {
+          "name": "Oknar Kryll",
+          "link": "resource://assets/npc/629b5c18-b158-45f7-a063-e4e8bdec7e4f"
+        },
         "title": "Grand Maître du Métal"
       },
       {
-        "name": "Loreena Asselya",
+        "name": null,
+        "link": {
+          "name": "Loreena Asselya",
+          "link": "resource://assets/npc/dc455a3a-90a5-4a50-add5-a5574b20b9d8"
+        },
         "title": "Grande Maîtresse de la Nature"
       },
       {
-        "name": "Pya Tellyan",
+        "name": null,
+        "link": {
+          "name": "Pya Tellyan",
+          "link": "resource://assets/npc/bc9b01f4-0838-43c6-8fc6-16e36c057e8a"
+        },
         "title": "Grande Maîtresse des Océans"
       },
       {
-        "name": "Courash Kell",
+        "name": null,
+        "link": {
+          "name": "Courash Kell",
+          "link": "resource://assets/npc/659aa645-8bd6-437d-88b4-5797d28094c0"
+        },
         "title": "Grand Maître de la Pierre"
       },
       {
@@ -1452,23 +1468,43 @@
         "title": "Grande Maîtresse des Rêves"
       },
       {
-        "name": "Tadd Lenkell",
+        "name": null,
+        "link": {
+          "name": "Tadd Lenkell",
+          "link": "resource://assets/npc/9a61a2cf-643d-407c-b8cf-809989761a72"
+        },
         "title": "Grand Maître des Vents"
       },
       {
-        "name": "Kalisshya Assandreck",
+        "name": null,
+        "link": {
+          "name": "Kalisshya Assandreck",
+          "link": "resource://assets/npc/52c5b15c-bd3e-47d9-93e1-7574a44d7448"
+        },
         "title": "Grande Maîtresse de l'Ombre"
       },
       {
-        "name": "Soder Fendrick",
+        "name": null,
+        "link": {
+          "name": "Soder Fendrick",
+          "link": "resource://assets/npc/bf934e6b-cc32-474d-a163-27bc3c4d3acb"
+        },
         "title": "Grand Maître des Invocations"
       },
       {
-        "name": "Aldur le Gris",
-        "title": "Grand Maître de l'instinct"
+        "name": null,
+        "link": {
+          "name": "Aldur le Gris",
+          "link": "resource://assets/npc/3d5144cd-e5e0-4dbf-9a7d-dcb9faf0c8c6"
+        },
+        "title": "Grand Maître de l'Instinct"
       },
       {
-        "name": "Agatha Sadryk",
+        "name": null,
+        "link": {
+          "name": "Agatha Sadryk",
+          "link": "resource://assets/npc/a5022c4d-327a-4146-8944-8e1528577779"
+        },
         "title": "Grande Maîtresse de la Sorcellerie"
       }
     ]

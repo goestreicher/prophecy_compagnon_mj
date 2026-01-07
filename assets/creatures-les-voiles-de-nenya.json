@@ -1,0 +1,271 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Flora",
+    "uuid": "7223f7e4-a04e-4bba-b926-d0aadbdda1dc",
+    "description": "Il n'est pas que les humains pour quitter les structures rigides d’Onyr. Flora - c’est sous ce nom qu’elle se présente aux humains — est une fille de Nenya qui a choisi la bohème.\n\nDragonne très puissante, elle prend le plus souvent la forme d'une humaine à la peau laiteuse et aux cheveux roux. Flora n’est pas [Cymbaline](resource://assets/npc/f5bd8434-0619-4ee1-9ddf-7f07fdad5970), elles sont amies et parfois l’une remplace l'autre à la tête de la cité de Nenya. Bien entendu, la Chimère est au courant de la petite ruse de ses deux compagnes et approuve le procédé. Cela permet une liberté plus grande pour agir discrètement si la situation l'exige. Ce que Cymbaline ignore, c'est que Flora prend l'apparence dans d’autres villes, et fait ainsi vivre une vingtaine de personnalités, toutes plus fausses les unes que les autres. Ce n’est pas de la schizophrénie mais un simple jeu. Là encore, Nenya approuve et Flora sait qu’elle n’est pas seule à pratiquer ce type d’exercices.\n\nDe fait, les enfants de la Chimère sont bien mieux implantés dans les affaires des royaumes qu’on pourrait le croire. En général, ils prennent l’apparence de philosophes, de conseillers ou de saltimbanques. Mais Flora, comme ses frères et sœurs, partagent une profonde haine pour tout ce qui est science et Humanisme. Moins démonstratifs que les agents de Brorne, ils fauchent les humanistes dans leurs rêves et les transforment en légumes vivants.\n\nL'étrange ressemblance physique qu’entretiennent Cymbaline et Flora, lorsque celle-ci prend forme humaine, a permis aux deux “sœurs” de déjouer de nombreux complots visant à déstabiliser le pouvoir politique de la caste. Cependant, la puissante fille de Chimère utilise également ses dons de déguisement à ses fins propres fins, sans forcément en avertir sa compagne.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": true,
+    "category": "dragons",
+    "biome": "Kor",
+    "real_size": "Inconnue",
+    "weight": "Inconnu",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capabilities": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Mentor éthéré",
+    "uuid": "4f51a4ea-0547-4a31-a647-12bb7d130250",
+    "description": "Le mentor éthéré est appelé par un Élu de Nenya qui utilise la faveur “Mentor éthéré”.\n\nLe personnage peut appeler chaque nuit, sur la réussite d'un jet Mental + Empathie + Tendance Dragon contre une Difficulté de 15, un familier chimérique. Celui-ci lui prodiguera des conseils et lui obéira jusqu'à l'aube. De plus, le Mentor peut agir sur son environnement - il peut donc combattre.\n\nL'Élu est convaincu de voir à ses côtés un individu de sexe opposé d'une grande beauté. Tous les autres observateurs distinguent difficilement une forme fantomatique. S'ils réussissent un jet de Mental + Volonté contre une Difficulté de 10, ils discerneront l'être qui hante leurs fantasmes les plus inavoués ; cette image sera d'autant plus parfaite que le nombre de Niveaux de Réussite est élevé.\n\nLa perte de son Mentor - pour des causes magiques ou parce qu'il se fait tuer dans un combat - plonge l'Elu dans une crise de dépression profonde qui lui fait remettre en cause tous ses acquis. Il gagne le désavantage Trouble mental (Dépression), sa Tendance Dragon est réduite de 1 et sa Sphère des Rêves, de 2 points. Cette crise dure jusqu’à son traitement psychologique (et son rachat en point).\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 2,
+      "intelligence": 6,
+      "coordination": 5,
+      "presence": 10,
+      "resistance": 3,
+      "volonte": 8,
+      "perception": 5,
+      "empathie": 8
+    },
+    "attributes": {
+      "physique": 1,
+      "mental": 6,
+      "manuel": 4,
+      "social": 9
+    },
+    "initiative": 3,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 2
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 8,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 9,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 9,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+        "Déviation subtile",
+        "Blocage mental"
+      ]
+    },
+    "favors": [],
+    "unique": false,
+    "category": "creaturesElementaires",
+    "biome": "Là où il est invoqué",
+    "real_size": "Selon l'invocateur",
+    "weight": "Selon l'invocateur",
+    "natural_armor": 10,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Toucher",
+        "special": "La victime subit également un sort de Résistance magique d’un nombre de Niveaux de Réussite égal à 3+NR du Toucher",
+        "skill": 7,
+        "damage": {
+          "static": 8,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.4,
+            "maximum_distance": 0.4
+          }
+        }
+      }
+    ],
+    "special_capabilities": []
+  }
+]
