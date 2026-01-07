@@ -62,7 +62,7 @@ class _InterdictsWidget extends StatelessWidget {
       ValueListenableBuilder(
         valueListenable: character.caste.careerNotifier,
         builder: (BuildContext context, Career? value, _) {
-          if(value == null) {
+          if(value == null || character.caste.career!.interdict == null) {
             return SizedBox.shrink();
           }
           else {
