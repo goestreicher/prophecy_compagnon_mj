@@ -1,0 +1,125 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Nualth-Iom",
+    "uuid": "ce9c7999-2fb4-461c-aae3-213c8ef9fbbd",
+    "description": "Ce dragon sans âge se repose dans une caverne au plus profond des [Collines de Fer](resource://assets/place/5c087163-3c71-42ce-b47d-2bff40e05717). Grâce à ses pouvoirs titanesques, il observe le monde, écoute l’homme naître, vivre et mourir. Tous les mages connaissent son existence et son importance. Nualth-Iom est l’archiviste des Quêteurs. Chaque nouveau pas vers la Perfection lui est rapporté - sans compter ce qu’il observe par lui-même - et est enregistré dans sa mémoire ancestrale. Il ne l’a jamais confirmé, mais certains pensent que c’est un fils de sang de Kezyr. On dit aussi qu’il ne reçoit pas seulement la visite de mages du métal, mais aussi celle d’autres mages et surtout d’autres castes.\n\nUn jour, Nualth-Iom sortira de sa grotte et soumettra à Kezyr le résultat de ses réflexions. Le Grand Dragon pourra alors transmettre à ses enfants son secret perdu depuis des éons.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": true,
+    "category": "dragons",
+    "biome": "Collines de Fer",
+    "real_size": "Inconnue",
+    "weight": "Inconnu",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capabilities": []
+  }
+]

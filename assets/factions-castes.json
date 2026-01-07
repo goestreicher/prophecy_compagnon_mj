@@ -63,7 +63,11 @@
     },
     "leaders": [
       {
-        "name": "Fendorn Kamil",
+        "name": null,
+        "link": {
+          "name": "Fendorn Kamil",
+          "link": "resource://assets/npc/e55f8791-4f37-489b-88b5-4b6e11e4cc03"
+        },
         "title": "Grand ordonnateur de la voie des architectes"
       }
     ]
@@ -129,7 +133,11 @@
     },
     "members": [
       {
-        "name": "Tarel Orowitz",
+        "name": null,
+        "link": {
+          "name": "Tarel Orowitz",
+          "link": "resource://assets/npc/d114e442-9570-4d0f-85ff-f1c4257bfc83"
+        },
         "title": "Parfait de la voie des mineurs"
       }
     ]
@@ -155,8 +163,12 @@
     },
     "members": [
       {
-        "name": "Tarel Orowitz",
-        "title": "Parfait de la voie des mineurs"
+        "name": null,
+        "link": {
+          "name": "Tarel Orowitz",
+          "link": "resource://assets/npc/d114e442-9570-4d0f-85ff-f1c4257bfc83"
+        },
+        "title": "Ardent des termites"
       }
     ]
   },
@@ -181,15 +193,27 @@
     },
     "members": [
       {
-        "name": "Miroslav Katamankonos",
+        "name": null,
+        "link": {
+          "name": "Miroslav Katamankonos",
+          "link": "resource://assets/npc/18382ab6-cbd1-413b-8cee-2daed199404d"
+        },
         "title": "Parfait de la voie des mécanistes"
       },
       {
-        "name": "Arkandara Jolanof",
+        "name": null,
+        "link": {
+          "name": "Arkandara Jolanof",
+          "link": "resource://assets/npc/e529ad21-d447-4943-971e-e55af119affd"
+        },
         "title": "Garde du corps du parfait des mécanistes"
       },
       {
-        "name": "Ishandra Kalina",
+        "name": null,
+        "link": {
+          "name": "Ishandra Kalina",
+          "link": "resource://assets/npc/4686966e-d6be-43da-a4d1-701af45efa57"
+        },
         "title": "Mécaniste"
       }
     ]
@@ -205,15 +229,27 @@
     },
     "members": [
       {
-        "name": "Tarel Orowitz",
+        "name": null,
+        "link": {
+          "name": "Tarel Orowitz",
+          "link": "resource://assets/npc/d114e442-9570-4d0f-85ff-f1c4257bfc83"
+        },
         "title": "Parfait de la voie des mineurs"
       },
       {
-        "name": "Fendorn Kamil",
+        "name": null,
+        "link": {
+          "name": "Fendorn Kamil",
+          "link": "resource://assets/npc/e55f8791-4f37-489b-88b5-4b6e11e4cc03"
+        },
         "title": "Parfait de la voie des architectes"
       },
       {
-        "name": "Miroslav Katamankonos",
+        "name": null,
+        "link": {
+          "name": "Miroslav Katamankonos",
+          "link": "resource://assets/npc/18382ab6-cbd1-413b-8cee-2daed199404d"
+        },
         "title": "Parfait de la voie des mécanistes"
       }
     ]
@@ -229,7 +265,11 @@
     },
     "members": [
       {
-        "name": "Tarel Orowitz",
+        "name": null,
+        "link": {
+          "name": "Tarel Orowitz",
+          "link": "resource://assets/npc/d114e442-9570-4d0f-85ff-f1c4257bfc83"
+        },
         "title": "Ardent des termites"
       }
     ]
@@ -255,11 +295,19 @@
     },
     "members": [
       {
-        "name": "Tarel Orowitz",
+        "name": null,
+        "link": {
+          "name": "Tarel Orowitz",
+          "link": "resource://assets/npc/d114e442-9570-4d0f-85ff-f1c4257bfc83"
+        },
         "title": "Parfait de la voie des mineurs"
       },
       {
-        "name": "Miroslav Katamankonos",
+        "name": null,
+        "link": {
+          "name": "Miroslav Katamankonos",
+          "link": "resource://assets/npc/18382ab6-cbd1-413b-8cee-2daed199404d"
+        },
         "title": "Parfait de la voie des mécanistes"
       }
     ]
@@ -275,13 +323,21 @@
     },
     "leaders": [
       {
-        "name": "Fendorn Kamil",
+        "name": null,
+        "link": {
+          "name": "Fendorn Kamil",
+          "link": "resource://assets/npc/e55f8791-4f37-489b-88b5-4b6e11e4cc03"
+        },
         "title": "Juge suprême du tribunal des arts"
       }
     ],
     "members": [
       {
-        "name": "Miroslav Katamankonos",
+        "name": null,
+        "link": {
+          "name": "Miroslav Katamankonos",
+          "link": "resource://assets/npc/18382ab6-cbd1-413b-8cee-2daed199404d"
+        },
         "title": "Parfait de la voie des mécanistes"
       }
     ]
@@ -308,7 +364,11 @@
     },
     "leaders": [
       {
-        "name": "Arkandara Jolanof",
+        "name": null,
+        "link": {
+          "name": "Arkandara Jolanof",
+          "link": "resource://assets/npc/e529ad21-d447-4943-971e-e55af119affd"
+        },
         "title": "Chef des veilleurs"
       }
     ]
@@ -354,10 +414,79 @@
     },
     "members": [
       {
-        "name": "Ishandra Kalina",
+        "name": null,
+        "link": {
+          "name": "Ishandra Kalina",
+          "link": "resource://assets/npc/4686966e-d6be-43da-a4d1-701af45efa57"
+        },
         "title": "Dissimulateur"
       }
     ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les confréries",
+    "uuid": "7cae887a-e28b-429d-b6b8-7b7695fd259b",
+    "parent_id": "11bec81e-f18c-4116-bd87-05c878c49630",
+    "display_only": false,
+    "leaders": [],
+    "members": [],
+    "description": "Les confréries sont des groupes d’artisans d’une guilde qui mettent leur matériel en commun - fourneaux, métiers à tisser, animaux de bât - pour composer une alliance satisfaisant les commandes des marchands. Ils font ainsi des économies et se répartissent les demandes massives des compagnies marchandes.\n\nD’autres confréries sont également célèbres et entretiennent avec les confréries majeures une saine concurrence qui dynamise chacun et garantit un travail appliqué. La confrérie du damier, celle des apothicaires, des tisseurs d’âmes ou encore des ciseleurs sont quelques-uns de ces multiples groupes.\n\n"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "La confrérie d'acier",
+    "uuid": "a2d3aa3d-4f4f-4486-915b-d6776490b976",
+    "parent_id": "7cae887a-e28b-429d-b6b8-7b7695fd259b",
+    "display_only": false,
+    "leaders": [],
+    "members": [],
+    "description": "Sous ce nom se rassemblent certains des meilleurs forgerons de Kor. Exclusivement tournés vers la fabrication d'armes, ils sont connus pour leur grande ouverture au public et pour répondre avec beaucoup d'attention aux multiples exigences des plus fines lames.\n\n"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "La confrérie de l'écaille",
+    "uuid": "20bd64e6-bd61-4c21-9697-a8f8cc95af17",
+    "parent_id": "7cae887a-e28b-429d-b6b8-7b7695fd259b",
+    "display_only": false,
+    "leaders": [],
+    "members": [],
+    "description": "Fondée il y a une vingtaine d'années par un protecteur, ces armuriers sont le contrepoint à la compétence de la confrérie d'acier. Connus pour concevoir les meilleures armures métalliques, ils sont devenus célèbres par leur rage constructive qui leur permet de produire en un temps record des plastrons et armures de mailles de qualité.\n\n"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "La confrérie de Lôm",
+    "uuid": "3587875d-afb3-49de-a5a1-4123ab04144a",
+    "parent_id": "7cae887a-e28b-429d-b6b8-7b7695fd259b",
+    "display_only": false,
+    "leaders": [],
+    "members": [],
+    "description": "Ces tanneurs de renom maîtrisent l’art délicat du travail du cuir des dragons de Lôm, ce qui fait d’eux les plus célèbres fabricants d’armures de cuir de Solyr. Leur savoir-faire est très apprécié des aventuriers et des chasseurs qui préfèrent leurs travaux à ceux des forgerons métallurgistes. On dit que certains de leurs commanditaires négocieraient avec les Zûls, ce qui leur vaut une tranquillité sans égal.\n\n"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "La confrérie de la soie",
+    "uuid": "28bc5618-a094-4ac8-993d-08e0a599b410",
+    "parent_id": "7cae887a-e28b-429d-b6b8-7b7695fd259b",
+    "display_only": false,
+    "leaders": [],
+    "members": [],
+    "description": "Cette confrérie se consacre exclusivement à la fabrication de vêtements de luxe pour les commerçants, les nobles et les citoyens de haut rang. Ses relations avec la noblesse de Solyr lui ont souvent valu des rumeurs de manipulation politique, sans que les preuves en aient jamais été dévoilées.\n\n"
   },
 
   {
