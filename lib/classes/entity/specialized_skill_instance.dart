@@ -11,7 +11,7 @@ class SpecializedSkillInstance {
     required this.value,
   });
 
-  final SpecializedSkill skill;
+  SpecializedSkill skill;
   int value;
 
   factory SpecializedSkillInstance.fromJson(Map<String, dynamic> json) =>

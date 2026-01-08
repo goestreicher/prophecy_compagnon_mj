@@ -640,6 +640,8 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
       icon: icon?.clone(),
     );
 
+  String get specializedSkillReservedPrefix => 'creature:$id:specialized:misc:';
+
   @override
   String displayName() => name;
 
@@ -760,7 +762,22 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
     j['location'] = ObjectLocation.memory.toJson();
     j['source'] = source?.toJson() ?? ObjectSource.local.toJson();
     j['name'] = newName;
-    return Creature.fromJson(j);
+    var cloned = Creature.fromJson(j);
+
+    // Update the specialized skills reserved prefix if needed
+    for(var family in cloned.skills.families.values) {
+      for(var skillInstance in family.all) {
+        for(var specializedSkillInstance in skillInstance.specializations) {
+          if(specializedSkillInstance.skill.reserved && specializedSkillInstance.skill.reservedPrefix != null) {
+            specializedSkillInstance.skill = specializedSkillInstance.skill.cloneWithReservedPrefix(
+              reservedPrefix: cloned.specializedSkillReservedPrefix,
+            );
+          }
+        }
+      }
+    }
+
+    return cloned;
   }
 
   static Future<Creature?> get(String id) async {

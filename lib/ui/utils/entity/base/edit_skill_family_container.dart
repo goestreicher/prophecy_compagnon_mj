@@ -44,7 +44,7 @@ class EntityEditSkillFamilyContainer extends StatelessWidget {
 
     String? reservedPrefix;
     if(entity is Creature) {
-      reservedPrefix = 'creature:${entity.id}:specialized:misc:';
+      reservedPrefix = (entity as Creature).specializedSkillReservedPrefix;
     }
 
     skillWidgets.add(

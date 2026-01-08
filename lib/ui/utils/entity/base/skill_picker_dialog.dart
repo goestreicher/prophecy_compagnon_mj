@@ -249,7 +249,9 @@ class SpecializedSkillPickerDialogState extends State<SpecializedSkillPickerDial
                             parent: _currentSkill!.skill,
                             name: _specializedSkillController.text,
                             reserved: _reserved,
-                            reservedPrefix: widget.reservedPrefix,
+                            reservedPrefix: _reserved
+                              ? widget.reservedPrefix
+                              : null,
                           );
                         }
 

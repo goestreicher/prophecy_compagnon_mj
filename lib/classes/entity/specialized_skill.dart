@@ -46,6 +46,18 @@ class SpecializedSkill {
     return s;
   }
 
+  SpecializedSkill cloneWithReservedPrefix({
+    required String reservedPrefix,
+  }) => SpecializedSkill.create(
+      parent: parent,
+      parentImplementation: parentImplementation,
+      name: name,
+      description: description,
+      reserved: true,
+      reservedPrefix: reservedPrefix,
+      reservedCastes: reservedCastes,
+    );
+
   SpecializedSkill._internal({
     required this.parent,
     this.parentImplementation,
