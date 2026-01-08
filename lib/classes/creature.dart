@@ -404,6 +404,7 @@ class CreatureSummary extends ResourceBaseClass {
         'creatures-les-enfants-de-heyra.json',
         'creatures-les-forges-de-kezyr.json',
         'creatures-les-foudres-de-kroryn.json',
+        'creatures-les-orphelins-de-szyl.json',
         'creatures-les-secrets-de-kalimsshar.json',
         'creatures-les-voiles-de-nenya.json',
         'creatures-yris-flambeau-de-l-humanite.json',

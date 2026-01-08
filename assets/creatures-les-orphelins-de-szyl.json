@@ -1,0 +1,125 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Scox",
+    "uuid": "28088e63-06ec-46fb-a2df-13c04827746a",
+    "description": "Ce vieux dragon de Szyl a gardé la fraîcheur et la candeur de sa jeunesse. Il prend toujours forme humaine pour visiter les villes et villages qu’il traverse et se fait connaître sous le nom de Scox L’heureux. Armé uniquement d’une mandoline, il joue le rôle d’un conteur, apportant des nouvelles du monde aux endroits les plus reculés. Souriant, jovial, il ne quitte pas une place sans être persuadé que les autochtones ne sont pas plus heureux. Il charme les femmes, fait rire les hommes et amuse les enfants.\n\nSa véritable fonction, comme d’autres de ses frères, est de veiller à l’équilibre des Tendances partout dans le monde. Il n’interviendra jamais directement, mais délivrera un rapport soit aux [Sages](resource://assets/faction/0f7e6247-efe6-4642-916f-124d012b9914), soit aux Conciliateurs - deux factions secrètes - qui agiront alors en fonction.\n\nSous une autre forme et un autre nom, Scox peut aussi être Conciliateur, mais uniquement en cas d’urgence.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": true,
+    "category": "dragons",
+    "biome": "Tout Kor",
+    "real_size": "Inconnue",
+    "weight": "Inconnu",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capabilities": []
+  }
+]

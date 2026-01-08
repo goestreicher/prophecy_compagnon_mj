@@ -2648,7 +2648,10 @@
     },
     "leaders": [
       {
-        "name": "Yunthar dit Le Gris",
+        "link": {
+          "name": "Yunthar dit Le Gris",
+          "link": "resource://assets/npc/34d38ab8-435b-41f0-a473-af5984903dc0"
+        },
         "title": "Maître des chasseurs"
       }
     ]
@@ -2664,7 +2667,10 @@
     },
     "leaders": [
       {
-        "name": "Traffin Opff",
+        "link": {
+          "name": "Traffin Opff",
+          "link": "resource://assets/npc/4277105e-19f0-4855-8eaf-61aef8db9f56"
+        },
         "title": "Maître des éclaireurs"
       }
     ]
@@ -2673,7 +2679,7 @@
     "name": "Les errants",
     "uuid": "390b9d24-7dab-4e60-93d6-89e3a314f9c9",
     "parent_id": "46864d2a-8d3f-4e00-bd63-ee16c4e345ee",
-    "description": "Amoureux du voyage par nature, les errants ne supportent pas de planifier le moindre élément de leur parcours. Lunatiques, ils peuvent s’enflammer pour une cause ou une autre, décider brutalement d'aider une troupe le long d’un trajet, mais laissent souvent leurs pas les guider au hasard.\n\nLes errants sont parfois considérés comme des gueux sans but ou comme de doux illuminés qui ne parviennent pas à trouver un sens à leur vie. En fait, l'errant est souvent avide de contacts humains, de découvertes et de nouveauté, passions qui les amènent à ne plus se soucier de leur propre vie ou confort, mais uniquement de leur richesse relationnelle. Il n’est pas rare que des errants se découvrent certaines affinités avec des prodiges, comme des sages ou des prophètes, enclins comme eux aux relations intérieures et profondes.",
+    "description": "Amoureux du voyage par nature, les errants ne supportent pas de planifier le moindre élément de leur parcours. Lunatiques, ils peuvent s’enflammer pour une cause ou une autre, décider brutalement d'aider une troupe le long d’un trajet, mais laissent souvent leurs pas les guider au hasard.\n\nLes errants sont parfois considérés comme des gueux sans but ou comme de doux illuminés qui ne parviennent pas à trouver un sens à leur vie. En fait, l'errant est souvent avide de contacts humains, de découvertes et de nouveauté, passions qui les amènent à ne plus se soucier de leur propre vie ou confort, mais uniquement de leur richesse relationnelle. Il n’est pas rare que des errants se découvrent certaines affinités avec des prodiges, comme des sages ou des prophètes, enclins comme eux aux relations intérieures et profondes.\n\nLes errants forment une compagnie à part. Étant donné leur effectif réduit, aucun besoin d’y définir une quelconque hiérarchie ne s’y est jamais fait sentir. Cette compagnie s'est donc trouvée une forme improvisée d’organisation, fondée sur l’âge. Lorsque des errants se rencontrent, un rapport de hiérarchie se crée spontanément en faveur du plus âgé. Leur philosophie en ce domaine est “Comme il est le plus vieux, il a parcouru le plus long chemin. C'est donc le plus sage d’entre nous.”\n\nComme les errants ne prévoient jamais leurs voyages, ils ne se rencontrent que très rarement et ne se connaissent pour ainsi dire pas entre eux. Personne ne sait donc qui est leur plus vénérable citoyen, mais tous s'accordent à dire que Szyl et ses fils ont leur idée sur le sujet et que si des événements nécessitent de s'adresser au chef de la compagnie, ils le trouveront et l’informeront de ses devoirs.\n\n",
     "source": {
       "type": "officiel",
       "name": "Les Orphelins de Szyl"
@@ -2709,7 +2715,10 @@
     },
     "leaders": [
       {
-        "name": "Hordral l'Harmonieux",
+        "link": {
+          "name": "Hordral l'Harmonieux",
+          "link": "resource://assets/npc/365c3105-5aae-41e3-b583-701d1a88e203"
+        },
         "title": "Maître des ménestrels"
       }
     ]
@@ -2725,7 +2734,11 @@
     },
     "leaders": [
       {
-        "name": "Sezuil",
+        "name": null,
+        "link": {
+          "name": "Sezuil",
+          "link": "resource://assets/npc/400bf2c7-eff3-4c72-bc14-d5b688cb2d4b"
+        },
         "title": "Maître des messagers"
       }
     ]
@@ -2741,7 +2754,10 @@
     },
     "leaders": [
       {
-        "name": "Hellestrid",
+        "link": {
+          "name": "Hellestrid",
+          "link": "resource://assets/npc/cf2a90e2-8db9-4006-91e0-c631de4971a0"
+        },
         "title": "Maîtresse des missionnaires"
       }
     ]
