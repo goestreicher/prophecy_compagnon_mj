@@ -2874,6 +2874,15 @@
         },
         "title": "Grand Maître de la Caste des Commerçants"
       }
+    ],
+    "members": [
+      {
+        "link": {
+          "name": "Hyman Glabecq",
+          "link": "resource://assets/npc/e732cdf6-b93b-4091-83d3-a811a01bc3f5"
+        },
+        "title": "Juge de la Caste des Commerçants"
+      }
     ]
   },
   {
@@ -2887,15 +2896,17 @@
     },
     "members": [
       {
-        "name": "Swan Armen",
+        "link": {
+          "name": "Swan Armen",
+          "link": "resource://assets/npc/4b9e99df-3803-43d7-90df-8eea5c4c272c"
+        },
         "title": "Grand Maître de la Caste des Commerçants"
       },
       {
-        "name": "Hyman Glabecq",
-        "title": "Juge du haut conseil des cités"
-      },
-      {
-        "name": "Kästar Orgm",
+        "link": {
+          "name": "Kästar Orgm",
+          "link": "resource://assets/npc/7d81a9f0-8c00-441d-9ac6-661593fe3b0c"
+        },
         "title": "Directeur du conseil territorial d'Omya"
       }
     ]
@@ -2929,7 +2940,10 @@
         "title": "Haut Consul de la congrégation du vin"
       },
       {
-        "name": "Elft Armen",
+        "link": {
+          "name": "Elft Armen",
+          "link": "resource://assets/npc/05301b5c-d668-463e-8a37-7efa78b5e9f9"
+        },
         "title": "Haut Consul de la congrégation des salaisons"
       }
     ]

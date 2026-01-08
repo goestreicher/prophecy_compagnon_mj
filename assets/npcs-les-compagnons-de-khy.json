@@ -252,5 +252,1796 @@
       "spells": [
       ]
     }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Ariane Selt",
+    "uuid": "e228b7e8-7513-4945-ab0d-9c426e88f653",
+    "description": "Cette comédienne dirige la troupe des libres rieurs, mais sa vie n’a pas toujours prêté à rire, puisqu'elle a vu sa famille se faire massacrer par l’Inquisition et qu’elle a elle-même connu ses prisons. Elle n’a qu’un but, retrouver Maître Cersé, l’Inquisiteur responsable de la mort de ses proches. Si sa quête doit l’amener à côtoyer des Humanistes ou des Fatalistes, peu importe. Elle n’éprouve aucune sorte de pitié lorsqu'il s’agit de mener son enquête. Elle peut tuer, torturer, menacer, ce qui fait d’elle un être aussi cruel que sa proie. Par deux fois elle l’a retrouvé, par deux fois, il s’est échappé. Sa troupe de comédiens est composée de victimes de Maître Cersé, tous infirmes suite à ses sévices. Eux aussi sont déterminés.\n\nApparence : une jeune femme rousse, aux cheveux nattés, à la fois athlétique et extraordinairement souple. Une cicatrice verticale lui barre le bas-ventre et remonte jusqu’au torse. Si elle sourit, c’est par ruse. Plus rien en elle ne lui permet de sourire vraiment.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 5,
+      "intelligence": 7,
+      "coordination": 7,
+      "presence": 5,
+      "resistance": 7,
+      "volonte": 7,
+      "perception": 9,
+      "empathie": 5
+    },
+    "attributes": {
+      "physique": 4,
+      "mental": 5,
+      "manuel": 4,
+      "social": 4
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 1
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesDeJet",
+              "value": 7,
+              "implementation": ""
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 7,
+              "implementation": ""
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 10,
+              "implementation": ""
+            },
+            {
+              "skill": "athletisme",
+              "value": 9,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 7,
+              "implementation": ""
+            },
+            {
+              "skill": "geographie",
+              "value": 7,
+              "implementation": ""
+            },
+            {
+              "skill": "histoire",
+              "value": 5,
+              "implementation": ""
+            },
+            {
+              "skill": "orientation",
+              "value": 9,
+              "implementation": ""
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "langueDesSignes",
+              "value": 9,
+              "implementation": ""
+            },
+            {
+              "skill": "premiersSoins",
+              "value": 8,
+              "implementation": ""
+            },
+            {
+              "skill": "explosifs",
+              "value": 5,
+              "implementation": ""
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 8,
+              "implementation": ""
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "pieges",
+              "value": 7,
+              "implementation": ""
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "deguisement",
+              "value": 9,
+              "implementation": ""
+            },
+            {
+              "skill": "jongler",
+              "value": 8,
+              "implementation": ""
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "conte",
+              "value": 7,
+              "implementation": ""
+            },
+            {
+              "skill": "marchandage",
+              "value": 7,
+              "implementation": ""
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "seduction",
+              "value": 8,
+              "implementation": ""
+            },
+            {
+              "skill": "artDeLaScene",
+              "value": 9,
+              "implementation": "Danse"
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 7,
+        "invocatoire": 2,
+        "sorcellerie": 4
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 4,
+        "cite": 8,
+        "vents": 5,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 4,
+        "cite": 8,
+        "vents": 5,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "mage",
+      "status": "expert",
+      "career": null,
+      "interdicts": [
+        "loiDeLaPrudence"
+      ],
+      "privileges": [
+        {
+          "privilege": "anonymat",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "connaissanceDuMondeCommercant",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "leurre",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "messager",
+          "description": "Non précisé",
+          "selected_cost": null
+        }
+      ]
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 6,
+    "proficiency": 4,
+    "renown": 0,
+    "disadvantages": [
+      {
+        "disadvantage": "infirmite",
+        "cost": 3,
+        "details": "Ne peut plus avoir d'enfant"
+      },
+      {
+        "disadvantage": "complexeDInferiorite",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "disadvantage": "echec",
+        "cost": 3,
+        "details": "Massacre de sa famille par l'Inquisition"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "conviction",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "corpsAguerri",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 1,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 4,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCommercants"
+    },
+    "unique": true,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Croche",
+    "uuid": "020458cc-b9aa-49fe-a9ce-87d6a99fc363",
+    "description": "Croche et [Le Caporal](resource://assets/npc/23e52089-b5d8-4903-ba1d-21cf4ad74abc), deux Princes Voleurs d'Yris, se cherchent des noises depuis la disparition du Zûl. Le Zûl avait organisé la guilde d'Yris et la dirigeait depuis une quinzaine d'années. Les tensions avec les mendiants étaient retombées, tandis que les relations avec les marchands étaient plutôt “constructives”.\n\nIl y a deux ans, Le Zûl et son compagnon draconique - Nemeth - disparurent. Depuis, Croche et Le Caporal, ses deux anciens lieutenants, s’efforcent de gérer au mieux la guilde. Aujourd’hui, la tension entre les deux anciens amis est telle que la guilde d’Yris est sur le point d’imploser. Entretemps, les relations avec les autres professions de la caste ont sérieusement dégénéré.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "grandMaitre",
+      "career": "voleur",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "yris"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Elenda Démentela",
+    "uuid": "3ac3afa8-5adf-44f4-a3a9-e1abd4e1ec24",
+    "description": "Cette commerçante en parfums ne nous intéresserait pas si elle n’était l’actuelle maîtresse de [Sir Tharen](resource://assets/npc/56c6043c-97b9-40b3-aa95-dc9e1b0a3941) - Grand Maître de la caste des artisans - et si la rumeur ne la présentait pas comme l’une des filles spirituelles de [Monsieur Ombre](resource://assets/npc/10474ae4-bf1f-4efd-b321-ffaf7da5a30d).\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "expert",
+      "career": "espion",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCommercants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Elft Armen",
+    "uuid": "05301b5c-d668-463e-8a37-7efa78b5e9f9",
+    "description": "Elft Armen n’est autre que le frère du [Grand Maître](resource://assets/npc/4b9e99df-3803-43d7-90df-8eea5c4c272c) de la Caste des Commerçants. Alors que sa congrégation (salaisons) est mineure dans le grand jeu de la politique commerciale, il se montre de plus en plus présent. Deux rumeurs contradictoires le concernent. Pour les uns, il profite de l’influence et du talent de son frère pour progresser bien au-delà de ses réelles compétences, pour les autres, Elft n’est autre que le premier artisan de la chute du Grand Maître.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "expert",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCommercants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Gerlin Ebôh",
+    "uuid": "0f7635bb-ec7b-4d41-b648-4e18e1aa8264",
+    "description": "Charmeur, séduisant et toujours souriant, Gerlin fait toujours borne impression à ses interlocuteurs. Malheureusement pour leur bourse, ces derniers doivent déchanter et constater que ce jeune homme avenant les a… plumés. En effet, malgré ses 24 ans, Gerlin est connu dans sa caste sous son titre de Prince Joueur.\n\nToujours en quête de sensations fortes et de possibilités de détourner l’argent des nantis, Gerlin invente constamment de nouveaux jeux et… de nouvelles façons de tricher !\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "grandMaitre",
+      "career": "joueur",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 24,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCommercants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Hyman Glabecq",
+    "uuid": "e732cdf6-b93b-4091-83d3-a811a01bc3f5",
+    "description": "Responsable de la résolution des litiges mettant en péril l’équilibre du Royaume de Kor, le Juge de la caste des commerçants est élu tous les trois ans au sein des représentants du [Haut Conseil des Cités](resource://assets/faction/085677b2-682f-47b7-8dfc-a2a04c1efefd). Hyman Glabecq occupe cette charge depuis bientôt 12 ans et aimerait terminer son “règne” en beauté. Âgé de 68 ans, ce marchand sait pertinemment qu'il n’aura pas droit à un nouveau mandat de trois années supplémentaires.\n\nDe plus, ses relations avec [Swan Armen](resource://assets/npc/4b9e99df-3803-43d7-90df-8eea5c4c272c) sont des plus tendues. Comme tout Élu de Brorne qui se respecte, il n’apprécie guère la politique de compromis que le Grand Maître essaye de généraliser. De plus, il ne supporte pas l’ambition démesurée de [Hürgans Klimb](resource://assets/faction/28d452f9-74f0-4f19-aa1f-20ec748a162a), le Haut Consul de la congrégation des épices. Il voit ainsi dans la “guerre des épices” une occasion de frapper un grand coup et de prononcer un jugement historique.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "Inconnu",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCommercants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Kästar Orgm",
+    "uuid": "7d81a9f0-8c00-441d-9ac6-661593fe3b0c",
+    "description": "Ce dignitaire tavernier, directeur du conseil territorial d’Omya, est l’un des artisans de la contestation qui agite la caste. Son combat est double. Tout d’abord, il désire que le [Haut Conseil des Cités](resource://assets/faction/085677b2-682f-47b7-8dfc-a2a04c1efefd) se tienne occasionnellement en d’autres lieux qu’Yris. D'autre part, il souhaite un retour à un conseil de Grands Maîtres représentatif de toutes les orientations professionnelles de la caste. Son combat, qui semblait d’abord d’arrière garde, séduit de plus en plus de partisans. En interrogeant ses proches, on peut apprendre que Kästar Orgm, jusqu’alors un tavernier plutôt calme, se sent investi d’une mission de salubrité sociale depuis qu’une Étoile lui a parlé dans son sommeil.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "maitre",
+      "career": "tenancier",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCommercants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Le Caporal",
+    "uuid": "23e52089-b5d8-4903-ba1d-21cf4ad74abc",
+    "description": "[Croche](resource://assets/npc/020458cc-b9aa-49fe-a9ce-87d6a99fc363) et Le Caporal, deux Princes Voleurs d'Yris, se cherchent des noises depuis la disparition du Zûl. Le Zûl avait organisé la guilde d'Yris et la dirigeait depuis une quinzaine d'années. Les tensions avec les mendiants étaient retombées, tandis que les relations avec les marchands étaient plutôt “constructives”.\n\nIl y a deux ans, Le Zûl et son compagnon draconique - Nemeth - disparurent. Depuis, Croche et Le Caporal, ses deux anciens lieutenants, s’efforcent de gérer au mieux la guilde. Aujourd’hui, la tension entre les deux anciens amis est telle que la guilde d’Yris est sur le point d’imploser. Entretemps, les relations avec les autres professions de la caste ont sérieusement dégénéré.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "grandMaitre",
+      "career": "voleur",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "yris"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Monsieur Ombre",
+    "uuid": "10474ae4-bf1f-4efd-b321-ffaf7da5a30d",
+    "description": "Tel est le nom sous lequel se cache le seul et unique Prince Espion qui arpente le Royaume de Kor. Monsieur Ombre aurait créé une école pour transmettre son savoir et ses techniques, mais nul ne sait où elle se trouve, ni comment y entrer.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "grandMaitre",
+      "career": "espion",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCommercants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Stribian le Magnifique",
+    "uuid": "b5c03885-406e-449b-9123-69a2dbaf8ff2",
+    "description": "Ce comédien a fondé, à Yris, la première école de comédie. Ainsi, chaque soir, des acteurs confirmés et des débutants donnent des représentations pour le plus grand plaisir des amateurs de beaux spectacles.\n\nOn murmure que Stribian le magnifique utiliserait son école pour former les jeunes espions et courtisanes à l’art de la manipulation.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "commercant",
+      "status": "expert",
+      "career": "espion",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCommercants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
   }
 ]

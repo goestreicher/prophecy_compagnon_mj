@@ -1,0 +1,125 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Guinn",
+    "uuid": "a0bf31ba-2df8-41ed-ac71-7847badbf94d",
+    "description": "Ce très jeune dragon de Khy a su rapidement transformer son apparence et prendre l’aspect d’un humain - un enfant. Sous cet aspect, il flâne dans les ruelles des cités, chipant une pomme au passage, aidant un mendiant à l’occasion, etc. Guinn n’a pas de mission particulière, n’est mandaté par personne et ne rend compte de ses activités qu’à lui seul. En revanche, fouinant à droite à gauche, il sait tout sur tout le monde.\n\nC’est une mine de renseignements pour quiconque sait le faire parler et l'écouter. Se faufilant partout, il voit tout et écoute l’essentiel.\n\nMais son petit manège a attiré l’attention d’une faction dont il ignore l’identité. Actuellement, il cherche à savoir qui peut bien s’intéresser à son cas et quel comportement il doit adopter. Sous la forme d’un adulte, il a filé ceux qui le suivaient, mais a été de nouveau repéré. Cela signifie que ses suiveurs peuvent le reconnaître sous n’importe quelle apparence. Qui sont-ils ? Le dragon serait prêt à donner beaucoup pour le savoir et continuer ses flâneries tranquillement.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 30,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": true,
+    "category": "dragons",
+    "biome": "Cités de Kor",
+    "real_size": "Inconnue",
+    "weight": "Inconnu",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capabilities": []
+  }
+]

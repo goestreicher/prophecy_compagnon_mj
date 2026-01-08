@@ -400,6 +400,7 @@ class CreatureSummary extends ResourceBaseClass {
       var assetFiles = [
         'creatures-ldb2e.json',
         'creatures-ecran2e.json',
+        'creatures-les-compagnons-de-khy.json',
         'creatures-les-ecailles-de-brorne.json',
         'creatures-les-enfants-de-heyra.json',
         'creatures-les-forges-de-kezyr.json',

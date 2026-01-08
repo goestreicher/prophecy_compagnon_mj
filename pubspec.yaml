@@ -83,6 +83,7 @@ flutter:
     - assets/creature-categories.json
     - assets/creatures-ldb2e.json
     - assets/creatures-ecran2e.json
+    - assets/creatures-les-compagnons-de-khy.json
     - assets/creatures-les-ecailles-de-brorne.json
     - assets/creatures-les-enfants-de-heyra.json
     - assets/creatures-les-forges-de-kezyr.json
