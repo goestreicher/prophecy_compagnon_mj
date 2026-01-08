@@ -841,7 +841,6 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
   }
 
   static void preImportFilter(Map<String, dynamic> json) {
-    json.remove('uuid');
     json.remove('source');
 
     if(json.containsKey('unique') && json['unique'] && json.containsKey('equipment') && json['equipment'] is List) {
@@ -860,7 +859,12 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
      */
     var defaultId = sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
     if(await CreatureSummary.exists(defaultId)) {
-      throw(CreatureExistsException(id: defaultId));
+      throw(CreatureNameExistsException(id: defaultId));
+    }
+    if(json.containsKey('uuid')) {
+      if(await CreatureSummary.exists(json['uuid'])) {
+        throw(CreatureIdExistsException(id: json['uuid']));
+      }
     }
 
     var model = Creature.fromJson(json);
@@ -908,13 +912,24 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
   }
 }
 
-class CreatureExistsException implements Exception {
-  const CreatureExistsException({ required this.id });
+class CreatureNameExistsException implements Exception {
+  const CreatureNameExistsException({ required this.id });
 
   final String id;
 
   @override
   String toString() {
-    return 'Une créature avec ce nom (ou un nom similaire existe déjà), ID: $id';
+    return 'Une créature avec ce nom (ou un nom similaire) existe déjà, ID: $id';
+  }
+}
+
+class CreatureIdExistsException implements Exception {
+  const CreatureIdExistsException({ required this.id });
+
+  final String id;
+
+  @override
+  String toString() {
+    return 'Une créature avec cet identifiant existe déjà, ID: $id';
   }
 }
