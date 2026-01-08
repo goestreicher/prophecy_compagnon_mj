@@ -200,7 +200,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "En brisant le miroir, le mage déchire la trame entre le réalité et l'Ether. Il se crée alors une distorsion spiralée qui se résorbe brutalement en aspirant tout objet ou être vivant dans un cercle de (10 + 5 par NR) mètres de rayon autour du mage. Résister à son aspiration nécessite un jet de Physique + Athlétisme (ou Force le cas échéant) contre le score d'incantation du sort pour ne pas être projeté dans l'Ether (au hasard). Le mage n'est pas aspiré et ses compagnons, s'ils sont prévenus, ont une Difficulté de 15. Le mage peut également utiliser le portail pour se rendre dans l'Ether, mais le sort ne permet pas le voyage inverse."
   },
@@ -282,7 +282,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
@@ -591,7 +591,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage adopte une posture lascive, fixe sa cible du regard tout en lui parlant d'une voix charmeuse. La victime subit alors un envoûtement auquel elle ne peut échapper qu'en réussissant un jet d'opposition de Mental + Volonté contre le score d'incantation du sort. Si elle échoue à ce jet, la cible tombe sous le charme du mage et ne peut ni détacher son regard de lui, ni effectuer d'action concrète pendant (5 + 2 par NR) tours. Pendant cette durée, la victime ne peut plus bouger, subjuguée par le mage, mais elle reste consciente de ce qui se passe et garde souvenir de ce qui se passe."
   },
@@ -696,7 +696,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "En se plaçant au centre d'un cercle de poudre de sommeil, le mage réunit autour de lui un vortex d'énergie magique qu'il peut utiliser pour le lancement d'un sortilège dans les (4 + 1 par Nr) heures. Ce sort verra alors, au choix du mage, son coût divisé par 2 ou sa portée, sa durée d'effets ou ses dégâts multipliés par 2. Si le sort agit sur la Volonté d'une cible, le mage peut choisir d'augmenter la Difficulté du jet de résistance de 5. Pendant la durée de l'incantation, le mage est inconscient de son environnement."
   },
@@ -759,7 +759,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Tenant le cristal au creux de ses mains, le mage enchante un lieu qu'il a préalablement délimité à l'aide des chandelles parfumées qui doivent brûler tout au long de la cérémonie (l'extinction d'une chandelle n'empêche pas le lancement du sort mais rend ce dernière inefficace). A l'issue de l'incantation, le sort confère au lieu un caractère magique pour (1 + 1 par NR) heures. Pendant cette durée, tout lancement de sort ou usage de Compétence magique effectué au sein de la zone enchantée se verra gratifié d'un bonus de +5 (le modificateur de milieu continue de s'appliquer)."
   },
@@ -801,7 +801,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage montre une pierre à la cible, située à moins de 50 mètres. Si celle-ci échoue à un jet d'opposition de Mental + Volonté contre le score d'incantation, elle devient confuse et perd toute capacité de réflexion pour (1 + 1 par NR) tours. Pendant ce temps, elle reçoit un malus de -5 pour toute action physique et de -3 pour toute activité intellectuelle."
   },
@@ -886,7 +886,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Durant l'incantation, le mage appose la pierre de rêve sur le front de son reflet. Le reflet se détache alors peu à peu du miroir (qui devient inutilisable) et la pierre de rêve s'enchâsse sur son front. Si le sort est manqué, le mage se retrouve enfermé dans le miroir durant un Augure. S'il est brisé, le mage meurt. Le reflet chimérique dure (1 + 1 par NR) Augure. Double parfait du personnage, il peut agir à sa place en toutes circonstances. Les besoins d'un reflet sont les mêmes que ceux d'un être humain. Quand le reflet et son original sont séparés, ils ne peuvent communiquer que par les rêves (sans limite de distance). Nulle communication instantanée n'est possible entre les 2 doubles, sauf par magie. De nombreux grands mages utilisent ce sort pour confier leurs responsabilités à leur reflet et continuer leur quête personnelle. Certains mages gardent leur reflet en sécurité, disposant ainsi d'une personne à prévenir en cas de difficulté. Un reflet chimérique ne se bat jamais et n'utilise jamais de sort offensif."
   },

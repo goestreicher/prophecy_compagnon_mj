@@ -308,7 +308,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
@@ -434,7 +434,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage lance un projectile de flammes comprimées vers son adversaire jusqu'à 50 mètres. Le dard est rapide, mais s'esquive et se pare avec un bouclier normalement. Il inflige 15 + 1D10 points de dommages et peut éventuellement enflammer des matériaux perforés au point d'impact (tunique, cheveux, cape...)."
   },
@@ -538,7 +538,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage lance la lave vers le ciel, où elle se fond dans les nuages soufrés qui s'accumulent durant toute la durée de l'incantation (charge à lui de la manipuler). Il saisit ensuite le morceau de verre et regarde une zone du paysage au travers, avant de le fracasser avec la dent de dragon. Au tour suivant, une grêle de feu commence à tomber du ciel, touchant une zone de 1200 m2 (forme au choix ou cercle de 40 mètres de diamètre. La grêle dure 10 tours et possède un effet de Barrage de 14 + 3/NR (voir Yris, p.91). Une cible peut être touchée à chaque tour et la grêle inflige 3D10 points de dommages. A la fin de la grêle, la zone touchée est entièrement dévastée, les bâtiments sont lourdement endommagés ou détruits et un incendie est probable dans les zones naturelles boisées ou les villes."
   },
@@ -684,7 +684,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Ce sort barbare est originaire des sorciers des Lacs sanglants. En entraînant 1 + NR cibles dans une danse guerrière et haineuse, le mage les asperge de gouttelettes de sang. Les cibles sont alors prises d'une transe qui leur confère un bonus de toucher et de dommages égal à leur Volonté. Ce sort dure une demi-heure. Durant cette durée, les cibles ne peuvent effectuer qu'une action de défense (parade ou esquive) par tour, en plus d'avoir un comportement colérique et irascible invivable."
   },
@@ -912,7 +912,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Ce sort extrêmement répandu et populaire permet d'ensorceler un objet pour qu'il puisse dispenser la chaleur de Kroryn. En lançant un peu de feu élémentaire sur la rune (Techniques : La matière, mages statut I), il l'ensorcèle pour un Augure. L'objet peut alors servir 3 + NR heures par jour pour chauffer plus ou moins fort. Un pot pourra faire bouillir de l'eau, une couverture sera tiède et une tunique permettra de sortir sous la neige à bras nus. Si l'objet est rendu brûlant et maintenu en contact avec la peau durant 1 tour, il peut en résulter une brûlure moyenne (1 Egratignure, une fois par jour et seulement s'il en reste au moins une à cocher). Il est impossible d'augmenter les dommages d'une arme avec cette rune somme toute utilitaire. Un échec au lancé de ce sort a des effets désastreux et enflamme brutalement toute matière combustible dans un rayon de 10 mètres autour du mage."
   },
@@ -954,7 +954,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage se met en transe dans un lieu dépassant les 40°C. A la fin de ce rituel, il enchante les cendres volcaniques pour une heure. Celles-ci, lancées sur une cible, permettent de se fondre dans un feu et d'y trouver refuge. Il est aussi possible de l'utiliser avec de la lave. La cible se transforme en flammes et se mêle au brasier proche. Elle est alors indétectable normalement, tout en restant consciente de son environnement. Elle est réduite à une conscience pure et ne peut parler (bien que la télépathie reste utilisable), ni bouger, ni interagir avec son équipement (qui est dématérialisé). Le sort dure tant que le feu est actif, au maximum 1 heure + 30 minutes par NR. S'il s'éteint et que le personnage en est inconscient (en sommeil ou en méditation), il est alors rematérialisé brutalement et subit 1D10 blessures en commençant par les Egratignures. Le personnage peut mettre fin au sort et se rematérialiser en 1 action dès qu'il le désire. Dans le brasier, ses points de magie de la sphère du Feu se régénèrent au rythme de 2 par heure et les créatures élémentaires régénèrent 4 fois plus vite."
   },

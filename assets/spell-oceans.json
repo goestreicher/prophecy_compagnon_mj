@@ -200,7 +200,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
@@ -390,7 +390,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "L'esprit du mage des océans peut s'ouvrir sur l'infinité de l'eau pour le protéger. Ce sort permet au mage de se prémunir de toutes les tentatives de pénétration psychique (attaques, contrôles, suggestions - psychologie y compris) en masquant son esprit dans la Sphère des Océans. Le mage bénéficie d'un bonus de +5 à tous ses jets de protection mentale et psychologique. Ce sort dure (3 + 1 par NR) tours."
   },
@@ -432,7 +432,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Ce sort défensif est la risée des combattants qui l'estiment acte de lâcheté par excellence. Néanmoins, beaucoup de mages des océans lui doivent la vie. Enseigné aux premiers âges de l'homme par Vessyan, un dragon des océans, ce sort n’avait pour seule utilité que de permettre aux mages les plus hardis de se familiariser avec l'élément d'Ozyr. Lorsqu'il exécute ce sort, le mage fait en sorte d'ignorer le prochain coup qui lui sera porté car son corps explosera en une gerbe d'eau (annule les dommages, seule la chair et les objets liés à la magie des océans sont liquéfiés). Il s'évapore quasi instantanément et se reconstitue à la prochaine pluie. Des mages l'utilisent parfois en combat sous une averse pour réapparaître dans le dos de leur adversaire ou pour prendre la fuite."
   },
@@ -453,7 +453,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage évoque la souplesse du ruisseau et la vivacité du torrent. Il obtient un bonus de +1 par NR en Coordination, +1 en Physique, +3 en Corps à corps, Esquive et sur toutes les compétences de Mouvement durant (3 + 2 par NR) tours. Le mage voit ses yeux devenir entièrement bleus et luminescents, mais doit consacrer autant d'actions à ses attaques qu'à ses défenses. Cela signifie qu'il ne peut effectuer plus de la moitié de ses actions (arrondie au supérieur) en Attaque et que les autres actions doivent être consacrées à la Défense ou aux mouvements de combat."
   },
@@ -515,7 +515,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "En intensifiant son énergie, le mage crée une aura lumineuse blanche et bleue dans un rayon de (3 + NR) mètres. L'aura gèle l'eau contenue dans l'humidité ambiante, ralentissant les mouvements des personnes situées dans son périmètre. Les assaillants subissent un malus de 1D à leur Initiative et les dommages des attaques touchant le mage sont réduits de (5 + 2 par NR)."
   },
@@ -642,7 +642,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Très courant chez les mages des océans, ce sort permet d'ensorceler des chausses pour marcher sur l'eau, quelle que soit la charge transportée. Les bottes conservent leur pouvoir pendant une semaine et permettent de marcher (1 + 1 par NR) heures par jour. Il faut une certaine habitude et un jet de Manuel + Coordination d'une Difficulté de 15 pour courir sur les vagues et les rapides sans chuter ou rouler sur le fil de l'eau. Il est à noter que, mage ou pas mage, nombreux sont les enfants d'Ozyr à ne pas apprécier l'emploi de ce sort en mer et à prendre un malin plaisir à soulever le mage pour le laisser retomber de haut sur un plancher d'eau dure..."
   },
@@ -663,7 +663,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage ouvre un portail fugace vers une caverne glaciaire garnie de stalactites cristallins. Une partie d'entre eux se détachent et tombent par le portail pour dévaster une zone de 3 mètres de rayon. Les dommages sont de (20 + 1D10 par NR) et il n'est possible de se protéger qu'avec un bouclier. Ce sort peut frapper jusqu'à 25 mètres et touche toutes les personnes dans la zone."
   },

@@ -98,7 +98,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage lance la feuille de laurier vers une cible à moins de 40 mètres. Ce projectile végétal inflige 5 + 1D10/NR points de dégâts. Si la cible subit au moins une égratignure, un poison contenu dans la feuille lui infligera une autre Egratignure à la fin du tour suivant à moins de réussir un jet de Physique + Résistance d'une Difficulté de 20."
   },
@@ -243,7 +243,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
@@ -695,7 +695,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage convoque 1 + 1/NR prédateurs typiques de la région. Ils apparaissent au début du tour suivant, de derrière un arbre, un rocher, etc. Le mage ne contrôle pas ces prédateurs, qui peuvent s'avérer plutôt affamés."
   },
@@ -716,7 +716,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Une fois l'arbre enchanté, le mage peut le façonner et le déplacer à sa guise. Nombre d'Experts de la nature installent leur logis à l'intérieur des troncs. L'arbre peut se déplacer à la vitesse d'un humain, n'est pas ralenti dans les forêts, et ne peut traverser les étendues infranchissables à pied (montagnes, rivières profondes, lacs de lave, etc.). Le mage doit se concentrer pour le déplacer ou attaquer avec l'arbre ; il peut ainsi effectuer une attaque par tour, par jet de Physique + Corps à corps, infligeant 40 + 1D10/NR points de dégâts, et qui peut être esquivée avec une Difficulté +5. Si l'arbre prend feu, il devra être éteint avant 10 tours, sinon l'enchantement prendra fin (et l'arbre continuera certainement à brûler). Ce sort dure un Augure."
   },
@@ -779,7 +779,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "En passant le licol à l'animal, le mage arrive à l'ensorceler pour en faire son familier. Le mage ne peut contrôler qu'un seul animal, et cela pendant (1 + NR) semaines (il peut décider d'arrêter le sort avant que cette durée ne soit écoulée). Tous les ordres donnés à l'animal doivent être proférés de manière intelligible, en sachant que l'animal conserve son intelligence initiale. Ce sort est efficace sur des animaux de moins de 10 kg. Pour chaque multiplicateur de 10 de la masse, le temps d'effet est divisé comme suit : /2 pour 100kg, /3 pour une tonne, /4 pour 10 tonnes. Ce sort ne fonctionne pas sur les dragons ou les créatures draconiques."
   },
@@ -842,7 +842,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage recrée un petit coin de Nature éphémère, quel que soit l'endroit où il se trouve. La zone transformée le reste tant qu'il ne la quitte pas. Cette zone couvre (5 + 5 par NR m2) et est considérée comme un site élémentaire de la Nature pour (1 heure + 10 minutes par NR)."
   },
@@ -862,7 +862,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "La Nature confie au mage une partie de sa puissance pendant (1 + 1 par NR) minutes. Avec une réussite normale, il bénéficie d'un bonus de +5 à la Caractéristique de son choix. Pour 1 NR, il bénéficie d'un bonus de +10 à la Caractéristique de son choix ou d'un dé supplémentaire d'Initiative (conservable). Pour 2 NR, il gagne une case supplémentaire par Niveau de blessure. Ces cases de blessure supplémentaires sont cochées en premier, et quand le sort prend fin, elles disparaissent même si elles ont été cochées."
   },
@@ -966,7 +966,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "En touchant sa cible avec l'anneau ensorcelé depuis moins d'une semaine, le mage la métamorphose en 1 tour en un animal connu de son choix. Si la cible résiste, le sort se résout par un jet d'opposition de Physique + Volonté contre le score d'incantation du sort. Ce sort dure jusqu'au prochain lever ou coucher du soleil. Les NR définissent la variation de masse de la cible. Pour devenir un animal 2 fois plus gros (ou plus petit), 1 NR est nécessaire, pour 4 fois, 2 NR, etc. La cible acquiert toutes les caractéristiques de l'animal choisi, à l'exception du Mental, de l'Intelligence et de la Volonté, qui restent celles de la cible. Toutefois, seules les capacités spéciales connues du mage sont créées. Il est impossible de métamorphoser en humain ou en dragon, et seules les Experts de la Sphère de la Nature peuvent métamorphoser en créatures draconiques. Il est impossible de lancer ce sort ailleurs que dans un lieu sauvage."
   },
@@ -987,7 +987,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage désigne sa cible à moins de 30 mètres et l'imprègne de l'odeur de la proie. Tous les prédateurs situés dans un rayon de 20 mètres autour de la cible se précipitent sur elle pour la dévorer. La cible garde cette odeur pendant (1 + NR) tours."
   },

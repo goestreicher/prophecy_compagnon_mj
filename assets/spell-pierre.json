@@ -201,7 +201,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
@@ -263,7 +263,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage évoque la stabilité de Brorne et peut marcher, courir ou prendre appui sur des surfaces humides ou glissantes comme si elles étaient sèches. Ce sort touche le mage (+1 par NR) cibles, si ces dernières sont dans la même posture que lui. Il dure 15 minutes et permet par exemple de courir sur de la mousse humide, ou d'escalader un mur par temps de pluie."
   },
@@ -387,7 +387,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage devient capable de déplacer la pierre avec une force colossale pendant (3 + NR) tours. Il peut tripler sa force pour soulever des pierres, bouger une statue ou soutenir un pilier en chute. En revanche, ce sort n'affecte pas les dommages de mêlée. Les objets déplacés conservent leur masse initiale. Ce sort affecte aussi la terre, le sable ou la glaise."
   },
@@ -429,7 +429,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage lache le diamant dans le récipient plein d'eau où il semble se dissoudre. Il plonge alors la main dans le récipient et en sort lentement une lame de cristal incolore d'un mètre de long, dure comme du diamant et munie d'une poignée sommaire. Cette arme tranchante a les caractéristiques d'une épée longue, mais avec +3 aux dommages et une résistance Exceptionnelle. Ce sort dure (5 + NR) tours, après quoi l'épée éclate en échardes de cristal. Il ne reste alors dans la main que le diamant intact."
   },
@@ -449,7 +449,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le lanceur transforme sa main levée en pierre pour 5 minutes. Avec 1 NR il transforme aussi son avant-bras et avec 2 NR son bras entier. Le membre transformé est immunisé à la douleur et se compose entièrement de pierre. Il reste maniable et souple, mais dénué de toucher. La main ne possède aucun bonus d'armure et sert généralement à attraper des objets tranchants ou brûlants. Avec cette main de pierre, il est possible de parer des armes à main nue, mais les armes de choc ou contondantes infligent leurs dommages normalement."
   },
@@ -720,7 +720,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "En versant quelques gouttes d'acide sur la rune gravée sur un rocher, le mage peut y introduire un objet donc le volume n'excède pas la taille du bloc. Ensuite, durant 24 heures et dans un rayon de (1 + NR) kilomètres, le lanceur peut dessiner une rune de Brorne sur n'importe quelle surface minérale en contact avec le sol (directement ou par continuité minérale) et y plonger la main pour ressortir l'objet dissimulé, sans se soucier cette fois de la taille du bloc. Durant tout ce temps, l'objet ne subit plus les effets du temps. Il est impossible de cacher une créature vivante, à l'exception des créatures élémentaires de la pierre (gargouilles, lézards mange- pierre, etc.)."
   },
@@ -741,7 +741,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage projette la poudre enchantée depuis moins d'une heure sur la cible. Le sort pétrifie la cible consentante en une statue faite de la roche de la poudre utilisée. Sous cette forme, le personnage ne peut plus bouger que ses yeux (qu'il peut fermer pour ressembler à une vraie statue) durant (1 + NR) heures. Il devient insensible au chaud comme au froid et aux agressions extérieures. Son métabolisme est inexistant, sons corps étant considéré comme entièrement minéral. Il n'émet plus d'odeur ou de signes vitaux. Il n'est sensible qu'aux armes contondantes ou de choc, et en subit les dommages sans armure. Le personnage peut mettre fin au sort à son gré, restant conscient de son environnement."
   },

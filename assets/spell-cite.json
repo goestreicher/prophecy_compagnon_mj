@@ -15,7 +15,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage crie à l'aide et les forces de l'ordre les plus proches entendent automatiquement ce cri. Elles apprennent automatiquement la localisation du mage, sa nature de mage, et ressentent le besoin de se précipiter aussitôt à son aide. Ce sort ne fonctionne que dans les limites d'une cité. Les mages des cités ayant une réputation sulfureuse, ils n'utiliseront ce sort qu'en dernière extrémité..."
   },
@@ -119,7 +119,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Une pellicule moirée s'étire sur le cadre de la fenêtre. Regarder par cette fenêtre dévoile automatiquement au mage toute illusion visuelle ou mentale située dans son champ visuel. Il peut ensuite retrouver les illusions découvertes grâce à un jet de Mental + Perception de Difficulté 20, en bénéficiant d'un bonus égal aux NR obtenus au lancement."
   },
@@ -200,7 +200,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
@@ -302,7 +302,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage désigne une porte à moins de 20 mètres et se tape légèrement le front. La prochaine personne à passer la porte se cognera la tête (quelle que soit sa taille). La victime perd 2 actions le temps de récupérer ses esprits et de se masser le crâne (une seule si elle porte un casque d'armure moyenne ou lourde). Ce sort sert souvent à se débarrasser de poursuivants ou à se moquer de sa victime en société."
   },
@@ -592,7 +592,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Les pattes de gecko se fondent dans la main du personnage, et ses pieds et mains commencent à ressembler aux doigts de ce lézard. Il peut se déplacer sur les surfaces lisses horizontales ou verticales sans problème, même à l'envers. Ses jets d'Athlétisme liés à l'escalade bénéficient d'un bonus de +10. Ce sort dure (1 + NR) minutes."
   },
@@ -613,7 +613,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage doit s'isoler de toute influence extérieure et se concentrer longuement avant de mélanger le sang de dragon à la peinture. Quand le mage repeint les façades d'un édifice avec cette peinture enchantée pour un jour, ce bâtiment devient invisible pour tout autre que lui (en fait, les gens passent sans le remarquer). En cas de soupçons, on peut déceler la supercherie sur un jet de Mental + Perception à Difficulté 35 ; cette Difficulté tombe à 25 pour un dragon, et à 20 pour un dragon des Cités. Les effets de ce sortilège durent 1 cycle."
   },

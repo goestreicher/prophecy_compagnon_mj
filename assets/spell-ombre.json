@@ -140,7 +140,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "En s'ouvrant une veine, le mage de l'ombre peut modeler le sang qui s'en échappe, créant un fouet carmin d'une dizaine de mètres de long qu'il pourra manier comme un fouet redoutable. Ses dommages de base sont de 20 et il s'utilise avec Armes articulées. Ce sort ignore les défenses physiques de la victime, mais se pare et s'esquive normalement. Ce sort possède un contrecoup notable : après les (10 + 2 par NR) où le sort est actif, le bras du mage devient exsangue et paralysé jusqu'au prochain coucher du soleil."
   },
@@ -201,7 +201,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
@@ -324,7 +324,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Sortilège effrayant montrant à quelles techniques abjectes sont rompus les mages de l'ombre, la peau de la main se met à couler sur le sol en un flot ininterrompu, immédiatement absorbée par celui ci et rejaillissant pour agripper fermement les mollets d'un adversaire jusqu'à 10 mètres. Les 2 belligérants sont alors immobilisés. La cible est incapable de se déplacer à moins de réussir un jet de Physique + Force contre une Difficulté de 25. Si le mage utilise une action pour resserrer sa prise par un jet d'opposition de Physique + Sphère de l'Ombre contre Physique + Résistance de la cible, il peut infliger (10 + 1D10 par NR) points de dommages. Le mage subit normalement les dommages infligés à sa main. Si celle-ci est tranchée par une blessure Grave, le mage retire son membre de chair fluide du sol qui se rétracte alors en reconstituant sa main intacte. Ce sort peut fracasser une jambe si une blessure Grave est cochée, et même déchirer les veines avec les esquilles d'os, ce qui pourra tuer. Ce sort dure (3 + 2 par NR) tours."
   },
@@ -761,7 +761,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Sortilège horrifique, les impressionnantes élytres composées d'ombres aux reflets nauséeux qui protègent le mage semble celles d'un insecte gigantesque posé sur lui. A chaque attaque, qu'il subit (sauf en cas d'attaques simultanées, où une seule attaque doit être sélectionnée), les élytres le recouvrent instantanément, lui offrant une protection supplémentaire de (5 + 3 par NR) contre tout dégât physique. Ce sort dure (1 + 1 par NR) heures."
   },
@@ -782,7 +782,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage désigne une blessure affligeant la cible. Tous les jets de soins affectant la victime seront pénalisés d'un -3, du fait du pus qui commence à suinter de la plaie. Les effets du sort durent (3 + 1 par NR) jours. Ce sort ne peut être lancé dans un site élémentaire, sauf ceux de la Sphère de l'Ombre."
   },
@@ -824,7 +824,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Destiné à perturber l'équilibre mental d'un individu, ce sort maudit sa victime pour (1 semaine + (1 par NR) jours). Chaque réalisation de la victime (artisanat, passe d'arme, etc.) envahira son esprit d'un rire moqueur du mage, lui imposant une pression propres à faire craquer les plus volontaires. Tout jet indiquant un 1 impose alors de lancer 2 dés au lieu d'un seul pour déterminer un éventuel Echec critique. Si l'un des 2 dés indique un score supérieur au score de la Compétence, c'est automatiquement un échec critique."
   },

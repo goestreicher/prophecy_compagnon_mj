@@ -181,7 +181,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
@@ -346,7 +346,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Tout en regardant son interlocuteur droit dans les yeux (moins de 1 mètre), le mage s'interroge sur la véracité de ses propos. Quelques instants plus tard, le mage entend comme un murmure dans le vent qui lui révèle s'il a menti durant les (1 + NR) minutes précédent son lancement. L'interlocuteur peut essayer de dissimuler son mensonge. Il doit alors réussir un jet d'opposition de Social + Volonté contre le score d'incantation du mage."
   },
@@ -428,7 +428,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Une plume à la main, le mage effectue une rapide danse aérienne. Celle-ci s'achève alors qu'un coussin d'air s'est formé au niveau de ses pieds et sur lequel il peut se déplacer comme si c'était une surface rigide. Il peut ainsi marcher en flottant légèrement au dessus du sol, ce qui lui permet de ne laisser aucune trace de son passage ou de franchir sans difficulté des obstacles tels que rivières et marais. Le sort peut affecter (1 par NR) personnes supplémentaires au choix du mage et dure 1 minute. Le mage peut prolonger la durée du sort à raison de 1 point de magie par minutes et par personne."
   },
@@ -489,7 +489,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "En agitant son éventail pour disperser les mots chuchotés au creux de sa main, le mage crée une faille invisible qui permet de parler (sans le voir) à un interlocuteur situé à moins de 1 kilomètre de lui, tant qu'il peut le localiser. Le portail reste ouvert (1 + 1 par NR) minutes."
   },
@@ -510,7 +510,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Prenant une poignée de sable dans chaque main, le mage entame la danse des vents. Tout en laissant s'égrainer lentement le sable, il s'adresse alors aux vents en chantonnant, leur demandant son chemin. Un esprit des vents se matérialise alors et se met à tourbillonner devant le mage, rassemblant le sable en un petit tourbillon qui prend la direction du lieu demandé. Le sable s'éparpille rapidement et le tourbillon disparaît totalement au bout de (2 + 1 par NR) tours."
   },
@@ -572,7 +572,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage s'installe au centre d'un cercle tracé à l'aide de la poudre et appelle les vents par une scansion de plus en plus forte. Un brouillard épais commence alors à s'élever de la jarre et se répand à la vitesse de 30 mètres par tour. Il s'étend sur un cercle de (40 + 5 mètres par NR) de diamètre. Le sort dure jusqu'au matin suivant."
   },
@@ -655,7 +655,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Une fois la voile du navire ensorcelée, celle ci se gonfle comme si un vent se levait. Pour contrôler la vitesse du navire, il suffit de déployer plus ou moins les voiles : lorsqu'elles sont amenées, la propulsion cesse, et lorsqu'elles sont complètement déployées, le navire se déplace comme par vent fort (cf. Les Versets d'Ozyr p.63-64). Le sort se déclenche en 4 tours et dure (1 + 1 par NR) semaines. La rune doit être visible de la proue du navire où le mage effectue l'enchantement, et se consume lors de l'incantation."
   }

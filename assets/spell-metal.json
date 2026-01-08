@@ -243,7 +243,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage invoque un peu d'élément et se met dans une posture de défense instinctive. L'élément recouvre tout son corps, selon les caractéristiques de cet élément. Le manteau procure 10 points d'armure à un personnage sans armure ou rajoute +5 à l'Indice de protection de l'armure d'un personnage s'il en porte déjà une. Ce sort est incompatible avec tout autre sort d'armure. Il dure (10 + 5 par NR) tours. Le manteau est opaque et inoffensif, et protège son lanceur contre l'élément dont il est formé pendant toute la durée du sort. Si un autre sort de cette sphère agresse le manteau, celui ci offre une protection doublée, mais se dissout si les dommages infligés par l'élément dépassent le double de sa nouvelle protection (on considère alors que l'élément du manteau est dispersé par le sort agresseur). Si l'élément n'est pas mû par un sort ou un effet magique précis (comme un incendie de forêt ou une grêle violente, mais pas la vague d'un Raz de marée ou la flamme d'un Souffle ardent), le manteau protège complètement le mage."
   },
@@ -388,7 +388,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Tout le métal porté par le mage (arme, armure) se met à briller violemment d'une lumière platine, aveuglant toutes les personnes sur 5 mètres de rayon comme s'ils regardaient le soleil. Il n'y a aucun dégagement de chaleur, seule la lumière est gênante et oblige à combattre en aveugle, avec les malus appropriés (de -5 à l'impossibilité d'agir, au choix du meneur)."
   },
@@ -429,7 +429,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage croise ses griffes en finissant son chant. Ces dernières deviennent invisibles et peuvent toucher un adversaire jusqu'à 15 mètres comme si le mage était engagé au corps à corps avec lui. Les griffes ignorent les armures ne comportant pas de métal et infligent des dommages de base de 10. Le mage doit réussir un jet de Physique + Corps à corps pour toucher son adversaire, ce dernier ne pouvant qu'esquiver en anticipant les mouvements du mage. Le sort dure 5 + 2 par NR tours après quoi les griffes redeviennent normales."
   },
@@ -554,7 +554,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Ce sort très puissant est redouté par tous les combattants de Kor. Pour peu qu'il arrive au corps à corps, le mage peut poser sa main sur l'armure métallique visée par un simple jet de Physique + Corps à Corps de Difficulté 15. La manœuvre s'esquive normalement, mais ne se pare pas. L'armure éclate alors en de multiples fragments acérés qui blessent cruellement son porteur, comme si le métal fuyait le contact du mage. La victime subit (30 + 1 par NR) points de dommages sans armure. L'armure perd immédiatement la moitié de son Indice de protection."
   },
@@ -596,7 +596,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Le mage ensorcèle un ruban de tissu large comme la main, long d'environ 3 mètres. Généralement porté ballant, il ressemble à une banale écharpe ou à un chèche. En combat, le ruban peut filer en tourbillonnant vers un adversaire en devenant tranchant comme un rasoir : il s'allonge magiquement et peut frapper jusqu'à 20 mètres, provoquant 15 + 1D10 points de dommages. Il s'esquive ou se pare normalement, mais peut frapper 4 cibles proches. Il est utilisable jusqu'à 5 fois par jour et demande une action du mage pour être guidé."
   },
@@ -701,7 +701,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Ce sort fut développé par les mages ingénieurs pour les aider dans leurs travaux sulfureux. Une fois le rituel terminé, le mage obtient une petite quantité de vif argent enchanté pour un jour. Versé sur du minerai ou des lingots de métal, il permet de procéder à froid au mélange de métaux normalement difficiles à liquéfier. Ce sort permet de rendre malléable un kilo de métal comme s'il s'agissait de glaise. Il en résulte un bonus de +2 pou travailler ce métal et bien sûr, la possibilité de se passer de forge. Les effets du liquide durent (1 + 1 par NR) jours. En cas d'échec, le vif argent se transforme en un poison extrêmement volatile occasionnant de violents tremblements au lanceur du sort pendant toute une journée."
   },
@@ -722,7 +722,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "La colère des dragons"
+      "name": "La Colère des Dragons"
     },
     "description": "Ce sort permet de sceller un portail élémentaire durable en y apposant le sceau élémentaire de Kezyr. Initialement conçu pour contrer les invasions de créatures éeriques, il fonctionne pour tout portail, passage ou tunnel issu de la magie. Le mage doit réussir un jet d'opposition de Mental + Volonté contre le score d'invocation du lanceur du portail pour le fermer instantanément. Le portail ne peut se rouvrir naturellement avant un cycle. Les portails durables ainsi clos sont toujours référencés par les mages du métal qui se chargent régulièrement de veiller à leur inviolabilité."
   }
