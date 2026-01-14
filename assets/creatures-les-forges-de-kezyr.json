@@ -6,40 +6,58 @@
     },
     "name": "Nualth-Iom",
     "uuid": "ce9c7999-2fb4-461c-aae3-213c8ef9fbbd",
-    "description": "Ce dragon sans âge se repose dans une caverne au plus profond des [Collines de Fer](resource://assets/place/5c087163-3c71-42ce-b47d-2bff40e05717). Grâce à ses pouvoirs titanesques, il observe le monde, écoute l’homme naître, vivre et mourir. Tous les mages connaissent son existence et son importance. Nualth-Iom est l’archiviste des Quêteurs. Chaque nouveau pas vers la Perfection lui est rapporté - sans compter ce qu’il observe par lui-même - et est enregistré dans sa mémoire ancestrale. Il ne l’a jamais confirmé, mais certains pensent que c’est un fils de sang de Kezyr. On dit aussi qu’il ne reçoit pas seulement la visite de mages du métal, mais aussi celle d’autres mages et surtout d’autres castes.\n\nUn jour, Nualth-Iom sortira de sa grotte et soumettra à Kezyr le résultat de ses réflexions. Le Grand Dragon pourra alors transmettre à ses enfants son secret perdu depuis des éons.\n\n",
+    "description": "Ce dragon sans âge se repose dans une caverne au plus profond des [Collines de Fer](resource://assets/place/5c087163-3c71-42ce-b47d-2bff40e05717). Grâce à ses pouvoirs titanesques, il observe le monde, écoute l’homme naître, vivre et mourir. Tous les mages connaissent son existence et son importance. Nualth-Iom est l’archiviste des Quêteurs. Chaque nouveau pas vers la Perfection lui est rapporté - sans compter ce qu’il observe par lui-même - et est enregistré dans sa mémoire ancestrale. Il ne l’a jamais confirmé, mais certains pensent que c’est un fils de sang de Kezyr. On dit aussi qu’il ne reçoit pas seulement la visite de mages du métal, mais aussi celle d’autres mages et surtout d’autres castes.\n\nUn jour, Nualth-Iom sortira de sa grotte et soumettra à Kezyr le résultat de ses réflexions. Le Grand Dragon pourra alors transmettre à ses enfants son secret perdu depuis des éons.\n\n## Description\n\nLes enfants de Kezyr sont parmi les plus beaux de leur espèce. Dotés d'écailles irisées et lumineuses, leur corps semble sculpté dans le plus pur des métaux par un orfèvre au talent inégalé. Leur silhouette élancée, aérienne, est un modèle d'articulation et de souplesse.\n\n## Particularités\n\nLes dragons du métal sont immunisés aux dommages des acides ou des sorts utilisant l'acide. Ils sont de plus insensibles à la foudre et à l'électricité (ainsi qu'aux sorts l'utilisant).\n\nTêtus et obstinés, les dragons du métal ignorent les malus de blessure lorsqu'ils affrontent des créatures de l'ombre.\n\nLes dragons du métal possèdent des crocs acérés et des griffes effilées. Les armures n'étant pas exclusivement composées de métal voient leur Indice de protection divisés par deux face à leurs coups.\n\nVifs et agiles, ils ajoutent 1 à chacun de leur Dés d'Initiative.\n\nLes dragons du métal sont insensibles au souffle des enfants de Kezyr de génération inférieure à la leur.\n\n## Forme humaine\n\nLes enfants de Kezyr sont, avec ceux de Khy et de Szyl, les plus à l'aise dans leur enveloppe de chair, dont ils affectionnent tout particulièrement l'aspect. Leur beauté fascinante et leur corps aux proportions parfaites passent difficilement inaperçus, surtout lorsqu'ils sont vêtus d'armures aux détails superbement ouvragés.\n\nCes dragons ne peuvent prendre forme humaine qu'à partir de l'âge jeune, mais ils sont capables de communiquer par la parole avec les humains dès leur plus jeune âge.\n\n**Transformation :** 15 actions du dragon vers l'homme, 10 actions de l'homme vers le dragon.\n\n**Interdit :** Faits de métal à la pureté exceptionnelle, les dragons de Kezyr ne peuvent toucher de main humaine un objet manufacturé de qualité médiocre sans le réduire en poussière. Seuls les objets de qualité exceptionnelle résistent à cet effet.\n\n## Pouvoirs spéciaux\n\nLes dragons du métal peuvent prendre leur forme humaine et élémentaire.\n\nLes dragons du métal peuvent réveiller le métal forgé ou ciselé et lui rendre son indépendance si le porteur de l'objet en est jugé indigne. S'ils réussissent un jet de Mental+Empathie contre une Difficulté égale au jet de création de l'objet, ce dernier se déforme et devient capable de se déplacer pour fuir. Il peut se hérisser de pointes, couler au sol ou sinuer comme un serpent pour rejoindre le corps du dragon ou s'enfoncer sous le sol. Les objets créés par Artisanat élémentaire sont immunisés à ce pouvoir car le métal ainsi travaillé n'est aucunement asservi mais apprivoisé.\n\nLes dragons du métal peuvent transformer tout métal en un autre par un simple toucher. Par un jet de Mental + Empathie sur la table du Privilège de Transmutation, ils peuvent bonifier ou avilir un métal.\n\nAu combat, ils subissent les malus d'attaque et de défense cumulative tous les deux coups et non à chaque (1° et 2° attaque à 15, 1° et 2° défense à 15, 3° et 4°attaque à 20, etc…)\n\n## Compétences\n\n**Combat :** Toutes à 15, plus cinq disposant d'un bonus de 1\n\n**Mouvement :** Toutes à 10, plus cinq disposant d'un bonus de 2\n\n**Théorie :** Toutes à 10, plus cinq disposant d'un bonus de 1\n\n**Pratique :** Toutes à 15, plus cinq disposant d'un bonus de 1\n\n**Technique :** Toutes à 15, plus cinq disposant d'un bonus de 3\n\n**Manipulation :** Toutes à 10, plus cinq disposant d'un bonus de 1\n\n**Communication :** Toutes à 15, plus cinq disposant d'un bonus de 1\n\n**Influence :** Toutes à 15, plus cinq disposant d'un bonus de 2\n\n**Sorts :** 900 pts de Complexité en Magie instinctive, 1000 en Magie invocatoire et 1200 en Sorcellerie.\n\n**Faveurs :** cinq Faveurs de chaque niveau, qu’il est possible de conférer par le Lien.\n\n",
     "image": null,
     "icon": null,
     "abilities": {
-      "force": 0,
-      "intelligence": 0,
-      "coordination": 0,
-      "presence": 0,
-      "resistance": 0,
-      "volonte": 0,
-      "perception": 0,
-      "empathie": 0
+      "force": 26,
+      "intelligence": 16,
+      "coordination": 18,
+      "presence": 18,
+      "resistance": 34,
+      "volonte": 19,
+      "perception": 16,
+      "empathie": 15
     },
     "attributes": {
-      "physique": 0,
-      "mental": 0,
-      "manuel": 0,
-      "social": 0
+      "physique": 26,
+      "mental": 22,
+      "manuel": 23,
+      "social": 20
     },
-    "initiative": 1,
+    "initiative": 4,
     "injuries": {
       "manager": {
         "levels": [
           {
-            "type": "injured",
+            "type": "scratch",
             "start": 0,
+            "end": 10,
+            "capacity": 5
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 5
+          },
+          {
+            "type": "grave",
+            "start": 20,
             "end": 30,
-            "capacity": 3
+            "capacity": 5
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 4
           },
           {
             "type": "death",
-            "start": 30,
+            "start": 40,
             "end": -1,
-            "capacity": 1
+            "capacity": 2
           }
         ],
         "injuries": {}
@@ -52,7 +70,26 @@
           "all": []
         },
         "mouvement": {
-          "all": []
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 10,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "reserved": true,
+                  "value": 13,
+                  "reserved_prefix": "creature:cefd2504-fa68-463d-9cbe-070506e5420c:specialized:misc:"
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 14,
+              "implementation": ""
+            }
+          ]
         },
         "theorie": {
           "all": []
@@ -82,27 +119,27 @@
     "equipment": [],
     "magic": {
       "skills": {
-        "instinctive": 0,
-        "invocatoire": 0,
-        "sorcellerie": 0
+        "instinctive": 15,
+        "invocatoire": 15,
+        "sorcellerie": 16
       },
       "spheres": {
         "pierre": 0,
         "feu": 0,
         "oceans": 0,
-        "metal": 0,
+        "metal": 14,
         "nature": 0,
         "reves": 0,
         "cite": 0,
         "vents": 0,
         "ombre": 0
       },
-      "pool": 0,
+      "pool": 81,
       "pools": {
         "pierre": 0,
         "feu": 0,
         "oceans": 0,
-        "metal": 0,
+        "metal": 14,
         "nature": 0,
         "reves": 0,
         "cite": 0,
@@ -115,11 +152,89 @@
     "unique": true,
     "category": "dragons",
     "biome": "Collines de Fer",
-    "real_size": "Inconnue",
-    "weight": "Inconnu",
-    "natural_armor": 0,
+    "real_size": "25m de long, 20m d'envergure",
+    "weight": "30 tonnes",
+    "natural_armor": 70,
     "natural_armor_description": "",
-    "natural_weapons": [],
-    "special_capabilities": []
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "special": null,
+        "skill": 15,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 4,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 5.5,
+            "maximum_distance": 5.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 5.5,
+            "maximum_distance": 5.5
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 14,
+        "damage": {
+          "static": 80,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 1
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6.25,
+            "maximum_distance": 6.25
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6.25,
+            "maximum_distance": 6.25
+          }
+        }
+      },
+      {
+        "name": "Queue",
+        "special": "Les dégâts sont de FOR + COO",
+        "skill": 14,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 18,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6.25,
+            "maximum_distance": 6.25
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6.25,
+            "maximum_distance": 6.25
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Souffle Métallique (15)",
+        "description": "Leur souffle est composé de milliers de gouttelettes de métal en fusion qui se solidifient instantanément en minuscules aguilles déchiquetant tout sur passage.\nUtilisation: PHY + Souffle, Diff. 15\nPortée: 100m\nZone d'effet: cône d'une largeur égale au quart de la longueur.\nEffets: Ce souffle ignore les armures n'étant pas exclusivement composées de métal et les réduit en charpie (Indice=0). Il inflige 25+1D10/NR pts de dommages et provoque le recul comme une attaque physique draconique. Tout Critique obtenu sur ce souffle provoque une Hémorragie (9) en plus de l'effet normal."
+      }
+    ]
   }
 ]

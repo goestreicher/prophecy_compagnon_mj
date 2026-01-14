@@ -727,40 +727,58 @@
     },
     "name": "Jamaël Onyx",
     "uuid": "533b5860-211d-4c4e-ab66-ff47279941e6",
-    "description": "Jamaël est un vieux dragon qui passe plus clair de son temps sous sa forme humaine. Il parcourt le monde de Kor et dirige un Refuge d'urgence au sud de la [Forêt de Solor](resource://assets/place/bcc7e2b4-c746-4d34-8ca2-f9841664f0d9) - région ravagée par une épidémie d’origine inconnue. En général, il prend l’apparence d’un colosse au visage léonin encadré d’une énorme barbe rousse. Sa force - sous forme humaine - est prodigieuse et il travaille autant comme magicien que comme simple bûcheron.\n\nMais Jamaël est aussi l'un des agents de renseignement de Heyra, et l'un de ses fils directs. La Mère Nature a observé depuis quelques années une augmentation des maladies contagieuses. Or, ayant cartographié la répartition des épidémies, elle a constaté qu’elles n’apparaissaient qu'aux frontières des royaumes.\n\nBien entendu, la réaction de la population locale est d’accuser les voisins et déjà plusieurs conflits ont éclaté au niveau local. Heyra voudrait bien savoir qui est en train de semer le chaos et, pour le moment, les mages humains qu’elle a fait enquêter n’ont rien trouvé ou ont disparu sans laisser de traces.\n\nLe mystère reste complet à ce jour.\n\n",
+    "description": "Jamaël est un vieux dragon qui passe plus clair de son temps sous sa forme humaine. Il parcourt le monde de Kor et dirige un Refuge d'urgence au sud de la [Forêt de Solor](resource://assets/place/bcc7e2b4-c746-4d34-8ca2-f9841664f0d9) - région ravagée par une épidémie d’origine inconnue. En général, il prend l’apparence d’un colosse au visage léonin encadré d’une énorme barbe rousse. Sa force - sous forme humaine - est prodigieuse et il travaille autant comme magicien que comme simple bûcheron.\n\nMais Jamaël est aussi l'un des agents de renseignement de Heyra, et l'un de ses fils directs. La Mère Nature a observé depuis quelques années une augmentation des maladies contagieuses. Or, ayant cartographié la répartition des épidémies, elle a constaté qu’elles n’apparaissaient qu'aux frontières des royaumes.\n\nBien entendu, la réaction de la population locale est d’accuser les voisins et déjà plusieurs conflits ont éclaté au niveau local. Heyra voudrait bien savoir qui est en train de semer le chaos et, pour le moment, les mages humains qu’elle a fait enquêter n’ont rien trouvé ou ont disparu sans laisser de traces.\n\nLe mystère reste complet à ce jour.\n\n## Description\n\nLes enfants de Heyra sont beaucoup moins agressifs que les autres ailés, tant dans leur comportement que dans leur physique, harmonieux, féérique. Leur corps tout entier semble sculpté dans le bois, l'herbe et les fleurs, et leurs écailles lisses allient la solidité du chêne aux couleurs des forêts printanières. Trapus et massifs, ils possèdent des ailes savamment articulées et des membres agiles qui leur permettent de se mouvoir dans les milieux les plus denses.\n\n## Particularités\n\nLes dragons de la nature sont immunisés aux dommages des poisons et aux effets altérant directement leurs cases de blessures (sorts ou capacités) sans provoquer de dommages.\n\nLe feu et les sorts l'utilisant affectent plus durement les dragons de la nature. Tout effet de ce type (Sphère du feu en général) inflige des dommages toujours maximum.\n\nLes dragons de la nature peuvent communiquer par télépathie avec toute créature vivante située à portée de vue (animal, plante, créature) tant que celle-ci a une conscience, même larvaire ou infime.\n\nLes animaux sauvages et les prédateurs naturels respectent intuitivement les dragons de la nature. Ils ne les attaqueront pas et respecteront leurs décisions. Ceci n'inclut pas les créatures draconiques ou élémentaires.\n\nLes dragons de la nature sont insensibles au souffle des enfants de Heyra de génération inférieure à la leur.\n\n## Forme humaine\n\nLa forme humain des dragons de la nature est caractérisée par la grâce, la beauté et la simplicité des atours qu'ils choisissent. Indifféremment masculins ou féminins, les corps de ces dragons sont dotés d'une morphologie quasi parfaite, et seul leur regard permet de soupçonner leur nature magique. Leurs cheveux et leur voix, douce et chaude, sont également caractéristiques.\n\nCes dragons ne peuvent prendre forme humaine qu'à partir de l'âge adulte, mais ils peuvent comprendre et se faire comprendre des humains dès leur plus jeune âge.\n\n**Transformation :** 16 actions du dragon vers l'homme, 12 actions de l'homme vers le dragon.\n\n**Interdit :** Fils des forêts et de la nature, les dragons de Heyra sont incapables d'abandonner le soleil et la terre en pénétrant des habitations ou des édifice dotés d'un toit et d'un plancher. S'ils s'y trouvent contraints, ils déchirent leur enveloppe de chair en quelques secondes. Toute rupture provoque la perte de points de magie de la Réserve personnelle ET de la Réserve de la Sphère de la Nature.\n\n## Pouvoirs spéciaux\n\nDans un combat en milieu naturel contre un être brisant l'équilibre naturel (dragon enragé, prédateur inhabituel invoqué, bûcherons dévastateurs) ils ajoutent 4 à leurs dés d'Initiative, en attaque et en défense.\n\nLes dragons de la nature peuvent prendre leur forme humaine.\n\nEn milieu non urbain, ils peuvent communiquer avec les forces naturelles dans un rayon de 4km. Ils peuvent ainsi lever les Hordes ou localiser approximativement une créature. Ce pouvoir peut être utilisé une fois par semaine.\n\nLes dragons de la nature peuvent prendre leur forme élémentaire. Sous toutes leurs formes, ils focalisent tant les énergies élémentaires que toutes période de convalescence (cf. p.193 du LdB) dans les (Empathie x5) m autour d'eux compte double.\n\n## Compétences\n\n**Combat :** Toutes à 8, plus quatre disposant d'un bonus de 1\n\n**Mouvement :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Théorie :** Toutes à 8, plus quatre disposant d'un bonus de 2\n\n**Pratique :** Toutes à 12, plus quatre disposant d'un bonus de 3\n\n**Technique :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Manipulation :** Toutes à 4, plus quatre disposant d'un bonus de 2\n\n**Communication :** Toutes à 16, plus quatre disposant d'un bonus de 1\n\n**Influence :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Sorts :** 700 pts de Complexité en Magie instinctive, 1000 en Magie invocatoire et 750 en Sorcellerie.\n\n**Faveurs :** quatre Faveurs de chaque niveau, qu’il est possible de conférer par le Lien.\n\n",
     "image": null,
     "icon": null,
     "abilities": {
-      "force": 0,
-      "intelligence": 0,
-      "coordination": 0,
-      "presence": 0,
-      "resistance": 0,
-      "volonte": 0,
-      "perception": 0,
-      "empathie": 0
+      "force": 18,
+      "intelligence": 15,
+      "coordination": 10,
+      "presence": 16,
+      "resistance": 26,
+      "volonte": 14,
+      "perception": 11,
+      "empathie": 16
     },
     "attributes": {
-      "physique": 0,
-      "mental": 0,
-      "manuel": 0,
-      "social": 0
+      "physique": 20,
+      "mental": 16,
+      "manuel": 14,
+      "social": 16
     },
-    "initiative": 1,
+    "initiative": 3,
     "injuries": {
       "manager": {
         "levels": [
           {
-            "type": "injured",
+            "type": "scratch",
             "start": 0,
+            "end": 10,
+            "capacity": 5
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 5
+          },
+          {
+            "type": "grave",
+            "start": 20,
             "end": 30,
-            "capacity": 3
+            "capacity": 4
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 4
           },
           {
             "type": "death",
-            "start": 30,
+            "start": 40,
             "end": -1,
-            "capacity": 1
+            "capacity": 2
           }
         ],
         "injuries": {}
@@ -773,7 +791,26 @@
           "all": []
         },
         "mouvement": {
-          "all": []
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 12,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "reserved": true,
+                  "value": 8,
+                  "reserved_prefix": "creature:c5481833-67fc-4436-88c8-28ac4062698c:specialized:misc:"
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 9,
+              "implementation": ""
+            }
+          ]
         },
         "theorie": {
           "all": []
@@ -803,28 +840,28 @@
     "equipment": [],
     "magic": {
       "skills": {
-        "instinctive": 0,
-        "invocatoire": 0,
-        "sorcellerie": 0
+        "instinctive": 14,
+        "invocatoire": 15,
+        "sorcellerie": 13
       },
       "spheres": {
         "pierre": 0,
         "feu": 0,
         "oceans": 0,
         "metal": 0,
-        "nature": 0,
+        "nature": 15,
         "reves": 0,
         "cite": 0,
         "vents": 0,
         "ombre": 0
       },
-      "pool": 0,
+      "pool": 66,
       "pools": {
         "pierre": 0,
         "feu": 0,
         "oceans": 0,
         "metal": 0,
-        "nature": 0,
+        "nature": 15,
         "reves": 0,
         "cite": 0,
         "vents": 0,
@@ -836,11 +873,89 @@
     "unique": true,
     "category": "dragons",
     "biome": "Sud de la Forêt de Solor",
-    "real_size": "Inconnue",
-    "weight": "Inconnu",
-    "natural_armor": 0,
+    "real_size": "25m de long, 25m d'envergure",
+    "weight": "46 tonnes",
+    "natural_armor": 45,
     "natural_armor_description": "",
-    "natural_weapons": [],
-    "special_capabilities": []
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "special": null,
+        "skill": 13,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 2,
+          "add": 15,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 4.5,
+            "maximum_distance": 4.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 4.5,
+            "maximum_distance": 4.5
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 14,
+        "damage": {
+          "static": 60,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 1
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          }
+        }
+      },
+      {
+        "name": "Queue",
+        "special": "Les dégâts sont de FOR + RES",
+        "skill": 11,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 26,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Souffle de la Nature (12)",
+        "description": "Leur souffle est une soie épaisse d'un doigt qui se désagrège en plusieurs minutes sous la forme d'une vapeur urticante et asphyxiante.\nUtilisation: PHY + Souffle en Opposition au Physique de la cible.\nPortée: 40m\nZone d'effet: Cône d'une largeur égale au quart de la longueur.\nEffets: La toile forme un cocon partiel autour des victimes situées dans la zone d'effet et les paralyse en les entravant (-1 action par NR sur le jet d'Oppositon). Les dragons de la nature peuvent affecter une surface énorme et seul le jet en Opposition peut rendre compte des efforts des cibles pour déchirer ces filaments au fur et à mesure de leur accumulation. Le dégagement demande une action et un jet de PHY+FOR égale à la Résistance du dragon de la nature ayant créé la toile.\nEn huit tours, la toile va se désagréger en libérant un gaz élémentaire scintillant et verdâtre. Asphyxiantes et provoquant des douleurs cutanées terribles, les vapeurs vont infliger 1D10 points de dommage par tour et étoufferont la victime (cf p. 194 du LdB, asphyxie par gaz nocifs).\nUn vent régulier ou un effet magique peuvent annuler les effets de l'asphyxie.\nLes créatures de l'ombre touchées par ces vapeurs doublent tous les dommages subis, car le gaz élémentaire de la nature les affecte particulièrement…"
+      }
+    ]
   }
 ]

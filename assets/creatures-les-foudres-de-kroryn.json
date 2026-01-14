@@ -157,40 +157,58 @@
     },
     "name": "Naas-Toäl",
     "uuid": "e309380e-1b62-454e-aa24-b65f63972252",
-    "description": "Si ce dragon dirige la moins puissante de toutes les écoles du Feu, il n’en est pas moins la discrète incarnation, sinon le symbole, de la magie de Kroryn. Il est la preuve vivante que l’on peut vivre longtemps en utilisant la Sphère du Feu et la Sorcellerie.\n\nCependant, depuis de nombreuses années, les mages soupçonnent Naas-Toäl d’avoir perdu la raison. L'affaire remonte à l’époque ou une série de crimes affreux a ensanglanté l'histoire d'Ankar. Hommes, femmes et enfants étaient retrouvés, horriblement mutilés, à tel point qu’une équipe d’Inquisiteurs fut dépêchée sur place pour découvrir l’origine des atrocités - considérées alors comme l'œuvre d'un serviteur de Kalimsshar, à n’en pas douter. L'équipe fut décimée en une nuit. Kroryn fit alors appeler Naas-Toäl en urgence et lui parla pendant deux mois complets. Deux mois sans aucun crime. Les meurtres reprirent au retour du vieux dragon. C'est alors que Kroryn le nomma directeur de l’école de Sorcellerie et qu'il lui demanda de la fonder à [Kendyr](resource://assets/place/e43eb555-3057-4209-b62b-a707a9c2296e). Si l’on n’eut jamais de preuve de la culpabilité de Naas-Toäl, il est clair que les rues de Kendyr sont nettement moins sûres depuis son arrivée…\n\n",
+    "description": "Si ce dragon dirige la moins puissante de toutes les écoles du Feu, il n’en est pas moins la discrète incarnation, sinon le symbole, de la magie de Kroryn. Il est la preuve vivante que l’on peut vivre longtemps en utilisant la Sphère du Feu et la Sorcellerie.\n\nCependant, depuis de nombreuses années, les mages soupçonnent Naas-Toäl d’avoir perdu la raison. L'affaire remonte à l’époque ou une série de crimes affreux a ensanglanté l'histoire d'Ankar. Hommes, femmes et enfants étaient retrouvés, horriblement mutilés, à tel point qu’une équipe d’Inquisiteurs fut dépêchée sur place pour découvrir l’origine des atrocités - considérées alors comme l'œuvre d'un serviteur de Kalimsshar, à n’en pas douter. L'équipe fut décimée en une nuit. Kroryn fit alors appeler Naas-Toäl en urgence et lui parla pendant deux mois complets. Deux mois sans aucun crime. Les meurtres reprirent au retour du vieux dragon. C'est alors que Kroryn le nomma directeur de l’école de Sorcellerie et qu'il lui demanda de la fonder à [Kendyr](resource://assets/place/e43eb555-3057-4209-b62b-a707a9c2296e). Si l’on n’eut jamais de preuve de la culpabilité de Naas-Toäl, il est clair que les rues de Kendyr sont nettement moins sûres depuis son arrivée…\n\n## Description\n\nLes dragons du feu sont moins massifs que leurs frères de roche, mais leur musculature et leur puissance les rendent nettement plus meurtriers. Leur corps semé d'écailles sombres, veinées de rouge, est parcouru d'arêtes et de lueurs flamboyantes dont l'intesité croit avec l'âge. La morphologie de leurs membres est très proche de celle des humains, mais leur gueule aux dents gigantesques suffit à inspirer la terreur.\n\n## Particularités\n\nLes dragons des volcans sont immunisés à la chaleur, aux dommages infligés par le feu (magique ou non) ou la lave. Les sorts du feu apportant des bonus de dommages sont inefficaces mais restent actifs.\n\nLeur cuirasse est brûlante et détruit les armes comportant du bois (manche, hampe) à la première touche pour les objets Normaux, 2° pour les Bons, etc…\n\nLa peur qu'ils inspirent ajoute 5 à leur Présence pour résoudre cet effet.\n\nVifs et nerveux, ils ajoutent 1 à chacun de leur Dés d'Initiative.\n\nLe froid et les sorts utilisant l'eau ou le froid affectent plus durement les dragons des volcans. Tout effet de ce type (Sphère des océans en général) inflige des dommages toujours maximum.\n\nLes dragons des volcans sont insensibles au souffle des enfants de Kroryn de génération inférieure à la leur.\n\n## Forme humaine\n\nLes fils de Kroryn aiment généralement à se présenter sous la forme d'un guerrier musculeux, solidement bâti et doté d'un visage aux traits aussi agressifs que possible, mais certains dragons du feu, plus sociaux, préfèrent se pourvoir d'une beauté menaçante. Il est rare cependant qu'un fils de Kroryn sous forme humaine se déplace sans arme et sans armure.\n\n**Transformation :** 16 actions du dragon vers l'homme, 12 actions de l'homme vers le dragon\n\n**Interdit :** Les dragons de Kroryn ne peuvent supporter le contact de la lumière lunaire sur leur peau humaine, aussi sont-ils incapables d'assumer cette forme une fois la nuit tombée. L'obscurité et les ténèbres surnaturelles n'influent pas sur cette limitation, mais un dragon hésitera tout de même à plonger dans une caverne privée des rayons du soleil.\n\n## Pouvoirs spéciaux\n\nPeut prendre sa forme élémentaire.\n\nPeut double sa Force pour déterminer les dommage d'une attaque  de contact visant une cible unique, une fois par tour.\n\nSubit les malus d'attaque cumulative tous les deux coups et non à chaque (1° et 2° attaque à 15, 3° et 4° à 20, etc…)\n\nPeut s'embraser et couvrir son corps − draconique ou humain − de flammes élémentaires qui augmentent de 2D10 les dommages de toutes leurs attaques physiques. Tous les adversaires approchant à moins de 5m du dragon − 2m sous forme humaine − subissent une attaque infligeant 20 points de dommages au début de chaque tour de combat. Les seules défenses sont  la magie ou les armures draconiques.\n\n## Compétences\n\n**Combat :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Mouvement :** Toutes à 8, plus quatre disposant d'un bonus de 2\n\n**Théorie :** Toutes à 4, plus quatre disposant d'un bonus de 2\n\n**Pratique :** Toutes à 8, plus quatre disposant d'un bonus de 1\n\n**Technique :** Toutes à 4, plus quatre disposant d'un bonus de 3\n\n**Manipulation** : Toutes à 4, plus quatre disposant d'un bonus de 1\n\n**Communication :** Toutes à 8, plus quatre disposant d'un bonus de 1\n\n**Influence :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Sorts :** 800 pts de Complexité en Magie instinctive, 500 en Magie invocatoire et 450 en Sorcellerie.\n\n**Faveurs :** quatre Faveurs de chaque niveau, qu’il est possible de conférer par le Lien.\n\n",
     "image": null,
     "icon": null,
     "abilities": {
-      "force": 0,
-      "intelligence": 0,
-      "coordination": 0,
-      "presence": 0,
-      "resistance": 0,
-      "volonte": 0,
-      "perception": 0,
-      "empathie": 0
+      "force": 25,
+      "intelligence": 13,
+      "coordination": 17,
+      "presence": 15,
+      "resistance": 30,
+      "volonte": 15,
+      "perception": 14,
+      "empathie": 7
     },
     "attributes": {
-      "physique": 0,
-      "mental": 0,
-      "manuel": 0,
-      "social": 0
+      "physique": 24,
+      "mental": 16,
+      "manuel": 14,
+      "social": 14
     },
-    "initiative": 1,
+    "initiative": 5,
     "injuries": {
       "manager": {
         "levels": [
           {
-            "type": "injured",
+            "type": "scratch",
             "start": 0,
+            "end": 10,
+            "capacity": 5
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 5
+          },
+          {
+            "type": "grave",
+            "start": 20,
             "end": 30,
+            "capacity": 5
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
             "capacity": 3
           },
           {
             "type": "death",
-            "start": 30,
+            "start": 40,
             "end": -1,
-            "capacity": 1
+            "capacity": 2
           }
         ],
         "injuries": {}
@@ -203,7 +221,26 @@
           "all": []
         },
         "mouvement": {
-          "all": []
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 14,
+              "implementation": ""
+            },
+            {
+              "skill": "athletisme",
+              "value": 8,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "reserved": true,
+                  "value": 13,
+                  "reserved_prefix": "creature:cc0bffaf-bcdd-48dd-8d77-82ee124b73c4:specialized:misc:"
+                }
+              ]
+            }
+          ]
         },
         "theorie": {
           "all": []
@@ -233,13 +270,13 @@
     "equipment": [],
     "magic": {
       "skills": {
-        "instinctive": 0,
-        "invocatoire": 0,
-        "sorcellerie": 0
+        "instinctive": 15,
+        "invocatoire": 13,
+        "sorcellerie": 11
       },
       "spheres": {
         "pierre": 0,
-        "feu": 0,
+        "feu": 14,
         "oceans": 0,
         "metal": 0,
         "nature": 0,
@@ -248,10 +285,10 @@
         "vents": 0,
         "ombre": 0
       },
-      "pool": 0,
+      "pool": 65,
       "pools": {
         "pierre": 0,
-        "feu": 0,
+        "feu": 14,
         "oceans": 0,
         "metal": 0,
         "nature": 0,
@@ -266,11 +303,89 @@
     "unique": true,
     "category": "dragons",
     "biome": "Kendyr",
-    "real_size": "Inconnue",
-    "weight": "Inconnu",
-    "natural_armor": 0,
+    "real_size": "23m de long, 18m d'envergure",
+    "weight": "43 tonnes",
+    "natural_armor": 50,
     "natural_armor_description": "",
-    "natural_weapons": [],
-    "special_capabilities": []
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "special": null,
+        "skill": 15,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 3,
+          "add": 5,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 4.5,
+            "maximum_distance": 4.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 4.5,
+            "maximum_distance": 4.5
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 15,
+        "damage": {
+          "static": 65,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 1
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          }
+        }
+      },
+      {
+        "name": "Queue",
+        "special": "Les dégats sont de FOR + COO",
+        "skill": 13,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 17,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Souffle des Volcans (15)",
+        "description": "Les dragons de Kroryn crachent un jet de gaz qui s'embrase au contact de l'air, libérant une impressionante gerbe de flammes.\nUtilisation : PHY + Souffle, Diff. 15\nPortée : 60m\nZone d'effet : 1m de large, impact sur 4m de rayon.\nEffets : Chaque créature située dans la trajectoire ou dans la zone d'impact du jet de flammes subit 20 + 2D10/NR du jet de souffle. Seules les armures comportant du cuir, ensorcelées, en Sang de Kezyr, en Sombre Acier ou draconiques (incluant les cuirasses draconiques) peuvent appliquer un Indice de protection."
+      }
+    ]
   }
 ]

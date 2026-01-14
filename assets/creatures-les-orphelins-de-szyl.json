@@ -6,40 +6,58 @@
     },
     "name": "Scox",
     "uuid": "28088e63-06ec-46fb-a2df-13c04827746a",
-    "description": "Ce vieux dragon de Szyl a gardé la fraîcheur et la candeur de sa jeunesse. Il prend toujours forme humaine pour visiter les villes et villages qu’il traverse et se fait connaître sous le nom de Scox L’heureux. Armé uniquement d’une mandoline, il joue le rôle d’un conteur, apportant des nouvelles du monde aux endroits les plus reculés. Souriant, jovial, il ne quitte pas une place sans être persuadé que les autochtones ne sont pas plus heureux. Il charme les femmes, fait rire les hommes et amuse les enfants.\n\nSa véritable fonction, comme d’autres de ses frères, est de veiller à l’équilibre des Tendances partout dans le monde. Il n’interviendra jamais directement, mais délivrera un rapport soit aux [Sages](resource://assets/faction/0f7e6247-efe6-4642-916f-124d012b9914), soit aux Conciliateurs - deux factions secrètes - qui agiront alors en fonction.\n\nSous une autre forme et un autre nom, Scox peut aussi être Conciliateur, mais uniquement en cas d’urgence.\n\n",
+    "description": "Ce vieux dragon de Szyl a gardé la fraîcheur et la candeur de sa jeunesse. Il prend toujours forme humaine pour visiter les villes et villages qu’il traverse et se fait connaître sous le nom de Scox L’heureux. Armé uniquement d’une mandoline, il joue le rôle d’un conteur, apportant des nouvelles du monde aux endroits les plus reculés. Souriant, jovial, il ne quitte pas une place sans être persuadé que les autochtones ne sont pas plus heureux. Il charme les femmes, fait rire les hommes et amuse les enfants.\n\nSa véritable fonction, comme d’autres de ses frères, est de veiller à l’équilibre des Tendances partout dans le monde. Il n’interviendra jamais directement, mais délivrera un rapport soit aux [Sages](resource://assets/faction/0f7e6247-efe6-4642-916f-124d012b9914), soit aux Conciliateurs - deux factions secrètes - qui agiront alors en fonction.\n\nSous une autre forme et un autre nom, Scox peut aussi être Conciliateur, mais uniquement en cas d’urgence.\n\n## Description\n\nLes enfants de Szyl sont semblables aux nuages. Légers et aériens, ils évoluent dans les cieux avec une grâce inégalée et peuvent, lors d'un combat, se révéler aussi prompts et meurtriers que la tempête. Leurs longues ailes diaphanes et leurs écailles lisses leur confèrent un éclat lumineux qui semble capter et réfléchir les rayons du soleil. Leur forme draconique est à dominant gris et bleu − deux couleurs qu'ils conservent dans les yeux de leur corps humain.\n\n## Particularités\n\nLes enfants de Szyl sont immunisés aux dommages des chutes. Ils sont de plus insensibles aux dommages provoqués par la foudre ou l'électricité ou les sorts l'utilisant.\n\nLes dragons des vents ne subissent pas les réductions de leur score d'Initiative qui pourraient survenir du fait d'une immobilisation ou d'un sort. De même, leurs malus de blessure ne s'appliquent pas à leurs dés d'Initiative.\n\nEn combat aérien, leurs manoeuvres d'atterrissage, d'envol ou de placement bénéficient d'un bonus de +4.\n\nLes adversaires au sol qui les attaquent physiquement (à distance ou au contact) subissent un malus de 5 à leur jet tant que le dragon est en vol.\n\nLorsqu'il est au sol, un dragon des vents subit un malus de 5 pour utiliser son souffle.\n\nLes dragons des vents sont insensibles au souffle des enfants de Szyl de génération inférieure à la leur (seule forme de foudre capable de les atteindre).\n\n## Forme humaine\n\nLa forme humaine des dragons de Szyl est marquée par la beauté exceptionnelle de leur corps et la grâce naturelle avec laquelle ils parlent, marchent et agissent.\n\n**Transformation :** 8 actions du dragon vers l'homme, 4 actions de l'homme vers le dragon.\n\n**Interdit :** La nature aérienne des enfants de Szyl les empêche de poser le pied sur le sol et les contraint à flotter sur un coussin invisible situé à 40 cm du sol.\n\n## Pouvoirs spéciaux\n\nLes dragons des vents jeunes ne peuvent être renversés au combat.\n\nIls ignorent les malus d'actions cumulatives d'esquive, de corps à corps et de mouvement.\n\nIls sont capables de prendre forme humaine, mais seulement une heure par jour.\n\nLes dragons des vents adultes disposent d'un dé neutre supplémentaire en Initiative.\n\nIls peuvent annuler un sort de la Sphère des vents qui les prend pour cible en réussissant un jet en Opposition contre le score d'incantation du mage.\n\nLes vieux dragons des vents peuvent se rendre invisibles sous forme draconique tant qu'ils volent. Les cibles éventuellement attaquées disposent d'un jet de Réaction de Difficulté égale à 25. Tout contact physique les rend visibles.\n\n## Compétences\n\n**Combat :** Toutes à 8, plus quatre disposant d'un bonus de 2\n\n**Mouvement :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Théorie :** Toutes à 8, plus quatre disposant d'un bonus de 2\n\n**Pratique :** Toutes à 12, plus quatre disposant d'un bonus de 1\n\n**Technique :** Toutes à 8, plus quatre disposant d'un bonus de 1\n\n**Manipulation :** Toutes à 12, plus quatre disposant d'un bonus de 3\n\n**Communication :** Toutes à 8, plus quatre disposant d'un bonus de 3\n\n**Influence :** Toutes à 8, plus quatre disposant d'un bonus de 2\n\n**Sorts :** 800 pts de Complexité en Magie instinctive, 700 en Magie invocatoire et 700 en Sorcellerie.\n\n**Faveurs :** quatre Faveurs de chaque niveau, qu’il est possible de conférer par le Lien.\n\n",
     "image": null,
     "icon": null,
     "abilities": {
-      "force": 0,
-      "intelligence": 0,
-      "coordination": 0,
-      "presence": 0,
-      "resistance": 0,
-      "volonte": 0,
-      "perception": 0,
-      "empathie": 0
+      "force": 16,
+      "intelligence": 15,
+      "coordination": 22,
+      "presence": 14,
+      "resistance": 16,
+      "volonte": 13,
+      "perception": 18,
+      "empathie": 12
     },
     "attributes": {
-      "physique": 0,
-      "mental": 0,
-      "manuel": 0,
-      "social": 0
+      "physique": 18,
+      "mental": 16,
+      "manuel": 24,
+      "social": 18
     },
-    "initiative": 1,
+    "initiative": 6,
     "injuries": {
       "manager": {
         "levels": [
           {
-            "type": "injured",
+            "type": "scratch",
             "start": 0,
+            "end": 10,
+            "capacity": 5
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 5
+          },
+          {
+            "type": "grave",
+            "start": 20,
             "end": 30,
+            "capacity": 4
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
             "capacity": 3
           },
           {
             "type": "death",
-            "start": 30,
+            "start": 40,
             "end": -1,
-            "capacity": 1
+            "capacity": 2
           }
         ],
         "injuries": {}
@@ -52,7 +70,26 @@
           "all": []
         },
         "mouvement": {
-          "all": []
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 12,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "reserved": true,
+                  "value": 16,
+                  "reserved_prefix": "creature:6a360ab9-6543-4fec-a840-84d543dc2dee:specialized:misc:"
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 15,
+              "implementation": ""
+            }
+          ]
         },
         "theorie": {
           "all": []
@@ -82,9 +119,9 @@
     "equipment": [],
     "magic": {
       "skills": {
-        "instinctive": 0,
-        "invocatoire": 0,
-        "sorcellerie": 0
+        "instinctive": 14,
+        "invocatoire": 13,
+        "sorcellerie": 12
       },
       "spheres": {
         "pierre": 0,
@@ -94,10 +131,10 @@
         "nature": 0,
         "reves": 0,
         "cite": 0,
-        "vents": 0,
+        "vents": 14,
         "ombre": 0
       },
-      "pool": 0,
+      "pool": 87,
       "pools": {
         "pierre": 0,
         "feu": 0,
@@ -106,7 +143,7 @@
         "nature": 0,
         "reves": 0,
         "cite": 0,
-        "vents": 0,
+        "vents": 14,
         "ombre": 0
       },
       "spells": []
@@ -114,12 +151,90 @@
     "favors": [],
     "unique": true,
     "category": "dragons",
-    "biome": "Tout Kor",
-    "real_size": "Inconnue",
-    "weight": "Inconnu",
-    "natural_armor": 0,
+    "biome": "Kor",
+    "real_size": "26m de long, 25m d'envergure",
+    "weight": "19 tonnes",
+    "natural_armor": 35,
     "natural_armor_description": "",
-    "natural_weapons": [],
-    "special_capabilities": []
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "special": null,
+        "skill": 14,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 2,
+          "add": 10,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 5,
+            "maximum_distance": 5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 5,
+            "maximum_distance": 5
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 13,
+        "damage": {
+          "static": 60,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 1
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6.5,
+            "maximum_distance": 6.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6.5,
+            "maximum_distance": 6.5
+          }
+        }
+      },
+      {
+        "name": "Queue",
+        "special": "Les dégâts sont de FOR + COO",
+        "skill": 15,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 22,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6.5,
+            "maximum_distance": 6.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6.5,
+            "maximum_distance": 6.5
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Souffle des Tempêtes (15)",
+        "description": "Le souffle des dragons de Szyl se transforme en une salve d'énergie comparable à la foudre, qui file en sifflant vers sa victime − ou ses victimes, pour les plus vieux dragons.\nUtilisation : PHY + Souffle, Diff. 15\nPortée : 80m\nZone d'effet : 4 cibles\nEffets : Chaque éclair inflige 10+1D10/NR point de dommage à sa cible − aucune armure n'est prise en compte."
+      }
+    ]
   }
 ]

@@ -262,40 +262,58 @@
     },
     "name": "Bégormstyr",
     "uuid": "33114480-2884-428a-8a87-c729e0b022fc",
-    "description": "Ce puissant dragon dirige le conseil des dragons. C’est l’un des plus vieux parmi les enfant de Brorne et un combattant terrifiant.\n\nIl dirige personnellement la [Ière Légion](resource://assets/faction/f02e8b7f-f462-4efa-baa9-d226736b540f), les “Crocs de Brorne”. Il s’entend particulièrement bien avec les humains. Cela lui a valu des moqueries de la part de certains membres de son espèce. Il a infligé une sévère leçon d’humilité à tous ces dragons prétentieux. Bégormstyr aime le combat mais c’est pourtant un modéré au sein du royaume de Kern.\n\n",
+    "description": "Ce puissant dragon dirige le conseil des dragons. C’est l’un des plus vieux parmi les enfant de Brorne et un combattant terrifiant.\n\nIl dirige personnellement la [Ière Légion](resource://assets/faction/f02e8b7f-f462-4efa-baa9-d226736b540f), les “Crocs de Brorne”. Il s’entend particulièrement bien avec les humains. Cela lui a valu des moqueries de la part de certains membres de son espèce. Il a infligé une sévère leçon d’humilité à tous ces dragons prétentieux. Bégormstyr aime le combat mais c’est pourtant un modéré au sein du royaume de Kern.\n\n## Description\n\nLes fils du Grand Dragon de la Pierre sont parmi les plus imposants et les plus puissants de tous les dragons. Leur cuirasse minérale, faite de silice et de granit, s'orne de reflets argentés à mesure que le temps fait son œuvre sur ces énormes masses de pierre mouvante. Les ailes gigantesques, une fois déployées, ressemblent à deux énormes murs de pierre, et bien que leur mobilité s'amenuise avec l'âge, les dragons de Brorne n'en sont pas moins de redoutables prédateurs.\n\n## Particularités\n\nLes dragons de la Pierre sont immunisés à la paralysie magique, ne peuvent être assommés ou renversés. Ils ne subissent jamais de recul quel qu'en soit l'origine.\n\nLeur cuirasse ne s'use que si un coup qui l'a traversé a provoqué une blessure au moins Légère. De plus, les armes les touchant par un Critique se brisent plus facilement (Très Bonne pour un Jeune, Supérieure pour un Adulte, etc...).\n\nLes acides affectent plus durement les dragons de la Pierre. Toute potion acide ou sort basé sur l'acide (Sphères de l'ombre ou des océans en général) inflige des dommages toujours maximum.\n\nLes dragons de la pierre sont insensibles au souffle des enfants de Brorne de génération inférieure à la leur.\n\n## Forme humaine\n\nSous forme humaine, les enfants de Brorne revêtent une apparence physique massive, aux épaules larges et aux traits carrés, presque grossiers. Leur âge et leur puissance peuvent être mesurés grâce aux tremblements qui ponctuent chacun de leurs pas − à peine perceptibles pour les adultes, sonores pour les vieux et accompagnés de secousses pour les anciens.\n\n**Transformation :** 25 actions du dragon vers l'homme, 20 actions de l'homme vers le dragon\n\n**Interdit :** Incapables de transformer leur cuirrasse en chair, les enfants de Brorne sont contraints de porter des vêtements et/ou armures couvrant l'intégralité du corps, tête comprise. Si leur “peau” se trouve exposée à l'air libre, de jour comme de nuit, ils reprennent instantannément leur forme draconique et perdent la moitié de leurs Points de Magie (Réserve Personnelle ET Réserve de la Sphère de la Pierre).\n\n## Pouvoirs spéciaux\n\nInsensible à la peur.\n\nImmunité aux armes tranchantes.\n\nImmunisé aux métamorphoses corporelles totales ou partielles.\n\nPeut prendre sa forme élémentaire et peut également se fondre dans la pierre en 3 actions. Une fois fusionné, il conserve la vue et l'audition dans l'axe de l'entrée.\n\nPeut se mouvoir dans la roche sans aucune entrave. Seule l'entrée ou la sortie est légèrement ralentie.\n\nImmunité aux armes de jet.\n\nSes coups ignorent les cuirasses draconiques et les armures draconiques de protection inférieures à 20. Les armures manufacturées sont détruites au premier coup à moins d'être ensorcelées, Légendaires, en Sang de Kezyr ou en Sombre Acier.\n\n## Compétences\n\n**Combat :** Toutes à 15, plus cinq disposant d'un bonus de 1\n\n**Mouvement :** Toutes à 5, plus cinq disposant d'un bonus de 2\n\n**Théorie :** Toutes à 10, plus cinq disposant d'un bonus de 2\n\n**Pratique :** Toutes à 10, plus cinq disposant d'un bonus de 1\n\n**Technique :** Toutes à 5, plus cinq disposant d'un bonus de 3\n\n**Manipulation :** Toutes à 5\n\n**Communication :** Toutes à 10, plus cinq disposant d'un bonus de 1\n\n**Influence :** Toutes à 15, plus cinq disposant d'un bonus de 2\n\n**Sorts :** 900 pts de Complexité en Magie instinctive, 800 en Magie invocatoire et 800 en Sorcellerie.\n\n**Faveurs :** cinq Faveurs de chaque niveau, qu’il est possible de conférer par le Lien.\n\n",
     "image": null,
     "icon": null,
     "abilities": {
-      "force": 0,
-      "intelligence": 0,
-      "coordination": 0,
-      "presence": 0,
-      "resistance": 0,
-      "volonte": 0,
-      "perception": 0,
-      "empathie": 0
+      "force": 35,
+      "intelligence": 5,
+      "coordination": 6,
+      "presence": 20,
+      "resistance": 50,
+      "volonte": 20,
+      "perception": 15,
+      "empathie": 4
     },
     "attributes": {
-      "physique": 0,
-      "mental": 0,
-      "manuel": 0,
-      "social": 0
+      "physique": 28,
+      "mental": 20,
+      "manuel": 8,
+      "social": 12
     },
-    "initiative": 1,
+    "initiative": 2,
     "injuries": {
       "manager": {
         "levels": [
           {
-            "type": "injured",
+            "type": "scratch",
             "start": 0,
+            "end": 10,
+            "capacity": 5
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 5
+          },
+          {
+            "type": "grave",
+            "start": 20,
             "end": 30,
-            "capacity": 3
+            "capacity": 5
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 4
           },
           {
             "type": "death",
-            "start": 30,
+            "start": 40,
             "end": -1,
-            "capacity": 1
+            "capacity": 3
           }
         ],
         "injuries": {}
@@ -308,7 +326,26 @@
           "all": []
         },
         "mouvement": {
-          "all": []
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 5,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "reserved": true,
+                  "value": 8,
+                  "reserved_prefix": "creature:a720a746-1f65-44fd-ad53-9d512f3d63d5:specialized:misc:"
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 5,
+              "implementation": ""
+            }
+          ]
         },
         "theorie": {
           "all": []
@@ -338,12 +375,12 @@
     "equipment": [],
     "magic": {
       "skills": {
-        "instinctive": 0,
-        "invocatoire": 0,
-        "sorcellerie": 0
+        "instinctive": 15,
+        "invocatoire": 14,
+        "sorcellerie": 14
       },
       "spheres": {
-        "pierre": 0,
+        "pierre": 15,
         "feu": 0,
         "oceans": 0,
         "metal": 0,
@@ -353,9 +390,9 @@
         "vents": 0,
         "ombre": 0
       },
-      "pool": 0,
+      "pool": 80,
       "pools": {
-        "pierre": 0,
+        "pierre": 15,
         "feu": 0,
         "oceans": 0,
         "metal": 0,
@@ -371,11 +408,89 @@
     "unique": true,
     "category": "dragons",
     "biome": "Kern",
-    "real_size": "Inconnue",
-    "weight": "Inconnu",
-    "natural_armor": 0,
+    "real_size": "35m de long, 29m d'envergure",
+    "weight": "80 tonnes",
+    "natural_armor": 100,
     "natural_armor_description": "",
-    "natural_weapons": [],
-    "special_capabilities": []
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "special": null,
+        "skill": 15,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 3,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 5.5,
+            "maximum_distance": 5.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 5.5,
+            "maximum_distance": 5.5
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 15,
+        "damage": {
+          "static": 70,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 1
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          }
+        }
+      },
+      {
+        "name": "Queue",
+        "special": "Les dégats sont de FOR + RES",
+        "skill": 15,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 50,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 8.5,
+            "maximum_distance": 8.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 8.5,
+            "maximum_distance": 8.5
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Souffle de la Pierre (15)",
+        "description": "En soufflant sur un sol naturel, les dragons de Brorne déclenchent une secousse sismique dont l'intensité, concentrée autour d'eux, suffit à arracher des fragments de roche qui volent vers leurs adversaires.\nUtilisation : PHY + Souffle, Diff. 20\nPortée : 100m\nZone d'effet : l'onde de choc se propage en cône d'une largeur égale à la moitié de sa portée (5m de large à 10m, 25m de large à 50m).\nEffets : Le souffle des enfants de Brorne provoque le recul comme une attaque physique draconique. Toute créature parvenant à rester dans la zone subit un malus de -5 à toutes ses actions physiques. Les roches tourbillonantes infligent 1D10 points de dommages par NR à tous les adversaires présents dans la zone."
+      }
+    ]
   }
 ]

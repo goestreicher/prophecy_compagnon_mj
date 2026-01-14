@@ -6,40 +6,58 @@
     },
     "name": "Flora",
     "uuid": "7223f7e4-a04e-4bba-b926-d0aadbdda1dc",
-    "description": "Il n'est pas que les humains pour quitter les structures rigides d’Onyr. Flora - c’est sous ce nom qu’elle se présente aux humains — est une fille de Nenya qui a choisi la bohème.\n\nDragonne très puissante, elle prend le plus souvent la forme d'une humaine à la peau laiteuse et aux cheveux roux. Flora n’est pas [Cymbaline](resource://assets/npc/f5bd8434-0619-4ee1-9ddf-7f07fdad5970), elles sont amies et parfois l’une remplace l'autre à la tête de la cité de Nenya. Bien entendu, la Chimère est au courant de la petite ruse de ses deux compagnes et approuve le procédé. Cela permet une liberté plus grande pour agir discrètement si la situation l'exige. Ce que Cymbaline ignore, c'est que Flora prend l'apparence dans d’autres villes, et fait ainsi vivre une vingtaine de personnalités, toutes plus fausses les unes que les autres. Ce n’est pas de la schizophrénie mais un simple jeu. Là encore, Nenya approuve et Flora sait qu’elle n’est pas seule à pratiquer ce type d’exercices.\n\nDe fait, les enfants de la Chimère sont bien mieux implantés dans les affaires des royaumes qu’on pourrait le croire. En général, ils prennent l’apparence de philosophes, de conseillers ou de saltimbanques. Mais Flora, comme ses frères et sœurs, partagent une profonde haine pour tout ce qui est science et Humanisme. Moins démonstratifs que les agents de Brorne, ils fauchent les humanistes dans leurs rêves et les transforment en légumes vivants.\n\nL'étrange ressemblance physique qu’entretiennent Cymbaline et Flora, lorsque celle-ci prend forme humaine, a permis aux deux “sœurs” de déjouer de nombreux complots visant à déstabiliser le pouvoir politique de la caste. Cependant, la puissante fille de Chimère utilise également ses dons de déguisement à ses fins propres fins, sans forcément en avertir sa compagne.\n\n",
+    "description": "Il n'est pas que les humains pour quitter les structures rigides d’Onyr. Flora - c’est sous ce nom qu’elle se présente aux humains — est une fille de Nenya qui a choisi la bohème.\n\nDragonne très puissante, elle prend le plus souvent la forme d'une humaine à la peau laiteuse et aux cheveux roux. Flora n’est pas [Cymbaline](resource://assets/npc/f5bd8434-0619-4ee1-9ddf-7f07fdad5970), elles sont amies et parfois l’une remplace l'autre à la tête de la cité de Nenya. Bien entendu, la Chimère est au courant de la petite ruse de ses deux compagnes et approuve le procédé. Cela permet une liberté plus grande pour agir discrètement si la situation l'exige. Ce que Cymbaline ignore, c'est que Flora prend l'apparence dans d’autres villes, et fait ainsi vivre une vingtaine de personnalités, toutes plus fausses les unes que les autres. Ce n’est pas de la schizophrénie mais un simple jeu. Là encore, Nenya approuve et Flora sait qu’elle n’est pas seule à pratiquer ce type d’exercices.\n\nDe fait, les enfants de la Chimère sont bien mieux implantés dans les affaires des royaumes qu’on pourrait le croire. En général, ils prennent l’apparence de philosophes, de conseillers ou de saltimbanques. Mais Flora, comme ses frères et sœurs, partagent une profonde haine pour tout ce qui est science et Humanisme. Moins démonstratifs que les agents de Brorne, ils fauchent les humanistes dans leurs rêves et les transforment en légumes vivants.\n\nL'étrange ressemblance physique qu’entretiennent Cymbaline et Flora, lorsque celle-ci prend forme humaine, a permis aux deux “sœurs” de déjouer de nombreux complots visant à déstabiliser le pouvoir politique de la caste. Cependant, la puissante fille de Chimère utilise également ses dons de déguisement à ses fins propres fins, sans forcément en avertir sa compagne.\n\n## Description\n\nIssus de magie pure et de fragments de rêves, les enfants de Nenya sont moins fait de chair et de sang que d'énergie. Si leur silhouette mouvant, trompeus, abrite bel et bien des muscles et des organes, toucher un dragon des rêves reviendrait à poser la main sur une armure de métal auréolée d'éclairs et de brumes toubillonnantes. Il est rare de les rencontrer en plein jour, car leur réel pouvoir s'affirme à la tombée de la nuit, qu'ils traversent comme des fantômes bleutés et évanescents.\n\n## Particularités\n\nNimbés d'une aura iridescente, les dragons de la magie sont flous et difficiles à toucher. En combat, tout jet d'attaque les visant subit un malus de 8.\n\nLes dragons de la magie sont capables de passer à volonté de l'Ether au Monde de Kor. Il leur en coûte une action et 5 points de magie. Il ne leur est pas possible d'emporter de créatures dénuées de capacités magiques ou d'objets n'étant pas ensorcelés.\n\nLes dragons de la magie peuvent annuler tout sort les prenant pour cible en réussissant un jet de Discipline + Sphère concernée d'une Difficulté égale au jet d'incantation du mage.\n\nLes dragons de la magie sont insensibles au souffle des enfants de Nenya de génération inférieure à la leur.\n\n## Forme humaine\n\nDéroutante, caractérisée par une beauté froide et un visage lisse, souvent dépourvu de bouche et d'organes, l'apparence humaine de ces dragons est semblable à leur forme draconique. Leurs atours − robes vaporeuses, bijoux étincelants − sont tout aussi mystiques et flottants.\n\n**Transformation :** 20 actions du dragon vers l'homme, 12 actions de l'homme vers le dragon.\n\n**Interdit :** Modelée par magie et maintenue par la seule concentration, la forme humaine des dragons de Nenya ne supporte pas le contact du monde réel − et se disloque dès qu'une créature dénuée de dons magiques la touche ou que ces dragons établissent un contact ou saisissent un objet non-enchanté. Toute rupture provoque la perte de points de magie de la Réserve personnelle ET des Réserves de Sphères.\n\n## Pouvoirs spéciaux\n\nDon de double vue qui l'immunise aux illusions et aux mystifications physiques (déguisement, métamorphose).\n\nLeur double vue leur permet de distinguer naturellement les courants magiques qui parcourent Kor et les enchantements qui y sont tissés (objets enchantés, matrices), mais pas les utilisateurs de magie. Ce don leur permet également de voir dans l'Ether depuis Kor et inversement.\n\nLes dragons de la magie adultes peuvent prendre leur forme élémentaire.\n\nLes vieux dragons de la magie peuvent prendre leur forme humaine.\n\nIls possèdent une telle harmonie avec les courants élémentaires que, dans un rayon de Empathie mètres, toute utilisation des Sphères bénéficie d'un bonus de 3 (sauf pour les dragons).\n\n## Compétences\n\n**Combat :** Toutes à 4, plus quatre disposant d'un bonus de 1\n\n**Mouvement :** Toutes à 8, plus quatre disposant d'un bonus de 2\n\n**Théorie :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Pratique :** Toutes à 12, plus quatre disposant d'un bonus de 1\n\n**Technique :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Manipulation :** Toutes à 8, plus quatre disposant d'un bonus de 3\n\n**Communication :** Toutes à 8, plus quatre disposant d'un bonus de 3\n\n**Influence :** Toutes à 8, plus quatre disposant d'un bonus de 2\n\n**Sorts :** 1200 pts de Complexité en Magie instinctive, 1200 en Magie invocatoire et 1200 en Sorcellerie.\n\n**Faveurs :** quatre Faveurs de chaque niveau, qu’il est possible de conférer par le Lien.\n\n",
     "image": null,
     "icon": null,
     "abilities": {
-      "force": 0,
-      "intelligence": 0,
-      "coordination": 0,
-      "presence": 0,
-      "resistance": 0,
-      "volonte": 0,
-      "perception": 0,
-      "empathie": 0
+      "force": 14,
+      "intelligence": 18,
+      "coordination": 15,
+      "presence": 18,
+      "resistance": 13,
+      "volonte": 18,
+      "perception": 15,
+      "empathie": 14
     },
     "attributes": {
-      "physique": 0,
-      "mental": 0,
-      "manuel": 0,
-      "social": 0
+      "physique": 14,
+      "mental": 20,
+      "manuel": 18,
+      "social": 12
     },
-    "initiative": 1,
+    "initiative": 5,
     "injuries": {
       "manager": {
         "levels": [
           {
-            "type": "injured",
+            "type": "scratch",
             "start": 0,
+            "end": 10,
+            "capacity": 4
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 5
+          },
+          {
+            "type": "grave",
+            "start": 20,
             "end": 30,
+            "capacity": 4
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
             "capacity": 3
           },
           {
             "type": "death",
-            "start": 30,
+            "start": 40,
             "end": -1,
-            "capacity": 1
+            "capacity": 2
           }
         ],
         "injuries": {}
@@ -52,7 +70,26 @@
           "all": []
         },
         "mouvement": {
-          "all": []
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 8,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "reserved": true,
+                  "value": 14,
+                  "reserved_prefix": "creature:0c312d21-d9b2-424f-b91b-8d88969b8ae8:specialized:misc:"
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 15,
+              "implementation": ""
+            }
+          ]
         },
         "theorie": {
           "all": []
@@ -82,32 +119,32 @@
     "equipment": [],
     "magic": {
       "skills": {
-        "instinctive": 0,
-        "invocatoire": 0,
-        "sorcellerie": 0
+        "instinctive": 15,
+        "invocatoire": 15,
+        "sorcellerie": 15
       },
       "spheres": {
-        "pierre": 0,
-        "feu": 0,
-        "oceans": 0,
-        "metal": 0,
-        "nature": 0,
-        "reves": 0,
-        "cite": 0,
-        "vents": 0,
-        "ombre": 0
+        "pierre": 3,
+        "feu": 3,
+        "oceans": 3,
+        "metal": 3,
+        "nature": 3,
+        "reves": 16,
+        "cite": 3,
+        "vents": 3,
+        "ombre": 3
       },
-      "pool": 0,
+      "pool": 107,
       "pools": {
-        "pierre": 0,
-        "feu": 0,
-        "oceans": 0,
-        "metal": 0,
-        "nature": 0,
-        "reves": 0,
-        "cite": 0,
-        "vents": 0,
-        "ombre": 0
+        "pierre": 3,
+        "feu": 3,
+        "oceans": 3,
+        "metal": 3,
+        "nature": 3,
+        "reves": 16,
+        "cite": 3,
+        "vents": 3,
+        "ombre": 3
       },
       "spells": []
     },
@@ -115,12 +152,66 @@
     "unique": true,
     "category": "dragons",
     "biome": "Kor",
-    "real_size": "Inconnue",
-    "weight": "Inconnu",
-    "natural_armor": 0,
+    "real_size": "14m de long, 10m d'envergure",
+    "weight": "12 tonnes",
+    "natural_armor": 30,
     "natural_armor_description": "",
-    "natural_weapons": [],
-    "special_capabilities": []
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "special": null,
+        "skill": 8,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 12,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 2.5,
+            "maximum_distance": 2.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 2.5,
+            "maximum_distance": 2.5
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 11,
+        "damage": {
+          "static": 40,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 1
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 3.5,
+            "maximum_distance": 3.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 3.5,
+            "maximum_distance": 3.5
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Souffle de l'Éther (12)",
+        "description": "Leur souffle est une brume irisée semi-opaque saturée de magie qui peut provoquer le sommeil, gêne les mouvements, obscurcit la vision et empêche l'activation des facultés magiques − principalement des sortilèges. Seuls les dragons de Nenya ne sont pas impactés par cette brume.\nUtilisation: MEN + Souffle, Diff. 15\nPortée: Selon zone d'effet\nZone d'effet: Hémisphère de 20m de rayon\nEffets: Le nuage se forme et prend effet immédiatement. Selon le nombre de NR obtenus par le dragon, le nuage va être plus ou moins dense et chargé d'énergie.\nIl dure quatre tours + 1/NR.\nSon opacité et les perturbations sensorielles qu'il provoque infligent un malus de 5 + 2/NR à tout jet de Perception ou d'attaque à distance. On estime qu'à partir de -11, la brume d'Ether est si dense que toute perception directe est impossible de l'extérieur du nuage. À l'intérieur, les victimes subissent les malus prévus sauf si le MJ estime que l'action est impossible car la visibilité ne dépasse pas 1m.\nDe plus, dès la formation du nuage et à chaque début de tour (avant le lancement des dés d'Initiative), les victimes doivent réussir un jet de MEN+VOL contre une Difficulté de 15+3/NR pour ne pas sombrer dans un sommeil profond. Retenir sa respiration est inutile, car l'action est magique et non uniquement respiratoire.\nEnfin, toute utilisation de magie est perturbée par le souffle. Toutes les Difficultés de sort subissent un malus de 5/NR. Tout dé indiquant 1 ou 10 provoque un Contrecoup ou un Miracle, car dans le nuage, il est inutile de tester un éventuel Critique (il est considéré comme ayant toujours lieu)."
+      }
+    ]
   },
   {
     "source": {
