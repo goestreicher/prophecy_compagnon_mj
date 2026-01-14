@@ -41,7 +41,7 @@ class _CreatureEditSecondaryAttributesState extends State<CreatureEditSecondaryA
                 child: NumIntInputWidget(
                   initialValue: widget.creature.naturalArmor,
                   minValue: 0,
-                  maxValue: 30,
+                  maxValue: 999,
                   onChanged: (int value) {
                     widget.creature.naturalArmor = value;
                   },

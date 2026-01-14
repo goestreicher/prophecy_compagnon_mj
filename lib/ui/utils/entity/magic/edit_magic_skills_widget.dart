@@ -30,6 +30,7 @@ class EntityEditMagicSkillsWidget extends StatelessWidget {
         children: [
           _EditMagicSkillWidget(
             name: 'Magie instinctive',
+            maxValue: 30,
             initialValue: entity.magic.skills.get(MagicSkill.instinctive),
             onChanged: (int value) {
               entity.magic.skills.set(MagicSkill.instinctive, value);
@@ -37,6 +38,7 @@ class EntityEditMagicSkillsWidget extends StatelessWidget {
           ),
           _EditMagicSkillWidget(
             name: 'Magie invocatoire',
+            maxValue: 30,
             initialValue: entity.magic.skills.get(MagicSkill.invocatoire),
             onChanged: (int value) {
               entity.magic.skills.set(MagicSkill.invocatoire, value);
@@ -44,6 +46,7 @@ class EntityEditMagicSkillsWidget extends StatelessWidget {
           ),
           _EditMagicSkillWidget(
             name: 'Sorcellerie',
+            maxValue: 30,
             initialValue: entity.magic.skills.get(MagicSkill.sorcellerie),
             onChanged: (int value) {
               entity.magic.skills.set(MagicSkill.sorcellerie, value);
@@ -56,7 +59,7 @@ class EntityEditMagicSkillsWidget extends StatelessWidget {
                 name: 'Réserve de magie',
                 initialValue: entity.magicPool,
                 minValue: entity.abilities.volonte,
-                maxValue: 99,
+                maxValue: 999,
                 onChanged: (int value) {
                   entity.magicPool = value;
                 },

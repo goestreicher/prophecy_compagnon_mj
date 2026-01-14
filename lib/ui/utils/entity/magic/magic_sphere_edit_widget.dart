@@ -73,7 +73,7 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
                     label: 'Niveau',
                     initialValue: _value,
                     minValue: 0,
-                    maxValue: 15,
+                    maxValue: 30,
                     onChanged: (int value) {
                       var old = _value;
                       var delta = value - old;

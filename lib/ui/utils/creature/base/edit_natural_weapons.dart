@@ -453,7 +453,7 @@ class _NaturalWeaponDamageEditWidgetState extends State<_NaturalWeaponDamageEdit
         SizedBox(
           width: 70,
           child: NumIntInputWidget(
-            initialValue: 0,
+            initialValue: damage.dice,
             minValue: 0,
             maxValue: 9999,
             onChanged: (int value) {
