@@ -91,6 +91,7 @@ flutter:
     - assets/creatures-les-grands-dragons.json
     - assets/creatures-les-orphelins-de-szyl.json
     - assets/creatures-les-secrets-de-kalimsshar.json
+    - assets/creatures-les-versets-d-ozyr.json
     - assets/creatures-les-voiles-de-nenya.json
     - assets/creatures-yris-flambeau-de-l-humanite.json
     - assets/factions-castes.json

@@ -72,6 +72,22 @@
     "is_default": true
   },
   {
+    "title": "Ysmir",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Oforia",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
     "title": "Élus de Brorne",
     "categories": [
       "elus"

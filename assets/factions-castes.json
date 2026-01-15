@@ -1068,25 +1068,40 @@
         "title": "Grand Dragon des Océans"
       },
       {
-        "name": "Solana Gaïra",
+        "link": {
+          "name": "Solana Gaïra",
+          "link": "resource://assets/npc/edc0aa3e-0b5f-40f1-b4e1-9c590957c4b4"
+        },
         "title": "Maîtresse de la Caste des Érudits"
       }
     ],
     "members": [
       {
-        "name": "Alakis Serball",
+        "link": {
+          "name": "Alakis Serball",
+          "link": "resource://assets/npc/c4a29230-2083-4aea-8a41-b38731b1d16e"
+        },
         "title": "Maître de la Loge des Historiens"
       },
       {
-        "name": "Margeth d'Orande",
-        "title": "Maître de la Loge des Géographes"
+        "link": {
+          "name": "Margeth d'Orande",
+          "link": "resource://assets/npc/d412be5e-e52e-49a9-96c0-055e63f1ed5b"
+        },
+        "title": "Maîtresse de la Loge des Géographes"
       },
       {
-        "name": "Thyll le Galyr",
+        "link": {
+          "name": "Thyll le Galyr",
+          "link": "resource://assets/npc/9a541e65-bccf-4a3a-9b96-e39d2f5fc31b"
+        },
         "title": "Maître de la Loge des Soigneurs"
       },
       {
-        "name": "Allham Quastih",
+        "link": {
+          "name": "Allham Quastih",
+          "link": "resource://assets/npc/d2539af5-1ccc-48ef-bfd5-60134954b42c"
+        },
         "title": "Maître de la Loge Théologique"
       }
     ]
@@ -1095,6 +1110,15 @@
     "name": "La Loge des Géographes",
     "uuid": "e5cd7b2e-754a-40cf-b1da-db1a445e3a8d",
     "parent_id": "82502efc-5410-452b-9db4-0ae11d88a2f9",
+    "leaders": [
+      {
+        "link": {
+          "name": "Margeth d'Orande",
+          "link": "resource://assets/npc/d412be5e-e52e-49a9-96c0-055e63f1ed5b"
+        },
+        "title": "Maîtresse de la Loge des Géographes"
+      }
+    ],
     "description": "La Loge des Géographes regroupe l’ordre des architectes, l’ordre des cartographes et l’ordre marin. La loge fonctionne de manière fractionnée. Les cartographes sillonnent le monde aux côtés des voyageurs et transmettent leurs écrits aux érudits, alors que les architectes pensent et créent de nouvelles formes ou de nouveaux plans qu’ils céderont aux artisans. L'ordre marin est une création récente, décidée par Ozyr afin de diriger les marins et de surveiller les navigateurs, détachés des voyageurs pour se placer sous la tutelle d'Ozyr.",
     "source": {
       "type": "officiel",
@@ -1148,13 +1172,31 @@
     "source": {
       "type": "officiel",
       "name": "Les Versets d'Ozyr"
-    }
+    },
+    "leaders": [
+      {
+        "link": {
+          "name": "Alakis Serball",
+          "link": "resource://assets/npc/c4a29230-2083-4aea-8a41-b38731b1d16e"
+        },
+        "title": "Maître de la Loge des Historiens"
+      }
+    ]
   },
   {
     "name": "Ordre des historiens",
     "uuid": "14696ec2-4c28-469a-8070-211c08ffea57",
     "parent_id": "1da5de41-adb0-4c20-b9bf-0425eb98ff6c",
     "description": "",
+    "members": [
+      {
+        "link": {
+          "name": "Marillan Hyunthiz",
+          "link": "resource://assets/npc/ad842ec0-d887-4684-a6be-ac0d0fd38c4e"
+        },
+        "title": "Membre de l'Ordre des Historiens"
+      }
+    ],
     "source": {
       "type": "officiel",
       "name": "Les Versets d'Ozyr"
@@ -1185,6 +1227,15 @@
     "uuid": "473992cd-0086-4e70-9e8b-978859abbb43",
     "parent_id": "82502efc-5410-452b-9db4-0ae11d88a2f9",
     "description": "La Loge des Soigneurs supervise toutes les professions liées au corps, à ses lois et à ses maux. Elle rassemble l'ordre des médecins, l’ordre des herboristes et l’ordre des scientifiques. Habitués à travailler de concert, les ordres de cette loge veillent à éviter tout isolement de leurs membres les uns par rapport aux autres.\n\nAlors que le médecin traite le patient et discerne le mal, l’herboriste tente de l’apaiser par ses préparations. L'ordre des scientifiques renforce depuis peu l'efficacité de cette loge en identifiant les raisons des maladies et les méthodes de soins s’y rapportant.",
+    "leaders": [
+      {
+        "link": {
+          "name": "Thyll le Galyr",
+          "link": "resource://assets/npc/9a541e65-bccf-4a3a-9b96-e39d2f5fc31b"
+        },
+        "title": "Maître de la Loge des Soigneurs"
+      }
+    ],
     "source": {
       "type": "officiel",
       "name": "Les Versets d'Ozyr"
@@ -1225,6 +1276,15 @@
     "uuid": "e89eb0e5-d359-427b-906f-8bf7390bf692",
     "parent_id": "82502efc-5410-452b-9db4-0ae11d88a2f9",
     "description": "La plus petite des quatre loges, la Loge Théologique est relativement unique en son genre dans la société draconique. Elle ne comprend aucun corps spécifique et ses membres sont assimilables à des religieux, dont le pouvoir moral sur le peuple est considérable. La Loge Théologique est la gardienne des temples d’Ozyr de par le monde et la responsable du temple d’Ozyr à Oforia. Ses membres sont chargés de relayer les volontés d’Ozyr, de coordonner les nombreuses prières et actions de foi jalonnant la vie des fidèles d’Ozyr et de maintenir les rapports avec les mages des océans. Ils sont aussi responsables des rapports avec les enfants d’Ozyr et du respect des rites religieux qui leur sont liés.\n\nOzyr étant le seul Dragon défendant l’existence d’une âme humaine, la Loge Théologique se veut la gardienne de la probité de cette âme, destinée à rejoindre Ozyr par-delà la mort. De ce fait, ses membres interviennent dans le maintien de la Loi du Secret et vouent une partie de leur existence à la protection spirituelle des hommes contre les théories hérétiques. Cette loge compte des individus de toutes origines et nombre de ses membres sont d'anciens Prodiges, protecteurs, paladins, érudits ou mages des océans qui ont choisi d’embrasser cette voie pour la sauvegarde de l'humanité.",
+    "leaders": [
+      {
+        "link": {
+          "name": "Allham Quastih",
+          "link": "resource://assets/npc/d2539af5-1ccc-48ef-bfd5-60134954b42c"
+        },
+        "title": "Maître de la Loge Théologique"
+      }
+    ],
     "source": {
       "type": "officiel",
       "name": "Les Versets d'Ozyr"
