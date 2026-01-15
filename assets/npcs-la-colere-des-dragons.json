@@ -1,0 +1,326 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "Ozfîjaâz Maeacadfo",
+    "uuid": "9074b7bc-dcb5-4183-8649-6711f956bc2f",
+    "description": "Cette femme n'est assurément pas humaine: sa peau porte les couleurs de l'émeraude et des intumescences bleu-vert courent sur le côté de son corps, depuis les oreilles jusqu'au bout des bras et des jambes, un peu comme des algues. Malgré son apparence élémentaire, elle possède un port altier et charme inconsciemment nombre de ses interlocuteurs grâce à ses gestes coulés et ses rires aussi frais qu'un torrent. Ozfijaâz (Mage de la Nature III°) est une Vœahfach, un Peuple Ancien créé par Ozyr et Nenya durant les guerres fratricides, et que l'on pensait éteint. Elle est arrivée à [Oforia](resource://assets/place/e91722bd-49a0-47fe-b928-b76e7c841229) à dos de Dragon des océans et a réclamé son entrée dans la caste des mages en tant qu'utilisatrice accomplie des Sphères des Océans et de la Nature. C'était il y a quatre-vingt ans. \n\nEn fait, elle venait surtout chercher de l'aide: pour une raison inconnue, maladie ou malédiction, elle est désespérément stérile. Elle espérait que les hommes, selon une légende de son peuple, pourraient l'aider à trouver un remède à son état. Régulièrement, Raaorar, le dragon des Océans, revient la voir et s'entretient secrètement avec elle. \n\nDepuis lors, des érudits et des mages étudient avec Ozfijaâz les raisons de sa stérilité, sans résultat pour l'instant. Elle est peut-être la dernière de son peuple, mais ne parle jamais de sa race. Elle n'a pas changé depuis son arrivée à Oforia. Nombre d'érudits et de mages l'accompagnent dans ses recherches, en échange des enseignements magiques intuitifs développés par son peuple, qui intéressent les hommes au plus haut point. \n\nDernièrement, le dragon est revenu avec des nouvelles qui ont paru l'affecter énormément. Elle ne s'est livrée à personne, mais tout le monde s'interroge sur la raison exacte de son changement d'humeur. Certains disent qu'Ozyr se seraient glissées dans l'[Académie](resource://assets/place/ccb66542-7d35-454e-90f4-279241b7c424) et aurait poursuivi Ozfijaâz, apparemment en vain. Il en est né une rumeur mêlant le désaveu draconique, la fin de sa race et la colère d'Ozyr, mais Ozfijaâz a tissé tellement d'amitiés humaines que toute décision à son encontre pourrait avoir des conséquences catastrophiques…\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "mage",
+      "status": "expert",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "ysmir"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "Rethio Olkeaar",
+    "uuid": "16bdbbcf-5ac1-4e0d-9ab4-26434811ba2d",
+    "description": "Rethio Olkeaar (Mage-Invocateur IVe) s'occupe actuellement de la chaire d'Invocation à l'[Université d'Oforia](resource://assets/place/ccb66542-7d35-454e-90f4-279241b7c424). Ses cheveux dressés lui donnent un côté rebelle et le font paraître plus jeune qu'il ne l'est en réalité. Quadragénaire, joyeux compagnon et fin artiste, comme l'attestent ses nombreuses toiles exposées dans quelques salons de l'Université, il parcourt en ce moment les terres galyrs à la recherche de techniques picturales perdues qu'aurait utilisé un peuple ancien. D'après des textes entreposés à l'Université, ces techniques picturales permettraient l'invocation de créatures représentées dans les dessins, si l'artiste suivait des rituels bien précis. Plusieurs personnes l'accompagnent dans ses recherches, dont quelques érudits, voyageurs et Prodiges.\n\nMais le Rethio qui assure toujours ses fonctions à l'Université n'est certainement pas le Rethio qui court les chemins. Le premier porte au front un corail blanc, pourpre et doré: une pierre de rêve-océan. Ce Rethio est un Reflet Chimérique, qui agit, vit et pense comme Rethio. Dans sa chambre trône toujours le miroir inutilisable dont il est né, conservant la marque de sa silhouette. Tandis que le vrai Rethio fouille les antiques sépultures sur les collines Galyrs, le reflet lui fait part de ses recherches : ils travaillent de concert, se transmettant les informations et découvertes glanées par rêve toutes les nuits. Mais un sujet commence à inquiéter les deux Rethio. Une jeune mage appelée Djavia, professeur à l'Université, a attiré l'attention du mage mais n'a pas répondu à ses avances. A son départ, Rethio a confié à son reflet la mission de continuer à essayer de séduire la jeune femme. Etrangement, la jeune femme semble s'intéresser bien plus au double qu'à l'original, pourtant semblables en tous points, d'après la théorie. Le reflet a même confié à Djavia le désir qu'il avait de vivre réellement pour lui-même, et Rethio en a conçu une grande haine. Tiraillé entre sa jalousie et ses recherches picturales, il hésite à quitter ses fouilles pour revenir à l'Université se débarrasser de son reflet. \n\nAucun des deux Rethio ne sait que Djavia vient de se lancer dans des recherches pour faire du reflet de Rethio un être à part entière…\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "mage",
+      "status": "maitre",
+      "career": "invocateur",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 41,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "ysmir"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  }
+]

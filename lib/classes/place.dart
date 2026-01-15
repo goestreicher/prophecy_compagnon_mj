@@ -195,6 +195,7 @@ class PlaceSummary extends ResourceBaseClass {
     await _loadLock.synchronized(() async {
       var assetFiles = [
         'places-ldb2e.json',
+        'places-la-colere-des-dragons.json',
         'places-les-compagnons-de-khy.json',
         'places-les-ecailles-de-brorne.json',
         'places-les-enfants-de-heyra.json',

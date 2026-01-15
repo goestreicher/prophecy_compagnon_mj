@@ -102,6 +102,7 @@ flutter:
     - assets/npc-categories.json
     - assets/npc-subcategories.json
     - assets/npcs-ldb2e.json
+    - assets/npcs-la-colere-des-dragons.json
     - assets/npcs-les-compagnons-de-khy.json
     - assets/npcs-les-ecailles-de-brorne.json
     - assets/npcs-les-enfants-de-heyra.json
@@ -114,6 +115,7 @@ flutter:
     - assets/npcs-les-voiles-de-nenya.json
     - assets/npcs-yris-flambeau-de-l-humanite.json
     - assets/places-ldb2e.json
+    - assets/places-la-colere-des-dragons.json
     - assets/places-les-compagnons-de-khy.json
     - assets/places-les-ecailles-de-brorne.json
     - assets/places-les-enfants-de-heyra.json

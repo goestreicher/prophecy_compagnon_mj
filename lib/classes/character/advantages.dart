@@ -91,6 +91,13 @@ enum Advantage {
     cost: [7],
     type: AdvantageType.general,
   ),
+  magieIntuitive(
+    title: 'Magie intuitive',
+    description: "Cet avantage confère au personnage une base de 2 dans une Sphère de magie et un sort gratuit de Magie Instinctive de niveau 1 dans cette même Sphère (à définir avec le meneur). Les limitations liées aux Sphères doivent être respectées. Cet Avantage ne peut être choisi qu'une seule fois et est incompatible avec l'Avantage “Magie naturelle”.\nLe sort de Magie instinctive choisi doit être lié à une situation “traumatisante” vécue par le personnage (peur du noir, angoisse de la solitéde, crainte de ne plus voir les couleurs…). Lorsque les conditions sont réunies pour rappeler l'aspect traumatisant de la situation, l'effet du sort se déclenche automatiquement sur un jet de Volonté + Sphère concernée contre la Difficulté du sort diminuée de 5. Le sorte utilise les énergies élémentaires ambiantes et l'angoisse du lanceur pour s'activer, il ne consomme donc aucun point de magie et ne nécessite aucune Clé. Un personnage désirant empêcher l'effet automatique peut tenter de le contrôler en se raisonnant et en réussissant un jet d'Intelligence + Sphère concernée contre une Difficulté égale à son propre jet de Volonté + Sphère utilisé lors du déclenchement accidentel. En dehors des situations critiques, le sort peut être lancé normalement : jet normal, dépense de points de magie et usage de Clés.",
+    cost: [5],
+    type: AdvantageType.general,
+    requireDetails: true,
+  ),
   magieNaturelle(
     title: 'Magie naturelle',
     description: "Cet Avantage confère au personnage une base de 2 dans une Sphère de magie et un sort de niveau 1 gratuit de cette Sphère.\nLes limitations liées aux Sphères doivent être respectées.\nCet Avantage ne peut être choisi qu’une seule fois.",
