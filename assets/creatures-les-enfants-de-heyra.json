@@ -12,16 +12,16 @@
     "initiative": 3,
     "abilities": {
       "force": 11,
-      "intelligence": 2,
-      "coordination": 3,
+      "intelligence": 1,
+      "coordination": 4,
       "presence": 0,
-      "resistance": 12,
+      "resistance": 11,
       "volonte": 6,
       "perception": 6,
-      "empathie": 1
+      "empathie": 7
     },
     "attributes": {
-      "physique": 8,
+      "physique": 6,
       "mental": 1,
       "manuel": 0,
       "social": 0
@@ -40,7 +40,7 @@
               "specializations": [
                 {
                   "name": "Course",
-                  "value": 6,
+                  "value": 4,
                   "reserved": false
                 }
               ]
@@ -74,6 +74,39 @@
       }
     },
     "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 5,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 5,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 5,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+        "Regain d'énergie"
+      ]
+    },
     "unique": false,
     "category": "animauxSauvages",
     "source": {
@@ -81,15 +114,15 @@
       "name": "Les Enfants de Heyra"
     },
     "biome": "régions tempérées et boisées",
-    "real_size": "2m",
+    "real_size": "1.7m au garrot",
     "weight": "600kg",
-    "natural_armor": 0,
-    "natural_armor_description": "",
+    "natural_armor": 2,
+    "natural_armor_description": "cuir",
     "natural_weapons": [
       {
         "name": "Défenses",
-        "skill": 7,
-        "damage": { "ability": "force", "add": 5 },
+        "skill": 5,
+        "damage": { "ability": "force", "add": 6 },
         "ranges": {
           "contact": {
             "initiative": 0,
@@ -103,8 +136,8 @@
       },
       {
         "name": "Morsure",
-        "skill": 4,
-        "damage": { "ability": "force", "add": 4 },
+        "skill": 3,
+        "damage": { "ability": "force", "add": 5 },
         "ranges": {
           "contact": {
             "initiative": 0,
@@ -119,22 +152,28 @@
     ],
     "special_capabilities": [
       {
-        "name": "Regain d'énergie",
-        "description": "Les compétences de l'eyrok ne peuvent être développées par le dressage, mais cet animal est capable, une fois par jour, de lancer “Regain d'énergie” comme s'il maîtrisait Sphère de la Nature à 4 et Magie instinctive à 5"
+        "name": "Charge",
+        "description": "L'eyrok bénéficie d'un bonus de +3 sur ses attaques de charge."
       }
     ],
     "injuries": {
       "manager": {
         "levels": [
           {
-            "type": "injured",
+            "type": "ignore",
             "start": 0,
-            "end": 50,
+            "end": 5,
+            "capacity": 1
+          },
+          {
+            "type": "injured",
+            "start": 5,
+            "end": 40,
             "capacity": 3
           },
           {
             "type": "death",
-            "start": 50,
+            "start": 40,
             "end": -1,
             "capacity": 1
           }
@@ -452,151 +491,202 @@
   },
   {
     "uuid": "5c9d74ab-6761-4e54-a339-ddd1a359815d",
-    "name": "Chevalin",
-    "description": "Bien que semblables à leurs ancêtres et cousins, les chevalins sont plus petits et plus légers que toutes les autres variétés de chevaux. Leur gentillesse et leur petit gabarit les prédisposent tout naturellement aux enfants, aux femmes et aux citadins - et principalement aux érudits, qui les considèrent comme une marque de noblesse.\n\n",
-    "image": null,
-    "icon": null,
-    "status": {
-      "bitfield": 0
-    },
-    "size": 0.8,
-    "initiative": 2,
-    "abilities": {
-      "force": 2,
-      "intelligence": 2,
-      "coordination": 5,
-      "presence": 0,
-      "resistance": 3,
-      "volonte": 3,
-      "perception": 5,
-      "empathie": 4
-    },
-    "attributes": {
-      "physique": 1,
-      "mental": 2,
-      "manuel": 0,
-      "social": 1
-    },
-    "skills": {
-      "families": {
-        "combat": {
-          "all": [
-            {
-              "skill": "acrobatie",
-              "value": 4
-            },
-            {
-              "skill": "athletisme",
-              "value": 1,
-              "specializations": [
-                {
-                  "name": "Course",
-                  "value": 4,
-                  "reserved": false
-                }
-              ]
-            }
-          ]
-        },
-        "mouvement": {
-          "all": [
-          ]
-        },
-        "theorie": {
-          "all": [
-          ]
-        },
-        "pratique": {
-          "all": [
-          ]
-        },
-        "technique": {
-          "all": [
-          ]
-        },
-        "manipulation": {
-          "all": [
-          ]
-        },
-        "communication": {
-          "all": [
-          ]
-        },
-        "influence": {
-          "all": [
-          ]
-        }
-      }
-    },
-    "equipment": [],
-    "unique": false,
-    "category": "animauxSauvages",
     "source": {
       "type": "officiel",
       "name": "Les Enfants de Heyra"
     },
-    "biome": "régions tempérées",
-    "real_size": "1m au garrot",
-    "weight": "250kg",
-    "natural_armor": 0,
-    "natural_armor_description": "",
-    "natural_weapons": [
-      {
-        "name": "Morsure",
-        "skill": 2,
-        "damage": { "ability": "force", "add": 2 },
-        "ranges": {
-          "contact": {
-            "initiative": 0,
-            "effective_distance": 0.15
-          },
-          "melee": {
-            "initiative": 0,
-            "effective_distance": 0.3
-          }
-        }
-      },
-      {
-        "name": "Ruade",
-        "skill": 4,
-        "damage": { "ability": "force", "add": 3 },
-        "ranges": {
-          "contact": {
-            "initiative": 0,
-            "effective_distance": 0.3
-          },
-          "melee": {
-            "initiative": 0,
-            "effective_distance": 0.6
-          }
-        }
-      }
-    ],
-    "special_capabilities": [
-      {
-        "name": "Dressage",
-        "description": "Particulièrement dociles, les chevalins se prêtent volontiers au dressage et peuvent apprendre toutes sortes de manœuvres. Leur Compétence Acrobatie peut être développée grâce à un jet de Dressage contre une Difficulté de 15, jusqu’à un niveau maximum de 8. De plus, au bout de quelques mois, un simple jet de Social + Empathie contre une Difficulté de 15 permet au cavalier d'appeler sa monture et même de comprendre certaines de ses émotions."
-      }
-    ],
+    "name": "Chevalin",
+    "description": "Cousin du cheval de selle, mais bien plus petit, le chevalin est une race de poney dont l'origine se perd dans la nuits des temps. Docile, solide, mais de petit gabarit et mauvais coureur, le chevalin est un bon animal de monte pour les femmes, les enfants et les cavaliers inexpérimentés.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 8,
+      "intelligence": 4,
+      "coordination": 5,
+      "presence": 0,
+      "resistance": 9,
+      "volonte": 5,
+      "perception": 5,
+      "empathie": 9
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 2,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 3,
     "injuries": {
       "manager": {
         "levels": [
           {
             "type": "injured",
             "start": 0,
-            "end": 25,
-            "capacity": 2
+            "end": 35,
+            "capacity": 3
           },
           {
             "type": "death",
-            "start": 25,
+            "start": 35,
             "end": -1,
             "capacity": 1
           }
         ],
         "injuries": {}
       }
-    }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Course",
+                  "reserved": false,
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 3,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "biome": "régions tempérées",
+    "real_size": "1m au garrot",
+    "weight": "250kg",
+    "natural_armor": 1,
+    "natural_armor_description": "Crin",
+    "natural_weapons": [
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 1,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 3,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.15,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.3,
+            "maximum_distance": null
+          }
+        }
+      },
+      {
+        "name": "Ruade",
+        "special": null,
+        "skill": 2,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 6,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.3,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.6,
+            "maximum_distance": null
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Docilité",
+        "description": "Les chevalins octroient un bonus de +3 à tout jet d'Équitation."
+      },
+      {
+        "name": "Gabarit réduit",
+        "description": "Il est impossible de Charger sur un chevalin."
+      }
+    ]
   },
   {
     "uuid": "a8f55320-bb2f-414a-810b-9634a0300281",

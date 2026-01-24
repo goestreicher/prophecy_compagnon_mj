@@ -16,7 +16,7 @@ class NaturalWeaponDisplayWidget extends StatelessWidget {
     if(weapon.damage.static != null && weapon.damage.static! > 0) {
       buffer.write(weapon.damage.static.toString());
     }
-    else {
+    else if(weapon.damage.ability != null) {
       var ability = weapon.damage.ability!.short;
       buffer.write(weapon.damage.multiply > 1
           ? '($ability x ${weapon.damage.multiply})'
@@ -24,6 +24,9 @@ class NaturalWeaponDisplayWidget extends StatelessWidget {
       if(weapon.damage.add > 0) {
         buffer.write(' + ${weapon.damage.add}');
       }
+    }
+    else {
+      buffer.write('0');
     }
     if(weapon.damage.dice > 0) {
       buffer.write(' + ${weapon.damage.dice}D10');

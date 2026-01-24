@@ -399,6 +399,7 @@ class CreatureSummary extends ResourceBaseClass {
     await _loadLock.synchronized(() async {
       var assetFiles = [
         'creatures-ldb2e.json',
+        'creatures-de-chair-et-d-ecailles.json',
         'creatures-ecran2e.json',
         'creatures-les-compagnons-de-khy.json',
         'creatures-les-ecailles-de-brorne.json',

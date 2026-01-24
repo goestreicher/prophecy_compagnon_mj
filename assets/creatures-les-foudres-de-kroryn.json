@@ -102,7 +102,7 @@
       {
         "name": "Ruade",
         "skill": 4,
-        "damage": { "ability": "force", "add": 3, "dice": 1 },
+        "damage": { "ability": "force", "add": 8 },
         "ranges": {
           "contact": {
             "initiative": 0,
@@ -117,7 +117,7 @@
       {
         "name": "Morsure",
         "skill": 3,
-        "damage": { "ability": "force", "add": 4, "dice": 1 },
+        "damage": { "ability": "force", "add": 5 },
         "ranges": {
           "contact": {
             "initiative": 0,

@@ -189,6 +189,12 @@ enum Advantage {
     cost: [4],
     type: AdvantageType.enfant
   ),
+  faeGardienne(
+      title: 'Faë gardienne',
+      description: "L'enfant a attiré l'attention d'une faë qui veille sur lui. Elle ne se révèlera jamais franchement, mais laissera des signes discrets de son attachement. Outre des interventions matérielles mineures (déplacer un petit objet, dérober une épingle à cheveux qui lui plaît…), la faë peut dépenser des points de magie comme des points de Chance en plus de ceux de l'enfant. Ce pouvoir n'est pas automatique et la faë est toujours gérée par le MJ. La faë regagne ses points de magie tous les jours de la Nature ou dans les sites élémentaires.",
+      cost: [3],
+      type: AdvantageType.enfant
+  ),
   fetiche(
     title: 'Fétiche',
     description: "Les enfants aiment croire que certains objets qui leur sont chers possèdent des pouvoirs magiques, ainsi qu’une personnalité propre. Tant qu’il porte cet objet sur lui, le personnage voit son Attribut Chance augmenter de 1. Si l’objet est perdu, volé ou détruit, le personnage sombre immédiatement dans une période de morosité qui durera une vingtaine de jours, et durant laquelle le personnage ne pourra plus regagner qu’un seul Point de Chance à chaque action ratée, quel que soit le type d’échec. Il sera également très irritable et aura nettement moins confiance en lui. L'Avantage est définitivement perdu dès la disparition du fétiche, et il est impossible de le remplacer.",

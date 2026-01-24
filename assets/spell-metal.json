@@ -601,6 +601,27 @@
     "description": "Le mage ensorcèle un ruban de tissu large comme la main, long d'environ 3 mètres. Généralement porté ballant, il ressemble à une banale écharpe ou à un chèche. En combat, le ruban peut filer en tourbillonnant vers un adversaire en devenant tranchant comme un rasoir : il s'allonge magiquement et peut frapper jusqu'à 20 mètres, provoquant 15 + 1D10 points de dommages. Il s'esquive ou se pare normalement, mais peut frapper 4 cibles proches. Il est utilisable jusqu'à 5 fois par jour et demande une action du mage pour être guidé."
   },
   {
+    "name": "Gardien du seuil d'airain",
+    "sphere": "metal",
+    "level": 3,
+    "skill": "invocatoire",
+    "complexity": 55,
+    "cost": 9,
+    "difficulty": 27,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "quelques gouttes de Sang de Garloch (semblable à de l'or liquide, consommé)",
+      "position (frapper le sol du poing en désignant le point de brisure)",
+      "rune du métal (à tracer avec le sang du Garloch)"
+    ],
+    "source": {
+      "type": "officiel",
+      "name": "De Chair et d'Écailles"
+    },
+    "description": "Ce sort crée une brisure dans les courants magiques du métal et en fait émerger un Garloch. La créature est arrachée à son lieu d'existence et apparaît dans une colère terrible. La brisure peut apparaître dans un rayon de 20m du mage et ce dernier doit se tenir en face du Garloch pour le dominer. Cet asservissement se résout par un jet en Opposition de Mental+Présence contre Mental+Volonté du Garloch. Ce jet coûte une action au mage et s'il est manqué, le Garloch peut réagir à son gré. S'il est réussi, le Garloch doit obéir au mage de son mieux pour 1+NR tours. Le sort dure (Sphère du métal x2) tours et si le contrôle est brisé avant la fin, le mage doit reprendre sa domination (on ne peut l'étendre tant que le Garloch est dominé). Si le Garloch en a le temps, il pourra lui même évoquer d'autres Garlochs (libres de toute domination) et ainsi de suite jusqu'à ce que tous les Garlochs d'une région soient alertés (ce qui peut aller jusqu'à une vingtaine et provoquer un massacre parmi les humains). À l'issue du sort, la brisure élémentaire invisible se résorbe et aspire le Garloch."
+  },
+  {
     "name": "Le manteau de foudre",
     "sphere": "metal",
     "level": 3,

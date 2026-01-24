@@ -222,6 +222,12 @@ enum Disadvantage {
     type: DisadvantageType.rare,
     requireDetails: true,
   ),
+  harmonieNaturelle(
+      title: 'Harmonie naturelle',
+      description: "Les dryades sont touchées émotionnellement par les malheurs qui touchent le domaine de Heyra autour d'elles. Par des récits déchirants et en jouant sur les émotions des hommes qu'elles rencontrent, les dryades peuvent faire naître la culpabilité dans le cœur de ceux qui blessent la Nature. Elles créent alors un blocage mental de plus en plus fort qui va empêcher le personnage d'agir à l'encontre de la Nature. Sans que ce pouvoir soit utilisé volontairement ou à des fins néfastes, les dryades en font un usage courant.\nCe Désavantage peut évoluer et empirer au fur et à mesure des plaintes des dryades. A chaque fois que le personnage agit “mal” selon la dryade, celle-ci pourra effectuer un jet en Opposition de Social+Séduction contre Mental+Présence du personnage. Chaque échec indique un degré dans le Désavantage. Le personnage sera de plus en plus pacifique, attentif à la Nature et paisible. Dès qu'il voudra agir contre la Nature (de façon inutile s'entend), mais aussi être agressif ou violent, il devra effectuer à chaque tour un jet de Mental+Volonté contre 5 fois le degré du Désavantage. S'il échoue, il arrête son action et prend conscience de son erreur.",
+      cost: [0],
+      type: DisadvantageType.rare
+  ),
   incompetence(
     title: 'Incompétence',
     description: "Il est parfois nécessaire de faire des sacrifices : ce Désavantage représente l'impasse que le personnage a faite sur une catégorie de Compétences (Combat, Mouvement, Théorie, etc.) au choix du joueur.\nLes Compétences de cette catégorie ne pourront être utilisées qu’avec une Difficulté augmentée de 5, quel que soit le type d'action. De plus, le niveau maximum que peut atteindre le personnage dans les Compétences de cette liste est réduit à 10.\nCe Désavantage peut survenir plusieurs fois, mais forcément pour des catégories de Compétences différentes.",

@@ -236,5 +236,171 @@
         "description": "Le souffle des dragons de Szyl se transforme en une salve d'énergie comparable à la foudre, qui file en sifflant vers sa victime − ou ses victimes, pour les plus vieux dragons.\nUtilisation : PHY + Souffle, Diff. 15\nPortée : 80m\nZone d'effet : 4 cibles\nEffets : Chaque éclair inflige 10+1D10/NR point de dommage à sa cible − aucune armure n'est prise en compte."
       }
     ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Dromadaire",
+    "uuid": "c219136b-b86d-4832-8b8d-e823d6b40355",
+    "description": "Endurant et accoutumé aux climats secs, le dromadaire est un animal têtu qui doit être fermement dressé. Sa faible consommation journalière en eau, en nourriture et le peu de soins qu’il exige en font la monture idéale du désert.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 10,
+      "intelligence": 4,
+      "coordination": 7,
+      "presence": 0,
+      "resistance": 15,
+      "volonte": 9,
+      "perception": 6,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 2,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 35,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 35,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 1.2,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Course",
+                  "reserved": false,
+                  "value": 4
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 4,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "biome": "Zones désertiques",
+    "real_size": "2,10m au garrot",
+    "weight": "700 kg",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 3,
+        "damage": {
+          "static": 4,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.5,
+            "maximum_distance": 0.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 1,
+            "maximum_distance": 1
+          }
+        }
+      }
+    ],
+    "special_capabilities": []
   }
 ]

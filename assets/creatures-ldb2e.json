@@ -286,6 +286,601 @@
     "equipment": []
   },
   {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Cheval de trait",
+    "uuid": "fae34c1c-9091-4413-b70f-1d1adb8dd1f5",
+    "description": "Solide et rapide, le cheval est utilisé par la moitié des cavaliers de Kor. À l'aise en plaine et colline, il demande des soins journaliers et une alimentation riche. D’autres types de chevaux existent, utilisés dans différentes circonstances. Le cheval de trait (RÉS 14, FOR 13, COO 4, Course 2, Saut 0, Poids 800 kg) ne se rencontre quasiment qu’en zone rurale ou aux abords des marchés. Le cheval de course (RÉS 10, COO 8, Course 10, dommages de ruade 5, excessivement exigeant en soins, pas plus d’une journée sur trois de voyage) est un animal racé, recherché par les messagers ou utilisé pour des spectacles et des courses de char très populaires. Enfin, le cheval de guerre (FOR 12) est un animal puissant et habitué aux fracas et à la violence des batailles, recherché par de nombreux chevaliers bien que les légendaires destriers kariens soient préférés par les plus riches.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 13,
+      "intelligence": 3,
+      "coordination": 4,
+      "presence": 0,
+      "resistance": 14,
+      "volonte": 5,
+      "perception": 5,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 1,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 35,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 35,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 1.2,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 4,
+              "implementation": null
+            },
+            {
+              "skill": "natation",
+              "value": 3,
+              "implementation": null
+            },
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "implementation": null,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "reserved": false,
+                  "value": 2
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "biome": "Plaines",
+    "real_size": "1,90 m au garrot",
+    "weight": "800 kg",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 2,
+        "damage": {
+          "static": 4,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.3,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.6,
+            "maximum_distance": null
+          }
+        }
+      },
+      {
+        "name": "Ruade",
+        "special": null,
+        "skill": 3,
+        "damage": {
+          "static": 7,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.4,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.8,
+            "maximum_distance": null
+          }
+        }
+      }
+    ],
+    "special_capabilities": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Cheval de course",
+    "uuid": "4e37338c-e9e0-40f6-a6bc-7922839bb00e",
+    "description": "Solide et rapide, le cheval est utilisé par la moitié des cavaliers de Kor. À l'aise en plaine et colline, il demande des soins journaliers et une alimentation riche. D’autres types de chevaux existent, utilisés dans différentes circonstances. Le cheval de trait (RÉS 14, FOR 13, COO 4, Course 2, Saut 0, Poids 800 kg) ne se rencontre quasiment qu’en zone rurale ou aux abords des marchés. Le cheval de course (RÉS 10, COO 8, Course 10, dommages de ruade 5, excessivement exigeant en soins, pas plus d’une journée sur trois de voyage) est un animal racé, recherché par les messagers ou utilisé pour des spectacles et des courses de char très populaires. Enfin, le cheval de guerre (FOR 12) est un animal puissant et habitué aux fracas et à la violence des batailles, recherché par de nombreux chevaliers bien que les légendaires destriers kariens soient préférés par les plus riches.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 11,
+      "intelligence": 3,
+      "coordination": 8,
+      "presence": 0,
+      "resistance": 10,
+      "volonte": 5,
+      "perception": 5,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 1,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 35,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 35,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 1.2,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 4,
+              "implementation": null
+            },
+            {
+              "skill": "natation",
+              "value": 3,
+              "implementation": null
+            },
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "implementation": null,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "reserved": false,
+                  "value": 10
+                },
+                {
+                  "name": "Sauter",
+                  "reserved": false,
+                  "value": 6
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "biome": "Plaines",
+    "real_size": "1,80 m au garrot",
+    "weight": "700 kg",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 2,
+        "damage": {
+          "static": 4,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.3,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.6,
+            "maximum_distance": null
+          }
+        }
+      },
+      {
+        "name": "Ruade",
+        "special": null,
+        "skill": 3,
+        "damage": {
+          "static": 5,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.4,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.8,
+            "maximum_distance": null
+          }
+        }
+      }
+    ],
+    "special_capabilities": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Cheval de guerre",
+    "uuid": "2ea07886-2a2a-4b4e-be4b-2864c3a09136",
+    "description": "Solide et rapide, le cheval est utilisé par la moitié des cavaliers de Kor. À l'aise en plaine et colline, il demande des soins journaliers et une alimentation riche. D’autres types de chevaux existent, utilisés dans différentes circonstances. Le cheval de trait (RÉS 14, FOR 13, COO 4, Course 2, Saut 0, Poids 800 kg) ne se rencontre quasiment qu’en zone rurale ou aux abords des marchés. Le cheval de course (RÉS 10, COO 8, Course 10, dommages de ruade 5, excessivement exigeant en soins, pas plus d’une journée sur trois de voyage) est un animal racé, recherché par les messagers ou utilisé pour des spectacles et des courses de char très populaires. Enfin, le cheval de guerre (FOR 12) est un animal puissant et habitué aux fracas et à la violence des batailles, recherché par de nombreux chevaliers bien que les légendaires destriers kariens soient préférés par les plus riches.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 12,
+      "intelligence": 3,
+      "coordination": 6,
+      "presence": 0,
+      "resistance": 12,
+      "volonte": 5,
+      "perception": 5,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 1,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 35,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 35,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 1.2,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 4,
+              "implementation": null
+            },
+            {
+              "skill": "natation",
+              "value": 3,
+              "implementation": null
+            },
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "implementation": null,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "reserved": false,
+                  "value": 6
+                },
+                {
+                  "name": "Sauter",
+                  "reserved": false,
+                  "value": 6
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "biome": "Plaines",
+    "real_size": "1,80 m au garrot",
+    "weight": "700 kg",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 2,
+        "damage": {
+          "static": 4,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.3,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.6,
+            "maximum_distance": null
+          }
+        }
+      },
+      {
+        "name": "Ruade",
+        "special": null,
+        "skill": 3,
+        "damage": {
+          "static": 7,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.4,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.8,
+            "maximum_distance": null
+          }
+        }
+      }
+    ],
+    "special_capabilities": []
+  },
+  {
     "uuid": "dbc9cdae-7d59-450b-8ad4-8dc2d4b7e64e",
     "name": "Hyène",
     "category": "animauxSauvages",
@@ -1265,7 +1860,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "description": "Les Horaldiens sont une race de géants musculeux créés par Ozyr et Brorne dans les heures les plus sombres des Guerres fratricides. À la fin de cette période, ils furent installés par Ozyr sur un archipel bien au-delà de l'horizon. Depuis cette époque, les Horaldiens n'ont plus posé le pied sur Kor, disparaissant des mémoires pour devenir des légendes et consacrant leur vie à l’art et à la réflexion. Les Horaldiens sont assez proches des humains au niveau social mais leur connaissance de la magie est largement supérieure et la notion de technologie leur est presque étrangère. Leur physique est massif, les muscles bulbeux roulant sous leur peau bleutée leur conférant une apparence terrifiante. Assez étrangement, les Horaldiens semblent provoquer non pas la crainte mais une peur panique chez la quasi-totalité des humains. Absolument pas belliqueux, ils ne cherchent pas le contact avec l’humanité ou les dragons, seuls quelques enfants d’Ozyr ou de Nenya partageant leur vie, mais toujours de façon sédentaire. \n\nLes Horaldiens vivent dans un archipel lointain comptant une bonne centaine d'îles. Ils tirent leurs ressources de la mer, à la fois par la pêche et par l'exploitation de cultures sous-marines dans les lagons de l'archipel. Les Horaldiens déclarent être un peu moins de cinquante mille individus, mais seraient capables de fournir une troupe de dix mille guerriers, ce qui devient terrifiant lorsque l'on connaît la solidarité et la cohésion de ce peuple. Toutefois, le concept de guerre chez les Horaldiens a beaucoup évolué depuis leur exode. Lorsqu'il y a un conflit, chaque parti amène le plus de combattants possible et le plus grand nombre emporte la victoire après un décompte par les autorités. Même si les Horaldiens ne se battent pas entre eux et sont un peuple incroyablement pacifique, l’art du combat leur est bien connu et fait partie de leur nature profonde. Ainsi, en cas de conflit externe, tous se retrouvent côte à côte. Les Horaldiens n’ont pas de roi, mais un conseil des sages à peine nécessaire étant donné leur cohésion et leur civisme. Les Horaldiens ne quittent presque jamais leur archipel, mais semblent toujours étrangement au fait de toutes les informations d'importance concernant le continent. Les rares explorateurs qui résistent à leur vision et qui ont visité Talgesh, leur capitale insulaire, parlent d’une cité cyclopéenne à l'architecture démentielle. Des escaliers partent en tous sens et parfois se croisent, provoquant des trompe-l'œil au sein des voûtes tarabiscotées. Il n’y a qu’à Talgesh qu'on trouve ce genre d’architecture et pour autant, des enluminures de certains grimoires de magie humains rappellent ce style\nLe plus curieux, c’est que les chapitres ainsi illustrés concernent le plus souvent certaines Eeries…",
+    "description": "Les Horaldiens sont une race de géants musculeux créés par Ozyr et Brorne dans les heures les plus sombres des Guerres fratricides. À la fin de cette période, ils furent installés par Ozyr sur un archipel bien au-delà de l'horizon. Depuis cette époque, les Horaldiens n'ont plus posé le pied sur Kor, disparaissant des mémoires pour devenir des légendes et consacrant leur vie à l’art et à la réflexion. Les Horaldiens sont assez proches des humains au niveau social mais leur connaissance de la magie est largement supérieure et la notion de technologie leur est presque étrangère. Leur physique est massif, les muscles bulbeux roulant sous leur peau bleutée leur conférant une apparence terrifiante. Assez étrangement, les Horaldiens semblent provoquer non pas la crainte mais une peur panique chez la quasi-totalité des humains. Absolument pas belliqueux, ils ne cherchent pas le contact avec l’humanité ou les dragons, seuls quelques enfants d’Ozyr ou de Nenya partageant leur vie, mais toujours de façon sédentaire. \n\nLes Horaldiens vivent dans un archipel lointain comptant une bonne centaine d'îles. Ils tirent leurs ressources de la mer, à la fois par la pêche et par l'exploitation de cultures sous-marines dans les lagons de l'archipel. Les Horaldiens déclarent être un peu moins de cinquante mille individus, mais seraient capables de fournir une troupe de dix mille guerriers, ce qui devient terrifiant lorsque l'on connaît la solidarité et la cohésion de ce peuple. Toutefois, le concept de guerre chez les Horaldiens a beaucoup évolué depuis leur exode. Lorsqu'il y a un conflit, chaque parti amène le plus de combattants possible et le plus grand nombre emporte la victoire après un décompte par les autorités. Même si les Horaldiens ne se battent pas entre eux et sont un peuple incroyablement pacifique, l’art du combat leur est bien connu et fait partie de leur nature profonde. Ainsi, en cas de conflit externe, tous se retrouvent côte à côte. Les Horaldiens n’ont pas de roi, mais un conseil des sages à peine nécessaire étant donné leur cohésion et leur civisme. Les Horaldiens ne quittent presque jamais leur archipel, mais semblent toujours étrangement au fait de toutes les informations d'importance concernant le continent. Les rares explorateurs qui résistent à leur vision et qui ont visité Talgesh, leur capitale insulaire, parlent d’une cité cyclopéenne à l'architecture démentielle. Des escaliers partent en tous sens et parfois se croisent, provoquant des trompe-l'œil au sein des voûtes tarabiscotées. Il n’y a qu’à Talgesh qu'on trouve ce genre d’architecture et pour autant, des enluminures de certains grimoires de magie humains rappellent ce style\nLe plus curieux, c’est que les chapitres ainsi illustrés concernent le plus souvent certaines Éeries…",
     "biome": "Archipel d'îles situées au-delà de l'Interdit",
     "real_size": "3,50 m en moyenne",
     "weight": "1 t en moyenne",

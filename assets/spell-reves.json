@@ -163,7 +163,7 @@
     "description": "Ce sort permet au mage, une fois par tour pendant (1 + NR) tours, de contraindre une cible de son choix située à moins de 50 mètres, à rediriger une attaque ou un sort vers une autre cible. Le mage peut choisir l'attaque ou le sort à détourner une fois le jet de dés effectué. La seule façon pour sa victime de se prémunir contre les effets de « Déviation subtile » est de réussir un jet de Physique + Volonté contre une Difficulté de 20."
   },
   {
-    "name": "Flots d'Eerie",
+    "name": "Flots d'Éerie",
     "sphere": "reves",
     "level": 1,
     "skill": "invocatoire",
@@ -174,7 +174,7 @@
     "casting_duration_unit": "turn",
     "keys": [
       "voix",
-      "danse d'Eerie",
+      "danse d'Éerie",
       "rune"
     ],
     "source": {
@@ -365,7 +365,7 @@
       "type": "officiel",
       "name": "Le sang noir de Moryargorn"
     },
-    "description": "En procédant à la méticuleuse harmonisation de son esprit avec les courants élémentaires qui baignent le corps de l'Etre Primordial, le mage prend conscience des points de convergence magique. Sans voir ou détecter les courants, il sait intuitivement s'ils sont forts ou faibles et où se situent les plus proches Eeries. Le personnage est informé des modificateurs de Sphère du site où il se trouve (environ 10m de rayon), et pour chaque Sphère qu'il maîtrise, il connaît la direction et la distance de la plus proche Eerie de cet élément. Il ne dispose par contre d'aucune indication quand à leur accessibilité ou contenu. Ce sort dure 1 + 1/NR tours."
+    "description": "En procédant à la méticuleuse harmonisation de son esprit avec les courants élémentaires qui baignent le corps de l'Etre Primordial, le mage prend conscience des points de convergence magique. Sans voir ou détecter les courants, il sait intuitivement s'ils sont forts ou faibles et où se situent les plus proches Éeries. Le personnage est informé des modificateurs de Sphère du site où il se trouve (environ 10m de rayon), et pour chaque Sphère qu'il maîtrise, il connaît la direction et la distance de la plus proche Éerie de cet élément. Il ne dispose par contre d'aucune indication quand à leur accessibilité ou contenu. Ce sort dure 1 + 1/NR tours."
   },
   {
     "name": "Sceau de maladresse",
@@ -407,6 +407,27 @@
       "name": "Livre de base 2e édition"
     },
     "description": "Ce sort endort une personne (ou une créature de taille humaine) située à moins de 10 mètres, à moins qu'elle ne réussisse un jet de résistance de Mental + Résistance contre une Difficulté de 15. La victime dort pendant (1 + NR) tours si on ne la secoue pas violemment."
+  },
+  {
+    "name": "Visions de l'avenir",
+    "sphere": "reves",
+    "level": 1,
+    "skill": "invocatoire",
+    "complexity": 10,
+    "cost": 3,
+    "difficulty": 16,
+    "casting_duration": 1,
+    "casting_duration_unit": "turn",
+    "keys": [
+      "un vol de fluix ou une formation d'ailes volantes",
+      "rune du temps",
+      "un peu de matière d'Éther"
+    ],
+    "source": {
+      "type": "officiel",
+      "name": "De Chair et d'Écailles"
+    },
+    "description": "Quand le mage aperçoit un vol de fluix, il peut lancer ce sort pour entrevoir dans les brumes de l'Ether une vision mineure de l'avenir. Une réussite simple ne fournit qu'une indication sur les événements de l'heure suivante, en termes flous (bénéfique, dangereux, richesse, danger, mort…) Le mage doit répartir ses NR entre la limite temporelle de la vision (1 NR: la journée, 2 NR: la semaine, 3 NR: l'Augure, etc.) et sa précision (par NR, le mage peut poser une question supplémentaire sur un événement probable à venir, à laquelle le MJ ne peut répondre que par oui ou non). Le mage a une vision par action (et pose donc une question par action) et il n'est pas possible d'interrompre le sort (on doit donc poser toutes les questions à la suite et ne rien faire d'autre)."
   },
   {
     "name": "Anneau de sort",
