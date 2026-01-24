@@ -276,6 +276,7 @@ class NonPlayerCharacterSummary extends ResourceBaseClass {
     await _loadLock.synchronized(() async {
       var assetFiles = [
         'npcs-ldb2e.json',
+        'npcs-de-chair-et-d-ecailles.json',
         'npcs-la-colere-des-dragons.json',
         'npcs-les-compagnons-de-khy.json',
         'npcs-les-ecailles-de-brorne.json',

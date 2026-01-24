@@ -1,0 +1,804 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "De Chair et d'Écailles"
+    },
+    "name": "Garde métallique",
+    "uuid": "bdd6f04c-06c3-4d6d-a908-e4d9fdb21c53",
+    "description": "Les Gardes métalliques sont un corps d'élite de guerriers affiliés à la Caste des artisans. Pour le bas peuple et la majorité des citoyens qui les ont croisés, ces hommes et ces femmes sont des combattants émérites voués à la défense de la caste et des intérêts de Kezyr. Mais pour certains mages et érudits, ces êtres ont cessé d'appartenir à l'humanité pour se rapprocher des énergies primordiales. A demi-élémentaires, ils conservent leur mentalité et leur libre arbitre, mais leur existence et leurs sensations sont radicalement différentes de ce que les hommes peuvent connaître.\n\n## Apparence\n\nLes Gardes métalliques sont vêtus d'armures légères de cuir clouté décorées de broderies ou de gravures. Leur visage est masqué, leurs yeux sont mouchetés de points argentés et leur peau porte des tatouages réputés ensorcelés (cf Les forges de Kezyr p.30).\n\n## Mentalité\n\nLes Gardes métalliques sont souvent silencieux et révérends envers les artisans qu'ils escortent. Ils n'ont pas à s'exprimer sans invitation et ne peuvent parler pour la caste. Lorsqu'ils sont seuls ou en mission, ils sont relativement plus loquaces et font preuve d'une sagesse étonnante pour des hommes d'armes.\n\nIls semblent souvent absorbés par des réflexions intérieures, mais presque personne ne sait que c'est ainsi qu'ils vivent leur empathie avec les énergies du métal.\n\n## Interpréter un Garde métallique\n\nInterpréter un garde métallique peut être intéressant pour des combattants ou des protecteurs adeptes des enseignements de Kezyr. Ces êtres conservent une grande maîtrise de leur destin et une relative liberté d'action, qui permet de les intégrer dans une équipe de personnages expérimentés.\n\n### Règles de création\n\nIl est impossible de créer directement un Garde métallique. On ne peut opter pour cette Carrière qu'après plusieurs aventures. Les Élus de Kezyr sont nombreux parmi les Gardes métalliques, mais tous les Élus du métal ne seront pas prêts à devenir Garde métallique.\n\nSeuls les combattants, protecteurs (très rarement des mages) de III° Statut minimum sont des candidats valables. Il n'y a que les protecteurs-gardes du corps qui puissent envisager cette voie dès le II° Statut.\n\nUne fois métamorphosés, les gardes ne peuvent plus acquérir de Privilèges de leur ancienne caste, conserver de Lien ou rester Inspirés. Les protecteurs perdent de plus leurs Bénéfices liées à l'application de la loi.\n\n### Privilèges des Gardes métalliques\n\nTous les Privilèges réservés aux Gardes métalliques s'acquièrent auprès des dragons du métal et des Maîtres de la Garde. Chacun d'entre eux est manifesté par un tatouage dont le dessin diffère pour chaque Garde, mais possédant une aura invisible tissée d'énergie métallique. Seuls les Dragons du métal et les Gardes peuvent les identifier à vue, car leurs sens leur permettent de voir dans l'énergie du métal. Éventuellement, des mages possédant certains Privilèges ou sorts pourront les discerner. Les interpréter demandera un jet de Spécialisation: Connaissance de la magie (Métal) de Difficulté 22.\n\n### L'Épreuve du Creuset élémentaire\n\nLorsqu'un personnage désire devenir Garde métallique, il doit se soumettre à l'épreuve du Creuset élémentaire. Officiellement, il se retire de Kor durant un Cycle pour recevoir l'enseignement de son nouvel ordre. Un fils de Kezyr l'emmène par les cieux. Il rejoint en fait la Cascade de Larmes (cf. Les forges de Kezyr p. 18) où Ksych procède à son immersion en prononçant un charme ancestral qui le fera spirituellement fusionner avec les énergies du métal alors que son corps sera plongé dans le métal en fusion. Le personnage doit alors puiser dans sa force intérieure pour réussir l'épreuve et faire survivre ensemble son corps et son esprit. Il doit réussir un jet de Physique+Volonté d'une Difficulté de 35. Comme ce jet n'autorise pas l'appel aux Tendances, seules la Chance ou la Maîtrise pourront aider le personnage (aucun sort ou potion n'est pris en compte, mais les Faveurs peuvent agir). S'il le désire, le joueur peut dépenser des points d'Expérience pour augmenter son jet après coup, à raison de 5 points d'Expérience par point manquant. S'il réussit ce jet, le charme de Ksych lui octroie l'Incarnat du métal et l'immunise à l'effet subjuguant de la Cascade. S'il ne possède pas assez de points d'Expérience (et donc de ressources intérieures) pour réussir ce jet, il meurt.\n\n## Matériel et organisation\n\nLes Gardes métalliques possèdent presque toujours des armes Exceptionnelles dont les facultés sont Équilibre ou Légèreté. Leurs armures sont de même qualité, rendues Légères ou Protectrices. Leur masque est un objet très personnel unique pour chacun. Ces objets Légendaires octroient un bonus de +4 en Intimidation et la capacité de relancer tout jet raté de résistance à la peur, à l'intimidation ou à la colère. Lorsqu'un Garde meurt, il est enterré avec son masque selon la tradition dungari. Il se désagrègera en quelques semaines, retournant aux courants élémentaires dont il est issu. S'il est porté par un autre que son propriétaire, il provoque une onde de choc dans les énergies élémentaires qui irrite tous les dragons du métal dans un rayon de 10 km. Nul doute que le sacrilège que représente l'usurpation de ce masque les plongera dans une fureur terrible.\n\n## Importance sociale\n\nLes Gardes métalliques sont connus du peuple, quoique rares (on estime leur nombre à 5.000 en tout Kor). Ils sont simplement vus comme des guerriers adeptes du métal, sans que jamais leur nature élémentaire ne soit connue ou rendue publique (seuls les Experts dans la Spécialisation Castes (Artisans) ou les Grands Maîtres mages connaissent cet aspect de l'ordre).\n\n## Missions\n\nLes Gardes métalliques ont une hiérarchie souple, basée sur la volonté de Kezyr de laisser ceux qui sont dignes de ces pouvoirs œuvrer le plus efficacement possible. Toutefois, un Garde est toujours aux ordres d'un Artisan renommé dans la région, qui peut le détacher comme garde ou le mandater pour des missions à son gré. Le respect de cet ordre est constant parmi les artisans. Il arrive que les Gardes métalliques soient envoyés en mission durant de longues périodes, mais ils ne sont jamais laissés entièrement oisifs. Kezyr a toujours besoin de maintenir discrètement la réputation de sa caste et entre les hérésies de l'Ordre Noir, les dangers représentés par les Humanistes toujours prompts à sa venger d'un artisan trop peu audacieux et les luttes intestines dont les hommes sont toujours capables, les Gardes sont toujours sur le qui-vive.\n\nIl n'est pas rare que dans le plus grand secret, les Gardes servent de renforts aux Espions de Kezyr. Au sein de ces cellules fermées, il arrive parfois que la finesse et la magie dont sont capables les Espions ne soit pas suffisante. Plutôt que de faire intervenir un dragon ou d'impliquer une trop grosse partie de la cellule, il arrive que l'aide d'un ou deux Gardes métalliques soit décidée par les dragons. Dans ces cas rares, les Gardes métalliques quittent leurs atours guerriers pour devenir des gens du commun, dissimulant leurs armes et leurs talismans dans diverses possessions. Ils peuvent ainsi entrer en contact avec les cellules dans la plus grande discrétion et frapper rapidement pour disparaître de la région ensuite. Lorsque ces actions d'éclat sont nécessaires, les Espions font toujours en sorte d'avoir le minimum de témoins, afin de pouvoir donner toute la mesure de leurs pouvoirs et laisser les Gardes agir à leur guise. Bien sûr, la rapidité de ces actions joue toujours en leur faveur.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 9,
+      "intelligence": 7,
+      "coordination": 8,
+      "presence": 6,
+      "resistance": 11,
+      "volonte": 8,
+      "perception": 9,
+      "empathie": 5
+    },
+    "attributes": {
+      "physique": 10,
+      "mental": 7,
+      "manuel": 7,
+      "social": 5
+    },
+    "initiative": 4,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 12,
+              "implementation": ""
+            },
+            {
+              "skill": "bouclier",
+              "value": 10,
+              "implementation": ""
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 8,
+              "implementation": ""
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 9,
+              "implementation": ""
+            },
+            {
+              "skill": "esquive",
+              "value": 8,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 7,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Artisans",
+                  "reserved": false,
+                  "value": 9
+                }
+              ]
+            },
+            {
+              "skill": "strategie",
+              "value": 6,
+              "implementation": ""
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "premiersSoins",
+              "value": 6,
+              "implementation": ""
+            }
+          ]
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "intimidation",
+              "value": 7,
+              "implementation": ""
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [
+      {
+        "type": "armor:cuirCloute",
+        "equiped_on": "none"
+      }
+    ],
+    "magic": {
+      "skills": {
+        "instinctive": 7,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 12,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 2,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 12,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "expert",
+      "career": "gardeMetallique",
+      "interdicts": [],
+      "privileges": [
+        {
+          "privilege": "engagement",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "riposte",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "vigilanceCombattant",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "tuteurArtisan",
+          "description": "Dragon du Métal adulte ou plusieurs artisans",
+          "selected_cost": null
+        }
+      ]
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 3,
+    "proficiency": 7,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "generique",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "unique": false,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "De Chair et d'Écailles"
+    },
+    "name": "Ceux-qui-ne-font-qu'un",
+    "uuid": "ef21e14a-4ee8-4e49-8f4a-7fb5f7f31df3",
+    "description": "Bien des légendes et des contes populaires parlent de la conscience de la Nature ou des esprits élémentaires liés à Heyra. Ils ne sont jamais pris à la légère et seuls les fous ou les inconscients les tiennent pour des racontars. On a vu des hordes d'animaux dévaster des camps de bûcherons, des trappeurs irrespectueux dévorés par les dépouilles de leurs victimes ou encore des arbres s'animer pour masquer des chemins et perdre les indésirables.\n\nDepuis la fondation de la caste des Prodiges, certains de ces hommes et femmes d'exception ont su communiquer avec l'Esprit de la Nature. Objets de légende, idolâtrés par les contes populaires, ils n'ont jamais fondé d'ordre, de confrérie ou de monastère. Discrets, rêveurs et philosophes, ils vivent aux côtés des humains comme tout un chacun. Certains d'entre eux utilisent leurs pouvoirs pour améliorer la vie d'une famille, d'un troupeau ou d'une espèce. D'autres ne les ont utilisé qu'une fois dans toute leur existence et ne s'en serviront probablement plus jamais. Pour les érudits, ils ont choisi de revenir aux énergies primordiales qui ont animé l'Homme. Pour le peuple et les bardes, ils sont Ceux-qui-ne-font-qu'un.\n\n## Apparence\n\nCeux-qui-ne-font-qu'un ne sont pas différents des autres Prodiges. Certains leur trouvent souvent une attitude méditative et rêveuse, mais ce trait de caractère est courant chez les héritiers de Solyr. Habitués à vivre tant spirituellement que physiquement, Ceux-qui-ne-font-qu'un accordent peu d'intérêt aux biens matériels. Il leur arrive souvent de se promener sans shaaduk't, certains oublient de se raser la barbe ou le crâne, certains vivent même nus. Pourtant, ils sont toujours très propres, car la Nature protège la Nature. Il suffit qu'ils se baignent pour être lavés, qu'ils dorment au soleil pour qu'un arbre leur fasse de l'ombre ou qu'ils rencontrent un oiseau pour que celui-ci dévore les poux et parasites.\n\n## Mentalité\n\nCeux-qui-ne-font-qu'un sont les plus modestes de tous les Prodiges. Ils n'abusent jamais de leurs pouvoirs et ne cherchent jamais à les rentabiliser. Ils sont partisans de la réciprocité. Ils acceptent d'autant mieux d'aider leur prochain ou de donner de leur force mentale à la Nature qu'ils savent que le jour où ils en auront besoin, Elle sera là.\n\n## Interpréter un de Ceux-qui-ne-font-qu'un\n\nInterpréter un de Ceux-qui-ne-font-qu'un est relativement audacieux et le MJ préfèrera parfois s'en servir pour créer un PNJ influent. Toutefois, il est tout à fait possible pour un joueur ayant parfaitement intégré les subtilités de la mentalité des Prodiges d'interpréter un de ces êtres d'exception.\n\n### Règles de création\n\nIl est impossible de créer directement un de Ceux-qui-ne-font-qu'un. On ne peut opter pour cette Carrière qu'après plusieurs aventures. On y trouve parfois des Prodiges Élus (de divers Dragons), mais c'est loin d'être un principe. Quelques rares mages de la Nature ont parfois embrassé cette carrière, mais ce furent des cas isolés. Après avoir opté pour cette carrière, Ceux-qui-ne-font-qu'un peuvent toujours acquérir des Privilèges, tisser un Lien ou rester Inspirés. En effet, devenir l'un d'entre eux n'est pas un bouleversement limitatif, c'est une harmonie supérieure avec les forces naturelles.\n\n### Privilèges de Ceux-qui-ne-font-qu'un\n\nTous des Privilèges de Ceux-qui-ne-font-qu'un s'acquièrent par méditation dans l'Esprit de la Nature. La majorité de ces Privilèges demanderont la dépense de points de magie pour s'activer et certains nécessiteront d'être désincarné pour être utilisés. Dans certains cas, il appartiendra au MJ de décider du coût des effets tentés par le personnage et de valider qu'ils font bien partie de ce Privilège.\n\n### Effets secondaires\n\nOutre les pouvoirs liés à leurs Privilèges, Ceux-qui-ne-font-qu'un sont parfois à l'origine de phénomènes incontrôlés comme des fleurs s'ouvrant sous leurs pas ou un toucher miraculeux qui soigne une mauvaise toux. Ils seront en général capables d'approcher les animaux sauvages les moins farouches ou sauront intuitivement que certains fruits ne sont pas comestibles. Néanmoins, ils devront toujours être prêts à assister l'Esprit de la Nature et à lui conférer de leur puissance (sous la forme de points de magie) ou de leur temps. Il appartiendra au MJ de gérer ces effets aussi bien bénéfiques que négatifs.\n\n## L'Esprit de la Nature\n\nEn fait de pouvoirs transmis de Prodige à Prodige depuis la nuit des temps, Ceux-qui-ne-font-qu'un n'ont comme capacité principale que de pouvoir laisser leur esprit rejoindre les courants élémentaires de la Nature. Au sein de ce courant se mêlent les énergies magiques, les cris de centaines de prédateurs, le bruissement de milliers de feuilles sous le vent, les esprits divagants d'autres Prodiges morts ou vivants et la conscience colossale, magnifique et majestueuse d'Heyra. Ceux-qui-ne-font-qu'un ont appris intuitivement à se lier à cette force. Permanente, aussi puissante que la Nature et destinée à durer tant qu'une plante, un animal ou un souffle d'Heyra continue à embellir Kor, cette force ne se domine pas. Ceux-qui-ne-font-qu'un ne la maîtrisent pas, ils en font partie et participent à chaque instant à sa puissance et à sa direction.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 6,
+      "intelligence": 6,
+      "coordination": 6,
+      "presence": 5,
+      "resistance": 6,
+      "volonte": 10,
+      "perception": 7,
+      "empathie": 10
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 7,
+      "manuel": 6,
+      "social": 9
+    },
+    "initiative": 3,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesDoubles",
+              "value": 6,
+              "implementation": ""
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 7,
+              "implementation": ""
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 5,
+              "implementation": ""
+            },
+            {
+              "skill": "escalade",
+              "value": 5,
+              "implementation": ""
+            },
+            {
+              "skill": "esquive",
+              "value": 8,
+              "implementation": ""
+            },
+            {
+              "skill": "natation",
+              "value": 5,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 6,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Sphère de la Nature",
+                  "reserved": false,
+                  "value": 11
+                }
+              ]
+            },
+            {
+              "skill": "connaissanceDesAnimaux",
+              "value": 11,
+              "implementation": ""
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 7,
+              "implementation": ""
+            },
+            {
+              "skill": "geographie",
+              "value": 6,
+              "implementation": ""
+            },
+            {
+              "skill": "fauneEtFlore",
+              "value": 10,
+              "implementation": ""
+            },
+            {
+              "skill": "orientation",
+              "value": 10,
+              "implementation": ""
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "herboristerie",
+              "value": 8,
+              "implementation": ""
+            },
+            {
+              "skill": "matieresPremieres",
+              "value": 10,
+              "implementation": ""
+            },
+            {
+              "skill": "survie",
+              "value": 10,
+              "implementation": "Au choix"
+            },
+            {
+              "skill": "survie",
+              "value": 10,
+              "implementation": "Seconde, au choix"
+            }
+          ]
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "dressage",
+              "value": 7,
+              "implementation": ""
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 8,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 12,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 5,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 12,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "prodige",
+      "status": "expert",
+      "career": "ceuxQuiNeFontQuUn",
+      "interdicts": [],
+      "privileges": [
+        {
+          "privilege": "donDeBrorne",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "donDeHeyra",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "donDeMoryagorn",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "donDeSolyr",
+          "description": null,
+          "selected_cost": null
+        }
+      ]
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 5,
+    "proficiency": 5,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "generique",
+    "sub_category": {
+      "name": "casteDesProdiges"
+    },
+    "unique": false,
+    "use_human_injury_manager": true
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "De Chair et d'Écailles"
+    },
+    "name": "Homme-dragon",
+    "uuid": "4ecf8ba6-9d39-4385-848f-7fc0511de5d9",
+    "description": "Durant les siècles passés, certains hommes et femmes ont atteint un point tel dans la vénération draconique et dans le renoncement personnel que leur nature profonde s'est modifiée. Véritables fanatiques, ces êtres ont abandonné leur humanité pour devenir des hommes-dragons, des hybrides magiquement modelés par Brorne et ses anciens fils pour devenir les gardiens ultimes des sanctuaires draconiques (cf. Les écailles de Brorne, p.31). Seul Brorne a accepté de prendre sous son aile des êtres si différents de l'humanité chère aux dragons. En effet, plus rien ne rattache ces créatures froides et inertes au monde des mortels.\n\n## Description\n\nLes hommes-dragons sont des hybrides obtenus par magie. Ils ne sont pas nés de parents draconiques et n'ont rien à voir avec des Orphelins. Ces créatures ont une taille anormale d'environ 2m50, des membres cuirassés par des plaques de cristaux ou de roche et leur visage est déformé en une mâchoire draconique. Certains sont munis d'ailes membraneuses, d'autres possèdent des griffes minérales tranchantes comme des rasoirs et certains possèdent même des capacités de régénération surnaturelles.\n\n## Mentalité\n\nLes hommes-dragons ont non seulement subi une altération majeure de leur corps, mais aussi de leur esprit. Ils ne possèdent plus de libre arbitre ou d'une capacité de jugement. À leurs yeux, ils auraient toujours dû être des dragons, seul le cruel destin les a obligés à revêtir une forme humaine. C'est avec plaisir qu'ils y ont renoncé pour servir aveuglément les Dragons et leurs enfants. Ils ne se considèrent plus comme citoyens ou humains. Ils n'obéissent (et sans aucune hésitation) qu'aux dragons et aux Édits draconiques. Possédant peu de capacités de décision, ils ne savent que suivre les ordres que leur maître dragon leur donne. Ils n'ont aucune individualité ou vie personnelle. Ce ne sont que des exécutants aux ordres des Ailés, toujours en quête ou figés dans l'ombre des dragons qui les dirigent.\n\n## Interpréter un homme-dragon\n\nCertains personnages pourront, à cause d'une vie particulièrement mouvementée et d'une grande piété draconique, se sentir attirés par ce destin. Pour un joueur, la perspective d'interpréter un tel personnage peut être tentante, tant pour la richesse d'un tel rôle que pour bénéficier de pouvoirs spectaculaires. Un meneur de jeu devra toujours prendre des précautions pour autoriser de tels rôles ou les faire interpréter par ses PNJs. Les hommes-dragons sont fort rares et peu connus du bas-peuple, et en parler autrement que comme des légendes imposera de posséder la Connaissance des dragons à au moins 5. De ce fait, il ne pourrait y avoir qu'un seul personnage de ce type à une table. Certains meneurs ambitieux pourront décider de faire jouer une table entière de ces créatures dans une campagne draconique, mais il leur faudra pour cela pas mal de travail. En tout état de cause, un joueur qui opte pour cette modification doit accepter de perdre une partie de son pouvoir sur le personnage et de laisser le MJ gérer certaines décisions à cause d'une mentalité altérée. Bien sûr, il appartient au meneur qui accepte un tel personnage à sa table de lui accorder une attention particulière.\n\n### Règles de création\n\nIl est impossible de créer un personnage homme-dragon. On ne peut que choisir cette carrière pour un personnage vétéran dont l'évolution est logique dans cette voie. Les dragons de pierre sont les seuls qui peuvent proposer à Brorne la création d'un homme-dragon. Ils ne proposent jamais cette voie à un humain, c'est au mortel de demander et il lui faudra faire la preuve de sa motivation infaillible pour accéder à la métamorphose suprême. Les dragons de la pierre rechignent par principe à laisser les hommes s'engager dans cette voie, ne serait-ce que pour tester leur volonté. Dans le cas des Élus liés par le Pacte de pierre, certains dragons verront comme un mérite personnel à proposer leur Élu, mais Brorne ne les accepte pas souvent, doutant de l'avis impartial de son descendant.\n\nEn général, seuls les citoyens de III° Statut sont considérés comme des candidats valables. Les plus faibles sont insignifiants, les plus expérimentés sont souvent trop utiles à leur caste. Une forte proportion d'hommes-dragons vient des rangs des protecteurs et, dans une moindre mesure, des combattants. Bien peu sont d'anciens Prodiges ou mages, et les autres castes toutes ensemble n'ont jamais fourni plus de quinze hommes-dragons.\n\n### Règles et capacités\n\nLes hommes-dragons possèdent certaines règles particulières : \n\nTout d'abord, ils ne sont plus humains et ne peuvent plus faire appel aux Tendances. Ils continuent par contre à noter les cercles acquis par leurs actions en jeu. Ils ne sont plus sensibles aux charmes humains mais peuvent s'émouvoir et apprécier l'art, la magie ou faire preuve de créativité. \n\nIls sont considérés comme des créatures draconiques et peuvent à ce titre utiliser deux dés sur chacun de leurs jets et garder celui qu'ils désirent (cf Livre de base p.274). Ils ne peuvent plus être Inspirés ou Élus, ni posséder de rang de caste ou acquérir de nouveaux Privilèges, Bénéfices ou Techniques. \n\nIls perdent l'Attribut Social et ne peuvent plus utiliser les Compétences qui en découlent (sauf Intimidation qu'ils utilisent avec Physique). Leur Empathie tombe à 1 quel que soit leur score d'origine. Tout jet de résistance impliquant le Social est résolu avec une valeur de 0, sauf en cas d'effet d'intimidation, de peur ou de domination mentale surnaturelle, auquel cas leur volonté se substitue au Social.\n\n## Importance sociale des hommes-dragons\n\nLes hommes-dragons sont excessivement rares. Il ne doit pas y en avoir plus de 500 dans tout Kor et presque tous vivent isolés de la société humaine. Une partie est employée comme gardien des sanctuaires draconiques et des temples majeurs. Certains autres ont en charge l'instruction des protecteurs les plus méritants et ne quittent que rarement Kern. Enfin, certains sont en quête pour les dragons et parcourent Kor dans le plus grand secret. Ce sont des êtres solitaires et discrets qui n'ont aucune raison de se mêler aux hommes dont ils ne font plus partie. Obstinés et d'une motivation inflexible, ce sont les ultimes armes des dragons avant de s'impliquer personnellement... Mis à part leurs expéditions, les hommes-dragons n'ont aucune liberté de mouvement et vivent perpétuellement aux ordres des dragons et à leurs côtés.\n\n## Les Seigneurs Ardents\n\nGroupe de dragons légendaires reniés par Kroryn, les [Seigneurs ardents](resource://assets/faction/9a203ede-7234-4237-8bf6-581707487609) seraient connus pour compter dans leurs rangs bon nombre d'hommes-dragons. Seuls les Experts en Connaissance des dragons peuvent aborder ce sujet avec réalisme, tout cela n'étant que tissu de légende pour les autres. Nul ne sait vraiment comment ils ont pu se libérer du joug des dragons de pierre et de Brorne, à moins que les plus anciens dragons des Seigneurs Ardents ne possèdent le secret de la métamorphose de ces êtres draconiques.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 12,
+      "intelligence": 5,
+      "coordination": 7,
+      "presence": 10,
+      "resistance": 14,
+      "volonte": 11,
+      "perception": 6,
+      "empathie": 1
+    },
+    "attributes": {
+      "physique": 11,
+      "mental": 6,
+      "manuel": 5,
+      "social": 0
+    },
+    "initiative": 3,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 50,
+            "capacity": 12
+          },
+          {
+            "type": "death",
+            "start": 50,
+            "end": -1,
+            "capacity": 2
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesArticulees",
+              "value": 13,
+              "implementation": ""
+            },
+            {
+              "skill": "armesContondantes",
+              "value": 13,
+              "implementation": ""
+            },
+            {
+              "skill": "armesDeChoc",
+              "value": 13,
+              "implementation": ""
+            },
+            {
+              "skill": "armesDoubles",
+              "value": 13,
+              "implementation": ""
+            },
+            {
+              "skill": "armesTranchantes",
+              "value": 13,
+              "implementation": ""
+            },
+            {
+              "skill": "armesDHast",
+              "value": 13,
+              "implementation": ""
+            },
+            {
+              "skill": "bouclier",
+              "value": 12,
+              "implementation": ""
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 9,
+              "implementation": ""
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 10,
+              "implementation": ""
+            },
+            {
+              "skill": "escalade",
+              "value": 8,
+              "implementation": ""
+            },
+            {
+              "skill": "esquive",
+              "value": 10,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 11,
+              "implementation": ""
+            },
+            {
+              "skill": "histoire",
+              "value": 8,
+              "implementation": ""
+            },
+            {
+              "skill": "philosophie",
+              "value": 11,
+              "implementation": "Draconiste"
+            }
+          ]
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "intimidation",
+              "value": 10,
+              "implementation": ""
+            }
+          ]
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 8,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 8,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 4,
+      "pools": {
+        "pierre": 8,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "protecteur",
+      "status": "expert",
+      "career": "hommeDragon",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 2.5,
+    "weight": 300,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "generique",
+    "sub_category": {
+      "name": "casteDesProtecteurs"
+    },
+    "unique": false,
+    "use_human_injury_manager": false
+  }
+]

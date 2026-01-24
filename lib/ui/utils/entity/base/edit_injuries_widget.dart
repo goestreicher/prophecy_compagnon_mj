@@ -399,7 +399,7 @@ class _InjuryLevelEditWidget extends StatelessWidget {
               label: 'Cases',
               initialValue: level.capacity,
               minValue: 1,
-              maxValue: 10,
+              maxValue: 12,
               onChanged: (int value) => onCapacityChanged(value),
             )
         ),

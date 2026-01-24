@@ -162,6 +162,7 @@
     "title": "Caste des artisans",
     "categories": [
       "dirigeants",
+      "generique",
       "personnalites"
     ],
     "is_default": true
@@ -170,6 +171,7 @@
     "title": "Caste des combattants",
     "categories": [
       "dirigeants",
+      "generique",
       "personnalites"
     ],
     "is_default": true
@@ -178,6 +180,7 @@
     "title": "Caste des commerçants",
     "categories": [
       "dirigeants",
+      "generique",
       "personnalites"
     ],
     "is_default": true
@@ -186,6 +189,7 @@
     "title": "Caste des érudits",
     "categories": [
       "dirigeants",
+      "generique",
       "personnalites"
     ],
     "is_default": true
@@ -194,6 +198,7 @@
     "title": "Caste des mages",
     "categories": [
       "dirigeants",
+      "generique",
       "personnalites"
     ],
     "is_default": true
@@ -202,6 +207,7 @@
     "title": "Caste des prodiges",
     "categories": [
       "dirigeants",
+      "generique",
       "personnalites"
     ],
     "is_default": true
@@ -210,6 +216,7 @@
     "title": "Caste des protecteurs",
     "categories": [
       "dirigeants",
+      "generique",
       "personnalites"
     ],
     "is_default": true
@@ -218,6 +225,7 @@
     "title": "Caste des voyageurs",
     "categories": [
       "dirigeants",
+      "generique",
       "personnalites"
     ],
     "is_default": true

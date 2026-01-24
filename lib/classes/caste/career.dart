@@ -63,6 +63,18 @@ enum Career {
       description: "Chaque fois qu’il réussit un jet de Forge, le personnage gagne automatiquement 1 Niveau de Réussite par niveau de Statut. Le résultat de son jet n’est pas modifié par ces Niveaux gratuits, mais ces derniers s’ajoutent à ceux déjà obtenus pour déterminer la qualité de l'objet.",
     ),
   ),
+  gardeMetallique(
+    castes: [Caste.combattant, Caste.protecteur],
+    title: 'Garde métallique',
+    interdict: CareerInterdict(
+      title: 'Tu tempèreras ta colère',
+      description: "",
+    ),
+    benefit: CareerBenefit(
+      title: 'Incarnat du métal',
+      description: "Le personnage a réussi l'épreuve secrète du Creuset élémentaire. Sa peau s'est épaissie et une couche de métal souple comme le cuir court désormais entre ses muscles et son épiderme (armure naturelle de 14). Il entretient un lien élémentaire intuitif avec les énergies du métal et va acquérir rapidement une empathie colossale avec la Sphère du métal (elle devient Réservée et Spécialisée). Ce lien régénère immédiatement sa peau de métal (pas de baisse de l'Indice de protection en cas de perforation) et lui octroie une endurance surnaturelle (+1 en Résistance).",
+    ),
+  ),
   mecaniste(
     castes: [Caste.artisan, Caste.artisanNoir],
     title: 'Le mécaniste',
@@ -653,6 +665,18 @@ enum Career {
     ),
   ),
 
+  ceuxQuiNeFontQuUn(
+    castes: [Caste.prodige],
+    title: "Ceux qui ne font qu'un",
+    interdict: CareerInterdict(
+      title: 'Tu ne domineras jamais la Nature',
+      description: "",
+    ),
+    benefit: CareerBenefit(
+      title: "Ne faire qu'un",
+      description: "Le personnage devient capable de libérer son esprit de son enveloppe corporelle pour fusionner avec l'Esprit de la Nature. Il peut développer les Privilèges de Ceux-qui-ne-font- qu'un (voir ci-après). Lorsqu'il est désincarné, le personnage reste conscient de ce qu'il advient de son corps et peut se réincarner en un tour. Il peut rester désincarné jusqu'à (Sphère de la Nature) heures par jour, que ce soit d'une traite ou par fractions. Dans cet état spirituel, il ne peut entrer dans les cités ou les villages, ni y utiliser ses pouvoirs ou y voir quoi que ce soit, ces zones lui restant brumeuses. Il ne peut pas communiquer avec son environnement si ce n'est par ses Privilèges ou par magie (tous les sorts affectant son esprit lorsqu'il se désincarne restent actifs). Il peut toujours tenter d'utiliser la magie, mais n'est plus capable d'exécuter des gestes, des chants ou des postures.\nSi un Prodige meurt de façon violente lors d'une désincarnation, son corps devient de pierre et son esprit reste fusionné avec l'Esprit de la Nature. S'il décède de mort naturelle, son corps se dissipera en quelques secondes pour ne laisser que ses possessions.",
+    ),
+  ),
   fervent(
     castes: [Caste.prodige],
     title: 'Le fervent',
@@ -772,6 +796,18 @@ enum Career {
     benefit: CareerBenefit(
       title: 'Ton ennemi est le mien',
       description: "Lorsqu'il se bat aux côtés de son protégé, et que celui-ci est visé par une attaque, le personnage peut tenter de s’interposer et effectuer une parade à sa place ou en même temps que lui. Dans les deux cas, la Difficulté du jet est de 15 et ne subit que les malus liés aux éventuelles pénalités d’action ou de blessures du personnage. S’il part seul, sa réussite est comparée à celle de l’attaquant et, s’il échoue, c’est lui qui subit pleinement les effets de l'attaque - ainsi que la possibilité d’une riposte. Si les parades sont simultanées, les deux jets s’effectuent en parallèle, chacun contre sa Difficulté, et les Niveaux de Réussite s'additionnent. Là encore, c’est le garde du corps qui subit les effets d’un échec ou bénéficie de l'opportunité d’une riposte.\nCette technique ne peut être utilisée qu’une fois par tour, et seulement si le personnage dispose d’un dé d'action qu’il peut dépenser au moment de l'attaque - quelle que soit sa valeur.",
+    ),
+  ),
+  hommeDragon(
+    castes: [Caste.artisan, Caste.combattant, Caste.commercant, Caste.erudit, Caste.mage, Caste.prodige, Caste.protecteur, Caste.voyageur],
+    title: 'Homme-dragon',
+    interdict: CareerInterdict(
+      title: 'Hésiter est déjà trahir',
+      description: "",
+    ),
+    benefit: CareerBenefit(
+      title: 'Héritage des écailles',
+      description: "Le personnage passe plusieurs semaines à subir une mystérieuse métamorphose dans un lieu où Brorne l'emporte. À son retour, il est irrémédiablement devenu un homme-dragon. Il peut développer les dons propres à cette carrière (et qui lui sont exclusifs). Il peut développer jusqu'à dix Spécialisations, toutes les Compétences sont comptées comme Générales et ses mentors seront toujours des dragons. Ses Caractéristiques peuvent atteindre 15, tout comme ses Attributs. Il ne subit plus les malus de blessure (toutes ses cases de Blessure sont fusionnées), son seuil de Mort passe à 51 et il obtient une seconde case de Mort. Son espérance de vie est d'environ RES siècles, mais il lui est interdit de se reproduire (tout manquement provoque la mise à mort du fautif, du partenaire et du descendant, qui s'il s'en sortait, aurait 1 chance sur 10 d'être un Orphelin). Il conserve toutes ses capacités spéciales découlant de son ancienne profession, mais brise tout Lien, sans toutefois provoquer de drame, vu qu'il cesse d'être un humain pour devenir lui même draconique.",
     ),
   ),
   ingenieurMilitaire(

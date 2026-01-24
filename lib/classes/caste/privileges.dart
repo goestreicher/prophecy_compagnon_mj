@@ -38,11 +38,23 @@ enum CastePrivilege {
     cost: [3],
   ),
 
+  adepteMetallique(
+      caste: Caste.artisan,
+      title: 'Adepte métallique',
+      description: "Ce Privilège est réservé aux Gardes métalliques.\nLe personnage peut apprendre à diriger l'énergie élémentaire qu'il perçoit naturellement. Il peut apprendre des sorts du métal comme s'il était mage et les dragons du métal n'auront généralement pas motif à lui refuser leur enseignement.",
+      cost: [4]
+  ),
   apprenti(
       caste: Caste.artisan,
       title: 'Apprenti',
       description: "Permet de disposer d’un apprenti artisan qui, en plus de rendre de menus services au personnage, pourra s’occuper de son atelier en son absence, porter des messages, colporter des rumeurs et effectuer certaines tâches de base. L'apprenti doit être instruit et demandera un peu de temps et d’attention de la part de son maître. Au bout de quelques années, l’apprenti quittera le personnage pour se lancer seul.",
       cost: [3]
+  ),
+  auraDePuissance(
+      caste: Caste.artisan,
+      title: 'Aura de puissance',
+      description: "Ce Privilège est réservé aux Gardes métalliques.\nÀ ce degré de fusion morale avec les énergies du métal, le personnage devient un nœud dans les courants magiques. Il est considéré comme un pôle de pouvoir et infléchit la magie dans les (Mental x3) m autour de lui. Cette zone est permanente et peut se comparer à un Site élémentaire possédant un bonus (non cumulatif) en Métal égal à sa Tendance Dragon (un bonus de +TD à toute action magique du Métal entreprise dans la zone ou le ciblant, et malus de -TD aux actions magiques des Océans, Nature et Rêves). Il sait que sa présence peut déranger certains dragons ou mages de puissance et restera toujours humble quant à ses capacités. Son existence devient intimement liée à cette fusion élémentaire. Si sa Tendance Dragon devient inférieure à la Fatalité ou à l'Homme, ou si elle atteint 0, le personnage meurt d'une crise foudroyante.",
+      cost: [6]
   ),
   autorisation(
       caste: Caste.artisan,
@@ -50,11 +62,29 @@ enum CastePrivilege {
       description: "Permet de pratiquer la mécanique pour réaliser des objets ou des machines d’intérêt public (engins de levage, horloges, roues de moulins, etc.). Ce Privilège ne permet pas de connaître la Compétence Mécanique (qui doit être apprise avec l’Avantage Art Interdit) mais simplement de la pratiquer de façon relativement libre. Le personnage dispose d’un sceau conféré par les maîtres de sa caste qui lui servira à marquer visiblement l’objet. Tous ses travaux dépendant de cette autorisation seront toujours validés par une commande transmise par la caste et validée par l’Inquisition.",
       cost: [4]
   ),
+  canalElementaire(
+      caste: Caste.artisan,
+      title: 'Canal élémentaire',
+      description: "Ce Privilège est réservé aux Gardes métalliques.\nLe personnage est capable de dévier légèrement les flux d'énergie élémentaire du métal. Il peut ainsi transférer ses points de magie vers la Réserve du métal d'une cible. Ce transfert s'effectue par jet de Mental+Empathie d'une Difficulté égale à la portée de la cible en mètres. Ce transfert prend une action par point. En général, cette faculté n'est utilisée que pour les cas extrêmes et ne sera jamais réclamée par un artisan digne de ce nom.",
+      cost: [4]
+  ),
   charteDAtelier(
       caste: Caste.artisan,
       title: "Charte d'atelier",
       description: "Permet de disposer d’une autorisation d'accès aux ateliers des artisans résidents. Elle se présente sous la forme d’une série de broderies apposées sur son tablier de sortie. Elles lui garantissent un accueil favorable chez ses confrères qui lui demanderont alors un dédommagement plus modique pour prêter un établi et quelques outils. Ce Privilège permet évidemment d’éviter les hausses de Difficulté dues à un matériel insuffisant. De plus, le personnage ne subira pas les allongements de délai de création dus au travail solitaire.",
       cost: [4]
+  ),
+  conscienceElementaire(
+      caste: Caste.artisan,
+      title: "Conscience élémentaire",
+      description: "Ce Privilège est réservé aux Gardes métalliques.\nLe personnage a appris à fondre temporairement sa conscience dans le flot d'énergie dans lequel baigne le corps de l'Être primordial. À moins d'être dans un site élémentaire, une Éerie ou un lieu où les énergies du métal sont absentes, le personnage peut user de Psychométrie (cf. Livre de base p. 100) sur le lieu où il se trouve. La Difficulté est inchangée et le MJ veillera à indiquer les traces importantes qui déforment les énergies élémentaires du lieu (bataille, action d'éclat, scène épique, forte empreinte sentimentale).",
+      cost: [3]
+  ),
+  corpsDAcier(
+      caste: Caste.artisan,
+      title: "Corps d'acier",
+      description: "Ce Privilège est réservé aux Gardes métalliques.\nLe personnage peut puiser dans les énergies élémentaires du métal pour trouver de la vigueur. Il peut régénérer une de ses cases de blessure pour 5 points de magie et un jet de Mental+Sphère du métal d'une Difficulté de 15. Ce drain prend une action complexe à activer et devient effective en 5-NR actions.",
+      cost: [5]
   ),
   ecole(
       caste: Caste.artisan,
@@ -78,6 +108,12 @@ enum CastePrivilege {
       cost: [1],
       unique: false,
       requireDetails: true
+  ),
+  gardeMetallique(
+      caste: Caste.artisan,
+      title: 'Garde métallique',
+      description: "Ce Privilège est seulement accessible à partir du IV° Statut. Il peut être acquis au III° Statut si le personnage possède un savoir-faire vital aux yeux de la caste (Expertise, don unique, appuis politiques majeurs…). Il permet de se voir affecter un Garde métallique pour sa protection personnelle. Le Garde n'est pas un valet et pourra refuser les tâches sans rapport avec sa fonction. Il ne se privera pas de donner en privé son avis à son Maître-artisan, tout comme il prendra d'autorité toutes les décisions nécessaires à sa sécurité. Peu importent les récriminations de l'artisan, les Gardes métalliques possèdent un tel prestige qu'ils peuvent se permettre de ne répondre de leurs actes que devant les Ardents (cf. Les forges de Kezyr p.28). Dans le cas de joueurs expérimentés, il peut être intéressant de faire interpréter le Garde par un autre joueur.",
+      cost: [6],
   ),
   notable(
       caste: Caste.artisan,
@@ -974,6 +1010,60 @@ enum CastePrivilege {
       description: "Permet, une fois par combat, de lancer un dé supplémentaire d’Initiative. Il est toujours impossible de conserver plus de dés qu’un personnage ne possède de nombre d'actions.",
       cost: [3]
   ),
+  empathieVegetaleMineure(
+      caste: Caste.prodige,
+      title: 'Empathie végétale mineure',
+      description: "Ce Privilège est réservé à Ceux-qui-ne-font-qu’un.\nLe personnage peut communiquer avec les plantes simples par empathie (les plantes n'ont aucun langage) et leur demander certains services. Il peut faire éclore une rose (1 point de magie), accélérer une croissance (1 pt par jour induit) ou dénicher une plante de soin rare dans un sous-bois tout en compensant le vide laissé par sa cueillette (de 1 à 3 pts). Il peut agir sur le bois brut ou les herbes coupées en ranimant les planches d'une porte pour les faire gonfler, rétrécir ou expulser des clous ou des vis (de 1 à 3 points de magie), germer une graine desséchée (1 pt) ou encore ressouder deux parties d'un morceau de bois brisé (2 pts).",
+      cost: [3]
+  ),
+  empathieVegetaleMajeure(
+      caste: Caste.prodige,
+      title: 'Empathie végétale majeure',
+      description: "Ce Privilège est réservé à Ceux-qui-ne-font-qu’un.\nRequiert l'empathie végétale mineure. Le personnage peut communiquer avec les végétaux complexes, élémentaires ou intelligents. Il peut provoquer des effets supérieurs comme commander à un lierre d'étouffer une créature à sa portée (2 pts par tour), déraciner un arbuste et le replanter ailleurs sans dommage (2 pts) ou encore animer un chêne pour le déplacer (4 pts par tour). Il peut agir sur le bois ou les végétaux travaillés pour en modifier la forme (1 à 4 pts) mais pas le volume. Il peut faire revivre un arbre foudroyé (3 pts) ou encore recomposer un parc dévasté par sa simple présence (5 pts) : les fleurs repoussent et se réalignent, les buissons se taillent et se forment, les feuilles mortes pourrissent et disparaissent dans le sol.",
+      cost: [4]
+  ),
+  empathieAnimaleMineure(
+      caste: Caste.prodige,
+      title: 'Empathie animale mineure',
+      description: "Ce Privilège est réservé à Ceux-qui-ne-font-qu’un.\nLe personnage peut communiquer avec les insectes, les poissons, les rongeurs et tous les animaux dont la Volonté est inférieure à sa Tendance Dragon. Il ne peut pas décider de leur comportement mais peut les côtoyer sans mal. Il peut les inciter à le rejoindre, à s'éloigner ou à l'aider. Selon les services consentis par les animaux (généralement bien disposés à son égard), il lui en coûtera de sa force mentale sous la forme de un à quatre points de magie. S'il doit tuer un animal pour se nourrir ou s'il provoque sa mort accidentellement, le personnage devra compenser la turbulence élémentaire en dépensant autant de points de magie que la Volonté de l'animal.",
+      cost: [3]
+  ),
+  empathieAnimaleMajeure(
+      caste: Caste.prodige,
+      title: 'Empathie animale majeure',
+      description: "Ce Privilège est réservé à Ceux-qui-ne-font-qu’un.\nRequiert l'empathie animale mineure. Le personnage peut communiquer avec les animaux les plus évolués et s'en faire comprendre. Il ne peut toujours pas les diriger mais simplement les inciter. Si l'animal est doté d'une Intelligence supérieure à la sienne, il peut même s'en prendre à lui après un jet en Opposition de Mental+Volonté contre Social+Présence du personnage. Tout comme l'empathie mineure, il lui en coûtera de l'énergie spirituelle s'il commande aux animaux (de 3 à 6 pts). La mort d'un animal provoquée par le personnage nécessitera une dépense égale à la Volonté de l'animal.",
+      cost: [4]
+  ),
+  empathieDraconique(
+      caste: Caste.prodige,
+      title: 'Empathie draconique',
+      description: "Ce Privilège est réservé à Ceux-qui-ne-font-qu’un.\nRequiert l'empathie animale majeure. Le personnage peut communiquer avec les créatures draconiques (en plus de sa télépathie de Prodige) et les créatures élémentaires de la nature, des vents, de la pierre et des océans. Il peut tenter d'influer sur leur comportement, mais la créature peut se sentir offensée si elle est dotée d'une Intelligence supérieure. Son libre arbitre moral est géré comme dans l'empathie majeure. Sa mort entraîne les mêmes conséquences.",
+      cost: [3]
+  ),
+  empathieMinerale(
+      caste: Caste.prodige,
+      title: 'Empathie minérale',
+      description: "Ce Privilège est réservé à Ceux-qui-ne-font-qu’un.\nBrorne a toujours respecté les Prodiges et ceux qui savaient transmettre l'enseignement des Ailés. Cela confère à Ceux-qui-ne-font-qu'un un pouvoir limité sur le règne minéral et terrestre. Le personnage peut commander à la terre de se mouvoir (2 pts), de s'ouvrir (de 3 à 6 pts) ou fissurer des rochers comme si une plante invisible poussait à l'intérieur (4 à 8 pts). Il ne peut séparer les pierres de la nature ou en changer la forme.",
+      cost: [4]
+  ),
+  empathieAquatiqueProdige(
+      caste: Caste.prodige,
+      title: "Empathie aquatique (Ceux-qui-ne-font-qu'un)",
+      description: "Ce Privilège est réservé à Ceux-qui-ne-font-qu’un.\nTout comme Brorne, Ozyr concède aux Prodiges des pouvoirs à la mesure de leur sacerdoce et de leur dévotion envers la Nature. Ceux-qui-ne-font-qu'un peuvent ainsi commander aux fleuves, aux rivières et aux cascades, mais très rarement aux océans. Le personnage peut raviver un ruisseau amoindri (3 pts), déchaîner un bref torrent dans le lit d'une rivière (6 pts) ou encore purifier un étang souillé par une charogne (5 pts).",
+      cost: [4]
+  ),
+  eruptionNaturelle(
+      caste: Caste.prodige,
+      title: "Éruption naturelle",
+      description: "Ce Privilège est réservé à Ceux-qui-ne-font-qu’un.\nLe personnage crée un nœud dans les énergies de la Nature. Il en résulte une croissance spontanée d'un ou plusieurs éléments naturels en contact avec lui (à son choix). Un bâton bourgeonnera et se changera en arbre en trois tours (3 pts), un lierre poussera en quelques secondes le long d'une muraille (4 pts) ou un fleuve pourra entrer en crue brutale durant plusieurs heures (7 pts) Il n'est pas possible de ranimer ou de soigner un être vivant par ce Privilège, la Vie et la Mort étant du domaine de Kalimsshar.",
+      cost: [5]
+  ),
+  empathieClimatique(
+      caste: Caste.prodige,
+      title: "Empathie climatique",
+      description: "Ce Privilège est réservé à Ceux-qui-ne-font-qu’un.\nLe personnage peut influencer le climat dans la région où il se trouve (quelques km). Il ne peut provoquer un événement aberrant (tempête de neige dans le désert ou une canicule en terre glaciaire), ni des phénomènes néfastes à la Nature (tempêtes, tornades, foudre ou grêle). Il peut par contre faire pleuvoir (4 pts), chasser ou convoquer des nuages (3 pts), faire tourner le vent (5 pts) ou faire varier la température de façon tolérable (1pt par +/-5°C).",
+      cost: [4]
+  ),
   aplombProdige(
       caste: Caste.prodige,
       title: 'Aplomb',
@@ -1079,6 +1169,66 @@ enum CastePrivilege {
       cost: [8],
       unique: false,
       requireDetails: true
+  ),
+  apparenceDraconique(
+      caste: Caste.protecteur,
+      title: 'Apparence draconique',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nLe personnage possède une apparence inhumaine. Son visage est déformé en un museau draconique, ses cheveux ont disparu au profit de crins de chitine et ses yeux sont enfoncés dans des orbites calleuses décalées sur les côtés du visage. Sa peau a l'apparence de cuir épais dénué de pilosité et en certains endroits, des concrétions minérales et des os épais la déforment (armure naturelle de 5 pts). Ses ongles sont trois fois plus épais (ils peuvent servir d'armes et infligent FOR+2, Init. 0/+2) et ses doigts ne comptent plus qu'une articulation. Ses pieds subissent la même modification, ce qui interdit le port de chausses ou de bottes ; peu importe, vu que la plante des pieds est renforcée et supporte sans mal de marcher sur des pierres ou des échardes fines. Ses jambes sont plus courtes, ses cuisses ont une musculature hypertrophiée et enfin, sa taille totale avoisine les 2m50 pour un poids d'environ 300 kg.",
+      cost: [0]
+  ),
+  crocsDraconiques(
+      caste: Caste.protecteur,
+      title: 'Crocs draconiques',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nLes dents du personnage achèvent leur transformation pour devenir des canines coniques épaisses comme le pouce. Elles ne gênent pas la prononciation et infligent des dommages conséquents de FOR+7 pour une Init. de -2/+2. Elles ne peuvent servir pour parer et le personnage doit développer la Compétence Morsure pour apprendre à bien se servir de cette gueule.",
+      cost: [4]
+  ),
+  ailes(
+      caste: Caste.protecteur,
+      title: 'Ailes',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nLe personnage connaît une nouvelle transformation en voyant des ailes membraneuses se tisser sous ses bras et contre son torse. Il se crée une nouvelle articulation dans les bras, qui descendent désormais jusqu'aux genoux. Le personnage peut emporter dix kilos de charge par point de Force, que ce soit en équipement ou en compagnons. Il peut développer la compétence Vol jusqu'à un score de 10 (un homme- dragon ne peut devenir Expert dans cette Compétence). Son envergure est d'environ 3 m et il lui est impossible de porter un vêtement ou une armure sur le torse si il n'est pas prévu pour laisser passer les membranes. Le vol est bruyant, mais le personnage peut planer silencieusement.",
+      cost: [6]
+  ),
+  cuirasseDraconique(
+      caste: Caste.protecteur,
+      title: 'Cuirasse draconique',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nLa peau du personnage est désormais composée de concrétions minérales en losanges qui déforment son cuir par le dessous. Cet épiderme renforcé possède une protection naturelle de 18 et ne gêne en rien les mouvements du personnage. Son poids augmente considérablement d'environ 30 kg.",
+      cost: [5]
+  ),
+  reflexesSuperieurs(
+      caste: Caste.protecteur,
+      title: 'Réflexes supérieurs',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nLe personnage a subi un tel entraînement auprès des dragons qu'il a une parfaite Coordination musculaire et nerveuse. Il obtient un bonus de +1 sur tous ses dés d'Initiative et un +3 sur tous ses jets de Réaction.",
+      cost: [4]
+  ),
+  savoirAncestral(
+      caste: Caste.protecteur,
+      title: 'Savoir ancestral',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nL'homme-dragon a passé plusieurs semaines de méditation dans les profondeurs de Kor et a longtemps écouté les souvenirs des dragons aînés. Il obtient un bonus de +3 sur ses jets d'Histoire, Connaissance des dragons et Philosophie draconique.",
+      cost: [2]
+  ),
+  harmonieMagique(
+      caste: Caste.protecteur,
+      title: 'Harmonie magique',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nL'homme-dragon a tenté de dépasser le faible lien des mortels avec les énergies primordiales de Moryagorn pour accéder à une meilleure compréhension de la magie. Il obtient un bonus de +1 lors de l'utilisation de ses Sphères et diminue de moitié le temps d'apprentissage des sorts lorsque son maître est un dragon (c'est à dire presque toujours). De plus, la qualité de son sommeil ne peut être altérée et il regagne toujours l'intégralité de ses points de magie chaque nuit.",
+      cost: [5]
+  ),
+  resistanceMinerale(
+      caste: Caste.protecteur,
+      title: 'Résistance minérale',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nLe métabolisme de l'homme-dragon devient de plus en plus proche de celui des dragons et l'immunise à de nombreux dangers naturels. Il obtient un bonus systématique de +5 sur tout jet de soin (manuel ou magique) qui le prend pour cible. Il est immunisé aux maladies d'une virulence inférieure à 15 (bien qu'il puisse toujours la véhiculer). Il peut puiser dans ses réserves spirituelles pour reconstituer son corps et peut ainsi stopper une hémorragie en dépensant 5 points de magie (ce qui compte comme action complexe). Par contre, il ne peut plus être soigné par chirurgie à moins que le soigneur ne possède la Spécialisation : Anatomie draconique (ce qui est rarissime).",
+      cost: [6]
+  ),
+  sensSuperieur(
+      caste: Caste.protecteur,
+      title: 'Sens supérieur',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nL'homme-dragon s'est focalisé sur un de ses sens pour le décupler. Lors de tout jet impliquant ce sens particulier, il peut relancer un dé (et un seul) dont le résultat ne lui convient pas. Cette relance annule le résultat précédent qui ne peut être finalement choisi. Ce don peut être choisi plusieurs fois.",
+      cost: [4]
+  ),
+  instructionDraconique(
+      caste: Caste.protecteur,
+      title: 'Instruction draconique',
+      description: "Ce Privilège est réservé aux Hommes-dragons.\nLe personnage s'isole en terre draconique pour recevoir une instruction particulière de la part d'un dragon qui l'accepte. Ce don peut s'acquérir par avance pour le jour où le personnage voudra être instruit par un dragon (il devient alors une promesse du dragon de le prendre sous son aile pour un temps). Ce don est perdu lors de l'apprentissage, mais remplace le coût en points d'Expérience pour une Compétence (uniquement). Il peut être acquis plusieurs fois. Le meneur peut décider de réduire le coût de ce Don pour un personnage qui aurait glorieusement œuvré pour les dragons et qui serait ainsi récompensé.",
+      cost: [3]
   ),
 
   conviction(

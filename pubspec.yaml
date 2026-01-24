@@ -103,6 +103,7 @@ flutter:
     - assets/npc-categories.json
     - assets/npc-subcategories.json
     - assets/npcs-ldb2e.json
+    - assets/npcs-de-chair-et-d-ecailles.json
     - assets/npcs-la-colere-des-dragons.json
     - assets/npcs-les-compagnons-de-khy.json
     - assets/npcs-les-ecailles-de-brorne.json
