@@ -17,9 +17,9 @@ import 'utils/full_page_loading.dart';
 Future<void> _loadAssets() async {
   // TODO: some of those can throw storage exceptions, manage them
   await Place.init();
-  await ArmorModel.loadDefaultAssets();
-  await ShieldModel.loadDefaultAssets();
-  await WeaponModel.loadDefaultAssets();
+  await ArmorModel.init();
+  await ShieldModel.init();
+  await WeaponModel.init();
   await MagicSpell.loadDefaultAssets();
   await CreatureCategory.init();
   await Creature.init();

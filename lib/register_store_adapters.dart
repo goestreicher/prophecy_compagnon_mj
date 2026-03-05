@@ -1,3 +1,4 @@
+import "package:prophecy_compagnon_mj/classes/armor.dart";
 import "package:prophecy_compagnon_mj/classes/creature.dart";
 import "package:prophecy_compagnon_mj/classes/entity_instance.dart";
 import "package:prophecy_compagnon_mj/classes/exportable_binary_data.dart";
@@ -9,12 +10,18 @@ import "package:prophecy_compagnon_mj/classes/place.dart";
 import "package:prophecy_compagnon_mj/classes/place_map.dart";
 import "package:prophecy_compagnon_mj/classes/player_character.dart";
 import "package:prophecy_compagnon_mj/classes/scenario.dart";
+import "package:prophecy_compagnon_mj/classes/shield.dart";
 import "package:prophecy_compagnon_mj/classes/star.dart";
 import "package:prophecy_compagnon_mj/classes/table.dart";
+import "package:prophecy_compagnon_mj/classes/weapon.dart";
 
 import "classes/storage/storage.dart";
 
 void registerStoreAdapters() {
+  DataStorage.registerStoreAdapter(
+    ArmorStore().storeCategory(),
+    () => ArmorStore(),
+  );
   DataStorage.registerStoreAdapter(
     CreatureCategoryStore().storeCategory(),
     () => CreatureCategoryStore(),
@@ -92,6 +99,10 @@ void registerStoreAdapters() {
     () => ScenarioStore(),
   );
   DataStorage.registerStoreAdapter(
+    ShieldStore().storeCategory(),
+    () => ShieldStore(),
+  );
+  DataStorage.registerStoreAdapter(
     StarStore().storeCategory(),
     () => StarStore(),
   );
@@ -106,5 +117,9 @@ void registerStoreAdapters() {
   DataStorage.registerStoreAdapter(
     GameTableStore().storeCategory(),
     () => GameTableStore(),
+  );
+  DataStorage.registerStoreAdapter(
+    WeaponStore().storeCategory(),
+    () => WeaponStore(),
   );
 }

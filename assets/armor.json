@@ -15,7 +15,12 @@
     },
     "requirements": {},
     "protection": 2,
-    "penalty": 0
+    "penalty": 0,
+    "uuid": "5a763d11-21cf-4030-82c2-7358d80d7f01",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Fourrures",
@@ -33,7 +38,12 @@
     },
     "requirements": {},
     "protection": 5,
-    "penalty": 0
+    "penalty": 0,
+    "uuid": "9003250a-436b-44d3-8db3-e9cca2dcf5ad",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Cuir souple",
@@ -51,7 +61,12 @@
     },
     "requirements": {},
     "protection": 4,
-    "penalty": 0
+    "penalty": 0,
+    "uuid": "040a1389-27af-47a9-b9f2-1fd0e9659057",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Cuir clouté",
@@ -69,7 +84,12 @@
     },
     "requirements": {},
     "protection": 6,
-    "penalty": 0
+    "penalty": 0,
+    "uuid": "e98b9017-3590-432c-aa40-23fbffd84a23",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Cuir bouilli",
@@ -87,7 +107,12 @@
     },
     "requirements": {},
     "protection": 8,
-    "penalty": -2
+    "penalty": -2,
+    "uuid": "7d98e81b-8963-4197-ad02-37ff2dbc90bb",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Armure d'os et de corne",
@@ -107,7 +132,12 @@
       "force": 4
     },
     "protection": 12,
-    "penalty": -2
+    "penalty": -2,
+    "uuid": "4aa64277-5870-47d9-8afd-399f60a0d8dd",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Cotte légère",
@@ -127,7 +157,12 @@
       "force": 4
     },
     "protection": 10,
-    "penalty": 0
+    "penalty": 0,
+    "uuid": "c3dbf306-ef1f-4564-a75a-e02998755d7c",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Cotte de mailles",
@@ -148,7 +183,12 @@
       "resistance": 6
     },
     "protection": 15,
-    "penalty": -2
+    "penalty": -2,
+    "uuid": "45a9d318-fb08-46d5-b7b7-158e2ec584f5",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Armure d'anneaux",
@@ -169,7 +209,12 @@
       "resistance": 5
     },
     "protection": 16,
-    "penalty": -4
+    "penalty": -4,
+    "uuid": "5bd99732-041a-4b4c-bc02-3847276a9baa",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Brigandine",
@@ -190,7 +235,12 @@
       "resistance": 5
     },
     "protection": 17,
-    "penalty": -5
+    "penalty": -5,
+    "uuid": "7370a521-dba9-47d2-9804-c5a7e942b0a0",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Armure d'écailles",
@@ -211,7 +261,12 @@
       "resistance": 6
     },
     "protection": 20,
-    "penalty": -5
+    "penalty": -5,
+    "uuid": "fd2fc687-236c-4fe5-a21e-288082f9ecc0",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Armure de bois",
@@ -232,7 +287,12 @@
       "resistance": 3
     },
     "protection": 15,
-    "penalty": -6
+    "penalty": -6,
+    "uuid": "314fee76-3baf-400a-993f-d4544f954fab",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Armure de demi-plaques",
@@ -253,7 +313,12 @@
       "resistance": 5
     },
     "protection": 18,
-    "penalty": -6
+    "penalty": -6,
+    "uuid": "ea192510-a7e9-4996-8041-7919e40ee9b2",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Armure de lamelles",
@@ -274,7 +339,12 @@
       "resistance": 5
     },
     "protection": 22,
-    "penalty": -8
+    "penalty": -8,
+    "uuid": "ef292979-c5e0-47b1-8089-1fedac6e06bd",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Armure de plaques",
@@ -295,7 +365,12 @@
       "resistance": 7
     },
     "protection": 25,
-    "penalty": -10
+    "penalty": -10,
+    "uuid": "a5b04f24-f021-4fbc-8568-5cab18b9f82b",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Armure draconique",
@@ -316,6 +391,11 @@
       "resistance": 7
     },
     "protection": 27,
-    "penalty": -10
+    "penalty": -10,
+    "uuid": "c7df13d7-8f1c-4807-a1f9-92af6600e37d",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   }
 ]

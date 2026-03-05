@@ -730,7 +730,8 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
 
         var wm = WeaponModel(
             name: 'creature:$id:specialized:weapon:${weapon.id}',
-            id: 'creature:$id:specialized:weapon:${weapon.id}',
+            uuid: 'creature:$id:specialized:weapon:${weapon.id}',
+            source: ObjectSource.local,
             skill: spSkill,
             weight: 0.0,
             creationDifficulty: 0,

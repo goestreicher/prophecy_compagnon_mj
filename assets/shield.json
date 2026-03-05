@@ -20,6 +20,11 @@
     "damage": {
       "ability": "force",
       "dice": 1
+    },
+    "uuid": "cc9622db-9d2b-452c-9ec7-68c626a46588",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
     }
   },
   {
@@ -45,6 +50,11 @@
       "ability": "force",
       "add": 2,
       "dice": 1
+    },
+    "uuid": "72a147ca-90f1-4f15-824d-83ea6bcb1fe5",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
     }
   },
   {
@@ -70,6 +80,11 @@
       "ability": "force",
       "add": 4,
       "dice": 1
+    },
+    "uuid": "55c3f3f0-3e3f-44ed-88bc-be96465951b0",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
     }
   },
   {
@@ -95,6 +110,11 @@
       "ability": "force",
       "add": 5,
       "dice": 1
+    },
+    "uuid": "ca8ceb16-4d83-44ee-9eec-11fe90140a6e",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
     }
   },
   {
@@ -120,6 +140,11 @@
       "ability": "force",
       "add": 5,
       "dice": 1
+    },
+    "uuid": "ae0c0600-bdec-4453-a01c-06f737d9fd71",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
     }
   }
 ]

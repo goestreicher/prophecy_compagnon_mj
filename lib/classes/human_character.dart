@@ -239,7 +239,8 @@ class HumanCharacter extends EntityBase with MagicUser {
     );
     var wm = WeaponModel(
         name: 'Poings',
-        id: 'poings',
+        uuid: 'poings',
+        source: ObjectSource.local,
         skill: sk,
         weight: 0.0,
         creationDifficulty: 0,
@@ -269,7 +270,8 @@ class HumanCharacter extends EntityBase with MagicUser {
     );
     wm = WeaponModel(
         name: 'Pieds',
-        id: 'pieds',
+        uuid: 'pieds',
+        source: ObjectSource.local,
         skill: sk,
         weight: 0.0,
         creationDifficulty: 0,

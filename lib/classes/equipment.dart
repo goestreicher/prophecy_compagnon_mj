@@ -5,6 +5,7 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'entity/abilities.dart';
+import 'resource_base_class.dart';
 
 part 'equipment.g.dart';
 
@@ -89,9 +90,12 @@ class EquipmentAvailability {
       _$EquipmentAvailabilityToJson(this);
 }
 
-abstract class EquipmentModel {
+abstract class EquipmentModel extends ResourceBaseClass {
   EquipmentModel({
-    required this.name,
+    required this.uuid,
+    required super.name,
+    required super.source,
+    super.location,
     required this.weight,
     required this.creationDifficulty,
     required this.creationTime,
@@ -99,14 +103,14 @@ abstract class EquipmentModel {
     required this.cityAvailability,
   });
 
-  String get uuid;
-
-  String name;
+  String uuid;
   double weight;
   int creationDifficulty;
   int creationTime;
   EquipmentAvailability villageAvailability;
   EquipmentAvailability cityAvailability;
+
+  @override String get id => uuid;
 }
 
 abstract class Equipment {

@@ -49,6 +49,30 @@ class AttributeBasedCalculator {
     return (base + rnd).toDouble();
   }
 
+  @override
+  String toString() {
+    String ret = 'N/A';
+
+    if(static != null && static! > 0) {
+      ret = static.toString();
+    }
+    else if(ability != null) {
+      var ab = ability!.short;
+      var buffer = StringBuffer(multiply > 1
+          ? '(${ab}x$multiply)'
+          : ab);
+      if(add > 0) {
+        buffer.write(' + $add');
+      }
+      if(dice > 0) {
+        buffer.write(' + ${dice}D10');
+      }
+      ret = buffer.toString();
+    }
+
+    return ret;
+  }
+
   factory AttributeBasedCalculator.fromJson(Map<String, dynamic> json) =>
       _$AttributeBasedCalculatorFromJson(json);
 

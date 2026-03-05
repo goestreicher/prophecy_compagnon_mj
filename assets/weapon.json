@@ -15,11 +15,29 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 3 },
-    "initiative": { "melee": 0, "contact": 0 },
-    "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range_effective": { "static": 0.8 },
-    "range_max": { "static": 0.8 }
+    "requirements": {
+      "force": 3
+    },
+    "initiative": {
+      "melee": 0,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 8,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.8
+    },
+    "range_max": {
+      "static": 0.8
+    },
+    "uuid": "e37feb85-529b-4cd5-bece-f3d9a77bae40",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Épée vulgaire",
@@ -37,11 +55,29 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 4 },
-    "initiative": { "melee": 1, "contact": 0 },
-    "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 }
+    "requirements": {
+      "force": 4
+    },
+    "initiative": {
+      "melee": 1,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 10,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
+    "uuid": "20ee308f-420b-4a4c-99ac-5e70347523f8",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Épée Longue",
@@ -59,11 +95,29 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 5 },
-    "initiative": { "melee": 2, "contact": -2 },
-    "damage": { "ability": "force", "add": 12, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 5
+    },
+    "initiative": {
+      "melee": 2,
+      "contact": -2
+    },
+    "damage": {
+      "ability": "force",
+      "add": 12,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "b1f26761-d126-41a4-a4c2-f1a3ac6f3b82",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Épée large",
@@ -81,11 +135,29 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 5 },
-    "initiative": { "melee": 0, "contact": -2 },
-    "damage": { "ability": "force", "add": 14, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 }
+    "requirements": {
+      "force": 5
+    },
+    "initiative": {
+      "melee": 0,
+      "contact": -2
+    },
+    "damage": {
+      "ability": "force",
+      "add": 14,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
+    "uuid": "f59afe1b-895c-4233-897e-8af90a2524c7",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Épée de duel",
@@ -103,11 +175,24 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 4 },
-    "initiative": { "melee": 2, "contact": 0 },
-    "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 },
+    "requirements": {
+      "force": 4
+    },
+    "initiative": {
+      "melee": 2,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 8,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
     "special": [
       {
         "description": "Perforation - Contre les armures légères, le jet d'attaque peut s'effectuer avec l'Attribut Manuel. Si l'attaque porte, l'armure est divisée par deux. Pour un NR et plus, l'armure est ignorée.",
@@ -117,7 +202,12 @@
           "value": 2
         }
       }
-    ]
+    ],
+    "uuid": "62b664bc-aa90-42d1-86be-e75800747e1a",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Sabre",
@@ -135,11 +225,30 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 3, "coordination": 4 },
-    "initiative": { "melee": 1, "contact": 0 },
-    "damage": { "ability": "force", "add": 9, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 }
+    "requirements": {
+      "force": 3,
+      "coordination": 4
+    },
+    "initiative": {
+      "melee": 1,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 9,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
+    "uuid": "9523aba6-3c0b-460f-8fc8-f6beaa447757",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Fauchard",
@@ -157,11 +266,30 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": {"force": 4, "coordination": 4},
-    "initiative": { "melee": 1, "contact": 0 },
-    "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 }
+    "requirements": {
+      "force": 4,
+      "coordination": 4
+    },
+    "initiative": {
+      "melee": 1,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 11,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
+    "uuid": "f054bc01-60a5-4c4b-accb-66bbd31760b6",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Cimeterre",
@@ -179,11 +307,30 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": {"force": 5, "coordination": 4},
-    "initiative": { "melee": 1, "contact": -1 },
-    "damage": { "ability": "force", "add": 13, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 }
+    "requirements": {
+      "force": 5,
+      "coordination": 4
+    },
+    "initiative": {
+      "melee": 1,
+      "contact": -1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 13,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
+    "uuid": "1ca0e6f3-6d6c-4279-aefe-275b518752f2",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Épée batarde",
@@ -201,11 +348,29 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5 },
-    "initiative": { "melee": 2 },
-    "damage": { "ability": "force", "multiply": 2, "add": 8, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 5
+    },
+    "initiative": {
+      "melee": 2
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 8,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "bddb8599-83f2-44d0-b0a1-d30cb6914983",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Épée à deux mains",
@@ -223,11 +388,29 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6 },
-    "initiative": { "melee": 1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 11, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 6
+    },
+    "initiative": {
+      "melee": 1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 11,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "b9a0318b-95bf-49cd-9e7d-ab0bbb68ebb9",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Cimeterre à deux mains",
@@ -245,11 +428,29 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5 },
-    "initiative": { "melee": 1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 13, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 5
+    },
+    "initiative": {
+      "melee": 1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 13,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "248cc872-1739-43de-ad50-2e5dc17845e0",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Glaive zangarien",
@@ -267,13 +468,31 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 7, "coordination": 5 },
-    "initiative": { "melee": 1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 12, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 7,
+      "coordination": 5
+    },
+    "initiative": {
+      "melee": 1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 12,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "92cdf534-725f-46fc-8511-1bed17410625",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
-
   {
     "name": "Hachette",
     "skill": "armesDeChoc",
@@ -290,11 +509,30 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 4, "coordination": 4 },
-    "initiative": { "melee": -1, "contact": 1 },
-    "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range_effective": { "static": 0.5 },
-    "range_max": { "static": 0.5 }
+    "requirements": {
+      "force": 4,
+      "coordination": 4
+    },
+    "initiative": {
+      "melee": -1,
+      "contact": 1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 10,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.5
+    },
+    "range_max": {
+      "static": 0.5
+    },
+    "uuid": "8b2877a5-8dc1-464d-82f5-e1ee7bf5e85a",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Hache",
@@ -312,11 +550,29 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 5, "coordination": 5 },
-    "initiative": { "melee": -1 },
-    "damage": { "ability": "force", "add": 15, "dice": 1 },
-    "range_effective": { "static": 0.8 },
-    "range_max": { "static": 0.8 }
+    "requirements": {
+      "force": 5,
+      "coordination": 5
+    },
+    "initiative": {
+      "melee": -1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 15,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.8
+    },
+    "range_max": {
+      "static": 0.8
+    },
+    "uuid": "6d17ac5c-8d6e-4bb6-bf5d-f68700ab1ec2",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Hache double",
@@ -334,11 +590,29 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 5, "coordination": 6 },
-    "initiative": { "melee": 0 },
-    "damage": { "ability": "force", "add": 15, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 }
+    "requirements": {
+      "force": 5,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 15,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
+    "uuid": "f5e9bb82-ddd5-4cc1-9f29-ea05c7a864c6",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Pic de guerre",
@@ -356,11 +630,25 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 3, "coordination": 6 },
-    "initiative": { "melee": -1, "contact": 1 },
-    "damage": { "ability": "force", "add": 6, "dice": 1 },
-    "range_effective": { "static": 0.8 },
-    "range_max": { "static": 0.8 },
+    "requirements": {
+      "force": 3,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": -1,
+      "contact": 1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 6,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.8
+    },
+    "range_max": {
+      "static": 0.8
+    },
     "special": [
       {
         "description": "Armures divisées par 2",
@@ -369,7 +657,12 @@
           "value": 2
         }
       }
-    ]
+    ],
+    "uuid": "6c5a8881-e183-4bc6-96db-8b5a237e784d",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Bec de corbin",
@@ -387,11 +680,24 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 5, "coordination": 7 },
-    "initiative": { "melee": -1 },
-    "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 },
+    "requirements": {
+      "force": 5,
+      "coordination": 7
+    },
+    "initiative": {
+      "melee": -1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 10,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
     "special": [
       {
         "description": "Armures divisées par 2",
@@ -400,7 +706,12 @@
           "value": 2
         }
       }
-    ]
+    ],
+    "uuid": "d398298a-b9cf-4a51-b10c-7b77bd681c85",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Hache de justice",
@@ -418,11 +729,30 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6, "coordination": 4 },
-    "initiative": { "melee": -2 },
-    "damage": { "ability": "force", "multiply": 2, "add": 15, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 6,
+      "coordination": 4
+    },
+    "initiative": {
+      "melee": -2
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 15,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "d655c59c-4fa7-4cf4-8ff5-8189587668bf",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Hache à deux mains",
@@ -440,11 +770,30 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6, "coordination": 6 },
-    "initiative": { "melee": -2 },
-    "damage": { "ability": "force", "multiply": 2, "add": 16, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 6,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": -2
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 16,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "7c99e929-fa99-4004-a335-92c686e97467",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Hache double à deux mains",
@@ -462,11 +811,30 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 7, "coordination": 6 },
-    "initiative": { "melee": -1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 17, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 7,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": -1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 17,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "dd35f6aa-f042-4674-b280-48d3cf6c4659",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Pioche de guerre",
@@ -484,11 +852,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6, "coordination": 6 },
-    "initiative": { "melee": -1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 12, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 },
+    "requirements": {
+      "force": 6,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": -1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 12,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
     "special": [
       {
         "description": "Armures divisées par 2",
@@ -497,9 +879,13 @@
           "value": 2
         }
       }
-    ]
+    ],
+    "uuid": "afb68681-9fd6-47be-a20e-61d7b864a6e4",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
-
   {
     "name": "Gourdin",
     "skill": "armesContondantes",
@@ -516,11 +902,24 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 3 },
-    "initiative": { "melee": 0, "contact": 0 },
-    "damage": { "ability": "force", "multiply": 2, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 },
+    "requirements": {
+      "force": 3
+    },
+    "initiative": {
+      "melee": 0,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
     "special": [
       {
         "description": "+10 pour assommer",
@@ -530,7 +929,12 @@
           "value": 10
         }
       }
-    ]
+    ],
+    "uuid": "c0aaa449-5ed7-44ef-af3a-7e69368a19e4",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Gourdin ferré",
@@ -548,11 +952,25 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 4 },
-    "initiative": { "melee": -1, "contact": 0 },
-    "damage": { "ability": "force", "multiply": 2, "add": 2, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 },
+    "requirements": {
+      "force": 4
+    },
+    "initiative": {
+      "melee": -1,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
     "special": [
       {
         "description": "+5 pour assommer",
@@ -562,7 +980,12 @@
           "value": 5
         }
       }
-    ]
+    ],
+    "uuid": "b43c66e0-2f54-4570-bf23-72d800161ac4",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Masse d'armes",
@@ -580,11 +1003,30 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 4 },
-    "initiative": { "melee": 0, "contact": -1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 4, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 }
+    "requirements": {
+      "force": 4
+    },
+    "initiative": {
+      "melee": 0,
+      "contact": -1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 4,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
+    "uuid": "421613ea-9b84-488e-91e7-f21faadb6997",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Masse à ailettes",
@@ -602,11 +1044,31 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 5, "coordination": 5 },
-    "initiative": { "melee": 0, "contact": -1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 6, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 }
+    "requirements": {
+      "force": 5,
+      "coordination": 5
+    },
+    "initiative": {
+      "melee": 0,
+      "contact": -1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 6,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
+    "uuid": "cc93025a-5a7d-48d0-8ae0-e283aae40e75",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Masse à pointes",
@@ -624,11 +1086,30 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 6, "coordination": 6 },
-    "initiative": { "melee": -1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 8, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 }
+    "requirements": {
+      "force": 6,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": -1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 8,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
+    "uuid": "ef54a226-a09d-4384-bda6-05a0de55d28e",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Massue ferrée",
@@ -646,11 +1127,29 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5 },
-    "initiative": { "melee": 0 },
-    "damage": { "ability": "force", "multiply": 3, "add": 5, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 5
+    },
+    "initiative": {
+      "melee": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 3,
+      "add": 5,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "520bba17-6d11-4865-8dea-5bbea8408437",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Masse à deux mains",
@@ -668,11 +1167,30 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6, "coordination": 6 },
-    "initiative": { "melee": -1 },
-    "damage": { "ability": "force", "multiply": 3, "add": 7, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 }
+    "requirements": {
+      "force": 6,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": -1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 3,
+      "add": 7,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
+    "uuid": "d4c4fd38-7cc4-429f-a301-d94cb31dad28",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Marteau à deux mains",
@@ -690,18 +1208,35 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 7 },
-    "initiative": { "melee": -3 },
-    "damage": { "ability": "force", "multiply": 3, "add": 9, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 },
+    "requirements": {
+      "force": 7
+    },
+    "initiative": {
+      "melee": -3
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 3,
+      "add": 9,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
     "special": [
       {
         "description": "Permet de renverser en mêlée"
       }
-    ]
+    ],
+    "uuid": "99ec0224-139b-4925-9003-af3b6623ee53",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
-
   {
     "name": "Fouet",
     "skill": "armesArticulees",
@@ -718,11 +1253,21 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "coordination": 7 },
-    "initiative": { "melee": 3 },
-    "damage": { "ability": "force" },
-    "range_effective": { "static": 2.0 },
-    "range_max": { "static": 2.0 },
+    "requirements": {
+      "coordination": 7
+    },
+    "initiative": {
+      "melee": 3
+    },
+    "damage": {
+      "ability": "force"
+    },
+    "range_effective": {
+      "static": 2.0
+    },
+    "range_max": {
+      "static": 2.0
+    },
     "special": [
       {
         "description": "Ne peut parer ou être parée"
@@ -730,7 +1275,12 @@
       {
         "description": "Attaque d'entravement"
       }
-    ]
+    ],
+    "uuid": "17e147aa-742a-4a00-bd5c-710d05e474da",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Chaîne",
@@ -748,11 +1298,23 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 4, "coordination": 7 },
-    "initiative": { "melee": 1 },
-    "damage": { "ability": "force", "dice": 2 },
-    "range_effective": { "static": 2.0 },
-    "range_max": { "static": 2.0 },
+    "requirements": {
+      "force": 4,
+      "coordination": 7
+    },
+    "initiative": {
+      "melee": 1
+    },
+    "damage": {
+      "ability": "force",
+      "dice": 2
+    },
+    "range_effective": {
+      "static": 2.0
+    },
+    "range_max": {
+      "static": 2.0
+    },
     "special": [
       {
         "description": "Ne peut parer ou être parée"
@@ -760,7 +1322,12 @@
       {
         "description": "Attaque d'entravement"
       }
-    ]
+    ],
+    "uuid": "66deaff1-d1cd-4b0d-a2a0-8f2fe9f030dc",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Fléau léger",
@@ -778,11 +1345,25 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 4, "coordination": 6 },
-    "initiative": { "melee": 1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 1, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 },
+    "requirements": {
+      "force": 4,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": 1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 1,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -791,7 +1372,12 @@
           "value": 5
         }
       }
-    ]
+    ],
+    "uuid": "8558c61c-c03c-4299-8534-987e72add65a",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Fléau triple",
@@ -809,11 +1395,25 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 6, "coordination": 7 },
-    "initiative": { "melee": 1 },
-    "damage": { "ability": "force", "multiply": 2, "add": 3, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 },
+    "requirements": {
+      "force": 6,
+      "coordination": 7
+    },
+    "initiative": {
+      "melee": 1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 3,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
     "special": [
       {
         "description": "-8 à la parade de l'adversaire",
@@ -822,7 +1422,12 @@
           "value": 8
         }
       }
-    ]
+    ],
+    "uuid": "be835e29-489d-435a-9eb7-9f57db77fb9a",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Fléau lourd",
@@ -840,11 +1445,25 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 6, "coordination": 6 },
-    "initiative": { "melee": 0 },
-    "damage": { "ability": "force", "multiply": 2, "add": 5, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 },
+    "requirements": {
+      "force": 6,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 5,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -853,7 +1472,12 @@
           "value": 5
         }
       }
-    ]
+    ],
+    "uuid": "774a8ddf-7624-4b80-bdba-44f71bc39e8f",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Fléau paysan",
@@ -871,11 +1495,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 5 },
-    "initiative": { "melee": 0 },
-    "damage": { "ability": "force", "multiply": 2, "add": 2, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 },
+    "requirements": {
+      "force": 5,
+      "coordination": 5
+    },
+    "initiative": {
+      "melee": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
     "special": [
       {
         "description": "-3 à la parade de l'adversaire",
@@ -892,7 +1530,12 @@
           "value": 5
         }
       }
-    ]
+    ],
+    "uuid": "b0791dd4-13ce-45a1-8275-73544989d984",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Fléau à deux mains",
@@ -910,11 +1553,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6, "coordination": 6 },
-    "initiative": { "melee": -1 },
-    "damage": { "ability": "force", "multiply": 3, "add": 5, "dice": 1 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 },
+    "requirements": {
+      "force": 6,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": -1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 3,
+      "add": 5,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -923,7 +1580,12 @@
           "value": 5
         }
       }
-    ]
+    ],
+    "uuid": "affae94e-1014-4adb-9a99-66d14a2e11a9",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Poing de Brorne",
@@ -941,11 +1603,24 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 7, "coordination": 7 },
-    "initiative": { "melee": -2 },
-    "damage": { "ability": "force", "multiply": 3, "dice": 2 },
-    "range_effective": { "static": 1.2 },
-    "range_max": { "static": 1.2 },
+    "requirements": {
+      "force": 7,
+      "coordination": 7
+    },
+    "initiative": {
+      "melee": -2
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 3,
+      "dice": 2
+    },
+    "range_effective": {
+      "static": 1.2
+    },
+    "range_max": {
+      "static": 1.2
+    },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -957,9 +1632,13 @@
       {
         "description": "Permet de renverser en mêlée"
       }
-    ]
+    ],
+    "uuid": "dc864056-a3a9-4ca7-9017-9c0f4c690ea1",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
-
   {
     "name": "Double épée",
     "skill": "armesDoubles",
@@ -976,16 +1655,35 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "force": 6, "coordination": 7 },
-    "initiative": { "melee": 2, "contact": -2 },
-    "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range_effective": { "static": 1.0 },
-    "range_max": { "static": 1.0 },
+    "requirements": {
+      "force": 6,
+      "coordination": 7
+    },
+    "initiative": {
+      "melee": 2,
+      "contact": -2
+    },
+    "damage": {
+      "ability": "force",
+      "add": 10,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.0
+    },
+    "range_max": {
+      "static": 1.0
+    },
     "special": [
       {
         "description": "Enchaînement - Permet d'obtenir, une fois par tour, une attaque gratuite automatique sur une attaque avec deux NR"
       }
-    ]
+    ],
+    "uuid": "bbdf1bf9-9fd5-4147-a1a3-1a92b9cfaeaf",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Lance-sabre",
@@ -1003,11 +1701,29 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 6 },
-    "initiative": { "melee": 2 },
-    "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range_effective": { "static": 1.5 },
-    "range_max": { "static": 1.5 }
+    "requirements": {
+      "force": 5,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": 2
+    },
+    "damage": {
+      "ability": "force",
+      "add": 11,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.5
+    },
+    "range_max": {
+      "static": 1.5
+    },
+    "uuid": "3a684543-fd1f-4b45-ad25-923ceb281f46",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Bâton de combat",
@@ -1025,11 +1741,24 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "coordination": 3 },
-    "initiative": { "melee": 1, "contact": 0 },
-    "damage": { "ability": "force", "multiply": 2, "dice": 1 },
-    "range_effective": { "static": 1.5 },
-    "range_max": { "static": 1.5 },
+    "requirements": {
+      "coordination": 3
+    },
+    "initiative": {
+      "melee": 1,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.5
+    },
+    "range_max": {
+      "static": 1.5
+    },
     "special": [
       {
         "description": "+5 pour assommer",
@@ -1039,7 +1768,12 @@
           "value": 5
         }
       }
-    ]
+    ],
+    "uuid": "f3ca7d1d-bbae-4f8d-b818-b82f637fdc23",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Shaaduk't",
@@ -1057,11 +1791,26 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 6 },
-    "initiative": { "melee": 2, "contact": 0 },
-    "damage": { "ability": "force", "multiply": 2, "add": 4, "dice": 1 },
-    "range_effective": { "static": 1.5 },
-    "range_max": { "static": 1.5 },
+    "requirements": {
+      "force": 5,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": 2,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 4,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.5
+    },
+    "range_max": {
+      "static": 1.5
+    },
     "special": [
       {
         "description": "+5 pour assommer",
@@ -1079,7 +1828,12 @@
           "value": 5
         }
       }
-    ]
+    ],
+    "uuid": "e6fd17f2-bb8d-4559-8525-d9c15536325f",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Nirga'k",
@@ -1097,16 +1851,35 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 6 },
-    "initiative": { "melee": 0 },
-    "damage": { "ability": "force", "multiply": 2, "add": 6, "dice": 1 },
-    "range_effective": { "static": 1.5 },
-    "range_max": { "static": 1.5 },
+    "requirements": {
+      "force": 5,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 6,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.5
+    },
+    "range_max": {
+      "static": 1.5
+    },
     "special": [
       {
         "description": "Enchaînement - Permet d'obtenir, une fois par tour, une attaque gratuite automatique sur une attaque avec deux NR"
       }
-    ]
+    ],
+    "uuid": "f41d474c-ae8a-4a71-bbb8-6e5929731258",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Croc à chaîne",
@@ -1124,11 +1897,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 7 },
-    "initiative": { "melee": 1, "contact": 0 },
-    "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range_effective": { "static": 2.0 },
-    "range_max": { "static": 2.0 },
+    "requirements": {
+      "force": 5,
+      "coordination": 7
+    },
+    "initiative": {
+      "melee": 1,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 11,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 2.0
+    },
+    "range_max": {
+      "static": 2.0
+    },
     "special": [
       {
         "description": "Attaque d'entravement"
@@ -1140,7 +1927,12 @@
           "value": 3
         }
       }
-    ]
+    ],
+    "uuid": "be2a39c3-1e71-45fd-9ce9-2a2a53013c4e",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Double chaîne",
@@ -1158,11 +1950,24 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 8 },
-    "initiative": { "melee": 2 },
-    "damage": { "ability": "force", "multiply": 2, "dice": 2 },
-    "range_effective": { "static": 2.0 },
-    "range_max": { "static": 2.0 },
+    "requirements": {
+      "force": 5,
+      "coordination": 8
+    },
+    "initiative": {
+      "melee": 2
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "dice": 2
+    },
+    "range_effective": {
+      "static": 2.0
+    },
+    "range_max": {
+      "static": 2.0
+    },
     "special": [
       {
         "description": "Pas de dégâts contre les armures lourdes",
@@ -1178,7 +1983,12 @@
           "value": 8
         }
       }
-    ]
+    ],
+    "uuid": "4acea0cd-62bf-49ce-a9f8-4c7c666d0770",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Double fléau (Fléau d'harmonie)",
@@ -1196,11 +2006,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6, "coordination": 7 },
-    "initiative": { "melee": 2 },
-    "damage": { "ability": "force", "multiply": 3, "add": 4, "dice": 1 },
-    "range_effective": { "static": 1.5 },
-    "range_max": { "static": 1.5 },
+    "requirements": {
+      "force": 6,
+      "coordination": 7
+    },
+    "initiative": {
+      "melee": 2
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 3,
+      "add": 4,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.5
+    },
+    "range_max": {
+      "static": 1.5
+    },
     "special": [
       {
         "description": "-5 à la parade de l'adversaire",
@@ -1209,9 +2033,13 @@
           "value": 5
         }
       }
-    ]
+    ],
+    "uuid": "e6cb7ebc-c16c-48d5-b6d0-6da65f80a411",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
-
   {
     "name": "Poing",
     "skill": "corpsACorps",
@@ -1229,10 +2057,20 @@
     "body_part": "hand",
     "hands": 0,
     "requirements": {},
-    "initiative": { "melee": 0, "contact": 2 },
-    "damage": { "ability": "force", "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 },
+    "initiative": {
+      "melee": 0,
+      "contact": 2
+    },
+    "damage": {
+      "ability": "force",
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
     "special": [
       {
         "description": "+3 pour assommer",
@@ -1242,7 +2080,12 @@
           "value": 3
         }
       }
-    ]
+    ],
+    "uuid": "3c7becf9-3a73-4bf1-b2d1-94fd1f814b04",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Pieds",
@@ -1261,10 +2104,21 @@
     "body_part": "hand",
     "hands": 0,
     "requirements": {},
-    "initiative": { "melee": 0, "contact": 1 },
-    "damage": { "ability": "force", "add": 2, "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 },
+    "initiative": {
+      "melee": 0,
+      "contact": 1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
     "special": [
       {
         "description": "+3 pour assommer",
@@ -1274,7 +2128,12 @@
           "value": 3
         }
       }
-    ]
+    ],
+    "uuid": "1f99c4fc-0391-4508-9b7b-37c48a829042",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Gant clouté",
@@ -1293,10 +2152,21 @@
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
-    "initiative": { "melee": 0, "contact": 1 },
-    "damage": { "ability": "force", "add": 1, "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 },
+    "initiative": {
+      "melee": 0,
+      "contact": 1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 1,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
     "special": [
       {
         "description": "+3 pour assommer",
@@ -1306,7 +2176,12 @@
           "value": 3
         }
       }
-    ]
+    ],
+    "uuid": "920cf019-75b8-4790-8bc8-123a9b74c9f4",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Gant de métal",
@@ -1325,10 +2200,21 @@
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
-    "initiative": { "melee": 0, "contact": 1 },
-    "damage": { "ability": "force", "add": 2, "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 },
+    "initiative": {
+      "melee": 0,
+      "contact": 1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
     "special": [
       {
         "description": "+3 pour assommer",
@@ -1338,7 +2224,12 @@
           "value": 3
         }
       }
-    ]
+    ],
+    "uuid": "f417c94e-ee3c-4d51-858b-f276569a572c",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Cestus",
@@ -1357,10 +2248,26 @@
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
-    "initiative": { "melee": 0, "contact": 2 },
-    "damage": { "ability": "force", "add": 4, "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 }
+    "initiative": {
+      "melee": 0,
+      "contact": 2
+    },
+    "damage": {
+      "ability": "force",
+      "add": 4,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
+    "uuid": "f03db636-6c98-406a-a4f3-faf8136d9a42",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Serpe",
@@ -1379,10 +2286,26 @@
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
-    "initiative": { "melee": -1, "contact": -1 },
-    "damage": { "ability": "force", "add": 5, "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 }
+    "initiative": {
+      "melee": -1,
+      "contact": -1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 5,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
+    "uuid": "d256b905-c099-47c3-bc92-430498f0b54e",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Couteau",
@@ -1401,10 +2324,26 @@
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
-    "initiative": { "melee": 0, "contact": 1 },
-    "damage": { "ability": "force", "add": 3, "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 }
+    "initiative": {
+      "melee": 0,
+      "contact": 1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 3,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
+    "uuid": "16650fb0-4503-47e2-9ac1-d00a651733cb",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Dague",
@@ -1423,10 +2362,26 @@
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
-    "initiative": { "melee": 0, "contact": 1 },
-    "damage": { "ability": "force", "add": 6, "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 }
+    "initiative": {
+      "melee": 0,
+      "contact": 1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 6,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
+    "uuid": "cde463bf-bc63-4f88-93db-49127d0b7546",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Dague main gauche",
@@ -1445,10 +2400,21 @@
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
-    "initiative": { "melee": 0, "contact": 0 },
-    "damage": { "ability": "force", "add": 5, "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 },
+    "initiative": {
+      "melee": 0,
+      "contact": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 5,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
     "special": [
       {
         "description": "+3 à la parade contre les armes tranchantes à une main",
@@ -1459,7 +2425,12 @@
           "handiness": 1
         }
       }
-    ]
+    ],
+    "uuid": "1e10b678-7bce-4553-8043-fdf975cb7a03",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Katar",
@@ -1478,10 +2449,21 @@
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
-    "initiative": { "melee": -1, "contact": 2 },
-    "damage": { "ability": "force", "add": 5, "dice": 1 },
-    "range_effective": { "static": 0.2 },
-    "range_max": { "static": 0.2 },
+    "initiative": {
+      "melee": -1,
+      "contact": 2
+    },
+    "damage": {
+      "ability": "force",
+      "add": 5,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 0.2
+    },
+    "range_max": {
+      "static": 0.2
+    },
     "special": [
       {
         "description": "Armures légères divisées par 2",
@@ -1491,9 +2473,13 @@
           "value": 2
         }
       }
-    ]
+    ],
+    "uuid": "9dccd8bb-1307-46db-9ae5-d08a0046eaf5",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
-
   {
     "name": "Lance courte",
     "skill": "armesDHast",
@@ -1510,11 +2496,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 3, "coordination": 3 },
-    "initiative": { "melee": 0, "distance": 3 },
-    "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range_effective": { "static": 1.8 },
-    "range_max": { "static": 1.8 },
+    "requirements": {
+      "force": 3,
+      "coordination": 3
+    },
+    "initiative": {
+      "melee": 0,
+      "distance": 3
+    },
+    "damage": {
+      "ability": "force",
+      "add": 8,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.8
+    },
+    "range_max": {
+      "static": 1.8
+    },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1524,7 +2524,12 @@
           "value": 3
         }
       }
-    ]
+    ],
+    "uuid": "144b0679-575f-4373-9b30-2be59cb66b69",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Lance",
@@ -1542,11 +2547,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 4, "coordination": 5 },
-    "initiative": { "melee": 0, "distance": 5 },
-    "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range_effective": { "static": 2.2 },
-    "range_max": { "static": 2.2 },
+    "requirements": {
+      "force": 4,
+      "coordination": 5
+    },
+    "initiative": {
+      "melee": 0,
+      "distance": 5
+    },
+    "damage": {
+      "ability": "force",
+      "add": 10,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 2.2
+    },
+    "range_max": {
+      "static": 2.2
+    },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1559,7 +2578,12 @@
       {
         "description": "Contre-charge - Les dommages de cette arme sont augmentés de 15 si elle est utilisée pour contrer une charge de cavalerie."
       }
-    ]
+    ],
+    "uuid": "5f926ee7-dc1f-414b-bde1-c695d9ac2c66",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Épieu",
@@ -1577,11 +2601,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 4 },
-    "initiative": { "melee": 0, "distance": 1 },
-    "damage": { "ability": "force", "add": 12, "dice": 1 },
-    "range_effective": { "static": 2.2 },
-    "range_max": { "static": 2.2 },
+    "requirements": {
+      "force": 5,
+      "coordination": 4
+    },
+    "initiative": {
+      "melee": 0,
+      "distance": 1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 12,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 2.2
+    },
+    "range_max": {
+      "static": 2.2
+    },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1594,7 +2632,12 @@
       {
         "description": "Contre-charge - Les dommages de cette arme sont augmentés de 15 si elle est utilisée pour contrer une charge de cavalerie."
       }
-    ]
+    ],
+    "uuid": "a8e937c1-ac91-4a58-9d1a-3898acefc163",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Vouge",
@@ -1612,11 +2655,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 4 },
-    "initiative": { "melee": 0, "distance": 3 },
-    "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range_effective": { "static": 2.2 },
-    "range_max": { "static": 2.2 },
+    "requirements": {
+      "force": 5,
+      "coordination": 4
+    },
+    "initiative": {
+      "melee": 0,
+      "distance": 3
+    },
+    "damage": {
+      "ability": "force",
+      "add": 11,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 2.2
+    },
+    "range_max": {
+      "static": 2.2
+    },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1629,7 +2686,12 @@
       {
         "description": "Contre-charge - Les dommages de cette arme sont augmentés de 15 si elle est utilisée pour contrer une charge de cavalerie."
       }
-    ]
+    ],
+    "uuid": "c1a51b5b-62d6-430b-bbcf-16c763042d00",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Hallebarde",
@@ -1647,11 +2709,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 6 },
-    "initiative": { "melee": 0, "distance": 3 },
-    "damage": { "ability": "force", "add": 11, "dice": 1 },
-    "range_effective": { "static": 2.2 },
-    "range_max": { "static": 2.2 },
+    "requirements": {
+      "force": 5,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": 0,
+      "distance": 3
+    },
+    "damage": {
+      "ability": "force",
+      "add": 11,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 2.2
+    },
+    "range_max": {
+      "static": 2.2
+    },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1664,7 +2740,12 @@
       {
         "description": "Permet de déséquilibrer en mêlée."
       }
-    ]
+    ],
+    "uuid": "a2dafa9e-95fb-4490-9fad-0eae0a58dfdc",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Trident",
@@ -1682,11 +2763,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "coordination": 4 },
-    "initiative": { "melee": 0, "distance": 1 },
-    "damage": { "ability": "force", "add": 14, "dice": 1 },
-    "range_effective": { "static": 2.2 },
-    "range_max": { "static": 2.2 },
+    "requirements": {
+      "force": 5,
+      "coordination": 4
+    },
+    "initiative": {
+      "melee": 0,
+      "distance": 1
+    },
+    "damage": {
+      "ability": "force",
+      "add": 14,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 2.2
+    },
+    "range_max": {
+      "static": 2.2
+    },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1696,7 +2791,12 @@
           "value": 3
         }
       }
-    ]
+    ],
+    "uuid": "013b2b01-f3be-4892-b1d5-79e6a2e58421",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Pique",
@@ -1714,11 +2814,25 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6, "coordination": 5 },
-    "initiative": { "melee": 0, "distance": 10 },
-    "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range_effective": { "static": 2.5 },
-    "range_max": { "static": 2.5 },
+    "requirements": {
+      "force": 6,
+      "coordination": 5
+    },
+    "initiative": {
+      "melee": 0,
+      "distance": 10
+    },
+    "damage": {
+      "ability": "force",
+      "add": 10,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 2.5
+    },
+    "range_max": {
+      "static": 2.5
+    },
     "special": [
       {
         "description": "Maintien à distance",
@@ -1731,9 +2845,13 @@
       {
         "description": "Une fois le premier coup porté, la pique doit être lâchée à cause de son encombrement."
       }
-    ]
+    ],
+    "uuid": "c8d6d242-4065-4564-83a2-2366f5a63634",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
-
   {
     "name": "Bolas",
     "skill": "armesDeJet",
@@ -1750,11 +2868,24 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "perception": 3, "coordination": 6 },
-    "initiative": { "ranged": 0 },
-    "damage": { "static": 0 },
-    "range_effective": { "ability": "force", "multiply": 2 },
-    "range_max": { "ability": "force", "multiply": 4 },
+    "requirements": {
+      "perception": 3,
+      "coordination": 6
+    },
+    "initiative": {
+      "ranged": 0
+    },
+    "damage": {
+      "static": 0
+    },
+    "range_effective": {
+      "ability": "force",
+      "multiply": 2
+    },
+    "range_max": {
+      "ability": "force",
+      "multiply": 4
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1763,7 +2894,12 @@
       {
         "description": "Attaque d'entravement."
       }
-    ]
+    ],
+    "uuid": "84016510-20aa-4f2d-a8f1-5d1d882abf6a",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Pierre",
@@ -1782,16 +2918,31 @@
     "body_part": "hand",
     "hands": 1,
     "requirements": {},
-    "initiative": { "ranged": 3 },
-    "damage": { "ability": "force", "dice": 1 },
-    "range_effective": { "ability": "force" },
-    "range_max": { "ability": "force", "multiply": 2 },
+    "initiative": {
+      "ranged": 3
+    },
+    "damage": {
+      "ability": "force",
+      "dice": 1
+    },
+    "range_effective": {
+      "ability": "force"
+    },
+    "range_max": {
+      "ability": "force",
+      "multiply": 2
+    },
     "special": [
       {
         "description": "Ne peut pas se parer (sauf bouclier).",
         "type": "opponent_no_parry_save_shield"
       }
-    ]
+    ],
+    "uuid": "3bfd23dc-4416-4bf9-8141-742b064a06c4",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Dards",
@@ -1809,11 +2960,25 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "perception": 3, "coordination": 4 },
-    "initiative": { "ranged": 4 },
-    "damage": { "ability": "force", "dice": 1 },
-    "range_effective": { "ability": "force", "multiply": 2 },
-    "range_max": { "ability": "force", "multiply": 3 },
+    "requirements": {
+      "perception": 3,
+      "coordination": 4
+    },
+    "initiative": {
+      "ranged": 4
+    },
+    "damage": {
+      "ability": "force",
+      "dice": 1
+    },
+    "range_effective": {
+      "ability": "force",
+      "multiply": 2
+    },
+    "range_max": {
+      "ability": "force",
+      "multiply": 3
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1823,7 +2988,12 @@
         "description": "Ne peut pas s'esquiver.",
         "type": "opponent_no_dodge"
       }
-    ]
+    ],
+    "uuid": "a0f016d8-e136-4823-92fa-b0e807f442d0",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Poignard de lancer",
@@ -1841,11 +3011,26 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "perception": 4, "coordination": 4 },
-    "initiative": { "ranged": 3 },
-    "damage": { "ability": "force", "add": 2, "dice": 1 },
-    "range_effective": { "ability": "force", "multiply": 2 },
-    "range_max": { "ability": "force", "multiply": 3 },
+    "requirements": {
+      "perception": 4,
+      "coordination": 4
+    },
+    "initiative": {
+      "ranged": 3
+    },
+    "damage": {
+      "ability": "force",
+      "add": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "ability": "force",
+      "multiply": 2
+    },
+    "range_max": {
+      "ability": "force",
+      "multiply": 3
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1855,7 +3040,12 @@
         "description": "Ne peut pas s'esquiver.",
         "type": "opponent_no_dodge"
       }
-    ]
+    ],
+    "uuid": "10fa1fd8-d30a-40e6-bf0b-7a19863e08f1",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Couteau étoile",
@@ -1873,17 +3063,38 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "perception": 4, "coordination": 6 },
-    "initiative": { "ranged": 2 },
-    "damage": { "ability": "force", "multiply": 2, "add": 5, "dice": 1 },
-    "range_effective": { "ability": "force", "multiply": 3 },
-    "range_max": { "ability": "force", "multiply": 5 },
+    "requirements": {
+      "perception": 4,
+      "coordination": 6
+    },
+    "initiative": {
+      "ranged": 2
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 5,
+      "dice": 1
+    },
+    "range_effective": {
+      "ability": "force",
+      "multiply": 3
+    },
+    "range_max": {
+      "ability": "force",
+      "multiply": 5
+    },
     "special": [
       {
         "description": "Ne peut pas se parer (sauf bouclier).",
         "type": "opponent_no_parry_save_shield"
       }
-    ]
+    ],
+    "uuid": "216d91d8-fb70-4085-bd78-313603eee9d8",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Hachette de lancer",
@@ -1901,17 +3112,37 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "perception": 5, "coordination": 4 },
-    "initiative": { "ranged": 1 },
-    "damage": { "ability": "force", "multiply": 2, "dice": 1 },
-    "range_effective": { "ability": "force", "multiply": 2 },
-    "range_max": { "ability": "force", "multiply": 3 },
+    "requirements": {
+      "perception": 5,
+      "coordination": 4
+    },
+    "initiative": {
+      "ranged": 1
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "ability": "force",
+      "multiply": 2
+    },
+    "range_max": {
+      "ability": "force",
+      "multiply": 3
+    },
     "special": [
       {
         "description": "Ne peut pas se parer (sauf bouclier).",
         "type": "opponent_no_parry_save_shield"
       }
-    ]
+    ],
+    "uuid": "b2b45612-b299-4600-b40c-5a1eb3ebd0d4",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Javelot",
@@ -1929,19 +3160,39 @@
     },
     "body_part": "hand",
     "hands": 1,
-    "requirements": { "perception": 6, "coordination": 4 },
-    "initiative": { "ranged": 0 },
-    "damage": { "ability": "force", "multiply": 2, "add": 2, "dice": 1 },
-    "range_effective": { "ability": "force", "multiply": 5 },
-    "range_max": { "ability": "force", "multiply": 10 },
+    "requirements": {
+      "perception": 6,
+      "coordination": 4
+    },
+    "initiative": {
+      "ranged": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "add": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "ability": "force",
+      "multiply": 5
+    },
+    "range_max": {
+      "ability": "force",
+      "multiply": 10
+    },
     "special": [
       {
         "description": "Ne peut pas se parer (sauf bouclier).",
         "type": "opponent_no_parry_save_shield"
       }
-    ]
+    ],
+    "uuid": "8e9beb63-f1fd-4550-a8c9-41e79366e0d3",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
-
   {
     "name": "Arc commun",
     "skill": "armesAProjectiles",
@@ -1958,11 +3209,24 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 3, "perception": 4 },
-    "initiative": { "ranged": 0 },
-    "damage": { "ability": "force", "add": 6, "dice": 1 },
-    "range_effective": { "static": 40.0 },
-    "range_max": { "static": 100.0 },
+    "requirements": {
+      "force": 3,
+      "perception": 4
+    },
+    "initiative": {
+      "ranged": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 6,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 40.0
+    },
+    "range_max": {
+      "static": 100.0
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -1979,7 +3243,12 @@
           "value": 1
         }
       }
-    ]
+    ],
+    "uuid": "319a4b95-e072-47c2-b594-78155c23fefd",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Arc composite",
@@ -1997,11 +3266,24 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6, "perception": 4 },
-    "initiative": { "ranged": 0 },
-    "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range_effective": { "static": 60.0 },
-    "range_max": { "static": 200.0 },
+    "requirements": {
+      "force": 6,
+      "perception": 4
+    },
+    "initiative": {
+      "ranged": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 10,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 60.0
+    },
+    "range_max": {
+      "static": 200.0
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -2018,7 +3300,12 @@
           "value": 1
         }
       }
-    ]
+    ],
+    "uuid": "da2af094-06e1-44ab-bc11-35d858acc9f4",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Arc long",
@@ -2036,11 +3323,24 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5, "perception": 4 },
-    "initiative": { "ranged": 0 },
-    "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range_effective": { "static": 80.0 },
-    "range_max": { "static": 300.0 },
+    "requirements": {
+      "force": 5,
+      "perception": 4
+    },
+    "initiative": {
+      "ranged": 0
+    },
+    "damage": {
+      "ability": "force",
+      "add": 8,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 80.0
+    },
+    "range_max": {
+      "static": 300.0
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -2057,7 +3357,12 @@
           "value": 1
         }
       }
-    ]
+    ],
+    "uuid": "ab318b36-ee3a-428a-b3be-8b52e8401062",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Fronde",
@@ -2075,11 +3380,22 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "perception": 4, "coordination": 6 },
-    "initiative": { "ranged": -1 },
-    "damage": { "static": 5 },
-    "range_effective": { "static": 20.0 },
-    "range_max": { "static": 100.0 },
+    "requirements": {
+      "perception": 4,
+      "coordination": 6
+    },
+    "initiative": {
+      "ranged": -1
+    },
+    "damage": {
+      "static": 5
+    },
+    "range_effective": {
+      "static": 20.0
+    },
+    "range_max": {
+      "static": 100.0
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -2103,7 +3419,12 @@
           "value": 5
         }
       }
-    ]
+    ],
+    "uuid": "b0f30985-0202-4ce6-81c1-448936bb70b6",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Sarbacane",
@@ -2122,10 +3443,18 @@
     "body_part": "hand",
     "hands": 2,
     "requirements": {},
-    "initiative": { "ranged": 3 },
-    "damage": { "static": 1 },
-    "range_effective": { "static": 20.0 },
-    "range_max": { "static": 20.0 },
+    "initiative": {
+      "ranged": 3
+    },
+    "damage": {
+      "static": 1
+    },
+    "range_effective": {
+      "static": 20.0
+    },
+    "range_max": {
+      "static": 20.0
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -2139,7 +3468,12 @@
         "description": "Pas de dommages si la cible porte une armure.",
         "type": "armor_ineffective"
       }
-    ]
+    ],
+    "uuid": "6c9b23d8-1564-424a-9232-327f20dd441a",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Atlat",
@@ -2157,11 +3491,26 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "perception": 5, "coordination": 5 },
-    "initiative": { "ranged": 0 },
-    "damage": { "ability": "force", "multiply": 2, "dice": 1 },
-    "range_effective": { "ability": "force", "multiply": 4 },
-    "range_max": { "ability": "force", "multiply": 6 },
+    "requirements": {
+      "perception": 5,
+      "coordination": 5
+    },
+    "initiative": {
+      "ranged": 0
+    },
+    "damage": {
+      "ability": "force",
+      "multiply": 2,
+      "dice": 1
+    },
+    "range_effective": {
+      "ability": "force",
+      "multiply": 4
+    },
+    "range_max": {
+      "ability": "force",
+      "multiply": 6
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -2178,7 +3527,12 @@
           "value": 1
         }
       }
-    ]
+    ],
+    "uuid": "18652b92-8405-4dca-a57b-ae002073a941",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Arbalète légère",
@@ -2196,11 +3550,23 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 4 },
-    "initiative": { "ranged": 3 },
-    "damage": { "ability": "force", "add": 6, "dice": 1 },
-    "range_effective": { "static": 40.0 },
-    "range_max": { "static": 140.0 },
+    "requirements": {
+      "force": 4
+    },
+    "initiative": {
+      "ranged": 3
+    },
+    "damage": {
+      "ability": "force",
+      "add": 6,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 40.0
+    },
+    "range_max": {
+      "static": 140.0
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -2224,7 +3590,12 @@
           "value": 2
         }
       }
-    ]
+    ],
+    "uuid": "422fb0e1-b27f-42b2-82ba-c0c90eda198d",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Arbalète moyenne",
@@ -2242,11 +3613,23 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 5 },
-    "initiative": { "ranged": 3 },
-    "damage": { "ability": "force", "add": 10, "dice": 1 },
-    "range_effective": { "static": 50.0 },
-    "range_max": { "static": 200.0 },
+    "requirements": {
+      "force": 5
+    },
+    "initiative": {
+      "ranged": 3
+    },
+    "damage": {
+      "ability": "force",
+      "add": 10,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 50.0
+    },
+    "range_max": {
+      "static": 200.0
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -2270,7 +3653,12 @@
           "value": 3
         }
       }
-    ]
+    ],
+    "uuid": "e1cf625b-2090-411f-b62f-15c129c0e7c5",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Arbalète lourde",
@@ -2288,11 +3676,23 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6 },
-    "initiative": { "ranged": 3 },
-    "damage": { "ability": "force", "add": 8, "dice": 1 },
-    "range_effective": { "static": 80.0 },
-    "range_max": { "static": 380.0 },
+    "requirements": {
+      "force": 6
+    },
+    "initiative": {
+      "ranged": 3
+    },
+    "damage": {
+      "ability": "force",
+      "add": 8,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 80.0
+    },
+    "range_max": {
+      "static": 380.0
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -2316,7 +3716,12 @@
           "value": 4
         }
       }
-    ]
+    ],
+    "uuid": "b1df428b-575a-4067-80e1-07ab9adda5cd",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   },
   {
     "name": "Lance-harpon",
@@ -2334,11 +3739,21 @@
     },
     "body_part": "hand",
     "hands": 2,
-    "requirements": { "force": 6 },
-    "initiative": { "ranged": 4 },
-    "damage": { "static": 25 },
-    "range_effective": { "static": 10.0 },
-    "range_max": { "static": 40.0 },
+    "requirements": {
+      "force": 6
+    },
+    "initiative": {
+      "ranged": 4
+    },
+    "damage": {
+      "static": 25
+    },
+    "range_effective": {
+      "static": 10.0
+    },
+    "range_max": {
+      "static": 40.0
+    },
     "special": [
       {
         "description": "Ne peut pas se parer.",
@@ -2362,6 +3777,11 @@
           "value": 3
         }
       }
-    ]
+    ],
+    "uuid": "47df926d-18ad-42b9-9ebb-8c0ab0622fcc",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
   }
 ]

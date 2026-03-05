@@ -6,6 +6,7 @@ import 'creatures/clone.dart';
 import 'creatures/create.dart';
 import 'creatures/edit.dart';
 import 'creatures/list.dart';
+import 'equipment/list.dart';
 import 'factions/main.dart';
 import 'non_player_character/clone.dart';
 import 'non_player_character/create.dart';
@@ -250,6 +251,13 @@ final mainAppRoutes = [
       const SpellsListPage(),
     icon: Icon(Symbols.auto_fix_high),
     label: Text('Sorts'),
+  ),
+  MainAppRoute(
+    path: '/equipment',
+    builder: (BuildContext context, GoRouterState state) =>
+      const EquipmentListPage(),
+    icon: Icon(Symbols.swords),
+    label: Text('Équipement'),
   ),
   MainAppRoute(
     path: '/stars',

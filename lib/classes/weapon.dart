@@ -1,25 +1,89 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
 import 'entity/abilities.dart';
 import 'entity/skill.dart';
+import 'entity/skill_family.dart';
 import 'entity/specialized_skill.dart';
 import 'equipment.dart';
 import 'entity_base.dart';
 import 'entity/base.dart';
-import '../text_utils.dart';
+import 'object_location.dart';
+import 'object_source.dart';
+import 'storage/default_assets_store.dart';
+import 'storage/storable.dart';
 
 part 'weapon.g.dart';
 
+class WeaponStore extends JsonStoreAdapter<WeaponModel> {
+  @override
+  String storeCategory() => 'weapons';
+
+  @override
+  String key(WeaponModel object) => object.id;
+
+  @override
+  Future<WeaponModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
+      WeaponModel.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(WeaponModel object) async =>
+      object.toJson();
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class WeaponModel extends EquipmentModel {
-  WeaponModel({
-    required this.id,
+  factory WeaponModel({
+    required String uuid,
+    required String name,
+    required ObjectSource source,
+    ObjectLocation location = ObjectLocation.memory,
+    required double weight,
+    required int creationDifficulty,
+    required int creationTime,
+    required EquipmentAvailability villageAvailability,
+    required EquipmentAvailability cityAvailability,
+    required SpecializedSkill skill,
+    required EquipableItemBodyPart bodyPart,
+    required int hands,
+    required Map<Ability, int> requirements,
+    required Map<WeaponRange, int> initiative,
+    required AttributeBasedCalculator damage,
+    required AttributeBasedCalculator rangeEffective,
+    required AttributeBasedCalculator rangeMax,
+  })
+  {
+    var wm = _cache[uuid]
+        ?? WeaponModel._create(
+            uuid: uuid,
+            name: name,
+            source: source,
+            location: location,
+            weight: weight,
+            creationDifficulty: creationDifficulty,
+            creationTime: creationTime,
+            villageAvailability: villageAvailability,
+            cityAvailability: cityAvailability,
+            skill: skill,
+            bodyPart: bodyPart,
+            hands: hands,
+            requirements: requirements,
+            initiative: initiative,
+            damage: damage,
+            rangeEffective: rangeEffective,
+            rangeMax: rangeMax
+        );
+    _cache[wm.id] = wm;
+    return wm;
+  }
+
+  WeaponModel._create({
+    required super.uuid,
     required super.name,
+    required super.source,
+    super.location,
     required super.weight,
     required super.creationDifficulty,
     required super.creationTime,
@@ -35,20 +99,15 @@ class WeaponModel extends EquipmentModel {
     required this.rangeMax,
   });
 
-  @override
-  String get uuid => id;
-
-  @JsonKey(includeToJson: false, readValue: _getIdFromJson)
-  final String id;
   @JsonKey(readValue: _getSkillFromJson, toJson: _setSkillToJson)
-  final SpecializedSkill skill;
-  final EquipableItemBodyPart bodyPart;
-  final int hands;
-  final Map<Ability,int> requirements;
-  final Map<WeaponRange, int> initiative;
-  final AttributeBasedCalculator damage;
-  final AttributeBasedCalculator rangeEffective;
-  final AttributeBasedCalculator rangeMax;
+  SpecializedSkill skill;
+  EquipableItemBodyPart bodyPart;
+  int hands;
+  Map<Ability,int> requirements;
+  Map<WeaponRange, int> initiative;
+  AttributeBasedCalculator damage;
+  AttributeBasedCalculator rangeEffective;
+  AttributeBasedCalculator rangeMax;
 
   WeaponRange get range {
     return initiative.keys.reduce((value, element) => element.index > value.index ? element : value);
@@ -58,54 +117,112 @@ class WeaponModel extends EquipmentModel {
     return Weapon.create(model: this);
   }
 
-  static List<String> ids() {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    return _models.keys.toList();
-  }
+  static Iterable<String> ids() => _cache.keys;
 
-  static List<String> idsBySkill(Skill skill) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    var ret = <String>[];
-    for(var wm in _models.values) {
-      if(wm.skill.parent == skill) ret.add(wm.id);
+  static Iterable<String> idsBySkill(Skill skill) =>
+    _cache.values
+      .where(
+          (WeaponModel wm) => wm.skill.parent == skill
+      )
+      .map(
+          (WeaponModel wm) => wm.id
+      );
+
+  static WeaponModel? get(String id) => _cache[id];
+
+  static List<Skill> weaponSkills() =>
+    [...Skill.fromFamily(SkillFamily.combat), Skill.armesAProjectiles, Skill.armesAPoudreNoire, Skill.armesMecaniques]
+      .where((Skill s) => !([Skill.criDeLaPierre, Skill.creatureNaturalWeapon, Skill.bouclier].contains(s)))
+      .toList();
+
+  static List<Skill> skillsForWeaponRange(WeaponRange range) =>
+    _rangeToSkill[range] ?? <Skill>[];
+
+  static List<WeaponRange> weaponRangesForSkill(Skill skill) {
+    var ret = <WeaponRange>[];
+    for(var r in _rangeToSkill.keys) {
+      if(_rangeToSkill[r]!.contains(skill)) {
+        ret.add(r);
+      }
     }
     return ret;
   }
 
-  static WeaponModel? get(String id) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    return _models[id];
+  static Future<void> init() async {
+    // ignore:unused_local_variable
+    var c = _cache;
+    await loadAll();
   }
 
-  static void register(WeaponModel model) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    var id = sentenceToCamelCase(transliterateFrenchToAscii(model.name));
-    if(!_models.containsKey(id)) _models[id] = model;
+  static Future<void> loadAll() async {
+    EquipmentFactory.instance.registerFactory('weapon', _weaponFactory);
+
+    await _loadLock.synchronized(() async {
+      var assetFiles = [
+        'weapon.json',
+      ];
+
+      for (var f in assetFiles) {
+        for (var model in await loadJSONAssetObjectList(f)) {
+          try {
+            // ignore:unused_local_variable
+            var instance = WeaponModel.fromJson(model);
+            _cache[instance.id] = instance;
+          } catch (e, stacktrace) {
+            print('Error loading weapon ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+          }
+        }
+      }
+
+      for(var instance in (await WeaponStore().getAll())) {
+        _cache[instance.id] = instance;
+      }
+    });
   }
+
+  static Future<void> saveLocalModel(WeaponModel weapon) async {
+    await WeaponStore().save(weapon);
+    _cache[weapon.id] = weapon;
+  }
+
+  static Future<void> deleteLocalModel(String id) async {
+    var weapon = await WeaponStore().get(id);
+    if(weapon != null) await WeaponStore().delete(weapon);
+    _cache.remove(id);
+  }
+
+  static final Map<WeaponRange, List<Skill>> _rangeToSkill = {
+      WeaponRange.contact: [
+        Skill.armesTranchantes,
+        Skill.armesDeChoc,
+        Skill.armesContondantes,
+        Skill.armesDoubles,
+        Skill.corpsACorps,
+      ],
+      WeaponRange.melee: [
+        Skill.armesTranchantes,
+        Skill.armesDeChoc,
+        Skill.armesContondantes,
+        Skill.armesArticulees,
+        Skill.armesDoubles,
+        Skill.corpsACorps,
+      ],
+      WeaponRange.distance: [
+        Skill.armesDHast
+      ],
+      WeaponRange.ranged: [
+        Skill.armesDeJet,
+        Skill.armesAProjectiles,
+        Skill.armesMecaniques,
+        Skill.armesAPoudreNoire,
+      ],
+    };
 
   static Weapon? _weaponFactory(String id, String uuid) {
     var model = get(id);
     if(model == null) return null;
     return Weapon(uuid, model: model);
   }
-
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    EquipmentFactory.instance.registerFactory('weapon', _weaponFactory);
-
-    var jsonStr = await rootBundle.loadString('assets/weapon.json');
-    var assets = json.decode(jsonStr);
-
-    for(var model in assets) {
-      var id = _getIdFromJson(model, 'name') as String;
-      _models[id] = WeaponModel.fromJson(model);
-    }
-  }
-
-  static Object? _getIdFromJson(Map<dynamic, dynamic> json, _) =>
-      sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
 
   static Object? _getSkillFromJson(Map<dynamic, dynamic> json, _) {
     var skill = Skill.values.byName(json['skill']);
@@ -115,8 +232,8 @@ class WeaponModel extends EquipmentModel {
 
   static String _setSkillToJson(SpecializedSkill skill) => skill.parent.name;
 
-  static bool _defaultAssetsLoaded = false;
-  static final Map<String, WeaponModel> _models = <String, WeaponModel>{};
+  static final Map<String, WeaponModel> _cache = <String, WeaponModel>{};
+  static final _loadLock = Lock();
 
   factory WeaponModel.fromJson(Map<String, dynamic> json) =>
       _$WeaponModelFromJson(json);

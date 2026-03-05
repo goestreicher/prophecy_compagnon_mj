@@ -1,13 +1,14 @@
-import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
-
-import 'dart:convert';
 
 import 'entity/abilities.dart';
 import 'entity_base.dart';
 import 'equipment.dart';
-import '../text_utils.dart';
+import 'object_location.dart';
+import 'object_source.dart';
+import 'storage/default_assets_store.dart';
+import 'storage/storable.dart';
 
 part 'armor.g.dart';
 
@@ -21,11 +22,65 @@ enum ArmorType {
   final String title;
 }
 
+class ArmorStore extends JsonStoreAdapter<ArmorModel> {
+  @override
+  String storeCategory() => 'armors';
+
+  @override
+  String key(ArmorModel object) => object.id;
+
+  @override
+  Future<ArmorModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
+      ArmorModel.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(ArmorModel object) async =>
+      object.toJson();
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ArmorModel extends EquipmentModel {
-  ArmorModel({
-    required this.id,
+  factory ArmorModel({
+    required String uuid,
+    required String name,
+    required ObjectSource source,
+    ObjectLocation location = ObjectLocation.memory,
+    required double weight,
+    required int creationDifficulty,
+    required int creationTime,
+    required EquipmentAvailability villageAvailability,
+    required EquipmentAvailability cityAvailability,
+    required ArmorType type,
+    required Map<Ability, int> requirements,
+    required int protection,
+    required int penalty,
+  })
+  {
+    var am = _cache[uuid]
+        ?? ArmorModel._create(
+          uuid: uuid,
+          name: name,
+          source: source,
+          location: location,
+          weight: weight,
+          creationDifficulty: creationDifficulty,
+          creationTime: creationTime,
+          villageAvailability: villageAvailability,
+          cityAvailability: cityAvailability,
+          type: type,
+          requirements: requirements,
+          protection: protection,
+          penalty: penalty,
+        );
+    _cache[am.id] = am;
+    return am;
+  }
+
+  ArmorModel._create({
+    required super.uuid,
     required super.name,
+    required super.source,
+    super.location,
     required super.weight,
     required super.creationDifficulty,
     required super.creationTime,
@@ -37,67 +92,79 @@ class ArmorModel extends EquipmentModel {
     required this.penalty,
   });
 
-  @override
-  String get uuid => id;
-
-  @JsonKey(includeToJson: false, readValue: _getIdFromJson)
-  final String id;
-  final ArmorType type;
-  final Map<Ability,int> requirements;
-  final int protection;
-  final int penalty;
+  ArmorType type;
+  Map<Ability,int> requirements;
+  int protection;
+  int penalty;
 
   Armor instantiate() {
     return Armor.create(model: this);
   }
 
-  static List<String> ids() {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    return _models.keys.toList();
-  }
-  static List<String> idsByType(ArmorType type) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    var ret = <String>[];
-    for(var am in _models.values) {
-      if(am.type == type) ret.add(am.id);
-    }
-    return ret;
-  }
-  static ArmorModel? get(String id) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    return _models[id];
-  }
-  static void register(ArmorModel model) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    var id = sentenceToCamelCase(transliterateFrenchToAscii(model.name));
-    if(!_models.containsKey(id)) _models[id] = model;
-  }
+  static Iterable<String> ids() => _cache.keys;
+
+  static Iterable<String> idsByType(ArmorType type) =>
+    _cache.values
+      .where(
+          (ArmorModel am) => am.type == type
+        )
+      .map(
+          (ArmorModel am) => am.id
+      );
+
+  static ArmorModel? get(String id) => _cache[id];
+
   static Armor? _armorFactory(String id, String uuid) {
     var model = get(id);
     if(model == null) return null;
     return Armor(uuid, model: model);
   }
 
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    EquipmentFactory.instance.registerFactory('armor', _armorFactory);
-
-    var jsonStr = await rootBundle.loadString('assets/armor.json');
-    var assets = json.decode(jsonStr);
-
-    for(var model in assets) {
-      var id = _getIdFromJson(model, 'name') as String;
-      _models[id] = ArmorModel.fromJson(model);
-    }
+  static Future<void> init() async {
+    // ignore:unused_local_variable
+    var c = _cache;
+    await loadAll();
   }
 
-  static Object? _getIdFromJson(Map<dynamic, dynamic> json, _) =>
-      sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
+  static Future<void> loadAll() async {
+    EquipmentFactory.instance.registerFactory('armor', _armorFactory);
 
-  static bool _defaultAssetsLoaded = false;
-  static final Map<String, ArmorModel> _models = <String, ArmorModel>{};
+    await _loadLock.synchronized(() async {
+      var assetFiles = [
+        'armor.json',
+      ];
+
+      for (var f in assetFiles) {
+        for (var model in await loadJSONAssetObjectList(f)) {
+          try {
+            // ignore:unused_local_variable
+            var instance = ArmorModel.fromJson(model);
+            _cache[instance.id] = instance;
+          } catch (e, stacktrace) {
+            print('Error loading armor ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+          }
+        }
+      }
+
+      for(var instance in (await ArmorStore().getAll())) {
+        _cache[instance.id] = instance;
+      }
+    });
+  }
+
+  static Future<void> saveLocalModel(ArmorModel armor) async {
+    await ArmorStore().save(armor);
+    _cache[armor.id] = armor;
+  }
+
+  static Future<void> deleteLocalModel(String id) async {
+    var armor = await ArmorStore().get(id);
+    if(armor != null) await ArmorStore().delete(armor);
+    _cache.remove(id);
+  }
+
+  static final Map<String, ArmorModel> _cache = <String, ArmorModel>{};
+  static final _loadLock = Lock();
 
   factory ArmorModel.fromJson(Map<String, dynamic> json) =>
       _$ArmorModelFromJson(json);

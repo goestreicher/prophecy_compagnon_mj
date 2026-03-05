@@ -1,23 +1,77 @@
-import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
-
-import 'dart:convert';
 
 import 'entity/base.dart';
 import 'combat.dart';
 import 'entity/abilities.dart';
 import 'equipment.dart';
 import 'entity_base.dart';
-import '../text_utils.dart';
+import 'object_location.dart';
+import 'object_source.dart';
+import 'storage/default_assets_store.dart';
+import 'storage/storable.dart';
 
 part 'shield.g.dart';
 
+class ShieldStore extends JsonStoreAdapter<ShieldModel> {
+  @override
+  String storeCategory() => 'shields';
+
+  @override
+  String key(ShieldModel object) => object.id;
+
+  @override
+  Future<ShieldModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
+      ShieldModel.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(ShieldModel object) async =>
+      object.toJson();
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ShieldModel extends EquipmentModel {
-  ShieldModel({
-    required this.id,
+  factory ShieldModel({
+    required String uuid,
+    required String name,
+    required ObjectSource source,
+    ObjectLocation location = ObjectLocation.memory,
+    required double weight,
+    required int creationDifficulty,
+    required int creationTime,
+    required EquipmentAvailability villageAvailability,
+    required EquipmentAvailability cityAvailability,
+    required Map<Ability, int> requirements,
+    required int protection,
+    required int penalty,
+    required AttributeBasedCalculator damage,
+  })
+  {
+    var sm = _cache[uuid]
+        ?? ShieldModel._create(
+            uuid: uuid,
+            name: name,
+            source: source,
+            location: location,
+            weight: weight,
+            creationDifficulty: creationDifficulty,
+            creationTime: creationTime,
+            villageAvailability: villageAvailability,
+            cityAvailability: cityAvailability,
+            requirements: requirements,
+            protection: protection,
+            penalty: penalty,
+            damage: damage);
+    _cache[sm.id] = sm;
+    return sm;
+  }
+
+  ShieldModel._create({
+    required super.uuid,
     required super.name,
+    required super.source,
+    super.location,
     required super.weight,
     required super.creationDifficulty,
     required super.creationTime,
@@ -29,35 +83,18 @@ class ShieldModel extends EquipmentModel {
     required this.damage,
   });
 
-  @override
-  String get uuid => id;
-
-  @JsonKey(includeToJson: false, readValue: _getIdFromJson)
-  final String id;
-  final Map<Ability, int> requirements;
-  final int protection;
-  final int penalty;
-  final AttributeBasedCalculator damage;
+  Map<Ability, int> requirements;
+  int protection;
+  int penalty;
+  AttributeBasedCalculator damage;
 
   Shield instantiate() {
     return Shield.create(model: this);
   }
 
-  static List<String> ids() {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    return _models.keys.toList();
-  }
+  static Iterable<String> ids() => _cache.keys;
 
-  static ShieldModel? get(String id) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    return _models[id];
-  }
-
-  static void register(ShieldModel model) {
-    if(!_defaultAssetsLoaded) loadDefaultAssets();
-    var id = sentenceToCamelCase(transliterateFrenchToAscii(model.name));
-    if(!_models.containsKey(id)) _models[id] = model;
-  }
+  static ShieldModel? get(String id) => _cache[id];
 
   static Shield? _shieldFactory(String id, String uuid) {
     var model = get(id);
@@ -65,26 +102,51 @@ class ShieldModel extends EquipmentModel {
     return Shield(uuid, model: model);
   }
 
-  static Future<void> loadDefaultAssets() async {
-    if(_defaultAssetsLoaded) return;
-    _defaultAssetsLoaded = true;
-
-    EquipmentFactory.instance.registerFactory('shield', _shieldFactory);
-
-    var jsonStr = await rootBundle.loadString('assets/shield.json');
-    var assets = json.decode(jsonStr);
-
-    for(var model in assets) {
-      var id = _getIdFromJson(model, 'name') as String;
-      _models[id] = ShieldModel.fromJson(model);
-    }
+  static Future<void> init() async {
+    // ignore:unused_local_variable
+    var c = _cache;
+    await loadAll();
   }
 
-  static Object? _getIdFromJson(Map<dynamic, dynamic> json, _) =>
-      sentenceToCamelCase(transliterateFrenchToAscii(json['name']));
+  static Future<void> loadAll() async {
+    EquipmentFactory.instance.registerFactory('shield', _shieldFactory);
 
-  static bool _defaultAssetsLoaded = false;
-  static final Map<String, ShieldModel> _models = <String, ShieldModel>{};
+    await _loadLock.synchronized(() async {
+      var assetFiles = [
+        'shield.json',
+      ];
+
+      for (var f in assetFiles) {
+        for (var model in await loadJSONAssetObjectList(f)) {
+          try {
+            // ignore:unused_local_variable
+            var instance = ShieldModel.fromJson(model);
+            _cache[instance.id] = instance;
+          } catch (e, stacktrace) {
+            print('Error loading shield ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+          }
+        }
+      }
+
+      for(var instance in (await ShieldStore().getAll())) {
+        _cache[instance.id] = instance;
+      }
+    });
+  }
+
+  static Future<void> saveLocalModel(ShieldModel shield) async {
+    await ShieldStore().save(shield);
+    _cache[shield.id] = shield;
+  }
+
+  static Future<void> deleteLocalModel(String id) async {
+    var shield = await ShieldStore().get(id);
+    if(shield != null) await ShieldStore().delete(shield);
+    _cache.remove(id);
+  }
+
+  static final Map<String, ShieldModel> _cache = <String, ShieldModel>{};
+  static final _loadLock = Lock();
 
   factory ShieldModel.fromJson(Map<String, dynamic> json) =>
       _$ShieldModelFromJson(json);
