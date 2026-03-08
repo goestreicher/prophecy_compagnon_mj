@@ -483,10 +483,10 @@
     },
     "equipment": [
       {
-        "type": "armor:cotteDeMailles"
+        "type": "armor:45a9d318-fb08-46d5-b7b7-158e2ec584f5"
       },
       {
-        "type": "weapon:epeeDeDuel"
+        "type": "weapon:62b664bc-aa90-42d1-86be-e75800747e1a"
       }
     ],
     "caste": {
@@ -790,7 +790,7 @@
     },
     "equipment": [
       {
-        "type": "weapon:arbaleteLegere"
+        "type": "weapon:422fb0e1-b27f-42b2-82ba-c0c90eda198d"
       }
     ],
     "caste": {

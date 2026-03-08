@@ -1941,10 +1941,10 @@
     ],
     "equipment": [
       {
-        "type": "weapon:hacheDoubleADeuxMains"
+        "type": "weapon:dd35f6aa-f042-4674-b280-48d3cf6c4659"
       },
       {
-        "type": "armor:armureDOsEtDeCorne"
+        "type": "armor:4aa64277-5870-47d9-8afd-399f60a0d8dd"
       }
     ],
     "special_capabilities": [
@@ -2067,10 +2067,10 @@
     "natural_weapons": [],
     "equipment": [
       {
-        "type": "weapon:vouge"
+        "type": "weapon:c1a51b5b-62d6-430b-bbcf-16c763042d00"
       },
       {
-        "type": "weapon:hacheADeuxMains"
+        "type": "weapon:7c99e929-fa99-4004-a335-92c686e97467"
       }
     ]
   },
@@ -2298,10 +2298,10 @@
     "natural_weapons": [],
     "equipment": [
       {
-        "type": "weapon:massueFerree"
+        "type": "weapon:520bba17-6d11-4865-8dea-5bbea8408437"
       },
       {
-        "type": "weapon:epeeVulgaire"
+        "type": "weapon:20ee308f-420b-4a4c-99ac-5e70347523f8"
       }
     ]
   },

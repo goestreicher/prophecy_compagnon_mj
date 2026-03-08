@@ -4543,17 +4543,17 @@
     },
     "equipment": [
       {
-        "type": "armor:armureDePlaques",
+        "type": "armor:a5b04f24-f021-4fbc-8568-5cab18b9f82b",
         "uuid": "c9c1ee06-8ea0-4320-a927-aa443c6b8df5",
         "equiped_on": "none"
       },
       {
-        "type": "weapon:epeeLarge",
+        "type": "weapon:f59afe1b-895c-4233-897e-8af90a2524c7",
         "uuid": "4526080b-282a-45a3-97fe-2d079041782d",
         "equiped_on": "none"
       },
       {
-        "type": "weapon:masseAPointes",
+        "type": "weapon:ef54a226-a09d-4384-bda6-05a0de55d28e",
         "uuid": "50ec0e20-e9f0-454a-8789-31744fb8d008",
         "equiped_on": "none"
       }
@@ -5444,7 +5444,7 @@
     },
     "equipment": [
       {
-        "type": "armor:armureDeDemiPlaques",
+        "type": "armor:ea192510-a7e9-4996-8041-7919e40ee9b2",
         "uuid": "31f51f7b-0833-47b8-bc70-7b8b833cace4",
         "equiped_on": "none"
       }
@@ -7782,7 +7782,7 @@
     },
     "equipment": [
       {
-        "type": "weapon:glaiveZangarien",
+        "type": "weapon:92cdf534-725f-46fc-8511-1bed17410625",
         "equiped_on": "none"
       }
     ],

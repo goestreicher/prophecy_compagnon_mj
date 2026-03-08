@@ -151,10 +151,10 @@
     },
     "equipment": [
       {
-        "type": "armor:cuirBouilli"
+        "type": "armor:7d98e81b-8963-4197-ad02-37ff2dbc90bb"
       },
       {
-        "type": "weapon:arbaleteLegere"
+        "type": "weapon:422fb0e1-b27f-42b2-82ba-c0c90eda198d"
       }
     ],
     "caste": {

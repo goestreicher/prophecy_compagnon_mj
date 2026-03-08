@@ -171,7 +171,7 @@
     },
     "equipment": [
       {
-        "type": "armor:cotteLegere"
+        "type": "armor:c3dbf306-ef1f-4564-a75a-e02998755d7c"
       }
     ],
     "caste": {
@@ -451,13 +451,13 @@
     },
     "equipment": [
       {
-        "type": "armor:cuirSouple"
+        "type": "armor:040a1389-27af-47a9-b9f2-1fd0e9659057"
       },
       {
-        "type": "weapon:dague"
+        "type": "weapon:cde463bf-bc63-4f88-93db-49127d0b7546"
       },
       {
-        "type": "weapon:arcCommun"
+        "type": "weapon:319a4b95-e072-47c2-b594-78155c23fefd"
       }
     ],
     "caste": {
@@ -722,10 +722,10 @@
     },
     "equipment": [
       {
-        "type": "armor:armureDeDemiPlaques"
+        "type": "armor:ea192510-a7e9-4996-8041-7919e40ee9b2"
       },
       {
-        "type": "weapon:epeeBatarde"
+        "type": "weapon:bddb8599-83f2-44d0-b0a1-d30cb6914983"
       }
     ],
     "caste": {
@@ -1286,13 +1286,13 @@
     },
     "equipment": [
       {
-        "type": "armor:cuirBouilli"
+        "type": "armor:7d98e81b-8963-4197-ad02-37ff2dbc90bb"
       },
       {
-        "type": "weapon:arcLong"
+        "type": "weapon:ab318b36-ee3a-428a-b3be-8b52e8401062"
       },
       {
-        "type": "weapon:epeeLongue"
+        "type": "weapon:b1f26761-d126-41a4-a4c2-f1a3ac6f3b82"
       }
     ],
     "caste": {

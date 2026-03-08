@@ -167,7 +167,7 @@
     },
     "equipment": [
       {
-        "type": "armor:armureDePlaques"
+        "type": "armor:a5b04f24-f021-4fbc-8568-5cab18b9f82b"
       }
     ],
     "caste": {
@@ -727,10 +727,10 @@
     },
     "equipment": [
       {
-        "type": "weapon:epeeADeuxMains"
+        "type": "weapon:b9a0318b-95bf-49cd-9e7d-ab0bbb68ebb9"
       },
       {
-        "type": "armor:armureDEcailles"
+        "type": "armor:fd2fc687-236c-4fe5-a21e-288082f9ecc0"
       }
     ],
     "caste": {
