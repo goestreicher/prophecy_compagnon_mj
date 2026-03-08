@@ -15,6 +15,7 @@ import '../num_input_widget.dart';
 import '../widget_group_container.dart';
 import 'equipment_requirements_edit_widget.dart';
 import 'scarcity_edit_widget.dart';
+import 'special_capabilities_edit_widget.dart';
 
 class WeaponEditDialog extends StatefulWidget {
   const WeaponEditDialog({
@@ -48,6 +49,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
   AttributeBasedCalculator damage = AttributeBasedCalculator(static: 0.0);
   AttributeBasedCalculator rangeEffective = AttributeBasedCalculator(static: 0.0);
   AttributeBasedCalculator rangeMax = AttributeBasedCalculator(static: 0.0);
+  List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
   void initState() {
@@ -69,6 +71,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
       damage = widget.weapon!.damage;
       rangeEffective = widget.weapon!.rangeEffective;
       rangeMax = widget.weapon!.rangeMax;
+      special = List.from(widget.weapon!.special);
     }
     else {
       for(var r in WeaponModel.weaponRangesForSkill(widget.skill)) {
@@ -322,6 +325,12 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                     calculator: rangeMax,
                     staticType: AttributeBasedCalculatorStaticType.double,
                   ),
+                  EquipmentSpecialCapabilitiesEditWidget(
+                    special: special,
+                    onChanged: (List<EquipmentSpecialCapability> c) {
+                      special = c;
+                    },
+                  ),
                 ],
               ),
             ),
@@ -368,6 +377,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                 damage: damage,
                 rangeEffective: rangeEffective,
                 rangeMax: rangeMax,
+                special: special,
               );
 
               Navigator.of(context).pop(weapon);
@@ -392,6 +402,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
               widget.weapon!.damage = damage;
               widget.weapon!.rangeEffective = rangeEffective;
               widget.weapon!.rangeMax = rangeMax;
+              widget.weapon!.special = special;
 
               Navigator.of(context).pop(widget.weapon!);
             }

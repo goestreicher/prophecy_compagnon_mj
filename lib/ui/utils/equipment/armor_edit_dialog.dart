@@ -8,6 +8,7 @@ import '../../../classes/equipment.dart';
 import '../../../classes/object_source.dart';
 import 'equipment_requirements_edit_widget.dart';
 import 'scarcity_edit_widget.dart';
+import 'special_capabilities_edit_widget.dart';
 
 class ArmorEditDialog extends StatefulWidget {
   const ArmorEditDialog({
@@ -36,6 +37,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
   Map<Ability, int> requirements = <Ability, int>{};
   TextEditingController protectionController = TextEditingController();
   TextEditingController penaltyController = TextEditingController();
+  List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
   void initState() {
@@ -53,6 +55,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
       requirements = widget.armor!.requirements;
       protectionController.text = widget.armor!.protection.toString();
       penaltyController.text = (-widget.armor!.penalty).toString();
+      special = List.from(widget.armor!.special);
     }
   }
 
@@ -234,6 +237,12 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
                       ),
                     ],
                   ),
+                  EquipmentSpecialCapabilitiesEditWidget(
+                    special: special,
+                    onChanged: (List<EquipmentSpecialCapability> c) {
+                      special = c;
+                    },
+                  ),
                 ],
               ),
             ),
@@ -270,6 +279,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
                 requirements: requirements,
                 protection: int.parse(protectionController.text),
                 penalty: -int.parse(penaltyController.text),
+                special: special,
               );
 
               Navigator.of(context).pop(armor);
@@ -290,6 +300,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
               widget.armor!.requirements = requirements;
               widget.armor!.protection = int.parse(protectionController.text);
               widget.armor!.penalty = -int.parse(penaltyController.text);
+              widget.armor!.special = special;
 
               Navigator.of(context).pop(widget.armor!);
             }

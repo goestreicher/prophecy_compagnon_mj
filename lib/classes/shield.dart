@@ -46,6 +46,7 @@ class ShieldModel extends EquipmentModel {
     required int protection,
     required int penalty,
     required AttributeBasedCalculator damage,
+    List<EquipmentSpecialCapability>? special,
   })
   {
     var sm = _cache[uuid]
@@ -62,7 +63,9 @@ class ShieldModel extends EquipmentModel {
             requirements: requirements,
             protection: protection,
             penalty: penalty,
-            damage: damage);
+            damage: damage,
+            special: special,
+        );
     _cache[sm.id] = sm;
     return sm;
   }
@@ -81,6 +84,7 @@ class ShieldModel extends EquipmentModel {
     required this.protection,
     required this.penalty,
     required this.damage,
+    super.special,
   });
 
   Map<Ability, int> requirements;

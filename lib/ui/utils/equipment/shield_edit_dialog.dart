@@ -10,6 +10,7 @@ import '../../../classes/shield.dart';
 import '../attribute_based_calculator_edit_widget.dart';
 import 'equipment_requirements_edit_widget.dart';
 import 'scarcity_edit_widget.dart';
+import 'special_capabilities_edit_widget.dart';
 
 class ShieldEditDialog extends StatefulWidget {
   const ShieldEditDialog({
@@ -37,6 +38,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
   TextEditingController protectionController = TextEditingController();
   TextEditingController penaltyController = TextEditingController();
   AttributeBasedCalculator damage = AttributeBasedCalculator(static: 0.0);
+  List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
   void initState() {
@@ -55,6 +57,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
       protectionController.text = widget.shield!.protection.toString();
       penaltyController.text = (-widget.shield!.penalty).toString();
       damage = widget.shield!.damage;
+      special = widget.shield!.special;
     }
   }
 
@@ -243,6 +246,12 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                     },
                     calculator: damage,
                   ),
+                  EquipmentSpecialCapabilitiesEditWidget(
+                    special: special,
+                    onChanged: (List<EquipmentSpecialCapability> c) {
+                      special = c;
+                    },
+                  ),
                 ],
               ),
             ),
@@ -279,6 +288,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                 protection: int.parse(protectionController.text),
                 penalty: -int.parse(penaltyController.text),
                 damage: damage,
+                special: special,
               );
 
               Navigator.of(context).pop(shield);
@@ -300,6 +310,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
               widget.shield!.protection = int.parse(protectionController.text);
               widget.shield!.penalty = -int.parse(penaltyController.text);
               widget.shield!.damage = damage;
+              widget.shield!.special = special;
 
               Navigator.of(context).pop(widget.shield!);
             }

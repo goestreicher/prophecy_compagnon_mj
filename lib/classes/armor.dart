@@ -54,6 +54,7 @@ class ArmorModel extends EquipmentModel {
     required Map<Ability, int> requirements,
     required int protection,
     required int penalty,
+    List<EquipmentSpecialCapability>? special,
   })
   {
     var am = _cache[uuid]
@@ -71,6 +72,7 @@ class ArmorModel extends EquipmentModel {
           requirements: requirements,
           protection: protection,
           penalty: penalty,
+          special: special,
         );
     _cache[am.id] = am;
     return am;
@@ -90,6 +92,7 @@ class ArmorModel extends EquipmentModel {
     required this.requirements,
     required this.protection,
     required this.penalty,
+    super.special,
   });
 
   ArmorType type;

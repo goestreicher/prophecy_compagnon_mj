@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../classes/armor.dart';
 import '../../classes/combat.dart';
 import '../../classes/entity/skill.dart';
+import '../../classes/equipment.dart';
 import '../../classes/object_source.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
@@ -467,7 +468,16 @@ class _WeaponCategoryContainerState extends State<_WeaponCategoryContainer> {
             _DefaultTableCell(child: Text(initStr)),
             _DefaultTableCell(child: Text('${weapon.rangeEffective.toString()} / ${weapon.rangeMax.toString()}')),
             _DefaultTableCell(child: Text(weapon.damage.toString())),
-            _DefaultTableCell(child: Text('')),
+            _DefaultTableCell(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 8.0,
+                children: [
+                  for(var sp in weapon.special ?? <EquipmentSpecialCapability>[])
+                    Text(sp.description),
+                ],
+              )
+            ),
           ]
         )
       );
@@ -694,7 +704,16 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
             _DefaultTableCell(child: Text(shield.protection.toString())),
             _DefaultTableCell(child: Text(shield.penalty.toString())),
             _DefaultTableCell(child: Text(shield.damage.toString())),
-            _DefaultTableCell(child: Text('')),
+            _DefaultTableCell(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 8.0,
+                children: [
+                  for(var sp in shield.special ?? <EquipmentSpecialCapability>[])
+                    Text(sp.description),
+                ],
+              )
+            ),
           ]
         )
       );
@@ -731,7 +750,6 @@ class _ArmorDataContainer extends StatelessWidget {
 
 class _ArmorTypeContainer extends StatefulWidget {
   const _ArmorTypeContainer({
-    super.key,
     required this.type,
   });
 
@@ -963,7 +981,16 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
             _DefaultTableCell(child: Text(reqsStr)),
             _DefaultTableCell(child: Text(armor.protection.toString())),
             _DefaultTableCell(child: Text(armor.penalty.toString())),
-            _DefaultTableCell(child: Text('')),
+            _DefaultTableCell(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 8.0,
+                children: [
+                  for(var sp in armor.special ?? <EquipmentSpecialCapability>[])
+                    Text(sp.description),
+                ],
+              )
+            ),
           ]
         )
       );

@@ -28,6 +28,11 @@ ArmorModel _$ArmorModelFromJson(Map<String, dynamic> json) => ArmorModel(
   ),
   protection: (json['protection'] as num).toInt(),
   penalty: (json['penalty'] as num).toInt(),
+  special: (json['special'] as List<dynamic>?)
+      ?.map(
+        (e) => EquipmentSpecialCapability.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
 );
 
 Map<String, dynamic> _$ArmorModelToJson(ArmorModel instance) =>
@@ -40,6 +45,7 @@ Map<String, dynamic> _$ArmorModelToJson(ArmorModel instance) =>
       'creation_time': instance.creationTime,
       'village_availability': instance.villageAvailability.toJson(),
       'city_availability': instance.cityAvailability.toJson(),
+      'special': instance.special.map((e) => e.toJson()).toList(),
       'type': _$ArmorTypeEnumMap[instance.type]!,
       'requirements': instance.requirements.map(
         (k, e) => MapEntry(_$AbilityEnumMap[k]!, e),

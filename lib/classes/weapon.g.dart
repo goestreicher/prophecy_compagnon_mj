@@ -43,6 +43,11 @@ WeaponModel _$WeaponModelFromJson(Map<String, dynamic> json) => WeaponModel(
   rangeMax: AttributeBasedCalculator.fromJson(
     json['range_max'] as Map<String, dynamic>,
   ),
+  special: (json['special'] as List<dynamic>?)
+      ?.map(
+        (e) => EquipmentSpecialCapability.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
 );
 
 Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
@@ -55,6 +60,7 @@ Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
       'creation_time': instance.creationTime,
       'village_availability': instance.villageAvailability.toJson(),
       'city_availability': instance.cityAvailability.toJson(),
+      'special': instance.special.map((e) => e.toJson()).toList(),
       'skill': WeaponModel._setSkillToJson(instance.skill),
       'body_part': _$EquipableItemBodyPartEnumMap[instance.bodyPart]!,
       'hands': instance.hands,

@@ -53,6 +53,7 @@ class WeaponModel extends EquipmentModel {
     required AttributeBasedCalculator damage,
     required AttributeBasedCalculator rangeEffective,
     required AttributeBasedCalculator rangeMax,
+    List<EquipmentSpecialCapability>? special,
   })
   {
     var wm = _cache[uuid]
@@ -73,7 +74,8 @@ class WeaponModel extends EquipmentModel {
             initiative: initiative,
             damage: damage,
             rangeEffective: rangeEffective,
-            rangeMax: rangeMax
+            rangeMax: rangeMax,
+            special: special,
         );
     _cache[wm.id] = wm;
     return wm;
@@ -97,6 +99,7 @@ class WeaponModel extends EquipmentModel {
     required this.damage,
     required this.rangeEffective,
     required this.rangeMax,
+    super.special,
   });
 
   @JsonKey(readValue: _getSkillFromJson, toJson: _setSkillToJson)

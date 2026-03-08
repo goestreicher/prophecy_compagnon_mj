@@ -90,6 +90,19 @@ class EquipmentAvailability {
       _$EquipmentAvailabilityToJson(this);
 }
 
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class EquipmentSpecialCapability {
+  EquipmentSpecialCapability({ required this.description });
+
+  String description;
+
+  static EquipmentSpecialCapability fromJson(Map<String, dynamic> j) =>
+      _$EquipmentSpecialCapabilityFromJson(j);
+
+  Map<String, dynamic> toJson() =>
+      _$EquipmentSpecialCapabilityToJson(this);
+}
+
 abstract class EquipmentModel extends ResourceBaseClass {
   EquipmentModel({
     required this.uuid,
@@ -101,7 +114,9 @@ abstract class EquipmentModel extends ResourceBaseClass {
     required this.creationTime,
     required this.villageAvailability,
     required this.cityAvailability,
-  });
+    List<EquipmentSpecialCapability>? special,
+  })
+    : special = special ?? <EquipmentSpecialCapability>[];
 
   String uuid;
   double weight;
@@ -109,6 +124,7 @@ abstract class EquipmentModel extends ResourceBaseClass {
   int creationTime;
   EquipmentAvailability villageAvailability;
   EquipmentAvailability cityAvailability;
+  List<EquipmentSpecialCapability> special;
 
   @override String get id => uuid;
 }

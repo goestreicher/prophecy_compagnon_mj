@@ -30,6 +30,11 @@ ShieldModel _$ShieldModelFromJson(Map<String, dynamic> json) => ShieldModel(
   damage: AttributeBasedCalculator.fromJson(
     json['damage'] as Map<String, dynamic>,
   ),
+  special: (json['special'] as List<dynamic>?)
+      ?.map(
+        (e) => EquipmentSpecialCapability.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
 );
 
 Map<String, dynamic> _$ShieldModelToJson(ShieldModel instance) =>
@@ -42,6 +47,7 @@ Map<String, dynamic> _$ShieldModelToJson(ShieldModel instance) =>
       'creation_time': instance.creationTime,
       'village_availability': instance.villageAvailability.toJson(),
       'city_availability': instance.cityAvailability.toJson(),
+      'special': instance.special.map((e) => e.toJson()).toList(),
       'requirements': instance.requirements.map(
         (k, e) => MapEntry(_$AbilityEnumMap[k]!, e),
       ),
