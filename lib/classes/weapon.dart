@@ -17,9 +17,9 @@ import 'storage/storable.dart';
 
 part 'weapon.g.dart';
 
-class WeaponStore extends JsonStoreAdapter<WeaponModel> {
+class WeaponModelStore extends JsonStoreAdapter<WeaponModel> {
   @override
-  String storeCategory() => 'weapons';
+  String storeCategory() => 'weaponModels';
 
   @override
   String key(WeaponModel object) => object.id;
@@ -177,20 +177,20 @@ class WeaponModel extends EquipmentModel {
         }
       }
 
-      for(var instance in (await WeaponStore().getAll())) {
+      for(var instance in (await WeaponModelStore().getAll())) {
         _cache[instance.id] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(WeaponModel weapon) async {
-    await WeaponStore().save(weapon);
+    await WeaponModelStore().save(weapon);
     _cache[weapon.id] = weapon;
   }
 
   static Future<void> deleteLocalModel(String id) async {
-    var weapon = await WeaponStore().get(id);
-    if(weapon != null) await WeaponStore().delete(weapon);
+    var weapon = await WeaponModelStore().get(id);
+    if(weapon != null) await WeaponModelStore().delete(weapon);
     _cache.remove(id);
   }
 

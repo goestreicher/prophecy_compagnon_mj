@@ -22,9 +22,9 @@ enum ArmorType {
   final String title;
 }
 
-class ArmorStore extends JsonStoreAdapter<ArmorModel> {
+class ArmorModelStore extends JsonStoreAdapter<ArmorModel> {
   @override
-  String storeCategory() => 'armors';
+  String storeCategory() => 'armorModels';
 
   @override
   String key(ArmorModel object) => object.id;
@@ -149,20 +149,20 @@ class ArmorModel extends EquipmentModel {
         }
       }
 
-      for(var instance in (await ArmorStore().getAll())) {
+      for(var instance in (await ArmorModelStore().getAll())) {
         _cache[instance.id] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(ArmorModel armor) async {
-    await ArmorStore().save(armor);
+    await ArmorModelStore().save(armor);
     _cache[armor.id] = armor;
   }
 
   static Future<void> deleteLocalModel(String id) async {
-    var armor = await ArmorStore().get(id);
-    if(armor != null) await ArmorStore().delete(armor);
+    var armor = await ArmorModelStore().get(id);
+    if(armor != null) await ArmorModelStore().delete(armor);
     _cache.remove(id);
   }
 

@@ -48,13 +48,14 @@ WeaponModel _$WeaponModelFromJson(Map<String, dynamic> json) => WeaponModel(
         (e) => EquipmentSpecialCapability.fromJson(e as Map<String, dynamic>),
       )
       .toList(),
-);
+)..unique = json['unique'] as bool;
 
 Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
     <String, dynamic>{
       'source': instance.source.toJson(),
       'name': instance.name,
       'uuid': instance.uuid,
+      'unique': instance.unique,
       'weight': instance.weight,
       'creation_difficulty': instance.creationDifficulty,
       'creation_time': instance.creationTime,

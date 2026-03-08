@@ -35,13 +35,14 @@ ShieldModel _$ShieldModelFromJson(Map<String, dynamic> json) => ShieldModel(
         (e) => EquipmentSpecialCapability.fromJson(e as Map<String, dynamic>),
       )
       .toList(),
-);
+)..unique = json['unique'] as bool;
 
 Map<String, dynamic> _$ShieldModelToJson(ShieldModel instance) =>
     <String, dynamic>{
       'source': instance.source.toJson(),
       'name': instance.name,
       'uuid': instance.uuid,
+      'unique': instance.unique,
       'weight': instance.weight,
       'creation_difficulty': instance.creationDifficulty,
       'creation_time': instance.creationTime,

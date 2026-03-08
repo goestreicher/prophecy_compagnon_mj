@@ -14,9 +14,9 @@ import 'storage/storable.dart';
 
 part 'shield.g.dart';
 
-class ShieldStore extends JsonStoreAdapter<ShieldModel> {
+class ShieldModelStore extends JsonStoreAdapter<ShieldModel> {
   @override
-  String storeCategory() => 'shields';
+  String storeCategory() => 'shieldModels';
 
   @override
   String key(ShieldModel object) => object.id;
@@ -132,20 +132,20 @@ class ShieldModel extends EquipmentModel {
         }
       }
 
-      for(var instance in (await ShieldStore().getAll())) {
+      for(var instance in (await ShieldModelStore().getAll())) {
         _cache[instance.id] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(ShieldModel shield) async {
-    await ShieldStore().save(shield);
+    await ShieldModelStore().save(shield);
     _cache[shield.id] = shield;
   }
 
   static Future<void> deleteLocalModel(String id) async {
-    var shield = await ShieldStore().get(id);
-    if(shield != null) await ShieldStore().delete(shield);
+    var shield = await ShieldModelStore().get(id);
+    if(shield != null) await ShieldModelStore().delete(shield);
     _cache.remove(id);
   }
 

@@ -19,8 +19,8 @@ import "classes/storage/storage.dart";
 
 void registerStoreAdapters() {
   DataStorage.registerStoreAdapter(
-    ArmorStore().storeCategory(),
-    () => ArmorStore(),
+    ArmorModelStore().storeCategory(),
+    () => ArmorModelStore(),
   );
   DataStorage.registerStoreAdapter(
     CreatureCategoryStore().storeCategory(),
@@ -99,8 +99,8 @@ void registerStoreAdapters() {
     () => ScenarioStore(),
   );
   DataStorage.registerStoreAdapter(
-    ShieldStore().storeCategory(),
-    () => ShieldStore(),
+    ShieldModelStore().storeCategory(),
+    () => ShieldModelStore(),
   );
   DataStorage.registerStoreAdapter(
     StarStore().storeCategory(),
@@ -119,7 +119,7 @@ void registerStoreAdapters() {
     () => GameTableStore(),
   );
   DataStorage.registerStoreAdapter(
-    WeaponStore().storeCategory(),
-    () => WeaponStore(),
+    WeaponModelStore().storeCategory(),
+    () => WeaponModelStore(),
   );
 }
