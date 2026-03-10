@@ -63,6 +63,7 @@ class ArmorModel extends EquipmentModel {
   factory ArmorModel({
     required String uuid,
     required String name,
+    bool unique = false,
     required ObjectSource source,
     ObjectLocation location = ObjectLocation.memory,
     required double weight,
@@ -81,6 +82,7 @@ class ArmorModel extends EquipmentModel {
         ?? ArmorModel._create(
           uuid: uuid,
           name: name,
+          unique: unique,
           source: source,
           location: location,
           weight: weight,
@@ -101,6 +103,7 @@ class ArmorModel extends EquipmentModel {
   ArmorModel._create({
     required super.uuid,
     required super.name,
+    super.unique,
     required super.source,
     super.location,
     required super.weight,

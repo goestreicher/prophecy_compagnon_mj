@@ -9,6 +9,7 @@ part of 'armor.dart';
 ArmorModel _$ArmorModelFromJson(Map<String, dynamic> json) => ArmorModel(
   uuid: json['uuid'] as String,
   name: json['name'] as String,
+  unique: json['unique'] as bool? ?? false,
   source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   location: json['location'] == null
       ? ObjectLocation.memory
@@ -40,6 +41,7 @@ Map<String, dynamic> _$ArmorModelToJson(ArmorModel instance) =>
       'source': instance.source.toJson(),
       'name': instance.name,
       'uuid': instance.uuid,
+      'unique': instance.unique,
       'weight': instance.weight,
       'creation_difficulty': instance.creationDifficulty,
       'creation_time': instance.creationTime,

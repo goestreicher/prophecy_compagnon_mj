@@ -34,6 +34,7 @@ class WeaponEditDialog extends StatefulWidget {
 class _WeaponEditDialogState extends State<WeaponEditDialog> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
+  bool unique = false;
   int? hands;
   SpecializedSkill? specializedSkill;
   bool createSpecializedSkill = false;
@@ -57,6 +58,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
 
     if(widget.weapon != null) {
       nameController.text = widget.weapon!.name;
+      unique = widget.weapon!.unique;
       hands = widget.weapon!.hands;
       specializedSkill = widget.weapon!.skill;
       weightController.text = widget.weapon!.weight.toStringAsFixed(2);
@@ -101,8 +103,17 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                 spacing: 16.0,
                 children: [
                   Row(
-                    spacing: 12.0,
+                    spacing: 8.0,
                     children: [
+                      Text('Unique'),
+                      Switch(
+                        value: unique,
+                        onChanged: (bool v) {
+                          setState(() {
+                            unique = v;
+                          });
+                        },
+                      ),
                       Expanded(
                         child: TextFormField(
                           controller: nameController,
@@ -357,6 +368,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
               var weapon = WeaponModel(
                 uuid: const Uuid().v4().toString(),
                 name: nameController.text,
+                unique: unique,
                 source: ObjectSource.local,
                 weight: double.parse(weightController.text),
                 creationDifficulty: int.parse(dcController.text),
@@ -384,6 +396,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
             }
             else {
               widget.weapon!.name = nameController.text;
+              widget.weapon!.unique = unique;
               widget.weapon!.skill = specializedSkill!;
               widget.weapon!.weight = double.parse(weightController.text);
               widget.weapon!.creationDifficulty = int.parse(dcController.text);

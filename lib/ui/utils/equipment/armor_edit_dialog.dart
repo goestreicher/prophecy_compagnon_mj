@@ -27,6 +27,7 @@ class ArmorEditDialog extends StatefulWidget {
 class _ArmorEditDialogState extends State<ArmorEditDialog> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
+  bool unique = false;
   TextEditingController weightController = TextEditingController();
   TextEditingController dcController = TextEditingController();
   TextEditingController tcController = TextEditingController();
@@ -45,6 +46,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
 
     if(widget.armor != null) {
       nameController.text = widget.armor!.name;
+      unique = widget.armor!.unique;
       weightController.text = widget.armor!.weight.toStringAsFixed(2);
       dcController.text = widget.armor!.creationDifficulty.toString();
       tcController.text = widget.armor!.creationTime.toString();
@@ -77,19 +79,35 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
                 mainAxisSize: MainAxisSize.min,
                 spacing: 16.0,
                 children: [
-                  TextFormField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                      labelText: 'Nom',
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) {
-                        return 'Valeur manquante';
-                      }
-                      return null;
-                    },
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                  Row(
+                    spacing: 8.0,
+                    children: [
+                      Text('Unique'),
+                      Switch(
+                        value: unique,
+                        onChanged: (bool v) {
+                          setState(() {
+                            unique = v;
+                          });
+                        },
+                      ),
+                      Expanded(
+                        child: TextFormField(
+                          controller: nameController,
+                          decoration: InputDecoration(
+                            labelText: 'Nom',
+                            border: OutlineInputBorder(),
+                          ),
+                          validator: (String? value) {
+                            if(value == null || value.isEmpty) {
+                              return 'Valeur manquante';
+                            }
+                            return null;
+                          },
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                        ),
+                      ),
+                    ],
                   ),
                   Row(
                     spacing: 12.0,
@@ -263,6 +281,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
               var armor = ArmorModel(
                 uuid: const Uuid().v4().toString(),
                 name: nameController.text,
+                unique: unique,
                 source: ObjectSource.local,
                 weight: double.parse(weightController.text),
                 creationDifficulty: int.parse(dcController.text),
@@ -286,6 +305,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
             }
             else {
               widget.armor!.name = nameController.text;
+              widget.armor!.unique = unique;
               widget.armor!.weight = double.parse(weightController.text);
               widget.armor!.creationDifficulty = int.parse(dcController.text);
               widget.armor!.creationTime = int.parse(tcController.text);

@@ -454,7 +454,27 @@ class _WeaponCategoryContainerState extends State<_WeaponCategoryContainer> {
                         ),
                       ],
                     ),
-                  Expanded(child: Text(weapon.name)),
+                  Expanded(
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(text: weapon.name),
+                          if(weapon.unique)
+                            TextSpan(text: ' '),
+                          if(weapon.unique)
+                            WidgetSpan(
+                              child: Tooltip(
+                                message: 'Unique',
+                                child: Icon(
+                                  Icons.looks_one_outlined,
+                                  size: 18,
+                                ),
+                              ),
+                            )
+                        ]
+                      )
+                    )
+                  ),
                 ],
               )
             ),
@@ -690,7 +710,27 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
                         ),
                       ],
                     ),
-                  Expanded(child: Text(shield.name)),
+                  Expanded(
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(text: shield.name),
+                          if(shield.unique)
+                            TextSpan(text: ' '),
+                          if(shield.unique)
+                            WidgetSpan(
+                              child: Tooltip(
+                                message: 'Unique',
+                                child: Icon(
+                                  Icons.looks_one_outlined,
+                                  size: 18,
+                                ),
+                              ),
+                            )
+                        ]
+                      )
+                    )
+                  ),
                 ],
               )
             ),
@@ -968,7 +1008,27 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
                         ),
                       ],
                     ),
-                  Expanded(child: Text(armor.name)),
+                  Expanded(
+                    child: Text.rich(
+                      TextSpan(
+                        children: [
+                          TextSpan(text: armor.name),
+                          if(armor.unique)
+                            TextSpan(text: ' '),
+                          if(armor.unique)
+                            WidgetSpan(
+                              child: Tooltip(
+                                message: 'Unique',
+                                child: Icon(
+                                  Icons.looks_one_outlined,
+                                  size: 18,
+                                ),
+                              ),
+                            )
+                        ]
+                      )
+                    )
+                  ),
                 ],
               )
             ),

@@ -9,6 +9,7 @@ part of 'weapon.dart';
 WeaponModel _$WeaponModelFromJson(Map<String, dynamic> json) => WeaponModel(
   uuid: json['uuid'] as String,
   name: json['name'] as String,
+  unique: json['unique'] as bool? ?? false,
   source: ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
   location: json['location'] == null
       ? ObjectLocation.memory
@@ -55,6 +56,7 @@ Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
       'source': instance.source.toJson(),
       'name': instance.name,
       'uuid': instance.uuid,
+      'unique': instance.unique,
       'weight': instance.weight,
       'creation_difficulty': instance.creationDifficulty,
       'creation_time': instance.creationTime,

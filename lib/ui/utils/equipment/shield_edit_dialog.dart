@@ -27,6 +27,7 @@ class ShieldEditDialog extends StatefulWidget {
 class _ShieldEditDialogState extends State<ShieldEditDialog> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
+  bool unique = false;
   TextEditingController weightController = TextEditingController();
   TextEditingController dcController = TextEditingController();
   TextEditingController tcController = TextEditingController();
@@ -46,6 +47,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
 
     if(widget.shield != null) {
       nameController.text = widget.shield!.name;
+      unique = widget.shield!.unique;
       weightController.text = widget.shield!.weight.toStringAsFixed(2);
       dcController.text = widget.shield!.creationDifficulty.toString();
       tcController.text = widget.shield!.creationTime.toString();
@@ -79,19 +81,35 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                 mainAxisSize: MainAxisSize.min,
                 spacing: 16.0,
                 children: [
-                  TextFormField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                      labelText: 'Nom',
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) {
-                        return 'Valeur manquante';
-                      }
-                      return null;
-                    },
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                  Row(
+                    spacing: 8.0,
+                    children: [
+                      Text('Unique'),
+                      Switch(
+                        value: unique,
+                        onChanged: (bool v) {
+                          setState(() {
+                            unique = v;
+                          });
+                        },
+                      ),
+                      Expanded(
+                        child: TextFormField(
+                          controller: nameController,
+                          decoration: InputDecoration(
+                            labelText: 'Nom',
+                            border: OutlineInputBorder(),
+                          ),
+                          validator: (String? value) {
+                            if(value == null || value.isEmpty) {
+                              return 'Valeur manquante';
+                            }
+                            return null;
+                          },
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                        ),
+                      ),
+                    ],
                   ),
                   Row(
                     spacing: 12.0,
@@ -272,6 +290,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
               var shield = ShieldModel(
                 uuid: const Uuid().v4().toString(),
                 name: nameController.text,
+                unique: unique,
                 source: ObjectSource.local,
                 weight: double.parse(weightController.text),
                 creationDifficulty: int.parse(dcController.text),
@@ -295,6 +314,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
             }
             else {
               widget.shield!.name = nameController.text;
+              widget.shield!.unique = unique;
               widget.shield!.weight = double.parse(weightController.text);
               widget.shield!.creationDifficulty = int.parse(dcController.text);
               widget.shield!.creationTime = int.parse(tcController.text);

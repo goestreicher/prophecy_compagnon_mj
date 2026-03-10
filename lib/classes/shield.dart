@@ -55,6 +55,7 @@ class ShieldModel extends EquipmentModel {
   factory ShieldModel({
     required String uuid,
     required String name,
+    bool unique = false,
     required ObjectSource source,
     ObjectLocation location = ObjectLocation.memory,
     required double weight,
@@ -73,6 +74,7 @@ class ShieldModel extends EquipmentModel {
         ?? ShieldModel._create(
             uuid: uuid,
             name: name,
+            unique: unique,
             source: source,
             location: location,
             weight: weight,
@@ -93,6 +95,7 @@ class ShieldModel extends EquipmentModel {
   ShieldModel._create({
     required super.uuid,
     required super.name,
+    super.unique,
     required super.source,
     super.location,
     required super.weight,
