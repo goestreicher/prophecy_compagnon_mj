@@ -41,31 +41,46 @@ enum EquipmentScarcity {
   const EquipmentScarcity({ required this.title, required this.short });
 }
 
+typedef EquipmentFactoryFunction = Equipment? Function(String, Map<String, dynamic>?);
+
 class EquipmentFactory {
   static final EquipmentFactory instance = EquipmentFactory._create();
 
-  void registerFactory(String id, Equipment? Function(String,String) factory) {
+  void registerFactory(
+      String id,
+      EquipmentFactoryFunction factory
+  ) {
     if(!_factories.containsKey(id)) _factories[id] = factory;
   }
 
   bool hasFactory(String id) => _factories.containsKey(id);
 
-  Equipment? Function(String,String)? getFactory(String id) {
+  EquipmentFactoryFunction? getFactory(String id) {
     return _factories[id];
   }
 
-  Equipment? forgeEquipment(String fullId, { String uuid = '' }) {
+  Equipment? forgeEquipment(String fullId, { Map<String, dynamic>? json }) {
     var ids = fullId.split(':');
     if (ids.length < 2) return null;
+
     var factory = EquipmentFactory.instance.getFactory(ids[0]);
     if (factory == null) return null;
-    var eq = factory(ids[1], uuid.isNotEmpty ? uuid : const Uuid().v4().toString());
+
+    if(json != null && !json.containsKey('uuid')) {
+      json['uuid'] = const Uuid().v4().toString();
+    }
+
+    var eq = factory(
+      ids[1],
+      json,
+    );
+
     return eq;
   }
 
   EquipmentFactory._create();
 
-  final Map<String, Equipment? Function(String,String)> _factories = {};
+  final Map<String, EquipmentFactoryFunction> _factories = {};
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -140,6 +155,20 @@ abstract class Equipment {
 
   String name;
   double weight;
+
+  @mustCallSuper
+  void restoreFromJson(Map<String, dynamic> json) {
+    // no-op
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'weight': weight,
+      'type': type(),
+      'uuid': uuid(),
+    };
+  }
 }
 
 abstract class EquipableItem extends Equipment {
@@ -168,6 +197,25 @@ abstract class EquipableItem extends Equipment {
   @mustCallSuper
   void unequiped(SupportsEquipableItem owner) {
     equipedOnNotifier.value = EquipableItemTarget.none;
+  }
+
+  @override
+  void restoreFromJson(Map<String, dynamic> json) {
+    super.restoreFromJson(json);
+
+    if(json.containsKey('equiped_on')) {
+      equipedOn = EquipableItemTarget.values.byName(json['equiped_on']);
+    }
+  }
+
+  @override
+  Map<String, dynamic> toJson() {
+    return {
+      ...(super.toJson()),
+      'body_part': bodyPart.name,
+      'handiness': handiness,
+      'equiped_on': equipedOn.name,
+    };
   }
 }
 
@@ -332,13 +380,10 @@ class EntityEquipment with IterableMixin<Equipment>, ChangeNotifier {
         continue;
       }
 
-      var eq = EquipmentFactory.instance.forgeEquipment(e['type'], uuid: e['uuid']);
-
-      if(eq is EquipableItem && j.containsKey('equiped_on')) {
-        eq.equipedOn = EquipableItemTarget.values.byName(j['equiped_on']);
-      }
+      var eq = EquipmentFactory.instance.forgeEquipment(e['type'], json: e);
 
       if (eq != null) {
+        eq.restoreFromJson(e);
         equipment.add(eq);
         uuids.add(eq.uuid());
       }
@@ -351,13 +396,7 @@ class EntityEquipment with IterableMixin<Equipment>, ChangeNotifier {
     List<Map<String, dynamic>> ret = [];
 
     for(var eq in ee) {
-      ret.add({
-        'type': eq.type(),
-        'uuid': eq.uuid(),
-        'equiped_on': eq is EquipableItem
-          ? eq.equipedOn.name
-          : EquipableItemTarget.none.name,
-      });
+      ret.add(eq.toJson());
     }
 
     return ret;

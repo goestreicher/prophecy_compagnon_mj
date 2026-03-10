@@ -117,10 +117,16 @@ class ArmorModel extends EquipmentModel {
 
   static ArmorModel? get(String id) => _cache[id];
 
-  static Armor? _armorFactory(String id, String uuid) {
+  static Armor? _armorFactory(String id, Map<String, dynamic>? json) {
     var model = get(id);
     if(model == null) return null;
-    return Armor(uuid, model: model);
+
+    if(json != null && json.containsKey('uuid')) {
+      return Armor(json['uuid'], model: model);
+    }
+    else {
+      return Armor.create(model: model);
+    }
   }
 
   static Future<void> init() async {

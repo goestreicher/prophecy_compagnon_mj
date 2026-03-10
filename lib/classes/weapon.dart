@@ -221,10 +221,16 @@ class WeaponModel extends EquipmentModel {
       ],
     };
 
-  static Weapon? _weaponFactory(String id, String uuid) {
+  static Weapon? _weaponFactory(String id, Map<String, dynamic>? json) {
     var model = get(id);
     if(model == null) return null;
-    return Weapon(uuid, model: model);
+
+    if(json != null && json.containsKey('uuid')) {
+      return Weapon(json['uuid'], model: model);
+    }
+    else {
+      return Weapon.create(model: model);
+    }
   }
 
   static Object? _getSkillFromJson(Map<dynamic, dynamic> json, _) {

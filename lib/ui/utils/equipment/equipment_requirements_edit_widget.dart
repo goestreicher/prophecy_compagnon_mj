@@ -180,8 +180,8 @@ class _AddRequirementWidgetState extends State<_AddRequirementWidget> {
           constraints: const BoxConstraints(),
         ),
         IconButton(
-          onPressed: ability == null || value == null ? null : () {
-            widget.onDone(ability!, value!);
+          onPressed: ability == null ? null : () {
+            widget.onDone(ability!, value);
           },
           icon: const Icon(Icons.check_circle_outline),
           iconSize: 18.0,

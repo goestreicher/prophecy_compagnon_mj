@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../../classes/armor.dart';
 import '../../classes/combat.dart';
 import '../../classes/entity/skill.dart';
-import '../../classes/equipment.dart';
 import '../../classes/object_source.dart';
 import '../../classes/shield.dart';
 import '../../classes/weapon.dart';
@@ -473,7 +472,7 @@ class _WeaponCategoryContainerState extends State<_WeaponCategoryContainer> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 8.0,
                 children: [
-                  for(var sp in weapon.special ?? <EquipmentSpecialCapability>[])
+                  for(var sp in weapon.special)
                     Text(sp.description),
                 ],
               )
@@ -709,7 +708,7 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 8.0,
                 children: [
-                  for(var sp in shield.special ?? <EquipmentSpecialCapability>[])
+                  for(var sp in shield.special)
                     Text(sp.description),
                 ],
               )
@@ -986,7 +985,7 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 spacing: 8.0,
                 children: [
-                  for(var sp in armor.special ?? <EquipmentSpecialCapability>[])
+                  for(var sp in armor.special)
                     Text(sp.description),
                 ],
               )

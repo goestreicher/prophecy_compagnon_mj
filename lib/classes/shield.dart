@@ -100,10 +100,16 @@ class ShieldModel extends EquipmentModel {
 
   static ShieldModel? get(String id) => _cache[id];
 
-  static Shield? _shieldFactory(String id, String uuid) {
+  static Shield? _shieldFactory(String id, Map<String, dynamic>? json) {
     var model = get(id);
     if(model == null) return null;
-    return Shield(uuid, model: model);
+
+    if(json != null && json.containsKey('uuid')) {
+      return Shield(json['uuid'], model: model);
+    }
+    else {
+      return Shield.create(model: model);
+    }
   }
 
   static Future<void> init() async {
