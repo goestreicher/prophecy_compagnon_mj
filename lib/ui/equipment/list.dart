@@ -80,10 +80,17 @@ class _EquipmentTypeContainerState extends State<_EquipmentTypeContainer> {
                     ),
                   ),
                 ),
-                Text(
-                  widget.title,
-                  style: theme.textTheme.titleLarge!.copyWith(
-                    fontWeight: FontWeight.bold,
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      expanded = !expanded;
+                    });
+                  },
+                  child: Text(
+                    widget.title,
+                    style: theme.textTheme.titleLarge!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
                 ?widget.titleSuffix,
@@ -257,28 +264,35 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
                 ),
               ),
             ),
-            _SubCategoryTitle(
-              title: widget.skill.title,
-              titleSuffix: IconButton(
-                onPressed: () async {
-                  WeaponModel? wm = await showDialog(
-                    context: context,
-                    builder: (BuildContext context) => WeaponEditDialog(
-                      skill: widget.skill,
-                    ),
-                  );
-                  if(wm == null) return;
-                  if(!context.mounted) return;
-                  await WeaponModel.saveLocalModel(wm);
-                  setState(() {
-                    loadWeapons();
-                  });
-                },
-                icon: const Icon(Icons.add),
-                iconSize: 24.0,
-                padding: const EdgeInsets.all(4.0),
-                constraints: const BoxConstraints(),
-                tooltip: 'Nouvelle arme',
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  expanded = !expanded;
+                });
+              },
+              child: _SubCategoryTitle(
+                title: widget.skill.title,
+                titleSuffix: IconButton(
+                  onPressed: () async {
+                    WeaponModel? wm = await showDialog(
+                      context: context,
+                      builder: (BuildContext context) => WeaponEditDialog(
+                        skill: widget.skill,
+                      ),
+                    );
+                    if(wm == null) return;
+                    if(!context.mounted) return;
+                    await WeaponModel.saveLocalModel(wm);
+                    setState(() {
+                      loadWeapons();
+                    });
+                  },
+                  icon: const Icon(Icons.add),
+                  iconSize: 24.0,
+                  padding: const EdgeInsets.all(4.0),
+                  constraints: const BoxConstraints(),
+                  tooltip: 'Nouvelle arme',
+                ),
               ),
             ),
           ],
@@ -893,28 +907,35 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
                 ),
               ),
             ),
-            _SubCategoryTitle(
-              title: widget.type.title,
-              titleSuffix: IconButton(
-                onPressed: () async {
-                  ArmorModel? am = await showDialog(
-                    context: context,
-                    builder: (BuildContext context) => ArmorEditDialog(
-                      type: widget.type,
-                    ),
-                  );
-                  if(am == null) return;
-                  if(!context.mounted) return;
-                  await ArmorModel.saveLocalModel(am);
-                  setState(() {
-                    loadArmors();
-                  });
-                },
-                icon: const Icon(Icons.add),
-                iconSize: 24.0,
-                padding: const EdgeInsets.all(4.0),
-                constraints: const BoxConstraints(),
-                tooltip: 'Nouvelle armure',
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  expanded = !expanded;
+                });
+              },
+              child: _SubCategoryTitle(
+                title: widget.type.title,
+                titleSuffix: IconButton(
+                  onPressed: () async {
+                    ArmorModel? am = await showDialog(
+                      context: context,
+                      builder: (BuildContext context) => ArmorEditDialog(
+                        type: widget.type,
+                      ),
+                    );
+                    if(am == null) return;
+                    if(!context.mounted) return;
+                    await ArmorModel.saveLocalModel(am);
+                    setState(() {
+                      loadArmors();
+                    });
+                  },
+                  icon: const Icon(Icons.add),
+                  iconSize: 24.0,
+                  padding: const EdgeInsets.all(4.0),
+                  constraints: const BoxConstraints(),
+                  tooltip: 'Nouvelle armure',
+                ),
               ),
             )
           ]
