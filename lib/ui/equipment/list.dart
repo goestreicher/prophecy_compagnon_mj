@@ -29,7 +29,7 @@ class EquipmentListPage extends StatelessWidget {
   }
 }
 
-class _EquipmentTypeContainer extends StatelessWidget {
+class _EquipmentTypeContainer extends StatefulWidget {
   const _EquipmentTypeContainer({
     required this.title,
     required this.child,
@@ -39,6 +39,13 @@ class _EquipmentTypeContainer extends StatelessWidget {
   final String title;
   final Widget child;
   final Widget? titleSuffix;
+
+  @override
+  State<_EquipmentTypeContainer> createState() => _EquipmentTypeContainerState();
+}
+
+class _EquipmentTypeContainerState extends State<_EquipmentTypeContainer> {
+  bool expanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -59,16 +66,31 @@ class _EquipmentTypeContainer extends StatelessWidget {
               spacing: 4.0,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                InkWell(
+                  onTap: () {
+                    setState(() {
+                      expanded = !expanded;
+                    });
+                  },
+                  customBorder: const CircleBorder(),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(
+                      expanded ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_right,
+                    ),
+                  ),
+                ),
                 Text(
-                  title,
+                  widget.title,
                   style: theme.textTheme.titleLarge!.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                ?titleSuffix,
+                ?widget.titleSuffix,
               ],
             ),
-            child,
+            if(expanded)
+              widget.child,
           ],
         ),
       ),
@@ -150,7 +172,7 @@ class _WeaponDataContainer extends StatelessWidget {
 
     for(var skill in WeaponModel.weaponSkills()) {
       tables.add(
-        _WeaponCategoryContainer(
+        _WeaponTypeContainer(
           title: skill.title,
           skill: skill,
         )
@@ -167,8 +189,8 @@ class _WeaponDataContainer extends StatelessWidget {
   }
 }
 
-class _WeaponCategoryContainer extends StatefulWidget {
-  const _WeaponCategoryContainer({
+class _WeaponTypeContainer extends StatefulWidget {
+  const _WeaponTypeContainer({
     required this.title,
     required this.skill,
   });
@@ -177,10 +199,11 @@ class _WeaponCategoryContainer extends StatefulWidget {
   final Skill skill;
 
   @override
-  State<_WeaponCategoryContainer> createState() => _WeaponCategoryContainerState();
+  State<_WeaponTypeContainer> createState() => _WeaponTypeContainerState();
 }
 
-class _WeaponCategoryContainerState extends State<_WeaponCategoryContainer> {
+class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
+  bool expanded = false;
   List<WeaponModel> oneHandedWeapons = <WeaponModel>[];
   List<WeaponModel> twoHandedWeapons = <WeaponModel>[];
 
@@ -213,139 +236,165 @@ class _WeaponCategoryContainerState extends State<_WeaponCategoryContainer> {
     var children = <Widget>[];
 
     children.add(
-      _SubCategoryTitle(
-        title: widget.skill.title,
-        titleSuffix: IconButton(
-          onPressed: () async {
-            WeaponModel? wm = await showDialog(
-              context: context,
-              builder: (BuildContext context) => WeaponEditDialog(
-                skill: widget.skill,
+      Padding(
+        padding: EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 4.0,
+          children: [
+            InkWell(
+              onTap: () {
+                setState(() {
+                  expanded = !expanded;
+                });
+              },
+              customBorder: const CircleBorder(),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Icon(
+                  expanded ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_right,
+                  size: 18.0,
+                ),
               ),
-            );
-            if(wm == null) return;
-            if(!context.mounted) return;
-            await WeaponModel.saveLocalModel(wm);
-            setState(() {
-              loadWeapons();
-            });
-          },
-          icon: const Icon(Icons.add),
-          iconSize: 24.0,
-          padding: const EdgeInsets.all(4.0),
-          constraints: const BoxConstraints(),
-          tooltip: 'Nouvelle arme',
+            ),
+            _SubCategoryTitle(
+              title: widget.skill.title,
+              titleSuffix: IconButton(
+                onPressed: () async {
+                  WeaponModel? wm = await showDialog(
+                    context: context,
+                    builder: (BuildContext context) => WeaponEditDialog(
+                      skill: widget.skill,
+                    ),
+                  );
+                  if(wm == null) return;
+                  if(!context.mounted) return;
+                  await WeaponModel.saveLocalModel(wm);
+                  setState(() {
+                    loadWeapons();
+                  });
+                },
+                icon: const Icon(Icons.add),
+                iconSize: 24.0,
+                padding: const EdgeInsets.all(4.0),
+                constraints: const BoxConstraints(),
+                tooltip: 'Nouvelle arme',
+              ),
+            ),
+          ],
         ),
       )
     );
 
-    if(oneHandedWeapons.isEmpty && twoHandedWeapons.isEmpty) {
-      children.add(Text('Aucune'));
-    }
-    else {
-      var rows = <TableRow>[];
-
-      if(oneHandedWeapons.isNotEmpty) {
-        rows.add(
-          _createSeparatorRow('Une main', context)
-        );
-        rows.addAll(_createWeaponRows(oneHandedWeapons, context));
+    if(expanded) {
+      if (oneHandedWeapons.isEmpty && twoHandedWeapons.isEmpty) {
+        children.add(Text('Aucune'));
       }
+      else {
+        var rows = <TableRow>[];
 
-      if(twoHandedWeapons.isNotEmpty) {
-        rows.add(
-          _createSeparatorRow('Deux mains', context)
-        );
-        rows.addAll(_createWeaponRows(twoHandedWeapons, context));
-      }
+        if (oneHandedWeapons.isNotEmpty) {
+          rows.add(
+            _createSeparatorRow('Une main', context)
+          );
+          rows.addAll(_createWeaponRows(oneHandedWeapons, context));
+        }
 
-      children.add(
-        Table(
-          border: TableBorder(
-            left: BorderSide(width: 1.0, color: Colors.black38),
-            top: BorderSide(width: 1.0, color: Colors.black38),
-            right: BorderSide(width: 1.0, color: Colors.black38),
-            bottom: BorderSide(width: 1.0, color: Colors.black38),
-            //verticalInside: BorderSide(width: 1.0, color: Colors.black38),
-            //verticalInside: BorderSide.none,
-          ),
-          defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-          columnWidths: const <int, TableColumnWidth>{
-            0: FixedColumnWidth(140),   // Name
-            1: IntrinsicColumnWidth(),  // Weight
-            2: IntrinsicColumnWidth(),  // Creation difficulty
-            3: IntrinsicColumnWidth(),  // Creation time
-            4: IntrinsicColumnWidth(),  // Village scarcity
-            5: IntrinsicColumnWidth(),  // City scarcity
-            6: IntrinsicColumnWidth(),  // Requirements
-            7: IntrinsicColumnWidth(),  // Initiative
-            8: IntrinsicColumnWidth(),  // Range
-            9: IntrinsicColumnWidth(),  // Damage
-          },
-          children: [
-            TableRow(
-              children: [
-                _HeaderTableCell(
-                    child: Text(
-                      'Nom',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'Poids',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'DC',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'TC',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'Rareté/Prix\n(villages)',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'Rareté/Prix\n(villes)',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'Pré-requis',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'Initiative\n(M/CC)',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'Portée\n(Eff./Max.)',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'Dommages',
-                    )
-                ),
-                _HeaderTableCell(
-                    child: Text(
-                      'Spécial',
-                    )
-                ),
-              ]
+        if (twoHandedWeapons.isNotEmpty) {
+          rows.add(
+              _createSeparatorRow('Deux mains', context)
+          );
+          rows.addAll(_createWeaponRows(twoHandedWeapons, context));
+        }
+
+        children.add(
+          Table(
+            border: TableBorder(
+              left: BorderSide(width: 1.0, color: Colors.black38),
+              top: BorderSide(width: 1.0, color: Colors.black38),
+              right: BorderSide(width: 1.0, color: Colors.black38),
+              bottom: BorderSide(width: 1.0, color: Colors.black38),
+              //verticalInside: BorderSide(width: 1.0, color: Colors.black38),
+              //verticalInside: BorderSide.none,
             ),
-            ...rows
-          ],
-        )
-      );
+            defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+            columnWidths: const <int, TableColumnWidth>{
+              0: FixedColumnWidth(140), // Name
+              1: IntrinsicColumnWidth(), // Weight
+              2: IntrinsicColumnWidth(), // Creation difficulty
+              3: IntrinsicColumnWidth(), // Creation time
+              4: IntrinsicColumnWidth(), // Village scarcity
+              5: IntrinsicColumnWidth(), // City scarcity
+              6: IntrinsicColumnWidth(), // Requirements
+              7: IntrinsicColumnWidth(), // Initiative
+              8: IntrinsicColumnWidth(), // Range
+              9: IntrinsicColumnWidth(), // Damage
+            },
+            children: [
+              TableRow(
+                children: [
+                  _HeaderTableCell(
+                      child: Text(
+                        'Nom',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'Poids',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'DC',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'TC',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'Rareté/Prix\n(villages)',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'Rareté/Prix\n(villes)',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'Pré-requis',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'Initiative\n(M/CC)',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'Portée\n(Eff./Max.)',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'Dommages',
+                      )
+                  ),
+                  _HeaderTableCell(
+                      child: Text(
+                        'Spécial',
+                      )
+                  ),
+                ]
+              ),
+              ...rows
+            ],
+          )
+        );
+      }
     }
 
     return Column(
@@ -799,6 +848,7 @@ class _ArmorTypeContainer extends StatefulWidget {
 }
 
 class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
+  bool expanded = false;
   List<ArmorModel> armors = <ArmorModel>[];
 
   @override
@@ -822,37 +872,63 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
     var children = <Widget>[];
 
     children.add(
-        _SubCategoryTitle(
-          title: widget.type.title,
-          titleSuffix: IconButton(
-            onPressed: () async {
-              ArmorModel? am = await showDialog(
-                context: context,
-                builder: (BuildContext context) => ArmorEditDialog(
-                  type: widget.type,
+      Padding(
+        padding: EdgeInsets.fromLTRB(8.0, 0.0, 0.0, 0.0),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          spacing: 4.0,
+          children: [
+            InkWell(
+              onTap: () {
+                setState(() {
+                  expanded = !expanded;
+                });
+              },
+              customBorder: const CircleBorder(),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: Icon(
+                  expanded ? Icons.keyboard_arrow_down : Icons.keyboard_arrow_right,
+                  size: 18.0,
                 ),
-              );
-              if(am == null) return;
-              if(!context.mounted) return;
-              await ArmorModel.saveLocalModel(am);
-              setState(() {
-                loadArmors();
-              });
-            },
-            icon: const Icon(Icons.add),
-            iconSize: 24.0,
-            padding: const EdgeInsets.all(4.0),
-            constraints: const BoxConstraints(),
-            tooltip: 'Nouvelle armure',
-          ),
-        )
+              ),
+            ),
+            _SubCategoryTitle(
+              title: widget.type.title,
+              titleSuffix: IconButton(
+                onPressed: () async {
+                  ArmorModel? am = await showDialog(
+                    context: context,
+                    builder: (BuildContext context) => ArmorEditDialog(
+                      type: widget.type,
+                    ),
+                  );
+                  if(am == null) return;
+                  if(!context.mounted) return;
+                  await ArmorModel.saveLocalModel(am);
+                  setState(() {
+                    loadArmors();
+                  });
+                },
+                icon: const Icon(Icons.add),
+                iconSize: 24.0,
+                padding: const EdgeInsets.all(4.0),
+                constraints: const BoxConstraints(),
+                tooltip: 'Nouvelle armure',
+              ),
+            )
+          ]
+        ),
+      )
     );
 
-    if(armors.isEmpty) {
-      children.add(Text('Aucune'));
-    }
-    else {
-      children.add(_createArmorTable(armors, context));
+    if(expanded) {
+      if (armors.isEmpty) {
+        children.add(Text('Aucune'));
+      }
+      else {
+        children.add(_createArmorTable(armors, context));
+      }
     }
 
     return Column(
