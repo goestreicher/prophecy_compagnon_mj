@@ -505,7 +505,7 @@ class CommandDispatcher extends ChangeNotifier {
     var selectable = <String>[];
 
     var weapon = _session.encounter!.currentTurn!.activeAction!.environment[CombatTurnActionEnvironmentKey.weapon] as Weapon;
-    for(var entity in _session.encounter!.targetsInWeaponRangeFor(_session.encounter!.currentTurn!.activeAction!.entity, weapon.model.range)) {
+    for(var entity in _session.encounter!.targetsInWeaponRangeFor(_session.encounter!.currentTurn!.activeAction!.entity, (weapon.model as WeaponModel).range)) {
       debugPrint('${entity.name} in weapon range');
 
       // TODO: check if the entity can be selected for the current action subtype

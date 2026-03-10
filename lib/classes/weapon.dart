@@ -33,6 +33,26 @@ class WeaponModelStore extends JsonStoreAdapter<WeaponModel> {
       object.toJson();
 }
 
+class _WeaponFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? model(String id) {
+    return WeaponModel.get(id);
+  }
+
+  @override
+  Equipment? forge(String id, Map<String, dynamic>? json) {
+    var m = WeaponModel.get(id);
+    if(m == null) return null;
+
+    if(json != null && json.containsKey('uuid')) {
+      return Weapon(json['uuid'], model: m);
+    }
+    else {
+      return Weapon.create(model: m);
+    }
+  }
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class WeaponModel extends EquipmentModel {
   factory WeaponModel({
@@ -158,7 +178,7 @@ class WeaponModel extends EquipmentModel {
   }
 
   static Future<void> loadAll() async {
-    EquipmentFactory.instance.registerFactory('weapon', _weaponFactory);
+    EquipmentFactory.instance.registerFactory('weapon', _WeaponFactoryImplementation());
 
     await _loadLock.synchronized(() async {
       var assetFiles = [
@@ -221,18 +241,6 @@ class WeaponModel extends EquipmentModel {
       ],
     };
 
-  static Weapon? _weaponFactory(String id, Map<String, dynamic>? json) {
-    var model = get(id);
-    if(model == null) return null;
-
-    if(json != null && json.containsKey('uuid')) {
-      return Weapon(json['uuid'], model: model);
-    }
-    else {
-      return Weapon.create(model: model);
-    }
-  }
-
   static Object? _getSkillFromJson(Map<dynamic, dynamic> json, _) {
     var skill = Skill.values.byName(json['skill']);
     var sp = SpecializedSkill.create(parent: skill, name: json['name']);
@@ -252,25 +260,22 @@ class WeaponModel extends EquipmentModel {
 }
 
 class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider {
-  Weapon(this._uuid, { required this.model })
+  Weapon(this._uuid, { required WeaponModel model })
     : super(
-        name: model.name,
-        weight: model.weight,
+        model: model,
         bodyPart: model.bodyPart,
         handiness: model.hands
       );
 
-  Weapon.create({ required this.model })
+  Weapon.create({ required WeaponModel model })
     : _uuid = const Uuid().v4().toString(),
       super(
-        name: model.name,
-        weight: model.weight,
+        model: model,
         bodyPart: EquipableItemBodyPart.hand,
         handiness: model.hands
       );
 
   final String _uuid;
-  final WeaponModel model;
 
   @override
   String type() => 'weapon:${model.id}';
@@ -279,14 +284,14 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
   String uuid() => _uuid;
 
   @override
-  Map<Ability, int> equipRequirements() => model.requirements;
+  Map<Ability, int> equipRequirements() => (model as WeaponModel).requirements;
 
   @override
   void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
     super.equiped(owner, target);
 
     if(owner is EntityBase) {
-      for (var range in model.initiative.keys) {
+      for (var range in (model as WeaponModel).initiative.keys) {
         owner.addDamageProvider(range, this);
       }
     }
@@ -303,9 +308,9 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
 
   @override
   int damage(EntityBase owner, {List<int>? throws }) =>
-      model.damage.calculate(
-          model.damage.ability != null
-              ? owner.abilities.ability(model.damage.ability!)
+      (model as WeaponModel).damage.calculate(
+          (model as WeaponModel).damage.ability != null
+              ? owner.abilities.ability((model as WeaponModel).damage.ability!)
               : 0,
           throws: throws
       ).toInt();
@@ -314,10 +319,10 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
   int initiativeForRange(WeaponRange range) {
     int ret = 0;
     WeaponRange selected = WeaponRange.contact;
-    for(var r in model.initiative.keys) {
+    for(var r in (model as WeaponModel).initiative.keys) {
       if(r.index >= selected.index && r.index <= range.index) {
         selected = r;
-        ret = model.initiative[r]!;
+        ret = (model as WeaponModel).initiative[r]!;
       }
     }
     return ret;

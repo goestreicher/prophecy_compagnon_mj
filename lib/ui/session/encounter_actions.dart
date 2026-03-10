@@ -359,7 +359,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
 
     if(weapons.isNotEmpty) {
       var rangedWeapons = weapons
-          .where((Weapon w) => w.model.initiative.containsKey(WeaponRange.ranged))
+          .where((Weapon w) => (w.model as WeaponModel).initiative.containsKey(WeaponRange.ranged))
           .toList();
 
       var hasTargets = widget.action.turn.encounter.targetsInMovementRangeFor(widget.action.entity, WeaponRange.ranged).isNotEmpty ||
@@ -396,7 +396,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
       }
 
       var meleeWeapons = weapons
-          .where((Weapon w) => w.model.initiative.containsKey(WeaponRange.melee))
+          .where((Weapon w) => (w.model as WeaponModel).initiative.containsKey(WeaponRange.melee))
           .toList();
 
       hasTargets = widget.action.turn.encounter.targetsInMovementRangeFor(widget.action.entity, WeaponRange.melee).isNotEmpty ||
@@ -433,7 +433,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
       }
 
       var contactWeapons = weapons
-          .where((Weapon w) => w.model.initiative.containsKey(WeaponRange.contact))
+          .where((Weapon w) => (w.model as WeaponModel).initiative.containsKey(WeaponRange.contact))
           .toList();
 
       hasTargets = widget.action.turn.encounter.targetsInMovementRangeFor(widget.action.entity, WeaponRange.contact).isNotEmpty ||
@@ -712,8 +712,8 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           attacker: action.entity,
           defender: target,
           attribute: Attribute.physique,
-          skill: weapon.model.skill.parent,
-          specialization: weapon.model.skill.name,
+          skill: (weapon.model as WeaponModel).skill.parent,
+          specialization: (weapon.model as WeaponModel).skill.name,
           difficulty: attackDifficulty,
       ),
     );
@@ -804,10 +804,10 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           }
           else {
             if(targetDominantEquipedItem != null) {
-              defenseThrowSpecialization = (targetDominantEquipedItem as Weapon).model.skill;
+              defenseThrowSpecialization = ((targetDominantEquipedItem as Weapon).model as WeaponModel).skill;
             }
             else {
-              defenseThrowSpecialization = (targetWeakEquipedItem as Weapon).model.skill;
+              defenseThrowSpecialization = ((targetWeakEquipedItem as Weapon).model as WeaponModel).skill;
             }
             defenseThrowSkill = defenseThrowSpecialization.parent;
           }

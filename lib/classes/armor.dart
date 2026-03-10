@@ -38,6 +38,26 @@ class ArmorModelStore extends JsonStoreAdapter<ArmorModel> {
       object.toJson();
 }
 
+class _ArmorFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? model(String id) {
+    return ArmorModel.get(id);
+  }
+
+  @override
+  Equipment? forge(String id, Map<String, dynamic>? json) {
+    var m = ArmorModel.get(id);
+    if(m == null) return null;
+
+    if(json != null && json.containsKey('uuid')) {
+      return Armor(json['uuid'], model: m);
+    }
+    else {
+      return Armor.create(model: m);
+    }
+  }
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ArmorModel extends EquipmentModel {
   factory ArmorModel({
@@ -117,18 +137,6 @@ class ArmorModel extends EquipmentModel {
 
   static ArmorModel? get(String id) => _cache[id];
 
-  static Armor? _armorFactory(String id, Map<String, dynamic>? json) {
-    var model = get(id);
-    if(model == null) return null;
-
-    if(json != null && json.containsKey('uuid')) {
-      return Armor(json['uuid'], model: model);
-    }
-    else {
-      return Armor.create(model: model);
-    }
-  }
-
   static Future<void> init() async {
     // ignore:unused_local_variable
     var c = _cache;
@@ -136,7 +144,7 @@ class ArmorModel extends EquipmentModel {
   }
 
   static Future<void> loadAll() async {
-    EquipmentFactory.instance.registerFactory('armor', _armorFactory);
+    EquipmentFactory.instance.registerFactory('armor', _ArmorFactoryImplementation());
 
     await _loadLock.synchronized(() async {
       var assetFiles = [
@@ -183,25 +191,22 @@ class ArmorModel extends EquipmentModel {
 }
 
 class Armor extends EquipableItem implements ProtectionProvider {
-  Armor(this._uuid, { required this.model })
+  Armor(this._uuid, { required ArmorModel model })
     : super(
-        name: model.name,
-        weight: model.weight,
+        model: model,
         bodyPart: EquipableItemBodyPart.body,
         handiness: 0
       );
 
-  Armor.create({ required this.model })
+  Armor.create({ required ArmorModel model })
     : _uuid = const Uuid().v4().toString(),
       super(
-        name: model.name,
-        weight: model.weight,
+        model: model,
         bodyPart: EquipableItemBodyPart.body,
         handiness: 0
       );
 
   final String _uuid;
-  final ArmorModel model;
 
   @override
   String type() => 'armor:${model.id}';
@@ -210,7 +215,7 @@ class Armor extends EquipableItem implements ProtectionProvider {
   String uuid() => _uuid;
 
   @override
-  Map<Ability, int> equipRequirements() => model.requirements;
+  Map<Ability, int> equipRequirements() => (model as ArmorModel).requirements;
 
   @override
   void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
@@ -231,5 +236,5 @@ class Armor extends EquipableItem implements ProtectionProvider {
   }
 
   @override
-  int protection() => model.protection;
+  int protection() => (model as ArmorModel).protection;
 }

@@ -156,11 +156,11 @@ class _ArmorEditWidgetState extends State<ArmorEditWidget> {
                   style: theme.textTheme.bodyMedium,
                 ),
                 Text(
-                  'Pénalite ${widget.armor.model.penalty}',
+                  'Pénalite ${(widget.armor.model as ArmorModel).penalty}',
                   style: theme.textTheme.bodySmall,
                 ),
                 Text(
-                  widget.armor.model.type.title,
+                  (widget.armor.model as ArmorModel).type.title,
                   style: theme.textTheme.bodySmall,
                 )
               ],

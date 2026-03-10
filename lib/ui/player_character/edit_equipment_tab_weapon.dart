@@ -136,19 +136,19 @@ class WeaponEditWidget extends StatefulWidget {
     required this.onEquipedStateChanged,
     this.allowDelete = true,
   }) {
-    if(weapon.model.damage.static != null && weapon.model.damage.static! > 0) {
-      damage = weapon.model.damage.static.toString();
+    if((weapon.model as WeaponModel).damage.static != null && (weapon.model as WeaponModel).damage.static! > 0) {
+      damage = (weapon.model as WeaponModel).damage.static.toString();
     }
     else {
-      var ability = weapon.model.damage.ability!.short;
-      var buffer = StringBuffer(weapon.model.damage.multiply > 1
-          ? '($ability x ${weapon.model.damage.multiply})'
+      var ability = (weapon.model as WeaponModel).damage.ability!.short;
+      var buffer = StringBuffer((weapon.model as WeaponModel).damage.multiply > 1
+          ? '($ability x ${(weapon.model as WeaponModel).damage.multiply})'
           : ability);
-      if(weapon.model.damage.add > 0) {
-        buffer.write(' + ${weapon.model.damage.add}');
+      if((weapon.model as WeaponModel).damage.add > 0) {
+        buffer.write(' + ${(weapon.model as WeaponModel).damage.add}');
       }
-      if(weapon.model.damage.dice > 0) {
-        buffer.write(' + ${weapon.model.damage.dice}D10');
+      if((weapon.model as WeaponModel).damage.dice > 0) {
+        buffer.write(' + ${(weapon.model as WeaponModel).damage.dice}D10');
       }
       damage = buffer.toString();
     }
@@ -364,7 +364,7 @@ class _ShieldEditWidgetState extends State<ShieldEditWidget> {
                   style: theme.textTheme.bodyMedium,
                 ),
                 Text(
-                  'Pénalité ${widget.shield.model.penalty}',
+                  'Pénalité ${(widget.shield.model as ShieldModel).penalty}',
                   style: theme.textTheme.bodySmall,
                 ),
               ],

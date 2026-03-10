@@ -43,19 +43,24 @@ enum EquipmentScarcity {
 
 typedef EquipmentFactoryFunction = Equipment? Function(String, Map<String, dynamic>?);
 
+abstract class EquipmentFactoryImplementation {
+  EquipmentModel? model(String id);
+  Equipment? forge(String id, Map<String, dynamic>? json);
+}
+
 class EquipmentFactory {
   static final EquipmentFactory instance = EquipmentFactory._create();
 
   void registerFactory(
       String id,
-      EquipmentFactoryFunction factory
+      EquipmentFactoryImplementation factory
   ) {
     if(!_factories.containsKey(id)) _factories[id] = factory;
   }
 
   bool hasFactory(String id) => _factories.containsKey(id);
 
-  EquipmentFactoryFunction? getFactory(String id) {
+  EquipmentFactoryImplementation? getFactory(String id) {
     return _factories[id];
   }
 
@@ -64,13 +69,16 @@ class EquipmentFactory {
     if (ids.length < 2) return null;
 
     var factory = EquipmentFactory.instance.getFactory(ids[0]);
-    if (factory == null) return null;
+    if(factory == null) return null;
+
+    var model = factory.model(ids[1]);
+    if(model == null) return null;
 
     if(json != null && !json.containsKey('uuid')) {
-      json['uuid'] = const Uuid().v4().toString();
+      json['uuid'] = model.unique ? model.uuid : const Uuid().v4().toString();
     }
 
-    var eq = factory(
+    var eq = factory.forge(
       ids[1],
       json,
     );
@@ -80,7 +88,7 @@ class EquipmentFactory {
 
   EquipmentFactory._create();
 
-  final Map<String, EquipmentFactoryFunction> _factories = {};
+  final Map<String, EquipmentFactoryImplementation> _factories = {};
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -122,6 +130,7 @@ abstract class EquipmentModel extends ResourceBaseClass {
   EquipmentModel({
     required this.uuid,
     required super.name,
+    this.unique = false,
     required super.source,
     super.location,
     required this.weight,
@@ -134,6 +143,7 @@ abstract class EquipmentModel extends ResourceBaseClass {
     : special = special ?? <EquipmentSpecialCapability>[];
 
   String uuid;
+  bool unique;
   double weight;
   int creationDifficulty;
   int creationTime;
@@ -146,15 +156,15 @@ abstract class EquipmentModel extends ResourceBaseClass {
 
 abstract class Equipment {
   Equipment({
-    required this.name,
-    required this.weight
+    required this.model,
   });
 
   String type();
   String uuid();
 
-  String name;
-  double weight;
+  EquipmentModel model;
+  String get name => model.name;
+  double get weight => model.weight;
 
   @mustCallSuper
   void restoreFromJson(Map<String, dynamic> json) {
@@ -173,8 +183,7 @@ abstract class Equipment {
 
 abstract class EquipableItem extends Equipment {
   EquipableItem({
-    required super.name,
-    required super.weight,
+    required super.model,
     required this.bodyPart,
     required this.handiness,
     EquipableItemTarget equipedOn = EquipableItemTarget.none,

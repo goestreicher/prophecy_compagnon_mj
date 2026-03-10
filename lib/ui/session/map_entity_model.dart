@@ -78,8 +78,8 @@ class MapEntityModel extends MapModelMovableItem {
     var ret = 0.0;
 
     for(var dp in entity.damageProviderForHand(eqTarget)) {
-      if(dp is Weapon && dp.model.range != WeaponRange.contact) {
-        var dist = dp.model.rangeMax.calculate(entity.abilities.force);
+      if(dp is Weapon && (dp.model as WeaponModel).range != WeaponRange.contact) {
+        var dist = (dp.model as WeaponModel).rangeMax.calculate(entity.abilities.force);
         if(dist > ret) ret = dist;
       }
     }
@@ -96,8 +96,8 @@ class MapEntityModel extends MapModelMovableItem {
   WeaponRange combatWeaponRangeFor(EquipableItemTarget eqTarget) {
     var ret = WeaponRange.contact;
     for(var dp in entity.damageProviderForHand(eqTarget)) {
-      if(dp is Weapon && dp.model.range.index > ret.index) {
-        ret = dp.model.range;
+      if(dp is Weapon && (dp.model as WeaponModel).range.index > ret.index) {
+        ret = (dp.model as WeaponModel).range;
       }
     }
     return ret;

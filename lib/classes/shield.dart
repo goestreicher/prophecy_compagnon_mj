@@ -30,6 +30,26 @@ class ShieldModelStore extends JsonStoreAdapter<ShieldModel> {
       object.toJson();
 }
 
+class _ShieldFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? model(String id) {
+    return ShieldModel.get(id);
+  }
+
+  @override
+  Equipment? forge(String id, Map<String, dynamic>? json) {
+    var m = ShieldModel.get(id);
+    if(m == null) return null;
+
+    if(json != null && json.containsKey('uuid')) {
+      return Shield(json['uuid'], model: m);
+    }
+    else {
+      return Shield.create(model: m);
+    }
+  }
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class ShieldModel extends EquipmentModel {
   factory ShieldModel({
@@ -100,18 +120,6 @@ class ShieldModel extends EquipmentModel {
 
   static ShieldModel? get(String id) => _cache[id];
 
-  static Shield? _shieldFactory(String id, Map<String, dynamic>? json) {
-    var model = get(id);
-    if(model == null) return null;
-
-    if(json != null && json.containsKey('uuid')) {
-      return Shield(json['uuid'], model: model);
-    }
-    else {
-      return Shield.create(model: model);
-    }
-  }
-
   static Future<void> init() async {
     // ignore:unused_local_variable
     var c = _cache;
@@ -119,7 +127,7 @@ class ShieldModel extends EquipmentModel {
   }
 
   static Future<void> loadAll() async {
-    EquipmentFactory.instance.registerFactory('shield', _shieldFactory);
+    EquipmentFactory.instance.registerFactory('shield', _ShieldFactoryImplementation());
 
     await _loadLock.synchronized(() async {
       var assetFiles = [
@@ -166,25 +174,22 @@ class ShieldModel extends EquipmentModel {
 }
 
 class Shield extends EquipableItem implements ProtectionProvider, DamageProvider {
-  Shield(this._uuid, { required this.model })
+  Shield(this._uuid, { required ShieldModel model })
     : super(
-        name: model.name,
-        weight: model.weight,
+        model: model,
         bodyPart: EquipableItemBodyPart.hand,
         handiness: 1
       );
 
-  Shield.create({ required this.model })
+  Shield.create({ required ShieldModel model })
     : _uuid = const Uuid().v4().toString(),
       super(
-        name: model.name,
-        weight: model.weight,
+        model: model,
         bodyPart: EquipableItemBodyPart.hand,
         handiness: 1
       );
 
   final String _uuid;
-  final ShieldModel model;
 
   @override
   String type() => 'shield:${model.id}';
@@ -193,7 +198,7 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
   String uuid() => _uuid;
 
   @override
-  Map<Ability, int> equipRequirements() => model.requirements;
+  Map<Ability, int> equipRequirements() => (model as ShieldModel).requirements;
 
   @override
   void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
@@ -217,13 +222,13 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
   }
 
   @override
-  int protection() => model.protection;
+  int protection() => (model as ShieldModel).protection;
 
   @override
   int damage(EntityBase owner, {List<int>? throws }) =>
-      model.damage.calculate(
-        model.damage.ability != null
-            ? owner.abilities.ability(model.damage.ability!)
+      (model as ShieldModel).damage.calculate(
+          (model as ShieldModel).damage.ability != null
+            ? owner.abilities.ability((model as ShieldModel).damage.ability!)
             : 0,
         throws: throws
       ).toInt();
