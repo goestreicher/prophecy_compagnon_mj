@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/entity_base.dart';
-import '../../classes/equipment.dart';
-import '../../classes/shield.dart';
-import '../../classes/weapon.dart';
+import '../../classes/equipment/equipment.dart';
+import '../../classes/equipment/shield.dart';
+import '../../classes/equipment/weapon.dart';
 import '../utils/entity/equipment/shield_picker_dialog.dart';
 import '../utils/entity/equipment/weapon_picker_dialog.dart';
 
@@ -170,22 +170,26 @@ class _WeaponEditWidgetState extends State<WeaponEditWidget> {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    _selected = null;
 
-    if(widget.weapon.handiness == 2) {
-      if(widget.character.dominantHandEquiped == widget.weapon) {
-        _selected = EquipHands.both;
-      }
-      else {
-        _selected = null;
+    if((widget.weapon.model as EquipableItemModel).handiness == 2) {
+      for(var eq in widget.character.equipedForSlot(EquipableItemSlot.hands)) {
+        if(eq is Weapon && eq == widget.weapon) {
+          _selected = EquipHands.both;
+        }
       }
     }
-    else if(widget.weapon.handiness == 1) {
-      if(widget.character.dominantHandEquiped == widget.weapon) {
-        _selected = EquipHands.dominant;
-      } else if(widget.character.weakHandEquiped == widget.weapon) {
-        _selected = EquipHands.weak;
-      } else {
-        _selected = null;
+    else if((widget.weapon.model as EquipableItemModel).handiness == 1) {
+      for(var eq in widget.character.equipedForSlot(EquipableItemSlot.dominantHand)) {
+        if(eq is Weapon && eq == widget.weapon) {
+          _selected = EquipHands.dominant;
+        }
+      }
+
+      for(var eq in widget.character.equipedForSlot(EquipableItemSlot.weakHand)) {
+        if(eq is Weapon && eq == widget.weapon) {
+          _selected = EquipHands.weak;
+        }
       }
     }
     // TODO: manage the weapons with a handiness of zero
@@ -242,13 +246,13 @@ class _WeaponEditWidgetState extends State<WeaponEditWidget> {
             const SizedBox(width: 8.0),
             SegmentedButton<EquipHands>(
               segments: [
-                if(widget.weapon.handiness == 1)
+                if((widget.weapon.model as EquipableItemModel).handiness == 1)
                   ButtonSegment<EquipHands>(
                     value: EquipHands.weak,
                     tooltip: 'Main faible',
                     icon: Transform.flip(flipX: true, child: const Icon(Icons.back_hand_outlined)),
                   ),
-                if(widget.weapon.handiness == 2)
+                if((widget.weapon.model as EquipableItemModel).handiness == 2)
                   ButtonSegment<EquipHands>(
                     value: EquipHands.both,
                     tooltip: 'Deux mains',
@@ -259,9 +263,9 @@ class _WeaponEditWidgetState extends State<WeaponEditWidget> {
                       ],
                     ),
                   ),
-                if(widget.weapon.handiness == 1)
+                if((widget.weapon.model as EquipableItemModel).handiness == 1)
                   ButtonSegment<EquipHands>(
-                    enabled: widget.weapon.handiness == 1,
+                    enabled: (widget.weapon.model as EquipableItemModel).handiness == 1,
                     value: EquipHands.dominant,
                     tooltip: 'Main forte',
                     icon: const Icon(Icons.back_hand_outlined),
@@ -279,17 +283,17 @@ class _WeaponEditWidgetState extends State<WeaponEditWidget> {
                   widget.onEquipedStateChanged();
                 }
                 else {
-                  var target = EquipableItemTarget.none;
+                  EquipableItemSlot? target;
                   if(selection.first == EquipHands.both) {
-                    target = EquipableItemTarget.bothHands;
+                    target = EquipableItemSlot.hands;
                   }
                   else if(selection.first == EquipHands.dominant) {
-                    target = EquipableItemTarget.dominantHand;
+                    target = EquipableItemSlot.dominantHand;
                   }
-                  else if(selection.first == EquipHands.weak) {
-                    target = EquipableItemTarget.weakHand;
+                  else {
+                    target = EquipableItemSlot.weakHand;
                   }
-                  widget.character.replaceEquiped(widget.weapon, target: target);
+                  widget.character.replaceEquiped(item: widget.weapon, target: target);
                   widget.onEquipedStateChanged();
                 }
               },
@@ -385,7 +389,7 @@ class _ShieldEditWidgetState extends State<ShieldEditWidget> {
                       ? null
                       : (bool value) {
                     if(value) {
-                      widget.character.replaceEquiped(widget.shield, target: EquipableItemTarget.weakHand);
+                      widget.character.replaceEquiped(item: widget.shield, target: EquipableItemSlot.weakHand);
                       widget.onEquipedStateChanged();
                     }
                     else if(!value && widget.character.isEquiped(widget.shield)) {

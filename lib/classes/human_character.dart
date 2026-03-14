@@ -21,13 +21,13 @@ import 'entity/specialized_skill.dart';
 import 'entity/status.dart';
 import 'entity_base.dart';
 import 'combat.dart';
-import 'equipment.dart';
+import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'magic_user.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'place.dart';
-import 'weapon.dart';
+import 'equipment/weapon.dart';
 
 part 'human_character.g.dart';
 
@@ -247,8 +247,8 @@ class HumanCharacter extends EntityBase with MagicUser {
         creationTime: 0,
         villageAvailability: EquipmentAvailability.empty,
         cityAvailability: EquipmentAvailability.empty,
-        bodyPart: EquipableItemBodyPart.hand,
-        hands: 0,
+        slot: EquipableItemSlot.hands,
+        handiness: 0,
         requirements: {},
         initiative: {
           WeaponRange.contact: 2,
@@ -278,8 +278,8 @@ class HumanCharacter extends EntityBase with MagicUser {
         creationTime: 0,
         villageAvailability: EquipmentAvailability.empty,
         cityAvailability: EquipmentAvailability.empty,
-        bodyPart: EquipableItemBodyPart.feet,
-        hands: 0,
+        slot: EquipableItemSlot.feet,
+        handiness: 0,
         requirements: {},
         initiative: {
           WeaponRange.contact: 2,

@@ -13,7 +13,7 @@ import 'entity/attributes.dart';
 import 'entity/magic.dart';
 import 'entity/skills.dart';
 import 'entity/status.dart';
-import 'equipment.dart';
+import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'object_location.dart';
 import 'object_source.dart';
@@ -218,17 +218,14 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
   List<DamageProvider> damageProvidersForRange(WeaponRange range) {
     return _damageProviders[range] ?? <DamageProvider>[];
   }
-  List<DamageProvider> damageProviderForHand(EquipableItemTarget hand) {
+  List<DamageProvider> damageProviderForHand(EquipableItemSlot hand) {
     var ret = <DamageProvider>[];
 
-    if(hand == EquipableItemTarget.dominantHand) {
-      if(dominantHandEquiped is DamageProvider) {
-        ret.add(dominantHandEquiped! as DamageProvider);
-      }
-    }
-    else if(hand == EquipableItemTarget.weakHand) {
-      if(weakHandEquiped is DamageProvider) {
-        ret.add(weakHandEquiped! as DamageProvider);
+    if(hand == EquipableItemSlot.dominantHand || hand == EquipableItemSlot.weakHand) {
+      for(var eq in equipedForSlot(hand)) {
+        if(eq is DamageProvider) {
+          ret.add(eq as DamageProvider);
+        }
       }
     }
 
@@ -255,8 +252,11 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     }
 
     int? weakHandInitiative;
-    if(weakHandEquiped != null && weakHandEquiped != dominantHandEquiped) {
-      weakHandInitiative = Random().nextInt(10) + 1;
+    for(var eq in equipedForSlot(EquipableItemSlot.weakHand)) {
+      if(eq is InitiativeProvider) {
+        weakHandInitiative = Random().nextInt(10) + 1;
+        break;
+      }
     }
 
     return (dominantHandInitiatives, weakHandInitiative);
@@ -292,8 +292,8 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
   @mustCallSuper
   void loadNonRestorableJson(Map<String, dynamic> json) {
     for(var eq in equipment) {
-      if(eq is EquipableItem && eq.equipedOn != EquipableItemTarget.none) {
-        equip(eq, target: eq.equipedOn);
+      if(eq is EquipableItem && eq.equipedOn != null) {
+        equip(item: eq, target: eq.equipedOn!);
       }
     }
   }

@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../classes/armor.dart';
+import '../classes/equipment/armor.dart';
 import '../classes/creature.dart';
+import '../classes/equipment/cloth.dart';
 import '../classes/faction.dart';
 import '../classes/magic_spell.dart';
 import '../classes/non_player_character.dart';
 import '../classes/npc_category.dart';
 import '../classes/place.dart';
-import '../classes/shield.dart';
+import '../classes/equipment/shield.dart';
 import '../classes/star.dart';
-import '../classes/weapon.dart';
+import '../classes/equipment/weapon.dart';
 import 'app_routes.dart';
 import 'utils/full_page_loading.dart';
 
@@ -20,6 +21,7 @@ Future<void> _loadAssets() async {
   await ArmorModel.init();
   await ShieldModel.init();
   await WeaponModel.init();
+  await ClothModel.init();
   await MagicSpell.loadDefaultAssets();
   await CreatureCategory.init();
   await Creature.init();

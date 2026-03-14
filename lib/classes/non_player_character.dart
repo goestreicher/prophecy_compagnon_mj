@@ -17,7 +17,7 @@ import 'draconic_link.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
 import 'entity_instance.dart';
-import 'equipment.dart';
+import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
 import 'npc_category.dart';

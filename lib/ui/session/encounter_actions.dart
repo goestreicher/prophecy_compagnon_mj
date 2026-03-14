@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
+import 'package:prophecy_compagnon_mj/classes/equipment/equipment.dart';
 import 'package:provider/provider.dart';
 
 import '../../classes/combat.dart';
@@ -12,8 +13,8 @@ import '../../classes/entity/skill.dart';
 import '../../classes/entity/specialized_skill.dart';
 import '../../classes/entity/status.dart';
 import '../../classes/entity_base.dart';
-import '../../classes/shield.dart';
-import '../../classes/weapon.dart';
+import '../../classes/equipment/shield.dart';
+import '../../classes/equipment/weapon.dart';
 import 'attack_throw_dialog.dart';
 import 'command_dispatcher.dart';
 import 'defense_action_select_dialog.dart';
@@ -746,8 +747,27 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
         }
       }
 
-      var targetDominantEquipedItem = target.dominantHandEquiped;
-      var targetWeakEquipedItem = target.weakHandEquiped;
+      Weapon? targetDominantEquipedWeapon;
+      var targetDominantHasWeapon = false;
+      for(var eq in [...target.equipedForSlot(EquipableItemSlot.hands), ...target.equipedForSlot(EquipableItemSlot.dominantHand)]) {
+        if(eq is Weapon) {
+          targetDominantEquipedWeapon = eq;
+          targetDominantHasWeapon = true;
+        }
+      }
+
+      Weapon? targetWeakEquipedWeapon;
+      var targetWeakHasWeapon = false;
+      var targetWeakHasShield = false;
+      for(var eq in target.equipedForSlot(EquipableItemSlot.weakHand)) {
+        if(eq is Weapon) {
+          targetWeakEquipedWeapon = eq;
+          targetDominantHasWeapon = true;
+        }
+        else if(eq is Shield) {
+          targetWeakHasShield = true;
+        }
+      }
 
       if (availableRanks.isNotEmpty) {
         if(!context.mounted) return;
@@ -756,11 +776,8 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           builder: (BuildContext context) => DefenseActionSelectDialog(
             entityName: target.name,
             ranks: availableRanks,
-            canBlock: (
-                (targetDominantEquipedItem != null && targetDominantEquipedItem is Weapon) ||
-                (targetWeakEquipedItem != null && targetWeakEquipedItem is Weapon)
-            ), // TODO: check the type of weapons used (attack & defense)
-            canBlockShield: targetWeakEquipedItem is Shield,
+            canBlock: (targetDominantHasWeapon || targetWeakHasWeapon), // TODO: check the type of weapons used (attack & defense)
+            canBlockShield: targetWeakHasShield,
           ),
         );
 
@@ -803,11 +820,11 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
             defenseThrowSkill = Skill.bouclier;
           }
           else {
-            if(targetDominantEquipedItem != null) {
-              defenseThrowSpecialization = ((targetDominantEquipedItem as Weapon).model as WeaponModel).skill;
+            if(targetDominantEquipedWeapon != null) {
+              defenseThrowSpecialization = ((targetDominantEquipedWeapon).model as WeaponModel).skill;
             }
             else {
-              defenseThrowSpecialization = ((targetWeakEquipedItem as Weapon).model as WeaponModel).skill;
+              defenseThrowSpecialization = ((targetWeakEquipedWeapon as Weapon).model as WeaponModel).skill;
             }
             defenseThrowSkill = defenseThrowSpecialization.parent;
           }

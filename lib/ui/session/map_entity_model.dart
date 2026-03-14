@@ -8,8 +8,8 @@ import 'package:provider/provider.dart';
 import '../../classes/combat.dart';
 import '../../classes/entity/status.dart';
 import '../../classes/entity_base.dart';
-import '../../classes/equipment.dart';
-import '../../classes/weapon.dart';
+import '../../classes/equipment/equipment.dart';
+import '../../classes/equipment/weapon.dart';
 import 'command_dispatcher.dart';
 import 'map_model.dart';
 
@@ -70,11 +70,11 @@ class MapEntityModel extends MapModelMovableItem {
   double get contactCombatRange => entity.contactCombatRange * map.background.pixelsPerMeter;
 
   double get combatRange => max(
-      combatRangeFor(EquipableItemTarget.dominantHand),
-      combatRangeFor(EquipableItemTarget.weakHand),
+      combatRangeFor(EquipableItemSlot.dominantHand),
+      combatRangeFor(EquipableItemSlot.weakHand),
     );
 
-  double combatRangeFor(EquipableItemTarget eqTarget) {
+  double combatRangeFor(EquipableItemSlot eqTarget) {
     var ret = 0.0;
 
     for(var dp in entity.damageProviderForHand(eqTarget)) {
@@ -88,12 +88,12 @@ class MapEntityModel extends MapModelMovableItem {
   }
 
   WeaponRange get combatWeaponRange {
-    var dHand = combatWeaponRangeFor(EquipableItemTarget.dominantHand);
-    var wHand = combatWeaponRangeFor(EquipableItemTarget.weakHand);
+    var dHand = combatWeaponRangeFor(EquipableItemSlot.dominantHand);
+    var wHand = combatWeaponRangeFor(EquipableItemSlot.weakHand);
     return dHand.index > wHand.index ? dHand : wHand;
   }
 
-  WeaponRange combatWeaponRangeFor(EquipableItemTarget eqTarget) {
+  WeaponRange combatWeaponRangeFor(EquipableItemSlot eqTarget) {
     var ret = WeaponRange.contact;
     for(var dp in entity.damageProviderForHand(eqTarget)) {
       if(dp is Weapon && (dp.model as WeaponModel).range.index > ret.index) {

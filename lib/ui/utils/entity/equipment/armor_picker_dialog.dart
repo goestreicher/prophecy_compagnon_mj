@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/armor.dart';
+import '../../../../classes/equipment/armor.dart';
 
 class ArmorPickerDialog extends StatefulWidget {
   const ArmorPickerDialog({ super.key });

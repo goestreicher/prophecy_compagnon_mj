@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../../classes/armor.dart';
+import '../../../classes/equipment/armor.dart';
 import '../../../classes/caste/base.dart';
 import '../../../classes/draconic_link.dart';
 import '../../../classes/entity/attributes.dart';
 import '../../../classes/entity/skill_family.dart';
-import '../../../classes/equipment.dart';
+import '../../../classes/equipment/equipment.dart';
 import '../../../classes/human_character.dart';
 import '../../../classes/magic.dart';
-import '../../../classes/shield.dart';
-import '../../../classes/weapon.dart';
+import '../../../classes/equipment/shield.dart';
+import '../../../classes/equipment/weapon.dart';
 import '../entity/base/display_abilities_widget.dart';
 import '../entity/base/display_attributes_widget.dart';
 import '../entity/base/display_injuries_widget.dart';

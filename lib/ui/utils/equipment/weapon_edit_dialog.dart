@@ -7,9 +7,9 @@ import '../../../classes/entity/abilities.dart';
 import '../../../classes/entity/base.dart';
 import '../../../classes/entity/skill.dart';
 import '../../../classes/entity/specialized_skill.dart';
-import '../../../classes/equipment.dart';
+import '../../../classes/equipment/equipment.dart';
 import '../../../classes/object_source.dart';
-import '../../../classes/weapon.dart';
+import '../../../classes/equipment/weapon.dart';
 import '../attribute_based_calculator_edit_widget.dart';
 import '../num_input_widget.dart';
 import '../widget_group_container.dart';
@@ -59,7 +59,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
     if(widget.weapon != null) {
       nameController.text = widget.weapon!.name;
       unique = widget.weapon!.unique;
-      hands = widget.weapon!.hands;
+      hands = widget.weapon!.handiness;
       specializedSkill = widget.weapon!.skill;
       weightController.text = widget.weapon!.weight.toStringAsFixed(2);
       dcController.text = widget.weapon!.creationDifficulty.toString();
@@ -382,8 +382,8 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                   price: cityPrice!,
                 ),
                 skill: specializedSkill!,
-                bodyPart: EquipableItemBodyPart.hand,
-                hands: hands!,
+                slot: EquipableItemSlot.hands,
+                handiness: hands!,
                 requirements: requirements,
                 initiative: initiatives,
                 damage: damage,
@@ -409,7 +409,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                 scarcity: cityScarcity!,
                 price: cityPrice!,
               );
-              widget.weapon!.hands = hands!;
+              widget.weapon!.handiness = hands!;
               widget.weapon!.requirements = requirements;
               widget.weapon!.initiative = initiatives;
               widget.weapon!.damage = damage;

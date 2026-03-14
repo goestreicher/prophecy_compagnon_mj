@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:prophecy_compagnon_mj/classes/equipment.dart';
+import 'package:prophecy_compagnon_mj/classes/equipment/equipment.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../../classes/entity/abilities.dart';
 import '../../../classes/entity/base.dart';
 import '../../../classes/object_source.dart';
-import '../../../classes/shield.dart';
+import '../../../classes/equipment/shield.dart';
 import '../attribute_based_calculator_edit_widget.dart';
 import 'equipment_requirements_edit_widget.dart';
 import 'scarcity_edit_widget.dart';

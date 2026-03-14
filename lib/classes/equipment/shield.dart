@@ -2,15 +2,15 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
-import 'entity/base.dart';
-import 'combat.dart';
-import 'entity/abilities.dart';
+import '../entity/base.dart';
+import '../combat.dart';
+import '../entity/abilities.dart';
 import 'equipment.dart';
-import 'entity_base.dart';
-import 'object_location.dart';
-import 'object_source.dart';
-import 'storage/default_assets_store.dart';
-import 'storage/storable.dart';
+import '../entity_base.dart';
+import '../object_location.dart';
+import '../object_source.dart';
+import '../storage/default_assets_store.dart';
+import '../storage/storable.dart';
 
 part 'shield.g.dart';
 
@@ -51,7 +51,7 @@ class _ShieldFactoryImplementation implements EquipmentFactoryImplementation {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class ShieldModel extends EquipmentModel {
+class ShieldModel extends EquipableItemModel {
   factory ShieldModel({
     required String uuid,
     required String name,
@@ -63,6 +63,9 @@ class ShieldModel extends EquipmentModel {
     required int creationTime,
     required EquipmentAvailability villageAvailability,
     required EquipmentAvailability cityAvailability,
+    EquipableItemSlot slot = EquipableItemSlot.hands,
+    int handiness = 1,
+    EquipableItemLayer layer = EquipableItemLayer.normal,
     required Map<Ability, int> requirements,
     required int protection,
     required int penalty,
@@ -82,6 +85,9 @@ class ShieldModel extends EquipmentModel {
             creationTime: creationTime,
             villageAvailability: villageAvailability,
             cityAvailability: cityAvailability,
+            slot: slot,
+            handiness: handiness,
+            layer: layer,
             requirements: requirements,
             protection: protection,
             penalty: penalty,
@@ -103,6 +109,9 @@ class ShieldModel extends EquipmentModel {
     required super.creationTime,
     required super.villageAvailability,
     required super.cityAvailability,
+    super.slot = EquipableItemSlot.hands,
+    super.handiness = 1,
+    super.layer,
     required this.requirements,
     required this.protection,
     required this.penalty,
@@ -180,16 +189,12 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
   Shield(this._uuid, { required ShieldModel model })
     : super(
         model: model,
-        bodyPart: EquipableItemBodyPart.hand,
-        handiness: 1
       );
 
   Shield.create({ required ShieldModel model })
     : _uuid = const Uuid().v4().toString(),
       super(
         model: model,
-        bodyPart: EquipableItemBodyPart.hand,
-        handiness: 1
       );
 
   final String _uuid;
@@ -204,7 +209,7 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
   Map<Ability, int> equipRequirements() => (model as ShieldModel).requirements;
 
   @override
-  void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
+  void equiped(SupportsEquipableItem owner, EquipableItemSlot target) {
     super.equiped(owner, target);
 
     if(owner is EntityBase) {

@@ -1,0 +1,530 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bottes rigides",
+    "uuid": "e300f7ff-9c20-41e3-a20b-6fe49dac69ca",
+    "unique": false,
+    "weight": 1.5,
+    "creation_difficulty": 10,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 80
+    },
+    "special": [],
+    "slot": "feet",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bottes souples",
+    "uuid": "c5bf6503-7fca-4c2d-8019-dcdeb4096c5c",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 60
+    },
+    "special": [],
+    "slot": "feet",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Brodequins",
+    "uuid": "5c225ea6-7df0-46a8-9ec9-c43fd2f394e4",
+    "unique": false,
+    "weight": 0.8,
+    "creation_difficulty": 15,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 60
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 80
+    },
+    "special": [],
+    "slot": "feet",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Cape épaisse",
+    "uuid": "b7bf0347-9a6c-4d50-bb1b-37b062c8385c",
+    "unique": false,
+    "weight": 2,
+    "creation_difficulty": 5,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 30
+    },
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "over"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Cape légère",
+    "uuid": "1be987e8-6807-410e-b221-19e742fc0c1c",
+    "unique": false,
+    "weight": 1.2,
+    "creation_difficulty": 5,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 10
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "over"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Ceinture",
+    "uuid": "1d9697d0-4b3b-4846-8ddf-5bb0eba4c6b9",
+    "unique": false,
+    "weight": 0.2,
+    "creation_difficulty": 5,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 10
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 10
+    },
+    "special": [],
+    "slot": "belt",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Ceinture à poches",
+    "uuid": "1ff5ea2b-5a22-43c8-9513-a062fe1bef6d",
+    "unique": false,
+    "weight": 0.5,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 50
+    },
+    "special": [],
+    "slot": "belt",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Chapeau",
+    "uuid": "575a4f40-3b99-4876-821d-547ba145265e",
+    "unique": false,
+    "weight": 0.3,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 60
+    },
+    "special": [],
+    "slot": "head",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Chausses / Sabots",
+    "uuid": "b4b92c47-53b8-490a-aeb8-418dc55976b1",
+    "unique": false,
+    "weight": 0.6,
+    "creation_difficulty": 10,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 40
+    },
+    "special": [],
+    "slot": "feet",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Gants de cuir",
+    "uuid": "4b2cad5f-944c-40ee-81f5-306eb3363ce9",
+    "unique": false,
+    "weight": 0.3,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 40
+    },
+    "special": [],
+    "slot": "hands",
+    "handiness": 0,
+    "layer": "over"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Gants légers",
+    "uuid": "a80320b9-4210-4877-af88-2fbc274c5559",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 10
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
+    "special": [],
+    "slot": "hands",
+    "handiness": 0,
+    "layer": "over"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "M'jarh (robe de Prodige)",
+    "uuid": "73be4953-5463-4bad-9771-710976e6d7e1",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "nonApplicable",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "nonApplicable",
+      "price": 20
+    },
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "under"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Manteau de tissu",
+    "uuid": "d9dd84b2-5687-4ae8-87a2-012db9a65d98",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 15,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 60
+    },
+    "special": [],
+    "slot": "upperBody",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Manteau de cuir",
+    "uuid": "ac2ec1b8-7c76-4335-94ce-9c9443691804",
+    "unique": false,
+    "weight": 1.5,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 120
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 250
+    },
+    "special": [],
+    "slot": "upperBody",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Poncho de cuir",
+    "uuid": "9180c8fd-cb81-4d0f-a016-20601353ca9d",
+    "unique": false,
+    "weight": 1.5,
+    "creation_difficulty": 10,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 80
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 150
+    },
+    "special": [],
+    "slot": "upperBody",
+    "handiness": 0,
+    "layer": "over"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Robe de bure",
+    "uuid": "e466eda5-c498-44d6-9264-1c3578b1cce8",
+    "unique": false,
+    "weight": 1.5,
+    "creation_difficulty": 5,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "under"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Sandales",
+    "uuid": "0612c2f2-4ac1-42ef-b300-d4274439662c",
+    "unique": false,
+    "weight": 0.3,
+    "creation_difficulty": 10,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 25
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 40
+    },
+    "special": [],
+    "slot": "feet",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Vêtements chauds",
+    "uuid": "65ba4b62-8fe1-41aa-88bb-11fda659fc93",
+    "unique": false,
+    "weight": 2,
+    "creation_difficulty": 10,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 60
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 40
+    },
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "under"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Vêtements communs",
+    "uuid": "af828561-f86d-4f7a-8c31-8a58505338fb",
+    "unique": false,
+    "weight": 1.5,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 60
+    },
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "under"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Vêtements de voyage",
+    "uuid": "f403c6ac-887a-4346-9152-44a53eb152c6",
+    "unique": false,
+    "weight": 2,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 60
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 80
+    },
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "under"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Vêtements en soie",
+    "uuid": "074e3473-661f-4df1-bd2a-ef35df4813ba",
+    "unique": false,
+    "weight": 1.2,
+    "creation_difficulty": 20,
+    "creation_time": 14,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 2000
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 2400
+    },
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "under"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Vêtements fourrés",
+    "uuid": "598fd359-75d4-4838-84ad-093cec4bd4c2",
+    "unique": false,
+    "weight": 2.5,
+    "creation_difficulty": 10,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 80
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 120
+    },
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "under"
+  }
+]

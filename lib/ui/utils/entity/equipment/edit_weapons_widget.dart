@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/entity/abilities.dart';
 import '../../../../classes/entity_base.dart';
-import '../../../../classes/equipment.dart';
-import '../../../../classes/shield.dart';
-import '../../../../classes/weapon.dart';
+import '../../../../classes/equipment/equipment.dart';
+import '../../../../classes/equipment/shield.dart';
+import '../../../../classes/equipment/weapon.dart';
 import '../../widget_group_container.dart';
 import 'shield_equip_widget.dart';
 import 'shield_picker_dialog.dart';
@@ -73,7 +73,7 @@ class _WeaponsWidget extends StatelessWidget {
               // abilities of interest: force, perception, coordination
               return ValueListenableBuilder(
                 valueListenable: eq.equipedOnNotifier,
-                builder: (BuildContext context, EquipableItemTarget value, _) {
+                builder: (BuildContext context, EquipableItemSlot? value, _) {
                   return WeaponEquipWidget(
                     entity: entity,
                     weapon: eq,
@@ -93,7 +93,7 @@ class _WeaponsWidget extends StatelessWidget {
               // abilities of interest: force, resistance
               return ValueListenableBuilder(
                 valueListenable: eq.equipedOnNotifier,
-                builder: (BuildContext context, EquipableItemTarget value, _) {
+                builder: (BuildContext context, EquipableItemSlot? value, _) {
                   return ShieldEquipWidget(
                     entity: entity,
                     shield: eq,

@@ -80,6 +80,7 @@ flutter:
   uses-material-design: true
   assets:
     - assets/armor.json
+    - assets/clothes.json
     - assets/creature-categories.json
     - assets/creatures-ldb2e.json
     - assets/creatures-de-chair-et-d-ecailles.json

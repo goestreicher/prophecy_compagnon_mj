@@ -3,8 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'combat.dart';
 import 'encounter.dart';
 import 'entity_base.dart';
-import 'equipment.dart';
-import 'weapon.dart';
+import 'equipment/equipment.dart';
+import 'equipment/weapon.dart';
 
 enum CombatActionType{
   none(title: 'Aucune action',),
@@ -187,7 +187,7 @@ class CombatTurn extends ChangeNotifier {
         turn: this,
         rank: init,
         entity: entity,
-        hand: EquipableItemTarget.dominantHand,
+        hand: EquipableItemSlot.dominantHand,
       );
 
       actions.add(action);
@@ -200,7 +200,7 @@ class CombatTurn extends ChangeNotifier {
         turn: this,
         rank: weakHandInitiative,
         entity: entity,
-        hand: EquipableItemTarget.weakHand,
+        hand: EquipableItemSlot.weakHand,
       ));
     }
 
@@ -221,14 +221,14 @@ class CombatTurn extends ChangeNotifier {
   }
   
   void _applyLongRunningActionToTurn(CombatActionDuration d) {
-    for(var a in actionsForEntity(d.entity, startAt: currentRank).where((CombatTurnAction a) => a.hand == EquipableItemTarget.dominantHand)) {
+    for(var a in actionsForEntity(d.entity, startAt: currentRank).where((CombatTurnAction a) => a.hand == EquipableItemSlot.dominantHand)) {
       _applyLongRunningActionToAction(d, a);
       if (d.actions == 0) break;
     }
 
     if(d.turns == 1) {
       var actions = actionsForEntity(d.entity, startAt: currentRank)
-          .where((CombatTurnAction a) => a.hand == EquipableItemTarget.dominantHand)
+          .where((CombatTurnAction a) => a.hand == EquipableItemSlot.dominantHand)
           .toList();
       if(actions.isNotEmpty) {
         actions.sort((a, b) => a.rank - b.rank);
@@ -383,7 +383,7 @@ class CombatTurnAction {
   CombatTurn turn;
   int rank;
   final EntityBase entity;
-  final EquipableItemTarget hand;
+  final EquipableItemSlot hand;
   CombatActionType type;
   CombatActionSubtype subtype;
   Map<CombatTurnActionEnvironmentKey, dynamic> environment;
@@ -401,7 +401,7 @@ Map<CombatTurnActionEnvironmentKey, dynamic> _attackBrutalEnvironment = {
     (Map<CombatTurnActionEnvironmentKey, dynamic> env) {
       var initialDamage = env[CombatTurnActionEnvironmentKey.damage] as int;
       var finalDamage = initialDamage + (env[CombatTurnActionEnvironmentKey.attacker] as EntityBase).abilities.force;
-      if((env[CombatTurnActionEnvironmentKey.weapon] as Weapon).handiness == 2) {
+      if(((env[CombatTurnActionEnvironmentKey.weapon] as Weapon).model as EquipableItemModel).handiness == 2) {
         finalDamage += (env[CombatTurnActionEnvironmentKey.attacker] as EntityBase).abilities.force;
       }
       return finalDamage;

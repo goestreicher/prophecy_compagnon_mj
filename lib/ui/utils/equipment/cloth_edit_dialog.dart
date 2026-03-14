@@ -2,29 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../../classes/equipment/armor.dart';
-import '../../../classes/entity/abilities.dart';
+import '../../../classes/equipment/cloth.dart';
 import '../../../classes/equipment/equipment.dart';
 import '../../../classes/object_source.dart';
-import 'equipment_requirements_edit_widget.dart';
 import 'scarcity_edit_widget.dart';
 import 'special_capabilities_edit_widget.dart';
 
-class ArmorEditDialog extends StatefulWidget {
-  const ArmorEditDialog({
+class ClothEditDialog extends StatefulWidget {
+  const ClothEditDialog({
     super.key,
     required this.type,
-    this.armor,
+    this.cloth,
   });
 
-  final ArmorType type;
-  final ArmorModel? armor;
+  final EquipableItemSlot type;
+  final ClothModel? cloth;
 
   @override
-  State<ArmorEditDialog> createState() => _ArmorEditDialogState();
+  State<ClothEditDialog> createState() => _ClothEditDialogState();
 }
 
-class _ArmorEditDialogState extends State<ArmorEditDialog> {
+class _ClothEditDialogState extends State<ClothEditDialog> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
   bool unique = false;
@@ -35,36 +33,32 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
   int? villagePrice;
   EquipmentScarcity? cityScarcity;
   int? cityPrice;
-  Map<Ability, int> requirements = <Ability, int>{};
-  TextEditingController protectionController = TextEditingController();
-  TextEditingController penaltyController = TextEditingController();
+  EquipableItemLayer layer = EquipableItemLayer.normal;
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
   void initState() {
     super.initState();
 
-    if(widget.armor != null) {
-      nameController.text = widget.armor!.name;
-      unique = widget.armor!.unique;
-      weightController.text = widget.armor!.weight.toStringAsFixed(2);
-      dcController.text = widget.armor!.creationDifficulty.toString();
-      tcController.text = widget.armor!.creationTime.toString();
-      villageScarcity = widget.armor!.villageAvailability.scarcity;
-      villagePrice = widget.armor!.villageAvailability.price;
-      cityScarcity = widget.armor!.cityAvailability.scarcity;
-      cityPrice = widget.armor!.cityAvailability.price;
-      requirements = widget.armor!.requirements;
-      protectionController.text = widget.armor!.protection.toString();
-      penaltyController.text = (-widget.armor!.penalty).toString();
-      special = List.from(widget.armor!.special);
+    if(widget.cloth != null) {
+      nameController.text = widget.cloth!.name;
+      unique = widget.cloth!.unique;
+      weightController.text = widget.cloth!.weight.toStringAsFixed(2);
+      dcController.text = widget.cloth!.creationDifficulty.toString();
+      tcController.text = widget.cloth!.creationTime.toString();
+      villageScarcity = widget.cloth!.villageAvailability.scarcity;
+      villagePrice = widget.cloth!.villageAvailability.price;
+      cityScarcity = widget.cloth!.cityAvailability.scarcity;
+      cityPrice = widget.cloth!.cityAvailability.price;
+      layer = widget.cloth!.layer;
+      special = List.from(widget.cloth!.special);
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: const Text("Éditer l'armure"),
+      title: const Text("Éditer le vêtement"),
       content: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -200,66 +194,41 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
                     ],
                   ),
                   Row(
+                    spacing: 8.0,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 12.0,
                     children: [
-                      EquipmentRequirementsEditWidget(
-                        onChanged: (Map<Ability, int> reqs) {
-                          requirements = reqs;
-                        },
-                        requirements: requirements,
-                      ),
                       Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          spacing: 12.0,
-                          children: [
-                            TextFormField(
-                              controller: protectionController,
-                              decoration: InputDecoration(
-                                labelText: 'Protection',
-                                border: OutlineInputBorder(),
-                              ),
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                              validator: (String? value) {
-                                if(value == null || value.isEmpty) return 'Valeur manquante';
-                                int? input = int.tryParse(value);
-                                if(input == null) return 'Pas un nombre';
-                                return null;
-                              },
-                              autovalidateMode: AutovalidateMode.onUserInteraction,
-                            ),
-                            TextFormField(
-                              controller: penaltyController,
-                              decoration: InputDecoration(
-                                labelText: 'Pénalité',
-                                border: OutlineInputBorder(),
-                              ),
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                              validator: (String? value) {
-                                if(value == null || value.isEmpty) return 'Valeur manquante';
-                                int? input = int.tryParse(value);
-                                if(input == null) return 'Pas un nombre';
-                                return null;
-                              },
-                              autovalidateMode: AutovalidateMode.onUserInteraction,
-                            ),
-                          ],
+                        child: EquipmentSpecialCapabilitiesEditWidget(
+                          special: special,
+                          onChanged: (List<EquipmentSpecialCapability> c) {
+                            special = c;
+                          },
+                        ),
+                      ),
+                      SizedBox(
+                        width: 180,
+                        child: DropdownMenuFormField<EquipableItemLayer>(
+                          initialSelection: layer,
+                          requestFocusOnTap: true,
+                          label: const Text('Couche'),
+                          inputDecorationTheme: const InputDecorationTheme(
+                            border: OutlineInputBorder(),
+                          ),
+                          expandedInsets: EdgeInsets.zero,
+                          dropdownMenuEntries: EquipableItemLayer.values
+                              .map((EquipableItemLayer l) => DropdownMenuEntry(value: l, label: l.title))
+                              .toList(),
+                          validator: (EquipableItemLayer? l) {
+                            if(l == null) return 'Valeur manquante';
+                            return null;
+                          },
+                          onSelected: (EquipableItemLayer? l) {
+                            if(l == null) return;
+                            layer = l;
+                          },
                         ),
                       ),
                     ],
-                  ),
-                  EquipmentSpecialCapabilitiesEditWidget(
-                    special: special,
-                    onChanged: (List<EquipmentSpecialCapability> c) {
-                      special = c;
-                    },
                   ),
                 ],
               ),
@@ -277,8 +246,8 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
           onPressed: () async {
             if(!formKey.currentState!.validate()) return;
 
-            if(widget.armor == null) {
-              var armor = ArmorModel(
+            if(widget.cloth == null) {
+              var cloth = ClothModel(
                 uuid: const Uuid().v4().toString(),
                 name: nameController.text,
                 unique: unique,
@@ -294,36 +263,31 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
                   scarcity: cityScarcity!,
                   price: cityPrice!,
                 ),
-                slot: EquipableItemSlot.body,
-                type: widget.type,
-                requirements: requirements,
-                protection: int.parse(protectionController.text),
-                penalty: -int.parse(penaltyController.text),
+                slot: widget.type,
+                layer: layer,
                 special: special,
               );
 
-              Navigator.of(context).pop(armor);
+              Navigator.of(context).pop(cloth);
             }
             else {
-              widget.armor!.name = nameController.text;
-              widget.armor!.unique = unique;
-              widget.armor!.weight = double.parse(weightController.text);
-              widget.armor!.creationDifficulty = int.parse(dcController.text);
-              widget.armor!.creationTime = int.parse(tcController.text);
-              widget.armor!.villageAvailability = EquipmentAvailability(
+              widget.cloth!.name = nameController.text;
+              widget.cloth!.unique = unique;
+              widget.cloth!.weight = double.parse(weightController.text);
+              widget.cloth!.creationDifficulty = int.parse(dcController.text);
+              widget.cloth!.creationTime = int.parse(tcController.text);
+              widget.cloth!.villageAvailability = EquipmentAvailability(
                   scarcity: villageScarcity!,
                   price: villagePrice!
               );
-              widget.armor!.cityAvailability = EquipmentAvailability(
+              widget.cloth!.cityAvailability = EquipmentAvailability(
                 scarcity: cityScarcity!,
                 price: cityPrice!,
               );
-              widget.armor!.requirements = requirements;
-              widget.armor!.protection = int.parse(protectionController.text);
-              widget.armor!.penalty = -int.parse(penaltyController.text);
-              widget.armor!.special = special;
+              widget.cloth!.layer = layer;
+              widget.cloth!.special = special;
 
-              Navigator.of(context).pop(widget.armor!);
+              Navigator.of(context).pop(widget.cloth!);
             }
           },
         )

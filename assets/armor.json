@@ -20,7 +20,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Fourrures",
@@ -43,7 +44,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Cuir souple",
@@ -66,7 +68,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Cuir clouté",
@@ -89,7 +92,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Cuir bouilli",
@@ -112,7 +116,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Armure d'os et de corne",
@@ -137,7 +142,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Cotte légère",
@@ -162,7 +168,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Cotte de mailles",
@@ -188,7 +195,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Armure d'anneaux",
@@ -214,7 +222,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Brigandine",
@@ -240,7 +249,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Armure d'écailles",
@@ -266,7 +276,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Armure de bois",
@@ -292,7 +303,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Armure de demi-plaques",
@@ -318,7 +330,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Armure de lamelles",
@@ -344,7 +357,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "body"
   },
   {
     "name": "Armure de plaques",
@@ -370,7 +384,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "fullBody"
   },
   {
     "name": "Armure draconique",
@@ -396,6 +411,7 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "fullBody"
   }
 ]

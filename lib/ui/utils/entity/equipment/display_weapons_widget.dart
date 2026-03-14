@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/entity_base.dart';
-import '../../../../classes/shield.dart';
-import '../../../../classes/weapon.dart';
+import '../../../../classes/equipment/shield.dart';
+import '../../../../classes/equipment/weapon.dart';
 import '../../widget_group_container.dart';
 import 'equipment_info_widgets.dart';
 

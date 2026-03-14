@@ -2,18 +2,18 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
-import 'combat.dart';
-import 'entity/abilities.dart';
-import 'entity/skill.dart';
-import 'entity/skill_family.dart';
-import 'entity/specialized_skill.dart';
+import '../combat.dart';
+import '../entity/abilities.dart';
+import '../entity/skill.dart';
+import '../entity/skill_family.dart';
+import '../entity/specialized_skill.dart';
 import 'equipment.dart';
-import 'entity_base.dart';
-import 'entity/base.dart';
-import 'object_location.dart';
-import 'object_source.dart';
-import 'storage/default_assets_store.dart';
-import 'storage/storable.dart';
+import '../entity_base.dart';
+import '../entity/base.dart';
+import '../object_location.dart';
+import '../object_source.dart';
+import '../storage/default_assets_store.dart';
+import '../storage/storable.dart';
 
 part 'weapon.g.dart';
 
@@ -54,7 +54,7 @@ class _WeaponFactoryImplementation implements EquipmentFactoryImplementation {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class WeaponModel extends EquipmentModel {
+class WeaponModel extends EquipableItemModel {
   factory WeaponModel({
     required String uuid,
     required String name,
@@ -66,9 +66,10 @@ class WeaponModel extends EquipmentModel {
     required int creationTime,
     required EquipmentAvailability villageAvailability,
     required EquipmentAvailability cityAvailability,
+    required EquipableItemSlot slot,
+    required int handiness,
+    EquipableItemLayer layer = EquipableItemLayer.normal,
     required SpecializedSkill skill,
-    required EquipableItemBodyPart bodyPart,
-    required int hands,
     required Map<Ability, int> requirements,
     required Map<WeaponRange, int> initiative,
     required AttributeBasedCalculator damage,
@@ -89,9 +90,10 @@ class WeaponModel extends EquipmentModel {
             creationTime: creationTime,
             villageAvailability: villageAvailability,
             cityAvailability: cityAvailability,
+            slot: slot,
+            handiness: handiness,
+            layer: layer,
             skill: skill,
-            bodyPart: bodyPart,
-            hands: hands,
             requirements: requirements,
             initiative: initiative,
             damage: damage,
@@ -114,9 +116,10 @@ class WeaponModel extends EquipmentModel {
     required super.creationTime,
     required super.villageAvailability,
     required super.cityAvailability,
+    required super.slot,
+    required super.handiness,
+    super.layer,
     required this.skill,
-    required this.bodyPart,
-    required this.hands,
     required this.requirements,
     required this.initiative,
     required this.damage,
@@ -127,8 +130,6 @@ class WeaponModel extends EquipmentModel {
 
   @JsonKey(readValue: _getSkillFromJson, toJson: _setSkillToJson)
   SpecializedSkill skill;
-  EquipableItemBodyPart bodyPart;
-  int hands;
   Map<Ability,int> requirements;
   Map<WeaponRange, int> initiative;
   AttributeBasedCalculator damage;
@@ -266,16 +267,12 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
   Weapon(this._uuid, { required WeaponModel model })
     : super(
         model: model,
-        bodyPart: model.bodyPart,
-        handiness: model.hands
       );
 
   Weapon.create({ required WeaponModel model })
     : _uuid = const Uuid().v4().toString(),
       super(
         model: model,
-        bodyPart: EquipableItemBodyPart.hand,
-        handiness: model.hands
       );
 
   final String _uuid;
@@ -290,7 +287,7 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
   Map<Ability, int> equipRequirements() => (model as WeaponModel).requirements;
 
   @override
-  void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
+  void equiped(SupportsEquipableItem owner, EquipableItemSlot target) {
     super.equiped(owner, target);
 
     if(owner is EntityBase) {

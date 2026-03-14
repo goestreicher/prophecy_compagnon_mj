@@ -14,7 +14,7 @@ import 'entity/status.dart';
 import 'draconic_favor.dart';
 import 'draconic_link.dart';
 import 'entity_base.dart';
-import 'equipment.dart';
+import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
 import 'object_location.dart';

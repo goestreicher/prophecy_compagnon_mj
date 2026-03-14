@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/armor.dart';
+import '../../../../classes/equipment/armor.dart';
 import '../../../../classes/entity/abilities.dart';
 import '../../../../classes/entity_base.dart';
-import '../../../../classes/equipment.dart';
+import '../../../../classes/equipment/equipment.dart';
 import '../../widget_group_container.dart';
 import 'armor_equip_widget.dart';
 import 'armor_picker_dialog.dart';
@@ -69,7 +69,7 @@ class _ArmorsWidget extends StatelessWidget {
             // abilities of interest: force, resistance
             return ValueListenableBuilder(
               valueListenable: eq.equipedOnNotifier,
-              builder: (BuildContext context, EquipableItemTarget value, _) {
+              builder: (BuildContext context, EquipableItemSlot? value, _) {
                 return ArmorEquipWidget(
                   entity: entity,
                   armor: eq,

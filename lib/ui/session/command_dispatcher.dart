@@ -4,7 +4,7 @@ import '../../classes/combat.dart';
 import '../../classes/combat_turn.dart';
 import '../../classes/encounter.dart';
 import '../../classes/entity/status.dart';
-import '../../classes/weapon.dart';
+import '../../classes/equipment/weapon.dart';
 import 'map_entity_model.dart';
 import 'map_model.dart';
 import 'session_model.dart';

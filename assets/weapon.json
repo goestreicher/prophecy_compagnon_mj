@@ -13,8 +13,8 @@
       "scarcity": "tresCommun",
       "price": 55
     },
-    "body_part": "hand",
-    "hands": 1,
+    "slot": "hands",
+    "handiness": 1,
     "requirements": {
       "force": 3
     },
@@ -53,8 +53,8 @@
       "scarcity": "tresCommun",
       "price": 70
     },
-    "body_part": "hand",
-    "hands": 1,
+    "slot": "hands",
+    "handiness": 1,
     "requirements": {
       "force": 4
     },
@@ -93,8 +93,8 @@
       "scarcity": "commun",
       "price": 115
     },
-    "body_part": "hand",
-    "hands": 1,
+    "slot": "hands",
+    "handiness": 1,
     "requirements": {
       "force": 5
     },
@@ -133,8 +133,6 @@
       "scarcity": "commun",
       "price": 120
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 5
     },
@@ -157,7 +155,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Épée de duel",
@@ -173,8 +173,6 @@
       "scarcity": "peuCommun",
       "price": 325
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 4
     },
@@ -207,7 +205,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Sabre",
@@ -223,8 +223,6 @@
       "scarcity": "commun",
       "price": 125
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 3,
       "coordination": 4
@@ -248,7 +246,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Fauchard",
@@ -264,8 +264,6 @@
       "scarcity": "commun",
       "price": 135
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 4,
       "coordination": 4
@@ -289,7 +287,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Cimeterre",
@@ -305,8 +305,6 @@
       "scarcity": "peuCommun",
       "price": 140
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 5,
       "coordination": 4
@@ -330,7 +328,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Épée batarde",
@@ -346,8 +346,6 @@
       "scarcity": "peuCommun",
       "price": 175
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5
     },
@@ -370,7 +368,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Épée à deux mains",
@@ -386,8 +386,6 @@
       "scarcity": "peuCommun",
       "price": 310
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6
     },
@@ -410,7 +408,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Cimeterre à deux mains",
@@ -426,8 +426,6 @@
       "scarcity": "rare",
       "price": 320
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5
     },
@@ -450,7 +448,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Glaive zangarien",
@@ -466,8 +466,6 @@
       "scarcity": "introuvable",
       "price": 3000
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 7,
       "coordination": 5
@@ -491,7 +489,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Hachette",
@@ -507,8 +507,6 @@
       "scarcity": "commun",
       "price": 65
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 4,
       "coordination": 4
@@ -532,7 +530,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Hache",
@@ -548,8 +548,6 @@
       "scarcity": "commun",
       "price": 100
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 5,
       "coordination": 5
@@ -572,7 +570,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Hache double",
@@ -588,8 +588,6 @@
       "scarcity": "peuCommun",
       "price": 145
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 5,
       "coordination": 6
@@ -612,7 +610,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Pic de guerre",
@@ -628,8 +628,6 @@
       "scarcity": "peuCommun",
       "price": 100
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 3,
       "coordination": 6
@@ -662,7 +660,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Bec de corbin",
@@ -678,8 +678,6 @@
       "scarcity": "rare",
       "price": 145
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 5,
       "coordination": 7
@@ -711,7 +709,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Hache de justice",
@@ -727,8 +727,6 @@
       "scarcity": "nonApplicable",
       "price": 500
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6,
       "coordination": 4
@@ -752,7 +750,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Hache à deux mains",
@@ -768,8 +768,6 @@
       "scarcity": "peuCommun",
       "price": 170
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6,
       "coordination": 6
@@ -793,7 +791,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Hache double à deux mains",
@@ -809,8 +809,6 @@
       "scarcity": "rare",
       "price": 345
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 7,
       "coordination": 6
@@ -834,7 +832,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Pioche de guerre",
@@ -850,8 +850,6 @@
       "scarcity": "rare",
       "price": 200
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6,
       "coordination": 6
@@ -884,7 +882,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Gourdin",
@@ -900,8 +900,6 @@
       "scarcity": "nonApplicable",
       "price": 0
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 3
     },
@@ -934,7 +932,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Gourdin ferré",
@@ -950,8 +950,6 @@
       "scarcity": "commun",
       "price": 40
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 4
     },
@@ -985,7 +983,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Masse d'armes",
@@ -1001,8 +1001,6 @@
       "scarcity": "commun",
       "price": 110
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 4
     },
@@ -1026,7 +1024,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Masse à ailettes",
@@ -1042,8 +1042,6 @@
       "scarcity": "peuCommun",
       "price": 175
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 5,
       "coordination": 5
@@ -1068,7 +1066,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Masse à pointes",
@@ -1084,8 +1084,6 @@
       "scarcity": "peuCommun",
       "price": 170
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 6,
       "coordination": 6
@@ -1109,7 +1107,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Massue ferrée",
@@ -1125,8 +1125,6 @@
       "scarcity": "rare",
       "price": 65
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5
     },
@@ -1149,7 +1147,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Masse à deux mains",
@@ -1165,8 +1165,6 @@
       "scarcity": "peuCommun",
       "price": 220
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6,
       "coordination": 6
@@ -1190,7 +1188,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Marteau à deux mains",
@@ -1206,8 +1206,6 @@
       "scarcity": "rare",
       "price": 175
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 7
     },
@@ -1235,7 +1233,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Fouet",
@@ -1251,8 +1251,6 @@
       "scarcity": "peuCommun",
       "price": 165
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "coordination": 7
     },
@@ -1280,7 +1278,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Chaîne",
@@ -1296,8 +1296,6 @@
       "scarcity": "peuCommun",
       "price": 145
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 4,
       "coordination": 7
@@ -1327,7 +1325,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Fléau léger",
@@ -1343,8 +1343,6 @@
       "scarcity": "peuCommun",
       "price": 350
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 4,
       "coordination": 6
@@ -1377,7 +1375,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Fléau triple",
@@ -1393,8 +1393,6 @@
       "scarcity": "peuCommun",
       "price": 455
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 6,
       "coordination": 7
@@ -1427,7 +1425,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Fléau lourd",
@@ -1443,8 +1443,6 @@
       "scarcity": "rare",
       "price": 575
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 6,
       "coordination": 6
@@ -1477,7 +1475,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Fléau paysan",
@@ -1493,8 +1493,6 @@
       "scarcity": "tresRare",
       "price": 140
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 5
@@ -1535,7 +1533,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Fléau à deux mains",
@@ -1551,8 +1551,6 @@
       "scarcity": "rare",
       "price": 595
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6,
       "coordination": 6
@@ -1585,7 +1583,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Poing de Brorne",
@@ -1601,8 +1601,6 @@
       "scarcity": "rare",
       "price": 1700
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 7,
       "coordination": 7
@@ -1637,7 +1635,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Double épée",
@@ -1653,8 +1653,6 @@
       "scarcity": "peuCommun",
       "price": 430
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "force": 6,
       "coordination": 7
@@ -1683,7 +1681,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Lance-sabre",
@@ -1699,8 +1699,6 @@
       "scarcity": "peuCommun",
       "price": 120
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 6
@@ -1723,7 +1721,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Bâton de combat",
@@ -1739,8 +1739,6 @@
       "scarcity": "tresCommun",
       "price": 20
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "coordination": 3
     },
@@ -1773,7 +1771,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Shaaduk't",
@@ -1789,8 +1789,6 @@
       "scarcity": "nonApplicable",
       "price": 410
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 6
@@ -1833,7 +1831,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Nirga'k",
@@ -1849,8 +1849,6 @@
       "scarcity": "rare",
       "price": 150
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 6
@@ -1879,7 +1877,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Croc à chaîne",
@@ -1895,8 +1895,6 @@
       "scarcity": "rare",
       "price": 475
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 7
@@ -1932,7 +1930,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Double chaîne",
@@ -1948,8 +1948,6 @@
       "scarcity": "rare",
       "price": 530
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 8
@@ -1988,7 +1986,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Double fléau (Fléau d'harmonie)",
@@ -2004,8 +2004,6 @@
       "scarcity": "peuCommun",
       "price": 660
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6,
       "coordination": 7
@@ -2038,7 +2036,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Poing",
@@ -2054,8 +2054,6 @@
       "scarcity": "nonApplicable",
       "price": 0
     },
-    "body_part": "hand",
-    "hands": 0,
     "requirements": {},
     "initiative": {
       "melee": 0,
@@ -2085,7 +2083,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 0
   },
   {
     "name": "Pieds",
@@ -2101,8 +2101,6 @@
       "scarcity": "nonApplicable",
       "price": 0
     },
-    "body_part": "hand",
-    "hands": 0,
     "requirements": {},
     "initiative": {
       "melee": 0,
@@ -2133,7 +2131,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 0
   },
   {
     "name": "Gant clouté",
@@ -2149,8 +2149,6 @@
       "scarcity": "tresCommun",
       "price": 65
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {},
     "initiative": {
       "melee": 0,
@@ -2181,7 +2179,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Gant de métal",
@@ -2197,8 +2197,6 @@
       "scarcity": "commun",
       "price": 135
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {},
     "initiative": {
       "melee": 0,
@@ -2229,7 +2227,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Cestus",
@@ -2245,8 +2245,6 @@
       "scarcity": "commun",
       "price": 50
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {},
     "initiative": {
       "melee": 0,
@@ -2267,7 +2265,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Serpe",
@@ -2283,8 +2283,6 @@
       "scarcity": "peuCommun",
       "price": 95
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {},
     "initiative": {
       "melee": -1,
@@ -2305,7 +2303,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Couteau",
@@ -2321,8 +2321,6 @@
       "scarcity": "tresCommun",
       "price": 20
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {},
     "initiative": {
       "melee": 0,
@@ -2343,7 +2341,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Dague",
@@ -2359,8 +2359,6 @@
       "scarcity": "tresCommun",
       "price": 40
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {},
     "initiative": {
       "melee": 0,
@@ -2381,7 +2379,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Dague main gauche",
@@ -2397,8 +2397,6 @@
       "scarcity": "peuCommun",
       "price": 220
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {},
     "initiative": {
       "melee": 0,
@@ -2430,7 +2428,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Katar",
@@ -2446,8 +2446,6 @@
       "scarcity": "peuCommun",
       "price": 330
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {},
     "initiative": {
       "melee": -1,
@@ -2478,7 +2476,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Lance courte",
@@ -2494,8 +2494,6 @@
       "scarcity": "tresCommun",
       "price": 55
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 3,
       "coordination": 3
@@ -2529,7 +2527,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Lance",
@@ -2545,8 +2545,6 @@
       "scarcity": "tresCommun",
       "price": 80
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 4,
       "coordination": 5
@@ -2583,7 +2581,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Épieu",
@@ -2599,8 +2599,6 @@
       "scarcity": "commun",
       "price": 85
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 4
@@ -2637,7 +2635,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Vouge",
@@ -2653,8 +2653,6 @@
       "scarcity": "peuCommun",
       "price": 150
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 4
@@ -2691,7 +2689,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Hallebarde",
@@ -2707,8 +2707,6 @@
       "scarcity": "peuCommun",
       "price": 310
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 6
@@ -2745,7 +2743,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Trident",
@@ -2761,8 +2761,6 @@
       "scarcity": "peuCommun",
       "price": 165
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "coordination": 4
@@ -2796,7 +2794,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Pique",
@@ -2812,8 +2812,6 @@
       "scarcity": "peuCommun",
       "price": 245
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6,
       "coordination": 5
@@ -2850,7 +2848,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Bolas",
@@ -2866,8 +2866,6 @@
       "scarcity": "rare",
       "price": 55
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "perception": 3,
       "coordination": 6
@@ -2899,7 +2897,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Pierre",
@@ -2915,8 +2915,6 @@
       "scarcity": "nonApplicable",
       "price": 0
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {},
     "initiative": {
       "ranged": 3
@@ -2942,7 +2940,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Dards",
@@ -2958,8 +2958,6 @@
       "scarcity": "peuCommun",
       "price": 25
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "perception": 3,
       "coordination": 4
@@ -2993,7 +2991,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Poignard de lancer",
@@ -3009,8 +3009,6 @@
       "scarcity": "commun",
       "price": 25
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "perception": 4,
       "coordination": 4
@@ -3045,7 +3043,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Couteau étoile",
@@ -3061,8 +3061,6 @@
       "scarcity": "peuCommun",
       "price": 455
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "perception": 4,
       "coordination": 6
@@ -3094,7 +3092,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Hachette de lancer",
@@ -3110,8 +3110,6 @@
       "scarcity": "tresCommun",
       "price": 45
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "perception": 5,
       "coordination": 4
@@ -3142,7 +3140,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Javelot",
@@ -3158,8 +3158,6 @@
       "scarcity": "tresCommun",
       "price": 30
     },
-    "body_part": "hand",
-    "hands": 1,
     "requirements": {
       "perception": 6,
       "coordination": 4
@@ -3191,7 +3189,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 1
   },
   {
     "name": "Arc commun",
@@ -3207,8 +3207,6 @@
       "scarcity": "rare",
       "price": 290
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 3,
       "perception": 4
@@ -3248,7 +3246,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Arc composite",
@@ -3264,8 +3264,6 @@
       "scarcity": "rare",
       "price": 2000
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6,
       "perception": 4
@@ -3305,7 +3303,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Arc long",
@@ -3321,8 +3321,6 @@
       "scarcity": "rare",
       "price": 2400
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5,
       "perception": 4
@@ -3362,7 +3360,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Fronde",
@@ -3378,8 +3378,6 @@
       "scarcity": "commun",
       "price": 90
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "perception": 4,
       "coordination": 6
@@ -3424,7 +3422,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Sarbacane",
@@ -3440,8 +3440,6 @@
       "scarcity": "peuCommun",
       "price": 40
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {},
     "initiative": {
       "ranged": 3
@@ -3473,7 +3471,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Atlat",
@@ -3489,8 +3489,6 @@
       "scarcity": "peuCommun",
       "price": 45
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "perception": 5,
       "coordination": 5
@@ -3532,7 +3530,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Arbalète légère",
@@ -3548,8 +3548,6 @@
       "scarcity": "introuvable",
       "price": 2700
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 4
     },
@@ -3595,7 +3593,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Arbalète moyenne",
@@ -3611,8 +3611,6 @@
       "scarcity": "introuvable",
       "price": 3400
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 5
     },
@@ -3658,7 +3656,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Arbalète lourde",
@@ -3674,8 +3674,6 @@
       "scarcity": "introuvable",
       "price": 8200
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6
     },
@@ -3721,7 +3719,9 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   },
   {
     "name": "Lance-harpon",
@@ -3737,8 +3737,6 @@
       "scarcity": "introuvable",
       "price": 5400
     },
-    "body_part": "hand",
-    "hands": 2,
     "requirements": {
       "force": 6
     },
@@ -3782,6 +3780,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "slot": "hands",
+    "handiness": 2
   }
 ]

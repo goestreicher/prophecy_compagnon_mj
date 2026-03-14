@@ -18,14 +18,14 @@ import 'entity/status.dart';
 import 'entity_instance.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
-import 'equipment.dart';
+import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'magic_user.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'resource_base_class.dart';
 import 'resource_memory_cache.dart';
-import 'weapon.dart';
+import 'equipment/weapon.dart';
 import 'entity/base.dart';
 import 'entity/injury.dart';
 import 'storage/default_assets_store.dart';
@@ -738,8 +738,8 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
             creationTime: 0,
             villageAvailability: EquipmentAvailability.empty,
             cityAvailability: EquipmentAvailability.empty,
-            bodyPart: EquipableItemBodyPart.hand,
-            hands: 0,
+            slot: EquipableItemSlot.hands,
+            handiness: 0,
             requirements: {},
             initiative: Map<WeaponRange, int>.fromEntries(
               weapon.ranges.keys.map( (WeaponRange r) => MapEntry(r, 0) )

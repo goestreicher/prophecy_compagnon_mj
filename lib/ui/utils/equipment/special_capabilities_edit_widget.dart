@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../classes/equipment.dart';
+import '../../../classes/equipment/equipment.dart';
 import '../widget_group_container.dart';
 
 class EquipmentSpecialCapabilitiesEditWidget extends StatefulWidget {

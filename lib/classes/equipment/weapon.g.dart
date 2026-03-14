@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'shield.dart';
+part of 'weapon.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ShieldModel _$ShieldModelFromJson(Map<String, dynamic> json) => ShieldModel(
+WeaponModel _$WeaponModelFromJson(Map<String, dynamic> json) => WeaponModel(
   uuid: json['uuid'] as String,
   name: json['name'] as String,
   unique: json['unique'] as bool? ?? false,
@@ -23,13 +23,29 @@ ShieldModel _$ShieldModelFromJson(Map<String, dynamic> json) => ShieldModel(
   cityAvailability: EquipmentAvailability.fromJson(
     json['city_availability'] as Map<String, dynamic>,
   ),
+  slot: $enumDecode(_$EquipableItemSlotEnumMap, json['slot']),
+  handiness: (json['handiness'] as num).toInt(),
+  layer:
+      $enumDecodeNullable(_$EquipableItemLayerEnumMap, json['layer']) ??
+      EquipableItemLayer.normal,
+  skill: SpecializedSkill.fromJson(
+    WeaponModel._getSkillFromJson(json, 'skill') as Map<String, dynamic>,
+  ),
   requirements: (json['requirements'] as Map<String, dynamic>).map(
     (k, e) => MapEntry($enumDecode(_$AbilityEnumMap, k), (e as num).toInt()),
   ),
-  protection: (json['protection'] as num).toInt(),
-  penalty: (json['penalty'] as num).toInt(),
+  initiative: (json['initiative'] as Map<String, dynamic>).map(
+    (k, e) =>
+        MapEntry($enumDecode(_$WeaponRangeEnumMap, k), (e as num).toInt()),
+  ),
   damage: AttributeBasedCalculator.fromJson(
     json['damage'] as Map<String, dynamic>,
+  ),
+  rangeEffective: AttributeBasedCalculator.fromJson(
+    json['range_effective'] as Map<String, dynamic>,
+  ),
+  rangeMax: AttributeBasedCalculator.fromJson(
+    json['range_max'] as Map<String, dynamic>,
   ),
   special: (json['special'] as List<dynamic>?)
       ?.map(
@@ -38,7 +54,7 @@ ShieldModel _$ShieldModelFromJson(Map<String, dynamic> json) => ShieldModel(
       .toList(),
 );
 
-Map<String, dynamic> _$ShieldModelToJson(ShieldModel instance) =>
+Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
     <String, dynamic>{
       'source': instance.source.toJson(),
       'name': instance.name,
@@ -50,13 +66,43 @@ Map<String, dynamic> _$ShieldModelToJson(ShieldModel instance) =>
       'village_availability': instance.villageAvailability.toJson(),
       'city_availability': instance.cityAvailability.toJson(),
       'special': instance.special.map((e) => e.toJson()).toList(),
+      'slot': _$EquipableItemSlotEnumMap[instance.slot]!,
+      'handiness': instance.handiness,
+      'layer': _$EquipableItemLayerEnumMap[instance.layer]!,
+      'skill': WeaponModel._setSkillToJson(instance.skill),
       'requirements': instance.requirements.map(
         (k, e) => MapEntry(_$AbilityEnumMap[k]!, e),
       ),
-      'protection': instance.protection,
-      'penalty': instance.penalty,
+      'initiative': instance.initiative.map(
+        (k, e) => MapEntry(_$WeaponRangeEnumMap[k]!, e),
+      ),
       'damage': instance.damage.toJson(),
+      'range_effective': instance.rangeEffective.toJson(),
+      'range_max': instance.rangeMax.toJson(),
     };
+
+const _$EquipableItemSlotEnumMap = {
+  EquipableItemSlot.body: 'body',
+  EquipableItemSlot.fullBody: 'fullBody',
+  EquipableItemSlot.upperBody: 'upperBody',
+  EquipableItemSlot.head: 'head',
+  EquipableItemSlot.neck: 'neck',
+  EquipableItemSlot.torso: 'torso',
+  EquipableItemSlot.belt: 'belt',
+  EquipableItemSlot.arms: 'arms',
+  EquipableItemSlot.hands: 'hands',
+  EquipableItemSlot.dominantHand: 'dominantHand',
+  EquipableItemSlot.weakHand: 'weakHand',
+  EquipableItemSlot.fingers: 'fingers',
+  EquipableItemSlot.legs: 'legs',
+  EquipableItemSlot.feet: 'feet',
+};
+
+const _$EquipableItemLayerEnumMap = {
+  EquipableItemLayer.under: 'under',
+  EquipableItemLayer.normal: 'normal',
+  EquipableItemLayer.over: 'over',
+};
 
 const _$AbilityEnumMap = {
   Ability.force: 'force',
@@ -67,4 +113,11 @@ const _$AbilityEnumMap = {
   Ability.volonte: 'volonte',
   Ability.perception: 'perception',
   Ability.empathie: 'empathie',
+};
+
+const _$WeaponRangeEnumMap = {
+  WeaponRange.contact: 'contact',
+  WeaponRange.melee: 'melee',
+  WeaponRange.distance: 'distance',
+  WeaponRange.ranged: 'ranged',
 };

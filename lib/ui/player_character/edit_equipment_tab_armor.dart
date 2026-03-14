@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/entity_base.dart';
-import '../../classes/equipment.dart';
-import '../../classes/armor.dart';
+import '../../classes/equipment/equipment.dart';
+import '../../classes/equipment/armor.dart';
 import '../utils/entity/equipment/armor_picker_dialog.dart';
 
 class ArmorListWidget extends StatefulWidget {
@@ -181,7 +181,10 @@ class _ArmorEditWidgetState extends State<ArmorEditWidget> {
                       ? null
                       : (bool value) {
                     if(value) {
-                      widget.character.replaceEquiped(widget.armor, target: EquipableItemTarget.body);
+                      widget.character.replaceEquiped(
+                        item: widget.armor,
+                        target: (widget.armor.model as EquipableItemModel).slot,
+                      );
                       widget.onEquipedStateChanged();
                     }
                     else if(!value && widget.character.isEquiped(widget.armor)) {

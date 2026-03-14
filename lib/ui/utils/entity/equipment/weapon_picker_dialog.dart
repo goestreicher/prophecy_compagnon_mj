@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/entity/skill.dart';
 import '../../../../classes/entity/skill_family.dart';
-import '../../../../classes/weapon.dart';
+import '../../../../classes/equipment/weapon.dart';
 
 class WeaponPickerDialog extends StatefulWidget {
   const WeaponPickerDialog({ super.key });

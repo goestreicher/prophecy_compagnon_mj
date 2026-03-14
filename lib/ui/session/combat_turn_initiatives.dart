@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prophecy_compagnon_mj/classes/equipment/equipment.dart';
 
 import '../../classes/combat.dart';
 import '../../classes/combat_turn.dart';
@@ -191,10 +192,14 @@ class _CharacterInitiativeInputWidgetState extends State<_CharacterInitiativeInp
     var theme = Theme.of(context);
 
     int dominantHandInitiativeModifier = 0;
-    if(widget.character.dominantHandEquiped != null
-        && widget.character.dominantHandEquiped is InitiativeProvider) {
-      dominantHandInitiativeModifier =
-          (widget.character.dominantHandEquiped as InitiativeProvider).initiativeForRange(widget.engagementRange);
+    var equipments = [
+        ...(widget.character.equipedForSlot(EquipableItemSlot.dominantHand)),
+        ...(widget.character.equipedForSlot(EquipableItemSlot.hands))
+      ];
+    for(var eq in equipments) {
+      if(eq is InitiativeProvider && (eq as InitiativeProvider).initiativeForRange(widget.engagementRange) > dominantHandInitiativeModifier) {
+        dominantHandInitiativeModifier = (eq as InitiativeProvider).initiativeForRange(widget.engagementRange);
+      }
     }
 
     bool useInitialValues = widget.initialValues != null && widget.initialValues!.$1.length == widget.character.initiative;
@@ -248,26 +253,29 @@ class _CharacterInitiativeInputWidgetState extends State<_CharacterInitiativeInp
       selectedInitiativeModifierRank = 0;
     }
 
-    if(widget.character.weakHandEquiped != null
-        && widget.character.weakHandEquiped is InitiativeProvider
-        && widget.character.weakHandEquiped != widget.character.dominantHandEquiped) {
-      requireWeakHandInitiative = true;
-      int weakHandInitiativeModifier =
-      (widget.character.weakHandEquiped as InitiativeProvider).initiativeForRange(widget.engagementRange);
-      initiativesWidget.add(_SingleInitiativeInputWidget(
-        initialValue: useInitialValues ? widget.initialValues!.$2 : null,
-        isWeakHand: true,
-        initiativeModifier: weakHandInitiativeModifier,
-        onInitiativeSelected: (int v) {
-          setState(() {
-            weakHandInitiative = v + weakHandInitiativeModifier;
-          });
-        },
-        onInitiativeModifierSet: () {
-          // NO-OP, as the modifier is always set
-        },
-        selectedForModifier: true,
-      ));
+    for(var eq in widget.character.equipedForSlot(EquipableItemSlot.weakHand)) {
+      if(eq is InitiativeProvider) {
+        requireWeakHandInitiative = true;
+        int weakHandInitiativeModifier =
+          (eq as InitiativeProvider).initiativeForRange(widget.engagementRange);
+
+        initiativesWidget.add(
+          _SingleInitiativeInputWidget(
+            initialValue: useInitialValues ? widget.initialValues!.$2 : null,
+            isWeakHand: true,
+            initiativeModifier: weakHandInitiativeModifier,
+            onInitiativeSelected: (int v) {
+              setState(() {
+                weakHandInitiative = v + weakHandInitiativeModifier;
+              });
+            },
+            onInitiativeModifierSet: () {
+              // NO-OP, as the modifier is always set
+            },
+            selectedForModifier: true,
+          )
+        );
+      }
     }
 
     Widget? damageMalusWidget;

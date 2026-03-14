@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/entity_base.dart';
-import '../../../../classes/equipment.dart';
-import '../../../../classes/shield.dart';
+import '../../../../classes/equipment/equipment.dart';
+import '../../../../classes/equipment/shield.dart';
 import 'equipment_info_widgets.dart';
 
 class ShieldEquipWidget extends StatelessWidget {
@@ -65,8 +65,8 @@ class ShieldEquipWidget extends StatelessWidget {
                       : (bool value) {
                     if(value) {
                       entity.replaceEquiped(
-                        shield,
-                        target: EquipableItemTarget.weakHand
+                        item: shield,
+                        target: EquipableItemSlot.weakHand
                       );
                     }
                     else if(!value && entity.isEquiped(shield)) {

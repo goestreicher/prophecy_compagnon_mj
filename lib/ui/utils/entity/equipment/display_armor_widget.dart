@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/armor.dart';
+import '../../../../classes/equipment/armor.dart';
 import '../../../../classes/entity_base.dart';
 import '../../widget_group_container.dart';
 import 'equipment_info_widgets.dart';

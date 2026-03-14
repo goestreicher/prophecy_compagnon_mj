@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/entity_base.dart';
-import '../../../../classes/equipment.dart';
-import '../../../../classes/weapon.dart';
+import '../../../../classes/equipment/equipment.dart';
+import '../../../../classes/equipment/weapon.dart';
 import 'equipment_info_widgets.dart';
 
 class WeaponEquipWidget extends StatelessWidget {
@@ -58,17 +58,17 @@ class WeaponEquipWidget extends StatelessWidget {
                 style: theme.textTheme.bodySmall,
               ),
             const SizedBox(width: 8.0),
-            SegmentedButton<EquipableItemTarget>(
+            SegmentedButton<EquipableItemSlot>(
               segments: [
-                if(weapon.handiness == 1)
-                  ButtonSegment<EquipableItemTarget>(
-                    value: EquipableItemTarget.weakHand,
+                if((weapon.model as EquipableItemModel).handiness == 1)
+                  ButtonSegment<EquipableItemSlot>(
+                    value: EquipableItemSlot.weakHand,
                     tooltip: 'Main faible',
                     icon: Transform.flip(flipX: true, child: const Icon(Icons.back_hand_outlined)),
                   ),
-                if(weapon.handiness == 2)
-                  ButtonSegment<EquipableItemTarget>(
-                    value: EquipableItemTarget.bothHands,
+                if((weapon.model as EquipableItemModel).handiness == 2)
+                  ButtonSegment<EquipableItemSlot>(
+                    value: EquipableItemSlot.hands,
                     tooltip: 'Deux mains',
                     icon: Row(
                       children: [
@@ -77,29 +77,29 @@ class WeaponEquipWidget extends StatelessWidget {
                       ],
                     ),
                   ),
-                if(weapon.handiness == 1)
-                  ButtonSegment<EquipableItemTarget>(
-                    enabled: weapon.handiness == 1,
-                    value: EquipableItemTarget.dominantHand,
+                if((weapon.model as EquipableItemModel).handiness == 1)
+                  ButtonSegment<EquipableItemSlot>(
+                    enabled: (weapon.model as EquipableItemModel).handiness == 1,
+                    value: EquipableItemSlot.dominantHand,
                     tooltip: 'Main forte',
                     icon: const Icon(Icons.back_hand_outlined),
                   ),
               ],
-              selected: weapon.equipedOn == EquipableItemTarget.none
+              selected: weapon.equipedOn == null
                   ? {}
-                  : <EquipableItemTarget>{weapon.equipedOn},
+                  : <EquipableItemSlot>{weapon.equipedOn!},
               emptySelectionAllowed: true,
               showSelectedIcon: false,
               onSelectionChanged:
                 !entity.meetsEquipableRequirements(weapon)
                   ? null
-                  : (Set<EquipableItemTarget> selection) {
+                  : (Set<EquipableItemSlot> selection) {
                       if(selection.isEmpty) {
                         entity.unequip(weapon);
                       }
                       else {
                         entity.replaceEquiped(
-                          weapon,
+                          item: weapon,
                           target: selection.first
                         );
                       }

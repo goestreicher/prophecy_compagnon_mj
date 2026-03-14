@@ -6,7 +6,7 @@ import 'entity/attributes.dart';
 import 'entity/skill_instance.dart';
 import 'entity/skills.dart';
 import 'entity/status.dart';
-import 'equipment.dart';
+import 'equipment/equipment.dart';
 import 'entity_base.dart';
 import 'exportable_binary_data.dart';
 import 'magic.dart';

@@ -1,6 +1,9 @@
-import "package:prophecy_compagnon_mj/classes/armor.dart";
 import "package:prophecy_compagnon_mj/classes/creature.dart";
 import "package:prophecy_compagnon_mj/classes/entity_instance.dart";
+import "package:prophecy_compagnon_mj/classes/equipment/armor.dart";
+import "package:prophecy_compagnon_mj/classes/equipment/cloth.dart";
+import "package:prophecy_compagnon_mj/classes/equipment/shield.dart";
+import "package:prophecy_compagnon_mj/classes/equipment/weapon.dart";
 import "package:prophecy_compagnon_mj/classes/exportable_binary_data.dart";
 import "package:prophecy_compagnon_mj/classes/faction.dart";
 import "package:prophecy_compagnon_mj/classes/game_session.dart";
@@ -10,18 +13,12 @@ import "package:prophecy_compagnon_mj/classes/place.dart";
 import "package:prophecy_compagnon_mj/classes/place_map.dart";
 import "package:prophecy_compagnon_mj/classes/player_character.dart";
 import "package:prophecy_compagnon_mj/classes/scenario.dart";
-import "package:prophecy_compagnon_mj/classes/shield.dart";
 import "package:prophecy_compagnon_mj/classes/star.dart";
 import "package:prophecy_compagnon_mj/classes/table.dart";
-import "package:prophecy_compagnon_mj/classes/weapon.dart";
 
 import "classes/storage/storage.dart";
 
 void registerStoreAdapters() {
-  DataStorage.registerStoreAdapter(
-    ArmorModelStore().storeCategory(),
-    () => ArmorModelStore(),
-  );
   DataStorage.registerStoreAdapter(
     CreatureCategoryStore().storeCategory(),
     () => CreatureCategoryStore(),
@@ -37,6 +34,22 @@ void registerStoreAdapters() {
   DataStorage.registerStoreAdapter(
     EntityInstanceStore().storeCategory(),
     () => EntityInstanceStore(),
+  );
+  DataStorage.registerStoreAdapter(
+    ArmorModelStore().storeCategory(),
+    () => ArmorModelStore(),
+  );
+  DataStorage.registerStoreAdapter(
+    ClothModelStore().storeCategory(),
+    () => ClothModelStore(),
+  );
+  DataStorage.registerStoreAdapter(
+    ShieldModelStore().storeCategory(),
+    () => ShieldModelStore(),
+  );
+  DataStorage.registerStoreAdapter(
+    WeaponModelStore().storeCategory(),
+    () => WeaponModelStore(),
   );
   DataStorage.registerStoreAdapter(
     BinaryDataStore().storeCategory(),
@@ -99,10 +112,6 @@ void registerStoreAdapters() {
     () => ScenarioStore(),
   );
   DataStorage.registerStoreAdapter(
-    ShieldModelStore().storeCategory(),
-    () => ShieldModelStore(),
-  );
-  DataStorage.registerStoreAdapter(
     StarStore().storeCategory(),
     () => StarStore(),
   );
@@ -117,9 +126,5 @@ void registerStoreAdapters() {
   DataStorage.registerStoreAdapter(
     GameTableStore().storeCategory(),
     () => GameTableStore(),
-  );
-  DataStorage.registerStoreAdapter(
-    WeaponModelStore().storeCategory(),
-    () => WeaponModelStore(),
   );
 }

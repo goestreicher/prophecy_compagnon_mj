@@ -2,13 +2,13 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
-import 'entity/abilities.dart';
-import 'entity_base.dart';
+import '../entity/abilities.dart';
+import '../entity_base.dart';
 import 'equipment.dart';
-import 'object_location.dart';
-import 'object_source.dart';
-import 'storage/default_assets_store.dart';
-import 'storage/storable.dart';
+import '../object_location.dart';
+import '../object_source.dart';
+import '../storage/default_assets_store.dart';
+import '../storage/storable.dart';
 
 part 'armor.g.dart';
 
@@ -59,7 +59,7 @@ class _ArmorFactoryImplementation implements EquipmentFactoryImplementation {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class ArmorModel extends EquipmentModel {
+class ArmorModel extends EquipableItemModel {
   factory ArmorModel({
     required String uuid,
     required String name,
@@ -71,6 +71,9 @@ class ArmorModel extends EquipmentModel {
     required int creationTime,
     required EquipmentAvailability villageAvailability,
     required EquipmentAvailability cityAvailability,
+    int handiness = 0,
+    EquipableItemLayer layer = EquipableItemLayer.normal,
+    required EquipableItemSlot slot,
     required ArmorType type,
     required Map<Ability, int> requirements,
     required int protection,
@@ -90,6 +93,9 @@ class ArmorModel extends EquipmentModel {
           creationTime: creationTime,
           villageAvailability: villageAvailability,
           cityAvailability: cityAvailability,
+          slot: slot,
+          handiness: handiness,
+          layer: layer,
           type: type,
           requirements: requirements,
           protection: protection,
@@ -111,6 +117,9 @@ class ArmorModel extends EquipmentModel {
     required super.creationTime,
     required super.villageAvailability,
     required super.cityAvailability,
+    required super.slot,
+    super.handiness = 0,
+    super.layer,
     required this.type,
     required this.requirements,
     required this.protection,
@@ -197,16 +206,12 @@ class Armor extends EquipableItem implements ProtectionProvider {
   Armor(this._uuid, { required ArmorModel model })
     : super(
         model: model,
-        bodyPart: EquipableItemBodyPart.body,
-        handiness: 0
       );
 
   Armor.create({ required ArmorModel model })
     : _uuid = const Uuid().v4().toString(),
       super(
         model: model,
-        bodyPart: EquipableItemBodyPart.body,
-        handiness: 0
       );
 
   final String _uuid;
@@ -221,7 +226,7 @@ class Armor extends EquipableItem implements ProtectionProvider {
   Map<Ability, int> equipRequirements() => (model as ArmorModel).requirements;
 
   @override
-  void equiped(SupportsEquipableItem owner, EquipableItemTarget target) {
+  void equiped(SupportsEquipableItem owner, EquipableItemSlot target) {
     super.equiped(owner, target);
 
     if(owner is EntityBase) {

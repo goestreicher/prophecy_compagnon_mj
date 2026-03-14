@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/armor.dart';
-import '../../../../classes/shield.dart';
-import '../../../../classes/weapon.dart';
+import '../../../../classes/equipment/armor.dart';
+import '../../../../classes/equipment/shield.dart';
+import '../../../../classes/equipment/weapon.dart';
 
 class WeaponInfoWidget extends StatelessWidget {
   const WeaponInfoWidget({ super.key, required this.weapon });
