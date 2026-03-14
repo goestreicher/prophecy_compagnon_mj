@@ -11,18 +11,6 @@ import 'equipment.dart';
 
 part 'cloth.g.dart';
 
-enum ClothCategory {
-  body(title: 'Corps'),
-  feet(title: 'Pieds'),
-  hands(title: 'Mains'),
-  head(title: 'Tête'),
-  ;
-
-  final String title;
-
-  const ClothCategory({ required this.title });
-}
-
 class ClothModelStore extends JsonStoreAdapter<ClothModel> {
   @override
   String storeCategory() => 'clothModels';
