@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:prophecy_compagnon_mj/classes/equipment/misc_gear.dart';
 
 import '../../classes/equipment/armor.dart';
 import '../../classes/combat.dart';
@@ -13,11 +14,13 @@ import '../../classes/equipment/shield.dart';
 import '../../classes/equipment/weapon.dart';
 import '../utils/equipment/armor_edit_dialog.dart';
 import '../utils/equipment/cloth_edit_dialog.dart';
+import '../utils/equipment/misc_gear_edit_dialog.dart';
 import '../utils/equipment/shield_edit_dialog.dart';
 import '../utils/equipment/weapon_edit_dialog.dart';
 
 part 'list.armor.g.dart';
 part 'list.cloth.g.dart';
+part 'list.misc-gear.g.dart';
 part 'list.shield.g.dart';
 part 'list.weapon.g.dart';
 
@@ -35,6 +38,7 @@ class EquipmentListPage extends StatelessWidget {
           _ShieldDataContainer(),
           _ArmorDataContainer(),
           _ClothDataContainer(),
+          _MiscGearDataContainer(),
         ],
       ),
     );

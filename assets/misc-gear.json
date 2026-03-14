@@ -1,0 +1,947 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bandage",
+    "uuid": "39015493-6c43-4b67-8f4d-cd23b28e9ebf",
+    "unique": false,
+    "weight": 0.2,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 20
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bille",
+    "uuid": "9055f731-43a1-434d-a4aa-e1b1e72d8d1f",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 5,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 1
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 1
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bourse",
+    "uuid": "9a414c5e-2d8b-4387-8d5c-ea5096676553",
+    "unique": false,
+    "weight": 0.2,
+    "creation_difficulty": 10,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 3
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 2
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Briquet à amadou",
+    "uuid": "1de0f7bf-11ef-4ee6-a61d-0e83a975a2f1",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 10
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 15
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Carquois",
+    "uuid": "3682137d-227a-48ff-86c6-ab812eec6499",
+    "unique": false,
+    "weight": 0.5,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 25
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 20
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Carreau",
+    "uuid": "cea676e1-2dcb-4a3a-963b-de2eb71e7f97",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 15,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 5
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 10
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Carnet (20 pages)",
+    "uuid": "849d426a-9abb-4683-9036-65b5e4c4532e",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 15,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 75
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Chaîne (5m)",
+    "uuid": "2cbc2a0e-b686-4a6e-8510-197ec995c86b",
+    "unique": false,
+    "weight": 2,
+    "creation_difficulty": 20,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 70
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Corde (5m)",
+    "uuid": "f55eadde-e5b7-423d-be6d-b2cba5dbf9d1",
+    "unique": false,
+    "weight": 3,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 5
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 8
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Couchage",
+    "uuid": "a124f36b-cab3-457f-8f79-411c2ead9533",
+    "unique": false,
+    "weight": 2,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 5
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Couverture",
+    "uuid": "6a5a2cb9-6305-426a-a4b2-10c3987dcf7f",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 25
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Drapeau de toile",
+    "uuid": "bad65e54-a71a-413c-9079-02b430a29ef1",
+    "unique": false,
+    "weight": 0.3,
+    "creation_difficulty": 5,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 2
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 3
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Encrier",
+    "uuid": "1a7f0453-ca8e-41d7-9650-598271a64b1e",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 30
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Encens",
+    "uuid": "110a26ad-cfc4-4927-946c-10b7397337eb",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 12,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 40
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Fiole vide",
+    "uuid": "eea6718b-e55b-422c-b345-b5a8135cb1b6",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 6
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 5
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Fiole d'encre",
+    "uuid": "878b1aea-de94-484a-ad45-c1ffea9e7596",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 8
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 10
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Fiole d'huile",
+    "uuid": "d6f12518-f669-473b-95ff-bcf8988885d8",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 14
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 15
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Filet",
+    "uuid": "b4142bb8-aca2-4112-a491-26bdf0c42b9e",
+    "unique": false,
+    "weight": 3,
+    "creation_difficulty": 10,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Flèche",
+    "uuid": "f9f45d40-534c-4ec4-ba8d-bf5353cf824d",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 15,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 2
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 2
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Gamelle / bol / écuelle",
+    "uuid": "1509883a-672e-43e6-944c-1ce8a1a32f9d",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 3
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 3
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Gourde",
+    "uuid": "5eabd017-c4b2-4819-907a-2c0408912e6c",
+    "unique": false,
+    "weight": 0.5,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 7
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 8
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Grappin",
+    "uuid": "4466e883-654a-425e-8688-dab029b0bff6",
+    "unique": false,
+    "weight": 2,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 25
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Instrument de musique",
+    "uuid": "de82e8a0-805d-410b-8af7-09045ba733b9",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 15,
+    "creation_time": 15,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 60
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Lampe à huile",
+    "uuid": "2369f61c-7ff3-4930-b611-af70abe3f3ed",
+    "unique": false,
+    "weight": 0.5,
+    "creation_difficulty": 15,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 15
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 15
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Livre vierge (30 pages)",
+    "uuid": "e410469f-f1b6-478e-834f-65cfde430844",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 15,
+    "creation_time": 6,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 150
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 100
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Marteau et burin",
+    "uuid": "e25dd96f-3eff-4c1d-b3c0-aab68e1857c5",
+    "unique": false,
+    "weight": 3,
+    "creation_difficulty": 10,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 25
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Matériel de cuisine",
+    "uuid": "b6e86e2c-1e4d-4a6d-8a9d-32f23f3f88f4",
+    "unique": false,
+    "weight": 3,
+    "creation_difficulty": 10,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 35
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Mirroir",
+    "uuid": "68c09b9b-c42a-4535-af7e-43ab2cd2e306",
+    "unique": false,
+    "weight": 0.5,
+    "creation_difficulty": 15,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 250
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Musette",
+    "uuid": "14571d3c-a950-46b9-a5f5-14ab88fb5b12",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 30
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Papyrus",
+    "uuid": "dafb70b2-b0c4-4210-b941-7a3db04275c4",
+    "unique": false,
+    "weight": 0,
+    "creation_difficulty": 5,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 5
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 5
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Parchemin",
+    "uuid": "84d14c7d-d24f-4397-bb90-126a2ea74d5d",
+    "unique": false,
+    "weight": 0,
+    "creation_difficulty": 10,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 25
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 20
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Peinture",
+    "uuid": "d70655c0-b230-4645-b136-64bb92476d81",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 10,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 50
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Piège à ours",
+    "uuid": "23477003-1dd5-4959-9bbf-34a01b5aee08",
+    "unique": false,
+    "weight": 4,
+    "creation_difficulty": 15,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 35
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 40
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Pierre à aiguiser",
+    "uuid": "46d4566e-53bc-434c-bd10-38512e27a176",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 10
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 10
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Pinceau",
+    "uuid": "9e534ed9-7e72-421a-a7a1-549c4561b78b",
+    "unique": false,
+    "weight": 0,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 10
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 10
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Piton",
+    "uuid": "40daea0f-59f6-4bb1-bbe5-706c91628b74",
+    "unique": false,
+    "weight": 0.1,
+    "creation_difficulty": 10,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 10
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 10
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Plume de scribe",
+    "uuid": "dd837a84-acd8-4ce7-95bb-32f945f218b6",
+    "unique": false,
+    "weight": 0,
+    "creation_difficulty": 10,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 5
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 10
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Pochette (en cuir)",
+    "uuid": "b21f5099-51f0-4359-a44d-21ee56ffc610",
+    "unique": false,
+    "weight": 0.2,
+    "creation_difficulty": 5,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 10
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 10
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Sac de campagne",
+    "uuid": "68894892-5ced-4765-9113-e8fa8d1c930f",
+    "unique": false,
+    "weight": 2,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 40
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Sac de voyage",
+    "uuid": "14d42bdc-403b-4a02-9e65-bf9f4b6750a2",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 35
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 30
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Sifflet",
+    "uuid": "03e74cec-17b1-410a-8a69-a4a787426d72",
+    "unique": false,
+    "weight": 0,
+    "creation_difficulty": 10,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 2
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 3
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Tente (grande)",
+    "uuid": "7a5c68dd-1787-48a8-a18a-f80d2c18bdee",
+    "unique": false,
+    "weight": 10,
+    "creation_difficulty": 20,
+    "creation_time": 18,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 600
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 700
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Tente (individuelle)",
+    "uuid": "f4f29a31-5eab-4318-bc66-a111d0149f75",
+    "unique": false,
+    "weight": 5,
+    "creation_difficulty": 15,
+    "creation_time": 7,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 60
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Toile huilée (4m²)",
+    "uuid": "a976d1e2-6533-451d-97f5-57f0ed79b4b7",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 10,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 7
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 8
+    },
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Torche",
+    "uuid": "8132df76-1c87-400e-a9e9-b66c56c6c58b",
+    "unique": false,
+    "weight": 0.2,
+    "creation_difficulty": 5,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 2
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 2
+    },
+    "special": []
+  }
+]

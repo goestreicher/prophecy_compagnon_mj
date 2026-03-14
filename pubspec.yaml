@@ -101,6 +101,7 @@ flutter:
     - assets/factions-les-secrets-de-kalimsshar.json
     - assets/factions-les-voiles-de-nenya.json
     - assets/factions-yris-flambeau-de-l-humanite.json
+    - assets/misc-gear.json
     - assets/npc-categories.json
     - assets/npc-subcategories.json
     - assets/npcs-ldb2e.json
