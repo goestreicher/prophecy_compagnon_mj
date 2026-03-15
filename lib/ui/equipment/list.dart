@@ -9,17 +9,20 @@ import '../../classes/combat.dart';
 import '../../classes/entity/skill.dart';
 import '../../classes/equipment/cloth.dart';
 import '../../classes/equipment/equipment.dart';
+import '../../classes/equipment/jewel.dart';
 import '../../classes/object_source.dart';
 import '../../classes/equipment/shield.dart';
 import '../../classes/equipment/weapon.dart';
 import '../utils/equipment/armor_edit_dialog.dart';
 import '../utils/equipment/cloth_edit_dialog.dart';
+import '../utils/equipment/jewel_edit_dialog.dart';
 import '../utils/equipment/misc_gear_edit_dialog.dart';
 import '../utils/equipment/shield_edit_dialog.dart';
 import '../utils/equipment/weapon_edit_dialog.dart';
 
 part 'list.armor.g.dart';
 part 'list.cloth.g.dart';
+part 'list.jewel.g.dart';
 part 'list.misc-gear.g.dart';
 part 'list.shield.g.dart';
 part 'list.weapon.g.dart';
@@ -38,6 +41,7 @@ class EquipmentListPage extends StatelessWidget {
           _ShieldDataContainer(),
           _ArmorDataContainer(),
           _ClothDataContainer(),
+          _JewelDataContainer(),
           _MiscGearDataContainer(),
         ],
       ),

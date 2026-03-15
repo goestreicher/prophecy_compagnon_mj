@@ -1,0 +1,352 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Anneau",
+    "uuid": "2cc1c9b0-0024-4ca6-b4ff-62fc61072365",
+    "unique": false,
+    "weight": 0.005,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 5
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 5
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "fingers",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bague",
+    "uuid": "70ef5f53-847b-4c1b-a000-a2c7b0aa9b97",
+    "unique": false,
+    "weight": 0.015,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 20
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "fingers",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bandeau",
+    "uuid": "c7a31f25-fc18-4f5e-9216-7ea98c331949",
+    "unique": false,
+    "weight": 0.06,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 15
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 15
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "fingers",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Boucles d'oreilles",
+    "uuid": "264d20b5-bff6-4c67-be1b-63dfadde9775",
+    "unique": false,
+    "weight": 0.01,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 10
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 10
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "ears",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bracelet (petit)",
+    "uuid": "67f38714-6756-424d-a924-3a6fe4be5852",
+    "unique": false,
+    "weight": 0.03,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 30
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "forearms",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bracelet (grand)",
+    "uuid": "e22b03dd-fb0e-4a8e-ad5b-5ba050f7d644",
+    "unique": false,
+    "weight": 0.05,
+    "creation_difficulty": 10,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 50
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "forearms",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bracelet de force",
+    "uuid": "f887a035-0890-4adc-ad26-14bd9461d91b",
+    "unique": false,
+    "weight": 0.4,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 60
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 60
+    },
+    "supports_metal": false,
+    "special": [],
+    "slot": "forearms",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Bracelet de combattant",
+    "uuid": "64128f37-43c2-4d9d-8c70-99210b911227",
+    "unique": false,
+    "weight": 1,
+    "creation_difficulty": 20,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 80
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 80
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "forearms",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Broche",
+    "uuid": "6eb674ef-f62e-4025-a454-7aa23b70ddcd",
+    "unique": false,
+    "weight": 0.03,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 40
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "chest",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Chaînette",
+    "uuid": "096b762a-8e6c-46f1-9b4c-c8c25e06ecb5",
+    "unique": false,
+    "weight": 0.02,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 40
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "neck",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Collier (simple)",
+    "uuid": "5cc65e9d-d9dd-4814-a3f7-c66bb7967ada",
+    "unique": false,
+    "weight": 0.08,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 60
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 60
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "neck",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Collier (large)",
+    "uuid": "16ebd360-eb9d-4e6f-9b69-e09610575d86",
+    "unique": false,
+    "weight": 0.2,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 80
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 80
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "neck",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Couronne",
+    "uuid": "ded03c3d-539b-4f5b-a887-1c9db35b7508",
+    "unique": false,
+    "weight": 0.4,
+    "creation_difficulty": 20,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "forehead",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Torque",
+    "uuid": "d605abad-05cb-4e7c-bc22-7bed2e4a67b3",
+    "unique": false,
+    "weight": 0.5,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 70
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 70
+    },
+    "supports_metal": true,
+    "special": [],
+    "slot": "upperArms",
+    "handiness": 0,
+    "layer": "normal"
+  }
+]

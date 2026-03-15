@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'armor.dart';
+part of 'jewel.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ArmorModel _$ArmorModelFromJson(Map<String, dynamic> json) => ArmorModel(
+JewelModel _$JewelModelFromJson(Map<String, dynamic> json) => JewelModel(
   uuid: json['uuid'] as String,
   name: json['name'] as String,
   unique: json['unique'] as bool? ?? false,
@@ -23,17 +23,11 @@ ArmorModel _$ArmorModelFromJson(Map<String, dynamic> json) => ArmorModel(
   cityAvailability: EquipmentAvailability.fromJson(
     json['city_availability'] as Map<String, dynamic>,
   ),
+  slot: $enumDecode(_$EquipableItemSlotEnumMap, json['slot']),
   handiness: (json['handiness'] as num?)?.toInt() ?? 0,
   layer:
       $enumDecodeNullable(_$EquipableItemLayerEnumMap, json['layer']) ??
       EquipableItemLayer.normal,
-  slot: $enumDecode(_$EquipableItemSlotEnumMap, json['slot']),
-  type: $enumDecode(_$ArmorTypeEnumMap, json['type']),
-  requirements: (json['requirements'] as Map<String, dynamic>).map(
-    (k, e) => MapEntry($enumDecode(_$AbilityEnumMap, k), (e as num).toInt()),
-  ),
-  protection: (json['protection'] as num).toInt(),
-  penalty: (json['penalty'] as num).toInt(),
   supportsMetal: json['supports_metal'] as bool? ?? false,
   special: (json['special'] as List<dynamic>?)
       ?.map(
@@ -42,7 +36,7 @@ ArmorModel _$ArmorModelFromJson(Map<String, dynamic> json) => ArmorModel(
       .toList(),
 );
 
-Map<String, dynamic> _$ArmorModelToJson(ArmorModel instance) =>
+Map<String, dynamic> _$JewelModelToJson(JewelModel instance) =>
     <String, dynamic>{
       'source': instance.source.toJson(),
       'name': instance.name,
@@ -58,19 +52,7 @@ Map<String, dynamic> _$ArmorModelToJson(ArmorModel instance) =>
       'slot': _$EquipableItemSlotEnumMap[instance.slot]!,
       'handiness': instance.handiness,
       'layer': _$EquipableItemLayerEnumMap[instance.layer]!,
-      'type': _$ArmorTypeEnumMap[instance.type]!,
-      'requirements': instance.requirements.map(
-        (k, e) => MapEntry(_$AbilityEnumMap[k]!, e),
-      ),
-      'protection': instance.protection,
-      'penalty': instance.penalty,
     };
-
-const _$EquipableItemLayerEnumMap = {
-  EquipableItemLayer.under: 'under',
-  EquipableItemLayer.normal: 'normal',
-  EquipableItemLayer.over: 'over',
-};
 
 const _$EquipableItemSlotEnumMap = {
   EquipableItemSlot.body: 'body',
@@ -94,19 +76,8 @@ const _$EquipableItemSlotEnumMap = {
   EquipableItemSlot.feet: 'feet',
 };
 
-const _$ArmorTypeEnumMap = {
-  ArmorType.light: 'light',
-  ArmorType.medium: 'medium',
-  ArmorType.heavy: 'heavy',
-};
-
-const _$AbilityEnumMap = {
-  Ability.force: 'force',
-  Ability.intelligence: 'intelligence',
-  Ability.coordination: 'coordination',
-  Ability.presence: 'presence',
-  Ability.resistance: 'resistance',
-  Ability.volonte: 'volonte',
-  Ability.perception: 'perception',
-  Ability.empathie: 'empathie',
+const _$EquipableItemLayerEnumMap = {
+  EquipableItemLayer.under: 'under',
+  EquipableItemLayer.normal: 'normal',
+  EquipableItemLayer.over: 'over',
 };

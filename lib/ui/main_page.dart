@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../classes/equipment/armor.dart';
 import '../classes/creature.dart';
 import '../classes/equipment/cloth.dart';
+import '../classes/equipment/jewel.dart';
 import '../classes/equipment/misc_gear.dart';
 import '../classes/faction.dart';
 import '../classes/magic_spell.dart';
@@ -24,6 +25,7 @@ Future<void> _loadAssets() async {
   await WeaponModel.init();
   await ClothModel.init();
   await MiscGearModel.init();
+  await JewelModel.init();
   await MagicSpell.loadDefaultAssets();
   await CreatureCategory.init();
   await Creature.init();

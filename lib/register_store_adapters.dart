@@ -2,6 +2,8 @@ import "package:prophecy_compagnon_mj/classes/creature.dart";
 import "package:prophecy_compagnon_mj/classes/entity_instance.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/armor.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/cloth.dart";
+import "package:prophecy_compagnon_mj/classes/equipment/jewel.dart";
+import "package:prophecy_compagnon_mj/classes/equipment/misc_gear.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/shield.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/weapon.dart";
 import "package:prophecy_compagnon_mj/classes/exportable_binary_data.dart";
@@ -42,6 +44,14 @@ void registerStoreAdapters() {
   DataStorage.registerStoreAdapter(
     ClothModelStore().storeCategory(),
     () => ClothModelStore(),
+  );
+  DataStorage.registerStoreAdapter(
+    JewelModelStore().storeCategory(),
+    () => JewelModelStore(),
+  );
+  DataStorage.registerStoreAdapter(
+    MiscGearModelStore().storeCategory(),
+    () => MiscGearModelStore(),
   );
   DataStorage.registerStoreAdapter(
     ShieldModelStore().storeCategory(),
