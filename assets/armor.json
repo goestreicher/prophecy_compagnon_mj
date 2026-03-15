@@ -69,7 +69,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "body"
+    "slot": "upperBody"
   },
   {
     "name": "Cuir clouté",
@@ -93,7 +93,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "body"
+    "slot": "upperBody"
   },
   {
     "name": "Cuir bouilli",
@@ -117,7 +117,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "body"
+    "slot": "upperBody"
   },
   {
     "name": "Armure d'os et de corne",
@@ -143,7 +143,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "body"
+    "slot": "fullBody"
   },
   {
     "name": "Cotte légère",
@@ -169,7 +169,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "body"
+    "slot": "upperBody"
   },
   {
     "name": "Cotte de mailles",
@@ -196,7 +196,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "body"
+    "slot": "upperBody"
   },
   {
     "name": "Armure d'anneaux",
@@ -223,7 +223,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "body"
+    "slot": "upperBody"
   },
   {
     "name": "Brigandine",
@@ -331,7 +331,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "body"
+    "slot": "fullBody"
   },
   {
     "name": "Armure de lamelles",
