@@ -97,16 +97,13 @@ class _ArmorsWidget extends StatelessWidget {
             ),
             label: const Text('Nouvelle armure'),
             onPressed: () async {
-              String? armorId = await showDialog(
+              Armor? a = await showDialog(
                 context: context,
                 builder: (BuildContext context) => const ArmorPickerDialog(),
               );
-              if(armorId == null) return;
+              if(a == null) return;
 
-              ArmorModel? model = ArmorModel.get(armorId);
-              if(model == null) return;
-
-              entity.equipment.add(model.instantiate());
+              entity.equipment.add(a);
             },
           ),
         ),

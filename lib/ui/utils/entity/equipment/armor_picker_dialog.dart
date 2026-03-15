@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/equipment/armor.dart';
+import '../../../../classes/equipment/equipment.dart';
 
 class ArmorPickerDialog extends StatefulWidget {
   const ArmorPickerDialog({ super.key });
@@ -10,10 +11,12 @@ class ArmorPickerDialog extends StatefulWidget {
 }
 
 class _ArmorPickerDialogState extends State<ArmorPickerDialog> {
-  final TextEditingController _typeController = TextEditingController();
-  final TextEditingController _armorController = TextEditingController();
-  List<ArmorModel> _armors = <ArmorModel>[];
-  String? _armorId;
+  final TextEditingController typeController = TextEditingController();
+  List<ArmorModel> armors = <ArmorModel>[];
+  final TextEditingController armorController = TextEditingController();
+  ArmorModel? model;
+  EquipmentQuality quality = EquipmentQuality.normal;
+  final TextEditingController aliasController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,10 @@ class _ArmorPickerDialogState extends State<ArmorPickerDialog> {
       title: const Text("Sélectionner l'armure"),
       content: Column(
         mainAxisSize: MainAxisSize.min,
+        spacing: 16.0,
         children: [
           DropdownMenu(
-            controller: _typeController,
+            controller: typeController,
             requestFocusOnTap: true,
             label: const Text('Type'),
             expandedInsets: EdgeInsets.zero,
@@ -38,53 +42,84 @@ class _ArmorPickerDialogState extends State<ArmorPickerDialog> {
                   armors.add(ArmorModel.get(id)!);
                 }
               }
-              _armorController.clear();
+              armorController.clear();
               setState(() {
-                _armorId = null;
-                _armors = armors;
+                model = null;
+                this.armors = armors;
               });
             },
           ),
-          const SizedBox(height: 16.0),
           DropdownMenu(
-            controller: _armorController,
+            controller: armorController,
             requestFocusOnTap: true,
             label: const Text('Armure'),
             expandedInsets: EdgeInsets.zero,
-            dropdownMenuEntries:
-            _armors.map((ArmorModel a) => DropdownMenuEntry(value: a, label: a.name)).toList(),
+            dropdownMenuEntries: armors
+              .map((ArmorModel a) => DropdownMenuEntry(value: a, label: a.name))
+              .toList(),
             onSelected: (ArmorModel? a) {
-              if(a == null) return;
-              _armorId = a.id;
+              model = a;
             },
           ),
+          DropdownMenuFormField<EquipmentQuality>(
+            initialSelection: quality,
+            requestFocusOnTap: true,
+            label: const Text('Qualité'),
+            inputDecorationTheme: const InputDecorationTheme(
+              border: OutlineInputBorder(),
+            ),
+            expandedInsets: EdgeInsets.zero,
+            dropdownMenuEntries: EquipmentQuality.values
+              .map((EquipmentQuality q) => DropdownMenuEntry(value: q, label: q.title))
+              .toList(),
+            validator: (EquipmentQuality? q) {
+              if(q == null) return 'Valeur manquante';
+              return null;
+            },
+            onSelected: (EquipmentQuality? q) {
+              if(q == null) return;
+              quality = q;
+            },
+          ),
+          TextField(
+            controller: aliasController,
+            decoration: InputDecoration(
+              labelText: 'Alias',
+              border: OutlineInputBorder(),
+            ),
+          ),
           Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('Annuler'),
+            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Annuler'),
+                ),
+                const SizedBox(width: 12.0),
+                ElevatedButton(
+                  onPressed: () {
+                    if(model == null) return;
+
+                    var armor = Armor.create(
+                      model: model!,
+                      alias: aliasController.text.isEmpty ? null : aliasController.text,
+                      quality: quality,
+                    );
+
+                    Navigator.of(context).pop(armor);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: theme.colorScheme.primary,
+                    foregroundColor: theme.colorScheme.onPrimary,
                   ),
-                  const SizedBox(width: 12.0),
-                  ElevatedButton(
-                    onPressed: () {
-                      if(_typeController.text.isEmpty) return;
-                      if(_armorController.text.isEmpty) return;
-                      if(_armorId == null) return;
-                      Navigator.of(context).pop(_armorId);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: theme.colorScheme.primary,
-                      foregroundColor: theme.colorScheme.onPrimary,
-                    ),
-                    child: const Text('OK'),
-                  )
-                ],
-              )
+                  child: const Text('OK'),
+                )
+              ],
+            )
           ),
         ],
       ),

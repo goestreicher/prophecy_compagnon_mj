@@ -32,6 +32,11 @@ class WeaponInfoWidget extends StatelessWidget {
       damage = buffer.toString();
     }
 
+    var typeLine = (weapon.model as WeaponModel).skill.parent.title;
+    if(weapon.alias != null) {
+      typeLine += ' / ${weapon.model.name}';
+    }
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -41,6 +46,14 @@ class WeaponInfoWidget extends StatelessWidget {
         ),
         Text(
           'Dégats $damage',
+          style: theme.textTheme.bodySmall,
+        ),
+        Text(
+          'Qualité : ${weapon.quality.title}',
+          style: theme.textTheme.bodySmall,
+        ),
+        Text(
+          typeLine,
           style: theme.textTheme.bodySmall,
         ),
       ],
@@ -72,6 +85,15 @@ class ShieldInfoWidget extends StatelessWidget {
           'Pénalité ${(shield.model as ShieldModel).penalty}',
           style: theme.textTheme.bodySmall,
         ),
+        Text(
+          'Qualité : ${shield.quality.title}',
+          style: theme.textTheme.bodySmall,
+        ),
+        if(shield.alias != null)
+          Text(
+            shield.model.name,
+            style: theme.textTheme.bodySmall,
+          ),
       ],
     );
   }
@@ -85,6 +107,12 @@ class ArmorInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+
+    var typeLine = '';
+    if(armor.alias != null) {
+      typeLine = '${armor.model.name} / ';
+    }
+    typeLine += (armor.model as ArmorModel).type.title;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +130,11 @@ class ArmorInfoWidget extends StatelessWidget {
           style: theme.textTheme.bodySmall,
         ),
         Text(
-          (armor.model as ArmorModel).type.title,
+          'Qualité : ${armor.quality.title}',
+          style: theme.textTheme.bodySmall,
+        ),
+        Text(
+          typeLine,
           style: theme.textTheme.bodySmall,
         )
       ],
@@ -119,6 +151,12 @@ class ClothInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
+    String subLine = '';
+    if(cloth.alias != null) {
+      subLine += '${cloth.model.name} / ';
+    }
+    subLine += (cloth.model as ClothModel).slot.title;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -127,9 +165,13 @@ class ClothInfoWidget extends StatelessWidget {
           style: theme.textTheme.titleMedium,
         ),
         Text(
-          (cloth.model as ClothModel).slot.title,
+          'Qualité : ${cloth.quality.title}',
           style: theme.textTheme.bodySmall,
-        )
+        ),
+        Text(
+          subLine,
+          style: theme.textTheme.bodySmall,
+        ),
       ],
     );
   }

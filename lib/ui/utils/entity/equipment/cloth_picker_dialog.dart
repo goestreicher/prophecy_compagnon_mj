@@ -15,6 +15,7 @@ class _ClothPickerDialogState extends State<ClothPickerDialog> {
   EquipableItemSlot? slot;
   List<ClothModel> clothes = <ClothModel>[];
   ClothModel? model;
+  TextEditingController aliasController = TextEditingController();
   EquipmentQuality quality = EquipmentQuality.normal;
 
   void loadClothes() {
@@ -36,7 +37,7 @@ class _ClothPickerDialogState extends State<ClothPickerDialog> {
         key: formKey,
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          spacing: 12.0,
+          spacing: 16.0,
           children: [
             DropdownMenuFormField<EquipableItemSlot>(
               requestFocusOnTap: true,
@@ -97,6 +98,13 @@ class _ClothPickerDialogState extends State<ClothPickerDialog> {
                 quality = q;
               },
             ),
+            TextField(
+              controller: aliasController,
+              decoration: InputDecoration(
+                labelText: 'Alias',
+                border: OutlineInputBorder(),
+              ),
+            ),
           ],
         ),
       ),
@@ -110,7 +118,11 @@ class _ClothPickerDialogState extends State<ClothPickerDialog> {
           onPressed: () async {
             if(!formKey.currentState!.validate()) return;
 
-            var cloth = Cloth.create(model: model!, quality: quality);
+            var cloth = Cloth.create(
+              model: model!,
+              alias: aliasController.text.isEmpty ? null : aliasController.text,
+              quality: quality,
+            );
             Navigator.of(context).pop(cloth);
           },
         )

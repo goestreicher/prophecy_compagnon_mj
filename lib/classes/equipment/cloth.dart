@@ -181,12 +181,14 @@ class ClothModel extends EquipableItemModel {
 class Cloth extends EquipableItem {
   Cloth(this._uuid, {
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   });
 
   Cloth.create({
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   })

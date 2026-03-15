@@ -125,16 +125,13 @@ class _WeaponsWidget extends StatelessWidget {
               ),
               label: const Text('Nouvelle arme'),
               onPressed: () async {
-                String? weaponId = await showDialog(
+                Weapon? w = await showDialog(
                   context: context,
                   builder: (BuildContext context) => const WeaponPickerDialog(),
                 );
-                if(weaponId == null) return;
+                if(w == null) return;
 
-                WeaponModel? model = WeaponModel.get(weaponId);
-                if(model == null) return;
-
-                entity.equipment.add(model.instantiate());
+                entity.equipment.add(w);
               },
             ),
             ElevatedButton.icon(
@@ -147,16 +144,12 @@ class _WeaponsWidget extends StatelessWidget {
               ),
               label: const Text('Nouveau bouclier'),
               onPressed: () async {
-                String? shieldId = await showDialog(
+                Shield? s = await showDialog(
                   context: context,
                   builder: (BuildContext context) => const ShieldPickerDialog(),
                 );
-                if(shieldId == null) return;
-
-                ShieldModel? model = ShieldModel.get(shieldId);
-                if(model == null) return;
-
-                entity.equipment.add(model.instantiate());
+                if(s == null) return;
+                entity.equipment.add(s);
               },
             ),
           ],

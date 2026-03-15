@@ -208,12 +208,14 @@ class ArmorModel extends EquipableItemModel {
 class Armor extends EquipableItem implements ProtectionProvider {
   Armor(this._uuid, {
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   });
 
   Armor.create({
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   })

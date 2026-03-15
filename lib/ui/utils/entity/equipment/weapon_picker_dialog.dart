@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/entity/skill.dart';
-import '../../../../classes/entity/skill_family.dart';
+import '../../../../classes/equipment/equipment.dart';
 import '../../../../classes/equipment/weapon.dart';
 
 class WeaponPickerDialog extends StatefulWidget {
@@ -12,10 +12,12 @@ class WeaponPickerDialog extends StatefulWidget {
 }
 
 class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
-  final TextEditingController _typeController = TextEditingController();
-  final TextEditingController _weaponController = TextEditingController();
-  List<WeaponModel> _weapons = <WeaponModel>[];
-  String? _weaponId;
+  final TextEditingController typeController = TextEditingController();
+  final TextEditingController weaponController = TextEditingController();
+  List<WeaponModel> weapons = <WeaponModel>[];
+  WeaponModel? model;
+  EquipmentQuality quality = EquipmentQuality.normal;
+  final TextEditingController aliasController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -25,23 +27,16 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
       title: const Text("Sélectionner l'arme"),
       content: Column(
         mainAxisSize: MainAxisSize.min,
+        spacing: 16.0,
         children: [
           DropdownMenu(
-            controller: _typeController,
+            controller: typeController,
             requestFocusOnTap: true,
             label: const Text('Type'),
             expandedInsets: EdgeInsets.zero,
-            dropdownMenuEntries: Skill.fromFamily(SkillFamily.combat)
-                // TODO: this static filtering is a bit dirty...
-                .where((Skill s) => s.canInstantiate && s != Skill.bouclier)
-                .map((Skill s) => DropdownMenuEntry(value: s, label: s.title))
-                .toList()
-                ..add(
-                  DropdownMenuEntry(
-                    value: Skill.armesAProjectiles,
-                    label: Skill.armesAProjectiles.title
-                  )
-                ),
+            dropdownMenuEntries: WeaponModel.weaponSkills()
+              .map((Skill s) => DropdownMenuEntry(value: s, label: s.title))
+              .toList(),
             onSelected: (Skill? s) {
               var weapons = <WeaponModel>[];
               if(s != null) {
@@ -49,54 +44,84 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
                   weapons.add(WeaponModel.get(id)!);
                 }
               }
-              _weaponController.clear();
+              weaponController.clear();
               setState(() {
-                _weaponId = null;
-                _weapons = weapons;
+                model = null;
+                this.weapons = weapons;
               });
             },
           ),
-          const SizedBox(height: 16.0),
           DropdownMenu(
-            controller: _weaponController,
+            controller: weaponController,
             requestFocusOnTap: true,
             label: const Text('Arme'),
             expandedInsets: EdgeInsets.zero,
-            dropdownMenuEntries: _weapons
-                .map((WeaponModel w) => DropdownMenuEntry(value: w, label: w.name))
-                .toList(),
+            dropdownMenuEntries: weapons
+              .map((WeaponModel w) => DropdownMenuEntry(value: w, label: w.name))
+              .toList(),
             onSelected: (WeaponModel? w) {
-              if(w == null) return;
-              _weaponId = w.id;
+              model = w;
             },
           ),
+          DropdownMenuFormField<EquipmentQuality>(
+            initialSelection: quality,
+            requestFocusOnTap: true,
+            label: const Text('Qualité'),
+            inputDecorationTheme: const InputDecorationTheme(
+              border: OutlineInputBorder(),
+            ),
+            expandedInsets: EdgeInsets.zero,
+            dropdownMenuEntries: EquipmentQuality.values
+              .map((EquipmentQuality q) => DropdownMenuEntry(value: q, label: q.title))
+              .toList(),
+            validator: (EquipmentQuality? q) {
+              if(q == null) return 'Valeur manquante';
+              return null;
+            },
+            onSelected: (EquipmentQuality? q) {
+              if(q == null) return;
+              quality = q;
+            },
+          ),
+          TextField(
+            controller: aliasController,
+            decoration: InputDecoration(
+              labelText: 'Alias',
+              border: OutlineInputBorder(),
+            ),
+          ),
           Padding(
-              padding: const EdgeInsets.symmetric(vertical: 12.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('Annuler'),
+            padding: const EdgeInsets.symmetric(vertical: 12.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Annuler'),
+                ),
+                const SizedBox(width: 12.0),
+                ElevatedButton(
+                  onPressed: () {
+                    if(model == null) return;
+
+                    var weapon = Weapon.create(
+                      model: model!,
+                      alias: aliasController.text.isEmpty ? null : aliasController.text,
+                      quality: quality,
+                    );
+
+                    Navigator.of(context).pop(weapon);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: theme.colorScheme.primary,
+                    foregroundColor: theme.colorScheme.onPrimary,
                   ),
-                  const SizedBox(width: 12.0),
-                  ElevatedButton(
-                    onPressed: () {
-                      if(_typeController.text.isEmpty) return;
-                      if(_weaponController.text.isEmpty) return;
-                      if(_weaponId == null) return;
-                      Navigator.of(context).pop(_weaponId);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: theme.colorScheme.primary,
-                      foregroundColor: theme.colorScheme.onPrimary,
-                    ),
-                    child: const Text('OK'),
-                  )
-                ],
-              )
+                  child: const Text('OK'),
+                )
+              ],
+            )
           ),
         ],
       ),

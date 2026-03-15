@@ -269,12 +269,14 @@ class WeaponModel extends EquipableItemModel {
 class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider {
   Weapon(this._uuid, {
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   });
 
   Weapon.create({
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   })

@@ -44,15 +44,13 @@ class _ArmorListWidgetState extends State<ArmorListWidget> {
             ),
             label: const Text('Nouvelle armure'),
             onPressed: () async {
-              String? armorId = await showDialog(
+              Armor? a = await showDialog(
                 context: context,
                 builder: (BuildContext context) => const ArmorPickerDialog(),
               );
-              if(armorId == null) return;
-              ArmorModel? model = ArmorModel.get(armorId);
-              if(model == null) return;
+              if(a == null) return;
               setState(() {
-                widget.character.addEquipment(model.instantiate());
+                widget.character.addEquipment(a);
               });
             },
           ),

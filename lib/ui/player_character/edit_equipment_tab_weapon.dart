@@ -48,15 +48,13 @@ class _WeaponListWidgetState extends State<WeaponListWidget> {
             ),
             label: const Text('Nouvelle arme'),
             onPressed: () async {
-              String? weaponId = await showDialog(
+              Weapon? w = await showDialog(
                 context: context,
                 builder: (BuildContext context) => const WeaponPickerDialog(),
               );
-              if(weaponId == null) return;
-              WeaponModel? model = WeaponModel.get(weaponId);
-              if(model == null) return;
+              if(w == null) return;
               setState(() {
-                widget.character.addEquipment(model.instantiate());
+                widget.character.addEquipment(w);
               });
             },
           ),
@@ -71,15 +69,13 @@ class _WeaponListWidgetState extends State<WeaponListWidget> {
             ),
             label: const Text('Nouveau bouclier'),
             onPressed: () async {
-              String? shieldId = await showDialog(
+              Shield? s = await showDialog(
                 context: context,
                 builder: (BuildContext context) => const ShieldPickerDialog(),
               );
-              if(shieldId == null) return;
-              ShieldModel? model = ShieldModel.get(shieldId);
-              if(model == null) return;
+              if(s == null) return;
               setState(() {
-                widget.character.addEquipment(model.instantiate());
+                widget.character.addEquipment(s);
               });
             },
           ),

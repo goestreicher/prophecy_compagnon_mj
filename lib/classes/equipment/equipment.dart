@@ -352,6 +352,7 @@ abstract class EquipableItemModel extends EquipmentModel {
 abstract class Equipment {
   Equipment({
     required this.model,
+    this.alias,
     this.quality = EquipmentQuality.normal,
     this.metal = EquipmentMetal.none,
   });
@@ -360,10 +361,11 @@ abstract class Equipment {
   String uuid();
 
   EquipmentModel model;
+  String? alias;
   EquipmentQuality quality;
   EquipmentMetal metal;
 
-  String get name => model.name;
+  String get name => alias ?? model.name;
 
   double get weight => model.weight * metal.weightModifier;
 
@@ -376,6 +378,10 @@ abstract class Equipment {
 
   @mustCallSuper
   void restoreFromJson(Map<String, dynamic> json) {
+    if(json['alias'] != null && (json['alias']! as String).isNotEmpty) {
+      alias = json['alias']!;
+    }
+
     if(json['quality'] != null) {
       quality = EquipmentQuality.values.byName(json['quality']);
     }
@@ -387,7 +393,7 @@ abstract class Equipment {
 
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
+      'alias': alias,
       'type': type(),
       'uuid': uuid(),
       'quality': quality.name,
@@ -399,6 +405,7 @@ abstract class Equipment {
 abstract class EquipableItem extends Equipment {
   EquipableItem({
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
     EquipableItemSlot? equipedOn,

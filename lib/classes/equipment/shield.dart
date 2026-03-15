@@ -191,12 +191,14 @@ class ShieldModel extends EquipableItemModel {
 class Shield extends EquipableItem implements ProtectionProvider, DamageProvider {
   Shield(this._uuid, {
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   });
 
   Shield.create({
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   })
