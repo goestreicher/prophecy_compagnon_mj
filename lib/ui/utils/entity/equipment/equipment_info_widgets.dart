@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/equipment/armor.dart';
+import '../../../../classes/equipment/cloth.dart';
 import '../../../../classes/equipment/shield.dart';
 import '../../../../classes/equipment/weapon.dart';
 
@@ -102,6 +103,31 @@ class ArmorInfoWidget extends StatelessWidget {
         ),
         Text(
           (armor.model as ArmorModel).type.title,
+          style: theme.textTheme.bodySmall,
+        )
+      ],
+    );
+  }
+}
+
+class ClothInfoWidget extends StatelessWidget {
+  const ClothInfoWidget({ super.key, required this.cloth });
+
+  final Cloth cloth;
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          cloth.name,
+          style: theme.textTheme.titleMedium,
+        ),
+        Text(
+          (cloth.model as ClothModel).slot.title,
           style: theme.textTheme.bodySmall,
         )
       ],
