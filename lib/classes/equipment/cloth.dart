@@ -63,6 +63,7 @@ class ClothModel extends EquipableItemModel {
     required EquipableItemSlot slot,
     int handiness = 0,
     EquipableItemLayer layer = EquipableItemLayer.normal,
+    bool supportsMetal = false,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -81,6 +82,7 @@ class ClothModel extends EquipableItemModel {
           slot: slot,
           handiness: handiness,
           layer: layer,
+          supportsMetal: supportsMetal,
           special: special,
         );
     _cache[cm.id] = cm;
@@ -101,6 +103,7 @@ class ClothModel extends EquipableItemModel {
     required super.slot,
     super.handiness = 0,
     super.layer,
+    super.supportsMetal,
     super.special,
   });
 
@@ -176,16 +179,18 @@ class ClothModel extends EquipableItemModel {
 }
 
 class Cloth extends EquipableItem {
-  Cloth(this._uuid, { required ClothModel model })
-    : super(
-        model: model,
-      );
+  Cloth(this._uuid, {
+    required super.model,
+    super.quality,
+    super.metal,
+  });
 
-  Cloth.create({ required ClothModel model })
-      : _uuid = const Uuid().v4().toString(),
-        super(
-          model: model,
-        );
+  Cloth.create({
+    required super.model,
+    super.quality,
+    super.metal,
+  })
+    : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
 

@@ -70,6 +70,7 @@ class ShieldModel extends EquipableItemModel {
     required int protection,
     required int penalty,
     required AttributeBasedCalculator damage,
+    bool supportsMetal = false,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -92,6 +93,7 @@ class ShieldModel extends EquipableItemModel {
             protection: protection,
             penalty: penalty,
             damage: damage,
+            supportsMetal: supportsMetal,
             special: special,
         );
     _cache[sm.id] = sm;
@@ -116,6 +118,7 @@ class ShieldModel extends EquipableItemModel {
     required this.protection,
     required this.penalty,
     required this.damage,
+    super.supportsMetal,
     super.special,
   });
 
@@ -186,16 +189,18 @@ class ShieldModel extends EquipableItemModel {
 }
 
 class Shield extends EquipableItem implements ProtectionProvider, DamageProvider {
-  Shield(this._uuid, { required ShieldModel model })
-    : super(
-        model: model,
-      );
+  Shield(this._uuid, {
+    required super.model,
+    super.quality,
+    super.metal,
+  });
 
-  Shield.create({ required ShieldModel model })
-    : _uuid = const Uuid().v4().toString(),
-      super(
-        model: model,
-      );
+  Shield.create({
+    required super.model,
+    super.quality,
+    super.metal,
+  })
+    : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
 

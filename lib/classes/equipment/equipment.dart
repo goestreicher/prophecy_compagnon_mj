@@ -86,6 +86,113 @@ enum EquipmentScarcity {
   const EquipmentScarcity({ required this.title, required this.short });
 }
 
+enum EquipmentQuality {
+  inferior(title: 'Inférieure', priceMultiplier: 0.9),
+  normal(title: 'Normale', priceMultiplier: 1.0),
+  good(title: 'Bonne', priceMultiplier: 1.2),
+  veryGood(title: 'Très bonne', priceMultiplier: 1.5),
+  superior(title: 'Supérieure', priceMultiplier: 2.0),
+  exceptional(title: 'Exceptionnelle', priceMultiplier: 3.0),
+  incredible(title: 'Incroyable', priceMultiplier: 5.0),
+  legendary(title: 'Légendaire', priceMultiplier: 10.0),
+  ;
+
+  final String title;
+  final double priceMultiplier;
+
+  const EquipmentQuality({ required this.title, required this.priceMultiplier });
+}
+
+enum EquipmentMetal {
+  none(
+    title: 'None',
+    weightModifier: 1.0,
+    damageModifier: 0,
+    protectionModifier: 0,
+  ),
+  iron(
+    title: 'Fer',
+    weightModifier: 1.0,
+    damageModifier: 0,
+    protectionModifier: 0,
+  ),
+  steel(
+    title: 'Acier',
+    weightModifier: 1.3,
+    damageModifier: 2,
+    protectionModifier: 2,
+    priceModifier: 5
+  ),
+  silver(
+    title: 'Argent',
+    weightModifier: 2.0,
+    damageModifier: 0,
+    protectionModifier: 0,
+    priceModifier: 25000
+  ),
+  bronze(
+    title: 'Bronze',
+    weightModifier: 0.9,
+    damageModifier: -5,
+    protectionModifier: -5,
+    priceModifier: 6
+  ),
+  copper(
+    title: 'Cuivre',
+    weightModifier: 1.15,
+    damageModifier: -2,
+    protectionModifier: -2,
+    priceModifier: 2
+  ),
+  gold(
+    title: 'Or',
+    weightModifier: 3.6,
+    damageModifier: 0,
+    protectionModifier: 0,
+    priceModifier: 33000
+  ),
+  platinum(
+    title: 'Platine',
+    weightModifier: 3.5,
+    damageModifier: 0,
+    protectionModifier: 0,
+    priceModifier: 30000
+  ),
+  stone(
+    title: 'Pierre',
+    weightModifier: 1.2,
+    damageModifier: -5,
+    protectionModifier: null
+  ),
+  bloodOfKezyr(
+    title: 'Sang de Kezyr',
+    weightModifier: 1.5,
+    damageModifier: 5,
+    protectionModifier: 10
+  ),
+  darkSteel(
+    title: 'Sombracier',
+    weightModifier: 0.75,
+    damageModifier: 8,
+    protectionModifier: 5
+  ),
+  ;
+
+  final String title;
+  final double weightModifier;
+  final int damageModifier;
+  final int? protectionModifier;
+  final double? priceModifier;
+
+  const EquipmentMetal({
+    required this.title,
+    required this.weightModifier,
+    required this.damageModifier,
+    this.protectionModifier,
+    this.priceModifier,
+  });
+}
+
 abstract class EquipmentFactoryImplementation {
   EquipmentModel? model(String id);
   Equipment? forge(String id, Map<String, dynamic>? json);
@@ -132,6 +239,11 @@ class EquipmentFactory {
   EquipmentFactory._create();
 
   final Map<String, EquipmentFactoryImplementation> _factories = {};
+}
+
+enum EquipmentAvailabilityZone {
+  village,
+  city,
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -181,6 +293,7 @@ abstract class EquipmentModel extends ResourceBaseClass {
     required this.creationTime,
     required this.villageAvailability,
     required this.cityAvailability,
+    this.supportsMetal = false,
     List<EquipmentSpecialCapability>? special,
   })
     : special = special ?? <EquipmentSpecialCapability>[];
@@ -192,9 +305,19 @@ abstract class EquipmentModel extends ResourceBaseClass {
   int creationTime;
   EquipmentAvailability villageAvailability;
   EquipmentAvailability cityAvailability;
+  bool supportsMetal;
   List<EquipmentSpecialCapability> special;
 
   @override String get id => uuid;
+
+  int price(EquipmentAvailabilityZone where) {
+    if(where == EquipmentAvailabilityZone.village) {
+      return villageAvailability.price;
+    }
+    else {
+      return cityAvailability.price;
+    }
+  }
 }
 
 abstract class EquipableItemModel extends EquipmentModel {
@@ -212,6 +335,7 @@ abstract class EquipableItemModel extends EquipmentModel {
     required this.slot,
     required this.handiness,
     this.layer = EquipableItemLayer.normal,
+    super.supportsMetal,
     required super.special,
   });
 
@@ -223,26 +347,46 @@ abstract class EquipableItemModel extends EquipmentModel {
 abstract class Equipment {
   Equipment({
     required this.model,
+    this.quality = EquipmentQuality.normal,
+    this.metal = EquipmentMetal.none,
   });
 
   String type();
   String uuid();
 
   EquipmentModel model;
+  EquipmentQuality quality;
+  EquipmentMetal metal;
+
   String get name => model.name;
-  double get weight => model.weight;
+
+  double get weight => model.weight * metal.weightModifier;
+
+  int price(EquipmentAvailabilityZone where) =>
+    (
+      model.price(where)
+      * (weight - model.weight * (metal.priceModifier ?? 0))
+      * quality.priceMultiplier
+    ).round();
 
   @mustCallSuper
   void restoreFromJson(Map<String, dynamic> json) {
-    // no-op
+    if(json['quality'] != null) {
+      quality = EquipmentQuality.values.byName(json['quality']);
+    }
+
+    if(json['metal'] != null && model.supportsMetal) {
+      metal = EquipmentMetal.values.byName(json['metal']);
+    }
   }
 
   Map<String, dynamic> toJson() {
     return {
       'name': name,
-      'weight': weight,
       'type': type(),
       'uuid': uuid(),
+      'quality': quality.name,
+      'metal': metal.name,
     };
   }
 }
@@ -250,6 +394,8 @@ abstract class Equipment {
 abstract class EquipableItem extends Equipment {
   EquipableItem({
     required super.model,
+    super.quality,
+    super.metal,
     EquipableItemSlot? equipedOn,
   })
     : equipedOnNotifier = ValueNotifier<EquipableItemSlot?>(equipedOn);

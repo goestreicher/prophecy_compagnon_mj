@@ -55,7 +55,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "supports_metal": true
   },
   {
     "name": "Grand bouclier",
@@ -85,7 +86,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "supports_metal": true
   },
   {
     "name": "Bouclier dragon",
@@ -115,7 +117,8 @@
     "source": {
       "type": "officiel",
       "name": "Livre de base 2e édition"
-    }
+    },
+    "supports_metal": true
   },
   {
     "name": "Bouclier draconique",

@@ -59,6 +59,7 @@ class MiscGearModel extends EquipmentModel {
     required int creationTime,
     required EquipmentAvailability villageAvailability,
     required EquipmentAvailability cityAvailability,
+    bool supportsMetal = false,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -74,6 +75,7 @@ class MiscGearModel extends EquipmentModel {
           creationTime: creationTime,
           villageAvailability: villageAvailability,
           cityAvailability: cityAvailability,
+          supportsMetal: supportsMetal,
           special: special,
         );
     _cache[gm.id] = gm;
@@ -91,6 +93,7 @@ class MiscGearModel extends EquipmentModel {
     required super.creationTime,
     required super.villageAvailability,
     required super.cityAvailability,
+    super.supportsMetal,
     List<EquipmentSpecialCapability>? special,
   });
 
@@ -152,16 +155,18 @@ class MiscGearModel extends EquipmentModel {
 }
 
 class MiscGear extends Equipment {
-  MiscGear(this._uuid, { required MiscGearModel model })
-    : super(
-        model: model,
-      );
+  MiscGear(this._uuid, {
+    required super.model,
+    super.quality,
+    super.metal,
+  });
 
-  MiscGear.create({ required MiscGearModel model })
-      : _uuid = const Uuid().v4().toString(),
-        super(
-          model: model,
-        );
+  MiscGear.create({
+    required super.model,
+    super.quality,
+    super.metal,
+  })
+    : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
 

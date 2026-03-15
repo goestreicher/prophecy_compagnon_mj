@@ -75,6 +75,7 @@ class WeaponModel extends EquipableItemModel {
     required AttributeBasedCalculator damage,
     required AttributeBasedCalculator rangeEffective,
     required AttributeBasedCalculator rangeMax,
+    bool supportsMetal = false,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -99,6 +100,7 @@ class WeaponModel extends EquipableItemModel {
             damage: damage,
             rangeEffective: rangeEffective,
             rangeMax: rangeMax,
+            supportsMetal: supportsMetal,
             special: special,
         );
     _cache[wm.id] = wm;
@@ -125,6 +127,7 @@ class WeaponModel extends EquipableItemModel {
     required this.damage,
     required this.rangeEffective,
     required this.rangeMax,
+    super.supportsMetal,
     super.special,
   });
 
@@ -264,16 +267,18 @@ class WeaponModel extends EquipableItemModel {
 }
 
 class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider {
-  Weapon(this._uuid, { required WeaponModel model })
-    : super(
-        model: model,
-      );
+  Weapon(this._uuid, {
+    required super.model,
+    super.quality,
+    super.metal,
+  });
 
-  Weapon.create({ required WeaponModel model })
-    : _uuid = const Uuid().v4().toString(),
-      super(
-        model: model,
-      );
+  Weapon.create({
+    required super.model,
+    super.quality,
+    super.metal,
+  })
+    : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
 

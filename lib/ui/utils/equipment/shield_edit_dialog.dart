@@ -35,6 +35,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
   int? villagePrice;
   EquipmentScarcity? cityScarcity;
   int? cityPrice;
+  bool supportsMetal = false;
   Map<Ability, int> requirements = <Ability, int>{};
   TextEditingController protectionController = TextEditingController();
   TextEditingController penaltyController = TextEditingController();
@@ -55,6 +56,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
       villagePrice = widget.shield!.villageAvailability.price;
       cityScarcity = widget.shield!.cityAvailability.scarcity;
       cityPrice = widget.shield!.cityAvailability.price;
+      supportsMetal = widget.shield!.supportsMetal;
       requirements = widget.shield!.requirements;
       protectionController.text = widget.shield!.protection.toString();
       penaltyController.text = (-widget.shield!.penalty).toString();
@@ -174,6 +176,20 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
+                    ],
+                  ),
+                  Row(
+                    spacing: 4.0,
+                    children: [
+                      Switch(
+                        value: supportsMetal,
+                        onChanged: (bool v) {
+                          setState(() {
+                            supportsMetal = v;
+                          });
+                        },
+                      ),
+                      Text('Peut être fabriqué avec différents métaux'),
                     ],
                   ),
                   Row(
@@ -307,6 +323,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                 protection: int.parse(protectionController.text),
                 penalty: -int.parse(penaltyController.text),
                 damage: damage,
+                supportsMetal: supportsMetal,
                 special: special,
               );
 
@@ -330,6 +347,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
               widget.shield!.protection = int.parse(protectionController.text);
               widget.shield!.penalty = -int.parse(penaltyController.text);
               widget.shield!.damage = damage;
+              widget.shield!.supportsMetal = supportsMetal;
               widget.shield!.special = special;
 
               Navigator.of(context).pop(widget.shield!);

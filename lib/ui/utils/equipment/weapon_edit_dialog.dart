@@ -45,6 +45,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
   int? villagePrice;
   EquipmentScarcity? cityScarcity;
   int? cityPrice;
+  bool supportsMetal = false;
   Map<Ability, int> requirements = <Ability, int>{};
   Map<WeaponRange, int> initiatives = <WeaponRange, int>{};
   AttributeBasedCalculator damage = AttributeBasedCalculator(static: 0.0);
@@ -68,6 +69,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
       villagePrice = widget.weapon!.villageAvailability.price;
       cityScarcity = widget.weapon!.cityAvailability.scarcity;
       cityPrice = widget.weapon!.cityAvailability.price;
+      supportsMetal = widget.weapon!.supportsMetal;
       requirements = widget.weapon!.requirements;
       initiatives = widget.weapon!.initiative;
       damage = widget.weapon!.damage;
@@ -263,6 +265,20 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                     ],
                   ),
                   Row(
+                    spacing: 4.0,
+                    children: [
+                      Switch(
+                        value: supportsMetal,
+                        onChanged: (bool v) {
+                          setState(() {
+                            supportsMetal = v;
+                          });
+                        },
+                      ),
+                      Text('Peut être fabriqué avec différents métaux'),
+                    ],
+                  ),
+                  Row(
                     spacing: 12.0,
                     children: [
                       Expanded(
@@ -389,6 +405,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                 damage: damage,
                 rangeEffective: rangeEffective,
                 rangeMax: rangeMax,
+                supportsMetal: supportsMetal,
                 special: special,
               );
 
@@ -415,6 +432,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
               widget.weapon!.damage = damage;
               widget.weapon!.rangeEffective = rangeEffective;
               widget.weapon!.rangeMax = rangeMax;
+              widget.weapon!.supportsMetal = supportsMetal;
               widget.weapon!.special = special;
 
               Navigator.of(context).pop(widget.weapon!);

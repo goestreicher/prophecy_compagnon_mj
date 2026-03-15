@@ -24,6 +24,7 @@ MiscGearModel _$MiscGearModelFromJson(Map<String, dynamic> json) =>
       cityAvailability: EquipmentAvailability.fromJson(
         json['city_availability'] as Map<String, dynamic>,
       ),
+      supportsMetal: json['supports_metal'] as bool? ?? false,
       special: (json['special'] as List<dynamic>?)
           ?.map(
             (e) =>
@@ -43,5 +44,6 @@ Map<String, dynamic> _$MiscGearModelToJson(MiscGearModel instance) =>
       'creation_time': instance.creationTime,
       'village_availability': instance.villageAvailability.toJson(),
       'city_availability': instance.cityAvailability.toJson(),
+      'supports_metal': instance.supportsMetal,
       'special': instance.special.map((e) => e.toJson()).toList(),
     };

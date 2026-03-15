@@ -78,6 +78,7 @@ class ArmorModel extends EquipableItemModel {
     required Map<Ability, int> requirements,
     required int protection,
     required int penalty,
+    bool supportsMetal = false,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -100,6 +101,7 @@ class ArmorModel extends EquipableItemModel {
           requirements: requirements,
           protection: protection,
           penalty: penalty,
+          supportsMetal: supportsMetal,
           special: special,
         );
     _cache[am.id] = am;
@@ -124,6 +126,7 @@ class ArmorModel extends EquipableItemModel {
     required this.requirements,
     required this.protection,
     required this.penalty,
+    super.supportsMetal,
     super.special,
   });
 
@@ -203,16 +206,18 @@ class ArmorModel extends EquipableItemModel {
 }
 
 class Armor extends EquipableItem implements ProtectionProvider {
-  Armor(this._uuid, { required ArmorModel model })
-    : super(
-        model: model,
-      );
+  Armor(this._uuid, {
+    required super.model,
+    super.quality,
+    super.metal,
+  });
 
-  Armor.create({ required ArmorModel model })
-    : _uuid = const Uuid().v4().toString(),
-      super(
-        model: model,
-      );
+  Armor.create({
+    required super.model,
+    super.quality,
+    super.metal,
+  })
+    : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
 

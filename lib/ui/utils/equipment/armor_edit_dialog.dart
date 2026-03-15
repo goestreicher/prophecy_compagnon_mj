@@ -35,6 +35,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
   int? villagePrice;
   EquipmentScarcity? cityScarcity;
   int? cityPrice;
+  bool supportsMetal = false;
   Map<Ability, int> requirements = <Ability, int>{};
   TextEditingController protectionController = TextEditingController();
   TextEditingController penaltyController = TextEditingController();
@@ -54,6 +55,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
       villagePrice = widget.armor!.villageAvailability.price;
       cityScarcity = widget.armor!.cityAvailability.scarcity;
       cityPrice = widget.armor!.cityAvailability.price;
+      supportsMetal = widget.armor!.supportsMetal;
       requirements = widget.armor!.requirements;
       protectionController.text = widget.armor!.protection.toString();
       penaltyController.text = (-widget.armor!.penalty).toString();
@@ -172,6 +174,20 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
+                    ],
+                  ),
+                  Row(
+                    spacing: 4.0,
+                    children: [
+                      Switch(
+                        value: supportsMetal,
+                        onChanged: (bool v) {
+                          setState(() {
+                            supportsMetal = v;
+                          });
+                        },
+                      ),
+                      Text('Peut être fabriquée avec différents métaux'),
                     ],
                   ),
                   Row(
@@ -299,6 +315,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
                 requirements: requirements,
                 protection: int.parse(protectionController.text),
                 penalty: -int.parse(penaltyController.text),
+                supportsMetal: supportsMetal,
                 special: special,
               );
 
@@ -321,6 +338,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
               widget.armor!.requirements = requirements;
               widget.armor!.protection = int.parse(protectionController.text);
               widget.armor!.penalty = -int.parse(penaltyController.text);
+              widget.armor!.supportsMetal = supportsMetal;
               widget.armor!.special = special;
 
               Navigator.of(context).pop(widget.armor!);
