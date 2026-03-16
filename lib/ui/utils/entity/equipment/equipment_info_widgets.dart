@@ -33,9 +33,9 @@ class WeaponInfoWidget extends StatelessWidget {
       damage = buffer.toString();
     }
 
-    var typeLine = (weapon.model as WeaponModel).skill.parent.title;
+    var typeLine = 'Compétence : ${(weapon.model as WeaponModel).skill.parent.title}';
     if(weapon.alias != null) {
-      typeLine += ' / ${weapon.model.name}';
+      typeLine += ' / Spécialisation : ${weapon.model.name}';
     }
 
     return Column(
@@ -79,12 +79,8 @@ class ShieldInfoWidget extends StatelessWidget {
           style: theme.textTheme.titleMedium,
         ),
         Text(
-          'Protection ${shield.protection()}',
+          'Protection : ${shield.protection()} / Pénalité : ${(shield.model as ShieldModel).penalty}',
           style: theme.textTheme.bodyMedium,
-        ),
-        Text(
-          'Pénalité ${(shield.model as ShieldModel).penalty}',
-          style: theme.textTheme.bodySmall,
         ),
         Text(
           'Qualité : ${shield.quality.title}',
@@ -109,11 +105,10 @@ class ArmorInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
-    var typeLine = '';
+    var typeLine = 'Type : ${(armor.model as ArmorModel).type.title}';
     if(armor.alias != null) {
-      typeLine = '${armor.model.name} / ';
+      typeLine += ' / ${armor.model.name}';
     }
-    typeLine += (armor.model as ArmorModel).type.title;
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,12 +118,8 @@ class ArmorInfoWidget extends StatelessWidget {
           style: theme.textTheme.titleMedium,
         ),
         Text(
-          'Protection ${armor.protection()}',
+          'Protection : ${armor.protection()} / Pénalite : ${(armor.model as ArmorModel).penalty}',
           style: theme.textTheme.bodyMedium,
-        ),
-        Text(
-          'Pénalite ${(armor.model as ArmorModel).penalty}',
-          style: theme.textTheme.bodySmall,
         ),
         Text(
           'Qualité : ${armor.quality.title}',
@@ -152,12 +143,6 @@ class ClothInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
-    String subLine = '';
-    if(cloth.alias != null) {
-      subLine += '${cloth.model.name} / ';
-    }
-    subLine += (cloth.model as ClothModel).slot.title;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -169,10 +154,11 @@ class ClothInfoWidget extends StatelessWidget {
           'Qualité : ${cloth.quality.title}',
           style: theme.textTheme.bodySmall,
         ),
-        Text(
-          subLine,
-          style: theme.textTheme.bodySmall,
-        ),
+        if(cloth.alias != null)
+          Text(
+            cloth.model.name,
+            style: theme.textTheme.bodySmall,
+          ),
       ],
     );
   }
@@ -187,12 +173,6 @@ class JewelInfoWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
-    String subLine = '';
-    if(jewel.alias != null) {
-      subLine += '${jewel.model.name} / ';
-    }
-    subLine += (jewel.model as JewelModel).slot.title;
-
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -204,10 +184,11 @@ class JewelInfoWidget extends StatelessWidget {
           'Qualité : ${jewel.quality.title}',
           style: theme.textTheme.bodySmall,
         ),
-        Text(
-          subLine,
-          style: theme.textTheme.bodySmall,
-        ),
+        if(jewel.alias != null)
+          Text(
+            jewel.model.name,
+            style: theme.textTheme.bodySmall,
+          ),
       ],
     );
   }
