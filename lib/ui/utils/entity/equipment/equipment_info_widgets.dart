@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/equipment/armor.dart';
 import '../../../../classes/equipment/cloth.dart';
+import '../../../../classes/equipment/jewel.dart';
 import '../../../../classes/equipment/shield.dart';
 import '../../../../classes/equipment/weapon.dart';
 
@@ -166,6 +167,41 @@ class ClothInfoWidget extends StatelessWidget {
         ),
         Text(
           'Qualité : ${cloth.quality.title}',
+          style: theme.textTheme.bodySmall,
+        ),
+        Text(
+          subLine,
+          style: theme.textTheme.bodySmall,
+        ),
+      ],
+    );
+  }
+}
+
+class JewelInfoWidget extends StatelessWidget {
+  const JewelInfoWidget({ super.key, required this.jewel });
+
+  final Jewel jewel;
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    String subLine = '';
+    if(jewel.alias != null) {
+      subLine += '${jewel.model.name} / ';
+    }
+    subLine += (jewel.model as JewelModel).slot.title;
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          jewel.name,
+          style: theme.textTheme.titleMedium,
+        ),
+        Text(
+          'Qualité : ${jewel.quality.title}',
           style: theme.textTheme.bodySmall,
         ),
         Text(

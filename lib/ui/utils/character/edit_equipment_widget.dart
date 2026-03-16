@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../classes/human_character.dart';
 import '../entity/equipment/edit_armor_widget.dart';
 import '../entity/equipment/edit_clothes_widget.dart';
+import '../entity/equipment/edit_jewels_widget.dart';
 import '../entity/equipment/edit_weapons_widget.dart';
 
 class CharacterEditEquipmentWidget extends StatelessWidget {
@@ -25,6 +26,9 @@ class CharacterEditEquipmentWidget extends StatelessWidget {
           entity: character,
         ),
         EntityEditClothesWidget(
+          entity: character,
+        ),
+        EntityEditJewelsWidget(
           entity: character,
         ),
       ],

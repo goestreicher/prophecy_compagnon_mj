@@ -182,12 +182,14 @@ class JewelModel extends EquipableItemModel {
 class Jewel extends EquipableItem {
   Jewel(this._uuid, {
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   });
 
   Jewel.create({
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   })
