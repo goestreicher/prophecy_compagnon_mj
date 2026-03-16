@@ -20,7 +20,7 @@
     },
     "supports_metal": true,
     "special": [],
-    "slot": "fingers",
+    "slot": "finger",
     "handiness": 0,
     "layer": "normal"
   },
@@ -45,7 +45,7 @@
     },
     "supports_metal": true,
     "special": [],
-    "slot": "fingers",
+    "slot": "finger",
     "handiness": 0,
     "layer": "normal"
   },
@@ -70,7 +70,7 @@
     },
     "supports_metal": true,
     "special": [],
-    "slot": "fingers",
+    "slot": "finger",
     "handiness": 0,
     "layer": "normal"
   },
@@ -120,7 +120,7 @@
     },
     "supports_metal": true,
     "special": [],
-    "slot": "forearms",
+    "slot": "forearm",
     "handiness": 0,
     "layer": "normal"
   },
@@ -145,7 +145,7 @@
     },
     "supports_metal": true,
     "special": [],
-    "slot": "forearms",
+    "slot": "forearm",
     "handiness": 0,
     "layer": "normal"
   },
@@ -170,7 +170,7 @@
     },
     "supports_metal": false,
     "special": [],
-    "slot": "forearms",
+    "slot": "forearm",
     "handiness": 0,
     "layer": "normal"
   },
@@ -195,7 +195,7 @@
     },
     "supports_metal": true,
     "special": [],
-    "slot": "forearms",
+    "slot": "forearm",
     "handiness": 0,
     "layer": "normal"
   },
@@ -345,7 +345,7 @@
     },
     "supports_metal": true,
     "special": [],
-    "slot": "upperArms",
+    "slot": "upperArm",
     "handiness": 0,
     "layer": "normal"
   }

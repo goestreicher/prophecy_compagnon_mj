@@ -114,9 +114,9 @@ class JewelModel extends EquipableItemModel {
     EquipableItemSlot.neck,
     EquipableItemSlot.ears,
     EquipableItemSlot.chest,
-    EquipableItemSlot.upperArms,
-    EquipableItemSlot.forearms,
-    EquipableItemSlot.fingers,
+    EquipableItemSlot.upperArm,
+    EquipableItemSlot.forearm,
+    EquipableItemSlot.finger,
   ];
 
   static Iterable<String> idsByBodyPart(EquipableItemSlot bp) =>

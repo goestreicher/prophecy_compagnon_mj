@@ -20,20 +20,21 @@ enum EquipableItemSlot {
   torso(title: 'Torse'),
   chest(title: 'Poitrine'),
   arms(title: 'Bras'),
-  upperArms(title: 'Haut de bras'),
-  forearms(title: 'Avant-bras'),
+  upperArm(title: 'Haut de bras', slots: 2),
+  forearm(title: 'Avant-bras', slots: 2),
   hands(title: 'Mains'),
   dominantHand(title: 'Main dominante'),
   weakHand(title: 'Main faible'),
-  fingers(title: 'Doigts'),
+  finger(title: 'Doigt', slots: 10),
   belt(title: 'Ceinture'),
   legs(title: 'Jambes'),
   feet(title: 'Pieds'),
   ;
   
   final String title;
+  final int slots;
   
-  const EquipableItemSlot({ required this.title });
+  const EquipableItemSlot({ required this.title, this.slots = 1 });
 
   static List<EquipableItemSlot> slotsFor(EquipableItemSlot bp) {
     if(bp == body) {
@@ -506,7 +507,7 @@ abstract mixin class SupportsEquipableItem {
   bool isEquiped(EquipableItem item) {
     for(var bp in equiped.keys) {
       for(var layer in equiped[bp]!.keys) {
-        if(equiped[bp]![layer] == item) {
+        if(equiped[bp]![layer]!.contains(item)) {
           return true;
         }
       }
@@ -521,23 +522,38 @@ abstract mixin class SupportsEquipableItem {
       for(var realBp in EquipableItemSlot.slotsFor(eit.slot)) {
         if(realBp == EquipableItemSlot.hands) {
           if(eit.handiness == 2) {
-            if (equiped[realBp] == null) {
-              equiped[realBp] = <EquipableItemLayer, EquipableItem>{};
+            if(equiped[realBp] == null) {
+              equiped[realBp] = <EquipableItemLayer, List<EquipableItem>>{};
             }
-            equiped[realBp]![eit.layer] = item;
+            if(equiped[realBp]![eit.layer] == null) {
+              equiped[realBp]![eit.layer] = <EquipableItem>[];
+            }
+            if(!equiped[realBp]![eit.layer]!.contains(item)) {
+              equiped[realBp]![eit.layer]!.add(item);
+            }
           }
           else if(eit.handiness == 1) {
-            if (equiped[target] == null) {
-              equiped[target] = <EquipableItemLayer, EquipableItem>{};
+            if(equiped[target] == null) {
+              equiped[target] = <EquipableItemLayer, List<EquipableItem>>{};
             }
-            equiped[target]![eit.layer] = item;
+            if(equiped[target]![eit.layer] == null) {
+              equiped[target]![eit.layer] = <EquipableItem>[];
+            }
+            if(!equiped[target]![eit.layer]!.contains(item)) {
+              equiped[target]![eit.layer]!.add(item);
+            }
           }
         }
         else {
           if (equiped[realBp] == null) {
-            equiped[realBp] = <EquipableItemLayer, EquipableItem>{};
+            equiped[realBp] = <EquipableItemLayer, List<EquipableItem>>{};
           }
-          equiped[realBp]![eit.layer] = item;
+          if(equiped[realBp]![eit.layer] == null) {
+            equiped[realBp]![eit.layer] = <EquipableItem>[];
+          }
+          if(!equiped[realBp]![eit.layer]!.contains(item)) {
+            equiped[realBp]![eit.layer]!.add(item);
+          }
         }
       }
 
@@ -547,11 +563,11 @@ abstract mixin class SupportsEquipableItem {
 
   void replaceEquiped({ required EquipableItem item, required EquipableItemSlot target }) {
     var eit = item.model as EquipableItemModel;
-    var currentlyEquipedItems = <EquipableItem>[];
+    var itemsToDesequip = <EquipableItem>[];
 
     if(target == EquipableItemSlot.dominantHand || target == EquipableItemSlot.weakHand) {
       if(equiped.containsKey(target) && equiped[target]![eit.layer] != null) {
-        currentlyEquipedItems.add(equiped[target]![eit.layer]!);
+        itemsToDesequip.addAll(equiped[target]![eit.layer]!);
       }
     }
 
@@ -559,16 +575,20 @@ abstract mixin class SupportsEquipableItem {
       if(target == EquipableItemSlot.hands) {
         for(var bp in [EquipableItemSlot.dominantHand, EquipableItemSlot.weakHand]) {
           if(equiped.containsKey(bp) && equiped[bp]![eit.layer] != null) {
-            currentlyEquipedItems.add(equiped[bp]![eit.layer]!);
+            itemsToDesequip.addAll(equiped[bp]![eit.layer]!);
           }
         }
       }
-      else if(equiped.containsKey(realBp) && equiped[realBp]![eit.layer] != null) {
-        currentlyEquipedItems.add(equiped[realBp]![eit.layer]!);
+      else if(
+          equiped.containsKey(realBp)
+          && equiped[realBp]![eit.layer] != null
+          && equiped[realBp]![eit.layer]!.length >= realBp.slots
+      ) {
+        itemsToDesequip.add(equiped[realBp]![eit.layer]![0]);
       }
     }
 
-    for(var currentlyEquipedItem in currentlyEquipedItems) {
+    for(var currentlyEquipedItem in itemsToDesequip) {
       if(currentlyEquipedItem.equipedOn == null) {
         continue;
       }
@@ -581,7 +601,10 @@ abstract mixin class SupportsEquipableItem {
   void unequip(EquipableItem item) {
     if(isEquiped(item)) {
       for(var bp in equiped.keys) {
-        equiped[bp]!.removeWhere((k, v) => v == item);
+        for(var layer in equiped[bp]!.values) {
+          layer.removeWhere((e) => e == item);
+        }
+        equiped[bp]!.removeWhere((k, v) => v.isEmpty);
       }
 
       item.unequiped(this);
@@ -592,20 +615,21 @@ abstract mixin class SupportsEquipableItem {
   List<EquipableItem> equipedForSlot(EquipableItemSlot slot) {
     var ret = <EquipableItem>[];
     for(var layer in equiped[slot]?.keys ?? <EquipableItemLayer>[]) {
-      ret.add(equiped[slot]![layer]!);
+      ret.addAll(equiped[slot]![layer]!);
     }
     return ret;
   }
 
-  @JsonKey(includeToJson: false, includeFromJson: false)
-  Map<EquipableItemSlot, Map<EquipableItemLayer, EquipableItem>> equiped =
-    <EquipableItemSlot, Map<EquipableItemLayer, EquipableItem>>{};
-
   bool isSlotFree(EquipableItemSlot slot, EquipableItemLayer layer) {
     if(!equiped.containsKey(slot)) return true;
     if(!equiped[slot]!.containsKey(layer)) return true;
+    if(equiped[slot]![layer]!.length < slot.slots) return true;
     return false;
   }
+
+  @JsonKey(includeToJson: false, includeFromJson: false)
+  Map<EquipableItemSlot, Map<EquipableItemLayer, List<EquipableItem>>> equiped =
+    <EquipableItemSlot, Map<EquipableItemLayer, List<EquipableItem>>>{};
 
   Map<String, dynamic> toJson() => _$SupportsEquipableItemToJson(this);
 }
