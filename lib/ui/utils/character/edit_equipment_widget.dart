@@ -4,6 +4,7 @@ import '../../../classes/human_character.dart';
 import '../entity/equipment/edit_armor_widget.dart';
 import '../entity/equipment/edit_clothes_widget.dart';
 import '../entity/equipment/edit_jewels_widget.dart';
+import '../entity/equipment/edit_misc_gear_widget.dart';
 import '../entity/equipment/edit_weapons_widget.dart';
 
 class CharacterEditEquipmentWidget extends StatelessWidget {
@@ -29,6 +30,9 @@ class CharacterEditEquipmentWidget extends StatelessWidget {
           entity: character,
         ),
         EntityEditJewelsWidget(
+          entity: character,
+        ),
+        EntityEditMiscGearWidget(
           entity: character,
         ),
       ],

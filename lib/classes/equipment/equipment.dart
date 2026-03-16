@@ -651,6 +651,11 @@ class EntityEquipment with IterableMixin<Equipment>, ChangeNotifier {
     notifyListeners();
   }
 
+  void removeWhere(bool Function(Equipment) where) {
+    _all.removeWhere(where);
+    notifyListeners();
+  }
+
   static EntityEquipment fromJson(List<dynamic> json) {
     var equipment = <Equipment>[];
     var uuids = <String>{};

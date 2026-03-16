@@ -157,12 +157,14 @@ class MiscGearModel extends EquipmentModel {
 class MiscGear extends Equipment {
   MiscGear(this._uuid, {
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   });
 
   MiscGear.create({
     required super.model,
+    super.alias,
     super.quality,
     super.metal,
   })

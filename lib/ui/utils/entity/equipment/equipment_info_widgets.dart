@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/equipment/armor.dart';
 import '../../../../classes/equipment/cloth.dart';
 import '../../../../classes/equipment/jewel.dart';
+import '../../../../classes/equipment/misc_gear.dart';
 import '../../../../classes/equipment/shield.dart';
 import '../../../../classes/equipment/weapon.dart';
 
@@ -187,6 +188,36 @@ class JewelInfoWidget extends StatelessWidget {
         if(jewel.alias != null)
           Text(
             jewel.model.name,
+            style: theme.textTheme.bodySmall,
+          ),
+      ],
+    );
+  }
+}
+
+class MiscGearInfoWidget extends StatelessWidget {
+  const MiscGearInfoWidget({ super.key, required this.item });
+
+  final MiscGear item;
+
+  @override
+  Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          item.name,
+          style: theme.textTheme.titleMedium,
+        ),
+        Text(
+          'Qualité : ${item.quality.title}',
+          style: theme.textTheme.bodySmall,
+        ),
+        if(item.alias != null)
+          Text(
+            item.model.name,
             style: theme.textTheme.bodySmall,
           ),
       ],
