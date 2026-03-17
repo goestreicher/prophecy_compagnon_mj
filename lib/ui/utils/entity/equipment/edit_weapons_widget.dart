@@ -16,10 +16,12 @@ class EntityEditWeaponsWidget extends StatelessWidget {
     super.key,
     required this.entity,
     this.showUnequipable = true,
+    this.showStored = true,
   });
 
   final EntityBase entity;
   final bool showUnequipable;
+  final bool showStored;
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +40,7 @@ class EntityEditWeaponsWidget extends StatelessWidget {
           return _WeaponsWidget(
             entity: entity,
             showUnequipable: showUnequipable,
+            showStored: showStored,
           );
         }
       ),
@@ -46,14 +49,19 @@ class EntityEditWeaponsWidget extends StatelessWidget {
 }
 
 class _WeaponsWidget extends StatelessWidget {
-  const _WeaponsWidget({ required this.entity, this.showUnequipable = true });
+  const _WeaponsWidget({
+    required this.entity,
+    this.showUnequipable = true,
+    this.showStored = true,
+  });
 
   final EntityBase entity;
   final bool showUnequipable;
+  final bool showStored;
 
   bool canDisplay(EquipableItem e) =>
-      showUnequipable
-      || entity.meetsEquipableRequirements(e);
+      (showUnequipable || entity.meetsEquipableRequirements(e))
+      && (showStored || !e.inStore);
 
   @override
   Widget build(BuildContext context) {
