@@ -188,6 +188,14 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     equipment.remove(eq);
   }
 
+  void storeEquipment(Equipment eq) {
+    if(eq is EquipableItem) unequip(eq);
+    eq.inStore = true;
+  }
+  void unstoreEquipment(Equipment eq) {
+    eq.inStore = false;
+  }
+
   final List<DamageProvider> _naturalWeapons = <DamageProvider>[];
 
   void addNaturalWeapon(WeaponRange range, DamageProvider nw) {

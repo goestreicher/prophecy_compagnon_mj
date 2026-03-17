@@ -4,6 +4,7 @@ import '../../../../classes/equipment/armor.dart';
 import '../../../../classes/entity_base.dart';
 import '../../../../classes/equipment/equipment.dart';
 import 'equipment_info_widgets.dart';
+import 'toggle_equipment_storage_widget.dart';
 
 class ArmorEquipWidget extends StatelessWidget {
   const ArmorEquipWidget({
@@ -48,35 +49,44 @@ class ArmorEquipWidget extends StatelessWidget {
             ...leading,
             ArmorInfoWidget(armor: armor),
             const Spacer(),
-            if(!entity.meetsEquipableRequirements(armor))
-              Text(
-                'Pré-requis\n${entity.unmetEquipableRequirementsDescription(armor)}',
-                textAlign: TextAlign.right,
-                style: theme.textTheme.bodySmall,
-              ),
-            Column(
-              children: [
-                Switch(
-                  value: entity.isEquiped(armor),
-                  onChanged: !entity.meetsEquipableRequirements(armor)
-                    ? null
-                    : (bool value) {
-                        if(value) {
-                          entity.replaceEquiped(
-                            item: armor,
-                            target: (armor.model as EquipableItemModel).slot,
-                          );
-                        }
-                        else if(!value && entity.isEquiped(armor)) {
-                          entity.unequip(armor);
-                        }
-                      },
-                ),
-                Text(
-                  entity.isEquiped(armor) ? 'Déséquiper' : 'Équiper',
-                  style: theme.textTheme.bodySmall,
-                )
-              ],
+            ToggleEquipmentStorageWidget(
+              entity: entity,
+              equipment: armor,
+              carriedWidget: Row(
+                spacing: 8.0,
+                children: [
+                  if(!entity.meetsEquipableRequirements(armor))
+                    Text(
+                      'Pré-requis\n${entity.unmetEquipableRequirementsDescription(armor)}',
+                      textAlign: TextAlign.right,
+                      style: theme.textTheme.bodySmall,
+                    ),
+                  Column(
+                    children: [
+                      Switch(
+                        value: entity.isEquiped(armor),
+                        onChanged: !entity.meetsEquipableRequirements(armor)
+                            ? null
+                            : (bool value) {
+                          if(value) {
+                            entity.replaceEquiped(
+                              item: armor,
+                              target: (armor.model as EquipableItemModel).slot,
+                            );
+                          }
+                          else if(!value && entity.isEquiped(armor)) {
+                            entity.unequip(armor);
+                          }
+                        },
+                      ),
+                      Text(
+                        entity.isEquiped(armor) ? 'Déséquiper' : 'Équiper',
+                        style: theme.textTheme.bodySmall,
+                      )
+                    ],
+                  ),
+                ],
+              )
             ),
           ],
         ),

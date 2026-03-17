@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:prophecy_compagnon_mj/ui/utils/num_input_widget.dart';
 
 import '../../../../classes/entity_base.dart';
 import '../../../../classes/equipment/misc_gear.dart';
 import 'equipment_info_widgets.dart';
+import 'toggle_equipment_storage_widget.dart';
 
 class MiscGearManageWidget extends StatelessWidget {
   const MiscGearManageWidget({
@@ -52,7 +52,7 @@ class MiscGearManageWidget extends StatelessWidget {
             MiscGearInfoWidget(item: item),
             const Spacer(),
             Column(
-              spacing: 8.0,
+              spacing: 4.0,
               children: [
                 Row(
                   spacing: 8.0,
@@ -83,6 +83,10 @@ class MiscGearManageWidget extends StatelessWidget {
                   style: theme.textTheme.bodySmall,
                 )
               ],
+            ),
+            ToggleEquipmentStorageWidget(
+              entity: entity,
+              equipment: item,
             ),
           ],
         ),

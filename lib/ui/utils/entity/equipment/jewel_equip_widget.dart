@@ -4,6 +4,7 @@ import '../../../../classes/entity_base.dart';
 import '../../../../classes/equipment/equipment.dart';
 import '../../../../classes/equipment/jewel.dart';
 import 'equipment_info_widgets.dart';
+import 'toggle_equipment_storage_widget.dart';
 
 class JewelEquipWidget extends StatelessWidget {
   const JewelEquipWidget({
@@ -48,27 +49,31 @@ class JewelEquipWidget extends StatelessWidget {
             ...leading,
             JewelInfoWidget(jewel: jewel),
             const Spacer(),
-            Column(
-              children: [
-                Switch(
-                  value: entity.isEquiped(jewel),
-                  onChanged: (bool value) {
-                    if(value) {
-                      entity.replaceEquiped(
-                        item: jewel,
-                        target: (jewel.model as EquipableItemModel).slot,
-                      );
-                    }
-                    else if(!value && entity.isEquiped(jewel)) {
-                      entity.unequip(jewel);
-                    }
-                  },
-                ),
-                Text(
-                  entity.isEquiped(jewel) ? 'Déséquiper' : 'Équiper',
-                  style: theme.textTheme.bodySmall,
-                )
-              ],
+            ToggleEquipmentStorageWidget(
+              entity: entity,
+              equipment: jewel,
+              carriedWidget: Column(
+                children: [
+                  Switch(
+                    value: entity.isEquiped(jewel),
+                    onChanged: (bool value) {
+                      if(value) {
+                        entity.replaceEquiped(
+                          item: jewel,
+                          target: (jewel.model as EquipableItemModel).slot,
+                        );
+                      }
+                      else if(!value && entity.isEquiped(jewel)) {
+                        entity.unequip(jewel);
+                      }
+                    },
+                  ),
+                  Text(
+                    entity.isEquiped(jewel) ? 'Déséquiper' : 'Équiper',
+                    style: theme.textTheme.bodySmall,
+                  )
+                ],
+              ),
             ),
           ],
         ),

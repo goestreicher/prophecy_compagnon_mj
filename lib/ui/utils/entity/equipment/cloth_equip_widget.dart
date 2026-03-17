@@ -4,6 +4,7 @@ import '../../../../classes/entity_base.dart';
 import '../../../../classes/equipment/cloth.dart';
 import '../../../../classes/equipment/equipment.dart';
 import 'equipment_info_widgets.dart';
+import 'toggle_equipment_storage_widget.dart';
 
 class ClothEquipWidget extends StatelessWidget {
   const ClothEquipWidget({
@@ -48,27 +49,31 @@ class ClothEquipWidget extends StatelessWidget {
             ...leading,
             ClothInfoWidget(cloth: cloth),
             const Spacer(),
-            Column(
-              children: [
-                Switch(
-                  value: entity.isEquiped(cloth),
-                  onChanged: (bool value) {
-                    if(value) {
-                      entity.replaceEquiped(
-                        item: cloth,
-                        target: (cloth.model as EquipableItemModel).slot,
-                      );
-                    }
-                    else if(!value && entity.isEquiped(cloth)) {
-                      entity.unequip(cloth);
-                    }
-                  },
-                ),
-                Text(
-                  entity.isEquiped(cloth) ? 'Déséquiper' : 'Équiper',
-                  style: theme.textTheme.bodySmall,
-                )
-              ],
+            ToggleEquipmentStorageWidget(
+              entity: entity,
+              equipment: cloth,
+              carriedWidget: Column(
+                children: [
+                  Switch(
+                    value: entity.isEquiped(cloth),
+                    onChanged: (bool value) {
+                      if(value) {
+                        entity.replaceEquiped(
+                          item: cloth,
+                          target: (cloth.model as EquipableItemModel).slot,
+                        );
+                      }
+                      else if(!value && entity.isEquiped(cloth)) {
+                        entity.unequip(cloth);
+                      }
+                    },
+                  ),
+                  Text(
+                    entity.isEquiped(cloth) ? 'Déséquiper' : 'Équiper',
+                    style: theme.textTheme.bodySmall,
+                  )
+                ],
+              ),
             ),
           ],
         ),

@@ -365,6 +365,7 @@ abstract class Equipment {
     this.alias,
     this.quality = EquipmentQuality.normal,
     this.metal = EquipmentMetal.none,
+    this.inStore = false,
   }) {
     if(model.supportsMetal && metal == EquipmentMetal.none) {
       metal = EquipmentMetal.iron;
@@ -378,6 +379,7 @@ abstract class Equipment {
   String? alias;
   EquipmentQuality quality;
   EquipmentMetal metal;
+  bool inStore;
 
   String get name => alias ?? model.name;
 
@@ -406,6 +408,10 @@ abstract class Equipment {
         ? EquipmentMetal.iron
         : m;
     }
+
+    if(json['in_store'] != null) {
+      inStore = json['in_store'] as bool;
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -415,6 +421,7 @@ abstract class Equipment {
       'uuid': uuid(),
       'quality': quality.name,
       'metal': metal.name,
+      'in_store': inStore,
     };
   }
 }
@@ -426,6 +433,7 @@ abstract class EquipableItem extends Equipment {
     super.quality,
     super.metal,
     EquipableItemSlot? equipedOn,
+    super.inStore,
   })
     : equipedOnNotifier = ValueNotifier<EquipableItemSlot?>(equipedOn);
 
