@@ -15,6 +15,7 @@ class _ArmorPickerDialogState extends State<ArmorPickerDialog> {
   List<ArmorModel> armors = <ArmorModel>[];
   final TextEditingController armorController = TextEditingController();
   ArmorModel? model;
+  EquipmentMetal metal = EquipmentMetal.none;
   EquipmentQuality quality = EquipmentQuality.normal;
   final TextEditingController aliasController = TextEditingController();
 
@@ -45,6 +46,7 @@ class _ArmorPickerDialogState extends State<ArmorPickerDialog> {
               armorController.clear();
               setState(() {
                 model = null;
+                metal = EquipmentMetal.none;
                 this.armors = armors;
               });
             },
@@ -58,9 +60,35 @@ class _ArmorPickerDialogState extends State<ArmorPickerDialog> {
               .map((ArmorModel a) => DropdownMenuEntry(value: a, label: a.name))
               .toList(),
             onSelected: (ArmorModel? a) {
-              model = a;
+              setState(() {
+                model = a;
+                metal = model?.supportsMetal ?? false
+                  ? EquipmentMetal.iron
+                  : EquipmentMetal.none;
+              });
             },
           ),
+          if(model?.supportsMetal ?? false)
+            DropdownMenuFormField<EquipmentMetal>(
+              initialSelection: EquipmentMetal.iron,
+              requestFocusOnTap: true,
+              label: const Text('Métal'),
+              inputDecorationTheme: const InputDecorationTheme(
+                border: OutlineInputBorder(),
+              ),
+              expandedInsets: EdgeInsets.zero,
+              dropdownMenuEntries: EquipmentMetal.values
+                .map((EquipmentMetal m) => DropdownMenuEntry(value: m, label: m.title))
+                .toList(),
+              validator: (EquipmentMetal? m) {
+                if(m == null) return 'Valeur manquante';
+                return null;
+              },
+              onSelected: (EquipmentMetal? m) {
+                if(m == null) return;
+                metal = m;
+              },
+            ),
           DropdownMenuFormField<EquipmentQuality>(
             initialSelection: quality,
             requestFocusOnTap: true,
@@ -108,6 +136,7 @@ class _ArmorPickerDialogState extends State<ArmorPickerDialog> {
                       model: model!,
                       alias: aliasController.text.isEmpty ? null : aliasController.text,
                       quality: quality,
+                      metal: metal,
                     );
 
                     Navigator.of(context).pop(armor);

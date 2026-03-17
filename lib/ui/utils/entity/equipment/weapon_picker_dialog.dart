@@ -16,6 +16,7 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
   final TextEditingController weaponController = TextEditingController();
   List<WeaponModel> weapons = <WeaponModel>[];
   WeaponModel? model;
+  EquipmentMetal metal = EquipmentMetal.none;
   EquipmentQuality quality = EquipmentQuality.normal;
   final TextEditingController aliasController = TextEditingController();
 
@@ -47,6 +48,7 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
               weaponController.clear();
               setState(() {
                 model = null;
+                metal = EquipmentMetal.none;
                 this.weapons = weapons;
               });
             },
@@ -60,9 +62,35 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
               .map((WeaponModel w) => DropdownMenuEntry(value: w, label: w.name))
               .toList(),
             onSelected: (WeaponModel? w) {
-              model = w;
+              setState(() {
+                model = w;
+                metal = model?.supportsMetal ?? false
+                  ? EquipmentMetal.iron
+                  : EquipmentMetal.none;
+              });
             },
           ),
+          if(model?.supportsMetal ?? false)
+            DropdownMenuFormField<EquipmentMetal>(
+              initialSelection: EquipmentMetal.iron,
+              requestFocusOnTap: true,
+              label: const Text('Métal'),
+              inputDecorationTheme: const InputDecorationTheme(
+                border: OutlineInputBorder(),
+              ),
+              expandedInsets: EdgeInsets.zero,
+              dropdownMenuEntries: EquipmentMetal.values
+                .map((EquipmentMetal m) => DropdownMenuEntry(value: m, label: m.title))
+                .toList(),
+              validator: (EquipmentMetal? m) {
+                if(m == null) return 'Valeur manquante';
+                return null;
+              },
+              onSelected: (EquipmentMetal? m) {
+                if(m == null) return;
+                metal = m;
+              },
+            ),
           DropdownMenuFormField<EquipmentQuality>(
             initialSelection: quality,
             requestFocusOnTap: true,
@@ -110,6 +138,7 @@ class _WeaponPickerDialogState extends State<WeaponPickerDialog> {
                       model: model!,
                       alias: aliasController.text.isEmpty ? null : aliasController.text,
                       quality: quality,
+                      metal: metal,
                     );
 
                     Navigator.of(context).pop(weapon);

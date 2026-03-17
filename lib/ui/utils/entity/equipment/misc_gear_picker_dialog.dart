@@ -14,6 +14,7 @@ class _MiscGearPickerDialogState extends State<MiscGearPickerDialog> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   List<MiscGearModel> items = <MiscGearModel>[];
   MiscGearModel? model;
+  EquipmentMetal metal = EquipmentMetal.none;
   TextEditingController aliasController = TextEditingController();
   EquipmentQuality quality = EquipmentQuality.normal;
   
@@ -53,9 +54,35 @@ class _MiscGearPickerDialogState extends State<MiscGearPickerDialog> {
                 return null;
               },
               onSelected: (MiscGearModel? mg) {
-                model = mg;
+                setState(() {
+                  model = mg;
+                  metal = model?.supportsMetal ?? false
+                    ? EquipmentMetal.iron
+                    : EquipmentMetal.none;
+                });
               },
             ),
+            if(model?.supportsMetal ?? false)
+              DropdownMenuFormField<EquipmentMetal>(
+                initialSelection: EquipmentMetal.iron,
+                requestFocusOnTap: true,
+                label: const Text('Métal'),
+                inputDecorationTheme: const InputDecorationTheme(
+                  border: OutlineInputBorder(),
+                ),
+                expandedInsets: EdgeInsets.zero,
+                dropdownMenuEntries: EquipmentMetal.values
+                  .map((EquipmentMetal m) => DropdownMenuEntry(value: m, label: m.title))
+                  .toList(),
+                validator: (EquipmentMetal? m) {
+                  if(m == null) return 'Valeur manquante';
+                  return null;
+                },
+                onSelected: (EquipmentMetal? m) {
+                  if(m == null) return;
+                  metal = m;
+                },
+              ),
             DropdownMenuFormField<EquipmentQuality>(
               initialSelection: quality,
               requestFocusOnTap: true,
@@ -100,6 +127,7 @@ class _MiscGearPickerDialogState extends State<MiscGearPickerDialog> {
               model: model!,
               alias: aliasController.text.isEmpty ? null : aliasController.text,
               quality: quality,
+              metal: metal,
             );
             Navigator.of(context).pop(mg);
           },

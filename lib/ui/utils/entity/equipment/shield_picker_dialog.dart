@@ -14,6 +14,7 @@ class _ShieldPickerDialogState extends State<ShieldPickerDialog> {
   final TextEditingController shieldController = TextEditingController();
   final Map<String, String> shields = <String, String>{};
   ShieldModel? model;
+  EquipmentMetal metal = EquipmentMetal.none;
   EquipmentQuality quality = EquipmentQuality.normal;
   final TextEditingController aliasController = TextEditingController();
 
@@ -40,14 +41,40 @@ class _ShieldPickerDialogState extends State<ShieldPickerDialog> {
               .map((String id) => DropdownMenuEntry(value: id, label: shields[id]!))
               .toList(),
             onSelected: (String? id) {
-              if(id == null) {
-                model = null;
-              }
-              else {
-                model = ShieldModel.get(id);
-              }
+              setState(() {
+                if(id == null) {
+                  model = null;
+                }
+                else {
+                  model = ShieldModel.get(id);
+                  metal = model?.supportsMetal ?? false
+                    ? EquipmentMetal.iron
+                    : EquipmentMetal.none;
+                }
+              });
             },
           ),
+          if(model?.supportsMetal ?? false)
+            DropdownMenuFormField<EquipmentMetal>(
+              initialSelection: EquipmentMetal.iron,
+              requestFocusOnTap: true,
+              label: const Text('Métal'),
+              inputDecorationTheme: const InputDecorationTheme(
+                border: OutlineInputBorder(),
+              ),
+              expandedInsets: EdgeInsets.zero,
+              dropdownMenuEntries: EquipmentMetal.values
+                .map((EquipmentMetal m) => DropdownMenuEntry(value: m, label: m.title))
+                .toList(),
+              validator: (EquipmentMetal? m) {
+                if(m == null) return 'Valeur manquante';
+                return null;
+              },
+              onSelected: (EquipmentMetal? m) {
+                if(m == null) return;
+                metal = m;
+              },
+            ),
           DropdownMenuFormField<EquipmentQuality>(
             initialSelection: quality,
             requestFocusOnTap: true,
@@ -95,6 +122,7 @@ class _ShieldPickerDialogState extends State<ShieldPickerDialog> {
                       model: model!,
                       alias: aliasController.text.isEmpty ? null : aliasController.text,
                       quality: quality,
+                      metal: metal,
                     );
                     Navigator.of(context).pop(shield);
                   },

@@ -127,21 +127,24 @@ enum EquipmentMetal {
     weightModifier: 1.3,
     damageModifier: 2,
     protectionModifier: 2,
-    priceModifier: 5
+    priceModifier: 5,
+    intrinsicResistance: EquipmentQuality.superior
   ),
   silver(
     title: 'Argent',
     weightModifier: 2.0,
     damageModifier: 0,
     protectionModifier: 0,
-    priceModifier: 25000
+    priceModifier: 25000,
+    intrinsicResistance: EquipmentQuality.good
   ),
   bronze(
     title: 'Bronze',
     weightModifier: 0.9,
     damageModifier: -5,
     protectionModifier: -5,
-    priceModifier: 6
+    priceModifier: 6,
+    intrinsicResistance: EquipmentQuality.inferior
   ),
   copper(
     title: 'Cuivre',
@@ -162,25 +165,29 @@ enum EquipmentMetal {
     weightModifier: 3.5,
     damageModifier: 0,
     protectionModifier: 0,
-    priceModifier: 30000
+    priceModifier: 30000,
+    intrinsicResistance: EquipmentQuality.good
   ),
   stone(
     title: 'Pierre',
     weightModifier: 1.2,
     damageModifier: -5,
-    protectionModifier: null
+    protectionModifier: null,
+    intrinsicResistance: EquipmentQuality.inferior
   ),
   bloodOfKezyr(
     title: 'Sang de Kezyr',
     weightModifier: 1.5,
     damageModifier: 5,
-    protectionModifier: 10
+    protectionModifier: 10,
+    intrinsicResistance: EquipmentQuality.legendary
   ),
   darkSteel(
     title: 'Sombracier',
     weightModifier: 0.75,
     damageModifier: 8,
-    protectionModifier: 5
+    protectionModifier: 5,
+    intrinsicResistance: EquipmentQuality.incredible
   ),
   ;
 
@@ -189,6 +196,7 @@ enum EquipmentMetal {
   final int damageModifier;
   final int? protectionModifier;
   final double? priceModifier;
+  final EquipmentQuality intrinsicResistance;
 
   const EquipmentMetal({
     required this.title,
@@ -196,6 +204,7 @@ enum EquipmentMetal {
     required this.damageModifier,
     this.protectionModifier,
     this.priceModifier,
+    this.intrinsicResistance = EquipmentQuality.normal,
   });
 }
 
@@ -356,7 +365,11 @@ abstract class Equipment {
     this.alias,
     this.quality = EquipmentQuality.normal,
     this.metal = EquipmentMetal.none,
-  });
+  }) {
+    if(model.supportsMetal && metal == EquipmentMetal.none) {
+      metal = EquipmentMetal.iron;
+    }
+  }
 
   String type();
   String uuid();
@@ -388,7 +401,10 @@ abstract class Equipment {
     }
 
     if(json['metal'] != null && model.supportsMetal) {
-      metal = EquipmentMetal.values.byName(json['metal']);
+      var m = EquipmentMetal.values.byName(json['metal']);
+      metal = m == EquipmentMetal.none
+        ? EquipmentMetal.iron
+        : m;
     }
   }
 

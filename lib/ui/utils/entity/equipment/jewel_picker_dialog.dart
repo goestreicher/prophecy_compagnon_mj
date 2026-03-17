@@ -15,6 +15,7 @@ class _JewelPickerDialogState extends State<JewelPickerDialog> {
   EquipableItemSlot? slot;
   List<JewelModel> jewels = <JewelModel>[];
   JewelModel? model;
+  EquipmentMetal metal = EquipmentMetal.none;
   TextEditingController aliasController = TextEditingController();
   EquipmentQuality quality = EquipmentQuality.normal;
 
@@ -56,6 +57,8 @@ class _JewelPickerDialogState extends State<JewelPickerDialog> {
               onSelected: (EquipableItemSlot? l) {
                 setState(() {
                   slot = l;
+                  model = null;
+                  metal = EquipmentMetal.none;
                   loadJewels();
                 });
               },
@@ -75,9 +78,35 @@ class _JewelPickerDialogState extends State<JewelPickerDialog> {
                 return null;
               },
               onSelected: (JewelModel? j) {
-                model = j;
+                setState(() {
+                  model = j;
+                  metal = model?.supportsMetal ?? false
+                    ? EquipmentMetal.iron
+                    : EquipmentMetal.none;
+                });
               },
             ),
+            if(model?.supportsMetal ?? false)
+              DropdownMenuFormField<EquipmentMetal>(
+                initialSelection: EquipmentMetal.iron,
+                requestFocusOnTap: true,
+                label: const Text('Métal'),
+                inputDecorationTheme: const InputDecorationTheme(
+                  border: OutlineInputBorder(),
+                ),
+                expandedInsets: EdgeInsets.zero,
+                dropdownMenuEntries: EquipmentMetal.values
+                    .map((EquipmentMetal m) => DropdownMenuEntry(value: m, label: m.title))
+                    .toList(),
+                validator: (EquipmentMetal? m) {
+                  if(m == null) return 'Valeur manquante';
+                  return null;
+                },
+                onSelected: (EquipmentMetal? m) {
+                  if(m == null) return;
+                  metal = m;
+                },
+              ),
             DropdownMenuFormField<EquipmentQuality>(
               initialSelection: quality,
               requestFocusOnTap: true,
@@ -118,12 +147,13 @@ class _JewelPickerDialogState extends State<JewelPickerDialog> {
           onPressed: () async {
             if(!formKey.currentState!.validate()) return;
 
-            var cloth = Jewel.create(
+            var jewel = Jewel.create(
               model: model!,
               alias: aliasController.text.isEmpty ? null : aliasController.text,
               quality: quality,
+              metal: metal,
             );
-            Navigator.of(context).pop(cloth);
+            Navigator.of(context).pop(jewel);
           },
         )
       ],
