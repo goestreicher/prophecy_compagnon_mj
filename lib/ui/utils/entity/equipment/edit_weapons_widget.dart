@@ -58,12 +58,23 @@ class _WeaponsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+    var weapons = <Weapon>[];
+    var shields = <Shield>[];
     var widgets = <Widget>[];
 
     for(var eq in entity.equipment) {
       if(eq is! EquipableItem) continue;
       if(!canDisplay(eq)) continue;
 
+      if(eq is Weapon) {
+        weapons.add(eq);
+      }
+      else if(eq is Shield) {
+        shields.add(eq);
+      }
+    }
+
+    for(var eq in [...weapons, ...shields]) {
       if (eq is Weapon) {
         widgets.add(
           StreamBuilder(
