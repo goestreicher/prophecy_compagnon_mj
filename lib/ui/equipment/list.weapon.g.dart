@@ -58,6 +58,7 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
     for(var wid in WeaponModel.idsBySkill(widget.skill)) {
       var weapon = WeaponModel.get(wid);
       if(weapon == null) continue;
+      if(weapon is NaturalWeaponModel) continue;
 
       if(weapon.handiness == 2) {
         twoHandedWeapons.add(weapon);

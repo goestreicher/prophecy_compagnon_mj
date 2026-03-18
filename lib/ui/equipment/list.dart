@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:prophecy_compagnon_mj/classes/equipment/misc_gear.dart';
 
+import '../../classes/creature.dart';
 import '../../classes/equipment/armor.dart';
 import '../../classes/combat.dart';
 import '../../classes/entity/skill.dart';
