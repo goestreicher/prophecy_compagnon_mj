@@ -13,6 +13,7 @@ import 'entity/attributes.dart';
 import 'entity/magic.dart';
 import 'entity/skills.dart';
 import 'entity/status.dart';
+import 'equipment/enums.dart';
 import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'object_location.dart';

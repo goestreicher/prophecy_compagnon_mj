@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import '../../classes/combat.dart';
 import '../../classes/entity/status.dart';
 import '../../classes/entity_base.dart';
-import '../../classes/equipment/equipment.dart';
+import '../../classes/equipment/enums.dart';
 import '../../classes/equipment/weapon.dart';
 import 'command_dispatcher.dart';
 import 'map_model.dart';

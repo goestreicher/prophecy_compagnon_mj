@@ -4,6 +4,7 @@ import 'package:uuid/uuid.dart';
 
 import '../../../classes/equipment/armor.dart';
 import '../../../classes/entity/abilities.dart';
+import '../../../classes/equipment/enums.dart';
 import '../../../classes/equipment/equipment.dart';
 import '../../../classes/object_source.dart';
 import 'equipment_requirements_edit_widget.dart';

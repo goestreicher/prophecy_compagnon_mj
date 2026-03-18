@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/equipment/cloth.dart';
-import '../../../../classes/equipment/equipment.dart';
+import '../../../../classes/equipment/enums.dart';
 
 class ClothPickerDialog extends StatefulWidget {
   const ClothPickerDialog({ super.key });

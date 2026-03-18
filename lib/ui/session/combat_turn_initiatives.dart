@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:prophecy_compagnon_mj/classes/equipment/equipment.dart';
 
 import '../../classes/combat.dart';
 import '../../classes/combat_turn.dart';
 import '../../classes/encounter.dart';
 import '../../classes/entity_base.dart';
+import '../../classes/equipment/enums.dart';
 import '../../classes/player_character.dart';
 import '../utils/dice_roll_input.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/equipment/armor.dart';
-import '../../../../classes/equipment/equipment.dart';
+import '../../../../classes/equipment/enums.dart';
 
 class ArmorPickerDialog extends StatefulWidget {
   const ArmorPickerDialog({ super.key });

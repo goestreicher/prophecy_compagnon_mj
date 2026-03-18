@@ -7,6 +7,7 @@ import '../object_location.dart';
 import '../object_source.dart';
 import '../storage/default_assets_store.dart';
 import '../storage/storable.dart';
+import 'enums.dart';
 import 'equipment.dart';
 
 part 'cloth.g.dart';

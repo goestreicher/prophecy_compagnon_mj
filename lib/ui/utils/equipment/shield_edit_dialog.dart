@@ -5,6 +5,7 @@ import 'package:uuid/uuid.dart';
 
 import '../../../classes/entity/abilities.dart';
 import '../../../classes/entity/base.dart';
+import '../../../classes/equipment/enums.dart';
 import '../../../classes/object_source.dart';
 import '../../../classes/equipment/shield.dart';
 import '../attribute_based_calculator_edit_widget.dart';

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/entity_base.dart';
-import '../../../../classes/equipment/equipment.dart';
+import '../../../../classes/equipment/enums.dart';
 import '../../../../classes/equipment/jewel.dart';
 import '../../widget_group_container.dart';
 import 'jewel_equip_widget.dart';

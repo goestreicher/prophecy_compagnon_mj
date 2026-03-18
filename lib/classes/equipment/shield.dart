@@ -5,6 +5,7 @@ import 'package:uuid/uuid.dart';
 import '../entity/base.dart';
 import '../combat.dart';
 import '../entity/abilities.dart';
+import 'enums.dart';
 import 'equipment.dart';
 import '../entity_base.dart';
 import '../object_location.dart';

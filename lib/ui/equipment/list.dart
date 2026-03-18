@@ -8,7 +8,7 @@ import '../../classes/equipment/armor.dart';
 import '../../classes/combat.dart';
 import '../../classes/entity/skill.dart';
 import '../../classes/equipment/cloth.dart';
-import '../../classes/equipment/equipment.dart';
+import '../../classes/equipment/enums.dart';
 import '../../classes/equipment/jewel.dart';
 import '../../classes/object_source.dart';
 import '../../classes/equipment/shield.dart';

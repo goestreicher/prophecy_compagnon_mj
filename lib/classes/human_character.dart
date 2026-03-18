@@ -21,6 +21,7 @@ import 'entity/specialized_skill.dart';
 import 'entity/status.dart';
 import 'entity_base.dart';
 import 'combat.dart';
+import 'equipment/enums.dart';
 import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'magic_user.dart';

@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'combat.dart';
 import 'encounter.dart';
 import 'entity_base.dart';
+import 'equipment/enums.dart';
 import 'equipment/equipment.dart';
 import 'equipment/weapon.dart';
 

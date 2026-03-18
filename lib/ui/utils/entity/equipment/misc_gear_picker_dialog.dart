@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../classes/equipment/equipment.dart';
+import '../../../../classes/equipment/enums.dart';
 import '../../../../classes/equipment/misc_gear.dart';
 
 class MiscGearPickerDialog extends StatefulWidget {

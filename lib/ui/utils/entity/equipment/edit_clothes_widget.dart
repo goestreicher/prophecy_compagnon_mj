@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/entity_base.dart';
 import '../../../../classes/equipment/cloth.dart';
-import '../../../../classes/equipment/equipment.dart';
+import '../../../../classes/equipment/enums.dart';
 import '../../widget_group_container.dart';
 import 'cloth_equip_widget.dart';
 import 'cloth_picker_dialog.dart';

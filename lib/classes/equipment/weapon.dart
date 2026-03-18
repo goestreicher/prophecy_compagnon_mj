@@ -7,6 +7,7 @@ import '../entity/abilities.dart';
 import '../entity/skill.dart';
 import '../entity/skill_family.dart';
 import '../entity/specialized_skill.dart';
+import 'enums.dart';
 import 'equipment.dart';
 import '../entity_base.dart';
 import '../entity/base.dart';

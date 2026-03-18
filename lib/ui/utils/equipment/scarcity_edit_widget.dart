@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../../../classes/equipment/equipment.dart';
+import '../../../classes/equipment/enums.dart';
 import '../widget_group_container.dart';
 
 class ScarcityEditWidget extends StatefulWidget {

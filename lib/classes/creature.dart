@@ -18,6 +18,7 @@ import 'entity/status.dart';
 import 'entity_instance.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
+import 'equipment/enums.dart';
 import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'magic_user.dart';

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../classes/entity/abilities.dart';
 import '../../../../classes/entity_base.dart';
+import '../../../../classes/equipment/enums.dart';
 import '../../../../classes/equipment/equipment.dart';
 import '../../../../classes/equipment/shield.dart';
 import '../../../../classes/equipment/weapon.dart';

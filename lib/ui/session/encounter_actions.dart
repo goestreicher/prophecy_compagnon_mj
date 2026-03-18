@@ -2,7 +2,6 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:material_symbols_icons/material_symbols_icons.dart';
-import 'package:prophecy_compagnon_mj/classes/equipment/equipment.dart';
 import 'package:provider/provider.dart';
 
 import '../../classes/combat.dart';
@@ -13,6 +12,7 @@ import '../../classes/entity/skill.dart';
 import '../../classes/entity/specialized_skill.dart';
 import '../../classes/entity/status.dart';
 import '../../classes/entity_base.dart';
+import '../../classes/equipment/enums.dart';
 import '../../classes/equipment/shield.dart';
 import '../../classes/equipment/weapon.dart';
 import 'attack_throw_dialog.dart';

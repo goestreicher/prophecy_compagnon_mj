@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:uuid/uuid.dart';
 
+import '../../../classes/equipment/enums.dart';
 import '../../../classes/equipment/equipment.dart';
 import '../../../classes/equipment/misc_gear.dart';
 import '../../../classes/object_source.dart';

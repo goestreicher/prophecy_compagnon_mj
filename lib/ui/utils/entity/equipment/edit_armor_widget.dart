@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/equipment/armor.dart';
 import '../../../../classes/entity/abilities.dart';
 import '../../../../classes/entity_base.dart';
-import '../../../../classes/equipment/equipment.dart';
+import '../../../../classes/equipment/enums.dart';
 import '../../widget_group_container.dart';
 import 'armor_equip_widget.dart';
 import 'armor_picker_dialog.dart';
