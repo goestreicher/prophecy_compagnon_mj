@@ -40,6 +40,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
   TextEditingController protectionController = TextEditingController();
   TextEditingController penaltyController = TextEditingController();
   AttributeBasedCalculator damage = AttributeBasedCalculator(static: 0.0);
+  TextEditingController descriptionController = TextEditingController();
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
@@ -61,6 +62,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
       protectionController.text = widget.shield!.protection.toString();
       penaltyController.text = (-widget.shield!.penalty).toString();
       damage = widget.shield!.damage;
+      descriptionController.text = widget.shield!.description;
       special = widget.shield!.special;
     }
   }
@@ -280,6 +282,15 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                     },
                     calculator: damage,
                   ),
+                  TextField(
+                    controller: descriptionController,
+                    decoration: InputDecoration(
+                      labelText: 'Description',
+                      border: OutlineInputBorder(),
+                    ),
+                    minLines: 5,
+                    maxLines: 5,
+                  ),
                   EquipmentSpecialCapabilitiesEditWidget(
                     special: special,
                     onChanged: (List<EquipmentSpecialCapability> c) {
@@ -308,6 +319,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                 name: nameController.text,
                 unique: unique,
                 source: ObjectSource.local,
+                description: descriptionController.text,
                 weight: double.parse(weightController.text),
                 creationDifficulty: int.parse(dcController.text),
                 creationTime: int.parse(tcController.text),
@@ -332,6 +344,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
             else {
               widget.shield!.name = nameController.text;
               widget.shield!.unique = unique;
+              widget.shield!.description = descriptionController.text;
               widget.shield!.weight = double.parse(weightController.text);
               widget.shield!.creationDifficulty = int.parse(dcController.text);
               widget.shield!.creationTime = int.parse(tcController.text);

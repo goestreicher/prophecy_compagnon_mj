@@ -303,6 +303,7 @@ abstract class EquipmentModel extends ResourceBaseClass {
     this.unique = false,
     required super.source,
     super.location,
+    this.description = '',
     required this.weight,
     required this.creationDifficulty,
     required this.creationTime,
@@ -315,6 +316,7 @@ abstract class EquipmentModel extends ResourceBaseClass {
 
   String uuid;
   bool unique;
+  String description;
   double weight;
   int creationDifficulty;
   int creationTime;
@@ -342,6 +344,7 @@ abstract class EquipableItemModel extends EquipmentModel {
     super.unique,
     required super.source,
     super.location,
+    super.description,
     required super.weight,
     required super.creationDifficulty,
     required super.creationTime,
@@ -382,6 +385,8 @@ abstract class Equipment {
   bool inStore;
 
   String get name => alias ?? model.name;
+
+  String get description => model.description;
 
   double get weight => model.weight * metal.weightModifier;
 

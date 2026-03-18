@@ -296,7 +296,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Un fauchard est une variante du sabre dont la lame voit sa largeur diminuer au fil de sa longueur. Un fauchard est originellement une arme d'estoc dont le tranchant a été travaillé."
   },
   {
     "name": "Cimeterre",
@@ -461,7 +462,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Le cimeterre est une arme à lame courbe et lourde dont la largeur de lame augmente au fur et à mesure de sa longueur, qui est d'environ un mètre. C'est une arme de taille dont l'inertie permet des mouvements surprenants. Elle est issue de l'artisanat zûl et son usage et sa production se sont répandus dans Kor au fil des siècles. Dans sa version lourde, le cimeterre à deux mains zûl est l'arme tranchante la plus pesante connue à ce jour."
   },
   {
     "name": "Glaive zangarien",
@@ -678,7 +680,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Le pic de guerre dispose d'un fer conique d'environ quinze centimètres de long pour une section d'environ trois centimètres à la base. Il est fixè à un manche de hachette et procure une terrifiante force d'impact face aux armures. Sa surface de pénétration est faible et les chances de toucher une zone vitale pour provoquer de gros dégâts le sont tout autant."
   },
   {
     "name": "Bec de corbin",
@@ -728,7 +731,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Version plus lourde du pic de guerre, le bec de corbin est muni d'un fer hexagonal de cinq centimètres de diamètre pour vingt à vingt-cinq centimètres de long. Un manche plus long souvent renforcé de fer lui apporte une maniabilité appréciable."
   },
   {
     "name": "Hache de justice",
@@ -812,7 +816,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Cette arme honorifique est une sorte de hache d'exécution à fer long et à manche court. À travers tout Kor, elle est l'apanage des Inquisiteurs qui s'en servent à la fois au combat et pour leurs œuvres de bourreau. Seuls les artisans reconnus par l'Inquisition (environ cinq cents dans tout Kor) peuvent confectionner cette arme. Un tel artisan ne réalisera une hache de justice que sur commande et pour un Inquisiteur portant son Écharpe de Dignité et le Livre de la Loi. Le prix de cette arme est fixe et ne compte que la main-d'œuvre."
   },
   {
     "name": "Hache double à deux mains",
@@ -905,7 +910,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Version lourde du bec de corbin, la pioche de guerre est une arme presque exclusivement utilisée par les fantassins lourds pour attaquer les guerriers en armure ou par les miliciens de campagne pour lutter contre les monstres cuirassés ou écailleux. Elle possède un double fer heyagonal, opposé et droit de trant-cinq centimètres de long pour une section de six à sept centimètres. Son manche renforcé de fer mesure environ un mètre et possède souvent un fer de lance monté dans l'axe du manche pour pouvoir frapper d'estoc."
   },
   {
     "name": "Gourdin",
@@ -1092,7 +1098,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "La masse à ailettes possède un fer cylindrique court muni d'ailettes triangulaires disposées en étoile autour du manche. Elles provoquent des dommages de déchirure en plus de la force d'impact."
   },
   {
     "name": "Masse à pointes",
@@ -1134,7 +1141,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "La masse à pointes possède un fer long muni de courtes pointes coniques de deux centimètres qui provoquent des blessures peu profondes mais nombreuses et particulièrement douloureuses."
   },
   {
     "name": "Massue ferrée",
@@ -1263,7 +1271,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Le marteau à deux mains est un outil paysan parfois utilisé par les troupes irrégulières ou par les unités de sapeurs. Une tête rectangulaire de fer battu est fixée sur un solide manche de pioche d'un bon mètre de long. Arme fruste et dédaignée, ell reste crainte en raison de son impact phénoménal."
   },
   {
     "name": "Fouet",
@@ -1346,7 +1355,7 @@
         "description": "Ne peut parer ou être parée"
       },
       {
-        "description": "Attaque d'entravement"
+        "description": "Attaque d'entravement, jet avec l'Attribut Manuel"
       }
     ],
     "uuid": "66deaff1-d1cd-4b0d-a2a0-8f2fe9f030dc",
@@ -1356,7 +1365,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Une chaîne de combat mesure environ un mètre cinquante et possède des maillons carrés d'un centimètre d'épaisseur, parfois garnis de barbillons. La chaîne permet une attaque spéciale d'entravement jusqu'à une distance de trois mètre, et ce uniquement en mêlée. Le jet d'attaque d'effectue avec l'Attribut Manuel. Si l'attaque est simplement réussie, les dommages sont appliqués. Pour un NR, la chaîne s'enroule autour d'un bras (l'adversaire ainsi entravé se voit infliger un malus de 5 à ses actions utilisant les bras) ou d'une jambe (bonus de +5 sur une action de renversement, qui est alors autorisée en mêlée). Avec deux NR et plus, la chaîne peut s'enrouler autour du cou (au choix). Appliquer alors les règles d'étranglement en combat."
   },
   {
     "name": "Fléau léger",
@@ -1671,7 +1681,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Ce fléau colossal est réservé aux combattants les plus massifs et les plus endurcis. Il se compose d'un manche court de quarante centimètres de long sur lequel est fixée une chaîne très épaisse longue de près d'un mètre. À son extrémité se trouve un poids de la taille d'un melon de fer, garni d'aspérités barbelées. Le poing de Brorne s'utilise en grands mouvements circulaires et continus, seule son inertie étant capable de lui assurer un mouvement rapide."
   },
   {
     "name": "Double épée",
@@ -1718,7 +1729,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "La double épée est une des armes de prédilection des protecteurs. Elle se compose de deux lames d’épée asymétriques à un seul tranchant, montées sur une poignée sans garde se trouvant au milieu. Les lames possèdent des tranchants opposés, ce qui rend cette arme très rapide et dangereuse.\\nSi l’attaquant réussit à toucher son adversaire avec au moins deux NR, il peut immédiatement tenter (une fois par tour) une attaque supplémentaire. Cette attaque ne coûte aucune action et n’entraîne pas de malus supplémentaire. Par contre, elle subit les mêmes malus que l'attaque qui lui a permis d’être lancée."
   },
   {
     "name": "Lance-sabre",
@@ -1759,7 +1771,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Le lance-sabre est une courte lancette d’environ un mètre de long possédant un fer plat et effilé à sa base et une lame de sabre large et épaisse à son extrémité."
   },
   {
     "name": "Bâton de combat",
@@ -1871,7 +1884,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Le shaaduk't est l’arme symbolique des Prodiges. Il se compose d’un long manche de bois sculpté portant à une extrémité un fer cylindrique de masse à deux mains et à l’autre extrémité un double crochet émoussé. Le shaaduk’t sert à se battre mais surtout à monter sur le dos des dragons, le crochet émoussé servant alors à prendre prise entre les écailles. Au fil du temps, les Prodiges ont appris à utiliser cette arme pour faire tomber leurs adversaires avant de les assommer. Il permet la manœuvre de renversement en mêlée. Un shaaduk't ne peut être utilisé que par un Prodige et un artisan refusera d’en confectionner un pour tout autre citoyen. Un shaaduk't ne se paie jamais en dracs, les artisans demandant de menus services et une bénédiction en échange de leur labeur au service des Dragons."
   },
   {
     "name": "Nirga'k",
@@ -1918,7 +1932,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Un nirga’k possède un manche d'environ un mètre quarante et possède à son extrémité inférieure un fer de masse alors que son extrémité supérieure est ornée d’un fer de hache large et effilé monté dans l'axe du manche et non perpendiculairement. Si l’attaquant réussit à toucher sur une attaque avec au moins deux NR, il peut immédiatement tenter (une fois par tour) une attaque supplémentaire. Cette attaque ne coûte aucune action et n'entraîne pas de malus ultérieur en attaque. Par contre, elle subit les mêmes malus que l’attaque qui lui a permis d’être lancée."
   },
   {
     "name": "Croc à chaîne",
@@ -1972,7 +1987,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Le croc à chaîne est une arme complexe et spectaculaire dans son utilisation. Il se compose d’une lourde lame angulaire dont le tranchant intérieur est aiguisé. Il est dépourvu de garde et une longue chaînette est attachée à sa poignée à une main. Manipulée avec l’autre main, elle fait environ deux mètres et se trouve lestée par un petit poids en forme de fleur d’acier. Le croc permet une attaque d’entravement, résolue comme celle de la chaîne."
   },
   {
     "name": "Double chaîne",
@@ -2029,7 +2045,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "La double chaîne se compose de deux faisceaux de chaînes ornées de barbillons accrochés à des anneaux de fer et reliés entre eux par une chaîne. Elle s'utilise en mouvements circulaires alternés, l’inertie de l’une faisant contrepoids pour l’autre."
   },
   {
     "name": "Double fléau (Fléau d'harmonie)",
@@ -2080,7 +2097,8 @@
     },
     "slot": "hands",
     "handiness": 2,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Aussi nommé fléau d'harmonie, cette arme se compose d’un manche d’un mètre cinquante aux extrémités duquel sont fixées des chaînes de fléau léger."
   },
   {
     "name": "Poing",
@@ -2311,7 +2329,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Un cestus est un bloc de fer large comme la main, percé de quatre trous pour enfiler les doigts à l’intérieur. Un cestus se porte au-dessus des doigts afin de lester le poids de la main."
   },
   {
     "name": "Serpe",
@@ -2478,7 +2497,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Une fine dague à la lame de plus de trente centimètres de long, possédant une garde ouvragée couvrant la surface de la main. Très utile pour se défendre contre un bretteur mais peu adapté contre une hache ou une armure lourde."
   },
   {
     "name": "Katar",
@@ -2527,7 +2547,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Un katar est une variante du cestus. Sur un gros cestus de fer sont attachées deux ou trois lames, rajoutées dans l’axe du bras ou perpendiculairement."
   },
   {
     "name": "Lance courte",
@@ -2955,7 +2976,8 @@
       "name": "Livre de base 2e édition"
     },
     "slot": "hands",
-    "handiness": 1
+    "handiness": 1,
+    "description": "Trois poids de fer sont attachés à des cordes de chanvre nouées à leur extrémité. Un bolas s’utilise en le faisant tourner au-dessus de sa tête pour le lancer sur une cible afin de gêner ses mouvements. Le bolas permet une attaque d’entravement, résolue comme celle de la chaîne et valable tout au long de la distance de tir."
   },
   {
     "name": "Pierre",
@@ -3050,7 +3072,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Les dards sont de longues échardes de fer, longues comme une main et portant des ailettes de plume à leur base. Lancés à la main, ces projectiles sont mortels à courte distance."
   },
   {
     "name": "Poignard de lancer",
@@ -3153,7 +3176,8 @@
     },
     "slot": "hands",
     "handiness": 1,
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Un couteau étoile est une variante de la dague. Un fer plat se divise en quatre lames à simple tranchant organisées de façon à toujours présenter un tranchant lors de sa rotation. Un manche permet de lancer l’arme en lui imprimant un mouvement de rotation rapide."
   },
   {
     "name": "Hachette de lancer",
@@ -3593,7 +3617,8 @@
       "name": "Livre de base 2e édition"
     },
     "slot": "hands",
-    "handiness": 2
+    "handiness": 2,
+    "description": "Un atlat est un propulseur destiné à lancer de courtes javelines de soixante centimètres de long. Il se compose d’un manche de bois se finissant en cuiller oblique. L'atlat se saisit dans le poing, un doigt passé autour de la javeline dont la base est enchâssée dans la cuiller. Un rapide mouvement de poignet imprimé à l’arme permet alors de lancer le projectile bien plus loin qu’à main nue."
   },
   {
     "name": "Arbalète légère",
@@ -3843,6 +3868,7 @@
       "name": "Livre de base 2e édition"
     },
     "slot": "hands",
-    "handiness": 2
+    "handiness": 2,
+    "description": "Le lance-harpon est une arme construite sur le modèle de la sarbacane. Un tube de fer est bouché à sa base et un long ressort est comprimé à l’intérieur par un harpon de quatre-vingt centimètres de long à la pointe en ailettes. Un levier permet le relâchement du ressort qui propulse le harpon avec une énergie constante. Utilisée par les troupes de résistants humanistes, cette arme est crainte de tous."
   }
 ]

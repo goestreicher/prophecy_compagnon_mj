@@ -39,6 +39,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
   Map<Ability, int> requirements = <Ability, int>{};
   TextEditingController protectionController = TextEditingController();
   TextEditingController penaltyController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
@@ -59,6 +60,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
       requirements = widget.armor!.requirements;
       protectionController.text = widget.armor!.protection.toString();
       penaltyController.text = (-widget.armor!.penalty).toString();
+      descriptionController.text = widget.armor!.description;
       special = List.from(widget.armor!.special);
     }
   }
@@ -271,6 +273,15 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
                       ),
                     ],
                   ),
+                  TextField(
+                    controller: descriptionController,
+                    decoration: InputDecoration(
+                      labelText: 'Description',
+                      border: OutlineInputBorder(),
+                    ),
+                    minLines: 5,
+                    maxLines: 5,
+                  ),
                   EquipmentSpecialCapabilitiesEditWidget(
                     special: special,
                     onChanged: (List<EquipmentSpecialCapability> c) {
@@ -299,6 +310,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
                 name: nameController.text,
                 unique: unique,
                 source: ObjectSource.local,
+                description: descriptionController.text,
                 weight: double.parse(weightController.text),
                 creationDifficulty: int.parse(dcController.text),
                 creationTime: int.parse(tcController.text),
@@ -324,6 +336,7 @@ class _ArmorEditDialogState extends State<ArmorEditDialog> {
             else {
               widget.armor!.name = nameController.text;
               widget.armor!.unique = unique;
+              widget.armor!.description = descriptionController.text;
               widget.armor!.weight = double.parse(weightController.text);
               widget.armor!.creationDifficulty = int.parse(dcController.text);
               widget.armor!.creationTime = int.parse(tcController.text);

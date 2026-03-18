@@ -15,6 +15,7 @@ MiscGearModel _$MiscGearModelFromJson(Map<String, dynamic> json) =>
       location: json['location'] == null
           ? ObjectLocation.memory
           : ObjectLocation.fromJson(json['location'] as Map<String, dynamic>),
+      description: json['description'] as String? ?? '',
       weight: (json['weight'] as num).toDouble(),
       creationDifficulty: (json['creation_difficulty'] as num).toInt(),
       creationTime: (json['creation_time'] as num).toInt(),
@@ -39,6 +40,7 @@ Map<String, dynamic> _$MiscGearModelToJson(MiscGearModel instance) =>
       'name': instance.name,
       'uuid': instance.uuid,
       'unique': instance.unique,
+      'description': instance.description,
       'weight': instance.weight,
       'creation_difficulty': instance.creationDifficulty,
       'creation_time': instance.creationTime,

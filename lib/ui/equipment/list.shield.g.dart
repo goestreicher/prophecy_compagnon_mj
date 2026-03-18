@@ -202,17 +202,56 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
                         children: [
                           TextSpan(text: shield.name),
                           if(shield.unique)
-                            TextSpan(text: ' '),
-                          if(shield.unique)
-                            WidgetSpan(
-                              child: Tooltip(
-                                message: 'Unique',
-                                child: Icon(
-                                  Icons.looks_one_outlined,
-                                  size: 18,
+                            TextSpan(
+                                children: [
+                                  TextSpan(text: ' '),
+                                  WidgetSpan(
+                                    child: Tooltip(
+                                      message: 'Unique',
+                                      child: Icon(
+                                        Icons.looks_one_outlined,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  ),
+                                ]
+                            ),
+                          if(shield.description.isNotEmpty)
+                            TextSpan(
+                              children: [
+                                TextSpan(text: ' '),
+                                WidgetSpan(
+                                  child: MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          DismissibleDialog<void>(
+                                            title: shield.name,
+                                            content: ConstrainedBox(
+                                              constraints: BoxConstraints(
+                                                minWidth: 400,
+                                                maxWidth: 400,
+                                                maxHeight: 400,
+                                              ),
+                                              child: SingleChildScrollView(
+                                                child: Text(
+                                                  shield.description,
+                                                ),
+                                              )
+                                            )
+                                          )
+                                        );
+                                      },
+                                      child: Icon(
+                                        Icons.info_outline,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  )
                                 ),
-                              ),
-                            )
+                              ]
+                            ),
                         ]
                       )
                     )

@@ -345,17 +345,56 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
                         children: [
                           TextSpan(text: weapon.name),
                           if(weapon.unique)
-                            TextSpan(text: ' '),
-                          if(weapon.unique)
-                            WidgetSpan(
-                              child: Tooltip(
-                                message: 'Unique',
-                                child: Icon(
-                                  Icons.looks_one_outlined,
-                                  size: 18,
+                            TextSpan(
+                              children: [
+                                TextSpan(text: ' '),
+                                WidgetSpan(
+                                  child: Tooltip(
+                                    message: 'Unique',
+                                    child: Icon(
+                                      Icons.looks_one_outlined,
+                                      size: 18,
+                                    ),
+                                  ),
                                 ),
-                              ),
-                            )
+                              ]
+                            ),
+                          if(weapon.description.isNotEmpty)
+                            TextSpan(
+                              children: [
+                                TextSpan(text: ' '),
+                                WidgetSpan(
+                                  child: MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          DismissibleDialog<void>(
+                                            title: weapon.name,
+                                            content: ConstrainedBox(
+                                              constraints: BoxConstraints(
+                                                minWidth: 400,
+                                                maxWidth: 400,
+                                                maxHeight: 400,
+                                              ),
+                                              child: SingleChildScrollView(
+                                                child: Text(
+                                                  weapon.description,
+                                                ),
+                                              )
+                                            )
+                                          )
+                                        );
+                                      },
+                                      child: Icon(
+                                        Icons.info_outline,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  )
+                                ),
+                              ]
+                            ),
                         ]
                       )
                     )

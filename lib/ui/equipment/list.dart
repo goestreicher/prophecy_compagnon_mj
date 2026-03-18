@@ -13,6 +13,7 @@ import '../../classes/equipment/jewel.dart';
 import '../../classes/object_source.dart';
 import '../../classes/equipment/shield.dart';
 import '../../classes/equipment/weapon.dart';
+import '../utils/dismissible_dialog.dart';
 import '../utils/equipment/armor_edit_dialog.dart';
 import '../utils/equipment/cloth_edit_dialog.dart';
 import '../utils/equipment/jewel_edit_dialog.dart';

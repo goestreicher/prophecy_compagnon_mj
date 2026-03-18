@@ -28,6 +28,7 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
   int? villagePrice;
   EquipmentScarcity? cityScarcity;
   int? cityPrice;
+  TextEditingController descriptionController = TextEditingController();
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
@@ -44,6 +45,7 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
       villagePrice = widget.item!.villageAvailability.price;
       cityScarcity = widget.item!.cityAvailability.scarcity;
       cityPrice = widget.item!.cityAvailability.price;
+      descriptionController.text = widget.item!.description;
       special = widget.item!.special;
     }
   }
@@ -186,6 +188,15 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
                       ),
                     ],
                   ),
+                  TextField(
+                    controller: descriptionController,
+                    decoration: InputDecoration(
+                      labelText: 'Description',
+                      border: OutlineInputBorder(),
+                    ),
+                    minLines: 5,
+                    maxLines: 5,
+                  ),
                   EquipmentSpecialCapabilitiesEditWidget(
                     special: special,
                     onChanged: (List<EquipmentSpecialCapability> c) {
@@ -214,6 +225,7 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
                 name: nameController.text,
                 unique: unique,
                 source: ObjectSource.local,
+                description: descriptionController.text,
                 weight: double.parse(weightController.text),
                 creationDifficulty: int.parse(dcController.text),
                 creationTime: int.parse(tcController.text),
@@ -233,6 +245,7 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
             else {
               widget.item!.name = nameController.text;
               widget.item!.unique = unique;
+              widget.item!.description = descriptionController.text;
               widget.item!.weight = double.parse(weightController.text);
               widget.item!.creationDifficulty = int.parse(dcController.text);
               widget.item!.creationTime = int.parse(tcController.text);

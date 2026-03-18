@@ -248,17 +248,56 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
                         children: [
                           TextSpan(text: cloth.name),
                           if(cloth.unique)
-                            TextSpan(text: ' '),
-                          if(cloth.unique)
-                            WidgetSpan(
-                              child: Tooltip(
-                                message: 'Unique',
-                                child: Icon(
-                                  Icons.looks_one_outlined,
-                                  size: 18,
+                            TextSpan(
+                                children: [
+                                  TextSpan(text: ' '),
+                                  WidgetSpan(
+                                    child: Tooltip(
+                                      message: 'Unique',
+                                      child: Icon(
+                                        Icons.looks_one_outlined,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  ),
+                                ]
+                            ),
+                          if(cloth.description.isNotEmpty)
+                            TextSpan(
+                              children: [
+                                TextSpan(text: ' '),
+                                WidgetSpan(
+                                  child: MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          DismissibleDialog<void>(
+                                            title: cloth.name,
+                                            content: ConstrainedBox(
+                                              constraints: BoxConstraints(
+                                                minWidth: 400,
+                                                maxWidth: 400,
+                                                maxHeight: 400,
+                                              ),
+                                              child: SingleChildScrollView(
+                                                child: Text(
+                                                  cloth.description,
+                                                ),
+                                              )
+                                            )
+                                          )
+                                        );
+                                      },
+                                      child: Icon(
+                                        Icons.info_outline,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  )
                                 ),
-                              ),
-                            )
+                              ]
+                            ),
                         ]
                       )
                     )

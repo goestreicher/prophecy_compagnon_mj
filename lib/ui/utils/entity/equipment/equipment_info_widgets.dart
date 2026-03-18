@@ -6,6 +6,7 @@ import '../../../../classes/equipment/jewel.dart';
 import '../../../../classes/equipment/misc_gear.dart';
 import '../../../../classes/equipment/shield.dart';
 import '../../../../classes/equipment/weapon.dart';
+import '../../dismissible_dialog.dart';
 
 class WeaponInfoWidget extends StatelessWidget {
   const WeaponInfoWidget({ super.key, required this.weapon });
@@ -48,8 +49,65 @@ class WeaponInfoWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          '\u{2694} ${weapon.name}',
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(
+                text: '\u{2694} ${weapon.name}',
+              ),
+              if(weapon.model.unique)
+                TextSpan(
+                  children: [
+                    TextSpan(text: ' '),
+                    WidgetSpan(
+                      child: Tooltip(
+                        message: 'Unique',
+                        child: Icon(
+                          Icons.looks_one_outlined,
+                          size: 18,
+                        ),
+                      ),
+                    ),
+                  ]
+                ),
+              if(weapon.description.isNotEmpty)
+                TextSpan(
+                  children: [
+                    TextSpan(text: ' '),
+                    WidgetSpan(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              DismissibleDialog<void>(
+                                title: weapon.name,
+                                content: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minWidth: 400,
+                                    maxWidth: 400,
+                                    maxHeight: 400,
+                                  ),
+                                  child: SingleChildScrollView(
+                                    child: Text(
+                                      weapon.description,
+                                    ),
+                                  )
+                                )
+                              )
+                            );
+                          },
+                          child: Icon(
+                            Icons.info_outline,
+                            size: 18,
+                          ),
+                        ),
+                      )
+                    ),
+                  ]
+                ),
+            ]
+          ),
           style: theme.textTheme.titleMedium,
         ),
         Text(
@@ -87,8 +145,63 @@ class ShieldInfoWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          '\u{1F6E1} ${shield.name}',
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(text: '\u{1F6E1} ${shield.name}'),
+              if(shield.model.unique)
+                TextSpan(
+                  children: [
+                    TextSpan(text: ' '),
+                    WidgetSpan(
+                      child: Tooltip(
+                        message: 'Unique',
+                        child: Icon(
+                          Icons.looks_one_outlined,
+                          size: 18,
+                        ),
+                      ),
+                    ),
+                  ]
+                ),
+              if(shield.description.isNotEmpty)
+                TextSpan(
+                  children: [
+                    TextSpan(text: ' '),
+                    WidgetSpan(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              DismissibleDialog<void>(
+                                title: shield.name,
+                                content: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minWidth: 400,
+                                    maxWidth: 400,
+                                    maxHeight: 400,
+                                  ),
+                                  child: SingleChildScrollView(
+                                    child: Text(
+                                      shield.description,
+                                    ),
+                                  )
+                                )
+                              )
+                            );
+                          },
+                          child: Icon(
+                            Icons.info_outline,
+                            size: 18,
+                          ),
+                        ),
+                      )
+                    ),
+                  ]
+                ),
+            ],
+          ),
           style: theme.textTheme.titleMedium,
         ),
         Text(
@@ -132,9 +245,64 @@ class ArmorInfoWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          '\u{1FA96} ${armor.name}',
-          style: theme.textTheme.titleMedium,
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(text: '\u{1FA96} ${armor.name}'),
+              if(armor.model.unique)
+                TextSpan(
+                  children: [
+                    TextSpan(text: ' '),
+                    WidgetSpan(
+                      child: Tooltip(
+                        message: 'Unique',
+                        child: Icon(
+                          Icons.looks_one_outlined,
+                          size: 18,
+                        ),
+                      ),
+                    ),
+                  ]
+                ),
+              if(armor.description.isNotEmpty)
+                TextSpan(
+                  children: [
+                    TextSpan(text: ' '),
+                    WidgetSpan(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              DismissibleDialog<void>(
+                                title: armor.name,
+                                content: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minWidth: 400,
+                                    maxWidth: 400,
+                                    maxHeight: 400,
+                                  ),
+                                  child: SingleChildScrollView(
+                                    child: Text(
+                                      armor.description,
+                                    ),
+                                  )
+                                )
+                              )
+                            );
+                          },
+                          child: Icon(
+                            Icons.info_outline,
+                            size: 18,
+                          ),
+                        ),
+                      )
+                    ),
+                  ]
+                ),
+            ],
+            style: theme.textTheme.titleMedium,
+          ),
         ),
         Text(
           'Protection : ${armor.protection()} / Pénalite : ${(armor.model as ArmorModel).penalty}',
@@ -171,9 +339,63 @@ class ClothInfoWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          cloth.name,
-          style: theme.textTheme.titleMedium,
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(text: cloth.name),
+              if(cloth.model.unique)
+                TextSpan(
+                    children: [
+                      TextSpan(text: ' '),
+                      WidgetSpan(
+                        child: Tooltip(
+                          message: 'Unique',
+                          child: Icon(
+                            Icons.looks_one_outlined,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                    ]
+                ),
+              if(cloth.description.isNotEmpty)
+                TextSpan(
+                  children: [
+                    TextSpan(text: ' '),
+                    WidgetSpan(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              DismissibleDialog<void>(
+                                title: cloth.name,
+                                content: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minWidth: 400,
+                                    maxWidth: 400,
+                                    maxHeight: 400,
+                                  ),
+                                  child: SingleChildScrollView(
+                                    child: Text(
+                                      cloth.description,
+                                    ),
+                                  )
+                                )
+                              )
+                            );
+                          },
+                          child: Icon(
+                            Icons.info_outline,
+                            size: 18,
+                          ),
+                        ),
+                      )
+                    ),
+                  ]
+              ),
+            ],
+          ),
         ),
         Text(
           infoLine,
@@ -207,8 +429,63 @@ class JewelInfoWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          jewel.name,
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(text: jewel.name),
+              if(jewel.model.unique)
+                TextSpan(
+                    children: [
+                      TextSpan(text: ' '),
+                      WidgetSpan(
+                        child: Tooltip(
+                          message: 'Unique',
+                          child: Icon(
+                            Icons.looks_one_outlined,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                    ]
+                ),
+              if(jewel.description.isNotEmpty)
+                TextSpan(
+                  children: [
+                    TextSpan(text: ' '),
+                    WidgetSpan(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              DismissibleDialog<void>(
+                                title: jewel.name,
+                                content: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minWidth: 400,
+                                    maxWidth: 400,
+                                    maxHeight: 400,
+                                  ),
+                                  child: SingleChildScrollView(
+                                    child: Text(
+                                      jewel.description,
+                                    ),
+                                  )
+                                )
+                              )
+                            );
+                          },
+                          child: Icon(
+                            Icons.info_outline,
+                            size: 18,
+                          ),
+                        ),
+                      )
+                    ),
+                  ]
+                ),
+            ],
+          ),
           style: theme.textTheme.titleMedium,
         ),
         Text(
@@ -242,8 +519,63 @@ class MiscGearInfoWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          item.name,
+        Text.rich(
+          TextSpan(
+            children: [
+              TextSpan(text: item.name),
+              if(item.model.unique)
+                TextSpan(
+                    children: [
+                      TextSpan(text: ' '),
+                      WidgetSpan(
+                        child: Tooltip(
+                          message: 'Unique',
+                          child: Icon(
+                            Icons.looks_one_outlined,
+                            size: 18,
+                          ),
+                        ),
+                      ),
+                    ]
+                ),
+              if(item.description.isNotEmpty)
+                TextSpan(
+                  children: [
+                    TextSpan(text: ' '),
+                    WidgetSpan(
+                      child: MouseRegion(
+                        cursor: SystemMouseCursors.click,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              DismissibleDialog<void>(
+                                title: item.name,
+                                content: ConstrainedBox(
+                                  constraints: BoxConstraints(
+                                    minWidth: 400,
+                                    maxWidth: 400,
+                                    maxHeight: 400,
+                                  ),
+                                  child: SingleChildScrollView(
+                                    child: Text(
+                                      item.description,
+                                    ),
+                                  )
+                                )
+                              )
+                            );
+                          },
+                          child: Icon(
+                            Icons.info_outline,
+                            size: 18,
+                          ),
+                        ),
+                      )
+                    ),
+                  ]
+                ),
+            ],
+          ),
           style: theme.textTheme.titleMedium,
         ),
         Text(

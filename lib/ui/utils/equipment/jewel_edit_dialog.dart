@@ -35,6 +35,7 @@ class _JewelEditDialogState extends State<JewelEditDialog> {
   EquipmentScarcity? cityScarcity;
   int? cityPrice;
   EquipableItemLayer layer = EquipableItemLayer.normal;
+  TextEditingController descriptionController = TextEditingController();
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
@@ -53,6 +54,7 @@ class _JewelEditDialogState extends State<JewelEditDialog> {
       cityPrice = widget.jewel!.cityAvailability.price;
       supportsMetal = widget.jewel!.supportsMetal;
       layer = widget.jewel!.layer;
+      descriptionController.text = widget.jewel!.description;
       special = List.from(widget.jewel!.special);
     }
   }
@@ -209,6 +211,15 @@ class _JewelEditDialogState extends State<JewelEditDialog> {
                       ),
                     ],
                   ),
+                  TextField(
+                    controller: descriptionController,
+                    decoration: InputDecoration(
+                      labelText: 'Description',
+                      border: OutlineInputBorder(),
+                    ),
+                    minLines: 5,
+                    maxLines: 5,
+                  ),
                   Row(
                     spacing: 8.0,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -268,6 +279,7 @@ class _JewelEditDialogState extends State<JewelEditDialog> {
                 name: nameController.text,
                 unique: unique,
                 source: ObjectSource.local,
+                description: descriptionController.text,
                 weight: double.parse(weightController.text),
                 creationDifficulty: int.parse(dcController.text),
                 creationTime: int.parse(tcController.text),
@@ -290,6 +302,7 @@ class _JewelEditDialogState extends State<JewelEditDialog> {
             else {
               widget.jewel!.name = nameController.text;
               widget.jewel!.unique = unique;
+              widget.jewel!.description = descriptionController.text;
               widget.jewel!.weight = double.parse(weightController.text);
               widget.jewel!.creationDifficulty = int.parse(dcController.text);
               widget.jewel!.creationTime = int.parse(tcController.text);

@@ -169,17 +169,56 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
                         children: [
                           TextSpan(text: item.name),
                           if(item.unique)
-                            TextSpan(text: ' '),
-                          if(item.unique)
-                            WidgetSpan(
-                              child: Tooltip(
-                                message: 'Unique',
-                                child: Icon(
-                                  Icons.looks_one_outlined,
-                                  size: 18,
+                            TextSpan(
+                                children: [
+                                  TextSpan(text: ' '),
+                                  WidgetSpan(
+                                    child: Tooltip(
+                                      message: 'Unique',
+                                      child: Icon(
+                                        Icons.looks_one_outlined,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  ),
+                                ]
+                            ),
+                          if(item.description.isNotEmpty)
+                            TextSpan(
+                              children: [
+                                TextSpan(text: ' '),
+                                WidgetSpan(
+                                  child: MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          DismissibleDialog<void>(
+                                            title: item.name,
+                                            content: ConstrainedBox(
+                                              constraints: BoxConstraints(
+                                                minWidth: 400,
+                                                maxWidth: 400,
+                                                maxHeight: 400,
+                                              ),
+                                              child: SingleChildScrollView(
+                                                child: Text(
+                                                  item.description,
+                                                ),
+                                              )
+                                            )
+                                          )
+                                        );
+                                      },
+                                      child: Icon(
+                                        Icons.info_outline,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  )
                                 ),
-                              ),
-                            )
+                              ]
+                            ),
                         ]
                       )
                     )

@@ -51,6 +51,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
   AttributeBasedCalculator damage = AttributeBasedCalculator(static: 0.0);
   AttributeBasedCalculator rangeEffective = AttributeBasedCalculator(static: 0.0);
   AttributeBasedCalculator rangeMax = AttributeBasedCalculator(static: 0.0);
+  TextEditingController descriptionController = TextEditingController();
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
@@ -75,6 +76,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
       damage = widget.weapon!.damage;
       rangeEffective = widget.weapon!.rangeEffective;
       rangeMax = widget.weapon!.rangeMax;
+      descriptionController.text = widget.weapon!.description;
       special = List.from(widget.weapon!.special);
     }
     else {
@@ -352,6 +354,15 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                     calculator: rangeMax,
                     staticType: AttributeBasedCalculatorStaticType.double,
                   ),
+                  TextField(
+                    controller: descriptionController,
+                    decoration: InputDecoration(
+                      labelText: 'Description',
+                      border: OutlineInputBorder(),
+                    ),
+                    minLines: 5,
+                    maxLines: 5,
+                  ),
                   EquipmentSpecialCapabilitiesEditWidget(
                     special: special,
                     onChanged: (List<EquipmentSpecialCapability> c) {
@@ -386,6 +397,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                 name: nameController.text,
                 unique: unique,
                 source: ObjectSource.local,
+                description: descriptionController.text,
                 weight: double.parse(weightController.text),
                 creationDifficulty: int.parse(dcController.text),
                 creationTime: int.parse(tcController.text),
@@ -415,6 +427,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
               widget.weapon!.name = nameController.text;
               widget.weapon!.unique = unique;
               widget.weapon!.skill = specializedSkill!;
+              widget.weapon!.description = descriptionController.text;
               widget.weapon!.weight = double.parse(weightController.text);
               widget.weapon!.creationDifficulty = int.parse(dcController.text);
               widget.weapon!.creationTime = int.parse(tcController.text);

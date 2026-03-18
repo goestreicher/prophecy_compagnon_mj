@@ -248,17 +248,56 @@ class _JewelTypeContainerState extends State<_JewelTypeContainer> {
                         children: [
                           TextSpan(text: jewel.name),
                           if(jewel.unique)
-                            TextSpan(text: ' '),
-                          if(jewel.unique)
-                            WidgetSpan(
-                              child: Tooltip(
-                                message: 'Unique',
-                                child: Icon(
-                                  Icons.looks_one_outlined,
-                                  size: 18,
+                            TextSpan(
+                                children: [
+                                  TextSpan(text: ' '),
+                                  WidgetSpan(
+                                    child: Tooltip(
+                                      message: 'Unique',
+                                      child: Icon(
+                                        Icons.looks_one_outlined,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  ),
+                                ]
+                            ),
+                          if(jewel.description.isNotEmpty)
+                            TextSpan(
+                              children: [
+                                TextSpan(text: ' '),
+                                WidgetSpan(
+                                  child: MouseRegion(
+                                    cursor: SystemMouseCursors.click,
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.of(context).push(
+                                          DismissibleDialog<void>(
+                                            title: jewel.name,
+                                            content: ConstrainedBox(
+                                              constraints: BoxConstraints(
+                                                minWidth: 400,
+                                                maxWidth: 400,
+                                                maxHeight: 400,
+                                              ),
+                                              child: SingleChildScrollView(
+                                                child: Text(
+                                                  jewel.description,
+                                                ),
+                                              )
+                                            )
+                                          )
+                                        );
+                                      },
+                                      child: Icon(
+                                        Icons.info_outline,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  )
                                 ),
-                              ),
-                            )
+                              ]
+                            ),
                         ]
                       )
                     )

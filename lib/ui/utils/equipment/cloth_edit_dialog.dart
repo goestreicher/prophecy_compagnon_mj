@@ -34,6 +34,7 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
   EquipmentScarcity? cityScarcity;
   int? cityPrice;
   EquipableItemLayer layer = EquipableItemLayer.normal;
+  TextEditingController descriptionController = TextEditingController();
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
@@ -51,6 +52,7 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
       cityScarcity = widget.cloth!.cityAvailability.scarcity;
       cityPrice = widget.cloth!.cityAvailability.price;
       layer = widget.cloth!.layer;
+      descriptionController.text = widget.cloth!.description;
       special = List.from(widget.cloth!.special);
     }
   }
@@ -193,6 +195,15 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
                       ),
                     ],
                   ),
+                  TextField(
+                    controller: descriptionController,
+                    decoration: InputDecoration(
+                      labelText: 'Description',
+                      border: OutlineInputBorder(),
+                    ),
+                    minLines: 5,
+                    maxLines: 5,
+                  ),
                   Row(
                     spacing: 8.0,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -252,6 +263,7 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
                 name: nameController.text,
                 unique: unique,
                 source: ObjectSource.local,
+                description: descriptionController.text,
                 weight: double.parse(weightController.text),
                 creationDifficulty: int.parse(dcController.text),
                 creationTime: int.parse(tcController.text),
@@ -273,6 +285,7 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
             else {
               widget.cloth!.name = nameController.text;
               widget.cloth!.unique = unique;
+              widget.cloth!.description = descriptionController.text;
               widget.cloth!.weight = double.parse(weightController.text);
               widget.cloth!.creationDifficulty = int.parse(dcController.text);
               widget.cloth!.creationTime = int.parse(tcController.text);

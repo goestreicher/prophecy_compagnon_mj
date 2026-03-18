@@ -143,7 +143,8 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "fullBody"
+    "slot": "fullBody",
+    "description": "Cette armure d'origine zûl est relativement prestigieuse. Le torse et les bras sont protégés par des armatures d’os emboîtées pour conserver une certaine souplesse. Les épaules sont protégées par des crânes d'animaux sculptés et taillés. Le bassin est protégé par une jupe composée de longues lames d’os cousues sur une ceinture large. Les jambes sont un pantalon de toile sombre sur lequel sont cousues verticalement des lames d'os se chevauchant. La tête est couverte d'une capuche cousue de cuir et d’os ou parfois d'un heaume taillé dans le crâne d’un grand prédateur."
   },
   {
     "name": "Cotte légère",
@@ -226,7 +227,8 @@
       "name": "Livre de base 2e édition"
     },
     "slot": "upperBody",
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "L’armure d’anneaux se compose d’une veste de cuir à longs pans où sont cousus de larges carrés de grosses mailles de fer entrecroisées. Elle est très appréciée par les mercenaires en raison de sa large disponibilité et sa facilité de réparation."
   },
   {
     "name": "Brigandine",
@@ -254,7 +256,8 @@
       "name": "Livre de base 2e édition"
     },
     "slot": "body",
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "La brigandine se compose d’une épaisse tunique de cuir rigide tombant jusqu'aux genoux, fabriquée dans du cuir de dragon de Lôm ou de trois couches de cuir cousues. Des plaquettes de fer rectangulaires de la taille d’une paume sont rivetées sur toute la surface et des coquilles de fer composent les épaulières. Les jambes sont protégées par des genouillères métalliques reliées à des bottes rivetées de fer. Très appréciée des protecteurs et des troupes de fantassins lourds, elle est aussi très répandue parmi les troupes de cavalerie de toutes origines."
   },
   {
     "name": "Armure d'écailles",
@@ -282,7 +285,8 @@
       "name": "Livre de base 2e édition"
     },
     "slot": "body",
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Cette armure se compose d’une lourde veste à manches longues et de culottes de cuir bouilli. De fines plaquettes en forme d’écaille sont cousues en rangées chevauchantes. Souple, mais lourde et demandant une compétence à la fois dans le domaine de la tannerie et de la forge, cette armure est plutôt rare et recherchée."
   },
   {
     "name": "Armure de bois",
@@ -309,7 +313,8 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "body"
+    "slot": "body",
+    "description": "Cette forme de protection est assez rare. Elle se compose d’une cuirasse de torse formée de lames de bois chevauchées, cousues sur une veste de laine épaisse ou de gal. Des jambières, des protections d’avant-bras et des épaulières de lamelles cousues complètent la protection, qui s'avère d’ailleurs assez chaude. C’est une armure originaire des Terres galyrs, toujours privilégiée dans ces terres froides. Elle est portée au travers de Kor par les miliciens, les chasseurs et les combattants embarqués."
   },
   {
     "name": "Armure de demi-plaques",
@@ -337,7 +342,8 @@
       "name": "Livre de base 2e édition"
     },
     "slot": "fullBody",
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "Cette armure se compose d’une veste à manches, d’une jupe et de cuissardes de mailles fines. Le torse est protégé par une plaque métallique laissant la taille souple. Un heaume fermé à collerette de mailles complète l’ensemble."
   },
   {
     "name": "Armure de lamelles",
@@ -365,7 +371,8 @@
       "name": "Livre de base 2e édition"
     },
     "slot": "body",
-    "supports_metal": true
+    "supports_metal": true,
+    "description": "L'armure à lamelles est inspirée de certains animaux comme le tatou. Elle consiste à riveter sur une armure de cuir de longues bandes métalliques horizontales d’un pouce de large."
   },
   {
     "name": "Armure de plaques",
@@ -420,6 +427,7 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     },
-    "slot": "fullBody"
+    "slot": "fullBody",
+    "description": "L’armure draconique est le sommet de l’artisanat élémentaire. Elle prend la forme d’une lourde armure de plaques constituée d’écailles de dragon sculptées par manipulation élémentaire. Tout le corps est alors recouvert par des plaques soudées entre elles qui ne sont autres que des parties animées d'une carapace élémentaire. Une armure draconique ne peut être vendue. Un artisan ne réalisera une telle armure que pour un Élu apportant les écailles que son compagnon lui aura données ou pour une seigneur ayant mérité la gratitude des ailés. Toute tentative de s'approprier une armure draconique n’étant pas la sienne est, dit-on, de mauvais présage, la malédiction des dragons frappant alors l’impudent. Bien sûr, il est inconcevable de créer une armure draconique à partir des écailles d’un ailé décédé."
   }
 ]
