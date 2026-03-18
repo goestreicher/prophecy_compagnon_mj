@@ -1,7 +1,9 @@
 part of 'list.dart';
 
 class _JewelDataContainer extends StatelessWidget {
-  const _JewelDataContainer();
+  const _JewelDataContainer({ this.filter });
+
+  final EquipmentModelListFilter? filter;
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +13,14 @@ class _JewelDataContainer extends StatelessWidget {
       tables.add(
           _JewelTypeContainer(
             type: type,
+            filter: filter,
           )
       );
     }
 
     return _EquipmentTypeContainer(
         title: 'Bijoux',
+        forceExpand: filter?.isNotEmpty() ?? false,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: tables,
@@ -26,9 +30,13 @@ class _JewelDataContainer extends StatelessWidget {
 }
 
 class _JewelTypeContainer extends StatefulWidget {
-  const _JewelTypeContainer({ required this.type });
+  const _JewelTypeContainer({
+    required this.type,
+    this.filter,
+  });
 
   final EquipableItemSlot type;
+  final EquipmentModelListFilter? filter;
 
   @override
   State<_JewelTypeContainer> createState() => _JewelTypeContainerState();
@@ -43,14 +51,24 @@ class _JewelTypeContainerState extends State<_JewelTypeContainer> {
     super.initState();
 
     loadJewels();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && jewels.isNotEmpty;
+  }
+
+  @override
+  void didUpdateWidget(covariant _JewelTypeContainer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    loadJewels();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && jewels.isNotEmpty;
   }
 
   void loadJewels() {
     jewels.clear();
     for(var cid in JewelModel.idsByBodyPart(widget.type)) {
-      var c = JewelModel.get(cid);
-      if(c == null) continue;
-      jewels.add(c);
+      var jewel = JewelModel.get(cid);
+      if(jewel == null) continue;
+      if(!(widget.filter?.match(jewel) ?? true)) continue;
+      jewels.add(jewel);
     }
   }
 

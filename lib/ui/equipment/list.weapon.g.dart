@@ -1,7 +1,9 @@
 part of 'list.dart';
 
 class _WeaponDataContainer extends StatelessWidget {
-  const _WeaponDataContainer();
+  const _WeaponDataContainer({ this.filter });
+
+  final EquipmentModelListFilter? filter;
 
   @override
   Widget build(BuildContext context) {
@@ -12,12 +14,14 @@ class _WeaponDataContainer extends StatelessWidget {
         _WeaponTypeContainer(
           title: skill.title,
           skill: skill,
+          filter: filter,
         )
       );
     }
 
     return _EquipmentTypeContainer(
       title: 'Armes',
+      forceExpand: filter?.isNotEmpty() ?? false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: tables,
@@ -30,10 +34,12 @@ class _WeaponTypeContainer extends StatefulWidget {
   const _WeaponTypeContainer({
     required this.title,
     required this.skill,
+    this.filter,
   });
 
   final String title;
   final Skill skill;
+  final EquipmentModelListFilter? filter;
 
   @override
   State<_WeaponTypeContainer> createState() => _WeaponTypeContainerState();
@@ -49,6 +55,17 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
     super.initState();
 
     loadWeapons();
+    expanded = (widget.filter?.isNotEmpty() ?? false)
+        && (oneHandedWeapons.isNotEmpty || twoHandedWeapons.isNotEmpty);
+  }
+
+  @override
+  void didUpdateWidget(covariant _WeaponTypeContainer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    loadWeapons();
+    expanded = (widget.filter?.isNotEmpty() ?? false)
+        && (oneHandedWeapons.isNotEmpty || twoHandedWeapons.isNotEmpty);
   }
 
   void loadWeapons() {
@@ -59,6 +76,7 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
       var weapon = WeaponModel.get(wid);
       if(weapon == null) continue;
       if(weapon is NaturalWeaponModel) continue;
+      if(!(widget.filter?.match(weapon) ?? true)) continue;
 
       if(weapon.handiness == 2) {
         twoHandedWeapons.add(weapon);

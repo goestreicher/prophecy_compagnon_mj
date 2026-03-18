@@ -1,7 +1,9 @@
 part of 'list.dart';
 
 class _ClothDataContainer extends StatelessWidget {
-  const _ClothDataContainer();
+  const _ClothDataContainer({ this.filter });
+
+  final EquipmentModelListFilter? filter;
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +13,14 @@ class _ClothDataContainer extends StatelessWidget {
       tables.add(
         _ClothTypeContainer(
           type: type,
+          filter: filter,
         )
       );
     }
 
     return _EquipmentTypeContainer(
         title: 'Vêtements',
+        forceExpand: filter?.isNotEmpty() ?? false,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: tables,
@@ -26,9 +30,13 @@ class _ClothDataContainer extends StatelessWidget {
 }
 
 class _ClothTypeContainer extends StatefulWidget {
-  const _ClothTypeContainer({ required this.type });
+  const _ClothTypeContainer({
+    required this.type,
+    this.filter,
+  });
 
   final EquipableItemSlot type;
+  final EquipmentModelListFilter? filter;
 
   @override
   State<_ClothTypeContainer> createState() => _ClothTypeContainerState();
@@ -43,14 +51,24 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
     super.initState();
 
     loadClothes();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && clothes.isNotEmpty;
+  }
+
+  @override
+  void didUpdateWidget(covariant _ClothTypeContainer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    loadClothes();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && clothes.isNotEmpty;
   }
 
   void loadClothes() {
     clothes.clear();
     for(var cid in ClothModel.idsByBodyPart(widget.type)) {
-      var c = ClothModel.get(cid);
-      if(c == null) continue;
-      clothes.add(c);
+      var cloth = ClothModel.get(cid);
+      if(cloth == null) continue;
+      if(!(widget.filter?.match(cloth) ?? true)) continue;
+      clothes.add(cloth);
     }
   }
 

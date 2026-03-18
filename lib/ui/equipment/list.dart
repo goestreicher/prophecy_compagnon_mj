@@ -18,6 +18,8 @@ import '../utils/dismissible_dialog.dart';
 import '../utils/equipment/armor_edit_dialog.dart';
 import '../utils/equipment/cloth_edit_dialog.dart';
 import '../utils/equipment/jewel_edit_dialog.dart';
+import '../utils/equipment/list_filter.dart';
+import '../utils/equipment/list_filter_widget.dart';
 import '../utils/equipment/misc_gear_edit_dialog.dart';
 import '../utils/equipment/shield_edit_dialog.dart';
 import '../utils/equipment/weapon_edit_dialog.dart';
@@ -29,24 +31,60 @@ part 'list.misc-gear.g.dart';
 part 'list.shield.g.dart';
 part 'list.weapon.g.dart';
 
-class EquipmentListPage extends StatelessWidget {
+class EquipmentListPage extends StatefulWidget {
   const EquipmentListPage({ super.key });
 
   @override
+  State<EquipmentListPage> createState() => _EquipmentListPageState();
+}
+
+class _EquipmentListPageState extends State<EquipmentListPage> {
+  EquipmentModelListFilter filter = EquipmentModelListFilter();
+
+  @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 16.0,
-        children: [
-          _WeaponDataContainer(),
-          _ShieldDataContainer(),
-          _ArmorDataContainer(),
-          _ClothDataContainer(),
-          _JewelDataContainer(),
-          _MiscGearDataContainer(),
-        ],
-      ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: EquipmentModelListFilterWidget(
+            onFilterChanged: (EquipmentModelListFilter f) {
+              setState(() {
+                filter = f;
+              });
+            }
+          ),
+        ),
+        Expanded(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 16.0,
+              children: [
+                _WeaponDataContainer(
+                  filter: filter,
+                ),
+                _ShieldDataContainer(
+                  filter: filter,
+                ),
+                _ArmorDataContainer(
+                  filter: filter,
+                ),
+                _ClothDataContainer(
+                  filter: filter,
+                ),
+                _JewelDataContainer(
+                  filter: filter,
+                ),
+                _MiscGearDataContainer(
+                  filter: filter,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -56,18 +94,34 @@ class _EquipmentTypeContainer extends StatefulWidget {
     required this.title,
     required this.child,
     this.titleSuffix,
+    this.forceExpand = false,
   });
 
   final String title;
   final Widget child;
   final Widget? titleSuffix;
+  final bool forceExpand;
 
   @override
   State<_EquipmentTypeContainer> createState() => _EquipmentTypeContainerState();
 }
 
 class _EquipmentTypeContainerState extends State<_EquipmentTypeContainer> {
-  bool expanded = false;
+  late bool expanded;
+
+  @override
+  void initState() {
+    super.initState();
+
+    expanded = widget.forceExpand;
+  }
+
+  @override
+  void didUpdateWidget(covariant _EquipmentTypeContainer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    expanded = widget.forceExpand;
+  }
 
   @override
   Widget build(BuildContext context) {

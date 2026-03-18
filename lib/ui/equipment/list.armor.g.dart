@@ -1,7 +1,9 @@
 part of 'list.dart';
 
 class _ArmorDataContainer extends StatelessWidget {
-  const _ArmorDataContainer();
+  const _ArmorDataContainer({ this.filter });
+
+  final EquipmentModelListFilter? filter;
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +13,14 @@ class _ArmorDataContainer extends StatelessWidget {
       tables.add(
         _ArmorTypeContainer(
           type: type,
+          filter: filter,
         )
       );
     }
 
     return _EquipmentTypeContainer(
       title: 'Armures',
+      forceExpand: filter?.isNotEmpty() ?? false,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: tables,
@@ -28,9 +32,11 @@ class _ArmorDataContainer extends StatelessWidget {
 class _ArmorTypeContainer extends StatefulWidget {
   const _ArmorTypeContainer({
     required this.type,
+    this.filter,
   });
 
   final ArmorType type;
+  final EquipmentModelListFilter? filter;
 
   @override
   State<_ArmorTypeContainer> createState() => _ArmorTypeContainerState();
@@ -45,6 +51,15 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
     super.initState();
 
     loadArmors();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && armors.isNotEmpty;
+  }
+
+  @override
+  void didUpdateWidget(covariant _ArmorTypeContainer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    loadArmors();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && armors.isNotEmpty;
   }
 
   void loadArmors() {
@@ -52,6 +67,7 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
     for(var aid in ArmorModel.idsByType(widget.type)) {
       var armor = ArmorModel.get(aid);
       if(armor == null) continue;
+      if(!(widget.filter?.match(armor) ?? true)) continue;
       armors.add(armor);
     }
   }

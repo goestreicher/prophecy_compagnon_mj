@@ -1,7 +1,9 @@
 part of 'list.dart';
 
 class _MiscGearDataContainer extends StatefulWidget {
-  const _MiscGearDataContainer();
+  const _MiscGearDataContainer({ this.filter });
+
+  final EquipmentModelListFilter? filter;
 
   @override
   State<_MiscGearDataContainer> createState() => _MiscGearDataContainerState();
@@ -16,12 +18,20 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
     
     loadGear();
   }
+
+  @override
+  void didUpdateWidget(covariant _MiscGearDataContainer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    loadGear();
+  }
   
   void loadGear() {
     gear.clear();
     for(var gid in MiscGearModel.ids()) {
       var g = MiscGearModel.get(gid);
       if(g == null) continue;
+      if(!(widget.filter?.match(g) ?? true)) continue;
       gear.add(g);
     }
   }
@@ -30,6 +40,7 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
   Widget build(BuildContext context) {
     return _EquipmentTypeContainer(
       title: 'Équipement commun',
+      forceExpand: (widget.filter?.isNotEmpty() ?? false) && gear.isNotEmpty,
       titleSuffix: IconButton(
         onPressed: () async {
           MiscGearModel? gm = await showDialog(

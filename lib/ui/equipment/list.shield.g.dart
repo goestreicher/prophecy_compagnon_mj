@@ -1,7 +1,9 @@
 part of 'list.dart';
 
 class _ShieldDataContainer extends StatefulWidget {
-  const _ShieldDataContainer();
+  const _ShieldDataContainer({ this.filter });
+
+  final EquipmentModelListFilter? filter;
 
   @override
   State<_ShieldDataContainer> createState() => _ShieldDataContainerState();
@@ -17,11 +19,19 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
     loadShields();
   }
 
+  @override
+  void didUpdateWidget(covariant _ShieldDataContainer oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    loadShields();
+  }
+
   void loadShields() {
     shields.clear();
     for(var sid in ShieldModel.ids()) {
       var shield = ShieldModel.get(sid);
       if(shield == null) continue;
+      if(!(widget.filter?.match(shield) ?? true)) continue;
       shields.add(shield);
     }
   }
@@ -30,6 +40,7 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
   Widget build(BuildContext context) {
     return _EquipmentTypeContainer(
       title: 'Boucliers',
+      forceExpand: (widget.filter?.isNotEmpty() ?? false) && shields.isNotEmpty,
       titleSuffix: IconButton(
         onPressed: () async {
           ShieldModel? sm = await showDialog(
