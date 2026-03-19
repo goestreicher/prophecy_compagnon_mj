@@ -150,6 +150,8 @@ class _JewelTypeContainerState extends State<_JewelTypeContainer> {
   }
 
   Table _createJewelTable(List<JewelModel> jewels, BuildContext context) {
+    var defaultCells = _createStandardEquipmentHeaders(context: context);
+
     return Table(
       border: TableBorder(
         left: BorderSide(width: 1.0, color: Colors.black38),
@@ -170,41 +172,13 @@ class _JewelTypeContainerState extends State<_JewelTypeContainer> {
       children: [
         TableRow(
           children: [
-            _HeaderTableCell(
-                child: Text(
-                  'Nom',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Poids',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'DC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'TC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villages)',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villes)',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Spécial',
-                )
-            ),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         ),
         ...(_createJewelRows(jewels, context).toList())
@@ -217,6 +191,41 @@ class _JewelTypeContainerState extends State<_JewelTypeContainer> {
     var ret = <TableRow>[];
 
     for(var (idx, jewel) in jewels.indexed) {
+      var defaultCells = _createStandardEquipmentCells(
+        equipment: jewel,
+        context: context,
+        editMenu: _EditableEquipmentMenu(
+          onEdit: () async {
+            JewelModel? jm = await showDialog(
+              context: context,
+              builder: (BuildContext context) => JewelEditDialog(
+                type: widget.type,
+                jewel: jewel,
+              ),
+            );
+            if(jm == null) return;
+            if(!context.mounted) return;
+            await JewelModel.saveLocalModel(jm);
+            setState(() {
+              loadJewels();
+            });
+          },
+          onDownload: () async {
+            var jsonStr = json.encode(jewel.toJson());
+            await FilePicker.platform.saveFile(
+              fileName: 'jewel_${jewel.id}.json',
+              bytes: utf8.encode(jsonStr),
+            );
+          },
+          onDelete: () async {
+            await JewelModel.deleteLocalModel(jewel.id);
+            setState(() {
+              loadJewels();
+            });
+          },
+        ),
+      );
+
       ret.add(
         TableRow(
           decoration: BoxDecoration(
@@ -225,119 +234,13 @@ class _JewelTypeContainerState extends State<_JewelTypeContainer> {
               : theme.colorScheme.surfaceContainerLowest
           ),
           children: [
-            _DefaultTableCell(
-              child: Row(
-                spacing: 8.0,
-                children: [
-                  if(jewel.source == ObjectSource.local)
-                    _EditableEquipmentMenu(
-                      onEdit: () async {
-                        JewelModel? jm = await showDialog(
-                          context: context,
-                          builder: (BuildContext context) => JewelEditDialog(
-                            type: widget.type,
-                            jewel: jewel,
-                          ),
-                        );
-                        if(jm == null) return;
-                        if(!context.mounted) return;
-                        await JewelModel.saveLocalModel(jm);
-                        setState(() {
-                          loadJewels();
-                        });
-                      },
-                      onDownload: () async {
-                        var jsonStr = json.encode(jewel.toJson());
-                        await FilePicker.platform.saveFile(
-                          fileName: 'jewel_${jewel.id}.json',
-                          bytes: utf8.encode(jsonStr),
-                        );
-                      },
-                      onDelete: () async {
-                        await JewelModel.deleteLocalModel(jewel.id);
-                        setState(() {
-                          loadJewels();
-                        });
-                      },
-                    ),
-                  Expanded(
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(text: jewel.name),
-                          if(jewel.unique)
-                            TextSpan(
-                                children: [
-                                  TextSpan(text: ' '),
-                                  WidgetSpan(
-                                    child: Tooltip(
-                                      message: 'Unique',
-                                      child: Icon(
-                                        Icons.looks_one_outlined,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  ),
-                                ]
-                            ),
-                          if(jewel.description.isNotEmpty)
-                            TextSpan(
-                              children: [
-                                TextSpan(text: ' '),
-                                WidgetSpan(
-                                  child: MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                          DismissibleDialog<void>(
-                                            title: jewel.name,
-                                            content: ConstrainedBox(
-                                              constraints: BoxConstraints(
-                                                minWidth: 400,
-                                                maxWidth: 400,
-                                                maxHeight: 400,
-                                              ),
-                                              child: SingleChildScrollView(
-                                                child: Text(
-                                                  jewel.description,
-                                                ),
-                                              )
-                                            )
-                                          )
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.info_outline,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  )
-                                ),
-                              ]
-                            ),
-                        ]
-                      )
-                    )
-                  ),
-                ],
-              )
-            ),
-            _DefaultTableCell(child: Text(jewel.weight.toString())),
-            _DefaultTableCell(child: Text(jewel.creationDifficulty.toString())),
-            _DefaultTableCell(child: Text(jewel.creationTime.toString())),
-            _DefaultTableCell(child: Text('${jewel.villageAvailability.scarcity.short}/${jewel.villageAvailability.price.toString()}')),
-            _DefaultTableCell(child: Text('${jewel.cityAvailability.scarcity.short}/${jewel.cityAvailability.price.toString()}')),
-            _DefaultTableCell(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: 8.0,
-                  children: [
-                    for(var sp in jewel.special)
-                      Text(sp.description),
-                  ],
-                )
-            ),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         )
       );

@@ -150,6 +150,8 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
   }
 
   Table _createArmorTable(List<ArmorModel> armors, BuildContext context) {
+    var defaultCells = _createStandardEquipmentHeaders(context: context);
+
     return Table(
       border: TableBorder(
         left: BorderSide(width: 1.0, color: Colors.black38),
@@ -173,36 +175,12 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
       children: [
         TableRow(
           children: [
-            _HeaderTableCell(
-                child: Text(
-                  'Nom',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Poids',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'DC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'TC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villages)',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villes)',
-                )
-            ),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
             _HeaderTableCell(
                 child: Text(
                   'Pré-requis',
@@ -218,11 +196,7 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
                   'Pénalité',
                 )
             ),
-            _HeaderTableCell(
-                child: Text(
-                  'Spécial',
-                )
-            ),
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         ),
         ...(_createArmorRows(armors, context).toList())
@@ -244,6 +218,42 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
         reqsStr = reqs.join(', ');
       }
 
+      var defaultCells = _createStandardEquipmentCells(
+        equipment: armor,
+        context: context,
+        editMenu: _EditableEquipmentMenu(
+          onEdit: () async {
+            ArmorModel? am = await showDialog(
+              context: context,
+              builder: (BuildContext context) => ArmorEditDialog(
+                type: armor.type,
+                armor: armor,
+              ),
+            );
+            if(am == null) return;
+            if(!context.mounted) return;
+
+            await ArmorModel.saveLocalModel(am);
+            setState(() {
+              loadArmors();
+            });
+          },
+          onDownload: () async {
+            var jsonStr = json.encode(armor.toJson());
+            await FilePicker.platform.saveFile(
+              fileName: 'armor_${armor.id}.json',
+              bytes: utf8.encode(jsonStr),
+            );
+          },
+          onDelete: () async {
+            await ArmorModel.deleteLocalModel(armor.id);
+            setState(() {
+              loadArmors();
+            });
+          },
+        ),
+      );
+
       ret.add(
         TableRow(
           decoration: BoxDecoration(
@@ -252,123 +262,16 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
               : theme.colorScheme.surfaceContainerLowest
           ),
           children: [
-            _DefaultTableCell(
-              child: Row(
-                spacing: 8.0,
-                children: [
-                  if(armor.source == ObjectSource.local)
-                    _EditableEquipmentMenu(
-                      onEdit: () async {
-                        ArmorModel? am = await showDialog(
-                          context: context,
-                          builder: (BuildContext context) => ArmorEditDialog(
-                            type: armor.type,
-                            armor: armor,
-                          ),
-                        );
-                        if(am == null) return;
-                        if(!context.mounted) return;
-
-                        await ArmorModel.saveLocalModel(am);
-                        setState(() {
-                          loadArmors();
-                        });
-                      },
-                      onDownload: () async {
-                        var jsonStr = json.encode(armor.toJson());
-                        await FilePicker.platform.saveFile(
-                          fileName: 'armor_${armor.id}.json',
-                          bytes: utf8.encode(jsonStr),
-                        );
-                      },
-                      onDelete: () async {
-                        await ArmorModel.deleteLocalModel(armor.id);
-                        setState(() {
-                          loadArmors();
-                        });
-                      },
-                    ),
-                  Expanded(
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(text: armor.name),
-                          if(armor.unique)
-                            TextSpan(
-                              children: [
-                                TextSpan(text: ' '),
-                                WidgetSpan(
-                                  child: Tooltip(
-                                    message: 'Unique',
-                                    child: Icon(
-                                      Icons.looks_one_outlined,
-                                      size: 18,
-                                    ),
-                                  ),
-                                ),
-                              ]
-                            ),
-                          if(armor.description.isNotEmpty)
-                            TextSpan(
-                              children: [
-                                TextSpan(text: ' '),
-                                WidgetSpan(
-                                  child: MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                          DismissibleDialog<void>(
-                                            title: armor.name,
-                                            content: ConstrainedBox(
-                                              constraints: BoxConstraints(
-                                                minWidth: 400,
-                                                maxWidth: 400,
-                                                maxHeight: 400,
-                                              ),
-                                              child: SingleChildScrollView(
-                                                child: Text(
-                                                  armor.description,
-                                                ),
-                                              )
-                                            )
-                                          )
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.info_outline,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  )
-                                ),
-                              ]
-                            ),
-                        ]
-                      )
-                    )
-                  ),
-                ],
-              )
-            ),
-            _DefaultTableCell(child: Text(armor.weight.toString())),
-            _DefaultTableCell(child: Text(armor.creationDifficulty.toString())),
-            _DefaultTableCell(child: Text(armor.creationTime.toString())),
-            _DefaultTableCell(child: Text('${armor.villageAvailability.scarcity.short}/${armor.villageAvailability.price.toString()}')),
-            _DefaultTableCell(child: Text('${armor.cityAvailability.scarcity.short}/${armor.cityAvailability.price.toString()}')),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
             _DefaultTableCell(child: Text(reqsStr)),
             _DefaultTableCell(child: Text(armor.protection.toString())),
             _DefaultTableCell(child: Text(armor.penalty.toString())),
-            _DefaultTableCell(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 8.0,
-                children: [
-                  for(var sp in armor.special)
-                    Text(sp.description),
-                ],
-              )
-            ),
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         )
       );

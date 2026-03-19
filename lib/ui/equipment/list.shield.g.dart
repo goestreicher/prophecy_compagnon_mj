@@ -65,6 +65,8 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
   }
 
   Table _createShieldTable(List<ShieldModel> shields, BuildContext context) {
+    var defaultCells = _createStandardEquipmentHeaders(context: context);
+
     return Table(
       border: TableBorder(
         left: BorderSide(width: 1.0, color: Colors.black38),
@@ -89,36 +91,12 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
       children: [
         TableRow(
           children: [
-            _HeaderTableCell(
-                child: Text(
-                  'Nom',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Poids',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'DC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'TC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villages)',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villes)',
-                )
-            ),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
             _HeaderTableCell(
                 child: Text(
                   'Pré-requis',
@@ -139,11 +117,7 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
                 'Dommages',
               ),
             ),
-            _HeaderTableCell(
-                child: Text(
-                  'Spécial',
-                )
-            ),
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         ),
         ...(_createShieldRows(shields, context).toList())
@@ -165,6 +139,40 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
         reqsStr = reqs.join(', ');
       }
 
+      var defaultCells = _createStandardEquipmentCells(
+        equipment: shield,
+        context: context,
+        editMenu: _EditableEquipmentMenu(
+          onEdit: () async {
+            ShieldModel? sm = await showDialog(
+              context: context,
+              builder: (BuildContext context) => ShieldEditDialog(
+                shield: shield,
+              ),
+            );
+            if(sm == null) return;
+            if(!context.mounted) return;
+            await ShieldModel.saveLocalModel(sm);
+            setState(() {
+              loadShields();
+            });
+          },
+          onDownload: () async {
+            var jsonStr = json.encode(shield.toJson());
+            await FilePicker.platform.saveFile(
+              fileName: 'shield_${shield.id}.json',
+              bytes: utf8.encode(jsonStr),
+            );
+          },
+          onDelete: () async {
+            await ShieldModel.deleteLocalModel(shield.id);
+            setState(() {
+              loadShields();
+            });
+          },
+        ),
+      );
+
       ret.add(
         TableRow(
           decoration: BoxDecoration(
@@ -173,122 +181,17 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
               : theme.colorScheme.surfaceContainerLowest
           ),
           children: [
-            _DefaultTableCell(
-              child: Row(
-                spacing: 8.0,
-                children: [
-                  if(shield.source == ObjectSource.local)
-                    _EditableEquipmentMenu(
-                      onEdit: () async {
-                        ShieldModel? sm = await showDialog(
-                          context: context,
-                          builder: (BuildContext context) => ShieldEditDialog(
-                            shield: shield,
-                          ),
-                        );
-                        if(sm == null) return;
-                        if(!context.mounted) return;
-                        await ShieldModel.saveLocalModel(sm);
-                        setState(() {
-                          loadShields();
-                        });
-                      },
-                      onDownload: () async {
-                        var jsonStr = json.encode(shield.toJson());
-                        await FilePicker.platform.saveFile(
-                          fileName: 'shield_${shield.id}.json',
-                          bytes: utf8.encode(jsonStr),
-                        );
-                      },
-                      onDelete: () async {
-                        await ShieldModel.deleteLocalModel(shield.id);
-                        setState(() {
-                          loadShields();
-                        });
-                      },
-                    ),
-                  Expanded(
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(text: shield.name),
-                          if(shield.unique)
-                            TextSpan(
-                                children: [
-                                  TextSpan(text: ' '),
-                                  WidgetSpan(
-                                    child: Tooltip(
-                                      message: 'Unique',
-                                      child: Icon(
-                                        Icons.looks_one_outlined,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  ),
-                                ]
-                            ),
-                          if(shield.description.isNotEmpty)
-                            TextSpan(
-                              children: [
-                                TextSpan(text: ' '),
-                                WidgetSpan(
-                                  child: MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                          DismissibleDialog<void>(
-                                            title: shield.name,
-                                            content: ConstrainedBox(
-                                              constraints: BoxConstraints(
-                                                minWidth: 400,
-                                                maxWidth: 400,
-                                                maxHeight: 400,
-                                              ),
-                                              child: SingleChildScrollView(
-                                                child: Text(
-                                                  shield.description,
-                                                ),
-                                              )
-                                            )
-                                          )
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.info_outline,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  )
-                                ),
-                              ]
-                            ),
-                        ]
-                      )
-                    )
-                  ),
-                ],
-              )
-            ),
-            _DefaultTableCell(child: Text(shield.weight.toString())),
-            _DefaultTableCell(child: Text(shield.creationDifficulty.toString())),
-            _DefaultTableCell(child: Text(shield.creationTime.toString())),
-            _DefaultTableCell(child: Text('${shield.villageAvailability.scarcity.short}/${shield.villageAvailability.price.toString()}')),
-            _DefaultTableCell(child: Text('${shield.cityAvailability.scarcity.short}/${shield.cityAvailability.price.toString()}')),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
             _DefaultTableCell(child: Text(reqsStr)),
             _DefaultTableCell(child: Text(shield.protection.toString())),
             _DefaultTableCell(child: Text(shield.penalty.toString())),
             _DefaultTableCell(child: Text(shield.damage.toString())),
-            _DefaultTableCell(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 8.0,
-                children: [
-                  for(var sp in shield.special)
-                    Text(sp.description),
-                ],
-              )
-            ),
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         )
       );

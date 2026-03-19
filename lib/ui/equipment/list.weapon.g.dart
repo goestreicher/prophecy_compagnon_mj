@@ -170,6 +170,8 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
           rows.addAll(_createWeaponRows(twoHandedWeapons, context));
         }
 
+        var defaultCells = _createStandardEquipmentHeaders(context: context);
+
         children.add(
           Table(
             border: TableBorder(
@@ -196,36 +198,12 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
             children: [
               TableRow(
                 children: [
-                  _HeaderTableCell(
-                      child: Text(
-                        'Nom',
-                      )
-                  ),
-                  _HeaderTableCell(
-                      child: Text(
-                        'Poids',
-                      )
-                  ),
-                  _HeaderTableCell(
-                      child: Text(
-                        'DC',
-                      )
-                  ),
-                  _HeaderTableCell(
-                      child: Text(
-                        'TC',
-                      )
-                  ),
-                  _HeaderTableCell(
-                      child: Text(
-                        'Rareté/Prix\n(villages)',
-                      )
-                  ),
-                  _HeaderTableCell(
-                      child: Text(
-                        'Rareté/Prix\n(villes)',
-                      )
-                  ),
+                  defaultCells[_EquipmentTableCells.name]!,
+                  defaultCells[_EquipmentTableCells.weight]!,
+                  defaultCells[_EquipmentTableCells.creationDifficulty]!,
+                  defaultCells[_EquipmentTableCells.creationTime]!,
+                  defaultCells[_EquipmentTableCells.villageAvailability]!,
+                  defaultCells[_EquipmentTableCells.cityAvailability]!,
                   _HeaderTableCell(
                       child: Text(
                         'Pré-requis',
@@ -246,11 +224,7 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
                         'Dommages',
                       )
                   ),
-                  _HeaderTableCell(
-                      child: Text(
-                        'Spécial',
-                      )
-                  ),
+                  defaultCells[_EquipmentTableCells.special]!,
                 ]
               ),
               ...rows
@@ -315,6 +289,41 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
       int? contactInitiative = weapon.initiative[WeaponRange.contact];
       var initStr = '${meleeInitiative ?? "NA"} / ${contactInitiative ?? "NA"}';
 
+      var defaultCells = _createStandardEquipmentCells(
+        equipment: weapon,
+        context: context,
+        editMenu: _EditableEquipmentMenu(
+          onEdit: () async {
+            WeaponModel? wm = await showDialog(
+              context: context,
+              builder: (BuildContext context) => WeaponEditDialog(
+                skill: weapon.skill.parent,
+                weapon: weapon,
+              ),
+            );
+            if(wm == null) return;
+            if(!context.mounted) return;
+            await WeaponModel.saveLocalModel(wm);
+            setState(() {
+              loadWeapons();
+            });
+          },
+          onDownload: () async {
+            var jsonStr = json.encode(weapon.toJson());
+            await FilePicker.platform.saveFile(
+              fileName: 'weapon_${weapon.id}.json',
+              bytes: utf8.encode(jsonStr),
+            );
+          },
+          onDelete: () async {
+            await WeaponModel.deleteLocalModel(weapon.id);
+            setState(() {
+              loadWeapons();
+            });
+          },
+        ),
+      );
+
       ret.add(
         TableRow(
           decoration: BoxDecoration(
@@ -323,123 +332,17 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
               : theme.colorScheme.surfaceContainerLowest
           ),
           children: [
-            _DefaultTableCell(
-              child: Row(
-                spacing: 8.0,
-                children: [
-                  if(weapon.source == ObjectSource.local)
-                    _EditableEquipmentMenu(
-                      onEdit: () async {
-                        WeaponModel? wm = await showDialog(
-                          context: context,
-                          builder: (BuildContext context) => WeaponEditDialog(
-                            skill: weapon.skill.parent,
-                            weapon: weapon,
-                          ),
-                        );
-                        if(wm == null) return;
-                        if(!context.mounted) return;
-                        await WeaponModel.saveLocalModel(wm);
-                        setState(() {
-                          loadWeapons();
-                        });
-                      },
-                      onDownload: () async {
-                        var jsonStr = json.encode(weapon.toJson());
-                        await FilePicker.platform.saveFile(
-                          fileName: 'weapon_${weapon.id}.json',
-                          bytes: utf8.encode(jsonStr),
-                        );
-                      },
-                      onDelete: () async {
-                        await WeaponModel.deleteLocalModel(weapon.id);
-                        setState(() {
-                          loadWeapons();
-                        });
-                      },
-                    ),
-                  Expanded(
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(text: weapon.name),
-                          if(weapon.unique)
-                            TextSpan(
-                              children: [
-                                TextSpan(text: ' '),
-                                WidgetSpan(
-                                  child: Tooltip(
-                                    message: 'Unique',
-                                    child: Icon(
-                                      Icons.looks_one_outlined,
-                                      size: 18,
-                                    ),
-                                  ),
-                                ),
-                              ]
-                            ),
-                          if(weapon.description.isNotEmpty)
-                            TextSpan(
-                              children: [
-                                TextSpan(text: ' '),
-                                WidgetSpan(
-                                  child: MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                          DismissibleDialog<void>(
-                                            title: weapon.name,
-                                            content: ConstrainedBox(
-                                              constraints: BoxConstraints(
-                                                minWidth: 400,
-                                                maxWidth: 400,
-                                                maxHeight: 400,
-                                              ),
-                                              child: SingleChildScrollView(
-                                                child: Text(
-                                                  weapon.description,
-                                                ),
-                                              )
-                                            )
-                                          )
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.info_outline,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  )
-                                ),
-                              ]
-                            ),
-                        ]
-                      )
-                    )
-                  ),
-                ],
-              )
-            ),
-            _DefaultTableCell(child: Text(weapon.weight.toString())),
-            _DefaultTableCell(child: Text(weapon.creationDifficulty.toString())),
-            _DefaultTableCell(child: Text(weapon.creationTime.toString())),
-            _DefaultTableCell(child: Text('${weapon.villageAvailability.scarcity.short}/${weapon.villageAvailability.price.toString()}')),
-            _DefaultTableCell(child: Text('${weapon.cityAvailability.scarcity.short}/${weapon.cityAvailability.price.toString()}')),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
             _DefaultTableCell(child: Text(reqsStr)),
             _DefaultTableCell(child: Text(initStr)),
             _DefaultTableCell(child: Text('${weapon.rangeEffective.toString()} / ${weapon.rangeMax.toString()}')),
             _DefaultTableCell(child: Text(weapon.damage.toString())),
-            _DefaultTableCell(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 8.0,
-                children: [
-                  for(var sp in weapon.special)
-                    Text(sp.description),
-                ],
-              )
-            ),
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         )
       );

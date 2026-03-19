@@ -10,6 +10,7 @@ import '../../classes/combat.dart';
 import '../../classes/entity/skill.dart';
 import '../../classes/equipment/cloth.dart';
 import '../../classes/equipment/enums.dart';
+import '../../classes/equipment/equipment.dart';
 import '../../classes/equipment/jewel.dart';
 import '../../classes/object_source.dart';
 import '../../classes/equipment/shield.dart';
@@ -228,9 +229,9 @@ class _DefaultTableCell extends StatelessWidget {
 
 class _HeaderTableCell extends StatelessWidget {
   const _HeaderTableCell({ required this.child });
-  
+
   final Widget child;
-  
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
@@ -244,6 +245,179 @@ class _HeaderTableCell extends StatelessWidget {
       ),
     );
   }
+}
+
+enum _EquipmentTableCells {
+  name,
+  weight,
+  creationDifficulty,
+  creationTime,
+  villageAvailability,
+  cityAvailability,
+  special,
+}
+
+Map<_EquipmentTableCells, _DefaultTableCell> _createStandardEquipmentCells({
+  required EquipmentModel equipment,
+  required BuildContext context,
+  required _EditableEquipmentMenu editMenu,
+}) {
+  var ret = <_EquipmentTableCells, _DefaultTableCell>{};
+
+  ret[_EquipmentTableCells.name] = _DefaultTableCell(
+      child: Row(
+        spacing: 8.0,
+        children: [
+          if(equipment.source == ObjectSource.local)
+            editMenu,
+          Expanded(
+            child: Text.rich(
+              TextSpan(
+                children: [
+                  TextSpan(text: equipment.name),
+                  if(equipment.unique)
+                    TextSpan(
+                        children: [
+                          TextSpan(text: ' '),
+                          WidgetSpan(
+                            child: Tooltip(
+                              message: 'Unique',
+                              child: Icon(
+                                Icons.looks_one_outlined,
+                                size: 18,
+                              ),
+                            ),
+                          ),
+                        ]
+                    ),
+                  if(equipment.description.isNotEmpty)
+                    TextSpan(
+                      children: [
+                        TextSpan(text: ' '),
+                        WidgetSpan(
+                          child: MouseRegion(
+                            cursor: SystemMouseCursors.click,
+                            child: GestureDetector(
+                              onTap: () {
+                                Navigator.of(context).push(
+                                  DismissibleDialog<void>(
+                                    title: equipment.name,
+                                    content: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                        minWidth: 400,
+                                        maxWidth: 400,
+                                        maxHeight: 400,
+                                      ),
+                                      child: SingleChildScrollView(
+                                        child: Text(
+                                          equipment.description,
+                                        ),
+                                      )
+                                    )
+                                  )
+                                );
+                              },
+                              child: Icon(
+                                Icons.info_outline,
+                                size: 18,
+                              ),
+                            ),
+                          )
+                        ),
+                      ]
+                    ),
+                ]
+              )
+            )
+          ),
+        ],
+      )
+  );
+
+  ret[_EquipmentTableCells.weight] = _DefaultTableCell(
+      child: Text(equipment.weight.toString()),
+  );
+
+  ret[_EquipmentTableCells.creationDifficulty] = _DefaultTableCell(
+      child: Text(equipment.creationDifficulty.toString())
+  );
+
+  ret[_EquipmentTableCells.creationTime] = _DefaultTableCell(
+      child: Text(equipment.creationTime.toString())
+  );
+
+  ret[_EquipmentTableCells.villageAvailability] = _DefaultTableCell(
+      child: Text(
+        '${equipment.villageAvailability.scarcity.short}'
+        '/'
+        '${equipment.villageAvailability.price.toString()}'
+      )
+  );
+
+  ret[_EquipmentTableCells.cityAvailability] = _DefaultTableCell(
+      child: Text(
+          '${equipment.cityAvailability.scarcity.short}'
+              '/'
+              '${equipment.cityAvailability.price.toString()}'
+      )
+  );
+
+  ret[_EquipmentTableCells.special] = _DefaultTableCell(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 8.0,
+        children: [
+          for(var sp in equipment.special)
+            Text(sp.description),
+        ],
+      )
+  );
+
+  return ret;
+}
+
+Map<_EquipmentTableCells, _HeaderTableCell> _createStandardEquipmentHeaders({
+  required BuildContext context,
+}) {
+  var ret = <_EquipmentTableCells, _HeaderTableCell>{
+    _EquipmentTableCells.name: _HeaderTableCell(
+        child: Text(
+          'Nom',
+        )
+      ),
+    _EquipmentTableCells.weight: _HeaderTableCell(
+        child: Text(
+          'Poids',
+        )
+      ),
+    _EquipmentTableCells.creationDifficulty: _HeaderTableCell(
+        child: Text(
+          'DC',
+        )
+      ),
+    _EquipmentTableCells.creationTime: _HeaderTableCell(
+        child: Text(
+          'TC',
+        )
+      ),
+    _EquipmentTableCells.villageAvailability: _HeaderTableCell(
+        child: Text(
+          'Rareté/Prix\n(villages)',
+        )
+      ),
+    _EquipmentTableCells.cityAvailability: _HeaderTableCell(
+        child: Text(
+          'Rareté/Prix\n(villes)',
+        )
+      ),
+    _EquipmentTableCells.special: _HeaderTableCell(
+        child: Text(
+          'Spécial',
+        )
+      ),
+  };
+
+  return ret;
 }
 
 class _EditableEquipmentMenu extends StatelessWidget {

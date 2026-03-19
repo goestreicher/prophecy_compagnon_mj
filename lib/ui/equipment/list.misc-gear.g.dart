@@ -65,6 +65,8 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
   }
   
   Table _createGearTable(List<MiscGearModel> gear, BuildContext context) {
+    var defaultCells = _createStandardEquipmentHeaders(context: context);
+
     return Table(
       border: TableBorder(
         left: BorderSide(width: 1.0, color: Colors.black38),
@@ -85,41 +87,13 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
       children: [
         TableRow(
           children: [
-            _HeaderTableCell(
-                child: Text(
-                  'Nom',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Poids',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'DC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'TC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villages)',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villes)',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Spécial',
-                )
-            ),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         ),
         ...(_createGearRows(gear, context).toList())
@@ -132,6 +106,40 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
     var ret = <TableRow>[];
 
     for(var (idx, item) in gear.indexed) {
+      var defaultCells = _createStandardEquipmentCells(
+        equipment: item,
+        context: context,
+        editMenu: _EditableEquipmentMenu(
+          onEdit: () async {
+            MiscGearModel? gm = await showDialog(
+              context: context,
+              builder: (BuildContext context) => MiscGearEditDialog(
+                item: item,
+              ),
+            );
+            if(gm == null) return;
+            if(!context.mounted) return;
+            await MiscGearModel.saveLocalModel(gm);
+            setState(() {
+              loadGear();
+            });
+          },
+          onDownload: () async {
+            var jsonStr = json.encode(item.toJson());
+            await FilePicker.platform.saveFile(
+              fileName: 'misc-gear_${item.id}.json',
+              bytes: utf8.encode(jsonStr),
+            );
+          },
+          onDelete: () async {
+            await MiscGearModel.deleteLocalModel(item.id);
+            setState(() {
+              loadGear();
+            });
+          },
+        ),
+      );
+
       ret.add(
         TableRow(
           decoration: BoxDecoration(
@@ -140,118 +148,13 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
               : theme.colorScheme.surfaceContainerLowest
           ),
           children: [
-            _DefaultTableCell(
-              child: Row(
-                spacing: 8.0,
-                children: [
-                  if(item.source == ObjectSource.local)
-                    _EditableEquipmentMenu(
-                      onEdit: () async {
-                        MiscGearModel? gm = await showDialog(
-                          context: context,
-                          builder: (BuildContext context) => MiscGearEditDialog(
-                            item: item,
-                          ),
-                        );
-                        if(gm == null) return;
-                        if(!context.mounted) return;
-                        await MiscGearModel.saveLocalModel(gm);
-                        setState(() {
-                          loadGear();
-                        });
-                      },
-                      onDownload: () async {
-                        var jsonStr = json.encode(item.toJson());
-                        await FilePicker.platform.saveFile(
-                          fileName: 'misc-gear_${item.id}.json',
-                          bytes: utf8.encode(jsonStr),
-                        );
-                      },
-                      onDelete: () async {
-                        await MiscGearModel.deleteLocalModel(item.id);
-                        setState(() {
-                          loadGear();
-                        });
-                      },
-                    ),
-                  Expanded(
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(text: item.name),
-                          if(item.unique)
-                            TextSpan(
-                                children: [
-                                  TextSpan(text: ' '),
-                                  WidgetSpan(
-                                    child: Tooltip(
-                                      message: 'Unique',
-                                      child: Icon(
-                                        Icons.looks_one_outlined,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  ),
-                                ]
-                            ),
-                          if(item.description.isNotEmpty)
-                            TextSpan(
-                              children: [
-                                TextSpan(text: ' '),
-                                WidgetSpan(
-                                  child: MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                          DismissibleDialog<void>(
-                                            title: item.name,
-                                            content: ConstrainedBox(
-                                              constraints: BoxConstraints(
-                                                minWidth: 400,
-                                                maxWidth: 400,
-                                                maxHeight: 400,
-                                              ),
-                                              child: SingleChildScrollView(
-                                                child: Text(
-                                                  item.description,
-                                                ),
-                                              )
-                                            )
-                                          )
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.info_outline,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  )
-                                ),
-                              ]
-                            ),
-                        ]
-                      )
-                    )
-                  ),
-                ],
-              )
-            ),
-            _DefaultTableCell(child: Text(item.weight.toString())),
-            _DefaultTableCell(child: Text(item.creationDifficulty.toString())),
-            _DefaultTableCell(child: Text(item.creationTime.toString())),
-            _DefaultTableCell(child: Text('${item.villageAvailability.scarcity.short}/${item.villageAvailability.price.toString()}')),
-            _DefaultTableCell(child: Text('${item.cityAvailability.scarcity.short}/${item.cityAvailability.price.toString()}')),
-            _DefaultTableCell(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 8.0,
-                children: [
-                  for(var sp in item.special)
-                    Text(sp.description),
-                ],
-              )
-            ),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         )
       );

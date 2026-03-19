@@ -150,6 +150,8 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
   }
 
   Table _createClothTable(List<ClothModel> clothes, BuildContext context) {
+    var defaultCells = _createStandardEquipmentHeaders(context: context);
+
     return Table(
       border: TableBorder(
         left: BorderSide(width: 1.0, color: Colors.black38),
@@ -170,41 +172,13 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
       children: [
         TableRow(
           children: [
-            _HeaderTableCell(
-                child: Text(
-                  'Nom',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Poids',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'DC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'TC',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villages)',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Rareté/Prix\n(villes)',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Spécial',
-                )
-            ),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         ),
         ...(_createClothRows(clothes, context).toList())
@@ -217,6 +191,41 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
     var ret = <TableRow>[];
 
     for(var (idx, cloth) in clothes.indexed) {
+      var defaultCells = _createStandardEquipmentCells(
+        equipment: cloth,
+        context: context,
+        editMenu: _EditableEquipmentMenu(
+          onEdit: () async {
+            ClothModel? cm = await showDialog(
+              context: context,
+              builder: (BuildContext context) => ClothEditDialog(
+                type: widget.type,
+                cloth: cloth,
+              ),
+            );
+            if(cm == null) return;
+            if(!context.mounted) return;
+            await ClothModel.saveLocalModel(cm);
+            setState(() {
+              loadClothes();
+            });
+          },
+          onDownload: () async {
+            var jsonStr = json.encode(cloth.toJson());
+            await FilePicker.platform.saveFile(
+              fileName: 'cloth_${cloth.id}.json',
+              bytes: utf8.encode(jsonStr),
+            );
+          },
+          onDelete: () async {
+            await ClothModel.deleteLocalModel(cloth.id);
+            setState(() {
+              loadClothes();
+            });
+          },
+        ),
+      );
+
       ret.add(
         TableRow(
           decoration: BoxDecoration(
@@ -225,119 +234,13 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
               : theme.colorScheme.surfaceContainerLowest
           ),
           children: [
-            _DefaultTableCell(
-              child: Row(
-                spacing: 8.0,
-                children: [
-                  if(cloth.source == ObjectSource.local)
-                    _EditableEquipmentMenu(
-                      onEdit: () async {
-                        ClothModel? cm = await showDialog(
-                          context: context,
-                          builder: (BuildContext context) => ClothEditDialog(
-                            type: widget.type,
-                            cloth: cloth,
-                          ),
-                        );
-                        if(cm == null) return;
-                        if(!context.mounted) return;
-                        await ClothModel.saveLocalModel(cm);
-                        setState(() {
-                          loadClothes();
-                        });
-                      },
-                      onDownload: () async {
-                        var jsonStr = json.encode(cloth.toJson());
-                        await FilePicker.platform.saveFile(
-                          fileName: 'cloth_${cloth.id}.json',
-                          bytes: utf8.encode(jsonStr),
-                        );
-                      },
-                      onDelete: () async {
-                        await ClothModel.deleteLocalModel(cloth.id);
-                        setState(() {
-                          loadClothes();
-                        });
-                      },
-                    ),
-                  Expanded(
-                    child: Text.rich(
-                      TextSpan(
-                        children: [
-                          TextSpan(text: cloth.name),
-                          if(cloth.unique)
-                            TextSpan(
-                                children: [
-                                  TextSpan(text: ' '),
-                                  WidgetSpan(
-                                    child: Tooltip(
-                                      message: 'Unique',
-                                      child: Icon(
-                                        Icons.looks_one_outlined,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  ),
-                                ]
-                            ),
-                          if(cloth.description.isNotEmpty)
-                            TextSpan(
-                              children: [
-                                TextSpan(text: ' '),
-                                WidgetSpan(
-                                  child: MouseRegion(
-                                    cursor: SystemMouseCursors.click,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        Navigator.of(context).push(
-                                          DismissibleDialog<void>(
-                                            title: cloth.name,
-                                            content: ConstrainedBox(
-                                              constraints: BoxConstraints(
-                                                minWidth: 400,
-                                                maxWidth: 400,
-                                                maxHeight: 400,
-                                              ),
-                                              child: SingleChildScrollView(
-                                                child: Text(
-                                                  cloth.description,
-                                                ),
-                                              )
-                                            )
-                                          )
-                                        );
-                                      },
-                                      child: Icon(
-                                        Icons.info_outline,
-                                        size: 18,
-                                      ),
-                                    ),
-                                  )
-                                ),
-                              ]
-                            ),
-                        ]
-                      )
-                    )
-                  ),
-                ],
-              )
-            ),
-            _DefaultTableCell(child: Text(cloth.weight.toString())),
-            _DefaultTableCell(child: Text(cloth.creationDifficulty.toString())),
-            _DefaultTableCell(child: Text(cloth.creationTime.toString())),
-            _DefaultTableCell(child: Text('${cloth.villageAvailability.scarcity.short}/${cloth.villageAvailability.price.toString()}')),
-            _DefaultTableCell(child: Text('${cloth.cityAvailability.scarcity.short}/${cloth.cityAvailability.price.toString()}')),
-            _DefaultTableCell(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 8.0,
-                children: [
-                  for(var sp in cloth.special)
-                    Text(sp.description),
-                ],
-              )
-            ),
+            defaultCells[_EquipmentTableCells.name]!,
+            defaultCells[_EquipmentTableCells.weight]!,
+            defaultCells[_EquipmentTableCells.creationDifficulty]!,
+            defaultCells[_EquipmentTableCells.creationTime]!,
+            defaultCells[_EquipmentTableCells.villageAvailability]!,
+            defaultCells[_EquipmentTableCells.cityAvailability]!,
+            defaultCells[_EquipmentTableCells.special]!,
           ]
         )
       );
