@@ -24,10 +24,10 @@ class WidgetGroupContainer extends StatelessWidget {
 
     return Center(
       child: Stack(
+        clipBehavior: Clip.none,
         children: [
           Container(
             padding: EdgeInsets.fromLTRB(8.0, 8.0 + (titleWidgetSize.height / 2), 8.0, 8.0),
-            margin: EdgeInsets.fromLTRB(0.0, titleWidgetSize.height / 2, 0.0, 0.0),
             decoration: BoxDecoration(
               border: const GradientBoxBorder(
                 width: 1.5,
@@ -44,14 +44,14 @@ class WidgetGroupContainer extends StatelessWidget {
           ),
           if(title != null)
             Positioned(
-              top: 0,
+              top: -(titleWidgetSize.height / 2),
               left: 12,
               child: Container(
                 color: theme.colorScheme.surfaceBright,
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
                 child: title,
               )
-            )
+            ),
         ],
       ),
     );

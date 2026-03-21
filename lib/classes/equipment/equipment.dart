@@ -82,8 +82,13 @@ class EquipmentAvailability {
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class EquipmentSpecialCapability {
-  EquipmentSpecialCapability({ required this.description });
+  EquipmentSpecialCapability({
+    this.title,
+    required this.description,
+  });
 
+  @JsonKey(includeIfNull: false)
+  String? title;
   String description;
 
   static EquipmentSpecialCapability fromJson(Map<String, dynamic> j) =>
@@ -107,6 +112,7 @@ abstract class EquipmentModel extends ResourceBaseClass {
     required this.villageAvailability,
     required this.cityAvailability,
     this.supportsMetal = false,
+    this.intrinsicResistance,
     List<EquipmentSpecialCapability>? special,
   })
     : special = special ?? <EquipmentSpecialCapability>[];
@@ -120,6 +126,8 @@ abstract class EquipmentModel extends ResourceBaseClass {
   EquipmentAvailability villageAvailability;
   EquipmentAvailability cityAvailability;
   bool supportsMetal;
+  @JsonKey(includeIfNull: false)
+  EquipmentQuality? intrinsicResistance;
   List<EquipmentSpecialCapability> special;
 
   @override String get id => uuid;
@@ -151,6 +159,7 @@ abstract class EquipableItemModel extends EquipmentModel {
     required this.handiness,
     this.layer = EquipableItemLayer.normal,
     super.supportsMetal,
+    super.intrinsicResistance,
     required super.special,
   });
 
@@ -186,6 +195,8 @@ abstract class Equipment {
   String get description => model.description;
 
   double get weight => model.weight * metal.weightModifier;
+
+  EquipmentQuality get resistance => model.intrinsicResistance ?? metal.intrinsicResistance;
 
   int price(EquipmentAvailabilityZone where) =>
     (

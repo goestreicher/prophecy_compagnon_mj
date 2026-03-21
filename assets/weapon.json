@@ -3870,5 +3870,71 @@
     "slot": "hands",
     "handiness": 2,
     "description": "Le lance-harpon est une arme construite sur le modèle de la sarbacane. Un tube de fer est bouché à sa base et un long ressort est comprimé à l’intérieur par un harpon de quatre-vingt centimètres de long à la pointe en ailettes. Un levier permet le relâchement du ressort qui propulse le harpon avec une énergie constante. Utilisée par les troupes de résistants humanistes, cette arme est crainte de tous."
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "L'Épée Ardente",
+    "uuid": "3c6f2b11-2575-47ae-b850-b8a0ec18f8e7",
+    "unique": true,
+    "description": "L'Épée Ardente fait partie d’une série d'armes légendaires forgées pour les Grands Maîtres de la Caste des Combattants au cours des treize siècles de guerre qui ont ravagé le monde. L'épée a été forgée à partir du sang de Kezyr et du Feu élémentaire. Dès qu'un combattant valeureux la tire de son fourreau, elle s’enflamme. L'Épée Ardente a disparu à la fin des grandes guerres. Elle était alors la propriété d’Inus Kar, un formidable combattant, ami de Kroryn. Inus fut terrassé au cours de la Bataille du Marais Sombre et on pense que son épée est engloutie quelque part dans un des marécages du Royaume de l’Ombre. Toutes ces armes légendaires furent perdues au cours des grandes guerres.\nLa lame de l’épée est d’une pureté rarement égalée. Elle n’a aucun défaut. Le métal est lisse et veiné de sillons rouges. Il est légèrement tiède au toucher. La garde représente une tête de dragon.\nLa lame s’enflamme uniquement si le porteur est un combattant digne des préceptes de Kroryn. En revanche, n’importe qui d’autre peut la manier sans tirer profit de son pouvoir.",
+    "weight": 1.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "exceptional",
+    "special": [
+      {
+        "description": "En combat, augmente l’initiative de celui qui la manie de 1 point."
+      },
+      {
+        "description": "Quand elle s'enflamme, inflige des dommages égaux à FOR+12+2D. Contre les créatures du feu, elle inflige des dommages normaux."
+      },
+      {
+        "description": "Confère à son utilisateur une résistance au feu qui réduit de moitié les dommages infligés par ce type d’attaque."
+      }
+    ],
+    "slot": "hands",
+    "handiness": 1,
+    "layer": "normal",
+    "skill": "armesTranchantes",
+    "requirements": {
+      "force": 5
+    },
+    "initiative": {
+      "contact": 2,
+      "melee": -2
+    },
+    "damage": {
+      "static": null,
+      "ability": "force",
+      "multiply": 1,
+      "add": 12,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    },
+    "range_max": {
+      "static": 1.2,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    }
   }
 ]

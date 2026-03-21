@@ -1,0 +1,181 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "L'Orbe du Feu",
+    "uuid": "401ccace-b0f0-4a42-9b3f-23e5b17cba5e",
+    "unique": true,
+    "description": "L’Orbe fut créé par un Dragon du Feu pour le combattant avec lequel il était lié. Le dragon, Krosgaryn, plongea au cœur du magma et en ramena un fragment de Feu élémentaire qu’il emprisonna dans une sphère de cristal indestructible.\nL’Orbe est une petite sphère de cristal de 10 centimètres de diamètre, à l’intérieur de laquelle est enfermé du Feu élémentaire. Elle n’est pas chaude au toucher. Le cristal est indestructible.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Bonus magique (Feu)",
+        "description": "L’Orbe permet de lancer plus facilement certains sortilèges de Magie Instinctive liés au Feu. Elle est utilisable par n’importe qui et on considère qu’elle octroie une Discipline Magie Instinctive de 3. Elle dispose d’un potentiel de 20 points de magie, qui se régénèrent au rythme de 1 point par jour si on place l’Orbe dans du feu. Toutes les difficultés sont réduites de 5 points. Grâce à l’Orbe du Feu, on peut utiliser les pouvoirs suivants : Bouclier, Œil de Pyrite et Souffle Ardent."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Le Cœur de Cendre",
+    "uuid": "d6a1e682-57d4-4a9e-a5b6-c5692275c5e2",
+    "unique": true,
+    "description": "Dans les temps anciens, un sorcier du nom d’Umal Rkhoon créa ce puissant objet de destruction. Maître dans l’art de la Magie du Feu, Umal était un être particulièrement corrompu. Il s'attaqua à un Dragon du Feu blessé et arracha de sa poitrine son cœur encore palpitant. Par Sorcellerie, il réduisit l’organe du dragon pour qu’il puisse tenir dans une main et l’enchanta. Traqué par des fidèles de Kroryn, le sorcier fut finalement vaincu et le cœur devint la propriété du maître d’armes, Sylus Kren.\nQuand ce célèbre combattant mourut de mort naturelle, son corps s'embrasa mystérieusement et fut réduit en cendres mais il n’y avait plus aucune trace de l’objet magique. Depuis, les seules traces que l’on ait de cet artefact sont les rapports fragmentaires indiquant que des individus s’enflamment mystérieusement à leur mort.\nLe Cœur de Cendre ressemble à un cœur humain desséché et noirci. Il est couvert de runes. Le Cœur est brûlant et ne peut être tenu en main qu’en portant une protection adéquate.",
+    "weight": 0.2,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Magie du Feu",
+        "description": "Le Cœur de Cendre augmente les effets de tous les pouvoirs liés au Feu. Un personnage ajoute 2D à tous ses jets pour lancer un sortilège lié au Feu et pour en déterminer les effets. De plus, toute attaque de Feu contre le porteur du Cœur voit ses effets réduits de 2D."
+      },
+      {
+        "description": "\nSi le propriétaire du Cœur vient à mourir, il est instantanément calciné et il ne reste plus de lui qu’un peu de cendre."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Les Fragments de Yhunn",
+    "uuid": "bb864794-be45-4b11-b980-08f3740639e4",
+    "unique": false,
+    "description": "Depuis les premiers âges du monde, Kroryn n’a eu de cesse de perfectionner les sciences du combat et de la stratégie. Au fur et à mesure, il a consigné ses réflexions sur divers supports. Après avoir achevé ses œuvres, Kroryn s’en désintéressait souvent et la plupart ont disparu.\nAvec le temps, les guerriers les plus courageux apprirent l’existence de ces Fragments et leur recherche devint une quête initiatique sur les traces de leur Dragon. Tous ceux qui ont un jour eu un fragment entre les mains n’en ont jamais révélé le contenu à d’autres et n’ont jamais tenté de les rassembler en un seul lieu. Yhunn, le plus célèbre Grand Maître de la Caste des Combattants, aurait été le seul à avoir lu tous les Fragments. Il dirigea la caste durant plus de cent ans et, nul n’a jamais su comment, malgré son âge, il restait si vigoureux et habile. Une légende dit qu’ayant lu le dernier Fragment, Yhunn comprit enfin la voie du guerrier dans son ensemble et entra dans le repaire de Kroryn pour réclamer le droit de devenir l’égal du Grand Dragon du Feu lui-même. Nul ne le revit jamais et son nom reste dans la mémoire collective comme l’un des meilleurs guerriers de Kor.\nSelon le lieu et l’époque, Kroryn a utilisé des plaquettes d’argile, des tablettes de pierre, des peaux, des parchemins et des papyrus. Il s’est servi de différents types de supports pour consigner ses réflexions.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Connaissance du Guerrier",
+        "description": "Les Fragments de Yhunn demandent de très longues semaines d'étude et de réflexion. Il faut 1D10 semaine(s) pour étudier le premier Fragment, 2D10 semaine(s) pour le second, etc. Après avoir étudié un Fragment, un personnage doit effectuer un jet de Mental + Intelligence contre une difficulté de 10. La difficulté est augmentée de 5 points par Fragment supplémentaire. Si on échoue à un jet, on peut recommencer après l'avoir étudié de nouveau. La compréhension d’un Fragment de Yhunn ajoute automatiquement un Interdit supplémentaire au personnage, qu’il ne peut transgresser sous peine de perdre cette connaissance. L’individu voit son espérance de vie augmentée de 5 années par Fragment assimilé et gagne automatiquement 1 niveau dans la compétence martiale de son choix."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Briquet de Kroryn",
+    "uuid": "bc8d43dc-0d31-4419-8347-1aa4860a4098",
+    "unique": false,
+    "description": "D’usage courant, il ressemble à un briquet normal, une plaque et un silex, si ce n’est qu’il produit trois fois plus d’étincelles et s’allume même sous la pluie et le vent.",
+    "weight": 0.05,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 60
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Paratonnerres",
+    "uuid": "071578ae-588c-4817-8e96-e46920cca6d0",
+    "unique": false,
+    "description": "Il n’est pas rare de voir à côté des grands bâtiments des pieux pointés vers le ciel. Ils attirent la foudre lors des grands orages. On ignore s'ils sont véritablement magiques ou s’il s'agit d’um phénomène purement scientifique.",
+    "weight": 5,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 120
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Huile inflammable",
+    "uuid": "dcae2836-89ae-4434-84f1-2e87e6479a90",
+    "unique": false,
+    "description": "Il s’agit pas d’eau de feu, mais d'une huile spéciale pour les lanternes, qui brille à la fois plus fort et plus lentement - un paradoxe qui intrigue Kroryn lui-même.",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 40
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Pyrique",
+    "uuid": "8ae1b8d2-c2ae-4c75-8d81-60563b10d5a3",
+    "unique": false,
+    "description": "La Pyrique, fragment rocheux baignée dans une solution souffrée, enflamme instantanément toute substance liquide dans lequelle elle est plongée. Si le volume de la pierre est suffisant, son immersion s'accompagne d'une explosion capable, en fonction du volume d'eau, de pulvériser le roc ou le métal. Il est dit que les Humanistes s'en servent pour protéger leurs cités, en embrasant les douves emplies d'eau qui bordent leurs enceintes.\nLa Pyrique est jugée hérétique par Ozyr et les Inquisiteurs de Brorne et ne s'échange qu'au marché noir.",
+    "weight": 0.1,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
+  }
+]

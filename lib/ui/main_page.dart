@@ -5,6 +5,7 @@ import '../classes/equipment/armor.dart';
 import '../classes/creature.dart';
 import '../classes/equipment/cloth.dart';
 import '../classes/equipment/jewel.dart';
+import '../classes/equipment/magic_gear.dart';
 import '../classes/equipment/misc_gear.dart';
 import '../classes/faction.dart';
 import '../classes/magic_spell.dart';
@@ -26,6 +27,7 @@ Future<void> _loadAssets() async {
   await ClothModel.init();
   await MiscGearModel.init();
   await JewelModel.init();
+  await MagicGearModel.init();
   await MagicSpell.loadDefaultAssets();
   await CreatureCategory.init();
   await Creature.init();

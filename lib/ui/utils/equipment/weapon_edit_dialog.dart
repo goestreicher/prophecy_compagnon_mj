@@ -53,6 +53,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
   AttributeBasedCalculator rangeEffective = AttributeBasedCalculator(static: 0.0);
   AttributeBasedCalculator rangeMax = AttributeBasedCalculator(static: 0.0);
   TextEditingController descriptionController = TextEditingController();
+  EquipmentQuality? intrinsicResistance;
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
@@ -78,6 +79,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
       rangeEffective = widget.weapon!.rangeEffective;
       rangeMax = widget.weapon!.rangeMax;
       descriptionController.text = widget.weapon!.description;
+      intrinsicResistance = widget.weapon!.intrinsicResistance;
       special = List.from(widget.weapon!.special);
     }
     else {
@@ -93,15 +95,13 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
 
     return AlertDialog(
       title: const Text("Éditer l'arme"),
-      content: SingleChildScrollView(
-        child: Form(
-          key: formKey,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                minWidth: 500,
-              ),
+      content: SizedBox(
+        width: 800,
+        child: SingleChildScrollView(
+          child: Form(
+            key: formKey,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -116,6 +116,23 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                         onChanged: (bool v) {
                           setState(() {
                             unique = v;
+                            if(v) {
+                              dcController.text = 0.toString();
+                              tcController.text = 0.toString();
+                              villageScarcity = EquipmentScarcity.introuvable;
+                              villagePrice = 0;
+                              cityScarcity = EquipmentScarcity.introuvable;
+                              cityPrice = 0;
+                            }
+                            else {
+                              dcController.clear();
+                              tcController.clear();
+                              villageScarcity = null;
+                              villagePrice = null;
+                              cityScarcity = null;
+                              cityPrice = null;
+                              intrinsicResistance = null;
+                            }
                           });
                         },
                       ),
@@ -135,6 +152,33 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
+                      SizedBox(
+                        width: 120,
+                        child: TextFormField(
+                          controller: weightController,
+                          decoration: InputDecoration(
+                            labelText: 'Poids',
+                            suffixText: 'kg',
+                            border: OutlineInputBorder(),
+                          ),
+                          keyboardType: TextInputType.number,
+                          inputFormatters: [
+                            FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
+                          ],
+                          validator: (String? value) {
+                            if(value == null || value.isEmpty) return 'Valeur manquante';
+                            double? input = double.tryParse(value);
+                            if(input == null) return 'Pas un nombre';
+                            return null;
+                          },
+                          autovalidateMode: AutovalidateMode.onUserInteraction,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Row(
+                    spacing: 12.0,
+                    children: [
                       SizedBox(
                         width: 120,
                         child: DropdownMenuFormField<int>(
@@ -157,11 +201,6 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                           },
                         ),
                       ),
-                    ],
-                  ),
-                  Row(
-                    spacing: 12.0,
-                    children: [
                       Expanded(
                         child: DropdownMenuFormField<SpecializedSkill>(
                           enabled: !createSpecializedSkill,
@@ -188,18 +227,29 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                           },
                         ),
                       ),
-                      Switch(
-                        value: createSpecializedSkill,
-                        onChanged: (bool v) {
-                          setState(() {
-                            createSpecializedSkill = v;
-                          });
-                        }
+                      SizedBox(
+                        width: 220,
+                        child: Row(
+                          spacing: 4.0,
+                          children: [
+                            Switch(
+                              value: createSpecializedSkill,
+                              onChanged: (bool v) {
+                                setState(() {
+                                  createSpecializedSkill = v;
+                                });
+                              }
+                            ),
+                            Expanded(
+                              child: Text(
+                                'Créer une spécialisation pour cette arme',
+                                style: theme.textTheme.bodySmall,
+                                softWrap: true,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
-                      Text(
-                        'Créer une\nspécialisation',
-                        style: theme.textTheme.bodySmall,
-                      )
                     ],
                   ),
                   Row(
@@ -207,26 +257,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                     children: [
                       Expanded(
                         child: TextFormField(
-                          controller: weightController,
-                          decoration: InputDecoration(
-                            labelText: 'Poids (kg)',
-                            border: OutlineInputBorder(),
-                          ),
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.allow(RegExp(r'[.0-9]')),
-                          ],
-                          validator: (String? value) {
-                            if(value == null || value.isEmpty) return 'Valeur manquante';
-                            double? input = double.tryParse(value);
-                            if(input == null) return 'Pas un nombre';
-                            return null;
-                          },
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                        ),
-                      ),
-                      Expanded(
-                        child: TextFormField(
+                          enabled: !unique,
                           controller: dcController,
                           decoration: InputDecoration(
                             labelText: 'Difficulté de création',
@@ -247,6 +278,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                       ),
                       Expanded(
                         child: TextFormField(
+                          enabled: !unique,
                           controller: tcController,
                           decoration: InputDecoration(
                             labelText: 'Temps de création',
@@ -265,70 +297,109 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
-                    ],
-                  ),
-                  Row(
-                    spacing: 4.0,
-                    children: [
-                      Switch(
-                        value: supportsMetal,
-                        onChanged: (bool v) {
-                          setState(() {
-                            supportsMetal = v;
-                          });
-                        },
-                      ),
-                      Text('Peut être fabriqué avec différents métaux'),
-                    ],
-                  ),
-                  Row(
-                    spacing: 12.0,
-                    children: [
-                      Expanded(
-                        child: ScarcityEditWidget(
-                          type: 'Rareté (villages)',
-                          onScarcityChanged: (EquipmentScarcity s) =>
-                          villageScarcity = s,
-                          onPriceChanged: (int p) => villagePrice = p,
-                          scarcity: villageScarcity,
-                          price: villagePrice,
+                      if(!unique)
+                        SizedBox(
+                          width: 220,
+                          child: Row(
+                            spacing: 4.0,
+                            children: [
+                              Switch(
+                                value: supportsMetal,
+                                onChanged: (bool v) {
+                                  setState(() {
+                                    supportsMetal = v;
+                                  });
+                                },
+                              ),
+                              Expanded(
+                                child: Text(
+                                  'Peut être fabriqué avec différents métaux',
+                                  style: theme.textTheme.bodySmall,
+                                  softWrap: true,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: ScarcityEditWidget(
-                          type: 'Rareté (villes)',
-                          onScarcityChanged: (EquipmentScarcity s) =>
-                          cityScarcity = s,
-                          onPriceChanged: (int p) => cityPrice = p,
-                          scarcity: cityScarcity,
-                          price: cityPrice,
+                      if(unique)
+                        Expanded(
+                          child:
+                          DropdownMenuFormField<EquipmentQuality>(
+                            initialSelection: intrinsicResistance,
+                            requestFocusOnTap: true,
+                            label: const Text('Résistance'),
+                            inputDecorationTheme: const InputDecorationTheme(
+                              border: OutlineInputBorder(),
+                            ),
+                            expandedInsets: EdgeInsets.zero,
+                            dropdownMenuEntries: EquipmentQuality.values
+                                .map((EquipmentQuality s) => DropdownMenuEntry(value: s, label: s.title))
+                                .toList(),
+                            validator: (EquipmentQuality? s) {
+                              if(s == null) return 'Valeur manquante';
+                              return null;
+                            },
+                            onSelected: (EquipmentQuality? s) {
+                              if(s == null) return;
+                              intrinsicResistance = s;
+                            },
+                          ),
                         ),
-                      ),
                     ],
                   ),
+                  if(!unique)
+                    Row(
+                      spacing: 12.0,
+                      children: [
+                        Expanded(
+                          child: ScarcityEditWidget(
+                            type: 'Rareté (villages)',
+                            onScarcityChanged: (EquipmentScarcity s) =>
+                              villageScarcity = s,
+                            onPriceChanged: (int p) => villagePrice = p,
+                            scarcity: villageScarcity,
+                            price: villagePrice,
+                          ),
+                        ),
+                        Expanded(
+                          child: ScarcityEditWidget(
+                            type: 'Rareté (villes)',
+                            onScarcityChanged: (EquipmentScarcity s) =>
+                              cityScarcity = s,
+                            onPriceChanged: (int p) => cityPrice = p,
+                            scarcity: cityScarcity,
+                            price: cityPrice,
+                          ),
+                        ),
+                      ],
+                    ),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     spacing: 12.0,
                     children: [
-                      EquipmentRequirementsEditWidget(
-                        onChanged: (Map<Ability, int> reqs) {
-                          requirements = reqs;
-                        },
-                        requirements: requirements,
+                      Expanded(
+                        child: EquipmentRequirementsEditWidget(
+                          onChanged: (Map<Ability, int> reqs) {
+                            requirements = reqs;
+                          },
+                          requirements: requirements,
+                        ),
                       ),
-                      _WeaponEditInitiativesWidget(
-                        skill: widget.skill,
-                        initiatives: widget.weapon?.initiative,
-                        onInitiativeChanged: (WeaponRange r, int v) {
-                          setState(() {
-                            initiatives[r] = v;
-                          });
-                        },
-                        onInitiativeRemoved: (WeaponRange r) {
-                          setState(() {
-                            initiatives.remove(r);
-                          });
-                        }
+                      Expanded(
+                        child: _WeaponEditInitiativesWidget(
+                          skill: widget.skill,
+                          initiatives: widget.weapon?.initiative,
+                          onInitiativeChanged: (WeaponRange r, int v) {
+                            setState(() {
+                              initiatives[r] = v;
+                            });
+                          },
+                          onInitiativeRemoved: (WeaponRange r) {
+                            setState(() {
+                              initiatives.remove(r);
+                            });
+                          }
+                        ),
                       ),
                     ],
                   ),
@@ -419,6 +490,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
                 rangeEffective: rangeEffective,
                 rangeMax: rangeMax,
                 supportsMetal: supportsMetal,
+                intrinsicResistance: intrinsicResistance,
                 special: special,
               );
 
@@ -447,6 +519,7 @@ class _WeaponEditDialogState extends State<WeaponEditDialog> {
               widget.weapon!.rangeEffective = rangeEffective;
               widget.weapon!.rangeMax = rangeMax;
               widget.weapon!.supportsMetal = supportsMetal;
+              widget.weapon!.intrinsicResistance = intrinsicResistance;
               widget.weapon!.special = special;
 
               Navigator.of(context).pop(widget.weapon!);
@@ -492,79 +565,82 @@ class _WeaponEditInitiativesWidget extends StatelessWidget {
             color: Colors.black87,
           )
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 8.0,
-        children: [
-          if(showContactInitiative)
-            _EditInitiativeWidget(
-              range: WeaponRange.contact,
-              onEnabledChanged: (bool v) {
-                if(!v) {
-                  onInitiativeRemoved(WeaponRange.contact);
-                }
-                else {
-                  onInitiativeChanged(WeaponRange.contact, 0);
-                }
-              },
-              onInitiativeChanged: (int v) {
-                onInitiativeChanged(WeaponRange.contact, v);
-              },
-              enabled: initiatives?.containsKey(WeaponRange.contact),
-              initiative: initiatives?[WeaponRange.contact],
-            ),
-          if(showMeleeInitiative)
-            _EditInitiativeWidget(
-              range: WeaponRange.melee,
-              onEnabledChanged: (bool v) {
-                if(!v) {
-                  onInitiativeRemoved(WeaponRange.melee);
-                }
-                else {
-                  onInitiativeChanged(WeaponRange.melee, 0);
-                }
-              },
-              onInitiativeChanged: (int v) {
-                onInitiativeChanged(WeaponRange.melee, v);
-              },
-              enabled: initiatives?.containsKey(WeaponRange.melee),
-              initiative: initiatives?[WeaponRange.melee],
-            ),
-          if(showDistanceInitiative)
-            _EditInitiativeWidget(
-              range: WeaponRange.distance,
-              onEnabledChanged: (bool v) {
-                if(!v) {
-                  onInitiativeRemoved(WeaponRange.distance);
-                }
-                else {
-                  onInitiativeChanged(WeaponRange.distance, 0);
-                }
-              },
-              onInitiativeChanged: (int v) {
-                onInitiativeChanged(WeaponRange.distance, v);
-              },
-              enabled: initiatives?.containsKey(WeaponRange.distance),
-              initiative: initiatives?[WeaponRange.distance],
-            ),
-          if(showRangedInitiative)
-            _EditInitiativeWidget(
-              range: WeaponRange.ranged,
-              onEnabledChanged: (bool v) {
-                if(!v) {
-                  onInitiativeRemoved(WeaponRange.ranged);
-                }
-                else {
-                  onInitiativeChanged(WeaponRange.ranged, 0);
-                }
-              },
-              onInitiativeChanged: (int v) {
-                onInitiativeChanged(WeaponRange.ranged, v);
-              },
-              enabled: initiatives?.containsKey(WeaponRange.ranged),
-              initiative: initiatives?[WeaponRange.ranged],
-            ),
-        ],
+      child: Align(
+        alignment: AlignmentGeometry.topLeft,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 8.0,
+          children: [
+            if(showContactInitiative)
+              _EditInitiativeWidget(
+                range: WeaponRange.contact,
+                onEnabledChanged: (bool v) {
+                  if(!v) {
+                    onInitiativeRemoved(WeaponRange.contact);
+                  }
+                  else {
+                    onInitiativeChanged(WeaponRange.contact, 0);
+                  }
+                },
+                onInitiativeChanged: (int v) {
+                  onInitiativeChanged(WeaponRange.contact, v);
+                },
+                enabled: initiatives?.containsKey(WeaponRange.contact),
+                initiative: initiatives?[WeaponRange.contact],
+              ),
+            if(showMeleeInitiative)
+              _EditInitiativeWidget(
+                range: WeaponRange.melee,
+                onEnabledChanged: (bool v) {
+                  if(!v) {
+                    onInitiativeRemoved(WeaponRange.melee);
+                  }
+                  else {
+                    onInitiativeChanged(WeaponRange.melee, 0);
+                  }
+                },
+                onInitiativeChanged: (int v) {
+                  onInitiativeChanged(WeaponRange.melee, v);
+                },
+                enabled: initiatives?.containsKey(WeaponRange.melee),
+                initiative: initiatives?[WeaponRange.melee],
+              ),
+            if(showDistanceInitiative)
+              _EditInitiativeWidget(
+                range: WeaponRange.distance,
+                onEnabledChanged: (bool v) {
+                  if(!v) {
+                    onInitiativeRemoved(WeaponRange.distance);
+                  }
+                  else {
+                    onInitiativeChanged(WeaponRange.distance, 0);
+                  }
+                },
+                onInitiativeChanged: (int v) {
+                  onInitiativeChanged(WeaponRange.distance, v);
+                },
+                enabled: initiatives?.containsKey(WeaponRange.distance),
+                initiative: initiatives?[WeaponRange.distance],
+              ),
+            if(showRangedInitiative)
+              _EditInitiativeWidget(
+                range: WeaponRange.ranged,
+                onEnabledChanged: (bool v) {
+                  if(!v) {
+                    onInitiativeRemoved(WeaponRange.ranged);
+                  }
+                  else {
+                    onInitiativeChanged(WeaponRange.ranged, 0);
+                  }
+                },
+                onInitiativeChanged: (int v) {
+                  onInitiativeChanged(WeaponRange.ranged, v);
+                },
+                enabled: initiatives?.containsKey(WeaponRange.ranged),
+                initiative: initiatives?[WeaponRange.ranged],
+              ),
+          ],
+        ),
       )
     );
   }

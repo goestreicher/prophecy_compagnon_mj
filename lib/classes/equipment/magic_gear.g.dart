@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'misc_gear.dart';
+part of 'magic_gear.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-MiscGearModel _$MiscGearModelFromJson(Map<String, dynamic> json) =>
-    MiscGearModel(
+MagicGearModel _$MagicGearModelFromJson(Map<String, dynamic> json) =>
+    MagicGearModel(
       uuid: json['uuid'] as String,
       name: json['name'] as String,
       unique: json['unique'] as bool? ?? false,
@@ -38,7 +38,7 @@ MiscGearModel _$MiscGearModelFromJson(Map<String, dynamic> json) =>
           .toList(),
     );
 
-Map<String, dynamic> _$MiscGearModelToJson(MiscGearModel instance) =>
+Map<String, dynamic> _$MagicGearModelToJson(MagicGearModel instance) =>
     <String, dynamic>{
       'source': instance.source.toJson(),
       'name': instance.name,

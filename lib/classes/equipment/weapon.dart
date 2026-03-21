@@ -78,6 +78,7 @@ class WeaponModel extends EquipableItemModel {
     required AttributeBasedCalculator rangeEffective,
     required AttributeBasedCalculator rangeMax,
     bool supportsMetal = false,
+    EquipmentQuality? intrinsicResistance,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -104,6 +105,7 @@ class WeaponModel extends EquipableItemModel {
             rangeEffective: rangeEffective,
             rangeMax: rangeMax,
             supportsMetal: supportsMetal,
+            intrinsicResistance: intrinsicResistance,
             special: special,
         );
     _cache[wm.id] = wm;
@@ -132,6 +134,7 @@ class WeaponModel extends EquipableItemModel {
     required this.rangeEffective,
     required this.rangeMax,
     super.supportsMetal,
+    super.intrinsicResistance,
     super.special,
   });
 

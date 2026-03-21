@@ -30,6 +30,7 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
   EquipmentScarcity? cityScarcity;
   int? cityPrice;
   TextEditingController descriptionController = TextEditingController();
+  EquipmentQuality? intrinsicResistance;
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
@@ -47,6 +48,7 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
       cityScarcity = widget.item!.cityAvailability.scarcity;
       cityPrice = widget.item!.cityAvailability.price;
       descriptionController.text = widget.item!.description;
+      widget.item!.intrinsicResistance = intrinsicResistance;
       special = widget.item!.special;
     }
   }
@@ -55,15 +57,13 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: const Text("Éditer l'équipement"),
-      content: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Form(
-            key: formKey,
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                minWidth: 500,
-              ),
+      content: SizedBox(
+        width: 800,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Form(
+              key: formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -78,6 +78,23 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
                         onChanged: (bool v) {
                           setState(() {
                             unique = v;
+                            if(v) {
+                              dcController.text = 0.toString();
+                              tcController.text = 0.toString();
+                              villageScarcity = EquipmentScarcity.introuvable;
+                              villagePrice = 0;
+                              cityScarcity = EquipmentScarcity.introuvable;
+                              cityPrice = 0;
+                            }
+                            else {
+                              dcController.clear();
+                              tcController.clear();
+                              villageScarcity = null;
+                              villagePrice = null;
+                              cityScarcity = null;
+                              cityPrice = null;
+                              intrinsicResistance = null;
+                            }
                           });
                         },
                       ),
@@ -97,16 +114,13 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
-                    ],
-                  ),
-                  Row(
-                    spacing: 12.0,
-                    children: [
-                      Expanded(
+                      SizedBox(
+                        width: 120,
                         child: TextFormField(
                           controller: weightController,
                           decoration: InputDecoration(
-                            labelText: 'Poids (kg)',
+                            labelText: 'Poids',
+                            suffixText: 'kg',
                             border: OutlineInputBorder(),
                           ),
                           keyboardType: TextInputType.number,
@@ -122,8 +136,14 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
+                    ],
+                  ),
+                  Row(
+                    spacing: 12.0,
+                    children: [
                       Expanded(
                         child: TextFormField(
+                          enabled: !unique,
                           controller: dcController,
                           decoration: InputDecoration(
                             labelText: 'Difficulté de création',
@@ -144,6 +164,7 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
                       ),
                       Expanded(
                         child: TextFormField(
+                          enabled: !unique,
                           controller: tcController,
                           decoration: InputDecoration(
                             labelText: 'Temps de création',
@@ -162,33 +183,58 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
+                      if(unique)
+                        Expanded(
+                          child:
+                          DropdownMenuFormField<EquipmentQuality>(
+                            initialSelection: intrinsicResistance,
+                            requestFocusOnTap: true,
+                            label: const Text('Résistance'),
+                            inputDecorationTheme: const InputDecorationTheme(
+                              border: OutlineInputBorder(),
+                            ),
+                            expandedInsets: EdgeInsets.zero,
+                            dropdownMenuEntries: EquipmentQuality.values
+                                .map((EquipmentQuality s) => DropdownMenuEntry(value: s, label: s.title))
+                                .toList(),
+                            validator: (EquipmentQuality? s) {
+                              if(s == null) return 'Valeur manquante';
+                              return null;
+                            },
+                            onSelected: (EquipmentQuality? s) {
+                              if(s == null) return;
+                              intrinsicResistance = s;
+                            },
+                          ),
+                        )
                     ],
                   ),
-                  Row(
-                    spacing: 12.0,
-                    children: [
-                      Expanded(
-                        child: ScarcityEditWidget(
-                          type: 'Rareté (villages)',
-                          onScarcityChanged: (EquipmentScarcity s) =>
-                          villageScarcity = s,
-                          onPriceChanged: (int p) => villagePrice = p,
-                          scarcity: villageScarcity,
-                          price: villagePrice,
+                  if(!unique)
+                    Row(
+                      spacing: 12.0,
+                      children: [
+                        Expanded(
+                          child: ScarcityEditWidget(
+                            type: 'Rareté (villages)',
+                            onScarcityChanged: (EquipmentScarcity s) =>
+                              villageScarcity = s,
+                            onPriceChanged: (int p) => villagePrice = p,
+                            scarcity: villageScarcity,
+                            price: villagePrice,
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: ScarcityEditWidget(
-                          type: 'Rareté (villes)',
-                          onScarcityChanged: (EquipmentScarcity s) =>
-                          cityScarcity = s,
-                          onPriceChanged: (int p) => cityPrice = p,
-                          scarcity: cityScarcity,
-                          price: cityPrice,
+                        Expanded(
+                          child: ScarcityEditWidget(
+                            type: 'Rareté (villes)',
+                            onScarcityChanged: (EquipmentScarcity s) =>
+                              cityScarcity = s,
+                            onPriceChanged: (int p) => cityPrice = p,
+                            scarcity: cityScarcity,
+                            price: cityPrice,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
                   TextField(
                     controller: descriptionController,
                     decoration: InputDecoration(
@@ -235,9 +281,10 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
                   price: villagePrice!
                 ),
                 cityAvailability: EquipmentAvailability(
-                scarcity: cityScarcity!,
-                price: cityPrice!,
+                  scarcity: cityScarcity!,
+                  price: cityPrice!,
                 ),
+                intrinsicResistance: intrinsicResistance,
                 special: special,
               );
 
@@ -258,6 +305,7 @@ class _MiscGearEditDialogState extends State<MiscGearEditDialog> {
                 scarcity: cityScarcity!,
                 price: cityPrice!,
               );
+              widget.item!.intrinsicResistance = intrinsicResistance;
               widget.item!.special = special;
 
               Navigator.of(context).pop(widget.item!);

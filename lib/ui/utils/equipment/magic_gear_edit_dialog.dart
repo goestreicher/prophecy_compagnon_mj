@@ -1,34 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:prophecy_compagnon_mj/classes/equipment/equipment.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../../classes/entity/abilities.dart';
-import '../../../classes/entity/base.dart';
 import '../../../classes/equipment/enums.dart';
+import '../../../classes/equipment/equipment.dart';
+import '../../../classes/equipment/magic_gear.dart';
 import '../../../classes/object_source.dart';
-import '../../../classes/equipment/shield.dart';
-import '../attribute_based_calculator_edit_widget.dart';
-import 'equipment_requirements_edit_widget.dart';
 import 'scarcity_edit_widget.dart';
 import 'special_capabilities_edit_widget.dart';
 
-class ShieldEditDialog extends StatefulWidget {
-  const ShieldEditDialog({
-    super.key,
-    this.shield,
-  });
+class MagicGearEditDialog extends StatefulWidget {
+  const MagicGearEditDialog({ super.key, this.item });
 
-  final ShieldModel? shield;
+  final MagicGearModel? item;
 
   @override
-  State<ShieldEditDialog> createState() => _ShieldEditDialogState();
+  State<MagicGearEditDialog> createState() => _MagicGearEditDialogState();
 }
 
-class _ShieldEditDialogState extends State<ShieldEditDialog> {
+class _MagicGearEditDialogState extends State<MagicGearEditDialog> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   TextEditingController nameController = TextEditingController();
-  bool unique = false;
+  bool unique = true;
   TextEditingController weightController = TextEditingController();
   TextEditingController dcController = TextEditingController();
   TextEditingController tcController = TextEditingController();
@@ -37,10 +30,6 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
   EquipmentScarcity? cityScarcity;
   int? cityPrice;
   bool supportsMetal = false;
-  Map<Ability, int> requirements = <Ability, int>{};
-  TextEditingController protectionController = TextEditingController();
-  TextEditingController penaltyController = TextEditingController();
-  AttributeBasedCalculator damage = AttributeBasedCalculator(static: 0.0);
   TextEditingController descriptionController = TextEditingController();
   EquipmentQuality? intrinsicResistance;
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
@@ -49,24 +38,20 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
   void initState() {
     super.initState();
 
-    if(widget.shield != null) {
-      nameController.text = widget.shield!.name;
-      unique = widget.shield!.unique;
-      weightController.text = widget.shield!.weight.toStringAsFixed(2);
-      dcController.text = widget.shield!.creationDifficulty.toString();
-      tcController.text = widget.shield!.creationTime.toString();
-      villageScarcity = widget.shield!.villageAvailability.scarcity;
-      villagePrice = widget.shield!.villageAvailability.price;
-      cityScarcity = widget.shield!.cityAvailability.scarcity;
-      cityPrice = widget.shield!.cityAvailability.price;
-      supportsMetal = widget.shield!.supportsMetal;
-      requirements = widget.shield!.requirements;
-      protectionController.text = widget.shield!.protection.toString();
-      penaltyController.text = (-widget.shield!.penalty).toString();
-      damage = widget.shield!.damage;
-      descriptionController.text = widget.shield!.description;
-      intrinsicResistance = widget.shield!.intrinsicResistance;
-      special = widget.shield!.special;
+    if(widget.item != null) {
+      nameController.text = widget.item!.name;
+      unique = widget.item!.unique;
+      weightController.text = widget.item!.weight.toStringAsFixed(2);
+      dcController.text = widget.item!.creationDifficulty.toString();
+      tcController.text = widget.item!.creationTime.toString();
+      villageScarcity = widget.item!.villageAvailability.scarcity;
+      villagePrice = widget.item!.villageAvailability.price;
+      cityScarcity = widget.item!.cityAvailability.scarcity;
+      cityPrice = widget.item!.cityAvailability.price;
+      supportsMetal = widget.item!.supportsMetal;
+      descriptionController.text = widget.item!.description;
+      intrinsicResistance = widget.item!.intrinsicResistance;
+      special = widget.item!.special;
     }
   }
 
@@ -75,7 +60,7 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
     var theme = Theme.of(context);
 
     return AlertDialog(
-      title: const Text('Éditer le bouclier'),
+      title: const Text("Éditer l'objet"),
       content: SizedBox(
         width: 800,
         child: SingleChildScrollView(
@@ -278,67 +263,6 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                         ),
                       ],
                     ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 12.0,
-                    children: [
-                      Expanded(
-                        child: EquipmentRequirementsEditWidget(
-                          onChanged: (Map<Ability, int> reqs) {
-                            requirements = reqs;
-                          },
-                          requirements: requirements,
-                        ),
-                      ),
-                      Expanded(
-                        child: TextFormField(
-                          controller: protectionController,
-                          decoration: InputDecoration(
-                            labelText: 'Protection',
-                            border: OutlineInputBorder(),
-                          ),
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly
-                          ],
-                          validator: (String? value) {
-                            if(value == null || value.isEmpty) return 'Valeur manquante';
-                            int? input = int.tryParse(value);
-                            if(input == null) return 'Pas un nombre';
-                            return null;
-                          },
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                        ),
-                      ),
-                      Expanded(
-                        child: TextFormField(
-                          controller: penaltyController,
-                          decoration: InputDecoration(
-                            labelText: 'Pénalité',
-                            border: OutlineInputBorder(),
-                          ),
-                          keyboardType: TextInputType.number,
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly
-                          ],
-                          validator: (String? value) {
-                            if(value == null || value.isEmpty) return 'Valeur manquante';
-                            int? input = int.tryParse(value);
-                            if(input == null) return 'Pas un nombre';
-                            return null;
-                          },
-                          autovalidateMode: AutovalidateMode.onUserInteraction,
-                        ),
-                      ),
-                    ],
-                  ),
-                  AttributeBasedCalculatorEditWidget(
-                    title: 'Dégats',
-                    onChanged: (AttributeBasedCalculator d) {
-                      damage = d;
-                    },
-                    calculator: damage,
-                  ),
                   TextField(
                     controller: descriptionController,
                     decoration: InputDecoration(
@@ -370,8 +294,8 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
           onPressed: () async {
             if(!formKey.currentState!.validate()) return;
 
-            if(widget.shield == null) {
-              var shield = ShieldModel(
+            if(widget.item == null) {
+              var shield = MagicGearModel(
                 uuid: const Uuid().v4().toString(),
                 name: nameController.text,
                 unique: unique,
@@ -388,11 +312,6 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                   scarcity: cityScarcity!,
                   price: cityPrice!,
                 ),
-                requirements: requirements,
-                protection: int.parse(protectionController.text),
-                penalty: -int.parse(penaltyController.text),
-                damage: damage,
-                supportsMetal: supportsMetal,
                 intrinsicResistance: intrinsicResistance,
                 special: special,
               );
@@ -400,29 +319,24 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
               Navigator.of(context).pop(shield);
             }
             else {
-              widget.shield!.name = nameController.text;
-              widget.shield!.unique = unique;
-              widget.shield!.description = descriptionController.text;
-              widget.shield!.weight = double.parse(weightController.text);
-              widget.shield!.creationDifficulty = int.parse(dcController.text);
-              widget.shield!.creationTime = int.parse(tcController.text);
-              widget.shield!.villageAvailability = EquipmentAvailability(
+              widget.item!.name = nameController.text;
+              widget.item!.unique = unique;
+              widget.item!.description = descriptionController.text;
+              widget.item!.weight = double.parse(weightController.text);
+              widget.item!.creationDifficulty = int.parse(dcController.text);
+              widget.item!.creationTime = int.parse(tcController.text);
+              widget.item!.villageAvailability = EquipmentAvailability(
                 scarcity: villageScarcity!,
                 price: villagePrice!
               );
-              widget.shield!.cityAvailability = EquipmentAvailability(
+              widget.item!.cityAvailability = EquipmentAvailability(
                 scarcity: cityScarcity!,
                 price: cityPrice!,
               );
-              widget.shield!.requirements = requirements;
-              widget.shield!.protection = int.parse(protectionController.text);
-              widget.shield!.penalty = -int.parse(penaltyController.text);
-              widget.shield!.damage = damage;
-              widget.shield!.supportsMetal = supportsMetal;
-              widget.shield!.intrinsicResistance = intrinsicResistance;
-              widget.shield!.special = special;
+              widget.item!.intrinsicResistance = intrinsicResistance;
+              widget.item!.special = special;
 
-              Navigator.of(context).pop(widget.shield!);
+              Navigator.of(context).pop(widget.item!);
             }
           },
         )

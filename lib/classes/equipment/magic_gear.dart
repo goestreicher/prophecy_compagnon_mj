@@ -2,7 +2,6 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
-import '../entity/abilities.dart';
 import '../object_location.dart';
 import '../object_source.dart';
 import '../storage/default_assets_store.dart';
@@ -10,47 +9,47 @@ import '../storage/storable.dart';
 import 'enums.dart';
 import 'equipment.dart';
 
-part 'cloth.g.dart';
+part 'magic_gear.g.dart';
 
-class ClothModelStore extends JsonStoreAdapter<ClothModel> {
+class MagicGearModelStore extends JsonStoreAdapter<MagicGearModel> {
   @override
-  String storeCategory() => 'clothModels';
-
-  @override
-  String key(ClothModel object) => object.id;
+  String storeCategory() => 'magicGearModels';
 
   @override
-  Future<ClothModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
-      ClothModel.fromJson(j);
+  String key(MagicGearModel object) => object.id;
 
   @override
-  Future<Map<String, dynamic>> toJsonRepresentation(ClothModel object) async =>
+  Future<MagicGearModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
+      MagicGearModel.fromJson(j);
+
+  @override
+  Future<Map<String, dynamic>> toJsonRepresentation(MagicGearModel object) async =>
       object.toJson();
 }
 
-class _ClothFactoryImplementation implements EquipmentFactoryImplementation {
+class _MagicGearFactoryImplementation implements EquipmentFactoryImplementation {
   @override
   EquipmentModel? model(String id) {
-    return ClothModel.get(id);
+    return MagicGearModel.get(id);
   }
 
   @override
   Equipment? forge(String id, Map<String, dynamic>? json) {
-    var m = ClothModel.get(id);
+    var m = MagicGearModel.get(id);
     if(m == null) return null;
 
     if(json != null && json.containsKey('uuid')) {
-      return Cloth(json['uuid'], model: m);
+      return MagicGear(json['uuid'], model: m);
     }
     else {
-      return Cloth.create(model: m);
+      return MagicGear.create(model: m);
     }
   }
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class ClothModel extends EquipableItemModel {
-  factory ClothModel({
+class MagicGearModel extends EquipmentModel {
+  factory MagicGearModel({
     required String uuid,
     required String name,
     bool unique = false,
@@ -62,16 +61,13 @@ class ClothModel extends EquipableItemModel {
     required int creationTime,
     required EquipmentAvailability villageAvailability,
     required EquipmentAvailability cityAvailability,
-    required EquipableItemSlot slot,
-    int handiness = 0,
-    EquipableItemLayer layer = EquipableItemLayer.normal,
     bool supportsMetal = false,
     EquipmentQuality? intrinsicResistance,
     List<EquipmentSpecialCapability>? special,
   })
   {
-    var cm = _cache[uuid]
-        ?? ClothModel._create(
+    var gm = _cache[uuid]
+        ?? MagicGearModel._create(
           uuid: uuid,
           name: name,
           unique: unique,
@@ -83,18 +79,15 @@ class ClothModel extends EquipableItemModel {
           creationTime: creationTime,
           villageAvailability: villageAvailability,
           cityAvailability: cityAvailability,
-          slot: slot,
-          handiness: handiness,
-          layer: layer,
           supportsMetal: supportsMetal,
           intrinsicResistance: intrinsicResistance,
           special: special,
         );
-    _cache[cm.id] = cm;
-    return cm;
+    _cache[gm.id] = gm;
+    return gm;
   }
 
-  ClothModel._create({
+  MagicGearModel._create({
     required super.uuid,
     required super.name,
     super.unique,
@@ -106,31 +99,14 @@ class ClothModel extends EquipableItemModel {
     required super.creationTime,
     required super.villageAvailability,
     required super.cityAvailability,
-    required super.slot,
-    super.handiness = 0,
-    super.layer,
     super.supportsMetal,
     super.intrinsicResistance,
     super.special,
   });
 
   static Iterable<String> ids() => _cache.keys;
-  
-  static List<EquipableItemSlot> supportedBodyParts() => [
-      EquipableItemSlot.head,
-      EquipableItemSlot.body,
-      EquipableItemSlot.upperBody,
-      EquipableItemSlot.belt,
-      EquipableItemSlot.hands,
-      EquipableItemSlot.feet,
-    ];
 
-  static Iterable<String> idsByBodyPart(EquipableItemSlot bp) =>
-    _cache.values
-      .where((ClothModel m) => m.slot == bp)
-      .map((ClothModel m) => m.id);
-
-  static ClothModel? get(String id) => _cache[id];
+  static MagicGearModel? get(String id) => _cache[id];
 
   static Future<void> init() async {
     // ignore:unused_local_variable
@@ -139,76 +115,73 @@ class ClothModel extends EquipableItemModel {
   }
 
   static Future<void> loadAll() async {
-    EquipmentFactory.instance.registerFactory('cloth', _ClothFactoryImplementation());
+    EquipmentFactory.instance.registerFactory('magic-gear', _MagicGearFactoryImplementation());
 
     await _loadLock.synchronized(() async {
       var assetFiles = [
-        'clothes.json',
+        'magic-gear.json',
       ];
 
       for (var f in assetFiles) {
         for (var model in await loadJSONAssetObjectList(f)) {
           try {
             // ignore:unused_local_variable
-            var instance = ClothModel.fromJson(model);
+            var instance = MagicGearModel.fromJson(model);
             _cache[instance.id] = instance;
           } catch (e, stacktrace) {
-            print('Error loading cloth ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
+            print('Error loading magic gear ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
           }
         }
       }
 
-      for(var instance in (await ClothModelStore().getAll())) {
+      for(var instance in (await MagicGearModelStore().getAll())) {
         _cache[instance.id] = instance;
       }
     });
   }
 
-  static Future<void> saveLocalModel(ClothModel cloth) async {
-    await ClothModelStore().save(cloth);
-    _cache[cloth.id] = cloth;
+  static Future<void> saveLocalModel(MagicGearModel gear) async {
+    await MagicGearModelStore().save(gear);
+    _cache[gear.id] = gear;
   }
 
   static Future<void> deleteLocalModel(String id) async {
-    var cloth = await ClothModelStore().get(id);
-    if(cloth != null) await ClothModelStore().delete(cloth);
+    var gear = await MagicGearModelStore().get(id);
+    if(gear != null) await MagicGearModelStore().delete(gear);
     _cache.remove(id);
   }
 
-  static final Map<String, ClothModel> _cache = <String, ClothModel>{};
+  static final Map<String, MagicGearModel> _cache = <String, MagicGearModel>{};
   static final _loadLock = Lock();
 
-  static ClothModel fromJson(Map<String, dynamic> json) =>
-      _$ClothModelFromJson(json);
+  static MagicGearModel fromJson(Map<String, dynamic> json) =>
+      _$MagicGearModelFromJson(json);
 
   Map<String, dynamic> toJson() =>
-      _$ClothModelToJson(this);
+      _$MagicGearModelToJson(this);
 }
 
-class Cloth extends EquipableItem {
-  Cloth(this._uuid, {
+class MagicGear extends Equipment {
+  MagicGear(this._uuid, {
     required super.model,
     super.alias,
     super.quality,
     super.metal,
   });
 
-  Cloth.create({
+  MagicGear.create({
     required super.model,
     super.alias,
     super.quality,
     super.metal,
   })
-    : _uuid = const Uuid().v4().toString();
+      : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
 
   @override
-  String type() => 'cloth:${model.id}';
+  String type() => 'magic-gear:${model.id}';
 
   @override
   String uuid() => _uuid;
-
-  @override
-  Map<Ability, int> equipRequirements() => <Ability, int>{};
 }

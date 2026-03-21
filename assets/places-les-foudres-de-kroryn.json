@@ -615,5 +615,130 @@
       "military": null
     },
     "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "La fournaise du bout du monde et le Sanctuaire du Feu",
+    "uuid": "73957280-5899-4e89-8d7a-2d8f8dab4253",
+    "parent_id": "af49b28d-ec78-4c7d-969d-7b2254ccb58b",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Parfois, lorsque Kroryn est en proie à un épineux problème, à une réflexion intense ou à un besoin de solitude, il s’exile dans le volcan méridional situé au bout des Terres de Glace. Là, il reprend sa forme élémentaire et habite le cratère qui déploie alors une activité phénoménale. Flottant au-dessus du magma, le Sanctuaire du Feu défie 1es lois de la physique. Cette citadelle flotte au-dessus de la lave, amarrée au cratère par de fins arcs de pierre Seuls les plus endurcis des mages et la fine fleur des Élus peuvent prétendre y survivre, car c’est un véritable vortex élémentaire et ses conditions extrêmes ne sont supportables que par magie. Cette sorte de sélection naturelle fait que seuls des dragons et une cinquantaine d’humains en connaissent l’existence, le Sanctuaire n’étant qu’une légende. Aucune route ne mène ici, les visiteurs viennent soit à dos de dragon, soit par un Portail magique.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "La tombe d'Ensoryl",
+    "uuid": "c0c5cfc0-31e8-4774-bf47-42d6fa28b803",
+    "parent_id": "530f140e-d5f7-4bb0-bdf5-faf7307d856c",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "On raconte qu'un jour, le plus puissant des fils de Kroryn, Ensoryl, fut vaincu par des dragons corrompus quelque part dans le Royaume de Kali. Mais la détermination d’Ensoryl était telle qu’en mourant, le feu qui l’habitait fut libéré et consuma ses adversaires. Depuis ce temps, tout être corrompu qui approche de son cadavre est instantanément calciné.\n\nDes voyageurs égarés sur les terres de l’ombre peuvent avoir la chance de trouver le gigantesque squelette d’Ensoryl sur une colline surplombant un des nombreux marais de cette région. L’aura de protection s’étend sur une centaine de mètres autour de la dépouille. Toute créature corrompue qui s’aventure dans ce périmètre s’embrase et meurt brûlée en quelques secondes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Le temple du Feu Corrompu",
+    "uuid": "2c9940d2-d86b-445a-a2a0-7424dabfbcd7",
+    "parent_id": "477313a3-f473-4f11-b7a5-acf718cdc54a",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "On raconte qu’à l'aube des temps, au cours de la Bataille de Khyméra, lorsque Kroryn fit appel à toute sa puissance pour mettre fin aux hostilités, un Dragon de l’Ombre usa d’une puissante magie pour arracher au Seigneur du Feu une partie de son pouvoir. Malheureusement pour l’être de la nuit, il fut consumé par le feu qu’il avait libéré.\n\nCependant, cette infime partie de Kroryn fut oubliée sur le champ de bataille et dérobée par un Syrass nommé Sebnek. Ce dernier, fasciné par tant de puissance, trahit son maître Kalimsshar et quitta les terres draconiques. Il se réfugia au cœur d’une haute montagne du nord et, de millénaire en millénaire, apprit à maîtriser le Feu Corrompu par sa noire magie.\n\nSebnek vit encore et il est le Grand Prêtre de la Flamme Noire. Il est entouré de nombreux humains, corrompus ou non, qui adorent le Feu Corrompu. On dit même que certains dragons auraient rejoint cette dangereuse confrérie.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "La Fontaine de Feu",
+    "uuid": "9a0c0f7f-00fe-46e7-adab-966b56acf43c",
+    "parent_id": "d1d05a2e-9203-458f-b850-452bc11b0792",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Il existe quelque part au nord du Royaume de Kor, un petit vallon paisible au centre duquel on peut trouver la légendaire Fontaine de Feu. Tout combattant au cœur pur et respectueux des enseignements de Kroryn peut s’y plonger. Si l’individu est fidèle aux préceptes de sa caste, il sera purifié de toute trace de corruption dont il aurait été la victime bien involontaire. De plus, il sera nimbé d’une aura ardente pendant toute une journée. Cette aura lui assure une totale immunité contre la chaleur.\n\nTout individu ne respectant pas les enseignements de Kroryn est brûlé par un feu que rien ne peut éteindre.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "La montagne de Feu",
+    "uuid": "e0c234c2-0e65-40b1-a930-1e754da52eee",
+    "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans les temps anciens, on raconte que Kroryn s’envola au sommet de la plus haute montagne du monde et que, dans un accès de colère, il exhala son souffle brûlant tout en haut de la montagne. Sa colère était si grande que la pierre fondit et se creusa avant de s’enflammer. Rien ne peut éteindre ce brasier qui fait partie du Dragon. On dit aussi que les flammes qui dansent au sommet de ce pic rocheux sont conscientes, qu’elles seraient un fragment de l'esprit élémentaire de Kroryn. Certains avancent même l'hypothèse selon laquelle, si ce feu venait à être étouffé, cela pourrait avoir des conséquences dramatiques sur le Grand Dragon.\n\nLes flammes enchantées de la montagne de feu sont effectivement douées de raison. Elles sont une incroyable source de connaissance pour ceux qui veulent découvrir les secrets du monde. Les guerriers les plus valeureux et les plus farouches peuvent même recevoir le don de la flamme vivante mais uniquement s’ils survivent aux épreuves particulièrement périlleuses qui les attendent au sommet de la montagne. La flamme vivante apparaît sur l’arme du combattant dès que celui-ci combat.\n\nLa montagne est dangereuse et attire de nombreuses créatures liées au Feu. La plupart sont de farouches adversaires et des prédateurs particulièrement vicieux.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
   }
 ]

@@ -66,6 +66,7 @@ class JewelModel extends EquipableItemModel {
     int handiness = 0,
     EquipableItemLayer layer = EquipableItemLayer.normal,
     bool supportsMetal = false,
+    EquipmentQuality? intrinsicResistance,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -86,6 +87,7 @@ class JewelModel extends EquipableItemModel {
           handiness: handiness,
           layer: layer,
           supportsMetal: supportsMetal,
+          intrinsicResistance: intrinsicResistance,
           special: special,
         );
     _cache[jm.id] = jm;
@@ -108,6 +110,7 @@ class JewelModel extends EquipableItemModel {
     super.handiness = 0,
     super.layer,
     super.supportsMetal,
+    super.intrinsicResistance,
     super.special,
   });
 

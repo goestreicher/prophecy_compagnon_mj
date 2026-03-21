@@ -32,11 +32,17 @@ const _$EquipmentScarcityEnumMap = {
 
 EquipmentSpecialCapability _$EquipmentSpecialCapabilityFromJson(
   Map<String, dynamic> json,
-) => EquipmentSpecialCapability(description: json['description'] as String);
+) => EquipmentSpecialCapability(
+  title: json['title'] as String?,
+  description: json['description'] as String,
+);
 
 Map<String, dynamic> _$EquipmentSpecialCapabilityToJson(
   EquipmentSpecialCapability instance,
-) => <String, dynamic>{'description': instance.description};
+) => <String, dynamic>{
+  'title': ?instance.title,
+  'description': instance.description,
+};
 
 Map<String, dynamic> _$SupportsEquipableItemToJson(
   SupportsEquipableItem instance,

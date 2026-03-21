@@ -36,6 +36,10 @@ ArmorModel _$ArmorModelFromJson(Map<String, dynamic> json) => ArmorModel(
   protection: (json['protection'] as num).toInt(),
   penalty: (json['penalty'] as num).toInt(),
   supportsMetal: json['supports_metal'] as bool? ?? false,
+  intrinsicResistance: $enumDecodeNullable(
+    _$EquipmentQualityEnumMap,
+    json['intrinsic_resistance'],
+  ),
   special: (json['special'] as List<dynamic>?)
       ?.map(
         (e) => EquipmentSpecialCapability.fromJson(e as Map<String, dynamic>),
@@ -56,6 +60,8 @@ Map<String, dynamic> _$ArmorModelToJson(ArmorModel instance) =>
       'village_availability': instance.villageAvailability.toJson(),
       'city_availability': instance.cityAvailability.toJson(),
       'supports_metal': instance.supportsMetal,
+      'intrinsic_resistance':
+          ?_$EquipmentQualityEnumMap[instance.intrinsicResistance],
       'special': instance.special.map((e) => e.toJson()).toList(),
       'slot': _$EquipableItemSlotEnumMap[instance.slot]!,
       'handiness': instance.handiness,
@@ -111,4 +117,15 @@ const _$AbilityEnumMap = {
   Ability.volonte: 'volonte',
   Ability.perception: 'perception',
   Ability.empathie: 'empathie',
+};
+
+const _$EquipmentQualityEnumMap = {
+  EquipmentQuality.inferior: 'inferior',
+  EquipmentQuality.normal: 'normal',
+  EquipmentQuality.good: 'good',
+  EquipmentQuality.veryGood: 'veryGood',
+  EquipmentQuality.superior: 'superior',
+  EquipmentQuality.exceptional: 'exceptional',
+  EquipmentQuality.incredible: 'incredible',
+  EquipmentQuality.legendary: 'legendary',
 };

@@ -348,5 +348,36 @@
     "slot": "upperArm",
     "handiness": 0,
     "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Le Talisman Écarlate",
+    "uuid": "87b5077e-aac2-4d63-bb79-a9f2625582c9",
+    "unique": true,
+    "description": "Les dragons sont présents dans le monde des esprits. Conume tout être vivant, ils génèrent une énergie spirituelle qui donne naissance à des êtres éthérés totalement indépendants. De plus, un dragon qui trouve la mort projette une partie de son esprit dans cette autre dimension. Le Talisman permet d'ouvrir un passage entre notre monde et celui des esprits pour invoquer un dragon éthéré. Le Talisman Écarlate fut créé par une grande magicienne de Nenya, Alliah Sallava. Elle en a conçu un par race de dragons (sauf pour les Dragons de l’Ombre). On raconte même qu’elle aurait conçu d’autres talismans qui permettent de lier l’esprit d’un dragon mort à leur possesseur. Le Talisman Écarlate permet d’appeler un Dragon du Feu.\nLe Talisman Écarlate a une apparence tout à fait banale. Il ressemble à un pendentif de cuivre commun, dont la forme évoque une écaille.",
+    "weight": 0.2,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Invocation d'esprit draconique",
+        "description": "Le Talisman permet d’invoquer un puissant esprit draconique qui se manifeste l’espace d’un tour de combat. Le dragon invoqué dépend du type de talisman. Un Humaniste ne peut en aucun cas utiliser cet objet. Normalement, on ne peut invoquer un esprit draconique qu’une fois par an. Si on utilise ume deuxième fois le Talisman avant que ce délai soit écoulé, le dragon apparaît tout de même mais il risque de repartir avec celui qui l’a appelé. L'invocateur doit alors lancer un nombre de dés égal à son nombre de points de Tendance Dragon, contre une difficulté de 15. La difficulté est augmentée de 5 points par appel supplémentaire. S’il échoue, il est emporté et dévoré par le dragon, après que celui-ci a obéi à ses ordres pour la durée du tour."
+      }
+    ],
+    "slot": "neck",
+    "handiness": 0,
+    "layer": "normal"
   }
 ]

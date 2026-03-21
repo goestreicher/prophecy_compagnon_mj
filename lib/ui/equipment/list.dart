@@ -12,6 +12,7 @@ import '../../classes/equipment/cloth.dart';
 import '../../classes/equipment/enums.dart';
 import '../../classes/equipment/equipment.dart';
 import '../../classes/equipment/jewel.dart';
+import '../../classes/equipment/magic_gear.dart';
 import '../../classes/object_source.dart';
 import '../../classes/equipment/shield.dart';
 import '../../classes/equipment/weapon.dart';
@@ -21,6 +22,7 @@ import '../utils/equipment/cloth_edit_dialog.dart';
 import '../utils/equipment/jewel_edit_dialog.dart';
 import '../utils/equipment/list_filter.dart';
 import '../utils/equipment/list_filter_widget.dart';
+import '../utils/equipment/magic_gear_edit_dialog.dart';
 import '../utils/equipment/misc_gear_edit_dialog.dart';
 import '../utils/equipment/shield_edit_dialog.dart';
 import '../utils/equipment/weapon_edit_dialog.dart';
@@ -28,6 +30,7 @@ import '../utils/equipment/weapon_edit_dialog.dart';
 part 'list.armor.g.dart';
 part 'list.cloth.g.dart';
 part 'list.jewel.g.dart';
+part 'list.magic-gear.g.dart';
 part 'list.misc-gear.g.dart';
 part 'list.shield.g.dart';
 part 'list.weapon.g.dart';
@@ -79,6 +82,9 @@ class _EquipmentListPageState extends State<EquipmentListPage> {
                   filter: filter,
                 ),
                 _MiscGearDataContainer(
+                  filter: filter,
+                ),
+                _MagicGearDataContainer(
                   filter: filter,
                 ),
               ],
@@ -368,12 +374,64 @@ Map<_EquipmentTableCells, _DefaultTableCell> _createStandardEquipmentCells({
         spacing: 8.0,
         children: [
           for(var sp in equipment.special)
-            Text(sp.description),
+            _EquipmentSpecialTableCell(special: sp),
         ],
       )
   );
 
   return ret;
+}
+
+class _EquipmentSpecialTableCell extends StatelessWidget {
+  const _EquipmentSpecialTableCell({ required this.special });
+
+  final EquipmentSpecialCapability special;
+
+  @override
+  Widget build(BuildContext context) {
+    if(special.title == null) {
+      return Text(special.description);
+    }
+    else {
+      return Text.rich(
+        TextSpan(
+          children: [
+            TextSpan(text: '${special.title} '),
+            WidgetSpan(
+              child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      DismissibleDialog<void>(
+                        title: special.title!,
+                        content: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            minWidth: 400,
+                            maxWidth: 400,
+                            maxHeight: 400,
+                          ),
+                          child: SingleChildScrollView(
+                            child: Text(
+                              special.description,
+                            ),
+                          )
+                        )
+                      )
+                    );
+                  },
+                  child: Icon(
+                    Icons.info_outline,
+                    size: 18,
+                  ),
+                ),
+              )
+            ),
+          ]
+        )
+      );
+    }
+  }
 }
 
 Map<_EquipmentTableCells, _HeaderTableCell> _createStandardEquipmentHeaders({

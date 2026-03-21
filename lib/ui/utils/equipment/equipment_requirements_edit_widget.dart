@@ -46,61 +46,64 @@ class _EquipmentRequirementsEditWidgetState extends State<EquipmentRequirementsE
         constraints: const BoxConstraints(
           minWidth: 150,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 12.0,
-          children: [
-            if(requirements.isEmpty && !isAdding)
-              const Text('Aucun pré-requis'),
-            for(var a in requirements.keys)
-              Row(
-                children: [
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        requirements.remove(a);
-                        widget.onChanged(requirements);
-                      });
-                    },
-                    icon: const Icon(Icons.delete),
-                    iconSize: 18.0,
-                    padding: const EdgeInsets.all(4.0),
-                    constraints: const BoxConstraints(),
-                  ),
-                  Text(
-                    '${a.short}: ${requirements[a]!}'
-                  ),
-                ],
-              ),
-            if(isAdding)
-              _AddRequirementWidget(
-                excludedAbilities: requirements.keys.toList(),
-                onDone: (Ability a, int v) {
-                  requirements[a] = v;
-                  widget.onChanged(requirements);
-                  setState(() {
-                    isAdding = false;
-                  });
-                },
-                onCanceled: () {
-                  setState(() {
-                    isAdding = false;
-                  });
-                }
-              ),
-            if(!isAdding)
-              IconButton(
-                onPressed: () {
-                  setState(() {
-                    isAdding = true;
-                  });
-                },
-                icon: const Icon(Icons.add),
-                iconSize: 24.0,
-                padding: const EdgeInsets.all(4.0),
-                constraints: const BoxConstraints(),
-              ),
-          ],
+        child: Align(
+          alignment: AlignmentGeometry.topLeft,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 12.0,
+            children: [
+              if(requirements.isEmpty && !isAdding)
+                const Text('Aucun pré-requis'),
+              for(var a in requirements.keys)
+                Row(
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        setState(() {
+                          requirements.remove(a);
+                          widget.onChanged(requirements);
+                        });
+                      },
+                      icon: const Icon(Icons.delete),
+                      iconSize: 18.0,
+                      padding: const EdgeInsets.all(4.0),
+                      constraints: const BoxConstraints(),
+                    ),
+                    Text(
+                      '${a.short}: ${requirements[a]!}'
+                    ),
+                  ],
+                ),
+              if(isAdding)
+                _AddRequirementWidget(
+                  excludedAbilities: requirements.keys.toList(),
+                  onDone: (Ability a, int v) {
+                    requirements[a] = v;
+                    widget.onChanged(requirements);
+                    setState(() {
+                      isAdding = false;
+                    });
+                  },
+                  onCanceled: () {
+                    setState(() {
+                      isAdding = false;
+                    });
+                  }
+                ),
+              if(!isAdding)
+                IconButton(
+                  onPressed: () {
+                    setState(() {
+                      isAdding = true;
+                    });
+                  },
+                  icon: const Icon(Icons.add),
+                  iconSize: 24.0,
+                  padding: const EdgeInsets.all(4.0),
+                  constraints: const BoxConstraints(),
+                ),
+            ],
+          ),
         ),
       ),
     );

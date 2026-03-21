@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:prophecy_compagnon_mj/classes/equipment/enums.dart';
 import 'package:synchronized/synchronized.dart';
 import 'package:uuid/uuid.dart';
 
@@ -61,6 +62,7 @@ class MiscGearModel extends EquipmentModel {
     required EquipmentAvailability villageAvailability,
     required EquipmentAvailability cityAvailability,
     bool supportsMetal = false,
+    EquipmentQuality? intrinsicResistance,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -78,6 +80,7 @@ class MiscGearModel extends EquipmentModel {
           villageAvailability: villageAvailability,
           cityAvailability: cityAvailability,
           supportsMetal: supportsMetal,
+          intrinsicResistance: intrinsicResistance,
           special: special,
         );
     _cache[gm.id] = gm;
@@ -97,7 +100,8 @@ class MiscGearModel extends EquipmentModel {
     required super.villageAvailability,
     required super.cityAvailability,
     super.supportsMetal,
-    List<EquipmentSpecialCapability>? special,
+    super.intrinsicResistance,
+    super.special,
   });
 
   static Iterable<String> ids() => _cache.keys;

@@ -3,6 +3,7 @@ import "package:prophecy_compagnon_mj/classes/entity_instance.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/armor.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/cloth.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/jewel.dart";
+import "package:prophecy_compagnon_mj/classes/equipment/magic_gear.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/misc_gear.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/shield.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/weapon.dart";
@@ -48,6 +49,10 @@ void registerStoreAdapters() {
   DataStorage.registerStoreAdapter(
     JewelModelStore().storeCategory(),
     () => JewelModelStore(),
+  );
+  DataStorage.registerStoreAdapter(
+    MagicGearModelStore().storeCategory(),
+    () => MagicGearModelStore(),
   );
   DataStorage.registerStoreAdapter(
     MiscGearModelStore().storeCategory(),

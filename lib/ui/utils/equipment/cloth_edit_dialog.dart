@@ -36,6 +36,7 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
   int? cityPrice;
   EquipableItemLayer layer = EquipableItemLayer.normal;
   TextEditingController descriptionController = TextEditingController();
+  EquipmentQuality? intrinsicResistance;
   List<EquipmentSpecialCapability> special = <EquipmentSpecialCapability>[];
 
   @override
@@ -54,6 +55,7 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
       cityPrice = widget.cloth!.cityAvailability.price;
       layer = widget.cloth!.layer;
       descriptionController.text = widget.cloth!.description;
+      intrinsicResistance = widget.cloth!.intrinsicResistance;
       special = List.from(widget.cloth!.special);
     }
   }
@@ -62,15 +64,13 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
   Widget build(BuildContext context) {
     return AlertDialog(
       title: const Text("Éditer le vêtement"),
-      content: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Form(
-            key: formKey,
-            child: ConstrainedBox(
-              constraints: const BoxConstraints(
-                minWidth: 500,
-              ),
+      content: SizedBox(
+        width: 800,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Form(
+              key: formKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -85,6 +85,23 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
                         onChanged: (bool v) {
                           setState(() {
                             unique = v;
+                            if(v) {
+                              dcController.text = 0.toString();
+                              tcController.text = 0.toString();
+                              villageScarcity = EquipmentScarcity.introuvable;
+                              villagePrice = 0;
+                              cityScarcity = EquipmentScarcity.introuvable;
+                              cityPrice = 0;
+                            }
+                            else {
+                              dcController.clear();
+                              tcController.clear();
+                              villageScarcity = null;
+                              villagePrice = null;
+                              cityScarcity = null;
+                              cityPrice = null;
+                              intrinsicResistance = null;
+                            }
                           });
                         },
                       ),
@@ -104,16 +121,13 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
-                    ],
-                  ),
-                  Row(
-                    spacing: 12.0,
-                    children: [
-                      Expanded(
+                      SizedBox(
+                        width: 120,
                         child: TextFormField(
                           controller: weightController,
                           decoration: InputDecoration(
-                            labelText: 'Poids (kg)',
+                            labelText: 'Poids',
+                            suffixText: 'kg',
                             border: OutlineInputBorder(),
                           ),
                           keyboardType: TextInputType.number,
@@ -129,8 +143,14 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
+                    ],
+                  ),
+                  Row(
+                    spacing: 12.0,
+                    children: [
                       Expanded(
                         child: TextFormField(
+                          enabled: !unique,
                           controller: dcController,
                           decoration: InputDecoration(
                             labelText: 'Difficulté de création',
@@ -151,6 +171,7 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
                       ),
                       Expanded(
                         child: TextFormField(
+                          enabled: !unique,
                           controller: tcController,
                           decoration: InputDecoration(
                             labelText: 'Temps de création',
@@ -169,33 +190,58 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                         ),
                       ),
+                      if(unique)
+                        Expanded(
+                          child:
+                          DropdownMenuFormField<EquipmentQuality>(
+                            initialSelection: intrinsicResistance,
+                            requestFocusOnTap: true,
+                            label: const Text('Résistance'),
+                            inputDecorationTheme: const InputDecorationTheme(
+                              border: OutlineInputBorder(),
+                            ),
+                            expandedInsets: EdgeInsets.zero,
+                            dropdownMenuEntries: EquipmentQuality.values
+                                .map((EquipmentQuality s) => DropdownMenuEntry(value: s, label: s.title))
+                                .toList(),
+                            validator: (EquipmentQuality? s) {
+                              if(s == null) return 'Valeur manquante';
+                              return null;
+                            },
+                            onSelected: (EquipmentQuality? s) {
+                              if(s == null) return;
+                              intrinsicResistance = s;
+                            },
+                          ),
+                        )
                     ],
                   ),
-                  Row(
-                    spacing: 12.0,
-                    children: [
-                      Expanded(
-                        child: ScarcityEditWidget(
-                          type: 'Rareté (villages)',
-                          onScarcityChanged: (EquipmentScarcity s) =>
-                          villageScarcity = s,
-                          onPriceChanged: (int p) => villagePrice = p,
-                          scarcity: villageScarcity,
-                          price: villagePrice,
+                  if(!unique)
+                    Row(
+                      spacing: 12.0,
+                      children: [
+                        Expanded(
+                          child: ScarcityEditWidget(
+                            type: 'Rareté (villages)',
+                            onScarcityChanged: (EquipmentScarcity s) =>
+                              villageScarcity = s,
+                            onPriceChanged: (int p) => villagePrice = p,
+                            scarcity: villageScarcity,
+                            price: villagePrice,
+                          ),
                         ),
-                      ),
-                      Expanded(
-                        child: ScarcityEditWidget(
-                          type: 'Rareté (villes)',
-                          onScarcityChanged: (EquipmentScarcity s) =>
-                          cityScarcity = s,
-                          onPriceChanged: (int p) => cityPrice = p,
-                          scarcity: cityScarcity,
-                          price: cityPrice,
+                        Expanded(
+                          child: ScarcityEditWidget(
+                            type: 'Rareté (villes)',
+                            onScarcityChanged: (EquipmentScarcity s) =>
+                              cityScarcity = s,
+                            onPriceChanged: (int p) => cityPrice = p,
+                            scarcity: cityScarcity,
+                            price: cityPrice,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
                   TextField(
                     controller: descriptionController,
                     decoration: InputDecoration(
@@ -269,8 +315,8 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
                 creationDifficulty: int.parse(dcController.text),
                 creationTime: int.parse(tcController.text),
                 villageAvailability: EquipmentAvailability(
-                    scarcity: villageScarcity!,
-                    price: villagePrice!
+                  scarcity: villageScarcity!,
+                  price: villagePrice!
                 ),
                 cityAvailability: EquipmentAvailability(
                   scarcity: cityScarcity!,
@@ -278,6 +324,7 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
                 ),
                 slot: widget.type,
                 layer: layer,
+                intrinsicResistance: intrinsicResistance,
                 special: special,
               );
 
@@ -291,14 +338,15 @@ class _ClothEditDialogState extends State<ClothEditDialog> {
               widget.cloth!.creationDifficulty = int.parse(dcController.text);
               widget.cloth!.creationTime = int.parse(tcController.text);
               widget.cloth!.villageAvailability = EquipmentAvailability(
-                  scarcity: villageScarcity!,
-                  price: villagePrice!
+                scarcity: villageScarcity!,
+                price: villagePrice!
               );
               widget.cloth!.cityAvailability = EquipmentAvailability(
                 scarcity: cityScarcity!,
                 price: cityPrice!,
               );
               widget.cloth!.layer = layer;
+              widget.cloth!.intrinsicResistance = intrinsicResistance;
               widget.cloth!.special = special;
 
               Navigator.of(context).pop(widget.cloth!);

@@ -73,6 +73,7 @@ class ShieldModel extends EquipableItemModel {
     required int penalty,
     required AttributeBasedCalculator damage,
     bool supportsMetal = false,
+    EquipmentQuality? intrinsicResistance,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -97,6 +98,7 @@ class ShieldModel extends EquipableItemModel {
             penalty: penalty,
             damage: damage,
             supportsMetal: supportsMetal,
+            intrinsicResistance: intrinsicResistance,
             special: special,
         );
     _cache[sm.id] = sm;
@@ -123,6 +125,7 @@ class ShieldModel extends EquipableItemModel {
     required this.penalty,
     required this.damage,
     super.supportsMetal,
+    super.intrinsicResistance,
     super.special,
   });
 

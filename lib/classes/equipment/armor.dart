@@ -81,6 +81,7 @@ class ArmorModel extends EquipableItemModel {
     required int protection,
     required int penalty,
     bool supportsMetal = false,
+    EquipmentQuality? intrinsicResistance,
     List<EquipmentSpecialCapability>? special,
   })
   {
@@ -105,6 +106,7 @@ class ArmorModel extends EquipableItemModel {
           protection: protection,
           penalty: penalty,
           supportsMetal: supportsMetal,
+          intrinsicResistance: intrinsicResistance,
           special: special,
         );
     _cache[am.id] = am;
@@ -131,6 +133,7 @@ class ArmorModel extends EquipableItemModel {
     required this.protection,
     required this.penalty,
     super.supportsMetal,
+    super.intrinsicResistance,
     super.special,
   });
 

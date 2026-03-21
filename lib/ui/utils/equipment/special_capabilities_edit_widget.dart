@@ -115,6 +115,8 @@ class _SpecialCapabilityEditWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(12.0),
@@ -122,8 +124,20 @@ class _SpecialCapabilityEditWidget extends StatelessWidget {
           spacing: 16.0,
           children: [
             Expanded(
-              child: Text(
-                capability.description,
+              child: Column(
+                spacing: 4.0,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  if(capability.title != null)
+                    Text(
+                      capability.title!,
+                      style: theme.textTheme.bodyMedium!
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  Text(
+                    capability.description,
+                  ),
+                ],
               ),
             ),
             IconButton(
@@ -171,6 +185,7 @@ class _SpecialCapabilityEditDialog extends StatefulWidget {
 
 class _SpecialCapabilityEditDialogState extends State<_SpecialCapabilityEditDialog> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  final TextEditingController titleController = TextEditingController();
   final TextEditingController descriptionController = TextEditingController();
 
   @override
@@ -178,6 +193,7 @@ class _SpecialCapabilityEditDialogState extends State<_SpecialCapabilityEditDial
     super.initState();
 
     if(widget.source != null) {
+      titleController.text = widget.source!.title ?? '';
       descriptionController.text = widget.source!.description;
     }
   }
@@ -194,6 +210,13 @@ class _SpecialCapabilityEditDialogState extends State<_SpecialCapabilityEditDial
             mainAxisSize: MainAxisSize.min,
             spacing: 16.0,
             children: [
+              TextField(
+                controller: titleController,
+                decoration: InputDecoration(
+                  label: const Text('Titre'),
+                  border: const OutlineInputBorder(),
+                ),
+              ),
               TextFormField(
                 controller: descriptionController,
                 minLines: 3,
@@ -225,11 +248,17 @@ class _SpecialCapabilityEditDialogState extends State<_SpecialCapabilityEditDial
 
             if(widget.source == null) {
               capability = EquipmentSpecialCapability(
+                title: titleController.text.isEmpty
+                  ? null
+                  : titleController.text,
                 description: descriptionController.text,
               );
             }
             else {
               capability = widget.source!;
+              capability.title = titleController.text.isEmpty
+                ? null
+                : titleController.text;
               capability.description = descriptionController.text;
             }
 
