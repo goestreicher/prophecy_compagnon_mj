@@ -177,5 +177,194 @@
     },
     "supports_metal": false,
     "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Poudre de sommeil",
+    "uuid": "832ecb4a-3f00-4901-b786-bbca8435f9e0",
+    "unique": false,
+    "description": "On raconte que, de temps en temps, la frontière séparant la réalité du Monde des Rêves est tellement ténue que des fragments de songes apparaissent dans la réalité pendant un bref instant. Ces fragments ne laissent derrière eux qu’un peu de poussière cristalline que l’on appelle la Poudre de Sommeil.\nLa Poudre de Sommeil est un substance cristalline extrêmement légère. On ne peut en recueillir que quelques pincées à chaque endroit où un rêve a débordé dans la réalité. La Poudre scintille légèrement.",
+    "weight": 0.01,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Sommeil",
+        "description": "Cette Poudre peut être utilisée sur n'importe quelle créature vivante. Pour qu’elle agisse, il faut la saupoudrer au-dessus de la cible — ce qui est impossible en combat ou s’il y a du vent. Une pincée suffit, quelle que soit la taille de la créature. La cible affectée doit réussir un jet de Mental + Volonté contre un Difficulté de 25 ou s’endormir immédiatement pendant 1D10 heures. La victime fera toujours de beaux rêves et se réveillera détendue et entièrement reposée. On raconte que tout individu profitant du sommeil d’une victime de la poudre pour la tuer sera à jamais hanté par des cauchemars terrifiants."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Élixir du cauchemar",
+    "uuid": "1b2671b9-11cd-4fd7-8d36-c98963989624",
+    "unique": false,
+    "description": "Alors que les rêves débordant dans la réalité créent la poudre du sommeil, les cauchemars qui se matérialisent produisent un liquide suintant et noir. Ce liquide est appelé Élixir du cauchemar et ses effets sont terrifiants.\nL'Élixir est une matière visqueuse dont on peut recueillir quelques gouttes à l’endroit où se sont matérialisés des cauchemars - généralement 1d10/2 gouttes. La matière est totalement opaque et colle à tout ce qui entre en contact avec elle. On ne peut la ramasser et la stocker qu’avec des ustensiles faits de cristal.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Transport cauchemardesque",
+        "description": "Une seule goutte de ce puissant ingrédient transporte immédiatement une victime dans le Monde des Cauchemars, si elle échoue à un jet de Mental + Volonté contre une Difficulté de 30. Mais, contrairement à la Poudre de Rêve, la victime reste éveillée. Toute la réalité autour d'elle s’enchevêtre avec un univers de terreur. L'effet dure pendant 1D10 tours. Pendant ce temps, l'infortuné voit toutes ses difficultés augmentées de 10 points s’il tente d’agir. Il est terrorisé et ne raisonne plus sainement. Tout ce qui l’entoure — amis ou ennemis - est perçu comme une menace. Les gens lui paraîtront atrocement déformés et hostiles. De plus, le personnage devra effectuer à chaque tour un jet de Mental + Volonté contre une difficulté de 15. La difficulté est augmentée de 5 points par tour supplémentaire. S'il échoue, il cède à la terreur et fuit aveuglément pendant que dure l’effet. S'il échoue une deuxième fois à ce jet, il est frappé d’une phobie permanente - en rapport avec son cauchemar. S'il échoue une troisième fois, il sombre dans la folie. S'il échoue une quatrième fois, il tombe en catalepsie et demeure prisonnier du Monde des Cauchemars, jusqu’à ce que des voyageurs oniriques viennent le libérer."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Fragments de la Bête",
+    "uuid": "de3bd419-e9bb-4c9d-8ec3-8950573d6803",
+    "unique": false,
+    "description": "Lorsque Nenya, Heyra et Kalimsshar anéantirent la bête immonde qui sommeillait dans le Dragon de la Magie, celle-ci fut pulvérisée et ses fragments éparpillés dans tout l’univers onirique. Certains de ces fragments se matérialisèrent dans la réatité.\nLes fragments de la bête ont une forme très variable. Dès qu’un être vivant s'approche d’eux, ils prennent la forme de ce que cet être désire le plus. Ainsi, pour un charognard, ils ressembleront à une carcasse pourrie ; pour un guerrier, ils prendront l’apparence d’une belle arme, pour un forgeron, l’aspect d’un métal précieux, etc.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Appel de la Bête",
+        "description": "Dès qu’un personnage touche un fragment, il doit effectuer un jet de Mental + Empathie contre une Difficulté de 25. Les adeptes de Nenya et les Prodiges bénéficient en plus d’un nombre de dés égal à leur Tendance Dragon. Si le jet est réussi, le fragment disparaît comme s’il n’avait jamais existé. Si le jet échoue, l’objet convoité disparaît également mais le personnage perd immédiatement 1 point de Tendance - au choix. Le fragment s’est insinué en lui et commence à le dévorer de l’intérieur. Il commencera alors à ressentir une soif de destruction inextinguible. Le personnage deviendra irascible et plein de haine. À ses yeux, tout ne sera que laideur. Dès qu’il se battra, qu'il se disputera avec quelqu'un, qu’il se sentira contrarié, etc, il devra effectuer un autre jet de Mental + Empathie ou perdre un autre Point de Tendance.\nChaque Point de Tendance perdu se transforme en 2 points de Haine qui s'utilisent comme des Points de Tendance normaux. Si un personnage perd tous ses Points de Tendance, il est entièrement consumé par la Haine et se transforme en une machine de destruction aveugle. S'il est vaincu, il explose et génère de nouveaux fragments qui apparaissent un peu partout dans le monde.\nUn individu victime d’un fragment peut être soigné dans les Temples d’Heyra, de Nenya, de Kalimeshar ou par des Prodiges. Le processus est long, Il nécessite 1D10 semaines par point perdu. Au bout de ce temps, le personnage effectue un jet de Mental + Volonté contre une Difficulté de 25. En cas d'échec critique, le personnage perd 1 Point de Tendance qu’il ne peut récupérer et il ne pourra être guéri que par Nenya en personne — l’occasion d’une grande quête."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Orbe de Rêve",
+    "uuid": "9ecbf555-fb52-4918-a38c-cbfca6a62ed7",
+    "unique": false,
+    "description": "Les Orbes de Rêve furent inventés par des fidèles de Nenya, désireux de conserver des fragments de leurs songes. Ils parlèrent de leur idée au Grand Dragon du Rêve qui leur accorda le droit d’arracher à son royaume des Sphères de rêves. Les grands mages usèrent d’une puissante magie pour créer ces Orbes, mais certains, par négligence, emprisonnèrent des créatures oniriques se trouvant dans la zone de leur songe. Après avoir découvert ces abus, Nenya refusa de transmettre de nouveau ce pouvoir. Seuls quelques rares magiciens en détiennent encore le secret.\nOn raconte aussi que certains auraient utilisé ce don à des fins beaucoup moins avouables et que des cauchemars auraient également été placés dans des Orbes.\nUn Orbe est une sphère transparente d'1 à 10 centimètres de diamètre. Chaque centimètre correspond à une surface de 10 mètres dans le Monde du Rêve. On raconte qu’il existerait des Orbes beaucoup plus grands. On peut voir dans l'Orbe le rêve qui y est emprisonné.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Tranport onirique",
+        "description": "On peut s'endormir avec un Orbe en le serrant dans ses mains. Dans ce cas, l'esprit du personnage se retrouvera dans l’Orbe et bénéficiera du rêve qui s’y trouve. Généralement, ce sont toujours des songes particulièrement agréables. Mais ils agissent directement sur l’organisme de celui qui s’y projette. Ainsi, un personnage qui utilise un Orbe de Rêve dans lequel il peut boire à volonté ne sera plus assoiffé. Si, dans ce rêve un forgeron est présent, il pourra réparer son équipement ; s’il y a un guérisseur, il pourra soigner le détenteur de l’Orbe, etc. On ne peut utiliser un Orbe qu’une fois par jour. Le danger est que l’on ne peut se réveiller pendant huit heures à chaque utilisation. Pire, si un individu malveillant retire l’Orbe des mains du dormeur pendant son sommeil, l’esprit reste enfermé dans l’objet.\nIl arrive que certains Orbes renferment des secrets qu’un explorateur pourra découvrir. Certains mages ont même enfermé leur esprit dans ces Orbes et n’ont plus de corps. Tout esprit à l’intérieur d’un Orbe est à l'abri des cauchemars et il est totalement isolé des Mondes des Rêves."
+      },
+      {
+        "title": "Matérialisation onirique",
+        "description": "Un Orbe peut également être brisé - certains mages utilisent la magie pour les rendre indestructibles. Un Orbe brisé libère le rêve qu’il contient, et ce rêve se superpose à la réalité pendant 8 heures. Au bout de ce temps, le rêve se dissipe et disparaît à tout jamais. Pendant que le rêve est actif, l’environnement et les personnages oniriques deviennent réels - l'environnement onirique remplace l’environnement réel. L'effet s'applique dans un diamètre de 10 à 100 mètres, selon la taille de l’Orbe. Tout ce qui se trouve à l'extérieur peut y pénétrer, mais sera soumis aux nouvelles conditions. Tout ce qui se trouve à l’intérieur tire bénéfice de ce nouvel environnement que l’on peut quitter en franchissant le seuil du rêve.\nCertains personnages ou créatures pris dans un Orbe peuvent y avoir été emprisonnés de manière involontaire. S'il s’agit de l’esprit d’un rêveur, au moment où l’Orbe est brisé, son esprit regagne son corps si celui-ci est encore en vie. Sinon, il meurt et rejoint le monde spirituel. S’il s’agit d’une créature onirique, elle regagne immédiatement le Monde des Rêves."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Instruments de Nenya",
+    "uuid": "31bbe2a0-d9c9-4170-a95b-e620e6d84008",
+    "unique": false,
+    "description": "Onyr est connue et réputée pour regrouper les plus grands luthiers de tout le Royaume de Kor. En général, il s’agit de mages qui enchantent à petites doses tous leurs instruments de musique. Ainsi, les artistes peuvent-ils sortir les sons les plus purs et les plus justes. Ces petits bijoux de lutherie sont onéreux, vingt fois le prix normal, mais donnent un bonus de 5 à ceux qui les utilisent.",
+    "weight": 1,
+    "creation_difficulty": 25,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 300
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 300
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Bonus de +5"
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Le miroir aux illusions perdues",
+    "uuid": "2ce52a83-78ff-4948-9be4-475c5e57cd44",
+    "unique": false,
+    "description": "Ce miroir est en acier car la réaction des gens qui regardent dedans est parfois brutale. Cet objet de foire vous permet de vous admirer tel que vous désireriez être. Il n’a aucune utilité autre mais remporte un certain succès dans les marchés.",
+    "weight": 2,
+    "creation_difficulty": 25,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "La roue à vent",
+    "uuid": "6e46162b-9297-4d35-8d7f-47e6bc3348f9",
+    "unique": false,
+    "description": "Cet objet est le premier cadeau que Szyl fit à sa mère. C’est une roue à vent musicale. Les artisans de Kezyr ont tenté plusieurs fois de la reproduire, mais ce sont les mages de Nenya qui ont le secret de sa fabrication. La roue est composée de clochettes, de cordes pincées ou frappées, de percussions, de cloches tubulaires et elle réagit au moindre souffle. Le vent, toujours différent, permet d’obtenir des mélodies toujours harmonieuses et variées. Les rois aiment à montrer qu’ils possèdent une roue à vent. Les sages qui en possèdent une la cache de peur de se la faire voler.",
+    "weight": 5,
+    "creation_difficulty": 25,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": []
   }
 ]

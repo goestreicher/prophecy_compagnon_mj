@@ -367,5 +367,155 @@
       "military": null
     },
     "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Les Arches du Rêve",
+    "uuid": "4f86a08c-12a9-4b36-b6c8-cb3b84854441",
+    "parent_id": "aa2232b8-03e0-4775-8fad-f0b4d27d3484",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au plus profond du temple de Nenya se trouve une grande salle voûtée dans laquelle se dressent les quatre Arches du Rêve. Ces Arches sont aussi vieilles que la création des hommes par les Dragons. Elles permettent d’accéder physiquement aux mondes oniriques. Il existerait d’autres arches dans des endroits isolés et difficiles d’accès. Celles du Temple de Nenya à Onyr sont gardées par de puissants Mages de la Sphère de Magie. Les gardiens ne craignent pas trop ceux qui voudraient utiliser ces Arches pour plonger dans les songes ; en revanche, ils redoutent particulièrement les créatures qui pourraient en surgir. C’est par ces Arches que les mages de la ville peuvent, en cas de besoin, appeler la Légion des Soldats Oniriques.\n\nLes Soldats Oniriques sont des songes qui peuvent prendre pied dans la réalité pendant un certain temps. Ils puisent leur énergie directement dans tous les mages qui effectuent l’invocation. Leur nombre dépend donc du nombre de magiciens engagés dans le rituel — en général, un magicien peut faire apparaître dix Soldats. Ils sont immatériels et ne peuvent en aucun cas communiquer. En revanche, leurs attaques ont des effets tout ce qu’il y a de plus réels. Ils ne sont vulnérables qu’à la magie ou aux armes forgées à partir de fragments de rêves ou de cauchemars.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Les Tours de l'Improbabilité",
+    "uuid": "9e376c4a-45cd-4db7-ac04-366b7449fa4e",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Il existe de par le monde d’étranges tours faites de marbre blanc et noir, où réalité et rêve se mêlent. Ces tours sont rares. Elles apparaissent et disparaissent sans aucune logique. À travers elles, on peut pénétrer dans le monde des rêves ou en sortir, mais uniquement après avoir surmonté les nombreux obstacles des tours.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Les tavernes des poètes",
+    "uuid": "93fc7a5f-7515-4afe-9436-37ce578445d0",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans de nombreuses villes, on peut trouver une Taverne des Poètes. Ces endroits sont, dit-on, bénis par Szyl et Nenya. On dit même que les deux Grands Dragons s’y rendraient en personne de temps en temps. Non seulement ces tavernes offrent des spectacles et de la nourriture de très grande qualité mais, en plus, on y dort particulièrement bien.\n\nToute malveillance semble y être impossible. Les voleurs échouent systématiquement quand ils y tentent un larcin et les esprits échauffés se calment très rapidement comme par magie.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Les Sanctuaires des rêveurs",
+    "uuid": "e200d224-af3d-4118-b46e-e3aa68cef923",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ces Sanctuaires, tenus par des fidèles de Nenya, fleurissent un peu partout dans le Royaume de Kor. On s’y rend pour dormir et partager les rêves des autres visiteurs. De plus, des mages de Nenya s’assurent qu'aucun cauchemar ne vienne perturber les songes des invités. Pour ceux qui ont des troubles du sommeil, on propose certains produits favorisant l’état de somnolence comme les célèbres perles d’Onyr qui permettent de s’endormir instantanément. Un individu hanté par des cauchemars peut y trouver le repos.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Les Dômes de la Grande Terreur",
+    "uuid": "1a851504-50fc-420d-8a8a-0d0f25ad93d3",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans certains endroits reculés, apparaissent ces étranges Dômes noirs. On peut y pénétrer sans contrainte en franchissant le seuil de ténèbres délimitant le Dôme. Ce qui se trouve à l’intérieur, personne ne le sait. On pense qu’il s’agit de zones de cauchemars. La plupart de ceux qui ont tenté l’aventure n’en sont jamais ressortis.\n\nLes quelques rares individus qui sont réapparus sont devenus complètement fous. Ils vivent prostrés en murmurant des paroles inintelligibles et leurs traits sont déformés par la terreur. On n’a jamais pu en tirer quoi que ce soit.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Les failles du rêve et des esprits",
+    "uuid": "7a8e8a8f-3938-4434-90d1-161b41a2ba79",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Un peu partout dans le monde, il peut se produire une faille entre le rêve — ou le cauchemar — et la réalité. Les effets d'une faille sont variables. Il peut s’en déverser des songes ou, au contraire, la réalité peut pénétrer dans le domaine onirique. Ces failles permettent également de passer d’un univers à l’autre. Mais il existe certaines failles qui donnent directement dans le monde des esprits. Le problème, c’est qu’il est impossible de faire la différence entre une faille de rêve, une faille de cauchemar et une faille spirituelle.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
   }
 ]

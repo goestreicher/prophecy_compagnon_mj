@@ -17,9 +17,9 @@ part 'place.g.dart';
 enum PlaceType {
   monde(title: 'Monde', sort: -1),
   continent(title: 'Continent', sort: 0),
-  nation(title: 'Nation', sort: 1),
-  region(title: 'Région', sort: 2),
-  lieuUnique(title: 'Lieu unique', sort: 4),
+  region(title: 'Région', sort: 1),
+  lieuUnique(title: 'Lieu unique', sort: 2),
+  nation(title: 'Nation', sort: 3),
   citeEtat(title: 'Cité-État', sort: 5),
   capitale(title: 'Capitale', sort: 6),
   archiduche(title: 'Archiduché', sort: 10),

@@ -379,5 +379,41 @@
     "slot": "neck",
     "handiness": 0,
     "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Le Talisman Éthéré",
+    "uuid": "5c12ed79-1d6d-4499-b6b6-7c62a707ced0",
+    "unique": true,
+    "description": "Alliah Sallava, une grande magicienne de Nenya, créa il y a des siècles plusieurs talismans permettant d’ouvrir un passage entre le monde réel et celui des esprits. Par ce passage, on peut appeler un esprit draconique selon le type de talisman. Mais celui qu’elle conçut pour Nenya est de loin le plus puissant.\nLe Talisman Éthéré est un petit disque de cuivre fixé à une lanière de cheveux tressés. Il ne porte aucun symbole mais dégage une légère lueur, perceptible la nuit.",
+    "weight": 0.2,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": true,
+    "intrinsic_resistance": "exceptional",
+    "special": [
+      {
+        "title": "Invocation d'esprit draconique (monde réel)",
+        "description": "Dans le monde réel, le Talisman permet, une fois par mois, d’invoquer un esprit draconique qui restera pendant un tour, sauf si le personnage est un fidèle de Nenya. Dans ce cas, il restera pendant un nombre de tours égal à la Tendance Dragon du personnage. Si on utilise ce talisman plus d’une fois par mois, le dragon apparaît mais l’invocateur doit lancer un nombre de dés égal à la valeur de sa Tendance Dragon contre une Difficulté de 15 — de 10 pour un fidèle de Nenya. La difficulté est augmentée de 5 points par appel supplémentaire. S’il échoue, il est emporté dans le Monde des Rêves, après que le dragon a obéi à ses ordres pour la durée du tour. Un personnage emporté dans le Monde des Rêves sombre immédiatement dans le coma et ne peut en sortir que si des aventuriers viennent le chercher dans le domaine onirique."
+      },
+      {
+        "title": "Invocation d'esprit draconique (monde onirique)",
+        "description": "Le possesseur de ce talisman peut également en faire usage quand il rêve, puisqu'il possède aussi l’objet quand il s’endort. Dans l’univers onirique, il peut, chaque année, faire appel au dragon un nombre de fois égal à sa Tendance Dragon. La créature restera avec lui pendant un nombre de tours égal à deux fois sa Tendance Dragon."
+      }
+    ],
+    "slot": "neck",
+    "handiness": 0,
+    "layer": "normal"
   }
 ]

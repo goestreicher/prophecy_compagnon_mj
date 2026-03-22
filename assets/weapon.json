@@ -3936,5 +3936,66 @@
       "add": 0,
       "dice": 0
     }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Épée des Songes",
+    "uuid": "9e7971bf-c668-4868-bca9-9f33b147a49a",
+    "unique": false,
+    "description": "Les Épées des Songes furent forgées pendant les Grandes Guerres, par des artisans mages. Les Mondes des Rêves étaient alors particulièrement perturbés par les cauchemars engendrés par le mal rongeant le Grand Dragon de la Magie. Ces mages ramenèrent de leurs songes des fragments de rêve avec lesquels ils firent ces Épées.\nToutes les Épées des Songes sont des épées longues, légèrement translucides et d’une très grande beauté. Elles sont solides, quoi que très légères - environ 1 kg. Cependant, quand elles sont utilisées dans le monde réel, leurs lames traversent la chair sans l’endommager, mais elles affectent normalement les matières inertes. Ainsi, on peut tout à fait parer une Épée des Songes et les armures protègent de leurs effets.",
+    "weight": 1,
+    "creation_difficulty": 25,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Inconscience (monde réel)",
+        "description": "Dans la réalité, les dommages qu'elles infligent n’affectent pas la créature touchée. En revanche, ces dommages sont la difficulté contre laquelle la victime doit réussir un jet de Mental + Volonté si elle ne veut pas sombrer dans l’inconscience pendant 1d10 tours."
+      },
+      {
+        "description": "Dans le Monde des Rêves, tout rêveur vaincu en songe par une telle arme ne meurt pas mais se réveille brutalement."
+      }
+    ],
+    "slot": "hands",
+    "handiness": 1,
+    "layer": "normal",
+    "skill": "armesTranchantes",
+    "requirements": {},
+    "initiative": {
+      "contact": 2,
+      "melee": -2
+    },
+    "damage": {
+      "static": null,
+      "ability": "force",
+      "multiply": 2,
+      "add": 11,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.2,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    },
+    "range_max": {
+      "static": 1.2,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    }
   }
 ]
