@@ -366,5 +366,303 @@
     },
     "supports_metal": false,
     "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les larmes d’Alaïssyndil",
+    "uuid": "026ed700-2e1f-468e-91f4-69968ba3a926",
+    "unique": false,
+    "description": "On raconte qu’Heyra recueillit un être fabuleux, Alaïssyndil, fille d’une étoile. Quand cette dernière voulut créer la vie, le Grand Dragon de la Nature lui refusa ce droit et Alaïssyndil pleura toutes les larmes de son corps. Ces larmes formèrent le Lac de la Vie , mais certaines s’envolèrent et retombèrent sur les terres du Royaume de Kor. On dit que ces larmes ont des propriétés magiques incroyables.\nLes larmes d’Alaïssyndil ont l’apparence de tout petits joyaux d’une pureté sans pareille. Ces joyaux sont solides mais, quand on les place sur la langue d’un être vivant, ils fondent. Ils ont un goût légèrement salé. Une larme se liquéfie quand elle est tenue par la pointe au-dessus d’une surface quelconque. La goutte tombe sur cette surface et provoque un changement radical. Inutile de dire que ces larmes sont extrêmement rares.",
+    "weight": 0.01,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Soin",
+        "description": "Une larme guérit n’importe quelle maladie, blessure ou corruption. Un individu rongé par une larve de perversion est automatiquement soigné. Toute malédiction est balayée par le pouvoir de la larme, quelle que soit son origine. Une personne ingérant une larme se sent purifiée et meilleure. Elle gagne 1 point de Présence. De plus, elle sera irrésistiblement attirée par ce qui est pur et beau. Tout acte visant à détruire ou à enlaidir lui paraîtra absurde. Tout personnage ingérant une de ces larmes perd 1 point de Tendance Fatalité, Homme ou Dragon (au choix) qu’il ne peut pas récupérer de manière normale.\nSeules certaines cérémonies spéciales — humanistes ou fatalistes — permettent à l'individu de recouvrer son point perdu."
+      },
+      {
+        "title": "Purification",
+        "description": "Si on laisse tomber la larme au-dessus d’une terre aride, celle-ci deviendra fertile ; au-dessus d’un lac empoisonné, elle purifiera ses eaux ; sur le flanc d’une montagne, elle fera jaillir une source et la végétation fleurira tout autour ; dans un désert, elle créera une oasis, etc. Contre un être de perversion, une larme est une arme dévastatrice.\nContre des humains au service de Kalimsshar, la larme inflige 10 + 1d10 points de dommages par point de Tendance Fatalité de la victime.\nContre des cauchemars, des bêtes immondes, des Dragons de l’Ombre ou d’autres créatures incarnant la perversion, la larme inflige le 1D10 x 10 points de dommages. Une larme ne peut être utilisée qu’une seule fois."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les élixirs de métamorphose",
+    "uuid": "3a49ea14-0d18-4ed4-a1f5-e4f4be134781",
+    "unique": false,
+    "description": "Les Fatalistes et les Humanistes ont toujours eu beaucoup de mal à s’infiltrer sur les terres de Heyra - tromper la nature n’est pas chose aisée ! De puissants sorciers fatalistes conçurent donc un élixir permettant d’adopter pendant une courte période la forme d’un animal. Pour que la transformation passe inaperçue, il était nécessaire que le sujet devienne le plus animal possible. L'élixir fut d’une telle efficacité que nombre de groupes, pas forcément des Humanistes ou des Fatalistes, en ont découvert le secret.\nUn élixir est fabriqué à partir du sang d’un animal fraîchement tué. Il a donc une teinte rouge et est assez sirupeux. Le sang est mélangé à différentes plantes et à un fragment d’écaille de dragon.",
+    "weight": 0.01,
+    "creation_difficulty": 25,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Transformation animale",
+        "description": "Un persomage ingurgitant cet élixir adopte la forme d’un animal précis — dépendant du type d’élixir. La transformation est doulourense et dure 1d10 x 10 tours. Pendant tout ce temps, l'individu souffre horriblement et ne peut rien faire. Une fois la transformation accomplie, le personnage est tellement proche de l’animal imité qu’il perd presque la totalité de son Intelligence. Il ne se souvient que de son objectif - se rendre à tel endroit, par exemple - et peut encore reconnaître ses amis proches ou ses ennemis. Pour tout le reste, il se comporte comme un animal.\nLa transformation dure 1 heure. Au bout de ce temps, le personnage doit faire un jet de Mental + Volonté contre une Difficulté de 15. S’il échoue, il perd un peu plus de son humanité et reste sous sa forme animale. Il pourra tenter de se transformer de nouveau au bout de 1D10 heures mais, cette fois, la Difficulté sera de 20. À chaque échec, il faut attendre 1d10 heures avant de relancer un jet et la difficulté augmente à chaque fois de 5 points. Quand un personnage réussit à retrouver sa forme normale, la première fois - et uniquement la première fois - qu’il croisera la route d'animaux dont il a adopté l’apparence, il devra effectuer un nouveau jet ou être attiré par l’appel de la nature. Si son jet est un échec critique, il reprend définitivement sa forme animale. S'il s’agit d’un échec simple, son comportement sera proche de celui de l’animal. S’il réussit son jet, il ne ressent qu’une légère nostalgie."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les statuettes des esprits animaux",
+    "uuid": "fb8ac608-4d9a-4bc7-8ce2-9ca2942e0755",
+    "unique": false,
+    "description": "Dans de nombreuses tribus primitives, on a découvert que les sorciers fabriquaient d’étranges statuettes capables d’abriter l’esprit des animaux. Le secret de ces statuettes est connu de très peu de gens, mais on sait que quelques Prodiges et certains sorciers fatalistes ont réussi à en fabriquer.\nCes statuettes sont souvent en bois, mais on peut en fabriquer dans d’autres matières. Plus la matière est noble, plus l’esprit attiré sera puissant. Une statuette a la forme du type d’esprit animal qu’elle veut héberger.",
+    "weight": 0.5,
+    "creation_difficulty": 25,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Réveil de l'esprit",
+        "description": "Quand une statuette est fabriquée, il faut effectuer une cérémonie très longue et très complexe pour attirer un esprit animal et l’y enfermer. Il est à noter que les quelques rares Prodiges à en avoir utilisé n’ont pas besoin d'effectuer cette cérémonie. Ils se contentent de demander à un esprit animal d'intervenir. Les Prodiges considèrent que le fait d’emprisonner un esprit est un crime épouvantable. Une fois un esprit animal emprisonné, le détenteur de la statuette peut le forcer à animer la sculpture. La sculpture grandit alors jusqu’à atteindre la taille normale de l’animal.\nCe dernier aura toutes les caractéristiques communes à son espèce mais sera fait de la matière utilisée pour la statuette. Il bénéficiera donc d’une protection équivalente. La créature obéit à celui qui l’a animée pendant 1D10 tours. Après, s’il s’agit d’un esprit emprisonné, ce dernier peut tenter de fuir sa prison en réussissant un jet de Mental + Volonté contre une Difficulté de 15. Certains sorciers peuvent renforcer la prison grâce à des enchantements, ce qui augmente la difficulté pour ce jet. Certaines statues sont beaucoup plus grandes et permettent d’animer des animaux gigantesques. On sait que de telles statues sont parfois utilisées pour garder des lieux saints dans le domaine de Heyra. Les esprits ne sont pas emprisonnés mais peuvent s’y incarner en cas de danger."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les encens néfastes",
+    "uuid": "4c60757a-1174-4ed7-af8f-97d0222fb11b",
+    "unique": false,
+    "description": "Les Humanistes, pour lutter contre les forces de la nature, fabriquèrent toute une série d’encens permettant de tenir à distance les créatures sauvages. Ces encens ont été élaborés à l’aide de méthodes scientifiques et non pas magiques.\nCe sont des petits bâtonnets d’encens d’apparence tout à fait commune. Ils ont tous une odeur différente qui est rarement agréable.",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 50
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Repoussoir",
+        "description": "Chaque type d’encens permet de tenir en respect une espèce de créatures. Si les créatures sont dirigées par un être intelligent, elles hésiteront à attaquer mais obéiront tout de même à leur maître. Mais, à chaque tour, elles devront réussir un jet de Mental + Volonté contre une Difficulté de 15 + 5 par tour ou fuir la zone. Un encens s'utilise dans un encensoir qui affecte toute la zone dans un rayon d’1 mètre. On peut le faire tourner autour de soi pour augmenter la diffusion de la fumée. L'effet affectera alors une zone de trois mètres de rayon. Un bâton d’encens met une heure à se consumer."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les Cristaux d'Humanisme",
+    "uuid": "be9e5dd4-2104-44dd-b9cf-5830f70ae644",
+    "unique": false,
+    "description": "Ces Cristaux furent découverts par des Humanistes dans ce qu’ils ont appelé des Débris d'Étoile. Personne, à part eux, ne sait ce qu’ils entendent par là. Ces Cristaux sont extrêmement rares et leurs effets sur la nature, particulièrement étonnants. En effet, les animaux, les plantes et même l’eau s’écartent d’un cristal. Leur pouvoir est tel qu’il affecte même les Dragons de la Nature.\nCe sont de petits cristaux luminescents de toutes les tailles et de toutes les formes.",
+    "weight": 0.01,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Repoussoir de la Nature",
+        "description": "Ces puissants objets magiques font reculer la nature tout autour d’eux quand on les sort de leur gaine de cuir, seule matière capable de neutraliser leurs pouvoirs. Leur effet agit dans une sphère de deux mètres tout autour de celui qui les brandit. L'eau s’écarte, l’herbe et les plantes sont arrachées. Les arbres ne sont pas affectés. De plus, aucun animal ne peut pénétrer dans la sphère. Les Dragons de la Nature, et uniquement eux, sont tenus en respect. Toute attaque, magique ou pas, liée à la nature voit ses effets réduits de moitié contre un personnage protégé par un Cristal. Les effets des cristaux ne durent que huit heures. Quand un cristal a été utilisé pendant huit heures, il est terne et n’a plus aucun pouvoir jusqu’à ce qu’il soit régénéré. On raconte que, pour cela, il doit être mis en contact avec le cœur d’une Étoile."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les graines de fertilité",
+    "uuid": "91e3334f-51fb-43ff-99ac-76660b78b979",
+    "unique": false,
+    "description": "Les premières graines de fertilité furent offertes par Heyra aux communautés humaines qui rencontraient des difficultés pour cultiver leurs champs. Elles sont enchantées par la nature elle-même. Les Prodiges jardiniers sont aujourd’hui détenteurs du secret de fabrication de ces précieuses graines.\nCes graines ont une apparence tout à fait normale, mais il n’est pas rare qu’elles bougent toutes seules quand on les tient dans la main.",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Croissance végétale",
+        "description": "Quand on enterre une de ces graines, elle donne naissance en 1D10 tours à un arbre adulte, à un parterre de fleurs couvrant cent mètres carrés, un épais taillis de cent mètres carrés ou un mur de ronces de dix mètres de large, de deux mètres de haut et d’un mètre d’épaisseur. Elle peut également fertiliser n’importe quel champ d’un hectare. Chaque type de graine déclenche un effet précis. Lancée contre une créature, la graine fait naître sous ses pieds des ronces et des lianes qui ligotent la victime en un tour, On considère que les plantes ont une force de 12. L'effet dure pendant 1D10 x 10 tours ou jusqu’à ce que celui qui a lancé la graine décide d’annuler son effet. Ce dernier peut également ordonner aux plantes d’écraser la victime. Les dommages infligés sont égaux à la Force des plantes + 1."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "La Corne de la Bête",
+    "uuid": "b0e75f97-c8ad-46bc-bf95-24f2ccf1a3ec",
+    "unique": true,
+    "description": "Cet objet magique des plus terrifiants fut créé par des Sorciers Obscurs peu de temps après que Nenya eut vaincu la Bête qui sommeillait en elle. La Corne fut conçue à partir de plusieurs fragments de la Bête. Cette Corne maléfique n’a été utilisée qu’une fois, contre des fidèles de Heyra, au cours de la Bataille du Bois Doré. Elle fit jaillir de terre une créature ancestrale, une abomination terrifiante vaincue par Heyra dans le passé.\nC’est une corne torve, veinée de noir qui palpite d’une lueur sinistre. Son contact est répugnant et il est très difficile de ne pas la lâcher tant elle inspire la terreur.",
+    "weight": 1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "legendary",
+    "special": [
+      {
+        "title": "Invocation de bête ancestrale",
+        "description": "La Corne peut invoquer une des bêtes ancestrales, des créatures destructrices qui, bien que nées de la nature, en sont souvent les pires ennemies. Ces créatures décharnées ont la puissance d’un dragon mineur et ravagent tout ce qui se trouve autour d’elles — le porteur de la Corne y compris. La créature, une fois invoquée, reste tant qu’elle n’a pas été vaincue. S’il n’y a pas d’ennemi en vue, elle tentera de se réfugier au cœur d’une forêt ou dans des montagnes."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les Fleurs de Jeunesse Éternelle",
+    "uuid": "042bf111-5323-4526-9108-fa8ad6c55e91",
+    "unique": false,
+    "description": "La première de ces fleurs fut créée par une dryade nommée Osiana, qui était éprise d’un mortel. Pour qu’il reste auprès d’elle, elle sacrifia une partie d’elle-même pour faire naître une rose de jeunesse éternelle. La dryade et son bien-aimé, un certain Yvon, seraient encore en vie. Depuis, on raconte que ces fleurs apparaissent à chaque fois qu’une dryade tombe amoureuse d’un mortel.\nCes fleurs sont souvent des roses d’une beauté sans pareille. Elles semblent tellement délicates qu’on les croirait faites de verre.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Lien vital",
+        "description": "Une Fleur de Jeunesse Éternelle reçoit, au cours d’un enchantement long et complexe, la force de vie d’un être vivant. Ce dernier vieillira mais son corps n’en portera pas les stigmates. De plus, il vivra beaucoup plus longtemps. S'il meurt autrement que de mort naturelle, on peut l’enterrer avec la fleur. Il renaîtra alors plusieurs semaines plus tard. Le ressuscité conservera toutes ses caractéristiques mais son sang sera fait de sève et il sera à jamais lié à la nature. Si le personnage meurt à nouveau, la fleur se fane. Si l’individu meurt une seconde fois ou s’il décède de mort naturelle, là où son corps est enterré naîtra un parterre de fleurs, qui bien souvent contiendra une autre Fleur de la Jeunesse Éternelle. On dit que l’esprit du défunt veille sur ce parterre. Un personnage dont la force de vie est enfermée dans une Fleur est particulièrement vulnérable face à un ennemi qui mettrait la main sur cette Fleur. En effet, si elle est détruite, le persormage meurt immédiatement. Enfin, la Fleur ne peut s’épanouir que si celui qui bénéficie de ses pouvoirs est aimé d’amour par un être vivant. Si cet amour vient à s’atténuer, la fleur se fane et meurt. Le personnage aussi."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les bandages magiques",
+    "uuid": "af714c29-51a8-4d2b-9024-3090e42c89d9",
+    "unique": false,
+    "description": "On peut trouver ces cataplasmes soit dans les manufactures, soit au marché noir. Ce sont de petits rouleaux de bande verdâtres et odorants — à cause des herbes − spécialement conçus pour accélérer la cicatrisation ou l’éradication de la maladie - suivant les cas. Le patient regagne une case de Blessure Légère supplémentaire ou deux cases d’Égratignure.",
+    "weight": 0.05,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 80
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les herbes",
+    "uuid": "81c967a2-1b00-4c80-ab02-f413018a2876",
+    "unique": false,
+    "description": "Les mages de Heyra - et ceux qui travaillent avec eux — utilisent trois types d’herbes. Les épices, les plus communes, font la fortune des herboristes. Certaines sont considérées comme magiques mais rien ne le prouve véritablement. D’autres sont interdites dans certaines régions, plus chères que de la poudre d’or dans d’autres.\nLe second type d’herbes sert surtout aux rebouteux et aux sages-femmes. Elles sont magiques car il n’y pas d’autre explication à leurs propriétés calmantes ou curatives. Heyra ne s’oppose pas à leur utilisation mais encourage plutôt la recherche de sorts très simples donnant les mêmes effets.\nEnfin, les poisons et les drogues sont considérés parfois comme magiques. Certaines drogues le sont : elles sont issues des laboratoires de Kalimsshar. Pour mémoire, leur vente, consommation ou utilisation est interdite et sévèrement punie.",
+    "weight": 0.05,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les graines, céréales et noyaux magiques",
+    "uuid": "e523298c-a197-4476-805d-d78171a6c9d6",
+    "unique": false,
+    "description": "Il existe un véritable commerce des graines magiques. Les mages de Heyra qui pratiquent ce trafic sont généralement en marge de leur caste. La Dragonne ferme les yeux sur leurs agissements tant que leurs manipulations magiques ne sont pas trop déviantes. L’utilisation de la magie pour faire pousser les plantes plus vite, pour que les blés soient lourds et les vergers remplis, n’est pas nouvelle. En revanche, par ses serviteurs, Heyra a appris que des minions de Kalimsshar parcouraient les campagnes pour proposer eux aussi de modifier magiquement les plantes pour un meilleur rendement.",
+    "weight": 0.05,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
   }
 ]

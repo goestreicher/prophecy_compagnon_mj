@@ -556,5 +556,130 @@
       "military": null
     },
     "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "La Grande Forêt",
+    "uuid": "dc43cef6-d1fb-4ae0-8f1d-d160cf62483b",
+    "parent_id": "7a82c870-cb66-40cb-9421-0cb8cb58d503",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Personne ne sait où elle se trouve. Elle est le domaine de Heyra, de sa fille adoptive et de ses créations. Forêt enchantée et mystérieuse, elle renferme des merveilles incomparables comme le Lac de la Vie. Certains récits de voyageurs décrivent une forêt étrange, loin au nord des terres draconiques. Il pourrait s'agir de la Grande Forêt, Heyra elle-même ayant admis que de rares individus l’avaient découverte. Toute créature vivante peut vivre en paix ici tant qu’elle respecte la nature. Aucune construction n’y est autorisée. On ne peut y faire du feu, couper du bois ou cueillir une fleur. Le bois est magique et son esprit veille sur tout ce qui y vit.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Le Lac de la Vie",
+    "uuid": "bf003481-a61f-4c74-bef6-8369360ff25d",
+    "parent_id": "dc43cef6-d1fb-4ae0-8f1d-d160cf62483b",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le Lac de la Vie fut créé par les larmes de la fille adoptive de Heyra. C’est un étang enchanté par la magie de Heyra et de Nenya. Tout être vivant qui y est plongé est guéri de tout. De plus, son esprit est purifié et le personnage perd tous ses points de Tendance autre que Dragon. Il pourra en regagner normalement par la suite, mais sera limité À quatre points dans chaque Tendance — sauf Dragon. Un mort peut revenir à la vie si on le plonge dans le lac et que son corps n’a pas commencé à se décomposer. Tout individu qui y est baigné gagne une fois, et une fois seulement, un point de Présence et un point de Social.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Le Tertre de la Bête",
+    "uuid": "a98334d2-1248-4454-84df-4e9553a8cf7d",
+    "parent_id": "7a82c870-cb66-40cb-9421-0cb8cb58d503",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce tertre est un monticule couvert de ronces et de plantes tourmentées. Il est situé au cœur d’un gigantesque marais au nord des terres draconiques. On dit que c’est la tombe d’une entité terrifiante, capable de ravager le monde. Le tertre attire les pires cauchemars engendrés par la création. C’est un endroit particulièrement dangereux qui abriterait des humains dégénérés adorant la Bête.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "La cascade des secrets",
+    "uuid": "d0b85f09-c317-4599-a505-3c465307e47f",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Quelque part au cœur d’une des grandes forêts de la terre des Dragons, peut-être même dans la Forêt Mère, il existe une petite cascade magique. Le chant de l’eau qui s'écoule révèle des secrets à ceux qui savent écouter la musique de la Nature. Près de cette cascade se réunissent les créatures les plus magiques de la création. Elles en sont les gardiennes et on dit qu’elles n’acceptent que ceux qui sont en complète harmonie avec la nature.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les vergers de Heyra",
+    "uuid": "d658ab4c-1980-40c4-bffa-1f255fa01b3f",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ces domaines sont en théorie interdits aux non Prodiges et aux non mages. Il s’agit d’immenses jardins magiques où poussent toute sorte de plantes et de fleurs. C’est là qu’on peut trouver des roses noires, des cerises d’émeraude et des jadiers (plante grasse aux feuilles en jade naturel). Les jardiniers qui y travaillent sont pour la majorité des Prodiges amoureux de leur fonction. Des artistes sont parfois invités à décorer les allées miraculeuses. Mais ces jardins servent aux mages de Heyra à faire des expériences autorisées et sont parfois utiliser pour palier à une famine dans une région.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
   }
 ]
