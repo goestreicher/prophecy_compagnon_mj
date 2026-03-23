@@ -53,6 +53,10 @@ class _MagicGearEditDialogState extends State<MagicGearEditDialog> {
       intrinsicResistance = widget.item!.intrinsicResistance;
       special = widget.item!.special;
     }
+    else {
+      dcController.text = 0.toString();
+      tcController.text = 0.toString();
+    }
   }
 
   @override
