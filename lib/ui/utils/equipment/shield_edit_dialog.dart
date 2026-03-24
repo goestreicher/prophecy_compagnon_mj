@@ -282,13 +282,11 @@ class _ShieldEditDialogState extends State<ShieldEditDialog> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     spacing: 12.0,
                     children: [
-                      Expanded(
-                        child: EquipmentRequirementsEditWidget(
-                          onChanged: (Map<Ability, int> reqs) {
-                            requirements = reqs;
-                          },
-                          requirements: requirements,
-                        ),
+                      EquipmentRequirementsEditWidget(
+                        onChanged: (Map<Ability, int> reqs) {
+                          requirements = reqs;
+                        },
+                        requirements: requirements,
                       ),
                       Expanded(
                         child: TextFormField(

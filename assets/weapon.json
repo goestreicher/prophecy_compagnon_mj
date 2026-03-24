@@ -3997,5 +3997,126 @@
       "add": 0,
       "dice": 0
     }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Bâton de pétrification",
+    "uuid": "8af1e87b-7426-42e7-9793-6df5497a2997",
+    "unique": false,
+    "description": "Ces puissants objets magiques furent créés par les premiers magiciens que Brorne ait formés. Ils furent enchantés à partir d’un étrange bois fossile que l’on ne trouve qu’au sommet des plus hautes montagnes.\nCes bâtons, d’une longueur d’un mètre cinquante, sont faits d’une pierre extrêmement résistante et particulièrement légère. Ils se manient exactement comme un banal bâton de bois.",
+    "weight": 1,
+    "creation_difficulty": 25,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Pétrification",
+        "description": "La victime, à chaque fois qu’elle subit des dommages, doit effectuer un jet de Physique + Résistance contre une Difficulté égale aux dommages infligés. Si elle échoue, elle perd 1 point de Coordination et se sent engourdie. Si sa Coordination tombe à O, la victime est pétrifiée. Chaque point de Coordination perdu peut être regagné au rythme de 1 point par heure. Un personnage pétrifié l’est pendant 1D10 tour(s). Durant ce délai, il reste capable d'utiliser la plupart de ses pouvoirs mentaux, mais devient incapable de parler si sa Coordination descend à 1."
+      }
+    ],
+    "slot": "hands",
+    "handiness": 2,
+    "layer": "normal",
+    "skill": "armesDoubles",
+    "requirements": {
+      "coordination": 3
+    },
+    "initiative": {
+      "contact": 0,
+      "melee": 1
+    },
+    "damage": {
+      "static": null,
+      "ability": "force",
+      "multiply": 1,
+      "add": 5,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1.5,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    },
+    "range_max": {
+      "static": 1.5,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La masse d'Ulandyr",
+    "uuid": "274e8f28-aebe-43ab-b91d-02883c9f3016",
+    "unique": true,
+    "description": "Ulandyr fut un grand guerrier de Brorne qui vécut au sixième siècle après le début des grandes guerres. Il combattait avec une masse terriblement puissante, capable de faire trembler la terre. Cette arme mythique disparut au cours de l’ultime bataille entre Kroryn et Brorne.\nLa masse est faite d’un alliage de métaux tout à fait impossible à obtenir naturellement. C’est une arme à deux mains très lourde - 6 kg - qui exige une Force minimum de 7 pour la manier sans pénalité.",
+    "weight": 6,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "incredible",
+    "special": [
+      {
+        "title": "Séisme",
+        "description": "Si on l’utilise pour frapper le sol, elle déclenche une sorte de séisme dans un rayon égal aux dommages infligés en mètres. Toutes les choses inanimées qui se trouvent dans la zone s’écroulent si elles ne sont pas solidement bâties. Toutes les créatures vivantes doivent effectuer un jet de Manuel + Coordination contre une Difficulté égale aux dommages pour ne pas tomber."
+      }
+    ],
+    "slot": "hands",
+    "handiness": 2,
+    "layer": "normal",
+    "skill": "armesContondantes",
+    "requirements": {
+      "force": 7,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": -1
+    },
+    "damage": {
+      "static": null,
+      "ability": "force",
+      "multiply": 3,
+      "add": 8,
+      "dice": 0
+    },
+    "range_effective": {
+      "static": 1.2,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    },
+    "range_max": {
+      "static": 1.2,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    }
   }
 ]

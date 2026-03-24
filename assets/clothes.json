@@ -526,5 +526,42 @@
     "slot": "body",
     "handiness": 0,
     "layer": "under"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le manteau d’invulnérabilité",
+    "uuid": "340950ca-4ca1-4c4f-ab3c-6a8442b0d939",
+    "unique": true,
+    "description": "Valris Hrod était un valeureux protecteur qui consacrait sa vie à la lutte contre le Fatalisme. Ses exploits étaient nombreux et les fidèles de Kalimsshar le craignaient. Combattant redoutable, aucun Fataliste n’arrivait à le vaincre. Des sorciers de l'Ombre le maudirent pendant qu’il ravageait leur temple. Valris fut frappé d’un mal terrible qui le rendait particulièrement sensible aux blessures. La moindre égratignure était pour lui une blessure grave. Brorne fit alors fabriquer un manteau qu’il lui offrit et qui le protégeait de la plupart des blessures. Quand Valris mourut, son corps se pétrifia.\nCe manteau est gris comme la pierre et pèse 20 kg. Il est fait d’un tissu magique dont chaque fibre est enchantée par la magie de la pierre.",
+    "weight": 20,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "incredible",
+    "special": [
+      {
+        "description": "Augmente de 2 la Résistance de son possesseur tant que ce dernier le porte"
+      },
+      {
+        "description": "Confère une protection égale à celle d’une armure de plaques (25)"
+      },
+      {
+        "description": "Si le détenteur de cet objet vient à mourir, il est immédiatement changé en pierre"
+      }
+    ],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "over"
   }
 ]

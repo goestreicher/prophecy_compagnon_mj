@@ -25,10 +25,10 @@ class _MagicGearEditDialogState extends State<MagicGearEditDialog> {
   TextEditingController weightController = TextEditingController();
   TextEditingController dcController = TextEditingController();
   TextEditingController tcController = TextEditingController();
-  EquipmentScarcity? villageScarcity;
-  int? villagePrice;
-  EquipmentScarcity? cityScarcity;
-  int? cityPrice;
+  EquipmentScarcity? villageScarcity = EquipmentScarcity.introuvable;
+  int? villagePrice = 0;
+  EquipmentScarcity? cityScarcity = EquipmentScarcity.introuvable;
+  int? cityPrice = 0;
   bool supportsMetal = false;
   TextEditingController descriptionController = TextEditingController();
   EquipmentQuality? intrinsicResistance;

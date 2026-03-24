@@ -623,5 +623,155 @@
       "military": null
     },
     "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Monolithe",
+    "uuid": "d05011c7-b088-4af0-a0d5-d435f4f04164",
+    "parent_id": "7a82c870-cb66-40cb-9421-0cb8cb58d503",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Monolithe est aussi appelé la Montagne Vivante. Cette créature vivrait loin dans les terres du nord, au sommet de la plus haute des montagnes du monde. C’est un titan gigantesque, endormi depuis des siècles, dont le corps est encastré dans la montagne. On le dit détenteur de grands secrets concernant le monde.\n\nBeaucoup ont tenté de partir en quête des connaissances de cette étrange créature. Mais les terres du nord sont sauvages et perfides. De plus, la montagne recèle bien des dangers et le terrain y est particulièrement dangereux. Ceux qui arriveraient au sommet doivent encore affronter les gardiens du titan, des [gargouilles](resource://assets/creature/8780626c-e306-46c1-bcef-40d942f40a17) extrêmement puissantes.\n\nOn raconte qu’un jour, Monolithe s’éveillera et fera trembler la terre. Beaucoup de sorciers effectuent des recherches pour savoir s’il est possible de prendre le contrôle d’une telle entité.\n\nLa légende veut que Monolithe ait été créé par Brorne et Kroryn à l'aube des temps, mais la puissance de leur création était telle qu’ils préférèrent l’endormir à tout jamais au cœur d’une montagne.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La caverne de Moryagorn",
+    "uuid": "1de61968-7f68-45d1-97d5-58540bba7300",
+    "parent_id": "af49b28d-ec78-4c7d-969d-7b2254ccb58b",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Il existerait, quelque part dans le monde, une caverne prodigieuse où on pourrait entrer en contact avec l’esprit du monde, celui de Moryagorn. Il n’existe que quelques textes fragmentaires au sujet de cette grotte. Les récits de certains voyageurs font état d’une ouverture béante sur le flanc d’une montagne, ouverture délimitée par deux gigantesques piliers évoquant deux canines. Des érudits pensent même qu’il s'agirait de la gueule de l'Être Primordial.\n\nLa caverne serait riche en nombreux filons de matières précieuses. Mais il y vivrait d’étranges créatures grotesques, d’une laideur repoussante, et qui passeraient leur temps à sculpter les cavernes.\n\nCertains affirment que celui qui parviendrait à éveiller l’esprit de Moryagorn pourrait apprendre tous les secrets du monde et acquérir une puissance qui n’aurait d’égale que celle des Grands Dragons.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les Neufs Colonnes d’Airain",
+    "uuid": "e862e8eb-b154-420d-80da-b9ea775d777f",
+    "parent_id": "af49b28d-ec78-4c7d-969d-7b2254ccb58b",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Au bout du monde, au sommet d'un très haut plateau presque inaccessible, on peut découvrir les Neufs Colonnes d’Airain, chacune contenant une partie de l’essence même des neufs Grands Dragons.\n\nCes colonnes conféreraient à celui qui en perce les secrets d’immenses pouvoirs. Pour cela, il faut bien entendu pouvoir vaincre le gardien de ce lieu, un dragon à neufs têtes, chaque tête représentant un des neufs Grands Dragons.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La vallée du Colosse",
+    "uuid": "7a745941-61f9-4b9f-b57a-d615168fb4c1",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans sa jeunesse, Brorne, assez peu doué pour l’art, aurait façonné une grande vallée pour pouvoir y entreposer les œuvres de ses frères et ses sœurs. Sculptures, merveilles de la nature, fleurs enchantées, armes et objets faits de métaux fabuleux, etc, seraient précieusement conservés dans cette vallée d’une montagne inconnue. Brorne aurait oublié jusqu’à leur existence.\n\nLa vallée serait elle-même un véritable paradis à la végétation luxuriante et imprégnée d’une magie fantastique. Le seul problème est que cet endroit est gardé par un colosse de pierre gigantesque qui se charge de tenir à distance tous les intrus.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les vestiges de la Cour d'Ébène",
+    "uuid": "bce2e3e8-456e-4c30-ac22-62edf8a02c2d",
+    "parent_id": "aab5f7a3-b8c0-42b8-8094-8e45440b0926",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Alors que d’innombrables compagnies d’aventuriers ont voué leur existence à la recherche de la mythique Cité des Immortels, dont les tours gigantesques parsèment les récits des historiens et les légendes contés aux plus jeunes, il est un autre lieu, moins connu, dont seuls quelques observateurs attentifs ont appris l’existence. Bien avant que les premiers conflits n’éclatent entre les Grands Dragons, il est dit que Brorne, empli de méfiance à l’égard de Kalimsshar et de ses autres frères, choisit une poignée d’Immortels et érigea pour eux un palais titanesque.\n\nLà, sous la forme d’un sage aux dimensions divines, il passa de longues années à leur conter l’histoire du monde, les secrets des Grands Dragons, la naissance de leur race et les signes qu’il lisait dans le cœur de l’Être Primordial. Les castes n’étaient pas encore créées que déjà Brorne transmettait son savoir et livrait aux premiers hommes les valeurs de la Terre.\n\nDe ces Immortels et de leur palais, il ne reste aujourd’hui que des ruines, mais l’acharnement des questeurs prouve qu’il subsiste encore un espoir - et peut-être même un passage vers les hautes salles d’ébène. Le fait qu'aucun aventurier n’ait jamais rapporté son témoignage ne prouve pas que les remparts de la Cour de Brorne, que l’on dit située dans les plus hautes Écailles, n’ait jamais été découverte.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La geôle",
+    "uuid": "74f313a1-012f-4b6a-b057-e6ea4239cdae",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Elle n’a rien de particulier si ce n’est qu’elle est totalement hermétique à toute forme de magie. On la réserve pour les magiciens et il y en a une dans chaque prison digne de ce nom.\n\nPetit détail : non seulement elle empêche de lancer un sortilège mais en plus elle est réfractaire à la magie. À chaque Point de Magie utilisé, elle se réduit de taille. On l’appelle aussi la broyeuse.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
   }
 ]

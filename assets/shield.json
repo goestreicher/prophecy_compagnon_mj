@@ -149,5 +149,48 @@
       "type": "officiel",
       "name": "Livre de base 2e édition"
     }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Écaille de Brorne",
+    "uuid": "3879130d-6d12-4240-9e69-57e011b2404d",
+    "unique": false,
+    "description": "Brorne offre aux meilleurs protecteurs des boucliers fabriqués à partir de ses propres écailles. Seuls de rares Élus peuvent recevoir ce présent mais beaucoup de ces boucliers ont été perdus au cours des siècles. Un bouclier de Brorne se reconnaît immédiatement et son détenteur a intérêt à être digne de le porter. Il doit surtout pouvoir le conserver.\nCes écailles sont des Boucliers Dragons normaux mais ils sont incrustés d’éclats de différents minerais.",
+    "weight": 4,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Ces boucliers sont indestructibles, ce qui implique que l’Indice de protection ne se réduit pas au fil des dommages infligés - le porteur ne subit donc que les dommages excédentaires."
+      }
+    ],
+    "slot": "hands",
+    "handiness": 1,
+    "layer": "normal",
+    "requirements": {
+      "force": 6,
+      "resistance": 7
+    },
+    "protection": 30,
+    "penalty": -4,
+    "damage": {
+      "static": null,
+      "ability": "force",
+      "multiply": 1,
+      "add": 5,
+      "dice": 1
+    }
   }
 ]

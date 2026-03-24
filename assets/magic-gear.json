@@ -664,5 +664,202 @@
     },
     "supports_metal": false,
     "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Talisman de ralentissement",
+    "uuid": "8814db71-5228-4204-8e04-e8520154ee79",
+    "unique": false,
+    "description": "Ces talismans, enchantés par la magie de la pierre, furent inventés par un enfant de Brorne. Il les offrit à ses élèves les plus doués pour qu’ils les utilisent afin de neutraliser des adversaires au lieu d'être contraint de les tuer. Malheureusement, la plupart de ces étudiants furent tués pendant les grandes guerres et les talismans ont été éparpillés dans la nature.\nCes talismans sont en pierre et sont gravés de runes complexes. Ils mesurent quelques centimètres de diamètre.",
+    "weight": 0.1,
+    "creation_difficulty": 25,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Ralentissement",
+        "description": "Un talisman peut être utilisé sur n’importe quelle cible située à moins d’un nombre de mètres égal à la Volonté du détenteur. La victime doit réussir un jet de Mental + Volonté contre une Difficulté égale à la somme de Mental + Volonté du détenteur. Si elle échoue, elle perd 1 dé d’Initiative pendant 1D10 tour(s). On peut utiliser plusieurs fois le talisman sur la même cible, mais on ne peut réduire son initiative en-dessous de 1 dé."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les fragments de pierre",
+    "uuid": "09e8ce2c-d1a5-4c77-a143-cc23167e2193",
+    "unique": false,
+    "description": "Le Peuple des Montagnes a pour habitude d’arracher les dents de ses défunts et de les enchanter grâce à la magie de la pierre. Il rend ainsi hommage à Brorne en offrant ses morts au Grand Dragon. Ces dents permettent d’invoquer des esprits de la pierre particulièrement redoutables.\nLes dents ont une teinte grisâtre et sont couvertes de symboles cabalistiques complexes.",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 200
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Squelette de pierre",
+        "description": "Quand une dent est jetée à terre, volontairement ou non, elle invoque un esprit de la pierre qui prend la forme du squelette de la personne décédée. Ce squelette est fait en pierre. Il combat pour celui qui l’a appelé jusqu’à ce qu’il soit détruit ou qu’il n’y ait plus d’ennemis à affronter. Une dent utilisée est détruite. Les squelettes peuvent utiliser armes et boucliers si on leur en fournit."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La corne de Balzar",
+    "uuid": "f6b79511-e4cc-4549-9809-ac0ca48c36e8",
+    "unique": true,
+    "description": "Pendant les grandes guerres, les troupes du Fatalisme affrontèrent à maintes reprises celles de Brorne. Ces dernières n’hésitaient pas à animer par magie des monstres de pierre qui ravageaient les armées adverses. Balzar était un puissant sorcier fataliste. Il créa une corne redoutable, capable de faire éclater la pierre.\nOn raconte que la corne de Balzar a été taillée dans une dent de Kalimsshar. Elle est donc faite d’un ivoire indestructible, veiné d’argent, d’or et de Sombre Acier. La corne est lourde - 2kg - et imprégnée de la magie fataliste.",
+    "weight": 2,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "legendary",
+    "special": [
+      {
+        "title": "Tendance Fataliste",
+        "description": "Pouvoirs et capacités\nTout individu qui utilise la corne pour la première fois gagne automatiquement 1 point de Fatalisme dont il ne peut pas se débarrasser normalement"
+      },
+      {
+        "title": "Brise-pierre",
+        "description": "La corne est une arme redoutable qui fait éclater la pierre sur une centaine de mètres autour de son utilisateur. La roche qui éclate projette des fragments sur 1D10 mètre(s) en infligeant 2 dés de dommages à toutes les cibles présentes. Toutes les créatures de pierre subissent 5 dés de dommages."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les cristaux de savoir",
+    "uuid": "a28cb441-db67-4611-9ca0-dc10f5faf3a6",
+    "unique": false,
+    "description": "L'existence de la Caverne de Moryagorn est longtemps restée une légende, mais la caste des mages a récemment apporté la preuve que ce lieu, réputé pour ses gisements de minerai et de gemmes enchantées, était bien plus qu’une simple rumeur populaire. Il y a une dizaine d’années de cela, Tanya Kyn, puissante mage de la terre, vint trouver les autorités de Griff qui, en proie à un litige territorial avec les Zûls, craignaient l’amorce d’une guerre. L'arrivée d'un mage surprit les responsables de la cité, qui s’attendaient à la venue d’un médiateur de la caste des érudits, mais Tanya fut tout de même conduite sur le Lieu du conflit, un tertre bordé par un fleuve dont les Züls revendiquaient la propriété. Là, elle sortit de sa sacoche une gemme flamboyante qu’elle planta rituellement dans le sol et entra en méditation.\nTous les spectateurs entendirent alors une voix caverneuse, grondante comme un tremblement de terre, qui parut s'élever de la gemme pour rendre leur bien aux Zûls. Nul ne contesta cette décision.\nLes cristaux de savoir ne sont que d’infimes éclats de la roche qui, dit-on, tapissent les parois de la Caverne de Moryagorn. Leur couleur est variable, et nul ne sait combien de ces gemmes sont actuellement en possession de la caste des mages, mais toutes les pierres ont en commun cet éclat lumineux, parcouru de feu et d’énergie, qui suffit à révéler leur nature profondément magique. Cette clarté s’intensifie dès que les gemmes sont mises au contact de la terre - rituel qui semble capable de déclencher leur formidable pouvoir. La gemme de Tanya mesurait une dizaine de centimètres de long, mais les mages prétendent en souriant que tous les cristaux ne sont pas aussi modestes.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Psychométrie",
+        "description": "Une fois plantés dans le sol, les cristaux permettent à leur utilisateur d’obtenir une réponse à une question concernant l’endroit et ses environs. Cette faculté psychométrique n’est limitée que par la force de volonté du porteur, car les visions transmises par la gemme sont parfois trop violentes, trop brutales pour un simple esprit humain.\nPour utiliser la gemme, il faut effectuer un jet de Mental + Volonté contre une Difficulté de 15, qui peut être augmentée de 5, voire de 10, selon la précision de la question ou l’éloignement dans le temps de l’événement recherché.\nEnsuite, pour supporter la vision, l’utilisateur doit effectuer un nouveau jet de Mental + Volonté contre la Difficulté du jet précédent + 5. Si ce jet est raté, il devient aveugle pour le reste de la journée et se voit incapable d’utiliser ses facultés requérant la concentration ou la volonté - comme le lancement de sortilèges, l’activation de dons ou de capacités surnaturelles, etc.\nUne seule utilisation du cristal est possible par jour."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le ciseau de Kezyr",
+    "uuid": "0119cb08-661d-4a45-b476-1e6e3127196d",
+    "unique": false,
+    "description": "Cet objet assez répandu chez les artistes est l’œuvre de Kezyr mais sans l’autorisation de Brorne, il n'aurait pu exister. C’est lui qui a donné le secret de la résonance de la pierre pour que le ciseau soit plus précis. Un sculpteur qui utilise cet objet a un bonus de 5 lors de son jet.",
+    "weight": 0.2,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 500
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 500
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Bonus de +5 sur les jets pour sculpter la pierre"
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La meule magique",
+    "uuid": "16ce2260-f247-4b7b-8da2-d573ef5dcccb",
+    "unique": false,
+    "description": "Classique dans le royaume de Kern, la meule n’est pas très répandue ailleurs. Le principe est simple, c’est une pierre qui tourne seule sur elle-même. Il n’y a pas besoin d’eau, de mulet ou d’homme pour la mettre en branle, elle continue sa course indéfiniment. Il est arrivé que des meules tournent encore alors que le moulin était en ruine. Les bandits s’en servent aussi parfois comme instrument de torture.",
+    "weight": 500,
+    "creation_difficulty": 20,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 500
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 800
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les pierres de fronde",
+    "uuid": "1848c806-91fb-4246-8f4d-34d960c11427",
+    "unique": false,
+    "description": "Les magiciens s’amusent parfois à enchanter les cailloux pour que les gamins puissent s’amuser avec des lance-pierres et des frondes. La particularité de ces pierres c’est qu’elles ne peuvent toucher que des choses inertes, pas d’être vivant.\nLe lanceur gagne un bonus de 5 en les utilisant. Il suffit de posséder les Compétences Sphère de la Pierre et Sorcellerie à 3 pour pouvoir les enchanter.",
+    "weight": 0.05,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 5
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 5
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Bonus de +5 au jet de tir"
+      },
+      {
+        "description": "Ne peut toucher qu'une cible non-vivante"
+      }
+    ]
   }
 ]
