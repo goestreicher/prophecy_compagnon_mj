@@ -983,5 +983,177 @@
     },
     "supports_metal": false,
     "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les pierres de Moryagorn",
+    "uuid": "818a867c-87c9-4e2f-9bde-0848d8502d24",
+    "unique": false,
+    "description": "Utilisées en secret par de nombreux voyageurs et éclaireurs d’expéditions lointaines, les pierres de Moryagorn font la fierté des rares citoyens qui, pour affirmer leur statut ou s’enorgueillir d’une telle possession, se risquent à les exhiber au grand jour. Connus depuis à peine quelques dizaines d’années, il semble que ces fragments de roche dotés de pouvoirs magnétiques existent - et soient utilisés - depuis bien plus longtemps. On dit des pierres de Moryagorn qu’elles ont été offertes par Szyl aux voyageurs méritants qui s’aventurèrent loin vers le grand ouest, le désert du nord et les marais ponctuant les côtes de la Source, pour les aider dans leurs périples et leur permettre de trouver la direction du nord. Mais aujourd’hui, jalousement conservées par la caste des voyageurs et quelques érudits nomades, ces pierres aimantées ne quittent plus que rarement les mains de leux propriétaire.\nDe taille variable et inégale, ces éclats de pierre aux reflets argentés tiennent généralement dans le creux de la main et ne se différencient des autres fragments rocheux que par leur incroyable faculté à glisser, sur n’importe quelle surface, en direction du nord. La notion de points cardinaux n’est certes pas communément développée sur le Royaume de Kor, excepté chez les Humanistes, mais la possibilité de pointer systématiquement vers une direction facilite grandement les voyages.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Tous les jets d'Orientation et d'Astrologie effectués grâce à une telle pierre voient leur Difficulté réduite de 5"
+      },
+      {
+        "description": "Le joueur ne peut obtenir d’échec critique et relance tout résultat de 1 qu’il obtient lors de jets d'Orientation et d'Astrologie"
+      },
+      {
+        "description": "Une fois par jour, le porteur d’une telle pierre peut choisir de relancer un dé du Dragon - qu’il sera ensuite obligé de conserver - lors d’un appel aux Tendances"
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les cuirs de Tyann Cyn",
+    "uuid": "2ec6cf5d-1ebe-49e2-b7f5-0ead293f174e",
+    "unique": true,
+    "description": "Tous les objets conçus par Tyann Cyn et ses quelques apprentis - qui feraient passer nombre d'artisans indépendants pour de simples élèves - s'avèrent plus résistants, plus souples et moins encombrants que les autres objets du même type. Pour déterminer ces “bonus”, effectuez un jet d’Artisanat en utilisant les caractéristiques de Tyann et de ses artisans, données pour chaque type d'équipement, et une Difficulté de 10. Pour chaque Niveau de Réussite, lancez ensuite un dé sur la table qui suit pour déterminer les bénéfices de l’objet. Si le client a un désir précis, comme une résistance accrue de son armure, par exemple, augmentez la Difficulté de 5 si l’objet de la demande est compris entre les résultats 1 et 5, et de 10 s’il est compris entre 6 et 10. Ces augmentations sont cumulatives.\n\n1 - Solidité : l'objet perd un point de protection par DEUX coups l'ayant traversé.\n2 - Beauté : le porteur gagne un bonus de +1 à tous ses jets de Social basés sur la négociation et le charme.\n3 - Privilège : le personnage gagne un bonus de +1 à tous ses jets de Social effectués “contre” des voyageurs.\n4 - Souplesse : l'encombrement de l'objet est réduit de 1.\n5 - Étincelle : l'objet est enchanté et dispose des pouvoirs d’un sortilège de premier niveau de la Sphère des Vents - au choix du meneur de jeu.\n6 - Résistance : l'objet perd un point de protection par TROIS coups l'ayant traversé.\n7 - Splendeur : le porteur gagne un bonus de +3 à tous ses jets de Social basés sur la négociation et le charme.\n8 - Honneur : le personnage gagne un bonus de +1 à tous ses jets de Social effectués “contre” des voyageurs, des artisans et des commerçants.\n9 - Légèreté : L'encombrement de l'objet est réduit de 2.\n10 - Enchantement : l'objet est enchanté et dispose des pouvoirs d’un sortilège de deuxième niveau de la Sphère des Vents - au choix du meneur de jeu.",
+    "weight": 0,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "normal",
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les hurlantes",
+    "uuid": "8c2adc83-e9c7-4ef5-b212-029bc21d56fa",
+    "unique": false,
+    "description": "Il ne s’agit pas d’un objet magique, bien qu’il en ait toutes les apparences. Ce sont des flûtes de bois suspendues aux branches des arbres ou sur un pylône. Bien placées, elles peuvent prévenir de leur sifflement l’arrivée d’une tempête. Avec de l'expérience, il est même possible de deviner la nature - pluie, orage, neige - et la force de la tourmente. Les bergers s’en servent souvent, ainsi que les enfants, pour effrayer les passants - le sifflement peut rappeler un hurlement d’âme en peine.",
+    "weight": 0.5,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 30
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les cerfs-volants",
+    "uuid": "d44791a4-e0ac-4c78-b4a4-506399dd7b49",
+    "unique": false,
+    "description": "Le vol est en théorie interdit à l’homme. Cela n’empêche pas les enfants de fabriquer de grandes ailes volantes et de s’y accrocher pour s’élever dans les airs. Ce jeu est toléré, car il peut se montrer d’une utilité plus importante en cas de guerre. En effet, les gamins servent de sentinelles et, plus ils jouent, plus ils sont capables de rester longtemps dans les cieux. À noter que, le long des côtes, ce jeu est interdit et puni de mort.",
+    "weight": 2,
+    "creation_difficulty": 15,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 20
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les tubes amplificateurs",
+    "uuid": "2441e8ea-2cf0-40ea-b37b-b5a391cf5d1b",
+    "unique": false,
+    "description": "Ces tubes sont assez rares, car leur préparation est longue et coûteuse. Ils se présentent sous la forme de tubes de laiton tenant dans la main et fermés par une valve. Il suffit de desserrer la valve pour que l’air, comprimé à l’intérieur, se libère. Les applications sont nombreuses - augmenter la flamme d’une forge, éteindre un feu en mélangeant air et eau, fabriquer une bombe silencieuse, etc. Certains Inquisiteurs les considèrent comme une arme humaniste.",
+    "weight": 0.5,
+    "creation_difficulty": 20,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 200
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les spirales sémaphores",
+    "uuid": "ba0db837-5c9c-4a9b-b763-fd5162cd657f",
+    "unique": false,
+    "description": "Ces moulins à vent sont tout à fait classiques, mais quand leurs ailes sont ornées de rubans et que leur rythme n’est plus régulier, c’est que les meuniers communiquent d’une colline à l’autre. Dans les campagnes, on prévient des dangers de la sorte - des rubans magiques lumineux peuvent aussi rendre le système opérationnel la nuit.",
+    "weight": 20,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 80
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "La poudre d'escampette",
+    "uuid": "ece5d1b4-d599-45c1-9637-b5ecc209b647",
+    "unique": false,
+    "description": "Seuls les mages les plus doués peuvent fabriquer cette poudre magique ressemblant à du sable bleuté. Les voyageurs en ont toujours sur eux, dans un petit sac accroché à leur cou. En fait, il s’agit plus d’un porte-bonheur ou d’un placebo - lorsqu'on l’utilise pour soigner - que d’un véritable objet magique. Grâce à elle, les voyages sont plus courts, la douleur disparaît, la jeunesse revient, les couples en difficulté sont sauvés, etc. Au meneur de jeu de décider de la réelle efficacité de la poudre.",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "supports_metal": false,
+    "special": []
   }
 ]

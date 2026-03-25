@@ -3035,5 +3035,222 @@
     },
     "unique": true,
     "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Tyann Cyn",
+    "uuid": "a7448354-e6ec-4ecd-b0aa-30d7685ef730",
+    "description": "Fils d’une voyageuse et d’un tanneur de renom, Tyann Cyn a grandi dans les tentes et les caravanes, bercé par les rencontres et les découvertes qui lui donnèrent l’envie de vouer son existence au voyage. En plus de sillonner les routes de Kor, cet artisan réputé pour sa joie de vivre, confectionne des pièces d'équipement qui passent pour les plus beaux cuirs du Royaume - au goût des voyageurs, en tous cas. Légers, résistants, particulièrement adaptés à la marche et aux conditions climatiques extrêmes, ces bottes, manteaux, gants, vestes et autres éléments d’armure sont aussi prisés que rares, car taillés sur mesure et vendus à prix d’or.\n\nLes cuirs de Tyann Cyn ont un éclat et une douceur incomparables - pour peu qu’ils soient consciencieusement entretenus, ils semblent comme neufs, malgré les années. Les armures sont plus fines, plus souples et mieux articulées, les bottes discrètes et chaudes, les capes amples et impeccablement droites… Un croissant de lune griffé atteste, sur chaque objet, de son authenticité et de l’identité de son tailleur.\n\nLes prix pratiqués par Tyann Cyn sont deux fois supérieurs aux prix courants et le temps de création est, lui aussi, doublé. Pour déterminer ces deux informations, utilisez le degré de qualité des objets, en fonction des Niveaux de Réussite obtenus\n\nSes apprentis sont souvent des Artisans ou des Compagnons, possédant des Compétences de 6 à 10, un Manuel de 6 à 9 et une Maîtrise de 7 à 10\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 9,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "artisanat",
+              "value": 11,
+              "implementation": "Tannerie",
+              "specializations": [
+                {
+                  "name": "Armures",
+                  "reserved": false,
+                  "value": 13
+                },
+                {
+                  "name": "Vêtements",
+                  "reserved": false,
+                  "value": 12
+                }
+              ]
+            }
+          ]
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "artisan",
+      "status": "maitre",
+      "career": null,
+      "interdicts": [],
+      "privileges": [
+        {
+          "privilege": "apprenti",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "charteDAtelier",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "notable",
+          "description": "Havre",
+          "selected_cost": null
+        },
+        {
+          "privilege": "outils",
+          "description": null,
+          "selected_cost": null
+        },
+        {
+          "privilege": "expertiseArtisan",
+          "description": null,
+          "selected_cost": null
+        }
+      ]
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 10,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [
+      {
+        "advantage": "techniquePersonnelle",
+        "cost": 5,
+        "details": "Tannerie"
+      },
+      {
+        "advantage": "habileteReconnue",
+        "cost": 5,
+        "details": "Manuel + Technique"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 2,
+        "circles": 0
+      },
+      "human": {
+        "value": 3,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "unique": false,
+    "use_human_injury_manager": false
   }
 ]

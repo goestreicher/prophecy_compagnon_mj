@@ -319,5 +319,80 @@
       "military": null
     },
     "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les refuges de Lloyan",
+    "uuid": "dede34de-d51c-41c9-8e86-5a9dd340f17f",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "batiment",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Il aura fallu des siècles à cette simple légende pour se muer en une réalité des plus féeriques, transmise de ville en ville par les conteurs, les bardes et les voyageurs de passage, mais ce que tous s'accordent à nommer les “refuges de Lloyan” fait désormais partie de ces motifs de quête et ces inoubliables souvenirs de périple. Le nom poétique de ces havres de paix est également celui du premier voyageur à avoir pu en démontrer l’existence, au terme de longues années de recherche, en offrant à une délégation de mages des vents et de citoyens de sa propre caste l'occasion de passer la nuit, au plus fort d’une tempête mémorable, dans la chaleur d’un gîte inattendu.\n\nCes refuges magiques n’ont aucune permanence, aucune existence physique durable, et n’apparaissent qu’au gré des vents et de leur souverain - le Seigneur des Vents. De forme et d'apparence variables, ces refuges peuvent prendre l'aspect d’une simple hutte de chasse, comme celui d’une véritable auberge, certes abandonnée, mais baignée d’une douce chaleur et munie de lits reposants. Ils apparaissent, prennent forme et vie, et subsistent le temps d’une nuit pour conférer leur protection aux voyageurs égarés, aux marcheurs transis de froid qui s’aventurent par mégarde trop loin des civilisations.\n\nRégulateur vivant du climat du Royaume de Kor, Szyl, Maître des Vents et des éléments naturels, considère ce don spontané comme une manifestation de la toute puissance draconique et une interprétation de sa bienveillance envers l’homme. Ainsi, tout en déchaînant ses humeurs sur la Terre, il prend soin d’accueillir les mortels démunis en son sein, de les réchauffer et de provoquer l’émerveillement si propice au respect des Grands Dragons.\n\nBien que de nature hautement magique, les refuges de Lloyan trompent leurs rares observateurs en ne dégageant aucune énergie reconnaissable, pas même - et à plus forte raison - par les mages de la Sphère des Vents. Au moment de les faire apparaître, les dragons chargés de ces manifestations ouvrent vers les Ééries un portail si délicat que ses effluves se dégradent sur plusieurs centaines de mètres autour du refuge en lui-même, évitant toute concentration trop flagrante de magie. Seuls les dragons semblent aptes, de par leur nature fondamentalement magique, à ressentir la présence d'une énergie surnaturelle - mais, incapables d’en discerner les contours avec exactitude, ils préfèrent généralement s’en tenir à l’écart…\n\nEn termes purement techniques, le meneur de jeu reste libre de conférer à ces refuges enchantés diverses facultés magiques, telles qu’une récupération accrue de la fatigue et des blessures, un climat magique propice aux rêves et aux prémonitions, une protection naturelle contre les prédateurs, les dragons, les créatures à Tendance Fataliste, etc.\n\nUne visite impromptue du Grand Dragon lui-même n’est pas improbable.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Le Mont des Brumes",
+    "uuid": "bc6619f4-d83c-4114-9d0b-534159390dd8",
+    "parent_id": "aab5f7a3-b8c0-42b8-8094-8e45440b0926",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Connu des seuls Élus de haut rang et situé au sommet des Écailles de Moryagorn, à plusieurs milliers de mètres d'altitude, ce vaste plateau polaire masquerait un château de glace cyclopéen, une citadelle cristalline qui constituerait l’un des points de rencontre privilégiés des Dragons et de leurs Élus.\n\nProtégé par sa situation géographique et par une épaisse brume voilant les cimes, le Château de Cristal se dresse sur une plaine immaculée, sillonnée de vaguelettes de neige soulevées par le vent. Les tours scintillent sous un ciel d’un bleu azur uniforme et seuls quelques dragons des vents trouvent plaisir à y résider. On dit que cet endroit fut créé par Szyl, alors qu’il explorait les Écailles, dans le but de disposer d’un lieu de rencontre paisible pour les Ailés. Avec le temps, ce plateau est devenu une sorte de terrain neutre où les Dragons préfèrent se rencontrer pour converser, débattre de litiges et méditer ensemble au lieu de s'affronter par l’intermédiaire de leurs Élus.\n\nLes hommes ne peuvent accéder à ce site qu’à dos de dragon, car le recours aux portails est interdit par la volonté de Szyl. L'air est irrespirable hors du plateau, mais les vents de Szyl rendent l’endroit “fréquentable” - bien que glacial. Respecté par tous, le Mont des Brumes est souvent dénué de toute présence, mais de nombreuses crises ont été évitées grâce aux rencontres qui s’y sont tenues. On dit même que des dragons de l’ombre auraient accepté de s’y rendre, par le passé.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les orphelines",
+    "uuid": "e8849de5-5490-435d-974e-525e20cd5b59",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": "Tempête",
+    "description": {
+      "general": "De mémoire d’érudit, les Orphelines sillonaient déjà le Royaume de Kor avant l’institution de la caste des voyageurs - mais elles étaient bien plus meurtrières, à cette époque. Longtemps confondues avec les titanesques Colères de Szyl, capables de déverser sur une région entière un flot de rage et d’éclairs, les Orphelines ont progressivement perdu en intensité, jusqu’à pratiquement disparaître.\n\nCes tempêtes soudaines, par trop brutales et concentrées pour être naturelles, sont dites chargées des âmes hurlantes des mages des vents morts par nuit de tempête. Nul ne peut les prédire, et encore moins les éviter, mais il semble heureusement qu'aucune tempête orpheline n’ait sévi aux abords des grandes cités draconiques ces dernières années…\n\nLa dernière en date, tristement mémorable, avait laissé derrière elle un village dévasté, une forêt transformée en morne plaine et une vallée détrempée, jonchée de cadavres. Szyl lui-même ne semble avoir aucun contrôle sur ces manifestations, assurément liées aux portails reliant le monde des mortels à celui des Ééries - où les âmes des mages attendent, torturées, de libérer leur colère sur la Terre.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
   }
 ]

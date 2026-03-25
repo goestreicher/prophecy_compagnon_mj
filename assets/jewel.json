@@ -510,5 +510,42 @@
     "slot": "finger",
     "handiness": 0,
     "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "L'anneau de l'archer",
+    "uuid": "c929aad4-0aec-4b6a-a630-2df0ca8f109c",
+    "unique": true,
+    "description": "Si nul n’a retenu le nom de son porteur original, beaucoup de voyageurs ont gardé en mémoire l'existence de cette bague, faite d’or et d’argent gris, que l’on dit imprégnée de la maîtrise du Grand Dragon des Vents.\nRéputé pour avoir été porté par le “meilleur archer que le Royaume de Kor ait jamais connu”, l’anneau a disparu au début des conflits entre Szyl et le Grand Dragon des Océans - une corrélation que certains n’hésitent pas à qualifier de “coïncidence” et qui, dans l’esprit des Maîtres de la caste des voyageurs, tendrait à prouver que l'anneau appartenait à Szyl lui-même.\nL’anneau de l’Archer est une bague double, prévue pour y glisser l’index et l’annulaire, dépourvue de toute gravure ou ornementation. Tout forgeron ou marchand pourra aisément estimer sa qualité comme exceptionnelle et fixer son prix de vente - purement théorique - à 50 dracs d’or minimum. Un mage des vents n'aura aucun mal à discerner les eflluves magiques liés à sa Sphère.\nIl est évident qu’une fois ses facultés identifiées en tant que telles, la valeur marchande de l’anneau est démultipliée de façon considérable.",
+    "weight": 0.02,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": true,
+    "intrinsic_resistance": "exceptional",
+    "special": [
+      {
+        "description": "Utilisable autant de fois par jour que sa Tendance Dragon"
+      },
+      {
+        "description": "Permet d'ajouter sa Coordination à sa Compétence ou aux dommages de chacune de ses flèches"
+      },
+      {
+        "description": "Lorsque le personnage ne tire qu'une flèche dans un même tour (et ce une fois par jour), et avec les Tendances, il lance deux dés du Dragon en plus des autres dés (qu'il ne peut garder, mais qui comptent éventuellement pour ses modifications de Tendances). Ces deux dés s'additionnent et chacun peut mener à un Critique. En cas de double Critique, les deux effets s'appliquent simultanément."
+      }
+    ],
+    "slot": "finger",
+    "handiness": 0,
+    "layer": "normal"
   }
 ]
