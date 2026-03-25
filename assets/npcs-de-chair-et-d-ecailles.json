@@ -157,7 +157,7 @@
     "equipment": [
       {
         "type": "armor:e98b9017-3590-432c-aa40-23fbffd84a23",
-        "equiped_on": "none"
+        "equiped_on": null
       }
     ],
     "magic": {

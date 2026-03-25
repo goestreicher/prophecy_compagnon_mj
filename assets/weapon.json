@@ -4118,5 +4118,133 @@
       "add": 0,
       "dice": 0
     }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "La lance d'Ykless",
+    "uuid": "31abf108-fe6a-4f25-a1aa-21ebb6c62a73",
+    "unique": true,
+    "description": "Ykless était un jeune dragon du métal lorsque Kezyr blessa Khy aux portes d’Yris. Ykless fut profondément choqué de l’effronterie dont fit preuve le Grand Dragon des Cités envers son géniteur - et en déduisit que Kezyr était lui aussi fort affecté par cette attitude et envisagerait sans doute de se venger de l’ingratitude de son fils. Heureux d’aider son maître, Ykless forgea durant de longues années une lance destinée à anéantir Khy. Quelle ne fut pas sa surprise quand, après avoir sacrifié son sang, ses écailles et son temps, Kezyr refusa sa proposition et lui parla, avec mélancolie, de “pardon”. Décontenancé, Ykless prit son envol. Nul ne revit le jeune dragon - ni la lance. Si Kezyr est convaincu qu’Ykless l’a détruite, dans un sursaut de lucidité, d’autres craignent qu'elle ne soit aux mains de Jyr. Et Kalimsshar la recherche.\nCette lance, nettement plus grande que la normale, est faite d’un alliage mêlant les matériaux les plus purs à des écailles et du sang de dragon. Prévue pour être maniée par Kezyr sous forme humaine, elle nécessite, pour être manipulée, une Force supérieure à 8 et une Compétence spécialisée (Armes d’hast : Lance) d’un niveau supérieur à 8.",
+    "weight": 2,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "exceptional",
+    "special": [
+      {
+        "title": "Khy-ller",
+        "description": "En présence du Grand Dragon des Cités, son possesseur doit réussir un jet Physique + Volonté contre une Difficulté de 25 pour éviter de se laisser guider par l'arme et de charger Khy. Si ce dernier venait à être touché, il est probable qu’il mourrait dans un maelstrôm d’énergies…"
+      }
+    ],
+    "slot": "hands",
+    "handiness": 2,
+    "layer": "normal",
+    "skill": "armesDHast",
+    "requirements": {
+      "force": 9
+    },
+    "initiative": {
+      "distance": 0
+    },
+    "damage": {
+      "static": null,
+      "ability": "force",
+      "multiply": 1,
+      "add": 10,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 2.5,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    },
+    "range_max": {
+      "static": 2.5,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Écaille de Yenk et Zveert-le-persécuteur",
+    "uuid": "fab5b4d2-1ee5-4bf4-a474-6927a95faa47",
+    "unique": true,
+    "description": "Le talisman d'écaille rend l’épée qui lui sert de support d’une qualité incroyable et d’une résistance exceptionnelle.",
+    "weight": 0.7,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "exceptional",
+    "special": [
+      {
+        "description": "Augmente l'Initiative de son utilisateur de 2 dés"
+      },
+      {
+        "title": "Respect de Kezyr",
+        "description": "Si le combattant respecte donc au moins un des Interdits de Kezyr, la réussite d’un jet Mental + Force + Tendance Dragon contre une Difficulté égale à la moitié de l’Indice de protection de l’armure, arrondi au chiffre inférieur, permet de réduire définitivement cet Indice de 2 points, plus 1 point par Niveau de Réussite."
+      },
+      {
+        "title": "Perforation",
+        "description": "Contre les armures légères, le jet d'attaque peut s'effectuer avec l'Attribut Manuel. Si l'attaque porte, l'armure est divisée par deux. Pour un NR et plus, l'armure est ignorée."
+      }
+    ],
+    "slot": "hands",
+    "handiness": 1,
+    "layer": "normal",
+    "skill": "armesTranchantes",
+    "requirements": {
+      "force": 4
+    },
+    "initiative": {
+      "contact": 0,
+      "melee": 2
+    },
+    "damage": {
+      "static": null,
+      "ability": "force",
+      "multiply": 1,
+      "add": 8,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 1,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    },
+    "range_max": {
+      "static": 1,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    }
   }
 ]

@@ -861,5 +861,127 @@
         "description": "Ne peut toucher qu'une cible non-vivante"
       }
     ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les outils d’Alverkop",
+    "uuid": "782d8d8f-7003-4f9a-ac7c-21dd5cda778a",
+    "unique": false,
+    "description": "Alverkop est né difforme. En effet, sa mère eut un grave accident durant sa grossesse, lorsqu’un enfant de Kezyr - Dwerk - s’abattit sur sa chaumière suite à un violent combat contre un fils de Kroryn.\nDwerk, pris de remords, accompagna l’enfant au fil de ces jours sombres que furent sa jeunesse. Maltraité par les uns, fui et rejeté par les autres, le jeune Alverkop eu la chance de pouvoir compter sur un allié draconique sans lequel son histoire aurait été plus brève.\nLorsqu'il eut 14 ans, Dwerk présenta Alverkop au Grand Dragon du Métal, le conjurant d'aider cet humain à devenir artisan. Le défi était de taille car les difformités de l’adolescent ne lui permettaient pas d’utiliser des outils conventionnels.\nCharmé par tant de sollicitude de la part d’un de ses dragons, Kezyr offrit sa chance à Alverkop en lui faisant forger des outils adaptés à son handicap. Au fil des ans, le Grand Dragon ne fut pas déçu et Dwerk eut un certain mal à cacher sa joie lorsque AlverKop devint Maître Maçon.\nCes outils ont des formes étranges, biscornues, et ne peuvent immédiatement être identifiés comme des outils de maçon qu’au prix d’un jet de Mental + Artisanat (Maçonnerie) contre une Difficulté de 20 - cette Difficulté est augmentée de 5 pour tous les autres types d’artisanat et de 10 en cas de jet effectué avec une Caractéristique.\nPouvoirs et capacités\nChacun de ces outils ne peut être utilisé que par des personnes souffrant d’un désavantage physique important - infirmité, faiblesse physique, petite taille ou fragilité - et possédant une Force inférieure à 5.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Bonus de 2 à chacun des jets impliquant l’Attribut Manuel"
+      },
+      {
+        "description": "Avant d'utiliser une Compétence Technique, le personnage peut tenter un jet de Manuel + Volonté + Tendance Dragon contre une Difficulté de 15 - quel que soit le nombre d’outils possédés - et chaque Niveau de Réussite obtenu s'ajoute au score de la Compétence Technique impliquée dans le jet d'action en cours"
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les talismans d'écaille",
+    "uuid": "6a93d699-1fe4-486d-aad0-2f38a80024ab",
+    "unique": false,
+    "description": "Les Talismans d’écailles\nCes talismans, enchantés par la magie du métal, furent rassemblés par l’un des premiers enfants de Kezyr à avoir transmis le Lien. Keblyk eut l’idée d’une coutume, toujours en vigueur aujourd’hui, pour marquer de solennité le choix d’un Élu : chaque enfant de Kezyr offre l’une de ses écailles à son compagnon.\nAu fils des ans et des décès, Keblyk s’est mis dans l’idée de récupérer toutes ces écailles perdues afin d’en faire des talismans qui rendraient dignement hommage aux premiers Élus. Chose fut faite, mais à la mort du dragon, sa collection de souvenirs se dispersa à travers le Royaume de Kor.\nChaque talisman est unique, tant dans sa forme que dans les pouvoirs qu’il confère, car Keblyk voudait respecter les particularités de chacun des groupes de compagnons. Généralement, il se présente sous la forme d'une écaille, dont la longueur varie de quelques centimètres à près d’un mètre, enchâssée dans un objet manufacturé - bijou, armure, arme, bouclier, etc.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les ciseaux de précision",
+    "uuid": "7e5a1346-d814-485b-9ef2-5f5fdd0505a4",
+    "unique": false,
+    "description": "Beaucoup d’orfèvres utilisent ces instruments quasi-chirurgicaux pour obtenir un maximum de précision. Non seulement leur finesse est inégalée, mais un petit sortilège de stabilité - provenant des mages de Brorne - préserve les mains de l’artisan de tout tremblement ou faux geste. L’équivalent existe pour les voleurs et les mécaniciens humanistes, mais personne ne voudra le reconnaître.",
+    "weight": 0.1,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 200
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les automates",
+    "uuid": "6da229d5-3364-4c4c-b489-a123fcea2b26",
+    "unique": false,
+    "description": "Ce terme englobe tous les types de décorations possibles, de la fresque à la statuette en passant par la marionnette. Ces objets ont pour vocation de garder un lieu ou un coffre. Sitôt que quelqu’un approche sans les désamorcer, leur piège s'active. Suivant le contexte, cela peut aller du simple dard empoisonné à la pluie d’acide bouillant.\nIl faut s’y connaître à la fois en mécanique et un peu en magie du métal pour déjouer les automates. Ils sont aussi utilisés par les Humanistes pour commettre des attentats.",
+    "weight": 5,
+    "creation_difficulty": 25,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les alliages de Kezyr",
+    "uuid": "fb2085f8-98b7-4fb8-b4fb-2691654be0f7",
+    "unique": false,
+    "description": "Qu'ils se présentent en barres de plusieurs kilos ou en sacs de poudre, les alliages servent à tous ceux qui travaillent les métaux sans procéder aux mélanges préalables de minerais pour obtenir la matière adéquate. Suivant les métaux déjà mélangés et leur rareté, qui varie d’un pays à l’autre, les alliages sont plus ou moins onéreux. On les considère comme des objets magiques, car certains mélanges ne pourraient être obtenus sans l'intervention d’un enchantement - car les éléments sont incompatibles.",
+    "weight": 1,
+    "creation_difficulty": 20,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 500
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 500
+    },
+    "supports_metal": false,
+    "special": []
   }
 ]

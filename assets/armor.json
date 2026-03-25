@@ -429,5 +429,38 @@
     },
     "slot": "fullBody",
     "description": "L’armure draconique est le sommet de l’artisanat élémentaire. Elle prend la forme d’une lourde armure de plaques constituée d’écailles de dragon sculptées par manipulation élémentaire. Tout le corps est alors recouvert par des plaques soudées entre elles qui ne sont autres que des parties animées d'une carapace élémentaire. Une armure draconique ne peut être vendue. Un artisan ne réalisera une telle armure que pour un Élu apportant les écailles que son compagnon lui aura données ou pour une seigneur ayant mérité la gratitude des ailés. Toute tentative de s'approprier une armure draconique n’étant pas la sienne est, dit-on, de mauvais présage, la malédiction des dragons frappant alors l’impudent. Bien sûr, il est inconcevable de créer une armure draconique à partir des écailles d’un ailé décédé."
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Phalange de métal",
+    "uuid": "70afbbc1-dc15-47dc-b4ca-3f73bbfeaa92",
+    "unique": false,
+    "description": "Sous ce terme générique se cachent des êtres animés faits de métal. Certains enfants de Kezyr, dans leur recherche de protections plus adaptées aux hommes, eurent l’idée de développer des armures autonomes et efficaces. Ils donnèrent ainsi naissance à des sortes de golems de métal, doués d’une faible intelligence, mais d’une forte résistance.\nCes “armures vivantes” se montrèrent rapidement incompatibles avec la présence d'humains en leur sein, et si l’idée fut rapidement abandonnée, de nombreuses pièces circulent dans le Royaume de Kor. Lorsqu’elles s’assemblent, elles peuvent rappeler à la conscience l’esprit du métal.\nLes pièces d’armures sont toutes métalliques et usées au point de tromper des experts sur leur réelle qualité. Toutes sont couvertes de fresques guerrières vantant les exploits des enfants de Kezyr.\nPouvoirs et capacités\nLorsque deux pièces sont ajustées, elles s’assemblent parfaitement et procurent un sentiment de bien-être à leur propriétaire. Ainsi portées, elles se révèlent supérieures à une armure de demi-plaques.\nEn revanche, le fait d’associer des pièces d’armure sans les enfiler conduit celles-ci à donner naissance à une phalange de métal. Une fois les pièces mises en contact, l’esprit du métal se matérialise et complète l’armure afin de générer un être autonome d’1,50 m.\nCe dernier obéira à son nouveau propriétaire si celui-ci réussit un jet de Manuel + Volonté + Tendance Dragon contre une Difficulté de 20. Dans le cas contraire, l’être de métal agira à sa guise dans l’intérêt de Kezyr. Une fois la phalange de métal tuée, l’armure se disloque et devient inutilisable.",
+    "weight": 12,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "normal",
+    "type": "heavy",
+    "requirements": {
+      "force": 4,
+      "resistance": 5
+    },
+    "protection": 32,
+    "penalty": -6
   }
 ]

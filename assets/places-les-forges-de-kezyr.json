@@ -689,5 +689,155 @@
       "military": null
     },
     "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Le tombeau de Khy",
+    "uuid": "5f30099e-e60f-4fbc-86d2-ded59f193745",
+    "parent_id": "f88784f4-6d6b-42ec-bf12-f66757a00963",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Touché dans sa chair lorsqu'il perdit son fils, Kezyr décida de lui consacrer un sanctuaire. Régulièrement, le Grand Dragon du Métal part se recueillir dans cette caverne enfouie au plus profond de la terre. Si un aventurier audacieux y accédait un jour, il pourrait découvrir l’âme même de Kezyr. En effet, tout y est majestueux, brillant, étouffant de beauté. Kezyr y forge des objets défiant l’imagination humaine à l’aide de ses écailles et de son propre sang, dans l’espoir de retrouver son fils un jour. Ceux-ci sont la cristallisation de ses états d’âme, de ses regrets, mais constituent également les témoins inégalables de sa vie et de l’histoire du Royaume de Kor. Tout visiteur qui pénétrerait dans le sanctuaire serait envahi par une vague de calme et de béatitude - il aurait le sentiment que l'harmonie est enfin à sa portée. Malheureusement, hors ces lieux, le monde lui semblerait bien frustre. Dès lors, il ne pourrait que se mettre en quête de la perfection en innovant, aidant autrui, construisant…\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "La coulée continue du savoir",
+    "uuid": "e5dd7451-da64-41ee-a17e-b293ab1d8513",
+    "parent_id": "aab5f7a3-b8c0-42b8-8094-8e45440b0926",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Il existerait, quelque part dans le monde, une caverne prodigieuse où l’on pourrait entrer en contact avec le savoir de Moryagorn. Bien que peu d'informations précises existent à ce sujet, les récits de voyageurs font état d’une montagne déchirée en son centre par une balafre aux éclats métalliques. Au cœur de cette grotte coulerait de façon continue un flux de métal incandescent - le sang de Moryagorn ? Protégée par des êtres difformes, aveugles, à la peau chitineuse et à la voix rauque et crissante, cette coulée offrirait, à qui oserait y plonger, les savoirs les mieux gardés. Un audacieux pourrait ainsi accéder à la connaissance du monde et en comprendre son évolution.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "La cascade de larmes",
+    "uuid": "aab1c80f-7f78-4591-acca-07fc94216410",
+    "parent_id": "0824a0bd-4fec-4be7-97c8-607018f04854",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Lorsque Kezyr repense à son fils et à ses erreurs d’antan, il n'est pas rare que la mélancolie l’accable et lui fasse verser quelques larmes. Ces dernières sont alors récoltées par Ksych, son plus fidèle serviteur et l’un de ses plus anciens fils, afin d’alimenter la cascade de larmes. En effet, au plus profond de Dungard coule une cascade aux reflets métalliques qui, selon la légende, offrirait l’invincibilité à ceux qui s’y baigneraient.\n\nNul n’est revenu pour confirmer ces dires, mais une rumeur persiste selon laquelle ces nouveaux “immortels” ne pourraient se détacher de la beauté de cette chute de larmes et seraient à jamais prisonniers de ses alentours merveilleux.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "La forge d’Alkayr",
+    "uuid": "4b54599f-c596-4c9e-a3de-e86cab3ac941",
+    "parent_id": "af49b28d-ec78-4c7d-969d-7b2254ccb58b",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Bien avant l’Âge des Fondations, Alkayr, neuvième enfant du Grand Dragon du Métal, a juré à son géniteur de lui faire gagner les guerres auxquelles il participerait. Il s’est, dès lors, retiré au cœur d’une montagne du bout du monde afin d’y installer des forges titanesques.\n\nLe temps s’est écoulé et Kezyr en a oublié jusqu’à l’existence de son fidèle enfant. Ce dernier, obnubilé par son travail, a perdu tout contact avec la réalité du Royaume de Kor et continue à vivre au rythme de ses forges. Celles-ci, dirigées par des êtres hauts de plus de trois mètres, à la peau écarlate et aux muscles démesurés, continuent à produire un arsenal effrayant. Bien que folie et mégalomanie le gagnent, Alkayr ne tarit pas d’imagination pour concevoir des armes, des armures et des machines de guerre à l’efficacité redoutable. Que pourrait-il advenir de Kor si Alkayr venait à sortir de son antre ? Si Kalimmshar venait à trouver les forges ?\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les neuf vestiges de la Tour d’Éternité",
+    "uuid": "5f78d531-9908-4389-99e1-5bef2f2a9078",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Voilà plus de quinze siècles que Kezyr ressasse son échec lors de l’effondrement de la Tour d’Éternité - plus de quinze siècles qu’il s’est juré de mener à bien ce projet grandiose. Malgré la destruction de son œuvre, il n’a eu de cesse de développer un plan plus grandiose encore.\n\nDepuis plusieurs siècles, ses plus fidèles enfants, ses Élus de haut niveau et ses artisans de rang élevé, œuvrent dans l’ombre à travers tout le royaume pour mener à bien une mission de confiance : construire neuf Tours d’Éternité. Convaincu que s’il dédiait chacune des tours à l’un des Grands Dragons, ces derniers ne nuiraient pas à son projet, Kezyr a ainsi désigné à ses proches neuf lieux symboliques - volcan, forêt, piton rocheux, falaise, sous-sol d’Yris - pour établir, dans le plus grand secret, les fondations des neuf tours.\n\nSur chacun de ces neuf lieux, le Grand Dragon du Métal a fait porter des vestiges de la première Tour d’Éternité auxquels il a fait adjoindre les matériaux les plus purs. Les fondations semblent enfin suffisamment solides et imposantes pour être dévoilées aux autres Grands Dragons. De plus, Kezyr s’inquiète de la recrudescence de voyageurs qui parlent de chantiers titanesques, de monolithes étranges ou d’immenses constructions. Il ne souhaite pas que l’Inquisition ou Kalimsshar mettent leur nez dans ses affaires avant qu’il n’ait pu mener son coup d’éclat à bien.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les cours élémentaires",
+    "uuid": "bce618b3-9528-42d0-b062-243976a18f6c",
+    "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Perdu dans le royaume de Kern, protégé par des pics montagneux peu accueillants, un plateau abrite les cours élémentaires. Sous des baraquements apparemment vétustes, Kezyr entretient les plus grands artistes et Maîtres Artisans des Terres des Dragons. En effet, les enfants du Grand Dragon parcourent Kor à la recherche des jeunes âmes les plus sensibles et les plus réceptives à la beauté des éléments.\n\nUne fois identifié, l’enfant est enlevé à ses parents et conduit sur le plateau où, dans le plus grand dénuement, il peut forger son art et approcher la perfection. Ainsi, une fois l’an, ces maîtres élémentaires offrent un spectacle en l’honneur de leur maître draconique au cours duquel un curieux de passage pourrait voir des dompteurs de vent, des sculpteurs de nuit, des chanteurs de flammes…\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
   }
 ]

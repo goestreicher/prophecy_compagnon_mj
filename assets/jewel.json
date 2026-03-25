@@ -415,5 +415,100 @@
     "slot": "neck",
     "handiness": 0,
     "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Écaille d’Elyss et Argür-le-prompt",
+    "uuid": "2bee0854-1cfd-415a-85ed-8c11268d3674",
+    "unique": true,
+    "description": "Ce talisman n’est utilisable qu’une seule et unique fois, en combat et contre une cible précise. Le propriétaire doit réussir un jet de Mental + Coordination contre une Difficulté égale à la somme de Mental + Perception de sa victime. Chaque Niveau de Réussite confère 2 points de Maîtrise utilisable pour n’importe quelle action entreprise contre cette dernière.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": true,
+    "intrinsic_resistance": "exceptional",
+    "special": [],
+    "slot": "finger",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Écaille de Krynog et Torsten-l'imprécateur",
+    "uuid": "eeb37cfe-4323-41ac-a840-95a376878277",
+    "unique": true,
+    "description": "Ce talisman facilite le lancement des sortilèges de Sorcellerie liés à la Sphère du Métal. Il est utilisable par toute personne possédant une Tendance Dragon supérieure ou égale à 2 et dispose d’une réserve de 30 Points de Magie, qui se régénère au rythme de 1 point par heure passée dans du métal en fusion.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": true,
+    "intrinsic_resistance": "exceptional",
+    "special": [
+      {
+        "description": "Confère à son utilisateur une Discipline Sorcellerie de 2"
+      },
+      {
+        "description": "Le propriétaire a accès aux sorts “Liquide corrosif” et “Lame du héros”"
+      }
+    ],
+    "slot": "neck",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Écaille d'Okard et Evalya-la-rouge",
+    "uuid": "95ce812e-6dfc-4883-9507-cc2ac748ba90",
+    "unique": true,
+    "description": "Seuil un fidèle de Kezyr respectant au moins deux Interdits du Grand Dragon du Métal peut faire appel au pouvoir de ce talisman. L’écaille d’Okard augmente tous les pouvoirs liés au métal.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": true,
+    "intrinsic_resistance": "exceptional",
+    "special": [
+      {
+        "description": "Permet de lancer et de conserver un dé supplémentaire à tous les jets de magie impliquant la Sphère du Métal - ainsi que pour en déterminer les effets"
+      },
+      {
+        "description": "Tous les dommages causés par une arme métallique au porteur de l’écaille sont réduits d’un nombre de points égal à sa Tendance Dragon + 5"
+      }
+    ],
+    "slot": "finger",
+    "handiness": 0,
+    "layer": "normal"
   }
 ]
