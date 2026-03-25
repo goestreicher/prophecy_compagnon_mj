@@ -263,6 +263,63 @@ enum _EquipmentTableCells {
   special,
 }
 
+Map<_EquipmentTableCells, TableColumnWidth> _getEquipmentColumnsWidth() {
+  var ret = <_EquipmentTableCells, TableColumnWidth>{
+    _EquipmentTableCells.name: FixedColumnWidth(200),
+    _EquipmentTableCells.weight: IntrinsicColumnWidth(),
+    _EquipmentTableCells.creationDifficulty: IntrinsicColumnWidth(),
+    _EquipmentTableCells.creationTime: IntrinsicColumnWidth(),
+    _EquipmentTableCells.villageAvailability: IntrinsicColumnWidth(),
+    _EquipmentTableCells.cityAvailability: IntrinsicColumnWidth(),
+  };
+
+  return ret;
+}
+
+Map<_EquipmentTableCells, _HeaderTableCell> _createStandardEquipmentHeaders({
+  required BuildContext context,
+}) {
+  var ret = <_EquipmentTableCells, _HeaderTableCell>{
+    _EquipmentTableCells.name: _HeaderTableCell(
+      child: Text(
+        'Nom',
+      )
+    ),
+    _EquipmentTableCells.weight: _HeaderTableCell(
+      child: Text(
+        'Poids',
+      )
+    ),
+    _EquipmentTableCells.creationDifficulty: _HeaderTableCell(
+      child: Text(
+        'DC',
+      )
+    ),
+    _EquipmentTableCells.creationTime: _HeaderTableCell(
+      child: Text(
+        'TC',
+      )
+    ),
+    _EquipmentTableCells.villageAvailability: _HeaderTableCell(
+      child: Text(
+        'Rareté/Prix\n(villages)',
+      )
+    ),
+    _EquipmentTableCells.cityAvailability: _HeaderTableCell(
+      child: Text(
+        'Rareté/Prix\n(villes)',
+      )
+    ),
+    _EquipmentTableCells.special: _HeaderTableCell(
+      child: Text(
+        'Spécial',
+      )
+    ),
+  };
+
+  return ret;
+}
+
 Map<_EquipmentTableCells, _DefaultTableCell> _createStandardEquipmentCells({
   required EquipmentModel equipment,
   required BuildContext context,
@@ -432,50 +489,6 @@ class _EquipmentSpecialTableCell extends StatelessWidget {
       );
     }
   }
-}
-
-Map<_EquipmentTableCells, _HeaderTableCell> _createStandardEquipmentHeaders({
-  required BuildContext context,
-}) {
-  var ret = <_EquipmentTableCells, _HeaderTableCell>{
-    _EquipmentTableCells.name: _HeaderTableCell(
-        child: Text(
-          'Nom',
-        )
-      ),
-    _EquipmentTableCells.weight: _HeaderTableCell(
-        child: Text(
-          'Poids',
-        )
-      ),
-    _EquipmentTableCells.creationDifficulty: _HeaderTableCell(
-        child: Text(
-          'DC',
-        )
-      ),
-    _EquipmentTableCells.creationTime: _HeaderTableCell(
-        child: Text(
-          'TC',
-        )
-      ),
-    _EquipmentTableCells.villageAvailability: _HeaderTableCell(
-        child: Text(
-          'Rareté/Prix\n(villages)',
-        )
-      ),
-    _EquipmentTableCells.cityAvailability: _HeaderTableCell(
-        child: Text(
-          'Rareté/Prix\n(villes)',
-        )
-      ),
-    _EquipmentTableCells.special: _HeaderTableCell(
-        child: Text(
-          'Spécial',
-        )
-      ),
-  };
-
-  return ret;
 }
 
 class _EditableEquipmentMenu extends StatelessWidget {

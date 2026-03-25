@@ -150,6 +150,7 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
   }
 
   Table _createArmorTable(List<ArmorModel> armors, BuildContext context) {
+    var widths = _getEquipmentColumnsWidth();
     var defaultCells = _createStandardEquipmentHeaders(context: context);
 
     return Table(
@@ -158,16 +159,15 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
         top: BorderSide(width: 1.0, color: Colors.black38),
         right: BorderSide(width: 1.0, color: Colors.black38),
         bottom: BorderSide(width: 1.0, color: Colors.black38),
-        verticalInside: BorderSide(width: 1.0, color: Colors.black38),
       ),
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-      columnWidths: const <int, TableColumnWidth>{
-        0: FixedColumnWidth(140),   // Name
-        1: IntrinsicColumnWidth(),  // Weight
-        2: IntrinsicColumnWidth(),  // Creation difficulty
-        3: IntrinsicColumnWidth(),  // Creation time
-        4: IntrinsicColumnWidth(),  // Village scarcity
-        5: IntrinsicColumnWidth(),  // City scarcity
+      columnWidths: <int, TableColumnWidth>{
+        0: ?widths[_EquipmentTableCells.name],
+        1: ?widths[_EquipmentTableCells.weight],
+        2: ?widths[_EquipmentTableCells.creationDifficulty],
+        3: ?widths[_EquipmentTableCells.creationTime],
+        4: ?widths[_EquipmentTableCells.villageAvailability],
+        5: ?widths[_EquipmentTableCells.cityAvailability],
         6: IntrinsicColumnWidth(),  // Requirements
         7: IntrinsicColumnWidth(),  // Protection
         8: IntrinsicColumnWidth(),  // Penalty

@@ -170,6 +170,7 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
           rows.addAll(_createWeaponRows(twoHandedWeapons, context));
         }
 
+        var widths = _getEquipmentColumnsWidth();
         var defaultCells = _createStandardEquipmentHeaders(context: context);
 
         children.add(
@@ -179,17 +180,15 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
               top: BorderSide(width: 1.0, color: Colors.black38),
               right: BorderSide(width: 1.0, color: Colors.black38),
               bottom: BorderSide(width: 1.0, color: Colors.black38),
-              //verticalInside: BorderSide(width: 1.0, color: Colors.black38),
-              //verticalInside: BorderSide.none,
             ),
             defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-            columnWidths: const <int, TableColumnWidth>{
-              0: FixedColumnWidth(140), // Name
-              1: IntrinsicColumnWidth(), // Weight
-              2: IntrinsicColumnWidth(), // Creation difficulty
-              3: IntrinsicColumnWidth(), // Creation time
-              4: IntrinsicColumnWidth(), // Village scarcity
-              5: IntrinsicColumnWidth(), // City scarcity
+            columnWidths: <int, TableColumnWidth>{
+              0: ?widths[_EquipmentTableCells.name],
+              1: ?widths[_EquipmentTableCells.weight],
+              2: ?widths[_EquipmentTableCells.creationDifficulty],
+              3: ?widths[_EquipmentTableCells.creationTime],
+              4: ?widths[_EquipmentTableCells.villageAvailability],
+              5: ?widths[_EquipmentTableCells.cityAvailability],
               6: IntrinsicColumnWidth(), // Requirements
               7: IntrinsicColumnWidth(), // Initiative
               8: IntrinsicColumnWidth(), // Range
