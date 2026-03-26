@@ -34,6 +34,7 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
       if(!(widget.filter?.match(shield) ?? true)) continue;
       shields.add(shield);
     }
+    shields.sort((a, b) => a.name.compareTo(b.name));
   }
 
   @override

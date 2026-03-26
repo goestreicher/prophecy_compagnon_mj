@@ -34,6 +34,7 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
       if(!(widget.filter?.match(g) ?? true)) continue;
       gear.add(g);
     }
+    gear.sort((a, b) => a.name.compareTo(b.name));
   }
   
   @override

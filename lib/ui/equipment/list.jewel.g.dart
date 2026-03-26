@@ -70,6 +70,7 @@ class _JewelTypeContainerState extends State<_JewelTypeContainer> {
       if(!(widget.filter?.match(jewel) ?? true)) continue;
       jewels.add(jewel);
     }
+    jewels.sort((a, b) => a.name.compareTo(b.name));
   }
 
   @override

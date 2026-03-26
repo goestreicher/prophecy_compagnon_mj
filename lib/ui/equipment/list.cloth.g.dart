@@ -70,6 +70,7 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
       if(!(widget.filter?.match(cloth) ?? true)) continue;
       clothes.add(cloth);
     }
+    clothes.sort((a, b) => a.name.compareTo(b.name));
   }
 
   @override

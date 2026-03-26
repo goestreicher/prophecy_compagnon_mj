@@ -157,6 +157,7 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
         var rows = <TableRow>[];
 
         if(oneHandedWeapons.isNotEmpty) {
+          oneHandedWeapons.sort((a, b) => a.name.compareTo(b.name));
           rows.add(
               _createSeparatorRow('Une main', context)
           );
@@ -164,6 +165,7 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
         }
 
         if(twoHandedWeapons.isNotEmpty) {
+          twoHandedWeapons.sort((a, b) => a.name.compareTo(b.name));
           rows.add(
               _createSeparatorRow('Deux mains', context)
           );

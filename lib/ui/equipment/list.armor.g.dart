@@ -70,6 +70,7 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
       if(!(widget.filter?.match(armor) ?? true)) continue;
       armors.add(armor);
     }
+    armors.sort((a, b) => a.name.compareTo(b.name));
   }
 
   @override
