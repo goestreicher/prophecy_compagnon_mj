@@ -622,5 +622,155 @@
       "military": null
     },
     "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "La foire de Kyelle",
+    "uuid": "e0409642-67be-4f52-8041-0a600600bd09",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Une fois l’an, quand s’annoncent les premières semaines du printemps, de nombreux marchands et curieux de tous bords lèvent des caravanes et quittent leurs cités à la recherche de Kyelle. Étrangement, nul ne semble jamais connaître avec précision l'endroit où se tiendra cette foire, ce gigantesque rassemblement de commerçants et de jongleurs, qui continue pourtant de drainer des milliers de visiteurs. Là où rien la veille ne le laissait soupçonner, se dressera le lendemain matin une magnifique cité, composée de tentes, d’étals, de voilages et de quelques bâtiments de pierre blanche.\n\nOn dit de cette cité qu’elle est liée à la magie du fils de Kezyr, Grand Dragon des Cités, mais rares sont ceux qui ont jamais pu en apporter la preuve. Le fait que la foire apparaisse et disparaisse en quelques heures seulement en semble déjà une preuve suffisante, certes, mais aucun mage draconique n’ayant jamais pu se joindre aux festivités, qui semblent réservées aux plus “humains” des habitants de Kor, il n’existe à ce jour aucune étude magique susceptible de confirmer la véritable nature de Kyelle.\n\nLe plus étonnant, c’est que personne ne semble véritablement savoir où se tiendra la foire - mais que des milliers de spectateurs et de marchands en trouvent chaque année le chemin, bien incapables d’expliquer par quel miracle.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Le Bastion",
+    "uuid": "c45c730f-de4a-4003-a9c9-4fe0ac9c3464",
+    "parent_id": "21c7ddf3-1697-476d-9a20-edecac20cf3b",
+    "type": "ville",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "De nombreuses rumeurs font actuellement état d’une incarnation de Khy en l’Empire Nésora - territoire humaniste et fief des activistes anti-draconiques. Interrogés sur le sujet, les plus puissants mages de la Sphère des Cités, ainsi que les érudits et géographes de la caste des voyageurs, ne semblent nullement en mesure d’apporter une confirmation officielle à la présence de Khy, mais tous les observateurs s’accordent sur la description d’une cité fortifiée, aux murs d’enceinte garnis de balistes et d’armes de guerre mécaniques, qui se dresse au sud de Py, non loin de l’embouchure de l’Oubli.\n\nCette cité, baptisée “Bastion” faute de plus amples renseignements, alimente depuis quelques années les plus folles polémiques sur le statut et les ambitions véritables du Grand Dragon des Cités, accusé de soutenir - et même de guider - les Humanistes. Plus inquiétant encore, la seule évocation de son existence suffit à faire frémir les garnisons de Kern.\n\nSi une offensive n’est pas encore à l’ordre du jour, les dernières manœuvres militaires d’entraînement ont été marquées par l’utilisation d’armes et d’armures spécifiquement conçues pour faire face aux armes mécaniques et aux remparts. Une fois de plus, seuls les dragons et leurs puissants Pères se refusent à tout commentaire hâtif - mais les récents événements impliquant Kroryn et Brorne ne laissent que peu d’espoir de paix et de non-ingérence. Le plus terrible, c’est que si nul ne peut affirmer que cette cité est une manifestation de Khy, tous les fidèles draconiques s’accordent à le penser - et à renier par là même l’un des neuf Grands Dragons.\n\nUn récent poème rapporté de Havre par Ludwin-le-Barde décrit Khy comme “la première victime de l’Humanisme, lui qui fut jadis la première victime de la foi draconique”.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Le sanctuaire de Zyl",
+    "uuid": "0edb1162-aa09-4023-889f-fb243db0eed3",
+    "parent_id": "7a2a025c-2020-4cb4-914d-f68b0f5e7131",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Dans les bois s’étendant à l’est de Sermande, sur les rives de la Brune qui s’écoule jusqu’aux portes d’Oforia, l’un des rares enfants de Khy connu pour assumer sa forme élémentaire se dresse, modeste hameau fait de tentes de toile. Familier des voyageurs, aux yeux de qui ce refuge constitue une curiosité touristique et une halte bienvenue, le sanctuaire de Zyl s’étend sur une trentaine de mètres de diamètre et offre aux visiteurs une dizaine de tentes de toile, reliées entre elles par des filets de soie et des bandelettes colorées. L'ambiance y est paisible, reposante et étrangement calme dans l’activité habituelle de ces bois. Les oiseaux y sont nombreux, mais “disciplinés”, et les rares animaux qui en approchent assez pour être remarqués sont les moins agressifs des environs. Aucun prédateur ne s’aventure à moins d’une centaine de mètres de l’endroit - et l’on comprend pourquoi.\n\nZyl n’est pas endormi, mais il se garde bien d’intervenir et de communiquer avec ses visiteurs - même par signes. Durant la journée, tout du moins, car celui qui passe la nuit sous ces tentes accueillantes a de grandes chances d’entrer en contact avec l'esprit du dragon. Zyl a élu domicile dans ces bois il y a plus d’un siècle, après la mort de son compagnon - Byran, un voyageur solitaire dont seuls les plus hauts représentants de la caste semblent avoir gardé souvenir. Habitué à partager les récits du voyageur, Zyl s’est tout naturellement épris de cette région boisée, riche du passage de nombreux pèlerins descendant du nord pour rallier la cité des érudits. À la nuit tombée, il aime à apparaître aux yeux de ses hôtes sous la forme de songes “éveillés”, terriblement réalistes ou par le biais de manifestations nettement plus teintées de magie - un mystérieux voyageur arrivant tard dans la nuit, surgissant des ombres pour partager le feu des aventuriers.\n\nTrès accueillant, profondément amoureux des hommes, Zyl n’est capable de violence qu’envers ceux qui profanent ouvertement sa retraite ou se montrent par trop intransigeants. S'il sent ses invités d’une nuit dignes de confiance et d’intérêt, il n’hésitera pas en revanche à les instruire de son savoir et à partager avec eux ses connaissances en géographie, en magie, en médecine et même en astrologie.\n\nEn termes purement techniques, le dragon est capable de servir de tuteur à tout personnage désireux d’apprendre. Il peut ainsi enseigner sortilèges, révélations d'ordre draconiques, géographiques, historiques, médicinales ou astrologiques comme s’il possédait un niveau de 12 dans ces Compétences - à l’exception d’Astrologie, qu’il possède à un équivalent de 8.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Les refuges",
+    "uuid": "4e057b2e-d187-4171-aa3b-11295270eaa2",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Il existe de par le monde un nombre important de refuges, à l’aspect et à la situation géographique variables, où Khy envoie régulièrement ses enfants pour qu’ils “apaisent l’âme des futurs voyageurs”. Ces huttes, clairières, fontaines, bancs creusés dans des souches, sont caractérisés par une étrange résonance que seuls les hommes affranchis des carcans draconiques peuvent ressentir. En passant à leurs abords, certains habitants de Kor entendent une douce musique, sentent sur leur visage un air frais, réconfortant, et découvrent dans ces lieux incroyables un bien-être surprenant - ainsi qu’une sécurité absolue, puisque seuls les enfants de Khy peuvent s’en approcher à moins d’une cinquantaine de mêtres. Les autres dragons ressentent un malaise aussi profond que les hommes s’y sentent heureux.\n\nEn termes techniques, ces refuges ne sont accessibles qu’aux hommes possédant au moins 3 en Tendance Homme et sont interdits aux personnes possédant une Tendance Dragon ou Fatalité supérieure à 3. Les dragons peuvent éventuellement s’en approcher, mais la Difficulté de tous leurs jets est augmentée de 10 et l’usage de tout sortilège d’une Sphère autre que celle des Cités est augmentée de 15. De plus, tout combat contre un dragon ou une créature corrompue alerte immanquablement les fils de Khy et les Élus du Grand Dragon des Cités présents dans un rayon pouvant s’étendre jusqu’à plusieurs kilomètres. Peu de ces refuges ont pu être localisés avec précision jusqu’à ce jour, mais leur existence est connue et relayée par les Élus de Khy et les mages des cités.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Les égouts",
+    "uuid": "a8fcc08b-303b-4d5c-8368-43c11c1e90d4",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Ce ne sont pas des lieux magiques à proprement parler, mais c’est la façon dont ils fonctionnent qui l’est. Les très rares villes à avoir un système d’évacuation des eaux ont été construites sur des caves naturelles, des rivières souterraines, des ruines ou des nécropoles. La magie intervient pour organiser les courants d’eau et donner du mouvement là où les fluides devraient stagner. Des mages sont spécialistes dans ce type de gestion mais, en général, ils cachent cette profession de peur d'être considérés comme des parias.\n\nInventer des égouts nécessite plusieurs semaines de travail d'expertise, d'estimation et d'examen du lieu de réalisation. Cet art (incontestablement magique) permet de faire passer des canalisations dans des endroits improbables et de les rendre indiscernables du décor (sauf examen poussé). Limité aux égouts, aux canalisations et aux conduits d'eau, cet art permet de tordre la réalité pour créer un système circulant improbable.\n\nPar exemple, faire passer un collecteur d'un mètre de diamètre dans l'épaisseur d'un plancher séparant un rez-de- chaussé d'une cave (et faisant moins d'un mètre d'épaisseur) demandera un jet d'Artisanat élémentaire des cités à 20 et 2 pts de magie par mètre à construire. Faire circuler de l'eau à l'encontre de la gravité (remonter une pente ou couler dans un sens précis sur une surface plane) demandera un jet de 15 à 25 selon la quantité mise en oeuvre, ainsi qu'un point de magie par mètre ensorcelé.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "La porte dérobée",
+    "uuid": "fc50f6f6-3382-49bd-bef2-a0344b065333",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le classique passage secret est typiquement un objet urbain. Un fermier ne va pas s’amuser à cacher ses portes et les bâtisseurs de forteresse préfèrent les couvrir de lourdes tapisseries ou se ménager une sortie par les douves. Mais la porte dissimulée dans le décor ne se trouve qu’en ville. Plus le camouflage est bon, plus la magie employée aura été puissante. Ces passages secrets sont très coûteux et comportent parfois des éléments de mécanique, ce qui en fait des objets interdits.\n\nTout comme les égouts, cet art consiste à se jouer des règles de l'architecture pour créer des passages et des pièces secrètes là où ils ne devraient pas pouvoir exister.\n\n* Créer une alcôve secrète demande un jet d'Artisanat élémentaire des cités à 15 et 4 pts de magie.\n* Créer une porte dérobée demande un jet d'Artisanat élémentaire des cités à 20 et 6 pts de magie.\n* Créer un cabinet secret demande un jet d'Artisanat élémentaire des cités à 25 et 8 pts de magie.\n* Créer une salle secrète dérobée demande un jet d'Artisanat élémentaire des cités à 30 et 12 pts de magie.\n* Créer un tunnel ou un corridor dans l'épaisseur d'un mur ou d'une cloison demande un jet d'Artisanat élémentaire des cités à 20 par 5m (ou 25 pour 10m) et 1 pt de magie par mètre.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
   }
 ]

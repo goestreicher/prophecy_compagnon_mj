@@ -1155,5 +1155,55 @@
     },
     "supports_metal": false,
     "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Les livres-mémoire",
+    "uuid": "cab0cf9e-7158-46dd-9e82-a5c5449c1d0a",
+    "unique": false,
+    "description": "Les livres-mémoire furent inventés par un érudit Élu du Grand Dragon des Cités qui, pour consigner son savoir sans risquer d’être surpris dans ses recherches, reçut de Khy la magie nécessaire à la conception d’un enchantement particulier.\nDécouvert lors d’une investigation menée par une unité d’Inquisiteurs au sein de la capitale, le premier des livres-mémoire connus fit de véritables ravages dans les rangs des protecteurs, mais aussi des érudits - pour qui la découverte de ces objets constitue, aujourd’hui encore, une révolution sans précédent. Les Maîtres de la caste ont immédiatement revendiqué la propriété de ces livres qui, à en croire les résultats de leurs recherches, seraient non seulement capables de retracer les pensées de leur propriétaire, mais surtout de les restituer - à la façon d’une mémoire.\nEn feuilletant frénétiquement les pages désespérément blanches de ce livre, les Inquisiteurs acceptèrent cette explication sans hésitation.\nLes livres-mémoire sont d'aspect variable, mais la qualité du cuir de leur couverture et de leur reliure laisse perplexes la plupart des observateurs. À l’intérieur, les pages liées par une colle invisible sont blanches. Il est impossible d’écrire quoi que ce soit sur ce papier à la finesse inégalée. Certains modèles sont ornés d’une gravure métallique, d’autres dotés d’un fermoir.\nSeul le propriétaire du livre est capable d’y inscrire des informations et de les lire par la suite.\nPour devenir “propriétaire” d’un tel livre, dont la détention est passible de mort pour hérésie, il ne suffit pas simplement de se le procurer : un dragon de Khy (Vieux ou Ancien) doit impérativement en effacer la mémoire avant d’y inscrire le nom du nouveau détenteur.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Permet, à tout moment, retrouver des informations qu’il y a consignées - et le joueur peut donc demander au meneur de jeu de lui rappeler un nom, une date, une description, etc."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Les plans exacts",
+    "uuid": "794b9a28-c4b4-4a08-871e-de37207863d2",
+    "unique": false,
+    "description": "Encore un exemple d’objet non magique mais qui, sans l'intervention de la magie, n'aurait pu exister. Les plans exacts n’existent pas. Ils sont le fruit d’une observation aérienne des mages de Khy que les dragons acceptent de porter sur leur dos pour qu’ils dessinent les plans à vue d’œil. Ces parchemins sont vendus très chers car ils peuvent être capitaux pour le contrôle militaire ou commercial d’une cité. Dans certaines villes, ils sont même interdits.",
+    "weight": 0.05,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
   }
 ]

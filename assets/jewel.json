@@ -547,5 +547,90 @@
     "slot": "finger",
     "handiness": 0,
     "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Les anneaux de confiance",
+    "uuid": "9703941c-6ee3-4165-9407-c2d931bf82ab",
+    "unique": false,
+    "description": "Forgés il y a moins de deux siècles par les ancêtres des actuels Maîtres Ciseleurs de la caste des artisans, ces anneaux à la beauté sobre reçurent les enchantements d’Élus de Khy, versés dans la Sorcellerie et la Sphère des Cités. Conçus à l’origine pour servir de présent et de signe de reconnaissance entre Élus, qui furent tout d’abord les seuls à pouvoir les porter, ces anneaux ont aujourd’hui quitté leurs mains originelles et se retrouvent, au hasard des rencontres et des voyages, en possession de citoyens de tous horizons. Ils sont très prisés des mages des cités et des nouveaux Élus de Khy, mais les estimations les plus réalistes ne font état que d'une dizaine de tels objets.\nFaits d’un alliage d’or blanc et d’argent, ces anneaux à la taille variable dégagent tous une aura de simplicité, de pureté, que les amateurs de bijoux connaissent et apprécient. La seule fioriture décelable est une silhouette serpentine stylisée, très fine, qui court sur le pourtour de la bague comme un filet de fumée.\nPlacées sous une lumière vive, ces bagues se mettent à luire et à capter les moindres lueurs pour étinceler, prouvant leur nature et leur enchantement. Quelques jours après l’avoir mise à son doigt, le porteur d’un anneau de confiance commence enfin à ressentir les effets sur ses aptitudes magiques.",
+    "weight": 0.01,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Augmente la Sphère des Cités de 2"
+      },
+      {
+        "description": "Chaque fois qu’il lance un sortilège des Cités, la Discipline impliquée augmente de 1 et le coût en Points de Magie réduit de 2"
+      },
+      {
+        "description": "Toutes les autres Sphères que celle de la Cité diminuent de 2 tant qu’il porte cet anneau"
+      },
+      {
+        "description": "Tendance Homme augmentée de 1 - maximum 5"
+      },
+      {
+        "description": "Tendance Dragon réduite de 1 - minimum 0"
+      },
+      {
+        "description": "Si le porteur d’un anneau se sépare volontairement de cet objet, il perd immédiatement 1 point en Tendance Homme et voit sa Sphère des Cités réduite de 2 de façon permanente; il est de plus incapable de faire appel aux sortilèges de cette Sphère jusqu'à la fin du prochain Augure"
+      }
+    ],
+    "slot": "finger",
+    "handiness": 0,
+    "layer": "normal"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Le troisième œil",
+    "uuid": "11cf2359-d2d9-4cc0-837d-695e2b5e6dca",
+    "unique": true,
+    "description": "Bien que cet objet mythique soit encore nimbé d’une aura de légende et de superstition, les mages des cités sont aujourd’hui en mesure de prouver son existence depuis que Soder Fendrick, Grand Maître des invocations, a annoncé se l'être fait dérober.\nLes accusations lancées par l’éminent mage ont provoqué un déferlement de protestations au sein de l’école des cités, mais à ce jour, l'objet n’a toujours pas réapparu. Décrit comme “l’objet le plus cher aux yeux des fidèles de Khy” par les mages des cités eux-mêmes, ce pendentif en argent enchanté suscite actuellement une vive polémique, car d’après les déclarations de Soder, il aurait non seulement le pouvoir de sonder le cœur des êtres et de dissocier la réalité des illusions, mais surtout d’échapper par magie au regard des dragons.\nLong et large comme un drac d’argent, le pendentif est orné d’un œil clos, semblable à celui qui figure sur les pièces dragons, et pourvu sur sa tranche de fines ciselures entrelacées. Il est retenu par une chaîne aux mailles incroyablement fines et résistantes, faites du même argent.\nCet objet extrêmement puissant possède encore d’autres capacités, mais il semble que seul son propriétaire originel puisse en tirer profit. Mais Khy ne l’a toujours pas revendiqué.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": true,
+    "intrinsic_resistance": "incredible",
+    "special": [
+      {
+        "description": "Ne peut être porté que par un homme possédant 5 en Tendance Homme"
+      },
+      {
+        "description": "Permet d’effectuer un jet de Mental + Empathie contre une Difficulté de 10 et de déterminer, en cas de réussite, le niveau d’une Tendance + 1 par Niveau de Réussite chez un individu observé"
+      },
+      {
+        "description": "En réussissant un jet de Mental + Empathie contre une Difficulté de 20, le porteur peut sentir la présence de tout dragon situé dans un rayon d’un kilomètre aux alentours"
+      },
+      {
+        "description": "Si son porteur tente de se cacher aux yeux et aux recherches - magiques, mentales ou physiques - d’un dragon, il augmente de 10 la Difficulté de tous les jets de ce dernier"
+      }
+    ],
+    "slot": "neck",
+    "handiness": 0,
+    "layer": "normal"
   }
 ]
