@@ -1205,5 +1205,120 @@
     },
     "supports_metal": false,
     "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les conques du savoir essentiel",
+    "uuid": "e2767943-ee65-4656-9b2e-fad4dcb12055",
+    "unique": false,
+    "description": "Mécontente de sa descendance directe, le Grand Dragon des Océans chercha à remplacer les humains, jugés trop stupides, par d’autres formes de vie. Ainsi, elle étudia largement la faune marine et dota certaines espèces de capacités et de compétences “plus que” naturelles. Malheureusement, dans la majeure partie des cas, ces expériences se révélèrent de cuisants échecs. Néanmoins, c’est ainsi que naquirent les conques du savoir essentiel.\nLes conques sont en fait les restes de coquillages et crustacés qu’Ozyr avait dotés de connaissances particulières ; or, ces enveloppes ont conservé une grande partie de leur sapience passée et peuvent la restituer à qui sait en extraire la substantifique moelle.\nIl n’existe pas de conque typique. Toutes les formes de coquilles sont possibles, des plus sobres aux plus bariolées, des plus rudimentaires aux plus complexes. Seul trait commun : ce sont des objets inanimés, car les animaux qui les ont “habitées” ont disparu depuis bien longtemps.\nLes conques sont assez rares, car il est important qu’elles soient entières et en bon état pour que le savoir qu’elles contiennent soit encore concentré et exploitable ; un bout de coquillage ne peut donc être d’aucune utilité !\nBien que chaque conque soit unique, d’un point de vue technique, certains traits sont communs à toutes. Chaque conque a un effet unique, qui se traduit par le gain temporaire d’un bonus de +1 à +5 dans une et une seule Compétence de Théorie, pour une durée de 1D10 x 10 minutes. Pour que ce bonus soit applicable, il est nécessaire que la conque soit entière et préparée selon un rituel spécifique (par exemple, être broyée puis fumée, être diluée dans un breuvage, être mise en contact avec une blessure à vif, etc.) ; ce rituel peut être identifié grâce à la réussite d’un jet de Mental + Connaissance des animaux contre une Difficulté de 20.\nEnfin, l’utilisateur doit réussir un jet de Résistance contre une Virulence de 5 + (bonus offert x 5) sous peine de subir une intoxication alimentaire entraînant des troubles gastriques accompagnés, parfois, de troubles mentaux selon le type de conque.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les écailles de la quintessence",
+    "uuid": "35d53e3e-c3d5-48c2-b732-3ce8c7259681",
+    "unique": false,
+    "description": "Il fut un temps où Ozyr était soucieuse de conserver une trace tangible de son savoir, de peur d’en perdre une partie. Le Grand Dragon choisit à l’époque de sacrifier certains de ses enfants, afin de graver à même leur corps toute l’étendue de sa connaissance. Autant dire que les morts furent nombreux !\nDe ces massacres ne subsistent, aujourd’hui, que quelques écailles porteuses de savoir de-ci de-là. Celles-ci se révèlent des biens précieux pour tout érudit qui se respecte.\nVéritable livre d’histoire, chacune de ces écailles recèle une partie des connaissances de Kor. La taille de chacune d’elle peut varier de quelques centimètres à un mètre, selon l’âge du dragon auquel elle appartenait.\nPouvoirs et capacités :\nDéchiffrer les secrets d’une écaille de la quintessence nécessite la réussite d’un jet Mental + Connaissance des dragons contre une Difficulté de 25, suivie de la réussite d’un jet Empathie + Lire et écrire + Tendance Dragon contre une Difficulté de 30. La lecture d’une écaille donne un bonus variant en fonction de l'âge du dragon dans l’une des Compétences suivantes (au choix du maître de jeu) : Connaissance de la magie, Connaissance des dragons, Géographie ou Histoire. L’écaille d’un jeune dragon ou d’un enfant procure un bonus de +1, celle d’un adulte, un bonus de +2 et celle d’un vieux, un bonus de +3 ; aucun ancien n’a été sacrifié pour cette bibliothèque “vivante”.Ces bonus sont définitivement acquis par le personnage. Ils peuvent permettre de devenir Expert par ce biais, mais pas de dépasser 15.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": " Les clepsydres",
+    "uuid": "7f518ded-1d2e-4683-b901-dee3a932f44a",
+    "unique": false,
+    "description": "Depuis que les hommes ont pris conscience de leur mortalité, ils ont toujours ressenti le besoin de se situer dans le temps et de coordonner leurs vies pour les rendre ptus agréables. Les clepsydres sont des objets relativement courants, s'appuyant sur le principe de l'écoulement constant d’un liquide pour mesurer le passage du temps selon la vidange du réservoir, à la manière d’un sablier liquide. Il est devenu habituel d’orner de décorations magnifiques ces objets, dont certains sont même ensorcelés pour se remplir seuls à un certain degré. En général, on trouve des clepsydres dans les universités des érudits ou les Sources. Ce sont des objets conmunautaires, plus appréciés que les mystérieuses horloges, trop souvent taxées d’Humanisme.\nEn ville, une clepsydre est souvent confiée à la milice, qui peut alors planifier ses rondes et en informer la population par des annonces publiques.",
+    "weight": 5,
+    "creation_difficulty": 20,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 500
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 600
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les marque-pages élémentaires",
+    "uuid": "14aa6bb6-8822-4876-8f78-6aa0a98e942f",
+    "unique": false,
+    "description": "Tout érudit qui se respecte possède un marque-page ensorcelé, fait d’un cuir ou d'une étoffe de son choix et enchanté par les artisans élémentaires. Outre les décorations et broderies qui les parsèment, les marque-pages élémentaires peuvent révéler le nom de leur propriétaire lorsque l’on passe la main au-dessus. Il se forme alors un glyphe magique fugace, scintillant d’une matière élémentaire choisie par le mage et formant son nom. Les ornementations d’un marque-page sont souvent en rapport avec le Statut de son propriétaire.\nUne coutume interne veut que, si on désire faire savoir qu’on l’étudie, on laisse son marque-page à l’intérieur d’un livre, posé dans les rayonnages d’une bibliothèque. Il est, pour un érudit, très impoli de consulter un livre ainsi réservé, si le Statut du propriétaire est manifestement supérieur au sien. Dans ce cas, il est d’usage de demander l’autorisation à l’érudit concerné, qui la refusera rarement.",
+    "weight": 0.05,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les coraux",
+    "uuid": "ff93f4ec-fddb-46c0-b406-8a4625e63fbc",
+    "unique": false,
+    "description": "Les riches marchands et les nobles possèdent souvent des pieds de coraux ensorcelés, maintenus en vie hors des océans par le biais de la magie. Des mages des océans ou des artisans élêmentaires enchantent les délicates arborescences, ce qui y entretient une humidité perpétuelle et simule ainsi le milieu marin.\nLes coraux arborent parfois plusieurs nuances de couleurs. Leur popularité va croissant et ils constituent l’un des cadeaux les plus appréciés, hormis leurs qualités décoratives.",
+    "weight": 0.5,
+    "creation_difficulty": 20,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 200
+    },
+    "supports_metal": false,
+    "special": []
   }
 ]

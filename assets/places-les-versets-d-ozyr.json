@@ -388,5 +388,130 @@
       "military": null
     },
     "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "L'île du bout du monde",
+    "uuid": "4d43ff89-3004-4109-a84e-8987add2202e",
+    "parent_id": "9b76a378-7cfa-49b5-874a-c93ad00cb6f5",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Les plus aventureux des héros osent, lorsque l’alcool a coulé à flots, parler d’une île lointaine qui étalerait toute sa beauté au cœur de la Tourmente, à quelques encablures au sud-est des côtes de l’Archipel de Pyr. Les plus passionnés véhiculent à son sujet des légendes où se côtoient richesse, gloire et liberté. D’autres, plus modérés, voient dans cette île le refuge idéal pour tous ceux que le joug des Grands Dragons contraint à la résistance ou à la clandestinité. Enfin, les rêveurs espèrent de cette terre neuve les révélations les plus folles sur l’homme, ses connaissances et son bonheur.\n\nMalheureusement pour eux, ce que tous pensent être une île paradisiaque, dont les apparitions sporadiques - lorsque le temps est au clair - délient les langues, n’est en fait qu’un vulgaire piège tendu par certains enfants d’Ozyr désireux d’évaluer la bêtise de l’homme. Cette “terre” est, de fait, formée des cadavres de leurs frères et sœurs tombés en disgrâce aux yeux du Grand Dragon des Océans, suite au comportement inadapté de leur Élu. Ces quelques dragons ont eu l’idée retorse de laisser filtrer l’espoir d’une terre promise afin d'identifier les humains trop épris de liberté ou trop désireux de s'approprier des connaissances qui ne leur sont pas destinées.\n\nCette “île”, constamment surveillée par les instigateurs de ce piège et leurs descendants, attire chaque année son lot d’aventuriers qui, sans exception, y connaissent une fin tragique. Depuis peu, et afin de nuire à certaines visées expansionnistes des Humanistes, quelques enfants d’Ozyr ont développé le Lien. Depuis, ils manipulent leur Élu afin de propager la “bonne parole” et renforcer le mythe d’une terre de liberté et de connaissance.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Le delta des âmes égarées",
+    "uuid": "9d7097f2-8438-435a-a134-a52134bd6109",
+    "parent_id": "05241904-b3d5-4146-8895-08a8487da233",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Certains érudits aiment mettre en garde les héros présomptueux au sujet des dangers qui les guettent sur les côtes des Mouvantes. L'un d’entre eux - le plus mystérieux - semble se situer généralement aux abords de la Forêt Mère. Selon ume périodicité irrégulière, certains cours d’eau voient leur lit s’enfler et débordent, formant au cours des ans une sorte de delta. Ce phénomène, incompréhensible pour les érudits versés dans l’histoire et la géographie, se double d’une activité surnaturelle capable de terroriser les plus courageux. En effet, lorsque le delta semble définitivement “installé” et que les alluvions ont bien enrichi le sol, une brume étrange commence à envahir la terre. Nul ne sait d’où elle provient, mais les rares observateurs encore sains d’esprit s'accordent à dire qu’elle émane du sous-sol par de minuscules fissures creusées par des monstres marins de très petite taille. Des imprudents, égarés dans ce brouillard méphitique aux forts relents de marée, affirment y avoir entendu des voix.\n\nLa rumeur affirme que ce sont les voix des victimes d’Ozyr, réclamant la clémence. Certains sages prétendent que vivre au cœur des brumes en permettant à son esprit d’être réceptif au chant des morts permet d’acquérir les connaissances de ces derniers… mais nul n’est assez fou pour tenter délibérément l’expérience. Au bout d’une lune, le phénomène cesse et le delta est balayé par une tempête qui gronde au cœur des Mouvantes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les grandes marées du savoir originel",
+    "uuid": "57b360a4-f2a6-46fd-b261-7f7766526008",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "De façon imprévisible, se produisent de plus en plus régulièrement de grandes marées. Ces dernières concernent autant le Grand Large, l’Interdit que la Tourmente. D’une violence extrême, ce sont de véritables tempêtes qui font progresser les eaux de plusieurs kilomètres au cœur des terres, inondant et détruisant tout sur leur passage. Les érudits s’opposent quant aux origines de ces marées.\n\nPour les plus humanistes, elles sont le signe de la prédominance de la nature sur les Grands Dragons. Pour les autres, elles sont la preuve de la volonté d’Ozyr de châtier les plus désobéissants. De fait, depuis que certaines grandes marées se sont produites à répétition aux alentours de Jaspor, celles-ci ont donné naissance à de nouvelles superstitions, même chez les plus vénaux des marchands. Cette hypothèse trouve aussi sa source dans le constat que, jamais au cours de son histoire, la cité d’Oforia n’a été touchée par l'une de ces marées dévastatrices.\n\nElles sont en réalité plus complexes que ce que le commun de mortel veut bien voir en elles. Quoique effectivement l’œuvre d’Ozyr, elles ont une fonction bien plus symbolique que la simple destruction. En effet, celles-ci prennent naissance dans des vagues de savoir projetées avec violence au cœur des océans par le Grand Dragon qui veut prouver, par cela, qu’une trop vaste connaissance peut être destructrice. Ozyr s'amuse aussi de constater que, face à ce flux de connaissance, les humains se réfugient dans la superstition. Nouvelle preuve de leur vacuité et de leur médiocrité. Certains sages, cependant, commencent à prendre conscience de l’origine de ces marées. Ils essayent depuis lors de les prévoir afin de se tenir prêts, le jour venu, à tenter d’absorber un maximum de ce flux de pure connaissance.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les neuf colonnes salées",
+    "uuid": "026d2727-08c5-4baf-8147-4aa278168a81",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Arrogante et désireuse de montrer l'étendue de son savoir à ses frères et sœurs, le Grand Dragon des Océans décida un jour de déplacer les océans et d’implanter leur essence au cœur même du Royaume de Kor. Consciente qu’inonder les plaines et les vallées ne pourrait qu’attirer le courroux de ses congénères, elle fit littéralement exploser les étendues d’eau sous son contrôle pour que s’abatte durant neuf jours et neuf nuits une pluie diluvienne sur le corps de son père. Ces précipitations ne firent que peu de dégâts irréversibles, mais marquêrent les esprits. Suite au déluge, les eaux s’évaporèrent rapidement, laissant pour seule trace de leur passage neuf magnifiques colonnes de sel cristallisé, preuves de la grandeur et du caractère éphémère du savoir.\n\nEn effet, au cours des siècles, ces colonnes, disséminées de par le royaume, s’érodèrent petit à petit. Aujourd’hui, il n’en reste plus que trois, bien que certaines zones arides portent encore les stigmates d’une terre passée au sel. En choisissant le chiffre neuf pour ses colonnes, Ozyr désirait dédier une part de savoir à son père et à chacun de ses frères et sœurs ; malheureusement, aucun ne comprit le message et les colonnes n’eurent d’autre utilité que de se transformer en lieu d’adoration pour des humains superstitieux.\n\nCertains d’entre eux vénérèrent “leur” colonne, lui attribuant de nombreuses qualités. D’autres ne virent en elles qu’un lieu de croyances, tandis que d’autres encore voulurent en faire une source de profit et en exploitèrent le sel, telle une manne céleste.\n\nPeu comprirent l’essence même de ce sel et très rares sont les érudits qui se penchèrent sur le phénomène. Avec un peu plus de perspicacité, les humains auraient pu se rendre compte que, consommé de facon intelligente et dans des quantités raisonpables, le sel leur aurait ouvert les portes de la connaissance.\n\nDes neuf colonnes, seules celles dédiées à Kroryn, Nenya et Kalimsshar sont encore visibles. La plus majestueuse ne fait plus que cinq mètres de haut, tandis que la plus petite darde encore ses quinze centimètres dans la cour d’une ferme depuis longtemps abandonnée. En récupérant un peu de ce sel, en le purifiant et en le consommant, dilué dans de l’eau océane, des visions extraordinaires et enivrantes sur le savoir universel apparaîtront. Le sel de Kroryn fera découvrir l'essence même de la violence, de la passion et de la douleur. Le sel de Nenya ouvrira les portes de la magie originelle, tandis que celui de Kalimsshar fera découvrir l’étendue de l’éphémère et de la mort. Qui sait ce que pourrait réellement vivre un humain tentant l'expérience ? La quête de savoir peut-elle supplanter la folie ?\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "L’océan intérieur",
+    "uuid": "e68c7a03-6a05-4efc-b097-6a547d76b8f2",
+    "parent_id": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Une hypothèse à la mode au sein des milieux les plus érudits est que le Royaume de Kor - donc, le corps de Moryagorn - flotterait sur un océan de connaissance. Cette vision du monde, dans un premier temps symbolique, est devenue, au fil des ans, de plus en plus concrète. Dès lors, convaincus que l'attitude “agressive” du Grand Dragon des Océans à l’égard de l’humanité est une défense face à ce nouvel éclairage, de nombreux Humanistes (et d’autres aventuriers avides de gloire et de sapience) se sont lancés à la recherche dudit océan primordial. Ainsi sont nés les mythes des galeries du savoir ou de la caverne de Moryagorn… parallèlement à la mise sur pied, toujours croissante, d’expéditions destinées à explorer les profondeurs de Kor.\n\nDepuis lors, la moindre rivière souterraine devient la source de rumeurs. De même, de véritables communautés humaines, quoique de petite taille, s’organisent sous terre et tolèrent leur existence troglodyte au nom de l’acquisition d’un savoir qui semble inépuisable.\n\nFace à tant d’activités chthoniennes, les fils de Brorne s’inquiètent et s’étonnent que leur père n’intervienne pas pour calmer la situation. Ozyr, pour sa part, s’amuse de tant de bêtise et constate, avec cynisme, que la moindre fable attire toujours un nombre croissant d’humains dans son sillage. Le Grand Dragon reste cependant dans l’expectative quant à la nécessité réelle de créer un océan sous le sol du Royaume de Kor, afin de pousser l’humanité aux confins de sa stupidité ; cependant, craignant de perturber ainsi le repos de son géniteur, elle s’en abstient… mais pour combien de temps ?\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
   }
 ]
