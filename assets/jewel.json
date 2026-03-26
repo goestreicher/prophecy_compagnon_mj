@@ -357,7 +357,7 @@
     "name": "Le Talisman Écarlate",
     "uuid": "87b5077e-aac2-4d63-bb79-a9f2625582c9",
     "unique": true,
-    "description": "Les dragons sont présents dans le monde des esprits. Conume tout être vivant, ils génèrent une énergie spirituelle qui donne naissance à des êtres éthérés totalement indépendants. De plus, un dragon qui trouve la mort projette une partie de son esprit dans cette autre dimension. Le Talisman permet d'ouvrir un passage entre notre monde et celui des esprits pour invoquer un dragon éthéré. Le Talisman Écarlate fut créé par une grande magicienne de Nenya, Alliah Sallava. Elle en a conçu un par race de dragons (sauf pour les Dragons de l’Ombre). On raconte même qu’elle aurait conçu d’autres talismans qui permettent de lier l’esprit d’un dragon mort à leur possesseur. Le Talisman Écarlate permet d’appeler un Dragon du Feu.\nLe Talisman Écarlate a une apparence tout à fait banale. Il ressemble à un pendentif de cuivre commun, dont la forme évoque une écaille.",
+    "description": "Les dragons sont présents dans le monde des esprits. Conume tout être vivant, ils génèrent une énergie spirituelle qui donne naissance à des êtres éthérés totalement indépendants. De plus, un dragon qui trouve la mort projette une partie de son esprit dans cette autre dimension. Le Talisman permet d'ouvrir un passage entre notre monde et celui des esprits pour invoquer un dragon éthéré. Le Talisman Écarlate fut créé par une grande magicienne de Nenya, Alliah Sallava. Elle en a conçu un par race de dragons (sauf pour les Dragons de l’Ombre). On raconte même qu’elle aurait conçu d’autres talismans qui permettent de lier l’esprit d’un dragon mort à leur possesseur. Le Talisman Écarlate permet d’appeler un Dragon du Feu.\nLe Talisman Écarlate a une apparence tout à fait banale. Il ressemble à un pendentif de cuivre commun, dont la forme évoque une écaille.\nIl est inutilisable par un personnage possédant 4 ou plus en Tendance Homme. La puissance du dragon évoqué est celle qu’il avait à sa mort (lancer 1D10) : 1 : Enfant, 2-3 : Jeune, 4-6 : Adulte, 7-9 : Vieux, 10 : Ancien.",
     "weight": 0.2,
     "creation_difficulty": 0,
     "creation_time": 0,
@@ -388,7 +388,7 @@
     "name": "Le Talisman Éthéré",
     "uuid": "5c12ed79-1d6d-4499-b6b6-7c62a707ced0",
     "unique": true,
-    "description": "Alliah Sallava, une grande magicienne de Nenya, créa il y a des siècles plusieurs talismans permettant d’ouvrir un passage entre le monde réel et celui des esprits. Par ce passage, on peut appeler un esprit draconique selon le type de talisman. Mais celui qu’elle conçut pour Nenya est de loin le plus puissant.\nLe Talisman Éthéré est un petit disque de cuivre fixé à une lanière de cheveux tressés. Il ne porte aucun symbole mais dégage une légère lueur, perceptible la nuit.",
+    "description": "Alliah Sallava, une grande magicienne de Nenya, créa il y a des siècles plusieurs talismans permettant d’ouvrir un passage entre le monde réel et celui des esprits. Par ce passage, on peut appeler un esprit draconique selon le type de talisman. Mais celui qu’elle conçut pour Nenya est de loin le plus puissant.\nLe Talisman Éthéré est un petit disque de cuivre fixé à une lanière de cheveux tressés. Il ne porte aucun symbole mais dégage une légère lueur, perceptible la nuit.\nIl est inutilisable par un personnage possédant 4 ou plus en Tendance Homme. La puissance du dragon évoqué est celle qu’il avait à sa mort (lancer 1D10) : 1 : Enfant, 2-3 : Jeune, 4-6 : Adulte, 7-9 : Vieux, 10 : Ancien.",
     "weight": 0.2,
     "creation_difficulty": 0,
     "creation_time": 0,
@@ -424,7 +424,7 @@
     "name": "Écaille d’Elyss et Argür-le-prompt",
     "uuid": "2bee0854-1cfd-415a-85ed-8c11268d3674",
     "unique": true,
-    "description": "Ce talisman n’est utilisable qu’une seule et unique fois, en combat et contre une cible précise. Le propriétaire doit réussir un jet de Mental + Coordination contre une Difficulté égale à la somme de Mental + Perception de sa victime. Chaque Niveau de Réussite confère 2 points de Maîtrise utilisable pour n’importe quelle action entreprise contre cette dernière.",
+    "description": "Ce talisman n’est utilisable qu’une fois par personne et par combat. Le propriétaire doit réussir un jet de Mental + Coordination contre une Difficulté égale à la somme de Mental + Perception de sa victime. Chaque Niveau de Réussite confère 1 + 2/NR points de Maîtrise utilisable pour n’importe quelle action entreprise contre cette dernière.",
     "weight": 0.05,
     "creation_difficulty": 0,
     "creation_time": 0,
@@ -467,10 +467,10 @@
     "intrinsic_resistance": "exceptional",
     "special": [
       {
-        "description": "Confère à son utilisateur une Discipline Sorcellerie de 2"
+        "description": "Confère à son utilisateur une Discipline Sorcellerie de 2, ou +1 à ses jets s'il possède déjà la Discipline"
       },
       {
-        "description": "Le propriétaire a accès aux sorts “Liquide corrosif” et “Lame du héros”"
+        "description": "Le propriétaire a accès aux sorts “Liquide corrosif” et “Lame du héros” sans les avoir appris, mais s’il obtient un Miracle : 3 : Faveur, il apprend obligatoirement l’un des deux sorts et nul autre"
       }
     ],
     "slot": "neck",

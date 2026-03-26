@@ -23,7 +23,7 @@
     "special": [
       {
         "title": "Bonus magique (Feu)",
-        "description": "L’Orbe permet de lancer plus facilement certains sortilèges de Magie Instinctive liés au Feu. Elle est utilisable par n’importe qui et on considère qu’elle octroie une Discipline Magie Instinctive de 3. Elle dispose d’un potentiel de 20 points de magie, qui se régénèrent au rythme de 1 point par jour si on place l’Orbe dans du feu. Toutes les difficultés sont réduites de 5 points. Grâce à l’Orbe du Feu, on peut utiliser les pouvoirs suivants : Bouclier, Œil de Pyrite et Souffle Ardent."
+        "description": "L’Orbe permet de lancer plus facilement certains sortilèges de Magie Instinctive liés au Feu. Elle est utilisable par n’importe qui et on considère qu’elle octroie une Discipline Magie Instinctive de 3. Elle dispose d’un potentiel de 20 points de magie, qui se régénèrent au rythme de 1 point par jour si on place l’Orbe dans du feu. Toutes les difficultés sont réduites de 5 points. Grâce à l’Orbe du Feu, on peut utiliser les pouvoirs suivants : Bouclier, Œil de Pyrite et Souffle Ardent. Chaque sort est utilisable autant de fois par jour que la Tendance Dragon du personnage (et selon les points de magie de l’Orbe)."
       }
     ]
   },
@@ -51,10 +51,10 @@
     "special": [
       {
         "title": "Magie du Feu",
-        "description": "Le Cœur de Cendre augmente les effets de tous les pouvoirs liés au Feu. Un personnage ajoute 2D à tous ses jets pour lancer un sortilège lié au Feu et pour en déterminer les effets. De plus, toute attaque de Feu contre le porteur du Cœur voit ses effets réduits de 2D."
+        "description": "Le Cœur de Cendre augmente les effets de tous les pouvoirs liés au Feu. Un personnage ajoute 1D neutre à toutes les actions magiques liées au Feu (lancement de sort ou apprentissage) et pour en déterminer les effets, mais à chaque fois que cette capacité est utilisée, le personnage perd un cercle en Dragon et en gagne un en Fatalité. De plus, tous les effets des sorts de feu contre le porteur sont calculés avec un NR de moins. Si le sort l’atteint sans NR, il est considéré comme annulé."
       },
       {
-        "description": "\nSi le propriétaire du Cœur vient à mourir, il est instantanément calciné et il ne reste plus de lui qu’un peu de cendre."
+        "description": "Si le propriétaire du Cœur vient à mourir, il est instantanément calciné et il ne reste plus de lui qu’un peu de cendre."
       }
     ]
   },
@@ -66,7 +66,7 @@
     "name": "Les Fragments de Yhunn",
     "uuid": "bb864794-be45-4b11-b980-08f3740639e4",
     "unique": false,
-    "description": "Depuis les premiers âges du monde, Kroryn n’a eu de cesse de perfectionner les sciences du combat et de la stratégie. Au fur et à mesure, il a consigné ses réflexions sur divers supports. Après avoir achevé ses œuvres, Kroryn s’en désintéressait souvent et la plupart ont disparu.\nAvec le temps, les guerriers les plus courageux apprirent l’existence de ces Fragments et leur recherche devint une quête initiatique sur les traces de leur Dragon. Tous ceux qui ont un jour eu un fragment entre les mains n’en ont jamais révélé le contenu à d’autres et n’ont jamais tenté de les rassembler en un seul lieu. Yhunn, le plus célèbre Grand Maître de la Caste des Combattants, aurait été le seul à avoir lu tous les Fragments. Il dirigea la caste durant plus de cent ans et, nul n’a jamais su comment, malgré son âge, il restait si vigoureux et habile. Une légende dit qu’ayant lu le dernier Fragment, Yhunn comprit enfin la voie du guerrier dans son ensemble et entra dans le repaire de Kroryn pour réclamer le droit de devenir l’égal du Grand Dragon du Feu lui-même. Nul ne le revit jamais et son nom reste dans la mémoire collective comme l’un des meilleurs guerriers de Kor.\nSelon le lieu et l’époque, Kroryn a utilisé des plaquettes d’argile, des tablettes de pierre, des peaux, des parchemins et des papyrus. Il s’est servi de différents types de supports pour consigner ses réflexions.",
+    "description": "Depuis les premiers âges du monde, Kroryn n’a eu de cesse de perfectionner les sciences du combat et de la stratégie. Au fur et à mesure, il a consigné ses réflexions sur divers supports. Après avoir achevé ses œuvres, Kroryn s’en désintéressait souvent et la plupart ont disparu.\nAvec le temps, les guerriers les plus courageux apprirent l’existence de ces Fragments et leur recherche devint une quête initiatique sur les traces de leur Dragon. Tous ceux qui ont un jour eu un fragment entre les mains n’en ont jamais révélé le contenu à d’autres et n’ont jamais tenté de les rassembler en un seul lieu. Yhunn, le plus célèbre Grand Maître de la Caste des Combattants, aurait été le seul à avoir lu tous les Fragments. Il dirigea la caste durant plus de cent ans et, nul n’a jamais su comment, malgré son âge, il restait si vigoureux et habile. Une légende dit qu’ayant lu le dernier Fragment, Yhunn comprit enfin la voie du guerrier dans son ensemble et entra dans le repaire de Kroryn pour réclamer le droit de devenir l’égal du Grand Dragon du Feu lui-même. Nul ne le revit jamais et son nom reste dans la mémoire collective comme l’un des meilleurs guerriers de Kor.\nSelon le lieu et l’époque, Kroryn a utilisé des plaquettes d’argile, des tablettes de pierre, des peaux, des parchemins et des papyrus. Il s’est servi de différents types de supports pour consigner ses réflexions.\nLes fragments permettent de devenir Expert, sans considération du score actuel de la Compétence, mais pas de de dépasser 15. Les Compétences augmentables sont : toutes les Compétences de Combat, Athlétisme, Equitation, Combat monté, Esquive, Stratégie, Armes de siège, Commandement.",
     "weight": 0.05,
     "creation_difficulty": 0,
     "creation_time": 0,
@@ -94,7 +94,7 @@
     "name": "Briquet de Kroryn",
     "uuid": "bc8d43dc-0d31-4419-8347-1aa4860a4098",
     "unique": false,
-    "description": "D’usage courant, il ressemble à un briquet normal, une plaque et un silex, si ce n’est qu’il produit trois fois plus d’étincelles et s’allume même sous la pluie et le vent.",
+    "description": "D’usage courant, il ressemble à un briquet normal, une plaque et un silex, si ce n’est qu’il produit trois fois plus d’étincelles et s’allume même sous la pluie et le vent.\nLeur création s'effectue avec Artisanat élémentaire : Feu (Difficulté 15) et la dépense d'un point de magie.",
     "weight": 0.05,
     "creation_difficulty": 15,
     "creation_time": 1,
@@ -104,7 +104,7 @@
     },
     "city_availability": {
       "scarcity": "peuCommun",
-      "price": 60
+      "price": 70
     },
     "supports_metal": false,
     "special": []
@@ -117,17 +117,17 @@
     "name": "Paratonnerres",
     "uuid": "071578ae-588c-4817-8e96-e46920cca6d0",
     "unique": false,
-    "description": "Il n’est pas rare de voir à côté des grands bâtiments des pieux pointés vers le ciel. Ils attirent la foudre lors des grands orages. On ignore s'ils sont véritablement magiques ou s’il s'agit d’um phénomène purement scientifique.",
+    "description": "Il n’est pas rare de voir à côté des grands bâtiments des pieux pointés vers le ciel. Ils attirent la foudre lors des grands orages. On ignore s'ils sont véritablement magiques ou s’il s'agit d’um phénomène purement scientifique.\nLeur création s'effectue avec Artisanat élémentaire : Métal (Difficulté 15) et la dépense de 5 points de magie.",
     "weight": 5,
     "creation_difficulty": 15,
     "creation_time": 2,
     "village_availability": {
-      "scarcity": "rare",
-      "price": 100
+      "scarcity": "introuvable",
+      "price": 60
     },
     "city_availability": {
-      "scarcity": "peuCommun",
-      "price": 120
+      "scarcity": "rare",
+      "price": 75
     },
     "supports_metal": false,
     "special": []
@@ -140,17 +140,17 @@
     "name": "Huile inflammable",
     "uuid": "dcae2836-89ae-4434-84f1-2e87e6479a90",
     "unique": false,
-    "description": "Il s’agit pas d’eau de feu, mais d'une huile spéciale pour les lanternes, qui brille à la fois plus fort et plus lentement - un paradoxe qui intrigue Kroryn lui-même.",
+    "description": "Il s’agit pas d’eau de feu, mais d'une huile spéciale pour les lanternes, qui brille à la fois plus fort et plus lentement - un paradoxe qui intrigue Kroryn lui-même.\nSa création s'effectue avec Alchimie (Difficulté 20).",
     "weight": 0.01,
     "creation_difficulty": 20,
     "creation_time": 1,
     "village_availability": {
-      "scarcity": "rare",
-      "price": 30
+      "scarcity": "tresRare",
+      "price": 40
     },
     "city_availability": {
       "scarcity": "rare",
-      "price": 40
+      "price": 45
     },
     "supports_metal": false,
     "special": []
@@ -258,7 +258,7 @@
     "special": [
       {
         "title": "Appel de la Bête",
-        "description": "Dès qu’un personnage touche un fragment, il doit effectuer un jet de Mental + Empathie contre une Difficulté de 25. Les adeptes de Nenya et les Prodiges bénéficient en plus d’un nombre de dés égal à leur Tendance Dragon. Si le jet est réussi, le fragment disparaît comme s’il n’avait jamais existé. Si le jet échoue, l’objet convoité disparaît également mais le personnage perd immédiatement 1 point de Tendance - au choix. Le fragment s’est insinué en lui et commence à le dévorer de l’intérieur. Il commencera alors à ressentir une soif de destruction inextinguible. Le personnage deviendra irascible et plein de haine. À ses yeux, tout ne sera que laideur. Dès qu’il se battra, qu'il se disputera avec quelqu'un, qu’il se sentira contrarié, etc, il devra effectuer un autre jet de Mental + Empathie ou perdre un autre Point de Tendance.\nChaque Point de Tendance perdu se transforme en 2 points de Haine qui s'utilisent comme des Points de Tendance normaux. Si un personnage perd tous ses Points de Tendance, il est entièrement consumé par la Haine et se transforme en une machine de destruction aveugle. S'il est vaincu, il explose et génère de nouveaux fragments qui apparaissent un peu partout dans le monde.\nUn individu victime d’un fragment peut être soigné dans les Temples d’Heyra, de Nenya, de Kalimeshar ou par des Prodiges. Le processus est long, Il nécessite 1D10 semaines par point perdu. Au bout de ce temps, le personnage effectue un jet de Mental + Volonté contre une Difficulté de 25. En cas d'échec critique, le personnage perd 1 Point de Tendance qu’il ne peut récupérer et il ne pourra être guéri que par Nenya en personne — l’occasion d’une grande quête."
+        "description": "Dès qu’un personnage touche un fragment, il doit effectuer un jet de Mental + Empathie contre une Difficulté de 25. Les adeptes de Nenya (les mages, les personnages possédant la sphère des Rêves et les Élus de Nenya) et les Prodiges bénéficient en plus d’un nombre de dés neutres égal à leur Tendance Dragon s'additionnant au résultat. Si le jet est réussi, le fragment disparaît comme s’il n’avait jamais existé. Si le jet échoue, l’objet convoité disparaît également mais le personnage perd immédiatement 1 point de Tendance - au choix. Le fragment s’est insinué en lui et commence à le dévorer de l’intérieur. Il commencera alors à ressentir une soif de destruction inextinguible. Le personnage deviendra irascible et plein de haine. À ses yeux, tout ne sera que laideur. Dès qu’il se battra, qu'il se disputera avec quelqu'un, qu’il se sentira contrarié, etc, il devra effectuer un autre jet de Mental + Empathie ou perdre un cercle de sa Tendance la plus élevée.\nChaque cercle de Tendance perdu se transforme en cercle de Haine qui finissent par composer une nouvelle Tendance. À partir de ce moment, le personnage peut lancer 4 dés lorsqu'il utilise les Tendances au lieu de trois (définir une nouvelle couleur pour ce dé de Haine). Les cercles (et les points) de Tendance Haine peuvent être perdus en roleplay mais pas en délaissant le dé de Haine… Arrivé à 5 en Haine, le personnage est consumé et se transforme en une machine de destruction aveugle. S'il est vaincu, il explose et génère de nouveaux fragments qui apparaissent un peu partout dans le monde.\nUn individu victime d’un fragment peut être soigné dans les Temples d’Heyra, de Nenya, de Kalimeshar ou par des Prodiges. Le processus est long, Il nécessite 1D10 semaines par point perdu. Au bout de ce temps, le personnage effectue un jet de Mental + Volonté contre une Difficulté de 25. En cas d'échec critique, le personnage perd 1 Point de Tendance qu’il ne peut récupérer et il ne pourra être guéri que par Nenya en personne — l’occasion d’une grande quête."
       }
     ]
   },
@@ -302,17 +302,17 @@
     "name": "Instruments de Nenya",
     "uuid": "31bbe2a0-d9c9-4170-a95b-e620e6d84008",
     "unique": false,
-    "description": "Onyr est connue et réputée pour regrouper les plus grands luthiers de tout le Royaume de Kor. En général, il s’agit de mages qui enchantent à petites doses tous leurs instruments de musique. Ainsi, les artistes peuvent-ils sortir les sons les plus purs et les plus justes. Ces petits bijoux de lutherie sont onéreux, vingt fois le prix normal, mais donnent un bonus de 5 à ceux qui les utilisent.",
+    "description": "Onyr est connue et réputée pour regrouper les plus grands luthiers de tout le Royaume de Kor. En général, il s’agit de mages qui enchantent à petites doses tous leurs instruments de musique. Ainsi, les artistes peuvent-ils sortir les sons les plus purs et les plus justes. Ces petits bijoux de lutherie sont onéreux, vingt fois le prix normal, mais donnent un bonus de 5 à ceux qui les utilisent.\nLeur création s'effectue avec Artisanat élémentaire : Rêves (Difficulté 20) et la dépense d'un point de magie de la sphère des Rêves, un de la sphère des Vents et un de la sphère de la Nature.\nÀ Onyr, leur rareté est r/1000.",
     "weight": 1,
     "creation_difficulty": 25,
     "creation_time": 3,
     "village_availability": {
-      "scarcity": "tresRare",
-      "price": 300
+      "scarcity": "introuvable",
+      "price": 1500
     },
     "city_availability": {
-      "scarcity": "tresRare",
-      "price": 300
+      "scarcity": "introuvable",
+      "price": 1500
     },
     "supports_metal": false,
     "special": [
@@ -329,17 +329,17 @@
     "name": "Le miroir aux illusions perdues",
     "uuid": "2ce52a83-78ff-4948-9be4-475c5e57cd44",
     "unique": false,
-    "description": "Ce miroir est en acier car la réaction des gens qui regardent dedans est parfois brutale. Cet objet de foire vous permet de vous admirer tel que vous désireriez être. Il n’a aucune utilité autre mais remporte un certain succès dans les marchés.",
+    "description": "Ce miroir est en acier car la réaction des gens qui regardent dedans est parfois brutale. Cet objet de foire vous permet de vous admirer tel que vous désireriez être. Il n’a aucune utilité autre mais remporte un certain succès dans les marchés.\nSa création s'effectue avec Artisanat élémentaire : Métal (Difficulté 20) et la dépense de 3 points de magie de la sphère des Rêves.",
     "weight": 2,
-    "creation_difficulty": 25,
+    "creation_difficulty": 20,
     "creation_time": 4,
     "village_availability": {
-      "scarcity": "tresRare",
-      "price": 200
+      "scarcity": "introuvable",
+      "price": 3000
     },
     "city_availability": {
       "scarcity": "tresRare",
-      "price": 200
+      "price": 2000
     },
     "supports_metal": false,
     "special": []
@@ -352,17 +352,17 @@
     "name": "La roue à vent",
     "uuid": "6e46162b-9297-4d35-8d7f-47e6bc3348f9",
     "unique": false,
-    "description": "Cet objet est le premier cadeau que Szyl fit à sa mère. C’est une roue à vent musicale. Les artisans de Kezyr ont tenté plusieurs fois de la reproduire, mais ce sont les mages de Nenya qui ont le secret de sa fabrication. La roue est composée de clochettes, de cordes pincées ou frappées, de percussions, de cloches tubulaires et elle réagit au moindre souffle. Le vent, toujours différent, permet d’obtenir des mélodies toujours harmonieuses et variées. Les rois aiment à montrer qu’ils possèdent une roue à vent. Les sages qui en possèdent une la cache de peur de se la faire voler.",
+    "description": "Cet objet est le premier cadeau que Szyl fit à sa mère. C’est une roue à vent musicale. Les artisans de Kezyr ont tenté plusieurs fois de la reproduire, mais ce sont les mages de Nenya qui ont le secret de sa fabrication. La roue est composée de clochettes, de cordes pincées ou frappées, de percussions, de cloches tubulaires et elle réagit au moindre souffle. Le vent, toujours différent, permet d’obtenir des mélodies toujours harmonieuses et variées. Les rois aiment à montrer qu’ils possèdent une roue à vent. Les sages qui en possèdent une la cache de peur de se la faire voler.\nIl est impossible de réaliser cette invention sans avoir reçu l'enseignement adéquat d'un mage de Nenya. Sa mise au point s'effectue avec Artisanat élémentaire : Vents (Difficulté 25) et la dépense de 6 points de magie de la sphère des Vents et de 4 de la sphère des Rêves .",
     "weight": 5,
     "creation_difficulty": 25,
     "creation_time": 10,
     "village_availability": {
-      "scarcity": "introuvable",
+      "scarcity": "nonApplicable",
       "price": 0
     },
     "city_availability": {
-      "scarcity": "tresRare",
-      "price": 0
+      "scarcity": "introuvable",
+      "price": 10000
     },
     "supports_metal": false,
     "special": []
@@ -391,11 +391,11 @@
     "special": [
       {
         "title": "Soin",
-        "description": "Une larme guérit n’importe quelle maladie, blessure ou corruption. Un individu rongé par une larve de perversion est automatiquement soigné. Toute malédiction est balayée par le pouvoir de la larme, quelle que soit son origine. Une personne ingérant une larme se sent purifiée et meilleure. Elle gagne 1 point de Présence. De plus, elle sera irrésistiblement attirée par ce qui est pur et beau. Tout acte visant à détruire ou à enlaidir lui paraîtra absurde. Tout personnage ingérant une de ces larmes perd 1 point de Tendance Fatalité, Homme ou Dragon (au choix) qu’il ne peut pas récupérer de manière normale.\nSeules certaines cérémonies spéciales — humanistes ou fatalistes — permettent à l'individu de recouvrer son point perdu."
+        "description": "Une larme guérit n’importe quelle maladie, blessure ou corruption. Un individu rongé par une larve de perversion est automatiquement soigné. Toute malédiction est balayée par le pouvoir de la larme, quelle que soit son origine. Une personne ingérant une larme se sent purifiée et meilleure. Elle gagne 1 point de Présence dans une vie. De plus, elle sera irrésistiblement attirée par ce qui est pur et beau. Tout acte visant à détruire ou à enlaidir lui paraîtra absurde. L'attraction vers le beau et le rejet de la laideur durent un cycle complet, après quoi le personnage retrouvera son comportement habituel. Lors du prochain cycle correspondant au cycle d'ingestion, le personnage subit un retour d'émotion et replonge dans la béatitude de la créativité. Ainsi, si une larme est ingérée durant le cycle de Moryagorn, le personnage connaîtra durant chaque cycle de Moryagorn l'état de béatitude.\nTout personnage ingérant une de ces larmes perd 1 point de Tendance Fatalité qu’il ne peut pas récupérer de manière normale et raye tous les cercles des trois Tendances.\nSeules certaines cérémonies spéciales — fatalistes — permettent à l'individu de recouvrer son point perdu."
       },
       {
         "title": "Purification",
-        "description": "Si on laisse tomber la larme au-dessus d’une terre aride, celle-ci deviendra fertile ; au-dessus d’un lac empoisonné, elle purifiera ses eaux ; sur le flanc d’une montagne, elle fera jaillir une source et la végétation fleurira tout autour ; dans un désert, elle créera une oasis, etc. Contre un être de perversion, une larme est une arme dévastatrice.\nContre des humains au service de Kalimsshar, la larme inflige 10 + 1d10 points de dommages par point de Tendance Fatalité de la victime.\nContre des cauchemars, des bêtes immondes, des Dragons de l’Ombre ou d’autres créatures incarnant la perversion, la larme inflige le 1D10 x 10 points de dommages. Une larme ne peut être utilisée qu’une seule fois."
+        "description": "Si on laisse tomber la larme au-dessus d’une terre aride, celle-ci deviendra fertile ; au-dessus d’un lac empoisonné, elle purifiera ses eaux ; sur le flanc d’une montagne, elle fera jaillir une source et la végétation fleurira tout autour ; dans un désert, elle créera une oasis, etc. Contre un être de perversion, une larme est une arme dévastatrice.\nContre des humains au service de Kalimsshar, la larme inflige 10 + 1d10 points de dommages par point de Tendance Fatalité de la victime.\nContre des cauchemars, des bêtes immondes, des Dragons de l’Ombre ou d’autres créatures incarnant la perversion, la larme inflige le 1D10 x 10 points de dommages. Les dommages infligés aux victimes fatalistes (humains ou monstres) ignorent toute armure, la larme touchant directement leur être profond et leur trame élémentaire.\nUne larme ne peut être utilisée qu’une seule fois."
       }
     ]
   },
@@ -407,7 +407,7 @@
     "name": "Les élixirs de métamorphose",
     "uuid": "3a49ea14-0d18-4ed4-a1f5-e4f4be134781",
     "unique": false,
-    "description": "Les Fatalistes et les Humanistes ont toujours eu beaucoup de mal à s’infiltrer sur les terres de Heyra - tromper la nature n’est pas chose aisée ! De puissants sorciers fatalistes conçurent donc un élixir permettant d’adopter pendant une courte période la forme d’un animal. Pour que la transformation passe inaperçue, il était nécessaire que le sujet devienne le plus animal possible. L'élixir fut d’une telle efficacité que nombre de groupes, pas forcément des Humanistes ou des Fatalistes, en ont découvert le secret.\nUn élixir est fabriqué à partir du sang d’un animal fraîchement tué. Il a donc une teinte rouge et est assez sirupeux. Le sang est mélangé à différentes plantes et à un fragment d’écaille de dragon.",
+    "description": "Les Fatalistes et les Humanistes ont toujours eu beaucoup de mal à s’infiltrer sur les terres de Heyra - tromper la nature n’est pas chose aisée ! De puissants sorciers fatalistes conçurent donc un élixir permettant d’adopter pendant une courte période la forme d’un animal. Pour que la transformation passe inaperçue, il était nécessaire que le sujet devienne le plus animal possible. L'élixir fut d’une telle efficacité que nombre de groupes, pas forcément des Humanistes ou des Fatalistes, en ont découvert le secret.\nUn élixir est fabriqué à partir du sang d’un animal fraîchement tué. Il a donc une teinte rouge et est assez sirupeux. Le sang est mélangé à différentes plantes et à un fragment d’écaille de dragon lié à l'élément de l'animal. Il faut alors effectuer une cérémonie d'une heure puis effectuer un jet d'Empathie + Artisanat élémentaire (Nature) contre une Difficulté de 15 pour un animal simple (poisson, serpent, chien), de 20 pour un animal agressif (loup, faucon, serpent constricteur ou venimeux), voire de 25 à 30 pour des animaux puissants (mastodontes, gorille, lion). La cérémonie coûte 5 points de magie.\nSeuls les Experts peuvent faire des potions permettant de se transformer en créature draconique, lesquelles ont souvent une Difficulté de 25 à 35.\nIl n'existe pas de commerce de ces potions qui sont considérées comme sacrées, quoique assez répandues. En général, seuls les prodiges, les mages et les artisans de la nature savent faire ces potions, dont il n'existe aucune recette écrite.",
     "weight": 0.01,
     "creation_difficulty": 25,
     "creation_time": 1,
@@ -423,7 +423,7 @@
     "special": [
       {
         "title": "Transformation animale",
-        "description": "Un persomage ingurgitant cet élixir adopte la forme d’un animal précis — dépendant du type d’élixir. La transformation est doulourense et dure 1d10 x 10 tours. Pendant tout ce temps, l'individu souffre horriblement et ne peut rien faire. Une fois la transformation accomplie, le personnage est tellement proche de l’animal imité qu’il perd presque la totalité de son Intelligence. Il ne se souvient que de son objectif - se rendre à tel endroit, par exemple - et peut encore reconnaître ses amis proches ou ses ennemis. Pour tout le reste, il se comporte comme un animal.\nLa transformation dure 1 heure. Au bout de ce temps, le personnage doit faire un jet de Mental + Volonté contre une Difficulté de 15. S’il échoue, il perd un peu plus de son humanité et reste sous sa forme animale. Il pourra tenter de se transformer de nouveau au bout de 1D10 heures mais, cette fois, la Difficulté sera de 20. À chaque échec, il faut attendre 1d10 heures avant de relancer un jet et la difficulté augmente à chaque fois de 5 points. Quand un personnage réussit à retrouver sa forme normale, la première fois - et uniquement la première fois - qu’il croisera la route d'animaux dont il a adopté l’apparence, il devra effectuer un nouveau jet ou être attiré par l’appel de la nature. Si son jet est un échec critique, il reprend définitivement sa forme animale. S'il s’agit d’un échec simple, son comportement sera proche de celui de l’animal. S’il réussit son jet, il ne ressent qu’une légère nostalgie."
+        "description": "Un persomage ingurgitant cet élixir adopte la forme d’un animal précis — dépendant du type d’élixir. La transformation est doulourense et dure 1d10 x 10 tours. Pendant tout ce temps, l'individu souffre horriblement et ne peut rien faire. Une fois la transformation accomplie, le personnage est tellement proche de l’animal imité qu’il perd presque la totalité de son Intelligence. Il ne se souvient que de son objectif - se rendre à tel endroit, par exemple - et peut encore reconnaître ses amis proches ou ses ennemis. Pour tout le reste, il se comporte comme un animal.\nLa potion confère un bonus de 1+1/NR points de bonus aux Attributs normaux de l'animal, que le personnage obtient dès sa transformation. Ces points de bonus sont distribués parmi les attributs au moment de la transformation. Il ne conserve que son Mental, qui reste inchangé, ainsi que sa Volonté. Son Intelligence tombe à 1. Ses autres Caractéristiques et Compétences sont remplacées par celles de l'animal pour une heure. Il n'est pas possible d'utiliser la magie sous cette forme.\nLa transformation dure 1 heure. Au bout de ce temps, le personnage doit faire un jet de Mental + Volonté contre une Difficulté de 15. S’il échoue, il perd un peu plus de son humanité et reste sous sa forme animale. Il pourra tenter de se transformer de nouveau au bout de 1D10 heures mais, cette fois, la Difficulté sera de 20. À chaque échec, il faut attendre 1d10 heures avant de relancer un jet et la difficulté augmente à chaque fois de 5 points. Quand un personnage réussit à retrouver sa forme normale, la première fois - et uniquement la première fois - qu’il croisera la route d'animaux dont il a adopté l’apparence, il devra effectuer un nouveau jet ou être attiré par l’appel de la nature. Si son jet est un échec critique, il reprend définitivement sa forme animale. S'il s’agit d’un échec simple, son comportement sera proche de celui de l’animal. S’il réussit son jet, il ne ressent qu’une légère nostalgie."
       }
     ]
   },
@@ -435,7 +435,7 @@
     "name": "Les statuettes des esprits animaux",
     "uuid": "fb8ac608-4d9a-4bc7-8ce2-9ca2942e0755",
     "unique": false,
-    "description": "Dans de nombreuses tribus primitives, on a découvert que les sorciers fabriquaient d’étranges statuettes capables d’abriter l’esprit des animaux. Le secret de ces statuettes est connu de très peu de gens, mais on sait que quelques Prodiges et certains sorciers fatalistes ont réussi à en fabriquer.\nCes statuettes sont souvent en bois, mais on peut en fabriquer dans d’autres matières. Plus la matière est noble, plus l’esprit attiré sera puissant. Une statuette a la forme du type d’esprit animal qu’elle veut héberger.",
+    "description": "Dans de nombreuses tribus primitives, on a découvert que les sorciers fabriquaient d’étranges statuettes capables d’abriter l’esprit des animaux. Le secret de ces statuettes est connu de très peu de gens, mais on sait que quelques Prodiges et certains sorciers fatalistes ont réussi à en fabriquer.\nCes statuettes sont souvent en bois, mais on peut en fabriquer dans d’autres matières. Plus la matière est noble, plus l’esprit attiré sera puissant. Une statuette a la forme du type d’esprit animal qu’elle veut héberger. Quand une statuette est fabriquée, il faut effectuer une cérémonie très longue et très complexe pour attirer un esprit animal et l’y enfermer. Il est à noter que les quelques rares Prodiges à en avoir utilisé n’ont pas besoin d'effectuer cette cérémonie. Ils se contentent de demander à un esprit animal d'intervenir. Les Prodiges considèrent que le fait d’emprisonner un esprit est un crime épouvantable.\nCréer une de ces statuettes enchantées requiert d'être Expert en sphère de la Nature. La réalisation de la statuette en elle-même s'effectue par un jet de Manuel + Artisanat concerné contre une Difficulté de 15 à 20. Il est indispensable d'obtenir 2 NR sans quoi la statuette ne sera qu'un bel objet, mais indigne de recevoir un esprit. Le lien de l'esprit nécessite un jet de Mental+Sphère de la nature contre une Difficulté de 30. Ce jet est considéré comme un jet de magie et peut entraîner des contrecoups en cas d'appel aux Tendances. La cérémonie dure 8h et draine tous les points de magie de la nature de l'officiant. La statuette peut alors s'animer autant de fois par jour que la Volonté de l'utilisateur. Il ne lui en coûte rien.\nL'appel à un esprit errant pour animer la statuette (méthode utilisée par les Prodiges) s'effectue par un jet d'Empathie + sphère de la Nature contre une Difficulté de 25. Il en coûte 3 pts de magie par appel, sans limitation par jour. Ce jet est un jet de magie pour la gestion des contrecoups en cas d'appel aux Tendances.",
     "weight": 0.5,
     "creation_difficulty": 25,
     "creation_time": 4,
@@ -451,7 +451,7 @@
     "special": [
       {
         "title": "Réveil de l'esprit",
-        "description": "Quand une statuette est fabriquée, il faut effectuer une cérémonie très longue et très complexe pour attirer un esprit animal et l’y enfermer. Il est à noter que les quelques rares Prodiges à en avoir utilisé n’ont pas besoin d'effectuer cette cérémonie. Ils se contentent de demander à un esprit animal d'intervenir. Les Prodiges considèrent que le fait d’emprisonner un esprit est un crime épouvantable. Une fois un esprit animal emprisonné, le détenteur de la statuette peut le forcer à animer la sculpture. La sculpture grandit alors jusqu’à atteindre la taille normale de l’animal.\nCe dernier aura toutes les caractéristiques communes à son espèce mais sera fait de la matière utilisée pour la statuette. Il bénéficiera donc d’une protection équivalente. La créature obéit à celui qui l’a animée pendant 1D10 tours. Après, s’il s’agit d’un esprit emprisonné, ce dernier peut tenter de fuir sa prison en réussissant un jet de Mental + Volonté contre une Difficulté de 15. Certains sorciers peuvent renforcer la prison grâce à des enchantements, ce qui augmente la difficulté pour ce jet. Certaines statues sont beaucoup plus grandes et permettent d’animer des animaux gigantesques. On sait que de telles statues sont parfois utilisées pour garder des lieux saints dans le domaine de Heyra. Les esprits ne sont pas emprisonnés mais peuvent s’y incarner en cas de danger."
+        "description": "Une fois un esprit animal emprisonné, le détenteur de la statuette peut le forcer à animer la sculpture. La sculpture grandit alors jusqu’à atteindre la taille normale de l’animal.\nCe dernier aura toutes les caractéristiques communes à son espèce mais sera fait de la matière utilisée pour la statuette. Il bénéficiera donc d’une protection équivalente. La créature obéit à celui qui l’a animée pendant 1D10 tours. Après, s’il s’agit d’un esprit emprisonné, ce dernier peut tenter de fuir sa prison en réussissant un jet de Mental + Volonté contre une Difficulté de 15. Certains sorciers peuvent renforcer la prison grâce à des enchantements, ce qui augmente la difficulté pour ce jet. Certaines statues sont beaucoup plus grandes et permettent d’animer des animaux gigantesques. On sait que de telles statues sont parfois utilisées pour garder des lieux saints dans le domaine de Heyra. Les esprits ne sont pas emprisonnés mais peuvent s’y incarner en cas de danger."
       }
     ]
   },
@@ -463,7 +463,7 @@
     "name": "Les encens néfastes",
     "uuid": "4c60757a-1174-4ed7-af8f-97d0222fb11b",
     "unique": false,
-    "description": "Les Humanistes, pour lutter contre les forces de la nature, fabriquèrent toute une série d’encens permettant de tenir à distance les créatures sauvages. Ces encens ont été élaborés à l’aide de méthodes scientifiques et non pas magiques.\nCe sont des petits bâtonnets d’encens d’apparence tout à fait commune. Ils ont tous une odeur différente qui est rarement agréable.",
+    "description": "Les Humanistes, pour lutter contre les forces de la nature, fabriquèrent toute une série d’encens permettant de tenir à distance les créatures sauvages. Ces encens ont été élaborés à l’aide de méthodes scientifiques et non pas magiques.\nCe sont des petits bâtonnets d’encens d’apparence tout à fait commune. Ils ont tous une odeur différente qui est rarement agréable.\nCes encens ont une Difficulté alchimique de 36.",
     "weight": 0.01,
     "creation_difficulty": 20,
     "creation_time": 1,
@@ -519,7 +519,7 @@
     "name": "Les graines de fertilité",
     "uuid": "91e3334f-51fb-43ff-99ac-76660b78b979",
     "unique": false,
-    "description": "Les premières graines de fertilité furent offertes par Heyra aux communautés humaines qui rencontraient des difficultés pour cultiver leurs champs. Elles sont enchantées par la nature elle-même. Les Prodiges jardiniers sont aujourd’hui détenteurs du secret de fabrication de ces précieuses graines.\nCes graines ont une apparence tout à fait normale, mais il n’est pas rare qu’elles bougent toutes seules quand on les tient dans la main.",
+    "description": "Les premières graines de fertilité furent offertes par Heyra aux communautés humaines qui rencontraient des difficultés pour cultiver leurs champs. Elles sont enchantées par la nature elle-même. Les Prodiges jardiniers sont aujourd’hui détenteurs du secret de fabrication de ces précieuses graines.\nCes graines ont une apparence tout à fait normale, mais il n’est pas rare qu’elles bougent toutes seules quand on les tient dans la main.\nCes graines sont créées par un jet de Sorcellerie + sphère de la Nature d'une difficulté de 15. Il est alors créé une graine + 1/NR. Ce processus dure une heure et draine tous les points de magie de la sphère de la Nature de l'enchanteur (il doit au moins posséder un point de magie disponible par graine créée, sans quoi le nombre de graine est réduit au nombre de points de magie drainés). La création de ces graines est uniquement accessible aux Prodiges-poètes de la Nature et aux mages de Heyra (qui l'apprennent auprès des poètes).",
     "weight": 0.01,
     "creation_difficulty": 20,
     "creation_time": 1,
@@ -564,7 +564,7 @@
     "special": [
       {
         "title": "Invocation de bête ancestrale",
-        "description": "La Corne peut invoquer une des bêtes ancestrales, des créatures destructrices qui, bien que nées de la nature, en sont souvent les pires ennemies. Ces créatures décharnées ont la puissance d’un dragon mineur et ravagent tout ce qui se trouve autour d’elles — le porteur de la Corne y compris. La créature, une fois invoquée, reste tant qu’elle n’a pas été vaincue. S’il n’y a pas d’ennemi en vue, elle tentera de se réfugier au cœur d’une forêt ou dans des montagnes."
+        "description": "La Corne peut invoquer une des bêtes ancestrales, des créatures destructrices qui, bien que nées de la nature, en sont souvent les pires ennemies. Ces créatures décharnées ont la puissance d’un dragon mineur et ravagent tout ce qui se trouve autour d’elles — le porteur de la Corne y compris. La créature, une fois invoquée, reste tant qu’elle n’a pas été vaincue. S’il n’y a pas d’ennemi en vue, elle tentera de se réfugier au cœur d’une forêt ou dans des montagnes.\nLa bête invoquée possède des caractéristiques similaires à un dragon d'age Jeune. Elle ne possède pas de capacité de souffle draconique, mais peut manipuler la magie de façon intuitive comme une Chimère d'âge similaire. Ses caractéristiques exactes sont à l'appréciation du meneur, l'apparition de cette créature étant la conclusion d'une campagne en elle-même."
       }
     ]
   },
@@ -604,17 +604,17 @@
     "name": "Les bandages magiques",
     "uuid": "af714c29-51a8-4d2b-9024-3090e42c89d9",
     "unique": false,
-    "description": "On peut trouver ces cataplasmes soit dans les manufactures, soit au marché noir. Ce sont de petits rouleaux de bande verdâtres et odorants — à cause des herbes − spécialement conçus pour accélérer la cicatrisation ou l’éradication de la maladie - suivant les cas. Le patient regagne une case de Blessure Légère supplémentaire ou deux cases d’Égratignure.",
+    "description": "On peut trouver ces cataplasmes soit dans les manufactures, soit au marché noir. Ce sont de petits rouleaux de bande verdâtres et odorants — à cause des herbes − spécialement conçus pour accélérer la cicatrisation ou l’éradication de la maladie - suivant les cas.\nLeur création s'effectue avec Artisanat élémentaire : Nature (Difficulté 20) et la dépense de trois points de magie de la sphère de la Nature. Il faut une journée de macération, mais le nombre de bandages macérant ensemble est au choix du créateur. En appliquant ce pansement sur une plaie, le temps de récupération déterminé par la table de la page 193 est divisé par deux.",
     "weight": 0.05,
     "creation_difficulty": 20,
     "creation_time": 1,
     "village_availability": {
-      "scarcity": "tresRare",
-      "price": 80
+      "scarcity": "peuCommun",
+      "price": 40
     },
     "city_availability": {
       "scarcity": "rare",
-      "price": 100
+      "price": 50
     },
     "supports_metal": false,
     "special": []
@@ -689,7 +689,7 @@
     "special": [
       {
         "title": "Ralentissement",
-        "description": "Un talisman peut être utilisé sur n’importe quelle cible située à moins d’un nombre de mètres égal à la Volonté du détenteur. La victime doit réussir un jet de Mental + Volonté contre une Difficulté égale à la somme de Mental + Volonté du détenteur. Si elle échoue, elle perd 1 dé d’Initiative pendant 1D10 tour(s). On peut utiliser plusieurs fois le talisman sur la même cible, mais on ne peut réduire son initiative en-dessous de 1 dé."
+        "description": "Un talisman peut être utilisé sur n’importe quelle cible située à moins d’un nombre de mètres égal à la Volonté du détenteur. La victime doit réussir un jet de Mental + Volonté en Opposition du détenteur. Si elle échoue, elle perd 1 dé d’Initiative pendant 1D10 tour(s). On peut utiliser plusieurs fois le talisman sur la même cible, mais on ne peut réduire son initiative en-dessous de 1 dé."
       }
     ]
   },
@@ -790,17 +790,17 @@
     "name": "Le ciseau de Kezyr",
     "uuid": "0119cb08-661d-4a45-b476-1e6e3127196d",
     "unique": false,
-    "description": "Cet objet assez répandu chez les artistes est l’œuvre de Kezyr mais sans l’autorisation de Brorne, il n'aurait pu exister. C’est lui qui a donné le secret de la résonance de la pierre pour que le ciseau soit plus précis. Un sculpteur qui utilise cet objet a un bonus de 5 lors de son jet.",
+    "description": "Cet objet assez répandu chez les artistes est l’œuvre de Kezyr mais sans l’autorisation de Brorne, il n'aurait pu exister. C’est lui qui a donné le secret de la résonance de la pierre pour que le ciseau soit plus précis. Un sculpteur qui utilise cet objet a un bonus de 5 lors de son jet.\nSa création nécessite un jet d'Artisanat élémentaire: Métal d'une Difficulté de 20, et coûte trois points de magie de la sphère du Métal et trois de la Sphère de la Pierre. ",
     "weight": 0.2,
     "creation_difficulty": 20,
     "creation_time": 1,
     "village_availability": {
-      "scarcity": "tresRare",
-      "price": 500
+      "scarcity": "introuvable",
+      "price": 1500
     },
     "city_availability": {
-      "scarcity": "rare",
-      "price": 500
+      "scarcity": "introuvable",
+      "price": 2000
     },
     "supports_metal": false,
     "special": [
@@ -817,7 +817,7 @@
     "name": "La meule magique",
     "uuid": "16ce2260-f247-4b7b-8da2-d573ef5dcccb",
     "unique": false,
-    "description": "Classique dans le royaume de Kern, la meule n’est pas très répandue ailleurs. Le principe est simple, c’est une pierre qui tourne seule sur elle-même. Il n’y a pas besoin d’eau, de mulet ou d’homme pour la mettre en branle, elle continue sa course indéfiniment. Il est arrivé que des meules tournent encore alors que le moulin était en ruine. Les bandits s’en servent aussi parfois comme instrument de torture.",
+    "description": "Classique dans le royaume de Kern, la meule n’est pas très répandue ailleurs. Le principe est simple, c’est une pierre qui tourne seule sur elle-même. Il n’y a pas besoin d’eau, de mulet ou d’homme pour la mettre en branle, elle continue sa course indéfiniment. Il est arrivé que des meules tournent encore alors que le moulin était en ruine. Les bandits s’en servent aussi parfois comme instrument de torture.\nSa création nécessite un jet d'Artisanat élémentaire: Pierre d'une Difficulté de 20, et coûte tous les points de magie de la sphère de la Pierre.",
     "weight": 500,
     "creation_difficulty": 20,
     "creation_time": 3,
@@ -840,7 +840,7 @@
     "name": "Les pierres de fronde",
     "uuid": "1848c806-91fb-4246-8f4d-34d960c11427",
     "unique": false,
-    "description": "Les magiciens s’amusent parfois à enchanter les cailloux pour que les gamins puissent s’amuser avec des lance-pierres et des frondes. La particularité de ces pierres c’est qu’elles ne peuvent toucher que des choses inertes, pas d’être vivant.\nLe lanceur gagne un bonus de 5 en les utilisant. Il suffit de posséder les Compétences Sphère de la Pierre et Sorcellerie à 3 pour pouvoir les enchanter.",
+    "description": "Les magiciens s’amusent parfois à enchanter les cailloux pour que les gamins puissent s’amuser avec des lance-pierres et des frondes. La particularité de ces pierres c’est qu’elles ne peuvent toucher que des choses inertes, pas d’être vivant.\nLe lanceur gagne un bonus de 5 en les utilisant. Il suffit de posséder les Compétences Sphère de la Pierre et Sorcellerie à 3 pour pouvoir les enchanter. Chaque pierre demande 5 mn de concentration et un point de magie de la sphère de la Pierre.",
     "weight": 0.05,
     "creation_difficulty": 15,
     "creation_time": 1,
@@ -923,7 +923,7 @@
     "name": "Les ciseaux de précision",
     "uuid": "7e5a1346-d814-485b-9ef2-5f5fdd0505a4",
     "unique": false,
-    "description": "Beaucoup d’orfèvres utilisent ces instruments quasi-chirurgicaux pour obtenir un maximum de précision. Non seulement leur finesse est inégalée, mais un petit sortilège de stabilité - provenant des mages de Brorne - préserve les mains de l’artisan de tout tremblement ou faux geste. L’équivalent existe pour les voleurs et les mécaniciens humanistes, mais personne ne voudra le reconnaître.",
+    "description": "Beaucoup d’orfèvres utilisent ces instruments quasi-chirurgicaux pour obtenir un maximum de précision. Non seulement leur finesse est inégalée, mais un petit sortilège de stabilité - provenant des mages de Brorne - préserve les mains de l’artisan de tout tremblement ou faux geste. L’équivalent existe pour les voleurs et les mécaniciens humanistes, mais personne ne voudra le reconnaître.\nCes ciseaux sont crées normalement par l'Artisanat concerné (DC inchangée), mais sont traités par les mages de la pierre ou les artisans élémentaire de Brorne. Il faut alors leur faire subir un traitement d'une journée, qui s'effectue par un jet d'artisanat élémentaire (Pierre) à 15 et la dépense de 2 pts de magie de la sphère de la Pierre. Une fois ce traitement effectué, l'utilisateur a droit à une relance de son dé (donc s'il n'utilise pas les Tendances) si ce dernier indique 1.",
     "weight": 0.1,
     "creation_difficulty": 20,
     "creation_time": 1,
@@ -946,7 +946,7 @@
     "name": "Les automates",
     "uuid": "6da229d5-3364-4c4c-b489-a123fcea2b26",
     "unique": false,
-    "description": "Ce terme englobe tous les types de décorations possibles, de la fresque à la statuette en passant par la marionnette. Ces objets ont pour vocation de garder un lieu ou un coffre. Sitôt que quelqu’un approche sans les désamorcer, leur piège s'active. Suivant le contexte, cela peut aller du simple dard empoisonné à la pluie d’acide bouillant.\nIl faut s’y connaître à la fois en mécanique et un peu en magie du métal pour déjouer les automates. Ils sont aussi utilisés par les Humanistes pour commettre des attentats.",
+    "description": "Ce terme englobe tous les types de décorations possibles, de la fresque à la statuette en passant par la marionnette. Ces objets ont pour vocation de garder un lieu ou un coffre. Sitôt que quelqu’un approche sans les désamorcer, leur piège s'active. Suivant le contexte, cela peut aller du simple dard empoisonné à la pluie d’acide bouillant.\nIl faut s’y connaître à la fois en mécanique et un peu en magie du métal pour déjouer les automates. Ils sont aussi utilisés par les Humanistes pour commettre des attentats.\nLeur création nécessite des jets d'Artisanat ou de Mécanisme de Difficulté 15 à 30 selon la complexité de l'automate, puis des jets de Pièges mécaniques (voir Yris), de Difficulté 15 à 25 selon le piège mis en oeuvre, puis un jet d'Artisanat élémentaire (Métal) de Difficulté équivalente à celle du piège. Le déclenchement du piège est à définir avec le MJ et reste à sa discrétion.\nLeur création implique un jet d'Artisanat élémentaire (Métal) contre une Difficulté égale à celle du métal le plus noble (voir l'échelle de Transmutation). On crée ainsi 1+1/NR kg de l'alliage. Il en coûte 1+1/NR point de magie de la sphère du Métal. Le prix moyen de ces barres est égal à 4 fois la moyenne des prix des deux métaux.",
     "weight": 5,
     "creation_difficulty": 25,
     "creation_time": 5,
@@ -1013,7 +1013,7 @@
         "description": "Le joueur ne peut obtenir d’échec critique et relance tout résultat de 1 qu’il obtient lors de jets d'Orientation et d'Astrologie"
       },
       {
-        "description": "Une fois par jour, le porteur d’une telle pierre peut choisir de relancer un dé du Dragon - qu’il sera ensuite obligé de conserver - lors d’un appel aux Tendances"
+        "description": "Une fois par jour, le porteur d’une telle pierre peut choisir de relancer un dé du Dragon - qu’il sera ensuite obligé de conserver - lors d’un appel aux Tendances - mais un 1 éventuel sur ce second jet ne sera pas relancé, même si c'est un jet d'Orientation ou d'Astrologie"
       }
     ]
   },
@@ -1049,17 +1049,17 @@
     "name": "Les hurlantes",
     "uuid": "8c2adc83-e9c7-4ef5-b212-029bc21d56fa",
     "unique": false,
-    "description": "Il ne s’agit pas d’un objet magique, bien qu’il en ait toutes les apparences. Ce sont des flûtes de bois suspendues aux branches des arbres ou sur un pylône. Bien placées, elles peuvent prévenir de leur sifflement l’arrivée d’une tempête. Avec de l'expérience, il est même possible de deviner la nature - pluie, orage, neige - et la force de la tourmente. Les bergers s’en servent souvent, ainsi que les enfants, pour effrayer les passants - le sifflement peut rappeler un hurlement d’âme en peine.",
+    "description": "Il ne s’agit pas d’un objet magique, bien qu’il en ait toutes les apparences. Ce sont des flûtes de bois suspendues aux branches des arbres ou sur un pylône. Bien placées, elles peuvent prévenir de leur sifflement l’arrivée d’une tempête. Avec de l'expérience, il est même possible de deviner la nature - pluie, orage, neige - et la force de la tourmente. Les bergers s’en servent souvent, ainsi que les enfants, pour effrayer les passants - le sifflement peut rappeler un hurlement d’âme en peine.\nLeur création s'effectue avec Artisanat : Menuiserie (Difficulté 18). Il faut une journée de travail.",
     "weight": 0.5,
-    "creation_difficulty": 15,
-    "creation_time": 2,
+    "creation_difficulty": 18,
+    "creation_time": 1,
     "village_availability": {
-      "scarcity": "peuCommun",
-      "price": 30
+      "scarcity": "tresCommun",
+      "price": 20
     },
     "city_availability": {
-      "scarcity": "rare",
-      "price": 50
+      "scarcity": "peuCommun",
+      "price": 25
     },
     "supports_metal": false,
     "special": []
@@ -1072,17 +1072,17 @@
     "name": "Les cerfs-volants",
     "uuid": "d44791a4-e0ac-4c78-b4a4-506399dd7b49",
     "unique": false,
-    "description": "Le vol est en théorie interdit à l’homme. Cela n’empêche pas les enfants de fabriquer de grandes ailes volantes et de s’y accrocher pour s’élever dans les airs. Ce jeu est toléré, car il peut se montrer d’une utilité plus importante en cas de guerre. En effet, les gamins servent de sentinelles et, plus ils jouent, plus ils sont capables de rester longtemps dans les cieux. À noter que, le long des côtes, ce jeu est interdit et puni de mort.",
+    "description": "Le vol est en théorie interdit à l’homme. Cela n’empêche pas les enfants de fabriquer de grandes ailes volantes et de s’y accrocher pour s’élever dans les airs. Ce jeu est toléré, car il peut se montrer d’une utilité plus importante en cas de guerre. En effet, les gamins servent de sentinelles et, plus ils jouent, plus ils sont capables de rester longtemps dans les cieux. À noter que, le long des côtes, ce jeu est interdit et puni de mort.\nLeur création s'effectue avec Artisanat : Couture (Difficulté 20). Il faut deux jours de travail.",
     "weight": 2,
-    "creation_difficulty": 15,
-    "creation_time": 3,
+    "creation_difficulty": 20,
+    "creation_time": 2,
     "village_availability": {
-      "scarcity": "rare",
-      "price": 20
+      "scarcity": "peuCommun",
+      "price": 100
     },
     "city_availability": {
-      "scarcity": "rare",
-      "price": 20
+      "scarcity": "tresRare",
+      "price": 150
     },
     "supports_metal": false,
     "special": []
@@ -1095,17 +1095,17 @@
     "name": "Les tubes amplificateurs",
     "uuid": "2441e8ea-2cf0-40ea-b37b-b5a391cf5d1b",
     "unique": false,
-    "description": "Ces tubes sont assez rares, car leur préparation est longue et coûteuse. Ils se présentent sous la forme de tubes de laiton tenant dans la main et fermés par une valve. Il suffit de desserrer la valve pour que l’air, comprimé à l’intérieur, se libère. Les applications sont nombreuses - augmenter la flamme d’une forge, éteindre un feu en mélangeant air et eau, fabriquer une bombe silencieuse, etc. Certains Inquisiteurs les considèrent comme une arme humaniste.",
+    "description": "Ces tubes sont assez rares, car leur préparation est longue et coûteuse. Ils se présentent sous la forme de tubes de laiton tenant dans la main et fermés par une valve. Il suffit de desserrer la valve pour que l’air, comprimé à l’intérieur, se libère. Les applications sont nombreuses - augmenter la flamme d’une forge, éteindre un feu en mélangeant air et eau, fabriquer une bombe silencieuse, etc. Certains Inquisiteurs les considèrent comme une arme humaniste.\nLa création du tube s'effectue avec Artisanat : Forge (Difficulté 20) et impose de posséder Mécanismes à 4. Il faut deux jours de travail. Le remplissage demande un jet d'Artisanat élémentaire: Vents (Difficulté 15) et la dépense de trois points de magie par litre d'air. Cette opération prend une heure (chaque NR divise ce temps par deux).",
     "weight": 0.5,
     "creation_difficulty": 20,
-    "creation_time": 5,
+    "creation_time": 2,
     "village_availability": {
       "scarcity": "tresRare",
-      "price": 200
+      "price": 500
     },
     "city_availability": {
-      "scarcity": "rare",
-      "price": 200
+      "scarcity": "tresRare",
+      "price": 400
     },
     "supports_metal": false,
     "special": []
@@ -1118,7 +1118,7 @@
     "name": "Les spirales sémaphores",
     "uuid": "ba0db837-5c9c-4a9b-b763-fd5162cd657f",
     "unique": false,
-    "description": "Ces moulins à vent sont tout à fait classiques, mais quand leurs ailes sont ornées de rubans et que leur rythme n’est plus régulier, c’est que les meuniers communiquent d’une colline à l’autre. Dans les campagnes, on prévient des dangers de la sorte - des rubans magiques lumineux peuvent aussi rendre le système opérationnel la nuit.",
+    "description": "Ces moulins à vent sont tout à fait classiques, mais quand leurs ailes sont ornées de rubans et que leur rythme n’est plus régulier, c’est que les meuniers communiquent d’une colline à l’autre. Dans les campagnes, on prévient des dangers de la sorte - des rubans magiques lumineux peuvent aussi rendre le système opérationnel la nuit.\nL'utilisation de ces systèmes se fait par Mental + Langage des signes (Spécialisation: sémaphores). Il faut absolument posséder la Spécialisation pour comprendre les messages.",
     "weight": 20,
     "creation_difficulty": 15,
     "creation_time": 2,
@@ -1141,7 +1141,7 @@
     "name": "La poudre d'escampette",
     "uuid": "ece5d1b4-d599-45c1-9637-b5ecc209b647",
     "unique": false,
-    "description": "Seuls les mages les plus doués peuvent fabriquer cette poudre magique ressemblant à du sable bleuté. Les voyageurs en ont toujours sur eux, dans un petit sac accroché à leur cou. En fait, il s’agit plus d’un porte-bonheur ou d’un placebo - lorsqu'on l’utilise pour soigner - que d’un véritable objet magique. Grâce à elle, les voyages sont plus courts, la douleur disparaît, la jeunesse revient, les couples en difficulté sont sauvés, etc. Au meneur de jeu de décider de la réelle efficacité de la poudre.",
+    "description": "Seuls les mages les plus doués peuvent fabriquer cette poudre magique ressemblant à du sable bleuté. Les voyageurs en ont toujours sur eux, dans un petit sac accroché à leur cou. En fait, il s’agit plus d’un porte-bonheur ou d’un placebo - lorsqu'on l’utilise pour soigner - que d’un véritable objet magique. Grâce à elle, les voyages sont plus courts, la douleur disparaît, la jeunesse revient, les couples en difficulté sont sauvés, etc. Au meneur de jeu de décider de la réelle efficacité de la poudre.\nSa création s'effectue par Artisanat élémentaire: Vents (Difficulté 15) et la dépense de trois points de magie. Par NR, le meneur peut accorder un effet mineur (un +1 sur un futur jet, un petit coup de chance, un malus de blessure réduit pour un tour, etc…). Ces pouvoirs ne sont jamais définitifs.",
     "weight": 0.01,
     "creation_difficulty": 20,
     "creation_time": 1,
@@ -1260,17 +1260,17 @@
     "name": " Les clepsydres",
     "uuid": "7f518ded-1d2e-4683-b901-dee3a932f44a",
     "unique": false,
-    "description": "Depuis que les hommes ont pris conscience de leur mortalité, ils ont toujours ressenti le besoin de se situer dans le temps et de coordonner leurs vies pour les rendre ptus agréables. Les clepsydres sont des objets relativement courants, s'appuyant sur le principe de l'écoulement constant d’un liquide pour mesurer le passage du temps selon la vidange du réservoir, à la manière d’un sablier liquide. Il est devenu habituel d’orner de décorations magnifiques ces objets, dont certains sont même ensorcelés pour se remplir seuls à un certain degré. En général, on trouve des clepsydres dans les universités des érudits ou les Sources. Ce sont des objets conmunautaires, plus appréciés que les mystérieuses horloges, trop souvent taxées d’Humanisme.\nEn ville, une clepsydre est souvent confiée à la milice, qui peut alors planifier ses rondes et en informer la population par des annonces publiques.",
+    "description": "Depuis que les hommes ont pris conscience de leur mortalité, ils ont toujours ressenti le besoin de se situer dans le temps et de coordonner leurs vies pour les rendre ptus agréables. Les clepsydres sont des objets relativement courants, s'appuyant sur le principe de l'écoulement constant d’un liquide pour mesurer le passage du temps selon la vidange du réservoir, à la manière d’un sablier liquide. Il est devenu habituel d’orner de décorations magnifiques ces objets, dont certains sont même ensorcelés pour se remplir seuls à un certain degré. En général, on trouve des clepsydres dans les universités des érudits ou les Sources. Ce sont des objets conmunautaires, plus appréciés que les mystérieuses horloges, trop souvent taxées d’Humanisme.\nEn ville, une clepsydre est souvent confiée à la milice, qui peut alors planifier ses rondes et en informer la population par des annonces publiques.\nLeur création s'effectue avec Artisanat : Verrerie (Difficulté 25). Il faut une semaine de travail.\nIl est possible de créer des clepsydres ensorcelées à partir de matériaux nobles comme du verre, ce qui demande alors un jet d'Artisanat : Verrerie (Difficulté 20) puis une cérémonie au Maître du Temps, Kalimsshar. Il suffit alors d'une journée de travail au total et la dépense de 3 points de magie de la Sphère de l'Ombre. La possession (et la création) de ces clepsydres ensorcelées est soumise à l'Aval draconique. Leur rareté est Villes : tr/6000, Villages : int/8000.",
     "weight": 5,
-    "creation_difficulty": 20,
-    "creation_time": 3,
+    "creation_difficulty": 25,
+    "creation_time": 9,
     "village_availability": {
-      "scarcity": "tresRare",
-      "price": 500
+      "scarcity": "introuvable",
+      "price": 4000
     },
     "city_availability": {
       "scarcity": "rare",
-      "price": 600
+      "price": 2500
     },
     "supports_metal": false,
     "special": []
@@ -1283,13 +1283,13 @@
     "name": "Les marque-pages élémentaires",
     "uuid": "14aa6bb6-8822-4876-8f78-6aa0a98e942f",
     "unique": false,
-    "description": "Tout érudit qui se respecte possède un marque-page ensorcelé, fait d’un cuir ou d'une étoffe de son choix et enchanté par les artisans élémentaires. Outre les décorations et broderies qui les parsèment, les marque-pages élémentaires peuvent révéler le nom de leur propriétaire lorsque l’on passe la main au-dessus. Il se forme alors un glyphe magique fugace, scintillant d’une matière élémentaire choisie par le mage et formant son nom. Les ornementations d’un marque-page sont souvent en rapport avec le Statut de son propriétaire.\nUne coutume interne veut que, si on désire faire savoir qu’on l’étudie, on laisse son marque-page à l’intérieur d’un livre, posé dans les rayonnages d’une bibliothèque. Il est, pour un érudit, très impoli de consulter un livre ainsi réservé, si le Statut du propriétaire est manifestement supérieur au sien. Dans ce cas, il est d’usage de demander l’autorisation à l’érudit concerné, qui la refusera rarement.",
+    "description": "Tout érudit qui se respecte possède un marque-page ensorcelé, fait d’un cuir ou d'une étoffe de son choix et enchanté par les artisans élémentaires. Outre les décorations et broderies qui les parsèment, les marque-pages élémentaires peuvent révéler le nom de leur propriétaire lorsque l’on passe la main au-dessus. Il se forme alors un glyphe magique fugace, scintillant d’une matière élémentaire choisie par le mage et formant son nom. Les ornementations d’un marque-page sont souvent en rapport avec le Statut de son propriétaire.\nUne coutume interne veut que, si on désire faire savoir qu’on l’étudie, on laisse son marque-page à l’intérieur d’un livre, posé dans les rayonnages d’une bibliothèque. Il est, pour un érudit, très impoli de consulter un livre ainsi réservé, si le Statut du propriétaire est manifestement supérieur au sien. Dans ce cas, il est d’usage de demander l’autorisation à l’érudit concerné, qui la refusera rarement.\nLeur création demande un jet d'Artisanat : Tannerie (Difficulté 10), puis un jet d'Artisanat élémentaire au choix (Difficulté 15). Les NR obtenus à ces deux jets s'ajoutent pour donner une appréciation de la qualité du marque-page obtenu. Il est de coutume de chercher à obtenir au moins un NR par Statut de l'érudit auquel il est destiné, mais pas plus, car cela constitue une faute de savoir-vivre très mal vue par les artisans et les érudits. Les prix donnés sont par niveau de Statut de l'érudit.",
     "weight": 0.05,
-    "creation_difficulty": 20,
+    "creation_difficulty": 15,
     "creation_time": 1,
     "village_availability": {
-      "scarcity": "tresRare",
-      "price": 100
+      "scarcity": "peuCommun",
+      "price": 125
     },
     "city_availability": {
       "scarcity": "peuCommun",
@@ -1306,17 +1306,17 @@
     "name": "Les coraux",
     "uuid": "ff93f4ec-fddb-46c0-b406-8a4625e63fbc",
     "unique": false,
-    "description": "Les riches marchands et les nobles possèdent souvent des pieds de coraux ensorcelés, maintenus en vie hors des océans par le biais de la magie. Des mages des océans ou des artisans élêmentaires enchantent les délicates arborescences, ce qui y entretient une humidité perpétuelle et simule ainsi le milieu marin.\nLes coraux arborent parfois plusieurs nuances de couleurs. Leur popularité va croissant et ils constituent l’un des cadeaux les plus appréciés, hormis leurs qualités décoratives.",
+    "description": "Les riches marchands et les nobles possèdent souvent des pieds de coraux ensorcelés, maintenus en vie hors des océans par le biais de la magie. Des mages des océans ou des artisans élêmentaires enchantent les délicates arborescences, ce qui y entretient une humidité perpétuelle et simule ainsi le milieu marin.\nLes coraux arborent parfois plusieurs nuances de couleurs. Leur popularité va croissant et ils constituent l’un des cadeaux les plus appréciés, hormis leurs qualités décoratives.\nLeur adaptation demande un jet d'Artisanat élémentaire : Océans (Difficulté 15). Leur acclimatation demande trois jours d'effort et il est possible d'adapter un pied de 20 cm par un jet réussi, éventuellement doublé pour chaque NR obtenu (1 NR:40 cm, 2 NR:80 cm…). Les prix donnés sont par centimètre de corail.",
     "weight": 0.5,
-    "creation_difficulty": 20,
+    "creation_difficulty": 15,
     "creation_time": 2,
     "village_availability": {
-      "scarcity": "tresRare",
-      "price": 200
+      "scarcity": "commun",
+      "price": 8
     },
     "city_availability": {
-      "scarcity": "rare",
-      "price": 200
+      "scarcity": "peuCommun",
+      "price": 10
     },
     "supports_metal": false,
     "special": []
