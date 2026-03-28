@@ -89,7 +89,7 @@ enum CastePrivilege {
   ecole(
       caste: Caste.artisan,
       title: "École",
-      description: "Permet au personnage d’avoir été formé dans une école réputée pour un type d’artisanat particulier. En choisissant ce Privilège, le personnage doit nommer un type précis d’objet - lames courtes, bagues, engrenages, etc. - dont la qualité de base sera toujours bonne, au minimum, lors de ses jets de Confection. Ainsi, le personnage gagne 2 Niveaux de Réussite “virtuels”, qui ne lui servent qu’à déterminer la qualité de sa création - mais qui modifient sensiblement le prix de vente et l’ajout d’éventuels enchantements.",
+      description: "Permet au personnage d’avoir été formé dans une école réputée pour un type d’artisanat particulier. En choisissant ce Privilège, le personnage doit nommer un type précis d’objet - lames courtes, bagues, engrenages, etc. - dont la qualité de base sera toujours Bonne, au minimum, lors de ses jets de Confection. Ainsi, le personnage gagne 1 Niveau de Réussite “virtuels”, qui ne lui servent qu’à déterminer la qualité de sa création - mais qui modifient sensiblement le prix de vente et l’ajout d’éventuels enchantements.",
       cost: [4],
       unique: false,
       requireDetails: true
@@ -241,7 +241,7 @@ enum CastePrivilege {
   recuperation(
       caste: Caste.combattant,
       title: 'Récupération',
-      description: "Permet au personnage, après une nuit de sommeil, d'effacer toutes ses Égratignures, une Blessure Légère ou une Blessure Grave, au choix. De plus, sur lui, tous les jets de Médecine et de Premiers soins voient leur Difficulté réduite de 5.",
+      description: "Permet au personnage, après une nuit de sommeil, d'effacer toutes ses Égratignures, une Blessure Légère ou une Blessure Grave, au choix. De plus, sur lui, tous les jets de Médecine, de Premiers soins ou de Chirurgie voient leur Difficulté réduite de 5.",
       cost: [6]
   ),
   riposte(
@@ -253,7 +253,7 @@ enum CastePrivilege {
   sommeilLeger(
       caste: Caste.combattant,
       title: 'Sommeil léger',
-      description: "Permet au personnage de ne jamais dormir que d’un œil et de voir la Difficulté de tous ses jets de Perception, de Réaction et d’Initiative diminuée de 5, lorsqu'il est question de se réveiller. Passé le premier tour de surprise, le personnage se réveille quoi qu’il arrive, même si ses jets sont ratés, du moment que quelque chose d’inhabituel se passe dans son rayon de sécurité. On estime par exemple qu’un rayon de 50 mètres autour du feu de camp correspond au périmètre de sécurité de tout bon aventurier.",
+      description: "Permet au personnage de ne jamais dormir que d’un œil et de voir la Difficulté de tous ses jets de Perception et de Réaction diminuée de 5, lorsqu'il est question de se réveiller. Passé le premier tour de surprise, le personnage se réveille quoi qu’il arrive, même si ses jets sont ratés, du moment que quelque chose d’inhabituel se passe dans son rayon de sécurité. On estime par exemple qu’un rayon de 50 mètres autour du feu de camp correspond au périmètre de sécurité de tout bon aventurier.",
       cost: [3]
   ),
   vigilanceCombattant(
@@ -545,7 +545,7 @@ enum CastePrivilege {
   aura(
       caste: Caste.mage,
       title: 'Aura',
-      description: "Permet au personnage de posséder une aura magique, visible uniquement par les membres de sa caste et les créatures féeriques, qui traduit par des nuances de couleurs le niveau de sa puissance, son Statut, ses Disciplines et Sphères de prédilection, ainsi que ses particularités magiques — pouvoirs spéciaux, Lien, etc. Tant qu’il ne précise pas le contraire, cette aura peut être sondée et observée par tous les mages. Dans ce cas, elle confère au personnage un bonus égal à son Statut pour tous les jets de Social qui concernent sa situation hiérarchique, ainsi que lors des rencontres avec des créatures élémentaires. Pour tenter de la masquer, il faut réussir un jet d’opposition Mental + Volonté contre Mental + Empathie de l’observateur.",
+      description: "Permet au personnage de posséder une aura magique, visible uniquement par les membres de sa caste et les créatures féeriques, qui traduit par des nuances de couleurs le niveau de sa puissance, son Statut, ses Disciplines et Sphères de prédilection, ainsi que ses particularités magiques — pouvoirs spéciaux, Lien, etc. Tant qu’il ne précise pas le contraire, cette aura peut être sondée et observée par tous les mages. Dans ce cas, elle confère au personnage un bonus égal à son Statut pour tous les jets de Social qui concernent sa situation hiérarchique, ainsi que lors des rencontres avec des créatures élémentaires. Pour tenter de la masquer, il faut réussir un jet d’opposition Mental + Volonté contre Mental + Empathie de l’observateur.\nCe Privilège est incompatible avec Anonymat.",
       cost: [3]
   ),
   bourreau(
@@ -713,7 +713,7 @@ enum CastePrivilege {
       caste: Caste.mageNoir,
       title: 'Puissance de sang',
       description: "Lorsque l'Augure Noir décide de puiser dans ses Réserves et de se mutiler pour obtenir des Points de Magie, il obtient deux Points de Magie par case cochée au lieu d'un seul.",
-      cost: [5]
+      cost: [4]
   ),
   puissanceElementaire(
       caste: Caste.mage,
@@ -971,7 +971,7 @@ enum CastePrivilege {
   donDeKhymera(
       caste: Caste.prodige,
       title: 'Le don de Khyméra',
-      description: "Ce Don, comparable à celui de Kali, permet au personnage d’utiliser la corruption d’un être vivant contre lui. Le Prodige doit établir un contact physique pour déclencher le Don. Pour chaque point de Tendance Fatalité que possède la cible, cette dernière subit une Blessure, dans l’ordre croissant. Une créature ou un homme possédant 5 en Fatalité meurt donc instantanément, à moins qu’il ne réussisse un jet de Physique + Résistance contre une Difficulté de 20 - auquel cas, il reste en vie, mais noircit tout de même une case de Mort.\nSi le Prodige provoque la mort de cette façon, il gagne instantanément 1 point de Tendance Homme qu’il ne pourra effacer qu’après une quête - laissée à l’appréciation du meneur de jeu.",
+      description: "Ce Don, comparable à celui de Kali, permet au personnage d’utiliser la corruption d’un être vivant contre lui. Le Prodige doit établir un contact physique pour déclencher le Don. Pour chaque point de Tendance Fatalité que possède la cible, cette dernière subit une Blessure, dans l’ordre croissant. Une créature ou un homme possédant 5 en Fatalité meurt donc instantanément, à moins qu’il ne réussisse un jet de Physique + Résistance contre une Difficulté de 20 - auquel cas, il reste en vie, mais noircit tout de même une case de Mort.\nSi le Prodige provoque la mort de cette façon, il gagne instantanément 1 point de Tendance Homme qu’il ne pourra effacer qu’après une quête - laissée à l’appréciation du meneur de jeu.\nUtilisable autant de fois par jour que sa Tendance Dragon.\nNe fonctionne pas sur les dragons.",
       cost: [6]
   ),
   donDeKroryn(
@@ -1135,7 +1135,7 @@ enum CastePrivilege {
   renseignement(
       caste: Caste.protecteur,
       title: 'Renseignement',
-      description: "Permet au personnage d'obtenir des renseignements précis sur tout individu, guilde, faction ou groupe potentiellement connu de la caste des protecteurs. Pour ce faire, il doit prendre contact avec un relais de sa caste - poste de garde, garnison, ambassadeur, etc. - et réussir un jet de Social + Vie en cité, Diplomatie ou Présence, contre une Difficulté allant de 10, sil s’agit d’une information anodine ou d’un individu public, à 30, si l’information est confidentielle ou l’individu doté d’une identité secrète. Le personnage peut ajouter son niveau de Statut s’il utilise la voie hiérarchique et la Difficulté peut être augmentée ou réduite de 5 à 10 en fonction de l’importance du service de renseignements auquel le personnage s'adresse. Chaque Niveau de Réussite peut accélérer la procédure ou conférer une information supplémentaire au personnage.",
+      description: "Permet au personnage d'obtenir des renseignements précis sur tout individu, guilde, faction ou groupe potentiellement connu de la caste des protecteurs. Pour ce faire, il doit prendre contact avec un relais de sa caste - poste de garde, garnison, ambassadeur, etc. - et réussir un jet de Social + Vie en cité contre une Difficulté allant de 10, sil s’agit d’une information anodine ou d’un individu public, à 30, si l’information est confidentielle ou l’individu doté d’une identité secrète. Le personnage peut ajouter son niveau de Statut s’il utilise la voie hiérarchique et la Difficulté peut être augmentée ou réduite de 5 à 10 en fonction de l’importance du service de renseignements auquel le personnage s'adresse. Chaque Niveau de Réussite peut accélérer la procédure ou conférer une information supplémentaire au personnage.",
       cost: [4]
   ),
   requisition(

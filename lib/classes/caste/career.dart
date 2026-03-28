@@ -153,7 +153,7 @@ enum Career {
       description: "",
     ),
     benefit: CareerBenefit(
-      title: "L'instant de vérité",
+      title: "Briser la concentration",
       description: "Lorsqu’il combat seul un adversaire, le duelliste peut dépenser des actions en début de tour afin de réduire le nombre de dés d’Initiative de son opposant. Ces actions doivent être déclarées avant le lancement des dés d’Initiative et ne peuvent réduire l’Initiative de la cible au-dessous de 1. Ce bénéfice est utilisable autant de fois par combat que le personnage possède de degrés de Statut. Il n’est pas possible d’appliquer ce Bénéfice à plusieurs cibles au cours d’un même combat.",
     ),
   ),
@@ -226,7 +226,7 @@ enum Career {
     ),
     benefit: CareerBenefit(
       title: 'Nulle place au doute',
-      description: "Lorsqu’il affronte un adversaire possédant des points dans la Tendance qui lui est Opposée, le personnage peut choisir de gagner un bonus à tous les jets de défense de son adversaire. Ce modificateur est égal à son Statut + valeur de la Tendance Opposée de son adversaire. Le personnage doit choisir la façon dont il utilise ce Bénéfice au début du premier tour de combat et ne peut plus en changer tant qu’il s’agit du même adversaire.",
+      description: "Lorsqu’il affronte un adversaire possédant des points dans la Tendance qui lui est Opposée, le personnage peut choisir de gagner un bonus à tous à tous ses jets d’attaque ou d’infliger un malus à tous les jets de défense de son adversaire. Ce modificateur est égal à son Statut + valeur de la Tendance Opposée de son adversaire. Le personnage doit choisir la façon dont il utilise ce Bénéfice au début du premier tour de combat et ne peut plus en changer tant qu’il s’agit du même adversaire.",
     ),
   ),
   strategeCombattant(

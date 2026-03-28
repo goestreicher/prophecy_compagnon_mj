@@ -202,7 +202,7 @@ class DraconicFavor {
         linkProgress: DraconicLinkProgress.premierNiveau,
         isDefault: true,
         title: "Les Mains de Lave",
-        description: "En réussissant, un jet de Mental + Volonté contre une Difficulté de 10, le personnage peut enflammer de petites surfaces de matière inerte, d'une taille maximum de 10 cm2 par point de Tendance Dragon qu'il possède. Chaque Niveau de Réussite lui permet, d'augmenter la surface de 10 cm2, d'améliorer la qualité de la combustion ou d'accélérer le processus. Utilisé en attaque, le jet voit sa Difficulté augmentée de 5 et les dommages de base sont égaux à 5 + la Tendance Dragon du personnage. Les dommages s’ajoutent aux dommages à mains nues et ignorent les armures comportant du métal.",
+        description: "En réussissant, un jet de Mental + Volonté contre une Difficulté de 10, le personnage peut enflammer de petites surfaces de matière inerte, d'une taille maximum de 10 cm2 par point de Tendance Dragon qu'il possède. Chaque Niveau de Réussite lui permet d'augmenter la surface de 10 cm2, d'améliorer la qualité de la combustion ou d'accélérer le processus. Utilisé en attaque, le jet voit sa Difficulté augmentée de 5 et les dommages de base sont égaux à 5 + la Tendance Dragon du personnage. Les dommages s’ajoutent aux dommages à mains nues et ignorent les armures comportant du métal.",
       ),
       DraconicFavor(
         sphere: MagicSphere.feu,
@@ -362,7 +362,7 @@ class DraconicFavor {
         linkProgress: DraconicLinkProgress.deuxiemeNiveau,
         isDefault: true,
         title: "L’Arrogance de l’Aveugle",
-        description: "Une fois par jour, en effectuant un jet de Mental + Empathie contre une Difficulté de 20, l'Élu peut conférer à n'importe quel objet manufacturé (outil, arme, armure, etc.), qui n'appartient pas à un Élu de Kezyr, un malus de 1 point par Niveau de Réussite. Ce malus peut s'appliquer à n'importe quelle fonction initiale de l'objet - Compétence, dommages, toucher, etc. Ce malus dure jusqu'au prochain lever du soleil. Il est impossible de dépenser des Points de Maîtrise pour augmenter le score de ce jet.",
+        description: "Une fois par jour, en effectuant un jet de Mental + Empathie contre une Difficulté de 15, l'Élu peut conférer à n'importe quel objet manufacturé (outil, arme, armure, etc.), qui n'appartient pas à un Élu de Kezyr, un malus de 1 point +2/NR. Ce malus peut s'appliquer à n'importe quelle fonction initiale de l'objet - Compétence, dommages, toucher, etc. Ce malus dure jusqu'au prochain lever du soleil. Il est impossible de dépenser des Points de Maîtrise pour augmenter le score de ce jet.",
       ),
       DraconicFavor(
         sphere: MagicSphere.metal,
@@ -581,7 +581,7 @@ class DraconicFavor {
         linkProgress: DraconicLinkProgress.deuxiemeNiveau,
         isDefault: true,
         title: "L’Âme du Foyer",
-        description: "En réussissant un jet d'Empathie + Vie en Cité contre une Difficulté de 20, l'Élu peut prendre connaissance des événements qui se sont déroulés dans un bâtiment au sein duquel il se trouve. Chaque Niveau de Réussite lui permet de remonter de 10 ans dans l'histoire de l'immeuble. L'information ainsi récoltée sera exprimée en termes d'émotions - peur, haine, amour, violence - et d'images mentales troubles - mouvements, gestes brusques - mais en aucun cas elle ne révélera une identité exacte ou ne permettra d'entendre précisément des sons.",
+        description: "En réussissant un jet d'Empathie + Vie en Cité contre une Difficulté de 15, l'Élu peut prendre connaissance des événements qui se sont déroulés dans un bâtiment au sein duquel il se trouve. Chaque Niveau de Réussite lui permet de remonter de 10 ans + 10/NR dans l'histoire de l'immeuble. L'information ainsi récoltée sera exprimée en termes d'émotions - peur, haine, amour, violence - et d'images mentales troubles - mouvements, gestes brusques - mais en aucun cas elle ne révélera une identité exacte ou ne permettra d'entendre précisément des sons.",
       ),
       DraconicFavor(
         sphere: MagicSphere.cite,
@@ -602,7 +602,7 @@ class DraconicFavor {
         linkProgress: DraconicLinkProgress.troisiemeNiveau,
         isDefault: true,
         title: "L’Insignifiance du Mendiant",
-        description: "Une fois par jour, le personnage peut devenir insignifiant aux yeux des autres humains. En réussissant un jet de Mental + Empathie + Tendance Homme contre une Difficulté de 20, il passe totalement inaperçu durant 10 minutes. Chaque Niveau de Réussite rajoute 10 minutes à son “insignifiance”. L'Élu peut se déplacer, parler, utiliser la magie ou des objets… personne ne fait attention à lui ! Ceci ne veut pas dire qu'il est invisible - il est juste capable de se faire oublier. En situation critique, par exemple, gardes vigilants, personne seule dans une pièce, les autres protagonistes de la scène peuvent tenter un jet de Mental + Perception contre une Difficulté de 15 + Tendance Homme afin de remarquer l'intrus. Pendant la durée de l'effet de cette Faveur, l'Élu souffre d'un malus de 10 à tous ses jets pour toutes les Compétences Sociales.",
+        description: "Une fois par jour, le personnage peut devenir insignifiant aux yeux des autres humains. En réussissant un jet de Mental + Empathie + Tendance Homme contre une Difficulté de 20, il passe totalement inaperçu durant 10 minutes. Chaque Niveau de Réussite rajoute 10 minutes à son “insignifiance”. L'Élu peut se déplacer, parler, utiliser la magie ou des objets… personne ne fait attention à lui ! Ceci ne veut pas dire qu'il est invisible - il est juste capable de se faire oublier. En situation critique, par exemple, gardes vigilants, personne seule dans une pièce, les autres protagonistes de la scène peuvent tenter un jet de Mental + Perception contre une Difficulté de 15 + Tendance Homme afin de remarquer l'intrus. Pendant la durée de l'effet de cette Faveur, l'Élu souffre d'un malus de 10 à tous ses jets pour toutes les Compétences Sociales. Le personnage insignifiant ne peut entrer en combat à moins de briser le charme. Certaines actions pourront toutefois le rendre visible (magie spectaculaire, destruction d'un objet dans l'environnement).",
       ),
       DraconicFavor(
         sphere: MagicSphere.cite,
