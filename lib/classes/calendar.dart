@@ -63,7 +63,7 @@ enum KorAge {
 
 enum KorCycle {
   blanc(title: "Cycle blanc", shortTitle: "Blanc"),
-  moryargon(title: "Cycle de Moryargon", shortTitle: "Moryargon"),
+  moryagorn(title: "Cycle de Moryagorn", shortTitle: "Moryagorn"),
   soleil(title: "Cycle du soleil", shortTitle: "Soleil"),
   silence(title: "Cycle du silence", shortTitle: "Silence");
 

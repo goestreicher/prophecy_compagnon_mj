@@ -331,7 +331,7 @@
     "description": "L'armure enchantée de la sorte bénéficie d'un bonus de +20 à son Indice de protection pendant (1 + NR) semaines, qui s'applique même contre les attaques ignorant les armures. De plus, elle ignore toute pénalité d'encombrement."
   },
   {
-    "name": "Au nom de Moryargorn",
+    "name": "Au nom de Moryagorn",
     "sphere": "pierre",
     "level": 2,
     "skill": "sorcellerie",
@@ -341,13 +341,13 @@
     "casting_duration": 2,
     "casting_duration_unit": "hour",
     "keys": [
-      "rune de Moryargorn (sur le front de la cible)",
-      "sang de Moryargorn (servant à tracer la rune, consommé)",
+      "rune de Moryagorn (sur le front de la cible)",
+      "sang de Moryagorn (servant à tracer la rune, consommé)",
       "cérémonie de vénération de l'Être Primordial (Social + Conn. des dragons, Diff. 20)"
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Ce sort est une cérémonie de vénération célébrée lors des nominations de hauts dignitaires Protecteurs, mages de la pierre ou Prodiges. Très spectaculaire, il insuffle dans le cœur de tous les spectateurs un sentiment de fierté et de ferveur draconique. Ce sort ne fonctionne que sur des personnages possédant 5 en Tendance Dragon et lance un appel à la sagesse de Moryagorn pour juger l'âme du postulant. Après une longue cérémonie de prière et de pieuse vénération, le personnage recevant les honneurs (qui doit impérativement être volontaire) se place en posture de méditation au centre d'un cercle formé par ses pairs. La maître de cérémonie prononce alors les derniers versets sacrés de la vénération. Quel que soit le lieu de la cérémonie, la lumière baisse brutalement et le personnage pris pour cible rayonne d'une lumière vive et tournoyante. Elle décrit lentement le spectre lumineux (du rouge au violet) tandis que les spectateurs retiennent leur souffle. Lorsque la lumière violette s'assombrit, le personnage se découpe en contrejour alors qu'une déflagration de lumière aveugle les participants. Lorsque la lueur se dissipe, le personnage a l'impression d'avoir frôlé une conscience supérieure. Les spectateurs de la cérémonie (jusqu'à 50) disposent pour l'Augure suivant d'un bonus de +3 à tout jet d'Eloquence, de Conte, de Volonté pour résister au doute ou à la peur, ainsi qu'à tout jet mettant en évidence leur fanatisme draconique. Le personnage ciblé peut effacer autant de cercles qu'il le désire dans ses Tendances et continue sa vie avec une sérénité intérieure palpable. Si sa ferveur draconique est mise en doute ou doit être prouvée durant l'Augure suivant, il dispose d'un bonus de +5."
   },
@@ -404,7 +404,7 @@
     "keys": [
       "gemme",
       "de petits morceaux de verre",
-      "sang de Moryargorn"
+      "sang de Moryagorn"
     ],
     "source": {
       "type": "officiel",
@@ -533,7 +533,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },
@@ -548,13 +548,13 @@
     "casting_duration": 1,
     "casting_duration_unit": "hour",
     "keys": [
-      "sagianor (cinq mesures, consommées pour tracer une rune de Moryargorn)",
+      "sagianor (cinq mesures, consommées pour tracer une rune de Moryagorn)",
       "rocher brut d'au moins cent tonnes",
       "posture de méditation suprême (Manuel + Acrobatie, Diff. 15)"
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Rare et spectaculaire, ce sort permet de mobiliser un rocher naturel pour en faire un vaisseau céleste. Le mage, souvent un initié de très haut Statut, se place en méditation au sommet du rocher et se concentre intensément. Peu après, le rocher s'arrache lentement du sol et s'élève vers le ciel. Quelle que soit sa charge ou ses occupants, le rocher lévite (de quelques centimètres à plusieurs milliers de mètres) et se déplace par la seule force de la volonté du mage. La maniabilité de l'aérolithe est quasi nulle, et tout changement de cap demande plusieurs centaines de mètres. De même, l'ascension ou la descente se font très lentement (un mètre par dix secondes). Cet impressionnant équipage possède une Compétence de Vol de 1. Impossible dans ce cas de tenter des manœuvres brutales, mais le mage possède un contrôle mental si précis qu'il peut guider le rocher à quelques centimètres près, même si des points du rocher lui sont hors de vue (il sait intuitivement où sont chaque parties du rocher). Au maximum, le rocher peut atteindre une vitesse de 25 km/h, avec une accélération et une décélération très lentes. Ce sort possède une durée de (Sphère + 1/NR) heures, et à l'expiration du sort, le rocher pique doucement du nez pour se poser avec douceur au sol. Il est toujours possible de relancer le sort en cours de descente pour continuer sa route. Tant que le sorcier n'est pas concentré pour diriger le rocher, celui-ci conserve son cap et sa vitesse quelles que soient les intempéries. Peu importe aussi les modifications de charge, un ou deux dragons peuvent même se poser sans que le rocher ne pique. Par contre, les ailés peuvent pousser ou dévier le rocher avec facilité (en lévitation, la masse du rocher est quasi nulle). Les dragons tolèrent les aérolithes en raison de la grande maîtrise magique nécessaire à leur élévation, qui rend alors compte de la ferveur draconique du sorcier le contrôlant. Bien sûr, il convient que le mage révère largement les dragons qu'il pourrait rencontrer lors de son voyage céleste. Posséder la Compétence Cérémonie des mages des océans (ou en accueillir un à bord) est toujours un gage de sécurité. Ce sort sert à certains puissants mages de la pierre pour se déplacer, mais n'est jamais utilisé à la légère. Indifférent au milieu, il peut franchir toute région. On dit que ce sort a été développé lors de la formation d'Onyr, et que les rochers qui soutiennent les tours sont enchantés éternellement par ce sort."
   },

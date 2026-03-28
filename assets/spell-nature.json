@@ -360,12 +360,12 @@
     "casting_duration_unit": "minute",
     "keys": [
       "sagianor (cataplasme)",
-      "rune de Moryargorn (sur la cible)",
+      "rune de Moryagorn (sur la cible)",
       "encens de la Nature (consommé)"
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Ce sort utilise un cataplasme de sagianor pour canaliser une étincelle de la vigueur de l'Etre primordial. Il s'utilise après un soin quelconque (ou directement sur la plaie si personne ne possède de Compétence de soins). La durée de régénération des blessures de la cible (en tenant compte des NR de soin) est alors divisée par 2 + 1/NR. Durant toute sa convalescence, le blessé doit conserver le lourd cataplasme en contact avec sa peau. La sagianor est ensuite récupérable. Si le cataplasme est ôté, la force vitale de la sagianor se dissipe et la détruit."
   },
@@ -463,7 +463,7 @@
     "casting_duration": 30,
     "casting_duration_unit": "minute",
     "keys": [
-      "rune de Moryargorn (tracée dans la boue)",
+      "rune de Moryagorn (tracée dans la boue)",
       "boue",
       "poudre d'argent (consommée)"
     ],
@@ -633,7 +633,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },

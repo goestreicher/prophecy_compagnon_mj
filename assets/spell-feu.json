@@ -162,7 +162,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Le sorcier ou le forgeron place la gemme dans le foyer de la forge où il désire attirer le regard ardent de Kroryn, en ayant soin de tracer au fond la rune du feu. Il ajoute alors lentement les blocs de charbon dans le foyer, en psalmodiant le fier chant de travail des Forgerons. Le rubis devient lumineux et vire à l'orange sombre, dégageant une chaleur infernale qui embrase les charbons. A la fin de l'incantation, le rubis est indiscernable des autres braises, mais durant (Sphères) heures, les braises possèdent une puissance capable de faire rougeoyer et fondre les métaux les plus nobles, y compris l'acier, mais aussi le Sang de Kezyr ou le Sombre Acier. Au terme du temps d'action, les braises refroidissent normalement et le rubis peut être récupéré (brûlant, mais intact). Si le sort est raté, le rubis explose en fragments qui ne sont plus que de la poudre de rubis."
   },
@@ -642,7 +642,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "En convoquant les énergies élémentaires par une brusque série de mouvements, le mage se blesse volontairement (ou blesse la cible du sort, Egratignure automatique) et mêle la sagianor à son sang. Instantanément, le sang devient un fluide élémentaire bouillonnant. Le personnage n'en souffre pas, pas plus qu'il ne subit les effets du froid s'il y est soumis (il divise par deux tout dommage infligé et réussit tout jet de Résistance automatiquement). Si jamais le personnage est blessé, son sang gicle de la blessure sous la forme d'un geyser de feu liquide et incandescent, qui inflige automatiquement à l'agresseur (1 + 1/NR)D10 pts de dommages de feu et peut l'embraser (cf. LdB p. 194 dans ce cas). Ce sort dure (Sphère) tours. L'équipement du Pj n'est pas altéré par les éclaboussures de son propre sang igné."
   },
@@ -663,7 +663,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },
@@ -959,7 +959,7 @@
     "description": "Le mage se met en transe dans un lieu dépassant les 40°C. A la fin de ce rituel, il enchante les cendres volcaniques pour une heure. Celles-ci, lancées sur une cible, permettent de se fondre dans un feu et d'y trouver refuge. Il est aussi possible de l'utiliser avec de la lave. La cible se transforme en flammes et se mêle au brasier proche. Elle est alors indétectable normalement, tout en restant consciente de son environnement. Elle est réduite à une conscience pure et ne peut parler (bien que la télépathie reste utilisable), ni bouger, ni interagir avec son équipement (qui est dématérialisé). Le sort dure tant que le feu est actif, au maximum 1 heure + 30 minutes par NR. S'il s'éteint et que le personnage en est inconscient (en sommeil ou en méditation), il est alors rematérialisé brutalement et subit 1D10 blessures en commençant par les Egratignures. Le personnage peut mettre fin au sort et se rematérialiser en 1 action dès qu'il le désire. Dans le brasier, ses points de magie de la sphère du Feu se régénèrent au rythme de 2 par heure et les créatures élémentaires régénèrent 4 fois plus vite."
   },
   {
-    "name": "Sang de Moryargorn",
+    "name": "Sang de Moryagorn",
     "sphere": "feu",
     "level": 3,
     "skill": "invocatoire",

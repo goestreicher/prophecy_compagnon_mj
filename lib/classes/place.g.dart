@@ -55,9 +55,9 @@ Map<String, dynamic> _$PlaceSummaryToJson(PlaceSummary instance) =>
 const _$PlaceTypeEnumMap = {
   PlaceType.monde: 'monde',
   PlaceType.continent: 'continent',
-  PlaceType.nation: 'nation',
   PlaceType.region: 'region',
   PlaceType.lieuUnique: 'lieuUnique',
+  PlaceType.nation: 'nation',
   PlaceType.citeEtat: 'citeEtat',
   PlaceType.capitale: 'capitale',
   PlaceType.archiduche: 'archiduche',

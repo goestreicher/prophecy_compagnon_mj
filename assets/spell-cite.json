@@ -363,7 +363,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Ce sort en appelle à la bienveillance de Moryagorn pour protéger l'invocateur et quelques-uns de ses alliés en les transportant dans un sanctuaire Éerique. Ce sort ne fonctionne pas sur les personnages possédant 3 ou plus en Tendance Homme (qui ne sont pas assez fervents pour attirer l'attention de l'Être Primordial). A la fin de l'incantation, le mage et (NR) compagnons (présents dans le cercle et dans la même position) sont désintégrés par les courants élémentaires et reconstitués (en un battement de cil) dans la plus proche Éerie... Mais ce sort n'octroie aucun droit de pénétrer dans l'Éerie et n'oblige ses habitants à un accueil paisible. Le plus souvent, les mages des cités utilisent ce sort pour pénétrer dans une Éerie proche dont l'accès est physiquement difficile. Enfin, il est toujours risqué de se projeter dans une Éerie au hasard, certaines d'entre elles étant mortelles pour les humains (Abysses des Océans, Veines de feu des Volcans)..."
   },
@@ -487,7 +487,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },
@@ -566,7 +566,7 @@
     "casting_duration_unit": "minute",
     "keys": [
       "un élément d'architecture de Bonne qualité",
-      "huile élémentaire spéciale (poudre d'argent et de nacre mélangées à du Sange de Moryargorn)",
+      "huile élémentaire spéciale (poudre d'argent et de nacre mélangées à du Sange de Moryagorn)",
       "rune de Khy (tracée avec l'huile élémentaire)"
     ],
     "source": {

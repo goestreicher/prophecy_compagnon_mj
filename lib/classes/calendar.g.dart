@@ -30,7 +30,7 @@ const _$KorAgeEnumMap = {
 
 const _$KorCycleEnumMap = {
   KorCycle.blanc: 'blanc',
-  KorCycle.moryargon: 'moryargon',
+  KorCycle.moryagorn: 'moryagorn',
   KorCycle.soleil: 'soleil',
   KorCycle.silence: 'silence',
 };

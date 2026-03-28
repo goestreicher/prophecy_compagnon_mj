@@ -358,12 +358,12 @@
     "casting_duration_unit": "turn",
     "keys": [
       "sagianor",
-      "rune de Moryargorn",
+      "rune de Moryagorn",
       "kata d'harmonie (Manuel + Acrobatie, Diff. 15)"
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "En procédant à la méticuleuse harmonisation de son esprit avec les courants élémentaires qui baignent le corps de l'Etre Primordial, le mage prend conscience des points de convergence magique. Sans voir ou détecter les courants, il sait intuitivement s'ils sont forts ou faibles et où se situent les plus proches Éeries. Le personnage est informé des modificateurs de Sphère du site où il se trouve (environ 10m de rayon), et pour chaque Sphère qu'il maîtrise, il connaît la direction et la distance de la plus proche Éerie de cet élément. Il ne dispose par contre d'aucune indication quand à leur accessibilité ou contenu. Ce sort dure 1 + 1/NR tours."
   },
@@ -696,7 +696,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Ce sort est une invention récente, bien que sa brutale mise au point laisse penser que de nombreux mages y travaillaient avant le Conseil Ethernien de 1312. Applicable à toutes les Sphères (une fois appris, le sort peut être lancé avec n'importe quelle Sphère), ce sort est une forme mineure du Talisman de puissance. Il permet de créer un petit focus doté de l'énergie d'une seule Sphère, pour une durée d'un Augure. Tout comme le Talisman de puissance, l'utilisateur doit réussir un jet (Empathie + Sphère de Diff. 15) pour drainer, en une action et au toucher, 1 + 1/NR points de magie de l'objet vers sa Réserve de Sphère (et non sa Réserve personnelle), à concurrence de son maximum. Lors de son enchantement, le talisman mineur peut contenir 10 + 5/NR points de magie (sur l'incantation), lesquels doivent provenir d'un coup de la Réserve personnelle du mage ensorceleur (il n'est donc pas possible d'utiliser plusieurs talismans pour en enchanter un plus fort, ou de recourir à des focus classiques pour transvaser l'énergie). Rater ce sort vide d'un coup la Réserve personnelle du mage. Utiliser un talisman enchanté par un autre mage est possible, sachant qu'une personne possédant la Sphère concernée les reconnaît immédiatement au toucher."
   },
@@ -928,7 +928,7 @@
     ],
     "source": {
       "type": "officiel",
-      "name": "Le sang noir de Moryargorn"
+      "name": "Le sang noir de Moryagorn"
     },
     "description": "Ce sort ancestral permet d'ensorceler un bijou afin d'en faire un point de concentration magique. Le bijou doit contenir de la sagianor, sous la forme d'une perle de verre remplie ou d'un bijou sculpté dans le Sang sous l'une de ses formes. Cet enchantement est une forme ancestrale de focus, peu connue des mages néophytes, mais très employée par les mages d'un certain Statut. En procédant à une cérémonie dangereuse (car il s'agit de canaliser de l'énergie brute dans la sagianor, et un échec interdit l'usage de la Sorcellerie durant un Augure), le sorcier enferme autant de points de magie qu'il le désire dans le talisman. Ces points peuvent provenir de sa Réserve personnelle ou de plusieurs de ses Réserves de Sphères. Pour une durée d'un an, il peut accéder à cette réserve brute par un jet d'Empathie + Sorcellerie de Diff. 15. Il transfère ainsi 1 + 1/NR points de magie de la Réserve de l'objet vers sa Réserve personnelle (à concurrence du maximum) en une action et jusqu'à (Empathie) mètres. Un talisman est transmissible, mais il est impossible d'y réinsuffler de l'énergie. A la fin de l'enchantement, l'énergie restante se dissipe. Identifier un talisman est immédiat (au toucher) pour un personnage possédant Sorcellerie. Il est possible de briser un talisman pour en dompter l'énergie brute. Ceci détruit l'objet, la sagianor et éventuellement le mage : si ce dernier rate un jet de Volonté+ Maîtrise (totale) de Difficulté 15 + nombre de points restants, il en résulte une explosion élémentaire qui inflige 50 points de dommages sur un rayon de 5 m (et l'énergie est perdue)."
   },
