@@ -3,9 +3,14 @@ import 'package:json_annotation/json_annotation.dart';
 part 'tendencies.g.dart';
 
 enum Tendency {
-  dragon,
-  human,
-  fatality,
+  dragon(title: "Dragon"),
+  human(title: "Homme"),
+  fatality(title: "Fatalité"),
+  ;
+
+  final String title;
+
+  const Tendency({ required this.title });
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
@@ -38,6 +43,17 @@ class CharacterTendencies {
   TendencyAttribute dragon;
   TendencyAttribute human;
   TendencyAttribute fatality;
+
+  TendencyAttribute operator [](Tendency tendency) {
+    switch(tendency) {
+      case Tendency.dragon:
+        return dragon;
+      case Tendency.human:
+        return human;
+      case Tendency.fatality:
+        return fatality;
+    }
+  }
 
   factory CharacterTendencies.fromJson(Map<String, dynamic> json) => _$CharacterTendenciesFromJson(json);
   Map<String, dynamic> toJson() => _$CharacterTendenciesToJson(this);

@@ -30,7 +30,7 @@ class CharacterEditCasteDetailsWidget extends StatelessWidget {
         ),
       ),
       child: Column(
-        spacing: 8.0,
+        spacing: 16.0,
         children: [
           CharacterEditCasteCareerWidget(
             character: character,
