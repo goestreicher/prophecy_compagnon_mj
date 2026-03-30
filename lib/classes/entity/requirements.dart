@@ -1,5 +1,6 @@
 import '../caste/base.dart';
 import '../caste/character_caste.dart';
+import '../caste/interdicts.dart';
 import '../caste/privileges.dart';
 import '../character/advantages.dart';
 import '../character/tendencies.dart';
@@ -213,6 +214,20 @@ class TendencyCirclesMaxRequirement extends EntityRequirement {
       entity is HumanCharacter
       && entity.tendencies[tendency].value == 0
       && entity.tendencies[tendency].circles <= max;
+}
+
+class HasInterdictRequirement extends EntityRequirement {
+  const HasInterdictRequirement({ required this.interdict });
+
+  final CasteInterdict interdict;
+
+  @override
+  String toDisplayString() => "Interdit ${interdict.title}";
+
+  @override
+  bool meetsRequirements(EntityBase entity) =>
+      entity is HumanCharacter
+      && entity.caste.interdicts.contains(interdict);
 }
 
 class InterdictCountMinRequirement extends EntityRequirement {

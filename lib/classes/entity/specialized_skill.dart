@@ -205,6 +205,13 @@ class SpecializedSkill {
       reservedCastes: [Caste.voyageur],
       description: "Cette spécialisation est réservée aux voyageurs.\nPermet au personnage d'utiliser efficacement une arme de distance tout en dirigeant une monture. En réussissant un jet de Manuel + Tir monté contre une Difficulté de 10 au début d’un tour de combat (qui remplace le jet d'Équitation pour contrôler sa monture avant le début du tour), le personnage pourra lancer au maximum (1 + Niveaux de Réussite) projectiles durant ce tour - le combat monté limitant ordinairement à un le nombre d’actions de ce type. Si ce jet est réussi, la Difficulté de tous les jets de tir à distance du personnage est réduite de 5 par Niveau de Réussite pendant le tour en cours. \nSi le jet est raté, il faut normalement utiliser sa première action pour guider sa monture. Il n'est alors possible que de tirer un projectile par tour, aux conditions énoncées ci-dessus.\nLa Difficulté de base des tirs est inchangée et reste soumise aux malus d'actions cumulatives. Cette Compétence ne s'applique pas aux tirs depuis les véhicules.",
     );
+
+    s = SpecializedSkill.create(
+      parent: Skill.psychologie,
+      name: "Manipulation",
+      reservedCastes: [Caste.erudit, Caste.mage, Caste.commercant],
+      description: "Cette spécialisation est exclusivement accessible aux membres de la faction des Historiens.\nGrâce à cette Spécialisation, les Historiens sont capables, après avoir discuté avec un individu pendant (10 - niveau de Compétence) heures (au minimum 30 minutes), de déterminer le type de propos à employer ou d'événements à provoquer afin de manipuler ce dernier. Cette Compétence, combinée avec le Bénéfice d'Historien, permet à l'agent d'être particulièrement persuasif et surtout de faire en sorte que l'information se répande. Par ailleurs, la réussit d'un jet de Manipulation apportera un bonus de 1+1/NR à tout ultérieur de Séduction, de Diplomatie ou toute autre Cométence sociale, ainsi qu'à tout sort visant à manipuler un individu."
+    );
   }
 
   factory SpecializedSkill.fromJson(Map<String, dynamic> json) =>

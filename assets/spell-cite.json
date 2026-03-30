@@ -534,6 +534,27 @@
     "description": "Ce sortilège permet d'enchanter une bague ou par extension, tout bijou discret pouvant être offert pour permettre à son porteur et à son enchanteur d'établir une forme singulière de communication empathique. En lançant ce sortilège, le mage doit se concentrer sur la personne à qui il souhaite l'offrir, car l'enchantement est à destination unique et ne fonctionne que si l'objet est porté par le bénéficiaire désigné au moment de l'incantation. Par la suite et durant un Cycle, en réussissant un jet de Mental + Empathie + Tendance Homme contre une Difficulté de 20, le porteur de l'objet peut provoquer une relation télépathique à double sens pour entendre l'enchanteur de l'objet et parler librement avec lui pendant 1 + 1/NR minutes (calculés sur le jet de Mental + Empathie). De son côté, l'enchanteur peut faire de même quand il le désire, mais la Difficulté de son propre jet de Mental + Empathie + Tendance Homme est de 15. Cette liaison peut être utilisée trois fois par jour, mais s'il le désire, le porteur du bijou peut l'activer artificiellement en dépensant cinq de ses points de magie par contact. Le Mj reste libre de modifier ces Difficultés en fonction de la distance et des circonstances dans lesquelles les jets sont effectués stress extrême, fatigue, proximité, disputes, etc."
   },
   {
+    "name": "La marque de la Salamandre",
+    "sphere": "cite",
+    "level": 3,
+    "skill": "sorcellerie",
+    "complexity": 50,
+    "cost": 15,
+    "difficulty": 25,
+    "casting_duration": 30,
+    "casting_duration_unit": "minute",
+    "keys": [
+      "tatouage de salamandre",
+      "sang d’un membre de la confrérie des Salamandres (quelques gouttes, consommées)",
+      "chant des secrets (Social+Don artistique : Chant Diff. 15)"
+    ],
+    "source": {
+      "type": "officiel",
+      "name": "Gravées dans l'écaille"
+    },
+    "description": "La Marque des Salamandres rend invisible le tatouage de salamandre de son porteur. Lorsque ce tatouage est à moins de 30 cm d’une autre Marque de la Salamandre, les deux porteurs voient leur tatouage luire brièvement en répandant une légère chaleur. Cette lueur est très brève et ne peut être perçue par un observateur extérieur que par un jet de Mental+Perception de Difficulté 25. Seul le porteur ressent la légère chaleur qui se manifeste. Le plus souvent, la Marque est portée sur la main ou l’avant-bras, mais certaines personnes la portent au cou pour la sentir se manifester discrètement lors d’étreintes de salutation.\nLors du lancement du sort, le mage peut affecter 1+1/NR tatouages au toucher (les Salamandres possèdent peu de mages capables de lancer ce sort, ce qui les incite à rassembler plusieurs membres pour resserrer les liens).\nLes Marques de la Salamandre ne réagissent qu'entre elles, mais il existe une Marque unique de Maître-Salamandre. Si le porteur de la Marque du Maître active son tatouage avec un subordonné, ce dernier sait intuitivement que son vis-à-vis est le Maître des Salamandres. Cette marque ne peut être créée qu'avec du sang du Maître précédent, et seulement après son décès. Il est porté par Lark d'Astir depuis plusieurs années, et son frère Erk la portait avant lui.\nUne marque de la Salamandre peut s'illuminer 3 fois par jour au maximum, sauf celle du Maître qui peut réagir à volonté et faire réagir une Marque qui a déjà brillé à son maximum ce jour."
+  },
+  {
     "name": "La robe du citadin",
     "sphere": "cite",
     "level": 3,

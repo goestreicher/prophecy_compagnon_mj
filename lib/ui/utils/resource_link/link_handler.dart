@@ -38,9 +38,6 @@ void handleResourceLinkClicked(ResourceLink link, BuildContext context) async {
     case ResourceLinkType.star:
       dialog = await handleStarLinkClicked(link, context);
       break;
-    default:
-      dialog = handleUnsupportedResourceType(link, context);
-      break;
   }
 
   if(!context.mounted) return;

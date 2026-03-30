@@ -7,6 +7,12 @@ enum CastePrivilege {
     description: "Le personnage est lié à l'Ordre Secret de l'Évolution, qui rassemble les savants et inventeurs Humanistes. Sans connaître une liste de membres (il n'y en a pas), ce Privilège permet de se faire reconnaître des autres membres par l'usage de mots de passe variants selon les conjonctions stellaires. Un jet classique a une Difficulté de 15 ; le rater indique un mot de passe erroné et inutilisable. Posséder ce Privilège est un moyen sûr de retrouver des confrères cachés car l'usage des mots de passe peut se mêler à une discussion anodine.",
     cost: [2],
   ),
+  contrebandier(
+      caste: Caste.sansCaste,
+      title: 'Contrebandier',
+      description: "Ce Privilège est réservé aux membres des Salamandres.\nPermet d'obtenir bon nombre de marchandises illégales.",
+      cost: [2],
+  ),
   laForceDeLAme(
     caste: Caste.sansCaste,
     title: "La force de l'âme (Humaniste)",
@@ -424,6 +430,18 @@ enum CastePrivilege {
     cost: [1,2,3,4,5],
   ),
 
+  adopteHistorien(
+      caste: Caste.erudit,
+      title: 'Adopté (Faction des Historiens)',
+      description: "Ce Privilège est exclusivement accessible aux membres de la Faction des Historiens.\nPermet de se faire reconnaître de n'importe quel dragon, autre qu’un enfant de Kalimsshar, comme porteur de l'autorité d'Ozyr. Grâce à ce Privilège, le personnage pourra ainsi être autorisé à communiquer par télépathie, à demander de l’aide ou à échanger des informations avec n’importe quel dragon.\nSelon la situation, il lui sera éventuellement possible d'obtenir le soutien momentané du dragon ou de proposer ses services reconnus à l’ailé. Si le dragon le souhaite, il pourra même le représenter dans certaines interactions avec les humains.",
+      cost: [5]
+  ),
+  adopteJuriste(
+      caste: Caste.erudit,
+      title: 'Adopté-Juriste',
+      description: "Ce Privilège est exclusivement accessible aux Juristes.\nLe personnage joue sur la solide réputation de sa confrérie. Ses interlocuteurs (tant qu'ils sont draconistes ou avertis de la réputation des Juristes) sont subjugués par ses paroles. Le personnage peut ajouter son Statut à tous ses jets visant à plaider, expliquer une loi ou faire aboutir un point de vue légal (Baratin, Lois, Éloquence). Il ajoute de plus son Statut à sa Renommée pour se faire reconnaître des autres hommes de loi.",
+      cost: [2]
+  ),
   ambassade(
       caste: Caste.erudit,
       title: 'Ambassade',
@@ -502,6 +520,13 @@ enum CastePrivilege {
       unique: false,
       requireDetails: true
   ),
+  influencesHistorien(
+      caste: Caste.erudit,
+      title: 'Influences (Faction des Historiens)',
+      description: "Ce Privilège est exclusivement accessible aux membres de la Faction des Historiens.\nPermet de disposer d’un réseau d’informateurs et de collaborateurs fidèles aux Lois draconiques, capables de lui apporter une aide non négligeable. Ce Privilège peut permettre d’obtenir des informations, de demander un soutien actif ou de disposer d’un petit nombre d'hommes de main en peu de temps. Il n’est applicable qu’au sein d’une cité comptant des groupes d'hommes et de femmes respectueux des Lois draconiques.",
+      cost: [3],
+      requireDetails: true
+  ),
   messagerErudit(
       caste: Caste.erudit,
       title: 'Messager',
@@ -509,6 +534,12 @@ enum CastePrivilege {
       cost: [4],
       unique: false,
       requireDetails: true
+  ),
+  pointsVitaux(
+    caste: Caste.erudit,
+    title: "Points vitaux (Faction des Historiens)",
+    description: "Ce Privilège est exclusivement accessible aux membres de la Faction des Historiens.\nL'Historien a reçu des connaissances particulières interdites sur les organes vitaux et sur les terminaisons nerveuses du corps humain. Sans être un médecin pour autant, il peut utiliser ses connaissances pour effectuer des soins (bonus de +2 en Premiers soins, Médecine, voire Chirurgie), mais également pour appuyer là où ça fait mal sans risquer de tuer durant des séances de torture (bonus de +2 au jet de torture, impossibilité de faire un échec critique, tout 1 est relancé). Enfin, durant un combat, l'érudit pourra essayer d'abréger l'affrontement par un coup décisif : au début de chaque combat, il pourra alors utiliser tout ou partie des points de Maîtrise dépensés comme modificateur sur le jet de coups critique afin d'atteindre un organe vital de son choix.",
+    cost: [5],
   ),
   psychologieErudit(
       caste: Caste.erudit,
@@ -528,6 +559,12 @@ enum CastePrivilege {
       title: 'Réseau occulte',
       description: "L’érudit connaît les endroits, échoppes, cercles occultes, où l’on parle de choses interdites et où l’on échange des livres sulfureux. Sur un jet de Social + Vie en cité Difficulté 15, il peut rentrer en contact avec des représentants de ces groupes. Ce Privilège n’est utile que dans les villes d’au moins dix mille habitants.",
       cost: [4]
+  ),
+  volonteDeFer(
+    caste: Caste.erudit,
+    title: "Volonté de fer (Faction des Historiens)",
+    description: "Ce Privilège est exclusivement accessible aux membres de la Faction des Historiens.\nOzyr a posé sa griffe sur l'esprit de son agent, diffusant le froid des abysses dans son âme. Désormais, il est moins sensible à toute tentative de séduction, de corruption ou de torture. Il bénéficie d'un bonus de +5 pour s'opposer à un jet impliquant l'attribut Social ou la Compétence de torture.",
+    cost: [5],
   ),
 
   anonymat(
@@ -1089,6 +1126,12 @@ enum CastePrivilege {
       description: "Permet de se faire reconnaître de n'importe quel dragon, autre qu’un enfant de Kalimsshar, comme porteur de l'autorité de Brorne. Grâce à ce Privilège, le personnage pourra ainsi être autorisé à communiquer par télépathie, à demander de l’aide ou à échanger des informations avec n’importe quel dragon.\nSelon la situation, il lui sera éventuellement possible d'obtenir le soutien momentané du dragon ou de proposer ses services reconnus à l’ailé. Si le dragon le souhaite, il pourra même le représenter dans certaines interactions avec les humains.",
       cost: [5]
   ),
+  aplombQuesteurGris(
+      caste: Caste.protecteur,
+      title: 'Aplomb (Questeur Gris)',
+      description: "Ce Privilège est exclusivement accessible aux Questeurs Gris.\nPermet de contrôler ses émotions et de faire prévaloir sa condition de Questeur Gris en toutes circonstances, aidant le personnage à éviter un combat, à engager une discussion posée ou à bénéficier du respect dû à sa fonction. Le personnage peut alors ajouter son Statut à son premier jet destiné à bloquer une situation en train de dégénérer. Cela peut être un jet de Diplomatie pour influencer sur une discussion ou de Commandement pour empêcher ou faire cesser un combat.",
+      cost: [2]
+  ),
   autorite(
       caste: Caste.protecteur,
       title: 'Autorité',
@@ -1107,10 +1150,25 @@ enum CastePrivilege {
       description: "Permet d'effectuer une parade gratuite au bouclier par tour de combat. Cette parade ne compte pas dans le nombre d'actions du personnage et ne subit pas de Difficulté supplémentaire.",
       cost: [6]
   ),
+  faveurPolitiqueQuesteurGris(
+      caste: Caste.protecteur,
+      title: 'Faveur politique (Questeur Gris)',
+      description: "Ce Privilège est exclusivement accessible aux Questeurs Gris.\nPermet d’avoir su tisser un réseau de relations politiques au sein d’une région (duché ou comté) où agit le Questeur ou où il a pu exercer. Ce réseau s'appuie sur des amitiés, des pots-de-vin et des services mutuels. Le personnage pourra obtenir plus facilement certaines informations (dates, projets de lois, ragots, etc.). Ce Privilège peut être choisi plusieurs fois et s'applique à une région à chaque fois.",
+      cost: [2],
+      unique: false,
+      requireDetails: true
+  ),
   influences(
       caste: Caste.protecteur,
       title: 'Influences',
       description: "Permet de disposer d’un réseau d’informateurs et de collaborateurs fidèles aux Lois draconiques, capables de lui apporter une aide non négligeable. Ce Privilège peut permettre d’obtenir des informations, de demander un soutien actif ou de disposer d’un petit nombre d'hommes de main en peu de temps. Il n’est applicable qu’au sein d’une cité comptant des groupes d'hommes et de femmes respectueux des Lois draconiques.",
+      cost: [3],
+      requireDetails: true
+  ),
+  influencesQuesteurGris(
+      caste: Caste.protecteur,
+      title: 'Influences (Questeur Gris)',
+      description: "Ce Privilège est exclusivement accessible aux Questeurs Gris.\nPermet de disposer d’un réseau d’informateurs et de collaborateurs, capables de lui apporter une aide non négligeable. Ce Privilège peut permettre d’obtenir des informations, de demander un soutien actif ou de disposer d’un petit nombre d'hommes de main en peu de temps. Il n’est applicable qu’au sein d’une cité.",
       cost: [3],
       requireDetails: true
   ),
@@ -1120,10 +1178,24 @@ enum CastePrivilege {
       description: "Permet au personnage de conserver une vision claire et globale en toute circonstance - qu’il soit au cœur d’une mêlée, dans un tunnel enfumé, etc. Ce Privilège donne au personnage le droit d’effectuer un jet de Perception et de réduire de 5 la Difficulté de jets pénalisés par le chaos ambiant, le bruit, la confusion, etc.",
       cost: [3]
   ),
+  notorieteQuesteurGris(
+      caste: Caste.protecteur,
+      title: 'Notoriété (Questeur Gris)',
+      description: "Ce Privilège est exclusivement accessible aux Questeurs Gris.\nPermet de s'être forgé une bonne réputation au sein d’une région (duché ou comté) où agit le Questeur ou où il a pu exercer. La Renommée du personnage est augmentée de 1 une fois qu’il est reconnu. Le personnage gagne un bonus de 3 à toutes ses actions sociales effectuées à l’intérieur de région. Ce Privilège peut être acheté plusieurs fois et s'applique à une région à chaque fois.",
+      cost: [2],
+      unique: false,
+      requireDetails: true
+  ),
   porteParole(
       caste: Caste.protecteur,
       title: 'Porte-parole',
       description: "Permet de faire office de porte-parole au sein de n'importe quel groupe. Le protecteur peut ainsi servir d’interlocuteur auprès de milices locales, de seigneurs ou de dirigeants de cités, négocier des trêves ou des alliances diplomatiques… La réussite de ces entreprises n’est absolument pas obligatoire, mais ce Privilège permet de prendre la parole dans des discussions que seuls les ambassadeurs attitrés sont normalement autorisés à mener.",
+      cost: [3]
+  ),
+  question(
+      caste: Caste.protecteur,
+      title: 'Question (Questeur Gris)',
+      description: "Ce Privilège est exclusivement accessible aux Questeurs Gris.\nAvant d’interroger ou de torturer un individu, l’inquisiteur peut en juger d’un regard la Volonté (à un point près) et la force morale. Par ce regard, l’inquisiteur sait intuitivement quels vont être les forces et faiblesses du suspect, et quelle technique (interrogatoire ou torture) il doit employer pour un maximum d’efficacité. Il obtient un bonus de +3 sur son jet d’interrogatoire ou de torture, cumulable avec d’autres bonus éventuels. De plus, il affecte le subconscient du suspect et diminue sa résistance mentale et physique. S’il torture, pour chaque degré de Statut, il peut augmenter les malus de blessures de chaque seuil de 1 (les faisant passer par exemple de 0/-1/-3/-5 à -3/-4/-6/-8 pour un inquisiteur du 3e statut). S’il effectue un interrogatoire, le MJ diminue de moitié le temps nécessaire pour faire craquer le suspect. Ce Privilège n’est utilisable qu’en situation d’interrogatoire, de torture ou de procès.",
       cost: [3]
   ),
   regardInquisiteur(
@@ -1144,11 +1216,25 @@ enum CastePrivilege {
       description: "Permet de réquisitionner tout matériel, renfort ou moyen financier qu’il juge indispensable au bon déroulement de sa mission. Les abus sont sévèrement punis par la caste.",
       cost: [4]
   ),
+  sommation(
+      caste: Caste.protecteur,
+      title: 'Sommation',
+      description: "Ce Privilège est automatiquement obtenu par les miliciens engagés, les mercenaires sous contrat, les milices tribales et les seigneurs dans l'exercice de leur pouvoir légal. Il est automatiquement perdu si l'on perd ses fonctions.\nLe personnage peut intimer à un criminel en fuite l'ordre de se rendre immédiatement. Il n'est efficace que dans le cadre légal. Difficile à utiliser (les criminels ont tendance à fuir les force de l'ordre), ce Privilège est à la fois social et surnaturel, agissant directement sur l'incoscient. Il s'utilise par un jet de Social + Présence contre une Difficulté égale à VOLx5 de la cible. Un seul jet est possible par fuyard et par scène, quel que soit le nombre de poursuivants. Si le jet est réussi, le criminel est paralysé de frayeur, se fige et perd l'espoir de fuir. Avec un NR, il lâche ses armes. Un jet critique (réussi ou non) provoque une telle onde de choc dans les courants élémentaires de Pierre que tous les dragons de Brorne dans un rayon de 1 km sont avertis que la Loi a été invoquée.\nLe MJ peut accorder ce Privilège à tout personnage dépositaire du pouvoir légal dans le context d'aventure (auxiliaire, protecteur ayant prise une enquête en main).\nUn Protecteur milicien applique son bénéfice de carrière (Garant de la paix), un seigneur entouré de sa garde ajoute sa Renommée à son jet et un Prodige obtient un bonus égal à la Tendance Dragon de sa cible. Les personnages Experts en Commandement ou en Intimidation ont un bonus de +3, posséder le Privilège Adopté (Protecteurs) octroie un +5, Autorité (Protecteur) +3, Notoriété (variable) fonctionne comme prévu (+1). Ces bonus sont cumulatifs et le MJ peut en adapter à son gré.",
+      cost: [0]
+  ),
   suspicion(
       caste: Caste.protecteur,
       title: 'Suspicion',
       description: "Permet au personnage, habitué aux interrogatoires et aux confrontations, de deviner qu’on lui ment ou qu'on tente de lui cacher, même partiellement, une information. Pour éviter de mettre la puce à l'oreille du joueur, il est conseillé au meneur de jeu de procéder lui-même à un jet de Social + Intellect contre une Difficulté de 10 à 20 et de donner au personnage les informations qu’il juge appropriées. Si le personnage pense être confronté à un mensonge, il peut demander à ce qu’un jet soit effectué.\nAttention cependant : un personnage par trop suspicieux risque fort, à terme, de devenir paranoïaque et de croire que tout le monde lui ment - au meneur de jeu de transformer ces abus de Privilège en un Désavantage…",
       cost: [4]
+  ),
+  vieillesRelations(
+      caste: Caste.protecteur,
+      title: 'Vieilles relations (Questeur Gris)',
+      description: "Ce Privilège est exclusivement accessible aux Questeurs Gris.\nPermet de disposer d'un vieux compagnon (ancien confrère d'académie, amis miliciens ou la famille d'un Questeur Gris très proche) dans n’importe quelle cité comptant plus de cinq mille habitants. Cet ami pourra rendre des services, fournir des renseignements ou apporter une aide variée - hébergement, prêt de matériel, etc.",
+      cost: [3],
+      unique: false,
+      requireDetails: true
   ),
   signesDeBatailleProtecteur(
       caste: Caste.protecteur,

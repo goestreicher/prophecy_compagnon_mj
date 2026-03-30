@@ -7,6 +7,7 @@ import '../entity/skill.dart';
 import '../entity/skill_family.dart';
 import '../magic.dart';
 import 'base.dart';
+import 'interdicts.dart';
 import 'privileges.dart';
 
 class CareerInterdict {
@@ -126,7 +127,7 @@ enum Career {
       WeaponSkillsMinRequirement(min: 10),
       SimpleDescriptionRequirement("Plusieurs fait d'arme notable en faveur de la caste des Artisans"),
       SimpleDescriptionRequirement("Le patronage d'au moins un dragon du Métal Adulte ou de plusieurs Artisans (15 niveaux de Statut cumulés)"),
-    ]
+    ],
   ),
   mecaniste(
     castes: [Caste.artisan, Caste.artisanNoir],
@@ -778,6 +779,39 @@ enum Career {
       )
     ]
   ),
+  historiensFaction(
+    castes: [Caste.erudit, Caste.mage, Caste.commercant],
+    title: "Les Historiens (Faction)",
+    interdict: CareerInterdict(
+      title: "Tu ne parleras pas",
+      description: "",
+    ),
+    benefit: CareerBenefit(
+      title: "Écrire l'Histoire",
+      description: "En regardant un individu droit dans les yeux, l'Historien est capable de modifier de manière superficielle ses connaissances. La magie d'Ozyr permet en effet à son agent de suggérer certaines informations qui viennent modifier ce que savait l'individu. Ce dernier doit réussir un jet de Mental + Volonté contre le jet de Social + Éloquence + Statut de l'Historien. Ce dernier peut préalablement utiliser Psychologie (Manipulation) pour trouver les mots les plus pertinents ou les informations à transformer pour faire de sa victime un pion ; en cas de réussite, il bénéficie d'un bonus de 1+1/NR à son jet. Si l'Historien a fait appel à sa compétence de Manipulation, la victime répandra les fausses informations à 5+5/NR personnes. Il revient alors au MJ de déterminer dans quelle mesure l'information va se répandre et se déformer de nouveau.",
+    ),
+    specialization: "Psychologie (Manipulation)",
+    requirements: [
+      OneOfRequirements(
+        requirements: [
+          CasteMemberRequirement(caste: Caste.erudit, status: CasteStatus.expert),
+          CasteMemberRequirement(caste: Caste.mage, status: CasteStatus.expert),
+          CasteMemberRequirement(caste: Caste.commercant, status: CasteStatus.expert),
+          HasSphereDraconicLinkRequirement(sphere: MagicSphere.oceans),
+        ]
+      ),
+      AttributeMinRequirement(attribute: Attribute.mental, min: 6),
+      AttributeMinRequirement(attribute: Attribute.social, min: 6),
+      SkillAttributeTotalPointsRequirement(attribute: Attribute.mental, min: 20),
+      SkillAttributeTotalPointsRequirement(attribute: Attribute.social, min: 30),
+      SingleSkillMinRequirement(skill: Skill.discretion, min: 5),
+      TendencyMinRequirement(tendency: Tendency.dragon, min: 5),
+      TendencyCirclesMaxRequirement(tendency: Tendency.human, max: 3),
+      TendencyCirclesMaxRequirement(tendency: Tendency.fatality, max: 3),
+      HasInterdictRequirement(interdict: CasteInterdict.loiDuSecret),
+    ],
+    reservedSkills: [Skill.interrogatoire, Skill.torture],
+  ),
   medecins(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les médecins',
@@ -939,7 +973,8 @@ enum Career {
       SingleSkillMinRequirement(skill: Skill.connaissanceDeLaMagie, min: 7),
       TendencyMinRequirement(tendency: Tendency.dragon, min: 3),
       ProficiencyMinRequirement(min: 8),
-    ]
+    ],
+    reservedSkills: [Skill.investigation, Skill.commandement],
   ),
   generaliste(
     castes: [Caste.mage, Caste.mageNoir],
@@ -1087,7 +1122,8 @@ enum Career {
       MagicSkillMinRequirement(skill: MagicSkill.sorcellerie, min: 7),
       TendencyMinRequirement(tendency: Tendency.dragon, min: 4),
       ProficiencyMinRequirement(min: 8),
-    ]
+    ],
+    reservedSkills: [Skill.lois, Skill.investigation, Skill.commandement],
   ),
   reveur(
     castes: [Caste.mage, Caste.mageNoir],
@@ -1565,6 +1601,36 @@ enum Career {
       SkillFamilyTotalPointsRequirement(family: SkillFamily.mouvement, min: 15),
     ]
   ),
+  questeurGris(
+    castes: [Caste.protecteur, Caste.commercant, Caste.erudit, Caste.mage],
+    title: "Questeur Gris",
+    interdict: CareerInterdict(
+      title: "Tu ne mentiras point",
+      description: "",
+    ),
+    benefit: CareerBenefit(
+      title: "Réquisition",
+      description: "Le Questeur Gris peut réquisitionner la milice locale ou les soldats du seigneur sur les terres duquel il agit afin de procéder à des arrestations (maximum 3 personnes par Statut quelle que soit la caste, cumulable avec d'autres capacités). Il peut également exiger de la milice le prêt de matériel afin de mener un enquête, dans la mesure où le matériel est disponible et pour un montant total n'excédant pas 50dA.",
+    ),
+    specialization: "Aucune",
+    requirements: [
+      OneOfRequirements(
+        requirements: [
+          CasteMemberRequirement(caste: Caste.protecteur, status: CasteStatus.initie),
+          CasteMemberRequirement(caste: Caste.commercant, status: CasteStatus.initie),
+          CasteMemberRequirement(caste: Caste.erudit, status: CasteStatus.expert),
+          CasteMemberRequirement(caste: Caste.mage, status: CasteStatus.expert),
+        ]
+      ),
+      AbilityMinRequirement(ability: Ability.intelligence, min: 7),
+      AbilityMinRequirement(ability: Ability.perception, min: 6),
+      WeaponSkillsMinRequirement(min: 6),
+      SingleSkillMinRequirement(skill: Skill.corpsACorps, min: 6),
+      SingleSkillMinRequirement(skill: Skill.lois, min: 6),
+      SingleSkillMinRequirement(skill: Skill.vieEnCite, min: 5),
+    ],
+    reservedSkills: [Skill.commandement, Skill.lois, Skill.vieEnCite],
+  ),
   soldat(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le soldat',
@@ -1809,6 +1875,7 @@ enum Career {
   final CareerBenefit benefit;
   final String specialization;
   final List<EntityRequirement> requirements;
+  final List<Skill> reservedSkills;
 
   const Career({
     required this.castes,
@@ -1817,5 +1884,6 @@ enum Career {
     required this.benefit,
     required this.specialization,
     this.requirements = const <EntityRequirement>[],
+    this.reservedSkills = const <Skill>[],
   });
 }

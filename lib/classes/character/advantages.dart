@@ -11,6 +11,12 @@ enum AdvantageType {
 }
 
 enum Advantage {
+  adopteParLAssemblee(
+    title: "Adopté par l'Assemblée",
+    description: "Permet de commencer directement en faisant partie de l'Assemblée. Le personnage doit posséder 3 au maximum en TD, s’il est Commerçant il devra posséder le Privilège Paria (cf. mise à jour CdK). Quelle que soit sa caste, il peut acquérir les Privilèges Fournisseur de poison (Comm.) à 3, Réseau (CdK p.33) à 3 et La Cause (SdK p.98) à 3.",
+    cost: [5],
+    type: AdvantageType.general
+  ),
   agilite(
     title: 'Agilité',
     description: "Le personnage est particulièrement agile et bénéficie d’un bonus de 2 à toutes ses actions de mouvement : escalader, se déplacer silencieusement, grimper à une corde, etc.",
@@ -55,6 +61,12 @@ enum Advantage {
     cost: [1],
     type: AdvantageType.general
   ),
+  codeDeTruands(
+    title: 'Code de truands',
+    description: "Cet avantage est réservé aux membres des Salamandres.\nLa Présence du personnage est augmentée de 2 lors de tous les jets basés sur l'honneur, le courage et le moral avec d'autres membres des Salamandres.",
+    cost: [1],
+    type: AdvantageType.general
+  ),
   confidences(
     title: 'Confidences',
     description: "Le personnage a la faculté d’inspirer la confiance et de provoquer le dialogue. Cet Avantage donne un bonus de 5 à tous les jets de Communication portant sur des informations que son interlocuteur tient à garder secrètes. Attention : cet Avantage ne permet pas d'obtenir spontanément des informations vitales (position de l’armée ennemie, son appartenance à une secte humaniste ou fataliste, révéler un secret draconique, etc.). Au sein du groupe, les compagnons du personnage auront de plus tendance à se confier à lui et à lui demander conseil en cas de problème.",
@@ -73,6 +85,12 @@ enum Advantage {
     cost: [1],
     type: AdvantageType.general
   ),
+  figureDuMilieu(
+      title: 'Figure du milieu',
+      description: "Le personnage est connu à l’intérieur de l'Assemblée, quel que soit son Statut. Cet Avantage augmente sa Renommée de 2 points pour toutes les actions liées à l'influence hiérarchique (obtenir des informations, négocier un marché, faire aboutir une demande, demander de l’aide, etc.).",
+      cost: [2],
+      type: AdvantageType.general
+  ),
   fortunePersonnelle(
     title: 'Fortune personnelle',
     description: "Cet Avantage confère au personnage une somme de 1 000 dracs de fer par point dépensé.",
@@ -89,6 +107,18 @@ enum Advantage {
     title: 'Humaniste',
     description: "Cet Avantage montre une véritable conversion du personnage aux thèses humanistes. En tant qu'Humaniste, le personnage peut ignorer la règle concernant l'Avantage “Art Interdit” requis avant le développement de Compétences Interdites. Il n'est donc plus obligé de l'acheter et peut accéder à ces Compétences à tout âge. De plus, il peut développer les Pouvoirs de l'esprit, une puissance psychique propre aux Humanistes qui lerr vaut les foudres des draconistes.\nLa Tendance Dragon d'un Humaniste convaincu ne peut jamais dépasser 1, tout comme sa Tendance Homme ne doit jamais descendre au-dessous de 3. Si l'une de ces conditions est brisée, le personnage perd l'usage de tous ses Pouvoirs de l'esprit, et ses points de Ferveur tombent à 0. Ses pouvoirs reviennedront à raison de un par semaine une fois ses Tendances rétablies. De même, ses points de Ferveur ne reviendront qu'à raison de un par jour suivant ce rééquilibrage de Tendances.",
     cost: [7],
+    type: AdvantageType.general,
+  ),
+  lienAssemblee(
+    title: "Lien avec l'Assemblée",
+    description: "Cet Avantage s'applique à une personne étrangère à l'Assemblée.\nPermet de connaître certains lieux, signes de rencontre et personnalités de différentes Assemblées.\nÀ 1, un jet de Mental+Vie en cités Diff. 16 permet de dénicher un lieu fréquenté par l’Assemblée et de demander gestuellement un rendez-vous avec le Contact.\nÀ 2, plusieurs membres dans différentes cités sont directement connus. L'anonymat doit être respecté et en toute cité, un membre sûr est contactable.\nÀ 4, plusieurs chefs de famille d'Assemblées diverses sont directement connus. Les rencontrer est possible et un bonus de +3 s'applique sur tous les jets liés à la pègre (marchandage, Renommée, vie en cités, etc.)",
+    cost: [1,2,4],
+    type: AdvantageType.general,
+  ),
+  lienSalamandres(
+    title: "Lien avec les Salamandres",
+    description: "Cet Avantage s'applique à une personne étrangère aux Salamandres.\nPermet de rentrer en contact avec les contrebandiers de Kor.\nÀ 2, plusieurs personnes possédant cet Avantage à 4 sont connues en divers points de Kor.\nÀ 4, sans être un Salamandre, le personnage connaît plusieurs membres de la confrérie et, sur un jet de Mental+Vie en cités Diff. 18, il peut toujours dénicher un Salamandre dans une cité (s’il en existe).",
+    cost: [2,4],
     type: AdvantageType.general,
   ),
   magieIntuitive(
@@ -138,6 +168,12 @@ enum Advantage {
     cost: [5],
     type: AdvantageType.general,
     requireDetails: true,
+  ),
+  salamandre(
+    title: "Salamandre",
+    description: "Permet de commencer directement en faisant partie des Salamandres. Le personnage ne peut posséder moins de 2 en TD, il obtient la Marque de la Salamandre et connaît au moins un contact par pays ou cité d'importance. Il peut acquérir le Privilège Fournisseur de poison (Comm.) à 2, qui devient Contrebandier et permet d'obtenir bon nombre de marchandises illégales.",
+    cost: [6],
+    type: AdvantageType.general,
   ),
   santeDeFer(
     title: 'Santé de fer',

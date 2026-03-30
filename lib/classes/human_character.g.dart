@@ -101,6 +101,7 @@ Map<String, dynamic> _$CharacterAdvantageToJson(CharacterAdvantage instance) =>
     };
 
 const _$AdvantageEnumMap = {
+  Advantage.adopteParLAssemblee: 'adopteParLAssemblee',
   Advantage.agilite: 'agilite',
   Advantage.allie: 'allie',
   Advantage.ambidextre: 'ambidextre',
@@ -108,12 +109,16 @@ const _$AdvantageEnumMap = {
   Advantage.augureFavorable: 'augureFavorable',
   Advantage.chance: 'chance',
   Advantage.charme: 'charme',
+  Advantage.codeDeTruands: 'codeDeTruands',
   Advantage.confidences: 'confidences',
   Advantage.corpsAguerri: 'corpsAguerri',
   Advantage.droiture: 'droiture',
+  Advantage.figureDuMilieu: 'figureDuMilieu',
   Advantage.fortunePersonnelle: 'fortunePersonnelle',
   Advantage.heritageDraconique: 'heritageDraconique',
   Advantage.humaniste: 'humaniste',
+  Advantage.lienAssemblee: 'lienAssemblee',
+  Advantage.lienSalamandres: 'lienSalamandres',
   Advantage.magieIntuitive: 'magieIntuitive',
   Advantage.magieNaturelle: 'magieNaturelle',
   Advantage.mentor: 'mentor',
@@ -121,6 +126,7 @@ const _$AdvantageEnumMap = {
   Advantage.prestance: 'prestance',
   Advantage.pressentiment: 'pressentiment',
   Advantage.resistanceALaMagie: 'resistanceALaMagie',
+  Advantage.salamandre: 'salamandre',
   Advantage.santeDeFer: 'santeDeFer',
   Advantage.sensAccru: 'sensAccru',
   Advantage.sensDeLOrientation: 'sensDeLOrientation',
