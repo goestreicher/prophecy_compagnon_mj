@@ -1,0 +1,37 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "M'lan",
+    "description": "\n\n",
+    "envergure": "level9",
+    "motivations": {
+      "vertu": "pardon",
+      "penchant": "fanatisme",
+      "ideal": "evoluer",
+      "interdit": "renier",
+      "epreuve": "quete",
+      "destinee": "illumination",
+      "values": {
+        "vertu": 7,
+        "penchant": 7,
+        "ideal": 7,
+        "interdit": 7,
+        "epreuve": 7,
+        "destinee": 7
+      }
+    },
+    "powers": {
+      "1": "empathie",
+      "2": "telepathie",
+      "3": "benediction",
+      "4": "champDeForce",
+      "5": "rituel",
+      "6": "offensive",
+      "7": "harmonie"
+    },
+    "companies": []
+  }
+]

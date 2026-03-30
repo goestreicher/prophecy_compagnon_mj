@@ -223,6 +223,7 @@ class Star extends ResourceBaseClass {
   static Future<void> loadAll() async {
     await _loadLock.synchronized(() async {
       var assetFiles = [
+        'stars-ecran2e.json',
         'stars-les-secrets-de-kalimsshar.json',
       ];
 
