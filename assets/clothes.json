@@ -563,5 +563,42 @@
     "slot": "body",
     "handiness": 0,
     "layer": "over"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "Le Sépulcre de Solyr",
+    "uuid": "4b307d6c-7fab-4388-9943-74e70ea2bace",
+    "unique": true,
+    "description": "Alors qu’à la fin de l’Âge des Conquêtes, les armées incroyables de Brorne et de Kroryn se faisaient face sur le champ de bataille, Solyr, le premier Prodige Élu, réussit à apaiser la haine et évita de sa sagesse une guerre dévastatrice. Si tous les baladins se souviennent qu’il se présenta sans arme face aux Grands Dragons, rares sont ceux qui gardent en mémoire l’habit, fait d’un simple voile de lin, qu’il portait ce jour-là. Des siècles après que le nom de Solyr fut entré dans l'histoire, le vêtement refit apparition, porté par un inconnu, et contribua par sa seule présence à offrir un dénouement heureux et pacifique aux plus terribles des conflits. Récemment, plusieurs personnes jurent avoir reconnu le Sépulcre de Solyr dans la large écharpe que Jard, fédérateur des Marches Alyzées, portait lors des quêtes diplomatiques qui fui ont permis d’unifier les Marches. Nul ne sait comment la relique lui serait parvenue, mais on murmure aujourd’hui qu’elle aurait quitté son cou.\nLe Sépulcre est un simple tissu de lin blanc, très fin, long d'environ deux mètres une fois déplié et retenu à l’épaule par une fibule de bois, gravée d’un œil de dragon. Le suaire ne se déchire jamais, mais nul n’a jamais tenté de lui faire la moindre entaille. Aussi étrange que cela puisse paraître, personne n’a jamais tenté d’ôter la fibule, qui semble faire corps avec le tissu.\nLe Sépulcre n’a actuellement aucun possesseur attitré. Il apparaît irrégulièrement dans l’histoire de Kor, lors de situations particulièrement tendues ou délicates, puis disparaît quelques années, quelques siècles, pour faire irruption dans un nouveau conflit . Son dernier porteur fut Jard, le célèbre fédérateur des Marches Alyzées, mais nul ne sait où se trouve actuellement le Sépulcre, ni pour quelle raison le héros des Marches l’a arboré, puis quitté.\nLe porteur du Sépulcre, une fois en sa possession, a souvent tendance à entreprendre de grands projets diplomatiques. Spontanément, il développe un intérêt pour une cause qu’il embrasse et mène à bien - devenant ainsi, à son insu, l'instrument des motivations secrètes du Sépulcre. Au vu de l’histoire, on imagine sans mal qu’il existe un grand nombre d'objets, de sites, de fragments et d’écrits porteurs d’une puissance draconique. Si toutes les reliques ne sont aussi prestigieuses que Morngärdt, la lame de Kroryn, elles disposent toutes d’une mémoire et d’une histoire capables, à elles seules, d’alimenter les plus folles intrigues.",
+    "weight": 1.2,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "legendary",
+    "special": [
+      {
+        "description": "Le possesseur du Sépulcre voit son Attribut Social passer à 13 tant qu’il le porte"
+      },
+      {
+        "description": "Le porteur captive l'attention rien qu’en murmurant quelques mots, coupant net les discussions alentours"
+      },
+      {
+        "description": "Toute tentative d'agression sur le porteur du Sépulcre nécessite un jet de Mental + Volonté contre une Difficulté de 25, sans quoi l’agresseur n'ose pas porter la main sur le porteur"
+      }
+    ],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "normal"
   }
 ]

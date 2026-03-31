@@ -192,5 +192,51 @@
       "add": 5,
       "dice": 1
     }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "La Première Écaille",
+    "uuid": "ab51cd67-e3c1-4f87-ac05-f768268f1940",
+    "unique": true,
+    "description": "Durant les guerres de l’Age des Conquêtes, Brorne, alors sous forme humaine et accompagné d’un seul écuyer, fut attaqué par trois des plus fabuleux champions de Kroryn. Pris par surprise, il se jeta au combat et reprit avec rage ses atours draconiques. Le combat dura peu. Brorne lacéra l’un des héros de ses griffes et brisa l’échine d’un autre, tandis que le dernier lui labourait le dos de coups de hache. À aucun moment il ne remarqua la jeune enfant, fille de l’un des guerriers, qui observait la scène en sanglotant. En voyant son père étendu et mourant, elle se jeta sous les griffes du Grand Dragon pour tenter de l’en éloigner. Alors que Brorne se retournait pour éventrer le dernier de ses adversaires, l’écuyer affolé vit la queue de son maître se rabattre vers l’enfant. Saisissant une large écaille sanglante arrachée au dos de Brorne par les coups de hache, il se jeta alors que la queue s’abattait, faisant trembler le sol. Lorsque Brorne se pencha à terre, intrigué par l’intensité du choc, il trouva son écuyer agonisant, les bras et le torse écrasés. L'homme mourut dans son sang, étranglé par une ultime prière d’excuse à son maître, mais l’enfant restait vivante, protégée par le plus puissant des boucliers que le monde allait jamais connaître.\nLa Première Écaille mesure environ quatre pieds de haut, pour une largeur de trois. Ovale, légèrement incurvée, elle semble faite de plusieurs lames d’écailles soudées, Il s’agit pourtant d’un seul bloc, issu de la carapace naturelle de Brorne. Des aspérités intérieures permettent de la tenir comme un bouclier, mais aucun outil n’a jamais réussi à la travailler pour y installer des sangles.\nLa Première Écaille est gardée à Kern, dans la Forteresse des Protecteurs. Elle est exposée symboliquement dans le Hall de Réunion. Dans le plus grand secret, il semblerait que Fasul Ibn Kan, redoutable chef de guerre Zûl et probable futur candidat au titre de Chevaucheur du Souffle du Dragon, soit outré de l’inutilité de l’Écaille ainsi exposée et que plusieurs tentatives pour l'obtenir soient en cours.\nLa Première Écaille ne peut normalement être portée que par le Maître de la Caste des Protecteurs, Ugmar Kast pour l’époque actuelle.",
+    "weight": 6,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "legendary",
+    "special": [
+      {
+        "description": "Si, lors d’une parade active, le porteur obtient au moins autant de Niveaux de Réussite que son adversaire, l’attaque parée n’inflige aucun dégât, quel qu’en soit le type (arme, magie, élément naturel, etc.)."
+      },
+      {
+        "description": "Le porteur ne subit d’effet de recul que face à une attaque physique d’un dragon."
+      }
+    ],
+    "slot": "hands",
+    "handiness": 1,
+    "layer": "normal",
+    "requirements": {
+      "force": 8
+    },
+    "protection": 15,
+    "penalty": -5,
+    "damage": {
+      "static": null,
+      "ability": "force",
+      "multiply": 1,
+      "add": 5,
+      "dice": 1
+    }
   }
 ]

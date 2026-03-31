@@ -424,6 +424,82 @@
     "supports_metal": true
   },
   {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "Morngärdt",
+    "uuid": "1048a0b6-0f31-4893-b340-9acec553fe07",
+    "unique": true,
+    "description": "Au XXIXXème siècle AdC, Brorne et Kroryn se firent face et, au cœur de leurs armées mêlées d’hommes et de dragons, ils s’affrontèrent lors d’un combat de titans. A cette occasion, Kroryn maniait Morngärdt, une colossale épée qu'il avait conçu plusieurs siècles auparavant avec Kezyr. Il est dit que Morngärdt pouvait appeler le Sang de Moryagorn, trancher un homme sans élan, faire fondre les plus solides armures et conférer à son porteur la furie de dix fils de Kroryn.\nMorngärdt se présente comme une épée à deux mains, d’une longueur de près de deux mètres. Sa lame à double tranchant, d’un métal argenté aux reflets rouges, est large d’une main à la base, de deux à son tiers, puis s’effile jusqu’à la pointe. Des dentelures jaillissent de la lame vers le milien et des runes d’un rouge scintillant fluctuent sur sa longueur. La garde est massive, rectangulaire et porte aux extrémités des rubis ronds de la taille d’un poing. La poignée est recouverte de cuir brun lacé d’or jusqu’au pommeau, masse de métal taillée en une pointe massive.\nMorngärdt est actuellement entre les mains de Tzeck, un redoutable Inquisiteur qui écume sans relâche la Principauté de Marne. Il a déjà été défié plusieurs fois par des héros de la caste des combattants, mais aucun n’a réussi à lui reprendre cette arme qu’ils considèrent, à tort ou à raison, comme leur héritage. Un des fils de Kroryn aurait déclaré à ce sujet : “Que celui qui veut Morngärdt soit assez fort pour la prendre !”\nMorngärdt est une arme terrifiante qui dans son aspect même provoque un malaise. Le porteur voit son Social réduit de 2 lorsqu’il la porte. Par contre, s’il tente d’intimider ou de se faire respecter par des menaces, il gagne un bonus de +5 à tous ses jets de Social. De plus, Morngärdt décuple l’agressivité de son porteur et le rend beaucoup plus sujet à la colère. Toute émotion violente contre laquelle il lutte augmente de 5 la Difficulté d’un éventuel jet de contrôle.",
+    "weight": 3.2,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "legendary",
+    "special": [
+      {
+        "description": "Bonus de 6 en Physique pour les actions de combat"
+      },
+      {
+        "description": "Bonus de 4 en Force pour les dégats"
+      },
+      {
+        "description": "Malus de 2 en Social"
+      },
+      {
+        "description": "Bonus de 5 à tous les jets d'intimidation"
+      },
+      {
+        "description": "La cible perd définitivement 1 point de Présence par NR obtenu lors d'une attaque"
+      },
+      {
+        "title": "Sang de Moryagorn",
+        "description": "Morngärdt a également le pouvoir d'éveiller le Sang de Moryagorn, en ouvrant le sol pour en faire jaillir des torrents de lave en fusion. Pour cela, le porteur doit posséder au moins 4 en Tendance Dragon et effectuer un jet de Physique + Sphère du Feu contre une Difficulté de 15. Il est impossible de dépenser des points de Maîtrise ou de Chance pour ce jet. Pour chaque NR obtenu, il ouvre le sol sur dix mètres et en fait jaillir une gerbe de magma qui inflige 1D10 Blessures à toute créature présente dans un rayon de 30 mètres autour du porteur, qu'elle soit hostile ou non au porteur. Ce pouvoir peut être utilisé une fois par jour et affecte également les dragons de Kroryn."
+      }
+    ],
+    "slot": "hands",
+    "handiness": 2,
+    "layer": "normal",
+    "skill": "armesTranchantes",
+    "requirements": {
+      "force": 7,
+      "coordination": 6
+    },
+    "initiative": {
+      "melee": 1
+    },
+    "damage": {
+      "static": null,
+      "ability": "force",
+      "multiply": 2,
+      "add": 15,
+      "dice": 1
+    },
+    "range_effective": {
+      "static": 2,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    },
+    "range_max": {
+      "static": 2,
+      "ability": null,
+      "multiply": 1,
+      "add": 0,
+      "dice": 0
+    }
+  },
+  {
     "name": "Cimeterre à deux mains",
     "skill": "armesTranchantes",
     "weight": 1.8,

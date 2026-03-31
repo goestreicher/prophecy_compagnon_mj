@@ -1320,5 +1320,34 @@
     },
     "supports_metal": false,
     "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "Le Bourdon d'Ébène",
+    "uuid": "53949051-7d82-43fc-a701-2aca3fa323f7",
+    "unique": true,
+    "description": "Lors de la création des Immortels, Heyra savait qu’elle devrait donner la Vie. Réfléchissant à son implication, elle décida non pas de créer une vie jeune et inexpérimentée, mais d’offrir l’essence même de la vitalité à ses futurs enfants, et se tourna alors vers ses plus belles créations, les Noënes. Ces êtres élémentaires étaient de véritables incarnations de la vie, et leur présence suffisait à fertiliser les plantes et les animaux à des lieues à la ronde. Dressant sous le vent leurs ramures orgueilleuses, les Noënes paraissaient comme des arbres immenses, dont les fruits argentés régalaient tous les êtres. Comprenant leur créatrice, ils extirpèrent leurs racines et s’assemblèrent en un imposant bosquet. Heyra s’inclina alors pour les enlacer et concentra toute leur énergie en un point focal. Les Noënes se flétrirent et devinrent cendres, alors que leur force se condensait autour du plus vieux d’entre eux. Il ne resta bientôt plus que le plus vénérable qui, gonflé de vie, se rétracta en une branche noire et rugueuse. Heyra porta cette branche auprès de chaque corps inanimé et, le touchant au front, lui insufla la vie.\nEn effleurant le millième Immortel, le bourdon perdit toute puissance et devint une coquille vide. Trop occupée par la naissance des hommes, Heyra l’abandonna derrière elle et laissa la nature reprendre ses droits.\nLe bourdon ressemble à un bâton calciné d’environ deux mètres de haut. Sa surface est rugueuse et noire, comme une branche brûlée qui se serait fossilisée. Il ne s’effrite jamais et sa forme physique ne peut être altéré d'aucune manière. Le bourdon d’ébène est devenu une entité vivante dès sa création. Après la naissance des Immortels, il a continué à vivre et, comme un arbre qui déploie ses racines, s’est mis à se recharger d’une énergie vitale propre.\nLe Bourdon est actuellement en possession de Kasif l’Ermite, un puissant mage pomyrien vivant reclus dans une grotte, non loin des montagnes de Kali. Il conserve le Bourdon depuis des années en vue de créer une créature magique qui serait son chef-d'œuvre, au mépris de Lois Draconiques et de la colère de Heyra. Le porteur doit constamment lutter contre le Bourdon, qui cherche toujours à libérer son énergie pour créer quelque chose. Kasif vient récemment de contracter un Lien, mais il ignore encore tout de la nature de son protecteur. Si les songes qui lui laissent entrevoir les sombres écailles d’un fils de Kalimsshar s’avèrent prémonitoires, les centaines de niveaux d’énergie que contient actuellement le bourdon risquent fort de servir les intérêts d’une bien triste ambition.",
+    "weight": 3,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "legendary",
+    "special": [
+      {
+        "title": "Lien vital",
+        "description": "En réussissant un jet de Mental + Empathie + Tendance Dragon contre une Diff. de 30, un être humain ou animal peut établir un lien empathique avec le bourdon afin de s’harmoniser à son énergie vitale. Cette énergie est quantifiée en niveaux. Chaque semaine, le bourdon gagne un niveau de vitalité qu’il stocke en vue d'insuffler ou de guérir la vie. Il n’y a aucune limite à l'énergie que peut contenir le bourdon.\nPour utiliser cette force, le porteur doit réussir un jet de Mental + Empathie contre une Difficulté de 15 et consommer un nombre de niveaux d'énergie déterminé par l’emploi du bourdon. Un niveau suffit pour soigner une blessure légère, deux pour une blessure grave et trois pour une fatale. Il en coûtera une dizaine pour régénérer un membre meurtri, vingt pour faire repousser un bras ou une jambe, cinquante rendre vie à un corps mort et, au prix d'une centaine de niveaux d’énergie, le porteur pourrait même insuffler la vie à des créatures artificielles, telles que des automates ou des golems de matière. Pour exemple, on estime qu’il a fallu un millier de ces niveaux pour animer le corps de chaque Immortel."
+      }
+    ]
   }
 ]
