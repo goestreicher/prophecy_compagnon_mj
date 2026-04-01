@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 import 'package:prophecy_compagnon_mj/classes/creature.dart';
 import 'package:prophecy_compagnon_mj/classes/non_player_character.dart';
 
+import '../../classes/equipment/equipment.dart';
 import '../../classes/faction.dart';
 import '../../classes/place.dart';
 import '../../classes/scenario.dart';
@@ -13,6 +14,7 @@ import '../../classes/scenario_map.dart';
 import '../../classes/star.dart';
 import 'edit_creatures_tab.dart';
 import 'edit_encounters_tab.dart';
+import 'edit_equipment_tab.dart';
 import 'edit_events_tab.dart';
 import 'edit_factions_tab.dart';
 import 'edit_general_tab.dart';
@@ -32,6 +34,8 @@ enum ScenarioEditTab {
   factions,
   encounters,
   maps,
+  equipment,
+  stars,
 }
 
 class ScenarioEditPage extends StatefulWidget {
@@ -79,6 +83,9 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
   List<ScenarioMap> uncommittedMapsCreation = <ScenarioMap>[];
   List<ScenarioMap> uncommittedMapsModification = <ScenarioMap>[];
   List<ScenarioMap> uncommittedMapsDeletion = <ScenarioMap>[];
+  List<EquipmentModel> uncommittedEquipmentCreation = <EquipmentModel>[];
+  List<EquipmentModel> uncommittedEquipmentModification = <EquipmentModel>[];
+  List<EquipmentModel> uncommittedEquipmentDeletion = <EquipmentModel>[];
   List<Star> uncommittedStarsCreation = <Star>[];
   List<Star> uncommittedStarsModification = <Star>[];
   List<Star> uncommittedStarsDeletion = <Star>[];
@@ -133,6 +140,17 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
       await m.willDelete();
     }
     uncommittedMapsDeletion.clear();
+
+    /*
+        Equipment
+     */
+    uncommittedEquipmentCreation.clear();
+    uncommittedEquipmentModification.clear();
+    for(var m in uncommittedEquipmentDeletion) {
+      var factory = EquipmentFactory.instance.getFactory(m.factory);
+      if(factory != null) await factory.deleteLocalModel(m);
+    }
+    uncommittedEquipmentDeletion.clear();
 
     /*
         Stars
@@ -206,6 +224,21 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
     uncommittedMapsDeletion.clear();
 
     /*
+        Equipment
+     */
+    for(var m in uncommittedEquipmentCreation) {
+      var factory = EquipmentFactory.instance.getFactory(m.factory);
+      if(factory != null) await factory.deleteLocalModel(m);
+    }
+    uncommittedEquipmentCreation.clear();
+    for(var m in uncommittedEquipmentModification) {
+      var factory = EquipmentFactory.instance.getFactory(m.factory);
+      if(factory != null) await factory.reloadFromStore(m.id);
+    }
+    uncommittedEquipmentModification.clear();
+    uncommittedEquipmentDeletion.clear();
+
+    /*
         Stars
      */
     for(var s in uncommittedStarsCreation) {
@@ -253,7 +286,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
           children: [
             DefaultTabController(
               initialIndex: widget.initialTab.index,
-              length: 9,
+              length: 10,
               child: Scaffold(
                 appBar: AppBar(
                   title: Text('Scénario: ${_scenario.name}'),
@@ -309,6 +342,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       Tab(text: 'Factions'),
                       Tab(text: 'Rencontres'),
                       Tab(text: 'Cartes'),
+                      Tab(text: 'Équipement'),
                       Tab(text: 'Étoiles'),
                     ],
                   ),
@@ -425,6 +459,24 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                         uncommittedMapsDeletion.add(m);
                         setState(() {
                           _scenario.maps.remove(m);
+                        });
+                      },
+                    ),
+                    ScenarioEditEquipmentPage(
+                      scenarioSource: _scenario.source,
+                      onEquipmentCreated: (EquipmentModel m) {
+                        uncommittedEquipmentCreation.add(m);
+                        setState(() {
+                          _scenario.equipment.add(m);
+                        });
+                      },
+                      onEquipmentModified: (EquipmentModel m) {
+                        uncommittedEquipmentModification.add(m);
+                      },
+                      onEquipmentDeleted: (EquipmentModel m) {
+                        uncommittedEquipmentDeletion.add(m);
+                        setState(() {
+                          _scenario.equipment.remove(m);
                         });
                       },
                     ),

@@ -17,7 +17,7 @@ class ClothModelStore extends JsonStoreAdapter<ClothModel> {
   String storeCategory() => 'clothModels';
 
   @override
-  String key(ClothModel object) => object.id;
+  String key(ClothModel object) => object.uuid;
 
   @override
   Future<ClothModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
@@ -29,6 +29,10 @@ class ClothModelStore extends JsonStoreAdapter<ClothModel> {
 }
 
 class _ClothFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? fromJson(Map<String, dynamic> json) =>
+      ClothModel.fromJson(json);
+
   @override
   EquipmentModel? model(String id) {
     return ClothModel.get(id);
@@ -45,6 +49,23 @@ class _ClothFactoryImplementation implements EquipmentFactoryImplementation {
     else {
       return Cloth.create(model: m);
     }
+  }
+
+  @override
+  Future<void> saveLocalModel(EquipmentModel model) async {
+    if(model is! ClothModel) return;
+    await ClothModel.saveLocalModel(model);
+  }
+
+  @override
+  Future<void> deleteLocalModel(EquipmentModel model) async {
+    if(model is! ClothModel) return;
+    await ClothModel.deleteLocalModel(model.uuid);
+  }
+
+  @override
+  Future<void> reloadFromStore(String uuid) async {
+    await ClothModel.reloadFromStore(uuid);
   }
 }
 
@@ -90,7 +111,7 @@ class ClothModel extends EquipableItemModel {
           intrinsicResistance: intrinsicResistance,
           special: special,
         );
-    _cache[cm.id] = cm;
+    _cache[cm.uuid] = cm;
     return cm;
   }
 
@@ -114,6 +135,10 @@ class ClothModel extends EquipableItemModel {
     super.special,
   });
 
+  @JsonKey(includeToJson: true)
+  @override
+  String get factory => 'cloth';
+
   static Iterable<String> ids() => _cache.keys;
   
   static List<EquipableItemSlot> supportedBodyParts() => [
@@ -128,7 +153,7 @@ class ClothModel extends EquipableItemModel {
   static Iterable<String> idsByBodyPart(EquipableItemSlot bp) =>
     _cache.values
       .where((ClothModel m) => m.slot == bp)
-      .map((ClothModel m) => m.id);
+      .map((ClothModel m) => m.uuid);
 
   static ClothModel? get(String id) => _cache[id];
 
@@ -151,7 +176,7 @@ class ClothModel extends EquipableItemModel {
           try {
             // ignore:unused_local_variable
             var instance = ClothModel.fromJson(model);
-            _cache[instance.id] = instance;
+            _cache[instance.uuid] = instance;
           } catch (e, stacktrace) {
             print('Error loading cloth ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
           }
@@ -159,14 +184,14 @@ class ClothModel extends EquipableItemModel {
       }
 
       for(var instance in (await ClothModelStore().getAll())) {
-        _cache[instance.id] = instance;
+        _cache[instance.uuid] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(ClothModel cloth) async {
     await ClothModelStore().save(cloth);
-    _cache[cloth.id] = cloth;
+    _cache[cloth.uuid] = cloth;
   }
 
   static Future<void> deleteLocalModel(String id) async {
@@ -175,12 +200,18 @@ class ClothModel extends EquipableItemModel {
     _cache.remove(id);
   }
 
+  static Future<void> reloadFromStore(String id) async {
+    var m = await ClothModelStore().get(id);
+    if(m != null) _cache[id] = m;
+  }
+
   static final Map<String, ClothModel> _cache = <String, ClothModel>{};
   static final _loadLock = Lock();
 
   static ClothModel fromJson(Map<String, dynamic> json) =>
       _$ClothModelFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() =>
       _$ClothModelToJson(this);
 }
@@ -202,9 +233,6 @@ class Cloth extends EquipableItem {
     : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
-
-  @override
-  String type() => 'cloth:${model.id}';
 
   @override
   String uuid() => _uuid;

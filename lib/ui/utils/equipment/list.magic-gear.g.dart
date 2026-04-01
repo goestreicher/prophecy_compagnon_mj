@@ -1,16 +1,26 @@
-part of 'list.dart';
+part of 'list_widget.dart';
 
-class _MiscGearDataContainer extends StatefulWidget {
-  const _MiscGearDataContainer({ this.filter });
+class _MagicGearDataContainer extends StatefulWidget {
+  const _MagicGearDataContainer({
+    required this.source,
+    this.filter,
+    this.onCreated,
+    this.onModified,
+    this.onDeleted,
+  });
 
+  final ObjectSource source;
   final EquipmentModelListFilter? filter;
+  final void Function(MagicGearModel)? onCreated;
+  final void Function(MagicGearModel)? onModified;
+  final void Function(MagicGearModel)? onDeleted;
 
   @override
-  State<_MiscGearDataContainer> createState() => _MiscGearDataContainerState();
+  State<_MagicGearDataContainer> createState() => _MagicGearDataContainerState();
 }
 
-class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
-  List<MiscGearModel> gear = <MiscGearModel>[];
+class _MagicGearDataContainerState extends State<_MagicGearDataContainer> {
+  List<MagicGearModel> gear = <MagicGearModel>[];
   
   @override
   void initState() {
@@ -20,7 +30,7 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
   }
 
   @override
-  void didUpdateWidget(covariant _MiscGearDataContainer oldWidget) {
+  void didUpdateWidget(covariant _MagicGearDataContainer oldWidget) {
     super.didUpdateWidget(oldWidget);
 
     loadGear();
@@ -28,8 +38,8 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
   
   void loadGear() {
     gear.clear();
-    for(var gid in MiscGearModel.ids()) {
-      var g = MiscGearModel.get(gid);
+    for(var gid in MagicGearModel.ids()) {
+      var g = MagicGearModel.get(gid);
       if(g == null) continue;
       if(!(widget.filter?.match(g) ?? true)) continue;
       gear.add(g);
@@ -40,17 +50,19 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
   @override
   Widget build(BuildContext context) {
     return _EquipmentTypeContainer(
-      title: 'Équipement commun',
+      title: 'Objets magiques',
       forceExpand: (widget.filter?.isNotEmpty() ?? false) && gear.isNotEmpty,
       titleSuffix: IconButton(
         onPressed: () async {
-          MiscGearModel? gm = await showDialog(
+          MagicGearModel? gm = await showDialog(
             context: context,
-            builder: (BuildContext context) => MiscGearEditDialog(),
+            builder: (BuildContext context) => MagicGearEditDialog(),
           );
           if(gm == null) return;
           if(!context.mounted) return;
-          await MiscGearModel.saveLocalModel(gm);
+          gm.source = widget.source;
+          await MagicGearModel.saveLocalModel(gm);
+          widget.onCreated?.call(gm);
           setState(() {
             loadGear();
           });
@@ -61,11 +73,13 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
         constraints: const BoxConstraints(),
         tooltip: 'Nouvel équipement commun',
       ),
-      child: _createGearTable(gear, context),
+      child: gear.isEmpty
+        ? const Text('Aucun')
+        : _createGearTable(gear, context),
     );
   }
   
-  Table _createGearTable(List<MiscGearModel> gear, BuildContext context) {
+  Table _createGearTable(List<MagicGearModel> gear, BuildContext context) {
     var widths = _getEquipmentColumnsWidth();
     var defaultCells = _createStandardEquipmentHeaders(context: context);
 
@@ -102,25 +116,28 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
     );
   }
 
-  Iterable<TableRow> _createGearRows(List<MiscGearModel> gear, BuildContext context) {
+  Iterable<TableRow> _createGearRows(List<MagicGearModel> gear, BuildContext context) {
     var theme = Theme.of(context);
     var ret = <TableRow>[];
 
     for(var (idx, item) in gear.indexed) {
+      var canEdit = item.source == ObjectSource.local || item.source == widget.source;
       var defaultCells = _createStandardEquipmentCells(
         equipment: item,
         context: context,
-        editMenu: _EditableEquipmentMenu(
+        editMenu: !canEdit ? null : _EditableEquipmentMenu(
           onEdit: () async {
-            MiscGearModel? gm = await showDialog(
+            MagicGearModel? gm = await showDialog(
               context: context,
-              builder: (BuildContext context) => MiscGearEditDialog(
+              builder: (BuildContext context) => MagicGearEditDialog(
                 item: item,
               ),
             );
             if(gm == null) return;
             if(!context.mounted) return;
-            await MiscGearModel.saveLocalModel(gm);
+            gm.source = widget.source;
+            await MagicGearModel.saveLocalModel(gm);
+            widget.onModified?.call(gm);
             setState(() {
               loadGear();
             });
@@ -128,12 +145,13 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
           onDownload: () async {
             var jsonStr = json.encode(item.toJson());
             await FilePicker.platform.saveFile(
-              fileName: 'misc-gear_${item.id}.json',
+              fileName: 'magic-gear_${item.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );
           },
           onDelete: () async {
-            await MiscGearModel.deleteLocalModel(item.id);
+            await MagicGearModel.deleteLocalModel(item.uuid);
+            widget.onDeleted?.call(item);
             setState(() {
               loadGear();
             });

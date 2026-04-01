@@ -28,7 +28,7 @@ class ArmorModelStore extends JsonStoreAdapter<ArmorModel> {
   String storeCategory() => 'armorModels';
 
   @override
-  String key(ArmorModel object) => object.id;
+  String key(ArmorModel object) => object.uuid;
 
   @override
   Future<ArmorModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
@@ -40,6 +40,10 @@ class ArmorModelStore extends JsonStoreAdapter<ArmorModel> {
 }
 
 class _ArmorFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? fromJson(Map<String, dynamic> json) =>
+      ArmorModel.fromJson(json);
+
   @override
   EquipmentModel? model(String id) {
     return ArmorModel.get(id);
@@ -56,6 +60,23 @@ class _ArmorFactoryImplementation implements EquipmentFactoryImplementation {
     else {
       return Armor.create(model: m);
     }
+  }
+
+  @override
+  Future<void> saveLocalModel(EquipmentModel model) async {
+    if(model is! ArmorModel) return;
+    await ArmorModel.saveLocalModel(model);
+  }
+
+  @override
+  Future<void> deleteLocalModel(EquipmentModel model) async {
+    if(model is! ArmorModel) return;
+    await ArmorModel.deleteLocalModel(model.uuid);
+  }
+
+  @override
+  Future<void> reloadFromStore(String uuid) async {
+    await ArmorModel.reloadFromStore(uuid);
   }
 }
 
@@ -109,7 +130,7 @@ class ArmorModel extends EquipableItemModel {
           intrinsicResistance: intrinsicResistance,
           special: special,
         );
-    _cache[am.id] = am;
+    _cache[am.uuid] = am;
     return am;
   }
 
@@ -142,6 +163,10 @@ class ArmorModel extends EquipableItemModel {
   int protection;
   int penalty;
 
+  @JsonKey(includeToJson: true)
+  @override
+  String get factory => 'armor';
+
   Armor instantiate() {
     return Armor.create(model: this);
   }
@@ -154,7 +179,7 @@ class ArmorModel extends EquipableItemModel {
           (ArmorModel am) => am.type == type
         )
       .map(
-          (ArmorModel am) => am.id
+          (ArmorModel am) => am.uuid
       );
 
   static ArmorModel? get(String id) => _cache[id];
@@ -178,7 +203,7 @@ class ArmorModel extends EquipableItemModel {
           try {
             // ignore:unused_local_variable
             var instance = ArmorModel.fromJson(model);
-            _cache[instance.id] = instance;
+            _cache[instance.uuid] = instance;
           } catch (e, stacktrace) {
             print('Error loading armor ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
           }
@@ -186,14 +211,14 @@ class ArmorModel extends EquipableItemModel {
       }
 
       for(var instance in (await ArmorModelStore().getAll())) {
-        _cache[instance.id] = instance;
+        _cache[instance.uuid] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(ArmorModel armor) async {
     await ArmorModelStore().save(armor);
-    _cache[armor.id] = armor;
+    _cache[armor.uuid] = armor;
   }
 
   static Future<void> deleteLocalModel(String id) async {
@@ -202,12 +227,18 @@ class ArmorModel extends EquipableItemModel {
     _cache.remove(id);
   }
 
+  static Future<void> reloadFromStore(String id) async {
+    var m = await ArmorModelStore().get(id);
+    if(m != null) _cache[id] = m;
+  }
+
   static final Map<String, ArmorModel> _cache = <String, ArmorModel>{};
   static final _loadLock = Lock();
 
   factory ArmorModel.fromJson(Map<String, dynamic> json) =>
       _$ArmorModelFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() =>
       _$ArmorModelToJson(this);
 }
@@ -229,9 +260,6 @@ class Armor extends EquipableItem implements ProtectionProvider {
     : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
-
-  @override
-  String type() => 'armor:${model.id}';
 
   @override
   String uuid() => _uuid;

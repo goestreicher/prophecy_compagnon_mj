@@ -1,76 +1,98 @@
-part of 'list.dart';
+part of 'list_widget.dart';
 
-class _ArmorDataContainer extends StatelessWidget {
-  const _ArmorDataContainer({ this.filter });
+class _ClothDataContainer extends StatelessWidget {
+  const _ClothDataContainer({
+    required this.source,
+    this.filter,
+    this.onCreated,
+    this.onModified,
+    this.onDeleted,
+  });
 
+  final ObjectSource source;
   final EquipmentModelListFilter? filter;
+  final void Function(ClothModel)? onCreated;
+  final void Function(ClothModel)? onModified;
+  final void Function(ClothModel)? onDeleted;
 
   @override
   Widget build(BuildContext context) {
     var tables = <Widget>[];
 
-    for(var type in ArmorType.values) {
+    for(var type in ClothModel.supportedBodyParts()) {
       tables.add(
-        _ArmorTypeContainer(
+        _ClothTypeContainer(
           type: type,
+          source: source,
           filter: filter,
+          onCreated: onCreated,
+          onModified: onModified,
+          onDeleted: onDeleted,
         )
       );
     }
 
     return _EquipmentTypeContainer(
-      title: 'Armures',
-      forceExpand: filter?.isNotEmpty() ?? false,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: tables,
-      )
+        title: 'Vêtements',
+        forceExpand: filter?.isNotEmpty() ?? false,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: tables,
+        )
     );
   }
 }
 
-class _ArmorTypeContainer extends StatefulWidget {
-  const _ArmorTypeContainer({
+class _ClothTypeContainer extends StatefulWidget {
+  const _ClothTypeContainer({
     required this.type,
+    required this.source,
     this.filter,
+    this.onCreated,
+    this.onModified,
+    this.onDeleted,
   });
 
-  final ArmorType type;
+  final EquipableItemSlot type;
+  final ObjectSource source;
   final EquipmentModelListFilter? filter;
+  final void Function(ClothModel)? onCreated;
+  final void Function(ClothModel)? onModified;
+  final void Function(ClothModel)? onDeleted;
 
   @override
-  State<_ArmorTypeContainer> createState() => _ArmorTypeContainerState();
+  State<_ClothTypeContainer> createState() => _ClothTypeContainerState();
 }
 
-class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
+class _ClothTypeContainerState extends State<_ClothTypeContainer> {
   bool expanded = false;
-  List<ArmorModel> armors = <ArmorModel>[];
+  List<ClothModel> clothes = <ClothModel>[];
 
   @override
   void initState() {
     super.initState();
 
-    loadArmors();
-    expanded = (widget.filter?.isNotEmpty() ?? false) && armors.isNotEmpty;
+    loadClothes();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && clothes.isNotEmpty;
   }
 
   @override
-  void didUpdateWidget(covariant _ArmorTypeContainer oldWidget) {
+  void didUpdateWidget(covariant _ClothTypeContainer oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    loadArmors();
-    expanded = (widget.filter?.isNotEmpty() ?? false) && armors.isNotEmpty;
+    loadClothes();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && clothes.isNotEmpty;
   }
 
-  void loadArmors() {
-    armors.clear();
-    for(var aid in ArmorModel.idsByType(widget.type)) {
-      var armor = ArmorModel.get(aid);
-      if(armor == null) continue;
-      if(!(widget.filter?.match(armor) ?? true)) continue;
-      armors.add(armor);
+  void loadClothes() {
+    clothes.clear();
+    for(var cid in ClothModel.idsByBodyPart(widget.type)) {
+      var cloth = ClothModel.get(cid);
+      if(cloth == null) continue;
+      if(!(widget.filter?.match(cloth) ?? true)) continue;
+      clothes.add(cloth);
     }
-    armors.sort((a, b) => a.name.compareTo(b.name));
+    clothes.sort((a, b) => a.name.compareTo(b.name));
   }
 
   @override
@@ -109,24 +131,26 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
                 title: widget.type.title,
                 titleSuffix: IconButton(
                   onPressed: () async {
-                    ArmorModel? am = await showDialog(
+                    ClothModel? cm = await showDialog(
                       context: context,
-                      builder: (BuildContext context) => ArmorEditDialog(
+                      builder: (BuildContext context) => ClothEditDialog(
                         type: widget.type,
                       ),
                     );
-                    if(am == null) return;
+                    if(cm == null) return;
                     if(!context.mounted) return;
-                    await ArmorModel.saveLocalModel(am);
+                    cm.source = widget.source;
+                    await ClothModel.saveLocalModel(cm);
+                    widget.onCreated?.call(cm);
                     setState(() {
-                      loadArmors();
+                      loadClothes();
                     });
                   },
                   icon: const Icon(Icons.add),
                   iconSize: 24.0,
                   padding: const EdgeInsets.all(4.0),
                   constraints: const BoxConstraints(),
-                  tooltip: 'Nouvelle armure',
+                  tooltip: 'Nouveau vêtement (${widget.type.title})',
                 ),
               ),
             )
@@ -136,11 +160,11 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
     );
 
     if(expanded) {
-      if(armors.isEmpty) {
-        children.add(Text('Aucune'));
+      if(clothes.isEmpty) {
+        children.add(Text('Aucun'));
       }
       else {
-        children.add(_createArmorTable(armors, context));
+        children.add(_createClothTable(clothes, context));
       }
     }
 
@@ -150,7 +174,7 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
     );
   }
 
-  Table _createArmorTable(List<ArmorModel> armors, BuildContext context) {
+  Table _createClothTable(List<ClothModel> clothes, BuildContext context) {
     var widths = _getEquipmentColumnsWidth();
     var defaultCells = _createStandardEquipmentHeaders(context: context);
 
@@ -169,9 +193,6 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
         3: ?widths[_EquipmentTableCells.creationTime],
         4: ?widths[_EquipmentTableCells.villageAvailability],
         5: ?widths[_EquipmentTableCells.cityAvailability],
-        6: IntrinsicColumnWidth(),  // Requirements
-        7: IntrinsicColumnWidth(),  // Protection
-        8: IntrinsicColumnWidth(),  // Penalty
       },
       children: [
         TableRow(
@@ -182,74 +203,53 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
             defaultCells[_EquipmentTableCells.creationTime]!,
             defaultCells[_EquipmentTableCells.villageAvailability]!,
             defaultCells[_EquipmentTableCells.cityAvailability]!,
-            _HeaderTableCell(
-                child: Text(
-                  'Pré-requis',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Protection',
-                )
-            ),
-            _HeaderTableCell(
-                child: Text(
-                  'Pénalité',
-                )
-            ),
             defaultCells[_EquipmentTableCells.special]!,
           ]
         ),
-        ...(_createArmorRows(armors, context).toList())
+        ...(_createClothRows(clothes, context).toList())
       ],
     );
   }
 
-  Iterable<TableRow> _createArmorRows(List<ArmorModel> armors, BuildContext context) {
+  Iterable<TableRow> _createClothRows(List<ClothModel> clothes, BuildContext context) {
     var theme = Theme.of(context);
     var ret = <TableRow>[];
 
-    for(var (idx, armor) in armors.indexed) {
-      var reqsStr = '';
-      if (armor.requirements.isNotEmpty) {
-        var reqs = <String>[];
-        for (var a in armor.requirements.keys) {
-          reqs.add('${a.short} ${armor.requirements[a]!}');
-        }
-        reqsStr = reqs.join(', ');
-      }
-
+    for(var (idx, cloth) in clothes.indexed) {
+      var canEdit = cloth.source == ObjectSource.local || cloth.source == widget.source;
       var defaultCells = _createStandardEquipmentCells(
-        equipment: armor,
+        equipment: cloth,
         context: context,
-        editMenu: _EditableEquipmentMenu(
+        editMenu: !canEdit ? null : _EditableEquipmentMenu(
           onEdit: () async {
-            ArmorModel? am = await showDialog(
+            ClothModel? cm = await showDialog(
               context: context,
-              builder: (BuildContext context) => ArmorEditDialog(
-                type: armor.type,
-                armor: armor,
+              builder: (BuildContext context) => ClothEditDialog(
+                type: widget.type,
+                cloth: cloth,
               ),
             );
-            if(am == null) return;
+            if(cm == null) return;
             if(!context.mounted) return;
-
-            await ArmorModel.saveLocalModel(am);
+            cm.source = widget.source;
+            await ClothModel.saveLocalModel(cm);
+            widget.onModified?.call(cm);
             setState(() {
-              loadArmors();
+              loadClothes();
             });
           },
           onDownload: () async {
-            var jsonStr = json.encode(armor.toJson());
+            var jsonStr = json.encode(cloth.toJson());
             await FilePicker.platform.saveFile(
-              fileName: 'armor_${armor.id}.json',
+              fileName: 'cloth_${cloth.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );
           },
           onDelete: () async {
-            await ArmorModel.deleteLocalModel(armor.id);
+            await ClothModel.deleteLocalModel(cloth.uuid);
+            widget.onDeleted?.call(cloth);
             setState(() {
-              loadArmors();
+              loadClothes();
             });
           },
         ),
@@ -269,9 +269,6 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
             defaultCells[_EquipmentTableCells.creationTime]!,
             defaultCells[_EquipmentTableCells.villageAvailability]!,
             defaultCells[_EquipmentTableCells.cityAvailability]!,
-            _DefaultTableCell(child: Text(reqsStr)),
-            _DefaultTableCell(child: Text(armor.protection.toString())),
-            _DefaultTableCell(child: Text(armor.penalty.toString())),
             defaultCells[_EquipmentTableCells.special]!,
           ]
         )

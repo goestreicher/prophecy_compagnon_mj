@@ -76,6 +76,7 @@ Map<String, dynamic> _$ShieldModelToJson(ShieldModel instance) =>
       'protection': instance.protection,
       'penalty': instance.penalty,
       'damage': instance.damage.toJson(),
+      'factory': instance.factory,
     };
 
 const _$EquipableItemSlotEnumMap = {

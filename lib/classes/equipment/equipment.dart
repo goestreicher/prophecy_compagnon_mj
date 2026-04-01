@@ -11,8 +11,12 @@ import 'enums.dart';
 part 'equipment.g.dart';
 
 abstract class EquipmentFactoryImplementation {
+  EquipmentModel? fromJson(Map<String, dynamic> json);
   EquipmentModel? model(String id);
   Equipment? forge(String id, Map<String, dynamic>? json);
+  Future<void> saveLocalModel(EquipmentModel model);
+  Future<void> deleteLocalModel(EquipmentModel model);
+  Future<void> reloadFromStore(String uuid);
 }
 
 class EquipmentFactory {
@@ -28,7 +32,32 @@ class EquipmentFactory {
   bool hasFactory(String id) => _factories.containsKey(id);
 
   EquipmentFactoryImplementation? getFactory(String id) {
-    return _factories[id];
+    var ids = id.split(':');
+    if(ids.length < 2) {
+      return _factories[id];
+    }
+    else {
+      return _factories[ids[0]];
+    }
+  }
+
+  EquipmentModel? fromJson(Map<String, dynamic> json) {
+    if(!json.containsKey('factory')) return null;
+
+    var factory = getFactory(json['factory']);
+    if(factory == null) return null;
+
+    return factory.fromJson(json);
+  }
+
+  EquipmentModel? getModel(String id) {
+    var ids = id.split(':');
+    if (ids.length < 2) return null;
+
+    var factory = EquipmentFactory.instance.getFactory(ids[0]);
+    if(factory == null) return null;
+
+    return factory.model(ids[1]);
   }
 
   Equipment? forgeEquipment(String fullId, { Map<String, dynamic>? json }) {
@@ -130,7 +159,12 @@ abstract class EquipmentModel extends ResourceBaseClass {
   EquipmentQuality? intrinsicResistance;
   List<EquipmentSpecialCapability> special;
 
-  @override String get id => uuid;
+  String get factory;
+
+  Map<String, dynamic> toJson();
+
+  @override
+  String get id => '$factory:$uuid';
 
   int price(EquipmentAvailabilityZone where) {
     if(where == EquipmentAvailabilityZone.village) {
@@ -181,8 +215,9 @@ abstract class Equipment {
     }
   }
 
-  String type();
   String uuid();
+
+  String type() => '${model.factory}:${model.id}';
 
   EquipmentModel model;
   String? alias;

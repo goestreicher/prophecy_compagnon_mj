@@ -89,6 +89,7 @@ Map<String, dynamic> _$WeaponModelToJson(WeaponModel instance) =>
       'damage': instance.damage.toJson(),
       'range_effective': instance.rangeEffective.toJson(),
       'range_max': instance.rangeMax.toJson(),
+      'factory': instance.factory,
     };
 
 const _$EquipableItemSlotEnumMap = {

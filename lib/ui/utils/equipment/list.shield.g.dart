@@ -1,9 +1,19 @@
-part of 'list.dart';
+part of 'list_widget.dart';
 
 class _ShieldDataContainer extends StatefulWidget {
-  const _ShieldDataContainer({ this.filter });
+  const _ShieldDataContainer({
+    required this.source,
+    this.filter,
+    this.onCreated,
+    this.onModified,
+    this.onDeleted,
+  });
 
+  final ObjectSource source;
   final EquipmentModelListFilter? filter;
+  final void Function(ShieldModel)? onCreated;
+  final void Function(ShieldModel)? onModified;
+  final void Function(ShieldModel)? onDeleted;
 
   @override
   State<_ShieldDataContainer> createState() => _ShieldDataContainerState();
@@ -50,7 +60,9 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
           );
           if(sm == null) return;
           if(!context.mounted) return;
+          sm.source = widget.source;
           await ShieldModel.saveLocalModel(sm);
+          widget.onCreated?.call(sm);
           setState(() {
             loadShields();
           });
@@ -61,7 +73,9 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
         constraints: const BoxConstraints(),
         tooltip: 'Nouveau bouclier',
       ),
-      child: _createShieldTable(shields, context),
+      child: shields.isEmpty
+        ? const Text('Aucun')
+        : _createShieldTable(shields, context),
     );
   }
 
@@ -140,10 +154,11 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
         reqsStr = reqs.join(', ');
       }
 
+      var canEdit = shield.source == ObjectSource.local || shield.source == widget.source;
       var defaultCells = _createStandardEquipmentCells(
         equipment: shield,
         context: context,
-        editMenu: _EditableEquipmentMenu(
+        editMenu: !canEdit ? null : _EditableEquipmentMenu(
           onEdit: () async {
             ShieldModel? sm = await showDialog(
               context: context,
@@ -153,7 +168,9 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
             );
             if(sm == null) return;
             if(!context.mounted) return;
+            sm.source = widget.source;
             await ShieldModel.saveLocalModel(sm);
+            widget.onModified?.call(sm);
             setState(() {
               loadShields();
             });
@@ -161,12 +178,13 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
           onDownload: () async {
             var jsonStr = json.encode(shield.toJson());
             await FilePicker.platform.saveFile(
-              fileName: 'shield_${shield.id}.json',
+              fileName: 'shield_${shield.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );
           },
           onDelete: () async {
-            await ShieldModel.deleteLocalModel(shield.id);
+            await ShieldModel.deleteLocalModel(shield.uuid);
+            widget.onDeleted?.call(shield);
             setState(() {
               loadShields();
             });

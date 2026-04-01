@@ -23,7 +23,7 @@ class WeaponModelStore extends JsonStoreAdapter<WeaponModel> {
   String storeCategory() => 'weaponModels';
 
   @override
-  String key(WeaponModel object) => object.id;
+  String key(WeaponModel object) => object.uuid;
 
   @override
   Future<WeaponModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
@@ -35,6 +35,10 @@ class WeaponModelStore extends JsonStoreAdapter<WeaponModel> {
 }
 
 class _WeaponFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? fromJson(Map<String, dynamic> json) =>
+      WeaponModel.fromJson(json);
+
   @override
   EquipmentModel? model(String id) {
     return WeaponModel.get(id);
@@ -51,6 +55,23 @@ class _WeaponFactoryImplementation implements EquipmentFactoryImplementation {
     else {
       return Weapon.create(model: m);
     }
+  }
+
+  @override
+  Future<void> saveLocalModel(EquipmentModel model) async {
+    if(model is! WeaponModel) return;
+    await WeaponModel.saveLocalModel(model);
+  }
+
+  @override
+  Future<void> deleteLocalModel(EquipmentModel model) async {
+    if(model is! WeaponModel) return;
+    await WeaponModel.deleteLocalModel(model.uuid);
+  }
+
+  @override
+  Future<void> reloadFromStore(String uuid) async {
+    await WeaponModel.reloadFromStore(uuid);
   }
 }
 
@@ -108,7 +129,7 @@ class WeaponModel extends EquipableItemModel {
             intrinsicResistance: intrinsicResistance,
             special: special,
         );
-    _cache[wm.id] = wm;
+    _cache[wm.uuid] = wm;
     return wm;
   }
 
@@ -150,6 +171,10 @@ class WeaponModel extends EquipableItemModel {
     return initiative.keys.reduce((value, element) => element.index > value.index ? element : value);
   }
 
+  @JsonKey(includeToJson: true)
+  @override
+  String get factory => 'weapon';
+
   Weapon instantiate() {
     return Weapon.create(model: this);
   }
@@ -162,7 +187,7 @@ class WeaponModel extends EquipableItemModel {
           (WeaponModel wm) => wm.skill.parent == skill
       )
       .map(
-          (WeaponModel wm) => wm.id
+          (WeaponModel wm) => wm.uuid
       );
 
   static WeaponModel? get(String id) => _cache[id];
@@ -204,7 +229,7 @@ class WeaponModel extends EquipableItemModel {
           try {
             // ignore:unused_local_variable
             var instance = WeaponModel.fromJson(model);
-            _cache[instance.id] = instance;
+            _cache[instance.uuid] = instance;
           } catch (e, stacktrace) {
             print('Error loading weapon ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
           }
@@ -212,20 +237,25 @@ class WeaponModel extends EquipableItemModel {
       }
 
       for(var instance in (await WeaponModelStore().getAll())) {
-        _cache[instance.id] = instance;
+        _cache[instance.uuid] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(WeaponModel weapon) async {
     await WeaponModelStore().save(weapon);
-    _cache[weapon.id] = weapon;
+    _cache[weapon.uuid] = weapon;
   }
 
   static Future<void> deleteLocalModel(String id) async {
     var weapon = await WeaponModelStore().get(id);
     if(weapon != null) await WeaponModelStore().delete(weapon);
     _cache.remove(id);
+  }
+
+  static Future<void> reloadFromStore(String id) async {
+    var m = await WeaponModelStore().get(id);
+    if(m != null) _cache[id] = m;
   }
 
   static final Map<WeaponRange, List<Skill>> _rangeToSkill = {
@@ -269,6 +299,7 @@ class WeaponModel extends EquipableItemModel {
   factory WeaponModel.fromJson(Map<String, dynamic> json) =>
       _$WeaponModelFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() =>
       _$WeaponModelToJson(this);
 }
@@ -290,9 +321,6 @@ class Weapon extends EquipableItem implements DamageProvider, InitiativeProvider
     : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
-
-  @override
-  String type() => 'weapon:${model.id}';
 
   @override
   String uuid() => _uuid;

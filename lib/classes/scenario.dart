@@ -3,6 +3,7 @@ import 'package:uuid/uuid.dart';
 
 import 'calendar.dart';
 import 'creature.dart';
+import 'equipment/equipment.dart';
 import 'faction.dart';
 import 'non_player_character.dart';
 import 'object_source.dart';
@@ -99,6 +100,17 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       j['factions'] = factionsJson;
     }
 
+    var equipment = <EquipmentModel>[];
+    if(j.containsKey('equipment')) {
+      for(var eqId in j['equipment']) {
+        var eq = EquipmentFactory.instance.getModel(eqId);
+        if(eq != null) {
+          equipment.add(eq);
+        }
+      }
+      j.remove('equipment');
+    }
+
     if(j.containsKey('stars')) {
       var starsJson = <Map<String, dynamic>>[];
       for(var starId in j['stars']) {
@@ -110,7 +122,10 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       j['stars'] = starsJson;
     }
 
-    return Scenario.fromJson(j);
+    var scenario = Scenario.fromJson(j);
+    if(equipment.isNotEmpty) scenario.equipment.addAll(equipment);
+
+    return scenario;
   }
 
   @override
@@ -146,6 +161,12 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
     }
     j['factions'] = factionIds;
 
+    var eqIds = <String>[];
+    for(var eq in object.equipment) {
+      eqIds.add(eq.id);
+    }
+    j['equipment'] = eqIds;
+
     var starIds = <String>[];
     for(var star in object.stars) {
       starIds.add(star.id);
@@ -179,6 +200,11 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       await Faction.saveLocalModel(faction);
     }
 
+    for(var eq in object.equipment) {
+      var factory = EquipmentFactory.instance.getFactory(eq.id);
+      if(factory != null) await factory.saveLocalModel(eq);
+    }
+
     for(var star in object.stars) {
       await Star.saveLocalModel(star);
     }
@@ -208,6 +234,11 @@ class ScenarioStore extends JsonStoreAdapter<Scenario> {
       await Faction.delete(faction);
     }
 
+    for(var eq in object.equipment) {
+      var factory = EquipmentFactory.instance.getFactory(eq.factory);
+      if(factory != null) await factory.deleteLocalModel(eq);
+    }
+
     for(var star in object.stars) {
       await Star.deleteLocalModel(star.id);
     }
@@ -232,6 +263,30 @@ class ScenarioSummary {
   factory ScenarioSummary.fromJson(Map<String, dynamic> json) => _$ScenarioSummaryFromJson(json);
 }
 
+class EquipmentListConverter extends JsonConverter<List<EquipmentModel>, List<dynamic>> {
+  const EquipmentListConverter();
+
+  @override
+  List<EquipmentModel> fromJson(List<dynamic> json) {
+    var ret = <EquipmentModel>[];
+    for(var eqJson in json) {
+      var model = EquipmentFactory.instance.fromJson(eqJson as Map<String, dynamic>);
+      if(model != null) ret.add(model);
+    }
+    return ret;
+  }
+
+  @override
+  List<dynamic> toJson(List<EquipmentModel> equipment) {
+    var ret = <dynamic>[];
+    for(var eq in equipment) {
+      ret.add(eq.toJson());
+    }
+    return ret;
+  }
+}
+
+@EquipmentListConverter()
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class Scenario {
   Scenario(
@@ -252,6 +307,7 @@ class Scenario {
         Map<DayRange, ScenarioDayEvents>? events,
         List<Place>? places,
         List<Faction>? factions,
+        List<EquipmentModel>? equipment,
         List<Star>? stars,
       })
     : uuid = uuid ?? const Uuid().v4().toString(),
@@ -262,6 +318,7 @@ class Scenario {
       events = events ?? <DayRange, ScenarioDayEvents>{},
       places = places ?? <Place>[],
       factions = factions ?? <Faction>[],
+      equipment = equipment ?? <EquipmentModel>[],
       stars = stars ?? <Star>[];
 
   factory Scenario.import(Map<String, dynamic> json) {
@@ -293,6 +350,10 @@ class Scenario {
       ScenarioMap.preImportFilter(map as Map<String, dynamic>);
     }
 
+    for(var eq in json['equipment'] as List<dynamic>? ?? []) {
+      eq['source'] = source;
+    }
+
     for(var star in json['stars'] as List<dynamic>? ?? []) {
       star['source'] = source;
     }
@@ -315,6 +376,7 @@ class Scenario {
   final List<ScenarioEncounter> encounters;
   final List<Place> places;
   final List<Faction> factions;
+  final List<EquipmentModel> equipment;
   final List<Star> stars;
   @JsonKey(includeToJson: false, includeFromJson: false)
     final Map<DayRange, ScenarioDayEvents> events;

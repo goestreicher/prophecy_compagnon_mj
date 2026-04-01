@@ -54,6 +54,7 @@ Map<String, dynamic> _$MiscGearModelToJson(MiscGearModel instance) =>
       'intrinsic_resistance':
           ?_$EquipmentQualityEnumMap[instance.intrinsicResistance],
       'special': instance.special.map((e) => e.toJson()).toList(),
+      'factory': instance.factory,
     };
 
 const _$EquipmentQualityEnumMap = {

@@ -1,25 +1,39 @@
-part of 'list.dart';
+part of 'list_widget.dart';
 
-class _ClothDataContainer extends StatelessWidget {
-  const _ClothDataContainer({ this.filter });
+class _JewelDataContainer extends StatelessWidget {
+  const _JewelDataContainer({
+    required this.source,
+    this.filter,
+    this.onCreated,
+    this.onModified,
+    this.onDeleted,
+  });
 
+  final ObjectSource source;
   final EquipmentModelListFilter? filter;
+  final void Function(JewelModel)? onCreated;
+  final void Function(JewelModel)? onModified;
+  final void Function(JewelModel)? onDeleted;
 
   @override
   Widget build(BuildContext context) {
     var tables = <Widget>[];
 
-    for(var type in ClothModel.supportedBodyParts()) {
+    for(var type in JewelModel.supportedBodyParts()) {
       tables.add(
-        _ClothTypeContainer(
-          type: type,
-          filter: filter,
-        )
+          _JewelTypeContainer(
+            type: type,
+            source: source,
+            filter: filter,
+            onCreated: onCreated,
+            onModified: onModified,
+            onDeleted: onDeleted,
+          )
       );
     }
 
     return _EquipmentTypeContainer(
-        title: 'Vêtements',
+        title: 'Bijoux',
         forceExpand: filter?.isNotEmpty() ?? false,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,48 +43,56 @@ class _ClothDataContainer extends StatelessWidget {
   }
 }
 
-class _ClothTypeContainer extends StatefulWidget {
-  const _ClothTypeContainer({
+class _JewelTypeContainer extends StatefulWidget {
+  const _JewelTypeContainer({
     required this.type,
+    required this.source,
     this.filter,
+    this.onCreated,
+    this.onModified,
+    this.onDeleted,
   });
 
   final EquipableItemSlot type;
+  final ObjectSource source;
   final EquipmentModelListFilter? filter;
+  final void Function(JewelModel)? onCreated;
+  final void Function(JewelModel)? onModified;
+  final void Function(JewelModel)? onDeleted;
 
   @override
-  State<_ClothTypeContainer> createState() => _ClothTypeContainerState();
+  State<_JewelTypeContainer> createState() => _JewelTypeContainerState();
 }
 
-class _ClothTypeContainerState extends State<_ClothTypeContainer> {
+class _JewelTypeContainerState extends State<_JewelTypeContainer> {
   bool expanded = false;
-  List<ClothModel> clothes = <ClothModel>[];
+  List<JewelModel> jewels = <JewelModel>[];
 
   @override
   void initState() {
     super.initState();
 
-    loadClothes();
-    expanded = (widget.filter?.isNotEmpty() ?? false) && clothes.isNotEmpty;
+    loadJewels();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && jewels.isNotEmpty;
   }
 
   @override
-  void didUpdateWidget(covariant _ClothTypeContainer oldWidget) {
+  void didUpdateWidget(covariant _JewelTypeContainer oldWidget) {
     super.didUpdateWidget(oldWidget);
 
-    loadClothes();
-    expanded = (widget.filter?.isNotEmpty() ?? false) && clothes.isNotEmpty;
+    loadJewels();
+    expanded = (widget.filter?.isNotEmpty() ?? false) && jewels.isNotEmpty;
   }
 
-  void loadClothes() {
-    clothes.clear();
-    for(var cid in ClothModel.idsByBodyPart(widget.type)) {
-      var cloth = ClothModel.get(cid);
-      if(cloth == null) continue;
-      if(!(widget.filter?.match(cloth) ?? true)) continue;
-      clothes.add(cloth);
+  void loadJewels() {
+    jewels.clear();
+    for(var cid in JewelModel.idsByBodyPart(widget.type)) {
+      var jewel = JewelModel.get(cid);
+      if(jewel == null) continue;
+      if(!(widget.filter?.match(jewel) ?? true)) continue;
+      jewels.add(jewel);
     }
-    clothes.sort((a, b) => a.name.compareTo(b.name));
+    jewels.sort((a, b) => a.name.compareTo(b.name));
   }
 
   @override
@@ -109,24 +131,26 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
                 title: widget.type.title,
                 titleSuffix: IconButton(
                   onPressed: () async {
-                    ClothModel? cm = await showDialog(
+                    JewelModel? jm = await showDialog(
                       context: context,
-                      builder: (BuildContext context) => ClothEditDialog(
+                      builder: (BuildContext context) => JewelEditDialog(
                         type: widget.type,
                       ),
                     );
-                    if(cm == null) return;
+                    if(jm == null) return;
                     if(!context.mounted) return;
-                    await ClothModel.saveLocalModel(cm);
+                    jm.source = widget.source;
+                    await JewelModel.saveLocalModel(jm);
+                    widget.onCreated?.call(jm);
                     setState(() {
-                      loadClothes();
+                      loadJewels();
                     });
                   },
                   icon: const Icon(Icons.add),
                   iconSize: 24.0,
                   padding: const EdgeInsets.all(4.0),
                   constraints: const BoxConstraints(),
-                  tooltip: 'Nouveau vêtement (${widget.type.title})',
+                  tooltip: 'Nouveau bijou (${widget.type.title})',
                 ),
               ),
             )
@@ -136,11 +160,11 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
     );
 
     if(expanded) {
-      if(clothes.isEmpty) {
+      if(jewels.isEmpty) {
         children.add(Text('Aucun'));
       }
       else {
-        children.add(_createClothTable(clothes, context));
+        children.add(_createJewelTable(jewels, context));
       }
     }
 
@@ -150,7 +174,7 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
     );
   }
 
-  Table _createClothTable(List<ClothModel> clothes, BuildContext context) {
+  Table _createJewelTable(List<JewelModel> jewels, BuildContext context) {
     var widths = _getEquipmentColumnsWidth();
     var defaultCells = _createStandardEquipmentHeaders(context: context);
 
@@ -182,46 +206,50 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
             defaultCells[_EquipmentTableCells.special]!,
           ]
         ),
-        ...(_createClothRows(clothes, context).toList())
+        ...(_createJewelRows(jewels, context).toList())
       ],
     );
   }
 
-  Iterable<TableRow> _createClothRows(List<ClothModel> clothes, BuildContext context) {
+  Iterable<TableRow> _createJewelRows(List<JewelModel> jewels, BuildContext context) {
     var theme = Theme.of(context);
     var ret = <TableRow>[];
 
-    for(var (idx, cloth) in clothes.indexed) {
+    for(var (idx, jewel) in jewels.indexed) {
+      var canEdit = jewel.source == ObjectSource.local || jewel.source == widget.source;
       var defaultCells = _createStandardEquipmentCells(
-        equipment: cloth,
+        equipment: jewel,
         context: context,
-        editMenu: _EditableEquipmentMenu(
+        editMenu: !canEdit ? null : _EditableEquipmentMenu(
           onEdit: () async {
-            ClothModel? cm = await showDialog(
+            JewelModel? jm = await showDialog(
               context: context,
-              builder: (BuildContext context) => ClothEditDialog(
+              builder: (BuildContext context) => JewelEditDialog(
                 type: widget.type,
-                cloth: cloth,
+                jewel: jewel,
               ),
             );
-            if(cm == null) return;
+            if(jm == null) return;
             if(!context.mounted) return;
-            await ClothModel.saveLocalModel(cm);
+            jm.source = widget.source;
+            await JewelModel.saveLocalModel(jm);
+            widget.onModified?.call(jm);
             setState(() {
-              loadClothes();
+              loadJewels();
             });
           },
           onDownload: () async {
-            var jsonStr = json.encode(cloth.toJson());
+            var jsonStr = json.encode(jewel.toJson());
             await FilePicker.platform.saveFile(
-              fileName: 'cloth_${cloth.id}.json',
+              fileName: 'jewel_${jewel.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );
           },
           onDelete: () async {
-            await ClothModel.deleteLocalModel(cloth.id);
+            await JewelModel.deleteLocalModel(jewel.uuid);
+            widget.onDeleted?.call(jewel);
             setState(() {
-              loadClothes();
+              loadJewels();
             });
           },
         ),

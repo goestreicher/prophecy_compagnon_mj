@@ -155,6 +155,22 @@ final mainAppRoutes = [
                 initialTab: ScenarioEditTab.maps
               ),
           ),
+          MainAppRoute(
+            path: '/equipment',
+            builder: (BuildContext context, GoRouterState state) =>
+              ScenarioEditPage(
+                uuid: state.pathParameters['uuid']!,
+                initialTab: ScenarioEditTab.equipment
+              ),
+          ),
+          MainAppRoute(
+            path: '/stars',
+            builder: (BuildContext context, GoRouterState state) =>
+              ScenarioEditPage(
+                uuid: state.pathParameters['uuid']!,
+                initialTab: ScenarioEditTab.stars
+              ),
+          ),
         ]
       ),
     ]

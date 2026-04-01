@@ -16,7 +16,7 @@ class MagicGearModelStore extends JsonStoreAdapter<MagicGearModel> {
   String storeCategory() => 'magicGearModels';
 
   @override
-  String key(MagicGearModel object) => object.id;
+  String key(MagicGearModel object) => object.uuid;
 
   @override
   Future<MagicGearModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
@@ -28,6 +28,10 @@ class MagicGearModelStore extends JsonStoreAdapter<MagicGearModel> {
 }
 
 class _MagicGearFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? fromJson(Map<String, dynamic> json) =>
+      MagicGearModel.fromJson(json);
+
   @override
   EquipmentModel? model(String id) {
     return MagicGearModel.get(id);
@@ -44,6 +48,23 @@ class _MagicGearFactoryImplementation implements EquipmentFactoryImplementation 
     else {
       return MagicGear.create(model: m);
     }
+  }
+
+  @override
+  Future<void> saveLocalModel(EquipmentModel model) async {
+    if(model is! MagicGearModel) return;
+    await MagicGearModel.saveLocalModel(model);
+  }
+
+  @override
+  Future<void> deleteLocalModel(EquipmentModel model) async {
+    if(model is! MagicGearModel) return;
+    await MagicGearModel.deleteLocalModel(model.uuid);
+  }
+
+  @override
+  Future<void> reloadFromStore(String uuid) async {
+    await MagicGearModel.reloadFromStore(uuid);
   }
 }
 
@@ -83,7 +104,7 @@ class MagicGearModel extends EquipmentModel {
           intrinsicResistance: intrinsicResistance,
           special: special,
         );
-    _cache[gm.id] = gm;
+    _cache[gm.uuid] = gm;
     return gm;
   }
 
@@ -103,6 +124,10 @@ class MagicGearModel extends EquipmentModel {
     super.intrinsicResistance,
     super.special,
   });
+
+  @JsonKey(includeToJson: true)
+  @override
+  String get factory => 'magic-gear';
 
   static Iterable<String> ids() => _cache.keys;
 
@@ -127,7 +152,7 @@ class MagicGearModel extends EquipmentModel {
           try {
             // ignore:unused_local_variable
             var instance = MagicGearModel.fromJson(model);
-            _cache[instance.id] = instance;
+            _cache[instance.uuid] = instance;
           } catch (e, stacktrace) {
             print('Error loading magic gear ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
           }
@@ -135,14 +160,14 @@ class MagicGearModel extends EquipmentModel {
       }
 
       for(var instance in (await MagicGearModelStore().getAll())) {
-        _cache[instance.id] = instance;
+        _cache[instance.uuid] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(MagicGearModel gear) async {
     await MagicGearModelStore().save(gear);
-    _cache[gear.id] = gear;
+    _cache[gear.uuid] = gear;
   }
 
   static Future<void> deleteLocalModel(String id) async {
@@ -151,12 +176,18 @@ class MagicGearModel extends EquipmentModel {
     _cache.remove(id);
   }
 
+  static Future<void> reloadFromStore(String id) async {
+    var m = await MagicGearModelStore().get(id);
+    if(m != null) _cache[id] = m;
+  }
+
   static final Map<String, MagicGearModel> _cache = <String, MagicGearModel>{};
   static final _loadLock = Lock();
 
   static MagicGearModel fromJson(Map<String, dynamic> json) =>
       _$MagicGearModelFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() =>
       _$MagicGearModelToJson(this);
 }
@@ -178,9 +209,6 @@ class MagicGear extends Equipment {
       : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
-
-  @override
-  String type() => 'magic-gear:${model.id}';
 
   @override
   String uuid() => _uuid;

@@ -16,7 +16,7 @@ class MiscGearModelStore extends JsonStoreAdapter<MiscGearModel> {
   String storeCategory() => 'miscGearModels';
 
   @override
-  String key(MiscGearModel object) => object.id;
+  String key(MiscGearModel object) => object.uuid;
 
   @override
   Future<MiscGearModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
@@ -28,6 +28,10 @@ class MiscGearModelStore extends JsonStoreAdapter<MiscGearModel> {
 }
 
 class _MiscGearFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? fromJson(Map<String, dynamic> json) =>
+      MiscGearModel.fromJson(json);
+
   @override
   EquipmentModel? model(String id) {
     return MiscGearModel.get(id);
@@ -44,6 +48,23 @@ class _MiscGearFactoryImplementation implements EquipmentFactoryImplementation {
     else {
       return MiscGear.create(model: m);
     }
+  }
+
+  @override
+  Future<void> saveLocalModel(EquipmentModel model) async {
+    if(model is! MiscGearModel) return;
+    await MiscGearModel.saveLocalModel(model);
+  }
+
+  @override
+  Future<void> deleteLocalModel(EquipmentModel model) async {
+    if(model is! MiscGearModel) return;
+    await MiscGearModel.deleteLocalModel(model.uuid);
+  }
+
+  @override
+  Future<void> reloadFromStore(String uuid) async {
+    await MiscGearModel.reloadFromStore(uuid);
   }
 }
 
@@ -83,7 +104,7 @@ class MiscGearModel extends EquipmentModel {
           intrinsicResistance: intrinsicResistance,
           special: special,
         );
-    _cache[gm.id] = gm;
+    _cache[gm.uuid] = gm;
     return gm;
   }
 
@@ -103,6 +124,10 @@ class MiscGearModel extends EquipmentModel {
     super.intrinsicResistance,
     super.special,
   });
+
+  @JsonKey(includeToJson: true)
+  @override
+  String get factory => 'misc-gear';
 
   static Iterable<String> ids() => _cache.keys;
 
@@ -127,7 +152,7 @@ class MiscGearModel extends EquipmentModel {
           try {
             // ignore:unused_local_variable
             var instance = MiscGearModel.fromJson(model);
-            _cache[instance.id] = instance;
+            _cache[instance.uuid] = instance;
           } catch (e, stacktrace) {
             print('Error loading misc gear ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
           }
@@ -135,14 +160,14 @@ class MiscGearModel extends EquipmentModel {
       }
 
       for(var instance in (await MiscGearModelStore().getAll())) {
-        _cache[instance.id] = instance;
+        _cache[instance.uuid] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(MiscGearModel gear) async {
     await MiscGearModelStore().save(gear);
-    _cache[gear.id] = gear;
+    _cache[gear.uuid] = gear;
   }
 
   static Future<void> deleteLocalModel(String id) async {
@@ -151,12 +176,18 @@ class MiscGearModel extends EquipmentModel {
     _cache.remove(id);
   }
 
+  static Future<void> reloadFromStore(String id) async {
+    var m = await MiscGearModelStore().get(id);
+    if(m != null) _cache[id] = m;
+  }
+
   static final Map<String, MiscGearModel> _cache = <String, MiscGearModel>{};
   static final _loadLock = Lock();
 
   static MiscGearModel fromJson(Map<String, dynamic> json) =>
       _$MiscGearModelFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() =>
       _$MiscGearModelToJson(this);
 }
@@ -178,9 +209,6 @@ class MiscGear extends Equipment {
     : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
-
-  @override
-  String type() => 'misc-gear:${model.id}';
 
   @override
   String uuid() => _uuid;

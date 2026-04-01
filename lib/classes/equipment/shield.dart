@@ -20,7 +20,7 @@ class ShieldModelStore extends JsonStoreAdapter<ShieldModel> {
   String storeCategory() => 'shieldModels';
 
   @override
-  String key(ShieldModel object) => object.id;
+  String key(ShieldModel object) => object.uuid;
 
   @override
   Future<ShieldModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
@@ -32,6 +32,10 @@ class ShieldModelStore extends JsonStoreAdapter<ShieldModel> {
 }
 
 class _ShieldFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? fromJson(Map<String, dynamic> json) =>
+      ShieldModel.fromJson(json);
+
   @override
   EquipmentModel? model(String id) {
     return ShieldModel.get(id);
@@ -48,6 +52,23 @@ class _ShieldFactoryImplementation implements EquipmentFactoryImplementation {
     else {
       return Shield.create(model: m);
     }
+  }
+
+  @override
+  Future<void> saveLocalModel(EquipmentModel model) async {
+    if(model is! ShieldModel) return;
+    await ShieldModel.saveLocalModel(model);
+  }
+
+  @override
+  Future<void> deleteLocalModel(EquipmentModel model) async {
+    if(model is! ShieldModel) return;
+    await ShieldModel.deleteLocalModel(model.uuid);
+  }
+
+  @override
+  Future<void> reloadFromStore(String uuid) async {
+    await ShieldModel.reloadFromStore(uuid);
   }
 }
 
@@ -101,7 +122,7 @@ class ShieldModel extends EquipableItemModel {
             intrinsicResistance: intrinsicResistance,
             special: special,
         );
-    _cache[sm.id] = sm;
+    _cache[sm.uuid] = sm;
     return sm;
   }
 
@@ -134,6 +155,10 @@ class ShieldModel extends EquipableItemModel {
   int penalty;
   AttributeBasedCalculator damage;
 
+  @JsonKey(includeToJson: true)
+  @override
+  String get factory => 'shield';
+
   Shield instantiate() {
     return Shield.create(model: this);
   }
@@ -161,7 +186,7 @@ class ShieldModel extends EquipableItemModel {
           try {
             // ignore:unused_local_variable
             var instance = ShieldModel.fromJson(model);
-            _cache[instance.id] = instance;
+            _cache[instance.uuid] = instance;
           } catch (e, stacktrace) {
             print('Error loading shield ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
           }
@@ -169,14 +194,14 @@ class ShieldModel extends EquipableItemModel {
       }
 
       for(var instance in (await ShieldModelStore().getAll())) {
-        _cache[instance.id] = instance;
+        _cache[instance.uuid] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(ShieldModel shield) async {
     await ShieldModelStore().save(shield);
-    _cache[shield.id] = shield;
+    _cache[shield.uuid] = shield;
   }
 
   static Future<void> deleteLocalModel(String id) async {
@@ -185,12 +210,18 @@ class ShieldModel extends EquipableItemModel {
     _cache.remove(id);
   }
 
+  static Future<void> reloadFromStore(String id) async {
+    var m = await ShieldModelStore().get(id);
+    if(m != null) _cache[id] = m;
+  }
+
   static final Map<String, ShieldModel> _cache = <String, ShieldModel>{};
   static final _loadLock = Lock();
 
   factory ShieldModel.fromJson(Map<String, dynamic> json) =>
       _$ShieldModelFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() =>
       _$ShieldModelToJson(this);
 }
@@ -212,9 +243,6 @@ class Shield extends EquipableItem implements ProtectionProvider, DamageProvider
     : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
-
-  @override
-  String type() => 'shield:${model.id}';
 
   @override
   String uuid() => _uuid;

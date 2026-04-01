@@ -72,6 +72,7 @@ Map<String, dynamic> _$ArmorModelToJson(ArmorModel instance) =>
       ),
       'protection': instance.protection,
       'penalty': instance.penalty,
+      'factory': instance.factory,
     };
 
 const _$EquipableItemLayerEnumMap = {

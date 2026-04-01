@@ -17,7 +17,7 @@ class JewelModelStore extends JsonStoreAdapter<JewelModel> {
   String storeCategory() => 'jewelModels';
 
   @override
-  String key(JewelModel object) => object.id;
+  String key(JewelModel object) => object.uuid;
 
   @override
   Future<JewelModel> fromJsonRepresentation(Map<String, dynamic> j) async =>
@@ -29,6 +29,10 @@ class JewelModelStore extends JsonStoreAdapter<JewelModel> {
 }
 
 class _JewelFactoryImplementation implements EquipmentFactoryImplementation {
+  @override
+  EquipmentModel? fromJson(Map<String, dynamic> json) =>
+      JewelModel.fromJson(json);
+
   @override
   EquipmentModel? model(String id) {
     return JewelModel.get(id);
@@ -45,6 +49,23 @@ class _JewelFactoryImplementation implements EquipmentFactoryImplementation {
     else {
       return Jewel.create(model: m);
     }
+  }
+
+  @override
+  Future<void> saveLocalModel(EquipmentModel model) async {
+    if(model is! JewelModel) return;
+    await JewelModel.saveLocalModel(model);
+  }
+
+  @override
+  Future<void> deleteLocalModel(EquipmentModel model) async {
+    if(model is! JewelModel) return;
+    await JewelModel.deleteLocalModel(model.uuid);
+  }
+
+  @override
+  Future<void> reloadFromStore(String uuid) async {
+    await JewelModel.reloadFromStore(uuid);
   }
 }
 
@@ -90,7 +111,7 @@ class JewelModel extends EquipableItemModel {
           intrinsicResistance: intrinsicResistance,
           special: special,
         );
-    _cache[jm.id] = jm;
+    _cache[jm.uuid] = jm;
     return jm;
   }
 
@@ -114,6 +135,10 @@ class JewelModel extends EquipableItemModel {
     super.special,
   });
 
+  @JsonKey(includeToJson: true)
+  @override
+  String get factory => 'cloth';
+
   static Iterable<String> ids() => _cache.keys;
 
   static List<EquipableItemSlot> supportedBodyParts() => [
@@ -129,7 +154,7 @@ class JewelModel extends EquipableItemModel {
   static Iterable<String> idsByBodyPart(EquipableItemSlot bp) =>
     _cache.values
       .where((JewelModel m) => m.slot == bp)
-      .map((JewelModel m) => m.id);
+      .map((JewelModel m) => m.uuid);
 
   static JewelModel? get(String id) => _cache[id];
 
@@ -152,7 +177,7 @@ class JewelModel extends EquipableItemModel {
           try {
             // ignore:unused_local_variable
             var instance = JewelModel.fromJson(model);
-            _cache[instance.id] = instance;
+            _cache[instance.uuid] = instance;
           } catch (e, stacktrace) {
             print('Error loading jewel ${model["name"]}: ${e.toString()}\n${stacktrace.toString()}');
           }
@@ -160,14 +185,14 @@ class JewelModel extends EquipableItemModel {
       }
 
       for(var instance in (await JewelModelStore().getAll())) {
-        _cache[instance.id] = instance;
+        _cache[instance.uuid] = instance;
       }
     });
   }
 
   static Future<void> saveLocalModel(JewelModel jewel) async {
     await JewelModelStore().save(jewel);
-    _cache[jewel.id] = jewel;
+    _cache[jewel.uuid] = jewel;
   }
 
   static Future<void> deleteLocalModel(String id) async {
@@ -176,12 +201,18 @@ class JewelModel extends EquipableItemModel {
     _cache.remove(id);
   }
 
+  static Future<void> reloadFromStore(String id) async {
+    var m = await JewelModelStore().get(id);
+    if(m != null) _cache[id] = m;
+  }
+
   static final Map<String, JewelModel> _cache = <String, JewelModel>{};
   static final _loadLock = Lock();
 
   static JewelModel fromJson(Map<String, dynamic> json) =>
       _$JewelModelFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() =>
       _$JewelModelToJson(this);
 }
@@ -203,9 +234,6 @@ class Jewel extends EquipableItem {
     : _uuid = const Uuid().v4().toString();
 
   final String _uuid;
-
-  @override
-  String type() => 'jewel:${model.id}';
 
   @override
   String uuid() => _uuid;

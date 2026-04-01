@@ -60,6 +60,7 @@ Map<String, dynamic> _$ClothModelToJson(ClothModel instance) =>
       'slot': _$EquipableItemSlotEnumMap[instance.slot]!,
       'handiness': instance.handiness,
       'layer': _$EquipableItemLayerEnumMap[instance.layer]!,
+      'factory': instance.factory,
     };
 
 const _$EquipableItemSlotEnumMap = {

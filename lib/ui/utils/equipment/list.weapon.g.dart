@@ -1,9 +1,19 @@
-part of 'list.dart';
+part of 'list_widget.dart';
 
 class _WeaponDataContainer extends StatelessWidget {
-  const _WeaponDataContainer({ this.filter });
+  const _WeaponDataContainer({
+    required this.source,
+    this.filter,
+    this.onCreated,
+    this.onModified,
+    this.onDeleted,
+  });
 
+  final ObjectSource source;
   final EquipmentModelListFilter? filter;
+  final void Function(WeaponModel)? onCreated;
+  final void Function(WeaponModel)? onModified;
+  final void Function(WeaponModel)? onDeleted;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +24,11 @@ class _WeaponDataContainer extends StatelessWidget {
         _WeaponTypeContainer(
           title: skill.title,
           skill: skill,
+          source: source,
           filter: filter,
+          onCreated: onCreated,
+          onModified: onModified,
+          onDeleted: onDeleted,
         )
       );
     }
@@ -34,12 +48,20 @@ class _WeaponTypeContainer extends StatefulWidget {
   const _WeaponTypeContainer({
     required this.title,
     required this.skill,
+    required this.source,
     this.filter,
+    this.onCreated,
+    this.onModified,
+    this.onDeleted,
   });
 
   final String title;
   final Skill skill;
+  final ObjectSource source;
   final EquipmentModelListFilter? filter;
+  final void Function(WeaponModel)? onCreated;
+  final void Function(WeaponModel)? onModified;
+  final void Function(WeaponModel)? onDeleted;
 
   @override
   State<_WeaponTypeContainer> createState() => _WeaponTypeContainerState();
@@ -131,7 +153,9 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
                     );
                     if(wm == null) return;
                     if(!context.mounted) return;
+                    wm.source = widget.source;
                     await WeaponModel.saveLocalModel(wm);
+                    widget.onCreated?.call(wm);
                     setState(() {
                       loadWeapons();
                     });
@@ -290,10 +314,11 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
       int? contactInitiative = weapon.initiative[WeaponRange.contact];
       var initStr = '${meleeInitiative ?? "NA"} / ${contactInitiative ?? "NA"}';
 
+      var canEdit = weapon.source == ObjectSource.local || weapon.source == widget.source;
       var defaultCells = _createStandardEquipmentCells(
         equipment: weapon,
         context: context,
-        editMenu: _EditableEquipmentMenu(
+        editMenu: !canEdit ? null : _EditableEquipmentMenu(
           onEdit: () async {
             WeaponModel? wm = await showDialog(
               context: context,
@@ -304,7 +329,9 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
             );
             if(wm == null) return;
             if(!context.mounted) return;
+            wm.source = widget.source;
             await WeaponModel.saveLocalModel(wm);
+            widget.onModified?.call(wm);
             setState(() {
               loadWeapons();
             });
@@ -312,12 +339,13 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
           onDownload: () async {
             var jsonStr = json.encode(weapon.toJson());
             await FilePicker.platform.saveFile(
-              fileName: 'weapon_${weapon.id}.json',
+              fileName: 'weapon_${weapon.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );
           },
           onDelete: () async {
-            await WeaponModel.deleteLocalModel(weapon.id);
+            await WeaponModel.deleteLocalModel(weapon.uuid);
+            widget.onDeleted?.call(weapon);
             setState(() {
               loadWeapons();
             });
