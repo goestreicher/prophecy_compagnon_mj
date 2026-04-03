@@ -94,12 +94,9 @@ class ScenarioEditEventsPage extends StatelessWidget {
           ),
         ),
         Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: ChangeNotifierProvider<_ScenarioEventsModel>.value(
-              value: _model,
-              child: _ScenarioEventsListWidget()
-            ),
+          child: ChangeNotifierProvider<_ScenarioEventsModel>.value(
+            value: _model,
+            child: _ScenarioEventsListWidget()
           )
         ),
       ],
@@ -209,12 +206,15 @@ class _ScenarioEventsListWidget extends StatelessWidget {
       child: ScrollablePositionedList.builder(
         itemCount: days.length,
         itemBuilder: (BuildContext context, int index) {
-          return _ScenarioDayEventsWidget(
-            dayRange: days[index],
-            events: events.eventsForDay(days[index]),
-            onDelete: (ScenarioEventCategory category, int pos) {
-              events.remove(days[index], category, pos);
-            },
+          return Padding(
+            padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+            child: _ScenarioDayEventsWidget(
+              dayRange: days[index],
+              events: events.eventsForDay(days[index]),
+              onDelete: (ScenarioEventCategory category, int pos) {
+                events.remove(days[index], category, pos);
+              },
+            ),
           );
         }
       ),
@@ -236,7 +236,7 @@ class _ScenarioDayEventsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    var gutterWidth = 16.0;
+    var dragModel = context.watch<_EventDragModel>();
 
     var headerLabel = '';
     var bestFitDuration = KorDuration.bestFitForRange(dayRange);
@@ -292,11 +292,44 @@ class _ScenarioDayEventsWidget extends StatelessWidget {
       },
     );
 
-    return LayoutBuilder(
-      builder: (BuildContext context, BoxConstraints constraints) {
-        var dragModel = context.watch<_EventDragModel>();
-
-        return DragTarget(
+    return Column(
+      children: [
+        IntrinsicHeight(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  Container(
+                    width: 8,
+                    color: theme.colorScheme.primary,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 32, 0, 12),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: theme.colorScheme.primary,
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                        child: Text(
+                          headerLabel,
+                          style: theme.textTheme.titleMedium!.copyWith(
+                            color: theme.colorScheme.onPrimary,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+        DragTarget(
           onWillAcceptWithDetails: (_) {
             dragModel.hoverDayRange = dayRange;
             return false;
@@ -305,45 +338,41 @@ class _ScenarioDayEventsWidget extends StatelessWidget {
             dragModel.hoverDayRange = null;
           },
           builder: (BuildContext context, List<dynamic> accepted, List<dynamic> rejected) {
-            return Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: theme.colorScheme.primary,
-                    borderRadius: BorderRadius.circular(4.0),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 12.0),
-                    child: Text(
-                      headerLabel,
-                      style: theme.textTheme.titleMedium!.copyWith(
-                        color: theme.colorScheme.onPrimary,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 4.0),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      width: constraints.maxWidth / 2 - gutterWidth,
+            return IntrinsicHeight(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
                       child: worldEvents,
                     ),
-                    Spacer(),
-                    SizedBox(
-                      width: constraints.maxWidth / 2 - gutterWidth,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Container(
+                            width: 8,
+                            color: theme.colorScheme.primary,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 16),
                       child: pcEvents,
                     ),
-                  ],
-                )
-              ],
+                  ),
+                ],
+              ),
             );
-          },
-        );
-      }
+          }
+        )
+      ],
     );
   }
 }
@@ -457,89 +486,79 @@ class _SingleDayEventsWidgetState extends State<_SingleDayEventsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 8.0),
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          var theme = Theme.of(context);
-          var dragModel = context.watch<_EventDragModel>();
+    var theme = Theme.of(context);
+    var dragModel = context.watch<_EventDragModel>();
 
-          var widgets = <Widget>[
-            _SingleEventDragTarget(position: 0, dayRange: widget.dayRange, category: widget.category),
-          ];
+    var widgets = <Widget>[
+      _SingleEventDragTarget(position: 0, dayRange: widget.dayRange, category: widget.category),
+    ];
 
-          for(var pos = 0; pos < widget.events.length; ++pos) {
-            widgets.addAll([
-              LongPressDraggable<_SingleEventDragData>(
-                data: _SingleEventDragData(
-                    dayRange: widget.dayRange,
-                    category: widget.category,
-                    position: pos,
-                    event: widget.events[pos]
-                ),
-                delay: Duration(milliseconds: 200),
-                onDragStarted: () {
-                  dragModel.dragging = true;
-                  dragModel.dayRange = widget.dayRange;
-                  dragModel.category = widget.category;
-                  dragModel.eventPos = pos;
-                  setState(() {
-                    currentlyDraggedItem = pos;
-                  });
-                },
-                onDragEnd: (DraggableDetails details) {
-                  dragModel.dragging = false;
-                  dragModel.dayRange = null;
-                  dragModel.category = null;
-                  dragModel.eventPos = null;
-                  dragModel.hoverDayRange = null;
-                  setState(() {
-                    currentlyDraggedItem = null;
-                  });
-                },
-                feedback: SizedBox(
-                  width: constraints.maxWidth - 16.0,
-                  child: Card(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 20.0),
-                      child: Text(
-                        widget.events[pos].title,
-                        style: theme.textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  )
-                ),
-                child: ChangeNotifierProvider(
-                  key: ObjectKey(widget.events[pos]),
-                  create: (_) {
-                    return _ScenarioEventsModelItem(
-                        dayRange: widget.dayRange,
-                        category: widget.category,
-                        position: pos,
-                        event: widget.events[pos]
-                    );
-                  },
-                  child: Opacity(
-                    opacity: currentlyDraggedItem == pos ? 0.2 : 1.0,
-                    child: _SingleEventWidget(
-                      onDelete: () => widget.onDelete(pos),
-                    ),
-                  ),
+    for(var pos = 0; pos < widget.events.length; ++pos) {
+      widgets.addAll([
+        LongPressDraggable<_SingleEventDragData>(
+          data: _SingleEventDragData(
+              dayRange: widget.dayRange,
+              category: widget.category,
+              position: pos,
+              event: widget.events[pos]
+          ),
+          delay: Duration(milliseconds: 200),
+          onDragStarted: () {
+            dragModel.dragging = true;
+            dragModel.dayRange = widget.dayRange;
+            dragModel.category = widget.category;
+            dragModel.eventPos = pos;
+            setState(() {
+              currentlyDraggedItem = pos;
+            });
+          },
+          onDragEnd: (DraggableDetails details) {
+            dragModel.dragging = false;
+            dragModel.dayRange = null;
+            dragModel.category = null;
+            dragModel.eventPos = null;
+            dragModel.hoverDayRange = null;
+            setState(() {
+              currentlyDraggedItem = null;
+            });
+          },
+          feedback: Card(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                  vertical: 10.0, horizontal: 20.0),
+              child: Text(
+                widget.events[pos].title,
+                style: theme.textTheme.titleMedium!.copyWith(
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              _SingleEventDragTarget(position: pos+1, dayRange: widget.dayRange, category: widget.category),
-            ]);
-          }
+            ),
+          ),
+          child: ChangeNotifierProvider(
+            key: ObjectKey(widget.events[pos]),
+            create: (_) {
+              return _ScenarioEventsModelItem(
+                  dayRange: widget.dayRange,
+                  category: widget.category,
+                  position: pos,
+                  event: widget.events[pos]
+              );
+            },
+            child: Opacity(
+              opacity: currentlyDraggedItem == pos ? 0.2 : 1.0,
+              child: _SingleEventWidget(
+                onDelete: () => widget.onDelete(pos),
+              ),
+            ),
+          ),
+        ),
+        _SingleEventDragTarget(position: pos+1, dayRange: widget.dayRange, category: widget.category),
+      ]);
+    }
 
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: widgets,
-          );
-        }
-      ),
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: widgets,
     );
   }
 }
