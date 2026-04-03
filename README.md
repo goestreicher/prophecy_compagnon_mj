@@ -8,12 +8,8 @@ Pretty much a WiP, not stable at the moment
 
 ## Creation part
 
-- [ ] Use UUIDs everywhere in the assets and make UUID mandatory in constructors
 - [ ] Add dates in the factions leaders and members?
-- [ ] Add artifacts resources?
-- [ ] Fill in more places from the official docs
 - [ ] Link factions (and places) titles to NPCs
-- [ ] Limit skills, specialized skills, advantage and disadvantages to their reserved caste
 
 
 - [x] Use the same leaders mechanism for places as exists for factions
@@ -31,6 +27,10 @@ Pretty much a WiP, not stable at the moment
     - Same as for creatures
 - [x] Migrate to MarkdownFleatherToolbar
   - [x] Migrate the resource selector from ScenarioFleatherToolbar
+- [x] Use UUIDs everywhere in the assets and make UUID mandatory in constructors
+- [x] Add artifacts resources?
+- [x] Fill in more places from the official docs
+- [x] Limit skills, specialized skills, advantage and disadvantages to their reserved caste
 
 ## Play part
 
