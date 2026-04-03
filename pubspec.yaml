@@ -96,6 +96,10 @@ flutter:
     - assets/creatures-les-versets-d-ozyr.json
     - assets/creatures-les-voiles-de-nenya.json
     - assets/creatures-yris-flambeau-de-l-humanite.json
+    - assets/events-avant-le-temps.json
+    - assets/events-age-des-fondations.json
+    - assets/events-age-des-conquetes.json
+    - assets/events-age-des-empires.json
     - assets/factions-castes.json
     - assets/factions-secretes.json
     - assets/factions-les-secrets-de-kalimsshar.json

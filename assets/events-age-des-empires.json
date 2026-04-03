@@ -1,0 +1,1460 @@
+[
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Premières théories humanistes",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "fa51e653-d8d8-47de-9112-c1d30dfec3a0"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 2,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 51,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Multiplication des Élus",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "77ae3bdb-89b9-41e7-85af-23104eaffc29"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 2,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 51,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Débats draconiques sur la gestion de l'humanité",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "9f75af53-4b64-47a1-b8aa-d00d2064deb3"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 21,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Jyr jure d'utiliser l'humanisme contre Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "1248cd46-6cc1-4455-aa48-b9199163f227"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 27,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Fondation des Historiens sous les ordres d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "82f9edc4-6db8-42f7-9319-c039ad86fc54"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 30,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les deux Immortels disparaissent de Kor",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "7834434d-8f97-401c-a108-4bf760f55a84"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 30,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Jyr devient ermite et guide secrètement l'humanité",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "67a3b9b3-e670-4359-82f6-ec67b9ca0ff9"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 30,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Sercya se cache à Jaspor",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "5fb34431-cd8f-4251-a0c5-b3549140066f"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 34,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Thraël se lie à Marak-Tan, qui devient Maître armurier de la caste des combattants",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "bd74123b-6b21-48b6-b577-ce83ab80653e"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 38,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Szyl et Ozyr s'affrontent dans les fonds marins",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "9549c392-c490-4b63-9311-5562342bbcbc"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 69,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Premières notions de médecine",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "aa68e135-e003-45b5-86f5-eaaa31fb2800"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 85,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Naissance de Kar-Hô-Zûl dans le Désert du Souffle Brûlant",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "f16d2574-5d3e-459c-b244-3092526b3216"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 86,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Mort du dragon Goëlnail dans une attaque humaniste",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "26ce623e-1b61-4299-82dd-f7ca203e3704"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 86,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Mars Exutor fonde l'Inquisition",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "eadcd317-569e-4b6e-99aa-9a34ce51d549"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 92,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 105,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kroryn sillone le monde sous forme humaine",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "fa1bf644-f3d7-4e9d-849c-f4d29e8a7d33"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 106,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kroryn instaure le Code des Combattants",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "1a71098e-bfcf-4dab-9563-e86848ea1240"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 107,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kalimsshar enseigne le Chant des Ombres à Szyl",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "f8712d99-2f7b-4a07-8efc-44506dff90ed"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 117,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kar-Hô-Zûl fédère les tribus du Désert du Souffle Brûlant",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "c8112be1-205c-4fe3-aca3-2bbde7f59849"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 117,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Naissance du terme “zûl”",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "4de6d6a8-596c-40c0-b2e3-d29b5c45f6b9"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 117,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 122,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Deuxièmes guerres de souveraineté",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "da6feca3-f128-45fd-88fd-e4d2628e7c3c"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 117,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 122,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les tribus zûls pillent Molyar",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "a9b78823-9a4d-4185-8eef-ca5bdcbc8643"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 119,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les Galyrs se replient dans les montagnes",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "56777267-74bd-40bd-85f9-b609347b8f4a"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 127,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Premières notions de chirurgie humaniste",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "e8f3301d-6076-4c27-ac19-5a70eb545558"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 136,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 145,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kezyr assemble un groupe d'agents qui deviennent les Espions",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "58f33344-9ce7-489f-9f76-08adcc78ebe4"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 149,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "L'Humanisme est déclaré hérésie",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "042406ed-2e93-4c26-a3b6-442da0c9ceb6"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 150,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 242,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Invasion Galyr de l'Empire de Solyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "35b40559-8c3f-494d-a2aa-bd224b0764cd"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 152,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Bayne quitte le Royaume de Kor avec une caravane d'érudits",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "d4de03d5-25bf-4e1d-b470-23c375a63df6"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 158,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Établissement de Jaspor",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "aee5f6bb-eb1a-460c-b527-e2d75fd9feb8"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 164,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Nenya instruit les premiers gardiens",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "f9eae2f9-fbdc-40bf-94cf-980d4b97bad1"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 172,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les Galyrs pillent Tamirande",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "1ca610c6-288b-414a-87b6-c8be09f0e2c7"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 175,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les nécromants s'implantent secrètement dans les marais de Path",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "62bb4727-e7ce-4040-8e6a-6e2464ae267b"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 186,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Saccage d'Orande par les Galyrs",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "d50e43d5-88f4-4def-9e0f-a0f98a364504"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 192,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Fondation de Zangar dans les marais de Path",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "2b1990d1-ae92-4d75-8936-9b2568311937"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 207,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Yhunn devient Maître de la caste des combattants",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "69058d85-9e9a-4f4e-8723-56df0b7b55ad"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 254,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 267,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Naëlk le Prodige perd son dragon et établit un Lien avec un dragon de l'ombre",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "c2af2b20-7405-4a8d-ac9f-69e2e81dbed6"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 272,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Naëlk instruit plusieurs Prodiges profanateurs à Solor",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "927d37e2-37b6-4bf6-9619-49e3111d531a"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 287,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Émergence de l'Orbel",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "128d1c08-4943-43b2-b950-f5dc2c25973d"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 288,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Heyra massacre les Profanateurs et emprisonne Naëlk",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "18746ba0-fb71-4f87-8815-367bd52300be"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 288,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Création du chêne noir de Solor, dit Sombrechêne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "13f81074-0763-4a1a-ac10-7d3253a1c952"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 298,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Belgor mène ses tribus aux Lacs Supérieurs",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "f5ae3757-a36e-4a01-920c-7e704d454b01"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 299,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Fondation du Tandara",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "c2ad2aa2-e244-42ff-870c-68d5f04b9dce"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 299,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Belgor rebaptise les Lacs Supérieurs “Lacs Sanglants”",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "3f9e148a-95be-433a-a290-04c349c57c43"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 302,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Naissance d'Alya",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "130b3328-5aaa-428b-922b-e978e71bd322"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 305,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Premières rumeurs sur les Étoiles",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "c53b024c-9856-44f6-b235-78820ef3ac25"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 309,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Yhunn pénètre dans le Kurghal",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "b758d5a4-0410-42f5-8e92-7fecf1ba6a1d"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 351,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Alya révèle la Première Prophétie",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "0bc7853d-dab2-4d3f-bd03-d38985f33a55"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 386,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Mort d'Alya",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "abf56e59-8c94-4c7e-917c-36fd2ba4738d"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 453,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Seconde Croisade",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "39cbb928-5219-4af0-a966-9f3ec8a01a68"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 454,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "L'Archipel de Pyr est dévasté et déclaré interdit",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "5a53e847-3dc7-4dd4-83f7-e4cf514b94f8"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 516,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Griff déclare son indépendance",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "d63823a0-3c67-4d8a-81b7-78dc19874de6"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 642,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Émergence de l'Alliance des Mages",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "9edf6ce7-dbbc-457d-b1d9-172bcd60c623"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 642,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "La Pomiradie déclare son indépendance",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "5c867827-26c9-4ad3-ad9f-ea0fb923b42d"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 642,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 652,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Troisièmes guerres de souveraineté",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "fe63c41b-7404-41af-a67a-9f49f17f61e9"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 642,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 652,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "L'Alliance des Mages affronte les Zûls, qui reculent jusqu'au désert",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "a3adc1cd-dc0e-4835-94de-4062c6aab172"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 642,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 652,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "La Pomiradie devient “Pomyrie”",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "672de0f9-dfd9-4d59-9f83-e223f1672a03"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 678,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Plusieurs fils de Kroryn bannis fondent les Seigneurs Ardents",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "c963f36a-a791-418c-81b1-c94f6c8312ef"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 730,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Neve, Orbel et Tandara fondent l'Empire Nésora",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "d35427fe-9109-415a-bdc6-d3b91c2ea6a7"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 756,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 757,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Première guerre entre Lasitian et Larmek",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "5bf6667b-c82e-4a8f-a59d-73fdd03af91d"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 761,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 763,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Seconde guerre entre Lasitian et Larmek",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "e2ceefb9-aabe-4049-878e-1da1bca9fad2"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 775,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "empires",
+        "year": 792,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Lasitian et Larmek sont ravagées par la peste, la famine et les incendies",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "27f1b75f-37c7-491b-9215-c09ab35a2b65"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 796,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Larmek est finalement annexée par Lasitian",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "708d6f2a-9a76-4a73-b356-b9dc426af575"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 797,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Exode massif vers Témeth",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "b83f0505-1b50-4e88-9201-eae870cbdb50"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 801,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Lasitian disparaît",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "8883d788-aa11-4627-8991-ada19aacaec4"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 840,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Instauration des règles du Royaume des Fleurs",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "710a7a11-2cd3-44b6-8c23-9e0a3c22980e"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 957,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Création des premiers engrenages mis au point à Nésora",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "64263527-c7c0-4da6-b352-8cf0d09f692a"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 958,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Naissance d'Elleïa",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "4e524551-6a0b-40d5-9690-fd9a6cbdd48a"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1078,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kayel de Gix crée les Elleïannes en une nuit",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "03bd16ae-2819-4f5f-8e22-59ef4b6a6eb9"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1146,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Invention de l'imprimerie à Nésora",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "0d183469-6c41-44a0-885c-71ab90990aec"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1185,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Jyr et Sercya réapparaissent dans Kor",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "6bd7f94f-9c7a-44b9-9290-a442bd31c86f"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1208,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Quatrièmes guerres de souveraineté",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "774b0b7b-2d44-439e-9259-a930f6ce64bb"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1208,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Troisième Croisade",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "ca7bec8e-c7b3-4363-82fa-667c1a9101dc"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1208,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Zangar est attaquée par l'Inquisition assistée de troupes de conscrits",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "f9b2e4d8-da4a-4072-a73d-7debb7323ede"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1219,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les dernières citadelles des Nécromants de Zangar sombrent dans les marais",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "72bf461b-cc60-4541-881b-3a9e8b60dc30"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1220,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les soldats de la Troisième Croisade fondent la Principauté de Marne",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "d4def589-66ca-465c-b69a-32329d2cc0f4"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1232,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Syshar est attaqué par les Immortels mais parvient à s'enfuir blessé",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "8cbb2b35-678c-4b2c-9c1b-58cec9d45c7f"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1258,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les Immortels commencent à chasser les dragons",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "13bb26a3-aafa-498e-aa68-d00ad2e3520c"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1258,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Apparition du Fléau",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "a09a94fd-8a6c-4af1-a3f3-b442c5d97661"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1262,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Apparition des premières notions de chimie à Nésora",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "ec015ff3-6a63-4450-9696-18a8ec1e6200"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1287,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Premiers raz de marée sur les côtes de l'Interdit",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "e3ab14c9-bba8-4b2a-be7c-44b9350e4c01"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "empires",
+        "year": 1299,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Jard unifie les Marches Alyzées",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "f1070cc2-3ecb-4094-aeda-88a6d8fa933a"
+  }
+]

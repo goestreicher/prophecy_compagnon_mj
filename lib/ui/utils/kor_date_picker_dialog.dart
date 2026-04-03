@@ -14,7 +14,10 @@ Future<KorDate?> showKorDatePicker({
 }
 
 class KorDatePickerDialog extends StatefulWidget {
-  const KorDatePickerDialog({ super.key, required this.initialDate });
+  const KorDatePickerDialog({
+    super.key,
+    required this.initialDate
+  });
 
   final KorDate initialDate;
 

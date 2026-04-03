@@ -52,6 +52,7 @@ enum KorDuration {
 }
 
 enum KorAge {
+  avant(title: 'Avant le Temps', shortTitle: 'AvT'),
   fondations(title: 'Âge des Fondations', shortTitle: 'AdF'),
   conquetes(title: 'Âge des Conquêtes', shortTitle: 'AdC'),
   empires(title: 'Âge des Empires', shortTitle: 'AdE');
@@ -145,7 +146,7 @@ class DayRange {
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
-class KorDate {
+class KorDate implements Comparable<KorDate> {
   KorDate({
     this.age = KorAge.empires,
     required this.year,
@@ -160,14 +161,15 @@ class KorDate {
   int week;
   WeekDay day;
 
-  int dayIndex() => (81 * cycle.index) + (9 * (week - 1)) + (day.index + 1);
+  int dayIndex() =>
+      (81 * cycle.index) + (9 * (week - 1)) + (day.index + 1);
 
   void addDays(int days) {
     var current = dayIndex();
     var target = current + days;
     var numYears = 0;
 
-    if(target < current) {
+    if (target < current) {
       while (target < 1) {
         numYears -= 1;
         target += 324;
@@ -180,20 +182,120 @@ class KorDate {
     day = WeekDay.values[(target - 1) % 9];
     week = (((target - 1) % 81) ~/ 9) + 1;
     cycle = KorCycle.values[(target ~/ 81) % 4 ];
-    year += numYears;
+    year = year + numYears;
   }
 
-  String toCompactString() => '${day.index+1}/$week/${cycle.shortTitle}, $year ${age.shortTitle}';
+  static String _weekOrdinal(int w) =>
+      w == 1 ? 'ère' : 'e';
 
-  String toFullString() {
-    var weekOrdinal = week == 1
-        ? 'ère'
-        : 'e';
-    return '${day.title}, $week$weekOrdinal semaine du ${cycle.title}, $year ${age.shortTitle}';
+  String toCompactString() =>
+      '${day.index+1}/$week/${cycle.shortTitle}, $year ${age.shortTitle}';
+
+  String toFullString() =>
+      '${day.title}, $week${_weekOrdinal(week)} semaine du ${cycle.title}, $year ${age.shortTitle}';
+
+  String format(String spec) =>
+      spec
+        .replaceAll('%A', age.title)
+        .replaceAll('%a', age.shortTitle)
+        .replaceAll('%Y', year.toString())
+        .replaceAll('%C', cycle.title)
+        .replaceAll('%c', cycle.shortTitle)
+        .replaceAll('%W', '$week${_weekOrdinal(week)} semaine')
+        .replaceAll('%w', week.toString())
+        .replaceAll('%D', day.title)
+        .replaceAll('%d', day.shortTitle)
+        .replaceAll('%n', (day.index+1).toString());
+
+  @override
+  String toString() => toFullString();
+
+  bool operator <(KorDate other) =>
+      age.index < other.age.index
+      || year < other.year
+      || cycle.index < other.cycle.index
+      || week < other.week
+      || day.index < other.day.index;
+
+  @override
+  bool operator ==(Object other) =>
+      other is KorDate
+      && age == other.age
+      && year == other.year
+      && cycle == other.cycle
+      && week == other.week
+      && day == other.day;
+
+  bool operator >(KorDate other) =>
+      !(this < other || this == other);
+
+  @override
+  int compareTo(KorDate other) =>
+      this < other
+          ? -1
+          : this == other
+              ? 0
+              : 1;
+
+  @override
+  int get hashCode => Object.hash(age, year, cycle, week, day);
+
+  Map<String, dynamic> toJson() =>
+      _$KorDateToJson(this);
+
+  factory KorDate.fromJson(Map<String, dynamic> json) =>
+      _$KorDateFromJson(json);
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class KorDateRange implements Comparable<KorDateRange> {
+  KorDateRange({
+    required this.start,
+    KorDate? end,
+  })
+    : end = end ?? start
+  {
+    if(start > this.end) {
+      throw(ArgumentError('Start date in a range cannot be greather than the end date'));
+    }
   }
 
-  Map<String, dynamic> toJson() => _$KorDateToJson(this);
-  factory KorDate.fromJson(Map<String, dynamic> json) => _$KorDateFromJson(json);
+  KorDate start;
+  KorDate end;
+
+  String format(String spec) =>
+      '${start.format(spec)}${start == end ? "" : " - ${end.format(spec)}"}';
+
+  @override
+  String toString() =>
+      '$start - $end';
+
+  @override
+  int compareTo(KorDateRange other) {
+    if(start < other.start) {
+      return -1;
+    }
+    else if(start == other.start) {
+      if(end == other.end) {
+        return 0;
+      }
+      else if(end < other.end) {
+        return -1;
+      }
+      else {
+        return 1;
+      }
+    }
+    else {
+      return 1;
+    }
+  }
+
+  static KorDateRange fromJson(Map<String, dynamic> json) =>
+      _$KorDateRangeFromJson(json);
+
+  Map<String, dynamic> toJson() =>
+      _$KorDateRangeToJson(this);
 }
 
 Augure getAugureForDate(KorDate date) {

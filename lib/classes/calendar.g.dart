@@ -23,6 +23,7 @@ Map<String, dynamic> _$KorDateToJson(KorDate instance) => <String, dynamic>{
 };
 
 const _$KorAgeEnumMap = {
+  KorAge.avant: 'avant',
   KorAge.fondations: 'fondations',
   KorAge.conquetes: 'conquetes',
   KorAge.empires: 'empires',
@@ -46,3 +47,16 @@ const _$WeekDayEnumMap = {
   WeekDay.vents: 'vents',
   WeekDay.serpent: 'serpent',
 };
+
+KorDateRange _$KorDateRangeFromJson(Map<String, dynamic> json) => KorDateRange(
+  start: KorDate.fromJson(json['start'] as Map<String, dynamic>),
+  end: json['end'] == null
+      ? null
+      : KorDate.fromJson(json['end'] as Map<String, dynamic>),
+);
+
+Map<String, dynamic> _$KorDateRangeToJson(KorDateRange instance) =>
+    <String, dynamic>{
+      'start': instance.start.toJson(),
+      'end': instance.end.toJson(),
+    };

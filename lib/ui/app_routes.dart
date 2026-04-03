@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:prophecy_compagnon_mj/ui/timeline/main.dart';
 
 import 'creatures/clone.dart';
 import 'creatures/create.dart';
@@ -303,6 +304,13 @@ final mainAppRoutes = [
           StarEditPage(id: state.pathParameters['uuid']!),
       ),
     ]
+  ),
+  MainAppRoute(
+    path: '/timeline',
+    builder: (BuildContext context, GoRouterState state) =>
+      TimelinePage(),
+    icon: Icon(Icons.access_time),
+    label: Text('Chronologie'),
   ),
   MainAppRoute(
     path: '/settings',
