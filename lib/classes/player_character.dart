@@ -150,6 +150,37 @@ class PlayerCharacterSummary {
   factory PlayerCharacterSummary.fromJson(Map<String, dynamic> json) => _$PlayerCharacterSummaryFromJson(json);
 }
 
+enum PlayerCharacterPrivilegedExperience {
+  danger(
+    title: 'Danger',
+    description: "Les routes de Kor sont pavées d’embûches, de combats, de pièges menrtriers et de rencontres susceptibles de mettre les personnages en bien mauvaise posture. La valeur de “danger” représente tous les périls que les personnages vont affronter, de la simple bagarre d’auberge au gigantesque combat d’armées, en passant par la menace d’une épidémie, l'approche d’une horde de dragons corrompus, le retour d’un ennemi oublié.",
+  ),
+  discovery(
+    title: 'Découverte',
+    description: "La rencontre et la découverte sont les deux principaux tenants de l’aventure, qui poussent les personnages à se confronter sans cesse à de nouvelles situations. Cette valeur représente tout ce que les personnages joueurs pourront apprendre, comprendre ou tout simplement découvrir au cours d’un scénario, de l’existence d’une faction à la rencontre d’un érudit chargé de souvenirs.",
+  ),
+  magic(
+    title: 'Magie',
+    description: "Dans un monde où les descendants du Premier des Dragons ont forgé la moindre parcelle de vie, la magie omniprésente joue un rôle majeur dans l’évolution des hommes. Ainsi, un scénario riche en phénomènes magiques, qu’ils soient provoqués par des mages ou liés à une perturbation naturelle, pourra apprendre beaucoup sur l’essence même de l’univers. Il va sans dire que la présence de dragons, voire de Grands Dragons, sera considérée comme un phénomène hautement magique.",
+  ),
+  implication(
+    title: 'Implication',
+    description: "La valeur des héros se mesure à la portée de leurs actes. Les plus puissants des guerriers sont généralement les plus connus, ceux qui ont brillé sur les champs de bataille. En explorant Kor, les personnages auront maintes fois l’occasion d’accroître leur renommée, de s'impliquer dans le jeu politique et d’entrer dans la légende, aux côtés des héros les plus célèbres. Cette valeur mesure donc les répercussions d’une aventure sur la renommée des personnages.",
+  ),
+  initiative(
+    title: 'Initiative',
+    description: "Cette valeur est moins liée au “contenu” du scénario qu’à la façon dont un personnage, ou un joueur, l'aura appréhendé. Alors que tous les membres du groupe hériteront des Points d’Expérience découlant des quatre premières valeurs, celle-ci récompense la participation active d’un personnage dans une aventure. Ainsi, si un personnage se sacrifie pour sauver ses compagnons, réussit une action sensationnelle ou met en pratique une idée hors du commun, le meneur de jeu pourra lui attribuer de 1 à 5 Points d’Expérience dont lui seul pourra bénéficier.",
+  ),
+  ;
+
+  const PlayerCharacterPrivilegedExperience({
+    required this.title,
+    required this.description,
+  });
+  final String title;
+  final String description;
+}
+
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
 class PlayerCharacter extends HumanCharacter {
   PlayerCharacter({
@@ -157,6 +188,8 @@ class PlayerCharacter extends HumanCharacter {
     required this.player,
     required this.augure,
     required super.name,
+    required this.privilegedExperience,
+    this.experience = 0,
     super.source = ObjectSource.local,
     super.location = ObjectLocation.memory,
     super.abilities,
@@ -199,6 +232,8 @@ class PlayerCharacter extends HumanCharacter {
 
   String player;
   final Augure augure;
+  PlayerCharacterPrivilegedExperience privilegedExperience;
+  int experience;
 
   PlayerCharacterSummary get summary => PlayerCharacterSummary(
     id: id,

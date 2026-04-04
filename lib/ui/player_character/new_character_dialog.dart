@@ -3,8 +3,24 @@ import 'package:flutter/material.dart';
 import '../../classes/calendar.dart';
 import '../../classes/player_character.dart';
 
-class NewPlayerCharacterDialog extends StatelessWidget {
-  NewPlayerCharacterDialog({super.key, required this.formKey});
+class NewPlayerCharacterDialog extends StatefulWidget {
+  const NewPlayerCharacterDialog({
+    super.key,
+    required this.formKey
+  });
+
+  @override
+  State<NewPlayerCharacterDialog> createState() => _NewPlayerCharacterDialogState();
+
+  final GlobalKey<FormState> formKey;
+}
+
+class _NewPlayerCharacterDialogState extends State<NewPlayerCharacterDialog> {
+  final TextEditingController characterNameController = TextEditingController();
+  final TextEditingController playerNameController = TextEditingController();
+
+  Augure? augure;
+  PlayerCharacterPrivilegedExperience? privilegedExperience;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +29,9 @@ class NewPlayerCharacterDialog extends StatelessWidget {
     return AlertDialog(
       title: const Text('Nouveau PJ'),
       content: Form(
-        key: formKey,
+        key: widget.formKey,
         child: Column(
+          spacing: 12,
           mainAxisSize: MainAxisSize.min,
           children: [
             TextFormField(
@@ -31,9 +48,6 @@ class NewPlayerCharacterDialog extends StatelessWidget {
                 return null;
               },
             ),
-            const SizedBox(
-              height: 12.0,
-            ),
             TextFormField(
               controller: playerNameController,
               decoration: const InputDecoration(
@@ -47,14 +61,10 @@ class NewPlayerCharacterDialog extends StatelessWidget {
                 return null;
               },
             ),
-            const SizedBox(
-              height: 12.0,
-            ),
-            DropdownMenu<Augure>(
-              controller: augureController,
+            DropdownMenuFormField(
+              initialSelection: augure,
               requestFocusOnTap: true,
               label: const Text('Augure'),
-              initialSelection: Augure.pierre,
               expandedInsets: EdgeInsets.zero,
               dropdownMenuEntries:
                 Augure.values.map<DropdownMenuEntry<Augure>>((Augure augure) {
@@ -63,49 +73,64 @@ class NewPlayerCharacterDialog extends StatelessWidget {
                       label: augure.title
                   );
                 }).toList(),
+              onSelected: (Augure? a) => augure = a,
+              validator: (Augure? a) {
+                if(a == null) return 'Valeur obligatoire';
+                return null;
+              },
             ),
-            Padding(
-                padding: const EdgeInsets.symmetric(vertical: 12.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text('Annuler'),
-                    ),
-                    const SizedBox(width: 12.0),
-                    ElevatedButton(
-                      onPressed: () {
-                        var characterName = characterNameController.text;
-                        var playerName = playerNameController.text;
-                        var augure = Augure.byTitle(augureController.text)!;
-
-                        PlayerCharacter char = PlayerCharacter(
-                          name: characterName,
-                          player: playerName,
-                          augure: augure,
-                        );
-                        Navigator.of(context).pop(char);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: theme.colorScheme.primary,
-                        foregroundColor: theme.colorScheme.onPrimary,
-                      ),
-                      child: const Text('OK'),
-                    )
-                  ],
+            DropdownMenuFormField(
+              initialSelection: privilegedExperience,
+              requestFocusOnTap: true,
+              label: const Text('Optique de progression'),
+              expandedInsets: EdgeInsets.zero,
+              dropdownMenuEntries: PlayerCharacterPrivilegedExperience.values
+                .map(
+                  (PlayerCharacterPrivilegedExperience e) =>
+                    DropdownMenuEntry(value: e, label: e.title),
                 )
+                .toList(),
+              onSelected: (PlayerCharacterPrivilegedExperience? e) =>
+                privilegedExperience = e,
+              validator: (PlayerCharacterPrivilegedExperience? e) {
+                if(e == null) return 'Valeur obligatoire';
+                return null;
+              },
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('Annuler'),
+                ),
+                const SizedBox(width: 12.0),
+                ElevatedButton(
+                  onPressed: () {
+                    var characterName = characterNameController.text;
+                    var playerName = playerNameController.text;
+
+                    PlayerCharacter char = PlayerCharacter(
+                      name: characterName,
+                      player: playerName,
+                      augure: augure!,
+                      privilegedExperience: privilegedExperience!,
+                    );
+                    Navigator.of(context).pop(char);
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: theme.colorScheme.primary,
+                    foregroundColor: theme.colorScheme.onPrimary,
+                  ),
+                  child: const Text('OK'),
+                )
+              ],
             ),
           ],
         )
       ),
     );
   }
-
-  final GlobalKey<FormState> formKey;
-  final TextEditingController characterNameController = TextEditingController();
-  final TextEditingController playerNameController = TextEditingController();
-  final TextEditingController augureController = TextEditingController();
 }

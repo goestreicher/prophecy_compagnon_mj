@@ -37,6 +37,11 @@ PlayerCharacter _$PlayerCharacterFromJson(Map<String, dynamic> json) =>
         player: json['player'] as String,
         augure: $enumDecode(_$AugureEnumMap, json['augure']),
         name: json['name'] as String,
+        privilegedExperience: $enumDecode(
+          _$PlayerCharacterPrivilegedExperienceEnumMap,
+          json['privileged_experience'],
+        ),
+        experience: (json['experience'] as num?)?.toInt() ?? 0,
         source: json['source'] == null
             ? ObjectSource.local
             : ObjectSource.fromJson(json['source'] as Map<String, dynamic>),
@@ -150,6 +155,10 @@ Map<String, dynamic> _$PlayerCharacterToJson(PlayerCharacter instance) =>
       'draconic_link': instance.draconicLink.toJson(),
       'player': instance.player,
       'augure': _$AugureEnumMap[instance.augure]!,
+      'privileged_experience':
+          _$PlayerCharacterPrivilegedExperienceEnumMap[instance
+              .privilegedExperience]!,
+      'experience': instance.experience,
     };
 
 const _$AugureEnumMap = {
@@ -164,4 +173,12 @@ const _$AugureEnumMap = {
   Augure.homme: 'homme',
   Augure.cite: 'cite',
   Augure.none: 'none',
+};
+
+const _$PlayerCharacterPrivilegedExperienceEnumMap = {
+  PlayerCharacterPrivilegedExperience.danger: 'danger',
+  PlayerCharacterPrivilegedExperience.discovery: 'discovery',
+  PlayerCharacterPrivilegedExperience.magic: 'magic',
+  PlayerCharacterPrivilegedExperience.implication: 'implication',
+  PlayerCharacterPrivilegedExperience.initiative: 'initiative',
 };

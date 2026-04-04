@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../classes/entity/attributes.dart';
 import '../../../classes/human_character.dart';
+import '../../../classes/player_character.dart';
 import '../entity/base/edit_abilities_widget.dart';
 import '../entity/base/edit_attributes_widget.dart';
 import '../entity/base/edit_injuries_widget.dart';
 import '../entity/base/edit_skill_group_container.dart';
 import 'base/edit_caste_widget.dart';
+import 'base/edit_experience_widget.dart';
 import 'base/edit_general_widget.dart';
 import 'base/edit_secondary_attributes_widget.dart';
 import 'base/edit_tendencies_widget.dart';
@@ -62,16 +64,24 @@ class CharacterEditBaseWidget extends StatelessWidget {
           ],
         ),
         Row(
+          spacing: 16.0,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Flexible(
+            Expanded(
               child: EntityEditInjuriesWidget(
                 entity: character,
               ),
             ),
-            CharacterEditTendenciesWidget(
-              character: character,
-            ),
+            if(character is PlayerCharacter)
+              Expanded(
+                child: PlayerCharacterEditExperienceWidget(
+                  character: character as PlayerCharacter,
+                ),
+              ),
           ],
+        ),
+        CharacterEditTendenciesWidget(
+          character: character,
         ),
       ],
     );
@@ -137,6 +147,10 @@ class CharacterEditBaseWidget extends StatelessWidget {
                   ),
                 ],
               ),
+              if(character is PlayerCharacter)
+                PlayerCharacterEditExperienceWidget(
+                  character: character as PlayerCharacter,
+                ),
             ],
           ),
         ),
