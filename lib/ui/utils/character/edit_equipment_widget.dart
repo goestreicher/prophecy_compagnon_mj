@@ -5,6 +5,7 @@ import '../entity/equipment/edit_armor_widget.dart';
 import '../entity/equipment/edit_clothes_widget.dart';
 import '../entity/equipment/edit_jewels_widget.dart';
 import '../entity/equipment/edit_misc_gear_widget.dart';
+import '../entity/equipment/edit_money_widget.dart';
 import '../entity/equipment/edit_weapons_widget.dart';
 
 class CharacterEditEquipmentWidget extends StatelessWidget {
@@ -20,6 +21,9 @@ class CharacterEditEquipmentWidget extends StatelessWidget {
     return Column(
       spacing: 16.0,
       children: [
+        EntityEditMoneyWidget(
+          entity: character,
+        ),
         EntityEditWeaponsWidget(
           entity: character,
         ),
