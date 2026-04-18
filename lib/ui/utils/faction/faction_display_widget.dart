@@ -79,7 +79,7 @@ class FactionDisplayWidget extends StatelessWidget {
             onPressed: () async {
               var j = await _export(faction);
               var jStr = json.encode(j);
-              await FilePicker.platform.saveFile(
+              await FilePicker.saveFile(
                 fileName: 'faction-${faction.id}.json',
                 bytes: utf8.encode(jStr),
               );

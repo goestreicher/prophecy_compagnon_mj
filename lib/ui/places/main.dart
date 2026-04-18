@@ -222,7 +222,7 @@ class _PlacesMainPageState extends State<PlacesMainPage> {
                 padding: const EdgeInsets.all(4.0),
                 tooltip: 'Importer un lieu',
                 onPressed: () async {
-                  var result = await FilePicker.platform.pickFiles(
+                  var result = await FilePicker.pickFiles(
                     type: FileType.custom,
                     allowedExtensions: ['json'],
                     withData: true,

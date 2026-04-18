@@ -240,7 +240,7 @@ class _ClothTypeContainerState extends State<_ClothTypeContainer> {
           },
           onDownload: () async {
             var jsonStr = json.encode(cloth.toJson());
-            await FilePicker.platform.saveFile(
+            await FilePicker.saveFile(
               fileName: 'cloth_${cloth.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );

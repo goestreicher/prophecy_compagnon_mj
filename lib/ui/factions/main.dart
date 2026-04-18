@@ -274,7 +274,7 @@ class _FactionsMainPageState extends State<FactionsMainPage> {
                       ],
                     ),
                     onPressed: () async {
-                      var result = await FilePicker.platform.pickFiles(
+                      var result = await FilePicker.pickFiles(
                         type: FileType.custom,
                         allowedExtensions: ['json'],
                         withData: true,

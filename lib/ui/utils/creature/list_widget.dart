@@ -78,7 +78,7 @@ class CreatureActionButtons extends StatelessWidget {
             onPressed: () async {
               var model = await Creature.get(creature.id);
               var jsonStr = json.encode(model!.toJson());
-              await FilePicker.platform.saveFile(
+              await FilePicker.saveFile(
                 fileName: 'creature-${creature.id}.json',
                 bytes: utf8.encode(jsonStr),
               );

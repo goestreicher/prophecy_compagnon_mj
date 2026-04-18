@@ -148,7 +148,7 @@ class _TableEditPageState extends State<TableEditPage> {
                     ],
                   ),
                   onPressed: () async {
-                    var result = await FilePicker.platform.pickFiles(
+                    var result = await FilePicker.pickFiles(
                       type: FileType.custom,
                       allowedExtensions: ['json'],
                       withData: true,
@@ -413,7 +413,7 @@ class _TableEditPageState extends State<TableEditPage> {
                       setState(() {
                         isWorking = false;
                       });
-                      await FilePicker.platform.saveFile(
+                      await FilePicker.saveFile(
                         fileName: 'table_${table.uuid}.json',
                         bytes: utf8.encode(jsonStr),
                       );

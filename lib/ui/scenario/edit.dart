@@ -298,7 +298,7 @@ class _ScenarioEditPageState extends State<ScenarioEditPage> {
                       onPressed: mainButtonsLocked ? null : () async {
                         tabGeneralPreSaveCallback?.call();
                         var jsonStr = json.encode(_scenario.toJson());
-                        await FilePicker.platform.saveFile(
+                        await FilePicker.saveFile(
                           fileName: 'scenario_${_scenario.uuid}.json',
                           bytes: utf8.encode(jsonStr),
                         );

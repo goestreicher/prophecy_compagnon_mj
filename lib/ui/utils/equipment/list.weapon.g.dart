@@ -338,7 +338,7 @@ class _WeaponTypeContainerState extends State<_WeaponTypeContainer> {
           },
           onDownload: () async {
             var jsonStr = json.encode(weapon.toJson());
-            await FilePicker.platform.saveFile(
+            await FilePicker.saveFile(
               fileName: 'weapon_${weapon.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );

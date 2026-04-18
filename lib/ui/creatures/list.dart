@@ -164,7 +164,7 @@ class _CreaturesListPageState extends State<CreaturesListPage> {
                       ],
                     ),
                     onPressed: () async {
-                      var result = await FilePicker.platform.pickFiles(
+                      var result = await FilePicker.pickFiles(
                         type: FileType.custom,
                         allowedExtensions: ['json'],
                         withData: true,

@@ -144,7 +144,7 @@ class _MiscGearDataContainerState extends State<_MiscGearDataContainer> {
           },
           onDownload: () async {
             var jsonStr = json.encode(item.toJson());
-            await FilePicker.platform.saveFile(
+            await FilePicker.saveFile(
               fileName: 'misc-gear_${item.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );

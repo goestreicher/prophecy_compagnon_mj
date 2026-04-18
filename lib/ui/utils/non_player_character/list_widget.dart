@@ -78,7 +78,7 @@ class NPCActionButtons extends StatelessWidget {
             onPressed: () async {
               var model = await NonPlayerCharacter.get(npc.id);
               var jsonStr = json.encode(model!.toJson());
-              await FilePicker.platform.saveFile(
+              await FilePicker.saveFile(
                 fileName: 'pnj-${npc.id}.json',
                 bytes: utf8.encode(jsonStr),
               );

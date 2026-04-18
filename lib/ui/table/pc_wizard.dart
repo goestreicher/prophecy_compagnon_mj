@@ -69,7 +69,7 @@ class PlayerCharacterWizard extends StatelessWidget {
                                     onPressed: () async {
                                       var jsonFull = pc.toJson();
                                       var jsonStr = json.encode(jsonFull);
-                                      await FilePicker.platform.saveFile(
+                                      await FilePicker.saveFile(
                                         fileName: 'pc_${pc.uuid}.json',
                                         bytes: utf8.encode(jsonStr),
                                       );

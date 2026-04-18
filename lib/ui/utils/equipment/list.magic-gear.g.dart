@@ -144,7 +144,7 @@ class _MagicGearDataContainerState extends State<_MagicGearDataContainer> {
           },
           onDownload: () async {
             var jsonStr = json.encode(item.toJson());
-            await FilePicker.platform.saveFile(
+            await FilePicker.saveFile(
               fileName: 'magic-gear_${item.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );

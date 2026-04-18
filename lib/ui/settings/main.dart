@@ -34,7 +34,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         setState(() {
                           isWorking = true;
                         });
-                        await FilePicker.platform.saveFile(
+                        await FilePicker.saveFile(
                           fileName: 'prophecy-compagnon-mj-export.zip',
                           bytes: await DataStorage.instance.export(),
                         );
@@ -47,7 +47,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       label: const Text('Importer une sauvegarde'),
                       icon: Icon(Icons.publish),
                       onPressed: () async {
-                        var result = await FilePicker.platform.pickFiles(
+                        var result = await FilePicker.pickFiles(
                           type: FileType.custom,
                           allowedExtensions: ['zip'],
                           withData: true,

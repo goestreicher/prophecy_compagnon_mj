@@ -177,7 +177,7 @@ class _ShieldDataContainerState extends State<_ShieldDataContainer> {
           },
           onDownload: () async {
             var jsonStr = json.encode(shield.toJson());
-            await FilePicker.platform.saveFile(
+            await FilePicker.saveFile(
               fileName: 'shield_${shield.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );

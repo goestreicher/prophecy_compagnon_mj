@@ -126,7 +126,7 @@ class PlayerCharacterWizardStepDataNames extends PlayerCharacterWizardStepData {
     var pc = playerCharacterWizardFinalize(model);
     var jsonFull = pc.toJson();
     var jsonStr = json.encode(jsonFull);
-    await FilePicker.platform.saveFile(
+    await FilePicker.saveFile(
       fileName: 'pc_${pc.uuid}.json',
       bytes: utf8.encode(jsonStr),
     );

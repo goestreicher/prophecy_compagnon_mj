@@ -134,7 +134,7 @@ class PlaceDisplayWidget extends StatelessWidget {
 
               var j = await _export(place, config);
               var jStr = json.encode(j);
-              await FilePicker.platform.saveFile(
+              await FilePicker.saveFile(
                 fileName: 'place-${place.id}.json',
                 bytes: utf8.encode(jStr),
               );

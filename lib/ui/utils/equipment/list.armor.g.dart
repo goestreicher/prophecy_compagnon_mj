@@ -268,7 +268,7 @@ class _ArmorTypeContainerState extends State<_ArmorTypeContainer> {
           },
           onDownload: () async {
             var jsonStr = json.encode(armor.toJson());
-            await FilePicker.platform.saveFile(
+            await FilePicker.saveFile(
               fileName: 'armor_${armor.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );

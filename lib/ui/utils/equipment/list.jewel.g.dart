@@ -240,7 +240,7 @@ class _JewelTypeContainerState extends State<_JewelTypeContainer> {
           },
           onDownload: () async {
             var jsonStr = json.encode(jewel.toJson());
-            await FilePicker.platform.saveFile(
+            await FilePicker.saveFile(
               fileName: 'jewel_${jewel.uuid}.json',
               bytes: utf8.encode(jsonStr),
             );

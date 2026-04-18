@@ -78,7 +78,7 @@ class StarActionButtons extends StatelessWidget {
             onPressed: () async {
               var model = await Star.get(star.id);
               var jsonStr = json.encode(model!.toJson());
-              await FilePicker.platform.saveFile(
+              await FilePicker.saveFile(
                 fileName: 'star-${star.id}.json',
                 bytes: utf8.encode(jsonStr),
               );
