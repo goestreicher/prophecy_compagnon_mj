@@ -1,9 +1,6 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 
 import '../../../classes/human_character.dart';
-import 'change_stream.dart';
 import 'edit_background_widget.dart';
 import 'edit_base_widget.dart';
 import 'edit_equipment_widget.dart';
@@ -26,21 +23,18 @@ class CharacterEditWidget extends StatefulWidget {
 }
 
 class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerProviderStateMixin {
-  late final StreamController<CharacterChange> changeStreamController;
   late final TabController tabController;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
     super.initState();
-    changeStreamController = StreamController<CharacterChange>.broadcast();
     tabController = TabController(length: 6, vsync: this);
   }
 
   @override
   void dispose() {
     tabController.dispose();
-    changeStreamController.close();
     super.dispose();
   }
 
@@ -98,7 +92,6 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
                 _CharacterEditTabWidget(
                   child: CharacterEditBackgroundWidget(
                     character: widget.character,
-                    changeStreamController: changeStreamController,
                   )
                 ),
                 _CharacterEditTabWidget(

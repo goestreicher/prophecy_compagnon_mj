@@ -12,11 +12,9 @@ class CharacterEditBackgroundWidget extends StatelessWidget {
   const CharacterEditBackgroundWidget({
     super.key,
     required this.character,
-    required this.changeStreamController,
   });
 
   final HumanCharacter character;
-  final StreamController<CharacterChange> changeStreamController;
 
   @override
   Widget build(BuildContext context) {
