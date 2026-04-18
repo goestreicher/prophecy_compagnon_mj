@@ -25,6 +25,7 @@ import 'stars/edit.dart';
 import 'stars/list.dart';
 import 'table/edit.dart';
 import 'table/list.dart';
+import 'table/pc_wizard.dart';
 import 'utils/custom_icons.dart';
 import 'welcome_page.dart';
 
@@ -50,19 +51,19 @@ final mainAppRoutes = [
   MainAppRoute(
     path: '/',
     builder: (BuildContext context, GoRouterState state) =>
-      const WelcomePage(),
+      WelcomePage(),
   ),
   MainAppRoute(
     path: '/sessions',
     builder: (BuildContext context, GoRouterState state) =>
-      const SessionsListPage(),
+      SessionsListPage(),
     icon: Icon(Symbols.tactic_rounded),
     label: Text('Sessions'),
   ),
   MainAppRoute(
     path: '/tables',
     builder: (BuildContext context, GoRouterState state) =>
-      const TablesListPage(),
+      TablesListPage(),
     icon: Icon(Symbols.groups),
     label: Text('Tables'),
     routes: [
@@ -74,6 +75,13 @@ final mainAppRoutes = [
           ),
         isFullScreen: true,
         routes: [
+          MainAppRoute(
+            path: '/wizard/pc',
+            builder: (BuildContext context, GoRouterState state) =>
+              PlayerCharacterWizard(
+                tableUuid: state.pathParameters['uuid']!
+              ),
+          ),
           MainAppRoute(
             path: '/pc/:pcUuid',
             builder: (BuildContext context, GoRouterState state) =>
@@ -90,7 +98,7 @@ final mainAppRoutes = [
   MainAppRoute(
     path: '/scenarios',
     builder: (BuildContext context, GoRouterState state) =>
-      const ScenariosListPage(),
+      ScenariosListPage(),
     icon: Icon(Symbols.book),
     label: Text('Scénarios'),
     routes: [
@@ -179,14 +187,14 @@ final mainAppRoutes = [
   MainAppRoute(
     path: '/npcs',
     builder: (BuildContext context, GoRouterState state) =>
-      const NPCsListPage(),
+      NPCsListPage(),
     icon: Icon(Symbols.face),
     label: Text('PNJs'),
     routes: [
       MainAppRoute(
         path: '/create',
         builder: (BuildContext context, GoRouterState state) =>
-          const NPCCreatePage(),
+          NPCCreatePage(),
       ),
       MainAppRoute(
         path: '/clone/:uuid',
@@ -208,14 +216,14 @@ final mainAppRoutes = [
   MainAppRoute(
     path: '/creatures',
     builder: (BuildContext context, GoRouterState state) =>
-      const CreaturesListPage(),
+      CreaturesListPage(),
     icon: Icon(CustomIcons.creature),
     label: Text('Créatures'),
     routes: [
       MainAppRoute(
         path: '/create',
         builder: (BuildContext context, GoRouterState state) =>
-          const CreatureCreatePage(),
+          CreatureCreatePage(),
       ),
       MainAppRoute(
         path: '/clone/:uuid',
@@ -237,7 +245,7 @@ final mainAppRoutes = [
   MainAppRoute(
     path: '/places',
     builder: (BuildContext context, GoRouterState state) =>
-      const PlacesMainPage(),
+      PlacesMainPage(),
     icon: Icon(Icons.place_outlined),
     label: Text('Lieux'),
     routes: [
@@ -251,7 +259,7 @@ final mainAppRoutes = [
   MainAppRoute(
     path: '/factions',
     builder: (BuildContext context, GoRouterState state) =>
-      const FactionsMainPage(),
+      FactionsMainPage(),
     icon: Icon(Symbols.graph_2),
     label: Text('Factions'),
     routes: [
@@ -265,28 +273,28 @@ final mainAppRoutes = [
   MainAppRoute(
     path: '/spells',
     builder: (BuildContext context, GoRouterState state) =>
-      const SpellsListPage(),
+      SpellsListPage(),
     icon: Icon(Symbols.auto_fix_high),
     label: Text('Sorts'),
   ),
   MainAppRoute(
     path: '/equipment',
     builder: (BuildContext context, GoRouterState state) =>
-      const EquipmentListPage(),
+      EquipmentListPage(),
     icon: Icon(Symbols.swords),
     label: Text('Équipement'),
   ),
   MainAppRoute(
     path: '/stars',
     builder: (BuildContext context, GoRouterState state) =>
-      const StarsListPage(),
+      StarsListPage(),
     icon: Icon(Symbols.stars_2),
     label: Text('Étoiles'),
     routes: [
       MainAppRoute(
         path: '/create',
         builder: (BuildContext context, GoRouterState state) =>
-        const StarCreatePage(),
+        StarCreatePage(),
       ),
       MainAppRoute(
         path: '/clone/:uuid',

@@ -20,6 +20,7 @@ import 'entity_instance.dart';
 import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
+import 'money.dart';
 import 'npc_category.dart';
 import 'object_location.dart';
 import 'object_source.dart';
@@ -430,6 +431,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     EntitySkills? skills,
     EntityStatus? status,
     EntityEquipment? equipment,
+    MoneyWallet? money,
     EntityMagic? magic,
     int age = 25,
     double height = 1.7,
@@ -470,6 +472,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
             skills: skills,
             status: status,
             equipment: equipment,
+            money: money,
             magic: magic,
             caste: caste,
             honoraryCaste: honoraryCaste,
@@ -514,6 +517,7 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     super.skills,
     super.status,
     super.equipment,
+    super.money,
     super.magic,
     super.caste,
     super.honoraryCaste,

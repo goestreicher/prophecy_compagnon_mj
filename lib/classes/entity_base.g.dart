@@ -32,6 +32,9 @@ EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase(
       ? null
       : EntityStatus.fromJson(json['status'] as Map<String, dynamic>),
   equipment: EntityEquipment.fromJson(json['equipment'] as List),
+  money: json['money'] == null
+      ? null
+      : MoneyWallet.fromJson(json['money'] as Map<String, dynamic>),
   magic: json['magic'] == null
       ? null
       : EntityMagic.fromJson(json['magic'] as Map<String, dynamic>),
@@ -65,6 +68,7 @@ Map<String, dynamic> _$EntityBaseToJson(EntityBase instance) =>
       'skills': instance.skills.toJson(),
       'status': instance.status.toJson(),
       'equipment': EntityEquipment.toJson(instance.equipment),
+      'money': instance.money.toJson(),
       'magic': instance.magic.toJson(),
       'favors': EntityDraconicFavors.toJson(instance.favors),
       'fervor': instance.fervor.toJson(),

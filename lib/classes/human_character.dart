@@ -25,6 +25,7 @@ import 'equipment/enums.dart';
 import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'magic_user.dart';
+import 'money.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'place.dart';
@@ -168,6 +169,7 @@ class HumanCharacter extends EntityBase with MagicUser {
     super.skills,
     super.status,
     super.equipment,
+    super.money,
     super.magic,
     super.favors,
     super.fervor,

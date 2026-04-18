@@ -134,17 +134,20 @@ class CharacterEditGeneralWidget extends StatelessWidget {
                     return FutureBuilder(
                       future: Place.withParent('e8c6ea13-f27c-4f12-8865-477305c61617'),
                       builder: (BuildContext context, AsyncSnapshot<List<Place>> snapshot) {
-                        Widget? trailing;
                         var places = <Place>[
                           Place.unknown,
                         ];
 
                         if(snapshot.connectionState == ConnectionState.waiting) {
-                          trailing = CircularProgressIndicator();
+                          return Text('Chargement...');
                         }
 
                         if(snapshot.hasError) {
-                          trailing = Icon(Icons.warning);
+                          return SizedBox(
+                              width: 36,
+                              height: 36,
+                            child: Icon(Icons.warning)
+                          );
                         }
 
                         if(snapshot.hasData && snapshot.data != null) {
@@ -159,7 +162,6 @@ class CharacterEditGeneralWidget extends StatelessWidget {
                           label: const Text("Pays d'origine"),
                           expandedInsets: EdgeInsets.zero,
                           textStyle: theme.textTheme.bodySmall,
-                          trailingIcon: trailing,
                           inputDecorationTheme: const InputDecorationTheme(
                             border: OutlineInputBorder(),
                             isCollapsed: true,

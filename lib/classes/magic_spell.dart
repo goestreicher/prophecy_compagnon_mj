@@ -27,6 +27,7 @@ class MagicSpellFilter {
     this.sphere,
     this.skill,
     this.level = -1,
+    this.complexity,
     this.search,
   });
 
@@ -35,6 +36,7 @@ class MagicSpellFilter {
   MagicSphere? sphere;
   MagicSkill? skill;
   int level;
+  int? complexity;
   String? search;
 
   @override
@@ -48,6 +50,7 @@ class MagicSpellFilter {
           && other.sphere == sphere
           && other.skill == skill
           && other.level == level
+          && other.complexity == complexity
           && other.search == search;
 }
 
@@ -101,6 +104,7 @@ class MagicSpell extends ResourceBaseClass {
       .where((MagicSpell s) => filter.sphere == null || s.sphere == filter.sphere)
       .where((MagicSpell s) => filter.skill == null || s.skill == filter.skill)
       .where((MagicSpell s) => filter.level == -1 || s.level == filter.level)
+      .where((MagicSpell s) => filter.complexity == null || s.complexity <= filter.complexity!)
       .where((MagicSpell s) =>
         filter.search == null
         || s.name.toLowerCase().contains(filter.search!.toLowerCase()));

@@ -28,6 +28,9 @@ enum Career {
   alchimiste(
     castes: [Caste.artisan, Caste.artisanNoir],
     title: "L'alchimiste",
+    motto: "Chaque ingrédient est appelé à faire partie d'un tout",
+    motivations: "Expérimenter, mélanger, concevoir",
+    description: "Cette voie regroupe les verriers et les alchimistes. Ils se séparent ensuite en deux groupes aux attributions spécifiques. D’un côté, on peut trouver les artisans spécialisés dans la préparation de produits destinés à la guerre - liquides inflammables, produits fumigènes, boules de verre contenant divers produits empoisonnés ou explosifs. De l’autre, on compte les artisans qui travaillent à des produits civils - teintures, peintures, verres, vitres, etc. - ou destinés à des applications médicales. Cette voie comprend de nombreux sympathisants de la cause humaniste.",
     interdict: CareerInterdict(
       title: "Tu ne corrompras pas les éléments fondamentaux" ,
       description: "",
@@ -47,6 +50,9 @@ enum Career {
   architecte(
     castes: [Caste.artisan, Caste.artisanNoir],
     title: "L'architecte",
+    motto: "Les distances prennent leurs mesures dans les yeux des mortels",
+    motivations: "Comprendre, structurer, décrire",
+    description: "La voie des architectes est double. Elle comprend la voie des concepteurs et celle des créateurs.\nLes concepteurs sont les fondateurs de la voie. Ils sont engagés pour dessiner les plans des bâtiments civils ou militaires. Au sein de cette voie, certains concepteurs se sont ainsi spécialisés dans les ouvrages militaires tels que des forteresses, tours et murs fortifiés, mais aussi des ouvrages plus temporaires tels que des tours d’assaut, béliers, palissades d’attaque, trébuchets… La plupart des autres concepteurs se sont spécialisés dans l’architecture civile et un certain nombre d’entre eux sont particulièrement réputés pour l’excellence et la magnificence de leurs ouvrages. C’est aussi au sein de cette voie que l’on peut trouver les quelques architectes maritimes qui dessinent les plans des navires marchands, civils ou militaires. Il est important de noter que cette voie semble être de plus en plus influencée par l’Humanisme.\nLa voie des créateurs regroupe les maçons, les terrassiers, les menuisiers et les charpentiers. En bref, toutes les professions travaillant de près ou de loin à la construction de bâtiments. Il existe des règles hiérarchiques tacites entre ces différentes professions. C’est ainsi que, sur un chantier, la parole d’un charpentier aura plus de poids que celle d’un maçon, qui pourra lui-même donner des ordres à un terrassier.",
     interdict: CareerInterdict(
       title: "Tu n'entreprendras rien sans préparation",
       description: "",
@@ -66,6 +72,9 @@ enum Career {
   artisanElementaire(
     castes: [Caste.artisan, Caste.artisanNoir],
     title: "L'artisan élémentaire",
+    motto: "La beauté de la matière transcende les carcans de l'esprit",
+    motivations: "Ressentir, canaliser, innover",
+    description: "Cette voie est très peu connue du grand public. Les artisans élémentaires sont des Maîtres capables de modeler les éléments par la seule force de leur volonté. Après avoir été élèves d’autres voies durant de longues années, les adeptes de cette voie suivent un entraînement auprès de Kezyr lui-même. On raconte que ces artisans sont capables de modifier de manière permanente la nature de l’air (on raconte ainsi que dans un palais merveilleux, l’air de chaque pièce produit une émotion différente sur les visiteurs ; on parle aussi d’une forteresse en ruine où l’air est chargé de poison et de peur), la forme du métal ou des minéraux, la nature de l’eau (qui devient susceptible de provoquer des émotions) ou de contrôler le feu. Cette voie n’est accessible qu’à des Maîtres Artisans et seul Kezyr peut décider de leur donner le pouvoir de façonner les éléments. Ils sont bien évidemment tous de farouches défenseurs de la voie draconique.",
     interdict: CareerInterdict(
       title: "Tu resteras en harmonie avec les énergies fondamentales",
       description: "",
@@ -86,6 +95,9 @@ enum Career {
   forgeron(
     castes: [Caste.artisan, Caste.artisanNoir],
     title: 'Le forgeron',
+    motto: "La perfection n'est pas de ce monde",
+    motivations: "Concevoir, façonner, peaufiner",
+    description: "La carrière des artisans du métal est la plus prestigieuse qui soit. Ils obéissent consciencieusement aux règles édictées par Kezyr.\nCette voie regroupe tous les artisans du métal, qu’ils soient armuriers ou simples forgerons de village. C’est au sein de cette voie que l’on retrouve certains des plus grands enchanteurs de la caste - ces derniers forment un groupe prestigieux : les reliquaires. Ce sont eux qui sont responsables des contacts avec les autres castes afin de pouvoir rassembler les talents pour obtenir des enchantements particulièrement puissants. Traditionnellement, Kezyr est plus particulièrement associé à ces manipulateurs du métal et il est vrai que la plupart des Élus de dragons de Kezyr appartiennent à cette voie. Elle reste très traditionaliste et c’est parmi ses membres que l’on peut compter le plus grand nombre d’Élus.",
     interdict: CareerInterdict(
       title: 'Tu ne tiendras aucune œuvre pour parfaite',
       description: "",
@@ -105,7 +117,11 @@ enum Career {
   ),
   gardeMetallique(
     castes: [Caste.combattant, Caste.protecteur],
+    isStandard: false,
     title: 'Garde métallique',
+    motto: "L'esprit ne fait qu'un avec la lame : vif et affûté",
+    motivations: "Protéger, servir, vaincre",
+    description: "",
     interdict: CareerInterdict(
       title: 'Tu tempèreras ta colère',
       description: "",
@@ -132,6 +148,9 @@ enum Career {
   mecaniste(
     castes: [Caste.artisan, Caste.artisanNoir],
     title: 'Le mécaniste',
+    motto: "L'appel du progrès ne peut souffrir d'aucune entrave",
+    motivations: "Créer, modifier, améliorer",
+    description: "Cette voie regroupe les artisans qui se sont spécialisés dans la construction de mécaniques plus ou moins complexes. On peut y trouver des artisans spécialisés dans la construction de structures destinées à aider aux travaux lourds - systèmes de grues et de poulies souvent utilisés par les architectes.\nCette voie est cependant surtout connue pour ses artisans spécialisés dans l’élaboration de petits mécanismes de précision. Leurs horloges et sabliers, qui font fureur auprès des plus riches habitants des grandes villes civilisées, mais aussi leurs automates, sont aussi prisés des nobles que proscrits par les dragons et les conservateurs.\nIl est important de noter que la plupart des artisans de cette voie sont des sympathisants humanistes. Ils sont aussi pourchassés et emprisonnés dans certains royaumes particulièrement traditionalistes - n’espérez pas trouver un horloger à Kern ou dans l’Empire Zûl…",
     interdict: CareerInterdict(
       title: "Tu n'auras d'autre but que l'évolution",
       description: "",
@@ -151,6 +170,9 @@ enum Career {
   mineur(
     castes: [Caste.artisan, Caste.artisanNoir],
     title: 'Le mineur',
+    motto: "Tous les fruits de la terre se doivent d'être cueillis",
+    motivations: "Explorer, analyser, répertorier",
+    description: "Cette voie regroupe deux types d'artisans : les fouisseurs et les “termites”.\nLes fouisseurs sont les artisans chargés de récupérer les minerais rares au cœur de la terre. Ils travaillent généralement en accord avec les concepteurs, qui dessinent les plans des mines, ainsi qu’avec les érudits, qui guident les zones de fouilles. C’est aussi parmi les fouisseurs que l’on peut trouver quelques artisans spécialisés dans l’excavation de reliques des Temps Anciens.\nLes “termites” se sont spécialisés dans la destruction des bâtiments et tout particulièrement dans l’éradication des constructions militaires. Ils comptent des sapeurs, qui creusent des tunnels destinés à faire s'effondrer les murailles des forteresses, des artificiers, qui utilisent les trouvailles des alchimistes pour miner les bâtiments. Une très forte rivalité oppose les “termites” aux architectes spécialisés dans l’édification de constructions militaires.",
     interdict: CareerInterdict(
       title: "Tu ne souilleras pas le corps de l'Être Primordial",
       description: "",
@@ -171,6 +193,9 @@ enum Career {
   orfevre(
     castes: [Caste.artisan, Caste.artisanNoir],
     title: "L'orfèvre",
+    motto: "Les mains peuvent façonner tout ce qu'un cœur peut comprendre",
+    motivations: "Ciseler, magnifier, embellir",
+    description: "Cette voie regroupe les joailliers, les tailleurs de gemmes, les orfèvres… Les artisans de cette voie comptent certains des artistes les plus recherchés de tout Kor. Ils sont choyés par les nobles, mais aussi par les membres de toutes les autres castes. En effet, ce sont les membres de cette voie qui conçoivent la plupart des décorations de rang et de caste. Il est intéressant de noter qu’une grande partie des tailleurs de gemmes sont aussi des mages spécialisés dans les enchantements. Les orfèvres entretiennent des contacts privilégiés avec les horlogers et sont donc assez proches de la tendance humaniste. Les autres professions de cette voie sont cependant généralement très traditionalistes.",
     interdict: CareerInterdict(
       title: 'Tu honoreras ta caste par ton talent',
       description: "",
@@ -190,6 +215,9 @@ enum Career {
   tisserand(
     castes: [Caste.artisan, Caste.artisanNoir],
     title: 'Le tisserand',
+    motto: "Nous sommes les forgerons de l'apparence",
+    motivations: "Parer, sublimer, respecter",
+    description: "La voie des tisserands est celle qui regroupe le plus grand nombre de membres. Cette voie comprend les tanneurs, les couturiers, les tisserands et toutes les professions liées à la confection de tissus.\nQuelques artisans se sont illustrés en créant des vêtements enchantés et dotés de capacités extraordinaires. Certains de ces tissus sont ainsi connus pour être indéchirables, d’autres sont parfaitement imperméables, d’autres sont ininflammables ou calorifères… Ce sont les membres de cette caste qui conçoivent et réalisent les tenues cérémonielles de la plupart des autres castes. Ils sont généralement assez traditionalistes.",
     interdict: CareerInterdict(
       title: "Tu magnifieras les traditions",
       description: "",
@@ -211,6 +239,9 @@ enum Career {
   aventurier(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: "L'aventurier",
+    motto: "Va où le vent porte ton bras",
+    motivations: "Découverte, danger, imprévu",
+    description: "Les aventuriers sont des combattants solitaires qui voyagent de par le monde pour enseigner leur art du combat, mais aussi apprendre de nouvelles techniques qu’ils transmettent ensuite aux Maîtres de la caste. Ils sont les représentants de leur caste et se doivent d’en donner une image respectable. De plus en plus souvent, les aventuriers sont accompagnés de membres de la Caste des Voyageurs, avec lesquels ils ont de nombreux points communs — notamment avec les bardes de Szyl.",
     interdict: null,
     benefit: CareerBenefit(
       title: "Forger l'expérience",
@@ -232,6 +263,9 @@ enum Career {
   chevalier(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le chevalier',
+    motto: "Que mon cœur soit le maître de mes enseignements",
+    description: "Le corps des chevaliers est considéré comme un corps d'élite qui n'accepte que ceux qui ont fait preuve d’une grande valeur. Il est régi par un code très strict, fondé avant tout sur le respect de la tradition et la défense des faibles. Les chevaliers sont sélectionnés par les instructeurs au sein des autres castes. On ne peut donc en faire partie que si l’on a été remarqué. Ce sont de redoutables cavaliers - qu’ils soient montés sur des chevaux, comme dans la plupart des cas, ou sur les rares dragons qui offrent ce privilège à leurs Élus.",
+    motivations: "Honneur, accomplissement",
     interdict: CareerInterdict(
       title: 'Tu feras honneur à ta caste',
       description: "",
@@ -251,6 +285,9 @@ enum Career {
   duelliste(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le duelliste',
+    motto: "Accepte chaque défi, honore chaque adversaire",
+    description: "Les duellistes ne vivent que pour se mesurer aux meilleurs combattants. Les conflits ne les intéressent pas. Ils vont de ville en ville pour parfaire leur maîtrise des armes et affronter les champions des différentes communautés. Les duellistes sont souvent considérés comme les théoriciens de l’art du combat, car ils mettent au point leurs propres techniques et manient des bottes, des gardes et des postures connues d’eux seuls. Nombre d’entre eux finissent leur carrière comme instructeurs.",
+    motivations: "Perfection, noblesse, dépassement de soi",
     interdict: CareerInterdict(
       title: "Tu honoreras chaque adversaire",
       description: "",
@@ -269,6 +306,9 @@ enum Career {
   gladiateur(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le gladiateur',
+    motto: "Le noble art du combat se transmet dans le spectacle que nous offrons chaque jour",
+    description: "Les gladiateurs ont fait de l’art du combat un véritable spectacle. Peu attirés par les conflits et les guerres, ils préfèrent se mesurer à d’autres gladiateurs dans une arène, sous les acclamations de la foule. Certains considèrent ce corps comme le moins noble de la Caste des Combattants, mais nombre de gladiateurs sont réputés pour la maîtrise dont ils font preuve, ainsi que pour leur sens inné du commandement.",
+    motivations: "Respect, maîtrise",
     interdict: CareerInterdict(
       title: "Tu respecteras l'adversaire valeureux",
       description: "",
@@ -288,6 +328,9 @@ enum Career {
   guerrier(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le guerrier',
+    motto: "C'est dans l'action que se découvre la valeur",
+    motivations: "Maîtrise, victoire, bravoure",
+    description: "Le corps des guerriers réunit une grande majorité des fidèles de Kroryn - et de ceux, nombreux également, qui ne font aucun rapport entre la Caste des Combattants et le Grand Dragon du Feu. Ils se consacrent à l’art du combat sous toutes ses formes, sans privilégier un aspect plus qu’un autre, car leur seule préoccupation est de prouver leur héroïsme. La plupart d’entre eux ne conçoit effectivement la vie qu'une arme à la main, dans la fureur des combats. Ce corps est certainement le plus éclectique qui soit — les guerriers pouvant être tour à tour mercenaires, stratèges, chevaliers ou même gladiateurs.",
     interdict: CareerInterdict(
       title: "Tu ne feras preuve d'aucune lâcheté",
       description: "",
@@ -306,6 +349,9 @@ enum Career {
   lutteur(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le lutteur',
+    motto: "L'arme n'est qu'un artifice",
+    motivations: "Tradition",
+    description: "Ce corps est très récent, mais l’art du pugilat et de la luite fut de tous temps enseigné au sein des autres corps. Le luiteur est très proche du gladiateur, car son art est pour lui un spectacle, mais il s'en différencie par une hygiène de vie et un comportement des plus monastiques. Ce corps est exclusivement réservé aux hommes, mais quelques combattantes d’autres corps ont fait de la lutte leur spécialité, qui offre de nombreux avantages au corps à corps.",
     interdict: CareerInterdict(
       title: "Tu n'useras pas d'artifice",
       description: "",
@@ -324,6 +370,9 @@ enum Career {
   maitreDArmes(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: "Le maître d'armes",
+    motto: "Le savoir se transmet dans l'honneur et la perfection",
+    motivations: "Tradition, maîtrise, partage",
+    description: "Les maîtres d’armes ne vivent que pour atteindre la perfection ultime du combat et du maniement d’une arme. La plupart des instructeurs de la caste sont issus de leurs rangs. Non seulement îls ne doivent plus faire qu’un avec leur arme mais, en plus, ils sont l’incarnation des enseignements de Kroryn. Les maîtres d’armes, plus que n'importe qui, se doivent d’être des exemples. On ne leur pardonne aucune faute et pour accéder au Statut le plus élevé de leur caste, ls sont jugés par Kroryn lui-même.",
     interdict: CareerInterdict(
       title: "Tu ne manieras d'autre arme que la tienne",
       description: "",
@@ -342,6 +391,9 @@ enum Career {
   mercenaire(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le mercenaire',
+    motto: "La compétence se vend au juste prix de chaque cause",
+    motivations: "Honneur, loyauté",
+    description: "Les mercenaires sont entraînés pour combattre dans n’importe quelles conditions. Comme les aventuriers, ils se doivent de faire honneur à leur caste, et ne prêtent donc leur bras à une cause que si elle est compatible avec les enseignements de Kroryn. Ce sont rarement des individus solitaires. Ils préfèrent nettement se réunir au sein de compagnies aux noms prestigieux. Le plus important pour un mercenaire est donc que sa compagnie soit réputée, la renommée individuelle n'ayant que peu d’importance. Les mercenaires sont plus redoutables eu groupe.",
     interdict: CareerInterdict(
       title: 'Tu ne trahiras point',
       description: "",
@@ -366,6 +418,9 @@ enum Career {
   paladin(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le paladin',
+    motto: "À chaque homme son destin, à chaque vie sa quête",
+    motivations: "Loyauté, bravoure",
+    description: "Souvent issus du corps des chevaliers, les paladins sont passés maîtres dans l’art du combat, mais ce sont également des individus profondément mystiques. C’est le corps qui compte le moins de membres, mais chacun d’entre eux est respecté et honoré. Ils se fixent tous un objectif qui va déterminer leur ligne de conduite. Leur principale motivation est leur idéal, qui peut prendre différentes formes - bien qu’en règle générale, un paladin se montre toujours vertueux, franc, droit et honnête. Certains se consacrent entièrement à la lutte contre le Fatalisme où l’Humanisme, d’autres, pour des raisons souvent personnelles, choisissent de défendre la justice et de rétablir la vérité.",
     interdict: CareerInterdict(
       title: 'Tu protégeras la vie',
       description: "",
@@ -388,6 +443,9 @@ enum Career {
   strategeCombattant(
     castes: [Caste.combattant, Caste.combattantNoir],
     title: 'Le stratège',
+    motto: "Un simple mot peut conduire cent mille hommes à la mort, ou à la victoire",
+    motivations: "Respect, justesse",
+    description: "Théoriciens de l’art de la guerre, les stratèges forment un corps à part dans la Caste des Combattants. En effet, il n’est nul besoin d'être un redoutable combattant pour en faire partie, même si de nombreux guerriers prestigieux ont un jour choisi cette voie. Le stratège, comme son nom l’indique, s'occupe de tactique et de stratégie. Il se doit de connaître la mentalité des combattants et la manière dont ils voient les choses. C’est pour cela qu’avant d’étudier la stratégie, ces individus passent souvent quelques années au sein des autres corps.",
     interdict: CareerInterdict(
       title: "Tu respecteras l'adversaire valeureux",
       description: "",
@@ -408,6 +466,9 @@ enum Career {
   courtisane(
     castes: [Caste.commercant, Caste.commercantNoir],
     title: 'La courtisane',
+    motto: "Le charme est la clé de bien des portes",
+    motivations: "Séduire, duper, abuser",
+    description: "Afin d’assurer leur présence au sein des différents réseaux d’information et renforcer leur action au sein des cités, les guildes de voleurs, de diplomates et d’espions ont développé une nouvelle carrière - majoritairement réservée aux femmes. Les confidences sur l’oreiller ont toujours su ouvrir de nombreuses perspectives, tant du point de vue des “coups” à monter que des informations à négocier. À l'inverse des prostituées, qui ne fréquentent que les salles embrumées des auberges et les rues de la cité, les courtisanes se prélassent dans le luxe et le confort des palais des puissants. Spécialement entraînées à la politique, à la pensée militaire et aux technologies, mêmes interdites, les courtisanes se révèlent des interlocutrices difficiles à manipuler et des espionnes hors pair.",
     interdict: CareerInterdict(
       title: 'Tu ne renieras pas ta condition',
       description: "",
@@ -430,6 +491,9 @@ enum Career {
   diplomate(
     castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le diplomate',
+    motto: "Tout conflit humain possède une solution humaine",
+    motivations: "Analyser, intercéder, résoudre",
+    description: "Le diplomate vend son aisance verbale et son érudition à des fins pacifistes. Il est un artisan essentiel de paix aussi bien entre organisations politiques - royaumes, contrées - qu’économiques - structures commerciales, guildes - ou sociales - castes. Les temps sont à la crise et nombre de diplomates sont les cibles privilégiées d’attentats.",
     interdict: CareerInterdict(
       title: 'Tu ne laisseras aucune situation tendre verse le meurtre',
       description: "",
@@ -453,6 +517,9 @@ enum Career {
   espion(
     castes: [Caste.commercant, Caste.commercantNoir],
     title: "L'espion",
+    motto: "Aucune ombre n'obscurcit complètement le regard",
+    motivations: "Chercher, découvrir, mémoriser",
+    description: "Cette carrière fascinante n’est en fait embrassée que par peu de citoyens, car les sacrifices à faire sont énormes - perte des liens familiaux, voyages fréquents, etc. Les espions servent des intérêts aussi bien politiques que commerciaux ou technologiques. De même, toujours en vue de respecter les préceptes de Khy, ils ne s’attacheront jamais à vie à une seule contrée. Il n’est d’ailleurs pas rare que certains d’entre eux travaillent simultanément pour plusieurs royaumes. Enfin, l’espion est un homme d’action qui ne rechigne pas à éliminer ou détruire si cela s’avère nécessaire.",
     interdict: CareerInterdict(
       title: 'Tu ne trahiras pas tes secrets',
       description: "",
@@ -474,6 +541,9 @@ enum Career {
   joueur(
     castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le joueur',
+    motto: "Triché ? Je n'ai pas triché, j'ai gagné",
+    motivations: "Jouer, risquer, gagner",
+    description: "Troisième nouvelle carrière développée par des associations de voleurs de plus en plus entreprenantes. S’il est mal vu de rétablir l’équilibre commercial par le vol, les humains sont moins réticents - surtout les nantis - à perdre volontairement leurs richesses dans des jeux de hasard. Passés maîtres dans l’art de la comédie, du verbe et de la manipulation, les joueurs sont, au fil des ans, devenus un élément non négligeable de l’économie des cités. En environnement rural, toutefois, l'affirmation de leur rôle est plus difficile.",
     interdict: CareerInterdict(
       title: "Tu prendras les riques qui s'imposent",
       description: "",
@@ -495,6 +565,9 @@ enum Career {
   marchand(
     castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le marchand',
+    motto: "Même les plus beaux rêves ont un prix",
+    motivations: "Échanger, écouter, partager",
+    description: "La carrière de marchand est une des plus courantes de la caste. S’y retrouvent tous les individus qui pensent faire carrière à partir de leur bagou et espèrent faire prospérer leurs intérêts personnels au profit de la collectivité - selon le principe : lorsque l'argent circule, tous les citoyens peuvent tirer leur épingle du jeu.",
     interdict: CareerInterdict(
       title: "Tu ne ruineras jamais pour t'enrichir",
       description: "",
@@ -514,6 +587,9 @@ enum Career {
   marchandItinerant(
     castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le marchand itinérant',
+    motto: "Chaque route de ce monde est un nouveau marché",
+    motivations: "Voyager, échanger, apprendre",
+    description: "Cette carrière est une variante de la carrière de marchand et sied à des individus qui aiment voyager. Ces derniers ont souvent compris qu’élargir le cercle de circulation des biens peut être un facteur de progression sociale important : uniformisation de la société autour de certaines valeurs, propagation des innovations et des biens de consommation. Les marchands itinérants se considèrent, plus que les voyageurs, comme le ciment interculturel nécessaire à l’épanouissement du Royaume de Kor.",
     interdict: CareerInterdict(
       title: 'Tu pousseras toujours plus loin ta bourse et ta monture',
       description: "",
@@ -540,6 +616,9 @@ enum Career {
   mendiant(
     castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le mendiant',
+    motto: "L'argent a été inventé pour ceux qui en manquaient",
+    motivations: "Observer, écouter, fureter",
+    description: "Cette profession attire peu d’individus car elle souffre d’un important manque de prestige. Cependant, elle a trouvé sa place dans le tissu social urbain : les mendiants sont une arme aux mains des commerçants contre les voleurs ! En effet, mendier permet de faire circuler les richesses sans pour autant s’attaquer directement à des intérêts commerciaux, mais bien en s’appuyant sur “l'humanité” de ses interlocuteurs. De plus, certaines rivalités persistent entre les organisations de voleurs et de mendiants, ce dont profitent allègrement les marchands.",
     interdict: CareerInterdict(
       title: 'Tu refuseras le confort et la possession matérielle',
       description: "",
@@ -559,6 +638,9 @@ enum Career {
   tenancier(
     castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le tenancier',
+    motto: "L'aventure vient à la porte de ceux qui lui souhaitent la bienvenue",
+    motivations: "Accueillir, rencontrer, échanger",
+    description: "À la croisée de toutes les orientations de la caste, se trouvent les taverniers. Un peu commerçants, un peu voleurs, un peu espions, les aubergistes sont le moteur du développement social du Royaume de Kor. Que ce soit dans les grandes cités ou dans les petites bourgades, ils matérialisent toujours le centre névralgique de tous les échanges physiques ou philosophiques. Les idées neuves germent dans les auberges, les coups se préparent dans les auberges, les rencontres se déroulent dans les auberges. Consciente de son pouvoir, la guilde des taverniers tente de développer des règles d’éthique en vue de réguler le commerce de l’information.",
     interdict: CareerInterdict(
       title: "Tu ne refuseras pas l'hospitalité",
       description: "",
@@ -581,6 +663,9 @@ enum Career {
   voleur(
     castes: [Caste.commercant, Caste.commercantNoir],
     title: 'Le voleur',
+    motto: "Aucune propriété n'est jamais définitive",
+    motivations: "Convoiter, atteindre, s'approprier",
+    description: "Cette carrière a pris de plus en plus d’ampleur au fil des années, car ses représentants ont bien compris leur rôle de moteur de la société. Les voleurs sont continuellement sur le fil du rasoir car ils incarnent les deux principes fondateurs de la caste. D'une part, ils créent constamment des déséquilibres dans les processus sociaux mis en place et, d’autre part, ils luttent pour en maintenir l’équilibre grâce, entre autres, à la juste répartition des fruits de leurs larcins.",
     interdict: CareerInterdict(
       title: 'Tu ne voleras pas la vie',
       description: "",
@@ -605,9 +690,13 @@ enum Career {
       HasPrivilegeRequirement(privilege: CastePrivilege.paria),
     ],
   ),
+
   architectes(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les architectes',
+    motto: "Du néant de l'esprit à l'éternité du regard",
+    motivations: "Concevoir, schématiser, innover",
+    description: "Penseurs de la matière, les architectes d’Ozyr raisonnent en termes de conception et non de réalisation. Leurs travaux sont axés sur la recherche de la solidité, du renouvellement de l’esthétique et de la fonctionnalité. Ils laissent à leurs confrères de la caste des artisans le soin d’utiliser leurs plans et principes pour mener sur le terrain des chantiers bruyants et éreintants.",
     interdict: CareerInterdict(
       title: 'Tu ne cautionneras aucune hérésie',
       description: "",
@@ -630,6 +719,9 @@ enum Career {
   astronomes(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les astronomes',
+    motto: "Le ciel est emplit de sagesse insoupçonnée",
+    motivations: "Observer, décrypter, interpréter",
+    description: "Descendants spirituels d’Alya, les astronomes forment une importante faction de chercheurs soutenus par Ozyr dans leur compréhension de la science des astres. Ils comptent parmi leur rang des historiens, des conteurs, des érudits et une forte proportion de scientifiques. Tous les membres de cette confrérie possèdent des Avals draconiques leur permettant d’utiliser des instruments proscrits afin de comprendre si une logique régule les phénomènes célestes. Soumis à la Loi du Secret, les astronomes n’ont pas le droit de divulguer leurs connaissances aux profanes et n’appliquent la Loi du Collège qu'entre eux. Cette confrérie est une faction malsaine, où les membres entretiennent une surveillance mutuelle d’ordre paranoïaque. En effet, à force de conserver leurs secrets, les astronomes en sont venus à douter de leurs confrères et à se suspecter mutuellement d’Humanisme. Si l’on trouve de nombreux Inspirés dans cette confrérie, il est bien rare que ces derniers se dévoilent, trop craintifs des réactions de leur hiérarchie à ce que beaucoup considèrent comme une possible affabulation. Si Alya a fièrement énoncé les Prophéties, ses descendants baignent dans un obscurantisme que l’on dit entretenu par Ozyr, en attendant qu’elle comprenne les secrets des Étoiles.",
     interdict: CareerInterdict(
       title: "Tu ne chercheras aucune vérité fondamentale dans les astres",
       description: "",
@@ -653,6 +745,9 @@ enum Career {
   cartographes(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les cartographes',
+    motto: "Tenir le monde entre ses mains, et le transmettre à d'autres",
+    motivations: "Explorer, répertorier, archiver",
+    description: "Probablement les plus mobiles et les plus intrépides des érudits, les cartographes se consacrent fidèlement au relevé du corps de l’Être Primordial. Relativement indifférents aux affaires politiques de leur caste, les cartographes travaillent depuis longtemps avec les explorateurs de Szyl, archivant consciencieusement les découvertes de ces derniers par des cartes sans cesse ajustées par les nouvelles générations.",
     interdict: CareerInterdict(
       title: "Tu peindras fidèlement le portrait de l'Être Primordial",
       description: "",
@@ -675,6 +770,9 @@ enum Career {
   conteurs(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les conteurs',
+    motto: "Une plume en guise d'épée, quelques mots pour seule magie",
+    description: "Très lié aux historiens, cet ordre se charge de relayer auprès des populations les facettes les plus communes de l’histoire. Ses membres sont autant des orateurs et des baladins que de véritables auteurs travaillant leurs textes pour en faire des outils de connaissance. Cet ordre compte assez peu de membres, mais les plus célèbres auteurs de contes, légendes et pièces de théâtre sont issus de ses rangs. Une querelle grandissante les oppose aux ménestrels, qui les accusent de déformer certains faits pour des motifs obscurs. Leur nombre réduit les désavantages, mais leur prestige leur permet tout de même de conserver l'attention du peuple et des puissants, toujours désireux de s'informer auprès des adeptes d’Ozyr.",
+    motivations: "Colporter, émerveiller, transmettre",
     interdict: CareerInterdict(
       title: 'Tu ne souilleras le verbe d\'aucune pensée impure',
       description: "",
@@ -699,6 +797,9 @@ enum Career {
   erudits(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les érudits',
+    motto: "Passions, désirs, ambitions et valeurs privent l'homme d'un véritable regard",
+    motivations: "Étudier, comparer, comprendre",
+    description: "Véritables gardiens du savoir, les érudits se considèrent comme responsables de la transmission de la connaissance aux générations actuelles et futures. Leur travail consiste à veiller à ce que toute découverte soit soigneusement compilée par écrit et conservée à l'abri des outrages du temps dans des bibliothèques soignées. Parfois considérés comme des rats de bibliothèque, les érudits sont probablement l’ordre le plus mésestimé car, sans eux, la quête du savoir serait vaine. Leurs actions en font une progression au travers des âges et non une perpétuelle redécouverte. Compilateurs, scribes, enlumineurs ou rénovateurs, ils sont plus intéressés par la préservation du savoir que par son acquisition. Bien connus des aventuriers, les érudits constituent l’ordre le plus souvent rencontré par ces hommes et ces femmes en quête de vieux écrits ou de livres d’un autre âge. Il est bien rare qu’ils soient raillés par leurs visiteurs et les aventuriers de Kor ont pour coutume de défendre cet ordre utile à tous et, surtout, gardien des traces de leurs exploits.",
     interdict: CareerInterdict(
       title: 'Tu ne laisseras aucune passion motiver ton jugement',
       description: "",
@@ -731,6 +832,9 @@ enum Career {
   herboristes(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les herboristes',
+    motto: "Chaque feuille, chaque fleur est source de savoir et de bienfaits",
+    motivations: "Analyser, combiner, répertorier",
+    description: "Dépositaires des secrets d’Heyra, les herboristes se sont rangés sous la bannière d’Ozyr, en raison de leur collaboration avec les médecins et de la rigueur des voies d’Ozyr dans la quête du savoir. Qu’ils soient alchimistes théoriciens cherchant à comprendre les principes fondamentaux des plantes ou patients observateurs des multiples espèces végétales, ce sont ceux qui répertorient l'usage des plantes par l’étude de leurs effets, plutôt que par une utilisation ancestrale, méthode préconisée par les Prodiges.",
     interdict: CareerInterdict(
       title: 'Tu ne corrompras la tature par aucune de tes pratiques',
       description: "",
@@ -756,6 +860,9 @@ enum Career {
   historiens(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les historiens',
+    motto: "Si le monde est un livre, nous sommes les doigts qui en tournent les pages",
+    motivations: "Apprendre, approfondir, consigner",
+    description: "Soucieux de guider les hommes en leur permettant de bien connaître leur passé, les historiens sont aussi des philosophes. Outre la compilation des événements historiques, leur mission implique qu’ils en débattent longuement afin de bien cerner leur mise en place et de pouvoir offrir des garde-fous solides aux dirigeants du Royaume de Kor.",
     interdict: CareerInterdict(
       title: "Tu n'occulteras aucune vérité, n'inventeras aucun mensonge",
       description: "",
@@ -781,7 +888,11 @@ enum Career {
   ),
   historiensFaction(
     castes: [Caste.erudit, Caste.mage, Caste.commercant],
+    isStandard: false,
     title: "Les Historiens (Faction)",
+    motto: "Nous sommes les esclaves, nous sommes les maîtres",
+    motivations: "Surveiller, intervenir, contrôler",
+    description: "",
     interdict: CareerInterdict(
       title: "Tu ne parleras pas",
       description: "",
@@ -815,6 +926,9 @@ enum Career {
   medecins(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les médecins',
+    motto: "Chaque homme qui meurt ou souffre est une insulte à la vie",
+    motivations: "Soigner, aider, protéger",
+    description: "Bien que les érudits étudiant la médecine soient considérés par beaucoup comme de dangereux profanateurs de l’intégrité du corps offert par les Dragons, ils préfèrent se considérer comme les explorateurs d’un domaine indispensable à l’amélioration de la vie de tous. Dépositaires d'un savoir parfois douteux, les médecins sont presque tous obligés de recourir à un Aval draconique afin de pouvoir exercer leur art. Compatissants et dévoués, les médecins consacrent leur vie à l’application de la médecine plus qu’à sa recherche fondamentale, domaine dangereux qu’ils préfèrent laisser aux scientifiques. ",
     interdict: CareerInterdict(
       title: "Tu ne seras l'agent d'aucune destruction",
       description: "",
@@ -840,6 +954,9 @@ enum Career {
   navigateurs(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les navigateurs',
+    motto: "Par la force d'Ozyr, nous voguons sur les eaux de ce monde",
+    motivations: "Acheminer, découvrir, former",
+    description: "Les navigateurs constituent l’organisation la plus récente de celles patronnées par Ozyr. Elle rassemble les marins citoyens, qui représentent une faible proportion de la faction des marins, majoritairement formée de serviteurs. On trouve parmi eux les capitaines, les armateurs, les cartographes côtiers et les navigateurs proprement dits. Bon nombre d’entre eux sont des voyageurs contraints de suivre les enseignements d’Ozyr pour bénéficier de l’autorisation de circuler au long des côtes. À l’origine fidèles à Szyl et épris de liberté, ils ont dû se résigner à suivre les directives de l’ordre marin et accepter, en 1206 AdE, le joug du Dragon des Océans. Szyl dut se plier à cette interprétation des Édits draconiques, Ozyr arguant de sa suprématie sur les mers. Toujours attachés à Szyl, les navigateurs vivent leur asservissement comme un mal nécessaire afin de pouvoir continuer à voguer. Nombre d’entre eux continuent, du fond de leur cœur, de suivre le Dragon des Vents, persuadés qu’il ne les pas abandonnés mais plutôt “détachés” pour leur propre sécurité et qu’il continue en secret à guider leur organisation. Quelques voyages sacrilèges en haute mer, mystérieusement favorisés par les vents, accréditent cette thèse, sans que la moindre preuve n’ait jamais été découverte par l’ordre marin.",
     interdict: CareerInterdict(
       title: "Tu ne brigueras d'autre liberté que celle offerte par la Mère des Océans",
       description: "",
@@ -865,6 +982,9 @@ enum Career {
   scientifiques(
     castes: [Caste.erudit, Caste.eruditNoir],
     title: 'Les scientifiques',
+    motto: "Il n'est aucune science, aucun savoir, que les Dragons n'ont pas légués aux hommes",
+    motivations: "Innover, expérimenter, institutionnaliser",
+    description: "Récemment créée à partir de la Loge des Soigneurs, la formation scientifique se consacre au délicat décryptage des secrets du monde, pour mieux en saisir les lois fondamentales. Flirtant perpétuellement avec l’Humanisme, ces érudits se font aussi les gardiens de connaissances dangereuses, se contraignant eux-mêmes à la loi du Secret pour préserver l’humanité de dérives à l’égard des voies draconiques.",
     interdict: CareerInterdict(
       title: 'Tu ne créeras aucun instrument de rébellien',
       description: "",
@@ -897,6 +1017,9 @@ enum Career {
   conjurateur(
     castes: [Caste.mage, Caste.mageNoir],
     title: 'Conjurateur',
+    motto: "Certaines portes réclament des gardiens particuliers",
+    motivations: "Protéger, éliminer, servir",
+    description: "Les mages du métal furent les premiers à subir les contrecoups de l'utilisation des portails magiques. Nombre d'entre eux périrent sous les coups des redotables élémentaires du métal qui figurent parmi les créatures les plus meurtries et les plus enragées issues des guerres draconiques. D'autres n'eurent même pas le temps comprendree la cause de leur mort, lacérés par des veines de minerais métallique jaillissant des entrailles de la terre. C'est parmi leurs rangs qu'apparurent les premiers conjurateurs, des mages spécialisés dans la lutte contre les créature et phénomènes surgissant des portails. Constatant que ces accidents n'étaient pas propres à la Sphère du Métal, ils formèrent leurs confrères des autres Sphères, mais aujourd'hui encore, les conjurateurs sont essentiellement des mages du métal.",
     interdict: CareerInterdict(
       title: "Tu ne faibliras point.",
       description: "",
@@ -916,6 +1039,9 @@ enum Career {
   enchanteur(
     castes: [Caste.mage, Caste.mageNoir],
     title: "L'enchanteur",
+    motto: "Heyra crée la vie, Nenya la sublime",
+    motivations: "Création, curiosité, innovation",
+    description: "Les mages de Kezyr sont les plus nombreux à s’intéresser à cette carrière. Mélangeant l’art de l’artisanat à celui de la magie, les enchanteurs sont particulièrement appréciés par l’ensemble de la population.",
     interdict: CareerInterdict(
       title: 'Tu ne créeras aucune forme de vie',
       description: "",
@@ -936,6 +1062,9 @@ enum Career {
   fideleDeChimere(
     castes: [Caste.mage, Caste.mageNoir],
     title: 'Le fidèle de Chimère',
+    motto: "Mếme aveugles, nous sommes tous Élus de Nenya",
+    motivations: "Pratique, discipline, tradition",
+    description: "Les mages d’Heyra, de Szyl et de Nenya sont nombreux à suivre cetie carrière — on raconte aussi qu'elle intéresse certains adeptes de Kalimsshar. Les étudiants y apprennent toutes les techniques visant à embellir toute chose, que ce soit un objet, un chant, de la musique, un paysage ou un être. De nombreux mages poètes, peintres ou sculpteurs sont issus de cetie carrière. C’est une profession totalement opposée à celle des mages combattants.",
     interdict: CareerInterdict(
       title: 'Nenya sera ton seul maître',
       description: "",
@@ -955,7 +1084,11 @@ enum Career {
   ),
   gardienMage(
     castes: [Caste.mage, Caste.mageNoir],
+    isStandard: false,
     title: 'Gardien',
+    motto: "Pour que la magie ne les consume",
+    motivations: "Veiller, encadrer, protéger",
+    description: "",
     interdict: CareerInterdict(
       title: 'Tu veilleras à la pureté de la magie.',
       description: "",
@@ -979,6 +1112,9 @@ enum Career {
   generaliste(
     castes: [Caste.mage, Caste.mageNoir],
     title: 'Le généraliste',
+    motto: "Puisse ma vie être assez longue pour en contempler tous les secrets",
+    motivations: "Apprentissage, maîtrise, découverte",
+    description: "Nombreux sont les magiciens, toutes tendances confondues, qui suivent cette carrière. Ils étudient toutes les formes de magie sans en privilégier aucune.",
     interdict: CareerInterdict(
       title: "Tu ne t'opposeras à aucun élément",
       description: "",
@@ -997,6 +1133,9 @@ enum Career {
   guerisseurMage(
     castes: [Caste.mage, Caste.mageNoir],
     title: 'Le guérisseur',
+    motto: "Le mage a le devoir de protéger la vie",
+    motivations: "Générosité, respect, pacifisme",
+    description: "Ces spécialistes de la Sorcellerie se consacrent à l’étude de l’utilisation de la magie sur les organismes. Bien qu’officiellement on parle de guérisseurs, il existe des écoles où les étudiants n’ont pas d'objectifs aussi nobles. On trouve donc des mages de toutes tendances dans cette carrière.",
     interdict: CareerInterdict(
       title: "Tu ne refuseras pas ton aide",
       description: "",
@@ -1021,6 +1160,9 @@ enum Career {
   invocateur(
     castes: [Caste.mage, Caste.mageNoir],
     title: "L'invocateur",
+    motto: "Que les sceaux de Nenya s'ouvrent devant moi",
+    motivations: "Étude, contrôle, tradition",
+    description: "Ceux qui choisissent de se spécialiser dans la magie invocatoire suivent cette carrière. Ils maîtrisent la technique des Portails et tentent d’apporter une réponse sur l’existence ou non des autres mondes. De nombreux mages de Nenya et de Szyl sont attirés par cette profession.",
     interdict: CareerInterdict(
       title: "Tu ne mettras pas l'équilibre en péril",
       description: "",
@@ -1046,6 +1188,9 @@ enum Career {
   mageDeCombat(
     castes: [Caste.mage, Caste.mageNoir],
     title: 'Le mage de combat',
+    motto: "La noble arme du combat n'a ni garde, ni lame",
+    motivations: "Courage, perfection",
+    description: "Spécialisés dans la magie instinctive, les mages de combat sont souvent des fidèles de Kroryn, de Brorne ou de Kezyr. C’est ume carrière attirant souvent les plus jeunes au grand désespoir de Nenya.",
     interdict: CareerInterdict(
       title: "Tu ne t'opposras pas aux faibles",
       description: "",
@@ -1065,6 +1210,9 @@ enum Career {
   necromant(
     castes: [Caste.mageNoir],
     title: 'Le nécromant',
+    motto: "La mort n'est qu'un passage, la mort n'est qu'un outil",
+    motivations: "Outrepasser, contrôler, transcender",
+    description: "",
     interdict: CareerInterdict(
       title: "L'Éternité n'existe pas",
       description: "",
@@ -1084,6 +1232,9 @@ enum Career {
   profanateur(
     castes: [Caste.mageNoir],
     title: 'Le profanateur',
+    motto: "Nulle règle n'élève l'homme",
+    motivations: "Libérer, corrompre, éveiller",
+    description: "",
     interdict: CareerInterdict(
       title: "Tu ne t'engageras jamais",
       description: "",
@@ -1103,7 +1254,11 @@ enum Career {
   ),
   questeurBlanc(
     castes: [Caste.mage, Caste.mageNoir],
+    isStandard: false,
     title: 'Questeur blanc',
+    motto: "-",
+    motivations: "Veiller, intervenir, sévir",
+    description: "Chargés d'enquêter sur les affaires affectant la magie, son usage ou sa pureté, les Questeurs blancs appartenaient jusqu'en 1311 à la corporation des Questeurs. Ce quatre hommes et femmes désignés par Nenya agissaient sous la responsabilité directe du Grand Commandeur et étaient compétents sur l'ensemble de Kor. Lors du Conseil éthernien, les Questeurs blancs furent dissociés des Questeurs et placés sous la responsabilité du Collège des Gardiens suprêmes. À la demande de la Chimère, Tadd Lenkel recruta des membres supplémentaires, portant leur nombre à neuf.\nLes Questeurs blancs sont en quelque sorte l'élite des Gardiens ; ils ne leurs sont pas supérieurs hiérarchiquement mais dans les faits, ce sont des mages plus puissants qui choisissent eux-mêmes leurs affaires (en ce sens, ils peuvent s'emparer d'une affaire traitée par un autre Gardien) et ont la possiblité de les juger sans en référer au Collège des Gardiens suprêmes. Ces pouvoirs sont certes impressionnants, mais ils se sont pas placés entre les mains de n'importe qui : chacun des neuf Questeurs blancs est l'égal des grands maîtres de caste, et a rencontré Nenya qui a confirmé sa nomination. Lenkel, qui court-circuite souvent le Collège des Gardiens suprêmes en traintant directement les Questeurs blancs, les considère comme des frères et sœurs. Toujours à la recherche des Sorciers Obscurs, il est d'aileurs considéré comme “le Dixième Questeur”.\nContrairement aux Gardiens, les Questeurs blancs disposent de pouvoirs permanents adaptés à l'ampleur de leur mission. S'ils ont eux aussi vocation à encadrer l'usage de la magie, ils ont avant tout la lourde tâche de lutter contre les crimes magiques, c'est à dire les méfaits perpétrés par des individus faisant appel à la magie ainsi que les agissements de tous les individus ou groupes dévoyant la magie pour asseoir leur pouvoir. Outre les Sorciers Obscurs, les Questeurs blancs pourchassent également l'Ordre Fataliste et les mages-ingénieurs ayant refusé d'abandonner leurs recherches, et ils ont reçu pour mission de lutter aux côtés de certains dragons contre les Seigneurs ardents et leurs serviteurs.",
     interdict: CareerInterdict(
       title: "Tu protégeras l'homme de la magie, et la magie de l'homme",
       description: "",
@@ -1128,6 +1283,9 @@ enum Career {
   reveur(
     castes: [Caste.mage, Caste.mageNoir],
     title: 'Le rêveur',
+    motto: "La vérité n'est pas de ce monde, mais le celui des Rêves",
+    motivations: "Observer, comparer, analyser",
+    description: "Ces magiciens apprennent toutes les techniques du rêve. La plupart souhaitent être aussi fidèles que possible aux enseignements de Nenya. C’est un métier difficile qui demande une prédisposition que tous n'ont pas. Les rêveurs sont souvent des gens qui passent le plus clair de leur temps la tête dans les nuages.",
     interdict: CareerInterdict(
       title: "Tu ne pertuberas pas l'ordre naturel",
       description: "",
@@ -1146,6 +1304,9 @@ enum Career {
   specialisteDesRituels(
     castes: [Caste.mage, Caste.mageNoir],
     title: 'Le spécialiste des rituels',
+    motto: "La clé de toute puissance réside dans les traditions",
+    motivations: "Expérimentation, tradition, découverte",
+    description: "Les mages qui suivent cette carrière se spécialisent dans les sortilèges les plus complexes demandant beaucoup de temps et une grande coopération. Ce n’est pas une profession où l’on voyage beaucoup et elle ne s'adresse donc pas à des aventuriers.",
     interdict: CareerInterdict(
       title: 'Tu suivras la Voie du Secret',
       description: "",
@@ -1165,6 +1326,9 @@ enum Career {
   specialisteElementaire(
     castes: [Caste.mage, Caste.mageNoir],
     title: 'Le spécialiste élémentaire',
+    motto: "La seule force est celle que procure la maîtrise",
+    motivations: "Contrôle, expérimentation, maîtrise",
+    description: "Les spécialistes élémentaires se consacrent à l'étude d’une seule Sphère. Ce sont les magiciens les plus répandus, car leur maîtrise de la Sphère est souvent source de grands pouvoirs.",
     interdict: CareerInterdict(
       title: "Tu ne vivras que pour un élément",
       description: "",
@@ -1183,6 +1347,9 @@ enum Career {
   tueurDeReves(
     castes: [Caste.mageNoir],
     title: 'Le tueur de rêves',
+    motto: "L'inconscient sera notre champ de bataille",
+    motivations: "Explorer, dévoiler, transformer",
+    description: "",
     interdict: CareerInterdict(
       title: "Tu ne pénètreras jamais l'esprit des dragons",
       description: "",
@@ -1203,6 +1370,9 @@ enum Career {
   gardienProdige(
     castes: [Caste.prodige],
     title: 'Le gardien',
+    motto: "Que Heyra me soutienne, je ne faillirai point",
+    motivations: "Accompagner, défendre",
+    description: "Les gardiens sont les combaitants de la Caste des Prodiges. Ils maîtrisent toutes les formes de combat visant à neutraliser un adversaire, mais sont aussi capables de tuer avec autant de savoir faire qu’un guerrier. Ils sont célèbres pour leur redoutable adresse avec des armes doubles. Protecteurs des lieux saints, des temples et des monastères, ce sont pour la plupart des individus d’un calme olympien.",
     interdict: CareerInterdict(
       title: "Tu n'abandonneras pas ton devoir",
       description: "",
@@ -1221,7 +1391,11 @@ enum Career {
   ),
   ceuxQuiNeFontQuUn(
     castes: [Caste.prodige],
+    isStandard: false,
     title: "Ceux qui ne font qu'un",
+    motto: "Tout en un et un en tout",
+    motivations: "Harmoniser, protéger, respecter",
+    description: "",
     interdict: CareerInterdict(
       title: 'Tu ne domineras jamais la Nature',
       description: "",
@@ -1247,6 +1421,9 @@ enum Career {
   fervent(
     castes: [Caste.prodige],
     title: 'Le fervent',
+    motto: "Toute vie s'entretient, aucune n'est inutile",
+    motivations: "Aider, pardonner",
+    description: "Les fervents sont également appelés les jardiniers. Ils s’occupent des arbres, des plantes et des fleurs. Ils sont l’incarnation de la vie végétale à laquelle ils consacrent toute leur existence. Les plus grands fervents sont récompensés en acquérant une plus grande robustesse et en bénéficiant de la protection du règne végétal.",
     interdict: CareerInterdict(
       title: 'Tu ne tueras point',
       description: "",
@@ -1268,6 +1445,9 @@ enum Career {
   guerisseurProdige(
     castes: [Caste.prodige],
     title: 'Le guérisseur',
+    motto: "Aucun fils de Heyra ne mérite de mourir",
+    motivations: "Guérir, partager, servir",
+    description: "Ce sont les champions de la vie et de la notion “d’humanité” appliquée à toutes les créatures vivantes. Ils ne vivent que pour guérir, jamais pour détruire. Ce sont généralement des êtres bons et généreux qui s’occupent de tous sans poser de questions ni porter de jugement. Un guérisseur soignera un Fataliste, et même un Humaniste, sans hésiter.",
     interdict: CareerInterdict(
       title: 'Tu ne refuseras pas ton aide',
       description: "",
@@ -1287,6 +1467,9 @@ enum Career {
   mediateur(
     castes: [Caste.prodige],
     title: 'Le médiateur',
+    motto: "Le conflit n'existe que dans sa solution",
+    motivations: "Intervenir, raisonner, résoudre",
+    description: "Les médiateurs sont chargés d’aller de communauté en communauté pour arbitrer des conflits. Leur venue est souvent attendue par de nombreux villages pour régler des litiges ou juger des criminels. C’est une voie très difficile car le Prodige est rarement confronté à des affaires simples. De plus, le médiateur doit garantir la stabilité de la communauté et éviter de faire naître des rancunes. C’est une voie demandant une grande diplomatie et une très bonne connaissance des hommes. Il faut signaler qu’un médiateur peut également s’occuper des conflits entre humains et dragons et même entre des animaux et les humains.",
     interdict: CareerInterdict(
       title: 'Tu ne permettras aucun conflit',
       description: "",
@@ -1306,6 +1489,9 @@ enum Career {
   missionnaire(
     castes: [Caste.prodige],
     title: 'Le missionnaire',
+    motto: "Nous sommes le souvenir des oubliés de Nature",
+    motivations: "Voyager, révéler",
+    description: "Les missionnaires voyagent au-delà des terres draconiques et visitent les communautés ignorantes des Lois Draconiques. Ce sont des explorateurs particulièrement ouverts. Certains se rendent même dans des villes humanistes ou fatalistes pour y prêcher la bonne parole. Les missionnaires sont ceux qui s’exposent le plus. Il arrive que certains renoncent à leurs vœux ou soient irrémédiablement attirés vers l’Humanisme ou le Fatalisme. Beaucoup trouvent la mort au cours de leurs voyages.",
     interdict: CareerInterdict(
       title: 'Tu ne subiras pas le doute',
       description: "",
@@ -1328,6 +1514,9 @@ enum Career {
   poeteDeLaNature(
     castes: [Caste.prodige],
     title: 'Le poète de la nature',
+    motto: "Mille fleurs font un jardin, mille jardins, une ode",
+    motivations: "Magnifier, louer, partager",
+    description: "Artistes et poètes, ces Prodiges ne vivent que pour embellir la nature. Proches de Nenya et de ses fidèles, mais aussi de Szyl, ce sont des individus pacifiques. On dit que certains peuvent, grâce à leur art, faire s’épanouir des fleurs en plein hiver. Ils sont très proches de certains animaux, comme les oiseaux chanteurs.",
     interdict: CareerInterdict(
       title: 'Tu ne briseras aucune harmonie',
       description: "",
@@ -1348,6 +1537,9 @@ enum Career {
   prodigeAnimal(
     castes: [Caste.prodige],
     title: 'Le prodige animal',
+    motto: "Nous sommes tous fils de Heyra",
+    motivations: "Respecter, protéger",
+    description: "Les Prodiges animaux sont liés aux créatures sauvages de la nature. Ils partagent leur vie et s’intègrent entièrement à la nature. Un tel Prodige s'associe généralement à une seule espèce dont il accepte les lois. En récompense, les animaux reconnaissent en lui un des leurs et Heyra lui donne le don de prendre la forme de cet animal. Ces Prodiges sont les plus solitaires et les plus éloignés des lois humaines.",
     interdict: CareerInterdict(
       title: "Tu n'enfreindras pas les lois de la nature",
       description: "",
@@ -1374,6 +1566,9 @@ enum Career {
   prophete(
     castes: [Caste.prodige],
     title: 'Le prophète',
+    motto: "Le printemps suit l'hiver, l'avenir suit le présent",
+    motivations: "Observer, comprendre, enseigner",
+    description: "S’adonnant entièrement à la méditation et à l’écoute de la nature, les prophètes sont les plus silencieux et les plus réfléchis de la caste. Il leur arrive de percevoir le futur et ils doivent alors prendre la terrible décision de le révéler ou non. Ils réfléchissent toujours à leurs actes et, s’ils révèlent un secret, ils le confient à tous. Il arrive qu’un prophète se rapproche tellement de la nature que son esprit s’y égare. Son âme quitte à jamais son corps et se mêle aux plaines et aux forêts. Sa dépouille ne pourrit pas mais se pétrifie lentement. On dit que ces âmes peuvent entrer en contact avec ceux qui les prient. Les statues de pierre de ces Prodiges sont souvent des lieux de recueillement.",
     interdict: CareerInterdict(
       title: "Tu ne pertuberas pas l'ordre naturel",
       description: "",
@@ -1394,6 +1589,9 @@ enum Career {
   sage(
     castes: [Caste.prodige],
     title: 'Le sage',
+    motto: "Le doute est l'allié de l'aveuglement",
+    motivations: "Comprendre, enseigner",
+    description: "Les sages sont des Prodiges qui aident les autres à trouver la réponse à leurs questions. Ce sont des conseillers et des rédempieurs. Ils tenteront toujours de ramener dans le droit chemin ceux qui se sont égarés. Ils sont ouverts à tous, aussi bien aux riches qu’aux pauvres, aux forts qu'aux faibles. Ils apportent la sagesse d’Heyra et peuvent, par conséquent, préconiser certaines mesures strictes pour résoudre un problème. Cependant, le recours à la violence et la condamnation sans appel d’une créature sont des solutions extrêmes, prises en désespoir de cause. Les sages sont souvent sollicités pour déterminer si une personne peut devenir Prodige. De plus, bon nombre de Prodiges n’arrivant pas à percevoir clairement leur voie font appel à eux.",
     interdict: CareerInterdict(
       title: 'Tu ne garderas aucun secret',
       description: "",
@@ -1413,6 +1611,9 @@ enum Career {
   tuteur(
     castes: [Caste.prodige],
     title: 'Le tuteur',
+    motto: "Le vent porte partout la parole de notre Mère",
+    motivations: "Apprendre, découvrir, partager",
+    description: "Les tuteurs sont des Prodiges beaucoup moins spécialisés que la plupart des autres membres de la caste. Ce sont des voyageurs qui tentent d’apporter la sagesse d’Heyra aux communautés qu’il visitent. Leur rôle est de partager leur savoir avec les futurs Prodiges. Au début de leur carrière, ils voyagent beaucoup pour apprendre et, dans certains cas, pour trouver un Maître des Secrets. Puis, quand ils se sentent suffisamment formés, ils reviennent dans un monastère - ou vont de monastère en monastère - pour enseigner leur art.",
     interdict: CareerInterdict(
       title: "Tu n'auras d'autre maître que la voie du savoir",
       description: "",
@@ -1434,6 +1635,9 @@ enum Career {
   gardeDuCorps(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le garde du corps',
+    motto: "Il n'y a pas de plus noble cause que celle de la vie",
+    motivations: "Protéger, honorer, servir",
+    description: "Cette profession attire peu d’individus car elle souffre d’un important manque de prestige. Tout à fait immérité d’ailleurs car ses membres comptent parmi les meilleurs soldats du royaume et, bien souvent, on leur confie des responsabilités écrasantes. Ils peuvent être employés pour protéger des dignitaires, pour escorter des convois marchands ou porter des messages de la plus haute importance.",
     interdict: CareerInterdict(
       title: 'Tu accepteras tout sacrifice',
       description: "",
@@ -1453,7 +1657,11 @@ enum Career {
   ),
   hommeDragon(
     castes: [Caste.artisan, Caste.combattant, Caste.commercant, Caste.erudit, Caste.mage, Caste.prodige, Caste.protecteur, Caste.voyageur],
+    isStandard: false,
     title: 'Homme-dragon',
+    motto: "Le dragon a parlé. J'entends et j'obéis !",
+    motivations: "Servir, glorifier, périr",
+    description: "",
     interdict: CareerInterdict(
       title: 'Hésiter est déjà trahir',
       description: "",
@@ -1479,6 +1687,9 @@ enum Career {
   ingenieurMilitaire(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: "L'ingénieur militaire",
+    motto: "L'homme a besoin d'armes comme le dragon de ses ailes",
+    motivations: "Créer, éprouver, améliorer",
+    description: "Cette profession tient à la fois du stratège et de l’architecte. L’ingénieur militaire a pour charge d’utiliser les ressources du terrain pour assurer la meilleure défense possible. Ils sont spécialisés dans la construction des fortifications.",
     interdict: CareerInterdict(
       title: 'Tu ne te détourneras pas de ta voie',
       description: "",
@@ -1499,6 +1710,9 @@ enum Career {
   inquisiteur(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: "L'inquisiteur",
+    motto: "Il n'y a de vie que par les Grands Dragons",
+    motivations: "Traquer, juger, éliminer",
+    description: "Les Inquisiteurs sont recrutés parmi les Lieutenants. Ils sont généralement sélectionnés pour leur fanatisme et leurs brillants résultats. Certaines mauvaises langues affirment que beaucoup d’Inquisiteurs sont engagés grâce à leurs relations ou celles de leurs parents. Tout nouveau candidat doit suivre un entraînement d’une année. Il sera alors jugé par Brorne ou ses représentants. S’il est digne de rejoindre les rangs des Inquisiteurs, on lui remettra les symboles sacrés de sa fonction. Sinon, il reprendra ses fonctions habituelles mais en bénéficiant d’une promotion.",
     interdict: CareerInterdict(
       title: 'Tu ne connaîtras pas le doute',
       description: "",
@@ -1526,6 +1740,9 @@ enum Career {
   instructeur(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: "L'instructeur",
+    motto: "Toute lame se forge, toute vie se forme",
+    motivations: "Apprendre, guider, évaluer",
+    description: "Choisis à partir du grade de Lieutenant, les instructeurs abandonnent la gloire des champs de bataille pour se consacrer à la formation des futurs soldats. Ils jouissent d’une excellente réputation, surtout quand des élèves de leurs écoles se distinguent en service commandé. On a coutume de dire qu’un bon instructeur vaut une légion entière.",
     interdict: CareerInterdict(
       title: 'Tu transmettras la tradition',
       description: "",
@@ -1544,6 +1761,9 @@ enum Career {
   legionnaire(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le légionnaire',
+    motto: "Aucune guerre n'est perdue d'avance",
+    motivations: "Combattre, triompher",
+    description: "Les légions sont constituées de l’élite des soldats. Un légionnaire est craint mais on le respecte plus que tout autre protecteur. Ils suivent un entraînement beaucoup plus dur que les autres soldats. La moindre faute est sévèrement sanctionnée. Un légionnaire se doit d’être l’incarnation des enseignements de Brorne.",
     interdict: CareerInterdict(
       title: 'Tu feras ton devoir',
       description: "",
@@ -1564,6 +1784,9 @@ enum Career {
   milicien(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le milicien',
+    motto: "La paix n'est pas une utopie, mais un devoir",
+    motivations: "Protéger, apaiser, rassurer",
+    description: "Spécialisés dans la protection civile et le maintien de l’ordre, ces protecteurs ne participent que très rarement à de grandes batailles. Leur lot quotidien consiste à régler les petites escarmouches, à surveiller les alentours des cités et à lutter contre les criminels. Ils participent généralement aux affaires des villes qu’ils protègent.",
     interdict: CareerInterdict(
       title: 'Tu respecteras la loi',
       description: "",
@@ -1584,6 +1807,9 @@ enum Career {
   protecteurItinerant(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le protecteur itinérant',
+    motto: "Le monde entier est tribunal de justice",
+    motivations: "Découvrir, honorer, juger",
+    description: "Le protecteur itinérant est un solitaire qui parcourt le monde afin d’apporter son aide aux communautés isolées. Il est également le porte-parole de Brorne et se doit donc d’incarner ses valeurs.",
     interdict: CareerInterdict(
       title: "Tu n'oublieras jamais ta condition",
       description: "",
@@ -1603,7 +1829,11 @@ enum Career {
   ),
   questeurGris(
     castes: [Caste.protecteur, Caste.commercant, Caste.erudit, Caste.mage],
+    isStandard: false,
     title: "Questeur Gris",
+    motto: "Que lumière soit faite !",
+    motivations: "Servir, enquêter, élucider",
+    description: "Composée essentiellement de protecteurs et d'érudits, mais également de commerçants et des mages, la corporation des Questeurs gris est une organisation tentaculaire formée il y a de nombreux siècles à linitiative des castes des protecteurs et des commerçants afin d'aider les représentants du pouvoir local à asseoir la justice et à protéger les intérêts des particuliers, notamment celui des marchands. Depuis, des académies ont été ouvertes dans la plupart des grandes villes pour former des citoyens au travail d'enquêteur. À sa sortie de l'académie, le Questeur gris est affecté à une région déterminée et se met à la disposition du seigneur local auquel il devra rendre compte de toute affaire dont il est saisi. Les Questeurs n'ont aucun lien hiérarchique entre eux et ne relèvent que du directeur de leur académie, et au plus haut niveau, du Grand Commandeur de l'ordre qui est en réalité un fils de Khy.",
     interdict: CareerInterdict(
       title: "Tu ne mentiras point",
       description: "",
@@ -1634,6 +1864,9 @@ enum Career {
   soldat(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le soldat',
+    motto: "Que le Dragon ordonne, j'obéis",
+    motivations: "Combattre, défendre, obéir",
+    description: "La carrière de soldat est une des plus pratiquées de la caste. On y forme la plupart des protecteurs qui constitueront le gros des troupes envoyées à droite et à gauche pour assurer la défense des villes. Les soldats les plus doués peuvent rapidement grimper les échelons de la hiérarchie militaire.",
     interdict: CareerInterdict(
       title: 'Tu respecteras ton supérieur',
       description: "",
@@ -1654,6 +1887,9 @@ enum Career {
   strategeProtecteur(
     castes: [Caste.protecteur, Caste.protecteurNoir],
     title: 'Le stratège',
+    motto: "Le glaive n'est rien sans la main qui le guide",
+    motivations: "Analyser, conseiller, vaincre",
+    description: "Rivaux des stratèges de Kroryn, ceux de la caste des protecteurs jouissent d’un plus grand prestige. Cependant, ils ont une approche beaucoup plus globale des problèmes militaires et on leur reproche souvent de ne pas se soucier assez des individus. Les pertes humaines ne signifient pas grand-chose pourvu que l’objectif est atteint. De plus, leur spécialité est l’organisation des défenses et non des assauts.",
     interdict: CareerInterdict(
       title: "Tu sacrifieras l'individu à l'armée",
       description: "",
@@ -1676,6 +1912,9 @@ enum Career {
   chasseurs(
     castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les chasseurs',
+    motto: "La nature offre des fruits que la civilisation pourrit",
+    motivations: "Vivre, observer, sauvegarder",
+    description: "Respectés et honorés, les chasseurs sont les seuls citoyens à affronter les animaux sauvages et les dangers de la nature de leur propre gré. Souvent très respectueux des enseignements de Heyra, ils ont pleine connaissance de la portée de chacun de leurs actes. Ils épargnent volontiers les animaux jeunes ou rares et ne chassent pas plus que ce qui est nécessaire à la subsistance de leur communauté. Ce sont souvent des personnes pratiques, quoiqu’un peu frustres de par leurs trop rares contacts avec d’autres humains, mais toujours empreints de sagesse. Ils sont souvent chargés de surveiller les lieux sauvages et s’organisent en patrouilles redoutables si des incursions de monstres surviennent dans leur région.",
     interdict: CareerInterdict(
       title: "Tu respecteras l'ordre naturel et le cycle de la vie",
       description: "",
@@ -1702,6 +1941,9 @@ enum Career {
   eclaireurs(
     castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les éclaireurs',
+    motto: "Chaque route s'ouvre devant les clés des pionniers",
+    motivations: "Guider, protéger, conseiller",
+    description: "Ce sont les éclaireurs qui représentent la majorité des voyageurs. Bien connus des citoyens pour leur rôle de protecteurs des caravanes et des troupes, ils sont considérés comme la branche la plus militaire de la caste. Disciplinés et dévoués à leurs compagnons, les éclaireurs deviennent guides ou escorteurs car ils sont les seuls à pouvoir éviter les dangers de la nature. Il n’est pas rare de voir des liens se tisser entre protecteurs et éclaireurs, dans leur mission commune de protection de leurs compagnons. En cas de guerre, ils sont aussi les meneurs des grands corps d’armée et forment des groupes de reconnaissance incomparables. Parfois, il arrive que les plus violents éclaireurs recherchent les conflits et s’apparentent alors plus à des mercenaires. Mais ils sont assez mal considérés par les combattants en raison de leurs talents d’archers, qui en font des adversaires insaisissables taxés de lâcheté.",
     interdict: CareerInterdict(
       title: 'Tu ne refuseras aucun périple, aucune traversée',
       description: "",
@@ -1730,6 +1972,9 @@ enum Career {
   errants(
     castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les errants',
+    motto: "Le voyage n'est-il pas assez beau en lui-même pour lui chercher une justification ?",
+    motivations: "Voyager, ressentir, partager",
+    description: "Amoureux du voyage par nature, les errants ne supportent pas de planifier le moindre élément de leur parcours. Lunatiques, ils peuvent s’enflammer pour une cause ou une autre, décider brutalement d’aider une troupe le long d’un trajet, mais laissent souvent leurs pas les guider au hasard. Les errants sont parfois considérés comme des gueux sans but ou comme de doux illuminés qui ne parviennent pas à trouver un sens à leur vie. En fait, l’errant est souvent avide de contacts humains, de découvertes et de nouveauté, passions qui les amènent à ne plus se soucier de leur propre vie ou confort, mais uniquement de leur richesse relationnelle. Il n’est pas rare que des errants se découvrent certaines affinités avec des prodiges, comme des sages ou des prophètes, enclins comme eux aux relations intérieures et profondes.",
     interdict: CareerInterdict(
       title: 'Tu ne souilleras pas la mémoire des contrées que tu visites',
       description: "",
@@ -1760,6 +2005,9 @@ enum Career {
   explorateurs(
     castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les explorateurs',
+    motto: "Il est tant de merveilles inconnues en ce monde",
+    motivations: "Apprendre, chercher, découvrir",
+    description: "Toujours à l’affût de rumeurs et de légendes, les explorateurs se rencontrent à la frontière entre Kor et les régions inconnues. Ce sont des gens passionnés, souvent obsédés par la soif de découverte et le prestige qu’elle confère. Bien connus des érudits, les explorateurs sont souvent sollicités pour mener à bien des missions dangereuses d’exploration de ruines ou de récupération de livres ou d’objets anciens.",
     interdict: CareerInterdict(
       title: "Tu ne garderas secrète aucune découverte d'importance",
       description: "",
@@ -1789,6 +2037,9 @@ enum Career {
   menestrels(
     castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les ménestrels',
+    motto: "Les mots ont des couleurs que les yeux ne peuvent peindre",
+    motivations: "Apprendre, interpréter, conter",
+    description: "Les ménestrels forment le seul réseau de communication durable existant dans Kor. Outre leur rôle de pourvoyeurs de distractions par des contes, poésies et musiques, ils sont pour le peuple la seule source d’information sur les régions situées à plus de deux jours de route. Les ménestrels sont très appréciés par toutes les couches de population, du noble s’informant des affaires en cours hors de son fief jusqu’au serviteur, ravi de pouvoir avoir des nouvelles de son village natal. Les Historiens recherchent souvent les écrits des ménestrels, car ce sont souvent des témoignages vivants d’une époque et d’une région lointaines.",
     interdict: CareerInterdict(
       title: "Tu n'altéreras pas la vérité de l'Histoire",
       description: "",
@@ -1814,6 +2065,9 @@ enum Career {
   messagers(
     castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les messagers',
+    motto: "Le savoir est un feu qu'il faut entretenir, un tableau sans cesse renouvelé",
+    motivations: "Écouter, transmettre, communiquer",
+    description: "Les messagers sont probablement les voyageurs les plus solitaires en raison de leur constante mobilité et de la rapidité de leurs déplacements. Les messagers sont parmi les meilleurs cavaliers de Kor, très habiles pour déjouer pièges et embuscades ou semer des poursuivants. Certains usent de la vitesse pure pour accomplir leurs missions, mais bon nombre d’entre eux sont de rusés comédiens, dissimulés sous de fausses identités afin de garantir la discrétion de leurs actes.",
     interdict: CareerInterdict(
       title: "Tu ne priveras tes pairs d'aucune information",
       description: "",
@@ -1841,6 +2095,9 @@ enum Career {
   missionnaires(
     castes: [Caste.voyageur, Caste.voyageurFataliste],
     title: 'Les missionnaires',
+    motto: "Le dons des Grands Dragons se transmet, tel le don de la vie",
+    motivations: "Instruire, transmettre, célébrer",
+    description: "Ces voyageurs sont parmi les plus fanatiques de la cause draconique connus. Ayant pris conscience des bienfaits des Édits draconiques, ils cherchent à instruire les peuplades les plus lointaines afin de leur faire partager ces enseignements. Ils sont souvent associés aux missionnaires Prodiges qui partagent la même flamme qu’eux. On ne les rencontre que rarement, mais la plupart du temps au-delà des frontières connues, bravant des cultures parfois très hostiles. Leur prosélytisme leur vaut un grand respect lorsqu’ils passent en Kor, car ils y sont considérés comme des incarnations vivantes du savoir draconique, dotées d’un courage sans limite pour oser aller instruire les infidèles.",
     interdict: CareerInterdict(
       title: "Tu ne détourneras pas l'enseignement draconique",
       description: "",
@@ -1871,19 +2128,27 @@ enum Career {
 
   final List<Caste> castes;
   final String title;
+  final String motto;
+  final String motivations;
+  final String description;
   final CareerInterdict? interdict;
   final CareerBenefit benefit;
   final String specialization;
   final List<EntityRequirement> requirements;
   final List<Skill> reservedSkills;
+  final bool isStandard;
 
   const Career({
     required this.castes,
     required this.title,
+    required this.motto,
+    required this.motivations,
+    required this.description,
     this.interdict,
     required this.benefit,
     required this.specialization,
     this.requirements = const <EntityRequirement>[],
     this.reservedSkills = const <Skill>[],
+    this.isStandard = true,
   });
 }

@@ -49,6 +49,15 @@ class _NumDoubleInputWidgetState extends State<NumDoubleInputWidget> {
     controller.text = widget.initialValue.toStringAsFixed(widget.decimals);
   }
 
+  @override
+  void didUpdateWidget(covariant NumDoubleInputWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if(widget.initialValue != oldWidget.initialValue) {
+      WidgetsBinding.instance.addPostFrameCallback((_) =>
+        controller.text = widget.initialValue.toStringAsFixed(widget.decimals));
+    }
+  }
+
   double roundValue(double input) {
     var p = pow(10, widget.decimals);
     return (input * p).round() / p;

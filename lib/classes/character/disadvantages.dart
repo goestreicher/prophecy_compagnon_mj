@@ -38,6 +38,7 @@ enum Disadvantage {
     cost: [1,2],
     type: DisadvantageType.commun,
     requireDetails: true,
+    unique: false,
   ),
   echec(
     title: 'Échec',
@@ -58,6 +59,7 @@ enum Disadvantage {
     cost: [3],
     type: DisadvantageType.commun,
     requireDetails: true,
+    unique: false,
   ),
   faiblesse(
     title: 'Faiblesse',
@@ -85,6 +87,7 @@ enum Disadvantage {
     cost: [3],
     type: DisadvantageType.commun,
     requireDetails: true,
+    unique: false,
   ),
   interditsDeBrorne(
     title: 'Interdits de Brorne (Mage de la Pierre)',
@@ -99,6 +102,7 @@ enum Disadvantage {
     cost: [1,3,5],
     type: DisadvantageType.commun,
     requireDetails: true,
+    unique: false,
   ),
   malchance(
     title: 'Malchance',
@@ -126,6 +130,7 @@ enum Disadvantage {
     cost: [1],
     type: DisadvantageType.commun,
     requireDetails: true,
+    unique: false,
   ),
   marqueDeNenya(
     title: 'Marque de Nenya (Mage des Rêves)',
@@ -147,6 +152,7 @@ enum Disadvantage {
     cost: [2],
     type: DisadvantageType.commun,
     requireDetails: true,
+    unique: false,
   ),
   phobie(
     title: 'Phobie',
@@ -154,6 +160,7 @@ enum Disadvantage {
     cost: [1,3,5],
     type: DisadvantageType.commun,
     requireDetails: true,
+    unique: false,
   ),
   phobieDesCites(
     title: 'Phobie des cités (Mage de la Nature)',
@@ -168,6 +175,7 @@ enum Disadvantage {
     cost: [2],
     type: DisadvantageType.commun,
     requireDetails: true,
+    unique: false,
   ),
   amnesie(
     title: 'Amnésie',
@@ -192,7 +200,8 @@ enum Disadvantage {
     title: 'Blessure',
     description: "Suite à une bataille, le personnage a subi une blessure qui ne s’est jamais vraiment refermée. Quelles que soient ses valeurs de Résistance et de Volonté, le personnage perd définitivement une case d’égratignure et une case de blessure légère. Aucune tentative de soins, même magiques, ne peut rendre ces cercles perdus à ce personnage.\nCe Désavantage peut survenir plusieurs fois.",
     cost: [5],
-    type: DisadvantageType.rare
+    type: DisadvantageType.rare,
+    unique: false,
   ),
   dependance(
     title: 'Dépendance',
@@ -221,6 +230,7 @@ enum Disadvantage {
     cost: [5],
     type: DisadvantageType.rare,
     requireDetails: true,
+    unique: false,
   ),
   harmonieNaturelle(
       title: 'Harmonie naturelle',
@@ -234,6 +244,7 @@ enum Disadvantage {
     cost: [5],
     type: DisadvantageType.rare,
     requireDetails: true,
+    unique: false,
   ),
   infirmite(
     title: 'Infirmité',
@@ -267,6 +278,7 @@ enum Disadvantage {
     cost: [2],
     type: DisadvantageType.rare,
     requireDetails: true,
+    unique: false,
   ),
   regardDesDragons(
     title: 'Regard des Dragons',
@@ -418,6 +430,7 @@ enum Disadvantage {
   final DisadvantageType type;
   final bool requireDetails;
   final List<Caste> reservedCastes;
+  final bool unique;
 
   const Disadvantage({
     required this.title,
@@ -426,5 +439,6 @@ enum Disadvantage {
     required this.type,
     this.requireDetails = false,
     this.reservedCastes = const <Caste>[],
+    this.unique = true,
   });
 }

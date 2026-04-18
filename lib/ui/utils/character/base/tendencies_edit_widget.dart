@@ -256,7 +256,8 @@ class _TendencyValueInputWidget extends StatelessWidget {
 
   Widget getValueWidget() {
     if(editable) {
-      controller!.text = value.toString();
+      WidgetsBinding.instance.addPostFrameCallback((_) =>
+        controller!.text = value.toString());
       return SizedBox(
         width: 40,
         child: TextFormField(

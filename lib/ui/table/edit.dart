@@ -130,6 +130,18 @@ class _TableEditPageState extends State<TableEditPage> {
                 MenuItemButton(
                   child: const Row(
                     children: [
+                      Icon(Symbols.wand_shine),
+                      SizedBox(width: 4.0),
+                      Text('Assistant de création de PJ'),
+                    ],
+                  ),
+                  onPressed: () {
+                    context.go('/tables/${widget.uuid}/wizard/pc');
+                  },
+                ),
+                MenuItemButton(
+                  child: const Row(
+                    children: [
                       Icon(Icons.publish),
                       SizedBox(width: 4.0),
                       Text('Importer un PJ'),

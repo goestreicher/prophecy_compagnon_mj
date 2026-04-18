@@ -25,7 +25,7 @@ class CharacterDisplayGeneralWidget extends StatelessWidget {
                   child: _GeneralWidgetHeader(title: 'Joueur', value: (character as PlayerCharacter).player),
                 ),
                 Expanded(
-                    child: _GeneralWidgetHeader(title: 'Origine', value: (character as PlayerCharacter).augure.title)
+                    child: _GeneralWidgetHeader(title: 'Augure', value: (character as PlayerCharacter).augure.title)
                 ),
               ],
             ),

@@ -186,6 +186,13 @@ class PlaceSummary extends ResourceBaseClass {
         .where((PlaceSummary p) => p.source == source);
   }
 
+  static Future<PlaceSummary?> byName(String name) async {
+    await loadAll();
+    return _cache.values
+        .where((PlaceSummary p) => p.name == name)
+        .firstOrNull;
+  }
+
   static Future<void> init() async {
     // ignore:unused_local_variable
     var c = _cache;

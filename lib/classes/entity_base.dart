@@ -16,6 +16,7 @@ import 'entity/status.dart';
 import 'equipment/enums.dart';
 import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
+import 'money.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'resource_base_class.dart';
@@ -54,6 +55,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     EntitySkills? skills,
     EntityStatus? status,
     EntityEquipment? equipment,
+    MoneyWallet? money,
     EntityMagic? magic,
     EntityDraconicFavors? favors,
     EntityFervor? fervor,
@@ -68,6 +70,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
       skills = skills ?? EntitySkills.empty(),
       status = status ?? EntityStatus.empty(),
       equipment = equipment ?? EntityEquipment(null),
+      money = money ?? MoneyWallet(),
       magic = magic ?? EntityMagic(),
       favors = favors ?? EntityDraconicFavors(),
       fervor = fervor ?? EntityFervor(),
@@ -149,6 +152,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
   EntityStatus status;
   @JsonKey(fromJson: EntityEquipment.fromJson, toJson: EntityEquipment.toJson)
   final EntityEquipment equipment;
+  final MoneyWallet money;
   final EntityMagic magic;
   @JsonKey(
     fromJson: EntityDraconicFavors.fromJson,

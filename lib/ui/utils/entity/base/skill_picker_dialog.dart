@@ -11,14 +11,18 @@ class SkillPickerDialog extends StatefulWidget {
     super.key,
     required this.family,
     this.excluded = const <Skill>[],
-    this.includeReservedCaste,
+    this.onlyReservedCaste,
+    this.doNotIndicateReservedForCaste,
+    this.forbidden = true,
   })
-    : _skillList = Skill.fromFamily(family, forCaste: includeReservedCaste)
+    : _skillList = Skill.fromFamily(family, forCaste: onlyReservedCaste, forbidden: forbidden)
           .where((Skill s) => s.requireConcreteImplementation || !excluded.contains(s)).toList();
 
   final SkillFamily family;
   final List<Skill> excluded;
-  final Caste? includeReservedCaste;
+  final Caste? onlyReservedCaste;
+  final Caste? doNotIndicateReservedForCaste;
+  final bool forbidden;
   final List<Skill> _skillList;
 
   @override
@@ -85,7 +89,7 @@ class _SkillPickerDialogState extends State<SkillPickerDialog> {
                           return DropdownMenuEntry(
                             value: s,
                             label: s.title,
-                            leadingIcon: s.reservedCastes.isEmpty
+                            leadingIcon: s.reservedCastes.isEmpty || s.reservedCastes.contains(widget.doNotIndicateReservedForCaste)
                               ? null
                               : Icon(Icons.lock_outline)
                           );

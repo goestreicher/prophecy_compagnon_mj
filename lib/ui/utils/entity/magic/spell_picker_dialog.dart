@@ -5,20 +5,36 @@ import '../../../../classes/magic_spell.dart';
 import 'display_magic_spell_widget.dart';
 
 class MagicSpellPickerDialog extends StatefulWidget {
-  const MagicSpellPickerDialog({ super.key });
+  const MagicSpellPickerDialog({
+    super.key,
+    this.sphere,
+    this.maxLevel = 3,
+    this.maxComplexity,
+  });
+
+  final MagicSphere? sphere;
+  final int maxLevel;
+  final int? maxComplexity;
 
   @override
   State<MagicSpellPickerDialog> createState() => _MagicSpellPickerDialogState();
 }
 
 class _MagicSpellPickerDialogState extends State<MagicSpellPickerDialog> {
-  final TextEditingController _sphereController = TextEditingController();
-  final TextEditingController _levelController = TextEditingController();
-  final TextEditingController _spellController = TextEditingController();
+  final TextEditingController sphereController = TextEditingController();
+  final TextEditingController levelController = TextEditingController();
+  final TextEditingController spellController = TextEditingController();
 
-  MagicSphere? _sphere;
-  int? _level;
-  MagicSpell? _spell;
+  MagicSphere? sphere;
+  int? level;
+  MagicSpell? spell;
+  
+  @override
+  void initState() {
+    super.initState();
+    
+    sphere = widget.sphere;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,63 +55,71 @@ class _MagicSpellPickerDialogState extends State<MagicSpellPickerDialog> {
                   mainAxisSize: MainAxisSize.min,
                   spacing: 16.0,
                   children: [
+                    if(widget.sphere == null)
+                      DropdownMenu(
+                        controller: sphereController,
+                        label: const Text('Sphère'),
+                        requestFocusOnTap: true,
+                        expandedInsets: EdgeInsets.zero,
+                        onSelected: (MagicSphere? sphere) {
+                          setState(() {
+                            this.sphere = sphere;
+                            spellController.clear();
+                            spell = null;
+                          });
+                        },
+                        dropdownMenuEntries: MagicSphere.values
+                          .map((MagicSphere s) => DropdownMenuEntry(value: s, label: s.title))
+                          .toList(),
+                      ),
                     DropdownMenu(
-                      controller: _sphereController,
-                      label: const Text('Sphère'),
-                      requestFocusOnTap: true,
-                      expandedInsets: EdgeInsets.zero,
-                      onSelected: (MagicSphere? sphere) {
-                        setState(() {
-                          _sphere = sphere;
-                          _spellController.clear();
-                          _spell = null;
-                        });
-                      },
-                      dropdownMenuEntries: MagicSphere.values
-                        .map((MagicSphere s) => DropdownMenuEntry(value: s, label: s.title))
-                        .toList(),
-                    ),
-                    DropdownMenu(
-                      controller: _levelController,
+                      controller: levelController,
                       label: const Text('Niveau'),
                       requestFocusOnTap: true,
                       expandedInsets: EdgeInsets.zero,
                       onSelected: (int? i) {
                         setState(() {
-                          _level = i;
-                          _spellController.clear();
-                          _spell = null;
+                          level = i;
+                          spellController.clear();
+                          spell = null;
                         });
                       },
-                      dropdownMenuEntries: const [
-                        DropdownMenuEntry(value: 1, label: "Niveau 1"),
-                        DropdownMenuEntry(value: 2, label: "Niveau 2"),
-                        DropdownMenuEntry(value: 3, label: "Niveau 3"),
-                      ]
+                      dropdownMenuEntries: List.generate(
+                        widget.maxLevel,
+                        (int i) => DropdownMenuEntry(
+                            value: i+1, label: "Niveau ${(i+1).toString()}"
+                        ),
+                      ),
                     ),
                     DropdownMenu(
-                      controller: _spellController,
+                      controller: spellController,
                       label: const Text('Sort'),
                       requestFocusOnTap: true,
                       expandedInsets: EdgeInsets.zero,
                       onSelected: (MagicSpell? spell) {
                         setState(() {
-                          _spell = spell;
+                          this.spell = spell;
                         });
                       },
-                      dropdownMenuEntries: _sphere == null || _level == null ?
+                      dropdownMenuEntries: sphere == null || level == null ?
                         <DropdownMenuEntry<MagicSpell>>[] :
-                        MagicSpell.filteredList(MagicSpellFilter(sphere: _sphere!, level: _level!))
+                        MagicSpell.filteredList(
+                            MagicSpellFilter(
+                              sphere: sphere!,
+                              level: level!,
+                              complexity: widget.maxComplexity,
+                            )
+                          )
                           .map((MagicSpell spell) => DropdownMenuEntry(value: spell, label: spell.name))
                           .toList(),
                     ),
                   ],
                 ),
               ),
-              if(_spell != null)
+              if(spell != null)
                 SizedBox(
                   width: 600,
-                  child: DisplayMagicSpellWidget(spell: _spell!)
+                  child: DisplayMagicSpellWidget(spell: spell!)
                 ),
             ],
           ),
@@ -113,8 +137,8 @@ class _MagicSpellPickerDialogState extends State<MagicSpellPickerDialog> {
                 const SizedBox(width: 12.0),
                 ElevatedButton(
                   onPressed: () {
-                    if(_spell == null) return;
-                    Navigator.of(context).pop(_spell);
+                    if(spell == null) return;
+                    Navigator.of(context).pop(spell);
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: theme.colorScheme.primary,

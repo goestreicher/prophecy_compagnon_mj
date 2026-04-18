@@ -29,6 +29,7 @@ enum Advantage {
     cost: [3,5],
     type: AdvantageType.general,
     requireDetails: true,
+    unique: false,
   ),
   ambidextre(
     title: 'Ambidextre',
@@ -148,7 +149,8 @@ enum Advantage {
     cost: [1,2,3,4,5,6],
     type: AdvantageType.general,
     requireDetails: true,
-    reservedCastes: [Caste.artisan]
+    reservedCastes: [Caste.artisan],
+    unique: false,
   ),
   prestance(
     title: 'Prestance',
@@ -187,6 +189,7 @@ enum Advantage {
     cost: [2],
     type: AdvantageType.general,
     requireDetails: true,
+    unique: false,
   ),
   sensDeLOrientation(
     title: "Sens de l'orientation",
@@ -297,6 +300,7 @@ enum Advantage {
   final AdvantageType type;
   final bool requireDetails;
   final List<Caste> reservedCastes;
+  final bool unique;
 
   const Advantage({
     required this.title,
@@ -305,5 +309,6 @@ enum Advantage {
     required this.type,
     this.requireDetails = false,
     this.reservedCastes = const <Caste>[],
+    this.unique = true,
   });
 }

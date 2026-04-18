@@ -17,6 +17,7 @@ import 'entity_base.dart';
 import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'human_character.dart';
+import 'money.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'storage/storable.dart';
@@ -200,6 +201,7 @@ class PlayerCharacter extends HumanCharacter {
     super.skills,
     super.status,
     super.equipment,
+    super.money,
     super.magic,
     super.caste,
     super.honoraryCaste,

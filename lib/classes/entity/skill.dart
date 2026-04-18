@@ -146,16 +146,20 @@ enum Skill {
     this.forbidden = false,
   });
 
-  static List<Skill> fromFamily(SkillFamily family, {Caste? forCaste}) {
+  static List<Skill> fromFamily(SkillFamily family, {Caste? forCaste, bool forbidden = true}) {
     List<Skill> ret = <Skill>[];
     for(var s in Skill.values) {
       if(
-      s.family == family
-          && (
-          forCaste == null
+        s.family == family
+            && (
+              forCaste == null
               || s.reservedCastes.isEmpty
               || s.reservedCastes.contains(forCaste)
-      )
+            )
+            && (
+              forbidden == true
+              || !s.forbidden
+            )
       ) {
         ret.add(s);
       }

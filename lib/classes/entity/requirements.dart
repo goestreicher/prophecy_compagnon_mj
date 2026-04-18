@@ -45,7 +45,7 @@ class OneOfRequirements extends EntityRequirement {
   String toDisplayString() =>
       requirements
         .map<String>((EntityRequirement r) => r.toDisplayString())
-        .join("\nOU ");
+        .join(" OU ");
 
   @override
   bool meetsRequirements(EntityBase entity) =>
@@ -61,7 +61,7 @@ class AllOfRequirements extends EntityRequirement {
   String toDisplayString() =>
       requirements
         .map<String>((EntityRequirement r) => r.toDisplayString())
-        .join("\nET ");
+        .join(" ET ");
 
   @override
   bool meetsRequirements(EntityBase entity) =>
@@ -658,7 +658,7 @@ class CasteMemberRequirement extends EntityRequirement {
   final CasteStatus status;
 
   @override
-  String toDisplayString() => "Membre de la Caste ${caste.title} de $status° Statut";
+  String toDisplayString() => "Membre de la Caste ${caste.title} de ${status.index}° Statut";
 
   @override
   bool meetsRequirements(EntityBase entity) =>

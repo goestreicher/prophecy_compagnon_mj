@@ -217,7 +217,7 @@ abstract class Equipment {
 
   String uuid();
 
-  String type() => '${model.factory}:${model.id}';
+  String type() => model.id;
 
   EquipmentModel model;
   String? alias;

@@ -22,6 +22,7 @@ import 'equipment/enums.dart';
 import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
 import 'magic_user.dart';
+import 'money.dart';
 import 'object_location.dart';
 import 'object_source.dart';
 import 'resource_base_class.dart';
@@ -558,6 +559,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
     List<CreatureSpecialCapability>? specialCapabilities,
     EntityStatus? status,
     EntityEquipment? equipment,
+    MoneyWallet? money,
     EntityMagic? magic,
     EntityDraconicFavors? favors,
   }) {
@@ -586,6 +588,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
             specialCapabilities: specialCapabilities,
             status: status,
             equipment: equipment,
+            money: money,
             magic: magic,
             favors: favors,
           );
@@ -619,6 +622,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
         List<CreatureSpecialCapability>? specialCapabilities,
         super.status,
         super.equipment,
+        super.money,
         super.magic,
         super.favors,
       })

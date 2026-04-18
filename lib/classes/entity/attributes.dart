@@ -2,19 +2,23 @@ import 'dart:async';
 
 import 'package:json_annotation/json_annotation.dart';
 
+import 'abilities.dart';
+
 part 'attributes.g.dart';
 
 enum Attribute {
-  physique(title: "Physique"),
-  mental(title: "Mental"),
-  manuel(title: "Manuel"),
-  social(title: "Social");
+  physique(title: "Physique", relatedAbilities: [Ability.force, Ability.resistance]),
+  mental(title: "Mental", relatedAbilities: [Ability.intelligence, Ability.volonte]),
+  manuel(title: "Manuel", relatedAbilities: [Ability.perception, Ability.coordination]),
+  social(title: "Social", relatedAbilities: [Ability.empathie, Ability.presence]);
 
   const Attribute({
     required this.title,
+    required this.relatedAbilities,
   });
 
   final String title;
+  final List<Ability> relatedAbilities;
 }
 
 class AttributeStreamChange {
@@ -55,6 +59,40 @@ class EntityAttributes {
   void setAttribute(Attribute a, int v) {
     _attributes[a] = v;
     streamController.add(AttributeStreamChange(attribute: a, value: v));
+  }
+
+  static int? attributeModifier(Attribute attribute, Map<Ability, int> abilities) {
+    int? modifier;
+    var sum = 0;
+    for(var ability in attribute.relatedAbilities) {
+      if(!abilities.containsKey(ability)) {
+        return null;
+      }
+      sum += abilities[ability]!;
+    }
+
+    switch(sum) {
+      case >=1 && <= 2:
+        modifier = -3;
+      case >= 3 && <= 5:
+        modifier = -2;
+      case >= 6 && <= 8:
+        modifier = -1;
+      case >= 9 && <= 11:
+        modifier = 0;
+      case >= 12 && <= 13:
+        modifier = 1;
+      case >= 14 && <= 15:
+        modifier = 2;
+      case >= 16 && <= 17:
+        modifier = 3;
+      case >= 18 && <= 19:
+        modifier = 4;
+      case >= 20:
+        modifier = 5;
+    }
+
+    return modifier;
   }
 
   final Map<Attribute, int> _attributes;
