@@ -152,7 +152,7 @@ class _DisadvantageSelectionWidgetState extends State<DisadvantageSelectionWidge
                   requestFocusOnTap: true,
                   expandedInsets: EdgeInsets.zero,
                   onSelected: (DisadvantageType? t) {
-                    if(t == currentType);
+                    if(t == currentType) return;
                     setState(() {
                       currentType = t;
                       selected = null;
