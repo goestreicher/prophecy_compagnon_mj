@@ -5,7 +5,10 @@ import '../../../../classes/human_character.dart';
 import 'disadvantage_select_widget.dart';
 
 class DisadvantagePickerDialog extends StatefulWidget {
-  const DisadvantagePickerDialog({ super.key, this.includeReservedForCaste });
+  const DisadvantagePickerDialog({
+    super.key,
+    this.includeReservedForCaste,
+  });
 
   final Caste? includeReservedForCaste;
 

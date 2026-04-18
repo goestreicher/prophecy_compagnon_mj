@@ -1,29 +1,31 @@
 import 'package:flutter/material.dart';
 
 import '../../../../classes/caste/base.dart';
-import '../../../../classes/character/disadvantages.dart';
+import '../../../../classes/character/advantages.dart';
 import '../../../../classes/human_character.dart';
 
-class DisadvantageSelectWidget extends StatefulWidget {
-  const DisadvantageSelectWidget({
+class AdvantageSelectWidget extends StatefulWidget {
+  const AdvantageSelectWidget({
     super.key,
-    this.includeReservedForCaste,
-    this.limitToType,
+    required this.types,
+    this.maxCost,
     this.exclude,
+    this.includeReservedForCaste,
     required this.onSelected,
   });
 
+  final List<AdvantageType> types;
+  final int? maxCost;
+  final List<Advantage>? exclude;
   final Caste? includeReservedForCaste;
-  final DisadvantageType? limitToType;
-  final List<Disadvantage>? exclude;
-  final void Function(CharacterDisadvantage?) onSelected;
+  final void Function(CharacterAdvantage?) onSelected;
 
   @override
-  State<DisadvantageSelectWidget> createState() => _DisadvantageSelectWidgetState();
+  State<AdvantageSelectWidget> createState() => _AdvantageSelectWidgetState();
 }
 
-class _DisadvantageSelectWidgetState extends State<DisadvantageSelectWidget> {
-  Disadvantage? selected;
+class _AdvantageSelectWidgetState extends State<AdvantageSelectWidget> {
+  Advantage? selected;
 
   @override
   Widget build(BuildContext context) {
@@ -31,26 +33,27 @@ class _DisadvantageSelectWidgetState extends State<DisadvantageSelectWidget> {
       children: [
         if(selected == null)
           Expanded(
-            child: DisadvantageSelectionWidget(
-              includeReservedForCaste: widget.includeReservedForCaste,
-              limitToType: widget.limitToType,
-              exclude: widget.exclude,
-              onSelected: (Disadvantage d) {
-                if(d.cost.length == 1 && !d.requireDetails) {
-                  widget.onSelected(
-                    CharacterDisadvantage(
-                      disadvantage: d,
-                      cost: d.cost[0],
-                      details: ''
-                    )
-                  );
+            child: _AdvantageSelectionWidget(
+                includeReservedForCaste: widget.includeReservedForCaste,
+                types: widget.types,
+                maxCost: widget.maxCost,
+                exclude: widget.exclude,
+                onSelected: (Advantage a) {
+                  if(a.cost.length == 1 && !a.requireDetails) {
+                    widget.onSelected(
+                      CharacterAdvantage(
+                        advantage: a,
+                        cost: a.cost[0],
+                        details: '',
+                      )
+                    );
+                  }
+                  else {
+                    setState(() {
+                      selected = a;
+                    });
+                  }
                 }
-                else {
-                  setState(() {
-                    selected = d;
-                  });
-                }
-              }
             ),
           ),
         if(selected != null)
@@ -60,8 +63,8 @@ class _DisadvantageSelectWidgetState extends State<DisadvantageSelectWidget> {
               spacing: 12.0,
               children: [
                 Expanded(
-                  child: SelectableDisadvantageViewWidget(
-                    disadvantage: selected!,
+                  child: _SelectableAdvantageViewWidget(
+                    advantage: selected!,
                     onSelected: () {
                       setState(() {
                         selected = null;
@@ -70,8 +73,11 @@ class _DisadvantageSelectWidgetState extends State<DisadvantageSelectWidget> {
                   ),
                 ),
                 Expanded(
-                  child: DisadvantageConfigurationWidget(
-                    disadvantage: selected!,
+                  child: _AdvantageConfigurationWidget(
+                    advantage: selected!,
+                    costs: selected!.cost
+                      .where((int c) => widget.maxCost == null || c <= widget.maxCost!)
+                      .toList(),
                     onDone: widget.onSelected,
                   ),
                 )
@@ -83,52 +89,54 @@ class _DisadvantageSelectWidgetState extends State<DisadvantageSelectWidget> {
   }
 }
 
-class DisadvantageSelectionWidget extends StatefulWidget {
-  const DisadvantageSelectionWidget({
-    super.key,
-    this.includeReservedForCaste,
-    this.limitToType,
+class _AdvantageSelectionWidget extends StatefulWidget {
+  const _AdvantageSelectionWidget({
+    required this.types,
+    this.maxCost,
     this.exclude,
+    this.includeReservedForCaste,
     required this.onSelected,
   });
 
+  final List<AdvantageType> types;
+  final int? maxCost;
+  final List<Advantage>? exclude;
   final Caste? includeReservedForCaste;
-  final DisadvantageType? limitToType;
-  final List<Disadvantage>? exclude;
-  final void Function(Disadvantage) onSelected;
+  final void Function(Advantage) onSelected;
 
   @override
-  State<DisadvantageSelectionWidget> createState() => _DisadvantageSelectionWidgetState();
+  State<_AdvantageSelectionWidget> createState() => _AdvantageSelectionWidgetState();
 }
 
-class _DisadvantageSelectionWidgetState extends State<DisadvantageSelectionWidget> {
-  DisadvantageType? currentType;
-  List<Disadvantage> disadvantages = <Disadvantage>[];
-  Disadvantage? selected;
+class _AdvantageSelectionWidgetState extends State<_AdvantageSelectionWidget> {
+  AdvantageType? currentType;
+  List<Advantage> advantages = <Advantage>[];
+  Advantage? selected;
 
   @override
   void initState() {
     super.initState();
 
-    currentType = widget.limitToType;
+    currentType = widget.types[0];
     _updateForCurrentType();
   }
 
   void _updateForCurrentType() {
-    disadvantages.clear();
+    advantages.clear();
 
     if(currentType == null) return;
 
-    disadvantages.addAll(
-      Disadvantage.values
+    advantages.addAll(
+      Advantage.values
         .where(
-          (Disadvantage d) =>
-            d.type == currentType
-            && !(widget.exclude?.contains(d) ?? false)
+          (Advantage a) =>
+            a.type == currentType
+            && (widget.maxCost == null || a.cost.any((int c) => c <= widget.maxCost!))
+            && !(widget.exclude?.contains(a) ?? false)
             && (
-              d.reservedCastes.isEmpty
+              a.reservedCastes.isEmpty
               || widget.includeReservedForCaste == null
-              || d.reservedCastes.contains(widget.includeReservedForCaste)
+              || a.reservedCastes.contains(widget.includeReservedForCaste)
             )
         )
     );
@@ -145,41 +153,40 @@ class _DisadvantageSelectionWidgetState extends State<DisadvantageSelectionWidge
             mainAxisSize: MainAxisSize.min,
             spacing: 16.0,
             children: [
-              if(widget.limitToType == null)
-                DropdownMenuFormField(
-                  initialSelection: currentType,
-                  label: const Text('Type'),
-                  requestFocusOnTap: true,
-                  expandedInsets: EdgeInsets.zero,
-                  onSelected: (DisadvantageType? t) {
-                    if(t == currentType) return;
-                    setState(() {
-                      currentType = t;
-                      selected = null;
-                      _updateForCurrentType();
-                    });
-                  },
-                  dropdownMenuEntries: DisadvantageType.values
-                    .map(
-                      (DisadvantageType t) => DropdownMenuEntry(
-                        value: t,
-                        label: t.title
-                      )
+              DropdownMenuFormField(
+                initialSelection: currentType,
+                label: const Text('Type'),
+                requestFocusOnTap: true,
+                expandedInsets: EdgeInsets.zero,
+                onSelected: (AdvantageType? t) {
+                  if(t == currentType) return;
+                  setState(() {
+                    currentType = t;
+                    selected = null;
+                    _updateForCurrentType();
+                  });
+                },
+                dropdownMenuEntries: AdvantageType.values
+                  .map(
+                    (AdvantageType t) => DropdownMenuEntry(
+                      value: t,
+                      label: t.title
                     )
-                    .toList(),
-                  validator: (DisadvantageType? t) {
-                    if(t == null) return 'Valeur manquante';
-                    return null;
-                  },
-                ),
+                  )
+                  .toList(),
+                validator: (AdvantageType? t) {
+                  if(t == null) return 'Valeur manquante';
+                  return null;
+                },
+              ),
               Expanded(
                 child: ListView.separated(
-                  itemCount: disadvantages.length,
+                  itemCount: advantages.length,
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
-                      title: Text(disadvantages[index].title),
+                      title: Text(advantages[index].title),
                       onTap: () => setState(() {
-                        selected = disadvantages[index];
+                        selected = advantages[index];
                       }),
                       trailing: Icon(
                         Icons.arrow_forward_ios,
@@ -195,8 +202,11 @@ class _DisadvantageSelectionWidgetState extends State<DisadvantageSelectionWidge
         Expanded(
           child: selected == null
             ? SizedBox.shrink()
-            : SelectableDisadvantageViewWidget(
-                disadvantage: selected!,
+            : _SelectableAdvantageViewWidget(
+                advantage: selected!,
+                costs: selected!.cost
+                  .where((int c) => widget.maxCost == null || c <= widget.maxCost!)
+                  .toList(),
                 onSelected: () => widget.onSelected(selected!),
               ),
         ),
@@ -205,15 +215,14 @@ class _DisadvantageSelectionWidgetState extends State<DisadvantageSelectionWidge
   }
 }
 
-class SelectableDisadvantageViewWidget extends StatelessWidget {
-  const SelectableDisadvantageViewWidget({
-    super.key,
-    required this.disadvantage,
+class _SelectableAdvantageViewWidget extends StatelessWidget {
+  const _SelectableAdvantageViewWidget({
+    required this.advantage,
     this.costs,
     required this.onSelected,
   });
 
-  final Disadvantage disadvantage;
+  final Advantage advantage;
   final List<int>? costs;
   final void Function() onSelected;
 
@@ -233,12 +242,12 @@ class SelectableDisadvantageViewWidget extends StatelessWidget {
               spacing: 8.0,
               children: [
                 Text(
-                  '${disadvantage.title} (${(costs ?? disadvantage.cost).join("/")})',
+                  '${advantage.title} (${(costs ?? advantage.cost).join("/")})',
                   style: theme.textTheme.titleMedium!
-                      .copyWith(fontWeight: FontWeight.bold),
+                    .copyWith(fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  disadvantage.description,
+                  advantage.description,
                 ),
               ],
             ),
@@ -249,38 +258,37 @@ class SelectableDisadvantageViewWidget extends StatelessWidget {
   }
 }
 
-class DisadvantageConfigurationWidget extends StatefulWidget {
-  const DisadvantageConfigurationWidget({
-    super.key,
-    required this.disadvantage,
+class _AdvantageConfigurationWidget extends StatefulWidget {
+  const _AdvantageConfigurationWidget({
+    required this.advantage,
     this.costs,
     required this.onDone,
   });
 
-  final Disadvantage disadvantage;
+  final Advantage advantage;
   final List<int>? costs;
-  final void Function(CharacterDisadvantage?) onDone;
+  final void Function(CharacterAdvantage?) onDone;
 
   @override
-  State<DisadvantageConfigurationWidget> createState() => _DisadvantageConfigurationWidgetState();
+  State<_AdvantageConfigurationWidget> createState() => _AdvantageConfigurationWidgetState();
 }
 
-class _DisadvantageConfigurationWidgetState extends State<DisadvantageConfigurationWidget> {
+class _AdvantageConfigurationWidgetState extends State<_AdvantageConfigurationWidget> {
   late List<int> costs;
   int? cost;
   String? details;
-  
+
   @override
   void initState() {
     super.initState();
-    
-    costs = widget.costs ?? widget.disadvantage.cost;
+
+    costs = widget.costs ?? widget.advantage.cost;
     if(costs.length == 1) cost = costs[0];
   }
 
   bool _canFinish() {
     if(cost == null) return false;
-    if(widget.disadvantage.requireDetails && (details == null || details!.isEmpty)) return false;
+    if(widget.advantage.requireDetails && (details == null || details!.isEmpty)) return false;
 
     return true;
   }
@@ -292,24 +300,24 @@ class _DisadvantageConfigurationWidgetState extends State<DisadvantageConfigurat
     }
 
     widget.onDone(
-      CharacterDisadvantage(
-        disadvantage: widget.disadvantage,
+      CharacterAdvantage(
+        advantage: widget.advantage,
         cost: cost ?? costs[0],
         details: details ?? "",
       )
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 16.0,
       children: [
         Text(
-          'Désavantage : ${widget.disadvantage.title}',
+          'Avantage : ${widget.advantage.title}',
           style: theme.textTheme.titleMedium!
             .copyWith(fontWeight: FontWeight.bold),
         ),
@@ -335,13 +343,13 @@ class _DisadvantageConfigurationWidgetState extends State<DisadvantageConfigurat
                   contentPadding: EdgeInsets.all(12.0),
                 ),
                 dropdownMenuEntries: costs
-                    .map(
-                      (int c) => DropdownMenuEntry(
-                        value: c,
-                        label: c.toString(),
-                      )
+                  .map(
+                    (int c) => DropdownMenuEntry(
+                      value: c,
+                      label: c.toString(),
                     )
-                    .toList(),
+                  )
+                  .toList(),
                 onSelected: (int? v) {
                   setState(() {
                     cost = v;
@@ -352,7 +360,7 @@ class _DisadvantageConfigurationWidgetState extends State<DisadvantageConfigurat
             )
           ],
         ),
-        if(widget.disadvantage.requireDetails)
+        if(widget.advantage.requireDetails)
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -361,7 +369,7 @@ class _DisadvantageConfigurationWidgetState extends State<DisadvantageConfigurat
                 Text(
                   'Détails',
                   style: theme.textTheme.titleMedium!
-                      .copyWith(fontWeight: FontWeight.bold),
+                    .copyWith(fontWeight: FontWeight.bold),
                 ),
                 Expanded(
                   child: TextField(
