@@ -490,6 +490,7 @@ class _StarterEquipmentWeaponWidgetState extends State<_StarterEquipmentWeaponWi
               ),
               dropdownMenuEntries: WeaponModel.idsBySkill(currentSkill!)
                 .map((String id) => WeaponModel.get(id))
+                .where((WeaponModel? m) => !(m?.unique ?? true) && (m?.handiness ?? 0) > 0)
                 .map((WeaponModel? m) => DropdownMenuEntry(value: m!, label: m.name))
                 .toList(),
               onSelected: (WeaponModel? m) {
@@ -631,6 +632,7 @@ class _StarterEquipmentArmorWidgetState extends State<_StarterEquipmentArmorWidg
               ),
               dropdownMenuEntries: ArmorModel.idsByType(currentType!)
                 .map((String id) => ArmorModel.get(id))
+                .where((ArmorModel? m) => !(m?.unique ?? true))
                 .map((ArmorModel? m) => DropdownMenuEntry(value: m!, label: m.name))
                 .toList(),
               onSelected: (ArmorModel? m) {
