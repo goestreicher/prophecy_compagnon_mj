@@ -7,6 +7,7 @@ import 'edit_equipment_widget.dart';
 import 'edit_fervor_widget.dart';
 import 'edit_magic_widget.dart';
 import 'edit_relations_widget.dart';
+import 'edit_skills_widget.dart';
 
 class CharacterEditWidget extends StatefulWidget {
   const CharacterEditWidget({
@@ -29,7 +30,7 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
   @override
   void initState() {
     super.initState();
-    tabController = TabController(length: 6, vsync: this);
+    tabController = TabController(length: 7, vsync: this);
   }
 
   @override
@@ -66,6 +67,7 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
           controller: tabController,
           tabs: const [
             Tab(text: 'Base'),
+            Tab(text: 'Compétences'),
             Tab(text: 'Caste & Lien'),
             Tab(text: 'Background'),
             Tab(text: 'Équipement'),
@@ -83,6 +85,11 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
                   child: CharacterEditBaseWidget(
                     character: widget.character,
                   )
+                ),
+                _CharacterEditTabWidget(
+                  child: CharacterEditSkillsWidget(
+                    character: widget.character,
+                  ),
                 ),
                 _CharacterEditTabWidget(
                   child: CharacterEditRelationsWidget(
@@ -142,7 +149,7 @@ class _CharacterEditTabWidgetState extends State<_CharacterEditTabWidget> with A
             maxWidth: 1000,
           ),
           child: Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(20.0),
             child: widget.child,
           ),
         ),

@@ -171,35 +171,7 @@ class CharacterEditBaseWidget extends StatelessWidget {
           topWidget = _threeColumnsLayout();
         }
 
-        return Column(
-          spacing: 12.0,
-          children: [
-            topWidget,
-            Divider(),
-            Wrap(
-              spacing: 20.0,
-              runSpacing: 12.0,
-              children: [
-                EntityEditSkillGroupContainer(
-                  entity: character,
-                  attribute: Attribute.physique,
-                ),
-                EntityEditSkillGroupContainer(
-                  entity: character,
-                  attribute: Attribute.mental,
-                ),
-                EntityEditSkillGroupContainer(
-                  entity: character,
-                  attribute: Attribute.manuel,
-                ),
-                EntityEditSkillGroupContainer(
-                  entity: character,
-                  attribute: Attribute.social,
-                ),
-              ],
-            ),
-          ],
-        );
+        return topWidget;
       }
     );
   }
