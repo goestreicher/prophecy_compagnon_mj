@@ -359,6 +359,7 @@ class _TableEditPageState extends State<TableEditPage> {
             if(selectedId != null)
               Expanded(
                 child: CharacterEditWidget(
+                  key: ValueKey((newPC ?? table.players.firstWhere((PlayerCharacter p) => p.id == selectedId!).uuid)),
                   character: newPC ?? table.players.firstWhere((PlayerCharacter p) => p.id == selectedId!),
                   onEditDone: (bool result) async {
                     if(result) {
