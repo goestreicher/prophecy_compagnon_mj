@@ -199,17 +199,16 @@ class _AdvantageSelectionWidgetState extends State<_AdvantageSelectionWidget> {
             ],
           ),
         ),
-        Expanded(
-          child: selected == null
-            ? SizedBox.shrink()
-            : _SelectableAdvantageViewWidget(
-                advantage: selected!,
-                costs: selected!.cost
-                  .where((int c) => widget.maxCost == null || c <= widget.maxCost!)
-                  .toList(),
-                onSelected: () => widget.onSelected(selected!),
-              ),
-        ),
+        if(selected != null)
+          Expanded(
+            child: _SelectableAdvantageViewWidget(
+              advantage: selected!,
+              costs: selected!.cost
+                .where((int c) => widget.maxCost == null || c <= widget.maxCost!)
+                .toList(),
+              onSelected: () => widget.onSelected(selected!),
+            ),
+          ),
       ],
     );
   }

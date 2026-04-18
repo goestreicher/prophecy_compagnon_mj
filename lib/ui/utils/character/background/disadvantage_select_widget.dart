@@ -192,14 +192,13 @@ class _DisadvantageSelectionWidgetState extends State<DisadvantageSelectionWidge
             ],
           ),
         ),
-        Expanded(
-          child: selected == null
-            ? SizedBox.shrink()
-            : SelectableDisadvantageViewWidget(
-                disadvantage: selected!,
-                onSelected: () => widget.onSelected(selected!),
-              ),
-        ),
+        if(selected != null)
+          Expanded(
+            child: SelectableDisadvantageViewWidget(
+              disadvantage: selected!,
+              onSelected: () => widget.onSelected(selected!),
+            ),
+          ),
       ],
     );
   }
