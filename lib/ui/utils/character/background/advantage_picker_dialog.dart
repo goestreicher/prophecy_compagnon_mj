@@ -31,22 +31,22 @@ class _AdvantagePickerDialogState extends State<AdvantagePickerDialog> {
     var theme = Theme.of(context);
 
     return AlertDialog(
-        title: const Text('Sélectionner le désavantage'),
-        content: SizedBox(
-          width: 800,
-          height: 500,
-          child: AdvantageSelectWidget(
-            types: (widget.types ?? AdvantageType.values),
-            maxCost: widget.maxCost,
-            exclude: widget.exclude,
-            includeReservedForCaste: widget.includeReservedForCaste,
-            onSelected: (CharacterAdvantage? a) {
-              setState(() {
-                selected = a;
-              });
-            },
-          ),
+      title: const Text("Sélectionner l'avantage"),
+      content: SizedBox(
+        width: 800,
+        height: 500,
+        child: AdvantageSelectWidget(
+          types: (widget.types ?? AdvantageType.values),
+          maxCost: widget.maxCost,
+          exclude: widget.exclude,
+          includeReservedForCaste: widget.includeReservedForCaste,
+          onSelected: (CharacterAdvantage? a) {
+            setState(() {
+              selected = a;
+            });
+          },
         ),
+      ),
       actions: [
         ElevatedButton(
           onPressed: () {
