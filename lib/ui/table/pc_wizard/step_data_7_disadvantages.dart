@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 
 import '../../../classes/character/disadvantages.dart';
 import '../../../classes/human_character.dart';
+import '../../utils/character/background/disadvantage_select_widget.dart';
 import 'enums.dart';
 import 'model.dart';
 import 'step_data.dart';
@@ -621,8 +622,6 @@ class _DisadvantageSelectionDialogState extends State<_DisadvantageSelectionDial
 
   @override
   Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-    
     return AlertDialog(
       title: const Text("Choix du désavantage"),
       content: SizedBox(
@@ -668,8 +667,8 @@ class _DisadvantageSelectionDialogState extends State<_DisadvantageSelectionDial
               ),
             if(disadvantage == null && niceDM)
               Expanded(
-                child: _DisadvantageFreeSelectionWidget(
-                  type: widget.type,
+                child: DisadvantageSelectionWidget(
+                  limitToType: widget.type,
                   exclude: widget.exclude,
                   onSelected: (Disadvantage d) => setState(() {
                     disadvantage = d;
@@ -689,96 +688,27 @@ class _DisadvantageSelectionDialogState extends State<_DisadvantageSelectionDial
                   spacing: 12.0,
                   children: [
                     Expanded(
-                      child: _SingleDisadvantageSelectionWidget(
+                      child: SelectableDisadvantageViewWidget(
                         disadvantage: disadvantage!,
-                        onSelected: () {}
-                      ),
+                        onSelected: () {
+                          setState(() {
+                            disadvantage = null;
+                            cost = null;
+                            details = null;
+                          });
+                        },
+                      )
                     ),
                     Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        spacing: 16.0,
-                        children: [
-                          Text(
-                            'Désavantage : ${disadvantage!.title}',
-                            style: theme.textTheme.titleMedium!
-                              .copyWith(fontWeight: FontWeight.bold),
-                          ),
-                          Row(
-                            spacing: 12.0,
-                            children: [
-                              Text(
-                                'Coût',
-                                style: theme.textTheme.titleMedium!
-                                  .copyWith(fontWeight: FontWeight.bold),
-                              ),
-                              SizedBox(
-                                width: 80,
-                                child: DropdownMenu<int>(
-                                  initialSelection: costs.length == 1
-                                    ? costs[0]
-                                    : null,
-                                  requestFocusOnTap: true,
-                                  expandedInsets: EdgeInsets.zero,
-                                  textStyle: theme.textTheme.bodySmall,
-                                  inputDecorationTheme: const InputDecorationTheme(
-                                    border: OutlineInputBorder(),
-                                    isCollapsed: true,
-                                    constraints: BoxConstraints(maxHeight: 36.0),
-                                    contentPadding: EdgeInsets.all(12.0),
-                                  ),
-                                  dropdownMenuEntries: costs
-                                    .map(
-                                      (int c) => DropdownMenuEntry(
-                                        value: c, label: c.toString()
-                                      )
-                                    )
-                                    .toList(),
-                                  onSelected: (int? v) {
-                                    if(v == null) return;
-                                    setState(() {
-                                      cost = v;
-                                      _prepareFinish();
-                                    });
-                                  },
-                                ),
-                              )
-                            ],
-                          ),
-                          if(disadvantage!.requireDetails)
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                spacing: 8.0,
-                                children: [
-                                  Text(
-                                    'Détails',
-                                    style: theme.textTheme.titleMedium!
-                                      .copyWith(fontWeight: FontWeight.bold),
-                                  ),
-                                  Expanded(
-                                    child: TextField(
-                                      decoration: const InputDecoration(
-                                        border: OutlineInputBorder(),
-                                        isCollapsed: true,
-                                        constraints: BoxConstraints(maxHeight: 36.0),
-                                        contentPadding: EdgeInsets.all(12.0),
-                                      ),
-                                      minLines: 1,
-                                      maxLines: 3,
-                                      onChanged: (String? v) {
-                                        if(v == null || v.isEmpty) return;
-                                        setState(() {
-                                          details = v;
-                                          _prepareFinish();
-                                        });
-                                      },
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                        ],
+                      child: DisadvantageConfigurationWidget(
+                        disadvantage: disadvantage!,
+                        onDone: (CharacterDisadvantage? d) {
+                          setState(() {
+                            cost = d?.cost;
+                            details = d?.details;
+                          });
+                          _prepareFinish();
+                        },
                       ),
                     ),
                   ],
