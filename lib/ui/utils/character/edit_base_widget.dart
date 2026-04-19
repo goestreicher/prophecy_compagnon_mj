@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../../../classes/entity/attributes.dart';
 import '../../../classes/human_character.dart';
 import '../../../classes/player_character.dart';
 import '../entity/base/edit_abilities_widget.dart';
 import '../entity/base/edit_attributes_widget.dart';
 import '../entity/base/edit_injuries_widget.dart';
-import '../entity/base/edit_skill_group_container.dart';
 import 'base/edit_caste_widget.dart';
 import 'base/edit_experience_widget.dart';
 import 'base/edit_general_widget.dart';
