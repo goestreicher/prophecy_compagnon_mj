@@ -60,7 +60,6 @@ class _CastePrivilegePickerDialogState extends State<CastePrivilegePickerDialog>
           (CastePrivilege p) =>
             (
               p.caste == currentCaste
-              ||  (p.caste == Caste.sansCaste && !widget.limitToDefaultCaste)
             )
             && (
               p.unique == false
@@ -149,6 +148,8 @@ class _CastePrivilegePickerDialogState extends State<CastePrivilegePickerDialog>
                               itemBuilder: (BuildContext context, int index) {
                                 return ListTile(
                                   title: Text(privilegesForCurrentCaste[index].title),
+                                  selected: viewing == privilegesForCurrentCaste[index],
+                                  selectedTileColor: theme.colorScheme.surfaceContainerLow,
                                   onTap: () => setState(() {
                                     viewing = privilegesForCurrentCaste[index];
                                   }),

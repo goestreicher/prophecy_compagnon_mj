@@ -144,6 +144,8 @@ class _AdvantageSelectionWidgetState extends State<_AdvantageSelectionWidget> {
 
   @override
   Widget build(BuildContext context) {
+    var theme = Theme.of(context);
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 12.0,
@@ -185,6 +187,8 @@ class _AdvantageSelectionWidgetState extends State<_AdvantageSelectionWidget> {
                   itemBuilder: (BuildContext context, int index) {
                     return ListTile(
                       title: Text(advantages[index].title),
+                      selected: selected == advantages[index],
+                      selectedTileColor: theme.colorScheme.surfaceContainerLow,
                       onTap: () => setState(() {
                         selected = advantages[index];
                       }),
