@@ -1,4 +1,7 @@
 import '../caste/base.dart';
+import '../entity/skill.dart';
+import '../entity/skill_family.dart';
+import '../magic.dart';
 
 enum AdvantageType {
   general(title: 'Général'),
@@ -9,6 +12,33 @@ enum AdvantageType {
 
   const AdvantageType({ required this.title });
 }
+
+List<String> _magicSphereNames() => MagicSphere.values
+    .map((MagicSphere s) => s.title)
+    .toList();
+
+List<String> _senseNames() => [
+    "Vue",
+    "Ouïe",
+    "Goût",
+    "Odorat",
+    "Toucher"
+  ];
+
+List<String> _artInterditGenerator() => [
+    Skill.armesMecaniques.title,
+    Skill.chirurgie.title,
+    Skill.explosifs.title,
+    Skill.mecanismes.title,
+  ];
+
+List<String> _habileteReconnueGenerator() => SkillFamily.values
+    .map((SkillFamily f) => f.title)
+    .toList();
+
+List<String> _techniquePersonnelleGenerator() => Skill.values
+    .map((Skill s) => s.title)
+    .toList();
 
 enum Advantage {
   adopteParLAssemblee(
@@ -128,6 +158,7 @@ enum Advantage {
     cost: [5],
     type: AdvantageType.general,
     requireDetails: true,
+    detailsGenerator: _magicSphereNames,
   ),
   magieNaturelle(
     title: 'Magie naturelle',
@@ -135,6 +166,7 @@ enum Advantage {
     cost: [4],
     type: AdvantageType.general,
     requireDetails: true,
+    detailsGenerator: _magicSphereNames,
   ),
   mentor(
     title: 'Mentor',
@@ -190,6 +222,7 @@ enum Advantage {
     type: AdvantageType.general,
     requireDetails: true,
     unique: false,
+    detailsGenerator: _senseNames,
   ),
   sensDeLOrientation(
     title: "Sens de l'orientation",
@@ -258,6 +291,7 @@ enum Advantage {
     cost: [3],
     type: AdvantageType.ancien,
     requireDetails: true,
+    detailsGenerator: _artInterditGenerator,
   ),
   conviction(
     title: 'Conviction',
@@ -277,6 +311,7 @@ enum Advantage {
     cost: [5],
     type: AdvantageType.ancien,
     requireDetails: true,
+    detailsGenerator: _habileteReconnueGenerator,
   ),
   objetDePredilection(
     title: 'Object de prédilection',
@@ -291,6 +326,7 @@ enum Advantage {
     cost: [5],
     type: AdvantageType.ancien,
     requireDetails: true,
+    detailsGenerator: _techniquePersonnelleGenerator,
   )
   ;
 
@@ -301,6 +337,7 @@ enum Advantage {
   final bool requireDetails;
   final List<Caste> reservedCastes;
   final bool unique;
+  final List<String> Function()? detailsGenerator;
 
   const Advantage({
     required this.title,
@@ -310,5 +347,6 @@ enum Advantage {
     this.requireDetails = false,
     this.reservedCastes = const <Caste>[],
     this.unique = true,
+    this.detailsGenerator,
   });
 }

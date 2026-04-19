@@ -273,6 +273,10 @@ class _AdvantageConfigurationWidget extends StatefulWidget {
 }
 
 class _AdvantageConfigurationWidgetState extends State<_AdvantageConfigurationWidget> {
+  TextEditingController detailsController = TextEditingController();
+  FocusNode detailsFocusNode = FocusNode();
+  GlobalKey detailsAutocompleteKey = GlobalKey();
+
   late List<int> costs;
   int? cost;
   String? details;
@@ -310,6 +314,50 @@ class _AdvantageConfigurationWidgetState extends State<_AdvantageConfigurationWi
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
+
+    Widget? autocompleteWidget;
+    var autocompleteOptions = (widget.advantage.detailsGenerator?.call() ?? <String>[]);
+    if(autocompleteOptions.isNotEmpty) {
+      autocompleteWidget = RawAutocomplete<String>(
+        textEditingController: detailsController,
+        focusNode: detailsFocusNode,
+        key: detailsAutocompleteKey,
+        onSelected: (String v) {
+          details = v;
+          _finish();
+        },
+        optionsBuilder: (TextEditingValue value) {
+          if(value.text.isEmpty) {
+            return const Iterable<String>.empty();
+          }
+          return autocompleteOptions
+            .where((String w) => w.toLowerCase().contains(value.text.toLowerCase()));
+        },
+        optionsViewBuilder:
+          (
+            BuildContext context,
+            AutocompleteOnSelected<String> onSelected,
+            Iterable<String> options,
+          ) {
+          return Material(
+            elevation: 4.0,
+            child: ListView(
+              shrinkWrap: true,
+              children: options
+                .map(
+                  (String option) => GestureDetector(
+                    onTap: () {
+                      onSelected(option);
+                    },
+                    child: ListTile(title: Text(option)),
+                  ),
+                )
+                .toList(),
+            ),
+          );
+        },
+      );
+    }
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -370,24 +418,25 @@ class _AdvantageConfigurationWidgetState extends State<_AdvantageConfigurationWi
                   style: theme.textTheme.titleMedium!
                     .copyWith(fontWeight: FontWeight.bold),
                 ),
-                Expanded(
-                  child: TextField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(),
-                      isCollapsed: true,
-                      constraints: BoxConstraints(maxHeight: 36.0),
-                      contentPadding: EdgeInsets.all(12.0),
-                    ),
-                    minLines: 1,
-                    maxLines: 3,
-                    onChanged: (String? v) {
-                      setState(() {
-                        details = v;
-                        _finish();
-                      });
-                    },
+                TextField(
+                  controller: detailsController,
+                  focusNode: detailsFocusNode,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                    isCollapsed: true,
+                    constraints: BoxConstraints(maxHeight: 36.0),
+                    contentPadding: EdgeInsets.all(12.0),
                   ),
+                  minLines: 1,
+                  maxLines: 3,
+                  onChanged: (String? v) {
+                    setState(() {
+                      details = v;
+                      _finish();
+                    });
+                  },
                 ),
+                ?autocompleteWidget,
               ],
             ),
           ),

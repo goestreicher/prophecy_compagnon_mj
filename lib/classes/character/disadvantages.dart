@@ -1,4 +1,5 @@
 import '../caste/base.dart';
+import '../caste/interdicts.dart';
 
 enum DisadvantageType {
   commun(title: 'Commun'),
@@ -9,6 +10,18 @@ enum DisadvantageType {
   final String title;
 
   const DisadvantageType({ required this.title });
+}
+
+List<String> _interdictsGenerator() {
+  var ret = <String>[];
+  for(var c in Caste.values) {
+    ret.addAll(
+      CasteInterdict.values
+          .where((CasteInterdict i) => i.caste == c)
+          .map((CasteInterdict i) => '${c.title} : ${i.title}')
+    );
+  }
+  return ret;
 }
 
 enum Disadvantage {
@@ -88,6 +101,7 @@ enum Disadvantage {
     type: DisadvantageType.commun,
     requireDetails: true,
     unique: false,
+    detailsGenerator: _interdictsGenerator,
   ),
   interditsDeBrorne(
     title: 'Interdits de Brorne (Mage de la Pierre)',
@@ -431,6 +445,7 @@ enum Disadvantage {
   final bool requireDetails;
   final List<Caste> reservedCastes;
   final bool unique;
+  final List<String> Function()? detailsGenerator;
 
   const Disadvantage({
     required this.title,
@@ -440,5 +455,6 @@ enum Disadvantage {
     this.requireDetails = false,
     this.reservedCastes = const <Caste>[],
     this.unique = true,
+    this.detailsGenerator,
   });
 }
