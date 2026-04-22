@@ -125,23 +125,13 @@ class _CharacterEditWidgetState extends State<CharacterEditWidget> with TickerPr
   }
 }
 
-class _CharacterEditTabWidget extends StatefulWidget {
+class _CharacterEditTabWidget extends StatelessWidget {
   const _CharacterEditTabWidget({ required this.child });
 
   final Widget child;
 
   @override
-  State<_CharacterEditTabWidget> createState() => _CharacterEditTabWidgetState();
-}
-
-class _CharacterEditTabWidgetState extends State<_CharacterEditTabWidget> with AutomaticKeepAliveClientMixin<_CharacterEditTabWidget> {
-  @override
-  bool get wantKeepAlive => true;
-
-  @override
   Widget build(BuildContext context) {
-    super.build(context);
-
     return SingleChildScrollView(
       child: Center(
         child: ConstrainedBox(
@@ -150,7 +140,7 @@ class _CharacterEditTabWidgetState extends State<_CharacterEditTabWidget> with A
           ),
           child: Padding(
             padding: const EdgeInsets.all(20.0),
-            child: widget.child,
+            child: child,
           ),
         ),
       ),
