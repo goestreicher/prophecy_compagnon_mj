@@ -2,6 +2,7 @@ import 'package:json_annotation/json_annotation.dart';
 
 import '../../text_utils.dart';
 import '../caste/base.dart';
+import '../equipment/weapon.dart';
 import 'skill.dart';
 
 part 'specialized_skill.g.dart';
@@ -126,7 +127,20 @@ class SpecializedSkill {
     if(SpecializedSkill._globalSpecializedSkillsInitialized) return;
     SpecializedSkill._globalSpecializedSkillsInitialized = true;
 
-    // TODO: add useful and known specializations here
+    for(var skill in WeaponModel.weaponSkills()) {
+      if(skill == Skill.creatureNaturalWeapon) continue;
+      for(var weaponId in WeaponModel.idsBySkill(skill)) {
+        var weapon = WeaponModel.get(weaponId);
+        if(weapon == null) continue;
+
+        // ignore:unused_local_variable
+        var s = SpecializedSkill.create(
+          parent: skill,
+          name: weapon.name,
+        );
+      }
+    }
+
     // ignore:unused_local_variable
     var s = SpecializedSkill.create(
       parent: Skill.vieEnCite,
@@ -212,6 +226,8 @@ class SpecializedSkill {
       reservedCastes: [Caste.erudit, Caste.mage, Caste.commercant],
       description: "Cette spécialisation est exclusivement accessible aux membres de la faction des Historiens.\nGrâce à cette Spécialisation, les Historiens sont capables, après avoir discuté avec un individu pendant (10 - niveau de Compétence) heures (au minimum 30 minutes), de déterminer le type de propos à employer ou d'événements à provoquer afin de manipuler ce dernier. Cette Compétence, combinée avec le Bénéfice d'Historien, permet à l'agent d'être particulièrement persuasif et surtout de faire en sorte que l'information se répande. Par ailleurs, la réussit d'un jet de Manipulation apportera un bonus de 1+1/NR à tout ultérieur de Séduction, de Diplomatie ou toute autre Cométence sociale, ainsi qu'à tout sort visant à manipuler un individu."
     );
+
+    // TODO: add useful and known specializations here
   }
 
   factory SpecializedSkill.fromJson(Map<String, dynamic> json) =>
