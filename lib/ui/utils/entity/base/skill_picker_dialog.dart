@@ -32,9 +32,9 @@ class SkillPickerDialog extends StatefulWidget {
 class _SkillPickerDialogState extends State<SkillPickerDialog> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final TextEditingController skillController = TextEditingController();
-  final TextEditingController implementationController = TextEditingController();
   
   Skill? currentSkill;
+  String? currentImplementation;
 
   @override
   Widget build(BuildContext context) {
@@ -56,7 +56,7 @@ class _SkillPickerDialogState extends State<SkillPickerDialog> {
             var instance = SkillInstance(
               skill: currentSkill!,
               value: 1,
-              implementation: implementationController.text,
+              implementation: currentImplementation,
             );
 
             Navigator.of(context).pop(instance);
@@ -101,17 +101,12 @@ class _SkillPickerDialogState extends State<SkillPickerDialog> {
                   },
                 ),
                 if(currentSkill != null && currentSkill!.requireConcreteImplementation)
-                  TextFormField(
-                    controller: implementationController,
-                    decoration: const InputDecoration(
-                      labelText: 'Nom de la compétence',
-                      border: OutlineInputBorder(),
-                    ),
-                    validator: (String? value) {
-                      if(value == null || value.isEmpty) {
-                        return 'Valeur obligatoire';
-                      }
-                      return null;
+                  _SkillImplementationInputWidget(
+                    skill: currentSkill!,
+                    onChanged: (String? v) {
+                      setState(() {
+                        currentImplementation = v;
+                      });
                     },
                   ),
                 if(currentSkill != null && currentSkill!.description.isNotEmpty)
@@ -121,6 +116,93 @@ class _SkillPickerDialogState extends State<SkillPickerDialog> {
           ),
         ),
       )
+    );
+  }
+}
+
+class _SkillImplementationInputWidget extends StatefulWidget {
+  const _SkillImplementationInputWidget({
+    required this.skill,
+    required this.onChanged,
+  });
+
+  final Skill skill;
+  final void Function(String?) onChanged;
+
+  @override
+  State<_SkillImplementationInputWidget> createState() => _SkillImplementationInputWidgetState();
+}
+
+class _SkillImplementationInputWidgetState extends State<_SkillImplementationInputWidget> {
+  TextEditingController implementationController = TextEditingController();
+  FocusNode implementationFocusNode = FocusNode();
+  GlobalKey implementationKey = GlobalKey();
+
+  @override
+  Widget build(BuildContext context) {
+    Widget? overlayWidget;
+
+    var implementationOptions = widget.skill.implementations ?? <String>[];
+    if(implementationOptions.isNotEmpty) {
+      overlayWidget = RawAutocomplete<String>(
+        key: implementationKey,
+        textEditingController: implementationController,
+        focusNode: implementationFocusNode,
+        onSelected: widget.onChanged,
+        optionsBuilder: (TextEditingValue value) {
+          if(value.text.isEmpty) {
+            return const Iterable<String>.empty();
+          }
+          return implementationOptions
+            .where((String w) => w.toLowerCase().contains(value.text.toLowerCase()));
+        },
+        optionsViewBuilder:
+          (
+            BuildContext context,
+            AutocompleteOnSelected<String> onSelected,
+            Iterable<String> options,
+          ) {
+          return Material(
+            elevation: 4.0,
+            child: ListView(
+              shrinkWrap: true,
+              children: options
+                .map(
+                  (String option) => GestureDetector(
+                    onTap: () {
+                      onSelected(option);
+                    },
+                    child: ListTile(title: Text(option)),
+                  ),
+                )
+                .toList(),
+            ),
+          );
+        },
+      );
+    }
+
+    return Column(
+      children: [
+        TextFormField(
+          controller: implementationController,
+          focusNode: implementationFocusNode,
+          decoration: const InputDecoration(
+            labelText: 'Nom de la compétence',
+            border: OutlineInputBorder(),
+          ),
+          onChanged: widget.skill.canCreateNewImplementation
+            ? widget.onChanged
+            : null,
+          validator: (String? value) {
+            if(value == null || value.isEmpty) {
+              return 'Valeur obligatoire';
+            }
+            return null;
+          },
+        ),
+        ?overlayWidget,
+      ],
     );
   }
 }
