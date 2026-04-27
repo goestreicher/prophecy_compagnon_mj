@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../classes/caste/base.dart';
 import '../../../../classes/character/disadvantages.dart';
 import '../../../../classes/human_character.dart';
+import '../../autocomplete_overlay_widget.dart';
 
 class DisadvantageSelectWidget extends StatefulWidget {
   const DisadvantageSelectWidget({
@@ -311,10 +312,10 @@ class _DisadvantageConfigurationWidgetState extends State<DisadvantageConfigurat
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
 
-    Widget? autocompleteWidget;
+    Widget? overlayWidget;
     var autocompleteOptions = (widget.disadvantage.detailsGenerator?.call() ?? <String>[]);
     if(autocompleteOptions.isNotEmpty) {
-      autocompleteWidget = RawAutocomplete<String>(
+      overlayWidget = RawAutocomplete<String>(
         textEditingController: detailsController,
         focusNode: detailsFocusNode,
         key: detailsAutocompleteKey,
@@ -352,6 +353,20 @@ class _DisadvantageConfigurationWidgetState extends State<DisadvantageConfigurat
             ),
           );
         },
+      );
+    }
+    else if(widget.disadvantage.detailsOverlay != null) {
+      overlayWidget = AutocompleteOverlayWidget(
+        key: detailsAutocompleteKey,
+        focusNode: detailsFocusNode,
+        childBuilder: widget.disadvantage.detailsOverlay!,
+        onInput: (String v) {
+          detailsController.text = '${detailsController.text}$v';
+          setState(() {
+            details = v;
+            _finish();
+          });
+        }
       );
     }
     
@@ -432,7 +447,7 @@ class _DisadvantageConfigurationWidgetState extends State<DisadvantageConfigurat
                     });
                   },
                 ),
-                ?autocompleteWidget,
+                ?overlayWidget,
               ],
             ),
           ),

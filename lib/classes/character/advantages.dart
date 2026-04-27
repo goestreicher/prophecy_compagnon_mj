@@ -1,7 +1,11 @@
+import 'package:flutter/material.dart';
+
+import '../../ui/utils/autocomplete_character_name_widget.dart';
 import '../caste/base.dart';
 import '../entity/skill.dart';
 import '../entity/skill_family.dart';
 import '../magic.dart';
+import '../resource_link/resource_link.dart';
 
 enum AdvantageType {
   general(title: 'Général'),
@@ -40,6 +44,18 @@ List<String> _techniquePersonnelleGenerator() => Skill.values
     .map((Skill s) => s.title)
     .toList();
 
+Widget _characterOrFactionAutocompleteWidget(BuildContext context, void Function(String) onInput) {
+  return resourceLinkNameAutocompleteWidget(
+    context,
+    onInput,
+    [
+      ResourceLinkType.npc,
+      ResourceLinkType.pc,
+      ResourceLinkType.faction
+    ]
+  );
+}
+
 enum Advantage {
   adopteParLAssemblee(
     title: "Adopté par l'Assemblée",
@@ -60,6 +76,7 @@ enum Advantage {
     type: AdvantageType.general,
     requireDetails: true,
     unique: false,
+    detailsOverlay: _characterOrFactionAutocompleteWidget,
   ),
   ambidextre(
     title: 'Ambidextre',
@@ -174,6 +191,7 @@ enum Advantage {
     cost: [4],
     type: AdvantageType.general,
     requireDetails: true,
+    detailsOverlay: characterNameAutocompleteWidget,
   ),
   present(
     title: 'Présent',
@@ -181,6 +199,7 @@ enum Advantage {
     cost: [1,2,3,4,5,6],
     type: AdvantageType.general,
     requireDetails: true,
+    detailsOverlay: characterNameAutocompleteWidget,
     reservedCastes: [Caste.artisan],
     unique: false,
   ),
@@ -338,6 +357,7 @@ enum Advantage {
   final List<Caste> reservedCastes;
   final bool unique;
   final List<String> Function()? detailsGenerator;
+  final Widget Function(BuildContext, void Function(String))? detailsOverlay;
 
   const Advantage({
     required this.title,
@@ -348,5 +368,6 @@ enum Advantage {
     this.reservedCastes = const <Caste>[],
     this.unique = true,
     this.detailsGenerator,
+    this.detailsOverlay,
   });
 }

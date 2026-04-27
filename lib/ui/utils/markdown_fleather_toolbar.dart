@@ -2,9 +2,8 @@ import 'package:fleather/fleather.dart';
 import 'package:flutter/material.dart';
 import 'package:parchment/codecs.dart';
 
-import '../../classes/resource_link/assets_resource_link_provider.dart';
 import '../../classes/resource_link/resource_link.dart';
-import 'resource_link_edit_widget.dart';
+import 'resource_link_picker_dialog.dart';
 
 class MarkdownFleatherToolbarFormField extends FormField<bool> {
   MarkdownFleatherToolbarFormField({
@@ -124,29 +123,6 @@ class _MarkdownFleatherToolbarState extends State<MarkdownFleatherToolbar> {
       ]);
     }
 
-    // trailing.addAll([
-    //   VerticalDivider(
-    //     indent: 16,
-    //     endIndent: 16,
-    //   ),
-    //   FLIconButton(
-    //     onPressed: !hasPendingChanges ? null : () {
-    //       widget.onSaved?.call(
-    //         ParchmentMarkdownCodec().encode(widget.controller.document)
-    //       );
-    //       setState(() {
-    //         hasPendingChanges = false;
-    //       });
-    //     },
-    //     size: 32,
-    //     icon: Icon(
-    //       Icons.check_circle_rounded,
-    //       size: 20,
-    //       color: hasPendingChanges ? theme.iconTheme.color : theme.disabledColor,
-    //     ),
-    //   ),
-    // ]);
-
     return Container(
       decoration: BoxDecoration(
         color: theme.canvasColor,
@@ -169,102 +145,4 @@ class _MarkdownFleatherToolbarState extends State<MarkdownFleatherToolbar> {
 
 Widget openBaseResourceLinkPickerDialog() {
   return ResourceLinkPickerDialog();
-}
-
-class ResourceLinkPickerDialog extends StatefulWidget {
-  const ResourceLinkPickerDialog({
-    super.key,
-    this.localProvider,
-  });
-
-  final ResourceLinkProvider? localProvider;
-
-  @override
-  State<ResourceLinkPickerDialog> createState() => _ResourceLinkPickerDialogState();
-}
-
-class _ResourceLinkPickerDialogState extends State<ResourceLinkPickerDialog> {
-  late ResourceLinkProvider selectedProvider;
-  ResourceLink? selected;
-
-  @override
-  void initState() {
-    super.initState();
-
-    selectedProvider = widget.localProvider ?? const AssetsResourceLinkProvider();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var theme = Theme.of(context);
-
-    return AlertDialog(
-      title: const Text('Sélection de la ressource'),
-      content: SizedBox(
-        width: 400,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          spacing: 12.0,
-          children: [
-            if(widget.localProvider != null)
-              Row(
-                spacing: 16.0,
-                children: [
-                  Switch(
-                    value: widget.localProvider == selectedProvider,
-                    onChanged: (bool value) {
-                      setState(() {
-                        selectedProvider = value
-                            ? widget.localProvider!
-                            : const AssetsResourceLinkProvider();
-                        selected = null;
-                      });
-                    },
-                  ),
-                  Expanded(
-                    child: Text(
-                      widget.localProvider == selectedProvider
-                        ? 'Utiliser les ressources locales (${widget.localProvider!.sourceNames()[0]}'
-                        : 'Utiliser les ressources de base'
-                    ),
-                  ),
-                ],
-              ),
-            ResourceLinkEditWidget(
-              provider: selectedProvider,
-              onChanged: (ResourceLink? l) {
-                setState(() {
-                  selected = l;
-                });
-              }
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0.0, 16.0, 0.0, 0.0),
-              child: Row(
-                children: [
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pop();
-                    },
-                    child: const Text('Annuler'),
-                  ),
-                  const SizedBox(width: 12.0),
-                  ElevatedButton(
-                    onPressed: selected == null ? null : () {
-                      Navigator.of(context).pop(selected);
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: theme.colorScheme.primary,
-                      foregroundColor: theme.colorScheme.onPrimary,
-                    ),
-                    child: const Text('OK'),
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
-      ),
-    );
-  }
 }

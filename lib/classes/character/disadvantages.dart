@@ -1,5 +1,9 @@
+import 'package:flutter/material.dart';
+
+import '../../ui/utils/autocomplete_character_name_widget.dart';
 import '../caste/base.dart';
 import '../caste/interdicts.dart';
+import '../resource_link/resource_link.dart';
 
 enum DisadvantageType {
   commun(title: 'Commun'),
@@ -22,6 +26,18 @@ List<String> _interdictsGenerator() {
     );
   }
   return ret;
+}
+
+Widget _characterOrFactionAutocompleteWidget(BuildContext context, void Function(String) onInput) {
+  return resourceLinkNameAutocompleteWidget(
+      context,
+      onInput,
+      [
+        ResourceLinkType.npc,
+        ResourceLinkType.pc,
+        ResourceLinkType.faction
+      ]
+  );
 }
 
 enum Disadvantage {
@@ -47,11 +63,12 @@ enum Disadvantage {
   ),
   dette(
     title: 'Dette',
-    description: "Le personnage est redevable d’une faveur ou d'une somme d'argent à un individu qui l’a aidé par le passé. Les détails de ce service rendu sont laissésà la discrétion du joueur et du meneur de jeu. Pour 1 point, la dette concerne une petite somme ou une faveur minime. Pour 2 points, il peut s'agir soit d’une dette importante (forte somme ou faveur conséquente), soit d’une dette que le destinataire prendra soin de récupérer sans ménager le personnage (par la force ou le chantage, en provoquant un scandale, etc.).\nUn scénario (ou un chapitre) spécifique devra toujours accompagner le remboursement.\nCe Désavantage peut survenir plusieurs fois.",
+    description: "Le personnage est redevable d’une faveur ou d'une somme d'argent à un individu qui l’a aidé par le passé. Les détails de ce service rendu sont laissés à la discrétion du joueur et du meneur de jeu. Pour 1 point, la dette concerne une petite somme ou une faveur minime. Pour 2 points, il peut s'agir soit d’une dette importante (forte somme ou faveur conséquente), soit d’une dette que le destinataire prendra soin de récupérer sans ménager le personnage (par la force ou le chantage, en provoquant un scandale, etc.).\nUn scénario (ou un chapitre) spécifique devra toujours accompagner le remboursement.\nCe Désavantage peut survenir plusieurs fois.",
     cost: [1,2],
     type: DisadvantageType.commun,
     requireDetails: true,
     unique: false,
+    detailsOverlay: _characterOrFactionAutocompleteWidget,
   ),
   echec(
     title: 'Échec',
@@ -73,6 +90,7 @@ enum Disadvantage {
     type: DisadvantageType.commun,
     requireDetails: true,
     unique: false,
+    detailsOverlay: _characterOrFactionAutocompleteWidget,
   ),
   faiblesse(
     title: 'Faiblesse',
@@ -245,6 +263,7 @@ enum Disadvantage {
     type: DisadvantageType.rare,
     requireDetails: true,
     unique: false,
+    detailsOverlay: _characterOrFactionAutocompleteWidget,
   ),
   harmonieNaturelle(
       title: 'Harmonie naturelle',
@@ -293,6 +312,7 @@ enum Disadvantage {
     type: DisadvantageType.rare,
     requireDetails: true,
     unique: false,
+    detailsOverlay: characterNameAutocompleteWidget,
   ),
   regardDesDragons(
     title: 'Regard des Dragons',
@@ -446,6 +466,7 @@ enum Disadvantage {
   final List<Caste> reservedCastes;
   final bool unique;
   final List<String> Function()? detailsGenerator;
+  final Widget Function(BuildContext, void Function(String))? detailsOverlay;
 
   const Disadvantage({
     required this.title,
@@ -456,5 +477,6 @@ enum Disadvantage {
     this.reservedCastes = const <Caste>[],
     this.unique = true,
     this.detailsGenerator,
+    this.detailsOverlay,
   });
 }
