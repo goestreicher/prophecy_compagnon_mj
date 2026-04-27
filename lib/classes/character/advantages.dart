@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../ui/utils/autocomplete_character_name_widget.dart';
+import '../../ui/utils/resource_link_name_autocomplete_widget.dart';
 import '../caste/base.dart';
 import '../entity/skill.dart';
 import '../entity/skill_family.dart';

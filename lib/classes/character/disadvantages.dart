@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../ui/utils/autocomplete_character_name_widget.dart';
+import '../../ui/utils/resource_link_name_autocomplete_widget.dart';
 import '../caste/base.dart';
 import '../caste/interdicts.dart';
 import '../resource_link/resource_link.dart';
