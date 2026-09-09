@@ -1,0 +1,102 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "Myriand, la cité des sables",
+    "uuid": "292db47d-0250-4047-8d1a-e1f963ff22fa",
+    "parent_id": "5dfb1642-37bf-48d6-bc99-c36799e7ccf9",
+    "type": "ville",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Une légende veut que Nenya se présentât un jour aux portes du royaume de Kalimsshar pour lui présenter un de ses enfants : Dwan-Tereg, le premier dragon bicéphale de tonte l’histoire de Kor. Intrigué, le Maître du Temps vint à sa rencontre et découvrit avec stupeur que chacune des têtes semblait riche d’une conscience propre - la première se prénommait Dwan, et la seconde Tereg. Quand Kalimsshar s’étonna que Nenya ait tenu à lui présenter ce dragon, elle l’interrompit et laissa parler Dwan, puis Tereg. Dwan salua le Fataliste comme on salue un oncle que l'on n’apprécie guère, mais Tereg honora Kalimsshar comme on salue un père - et un maître.\n\nDès sa naissance, Tereg s’était réclamé de Kalimsshar, et non de Nenya - mais, les deux têtes s’entendant à merveille, la Chimère ne pouvait se résoudre à éliminer la conscience rebelle. Kalimsshar lui-même en demeura perplexe. En sus des domaines oniriques qu’ils avaient en commun, les deux Grands Dragons entretenaient depuis toujours une relation énigmatique, passionnelle et indécise . Après de longues discussions avec sa sœur, Kalimsshar convint à son tour que Dwan-Tereg pourrait vivre en paix et servir à la fois les Rêves et le Temps.\n\nNenya proposa au dragon bicéphale de régner sur une cité relativement discrète pour qu’il ne subisse pas la haine des Grands Dragons, tant à cause de sa différence que sa filiation avec le Maître des Ombres. Kalimsshar fit donc construire Myriand par ses serviteurs et Nenya la protégea d’une aura magique qui la rendit invisible. Dwan-Tereg s’y installa, mais la conscience fataliste du dragon l’emporta rapidement sur sa jumelle. Myriand devint alors la ville des rêves perdus, la cité des cauchemars.\n\nQuand les Immortels devinrent hommes, Dwan-Tereg laissa certains d’entre eux s’installer dans les ruines de Myriand, sans jamais se montrer à eux - devenant une sorte d’éminence grise au sein de son propre domaine. Par la suite, inspirés par la présence tangible du dragon, de nombreux magiciens ouvrirent de grandes écoles de magie qui contribuèrent à la réputation de la cité invisible.\n\nMais Brorne vint à survoler la ville. La magie de Nenya avait beau en cacher les murs, la présence de Dwan-Tereg et son affiliation à Kalimsshar teintaient la région comme une braise vive embrase un lit de bois sec. D'un geste rageur, le Grand Dragon de Pierre déplaça une montagne de sable qu’il fit s’abattre sur Myriand et ses habitants, emprisonnant Dwan-Tereg dans son écrin de magie.\n\nÀ présent, l’on pense que Myriand se trouve enfouie aux frontières d’Ysmir et des terres zûl, seules ses tours les plus hautes dépassent des dunes. Des hommes s’y rendent et creusent le sable solidifié pour y trouver de nombreuses reliques des temps anciens, mais rares sont ceux qui ont réussi à rallier les salles englouties par le sable. Si Nenya et Kalimsshar n’ont plus ressenti la présence de Dwan-Tereg depuis ce jour, rien n'indique qu’il soit mort lors de l’attaque de Brorne - ni que les habitants de Myriand, protégés par la magie de Nenya, aient péri sous de simples flots de sable…\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "Les Elléïanes",
+    "uuid": "3697168f-4270-46e3-a943-4931d81d4fa9",
+    "parent_id": "18be0592-2dcf-4559-b681-c98876b74602",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "À la fin de l’Âge des Empires, dans un vallon situé au nord est de Gix, un fils de Brorne engendra une descendance avec une fille de Nenya. Ainsi naquit Ellïa, chimère issue du sang des deux dragons. Curieuse du monde que lui contaient ses géniteurs, elle utilisa intuitivement ses pouvoirs afin de le visiter. Un jour, un homme nommé Kayel brava le refuge draconique et implora de rencontrer celle qui hantait ses rêves. Les dragons comprirent alors que leur descendante s’était Liée à cet homme, poussée par sa curiosité et sa solitude. Ils déclarèrent accepter Kayel à condition qu’il leur démontre la puissance de ses pouvoirs. Le soir venu, l’homme fit jaillir du sol des dizaines de cheminées de fées emplies de lueurs dansantes.\n\nLa vallée entière trembla sous le flux canalisé par Kayel, qui transformait avec une incroyable force le corps sacré de Moryagorn. Impressionnés, les Dragons acceptèrent sa demande et accueillirent Kayel à leur coté de nombreuses années durant, lui révélant leurs secrets et les sources de leur magie.\n\nLa Vallée des Elléïannes est une légende. Située à environ douze kilomètres de Gix, on y accède par un trajet éprouvant à flanc de montagne. Une fois parvenu au col, on embrasse une vallée de trois kilomètres de long sur cinq cent mètres de large, où se dressent plusieurs dizaines d’imposantes colonnes de pierres naturelles évidées et érodées. De jour, la rareté des animaux et l’absence de routes confèrent une profonde atmosphère de calme et de sérénité à la vallée mais de nuit, les cheminées semblent s’illuminer de lueurs intérieures, décrivant lentement les couleurs du spectre, dans un silence absolu. Les Elléïannes sont un sanctuaire isolé, où nul ne peut vivre sans avoir l’impression de déranger. Il ne s’y trouve donc aucun résident permanent.\n\nLes Elléïanes sont une création des Sphères de la Pierre et de la Magie. Les modificateurs sont ici de : Terre +9, Rêves +7, Fatalité -6 et -2 pour toutes les autres Sphères - qui s’appliquent sur le score de base de tout jet de magie. Elles dissipent les charmes liés au chagrin ou au désespoir et il est impossible de modilier les rêves d’une personne dormant sous les Elléïanes. Un être qui y entre doit réussir un jet de Mental + Volonté contre une Difficulté égale à 5 fois sa Tendance Fatalité. Un jet réussi permet d’évoluer dans le Val durant un nombre de jour égal à sa Tendance Dragon, après quoi le personnage sent qu’il doit libérer le lieu de sa présence et quitte souvent de lui-même ce havre de paix. Si le jet est raté, le personnage semble frappé par une force immatérielle d’une violence inouïe qui déforme sa peau et écrase ses os en le repoussant en arrière. Il subit alors une attaque à la fois physique et mentale qui lui inflige 1D10 blessures +1 par point de Tendance Fatalité. Il est fait mention d’êtres corrompus qui ont lutté afin d’atteindre les Elléianes pour y faire retraite et se purifier, mais mul ne connaît vraiment quelles sont les limites du pouvoir de ce lieu.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "Le Chêne Noir de Solor",
+    "uuid": "587e3e1b-3d7a-459d-9915-053cca183d3e",
+    "parent_id": "bcc7e2b4-c746-4d34-8ca2-f9841664f0d9",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Aux alentours du IIIe Siècle AdE, un des premiers Prodiges nommé Naëlk connut la douleur de perdre son compagnon draconique, avec lequel un Lien profond s’était tissé. Au bord du suicide, il arpenta le monde en répandant sa tristesse, et son cœur rongé par la rancume ne tarda pas à attirer l'attention d’un fils de Kalimsshar. Alors qu’un nouveau Lien naissait progressivement entre eux, les deux compagnons trouvèrent refuge dans la forêt de Solor et, se plongeant dans les méandres de la Fatalité, découvrirent ensemble certaines vérités que Naëlk tenta de faire partager à d’autres Prodiges. Outrée, Heyra décida de détruire les deux impudents, Le Dragon d’Ombre pervertissait la Nature et Naëlk, en prêchant pour son frère noir, ternissait l’image et l’enseignement de sa caste. À son arrivée, elle trouva le dragon en dégénérescence, ses manipulations l’ayant changé en un chêne grouillant dont les vrilles écailleuses et végétales envahissaient les alentours. Sous ses ramures suintantes, Naëlk instruisait quelques prodiges au regard vitreux. Heyra fondit sur l’assemblée et la transforma de ses griffes en une mare sanglante. Mais Naëlk se releva alors, éventré, ruisselant de sang, et se moqua du Grand Dragon. “Kalimsshar me guide, lui souffla-til, et tu ne peux rien y faire, La mort n’est plus une peur, mais une bête, une simple forme de vie, que je suis parvenu à dompter !” Heyra gronda de rage sous les yeux pleins de défi du dragon d’Ombre. D'un geste dévastateur, elle repoussa le Prodige dans le tronc et enchâssa son corps démembré dans l'écorce de l’arbre perverti.\n\n“Si tu ne peux plus mourir, il te reste l’éternité pour contempler ton misérable royaume.”\n\nAu coeur de Solor, un territoire grouillant d’une vie anarchique et difforme abrite une clairière spongieuse, au centre de laquelle se dresse un chêne colossal haut de plus de cinquante mètres. Son feuillage couvre un cercle de plus de soixante mètres de diamètre. Son tronc est recouvert d’une écorce écailleuse et glaireuse, ses branches en perpétuelle croissance s’étouffenf et s’entremêlent, et ses feuilles ondoyantes se déforment inlassablement au regard. Une odeur acide agresse les sens et les gémissements entrecoupés de ricanements de Naëlk accompagnent le bruit écœurant de branches qui, comme vivantes, produisent d’atroces murmures de succion et de déglutition. Pour ceux qui osent y plonger leur regard, le corps brisé et sanguinolent du Prodige Noir gît, enchâssé dans l’écorce, en proie aux infinis tourments de Heyra.\n\nLe chêne n’est autre qu’un dragon d’Ombre dégénéré, figé sous forme élémentaire par le Grand Dragon de la Nature. Il porte Naëlk en son sein, mais ni l’un ni l’autre ne disposent plus d’une véritable conscience. Accéder à la clairière constitue un vrai calvaire car, outre les créatures sauvages et autres êtres élémentaires, les tourments de Naëlk donnent naissance à des entités fugaces qui hantent la forêt profonde. Certains parlent d’un spectre hurlant, d’autres d’un loup fait de brumes noires. Nul n’a jamais tué une seule de ces créatures. Le chêne tente parfois de saisir par ses vrilles végétales les créatures qui passent à portée, mais les plantes qui poussent sous son ombre sont parmi les plus beaux spécimens du monde. Si leur efficacité est double, une contrepartie apparaît bien vite. La plante continue sa croissance dans le corps, changeant en quelques mois le blessé en une abomination végétale.\n\nSans que Kalimsshar en soit directement à l'origine, le lieu est teinté de Fatalisme et la magie subit ici les modificateurs suivants : Fatalité +1D10, Nature +1D10 et toutes les autres Sphères -1. Il est nécessaire de tirer à chaque tour. Ces modificateurs s'appliquent sur le score de base de tout jet de magie effectué à moins d’un kilomètre du chêne - il peuvent être divisé par deux ou trois dans la région qui s’étend à une vingtaine de kilomètres autour de la clairière.\n\nIl est dit que parfois Naëlk délire en psalmodiant des Secrets. Certains Prodiges pervertis tentent parfois d'atteindre ce lieu afin d'y acquérir savoir et puissance. Nul n’a jamais rencontré le moindre de ces Profanateurs, devenus de sinistres légendes populaires, mais la caste des Prodiges refuse toujours de faire la moindre allusion à ces renégats de l'ombre.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "Les Jardins de Nacre",
+    "uuid": "603c10dd-6aab-4cc6-9107-31ac503ab253",
+    "parent_id": "0d8a0774-b272-4bbd-90a3-7506c9e1b38c",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "À l’époque où les Dragons régnaient seuls sur le monde, Ozyr vivait isolée dans la profondeur des océans. Bien qu’entourée de ses créatures, elle réservait toutefois ses rencontres aux seuls dragons capables de la rejoindre. Avec la multiplication de la descendance, de nombreux jeunes se plaignirent de ne pouvoir rencontrer Ozyr afin de profiter de son savoir, ou même simplement de se présenter à leur respectable parente. Après un moment de réflexion, Ozyr créa alors un lieu sous-marin où tous pourraient lui offrir compagnie et visite. Avec le temps toutefois, les dragons commencèrent à protéger, puis à défendre farouchement ce lieu que le Grand Dragon des Océans leur présentait comme un sanctuaire. C’est sans doute pourquoi peu connaissent aujourd’hui l'existence de ce repaire sous-marin.\n\nLes jardins sont situées sur la côte de l’Interdit, à une douzaine de lieues au nord d’Oforia, près de deux kilomètres au large. On y accède par un chemin jalousement tenu secret par les dragons, qu’ils ne révèlent aux hommes qu’en d’exceptionnelles circonstances. À un endroit précis, un chemin invisible permet d’entrer sous l’eau et de rejoindre le sentier bordé de coraux rouges qui se dessine bientôt. Après deux kilomètres, un gouffre profond plonge dans le sol et plusieurs escaliers taillés descendent à flanc de falaise vers des lueurs irradiantes. À cent mètres de profondeur, dans une eau limpide, les Jardins de Nacre tendent leurs colonnes de cristal délicatement ciselées vers la surface. Des milliers de renfoncements dans les parois abritent des algues foisonnantes qui Tuissellent comme des cascades. Plusieurs grandes grottes s’ouvrent au sol, ainsi que dans les falaises, et un immense dallage de jade et d’améthyste dessine les constellations du ciel. Irrégulièrement, des rochers gris semblent épouser les formes du corps et proposer autant de fauteuils naturels. Des algues phosphorescentes diffusent une lueur vert pâle sur l’ensemble du gouffre. \n\nLes Jardins sont l’endroit où Ozyr recevait ses descendants désireux de la voir. Depuis cette époque, certains hommes ont contemplé ce domaine réservé de Ozyr, qui se montre jalouse de sa tranquillité, mais la localisation exacte des Jardins reste un secret absolu qu’un dragon ne révélera à un Élu qu'avec la crainte de représailles. La pression et la respiration ne posent aucun problème aux invités du Grand Dragon et de ses fils, même si la visibilité reste floue durant les premiers mètres de descente. La gravité s’exerce avec assez de force pour permettre aux hommes de marcher sur le sable et le roc. Dès l'entrée dans le chemin de corail, le visiteur peut respirer sans aucune gêne mais, s’il s’écarte du sentier, il subit instantanément les effets de la profondeur. Il est possible de parler, les voix semblant résonner comme dans une immense cathédrale, et les livres et autres écrits ne subissent aucune dégradation. Les mouvements sont pourtant ralentis et se battre est impossible. L'usage de magie est possible en ces lieux (dans le limites de la logique), mais Ozyr et ses fils ont le pouvoir d’anmiler les effets indésirables.\n\nOzyr est instantanément informée de la présence de visiteurs et peut, en cas d'urgence, se ruer sur les lieux par les tunnels qui communiquent avec Oforia. Sa réaction est laissée à l’appréciation du meneur de jeu, en fonction des actes et des motivations des personnages. En l'absence du Grand Dragon des Océans, les Jardins sont déserts…\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]

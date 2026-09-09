@@ -1,0 +1,466 @@
+[
+  {
+    "name": "Vêtements épais",
+    "type": "light",
+    "weight": 2.0,
+    "creation_difficulty": 10,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 115
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 125
+    },
+    "requirements": {},
+    "protection": 2,
+    "penalty": 0,
+    "uuid": "5a763d11-21cf-4030-82c2-7358d80d7f01",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "body"
+  },
+  {
+    "name": "Fourrures",
+    "type": "light",
+    "weight": 4.0,
+    "creation_difficulty": 10,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 150
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 415
+    },
+    "requirements": {},
+    "protection": 5,
+    "penalty": 0,
+    "uuid": "9003250a-436b-44d3-8db3-e9cca2dcf5ad",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "body"
+  },
+  {
+    "name": "Cuir souple",
+    "type": "light",
+    "weight": 3.0,
+    "creation_difficulty": 15,
+    "creation_time": 8,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 215
+    },
+    "city_availability": {
+      "scarcity": "tresCommun",
+      "price": 160
+    },
+    "requirements": {},
+    "protection": 4,
+    "penalty": 0,
+    "uuid": "040a1389-27af-47a9-b9f2-1fd0e9659057",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "upperBody"
+  },
+  {
+    "name": "Cuir clouté",
+    "type": "light",
+    "weight": 6.0,
+    "creation_difficulty": 15,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 300
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 375
+    },
+    "requirements": {},
+    "protection": 6,
+    "penalty": 0,
+    "uuid": "e98b9017-3590-432c-aa40-23fbffd84a23",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "upperBody"
+  },
+  {
+    "name": "Cuir bouilli",
+    "type": "light",
+    "weight": 6.0,
+    "creation_difficulty": 20,
+    "creation_time": 12,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 765
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 790
+    },
+    "requirements": {},
+    "protection": 8,
+    "penalty": -2,
+    "uuid": "7d98e81b-8963-4197-ad02-37ff2dbc90bb",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "upperBody"
+  },
+  {
+    "name": "Armure d'os et de corne",
+    "type": "medium",
+    "weight": 7.0,
+    "creation_difficulty": 20,
+    "creation_time": 20,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 2400
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 3350
+    },
+    "requirements": {
+      "force": 4
+    },
+    "protection": 12,
+    "penalty": -2,
+    "uuid": "4aa64277-5870-47d9-8afd-399f60a0d8dd",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "fullBody",
+    "description": "Cette armure d'origine zûl est relativement prestigieuse. Le torse et les bras sont protégés par des armatures d’os emboîtées pour conserver une certaine souplesse. Les épaules sont protégées par des crânes d'animaux sculptés et taillés. Le bassin est protégé par une jupe composée de longues lames d’os cousues sur une ceinture large. Les jambes sont un pantalon de toile sombre sur lequel sont cousues verticalement des lames d'os se chevauchant. La tête est couverte d'une capuche cousue de cuir et d’os ou parfois d'un heaume taillé dans le crâne d’un grand prédateur."
+  },
+  {
+    "name": "Cotte légère",
+    "type": "medium",
+    "weight": 8.0,
+    "creation_difficulty": 15,
+    "creation_time": 15,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 550
+    },
+    "city_availability": {
+      "scarcity": "commun",
+      "price": 550
+    },
+    "requirements": {
+      "force": 4
+    },
+    "protection": 10,
+    "penalty": 0,
+    "uuid": "c3dbf306-ef1f-4564-a75a-e02998755d7c",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "upperBody",
+    "supports_metal": true
+  },
+  {
+    "name": "Cotte de mailles",
+    "type": "medium",
+    "weight": 12.0,
+    "creation_difficulty": 20,
+    "creation_time": 25,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 3500
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 1900
+    },
+    "requirements": {
+      "force": 4,
+      "resistance": 6
+    },
+    "protection": 15,
+    "penalty": -2,
+    "uuid": "45a9d318-fb08-46d5-b7b7-158e2ec584f5",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "upperBody",
+    "supports_metal": true
+  },
+  {
+    "name": "Armure d'anneaux",
+    "type": "medium",
+    "weight": 14.0,
+    "creation_difficulty": 15,
+    "creation_time": 30,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 1100
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 1400
+    },
+    "requirements": {
+      "force": 4,
+      "resistance": 5
+    },
+    "protection": 16,
+    "penalty": -4,
+    "uuid": "5bd99732-041a-4b4c-bc02-3847276a9baa",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "upperBody",
+    "supports_metal": true,
+    "description": "L’armure d’anneaux se compose d’une veste de cuir à longs pans où sont cousus de larges carrés de grosses mailles de fer entrecroisées. Elle est très appréciée par les mercenaires en raison de sa large disponibilité et sa facilité de réparation."
+  },
+  {
+    "name": "Brigandine",
+    "type": "medium",
+    "weight": 16.0,
+    "creation_difficulty": 20,
+    "creation_time": 20,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 2300
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 1800
+    },
+    "requirements": {
+      "force": 5,
+      "resistance": 5
+    },
+    "protection": 17,
+    "penalty": -5,
+    "uuid": "7370a521-dba9-47d2-9804-c5a7e942b0a0",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "body",
+    "supports_metal": true,
+    "description": "La brigandine se compose d’une épaisse tunique de cuir rigide tombant jusqu'aux genoux, fabriquée dans du cuir de dragon de Lôm ou de trois couches de cuir cousues. Des plaquettes de fer rectangulaires de la taille d’une paume sont rivetées sur toute la surface et des coquilles de fer composent les épaulières. Les jambes sont protégées par des genouillères métalliques reliées à des bottes rivetées de fer. Très appréciée des protecteurs et des troupes de fantassins lourds, elle est aussi très répandue parmi les troupes de cavalerie de toutes origines."
+  },
+  {
+    "name": "Armure d'écailles",
+    "type": "heavy",
+    "weight": 17.0,
+    "creation_difficulty": 20,
+    "creation_time": 30,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 2800
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 2800
+    },
+    "requirements": {
+      "force": 6,
+      "resistance": 6
+    },
+    "protection": 20,
+    "penalty": -5,
+    "uuid": "fd2fc687-236c-4fe5-a21e-288082f9ecc0",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "body",
+    "supports_metal": true,
+    "description": "Cette armure se compose d’une lourde veste à manches longues et de culottes de cuir bouilli. De fines plaquettes en forme d’écaille sont cousues en rangées chevauchantes. Souple, mais lourde et demandant une compétence à la fois dans le domaine de la tannerie et de la forge, cette armure est plutôt rare et recherchée."
+  },
+  {
+    "name": "Armure de bois",
+    "type": "heavy",
+    "weight": 10.0,
+    "creation_difficulty": 20,
+    "creation_time": 15,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 1200
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 1600
+    },
+    "requirements": {
+      "force": 4,
+      "resistance": 3
+    },
+    "protection": 15,
+    "penalty": -6,
+    "uuid": "314fee76-3baf-400a-993f-d4544f954fab",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "body",
+    "description": "Cette forme de protection est assez rare. Elle se compose d’une cuirasse de torse formée de lames de bois chevauchées, cousues sur une veste de laine épaisse ou de gal. Des jambières, des protections d’avant-bras et des épaulières de lamelles cousues complètent la protection, qui s'avère d’ailleurs assez chaude. C’est une armure originaire des Terres galyrs, toujours privilégiée dans ces terres froides. Elle est portée au travers de Kor par les miliciens, les chasseurs et les combattants embarqués."
+  },
+  {
+    "name": "Armure de demi-plaques",
+    "type": "heavy",
+    "weight": 15.0,
+    "creation_difficulty": 20,
+    "creation_time": 25,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 2400
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 1900
+    },
+    "requirements": {
+      "force": 4,
+      "resistance": 5
+    },
+    "protection": 18,
+    "penalty": -6,
+    "uuid": "ea192510-a7e9-4996-8041-7919e40ee9b2",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "fullBody",
+    "supports_metal": true,
+    "description": "Cette armure se compose d’une veste à manches, d’une jupe et de cuissardes de mailles fines. Le torse est protégé par une plaque métallique laissant la taille souple. Un heaume fermé à collerette de mailles complète l’ensemble."
+  },
+  {
+    "name": "Armure de lamelles",
+    "type": "heavy",
+    "weight": 20.0,
+    "creation_difficulty": 20,
+    "creation_time": 30,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 2800
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 2800
+    },
+    "requirements": {
+      "force": 5,
+      "resistance": 5
+    },
+    "protection": 22,
+    "penalty": -8,
+    "uuid": "ef292979-c5e0-47b1-8089-1fedac6e06bd",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "body",
+    "supports_metal": true,
+    "description": "L'armure à lamelles est inspirée de certains animaux comme le tatou. Elle consiste à riveter sur une armure de cuir de longues bandes métalliques horizontales d’un pouce de large."
+  },
+  {
+    "name": "Armure de plaques",
+    "type": "heavy",
+    "weight": 25.0,
+    "creation_difficulty": 25,
+    "creation_time": 40,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 11000
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 7500
+    },
+    "requirements": {
+      "force": 6,
+      "resistance": 7
+    },
+    "protection": 25,
+    "penalty": -10,
+    "uuid": "a5b04f24-f021-4fbc-8568-5cab18b9f82b",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "fullBody",
+    "supports_metal": true
+  },
+  {
+    "name": "Armure draconique",
+    "type": "heavy",
+    "weight": 30.0,
+    "creation_difficulty": 25,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 10000
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 7000
+    },
+    "requirements": {
+      "force": 7,
+      "resistance": 7
+    },
+    "protection": 27,
+    "penalty": -10,
+    "uuid": "c7df13d7-8f1c-4807-a1f9-92af6600e37d",
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "slot": "fullBody",
+    "description": "L’armure draconique est le sommet de l’artisanat élémentaire. Elle prend la forme d’une lourde armure de plaques constituée d’écailles de dragon sculptées par manipulation élémentaire. Tout le corps est alors recouvert par des plaques soudées entre elles qui ne sont autres que des parties animées d'une carapace élémentaire. Une armure draconique ne peut être vendue. Un artisan ne réalisera une telle armure que pour un Élu apportant les écailles que son compagnon lui aura données ou pour une seigneur ayant mérité la gratitude des ailés. Toute tentative de s'approprier une armure draconique n’étant pas la sienne est, dit-on, de mauvais présage, la malédiction des dragons frappant alors l’impudent. Bien sûr, il est inconcevable de créer une armure draconique à partir des écailles d’un ailé décédé."
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Phalange de métal",
+    "uuid": "70afbbc1-dc15-47dc-b4ca-3f73bbfeaa92",
+    "unique": false,
+    "description": "Sous ce terme générique se cachent des êtres animés faits de métal. Certains enfants de Kezyr, dans leur recherche de protections plus adaptées aux hommes, eurent l’idée de développer des armures autonomes et efficaces. Ils donnèrent ainsi naissance à des sortes de golems de métal, doués d’une faible intelligence, mais d’une forte résistance.\nCes “armures vivantes” se montrèrent rapidement incompatibles avec la présence d'humains en leur sein, et si l’idée fut rapidement abandonnée, de nombreuses pièces circulent dans le Royaume de Kor. Lorsqu’elles s’assemblent, elles peuvent rappeler à la conscience l’esprit du métal.\nLes pièces d’armures sont toutes métalliques et usées au point de tromper des experts sur leur réelle qualité. Toutes sont couvertes de fresques guerrières vantant les exploits des enfants de Kezyr.\nCes pièces d’armures sont ensorcelées et peuvent être détectées comme telles avec les Compétences prévues à cet effet.\nPouvoirs et capacités\nLorsque deux pièces sont ajustées, elles s’assemblent parfaitement et procurent un sentiment de bien-être à leur propriétaire. Ainsi portées, elles se révèlent supérieures à une armure de demi-plaques.\nEn revanche, le fait d’associer des pièces d’armure sans les enfiler conduit celles-ci à donner naissance à une phalange de métal. Une fois les pièces mises en contact, l’esprit du métal se matérialise et complète l’armure afin de générer un être autonome d’1,50 m.\nCe dernier obéira à son nouveau propriétaire si celui-ci réussit un jet de Mental + Volonté + Tendance Dragon contre une Difficulté de 20. Dans le cas contraire, l’être de métal agira à sa guise dans l’intérêt de Kezyr. Une fois la phalange de métal tuée, l’armure se disloque et devient inutilisable.",
+    "weight": 12,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [],
+    "slot": "body",
+    "handiness": 0,
+    "layer": "normal",
+    "type": "heavy",
+    "requirements": {
+      "force": 4,
+      "resistance": 5
+    },
+    "protection": 20,
+    "penalty": -5
+  }
+]

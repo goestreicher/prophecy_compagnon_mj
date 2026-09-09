@@ -1,0 +1,884 @@
+[
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 7,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Apparition du status de citoyen",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "84082e2f-ce82-44d2-b9e6-059a442a13f2"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 15,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Arrivée des premiers pèlerins à Kali",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "a5fb73ab-9906-4d29-9d68-a1354184c3e2"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 16,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "conquetes",
+        "year": 450,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Dégénérescence des Kalishites",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "caec5b39-9bed-49ac-b527-df317c79dcd4"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 450,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "conquetes",
+        "year": 500,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les hordes de Kalimsshar infiltrent le Royaume de Kor",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "17d36d7e-2380-4f7a-a7cc-05cd621e2186"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 503,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kalimsshar est appelé “Héraut de la Fatalité”",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "671455fb-4092-43fd-b01e-e393e085ac64"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 624,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Le royaume Kamala émerge de la Forêt Mère",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "fda8433e-62df-4624-afe9-f35172e35ffd"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 647,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les tribus Galyrs s'unissent dans les provinces du sud",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "168157de-fc59-47de-96b2-c7c64115e830"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 800,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "conquetes",
+        "year": 900,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Premières guerres humaines",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "b63be573-436b-45a6-9196-42e5b4dcf6a4"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1000,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "conquetes",
+        "year": 1100,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Nenya découvre progressivement l'existence des Immortels",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "da9231d6-9a69-4f1a-8fdf-1d4a9ae1e8c3"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1078,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Apparition des premiers mages dans les batailles",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "d60794b0-8ca1-4e93-8830-0380c15b73a3"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1205,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Apparition du terme “Assassin”",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "8f20410a-7985-4246-863c-a9a714072cb1"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1327,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "conquetes",
+        "year": 1372,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Unification des terres du sud",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "e5e18f86-fe35-46e1-bb44-f99a4a7f02df"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1373,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Fondation de Molyar",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "454322f2-c2b1-49b4-8a6f-9144309a7111"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1423,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kroryn et Kezyr forgent Ardente",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "db0accf0-5c90-4d52-b3b3-0d603f4046a1"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1500,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "conquetes",
+        "year": 1600,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les premiers dragons commencent à prendre part aux guerres",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "6a81135c-fa7a-4b7f-a91d-313816533612"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1663,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Jyr et Sercya rencontrent Khy",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "7e2c1bbd-5476-4610-885d-1b95842671bd"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1756,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Brorne perd une écaille face à trois champions de Kroryn",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "9c708ec6-16e3-4ed3-b676-d41e5d0a6a23"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1851,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Inus Kar devient Maître de la caste des combattants",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "6e4dd4a3-93d1-4add-b47a-af789d720f58"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1851,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Thraël forge la première lame",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "d37ab400-b67c-4b75-9488-83dbdc4a02d2"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1865,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Bataille du Marais Sombre",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "32353136-13fe-451d-aef0-44186525ca9b"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1865,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Mort d'Inus Kar",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "eaeb4e70-ecbd-4391-950e-73a78f3b8313"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 1956,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les premiers marins affrontent la colère d'Ozyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "ea699f03-7fcd-4614-bb59-32099364fd7c"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2178,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Krosgaryn façonne l'Orbe de Feu",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "817f842f-e1ac-4d97-ae25-eb7d0ae33d0b"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2200,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Szyl prend forme humaine",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "86602c75-662b-47d3-9134-455484a0d2fc"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2200,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les Grands Dragons apprennent la forme humaine à leurs enfants",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "e6c58339-45bb-4e67-93dc-b1307304770c"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2279,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les vallées du nord des Écailles de Moryagorn s'unissent",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "2eef94ab-6e4b-4e13-9c47-a68fd82f4f04"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2279,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kern devient la capitale du Royaume de la Pierre",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "9949715a-4406-493f-a833-dc682bc5a06a"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2308,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les fiefs de la côte prêtent allégeance à Kroryn",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "6a19b396-3a3e-462a-84c5-e3af4217e9c0"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2308,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Ankar devient la capitale du Royaume de Kar",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "afaac9e8-ddef-495e-9535-07d91f311976"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2379,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Organisation de la faction des Usuriers",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "d64a9e67-9ab3-47f7-b28f-7806c822f4cd"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2444,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Les cités indépendantes d'Ysmir s'unissent sous le gouvernement d'Oforia",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "6882d79c-131b-4ad1-94e0-1d43782bc930"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2537,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Regroupement de l'Assemblée",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "e8414ecf-a9f2-4d92-9092-8cb540bc12e7"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2654,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Ozyr détruit une expédition maritime contenant le Maître de la caste des voyageurs",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "5951e5bd-ac7f-4974-911b-482307313aa2"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2789,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Guerre de sécession à Kamala",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "8b48dd25-fedd-4d98-abfe-e8076fb160d5"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2806,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Premières guerres de souveraineté",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "50c2571d-a7c1-4a46-a5c5-1a783db2483d"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2806,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Duel entre Brorne et Kroryn",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "c7a2daeb-8b46-4772-8866-c1369032dc2d"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2806,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Massacre des Cent Mille",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "737936d7-77e3-4e24-a0fa-0cdb7f81e94c"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2827,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kamala se disloque",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "403ebbee-e899-458e-8c1e-367ef9567ec7"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2856,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      },
+      "end": {
+        "age": "conquetes",
+        "year": 2861,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Émergence de Lusitian, puis de Larmeck",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "4a3f1e88-f23f-4be3-9b85-769f3d25fda4"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2878,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Bataille d'Yris",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "17f77ef9-5617-40e5-84a1-afb4a1d80f19"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2878,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Kalimsshar et Heyra tentent de sauver Nenya",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "5856ba2a-41a7-4c47-a2bd-4f4a14374895"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2878,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Apparition de Solyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "4d0f1392-21f4-4704-9035-92d87fa6d500"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2878,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Investi du pouvoir de Moryagorn, Kalimsshar libère Nenya de la Bête",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "49db9b6f-e098-42ad-ab83-684c37b04d13"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2878,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Fin des premières guerres de souveraineté",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "82d4ff41-4480-4aae-b2e7-d65030814239"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2879,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Fondation de l'Empire de Solyr",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "ab37bb82-203c-431b-a988-0a59c19bd7cf"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2879,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Solyr révèle l'existence du Lien",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "36424d63-3b85-4799-898e-4b15c3b31a36"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2893,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Szyl fonde le Concile des Sages",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "688ff772-8573-424c-a647-017830de0c4e"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2910,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Fondation de Neve",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "35443155-ecbd-4382-b977-518cf74fa6d9"
+  },
+  {
+    "range": {
+      "start": {
+        "age": "conquetes",
+        "year": 2911,
+        "cycle": "blanc",
+        "week": 1,
+        "day": "roc"
+      }
+    },
+    "title": "Début de l'âge des Empires",
+    "source": {
+      "type": "officiel",
+      "name": "Les Grands Dragons"
+    },
+    "uuid": "3ae4c9b7-7a55-4860-b46b-ac2856ff71fd"
+  }
+]

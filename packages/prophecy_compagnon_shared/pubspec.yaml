@@ -1,0 +1,127 @@
+name: prophecy_compagnon_shared
+description: "A companion app for the Prophecy RPG - Shared components"
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.11.0 <4.0.0'
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_web_plugins:
+    sdk: flutter
+
+  animated_tree_view: ^2.0.0
+  archive: ^4.0.0
+  characters: ^1.4.0
+  crypto: ^3.0.0
+  file_picker: ^11.0.0
+  fleather: ^1.0.0
+  flutter_markdown_plus: ^1.0.0
+  gradient_borders: ^1.0.0
+  hive: ^2.2.0
+  hive_flutter: ^1.1.0
+  image: ^4.0.0
+  json_annotation: ^4.11.0
+  material_symbols_icons: ^4.0.0
+  parchment: ^1.0.0
+  path: ^1.9.0
+  synchronized: ^3.0.0
+  uuid: ^4.3.0
+  vector_math: ^2.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^6.0.0
+  build: ^4.0.0
+  build_runner: ^2.0.0
+  glob: ^2.1.0
+  json_serializable: ^6.0.0
+  source_gen: ^4.1.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/armor.json
+    - assets/clothes.json
+    - assets/creature-categories.json
+    - assets/creatures-ldb2e.json
+    - assets/creatures-de-chair-et-d-ecailles.json
+    - assets/creatures-ecran2e.json
+    - assets/creatures-les-compagnons-de-khy.json
+    - assets/creatures-les-ecailles-de-brorne.json
+    - assets/creatures-les-enfants-de-heyra.json
+    - assets/creatures-les-forges-de-kezyr.json
+    - assets/creatures-les-foudres-de-kroryn.json
+    - assets/creatures-les-grands-dragons.json
+    - assets/creatures-les-orphelins-de-szyl.json
+    - assets/creatures-les-secrets-de-kalimsshar.json
+    - assets/creatures-les-versets-d-ozyr.json
+    - assets/creatures-les-voiles-de-nenya.json
+    - assets/creatures-yris-flambeau-de-l-humanite.json
+    - assets/events-avant-le-temps.json
+    - assets/events-age-des-fondations.json
+    - assets/events-age-des-conquetes.json
+    - assets/events-age-des-empires.json
+    - assets/factions-castes.json
+    - assets/factions-secretes.json
+    - assets/factions-les-secrets-de-kalimsshar.json
+    - assets/factions-les-voiles-de-nenya.json
+    - assets/factions-yris-flambeau-de-l-humanite.json
+    - assets/jewel.json
+    - assets/magic-gear.json
+    - assets/misc-gear.json
+    - assets/npc-categories.json
+    - assets/npc-subcategories.json
+    - assets/npcs-ldb2e.json
+    - assets/npcs-de-chair-et-d-ecailles.json
+    - assets/npcs-la-colere-des-dragons.json
+    - assets/npcs-les-compagnons-de-khy.json
+    - assets/npcs-les-ecailles-de-brorne.json
+    - assets/npcs-les-enfants-de-heyra.json
+    - assets/npcs-les-forges-de-kezyr.json
+    - assets/npcs-les-foudres-de-kroryn.json
+    - assets/npcs-les-grands-dragons.json
+    - assets/npcs-les-orphelins-de-szyl.json
+    - assets/npcs-les-secrets-de-kalimsshar.json
+    - assets/npcs-les-versets-d-ozyr.json
+    - assets/npcs-les-voiles-de-nenya.json
+    - assets/npcs-yris-flambeau-de-l-humanite.json
+    - assets/places-ldb2e.json
+    - assets/places-ecran2e.json
+    - assets/places-la-colere-des-dragons.json
+    - assets/places-les-compagnons-de-khy.json
+    - assets/places-les-ecailles-de-brorne.json
+    - assets/places-les-enfants-de-heyra.json
+    - assets/places-les-forges-de-kezyr.json
+    - assets/places-les-foudres-de-kroryn.json
+    - assets/places-les-orphelins-de-szyl.json
+    - assets/places-les-secrets-de-kalimsshar.json
+    - assets/places-les-versets-d-ozyr.json
+    - assets/places-les-voiles-de-nenya.json
+    - assets/places-yris-flambeau-de-l-humanite.json
+    - assets/shield.json
+    - assets/spell-pierre.json
+    - assets/spell-feu.json
+    - assets/spell-oceans.json
+    - assets/spell-metal.json
+    - assets/spell-nature.json
+    - assets/spell-reves.json
+    - assets/spell-cite.json
+    - assets/spell-vents.json
+    - assets/spell-ombre.json
+    - assets/stars-ecran2e.json
+    - assets/stars-les-secrets-de-kalimsshar.json
+    - assets/weapon.json
+    - assets/images/magic/
+    - assets/images/maps/
+    - assets/images/tendencies/
+  fonts:
+    - family: CustomIcons
+      fonts:
+        - asset: fonts/CustomIcons.ttf

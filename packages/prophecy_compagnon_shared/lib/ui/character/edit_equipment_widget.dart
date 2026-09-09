@@ -1,0 +1,44 @@
+import 'package:flutter/material.dart';
+import 'package:prophecy_compagnon_shared/classes/human_character.dart';
+import 'package:prophecy_compagnon_shared/ui/entity/equipment/edit_armor_widget.dart';
+import 'package:prophecy_compagnon_shared/ui/entity/equipment/edit_clothes_widget.dart';
+import 'package:prophecy_compagnon_shared/ui/entity/equipment/edit_jewels_widget.dart';
+import 'package:prophecy_compagnon_shared/ui/entity/equipment/edit_misc_gear_widget.dart';
+import 'package:prophecy_compagnon_shared/ui/entity/equipment/edit_money_widget.dart';
+import 'package:prophecy_compagnon_shared/ui/entity/equipment/edit_weapons_widget.dart';
+
+class CharacterEditEquipmentWidget extends StatelessWidget {
+  const CharacterEditEquipmentWidget({
+    super.key,
+    required this.character,
+  });
+
+  final HumanCharacter character;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      spacing: 16.0,
+      children: [
+        EntityEditMoneyWidget(
+          entity: character,
+        ),
+        EntityEditWeaponsWidget(
+          entity: character,
+        ),
+        EntityEditArmorWidget(
+          entity: character,
+        ),
+        EntityEditClothesWidget(
+          entity: character,
+        ),
+        EntityEditJewelsWidget(
+          entity: character,
+        ),
+        EntityEditMiscGearWidget(
+          entity: character,
+        ),
+      ],
+    );
+  }
+}

@@ -1,0 +1,252 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "Petite Oforia",
+    "uuid": "11239bb9-0d02-44e5-9529-afe90fe4c258",
+    "parent_id": "6b275174-2f30-4697-a266-531d1883a60d",
+    "type": "ville",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'Université proprement dite s'est vue entourée au fil des siècles d'innombrables bâtiments jusqu'à former une petite ville. La plupart des maisons, construites en calcaire blanc, ne dépassent pas deux étages. Le rez-de-chaussée accueille typiquement un ou deux commerces ou ateliers d'artisan, et chaque étage une famille. Sur les toits plats, la coutume veut que soient installés de beaux solariums, des volières ouvertes ou des jardinets féconds entretenus par des Prodiges. Les visiteurs remarquent habituellement très vite la quantité d'objets quotidiens enchantés qu'utilisent les habitants de Petite Oforia. Que ces derniers soient conçus par des artisans versés dans les arts magiques ou des apprentis cherchant à s'entraîner, les chineurs peuvent trouver des tas d'objets un peu améliorés dans les boutiques de la petite ville: des balais qui ne laissent aucune poussière, des baquets dans lesquels le linge sale tourne sur lui-même, des socs de charrue inusables, des harnais permettant de mieux contrôler les animaux auxquels ils sont fixés, etc. En général, le prix de ces objets utilitaires ne dépasse pas le triple de celui de leurs équivalents ordinaires. Par contre, étant donné le niveau de vie élevé de cet endroit béni des dragons, le coût de la vie y est fortement rehaussé, tous les prix s'avérant au moins deux fois plus élevés que la normale. Toutes les castes possèdent ici un modeste établissement, auquel s'adressent les résidents d'Oforia pour les renseignements simples ou les requêtes peu importantes. Pour les sujets plus importants ou pressés, tous ont pris l'habitude de se rendre à Oforia, qui ne se situe qu'à une grosse heure de marche.\n\nPour les impératifs, quelques messagers de la caste des voyageurs se chargent d'effectuer les commissions à cheval. Le bourg profite aussi de petits quais, qu'utilisent les pêcheurs du coin pour y amarrer leurs chaloupes et leurs felouques, et quelques caboteurs apportant des cargaisons depuis Oforia ou Jaspor.\n\nUn petit détachement de protecteurs garantit la tranquillité des lieux, mais seuls de vieux briscards en font partie, qui préfèrent régler les problèmes humains par la diplomatie plus que par la force. Souvent magiciens accomplis dans plusieurs sphères, ils constituent une force de défense efficace et dissuasive.\n\n",
+      "history": "La légende veut qu'Oforia ait pour origine une créature élémentaire d'Ozyr, amoureuse des hommes et des voyages, qui sacrifia sa liberté pour veiller auprès de sa créatrice sur l'humanité qu'elle chérissait. Très rapidement, les humains sensibles aux énergies magiques se rassemblèrent dans un lieu à l'écart de la nouvelle ville, empreint de la magie aussi farouche que paisible des Océans. Ce lieu s'appelait alors Raz de Vaguer, un cap faisant face à une grande île et son entourage d'îlots.\n\nLes hommes s'installèrent sur le Raz, à quelques deux lieues de la cité, et laissèrent la grande île de Vélléane à la nature et aux dragons, sentant inconsciemment que le lieu devait rester sanctuaire. Ils construisirent rapidement une route d'Oforia à l'école (appelée Petite Oforia), pour faciliter les déplacements et les approvisionnements. Ils installèrent ensuite sur chaque îlot, au nombre de neuf, une stèle élémentaire correspondant à chacune des Sphères existant. Par respect, ils consacrèrent un des îlots à Kalimsshar mais conçurent un grand sortilège pour dissimuler cette île aux yeux des humains et des personnes non autorisées. Des ponts furent bâtis pour relier chacun des îlots (à l'exception de l'îlot de l'Ombre) et une plate-forme fut construite dans le chenal séparant le Raz de Vélléane pour relier directement l'archipel au continent. L'ouvrage massif ne prit que quelques années à construire, les mages de toutes Sphères unissant leurs talents à ceux des artisans et des érudits pour créer un ouvrage à la fois résistant, imposant et utile. Sur le cap, Petite Oforia se développait progressivement. Au fil du temps, de communauté et école de magie elle devint un petit village, puis un gros bourg, toujours lié à la cité draconique mais paradoxalement de plus en plus libre. Avec les quelques ouvriers ayant participé aux constructions, de petits commerces de proximité apparurent, et le bourg grandit comme un champignon.\n\nMais alors que le royaume d'Ysmir venait juste de se constituer (2444 AdC), la guerre devait couvrir de son voile néfaste les nations de Kor. Bien que Petite Oforia fut épargnée par les ravages de la guerre, la caste des mages recevait de plus en plus de demandes de divers pays ou cités pour des sortilèges défensifs ou offensifs, car la Chimère refusait de voir sa cité d'Onyr devenir un bureau d'étude pour la magie martiale. L'école accueillit de plus en plus de mages grassement payés pour concevoir d'efficaces sorts guerriers, et Petite Oforia délaissa peu à peu sa vocation première pour se diversifier dans toutes les sphères, la Sphère des Océans n'étant plus qu'une possible conception de la magie parmi les huit sphères étudiées. Pour respecter la Loi de la Prudence, les mages s'accaparèrent le territoire entourant le Raz et l'école puis en firent leur champ d'expérimentation : ils délimitèrent certaines zones à l'aide de bornes magiques, pour indiquer les endroits où les expériences magiques devenaient périlleuses, et en refouler les visiteurs. Puis ils concurent et approfondirent tous types de sorts dévastateurs. De nombreux sorts de destruction, de défense et de logistique furent conçus à Petite Oforia, bien que désormais les mages de l'université répugnent à accepter et à parler de ce lourd passé. Aujourd'hui encore, les terrains d'expérimentation restent utilisés par les élèves de la Discipline Instinctive et par les créateurs de sorts dangereux.\n\nAvec la fin de la guerre et l'Âge des Empires vint le temps de la réflexion. Ayant tant contribué à l'essor de guerre, Petite Oforia avait atteint une taille plus que raisonnable, avec près d'un millier de résidents permanents dont une bonne moitié de mages. Parmi les membres des castes présents sur les lieux, maints apprenaient ou connaissaient déjà les bases de certaines sphères. Les mages à l'humeur guerrière abandonnèrent les lieux et partirent à la recherche de nouveaux conflits, ou rejoignirent les écoles de Kar, Kern et Dungard, voire Nadjar, suivant leurs affinités et leurs tendances. D'autres mages, plus enclins à la création de sorts utilitaires, les remplacèrent peu à peu ; Petite Oforia, à l'image de sa voisine, devint un lieu d'étude, de calme et de méditation. La ville continua à croître, et sa proximité avec le siège de la caste des érudits colora les façons d'étudier la magie. Dès avant les décisions du Conseil Ethernien, l'école de magie d'Oforia était appelée Université de magie d'Oforia.\n\nAujourd'hui, au moins trois mille personnes vivent à l'université de magie de Petite Oforia, devenue une ville à part entière tout en dépendant toujours de la cité draconique. Les castes sont fortement représentées : environ trois personnes sur cinq font partie d'une caste, dont plus de cinquante pour cent de mages.\n\n",
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "L'Université de magie d'Oforia",
+    "uuid": "ccb66542-7d35-454e-90f4-279241b7c424",
+    "parent_id": "11239bb9-0d02-44e5-9529-afe90fe4c258",
+    "type": "quartier",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "L'aspect le plus étonnant de Petite Oforia, au vu de sa proximité avec les érudits si méticuleux, est qu'aucun plan n'a jamais été tracé pour cette Université, puisqu'elle s'est vu construite suivant les nécessités du moment. Dès le début de l'Âge des Conquêtes, et pendant deux millénaires, les mages d'Oforia assistés des meilleurs artisans ont ajouté à la simple structure à trois étages en calcaire marin de nombreuses dépendances et extensions. Ce fut durant cette période que l'Université d'Oforia revêtit son aspect profond: une bâtisse aux salles grandioses s'étendant sur plusieurs niveaux, des alternances de galeries paisibles longées de frises monumentales, inspirant tout à la fois crainte et respect de l'Histoire, et d'immenses impluviums où l'on se délasse en nageant avec de douces créatures élémentaires des océans. Depuis les majestueux balcons et compluviums, des dragons dominent les nefs et contemplent d'un œil les déambulations des humains. De temps à autre, un dragon invite un mortel, insigne honneur, à le rejoindre sur les hauteurs, pour peu qu'il ait réussi à attirer son attention.\n\nLa seule unité que l'on trouve dans l'architecture de l'Université concerne son aspect extérieur : avec les guerres de souveraineté, les habitants des lieux décidèrent de renforcer préventivement les constructions. Plusieurs tours et beffrois furent ajoutés à l'édifice déjà immense, qui fut ensuite garni de systèmes de défense magiques, et des fortifications extérieures enchantées furent édifiées. Quelques mages parfirent leur maîtrise de la sorcellerie et des portails dans l'attente d'adversaires. Sans doute grâce à cette puissance de dissuasion, ni la grande ni la Petite Oforia n'eurent à déplorer d'attaques durant les 72 années que durèrent ces guerres. Mais plutôt que de désarmer leurs protections, les mages décidèrent au sortir des guerres de souveraineté de mieux intégrer les éléments défensifs dans l'architecture oforienne de l'Université. Les tourelles se virent parées de ponts arachnéens et cotonneux, dont le seul but désormais était de plaire aux sens et d'adoucir pour l'esprit l'objectif primaire de ces flèches. \n\nAu début de l'Âge des Empires, le directoire de l'Université décida que l'expansion physique de ses bâtiments devait cesser, pour ne pas empiéter plus sur les domaines de la mer, sur le bourg ou vers le domaine de Szyl. Plutôt que de se tourner à nouveau vers une solution magique, en étendant par exemple les salles à l'intérieur de leurs propres murs, les mages décidèrent de se fier à leurs voisins érudits architectes. Vu les progrès des techniques architecturales, ces derniers n'eurent aucun mal à réorganiser et améliorer la disposition intérieure des salles. Désormais, des colimaçons sculptés en forme de dragons s'élancent vers les mezzanines, des tapisseries couvrent les rares archives, et de gracieuses vitrines étagées abritent des matrices de magie, authentiques œuvres d'art dont les sorts sont aussi puissants que l'ouvrage admirable. Quelques murs ont été transformés en parois-aquariums dans lesquelles hippocampes et méduses dansent des ballets merveilleux entre algues rousses et anemones de mer. Quelques érudits viennent ici étudier le comportement in-situ d'espèces maritimes.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": "Une attaque test lancée par les Galyrs en 173 AdE prouva le bien-fondé de la démarche de sécurisation et l'efficacité des défenses: une fois la population de Petite Oforia mise à l'abri, les rituels magiques fonctionnèrent seuls pour repousser les assaillants. Les mages de l'université assistèrent au déroulement de la bataille depuis l'intérieur de leurs amphithéâtres, étudiant leurs systèmes de protection, prenant quelques notes pour les perfectionner, et en profitant pour donner quelques cours magistraux aux étudiants des Disciplines magiques. Aucun galyr ne vit un seul être humain face à lui, même de loin, et suite à ce combat d'école, plus personne ne revint jamais se frotter à Petite Oforia.\n\n"
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "L'Amphithéâtre",
+    "uuid": "3932b4e4-13ca-40bc-9613-6b321ee7a94b",
+    "parent_id": "ccb66542-7d35-454e-90f4-279241b7c424",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cette immense salle sous-marine fut la dernière extension acceptée par le directoire pour l'Université, il y a un millier d'années. Couvert de cristal indestructible et chatoyant, l'amphithéâtre accueille toutes les réceptions et congrès officiels, ainsi que les conférences magistrales qu'accordent parfois des dignitaires de la caste des mages en visite.\n\nNulle source de lumière n'est visible dans la salle mais l'on y voit parfaitement. A l'extérieur, des enfants de Petite Oforia s'amusent à plonger pour batifoler devant les panneaux de cristal avec des dauphins et des otaries, ne s'arrêtant que pour remonter respirer ou parfois lorgner vers les mages à l'intérieur. Mais si l'amphithéâtre donne son nom à cette salle, elle est si grande que l'amphithéâtre lui- même n'en occupe que la partie médiane.\n\nDans le tiers gauche, un parc a été planté, plein de fleurs magnifiques et d'arbres majestueux; au milieu trône un bassin relié à l'Interdit, où quelques tortues-jade viennent paresseusement se faire caresser sur la grève de sable blond. Quand le temps n'est pas clément, quelques mages de la Nature et des Océans viennent se recueillir ici plutôt que sur les îlots de ces Sphères.\n\nDans le tiers droit, une grande salle de lecture se développe sur plusieurs niveaux. Des pupitres supportent toutes sortes d'illustrations et de gravures sur lesquelles se penchent quelques mages enlumineurs; dans les mezzanines, des étudiants en petit comité écoutent avec une curiosité contenue leur maître de magie, en train de manipuler ou d'effectuer d'innombrables Clés pour apprendre à ses élèves tel ou tel sortilège. Des apprentis mages d'Ozyr, reconnaissables à leur air empreint de solennité, veillent sur les registres, notant les entrées et sorties des matrices de magie présentées dans des vitrines de cristal en lévitation.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "Les laboratoires souterrains",
+    "uuid": "0603c069-829e-46a6-993c-0a7d41157b06",
+    "parent_id": "ccb66542-7d35-454e-90f4-279241b7c424",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Quelques cavernes souterraines à moitié immergées furent très tôt aménagées pour accueillir les laboratoires des mages. Leurs murs sombres furent recouverts d'algues phosphorescentes et de lichens à l'arôme agréable. Quelques meubles furent installés: armoires, tables, paillasses d'expérimentations, et même souvent quelques lits pour les mages désirant veiller constamment sur leurs expériences en cours. Des myriades de flacons, d'éprouvettes, et de bonbonnes sont entreposées dans ces laboratoires, les réactifs violents étant précautionneusement séparés. Certains disent que dans les laboratoires des grands mages, il est possible de trouver des Clés-composantes par dizaines, dont certaines sont d'une valeur astronomique…\n\nDes précautions magiques évacuent tout risque d'explosion ou de problème magique vers l'Interdit, à l'aide de portails magiques intégrés dans les laboratoires. En ces lieux, la mesure de précaution principale consiste à remettre en place l'enchantement d'évacuation, juste après qu'un problème survient : ce système est infaillible, et tout aléa expérimental frappant un laboratoire indique que son dernier utilisateur qui a subi un problème n'a pas replacé l'enchantement. Un laboratoire restant à la charge de son utilisateur, tout oubli à cette règle se voit sévèrement puni par l'administration (en vertu du non-respect de la Loi de la Prudence) : en cas de graves destructions ou de morts accidentelles, le châtiment peut aller jusqu'à la radiation de la caste, l'exil ou la mort.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "Le Bateau",
+    "uuid": "37850225-9f4a-4e52-95dc-dfa726b0b50b",
+    "parent_id": "ccb66542-7d35-454e-90f4-279241b7c424",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le dernier “bâtiment” de l'Université est mobile: il s'agit d'un fier multicoque conçu conjointement, il y a quelques siècles, par des érudits, des artisans et des mages des Océans. Chef d'œuvre d'ingéniosité et fruit d'une alliance de technologie et de magie, le navire combine savamment à une base de voilier oforien deux balanciers, en fait des birèmes galyrs retravaillées. Ozyr elle-même a semblé impressionnée par l'ouvrage lors de son lancement, et elle l'a béni. Ce trimaran sert principalement aux mages des Océans et d'Ozyr, visant à mettre en œuvre ou à tester de grandes invocations en pleine mer. En général, un dragon d'Ozyr accompagne toujours le navire, lui assurant ainsi une permission draconique de s'éloigner des côtes. Il arrive que le trimaran quitte le quai pendant plusieurs semaines avec à son bord des érudits- navigateurs, des mages d'Ozyr et des Elus des dragons des Océans, bien sûr toujours accompagnés d'un dragon. Des rumeurs racontent que l'on aurait déjà aperçu ce bateau sur toutes les mers du monde, épiant les côtes de Kali, de Nésora et de la Principauté de Marne.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "Les Îlots",
+    "uuid": "bc665a7c-2b11-42ec-9bd6-4e301de41c7a",
+    "parent_id": "ccb66542-7d35-454e-90f4-279241b7c424",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Huit îlots éparpillés face à la pointe de Vaguer entourent l'île enchanteresse de Vélléane. De grands ponts ont été jetés à travers la mer pour relier toutes les îles de l'archipel, à l'exception de Vélléane, et permettre aux mages d'aller se recueillir sur les pierres élémentaires consacrant chaque îlot à l'une des huit Sphères. La présence des nodes a lentement métamorphosé chaque îlot : celui du Feu est devenu chaud et sablonneux, celui du Métal froid et magnifique, et celui des Cités accueille aujourd'hui une auberge et un étrange labyrinthe très récréatif.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "L'îlot de l'Ombre",
+    "uuid": "390535f0-4027-4c07-87e0-58b5c013e62c",
+    "parent_id": "ccb66542-7d35-454e-90f4-279241b7c424",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Cet îlot, consacré dès la création de l'école à la Sphère de l'Ombre, par respect pour le Grand Dragon Kalimsshar, sommeille enveloppé dans un sortilège de dissimulation, dans l'attente de sa révélation. Nul ne peut apercevoir les ponts qui le rejoignent, et seuls les mages du directoire de l'université connaissent les moyens de les discerner et, dans l'ombre de leurs laboratoires souterrains, des portails cachés s'ouvrent pour les mener jusqu'à l'îlot. La tradition veut que les grands mages apprennent la magie honnie de l'Ombre, malgré les interdictions de leur caste et de l'ordre draconique. Depuis toujours, les mages du directoire savent que Nenya connaît leur “errance”, mais ils continuent à préserver le secret précieusement, redoutant fort les réactions des fanatiques. Bien plus que s'intéresser à la doctrine fataliste, les grands mages du directoire apprennent la magie de l'Ombre sous la tutelle de Sholwaanjir, ancien dragon du Temps installé à Petite Oforia depuis plus de trois millénaires. \n\nLa “cabale” du directoire essaie, avec la diversification des études à l'université, de susciter l'intérêt des nouveaux mages vers toutes les Sphères, plutôt que de se cantonner à un seul élément. En façade, ils lancent des programmes d'étude sur l'intégration de plusieurs Sphères dans le lancement des sorts ou sur des sorts adaptables quelle que soit la Sphère utilisée. En coulisse, ils tentent d'élargir les horizons des étudiants en magie. Un jour, espèrent-ils, la magie ne sera plus aussi catégorielle qu'aujourd'hui, et même la Sphère de l'Ombre perdra son odeur sulfureuse.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "Vélléane",
+    "uuid": "ba1b97ea-3a4d-4d4a-896c-59791f62c45a",
+    "parent_id": "ccb66542-7d35-454e-90f4-279241b7c424",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Sur cette superbe île, déclarée sanctuaire par les premiers habitants de l'école de magie, de grands oiseaux aux couleurs chaudes s'ébattent dans les feuillages, des otaries jouent et s'ébattent sur les plages de sable blanc, et des effluves délicates portées par les vents caressent les sens des promeneurs sur les ponts et les autres îlots. De nombreux dragons volent et paradent au-dessus de l'atoll, qu'aucun humain, pas même un Élu de Grand Dragon n'a jamais violé (officiellement, bien sûr). De temps à autre, d'éblouissants phénomènes magiques illuminent les cieux de l'île : tous les habitants de Petite Oforia interrompent un instant leurs activités quotidiennes pour contempler ces spectacles merveilleux. On dit que ces rares manifestations marquent la naissance d'un nouveau dragon.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "La Route",
+    "uuid": "aebf1b6b-a9c3-44ea-ab84-1628afbe1fb2",
+    "parent_id": "11239bb9-0d02-44e5-9529-afe90fe4c258",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Le voyageur qui se rend à Petite Oforia suit une belle route pavée depuis Oforia. A mi-chemin après la sortie de la cité draconique, des bornes magiques en nacre jalonnent cette route et guident les voyageurs jusqu'à l'université, tout en les empêchant de quitter le chemin pour s'aventurer dans les champs d'expérimentation. Seuls des mages des Océans pourraient réussir à outrepasser ces interdictions et à traverser les murs de bulles géantes qui se créent quand quelqu'un essaie de sortir de la route. On peut croiser de nombreux voyageurs et chariots d'approvisionnement allant ou venant de la cité, mais la majorité des provisions ou des marchandises transitent par caboteur le long des quelques kilomètres de côte séparant les deux Oforia, la grande et la Petite.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "La Colère des Dragons"
+    },
+    "name": "Les champs d'expérimentation",
+    "uuid": "e97330bc-cd21-41e7-9d06-ee0f10e30427",
+    "parent_id": "11239bb9-0d02-44e5-9529-afe90fe4c258",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "Depuis les guerres de l'Âge des Conquêtes, un sortilège fixe la limite du territoire de l'Université au point exact situé juste entre les deux villes, mais l'expansion des deux Oforia au cours du temps a souvent fait varier l'emplacement de ce point. En venant d'Oforia, les champs d'expérimentation s'étendent juste après ce point. Ils ne sont normalement accessibles que depuis l'université elle-même ; des clés insérées dans les marques de caste des mages ou prêtées aux étudiants permettent de passer les bornes et d'accéder aux terrains. Sur quelques centaines d'hectares, divers types d'environnement se succèdent ou se chevauchent ; au cours des siècles, les mages de l'université ont recréé plusieurs milieux dans lesquels ils peuvent s'entraîner à la pratique de leurs magies et concevoir des sorts potentiellement dangereux : prairies, jungles, déserts, moyenne montagne, souterrains et même une banquise. Certains endroits ont été totalement dévastés lors des expériences menées par les mages; la traversée de ces zones mortes, cratères vaporeux, cascades pétrifiées ou forêts de verre liquide, n'est pas vraiment conseillée aux étudiants. Par contre, quelques mages confirmés s'y rendent parfois pour étudier ou tenter de modifier tel ou tel phénomène. Des chemins et des runes indicatrices signalent les passages sûrs ou les dangers. Il n'est pas rare que des prospecteurs des arènes d'Yris, d'Ankar et de Jaspor paient le directoire de l'Université pour amener leurs équipes de chasseurs capturer quelques monstres, resservis ensuite dans des spectacles sanglants.\n\n",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]

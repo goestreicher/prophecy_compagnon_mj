@@ -1,0 +1,1353 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "L'Orbe du Feu",
+    "uuid": "401ccace-b0f0-4a42-9b3f-23e5b17cba5e",
+    "unique": true,
+    "description": "L’Orbe fut créé par un Dragon du Feu pour le combattant avec lequel il était lié. Le dragon, Krosgaryn, plongea au cœur du magma et en ramena un fragment de Feu élémentaire qu’il emprisonna dans une sphère de cristal indestructible.\nL’Orbe est une petite sphère de cristal de 10 centimètres de diamètre, à l’intérieur de laquelle est enfermé du Feu élémentaire. Elle n’est pas chaude au toucher. Le cristal est indestructible.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Bonus magique (Feu)",
+        "description": "L’Orbe permet de lancer plus facilement certains sortilèges de Magie Instinctive liés au Feu. Elle est utilisable par n’importe qui et on considère qu’elle octroie une Discipline Magie Instinctive de 3. Elle dispose d’un potentiel de 20 points de magie, qui se régénèrent au rythme de 1 point par jour si on place l’Orbe dans du feu. Toutes les difficultés sont réduites de 5 points. Grâce à l’Orbe du Feu, on peut utiliser les pouvoirs suivants : Bouclier, Œil de Pyrite et Souffle Ardent. Chaque sort est utilisable autant de fois par jour que la Tendance Dragon du personnage (et selon les points de magie de l’Orbe)."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Le Cœur de Cendre",
+    "uuid": "d6a1e682-57d4-4a9e-a5b6-c5692275c5e2",
+    "unique": true,
+    "description": "Dans les temps anciens, un sorcier du nom d’Umal Rkhoon créa ce puissant objet de destruction. Maître dans l’art de la Magie du Feu, Umal était un être particulièrement corrompu. Il s'attaqua à un Dragon du Feu blessé et arracha de sa poitrine son cœur encore palpitant. Par Sorcellerie, il réduisit l’organe du dragon pour qu’il puisse tenir dans une main et l’enchanta. Traqué par des fidèles de Kroryn, le sorcier fut finalement vaincu et le cœur devint la propriété du maître d’armes, Sylus Kren.\nQuand ce célèbre combattant mourut de mort naturelle, son corps s'embrasa mystérieusement et fut réduit en cendres mais il n’y avait plus aucune trace de l’objet magique. Depuis, les seules traces que l’on ait de cet artefact sont les rapports fragmentaires indiquant que des individus s’enflamment mystérieusement à leur mort.\nLe Cœur de Cendre ressemble à un cœur humain desséché et noirci. Il est couvert de runes. Le Cœur est brûlant et ne peut être tenu en main qu’en portant une protection adéquate.",
+    "weight": 0.2,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Magie du Feu",
+        "description": "Le Cœur de Cendre augmente les effets de tous les pouvoirs liés au Feu. Un personnage ajoute 1D neutre à toutes les actions magiques liées au Feu (lancement de sort ou apprentissage) et pour en déterminer les effets, mais à chaque fois que cette capacité est utilisée, le personnage perd un cercle en Dragon et en gagne un en Fatalité. De plus, tous les effets des sorts de feu contre le porteur sont calculés avec un NR de moins. Si le sort l’atteint sans NR, il est considéré comme annulé."
+      },
+      {
+        "description": "Si le propriétaire du Cœur vient à mourir, il est instantanément calciné et il ne reste plus de lui qu’un peu de cendre."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Les Fragments de Yhunn",
+    "uuid": "bb864794-be45-4b11-b980-08f3740639e4",
+    "unique": false,
+    "description": "Depuis les premiers âges du monde, Kroryn n’a eu de cesse de perfectionner les sciences du combat et de la stratégie. Au fur et à mesure, il a consigné ses réflexions sur divers supports. Après avoir achevé ses œuvres, Kroryn s’en désintéressait souvent et la plupart ont disparu.\nAvec le temps, les guerriers les plus courageux apprirent l’existence de ces Fragments et leur recherche devint une quête initiatique sur les traces de leur Dragon. Tous ceux qui ont un jour eu un fragment entre les mains n’en ont jamais révélé le contenu à d’autres et n’ont jamais tenté de les rassembler en un seul lieu. Yhunn, le plus célèbre Grand Maître de la Caste des Combattants, aurait été le seul à avoir lu tous les Fragments. Il dirigea la caste durant plus de cent ans et, nul n’a jamais su comment, malgré son âge, il restait si vigoureux et habile. Une légende dit qu’ayant lu le dernier Fragment, Yhunn comprit enfin la voie du guerrier dans son ensemble et entra dans le repaire de Kroryn pour réclamer le droit de devenir l’égal du Grand Dragon du Feu lui-même. Nul ne le revit jamais et son nom reste dans la mémoire collective comme l’un des meilleurs guerriers de Kor.\nSelon le lieu et l’époque, Kroryn a utilisé des plaquettes d’argile, des tablettes de pierre, des peaux, des parchemins et des papyrus. Il s’est servi de différents types de supports pour consigner ses réflexions.\nLes fragments permettent de devenir Expert, sans considération du score actuel de la Compétence, mais pas de de dépasser 15. Les Compétences augmentables sont : toutes les Compétences de Combat, Athlétisme, Equitation, Combat monté, Esquive, Stratégie, Armes de siège, Commandement.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Connaissance du Guerrier",
+        "description": "Les Fragments de Yhunn demandent de très longues semaines d'étude et de réflexion. Il faut 1D10 semaine(s) pour étudier le premier Fragment, 2D10 semaine(s) pour le second, etc. Après avoir étudié un Fragment, un personnage doit effectuer un jet de Mental + Intelligence contre une difficulté de 10. La difficulté est augmentée de 5 points par Fragment supplémentaire. Si on échoue à un jet, on peut recommencer après l'avoir étudié de nouveau. La compréhension d’un Fragment de Yhunn ajoute automatiquement un Interdit supplémentaire au personnage, qu’il ne peut transgresser sous peine de perdre cette connaissance. L’individu voit son espérance de vie augmentée de 5 années par Fragment assimilé et gagne automatiquement 1 niveau dans la compétence martiale de son choix."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Briquet de Kroryn",
+    "uuid": "bc8d43dc-0d31-4419-8347-1aa4860a4098",
+    "unique": false,
+    "description": "D’usage courant, il ressemble à un briquet normal, une plaque et un silex, si ce n’est qu’il produit trois fois plus d’étincelles et s’allume même sous la pluie et le vent.\nLeur création s'effectue avec Artisanat élémentaire : Feu (Difficulté 15) et la dépense d'un point de magie.",
+    "weight": 0.05,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 70
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Paratonnerres",
+    "uuid": "071578ae-588c-4817-8e96-e46920cca6d0",
+    "unique": false,
+    "description": "Il n’est pas rare de voir à côté des grands bâtiments des pieux pointés vers le ciel. Ils attirent la foudre lors des grands orages. On ignore s'ils sont véritablement magiques ou s’il s'agit d’um phénomène purement scientifique.\nLeur création s'effectue avec Artisanat élémentaire : Métal (Difficulté 15) et la dépense de 5 points de magie.",
+    "weight": 5,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 60
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 75
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Huile inflammable",
+    "uuid": "dcae2836-89ae-4434-84f1-2e87e6479a90",
+    "unique": false,
+    "description": "Il s’agit pas d’eau de feu, mais d'une huile spéciale pour les lanternes, qui brille à la fois plus fort et plus lentement - un paradoxe qui intrigue Kroryn lui-même.\nSa création s'effectue avec Alchimie (Difficulté 20).",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 45
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Pyrique",
+    "uuid": "8ae1b8d2-c2ae-4c75-8d81-60563b10d5a3",
+    "unique": false,
+    "description": "La Pyrique, fragment rocheux baignée dans une solution souffrée, enflamme instantanément toute substance liquide dans lequelle elle est plongée. Si le volume de la pierre est suffisant, son immersion s'accompagne d'une explosion capable, en fonction du volume d'eau, de pulvériser le roc ou le métal. Il est dit que les Humanistes s'en servent pour protéger leurs cités, en embrasant les douves emplies d'eau qui bordent leurs enceintes.\nLa Pyrique est jugée hérétique par Ozyr et les Inquisiteurs de Brorne et ne s'échange qu'au marché noir.",
+    "weight": 0.1,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Poudre de sommeil",
+    "uuid": "832ecb4a-3f00-4901-b786-bbca8435f9e0",
+    "unique": false,
+    "description": "On raconte que, de temps en temps, la frontière séparant la réalité du Monde des Rêves est tellement ténue que des fragments de songes apparaissent dans la réalité pendant un bref instant. Ces fragments ne laissent derrière eux qu’un peu de poussière cristalline que l’on appelle la Poudre de Sommeil.\nLa Poudre de Sommeil est un substance cristalline extrêmement légère. On ne peut en recueillir que quelques pincées à chaque endroit où un rêve a débordé dans la réalité. La Poudre scintille légèrement.",
+    "weight": 0.01,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Sommeil",
+        "description": "Cette Poudre peut être utilisée sur n'importe quelle créature vivante. Pour qu’elle agisse, il faut la saupoudrer au-dessus de la cible — ce qui est impossible en combat ou s’il y a du vent. Une pincée suffit, quelle que soit la taille de la créature. La cible affectée doit réussir un jet de Mental + Volonté contre un Difficulté de 25 ou s’endormir immédiatement pendant 1D10 heures. La victime fera toujours de beaux rêves et se réveillera détendue et entièrement reposée. On raconte que tout individu profitant du sommeil d’une victime de la poudre pour la tuer sera à jamais hanté par des cauchemars terrifiants."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Élixir du cauchemar",
+    "uuid": "1b2671b9-11cd-4fd7-8d36-c98963989624",
+    "unique": false,
+    "description": "Alors que les rêves débordant dans la réalité créent la poudre du sommeil, les cauchemars qui se matérialisent produisent un liquide suintant et noir. Ce liquide est appelé Élixir du cauchemar et ses effets sont terrifiants.\nL'Élixir est une matière visqueuse dont on peut recueillir quelques gouttes à l’endroit où se sont matérialisés des cauchemars - généralement 1d10/2 gouttes. La matière est totalement opaque et colle à tout ce qui entre en contact avec elle. On ne peut la ramasser et la stocker qu’avec des ustensiles faits de cristal.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Transport cauchemardesque",
+        "description": "Une seule goutte de ce puissant ingrédient transporte immédiatement une victime dans le Monde des Cauchemars, si elle échoue à un jet de Mental + Volonté contre une Difficulté de 30. Mais, contrairement à la Poudre de Rêve, la victime reste éveillée. Toute la réalité autour d'elle s’enchevêtre avec un univers de terreur. L'effet dure pendant 1D10 tours. Pendant ce temps, l'infortuné voit toutes ses difficultés augmentées de 10 points s’il tente d’agir. Il est terrorisé et ne raisonne plus sainement. Tout ce qui l’entoure — amis ou ennemis - est perçu comme une menace. Les gens lui paraîtront atrocement déformés et hostiles. De plus, le personnage devra effectuer à chaque tour un jet de Mental + Volonté contre une difficulté de 15. La difficulté est augmentée de 5 points par tour supplémentaire. S'il échoue, il cède à la terreur et fuit aveuglément pendant que dure l’effet. S'il échoue une deuxième fois à ce jet, il est frappé d’une phobie permanente - en rapport avec son cauchemar. S'il échoue une troisième fois, il sombre dans la folie. S'il échoue une quatrième fois, il tombe en catalepsie et demeure prisonnier du Monde des Cauchemars, jusqu’à ce que des voyageurs oniriques viennent le libérer."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Fragments de la Bête",
+    "uuid": "de3bd419-e9bb-4c9d-8ec3-8950573d6803",
+    "unique": false,
+    "description": "Lorsque Nenya, Heyra et Kalimsshar anéantirent la bête immonde qui sommeillait dans le Dragon de la Magie, celle-ci fut pulvérisée et ses fragments éparpillés dans tout l’univers onirique. Certains de ces fragments se matérialisèrent dans la réatité.\nLes fragments de la bête ont une forme très variable. Dès qu’un être vivant s'approche d’eux, ils prennent la forme de ce que cet être désire le plus. Ainsi, pour un charognard, ils ressembleront à une carcasse pourrie ; pour un guerrier, ils prendront l’apparence d’une belle arme, pour un forgeron, l’aspect d’un métal précieux, etc.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Appel de la Bête",
+        "description": "Dès qu’un personnage touche un fragment, il doit effectuer un jet de Mental + Empathie contre une Difficulté de 25. Les adeptes de Nenya (les mages, les personnages possédant la sphère des Rêves et les Élus de Nenya) et les Prodiges bénéficient en plus d’un nombre de dés neutres égal à leur Tendance Dragon s'additionnant au résultat. Si le jet est réussi, le fragment disparaît comme s’il n’avait jamais existé. Si le jet échoue, l’objet convoité disparaît également mais le personnage perd immédiatement 1 point de Tendance - au choix. Le fragment s’est insinué en lui et commence à le dévorer de l’intérieur. Il commencera alors à ressentir une soif de destruction inextinguible. Le personnage deviendra irascible et plein de haine. À ses yeux, tout ne sera que laideur. Dès qu’il se battra, qu'il se disputera avec quelqu'un, qu’il se sentira contrarié, etc, il devra effectuer un autre jet de Mental + Empathie ou perdre un cercle de sa Tendance la plus élevée.\nChaque cercle de Tendance perdu se transforme en cercle de Haine qui finissent par composer une nouvelle Tendance. À partir de ce moment, le personnage peut lancer 4 dés lorsqu'il utilise les Tendances au lieu de trois (définir une nouvelle couleur pour ce dé de Haine). Les cercles (et les points) de Tendance Haine peuvent être perdus en roleplay mais pas en délaissant le dé de Haine… Arrivé à 5 en Haine, le personnage est consumé et se transforme en une machine de destruction aveugle. S'il est vaincu, il explose et génère de nouveaux fragments qui apparaissent un peu partout dans le monde.\nUn individu victime d’un fragment peut être soigné dans les Temples d’Heyra, de Nenya, de Kalimeshar ou par des Prodiges. Le processus est long, Il nécessite 1D10 semaines par point perdu. Au bout de ce temps, le personnage effectue un jet de Mental + Volonté contre une Difficulté de 25. En cas d'échec critique, le personnage perd 1 Point de Tendance qu’il ne peut récupérer et il ne pourra être guéri que par Nenya en personne — l’occasion d’une grande quête."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Orbe de Rêve",
+    "uuid": "9ecbf555-fb52-4918-a38c-cbfca6a62ed7",
+    "unique": false,
+    "description": "Les Orbes de Rêve furent inventés par des fidèles de Nenya, désireux de conserver des fragments de leurs songes. Ils parlèrent de leur idée au Grand Dragon du Rêve qui leur accorda le droit d’arracher à son royaume des Sphères de rêves. Les grands mages usèrent d’une puissante magie pour créer ces Orbes, mais certains, par négligence, emprisonnèrent des créatures oniriques se trouvant dans la zone de leur songe. Après avoir découvert ces abus, Nenya refusa de transmettre de nouveau ce pouvoir. Seuls quelques rares magiciens en détiennent encore le secret.\nOn raconte aussi que certains auraient utilisé ce don à des fins beaucoup moins avouables et que des cauchemars auraient également été placés dans des Orbes.\nUn Orbe est une sphère transparente d'1 à 10 centimètres de diamètre. Chaque centimètre correspond à une surface de 10 mètres dans le Monde du Rêve. On raconte qu’il existerait des Orbes beaucoup plus grands. On peut voir dans l'Orbe le rêve qui y est emprisonné.",
+    "weight": 0.05,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Tranport onirique",
+        "description": "On peut s'endormir avec un Orbe en le serrant dans ses mains. Dans ce cas, l'esprit du personnage se retrouvera dans l’Orbe et bénéficiera du rêve qui s’y trouve. Généralement, ce sont toujours des songes particulièrement agréables. Mais ils agissent directement sur l’organisme de celui qui s’y projette. Ainsi, un personnage qui utilise un Orbe de Rêve dans lequel il peut boire à volonté ne sera plus assoiffé. Si, dans ce rêve un forgeron est présent, il pourra réparer son équipement ; s’il y a un guérisseur, il pourra soigner le détenteur de l’Orbe, etc. On ne peut utiliser un Orbe qu’une fois par jour. Le danger est que l’on ne peut se réveiller pendant huit heures à chaque utilisation. Pire, si un individu malveillant retire l’Orbe des mains du dormeur pendant son sommeil, l’esprit reste enfermé dans l’objet.\nIl arrive que certains Orbes renferment des secrets qu’un explorateur pourra découvrir. Certains mages ont même enfermé leur esprit dans ces Orbes et n’ont plus de corps. Tout esprit à l’intérieur d’un Orbe est à l'abri des cauchemars et il est totalement isolé des Mondes des Rêves."
+      },
+      {
+        "title": "Matérialisation onirique",
+        "description": "Un Orbe peut également être brisé - certains mages utilisent la magie pour les rendre indestructibles. Un Orbe brisé libère le rêve qu’il contient, et ce rêve se superpose à la réalité pendant 8 heures. Au bout de ce temps, le rêve se dissipe et disparaît à tout jamais. Pendant que le rêve est actif, l’environnement et les personnages oniriques deviennent réels - l'environnement onirique remplace l’environnement réel. L'effet s'applique dans un diamètre de 10 à 100 mètres, selon la taille de l’Orbe. Tout ce qui se trouve à l'extérieur peut y pénétrer, mais sera soumis aux nouvelles conditions. Tout ce qui se trouve à l’intérieur tire bénéfice de ce nouvel environnement que l’on peut quitter en franchissant le seuil du rêve.\nCertains personnages ou créatures pris dans un Orbe peuvent y avoir été emprisonnés de manière involontaire. S'il s’agit de l’esprit d’un rêveur, au moment où l’Orbe est brisé, son esprit regagne son corps si celui-ci est encore en vie. Sinon, il meurt et rejoint le monde spirituel. S’il s’agit d’une créature onirique, elle regagne immédiatement le Monde des Rêves."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Instruments de Nenya",
+    "uuid": "31bbe2a0-d9c9-4170-a95b-e620e6d84008",
+    "unique": false,
+    "description": "Onyr est connue et réputée pour regrouper les plus grands luthiers de tout le Royaume de Kor. En général, il s’agit de mages qui enchantent à petites doses tous leurs instruments de musique. Ainsi, les artistes peuvent-ils sortir les sons les plus purs et les plus justes. Ces petits bijoux de lutherie sont onéreux, vingt fois le prix normal, mais donnent un bonus de 5 à ceux qui les utilisent.\nLeur création s'effectue avec Artisanat élémentaire : Rêves (Difficulté 20) et la dépense d'un point de magie de la sphère des Rêves, un de la sphère des Vents et un de la sphère de la Nature.\nÀ Onyr, leur rareté est r/1000.",
+    "weight": 1,
+    "creation_difficulty": 25,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 1500
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 1500
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Bonus de +5"
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "Le miroir aux illusions perdues",
+    "uuid": "2ce52a83-78ff-4948-9be4-475c5e57cd44",
+    "unique": false,
+    "description": "Ce miroir est en acier car la réaction des gens qui regardent dedans est parfois brutale. Cet objet de foire vous permet de vous admirer tel que vous désireriez être. Il n’a aucune utilité autre mais remporte un certain succès dans les marchés.\nSa création s'effectue avec Artisanat élémentaire : Métal (Difficulté 20) et la dépense de 3 points de magie de la sphère des Rêves.",
+    "weight": 2,
+    "creation_difficulty": 20,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 3000
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 2000
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "La roue à vent",
+    "uuid": "6e46162b-9297-4d35-8d7f-47e6bc3348f9",
+    "unique": false,
+    "description": "Cet objet est le premier cadeau que Szyl fit à sa mère. C’est une roue à vent musicale. Les artisans de Kezyr ont tenté plusieurs fois de la reproduire, mais ce sont les mages de Nenya qui ont le secret de sa fabrication. La roue est composée de clochettes, de cordes pincées ou frappées, de percussions, de cloches tubulaires et elle réagit au moindre souffle. Le vent, toujours différent, permet d’obtenir des mélodies toujours harmonieuses et variées. Les rois aiment à montrer qu’ils possèdent une roue à vent. Les sages qui en possèdent une la cache de peur de se la faire voler.\nIl est impossible de réaliser cette invention sans avoir reçu l'enseignement adéquat d'un mage de Nenya. Sa mise au point s'effectue avec Artisanat élémentaire : Vents (Difficulté 25) et la dépense de 6 points de magie de la sphère des Vents et de 4 de la sphère des Rêves .",
+    "weight": 5,
+    "creation_difficulty": 25,
+    "creation_time": 10,
+    "village_availability": {
+      "scarcity": "nonApplicable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 10000
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les larmes d’Alaïssyndil",
+    "uuid": "026ed700-2e1f-468e-91f4-69968ba3a926",
+    "unique": false,
+    "description": "On raconte qu’Heyra recueillit un être fabuleux, Alaïssyndil, fille d’une étoile. Quand cette dernière voulut créer la vie, le Grand Dragon de la Nature lui refusa ce droit et Alaïssyndil pleura toutes les larmes de son corps. Ces larmes formèrent le Lac de la Vie , mais certaines s’envolèrent et retombèrent sur les terres du Royaume de Kor. On dit que ces larmes ont des propriétés magiques incroyables.\nLes larmes d’Alaïssyndil ont l’apparence de tout petits joyaux d’une pureté sans pareille. Ces joyaux sont solides mais, quand on les place sur la langue d’un être vivant, ils fondent. Ils ont un goût légèrement salé. Une larme se liquéfie quand elle est tenue par la pointe au-dessus d’une surface quelconque. La goutte tombe sur cette surface et provoque un changement radical. Inutile de dire que ces larmes sont extrêmement rares.",
+    "weight": 0.01,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Soin",
+        "description": "Une larme guérit n’importe quelle maladie, blessure ou corruption. Un individu rongé par une larve de perversion est automatiquement soigné. Toute malédiction est balayée par le pouvoir de la larme, quelle que soit son origine. Une personne ingérant une larme se sent purifiée et meilleure. Elle gagne 1 point de Présence dans une vie. De plus, elle sera irrésistiblement attirée par ce qui est pur et beau. Tout acte visant à détruire ou à enlaidir lui paraîtra absurde. L'attraction vers le beau et le rejet de la laideur durent un cycle complet, après quoi le personnage retrouvera son comportement habituel. Lors du prochain cycle correspondant au cycle d'ingestion, le personnage subit un retour d'émotion et replonge dans la béatitude de la créativité. Ainsi, si une larme est ingérée durant le cycle de Moryagorn, le personnage connaîtra durant chaque cycle de Moryagorn l'état de béatitude.\nTout personnage ingérant une de ces larmes perd 1 point de Tendance Fatalité qu’il ne peut pas récupérer de manière normale et raye tous les cercles des trois Tendances.\nSeules certaines cérémonies spéciales — fatalistes — permettent à l'individu de recouvrer son point perdu."
+      },
+      {
+        "title": "Purification",
+        "description": "Si on laisse tomber la larme au-dessus d’une terre aride, celle-ci deviendra fertile ; au-dessus d’un lac empoisonné, elle purifiera ses eaux ; sur le flanc d’une montagne, elle fera jaillir une source et la végétation fleurira tout autour ; dans un désert, elle créera une oasis, etc. Contre un être de perversion, une larme est une arme dévastatrice.\nContre des humains au service de Kalimsshar, la larme inflige 10 + 1d10 points de dommages par point de Tendance Fatalité de la victime.\nContre des cauchemars, des bêtes immondes, des Dragons de l’Ombre ou d’autres créatures incarnant la perversion, la larme inflige le 1D10 x 10 points de dommages. Les dommages infligés aux victimes fatalistes (humains ou monstres) ignorent toute armure, la larme touchant directement leur être profond et leur trame élémentaire.\nUne larme ne peut être utilisée qu’une seule fois."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les élixirs de métamorphose",
+    "uuid": "3a49ea14-0d18-4ed4-a1f5-e4f4be134781",
+    "unique": false,
+    "description": "Les Fatalistes et les Humanistes ont toujours eu beaucoup de mal à s’infiltrer sur les terres de Heyra - tromper la nature n’est pas chose aisée ! De puissants sorciers fatalistes conçurent donc un élixir permettant d’adopter pendant une courte période la forme d’un animal. Pour que la transformation passe inaperçue, il était nécessaire que le sujet devienne le plus animal possible. L'élixir fut d’une telle efficacité que nombre de groupes, pas forcément des Humanistes ou des Fatalistes, en ont découvert le secret.\nUn élixir est fabriqué à partir du sang d’un animal fraîchement tué. Il a donc une teinte rouge et est assez sirupeux. Le sang est mélangé à différentes plantes et à un fragment d’écaille de dragon lié à l'élément de l'animal. Il faut alors effectuer une cérémonie d'une heure puis effectuer un jet d'Empathie + Artisanat élémentaire (Nature) contre une Difficulté de 15 pour un animal simple (poisson, serpent, chien), de 20 pour un animal agressif (loup, faucon, serpent constricteur ou venimeux), voire de 25 à 30 pour des animaux puissants (mastodontes, gorille, lion). La cérémonie coûte 5 points de magie.\nSeuls les Experts peuvent faire des potions permettant de se transformer en créature draconique, lesquelles ont souvent une Difficulté de 25 à 35.\nIl n'existe pas de commerce de ces potions qui sont considérées comme sacrées, quoique assez répandues. En général, seuls les prodiges, les mages et les artisans de la nature savent faire ces potions, dont il n'existe aucune recette écrite.",
+    "weight": 0.01,
+    "creation_difficulty": 25,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Transformation animale",
+        "description": "Un persomage ingurgitant cet élixir adopte la forme d’un animal précis — dépendant du type d’élixir. La transformation est doulourense et dure 1d10 x 10 tours. Pendant tout ce temps, l'individu souffre horriblement et ne peut rien faire. Une fois la transformation accomplie, le personnage est tellement proche de l’animal imité qu’il perd presque la totalité de son Intelligence. Il ne se souvient que de son objectif - se rendre à tel endroit, par exemple - et peut encore reconnaître ses amis proches ou ses ennemis. Pour tout le reste, il se comporte comme un animal.\nLa potion confère un bonus de 1+1/NR points de bonus aux Attributs normaux de l'animal, que le personnage obtient dès sa transformation. Ces points de bonus sont distribués parmi les attributs au moment de la transformation. Il ne conserve que son Mental, qui reste inchangé, ainsi que sa Volonté. Son Intelligence tombe à 1. Ses autres Caractéristiques et Compétences sont remplacées par celles de l'animal pour une heure. Il n'est pas possible d'utiliser la magie sous cette forme.\nLa transformation dure 1 heure. Au bout de ce temps, le personnage doit faire un jet de Mental + Volonté contre une Difficulté de 15. S’il échoue, il perd un peu plus de son humanité et reste sous sa forme animale. Il pourra tenter de se transformer de nouveau au bout de 1D10 heures mais, cette fois, la Difficulté sera de 20. À chaque échec, il faut attendre 1d10 heures avant de relancer un jet et la difficulté augmente à chaque fois de 5 points. Quand un personnage réussit à retrouver sa forme normale, la première fois - et uniquement la première fois - qu’il croisera la route d'animaux dont il a adopté l’apparence, il devra effectuer un nouveau jet ou être attiré par l’appel de la nature. Si son jet est un échec critique, il reprend définitivement sa forme animale. S'il s’agit d’un échec simple, son comportement sera proche de celui de l’animal. S’il réussit son jet, il ne ressent qu’une légère nostalgie."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les statuettes des esprits animaux",
+    "uuid": "fb8ac608-4d9a-4bc7-8ce2-9ca2942e0755",
+    "unique": false,
+    "description": "Dans de nombreuses tribus primitives, on a découvert que les sorciers fabriquaient d’étranges statuettes capables d’abriter l’esprit des animaux. Le secret de ces statuettes est connu de très peu de gens, mais on sait que quelques Prodiges et certains sorciers fatalistes ont réussi à en fabriquer.\nCes statuettes sont souvent en bois, mais on peut en fabriquer dans d’autres matières. Plus la matière est noble, plus l’esprit attiré sera puissant. Une statuette a la forme du type d’esprit animal qu’elle veut héberger. Quand une statuette est fabriquée, il faut effectuer une cérémonie très longue et très complexe pour attirer un esprit animal et l’y enfermer. Il est à noter que les quelques rares Prodiges à en avoir utilisé n’ont pas besoin d'effectuer cette cérémonie. Ils se contentent de demander à un esprit animal d'intervenir. Les Prodiges considèrent que le fait d’emprisonner un esprit est un crime épouvantable.\nCréer une de ces statuettes enchantées requiert d'être Expert en sphère de la Nature. La réalisation de la statuette en elle-même s'effectue par un jet de Manuel + Artisanat concerné contre une Difficulté de 15 à 20. Il est indispensable d'obtenir 2 NR sans quoi la statuette ne sera qu'un bel objet, mais indigne de recevoir un esprit. Le lien de l'esprit nécessite un jet de Mental+Sphère de la nature contre une Difficulté de 30. Ce jet est considéré comme un jet de magie et peut entraîner des contrecoups en cas d'appel aux Tendances. La cérémonie dure 8h et draine tous les points de magie de la nature de l'officiant. La statuette peut alors s'animer autant de fois par jour que la Volonté de l'utilisateur. Il ne lui en coûte rien.\nL'appel à un esprit errant pour animer la statuette (méthode utilisée par les Prodiges) s'effectue par un jet d'Empathie + sphère de la Nature contre une Difficulté de 25. Il en coûte 3 pts de magie par appel, sans limitation par jour. Ce jet est un jet de magie pour la gestion des contrecoups en cas d'appel aux Tendances.",
+    "weight": 0.5,
+    "creation_difficulty": 25,
+    "creation_time": 4,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Réveil de l'esprit",
+        "description": "Une fois un esprit animal emprisonné, le détenteur de la statuette peut le forcer à animer la sculpture. La sculpture grandit alors jusqu’à atteindre la taille normale de l’animal.\nCe dernier aura toutes les caractéristiques communes à son espèce mais sera fait de la matière utilisée pour la statuette. Il bénéficiera donc d’une protection équivalente. La créature obéit à celui qui l’a animée pendant 1D10 tours. Après, s’il s’agit d’un esprit emprisonné, ce dernier peut tenter de fuir sa prison en réussissant un jet de Mental + Volonté contre une Difficulté de 15. Certains sorciers peuvent renforcer la prison grâce à des enchantements, ce qui augmente la difficulté pour ce jet. Certaines statues sont beaucoup plus grandes et permettent d’animer des animaux gigantesques. On sait que de telles statues sont parfois utilisées pour garder des lieux saints dans le domaine de Heyra. Les esprits ne sont pas emprisonnés mais peuvent s’y incarner en cas de danger."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les encens néfastes",
+    "uuid": "4c60757a-1174-4ed7-af8f-97d0222fb11b",
+    "unique": false,
+    "description": "Les Humanistes, pour lutter contre les forces de la nature, fabriquèrent toute une série d’encens permettant de tenir à distance les créatures sauvages. Ces encens ont été élaborés à l’aide de méthodes scientifiques et non pas magiques.\nCe sont des petits bâtonnets d’encens d’apparence tout à fait commune. Ils ont tous une odeur différente qui est rarement agréable.\nCes encens ont une Difficulté alchimique de 36.",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 50
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Repoussoir",
+        "description": "Chaque type d’encens permet de tenir en respect une espèce de créatures. Si les créatures sont dirigées par un être intelligent, elles hésiteront à attaquer mais obéiront tout de même à leur maître. Mais, à chaque tour, elles devront réussir un jet de Mental + Volonté contre une Difficulté de 15 + 5 par tour ou fuir la zone. Un encens s'utilise dans un encensoir qui affecte toute la zone dans un rayon d’1 mètre. On peut le faire tourner autour de soi pour augmenter la diffusion de la fumée. L'effet affectera alors une zone de trois mètres de rayon. Un bâton d’encens met une heure à se consumer."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les Cristaux d'Humanisme",
+    "uuid": "be9e5dd4-2104-44dd-b9cf-5830f70ae644",
+    "unique": false,
+    "description": "Ces Cristaux furent découverts par des Humanistes dans ce qu’ils ont appelé des Débris d'Étoile. Personne, à part eux, ne sait ce qu’ils entendent par là. Ces Cristaux sont extrêmement rares et leurs effets sur la nature, particulièrement étonnants. En effet, les animaux, les plantes et même l’eau s’écartent d’un cristal. Leur pouvoir est tel qu’il affecte même les Dragons de la Nature.\nCe sont de petits cristaux luminescents de toutes les tailles et de toutes les formes.",
+    "weight": 0.01,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Repoussoir de la Nature",
+        "description": "Ces puissants objets magiques font reculer la nature tout autour d’eux quand on les sort de leur gaine de cuir, seule matière capable de neutraliser leurs pouvoirs. Leur effet agit dans une sphère de deux mètres tout autour de celui qui les brandit. L'eau s’écarte, l’herbe et les plantes sont arrachées. Les arbres ne sont pas affectés. De plus, aucun animal ne peut pénétrer dans la sphère. Les Dragons de la Nature, et uniquement eux, sont tenus en respect. Toute attaque, magique ou pas, liée à la nature voit ses effets réduits de moitié contre un personnage protégé par un Cristal. Les effets des cristaux ne durent que huit heures. Quand un cristal a été utilisé pendant huit heures, il est terne et n’a plus aucun pouvoir jusqu’à ce qu’il soit régénéré. On raconte que, pour cela, il doit être mis en contact avec le cœur d’une Étoile."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les graines de fertilité",
+    "uuid": "91e3334f-51fb-43ff-99ac-76660b78b979",
+    "unique": false,
+    "description": "Les premières graines de fertilité furent offertes par Heyra aux communautés humaines qui rencontraient des difficultés pour cultiver leurs champs. Elles sont enchantées par la nature elle-même. Les Prodiges jardiniers sont aujourd’hui détenteurs du secret de fabrication de ces précieuses graines.\nCes graines ont une apparence tout à fait normale, mais il n’est pas rare qu’elles bougent toutes seules quand on les tient dans la main.\nCes graines sont créées par un jet de Sorcellerie + sphère de la Nature d'une difficulté de 15. Il est alors créé une graine + 1/NR. Ce processus dure une heure et draine tous les points de magie de la sphère de la Nature de l'enchanteur (il doit au moins posséder un point de magie disponible par graine créée, sans quoi le nombre de graine est réduit au nombre de points de magie drainés). La création de ces graines est uniquement accessible aux Prodiges-poètes de la Nature et aux mages de Heyra (qui l'apprennent auprès des poètes).",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Croissance végétale",
+        "description": "Quand on enterre une de ces graines, elle donne naissance en 1D10 tours à un arbre adulte, à un parterre de fleurs couvrant cent mètres carrés, un épais taillis de cent mètres carrés ou un mur de ronces de dix mètres de large, de deux mètres de haut et d’un mètre d’épaisseur. Elle peut également fertiliser n’importe quel champ d’un hectare. Chaque type de graine déclenche un effet précis. Lancée contre une créature, la graine fait naître sous ses pieds des ronces et des lianes qui ligotent la victime en un tour, On considère que les plantes ont une force de 12. L'effet dure pendant 1D10 x 10 tours ou jusqu’à ce que celui qui a lancé la graine décide d’annuler son effet. Ce dernier peut également ordonner aux plantes d’écraser la victime. Les dommages infligés sont égaux à la Force des plantes + 1."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "La Corne de la Bête",
+    "uuid": "b0e75f97-c8ad-46bc-bf95-24f2ccf1a3ec",
+    "unique": true,
+    "description": "Cet objet magique des plus terrifiants fut créé par des Sorciers Obscurs peu de temps après que Nenya eut vaincu la Bête qui sommeillait en elle. La Corne fut conçue à partir de plusieurs fragments de la Bête. Cette Corne maléfique n’a été utilisée qu’une fois, contre des fidèles de Heyra, au cours de la Bataille du Bois Doré. Elle fit jaillir de terre une créature ancestrale, une abomination terrifiante vaincue par Heyra dans le passé.\nC’est une corne torve, veinée de noir qui palpite d’une lueur sinistre. Son contact est répugnant et il est très difficile de ne pas la lâcher tant elle inspire la terreur.",
+    "weight": 1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "legendary",
+    "special": [
+      {
+        "title": "Invocation de bête ancestrale",
+        "description": "La Corne peut invoquer une des bêtes ancestrales, des créatures destructrices qui, bien que nées de la nature, en sont souvent les pires ennemies. Ces créatures décharnées ont la puissance d’un dragon mineur et ravagent tout ce qui se trouve autour d’elles — le porteur de la Corne y compris. La créature, une fois invoquée, reste tant qu’elle n’a pas été vaincue. S’il n’y a pas d’ennemi en vue, elle tentera de se réfugier au cœur d’une forêt ou dans des montagnes.\nLa bête invoquée possède des caractéristiques similaires à un dragon d'age Jeune. Elle ne possède pas de capacité de souffle draconique, mais peut manipuler la magie de façon intuitive comme une Chimère d'âge similaire. Ses caractéristiques exactes sont à l'appréciation du meneur, l'apparition de cette créature étant la conclusion d'une campagne en elle-même."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les Fleurs de Jeunesse Éternelle",
+    "uuid": "042bf111-5323-4526-9108-fa8ad6c55e91",
+    "unique": false,
+    "description": "La première de ces fleurs fut créée par une dryade nommée Osiana, qui était éprise d’un mortel. Pour qu’il reste auprès d’elle, elle sacrifia une partie d’elle-même pour faire naître une rose de jeunesse éternelle. La dryade et son bien-aimé, un certain Yvon, seraient encore en vie. Depuis, on raconte que ces fleurs apparaissent à chaque fois qu’une dryade tombe amoureuse d’un mortel.\nCes fleurs sont souvent des roses d’une beauté sans pareille. Elles semblent tellement délicates qu’on les croirait faites de verre.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Lien vital",
+        "description": "Une Fleur de Jeunesse Éternelle reçoit, au cours d’un enchantement long et complexe, la force de vie d’un être vivant. Ce dernier vieillira mais son corps n’en portera pas les stigmates. De plus, il vivra beaucoup plus longtemps. S'il meurt autrement que de mort naturelle, on peut l’enterrer avec la fleur. Il renaîtra alors plusieurs semaines plus tard. Le ressuscité conservera toutes ses caractéristiques mais son sang sera fait de sève et il sera à jamais lié à la nature. Si le personnage meurt à nouveau, la fleur se fane. Si l’individu meurt une seconde fois ou s’il décède de mort naturelle, là où son corps est enterré naîtra un parterre de fleurs, qui bien souvent contiendra une autre Fleur de la Jeunesse Éternelle. On dit que l’esprit du défunt veille sur ce parterre. Un personnage dont la force de vie est enfermée dans une Fleur est particulièrement vulnérable face à un ennemi qui mettrait la main sur cette Fleur. En effet, si elle est détruite, le persormage meurt immédiatement. Enfin, la Fleur ne peut s’épanouir que si celui qui bénéficie de ses pouvoirs est aimé d’amour par un être vivant. Si cet amour vient à s’atténuer, la fleur se fane et meurt. Le personnage aussi."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les bandages magiques",
+    "uuid": "af714c29-51a8-4d2b-9024-3090e42c89d9",
+    "unique": false,
+    "description": "On peut trouver ces cataplasmes soit dans les manufactures, soit au marché noir. Ce sont de petits rouleaux de bande verdâtres et odorants — à cause des herbes − spécialement conçus pour accélérer la cicatrisation ou l’éradication de la maladie - suivant les cas.\nLeur création s'effectue avec Artisanat élémentaire : Nature (Difficulté 20) et la dépense de trois points de magie de la sphère de la Nature. Il faut une journée de macération, mais le nombre de bandages macérant ensemble est au choix du créateur. En appliquant ce pansement sur une plaie, le temps de récupération déterminé par la table de la page 193 est divisé par deux.",
+    "weight": 0.05,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 40
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les herbes",
+    "uuid": "81c967a2-1b00-4c80-ab02-f413018a2876",
+    "unique": false,
+    "description": "Les mages de Heyra - et ceux qui travaillent avec eux — utilisent trois types d’herbes. Les épices, les plus communes, font la fortune des herboristes. Certaines sont considérées comme magiques mais rien ne le prouve véritablement. D’autres sont interdites dans certaines régions, plus chères que de la poudre d’or dans d’autres.\nLe second type d’herbes sert surtout aux rebouteux et aux sages-femmes. Elles sont magiques car il n’y pas d’autre explication à leurs propriétés calmantes ou curatives. Heyra ne s’oppose pas à leur utilisation mais encourage plutôt la recherche de sorts très simples donnant les mêmes effets.\nEnfin, les poisons et les drogues sont considérés parfois comme magiques. Certaines drogues le sont : elles sont issues des laboratoires de Kalimsshar. Pour mémoire, leur vente, consommation ou utilisation est interdite et sévèrement punie.",
+    "weight": 0.05,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Les graines, céréales et noyaux magiques",
+    "uuid": "e523298c-a197-4476-805d-d78171a6c9d6",
+    "unique": false,
+    "description": "Il existe un véritable commerce des graines magiques. Les mages de Heyra qui pratiquent ce trafic sont généralement en marge de leur caste. La Dragonne ferme les yeux sur leurs agissements tant que leurs manipulations magiques ne sont pas trop déviantes. L’utilisation de la magie pour faire pousser les plantes plus vite, pour que les blés soient lourds et les vergers remplis, n’est pas nouvelle. En revanche, par ses serviteurs, Heyra a appris que des minions de Kalimsshar parcouraient les campagnes pour proposer eux aussi de modifier magiquement les plantes pour un meilleur rendement.",
+    "weight": 0.05,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Talisman de ralentissement",
+    "uuid": "8814db71-5228-4204-8e04-e8520154ee79",
+    "unique": false,
+    "description": "Ces talismans, enchantés par la magie de la pierre, furent inventés par un enfant de Brorne. Il les offrit à ses élèves les plus doués pour qu’ils les utilisent afin de neutraliser des adversaires au lieu d'être contraint de les tuer. Malheureusement, la plupart de ces étudiants furent tués pendant les grandes guerres et les talismans ont été éparpillés dans la nature.\nCes talismans sont en pierre et sont gravés de runes complexes. Ils mesurent quelques centimètres de diamètre.",
+    "weight": 0.1,
+    "creation_difficulty": 25,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Ralentissement",
+        "description": "Un talisman peut être utilisé sur n’importe quelle cible située à moins d’un nombre de mètres égal à la Volonté du détenteur. La victime doit réussir un jet de Mental + Volonté en Opposition du détenteur. Si elle échoue, elle perd 1 dé d’Initiative pendant 1D10 tour(s). On peut utiliser plusieurs fois le talisman sur la même cible, mais on ne peut réduire son initiative en-dessous de 1 dé."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les fragments de pierre",
+    "uuid": "09e8ce2c-d1a5-4c77-a143-cc23167e2193",
+    "unique": false,
+    "description": "Le Peuple des Montagnes a pour habitude d’arracher les dents de ses défunts et de les enchanter grâce à la magie de la pierre. Il rend ainsi hommage à Brorne en offrant ses morts au Grand Dragon. Ces dents permettent d’invoquer des esprits de la pierre particulièrement redoutables.\nLes dents ont une teinte grisâtre et sont couvertes de symboles cabalistiques complexes.",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 200
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Squelette de pierre",
+        "description": "Quand une dent est jetée à terre, volontairement ou non, elle invoque un esprit de la pierre qui prend la forme du squelette de la personne décédée. Ce squelette est fait en pierre. Il combat pour celui qui l’a appelé jusqu’à ce qu’il soit détruit ou qu’il n’y ait plus d’ennemis à affronter. Une dent utilisée est détruite. Les squelettes peuvent utiliser armes et boucliers si on leur en fournit."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La corne de Balzar",
+    "uuid": "f6b79511-e4cc-4549-9809-ac0ca48c36e8",
+    "unique": true,
+    "description": "Pendant les grandes guerres, les troupes du Fatalisme affrontèrent à maintes reprises celles de Brorne. Ces dernières n’hésitaient pas à animer par magie des monstres de pierre qui ravageaient les armées adverses. Balzar était un puissant sorcier fataliste. Il créa une corne redoutable, capable de faire éclater la pierre.\nOn raconte que la corne de Balzar a été taillée dans une dent de Kalimsshar. Elle est donc faite d’un ivoire indestructible, veiné d’argent, d’or et de Sombre Acier. La corne est lourde - 2kg - et imprégnée de la magie fataliste.",
+    "weight": 2,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "legendary",
+    "special": [
+      {
+        "title": "Tendance Fataliste",
+        "description": "Pouvoirs et capacités\nTout individu qui utilise la corne pour la première fois gagne automatiquement 1 point de Fatalisme dont il ne peut pas se débarrasser normalement"
+      },
+      {
+        "title": "Brise-pierre",
+        "description": "La corne est une arme redoutable qui fait éclater la pierre sur une centaine de mètres autour de son utilisateur. La roche qui éclate projette des fragments sur 1D10 mètre(s) en infligeant 2 dés de dommages à toutes les cibles présentes. Toutes les créatures de pierre subissent 5 dés de dommages."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les cristaux de savoir",
+    "uuid": "a28cb441-db67-4611-9ca0-dc10f5faf3a6",
+    "unique": false,
+    "description": "L'existence de la Caverne de Moryagorn est longtemps restée une légende, mais la caste des mages a récemment apporté la preuve que ce lieu, réputé pour ses gisements de minerai et de gemmes enchantées, était bien plus qu’une simple rumeur populaire. Il y a une dizaine d’années de cela, Tanya Kyn, puissante mage de la terre, vint trouver les autorités de Griff qui, en proie à un litige territorial avec les Zûls, craignaient l’amorce d’une guerre. L'arrivée d'un mage surprit les responsables de la cité, qui s’attendaient à la venue d’un médiateur de la caste des érudits, mais Tanya fut tout de même conduite sur le Lieu du conflit, un tertre bordé par un fleuve dont les Züls revendiquaient la propriété. Là, elle sortit de sa sacoche une gemme flamboyante qu’elle planta rituellement dans le sol et entra en méditation.\nTous les spectateurs entendirent alors une voix caverneuse, grondante comme un tremblement de terre, qui parut s'élever de la gemme pour rendre leur bien aux Zûls. Nul ne contesta cette décision.\nLes cristaux de savoir ne sont que d’infimes éclats de la roche qui, dit-on, tapissent les parois de la Caverne de Moryagorn. Leur couleur est variable, et nul ne sait combien de ces gemmes sont actuellement en possession de la caste des mages, mais toutes les pierres ont en commun cet éclat lumineux, parcouru de feu et d’énergie, qui suffit à révéler leur nature profondément magique. Cette clarté s’intensifie dès que les gemmes sont mises au contact de la terre - rituel qui semble capable de déclencher leur formidable pouvoir. La gemme de Tanya mesurait une dizaine de centimètres de long, mais les mages prétendent en souriant que tous les cristaux ne sont pas aussi modestes.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "title": "Psychométrie",
+        "description": "Une fois plantés dans le sol, les cristaux permettent à leur utilisateur d’obtenir une réponse à une question concernant l’endroit et ses environs. Cette faculté psychométrique n’est limitée que par la force de volonté du porteur, car les visions transmises par la gemme sont parfois trop violentes, trop brutales pour un simple esprit humain.\nPour utiliser la gemme, il faut effectuer un jet de Mental + Volonté contre une Difficulté de 15, qui peut être augmentée de 5, voire de 10, selon la précision de la question ou l’éloignement dans le temps de l’événement recherché.\nEnsuite, pour supporter la vision, l’utilisateur doit effectuer un nouveau jet de Mental + Volonté contre la Difficulté du jet précédent + 5. Si ce jet est raté, il devient aveugle pour le reste de la journée et se voit incapable d’utiliser ses facultés requérant la concentration ou la volonté - comme le lancement de sortilèges, l’activation de dons ou de capacités surnaturelles, etc.\nUne seule utilisation du cristal est possible par jour."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Le ciseau de Kezyr",
+    "uuid": "0119cb08-661d-4a45-b476-1e6e3127196d",
+    "unique": false,
+    "description": "Cet objet assez répandu chez les artistes est l’œuvre de Kezyr mais sans l’autorisation de Brorne, il n'aurait pu exister. C’est lui qui a donné le secret de la résonance de la pierre pour que le ciseau soit plus précis. Un sculpteur qui utilise cet objet a un bonus de 5 lors de son jet.\nSa création nécessite un jet d'Artisanat élémentaire: Métal d'une Difficulté de 20, et coûte trois points de magie de la sphère du Métal et trois de la Sphère de la Pierre. ",
+    "weight": 0.2,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 1500
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 2000
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Bonus de +5 sur les jets pour sculpter la pierre"
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "La meule magique",
+    "uuid": "16ce2260-f247-4b7b-8da2-d573ef5dcccb",
+    "unique": false,
+    "description": "Classique dans le royaume de Kern, la meule n’est pas très répandue ailleurs. Le principe est simple, c’est une pierre qui tourne seule sur elle-même. Il n’y a pas besoin d’eau, de mulet ou d’homme pour la mettre en branle, elle continue sa course indéfiniment. Il est arrivé que des meules tournent encore alors que le moulin était en ruine. Les bandits s’en servent aussi parfois comme instrument de torture.\nSa création nécessite un jet d'Artisanat élémentaire: Pierre d'une Difficulté de 20, et coûte tous les points de magie de la sphère de la Pierre.",
+    "weight": 500,
+    "creation_difficulty": 20,
+    "creation_time": 3,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 500
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 800
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Écailles de Brorne"
+    },
+    "name": "Les pierres de fronde",
+    "uuid": "1848c806-91fb-4246-8f4d-34d960c11427",
+    "unique": false,
+    "description": "Les magiciens s’amusent parfois à enchanter les cailloux pour que les gamins puissent s’amuser avec des lance-pierres et des frondes. La particularité de ces pierres c’est qu’elles ne peuvent toucher que des choses inertes, pas d’être vivant.\nLe lanceur gagne un bonus de 5 en les utilisant. Il suffit de posséder les Compétences Sphère de la Pierre et Sorcellerie à 3 pour pouvoir les enchanter. Chaque pierre demande 5 mn de concentration et un point de magie de la sphère de la Pierre.",
+    "weight": 0.05,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 5
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 5
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Bonus de +5 au jet de tir"
+      },
+      {
+        "description": "Ne peut toucher qu'une cible non-vivante"
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les outils d’Alverkop",
+    "uuid": "782d8d8f-7003-4f9a-ac7c-21dd5cda778a",
+    "unique": false,
+    "description": "Alverkop est né difforme. En effet, sa mère eut un grave accident durant sa grossesse, lorsqu’un enfant de Kezyr - Dwerk - s’abattit sur sa chaumière suite à un violent combat contre un fils de Kroryn.\nDwerk, pris de remords, accompagna l’enfant au fil de ces jours sombres que furent sa jeunesse. Maltraité par les uns, fui et rejeté par les autres, le jeune Alverkop eu la chance de pouvoir compter sur un allié draconique sans lequel son histoire aurait été plus brève.\nLorsqu'il eut 14 ans, Dwerk présenta Alverkop au Grand Dragon du Métal, le conjurant d'aider cet humain à devenir artisan. Le défi était de taille car les difformités de l’adolescent ne lui permettaient pas d’utiliser des outils conventionnels.\nCharmé par tant de sollicitude de la part d’un de ses dragons, Kezyr offrit sa chance à Alverkop en lui faisant forger des outils adaptés à son handicap. Au fil des ans, le Grand Dragon ne fut pas déçu et Dwerk eut un certain mal à cacher sa joie lorsque AlverKop devint Maître Maçon.\nCes outils ont des formes étranges, biscornues, et ne peuvent immédiatement être identifiés comme des outils de maçon qu’au prix d’un jet de Mental + Artisanat (Maçonnerie) contre une Difficulté de 20 - cette Difficulté est augmentée de 5 pour tous les autres types d’artisanat et de 10 en cas de jet effectué avec une Caractéristique.\nPouvoirs et capacités\nChacun de ces outils ne peut être utilisé que par des personnes souffrant d’un désavantage physique important - infirmité, faiblesse physique, petite taille ou fragilité - et possédant une Force inférieure à 5.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Bonus de 2 à chacun des jets impliquant l’Attribut Manuel"
+      },
+      {
+        "description": "Avant d'utiliser une Compétence Technique, le personnage peut tenter un jet de Manuel + Volonté + Tendance Dragon contre une Difficulté de 15 - quel que soit le nombre d’outils possédés - et chaque Niveau de Réussite obtenu s'ajoute au score de la Compétence Technique impliquée dans le jet d'action en cours"
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les talismans d'écaille",
+    "uuid": "6a93d699-1fe4-486d-aad0-2f38a80024ab",
+    "unique": false,
+    "description": "Les Talismans d’écailles\nCes talismans, enchantés par la magie du métal, furent rassemblés par l’un des premiers enfants de Kezyr à avoir transmis le Lien. Keblyk eut l’idée d’une coutume, toujours en vigueur aujourd’hui, pour marquer de solennité le choix d’un Élu : chaque enfant de Kezyr offre l’une de ses écailles à son compagnon.\nAu fils des ans et des décès, Keblyk s’est mis dans l’idée de récupérer toutes ces écailles perdues afin d’en faire des talismans qui rendraient dignement hommage aux premiers Élus. Chose fut faite, mais à la mort du dragon, sa collection de souvenirs se dispersa à travers le Royaume de Kor.\nChaque talisman est unique, tant dans sa forme que dans les pouvoirs qu’il confère, car Keblyk voudait respecter les particularités de chacun des groupes de compagnons. Généralement, il se présente sous la forme d'une écaille, dont la longueur varie de quelques centimètres à près d’un mètre, enchâssée dans un objet manufacturé - bijou, armure, arme, bouclier, etc.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les ciseaux de précision",
+    "uuid": "7e5a1346-d814-485b-9ef2-5f5fdd0505a4",
+    "unique": false,
+    "description": "Beaucoup d’orfèvres utilisent ces instruments quasi-chirurgicaux pour obtenir un maximum de précision. Non seulement leur finesse est inégalée, mais un petit sortilège de stabilité - provenant des mages de Brorne - préserve les mains de l’artisan de tout tremblement ou faux geste. L’équivalent existe pour les voleurs et les mécaniciens humanistes, mais personne ne voudra le reconnaître.\nCes ciseaux sont crées normalement par l'Artisanat concerné (DC inchangée), mais sont traités par les mages de la pierre ou les artisans élémentaire de Brorne. Il faut alors leur faire subir un traitement d'une journée, qui s'effectue par un jet d'artisanat élémentaire (Pierre) à 15 et la dépense de 2 pts de magie de la sphère de la Pierre. Une fois ce traitement effectué, l'utilisateur a droit à une relance de son dé (donc s'il n'utilise pas les Tendances) si ce dernier indique 1.",
+    "weight": 0.1,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 200
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 200
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les automates",
+    "uuid": "6da229d5-3364-4c4c-b489-a123fcea2b26",
+    "unique": false,
+    "description": "Ce terme englobe tous les types de décorations possibles, de la fresque à la statuette en passant par la marionnette. Ces objets ont pour vocation de garder un lieu ou un coffre. Sitôt que quelqu’un approche sans les désamorcer, leur piège s'active. Suivant le contexte, cela peut aller du simple dard empoisonné à la pluie d’acide bouillant.\nIl faut s’y connaître à la fois en mécanique et un peu en magie du métal pour déjouer les automates. Ils sont aussi utilisés par les Humanistes pour commettre des attentats.\nLeur création nécessite des jets d'Artisanat ou de Mécanisme de Difficulté 15 à 30 selon la complexité de l'automate, puis des jets de Pièges mécaniques (voir Yris), de Difficulté 15 à 25 selon le piège mis en oeuvre, puis un jet d'Artisanat élémentaire (Métal) de Difficulté équivalente à celle du piège. Le déclenchement du piège est à définir avec le MJ et reste à sa discrétion.\nLeur création implique un jet d'Artisanat élémentaire (Métal) contre une Difficulté égale à celle du métal le plus noble (voir l'échelle de Transmutation). On crée ainsi 1+1/NR kg de l'alliage. Il en coûte 1+1/NR point de magie de la sphère du Métal. Le prix moyen de ces barres est égal à 4 fois la moyenne des prix des deux métaux.",
+    "weight": 5,
+    "creation_difficulty": 25,
+    "creation_time": 5,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Les alliages de Kezyr",
+    "uuid": "fb2085f8-98b7-4fb8-b4fb-2691654be0f7",
+    "unique": false,
+    "description": "Qu'ils se présentent en barres de plusieurs kilos ou en sacs de poudre, les alliages servent à tous ceux qui travaillent les métaux sans procéder aux mélanges préalables de minerais pour obtenir la matière adéquate. Suivant les métaux déjà mélangés et leur rareté, qui varie d’un pays à l’autre, les alliages sont plus ou moins onéreux. On les considère comme des objets magiques, car certains mélanges ne pourraient être obtenus sans l'intervention d’un enchantement - car les éléments sont incompatibles.",
+    "weight": 1,
+    "creation_difficulty": 20,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 500
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 500
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les pierres de Moryagorn",
+    "uuid": "818a867c-87c9-4e2f-9bde-0848d8502d24",
+    "unique": false,
+    "description": "Utilisées en secret par de nombreux voyageurs et éclaireurs d’expéditions lointaines, les pierres de Moryagorn font la fierté des rares citoyens qui, pour affirmer leur statut ou s’enorgueillir d’une telle possession, se risquent à les exhiber au grand jour. Connus depuis à peine quelques dizaines d’années, il semble que ces fragments de roche dotés de pouvoirs magnétiques existent - et soient utilisés - depuis bien plus longtemps. On dit des pierres de Moryagorn qu’elles ont été offertes par Szyl aux voyageurs méritants qui s’aventurèrent loin vers le grand ouest, le désert du nord et les marais ponctuant les côtes de la Source, pour les aider dans leurs périples et leur permettre de trouver la direction du nord. Mais aujourd’hui, jalousement conservées par la caste des voyageurs et quelques érudits nomades, ces pierres aimantées ne quittent plus que rarement les mains de leux propriétaire.\nDe taille variable et inégale, ces éclats de pierre aux reflets argentés tiennent généralement dans le creux de la main et ne se différencient des autres fragments rocheux que par leur incroyable faculté à glisser, sur n’importe quelle surface, en direction du nord. La notion de points cardinaux n’est certes pas communément développée sur le Royaume de Kor, excepté chez les Humanistes, mais la possibilité de pointer systématiquement vers une direction facilite grandement les voyages.",
+    "weight": 0.1,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 1000
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Tous les jets d'Orientation et d'Astrologie effectués grâce à une telle pierre voient leur Difficulté réduite de 5"
+      },
+      {
+        "description": "Le joueur ne peut obtenir d’échec critique et relance tout résultat de 1 qu’il obtient lors de jets d'Orientation et d'Astrologie"
+      },
+      {
+        "description": "Une fois par jour, le porteur d’une telle pierre peut choisir de relancer un dé du Dragon - qu’il sera ensuite obligé de conserver - lors d’un appel aux Tendances - mais un 1 éventuel sur ce second jet ne sera pas relancé, même si c'est un jet d'Orientation ou d'Astrologie"
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les cuirs de Tyann Cyn",
+    "uuid": "2ec6cf5d-1ebe-49e2-b7f5-0ead293f174e",
+    "unique": true,
+    "description": "Tous les objets conçus par Tyann Cyn et ses quelques apprentis - qui feraient passer nombre d'artisans indépendants pour de simples élèves - s'avèrent plus résistants, plus souples et moins encombrants que les autres objets du même type. Pour déterminer ces “bonus”, effectuez un jet d’Artisanat en utilisant les caractéristiques de Tyann et de ses artisans, données pour chaque type d'équipement, et une Difficulté de 10. Pour chaque Niveau de Réussite, lancez ensuite un dé sur la table qui suit pour déterminer les bénéfices de l’objet. Si le client a un désir précis, comme une résistance accrue de son armure, par exemple, augmentez la Difficulté de 5 si l’objet de la demande est compris entre les résultats 1 et 5, et de 10 s’il est compris entre 6 et 10. Ces augmentations sont cumulatives.\n\n1 - Solidité : l'objet perd un point de protection par DEUX coups l'ayant traversé.\n2 - Beauté : le porteur gagne un bonus de +1 à tous ses jets de Social basés sur la négociation et le charme.\n3 - Privilège : le personnage gagne un bonus de +1 à tous ses jets de Social effectués “contre” des voyageurs.\n4 - Souplesse : l'encombrement de l'objet est réduit de 1.\n5 - Étincelle : l'objet est enchanté et dispose des pouvoirs d’un sortilège de premier niveau de la Sphère des Vents - au choix du meneur de jeu.\n6 - Résistance : l'objet perd un point de protection par TROIS coups l'ayant traversé.\n7 - Splendeur : le porteur gagne un bonus de +3 à tous ses jets de Social basés sur la négociation et le charme.\n8 - Honneur : le personnage gagne un bonus de +1 à tous ses jets de Social effectués “contre” des voyageurs, des artisans et des commerçants.\n9 - Légèreté : L'encombrement de l'objet est réduit de 2.\n10 - Enchantement : l'objet est enchanté et dispose des pouvoirs d’un sortilège de deuxième niveau de la Sphère des Vents - au choix du meneur de jeu.",
+    "weight": 0,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "normal",
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les hurlantes",
+    "uuid": "8c2adc83-e9c7-4ef5-b212-029bc21d56fa",
+    "unique": false,
+    "description": "Il ne s’agit pas d’un objet magique, bien qu’il en ait toutes les apparences. Ce sont des flûtes de bois suspendues aux branches des arbres ou sur un pylône. Bien placées, elles peuvent prévenir de leur sifflement l’arrivée d’une tempête. Avec de l'expérience, il est même possible de deviner la nature - pluie, orage, neige - et la force de la tourmente. Les bergers s’en servent souvent, ainsi que les enfants, pour effrayer les passants - le sifflement peut rappeler un hurlement d’âme en peine.\nLeur création s'effectue avec Artisanat : Menuiserie (Difficulté 18). Il faut une journée de travail.",
+    "weight": 0.5,
+    "creation_difficulty": 18,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresCommun",
+      "price": 20
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 25
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les cerfs-volants",
+    "uuid": "d44791a4-e0ac-4c78-b4a4-506399dd7b49",
+    "unique": false,
+    "description": "Le vol est en théorie interdit à l’homme. Cela n’empêche pas les enfants de fabriquer de grandes ailes volantes et de s’y accrocher pour s’élever dans les airs. Ce jeu est toléré, car il peut se montrer d’une utilité plus importante en cas de guerre. En effet, les gamins servent de sentinelles et, plus ils jouent, plus ils sont capables de rester longtemps dans les cieux. À noter que, le long des côtes, ce jeu est interdit et puni de mort.\nLeur création s'effectue avec Artisanat : Couture (Difficulté 20). Il faut deux jours de travail.",
+    "weight": 2,
+    "creation_difficulty": 20,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 150
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les tubes amplificateurs",
+    "uuid": "2441e8ea-2cf0-40ea-b37b-b5a391cf5d1b",
+    "unique": false,
+    "description": "Ces tubes sont assez rares, car leur préparation est longue et coûteuse. Ils se présentent sous la forme de tubes de laiton tenant dans la main et fermés par une valve. Il suffit de desserrer la valve pour que l’air, comprimé à l’intérieur, se libère. Les applications sont nombreuses - augmenter la flamme d’une forge, éteindre un feu en mélangeant air et eau, fabriquer une bombe silencieuse, etc. Certains Inquisiteurs les considèrent comme une arme humaniste.\nLa création du tube s'effectue avec Artisanat : Forge (Difficulté 20) et impose de posséder Mécanismes à 4. Il faut deux jours de travail. Le remplissage demande un jet d'Artisanat élémentaire: Vents (Difficulté 15) et la dépense de trois points de magie par litre d'air. Cette opération prend une heure (chaque NR divise ce temps par deux).",
+    "weight": 0.5,
+    "creation_difficulty": 20,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 500
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 400
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "Les spirales sémaphores",
+    "uuid": "ba0db837-5c9c-4a9b-b763-fd5162cd657f",
+    "unique": false,
+    "description": "Ces moulins à vent sont tout à fait classiques, mais quand leurs ailes sont ornées de rubans et que leur rythme n’est plus régulier, c’est que les meuniers communiquent d’une colline à l’autre. Dans les campagnes, on prévient des dangers de la sorte - des rubans magiques lumineux peuvent aussi rendre le système opérationnel la nuit.\nL'utilisation de ces systèmes se fait par Mental + Langage des signes (Spécialisation: sémaphores). Il faut absolument posséder la Spécialisation pour comprendre les messages.",
+    "weight": 20,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 80
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Orphelins de Szyl"
+    },
+    "name": "La poudre d'escampette",
+    "uuid": "ece5d1b4-d599-45c1-9637-b5ecc209b647",
+    "unique": false,
+    "description": "Seuls les mages les plus doués peuvent fabriquer cette poudre magique ressemblant à du sable bleuté. Les voyageurs en ont toujours sur eux, dans un petit sac accroché à leur cou. En fait, il s’agit plus d’un porte-bonheur ou d’un placebo - lorsqu'on l’utilise pour soigner - que d’un véritable objet magique. Grâce à elle, les voyages sont plus courts, la douleur disparaît, la jeunesse revient, les couples en difficulté sont sauvés, etc. Au meneur de jeu de décider de la réelle efficacité de la poudre.\nSa création s'effectue par Artisanat élémentaire: Vents (Difficulté 15) et la dépense de trois points de magie. Par NR, le meneur peut accorder un effet mineur (un +1 sur un futur jet, un petit coup de chance, un malus de blessure réduit pour un tour, etc…). Ces pouvoirs ne sont jamais définitifs.",
+    "weight": 0.01,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 50
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Les livres-mémoire",
+    "uuid": "cab0cf9e-7158-46dd-9e82-a5c5449c1d0a",
+    "unique": false,
+    "description": "Les livres-mémoire furent inventés par un érudit Élu du Grand Dragon des Cités qui, pour consigner son savoir sans risquer d’être surpris dans ses recherches, reçut de Khy la magie nécessaire à la conception d’un enchantement particulier.\nDécouvert lors d’une investigation menée par une unité d’Inquisiteurs au sein de la capitale, le premier des livres-mémoire connus fit de véritables ravages dans les rangs des protecteurs, mais aussi des érudits - pour qui la découverte de ces objets constitue, aujourd’hui encore, une révolution sans précédent. Les Maîtres de la caste ont immédiatement revendiqué la propriété de ces livres qui, à en croire les résultats de leurs recherches, seraient non seulement capables de retracer les pensées de leur propriétaire, mais surtout de les restituer - à la façon d’une mémoire.\nEn feuilletant frénétiquement les pages désespérément blanches de ce livre, les Inquisiteurs acceptèrent cette explication sans hésitation.\nLes livres-mémoire sont d'aspect variable, mais la qualité du cuir de leur couverture et de leur reliure laisse perplexes la plupart des observateurs. À l’intérieur, les pages liées par une colle invisible sont blanches. Il est impossible d’écrire quoi que ce soit sur ce papier à la finesse inégalée. Certains modèles sont ornés d’une gravure métallique, d’autres dotés d’un fermoir.\nSeul le propriétaire du livre est capable d’y inscrire des informations et de les lire par la suite.\nPour devenir “propriétaire” d’un tel livre, dont la détention est passible de mort pour hérésie, il ne suffit pas simplement de se le procurer : un dragon de Khy (Vieux ou Ancien) doit impérativement en effacer la mémoire avant d’y inscrire le nom du nouveau détenteur.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": [
+      {
+        "description": "Permet, à tout moment, retrouver des informations qu’il y a consignées - et le joueur peut donc demander au meneur de jeu de lui rappeler un nom, une date, une description, etc."
+      }
+    ]
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Compagnons de Khy"
+    },
+    "name": "Les plans exacts",
+    "uuid": "794b9a28-c4b4-4a08-871e-de37207863d2",
+    "unique": false,
+    "description": "Encore un exemple d’objet non magique mais qui, sans l'intervention de la magie, n'aurait pu exister. Les plans exacts n’existent pas. Ils sont le fruit d’une observation aérienne des mages de Khy que les dragons acceptent de porter sur leur dos pour qu’ils dessinent les plans à vue d’œil. Ces parchemins sont vendus très chers car ils peuvent être capitaux pour le contrôle militaire ou commercial d’une cité. Dans certaines villes, ils sont même interdits.",
+    "weight": 0.05,
+    "creation_difficulty": 20,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "city_availability": {
+      "scarcity": "tresRare",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les conques du savoir essentiel",
+    "uuid": "e2767943-ee65-4656-9b2e-fad4dcb12055",
+    "unique": false,
+    "description": "Mécontente de sa descendance directe, le Grand Dragon des Océans chercha à remplacer les humains, jugés trop stupides, par d’autres formes de vie. Ainsi, elle étudia largement la faune marine et dota certaines espèces de capacités et de compétences “plus que” naturelles. Malheureusement, dans la majeure partie des cas, ces expériences se révélèrent de cuisants échecs. Néanmoins, c’est ainsi que naquirent les conques du savoir essentiel.\nLes conques sont en fait les restes de coquillages et crustacés qu’Ozyr avait dotés de connaissances particulières ; or, ces enveloppes ont conservé une grande partie de leur sapience passée et peuvent la restituer à qui sait en extraire la substantifique moelle.\nIl n’existe pas de conque typique. Toutes les formes de coquilles sont possibles, des plus sobres aux plus bariolées, des plus rudimentaires aux plus complexes. Seul trait commun : ce sont des objets inanimés, car les animaux qui les ont “habitées” ont disparu depuis bien longtemps.\nLes conques sont assez rares, car il est important qu’elles soient entières et en bon état pour que le savoir qu’elles contiennent soit encore concentré et exploitable ; un bout de coquillage ne peut donc être d’aucune utilité !\nBien que chaque conque soit unique, d’un point de vue technique, certains traits sont communs à toutes. Chaque conque a un effet unique, qui se traduit par le gain temporaire d’un bonus de +1 à +5 dans une et une seule Compétence de Théorie, pour une durée de 1D10 x 10 minutes. Pour que ce bonus soit applicable, il est nécessaire que la conque soit entière et préparée selon un rituel spécifique (par exemple, être broyée puis fumée, être diluée dans un breuvage, être mise en contact avec une blessure à vif, etc.) ; ce rituel peut être identifié grâce à la réussite d’un jet de Mental + Connaissance des animaux contre une Difficulté de 20.\nEnfin, l’utilisateur doit réussir un jet de Résistance contre une Virulence de 5 + (bonus offert x 5) sous peine de subir une intoxication alimentaire entraînant des troubles gastriques accompagnés, parfois, de troubles mentaux selon le type de conque.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les écailles de la quintessence",
+    "uuid": "35d53e3e-c3d5-48c2-b732-3ce8c7259681",
+    "unique": false,
+    "description": "Il fut un temps où Ozyr était soucieuse de conserver une trace tangible de son savoir, de peur d’en perdre une partie. Le Grand Dragon choisit à l’époque de sacrifier certains de ses enfants, afin de graver à même leur corps toute l’étendue de sa connaissance. Autant dire que les morts furent nombreux !\nDe ces massacres ne subsistent, aujourd’hui, que quelques écailles porteuses de savoir de-ci de-là. Celles-ci se révèlent des biens précieux pour tout érudit qui se respecte.\nVéritable livre d’histoire, chacune de ces écailles recèle une partie des connaissances de Kor. La taille de chacune d’elle peut varier de quelques centimètres à un mètre, selon l’âge du dragon auquel elle appartenait.\nPouvoirs et capacités :\nDéchiffrer les secrets d’une écaille de la quintessence nécessite la réussite d’un jet Mental + Connaissance des dragons contre une Difficulté de 25, suivie de la réussite d’un jet Empathie + Lire et écrire + Tendance Dragon contre une Difficulté de 30. La lecture d’une écaille donne un bonus variant en fonction de l'âge du dragon dans l’une des Compétences suivantes (au choix du maître de jeu) : Connaissance de la magie, Connaissance des dragons, Géographie ou Histoire. L’écaille d’un jeune dragon ou d’un enfant procure un bonus de +1, celle d’un adulte, un bonus de +2 et celle d’un vieux, un bonus de +3 ; aucun ancien n’a été sacrifié pour cette bibliothèque “vivante”.Ces bonus sont définitivement acquis par le personnage. Ils peuvent permettre de devenir Expert par ce biais, mais pas de dépasser 15.",
+    "weight": 0.5,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les clepsydres",
+    "uuid": "7f518ded-1d2e-4683-b901-dee3a932f44a",
+    "unique": false,
+    "description": "Depuis que les hommes ont pris conscience de leur mortalité, ils ont toujours ressenti le besoin de se situer dans le temps et de coordonner leurs vies pour les rendre ptus agréables. Les clepsydres sont des objets relativement courants, s'appuyant sur le principe de l'écoulement constant d’un liquide pour mesurer le passage du temps selon la vidange du réservoir, à la manière d’un sablier liquide. Il est devenu habituel d’orner de décorations magnifiques ces objets, dont certains sont même ensorcelés pour se remplir seuls à un certain degré. En général, on trouve des clepsydres dans les universités des érudits ou les Sources. Ce sont des objets conmunautaires, plus appréciés que les mystérieuses horloges, trop souvent taxées d’Humanisme.\nEn ville, une clepsydre est souvent confiée à la milice, qui peut alors planifier ses rondes et en informer la population par des annonces publiques.\nLeur création s'effectue avec Artisanat : Verrerie (Difficulté 25). Il faut une semaine de travail.\nIl est possible de créer des clepsydres ensorcelées à partir de matériaux nobles comme du verre, ce qui demande alors un jet d'Artisanat : Verrerie (Difficulté 20) puis une cérémonie au Maître du Temps, Kalimsshar. Il suffit alors d'une journée de travail au total et la dépense de 3 points de magie de la Sphère de l'Ombre. La possession (et la création) de ces clepsydres ensorcelées est soumise à l'Aval draconique. Leur rareté est Villes : tr/6000, Villages : int/8000.",
+    "weight": 5,
+    "creation_difficulty": 25,
+    "creation_time": 9,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 4000
+    },
+    "city_availability": {
+      "scarcity": "rare",
+      "price": 2500
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les marque-pages élémentaires",
+    "uuid": "14aa6bb6-8822-4876-8f78-6aa0a98e942f",
+    "unique": false,
+    "description": "Tout érudit qui se respecte possède un marque-page ensorcelé, fait d’un cuir ou d'une étoffe de son choix et enchanté par les artisans élémentaires. Outre les décorations et broderies qui les parsèment, les marque-pages élémentaires peuvent révéler le nom de leur propriétaire lorsque l’on passe la main au-dessus. Il se forme alors un glyphe magique fugace, scintillant d’une matière élémentaire choisie par le mage et formant son nom. Les ornementations d’un marque-page sont souvent en rapport avec le Statut de son propriétaire.\nUne coutume interne veut que, si on désire faire savoir qu’on l’étudie, on laisse son marque-page à l’intérieur d’un livre, posé dans les rayonnages d’une bibliothèque. Il est, pour un érudit, très impoli de consulter un livre ainsi réservé, si le Statut du propriétaire est manifestement supérieur au sien. Dans ce cas, il est d’usage de demander l’autorisation à l’érudit concerné, qui la refusera rarement.\nLeur création demande un jet d'Artisanat : Tannerie (Difficulté 10), puis un jet d'Artisanat élémentaire au choix (Difficulté 15). Les NR obtenus à ces deux jets s'ajoutent pour donner une appréciation de la qualité du marque-page obtenu. Il est de coutume de chercher à obtenir au moins un NR par Statut de l'érudit auquel il est destiné, mais pas plus, car cela constitue une faute de savoir-vivre très mal vue par les artisans et les érudits. Les prix donnés sont par niveau de Statut de l'érudit.",
+    "weight": 0.05,
+    "creation_difficulty": 15,
+    "creation_time": 1,
+    "village_availability": {
+      "scarcity": "peuCommun",
+      "price": 125
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 100
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Les coraux",
+    "uuid": "ff93f4ec-fddb-46c0-b406-8a4625e63fbc",
+    "unique": false,
+    "description": "Les riches marchands et les nobles possèdent souvent des pieds de coraux ensorcelés, maintenus en vie hors des océans par le biais de la magie. Des mages des océans ou des artisans élêmentaires enchantent les délicates arborescences, ce qui y entretient une humidité perpétuelle et simule ainsi le milieu marin.\nLes coraux arborent parfois plusieurs nuances de couleurs. Leur popularité va croissant et ils constituent l’un des cadeaux les plus appréciés, hormis leurs qualités décoratives.\nLeur adaptation demande un jet d'Artisanat élémentaire : Océans (Difficulté 15). Leur acclimatation demande trois jours d'effort et il est possible d'adapter un pied de 20 cm par un jet réussi, éventuellement doublé pour chaque NR obtenu (1 NR:40 cm, 2 NR:80 cm…). Les prix donnés sont par centimètre de corail.",
+    "weight": 0.5,
+    "creation_difficulty": 15,
+    "creation_time": 2,
+    "village_availability": {
+      "scarcity": "commun",
+      "price": 8
+    },
+    "city_availability": {
+      "scarcity": "peuCommun",
+      "price": 10
+    },
+    "supports_metal": false,
+    "special": []
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Écran 2e édition"
+    },
+    "name": "Le Bourdon d'Ébène",
+    "uuid": "53949051-7d82-43fc-a701-2aca3fa323f7",
+    "unique": true,
+    "description": "Lors de la création des Immortels, Heyra savait qu’elle devrait donner la Vie. Réfléchissant à son implication, elle décida non pas de créer une vie jeune et inexpérimentée, mais d’offrir l’essence même de la vitalité à ses futurs enfants, et se tourna alors vers ses plus belles créations, les Noënes. Ces êtres élémentaires étaient de véritables incarnations de la vie, et leur présence suffisait à fertiliser les plantes et les animaux à des lieues à la ronde. Dressant sous le vent leurs ramures orgueilleuses, les Noënes paraissaient comme des arbres immenses, dont les fruits argentés régalaient tous les êtres. Comprenant leur créatrice, ils extirpèrent leurs racines et s’assemblèrent en un imposant bosquet. Heyra s’inclina alors pour les enlacer et concentra toute leur énergie en un point focal. Les Noënes se flétrirent et devinrent cendres, alors que leur force se condensait autour du plus vieux d’entre eux. Il ne resta bientôt plus que le plus vénérable qui, gonflé de vie, se rétracta en une branche noire et rugueuse. Heyra porta cette branche auprès de chaque corps inanimé et, le touchant au front, lui insufla la vie.\nEn effleurant le millième Immortel, le bourdon perdit toute puissance et devint une coquille vide. Trop occupée par la naissance des hommes, Heyra l’abandonna derrière elle et laissa la nature reprendre ses droits.\nLe bourdon ressemble à un bâton calciné d’environ deux mètres de haut. Sa surface est rugueuse et noire, comme une branche brûlée qui se serait fossilisée. Il ne s’effrite jamais et sa forme physique ne peut être altéré d'aucune manière. Le bourdon d’ébène est devenu une entité vivante dès sa création. Après la naissance des Immortels, il a continué à vivre et, comme un arbre qui déploie ses racines, s’est mis à se recharger d’une énergie vitale propre.\nLe Bourdon est actuellement en possession de Kasif l’Ermite, un puissant mage pomyrien vivant reclus dans une grotte, non loin des montagnes de Kali. Il conserve le Bourdon depuis des années en vue de créer une créature magique qui serait son chef-d'œuvre, au mépris de Lois Draconiques et de la colère de Heyra. Le porteur doit constamment lutter contre le Bourdon, qui cherche toujours à libérer son énergie pour créer quelque chose. Kasif vient récemment de contracter un Lien, mais il ignore encore tout de la nature de son protecteur. Si les songes qui lui laissent entrevoir les sombres écailles d’un fils de Kalimsshar s’avèrent prémonitoires, les centaines de niveaux d’énergie que contient actuellement le bourdon risquent fort de servir les intérêts d’une bien triste ambition.",
+    "weight": 3,
+    "creation_difficulty": 0,
+    "creation_time": 0,
+    "village_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "city_availability": {
+      "scarcity": "introuvable",
+      "price": 0
+    },
+    "supports_metal": false,
+    "intrinsic_resistance": "legendary",
+    "special": [
+      {
+        "title": "Lien vital",
+        "description": "En réussissant un jet de Mental + Empathie + Tendance Dragon contre une Diff. de 30, un être humain ou animal peut établir un lien empathique avec le bourdon afin de s’harmoniser à son énergie vitale. Cette énergie est quantifiée en niveaux. Chaque semaine, le bourdon gagne un niveau de vitalité qu’il stocke en vue d'insuffler ou de guérir la vie. Il n’y a aucune limite à l'énergie que peut contenir le bourdon.\nPour utiliser cette force, le porteur doit réussir un jet de Mental + Empathie contre une Difficulté de 15 et consommer un nombre de niveaux d'énergie déterminé par l’emploi du bourdon. Un niveau suffit pour soigner une blessure légère, deux pour une blessure grave et trois pour une fatale. Il en coûtera une dizaine pour régénérer un membre meurtri, vingt pour faire repousser un bras ou une jambe, cinquante rendre vie à un corps mort et, au prix d'une centaine de niveaux d’énergie, le porteur pourrait même insuffler la vie à des créatures artificielles, telles que des automates ou des golems de matière. Pour exemple, on estime qu’il a fallu un millier de ces niveaux pour animer le corps de chaque Immortel."
+      }
+    ]
+  }
+]

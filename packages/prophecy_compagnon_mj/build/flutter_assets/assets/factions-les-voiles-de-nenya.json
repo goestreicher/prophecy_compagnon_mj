@@ -1,0 +1,46 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "La Confrérie des Arpenteurs des Rêves",
+    "uuid": "af774928-ca0d-4abb-8846-2cbc3f16bf47",
+    "parent_id": "3a29182b-cd82-4d3f-8ca1-cba470a64397",
+    "display_only": false,
+    "leaders": [
+      {
+        "name": "Kaleb Therviss",
+        "title": "Chef de la Confrérie des Arpenteurs de Rêves"
+      }
+    ],
+    "members": [],
+    "description": "Cette guilde de mages et de voyageur se consacre à l’exploration et la redécouverte de lieux symboliques et magiques de l’histoire du Royaume de Kor. Elle dispose de nombreux écrits historique et magiques concernant les différents Âges. Leur chef est un voyageur de haut rang, Kaleb Therviss.\n\n"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "La guilde des mages de guerre",
+    "uuid": "cca7b5af-23e1-42b6-b72d-823b8f865a76",
+    "parent_id": "3a29182b-cd82-4d3f-8ca1-cba470a64397",
+    "display_only": false,
+    "leaders": [],
+    "members": [],
+    "description": "Elle est mondialement honorée et instruit les mages dans l’art de la guerre et dans l’usage de leur art sur les champs de bataille.\n\n"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Voiles de Nenya"
+    },
+    "name": "La guilde des maîtres bâtisseurs",
+    "uuid": "edd3de78-2b45-40d8-bfe7-21946631f852",
+    "parent_id": "3a29182b-cd82-4d3f-8ca1-cba470a64397",
+    "display_only": false,
+    "leaders": [],
+    "members": [],
+    "description": "Elle regroupe en son sein des Mages de la Pierre, des maçons et des architectes. Cette puissante organisation est en charge de la construction de nouvelles tours si les Maîtres Élémentalistes le leur demandent. Îls sont présents dans tous les pays et les cités et sont souvent en charge de l'entretien magique et de la préservation des bâtiments enchantés. Leur chef est le Maître Sorcier de la Pierre.\n\n"
+  }
+]

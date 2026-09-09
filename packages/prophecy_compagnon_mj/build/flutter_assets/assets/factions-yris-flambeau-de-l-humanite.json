@@ -1,0 +1,34 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "L'oligarchie des peccables",
+    "uuid": "1bad40c0-b41a-4483-9076-b77f2cc5a1b5",
+    "parent_id": "9e480b5d-4107-4451-9640-a1d00db83dc2",
+    "display_only": false,
+    "leaders": [],
+    "members": [],
+    "description": "Sise dans la cité de [Charbonneuse](resource://assets/place/5c087163-3c71-42ce-b47d-2bff40e05717), cette bande de truands renommée se terre secrètement dans les bas-fonds et les puits de mines abandonnés. Paranar-des-sables est un fin tacticien commandant les cibles et les assauts de ses escouades de pillards à travers la région. Çion-le-voile sape les fondements de la politique locale, infiltrant ses pions dans tous les rouages de la société. Aradélide et la population de Charbonneuse ne font qu'un : l'homme invisible semble derrière chaque gueux et miséreux, au courant de tout, présent partout. Les peccables sont une centaine répartis dans la ville et pillent toute la région sans jamais faire de quartier…\n\n"
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    },
+    "name": "La sororité de Minas",
+    "uuid": "e3ffe1b9-8be0-4b88-9ae4-cfb102e5e8ed",
+    "parent_id": "9e480b5d-4107-4451-9640-a1d00db83dc2",
+    "display_only": false,
+    "leaders": [
+      {
+        "name": "Kirinaï",
+        "link": null,
+        "title": "Maîtresse de l'Ordre"
+      }
+    ],
+    "members": [],
+    "description": "Depuis des années, les sœurs intriguent pour contrôler le pouvoir ducal depuis [la Citadelle de Minas](resource://assets/place/6c51d755-3c9a-4789-9ab2-b2df38ef9783). L'investiture de [Florimelle](resource://assets/npc/35f75cf6-53fa-4563-8800-51368845f83e) fut une heureuse surprise et les anciennes manoeuvrent à présent pour tenter de placer d'autres femmes à la tête de fiefs. Fidèles d'une tradition guerrière impitoyable, elles sont galvanisées par Kirinaï, maîtresse de l'ordre et puissante Orpheline des volcans. Elle serait, dit-on, la fille de Karanyr et pourrait insidieusement être à l'origine du Grand Raid de 1299 et de la mort de Cellustan de Dungard, voire de Ruganön Tabarnasse de Férune, dont les points de vue en matière de lutte contre l'humanisme n'auraient peut être pas été suffisamment fermes pour elle.\n\n"
+  }
+]

@@ -1,0 +1,3273 @@
+[
+  {
+    "uuid": "9795d32a-cda4-403c-8742-6eb381fd3c10",
+    "name": "Alde Baran",
+    "description": "Alde Baran (prononcer Aldeu Barann) est sans doute le Duelliste le plus connu et le plus respecté de tout le Royaume de Kor. Après avoir mené plusieurs armées au combat, il est apprécié pour son efficacité et sa ruse. Charismatique et dynamique, il perd une bonne part de son crédit hors du royaume de Kar où sa fougue, son impétuosité et sa nature sanguine l’empêchent d'avoir une politique diplomatique cohérente. Quatre fois dans sa vie, Kroryn lui-même l’a fait convoquer. À chaque fois, Alde a refusé d’expliquer le motif de la rencontre. On sait que le magicien entretient des rapports houleux mais durables avec le connétable Mélean Sarn.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 9,
+      "intelligence": 11,
+      "coordination": 8,
+      "presence": 8,
+      "resistance": 11,
+      "volonte": 12,
+      "perception": 7,
+      "empathie": 10
+    },
+    "attributes": {
+      "physique": 7,
+      "mental": 10,
+      "manuel": 6,
+      "social": 5
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesContondantes",
+              "value": 10
+            },
+            {
+              "skill": "armesDoubles",
+              "value": 9
+            },
+            {
+              "skill": "armesTranchantes",
+              "value": 9
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 8
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "equitation",
+              "value": 7
+            },
+            {
+              "skill": "escalade",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 9
+            },
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 12
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 9
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "lireEtEcrire",
+              "value": 9
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 7
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 9
+            },
+            {
+              "skill": "intimidation",
+              "value": 8
+            }
+          ]
+        }
+      }
+    },
+    "equipment": [],
+    "caste": {
+      "caste": "mage",
+      "status": "grandMaitre",
+      "career": "mageDeCombat",
+      "interdicts": [
+        "loiDuPacte",
+        "loiDuSangCombattant"
+      ],
+      "privileges": [
+        {
+          "privilege": "messager",
+          "description": "Non précisé"
+        },
+        {
+          "privilege": "prevoyance",
+          "description": null
+        },
+        {
+          "privilege": "leurre",
+          "description": null
+        },
+        {
+          "privilege": "tuteurSpecialise",
+          "description": "Kroryn"
+        },
+        {
+          "privilege": "style",
+          "description": null
+        },
+        {
+          "privilege": "engagement",
+          "description": null
+        },
+        {
+          "privilege": "botteSecrete",
+          "description": "Non précisée"
+        },
+        {
+          "privilege": "feinte",
+          "description": null
+        },
+        {
+          "privilege": "riposte",
+          "description": null
+        }
+      ]
+    },
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "3f414562-cea5-4dfd-ac2d-0570ff889f11"
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 0,
+    "disadvantages": [
+      {
+        "disadvantage": "maledictionDeNenya",
+        "cost": 0,
+        "details": ""
+      },
+      {
+        "disadvantage": "traumatismeMental",
+        "cost": 4,
+        "details": ""
+      },
+      {
+        "disadvantage": "ennemiRare",
+        "cost": 5,
+        "details": "Ghôm, dragon ancien de Brorne"
+      },
+      {
+        "disadvantage": "incompetence",
+        "cost": 5,
+        "details": "Technologie"
+      },
+      {
+        "disadvantage": "regardDesDragons",
+        "cost": 5,
+        "details": "Brorne"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "magieNaturelle",
+        "cost": 4,
+        "details": "Feu"
+      },
+      {
+        "advantage": "augureFavorable",
+        "cost": 3,
+        "details": "Chimère"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 5,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesMages"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 4
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 3
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "magic": {
+      "skills": {
+        "instinctive": 10,
+        "invocatoire": 7,
+        "sorcellerie": 4
+      },
+      "spheres": {
+        "pierre": 7,
+        "feu": 12,
+        "oceans": 0,
+        "metal": 8,
+        "nature": 0,
+        "reves": 0,
+        "cite": 6,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 7,
+        "feu": 12,
+        "oceans": 0,
+        "metal": 8,
+        "nature": 0,
+        "reves": 0,
+        "cite": 6,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
+    }
+  },
+  {
+    "uuid": "2d1559e7-4065-4a99-9e44-d84a50b457bc",
+    "name": "Mélean Sarn",
+    "description": "Mélean Sarn est un stratège réputé et Général hors du commun, membre de la caste des combattants au titre de Capitaine. Ses qualités de gestionnaire sont fort appréciées, et ses exploits contre Kali et les hordes Zûl ont fait de lui un héros populaire.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 8,
+      "intelligence": 10,
+      "coordination": 7,
+      "presence": 9,
+      "resistance": 7,
+      "volonte": 8,
+      "perception": 9,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 8,
+      "mental": 7,
+      "manuel": 5,
+      "social": 7
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 9
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 6
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 6
+            },
+            {
+              "skill": "strategie",
+              "value": 10
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "armesDeSiege",
+              "value": 10
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "eloquence",
+              "value": 8
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 9
+            },
+            {
+              "skill": "diplomatie",
+              "value": 6
+            }
+          ]
+        }
+      }
+    },
+    "equipment": [],
+    "caste": {
+      "caste": "combattant",
+      "status": "expert",
+      "career": null,
+      "interdicts": [
+        "loiDeLArme"
+      ],
+      "privileges": [
+        {
+          "privilege": "argotCombattant",
+          "description": null
+        },
+        {
+          "privilege": "botteSecrete",
+          "description": "Non précisée"
+        },
+        {
+          "privilege": "doubleAttaque",
+          "description": null
+        },
+        {
+          "privilege": "feinte",
+          "description": null
+        },
+        {
+          "privilege": "riposte",
+          "description": null
+        },
+        {
+          "privilege": "vigilanceCombattant",
+          "description": null
+        }
+      ]
+    },
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "3f414562-cea5-4dfd-ac2d-0570ff889f11"
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 0,
+    "disadvantages": [
+      {
+        "disadvantage": "blessure",
+        "cost": 5,
+        "details": ""
+      },
+      {
+        "disadvantage": "obsession",
+        "cost": 2,
+        "details": "Non précisée"
+      }
+    ],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 3,
+        "circles": 0
+      },
+      "human": {
+        "value": 2,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 1,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "cite",
+      "dragon": "Fendill",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "kar"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
+    }
+  },
+  {
+    "uuid": "5b0dd392-4f59-475e-9103-831efb003c11",
+    "name": "Org Horkyn",
+    "description": "Une des légendes qui circule dans les rangs de la Caste des Combattants évoque un jeune dragon capricieux, désireux de se démarquer de ses congénères en se liant à deux humains. Kroryn, amusé par tant de forgue, accepta et l’autorisa à tenter l’expérience du Lien avec deux Élus. Fougueux et courageux, le jeune dragon partit en quête de deux compagnons humains. Après moult péripéties, il découvrit deux guerriers charismatiques, Veerl et Org, dont la valeur n’avait d’égal que le courage. Après les avoir vus combattre, il porta son dévolu sur eux sans la moindre hésitation. Les humains passèrent tous deux la première épreuve et la réussirent brillamment, fiers de devenir des Élus et de représenter les intérêts du feu qui coulait dans leurs veines. Malheureusement, Kalimsshar vit dans cette situation étonnante l’occasion de distiller son venin.\n\nSous forme humaine, il contacta les deux hommes afin de faire naître doute et jalousie au plus profond de leurs cœurs. Ainsi, Veerl et Org, alors les plus heureux des hommes, devinrent les pires ennemis du monde — à la plus grande tristesse du fils de Kroryn auquel ils étaient liés. Quand vint le moment de prouver leur valeur en vue de faire progresser le Lien qui les unissait au dragon, ils décidèrent de se défier mutuellement. Malheureusement, d’égale valeur et mus par des sentiments contradictoires, les deux combattants durent, exsangues, constater l'absence de vainqueur lors de ce premier affrontement. Soucieux de préserver l'intégrité de ses humains, le jeune dragon décida de les séparer de force et les conduisit aux extrémités opposées de Kor. Depuis lors, les deux humains, qui refusent de rompre leur Lien draconique, se cherchent et s'affrontent violemment à chacune de leurs rencontres.\n\nAujourd’hui, le fils de Kroryn continue de se morfondre et tente tant bien que mal d’éviter les rencontres entre ses deux protégés. Kroryn se passionne pour ce combat sans fin, qui prouve à ses yeux que deux combattants orgueilleux peuvent rivaliser de courage et d’audace sans jamais s’anéantir ; quant à Kalimsshar, il suit avec avidité l’évolution de l'œuvre du Fatalisme, guide et maître incontesté de ce combat perpétuel.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 7,
+      "intelligence": 4,
+      "coordination": 6,
+      "presence": 4,
+      "resistance": 5,
+      "volonte": 5,
+      "perception": 6,
+      "empathie": 3
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 2,
+      "manuel": 4,
+      "social": 1
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 8
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 6
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 5
+            },
+            {
+              "skill": "equitation",
+              "value": 5
+            },
+            {
+              "skill": "esquive",
+              "value": 5
+            },
+            {
+              "skill": "bouclier",
+              "value": 4
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
+    "equipment": [
+      {
+        "type": "weapon:b1f26761-d126-41a4-a4c2-f1a3ac6f3b82"
+      },
+      {
+        "type": "armor:ea192510-a7e9-4996-8041-7919e40ee9b2"
+      }
+    ],
+    "caste": {
+      "caste": "combattant",
+      "status": "initie",
+      "career": null,
+      "interdicts": [
+        "loiDuSangCombattant"
+      ],
+      "privileges": [
+        {
+          "privilege": "doubleAttaque",
+          "description": null
+        },
+        {
+          "privilege": "riposte",
+          "description": null
+        },
+        {
+          "privilege": "botteSecrete",
+          "description": "Non précisée"
+        }
+      ]
+    },
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "3f414562-cea5-4dfd-ac2d-0570ff889f11"
+    },
+    "luck": 0,
+    "proficiency": 6,
+    "renown": 0,
+    "disadvantages": [
+      {
+        "disadvantage": "ennemi",
+        "cost": 3,
+        "details": "Veerl Varag"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "sensEnAlerte",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 3,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 2,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Fils de Kroryn",
+      "progress": "premierNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeKroryn"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "unique": true,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 50,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 50,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
+    }
+  },
+  {
+    "uuid": "065c5c54-6eae-4356-b6f2-786a20fd4db0",
+    "name": "Veerl Varag",
+    "description": "Une des légendes qui circule dans les rangs de la Caste des Combattants évoque un jeune dragon capricieux, désireux de se démarquer de ses congénères en se liant à deux humains. Kroryn, amusé par tant de forgue, accepta et l’autorisa à tenter l’expérience du Lien avec deux Élus. Fougueux et courageux, le jeune dragon partit en quête de deux compagnons humains. Après moult péripéties, il découvrit deux guerriers charismatiques, Veerl et Org, dont la valeur n’avait d’égal que le courage. Après les avoir vus combattre, il porta son dévolu sur eux sans la moindre hésitation. Les humains passèrent tous deux la première épreuve et la réussirent brillamment, fiers de devenir des Élus et de représenter les intérêts du feu qui coulait dans leurs veines. Malheureusement, Kalimsshar vit dans cette situation étonnante l’occasion de distiller son venin.\n\nSous forme humaine, il contacta les deux hommes afin de faire naître doute et jalousie au plus profond de leurs cœurs. Ainsi, Veerl et Org, alors les plus heureux des hommes, devinrent les pires ennemis du monde — à la plus grande tristesse du fils de Kroryn auquel ils étaient liés. Quand vint le moment de prouver leur valeur en vue de faire progresser le Lien qui les unissait au dragon, ils décidèrent de se défier mutuellement. Malheureusement, d’égale valeur et mus par des sentiments contradictoires, les deux combattants durent, exsangues, constater l'absence de vainqueur lors de ce premier affrontement. Soucieux de préserver l'intégrité de ses humains, le jeune dragon décida de les séparer de force et les conduisit aux extrémités opposées de Kor. Depuis lors, les deux humains, qui refusent de rompre leur Lien draconique, se cherchent et s'affrontent violemment à chacune de leurs rencontres.\n\nAujourd’hui, le fils de Kroryn continue de se morfondre et tente tant bien que mal d’éviter les rencontres entre ses deux protégés. Kroryn se passionne pour ce combat sans fin, qui prouve à ses yeux que deux combattants orgueilleux peuvent rivaliser de courage et d’audace sans jamais s’anéantir ; quant à Kalimsshar, il suit avec avidité l’évolution de l'œuvre du Fatalisme, guide et maître incontesté de ce combat perpétuel.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 7,
+      "intelligence": 4,
+      "coordination": 6,
+      "presence": 4,
+      "resistance": 5,
+      "volonte": 5,
+      "perception": 6,
+      "empathie": 3
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 2,
+      "manuel": 4,
+      "social": 1
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesTranchantes",
+              "value": 8
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 6
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 5
+            },
+            {
+              "skill": "equitation",
+              "value": 5
+            },
+            {
+              "skill": "esquive",
+              "value": 5
+            },
+            {
+              "skill": "bouclier",
+              "value": 4
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
+    "equipment": [
+      {
+        "type": "weapon:b1f26761-d126-41a4-a4c2-f1a3ac6f3b82"
+      },
+      {
+        "type": "armor:ea192510-a7e9-4996-8041-7919e40ee9b2"
+      }
+    ],
+    "caste": {
+      "caste": "combattant",
+      "status": "initie",
+      "career": null,
+      "interdicts": [
+        "loiDuSangCombattant"
+      ],
+      "privileges": [
+        {
+          "privilege": "doubleAttaque",
+          "description": null
+        },
+        {
+          "privilege": "riposte",
+          "description": null
+        },
+        {
+          "privilege": "botteSecrete",
+          "description": "Non précisée"
+        }
+      ]
+    },
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "3f414562-cea5-4dfd-ac2d-0570ff889f11"
+    },
+    "luck": 0,
+    "proficiency": 6,
+    "renown": 0,
+    "disadvantages": [
+      {
+        "disadvantage": "ennemi",
+        "cost": 3,
+        "details": "Veerl Varag"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "sensEnAlerte",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 3,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 2,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Fils de Kroryn",
+      "progress": "premierNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeKroryn"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "unique": true,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 50,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 50,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
+    }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Ostyr Kern",
+    "uuid": "f69f8390-434c-4e75-93c0-947035a5bb06",
+    "description": "Ostyr est le personnage que rencontrera un jour ou l’autre tout individu voulant faire partie de la Caste des Combattants. On le surnomme l'Œil de Kroryn, car il a la réputation de lire dans le cœur des gens et de connaître leurs vraies motivations.\n\nOstyr va d’école en école pour tester la valeur de chacun. Il peut lui arriver de découvrir des traîtres, mais aussi des cœurs tellement vaillants qu’il les prend sous son aile et les présente à Kroryn en personne. Son don n’est malheureusement pas infaillible. Maître des faux de guerre, c’est un homme droit et intègre, lié à Kroval, un très ancien Dragon du Feu.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Kroval",
+      "progress": "quatriemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Lofyr le Poète",
+    "uuid": "b5ae5c7c-d99e-4fcf-80b9-b2f7d61ecc8a",
+    "description": "Lofyr est le barde personnel de Kroryn. C’est un vieil homme et certains disent qu’il serait âgé de plusieurs centaines d’années. Kroryn lui laisse une très grande liberté et il n’est pas rare de le croiser sur le territoire de Kar, dans les tavernes qu’il aime fréquenter, ou sur les routes, à la recherche d'aventures. Il a la réputation de pouvoir instaurer la paix et la tranquillité partout où il se trouve. Il peut se déplacer à la vitesse du vent et, si Kroryn a besoin de lui, il entend son appel où qu’il soit et franchit en très peu de temps d’incroyables distances pour le rejoindre. C’est un individu aimable, toujours prêt à rendre service et à raconter les histoires les plus incroyables.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "voyageur",
+      "status": "maitre",
+      "career": "menestrels",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 50,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Norin Sordval",
+    "uuid": "405d6460-792f-4bc5-9e36-e4050cec403f",
+    "description": "Ce gladiateur est une fieffée crapule qui travaille pour tous les criminels de Kar — il a même servi les intérêts de partisans de Kalimsshar.\n\nC’est un individu jaloux, menteur et cruel, dont le talent de comédien est tel que personne ne l’a jamais soupçonné de la moindre malveillance. On raconte même qu’il aurait trompé la magie du [Hall des Hauts Faits](resource://assets/place/0112cd67-30ca-40f2-b97e-37084eb21c17) et qu’il s’y serait vanté d’exploits accomplis par d’autres — son art du mensonge est tel que ce sont les vrais héros qui ont été accusés d’avoir menti.\n\nQuiconque a affaire aux milieux criminels dans le Royaume de Kar croise sa route un jour ou l’autre, sous le nom de Fisbur le Menteur.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "expert",
+      "career": "gladiateur",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "kar"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Aldan le Preux",
+    "uuid": "aab05df9-e64b-47c4-8f87-5666051f1da9",
+    "description": "Le maître des fléaux, Aldan le Preux, est l’un des grands héros de la Caste des Combattants. Vertueux, droit, honnête, persévérant et sans peur sont ses qualités principales. Il est la cible privilégiée des agents de la corruption de Kalimsshar mais, jusqu’à présent, aucun n’a réussi à le pousser à la faute. Il faut dire que son Dragon du Feu, Solstyr, veille sur lui et a reçu l’aide de Kroryn à plusieurs reprises. Aldan consacre sa vie au combat contre la perversion sous toute ses formes. Il est persuadé que tout individu corrompu peut être guéri et il cherchera toujours un moyen d’éviter la mort à ses adversaires.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "paladin",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Solstyr",
+      "progress": "quatriemeNiveau"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Anna Lestrov",
+    "uuid": "15be3c57-7035-44db-bdf9-de17f712cdb9",
+    "description": "Anna Lestrov est l’une des plus jeunes voyageuses à avoir atteint ce Statut. Âgée de 28 ans, elle se montre particulièrement douée dans sa profession. Son mari n’est autre qu’un des plus grands [bardes de Szyl](resource://assets/faction/d0f8331a-3b46-4cf8-9c88-7565c41aed95), Ken Lore, et leur union est considérée par beaucoup comme le symbole de l'alliance entre le Grand Dragon des Vents et celui du Feu.\n\nAnna voyage de moins en moins souvent, préférant rester à Ankar en compagnie de son mari et de ses trois enfants. Elle est liée depuis son plus jeune âge à Tyragorn, un jeune fils de Kroryn.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "aventurier",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 28,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Tyragorn",
+      "progress": "quatriemeNiveau"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Devon Styr",
+    "uuid": "a1eb71a4-e3d4-49d1-8e8c-05b0ba6749db",
+    "description": "Devon Styr, le maître stratège, est un individu taciturne. Il est l’un des rares humains à rencontrer régulièrement Kroryn, avec lequel il discute stratégie el tactique. Il est obsédé par la défense du territoire qu’il croit vulnérable aux invasions des Fatalistes et des Humanistes. Paranoïaque, il tente de convaincre le Dragon du Feu de renforcer la sécurité sur toutes ses terres, en transformant le Royaume de Kar en un véritable état policier.\n\nIl vit seul à Ankar et on ne lui connaît pas d’ami. Sa paranoïa est justifiée sur un point : beaucoup d’ennemis du royaume veulent sa mort car, en matière de stratégie, personne ne peut rivaliser avec lui.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "strategeCombattant",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Filius Serln",
+    "uuid": "89adbdff-7b02-4a33-a39c-a5ac1d3ebc8e",
+    "description": "Filius Serln est un personnage charmant dont l’image publique est irréprochable. Il est passé maître dans deux arts martiaux différents (ce qui est presque unique dans les annales). Publiquement, il est le maître des lances mais, en secret, il est aussi le maître des dagues. Car Filius n’est autre que le chef du [corps des assassins](resource://assets/faction/6d555483-38b3-444c-aac0-22ab359c524d). Pourtant, c’est un individu assez droit qui fait appliquer un strict code de conduite, même − et surtout − chez les assassins. Il n’a jamais compris que ce métier soit dénigré par les autres membres de la caste. Il n'est associé à aucun dragon et réside à Ankar.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "maitreDArmes",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Klauss Surval",
+    "uuid": "b52362ad-e3b3-4d54-8a1c-2b815a707ca3",
+    "description": "Klauss Surval est un redoutable combattant résidant à [Arkhel](resource://assets/place/07895b4c-bebd-4d9b-89fd-1cef3f8df7d7). Il a un passé trouble et certains affirment qu’il n’aurait pas toujours défendu les enseignements de Kroryn. Beaucoup l’accusent d’être un véritable tortionnaire, mais il n’en est rien — il est victime de ragots colportés par un marchand qui le hait, Jason Sertick. Ce dernier accuse Klauss d’avoir provoqué la mort de son fils au cours d’un entraînement ; ce fut un accident, et le maître instructeur en est eflectivement le principal responsable. Il ne s’en est d’ailleurs jamais remis. Surval est le maître des masses d’armes. Il n’est lié à aucun dragon.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "guerrier",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Kron Bréorne",
+    "uuid": "3a30f153-3535-4c47-ae25-b89ca3fbe5d4",
+    "description": "Le maître des tridents, sans le savoir, a été corrompu par les Fatalistes. Au cours d’un affrontement, Kron Bréorne a été contaminé par une larve de corruption qui, pour l’instant, sommeille en lui. Cependant, il devient de plus en plus violent et a même failli achever un adversaire vaincu lors d’un combat dans la [Grande Arène](resource://assets/place/0fd9a4e0-679e-49c9-8104-596749b7108a). Il est hanté par des cauchemars terrifiants, dont il n’ose pas parler, de peur d’être condamné à mort. Il réside à [Maurore](resource://assets/place/206357db-d7d8-4f33-b75e-5a6d39925ac9). Sa femme est morte de maladie et il s’occupe seul de ses trois garçons.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "gladiateur",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Léna Longues-Tresses",
+    "uuid": "ace67dbb-0056-450d-9f1c-b8518004b3c1",
+    "description": "Maîtresse d’armes proche de [Simon Valir](resource://assets/npc/a08f0186-c897-4589-bd61-6df2fb3f048d), Léna est une redoutable duelliste. Elle est en fait à la tête des troupes des [Seigneurs Ardents](resource://assets/faction/9a203ede-7234-4237-8bf6-581707487609) infiltrées sur le territoire. Elle est liée à l’un des plus puissants Dragons du Feu, Brazyr, l’un des premiers fils de Kroryn - un monstre gigantesque qui mena la révolte contre son père il y a plusieurs millénaires. Léna ne recule devant rien pour atteindre ses objectifs. Elle passe son temps à tenter de séduire les hauts dignitaires de la Caste des Combaitants. Sa principale fonction est de trouver parmi les élèves de la caste des recrues potentielles pour les Seigneurs Ardents.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "maitre",
+      "career": "duelliste",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Brazyr",
+      "progress": "quatriemeNiveau"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Simon Valir",
+    "uuid": "a08f0186-c897-4589-bd61-6df2fb3f048d",
+    "description": "Jeune et arrogant, Simon Valir est souvent rappelé à l’ordre par le [Grand Maître](resource://assets/npc/2b4b4b52-1d81-4800-ade6-1c6829aca81f) de la caste. C’est un coureur de jupons et il se considère comme le meilleur bretteur qui ait jamais existé. Il passe plus de temps à chercher des adversaires à sa mesure qu’à assumer ses responsabilités.\n\nIl est l'actuel maître des épées (Note : quand un maître dans une catégorie d'armes devient Grand Maître de la caste, c’est le seul cas où un autre peut revendiquer son titre sans avoir à le combattre). Simon a une grande faiblesse : les femmes. Cela lui attire souvent des ennuis avec des maris jaloux. Il en a d’ailleurs tué deux, secret qu’il cache soigneusement car cela lui vaudrait un renvoi immédiat de la caste. En effet, aucun des deux maris ne savait se battre.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "duelliste",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Titus",
+    "uuid": "23ddca45-4145-464a-ba61-6d82e11a93c5",
+    "description": "Ce géant de deux mètres trente est un personnage jovial d’une grande bonté. Il est l’actuel maître de la lutte. C’est une masse de muscles débonnaire qui ne ferait pas de mal à une mouche - du moment qu’on ne provoque pas sa colère, que l’on dit terrible. On raconte qu’il aurait tué un ours à mains nues. Il hait l’injustice et surtout ceux qui s’en rendent coupables. Il vit à Maurore, entouré de tellement de jeunes fermes qu’il provoque souvent la jalousie des autres hommes. Il fréquente la célèbre Taverne des Gladiateurs où, en compagnie de son ami [Kron Bréorne](resource://assets/npc/3a30f153-3535-4c47-ae25-b89ca3fbe5d4), il raconte ses exploits devant un public médusé et béat d’admiration.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "lutteur",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Tylus Morg",
+    "uuid": "15bcd78d-4eaf-4c15-ba10-b7932f9dbf82",
+    "description": "Tylus Morg est un monstre de guerre de plus de deux mètres qui est le maître actuel des haches.\n\nÀ quarante ans, il a participé à tellement de batailles qu’il en a oublié la plupart. Chauve, borgne, couvert de cicatrices et ne souriant jamais, cet individu inspire la crainte. On le dit totalement dépourvu du moindre sentiment. Pourtant, c’est certainement le guerrier le plus noble de la caste. Il n’a jamais commis un seul acte contraire au code. Il vit à [Maurore](resource://assets/place/206357db-d7d8-4f33-b75e-5a6d39925ac9), en compagnie du Dragon de Feu Asskar.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "mercenaire",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 40,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Asskar",
+      "progress": "quatriemeNiveau"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Foudres de Kroryn"
+    },
+    "name": "Vosgard",
+    "uuid": "6f14304a-5046-4517-8360-9a2feab32379",
+    "description": "Rarement un Dragon du feu et un homme auront vécu dans une telle harmonie que le chevalier Vosgard et son dragon, Millyria. Le maître des marteaux est un homme vaillant, incarnant à merveille les valeurs de Kroryn. Il est à la tête de la célèbre [Confrérie du Cimier Rouge](resource://assets/faction/d237e881-697c-4124-8176-a6dcc649fefe). On le dit sans peur et certainement un peu téméraire. Cela lui vaut d’être souvent la cible de pièges tendus par les Fatalistes mais, jusqu’à présent, il s’en est toujours bien sorti.\n\nCependant, Vosgard dissimule un terrible secret. Il a été marié à une jeune femme qui, touchée par la corruption, est aujourd’hui devenue l’une des plus redoutables combattantes des armées de Kalimsshar. Vosgard passe son temps entre les trois forts des [Crocs](resource://assets/place/0583dd5c-7d69-4774-ad2f-e915901c2e49), consacrant toute son énergie au combat contre Kali.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "combattant",
+      "status": "grandMaitre",
+      "career": "chevalier",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "feu",
+      "dragon": "Millyria",
+      "progress": "quatriemeNiveau"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesCombattants"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  }
+]

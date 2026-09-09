@@ -1,0 +1,774 @@
+[
+  {
+    "uuid": "monde",
+    "name": "Monde",
+    "type": "monde",
+    "description": {
+      "general": ""
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "name": "Kor",
+    "parent_id": "monde",
+    "type": "continent",
+    "description": {
+      "general": "Le continent de Kor."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "map": {
+      "source_type": "asset",
+      "source": "assets/images/maps/kor_global.png",
+      "image_width": 1754,
+      "image_height": 2480,
+      "real_width": 5658065,
+      "real_height": 8000000
+    }
+  },
+  {
+    "uuid": "9b76a378-7cfa-49b5-874a-c93ad00cb6f5",
+    "name": "Archipel de Pyr",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "motto": "terre draconique interdite aux humains",
+    "climate": "tempéré",
+    "description": {
+      "general": "Anciennement prospères, ces îles sont aujourd’hui presque vides de tout habitant humain. La guerre sainte qui les a ravagées n’a laissé que des cadavres, des ruines fumantes et des cendres rapidement balayées par les vents furieux venus de l’océan. Une fois l’hérésie humaniste rayée de la carte, les descendants des Grands Dragons ont investi la végétation luxuriante et, en seulement quelques siècles, ont fini par décourager toute tentative d’implantation humaine. Il est connu que Syrah, la magnifique cité rebâtie par les dragons en mémoire à Khytann, reste interdite à tout visiteur humain qui s’y présenterait.",
+      "history": "En 453 AdE, l’Inquisition déclara l’Archipel de Pyr terre humaniste. Les armées anéantirent la population au cœur des îles, balayant toute résistance. Tout peuplement fut interdit et tout manquement à cette règle est sévèrement sanctionné par l’Inquisition.",
+      "ethnology": "Il n’y pas d’humains dans l’Archipel de Pyr mis à part certains visiteurs amenés là par les dragons et quelques survivants retombés dans une vie primitive et tribale.",
+      "society": "Quelques primitifs survivants y vivent toujours, sous le regard attentif des grands ailés qui sillonnent inlassablement la région. Certaines rumeurs prétendent qu'un culte draconique y aurait été créé, peut-être même sous l’inspiration d’Ozyr, Mère des Océans, mais aucun citoyen aventureux ne s’est encore risqué à vérifier de ses yeux cette éventualité. Seuls quelques rares Élus, guidés par leur compagnon draconique, ont été admis à contempler de l’intérieur les immenses tours de pierre sculptée de la forteresse verticale.",
+      "politics": "Inconnue",
+      "judicial": "Inconnu. Les dragons ne semblent pas posséder la même notion de justice que les hommes.",
+      "economy": "Aucune",
+      "military": "L’Archipel de Pyr est peuplé de dragons et personne n'ose envisager le moindre affrontement contre eux…"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "c93ec89f-a8ad-4dcd-ab43-69b41d28083f",
+    "name": "Syrah",
+    "parent_id": "9b76a378-7cfa-49b5-874a-c93ad00cb6f5",
+    "type": "capitale",
+    "description": {
+      "general": ""
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "a15e4d82-7b50-4fcf-b096-db4c1a1a0555",
+    "name": "Cité de Griff",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "citeEtat",
+    "government": "unique. Le pouvoir est aux mains d'un seul homme reconnu pour ses exploits.",
+    "leaders": [
+      {
+        "name": "Yarm",
+        "title": "Guide de la Liberté"
+      }
+    ],
+    "motto": "indépendance, prospérité, audace",
+    "climate": "désertique côtier",
+    "description": {
+      "general": "Lourdement fortifiée, dotée de quatre enceintes titanesques successives circulaires, cette cité-État monumentale est bâtie aux portes du désert. Le quartier administratif se situe dans l'enceinte la plus au centre et abrite en permanence une dizaine d’ailés. Les autres enceintes abritent la population, certaines populations miséreuses ayant été jusqu’à coloniser l’espace compris entre les enceintes extérieures. Griff ne possède pas de style architectural particulier, faisant plus figure de mélange des styles venus des quatre coins de Kor.",
+      "history": "Les premiers colons s’installèrent il y a plusieurs siècles sur les rives du désert inhospitalier afin d'extraire le très recherché Sang Noir de Moryagorn. Ils établirent une cité puis une enceinte. Mais cet édifice fut détruit quand les tribus zûls se rassemblèrent pour chasser ces intrus. Ce fut un massacre où plus de quarante mille hommes, femmes et enfants trouvèrent la mort. Les survivants restèrent sur place pour honorer la mémoire de ceux qui avaient péri en ce lieu et rebâtirent la cité. Depuis, Griff a prospéré et s’est développée et cette fière et indépendante enclave dans les terres hostiles défie l’autorité des barbares et résiste à leurs assauts.",
+      "ethnology": "Mis à part un hâle prononcé et parfois quelques traits issus de la morphologie zûl, les habitants de Griff sont de tous les types.",
+      "society": "Griff rassemble de nombreux aventuriers qui rêvent d'y faire fortune et de connaître la tension de la guerre permanente. La cité ne possède aucune véritable culture locale. Au contraire, la présence d’habitants issus d'horizons radicalement différents a créé une sorte d'harmonie, de tradition fondée sur la pluralité et la complémentarité des mœurs. La population se compose donc de mercenaires, de mages itinérants, de criminels recherchés et d’autres marginaux en quête de liberté, d’anonymat ou de contrats juteux. Les simples visiteurs, aussi rares qu'’incongrus, sont tenus de payer leur séjour et de louer la protection de mercenaires pour être autorisés à passer plus de quelques heures à l’intérieur des remparts.",
+      "politics": "Griff est régie par une dictature militaire éclairée, au sens où le pouvoir est aux mains d’un seul homme, un héros. Les dirigeants de la cité changent régulièrement car, tous les trois ans, la loi locale impose des jeux et des épreuves destinées à choisir les citoyens les plus aptes à diriger Griff. Les Zûls sont les seuls à ne pas avoir le droit de participer. La dernière épreuve, qui départage les deux meilleurs prétendants, est un duel singulier qui ne cesse généralement qu'à la mort de l’un des deux protagonistes. Lorsque les finalistes s’entre-tuent, comme ce fut le cas plusieurs fois au cours de ce seul siècle, c'est le demi-finaliste le plus fort qui prend le commandement, au lieu de n'être appelé qu’à devenir le conseiller du dirigeant. Ce système curieux de désignation politique est fait pour qu'aucun homme ne prenne longtemps le pouvoir de Griff. Aucun candidat n’a d’ailleurs réussi à conserver le pouvoir plus de quatre fois de suite. Les épreuves, de la première à l’avant-dernière, sont conçues de façon à ce que chaque caste puisse avoir sa chance de briller et de, peut-être, remporter le titre. Un ensemble de lois définit le type et le nombre d'épreuves en fonction de la caste des différents postulants. Le spectacle est si passionnant que de nombreuses personnes font le voyage pour assister ou même pour participer à ces joutes.",
+      "judicial": "Le pouvoir juridique est séparé, délégué à l’ordre des Questeurs qui emploie des juges, juristes et scribes selon leurs qualités. Les questeurs collaborent activement avec la milice.",
+      "economy": "La ville extrait de son port une curieuse huile noire qui lui fournit une monnaie d'échange avec de nombreux autres Etats. C’est grâce à cette fortune naturelle qu’elle s’approvisionne à l'extérieur et paye les mercenaires qui la protègent. On ne connaît nul autre endroit dans tout Kor où une telle substance peut être extraite. Les habitants de Grif la nomment Sang Noir de Moryagorn, mais l’huile est aussi conme pour ses propriétés inflammables et toxiques, qui l’apparentent plus à Kalimsshar dans l'esprit de nombreux commerçants. En plus de cette production, Griff est favorisée par sa position géographique et reste une étape incontournable entre les Etats du nord et ceux du sud.",
+      "military": "En période de guerre, une participation à la défense peut être exigée de la part des individus susceptibles de s’avérer utiles − c'est-à-dire une grande majorité, aux yeux du conseil de guerre."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152",
+    "name": "Empire de Solyr",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "Empire dont le dirigeant est choisi au sein du Grand Conseil des Provins",
+    "leaders": [
+      {
+        "name": null,
+        "link": {
+          "name": "Rolan XII",
+          "link": "resource://assets/npc/b805eb0c-faec-4b03-972c-9e1aa7c2e19d"
+        },
+        "title": "Frère des Dragons"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Humbert Castavène de Lisen",
+          "link": "resource://assets/npc/2f7662c5-b1bb-4055-8529-4f77b63e7459"
+        },
+        "title": "Provin d'Yris"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Konner An'Revor",
+          "link": "resource://assets/npc/ec2a2083-b2b5-463f-8499-871b03791e7a"
+        },
+        "title": "Provin d'Erladys"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Balthus d'Arvendell",
+          "link": "resource://assets/npc/2d9cc5b9-1afd-419a-b74e-25ffce93c3b3"
+        },
+        "title": "Provin d'Arvendell"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Erlinda de Jelm de Sermande",
+          "link": "resource://assets/npc/c989e165-bc79-4833-90b0-599974ee6952"
+        },
+        "title": "Provin de Sermande"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Florimelle de Dungard",
+          "link": "resource://assets/npc/35f75cf6-53fa-4563-8800-51368845f83e"
+        },
+        "title": "Provin des Collines de Fer"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Zadel Tabarnasse de Férune",
+          "link": "resource://assets/npc/14e43e7d-bb5b-48c0-9368-caf3c3de48df"
+        },
+        "title": "Provin de Férune"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Samhen d'Istuhrwald",
+          "link": "resource://assets/npc/0aa6e0e9-005b-47dd-a1ee-891602a7e33e"
+        },
+        "title": "Provin de Vilys"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Armadeo Fersbach de Cormande",
+          "link": "resource://assets/npc/8e354875-8eee-4c9b-bf56-332a6a3a2c1e"
+        },
+        "title": "Provin de Cormande"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Kron Balhugg",
+          "link": "resource://assets/npc/df7d875d-7a8e-4c6f-a845-ee809967ecf0"
+        },
+        "title": "Provin-Combattant"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Hylman Grût",
+          "link": "resource://assets/npc/51131565-7fa8-4ce8-99b8-a85e933e1eb1"
+        },
+        "title": "Provin-Artisan"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Mayederic d'Onyr",
+          "link": "resource://assets/npc/a8bab91b-fc83-49ab-aa2e-fc52d70f84a9"
+        },
+        "title": "Provin-Mage"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Derndoel",
+          "link": "resource://assets/npc/dc4b6015-8976-4d65-99cf-726c4a408eb3"
+        },
+        "title": "Provin-Voyageur"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Esaül d'Akriss",
+          "link": "resource://assets/npc/4b57b432-fff1-4d56-8f21-c85c30521a6c"
+        },
+        "title": "Provin-Érudit"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Commandeur-dragon Laroya",
+          "link": "resource://assets/npc/f2384c9d-72a6-493f-9ee7-dd197bfcba7c"
+        },
+        "title": "Provin-Protecteur"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Tilda Az'na",
+          "link": "resource://assets/npc/f67046de-10d1-475f-ac0e-c8f96ef3ff5f"
+        },
+        "title": "Provin-Prodige"
+      },
+      {
+        "name": null,
+        "link": {
+          "name": "Lisbeth Ounas",
+          "link": "resource://assets/npc/87c011c0-fee9-4b28-aca7-19cd286c0445"
+        },
+        "title": "Provin-Commerçant"
+      }
+    ],
+    "motto": "liberté, commerce, tempérance",
+    "climate": "tempéré. Le climat au nord (Havre) est toujours magiquement altéré par le Dragon des Vents pour être chaud et ensoleillé.",
+    "description": {
+      "general": "Nation centrale de Kor, patrie draconique éclairée par la sagesse de trois Grands Dragons, l'Empire de Solyr est un pays dont l'histoire, le rayonnement et la puissance ne sont plus à évoquer. Doté d'un commerce florissant et d'une situation politique et militaire confortable, il serait irréaliste de penser que Solyr s'est fait en un jour et que rien ne vient troubler cette harmonie apparente. Derrière cette façade, une structure immense et complexe est à l'œuvre pour assurer la bonne marche et la cohésion de cette nation incontournable.\n\nL’Empire de Solyr a l'intérêt de présenter un très grand nombre de paysages et de sites géographiques. Ses routes sont relativement sûres et les voyages, qu'ils soient commerciaux ou d'agrément, s’y déroulent dans de très bonnes conditions. Très rurale, chaque région fourmille de petits villages et de villes fortifiées, mais elles comprennent également une capitale, qui compte entre cinquante et cent cinquante habitants, ainsi que quelques villes principales de grande taille. Ces dernières se divisent entre les villes “blanches” de l’ouest, qui doivent leur nom au crépi immaculé de leurs édifices, et les cités “boisées” de l’est, où la majorité des constructions sont décorées de bois peint, d’arches de végétation et de sculptures. Deux cités blanches, Cormande et Erladys, sont particulièrement reconnues pour leur beauté. La première, située à la croisée de nombreuses routes commerciales, constitue une sorte de berceau culturel des régions de l’ouest. C’est une ville d'échange et de commerce, particulièrement réputée pour ses musiciens et ses fêtes. Elle est d’ailleurs principalement administrée par des érudits, des commerçants et des voyageurs. La seconde, Erladys, est devenue célèbre pour son port majestueux où se dresse l’immense statue de Solyr qui en garde l’accès. Les aventuriers de tous horizons s’y retrouvent pour organiser des expéditions maritimes. Nettement plus anciennes, les villes de l'est sont des fiefs féodaux imprégnés par la tradition et le respect de la puissance draconique. Les villes du centre de l’Empire sont peu fortifiées et très richement décorées.",
+      "history": "L’Empire est issu de la première Guerre de Souveraineté qui débuta en 2806 AdC et qui lui permit d'émerger tout puissant à la fin des combats. Première nation de Kor et lieu de vie de trois Grands Dragons, l’Empire de Solyr a toujours été au cœur de nombreuses convoitises.",
+      "ethnology": "Les habitants de l'Empire de Solyr n'ont aucune caractéristique physique déterminante. Issus de nombreux brassages de population, ils ont par tradition un grand respect pour l'ensemble des hommes.\n\n## Les hommes\n\nSi la population globale de l'Empire s'élève à plus de vingt six millions d'habitants selon les calculs nébuleux des érudits, toutes les régions et les populations présentent de grandes différences. L'Empire est une nation rurale, où la proportion de citoyens ne dépasse pas 20 %. Bien sûr, ses cités peuvent faire monter ce chiffre à 40 voire 50%, mais ce sont des situations ponctuelles. Les différentes tranches d'âge sont assez équilibrées, étant donné que l'agriculture florissante et les rares catastrophes naturelles permettent une bonne survie. Seules les épidémies peuvent encore être considérées comme des freins à une expansion démographique régulière. \n\nLa mentalité solyrienne varie largement d'un bout à l'autre de l'Empire, en plus des différences entre cités et campagnes. En général, les paysans sont durs à la tâche, frustres, chaleureux, fiers d'appartenir à l'Empire et respectueux des traditions draconiques. Les citadins sont plus cultivés, mais cette évolution culturelle les conduit à des comportements de plus en plus surfaits et frivoles, délaissant le sens commun pour les “modes”, sortes de courants de styles n'existant que pour un temps (ce que seuls les nobles et les citadins semblent apprécier…)\n\n## Les dragons\n\nLes quelques dix mille ailés qui vivent dans l'Empire sont souvent très proches des villes. Près de 4000 vivent à Yris, 2500 à Dungard, 2000 à Havre (si l'on ne compte que les “résidents”) et le reste s'éparpille dans les campagnes et les cités d'importance. Autant dire que si croiser un dragon est courant dans une des trois Cités draconiques, en connaître un ou deux est souvent le lot des solyriens moyens. En dehors des Cités draconiques déjà traitées, les dragons urbains de l'Empire sont souvent profondément impliqués dans la vie courante, ayant renoncé à une présence directrice pour privilégier la voie de la sagesse et du conseil. Dans les campagnes, les dragons ont un rôle différent. Seul dans une région souvent vaste, le dragon est considéré comme l'autorité ultime vers laquelle se tourner. Même les barons et les comtes se passent rarement de leurs avis, bien que bon nombre aspirent à une vie solitaire loin des hommes. En fait, c'est le peuple des campagnes qui honore les dragons et les fait participer à la vie locale malgré leurs réticences.\n\n",
+      "society": "L'Empire compte un large éventail de mentalités causés par la présence des trois cités draconiques. Néanmoins, en règle générale, bien moins intéressés par le commerce et les échanges, les hommes affectionnent des valeurs nobles et chevaleresques, se considérant comme les plus fidèles serviteurs des Dragons. L'Empire constitue le cœur de Kor et la proximité des principaux sanctuaires draconiques fait que les hommes ont tout naturellement calqué leur vie sur celle des dragons. C'est pourquoi le statut d'Élu est particulièrement honorifique ici. Les grandes familles entretiennent à prix d’or des artistes qui immortalisent leurs traits et magnifient le nom de leur lignée. De nombreux villages ont ainsi la chance de disposer de très beaux bâtiments en pierre, érigés par les nobles pour le confort de tous. C’est en effet la coutume de prouver sa puissance et sa richesse en faisant édifier des palais fastueux, mais aussi en offrant à ses vassaux le plus de confort possible. Généralement, plus un seigneur veut prouver sa puissance, plus il couvre ses paysans d'or. Le luxe devient de plus en plus ostentatoire à mesure que l’on s'approche d’Yris, la capitale, offrant une véritable apothéose de splendeurs, devenues légendaires dans tout Kor grâce aux récits des bardes itinérants. Dès que l'on respecte les traditions locales, il fait bon vivre dans les contrées de l’est. Construite dans les collines voisines de Kern, Sermande a la réputation de disposer des meilleures auberges de Kor. Les plus grands cuisiniers s’y retrouvent et font venir à prix d'or tous les ingrédients nécessaires à la confection de leurs plats. Une grande école gastronomique, la Toque d'or, permet même aux meilleurs cuisiniers de s'initier à l'art de la magie culinaire, dont ils se serviront ensuite pour faire naître des goûts totalement inédits.",
+      "politics": "D’un point de vue politique, le régime féodal non héréditaire paraît assez paisible alors que c’est le seul royaume humain à contenir trois cités draconiques : Dungard, la Cité du Métal, Havre, la Cité des Vents et Yris, la capitale, où se trouve le sanctuaire de Khy. Les Grands Dragons n'ont pas l'ambition de gérer le territoire dans lequel se trouve leur cité. Cette particularité fait que l'Empire n’est soumis à l'autorité directe d’aucun des trois Grands Dragons. L'Empire de Solyr est dirigé par le Grand Conseil des Provins qui regroupe un représentant de chacune des huit castes, ainsi qu'un envoyé de chacune des provinces. La tradition veut que le titre d'Empereur, Frère des Dragons, soit porté par l’un d’eux. De même, les castes exercent un plein contrôle sur leurs membres et organisent généralement toutes les activités sociales. Les Grands Dragons considèrent Solyr comme le royaume humain le plus équilibré et le plus stable. Ils laissent à Khy le soin de développer avec les hommes une civilisation riche et prospère - dans la mesure où leurs intérêts ne sont pas remis en cause.",
+      "judicial": "Le système judiciaire est homogène d’une cité à l’autre. Les seigneurs locaux (barons et chevaliers) ont le droit de justice, en appelant à leur suzerain en cas de délit épineux, voire à l’Inquisition si la situation est trop grave. Les érudits sont souvent des conseillers recherchés par les seigneurs qui prêtent l'oreille à leur savoir.",
+      "economy": "L’Empire de Solyr est aujourd’hui puissant mais son centre est bien plus prospère que son pourtour. Le commerce impérial est très florissant, sa production couvrant la quasi-totalité des besoins. Il pratique le commerce avec ses proches voisins, mais également avec la plupart des territoires éloignés. De nombreux fleuves navigables favorisent le transport des marchandises. Les meilleurs artisans se retrouvent à Dungard, premier centre de production de minerai de tout Kor, pour mettre leur savoir-faire en commun. Situés sur le tracé des grands axes routiers et fluviaux, des postes de péage ont pour rôle de percevoir les taxes sur les marchandises - qui s'élèvent traditionnellement à un vingtième de la valeur des biens transportés. L'Empire frappe également sa propre monnaie.\n\nDu point de vue des productions de matières premières, l'Empire dispose de presque tous les types de biens: charbon, métaux, bois, céréales, cuirs, laine, coton, papyrus, bétail, tissus, vigne, poisson… Il n'y a guère que la pierre qui fasse défaut dans certaines régions et qui oblige à en importer de Kern. Si l'Empire dispose de telles ressources, elles proviennent souvent de régions spécifiques, ce qui crée un flux interne dense de caravanes et convois. En fait, pour approvisionner toutes les régions en matières premières, diverses compagnies marchandes se chargent de conduire des caravanes jusque dans les innombrables villages, échangeant alors les productions locales contre des ressources de provinces éloignées. Dans ces cas, si le drac est une échelle de conversion, il ne circule pas beaucoup d'argent, le troc basé sur les cours des marchandises restant fréquent. Il est donc de coutume d'échanger des stères de bois de construction contre des mesures de blé et de convertir les blocs de roche en longueurs de tissu. De plus, ce système évite l'accumulation de dracs dans les caravanes et les villages, évitant le brigandage et les raids de pillards. \n\nAu niveau des produits manufacturés, la situation est différente. Seules les grandes villes sont des centres de production de masse, les villages ne fabriquant que des objets nécessaires à leur vie courante. Certaines productions ne sont pas effectuées par les paysans, qui se contentent de les acheter aux marchands lorsque ceux-ci viennent commercer. Ainsi, les armes, armures, vêtements, objets d'art et de musique ou encore les harnachements et outils complexes ne sont-ils disponibles qu'en ville ou dans les caravanes. \n\nAu travers du flux incessant de ces exportations, un flux migratoire important se développe et dynamise l'Empire. Chaque caravane comptant au moins dix à vingt chariots, une dizaine de protecteurs, autant d'éclaireurs et une cohorte de voyageurs civils se greffant sur le convoi en plus des cochers et de leur familles, ce sont souvent des groupes de 50 à 200 personnes qui arpentent les routes. Malgré des patrouilles fréquentes, les dangers sur les routes de l'Empire sont semblables à ceux de Kor et suffisamment nombreux pour condamner à l'échec les équipées aventureuses de quelques piétons ou de cavaliers isolés.\n\n",
+      "military": "Chaque province est divisée en de très nombreux petits fiefs qui entretiennent des armées et se livrent sans cesse à des conflits privés de petite envergure. Au sud, les tribus zûls constituent une menace permanente. Il n’est pas rare qu'elles traversent la frontière pour se livrer à des raids et à des pillages. Au nord-ouest, l’unification des Marches Alyzées a rendu la situation beaucoup plus calme et sereine. Les trois cités draconiques que compte l’Empire sont d’ailleurs dédiées aux arts de la paix. Aussi, pour éviter d'être sans cesse bouleversés par les violences de la guerre, les hommes et les dragons ont conçu Solyr comme une véritable forteresse. Les marches de l’Empire sont relativement austères. Les cités frontalières étant principalement des garnisons fortifiées, destinées à repousser les menaces extérieures (invasions barbares, incursions étrangères, attaques de hordes), ces villes constituent autant de garanties de sécurité, et donc de prospérité, pour les provinces voisines. Loin au sud, le port kalishite et corrompu d’Hasran sert d'avant-poste à une incessante guerre de harcèlement contre l'Empire, ses côtes et ses navires en transit. De ce fait, rares sont ceux qui osent s’aventurer au large. Sur le continent, il arrive parfois qu'une expédition de représailles soit organisée par une province pour régler dans le sang un conflit frontalier avec Kar.\n\n## La Garde Impériale\n\nEmblématique de l'Empire de Solyr, elle constitue le noyau dur de l'armée en cas de guerre. Forte de milliers de protecteurs aguerris, elle est en temps de paix une force d'instruction et de maintien de l'ordre répartie au travers de l'Empire. Ses effectifs engagés se montent à environ dix mille hommes, répartis selon le schéma suivant : la moitié est stationnée à Yris pour former les conscrits, un tiers constitue le noyau de la milice de la Cité et le reste est en mission ou en garnison dans l'une des provinces, formant des troupes ou protégeant des convois d'hommes ou de matériel.\n\nLa conscription est une des pierres angulaires de l'esprit patriotique d'Yris. Depuis onze siècles, tous les hommes valides de l'Empire effectuent tous les six ans un service d'un cycle, formant l'host. Dans le langage populaire, l'host est devenu un terme générique désignant à la fois cette période militaire parfaitement intégrée à la mentalité et les troupes qui en résultent. En général, l'host compte 50.000 hommes: 10.000 à Yris en renfort de la milice, 20.000 à l'instruction autour de la capitale sous le commandement des engagés de la Garde impériale, le reste en garnison dans l'Empire, majoritairement à Erladys, Férune et Nivène. Quelle que soit son origine, un homme qui fait son host se retrouvera probablement bien loin de ses foyers et apprendra à connaître les autres régions de l'Empire. Cette structure, par rotation et formation autour d'un noyau de vétérans, permet à l'Empire de disposer d'une force facilement mobilisable et relativement entraînée de 60.000 hommes en quelques jours, le temps de rassembler les troupes. De plus, si le Frère des Dragons venait à déclarer la mobilisation générale (fait rare n'ayant eu lieu que pour la II° et la III° Croisade), il ne faudrait qu'une à deux semaines pour rassembler les conscrits au foyer et ainsi former la Garde impériale complète, alors forte de 700.000 hommes…\n\nSi d'aventure une telle mobilisation était reconduite, elle ne saurait perdurer. En effet, il est excessivement problématique de dépeupler la paysannerie de l'Empire, tant pour les moissons que pour la natalité et le moral populaire. De plus, même impressionnante, cette force se compose en majorité de paysans, des fantassins peu aguerris et au moral incertain qui doivent être épaulés pour ne pas subir des pertes effroyables.\n\n## Les troupes provinciales\n\nÀ côté de la Garde impériale, il convient d'ajouter les chevaliers, barons et bannerets des différents Provins, ainsi que leurs armées personnelles. En effet, chaque Provin possède un droit d'host qu'il applique en plus de l'host impériale. En général, il s'agit d'une conscription annuelle longue d'un augure, toujours effectuée dans le fief de son seigneur. Au cours de cette période, ce sont aussi bien un entraînement militaire que des travaux d'envergure qui sont effectués (construction de bâtiments, curage de douves, battues aux monstres, patrouilles, gardes...). Selon les provinces, les conscrits représentent de 20.000 à 50.000 hommes, les forces permanentes 70.000 à 150.000 hommes (300.000 en Férune, ce qui est unique) et la chevalerie de 5.000 à 20.000 preux. A cela peuvent bien sûr s'ajouter des troupes mercenaires, des détachements d'autres fiefs, les renforts de la Garde impériale et des troupes irrégulières.\n\n"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Yris, Flambeau de l'Humanité"
+    }
+  },
+  {
+    "uuid": "477313a3-f473-4f11-b7a5-acf718cdc54a",
+    "name": "Empire Nésora",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "conseil de représentants élus",
+    "leaders": [
+      {
+        "name": null,
+        "link": {
+          "name": "Ermar",
+          "link": "resource://assets/npc/86855dbb-b53e-4d76-8e8f-a7cda43043bc"
+        },
+        "title": "Empereur de Nésora et Grand Ordonnateur des alchimistes"
+      }
+    ],
+    "motto": "évolution, indépendance, prospérité",
+    "climate": "continental et océanique",
+    "description": {
+      "general": "L’Empire est une terre fertile et prospère. Ses villes sont souvent très denses, tant au niveau de la population que de l'architecture, qui privilégie les petites rues sinueuses et les espaces horizontaux. Aucun bâtiment n'étant prévu pour accueillir des visiteurs de taille draconique, les rares ailés qui viennent séjourner dans ces contrées sont priés de rester hors des agglomérations, dans le but d'éviter tout accident découlant de leur taille et de leurs proportions. On murmure souvent qu'une cité humaniste (si ce n’est plusieurs) se dresserait au nord de l’Empire, à l’orée du Grand Désert. La présence des rebelles suffirait à expliquer la propagande généralisée qui, selon les dragons, serait responsable de l’ambiance qui règne en ce moment dans tout l’Empire Nésora.",
+      "history": "Né du rassemblement de plusieurs royaumes (Neve, Orbel et Tandara), l’Empire Nésora a connu une expansion continuelle et, somme toute, relativement pacifique. En quelques siècles, les dragons ont progressivement déserté ces contrées inhospitalières où les hommes ne veulent à l'évidence pas de leur amitié. Les ambassadeurs de Kern, Solyr et Kar, ont déjà prévenu plusieurs fois les dirigeants que le fait de tolérer l’Humanisme, voire de favoriser une telle hérésie, risquait de replonger Kor dans la guerre. Pourtant, ils semblent rester sourds à la menace. Récemment, l’Inquisition aurait reçu mandat pour lancer un ultimatum afin de juguler l’hérésie croissante et favoriser le retour dans le giron draconique, quelle qu’en soit la méthode…\n\n## La révolution nésorienne\n\nIl y a une quinzaine d'années, les théories humanistes latentes qui s'étaient mêlées aux traditions régionales finirent par attirer l'attention du Prince Héritier Fenargiyon de Salia. Lors de son couronnement, il affirma hautement sa fière appartenance aux castes draconiques et déclara une grande réforme morale visant à purifier son Empire des nauséabondes théories humanistes. Secrètement Elu de Gyllandrthn, un fils de Kezyr adulte, il comptait provoquer un choc populaire et assurer une transition dans l'harmonie. Son plan échoua, les min théoriciens humanistes entrant dans une phase de clandestinité agressive. Ils luttèrent pendant deux ans contre les forces de la milice secrète impériale (largement appuyée par les protecteurs et les érudits). A l'issue d'une guerre froide qui fit discrètement plusieurs centaines de morts, un consensus fut trouvé par l'instauration d'un Sénat regroupant les nobles et les roturiers afin de donner un poids relatif (et illusoire) au peuple.\n\nC'est lors de l'adoption de cette réforme que les guerriers sacrés humanistes réussirent leur plus grand coup d'éclat, traquant et assassinant les plus solides appuis de l'Empereur. Isolé et harcelé, Fenargiyon préféra se donner la mort lors d'une émeute qui envahissait son palais. Les semaines qui suivirent donnèrent lieu à de discrètes pressions sur les castes encore présentes et virent l'accession d'Ermar au trône par désignation populaire. Par la suite, il instaura le vote populaire et fit soutenir son pouvoir par la voix des urnes (en fait en faisant plébisciter ses candidats uniques…)\n\n",
+      "ethnology": "Les habitants de l’Empire n'ont aucune caractéristique physique particulière.",
+      "society": "Les Nésoriens sont particulièrement indépendants. Ils n’apprécient guère les étrangers et se méfient des dragons, qu'ils considèrent communément comme des êtres perfides, ainsi que de leurs serviteurs les plus virulents. Territoire très étendu, l'Empire Nésora a mis en place certaines pratiques sociales originales qui paraîtraient saugrenues partout ailleurs. Considérées comme “extrémistes” par de nombreux courants de pensée, ces coutumes touchent à l’éducation, à la loi, aux mœurs et à la mentalité même des habitants. Les institutions impériales tiennent à ce que tous les enfants apprennent à lire, à écrire et à compter. Ils reçoivent également une instruction civique qui, en plus de leur apprendre les rudiments des différentes structures sociales, leur permet d’aborder avec un esprit relativement objectif l'entrée au sein d’une caste traditionnelle. La loi interdit aux enfants d'intégrer une caste avant l’âge de onze ans. De plus, tous les citoyens se doivent de passer le neuvième jour de chaque semaine dans les rangs d’un organisme impérial, au service de la communauté. Cette loi est interprétée de façon très libre par les dirigeants de certaines régions, qui imposent une parité entre le temps consacré au service de l’Empire et celui de la carrière personnelle de l'individu. Les castes ont d’ailleurs subi de nombreuses adaptations conditionnées par les lois de l’Empire Nésora. Les références aux Grands Dragons ont été largement atténuées pour ne plus faire d’eux les chefs symboliques des grands corps de métier - l'élément ou le principe élémentaire incarné par le Dragon étant venu le supplanter. Ainsi, on ne parle plus de la “sagesse d’Ozyr” ou de la “force de Brorne”, mais de la “sagesse de l’eau” ou de la “force de la pierre”. La magie est assez mal vue par la majorité de la population, qui l’assimile généralement à un pacte passé avec un Dragon. La caste des mages est pourtant bel et bien présente, mais elle prétend que la magie n’est rien d’autre que la compréhension de certains mécanismes naturels. Pour éviter les railleries et les attaques de leurs concitoyens, les mages rejoignent quasiment tous l’administration impériale, qui est la seule structure officielle capable d’autoriser l'étude de la magie. Les rares dragons en Nésora n’apprécient guère la façon dont ils sont traités. Ils y séjournent généralement à contrecœur - et pour une courte période, De ce fait, le nombre d’Élus dans l’Empire est beaucoup plus faible que partout ailleurs. Peu répandus aux frontières, les Élus sont de plus en plus inexistants à mesure que l’on s'éloigne vers le nord. Seuls les dragons de Khy, généralement un peu mieux reçus que leurs cousins, osent parfois tenter l'aventure et proposer le Lien à un homme - mais il n’est pas rare que le candidat refuse l'offre, au grand mécontentement du dragon.\n\nEstimer que Nésora est un empire humaniste jusqu'à la moelle est une mauvaise interprétation de sa situation. Comme partout ailleurs, le peuple se sent avant toute chose concerné par sa pitance quotidienne, son toit et sa descendance. Savoir qui gouverne est secondaire et dans tous les cas, il faut payer l'impôt. De ce fait et bien que la classe dirigeante soit majoritairement influencée par l'humanisme, les citoyens draconistes ne sont pas inexistants pour autant. Ils sont juste brimés et gênés, préférant souvent l'exil. De plus, l'Empire se démarque des nations de Kor, allant jusqu'à encourager l'apprentissage d'un patois local bien distinct de la langue draconique. Les écrits officiels et les débats politiques emploient désormais exclusivement cette nouvelle langue : le korsol.\n\n",
+      "politics": "Le pouvoir nésorien est entre les mains d'un Empereur, mais une récente réforme des institutions (en 1298 AdE) a donné naissance au Sénat, une assemblée élue par le peuple. Là où auparavant la noblesse nésorienne tentait de grappiller les faveurs du trône, le Sénat se présente désormais comme un conseil souverain épaulant l'Empereur dans ses décisions. Le titre même d'Empereur n'est plus héréditaire, ce dernier étant élu à vie par le Sénat. Le Sénat comporte 333 membres, élus par les gouverneurs des villes et des villages de tout l'Empire. Ces gouverneurs sont eux-même élus par la population dans son ensemble, sans distinction de citoyenneté. En somme, si ce n'est pas réellement le peuple qui décide de ses représentants, il désigne ceux qui les éliront.\n\nLe Sénat a autorité sur le domaine militaire, judiciaire, législatif et commercial. Depuis sa réforme, le Sénat a désigné Ermar, Grand Ordonnateur des Alchimistes de la caste des artisans pour constituer l'exécutif. L'Empereur avalise les lois qui lui sont soumises par le Sénat et se charge de leur application. L'Empire est divisé en Etats, chacun administré par un Régent assisté de trois Échevins. Le Régent est en charge de la politique et de la stabilité de l'État, les trois Échevins se divisant les responsabilités militaires, économiques et territoriales. L'Échevin Général gère les armées et les forces de maintien de l'ordre, l'Échevin Argentier s'occupe du commerce et de la collecte des impôts et l'Échevin d'État s'occupe des aménagements, des constructions et de l'occupation des terres.\n\n",
+      "judicial": "La justice est éclairée, à la charge de juges (itinérants ou sédentaires) qui siègent avec une assemblée de jurés professionnels extérieurs au litige. ",
+      "economy": "L'économie nésorienne est assez florissante bien qu'irrégulière dans l'implantation de ses ressources. L'Empire produit des céréales, du bétail, possède des bois et des mines, et dispose d'une ouverture considérable sur la mer. Du fait de l'accumulation des ressources dans certains États, le pays est sillonné de caravanes marchandes équilibrant les denrées. Un commerce maritime avec Jaspor ajuste les ressources, ce qui assure à Nésora une confortable situation économique.\n\n",
+      "military": "Bien que relativement calme, la région entretient une armée régulière importante, car nombreuses sont les villes qui vivent dans la psychose d’une attaque draconique. Cette appréhension est explicable par la simple ignorance de la race des Grands Ailés, dont les habitants de l’Empire refusent d'évoquer jusqu’au nom. D'autre part, les opérations pour récupérer le contrôle des Marches Alyzées sont un facteur de dissension qui augmente encore la tension. Chacun des deux États a massé des troupes à la frontière attendant une bonne raison pour entamer les hostilités. La situation est actuellement des plus tendues.\n\nL'armée de Nésora est une force principalement massée en garnisons près de la frontière des Marches Alyzées. Comptant quelques milliers de soldats, elle reste majoritairement une force d'infanterie conventionnelle épaulée par une cavalerie légère. Mais il convient de compter avec les forces mobilisables représentées par les miliciens paysans formés à la guérilla et aux actions éparses. D'après les témoignages des voyageurs revenus de ces terres inhospitalières, les paysans nésoriens seraient régulièrement entraînés, sans que des preuves formelles ou une estimation chiffrée de ces forces ne soit disponible. Si l'on ajoute à cela les rumeurs de soldats humanistes équipés d'armes hérétiques, l'estimation des forces armées nésoriennes devient extrêmement difficile.\n\n"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "5dfb1642-37bf-48d6-bc99-c36799e7ccf9",
+    "name": "Empire Zûl",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "tribus nomades et pouvoir guerrier",
+    "leaders": [
+      {
+        "name": "Mor-Mar-Zûl",
+        "title": "Chevaucheur du Souffle du Dragon"
+      }
+    ],
+    "motto": "honneur, famille, dragons",
+    "climate": "désertique chaud",
+    "description": {
+      "general": "L’Empire Zûl est une terre aride et hostile, un lieu inhospitalier. Le paysage semble n'être qu’une interminable succession de collines ou une immense étendue plane faite d’une terre rude et rocailleuse. A l’ouest, le désert de rocailles se transforme graduellement en vastes étendues sablonneuses. La végétation y est rare si ce n’est quelques touffes d’herbes sèches et craquantes. Les rares cités que les Zûls aient conservées de l’ancien royaume qu'ils ont conquis servent en fait de lieux de rassemblement et ceux qui y vivent durant l’année sont tous des étrangers.",
+      "history": "Les Zûls sont les descendants des premiers colons qui tentèrent de traverser et de domestiquer le Désert du Souffle Brûlant. En 117 AdE, Kar-Hô-Zûl a fédéré les tribus errantes en un peuple fier, aujourd’hui redouté.",
+      "ethnology": "Les Zûls ont les cheveux sombres, la barbe broussailleuse et les sourcils fournis. Leur peau est mate et leurs yeux sont sombres. Ils sont d’une taille un peu plus élancée et leur vie nomade et rude les rend souvent plus vigoureux et musclés.",
+      "society": "Atypiques, sauvages, les Zûls forment un grand peuple nomade qui habite une région du monde assez hostile. Leur tradition itinérante les pousse à migrer avec armes et bagages plusieurs fois par an. Belliqueux et excellents cavaliers, les Zûls luttent avec ferveur pour la puissance des Grands Dragons, qu'ils considèrent comme les maîtres absolus de l’univers. Ce sont eux qui ont la plus grande vénération pour les descendants de Moryagorn. Toute leur civilisation est construite autour de ce culte draconique qui semble sans limite. Il n'est pas rare que certains dragons vivent avec une même tribu depuis des siècles et servent de guide, de compagnon et de protecteur aux descendants d’un guerrier qui a jadis chevauché sur leur dos. Les Zûls ne sont pas réputés pour leur finesse. Ils vouent leur vie entière à la recherche de l’honneur et de l’harmonie avec les dragons. Nombreux sont les Élus que l’on compte parmi leurs rangs. Le mépris de la mort fait partie intégrante de leurs traditions et, en pratiquant le culte des ancêtres, les Zûls pensent que les prouesses accomplies par les générations passées renforcent encore leur courage, en se transmettant dans leur sang et dans leur âme, La culture zûl repose sur trois piliers principaux : l’honneur, la famille et le respect des dragons. Dès leur plus jeune âge, les enfants apprennent à être fiers et libres. Ils respectent le courage et méprisent la lâcheté, quels que soient leur sexe et leur caste. Les jeunes filles sont d’ailleurs aussi sévèrement éduquées que les garçons, car elles auront plus tard la charge de choisir un mari et de lui donner une abondante progéniture. Les femmes restent cependant totalement libres de ne pas se marier et de prolonger leur célibat aussi longtemps qu'elles le désirent. Une fois que la femme a décidé de former une famille, elle doit signifier à l’homme qu'elle veut être sienne. S'il accepte, leur mariage est célébré en même temps que toutes les autres unions de la tribu - généralement au début du printemps ou de l’automne. Si l’homme refuse, la femme a le droit de le défier en combat singulier. Si elle parvient à le vaincre, il est obligé de lui donner un enfant qui portera son nom. Les femmes peuvent même prétendre à des hommes déjà mariés, mais jamais à un de dix ans plus vieux ou plus jeune qu'elles. De par ces règles sacrées, la famille est au centre de toute l’organisation des tribus, car le partage du sang permet de vivre sous la même tente et donc de vénérer les mêmes ancêtres. Les dragons apprécient particulièrement les Zûls qui, persuadés que le statut d’Élu est le seul idéal digne d’être poursuivi, leur vouent un véritable culte. Les Zûls savent que les dragons ne sélectionnent que des individus hors du commun comme compagnons. C’est pourquoi ils passent leur vie à s’entraîner et à apprendre. Certains vont même jusqu'à frôler continuellement la mort dans l'espoir d’attirer l'attention d'un grand ailé. Quitter sa tribu pour partir à l’aventure et revenir avec un nouveau dragon comme compagnon est la meilleure méthode pour être choisi par les plus belles femmes.",
+      "politics": "Les tribus indépendantes sont dirigées par un chef militaire glorieux, le Chevaucheur du Souffle du Dragon. La passation de pouvoir se fait par duel entre le prétendant et le prédécesseur.",
+      "judicial": "Les chefs de tribu sont tout-puissants, mais le recours au combat singulier ou à l’avis draconique est très courant.",
+      "economy": "Le commerce est issu de pillage et des impôts collectés sur les routes du désert. La nourriture provient de l'élevage au sein des oasis mais aussi des pillages de caravanes marchandes et des “taxes” réclamées aux caravanes qui transitent du nord au sud.",
+      "military": "Les Zûls sont en guerre avec tous leurs voisins et n’hésitent pas à aller frapper profondément et razzier les royaumes qui les entourent - y compris celui du Seigneur de l'Ombre. Ils sont d’ailleurs les seuls à oser défier ouvertement la puissance de Kalimsshar."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "7648ea74-a7af-48d4-97a1-7ae80c9d8ffe",
+    "name": "Koran-Rogh",
+    "parent_id": "5dfb1642-37bf-48d6-bc99-c36799e7ccf9",
+    "type": "capitale",
+    "description": {
+      "general": ""
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "bcc7e2b4-c746-4d34-8ca2-f9841664f0d9",
+    "name": "Forêt de Solor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "villages indépendants et primitifs",
+    "climate": "océanique",
+    "description": {
+      "general": "Magique, cette gigantesque forêt a toujours été hostile à l'installation de la moindre civilisation humaine. La végétation y constitue une véritable barrière naturelle pour tous ceux qui rêvent de bâtir le moindre édifice solide dans cette région. Au final, seuls les animaux sauvages et les peuplades primitives parviennent à y conserver un habitat convenable, Mais même ces natifs sont contraints de lutter quotidiennement contre les affres de la faune et de la flore, car un grand nombre d’abominations, créatures survivantes des temps anciens, semblent avoir trouvé refuge dans cette forêt - et les rares visiteurs leur servent plus souvent de déjeuner que de compagnie… Le peu que l'on sait des habitants de Solor se résume souvent à des histoires sanglantes, récits de sombres sacrifices et de rituels impies. Les habitants de ces bois ont particulièrement mauvaise réputation. Ils ne sortent quasiment jamais de leur couvert et ne laissent aucun étranger partager le secret de leur quotidien. Les récits que l’on colporte décrivent les mœurs des peuplades de Solor de manière si contradictoire qu'aucune généralité n’a pu être établie. Seuls quelques rares voyageurs, habitués à sillonner la région, semblent avoir appris plus que de simples rumeurs. Mais ces informations se monnayent - et souvent très cher. La seule certitude qu'ont les dirigeants de la caste des voyageurs, dont les Maîtres Cartographes sont régulièrement consultés par tous les amateurs de légendes, concerne l'existence d’anciennes ruines de cités forestières, bâties au cœur même des bois. Aucun texte ne fait référence à d’éventuels habitants, mais il est clair que les guides ne se pressent pas pour escorter les aventuriers en direction de ces arbres menaçants.. Les arbres abattus repoussent en quelques heures, rendant la création d’axes de communication impossible, Les feux se déclarent spontanément dans les cabanes. Les pièges des chasseurs se désamorcent comme par miracle, quand ils ne se referment pas directement sur eux.",
+      "history": "La Forêt de Solor est considérée comme un îlot de corruption depuis le troisième siècle de l’Âge des Empires, avant quoi elle constituait une zone forestière commune et peu colonisée.",
+      "ethnology": "Les rares habitants observés en lisière de la Forêt de Solor furent décrits comme des humains dégénérés, parfois physiquement mais le plus souvent mentalement, rendus craintifs et farouches par un style de vie plus animal que civilisé.",
+      "society": "Tribus agressives vivant de chasse et de cueillette. Il est possible qu'ils se livrent à des rites anthropophages et à des affrontements de territoire, mais personne n'en a jamais apporté la preuve.",
+      "politics": "Probablement tribale dans le sens le plus frustre.",
+      "judicial": "Il est peu probable que la notion de justice existe dans la Forêt de Solor.",
+      "economy": "Aucune",
+      "military": "Aucune structure militaire n'existe, mais toute tentative de purification échoue systématiquement, la forêt recelant des créatures réellement monstrueuses, en plus d’un milieu qui semble doté d’une volonté maligne et destructrice."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "c472bd09-16ce-40e4-9c74-6ebf1927280f",
+    "name": "Jaspor",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "aristocratie marchande corrompue",
+    "leaders": [
+      {
+        "name": "Flavien",
+        "title": "Dragon et Prince Argentier"
+      }
+    ],
+    "motto": "luxure, richesse, suprématie",
+    "climate": "océanique doux",
+    "description": {
+      "general": "Jaspor est une île isolée et bardée de récifs. Hormis Jalad, la capitale, aucune autre cité importante ne s’est développée sur ce territoire hostile. Les bois de l’ouest regorgent de richesses naturelles : bois, plantes indispensables pour de nombreux philtres… Les habitants de l’île les exploitent peu et ne s'intéressent qu'aux substances illicites, aux marchés tentaculaires et aux monopoles régionaux. Dans les collines se trouvent de magnifiques propriétés, souvent à l'abandon depuis que leurs propriétaires ont choisi de se rapprocher de la capitale. Les serviteurs chanceux laissés sur place héritent alors d’une maison bien au-dessus de leurs moyens.",
+      "history": "Après plusieurs siècles de relative stabilité, l’île subit actuellement une profonde crise culturelle. La société est au bord du suicide collectif et l’on assiste à une lente descente aux enfers de la majorité de la population. La décadence qui règne en Jaspor est au-delà de tout ce qu’une société équilibrée est capable de supporter. Les réformateurs, rares et isolés, sont pour la plupart des draconistes fraîchement débarqués qui pensent à tort que les préceptes fatalistes de Kalimsshar sont en train de s’implanter dans la région. Aux côtés de quelques révolutionnaires, de nombreux adeptes de l’ordre et de la pureté s’évertuent à raviver les consciences dérivantes de leurs concitoyens, mais leurs élucubrations n’ont que peu de poids face à l’apathie généralisée.",
+      "ethnology": "La population de Jaspor ne possède aucune particularité physique héréditaire, mais le désespoir, l'usage des drogues et le cynisme creusent leurs traits, les rendant maigres et hâves. À l'inverse, certains deviennent incroyablement gras et patauds à force de ce style de vie sédentaire et festif.",
+      "society": "La mentalité des Jasporiens est, pour une majorité, perverse ; les nantis se complaisent dans la débauche, parfois abjecte. L'hédonisme, le cynisme, la cupidité et la fuite en avant par les fêtes et le vin sont des traits marquants des citoyens de l’île. Les princes marchands de Jaspor sont obsédés par leur seule fortune. Le culte obsessionnel, presque malsain, qu'ils vouent à l’aisance matérielle, les détourne complètement des enseignements spirituels des Dragons. Habitués à vivre dans un luxe outrancier, ils ne se connaissent aucun ennemi et se contentent de commercer avec les régions du continent en faisant rapatrier leurs richesses par la mer. Corrompu jusqu'aux bases, le régime politique de Jaspor tolère l'esclavage humain qui, bien que condamné par les Lois draconiques, y est pratiqué ouvertement. Les orgies succèdent aux banquets dans un luxe de débauche. Grands consommateurs de drogues et de substances hallucinogènes, les habitants utilisent même des philtres distillés du Sang Noir de Moryagorn pour provoquer un état de transe incontrôlable, Une rumeur prétend même que plusieurs nobles décadents auraient promis une récompense à qui leur rapporterail quelques gouttes du venin de Kalimsshar, le Seigneur de l'Ombre... Il faut préciser que toutes les fêtes organisées à Jaspor sont entièrement publiques et que chacun y apporte quelque chose pour rendre la soirée encore plus belle. La population libre ne vit généralement que la nuit, laissant le soin à la famille qui reçoit et à ses esclaves d'organiser la soirée suivante. Tout le système économique repose sur le départ des jeunes générations vers le continent et sur leur retour, quelques années plus tard, qui justifie toutes sortes d’excès et de débauches. Les visiteurs doivent payer pour participer aux fêtes - les pauvres sont impitoyablement réduits en esclavage. Nombreux sont les malheureux qui, attirés par les feux et les merveilles de Jaspor, ont fini enchaînés dans les geôles après quelques mois de liesse abusive.",
+      "politics": "Jaspor ne dispose pas d’une véritable structure politique puisque le régime marchand est corrompu. L’accession au pouvoir ne peut se faire sans le soutien des plus riches marchands. L'administration est nommée par le Prince Argentier. La succession se fait par renversement.",
+      "judicial": "Seule la loi du plus riche est la meilleure. La justice, partiale, est à la charge des magistrats nommés par le pouvoir. La corruption est importante ici aussi et les accusés ont des droits inégaux selon leur fortune.",
+      "economy": "Jaspor se situe au centre des plus importants échanges financiers de Kor et il faut en tenir compte lors des tractations commerciales. Les nobles de Jalad sont friands d’esclaves pour assouvir leurs instincts les plus primitifs ou pour les servir. L’importation d’esclaves est ainsi un marché en plein essor.",
+      "military": "La fortune des princes marchands est telle que Jaspor se permet d'entretenir une puissante armée de mercenaires, ayant depuis longtemps passé des accords d’exclusivité avec les plus grandes compagnies et les meilleures guildes. La flotte de Jaspor arpente tous les rivages de Kor et l’île est la seule à avoir converti certains de ses navires en embarcations de guerre afin de transporter spécifiquement des troupes. Entre cette force de frappe mobile et motivée et les accords monétaires destinés à enrayer toute attaque, Jaspor connaît une paix globale depuis plusieurs siècles."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "f25f8471-a35e-49b7-99f1-169458b10c2d",
+    "name": "Jalad",
+    "parent_id": "c472bd09-16ce-40e4-9c74-6ebf1927280f",
+    "type": "capitale",
+    "description": {
+      "general": ""
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "530f140e-d5f7-4bb0-bdf5-faf7307d856c",
+    "name": "Kali",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "autorité draconique",
+    "leaders": [
+      {
+        "name": "Kalimsshar",
+        "title": "Héraut de la Fatalité"
+      }
+    ],
+    "motto": "fatalisme, individualité, survie",
+    "climate": "automne continental perpétuel",
+    "description": {
+      "general": "Les terres du Neuvième Dragon n'ont rien d’accueillant. Elles se composent de paysages variés mais tous peuplés d’ombres malsaines, envahies d’une végétation moisissante et habitées par des abominations cauchemardesques. Les morts y côtoient les vivants et bon nombre de dragons de l’ombre vivent au milieu des hommes dans des villes et des villages où le magnifique le dispute au plus hideux. Kali est une terre désolée, où des brumes poisseuses masquent à la vue des parties entières de paysage, laissant autant de cachettes aux prédateurs de tous types. Contrairement à ce que l’on croit, tout le monde peut se rendre dans le Royaume de l'Ombre. Le voyage se fera simplement à ses risques et périls.",
+      "history": "Kali est un royaume draconique ancien datant de l'instauration de Kor. Son histoire connue est pleine de légendes affreuses, de raids menés contre les terres draconistes. Au-delà de légendes populaires, bien peu de personnes souhaitent se pencher sur l’histoire de ces terres, dont la simple évocation suffit à briser un banquet et qui rend plus sombres les longues nuits d’hiver…",
+      "ethnology": "Les habitants de Kali sont réputés pour leurs difformités et leur arts corporels malsains, incluant les scarifications et l’automutilation. Les habitants de Kor les considèrent tous comme des Corrompus difformes, bien que de rares voyageurs revenus indemnes de Kali font état d’une terre où une population maigre et farouche tente de vivre dans une relative normalité.\nLes autres familles draconiques sont très peu représentées. Les enfants de Kalimsshar sont pratiquement les seuls à fendre les cieux, tout comme ils sont les seuls à fondre sur des villages pour se nourrir de la population. L'ostracisme de leurs cousins est vécu amèrement par les plus jeunes dragons de l’ombre. Kalimsshar n'intervient pas dans les affaires de son pays.\\nIl est simplement ravi que les hommes puissent laisser libre cours à leur nature profonde, celle que ses frères et sœurs nomment vice ou corruption. Ses fils ont également la bride lâchée. S'ils s’opposent irrégulièrement les uns aux autres, ils prennent en revanche souvent part à l'activité humaine et n’hésitent pas à diriger des communautés selon leur bon vouloir.\\nBeaucoup d'anciens écument le pays sous leur forme élémentaire. À Kalaarat, la pestilence et l’aura qui se dégagent de la cité seraient le fait de plusieurs anciens invisibles au regard des mortels. Ils inspireraient la sororité et les confréries de la ville dans la poursuite de leurs études occultes très poussées. Heyra est à mille lieues de soupçonner que les expériences du passé ne sont pas encore tout à fait terminées.",
+      "society": "Kali est une nation brillant par l’anarchie de ses structures et l’unanimité de ses ennemis. Le pays tout entier fut façonné par Kalimsshar et sa noirceur n’est que le résultat de sa contamination par le Héraut de la Fatalité. Terre d’accueil de tout ce que l’humanité compte de déviances et d'hérésies, le pays du Seigneur de l'Ombre ressemble à um amoncellement de royaumes et de fiefs dirigés par la force et certaines velléités de conquêtes sur le reste de Kor. Depuis que les premiers Kalishites franchirent la Chaîne de la Griffe et ont dégénéré, Kali est stigmatisé par les marques de l’évolution, rapide et violente. L'influence du Héraut de la Fatalité et Maître du Temps est remarquable en comparaison des autres contrées de la Terre Sacrée des Dragons et des civilisations entières naissent, prospèrent et s'éteignent en quelques siècles, laissant la place à d’autres civilisations plus ou moins évoluées. Chaque femme donne naissance à sept ou huit enfants et le pays soutient un flot régulier d’immigrants.\nEn Kali, les jours y sont aussi horribles que les nuits, et l’ordre naturel qui y règne est à l’image du Grand Dragon qui en est le souverain : imprévisible, violent et impitoyable. Cependant, plusieurs villes réussissent à tenir et à proposer à des dizaines de milliers de personnes de partager les règles d’une communauté. En prenant soin d’assurer sa protection, il est cependant possible d’y survivre, puis d'y vivre. Mis à part une individualité prononcée qui révulse les citoyens draconistes, on ne sait pas grand-chose de plus des Kalishites.",
+      "politics": "Manipulateur, Kalimsshar décide de l'attribution de ses fiefs à ses serviteurs, humains ou dragons, les laissant ensemble se battre ou prospérer. Toutes ses volontés sont relayées par certains serviteurs puissants.\nBien que Nadjar soit la capitale de Kali, il est très difficile de lui reconnaître une autorité extérieure à ses murs. La cité parvient à maintenir un gouvernement stable tandis qu’au-dehors, la vie politique se résume à des décisions locales prises arbitrairement par les seigneurs. L'évolution du courant de pensée humaniste semble apporter beaucoup à cette stabilité en s’appuyant sur le développement des économies locales et des échanges.\nKali ne possède pour ainsi dire aucune politique extérieure. Au nord du pays, les tentatives d’invasions sont régulières et le port d’Hasran est la principale tête de pont de ces offensives en direction de l’Empire de Solyr et de Kar. À l’Est, les Zûls sont de farouches adversaires qui n'hésitent pas eux-mêmes à franchir les cols de la Griffe pour venir “purifier” jusqu’au cœur des terres. Ces raids se terminent souvent mal pour les Zûls mais constituent un danger supplémentaire dans la région, ainsi qu’un équilibre des forces. Plus au sud, Maran-Djaar concentre l’essentiel des offensives en direction de la Pomyrie mais se heurte à une résistance magique considérable.",
+      "judicial": "Chaque seigneur dispose d’un droit de justice différent de son voisin. Si certains l’exercent avec discernement, beaucoup se montrent capricieux.",
+      "economy": "L’économie de Kali semble s’appuyer sur des cultures vivrières et l’exploitation des ressources des marais et de plantes rares y foisonnant.",
+      "military": "Divisées en de multiples fiefs en état de guerre permanent, les terres de Kali sont parcourues aussi bien par les vivants que par les morts ; les fiefs de Kali sont le repaire des pires combattants, souvent rejetés par les castes et mus par l'attrait de la violence gratuite. Par sa population monstrueuse, Kali est une entité militaire puissante, capable de menacer tous ses voisins par des raids épisodiques et meurtriers."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "2f131d2e-caa5-427a-b16e-0e242f1c6e97",
+    "name": "Lacs Sanglants",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "patriarcat clanique",
+    "leaders": [
+      {
+        "name": "Orode",
+        "title": "Meneur des Guerriers"
+      }
+    ],
+    "motto": "force, autarcie, lignage",
+    "climate": "continental frais",
+    "description": {
+      "general": "Les Lacs Sanglants sont situés entre l'Empire Nésora et les Marches Alyzées. Ils constituent une plaine légèrement boisée et sauvage au cœur de laquelle se trouvent plusieurs lacs mineurs et le grand Lac Sanglant. Construite sur des îlots rocheux au centre du lac et sur des pilotis issus de la forêt qui entourait auparavant les lacs, la cité de Lacustre constitue l’une des villes les moins connues de Kor. Seuls les plus illustres voyageurs sont autorisés à visiter les îlots de Lacustre ; les autres sont impitoyablement sacrifiés.",
+      "history": "Les Lacs Sanglants sont une terre qui a toujours eu une connotation guerrière et barbare dans toutes les légendes de Kor. Issus du rassemblement des tribus barbares, les Lacs Sanglants n’ont marqué l’histoire que par le récit de leurs raids dévastateurs et la distance farouche avec laquelle ils traitent tous ceux qui ne peuvent se targuer de la même ascendance qu'eux.",
+      "ethnology": "Les Belgoriens ont tendance à être plus forts et plus grands que les habitants du reste de Kor. Leur chevelure est normalement d'un brun clair tirant vers l’auburn, qui est pour eux une fierté dans leur héritage ancestral. De coutume, ils portent les cheveux longs en une grande crinière peignée et soyeuse leur tombant dans le dos. Certaines légendes prétendent que les Belgoriens sacrifient leurs enfants maigres ou chétifs au bord du lac, de même que les nourrissons blonds, roux ou aux cheveux noirs. Nul n’a jamais été capable de vérifier ces horribles rumeurs.",
+      "society": "Les Belgoriens, qui doivent leur nom à un héros des temps anciens, n’ont rien d'un peuple civilisé. Ils sont au contraire sauvages et sanguinaires. Ils occupent les lacs du nord depuis plus de mille ans et n'ont jamais cédé devant les invasions successives de leurs ennemis. Dire que les habitants des Lacs Sanglants ont mauvaise réputation est un doux euphémisme. Pourtant, leur attitude belliqueuse n'est pas due à la haine ou à la peur de l’étranger. Leur société est fondée sur des valeurs élitistes qui prônent le respect absolu de la force et du pouvoir. Aussi, en défendant farouchement leur territoire contre toute incursion extérieure, ils préservent leur intégrité et leurs secrets. Leurs rapports avec les dragons sont excellents - Ics habitants de cette région respectent et admirent les enseignements des Grands Dragons, dont ils accueillent toujours les enfants avec bienveillance.\nComprimés entre l’Empire Nésora, plutôt envahissant, et les Marches Alyzées, pour lesquelles un ennemi commun aplanirait les conflits internes, les habitants des Lacs Sanglants se referment sur eux-mêmes, persuadés qu’ils seront incapables de survivre à une ouverture sur le monde extérieur.\nDans ce climat d’extrême tension, la région ne doit son indépendance qu'à la peur qu'elle inspire et à la réputation de sauvages sanguinaires que ses habitants ont réussi à se forger au fil des siècles.\n",
+      "politics": "Ancestral, le pouvoir est patriarcal, détenu par une famille descendant directement du fondateur de leur peuple. Chaque tribu est dirigée par un chef guerrier qui doit imposer sa force. En général, le fils du chef défie son père à l’âge adulte et prend sa place. Tous jurent allégeance au Meneur des Guerriers du fait de son lignage.",
+      "judicial": "La loi est brutale. Le chef de la tribu détient tous les droits.",
+      "economy": "L’économie belgoriene est limitée, les Belgoriens répugnant à commercer avec les autres habitants de Kor. Lorsqu'ils le font, ils exportent des produits d'artisanat et surtout des peaux dont ils sont parmi les meilleurs travailleurs.",
+      "military": "La population des Lacs Sanglants reste prudente vis-à-vis de l’Empire Nésora. Les armes et les techniques de combat dont disposent les Belgoriens sont particulièrement meurtrières, conférant à chacun d’eux la force et l’efficacité de deux ou trois hommes. De plus, ils sont particulièrement doués pour la tactique et la stratégie. Entraînés au combat dès leur plus jeune âge, quelle que soit leur caste d’origine, les Belgoriens ont à maintes reprises justifié leur réputation de soldats et de meurtriers dénués de toute émotion.\nAu combat, ils capturent le plus grand nombre de leurs ennemis pour les égorger sur les rives du Lac Sanglant, dont les eaux deviennent rouges du sang des vaincus. De nombreuses légendes font mention de ces pratiques, attribuant au sang versé des vertus rituelles, magiques, qui contribuent à renforcer l'aura de mystère et de peur qu’inspirent les habitants de cette région.\n"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "582a427e-b754-43d1-87ab-ca9ed018403c",
+    "name": "Lacustre",
+    "parent_id": "2f131d2e-caa5-427a-b16e-0e242f1c6e97",
+    "type": "capitale",
+    "description": {
+      "general": ""
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "bf64abcb-62c3-4f5e-960e-7e7bcce9efda",
+    "name": "Marches Alyzées",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "monarchie féodale héréditaire",
+    "leaders": [
+      {
+        "link": {
+          "name": "Jard",
+          "link": "resource://assets/npc/f9e77653-a8ee-426a-8972-88bedb5f1bb8"
+        },
+        "title": "le Bien-aimé, Prince des Marches Unifiées"
+      }
+    ],
+    "motto": "diverse, mais l'unité, le respect et la prospérité sont fréquemment cités",
+    "climate": "multitude de climats parfois magiquement altérés d'après une base de climat océanique tempéré",
+    "description": {
+      "general": "De nombreux lieux paraissent si improbables, si incongrus, que leur description laisse souvent croire aux fabulations de voyageurs prétentieux - et portés sur la boisson. La faune et la flore de certaines principautés ont été altérées pour que certains paramètres physiques soient rendus plus flagrants. En Ircadie, par exemple, les reflets cristallins des nombreuses roches rendent la lumière du jour sensiblement plus orangée. Les habitants y ont la peau hâlée en permanence et l’été dure près de six mois. À quelques lieues de là, les Olariens ont opté pour un climat beaucoup plus froid. Ils ont donc fait baisser la température et remplacé les essences végétales par des conifères capables de supporter la neige et la glace. Depuis plusieurs siècles, il est fréquent de rencontrer un ours blanc à la croisée d’un sentier. Plus loin encore, le royaume d’Arbicole est dédié aux oiseaux et à la maîtrise de l’air. Szyl y compte de nombreux adeptes et la gravité y est légèrement plus faible, les constructions sont toutes perchées en hauteur et les oiseaux règnent en maître sur la contrée. Le rêve de la plupart des habitants étant de pouvoir un jour voler, nombreux sont les habitants qui ont développé des capacités magiques liées à la sphère des Vents. Chacune des anciennes principautés dispose d’un bastion conservé, comprenant une forteresse et une petite ville.",
+      "history": "Les Marches Alyzées ont vu le jour grâce à l’impulsion de Jard cherchant à unifier les principautés qui longent Kern, l’Empire de Solyr et l’Empire Nésora. Il lui a fallu de longues années de négociations, de tractations et parfois de guerre pour réussir à unifier ces terres sous sa bannière.",
+      "ethnology": "Les habitants des Marches Alyzées ont une large diversité de styles ethniques bien typés car les lieux dans lesquels ils vivent ont depuis longtemps marqué leur aspect physique.",
+      "society": "Il y a autant de coutumes dans les Marches Alyzées que de royaumes ayant participé à sa fondation. Aujourd’hui encore, les vestiges des anciennes communautés restent présents, sous la forme de cultures, de traditions et d’habitudes variées. Les divisions passées des principautés ont fait des Marches Alyzées un lieu riche en couleurs, en cultures et en originalités malgré un véritable mélange d’individualités, avides de s'affirmer les unes par rapport aux autres. Les rivalités qui les ont opposées pendant des siècles ont modifié leurs vêtements et leurs arts, et chaque région possède son propre blason, fierté symbolique souvent cristallisée autour d’un monument ou d’un personnage historique. Mais certains habitants des Marches Alyzées accentuent plus encore leur différence. Les territoires étant particulièrement morcelés par la présence de nombreux vallons et collines, certains n’ont pas hésité à user de magie pour modifier le paysage. Loin d’avoir disparu, le folklore offre aux voyageurs de nombreuses perspectives. Il en va de même pour les costumes traditionnels, les plats gastronomiques, les armes ou les innombrables accents qui ponctuent le langage draconique.",
+      "politics": "Les Marches Alyzées sont une multitude de minuscules pays dont les dirigeants ont tous été anoblis par Jard et dont les terres sont devenues des fiefs. Du même coup, nombre des Marches se gardent rancune de conflits séculaires et bien que Jard ait institué une monarchie héréditaire dans le but que l'aîné de ses enfants monte un jour sur le trône, la situation politique reste très instable. L’Empire de Solyr et l’Empire Nésora, tous deux voisins des Marches Alyzées, intriguent sans relâche pour diriger le pays en sous-main et éviter qu'il ne tombe sous une autre influence que la leur - une situation qui crée nombre de conflits internes. Les assassinats de personnalités du régime de ces dernières années sont imputables principalement à cette guerre politique, certes discrète, mais trop peu virulente pour s'avérer efficace. Il n’est pas sûr que la belle unité qu’affichent aujourd’hui les Marches Alyzées survive longtemps à l’instigateur de ce jeune royaume unifié… Dans les moments d’intense agitation politique et militaire, on a pu recenser jusqu'à six cents micro-Etats indépendants au sein des Marches Alyzées.",
+      "judicial": "Chaque Marche dispose d’un système judiciaire différent, dont le seigneur local est en charge du bon fonctionnement. Les entorses et dérogations aux différentes lois instituées par Jard sont nombreuses, mais cela ne pose pas de problème tant que les sujets les plus importants ne sont pas abordés.",
+      "economy": "Les Marches Alyzées produisent une multitude de denrées parmi lesquelles on retrouve les meilleurs crus de Kor. Au-delà de nombreuses autres spécialités, les Marches Alyzées sont bien dotées en mines, bois et rivages pour réussir à exporter une grande variété de biens.",
+      "military": "La compétition entre les potentats ne s'étant pas limitée à des conflits militaires, les styles architecturaux varient d’une forteresse à l’autre, se retrouvant jusque dans les moindres constructions du quotidien."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "a1cb0caf-15ea-4951-82b5-3d12a4cb6e87",
+    "name": "Elia",
+    "parent_id": "bf64abcb-62c3-4f5e-960e-7e7bcce9efda",
+    "type": "capitale",
+    "description": {
+      "general": ""
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "6474b3b2-0f9b-4251-896a-b6e38f51d1a6",
+    "name": "Pomyrie",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "conseil de mages",
+    "leaders": [
+      {
+        "name": "Lylir",
+        "title": "Maîtresse des Sphères"
+      }
+    ],
+    "motto": "spiritualité, mesure, puissance",
+    "climate": "méditerranéen humide, altéré magiquement",
+    "description": {
+      "general": "Composée de cités reliées les mes aux autres par des pactes de collaboration et des échanges commerciaux, la Pomyrie constitue un royaume aussi vaste que structuré. En hiver, la présence de la cité magique d’Onyr, capitale itinérante des arts magiques, ajoute une nouvelle pierre à l’édifice mystique de la région. Bien qu'elle ne reste que le temps d’une saison, la Cité de la Magie suffit à décourager les assaillants potentiels et à provoquer toutes sortes de cérémonies festives. En plus d’une excellente situation géographique, la Pomyrie bénéficie d’une architecture superbe qui transforme chaque cité en une petite merveille de luxe et de raffinement. Si les remparts extérieurs sont ouvertement destinés à un usage défensif, l’intérieur des cités offre un contraste singulier, mélange de sculptures baroques, de fontaines et de couleurs chatoyantes, qui démontre à quel point les mages locaux apprécient d'employer leurs talents à un usage totalement pacifique.",
+      "history": "La Pomyrie était autrefois appelée Pomiradie, qui vit le jour par la déclaration de son indépendance en 642 AdE, après dix ans d’une guerre violente avec l’Empire Zûl. Depuis sa fondation, on dénombre peu de cas d’affrontements parmi les peuples de la plaine. Les dirigeants magiciens de cette nation tentent toujours de s’emparer de la Forêt de Solor mais tous leurs efforts restent vains.",
+      "ethnology": "Les Pomyriens n’ont aucune caractéristique physique particulière.",
+      "society": "La Pomyrie ne semble résister que grâce à la magie de ses dirigeants qui, adeptes de différentes Sphères draconiques, sont chargés de préserver la sécurité des habitants par tous les moyens imaginables. Plus que partout ailleurs, la magie est perçue comme une véritable manne et, pour permettre à tous de s’initier à la connaissance et à la maîtrise de ces voies mystérieuses, des collèges et des académies de magie ont été instaurés dans la majorité des villes. Chaque ville prône une Sphère de prédilection, de façon à ce que tous les éléments draconiques soient représentés - hormis la Sphère de l'Ombre, dont la pratique est strictement interdite et passible de la peine de mort. La tradition veut qu’un mage, à chaque fois qu’il accède à un Statut supérieur au sein de sa caste ou de son collège, prenne le temps d'offrir à la ville une œuvre d'art à l’image et à la mesure de sa puissance élémentaire. Contrairement à la croyance populaire, tous les Pomyriens ne sont pas mages - en vérité, on pourrait même penser qu’ils sont moins nombreux qu'ailleurs. Si la caste dirigeante du pays est effectivement celle des mages, il est évident qu'elle ne pourrait diriger la société sans l’appui des autres corps sociaux, en particulier la caste des combattants. En revanche, il est vrai que les manifestations de magie sont beaucoup plus présentes en Pomyrie que partout ailleurs. Chacune des grandes cités étant dédiée à une Sphère, dont l’élément principal est particulièrement mis en valeur, que ce soit par la sculpture, la peinture ou l’organisation interne de la cité, les habitants se plaisent à penser que plus leur ville sera belle, plus la magie de leur dirigeant sera puissante. Parmi les traits caractéristiques des Pomyriens, il faut noter un attrait tout particulier pour la chasse, qui est considérée comme l’activité noble par excellence. Citadins et ruraux organisent régulièrement de gigantesques battues et d’imposantes chasses à courre. Les plus riches pratiquent même une inquiétante chasse à l’homme, en utilisant comme proies des prisonniers de guerre ou des condamnés de droit commun. Les mages ne rechignent pas à ce genre d'exercices certains passent même de longues années à inventer des sorts spécifiques pour la traque où a capture d’une proie particulière.",
+      "politics": "La politique est très populaire en Pomyrie. Le régime est une magiocratie “démocratique” réfléchie, l'élection des mages dirigeants s’effectuant en conseils.",
+      "judicial": "Chaque cité dispose de plusieurs tribunaux dépendant de la caste de la Sphère maîtresse. Chaque cité dépêche de plus des juges itinérants dans les campagnes.",
+      "economy": "L’économie pomyrienne est prospère, ses productions agricoles et la profusion de ressources magiques suffisant à entraîner d’importants flux d'argent et de denrées.",
+      "military": "La Pomyrie s’expose régulièrement aux assauts répétés des Zûls et des Galyrs, ainsi qu'aux raids des monstruosités qui surgissent de la Forêt de Solor et du Royaume de l'Ombre. Pour lutter contre ces raids, la Pomyrie entretient d'importantes troupes de patrouille, chargées d’arpenter l’ensemble du territoire et des frontières."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "a5d0eb56-1e8e-4ffe-a225-efe98f85af9f",
+    "name": "Principauté de Marne",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "principauté marchande, dirigée par une assemblée de commerçants",
+    "leaders": [
+      {
+        "name": "Rario de Zani",
+        "title": "Prince de Maréni"
+      }
+    ],
+    "motto": "enrichissement, survie, virilité",
+    "climate": "tempéré très humide",
+    "description": {
+      "general": "Les villes de la Principauté de Marne possèdent une véritable identité architecturale. Plates et étendues, du fait de leur construction sur pilotis, elles sont plus souvent faites de torchis que de pierre, ce qui les rend à la fois fragiles et inflammables. Le fait qu'elles soient saturées d'humidité rend la propagation du feu difficile et permet de les préserver d’incendies importants. Si les villes côtières sont assez sûres, les marais restent un véritable enfer, semé de pièges mortels et infesté de créatures. On ne compte plus les malheureux aventuriers qui ont fini perdus dans les sables mouvants - ou dans l’estomac d’un prédateur amphibien.",
+      "history": "Issue de la dernière croisade de l’Inquisition, la Principauté de Marne n’a pas véritablement d’histoire. Des suppôts du Fatalisme ayant été découverts dans les marais de Path, l’Inquisition monta une armée en 1220 AdE qui refoula les Princes Magiciens plus profondément dans les marais. Zangar, la Nécropole des Princes Magiciens, disparut. Une grande partie des guerriers restèrent et fondèrent la Principauté de Marne. De plus, les rituels mystérieux des nécromants qui occupaient autrefois la région ont donné vie à des monstruosités vivantes - où à moitié mortes - qui ressortent du marais pour se gaver du sang des imprudents. Toutes les bonnes volontés sont alors mises à contribution pour les repousser, car il arrive qu’une véritable horde de monstres cauchemardesques déferle sur les petits villages côtiers.",
+      "ethnology": "Les Marniens présentent tous les types de physionomie, mais l’insalubrité des marécages voisins marque les générations sous la forme de petite vérole, de mycoses et de vermine. De ce fait, il est rare de porter la barbe ou les cheveux longs, cette habitude entraînant souvent poux et autres parasites.",
+      "society": "Les Marniens, issus de nombreuses migrations successives, sont principalement des aventuriers frustres, curieux ou avides de faire fortune. On comprend donc que peu d'hommes et de femmes revendiquent leur appartenance à la Principauté de Marne - la plupart préférant en effet se présenter d’une cité ou d'une région dont ils sont issus.\nD'un point de vue social, la Principauté de Marne est une contrée populaire, relativement pauvre, où l'aristocratie est aussi usurpée que dépravée. Les véritables seigneurs locaux, de riches marchands issus du commerce fluvial et maritime, ne sont guère plus éduqués.",
+      "politics": "La Principauté de Marne n’est guère qu’une extension marchande et militariste de l’Empire de Solyr. Un prince est désigné parmi les marchands, à la suite de pressions et tractations incessantes par une parodie de scrutin mais le choix du Prince est assujetti à l’approbation du Frère des Dragons de Solyr.",
+      "judicial": "Les chefs de village, partiaux, ont le droit de justice. Un tribunal composé des plus riches marchands conseille le chef à tous les procès.",
+      "economy": "Cette principauté située à l’orée des grands marais de l’ouest est à la fois riche et prospère, car elle utilise la proximité des marais pour exploiter de nombreuses ressources naturelles - dont la culture du papyrus, la capture d’animaux sauvages, la cueillette des fruits des marais et la pêche aux poissons rares. On y trouve également du corail et du jade, deux matières hautement précieuses et prisées des négociants.\nLe commerce de toutes ces marchandises avec les marchands de l’Empire de Solyr constitue une manne providentielle pour les habitants, dont les demeures colossales attestent généralement de leur richesse.",
+      "military": "Bien que l’armée de la Principauté de Marne soit devenue un ramassis de mercenaires désargentés, les traditions guerrières des fondateurs du pays ne sont pas loin et tous les habitants sont des pionniers possédant des armes et savent se battre dans cette terre sauvage."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "c95aa400-c398-462b-ac43-95775645d79d",
+    "name": "Hyelle",
+    "parent_id": "a5d0eb56-1e8e-4ffe-a225-efe98f85af9f",
+    "type": "capitale",
+    "description": {
+      "general": ""
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "7577db35-83d3-44f3-bf3f-2c0f8b511a3c",
+    "name": "Royaume des Fleurs",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "cités indépendantes",
+    "leaders": [
+      {
+        "name": "Nir le Prodige",
+        "title": ""
+      }
+    ],
+    "motto": "harmonie, sérénité, communauté",
+    "climate": "tropical",
+    "description": {
+      "general": "Construit sur les ruines de plusieurs civilisations, le Royaume des Fleurs ne contraste pas beaucoup avec la Forêt Mère, dont il occupe toute l’extrémité nord-ouest. Il est constitué d’une dizaine de cités entourées de très nombreux villages, dédiés à la nature et interdisant toute effusion de sang sur leurs terres.",
+      "history": "Les hommes qui peuplent le Royaume des Fleurs sont les descendants des anciens peuples de la forêt qui décidèrent de créer de nombreux sacrifices humains et animaux, cherchant à augmenter leurs pouvoirs magiques et leur influence sur le peuple. Ces régimes, qui furent longtemps populaires au sein de la Forêt Mère, ont été remplacés par ce nouveau royaume, organisé dans le respect de la nature. La cité de l’Orchidée est aujourd’hui aux mains des serviteurs du Neuvième Dragon. Etrangement, il semble que la prise de cette fabuleuse cité n'ait pas eu pour but de lancer de sanglantes représailles. Interrogés à ce sujet, plusieurs Élus de Heyra ont même fait mention d'une relative quiétude, avançant l’hypothèse d’une sorte de transe collective provoquée par le Seigneur de l'Ombre. À ce jour, aucun aventurier n’a encore été en mesure de vérifier ces dires.",
+      "ethnology": "Les habitants du Royaume des Fleurs sont légèrement différents de la population de Kor. Ils sont en moyenne un peu plus petits d’un ou deux pouces et assez minces, la vie en forêt ayant modifié leur corps pour le rendre plus agile.",
+      "society": "Soumise à la loi des cycles naturels, la population du Royaume des Fleurs est particulièrement mystique. Les habitants sont des gens calmes et paisibles qui cherchent à vivre en harmonie avec la nature et les autres. Chacune des cités a choisi une essence végétale dont elle a fait son symbole. Les habitants cultivent tous une de ces fleurs chez eux et portent les couleurs qui lui sont assorties. Ce rapport privilégié à la nature, assorti d’une quête permanente de l'harmonie et de la sérénité, exclut tout intérêt pour l'enrichissement personnel ou le conflit. La majorité des biens appartiennent aux castes qui, en échange d’une autodiscipline collective, les redistribuent à l’ensemble des citoyens. Chaque ville étant liée au nom et à la symbolique d'une fleur, la vie des bourgades s'organise toujours en fonction de la saison de floraison de l'espèce tutélaire - à l’image de Flore qui, liée à l'été, voue toute la saison chaude à une alternance de cérémonies et de festivités. Les femmes choisiront généralement de faire naître leurs enfants durant cette saison et les hommes, ainsi que les dragons, organiseront de grands rituels qui feront s'épanouir la nature environnante. En revanche, à l'approche de l’hiver, la vie de cette ville sombrera progressivement dans une profonde léthargie. Les habitants entrent alors dans un état proche de l’hibernation dont rien ne saurait troubler la quiétude. Les Prodiges en quête d'expériences et les jeunes, qui supportent généralement mal la léthargie, migrent alors généralement vers une ville dédiée aux fleurs d’hiver - où l’activité bat son plein.\nD'un point de vue culturel, le pacifisme politique qui maintient l’ensemble de la région dans la paix et l’harmonie n’a pas supprimé la nécessité du combat, Des tréfonds de la forêt, les bêtes sauvages et les primitifs tentent régulièrement des incursions qu'il faut combattre - de peur d’être anéanti.\nMais le véritable danger vient souvent de l’intérieur des terres, où les serviteurs du Seigneur du Temps, particulièrement actifs, tentent régulièrement de soudoyer de petites cités en corrompant la fleur maîtresse.\n",
+      "politics": "Le Royaume des Fleurs est la seule nation dont la structure politique est issue d'une caste. La succession est directe et reste dans la continuité. Chaque dirigeant choisit un successeur lors de la passation de pouvoir parmi les chefs des cités du royaume. Traditionnellement et depuis sa fondation, c’est un Prodige qui dirige le Royaume des Fleurs.",
+      "judicial": "Chaque cité dispose d’un conseil de quatre à dix membres, majoritairement des Prodiges, qui traitent chaque affaire. Les chefs des cités ne sont pas consultés.",
+      "economy": "Le commerce extérieur est la seule ressource économique du Royaume des Fleurs et est limité. Il existe essentiellement avec Témeth et Hyelle.",
+      "military": "La situation reculée du royaume et sa relative inaccessibilité en font un des rares lieux de Kor qui ne connaisse pas régulièrement la guerre. Les Prodiges forment le rempart nécessaire pour éviter l’implantation des suppôts de Kalimsshar. Cependant, malgré tous leurs efforts la cité de l’Orchidée est aujourd’hui aux mains des serviteurs du Neuvième Dragon."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "1b47529f-ecdd-477b-908a-d68c9fd1e2ab",
+    "name": "Flore",
+    "parent_id": "7577db35-83d3-44f3-bf3f-2c0f8b511a3c",
+    "type": "capitale",
+    "description": {
+      "general": ""
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "af49b28d-ec78-4c7d-969d-7b2254ccb58b",
+    "name": "Terres Galyrs",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "tribus indépendantes",
+    "leaders": [
+      {
+        "name": "Arland Poing d'acier",
+        "title": ""
+      }
+    ],
+    "motto": "tribu, spiritualité, paix",
+    "climate": "hivernal modéré",
+    "description": {
+      "general": "Les Terres Galyrs sont formées de grandes forêts de conifères établies sur des plateaux enneigés. Les dénivelés de cette région sont conséquents, de longues et étroites vallées séparant de grandes étendues sauvages. La faune y est abondante et se compose d’espèces habituées à la vie dans ces régions froides où la température moyenne est de 0 à 5°C.",
+      "history": "Après s’être repliés paisiblement dans les montagnes au sud lors des avancées zûls, les Galyrs ont été pris d’une frénésie de conquêtes pendant un siècle (de 150 à 242 AdE). Ils déferlèrent alors vers le nord, jusqu'à atteindre l’Empire de Solyr et les frontières de Kern, puis retournèrent vivre dans les terres du sud sans jamais plus manifester à nouveau d’instincts belliqueux aussi exacerbés.",
+      "ethnology": "D’un point de vue morphologique, les Galyrs sont massifs, ont le teint cuivré, les yeux en amande et portent de longues tresses blondes qui sont leur fierté. C’est l’un des rares peuples de Kor à être aussi typé. Leur dialecte est étrangement doux et il s'accompagne de gestes. Les Galyrs apprécient particulièrement les dragons des océans et ont dédié plusieurs sculptures géantes à Ozyr.",
+      "society": "Les Galyrs ont perdu leur frénésie guerrière et forment maintenant un peuple paisible. Les tribus galyrs sont constituées d'hommes et de femmes (de cinquante à trois cents membres) habitués à survivre dans des conditions de vie rudes. Fédérés en communautés depuis des temps immémoriaux, les membres de ces groupuscules s’impliquent dans la vie communautaire, partageant des traditions et une culture. À la fois chasseurs, marins et artistes, ils sont généralement pacifiques - du moment qu'on ne vient pas les déranger sur leurs terres. Un autre point marquant de la culture galyr est la pratique de l'échange des nourrissons entre tribus. D’après les récentes études menées par les érudits, il semble que cette coutume ait pour but d'éviter les alliances consanguines au sein d’une même communauté. De plus, cet échange permet aux Galyrs de revendiquer leur appartenance à un seul et même peuple - ce qui constitue l’une des meilleures garanties de paix.\nDepuis des siècles, ils luttent pour leur survie contre les éléments et les nombreuses créatures - souvent issues de la corruption du Neuvième Dragon - qui descendent des montagnes. Au sud, les raids slaynns menés le long de la côte par voie de terre ou par cabotage sont particulièrement meurtriers et obligent les populations locales à s’armer pour résister. Les Galyrs sont connus pour leur hospitalité et leur attachement au respect des traditions ; les castes sont importantes et constituent une sorte de structure parallèle qui transcende souvent les racines familiales.\n",
+      "politics": "L’organisation sociale des Galyrs est fondée sur un modèle clanique. Il s'agit d’un régime patriarcal où les trois à dix membres d’un conseil de tribu se partagent le pouvoir.",
+      "judicial": "Les patriarches (et dans une moindre mesure le conseil) gèrent l’application des lois spécifiques à chaque tribu qui diffèrent principalement selon leur position géographique.",
+      "economy": "Du port de Jyn, célèbre dans tout Kor pour ses chantiers navals, sortent chaque année de petites embarcations parfaitement adaptées pour le transport de marchandise en cabotage. Une partie de l'artisanat est ainsi exportée vers Oforia et Ephar. Les tribus montagnardes possèdent d'immenses troupeaux d'animaux à cornes - notamment des chèvres et des nervix, de gigantesques pachydermes laineux. Une fois teintée, la laine de ces énormes mammifères est utilisée par les artisans galyrs qui, en la mêlant à des fils de métal, confectionnent une étoffe légère et particulièrement résistante. Ils s’en servent pour tisser des vêtements chauds et souples, offrant une protection comparable à celle d’une cotte de mailles. Appelé “gal”, ce tissu est difficile à trouver car très rarement exporté par les artisans. Considéré comme l'une des seules véritables richesses locales, ce tissu possède également une connotation clanique, quasi religieuse, dont les guerriers font un usage très fréquent.",
+      "military": "Au regard des derniers siècles, aucune guerre n’a jamais divisé ce peuple pacifique et, quoi qu'en pensent les citoyens des grandes cités, extrêmement civilisé."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "ed90eaf1-d258-45f8-b705-53c1e8b97e72",
+    "name": "Keyral",
+    "parent_id": "af49b28d-ec78-4c7d-969d-7b2254ccb58b",
+    "type": "capitale",
+    "description": {
+      "general": ""
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "uuid": "6b275174-2f30-4697-a266-531d1883a60d",
+    "name": "Ysmir",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "nation",
+    "government": "union de cités-États",
+    "leaders": [
+      {
+        "name": "Ozyr",
+        "title": "Grand Dragon des Océans"
+      }
+    ],
+    "motto": "sagesse, intelligence, modestie",
+    "climate": "tropical humide",
+    "description": {
+      "general": "Ysmir est une plaine riche et humide, exploitée depuis des siècles pour la culture du riz et du papyrus. De part et d'autre de l'estuaire d’Oforia, les cités indépendantes qui forment le conglomérat d’Ysmir ne sont distantes que d’une dizaine de kilomètres les unes des autres. Sur la rive droite, Oforia, le plus grand port de Kor, est le véritable cœur de cette région. La cité abrite les plus grandes bibliothèques de Kor, où se rencontrent chaque année les plus célèbres historiens et géographes. Sa première voisine, Syria, est la ville de la connaissance de la vie et de la médecine. Myria, quant à elle, est dédiée à l'étude de la pensée et de la philosophie. Sur l’autre rive, Tamirande et Sande sont respectivement spécialisées dans les arts alchimiques et l'étude des Étoiles. Orande, enfin, la ville des arts, est réputée pour le talent de ses artisans, de ses peintres et de ses sculpteurs. Elles sont toutes dédiées au savoir et à la connaissance, prônant l'étude des textes et des arts anciens, l’apprentissage des techniques modernes, la transmission du savoir et la discussion des Édits draconiques.",
+      "history": "Par le passé, lors de l'invasion galyr, les cités de Tamirande et d’Orande furent complètement détruites (respectivement en 173 et 186 AdE). Par la suite, grâce à une implantation solide de la caste des érudits, chacune des cités d’Ysmir est parvenue, au fil des siècles, à conserver un statut d'indépendance inviolée.",
+      "ethnology": "Les habitants d'Ysmir n'ont aucune caractéristique physique particulière.",
+      "society": "La population citadine est obsédée par l'étude, la connaissance et les arts. Elle est curieuse, persévérante et respecte les aînés. La population rurale est des plus communes, surtout intéressée par sa survie au sein d’un royaume draconique paisible et agréable.",
+      "politics": "Le régime d’Ysmir s'apparente à une dictature éclairée. Ozyr gère le pays selon des avis d’humains triés sur le volet.",
+      "judicial": "Le système juridique d’Oforia est complexe. Les lois sont fixes et multiples. Leur interprétation est à la charge des érudits juristes. Les sentences peuvent être cassées par un jugement rendu par un érudit de plus haut Statut.",
+      "economy": "Le commerce est florissant à Ysmir car sa position de port central le rend indispensable dans les échanges commerciaux de Kor. La papeterie, l’alchimie et la charpenterie navale sont ainsi les trois artisanats particulièrement développés. Oforia abrite d’ailleurs l’une des plus importantes flottes de cabotage de tout Kor, ce qui permet de pratiquer le commerce des matières premières et de l'artisanat par voie maritime, évitant au sud les redoutables Zûls.",
+      "military": "Ysmir ne possède pratiquement pas d'armée, tout au plus des forces de protecteurs en charge de la capture des criminels, la surveillance des frontières et la lutte contre les incursions de brigands ou de monstres. En fait, Ysmir est la nation maîtresse de la diplomatie de Kor et si jamais une crise devait survenir, de nombreuses armées se porteraient à son secours, celles de l'Empire de Solyr en tête."
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Le Grand Désert",
+    "uuid": "d1d05a2e-9203-458f-b850-452bc11b0792",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "region",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": "Désertique chaud",
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Lieux génériques",
+    "uuid": "fa47bb45-a589-408b-baaf-7aac9257ed5e",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "lieuUnique",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "name": "Nord des terres draconiques",
+    "uuid": "7a82c870-cb66-40cb-9421-0cb8cb58d503",
+    "parent_id": "e8c6ea13-f27c-4f12-8865-477305c61617",
+    "type": "region",
+    "leaders": [],
+    "government": null,
+    "motto": null,
+    "climate": null,
+    "description": {
+      "general": "",
+      "history": null,
+      "ethnology": null,
+      "society": null,
+      "politics": null,
+      "judicial": null,
+      "economy": null,
+      "military": null
+    },
+    "map": null
+  }
+]

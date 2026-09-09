@@ -1,0 +1,1909 @@
+[
+  {
+    "uuid": "b54f698c-874b-4153-a00b-fd9954a6c51f",
+    "name": "Cis de Myriand",
+    "description": "Cis − prononcez Ciz − est un artiste libre, un sculpteur voyageant de ville en ville, pour servir dans les cours les plus prestigieuses. Son art est aussi célèbre que ses frasques amoureuses et ses fuites sur les toits.\n\nIl sculpte aussi bien les bronzes qu'il sait couler l'or et l'argent. Mais surtout, mage du métal, il travaille pour le service d'espionnage de Kezyr. Ses œuvres sont autant de machinations destinées à espionner, écouter, voire assassiner ses clients. À trente-cinq ans, ce Parrain est au sommet de son art. Une seule pensée le trouble : une femme. Et quelle femme ! Cymbaline, la Rêveuse Illuminée.\n\nIl serait prêt à tout trahir, tout abandonner pour son simple sourire. Malgré ses nombreuses conquêtes, son cœur est pris\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 6,
+      "intelligence": 6,
+      "coordination": 8,
+      "presence": 6,
+      "resistance": 7,
+      "volonte": 6,
+      "perception": 8,
+      "empathie": 5
+    },
+    "attributes": {
+      "physique": 3,
+      "mental": 5,
+      "manuel": 4,
+      "social": 4
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesContondantes",
+              "value": 2
+            },
+            {
+              "skill": "armesDeJet",
+              "value": 4
+            },
+            {
+              "skill": "corpsACorps",
+              "value": 6
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "acrobatie",
+              "value": 7
+            },
+            {
+              "skill": "athletisme",
+              "value": 4
+            },
+            {
+              "skill": "escalade",
+              "value": 8
+            },
+            {
+              "skill": "esquive",
+              "value": 9
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 2
+            },
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 8
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 1
+            },
+            {
+              "skill": "geographie",
+              "value": 8
+            },
+            {
+              "skill": "orientation",
+              "value": 8
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "estimation",
+              "value": 7
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 5
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "contrefacon",
+              "value": 9
+            },
+            {
+              "skill": "discretion",
+              "value": 9
+            },
+            {
+              "skill": "pieges",
+              "value": 7
+            },
+            {
+              "skill": "artisanat",
+              "implementation": "Orfèvrerie",
+              "value": 8
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "deguisement",
+              "value": 9
+            },
+            {
+              "skill": "deverrouillage",
+              "value": 9
+            },
+            {
+              "skill": "faireLesPoches",
+              "value": 7
+            },
+            {
+              "skill": "donArtistique",
+              "implementation": "Sculpture",
+              "value": 8
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "baratin",
+              "value": 8
+            },
+            {
+              "skill": "eloquence",
+              "value": 8
+            },
+            {
+              "skill": "marchandage",
+              "value": 6
+            },
+            {
+              "skill": "psychologie",
+              "value": 8
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "diplomatie",
+              "value": 3
+            }
+          ]
+        }
+      }
+    },
+    "equipment": [],
+    "caste": {
+      "caste": "mage",
+      "status": "expert",
+      "career": null,
+      "interdicts": [
+        "loiDeLaPrudence"
+      ],
+      "privileges": [
+        {
+          "privilege": "leurre",
+          "description": null
+        },
+        {
+          "privilege": "prevoyance",
+          "description": null
+        },
+        {
+          "privilege": "style",
+          "description": null
+        }
+      ]
+    },
+    "age": 35,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152"
+    },
+    "luck": 4,
+    "proficiency": 6,
+    "renown": 5,
+    "disadvantages": [
+      {
+        "disadvantage": "dette",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "disadvantage": "manie",
+        "cost": 1,
+        "details": ""
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "charme",
+        "cost": 1,
+        "details": ""
+      },
+      {
+        "advantage": "empathieNaturelle",
+        "cost": 4,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 4,
+        "circles": 0
+      },
+      "human": {
+        "value": 1,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 1
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "magic": {
+      "skills": {
+        "instinctive": 7,
+        "invocatoire": 3,
+        "sorcellerie": 8
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 7,
+        "metal": 8,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 6,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 7,
+        "metal": 8,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 6,
+        "ombre": 0
+      },
+      "spells": [
+      ]
+    }
+  },
+  {
+    "uuid": "35f75cf6-53fa-4563-8800-51368845f83e",
+    "name": "Florimelle de Dungard",
+    "description": "Duchesse de Dungard, elle est en charge de la justice, de l'armée et des lois. Pour les affaires de caste, elle traite directement avec Sir Tharen, le Grand Maître de la caste ou son suppléant, s'il est absent. Pour les affaires impériales, elle compose avec Hylmann Grût, Maître des orfèvres et représentant de la caste au Conseil des Provins.\n\nElle est la veuve du Duc Cellustan, tué en 1299 par Mor-Mar-Zûl alors qu'il défendait la cité contre un raid.\n\nÀ 36 ans, cette mince femme aux cheveux blonds au carré en a imposé aux plus grands depuis plus de dix ans. Elle que l'on pensait être une mère de famille et une bonne épouse s'est révélée être une femme à poigne depuis le décès de son mari. Après avoir obtenu, par le fer, de porter son titre, elle a étudié le métier des armes et la stratégie militaire pour devenir en deux ans une bretteuse confirmée et une stratège que les zûls ont appris à redouter. Souvent vêtue d'une robe faite non de tissu, mais de fines mailles ensorcelées et ouverte sur une tenue de chasse en daim, elle est assez peu conforme aux duchesses des autres provinces. Sa personnalité complexe déroute ses amis comme ses ennemis, étant capable de se comporter en grande dame de la cour comme en grossière mercenaire. Elle possède une féminité indéniable dont elle a peu conscience et dont elle ne sait se servir.",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 4,
+    "abilities": {
+      "force": 6,
+      "intelligence": 8,
+      "coordination": 6,
+      "presence": 9,
+      "resistance": 6,
+      "volonte": 8,
+      "perception": 9,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 7,
+      "manuel": 5,
+      "social": 8
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "armesDHast",
+              "value": 7
+            },
+            {
+              "skill": "armesTranchantes",
+              "value": 9,
+              "specializations": [
+                {
+                  "name": "Épée de duel",
+                  "value": 11,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "bouclier",
+              "value": 9
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 7
+            },
+            {
+              "skill": "equitation",
+              "value": 8
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 10
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 5
+            },
+            {
+              "skill": "histoire",
+              "value": 6
+            },
+            {
+              "skill": "lois",
+              "value": 11
+            },
+            {
+              "skill": "strategie",
+              "value": 9
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "cartographie",
+              "value": 7
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 8
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 9
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "armesDeSiege",
+              "value": 6
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "baratin",
+              "value": 7
+            },
+            {
+              "skill": "marchandage",
+              "value": 5
+            },
+            {
+              "skill": "psychologie",
+              "value": 8
+            },
+            {
+              "skill": "eloquence",
+              "value": 8
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 9
+            },
+            {
+              "skill": "diplomatie",
+              "value": 10
+            },
+            {
+              "skill": "seduction",
+              "value": 8
+            }
+          ]
+        }
+      }
+    },
+    "equipment": [
+      {
+        "type": "armor:45a9d318-fb08-46d5-b7b7-158e2ec584f5"
+      },
+      {
+        "type": "weapon:62b664bc-aa90-42d1-86be-e75800747e1a"
+      }
+    ],
+    "caste": {
+      "caste": "combattant",
+      "status": "expert",
+      "career": "duelliste",
+      "interdicts": [
+        "loiDeLArme"
+      ],
+      "privileges": [
+        {
+          "privilege": "botteSecrete",
+          "description": "Crève-œil, Diff. +5"
+        },
+        {
+          "privilege": "feinte",
+          "description": null
+        },
+        {
+          "privilege": "riposte",
+          "description": null
+        },
+        {
+          "privilege": "vigilanceCombattant",
+          "description": null
+        }
+      ]
+    },
+    "age": 36,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152"
+    },
+    "luck": 2,
+    "proficiency": 8,
+    "renown": 8,
+    "disadvantages": [
+      {
+        "disadvantage": "ennemiRare",
+        "cost": 5,
+        "details": "Mor-Mar-Zûl"
+      },
+      {
+        "disadvantage": "echec",
+        "cost": 3,
+        "details": ""
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "conviction",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "prestance",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "statutSocial",
+        "cost": 2,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 2,
+        "circles": 0
+      },
+      "human": {
+        "value": 3,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "Eyerdhâll",
+      "progress": "troisiemeNiveau"
+    },
+    "category": "Dirigeants",
+    "sub_category": {
+      "name": "empireDeSolyr"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 1
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
+    }
+  },
+  {
+    "uuid": "9ffea416-f905-4434-ba65-2e855dae0bee",
+    "name": "Yeerigo",
+    "description": "Yeerigo est méticuleux et ne laisse rien au hasard. Il dort peu, se nourrit chichement et n'est pas très causant. Mais derrière sa longue barbe blanche se cache un esprit brillant doublé d'une loyauté à toute épreuve. Yeerigo est un sage blessé par la trahison d'un de ses “fils”.\n\nYeerigo était le mentor d'Argomir et fut très affecté par la “désertion” de ce dernier, car il avait mis beaucoup d'espoir dans son jeune apprenti. Plus encore, le soir fatidique, il s'était rendu chez Argomir pour lui parler et l'aider à retrouver la foi dans le travail bien fait. C'est ainsi qu'il assista à la fuite de son protégé et au traquenard tendu à Kwizz, le jeune fils de Kezyr qui protégeait celui-ci. Suite à ces événements, Yeerigo jura de se venger des Inquisiteurs qui sont, selon lui, responsables de la défection d'Argomir et de la mort de Kwizz.\n\nConvaincu que la vengeance est un plat qui se mange froid, il réfléchit de longs mois avant de préparer les ébauches d’un plan qu’il veut parfait. Depuis lors, avec l’aide d’Ekhyt, son compagnon draconique, il s’est constitué un réseau d’informateurs et d’artisans en vue de porter, le moment venu, un coup fatal aux Inquisiteurs. Chaque jour, il glane un peu plus d’informations sur les habitudes de ses ennemis, sur leurs retraites, sur leurs forteresses, sur leurs alliés et leurs opérations. Chaque jour, il analyse, étudie, dissèque ces informations et peaufine le plan de sa vengeance !\n\nFasciné par tant d’abnégation et de méticulosité, le Grand Dragon du Métal suit de très près la progression du plan de Yeerigo. Conscient que ce genre d'initiative lui permettrait de porter un coup, sinon fatal, du moins handicapant, à l’Inquisition, Kezyr a demandé à ses espions de soutenir le Maître Artisan dans son entreprise.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 5,
+    "abilities": {
+      "force": 4,
+      "intelligence": 10,
+      "coordination": 10,
+      "presence": 3,
+      "resistance": 5,
+      "volonte": 8,
+      "perception": 7,
+      "empathie": 3
+    },
+    "attributes": {
+      "physique": 2,
+      "mental": 8,
+      "manuel": 8,
+      "social": 1
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "lois",
+              "value": 4
+            },
+            {
+              "skill": "castes",
+              "value": 5
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "alchimie",
+              "value": 8
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 4
+            },
+            {
+              "skill": "explosifs",
+              "value": 4
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "armesDeSiege",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Baliste",
+                  "value": 8,
+                  "reserved": false
+                },
+                {
+                  "name": "Éventreurs",
+                  "title": "Éventreurs",
+                  "value": 7,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "armesMecaniques",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Harpons",
+                  "value": 6,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "artisanat",
+              "implementation": "Forge",
+              "value": 10
+            },
+            {
+              "skill": "contrefacon",
+              "value": 6
+            },
+            {
+              "skill": "pieges",
+              "value": 7
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "deguisement",
+              "value": 5
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "commandement",
+              "value": 2
+            },
+            {
+              "skill": "diplomatie",
+              "value": 2
+            }
+          ]
+        }
+      }
+    },
+    "equipment": [
+      {
+        "type": "weapon:422fb0e1-b27f-42b2-82ba-c0c90eda198d"
+      }
+    ],
+    "caste": {
+      "caste": "artisan",
+      "status": "maitre",
+      "career": null,
+      "interdicts": [
+        "loiDeLaPerfection"
+      ],
+      "privileges": [
+        {
+          "privilege": "apprenti",
+          "description": null
+        },
+        {
+          "privilege": "autorisation",
+          "description": null
+        },
+        {
+          "privilege": "outils",
+          "description": null
+        }
+      ]
+    },
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "bfc4ff6a-81c8-4a32-8230-2ee0a5a49152"
+    },
+    "luck": 0,
+    "proficiency": 10,
+    "renown": 0,
+    "disadvantages": [
+      {
+        "disadvantage": "infirmite",
+        "cost": 5,
+        "details": "Jambe gauche"
+      },
+      {
+        "disadvantage": "manie",
+        "cost": 1,
+        "details": "La propreté est reine"
+      },
+      {
+        "disadvantage": "obsession",
+        "cost": 2,
+        "details": "Vengeance"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "conviction",
+        "cost": 2,
+        "details": ""
+      },
+      {
+        "advantage": "droiture",
+        "cost": 1,
+        "details": ""
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 1,
+        "circles": 0
+      },
+      "human": {
+        "value": 4,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "metal",
+      "dragon": "Ekhyt",
+      "progress": "deuxiemeNiveau"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDeKezyr"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "unique": true,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
+    }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Arkandara Jolanof",
+    "uuid": "e529ad21-d447-4943-971e-e55af119affd",
+    "description": "Cette femme est à la tête des [veilleurs](resource://assets/faction/2964c737-7780-4b1e-bb86-65fb1bc1d5a0). Elle est aussi membre de la [garde métallique](resource://assets/faction/c7e1e652-4f40-47f7-a94c-88137ded1275). Adepte de la [voie des forgerons](resource://assets/faction/dd3398d9-df24-48fc-9cc2-6089d9192a09), elle est le garde du corps personnel du [Maître Artisan](resource://assets/npc/18382ab6-cbd1-413b-8cee-2daed199404d) de la voie des mécanistes.\n\nSans être belle, c’est une femme séduisante. Toujours calme et discrète, ceux qui la connaissent ne peuvent penser qu’à de la glace lorsqu’ils parlent d’elle.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "artisan",
+      "status": "expert",
+      "career": "forgeron",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Fendorn Kamil",
+    "uuid": "e55f8791-4f37-489b-88b5-4b6e11e4cc03",
+    "description": "Fendorn Kamil est l’un des hommes les plus dangereux de la caste. Il est le parfait de [la voie des architectes](resource://assets/faction/2639b1a4-7a73-40f3-9f36-97fd84f09f13), l’ordonnateur de cette même voie et le juge suprême du [tribunal des arts](resource://assets/faction/4e0cc1b6-ee24-4c1a-a4fb-54a030a8eee6).\n\nMage de haut Statut, c’est un homme grand et maigre, calme et posé. Attentif et intelligent, il sait réfléchir avant de décider. Mais une fois sa décision prise, malheur à ceux qui se trouveront sur son chemin. C’est un farouche adversaire de la philosophie humaniste et il estime de son devoir d’empêcher sa caste de progresser sur le chemin de cette hérésie.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "artisan",
+      "status": "maitre",
+      "career": "architecte",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Ishandra Kalina",
+    "uuid": "4686966e-d6be-43da-a4d1-701af45efa57",
+    "description": "Considérée comme l’un des plus prodigieux artisans de la caste, cette jeune femme représente aussi son plus grand problème.\n\nEn l’espace de quelques années, alors qu’elle n’a qu’un peu plus de vingt ans, elle a maîtrisé les techniques de la voie des [architectes](resource://assets/faction/2639b1a4-7a73-40f3-9f36-97fd84f09f13), des [forgerons](resource://assets/faction/dd3398d9-df24-48fc-9cc2-6089d9192a09), des [orfèvres](resource://assets/faction/527e267d-fd62-44b3-90eb-53eaaf21c437) et des [alchimistes](resource://assets/faction/e976a3af-9f3a-4ab8-b055-8125d839c961). Elle est actuellement l’élève de [Miroslav Katamankonos](resource://assets/npc/18382ab6-cbd1-413b-8cee-2daed199404d) qui lui enseigne les secrets de la voie des [mécanistes](resource://assets/faction/e838398c-98ed-4138-b419-c0f162e324dd). Ishandra est aussi un membre renommé des [dissimulateurs](resource://assets/faction/15150772-1eef-4ba6-86bb-a93a42e81945) et certains prétendent qu'elle serait un artisan élémentaire. Qui plus est, cette femme est considérée comme l’une des plus belles qui soient. Ancienne élève - et maîtresse, prétendent certains - de [Tarel Orowitz](resource://assets/npc/d114e442-9570-4d0f-85ff-f1c4257bfc83), il a juré sa perte. Ishandra est connue pour disparaître sans prévenir et ne réapparaître que de longues semaines plus tard. Elle est aussi connue pour ses tendances fatalistes affirmées.\n\nIshandra est interdite de séjour dans de nombreuses nations et pourchassée par tout autant de factions désireuses de mettre fin à ses jours.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "artisan",
+      "status": "expert",
+      "career": "artisanElementaire",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 22,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Miroslav Katamankonos",
+    "uuid": "18382ab6-cbd1-413b-8cee-2daed199404d",
+    "description": "Maître Artisan et parfait de la [voie des mécanistes](resource://assets/faction/e838398c-98ed-4138-b419-c0f162e324dd), Miroslav est un petit homme bedonnant et sympathique. Dégarni, le nez surmonté d’épaisses lunettes et âgé d’une cinquantaine d’années, Miroslav est connu pour son goût des plaisirs, ses colères titanesques et son grand sens de l’amitié.\n\nSous ce petit homme à l’apparence inoffensive brûle un véritable volcan. Il est aussi membre des [visionnaires](resource://assets/faction/111a823b-9000-48cd-899e-1d504e9982d6) et du [tribunal des arts](resource://assets/faction/4e0cc1b6-ee24-4c1a-a4fb-54a030a8eee6), où il fait contrepoids à l'influence de [Tarel Orowitz](resource://assets/npc/d114e442-9570-4d0f-85ff-f1c4257bfc83).\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "artisan",
+      "status": "maitre",
+      "career": "mecaniste",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Slana Izmir",
+    "uuid": "393ceb39-ec00-4903-a2b4-098cd433775c",
+    "description": "Ancien chef de l’ordre des [dissimulateurs](resource://assets/faction/15150772-1eef-4ba6-86bb-a93a42e81945), cette femme fait partie des dix personnes les plus recherchées par l’Inquisition. On lui prête des pouvoirs surnaturels extraordinaires. Elle serait capable de franchir des kilomètres en quelques secondes, d’adopter une multitude de formes animales, de détruire des armées d’un seul regard…\n\nAttirante et effrayante comme seule la mort peut l’être, nombreux sont ceux qui parlent de ses charmes vénéneux et plus nombreux encore, ceux qui n’en parleront plus jamais.\n\nC’est un ancien membre de la [garde métallique](resource://assets/faction/c7e1e652-4f40-47f7-a94c-88137ded1275). Plus récemment, il semblerait que des manœuvres politiques au sein des [parfaits](resource://assets/faction/bdc1614f-de10-49ca-ab96-a8ce02a042e2) et du [tribunal des arts](resource://assets/faction/4e0cc1b6-ee24-4c1a-a4fb-54a030a8eee6) l’aient fait tomber en disgrâce. Elle est désormais pourchassée aussi par les membres de sa propre caste.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "artisan",
+      "status": "maitre",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Forges de Kezyr"
+    },
+    "name": "Tarel Orowitz",
+    "uuid": "d114e442-9570-4d0f-85ff-f1c4257bfc83",
+    "description": "Ce chef de l’[ordre des casse-murailles](resource://assets/faction/48c17599-7d3b-44d9-bfd8-ee8ddf27f088) est aussi l'un des hommes les plus influents de la caste.\n\nStratège de tout premier ordre, il est aussi le parfait de [la voie des mineurs](resource://assets/faction/a76af3dc-5266-4491-afb0-a54365d5782b) ; il fait partie des [visionnaires](resource://assets/faction/111a823b-9000-48cd-899e-1d504e9982d6) et est l’ardent des [termites](resource://assets/faction/94dd8936-fc98-4c9f-936c-020f73a9095f). Débordant d’énergie et de joie de vivre, cet homme imposant et jovial n’affiche certainement pas ses soixante-cinq printemps.\n\nIl disparaît souvent pour retrouver la voie des créateurs de la caste. Incognito, il parcourt le monde quelques mois afin de le voir d’un regard neuf et d’y enseigner son savoir.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "artisan",
+      "status": "grandMaitre",
+      "career": "mineur",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 65,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesArtisans"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  }
+]

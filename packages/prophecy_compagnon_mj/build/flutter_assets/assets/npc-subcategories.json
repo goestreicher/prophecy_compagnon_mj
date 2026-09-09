@@ -1,0 +1,353 @@
+[
+  {
+    "title": "Empire de Solyr",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Yris",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Empire Nésora",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Forêt Mère",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Témeth",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Kar",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Kern",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Marches Alyzées",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Pomyrie",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Ysmir",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Oforia",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Brorne",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Heyra",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Kezyr",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Khy",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Kroryn",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Nenya",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus d'Ozyr",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Szyl",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Élus de Kalimsshar",
+    "categories": [
+      "elus"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Sans Caste",
+    "categories": [
+      "generique",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des artisans",
+    "categories": [
+      "dirigeants",
+      "generique",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des combattants",
+    "categories": [
+      "dirigeants",
+      "generique",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des commerçants",
+    "categories": [
+      "dirigeants",
+      "generique",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des érudits",
+    "categories": [
+      "dirigeants",
+      "generique",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des mages",
+    "categories": [
+      "dirigeants",
+      "generique",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des prodiges",
+    "categories": [
+      "dirigeants",
+      "generique",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des protecteurs",
+    "categories": [
+      "dirigeants",
+      "generique",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Caste des voyageurs",
+    "categories": [
+      "dirigeants",
+      "generique",
+      "personnalites"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Artisans",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Combattants",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Commerçants",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Érudits",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Mages",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Prodiges",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Protecteurs",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Voyageurs",
+    "categories": [
+      "herosEtAventuriers"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Compagnons de Khyméra",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Culte du Crépuscule",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Disciples de Shaddi",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Indighirka",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Légion des Ténèbres",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Maîtres de l'ombre",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Porteurs de cauchemars",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Yaminaï",
+    "categories": [
+      "seidesDeLOmbre"
+    ],
+    "is_default": true
+  },
+  {
+    "title": "Humanistes",
+    "categories": [
+      "dirigeants",
+      "personnalites"
+    ],
+    "is_default": true
+  }
+]

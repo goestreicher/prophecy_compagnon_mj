@@ -1,0 +1,74 @@
+[
+  {
+    "uuid": "ad359c7c-2724-4701-b5db-058a381cf0fd",
+    "name": "Villageois sans caste",
+    "category": "generique",
+    "sub_category": {
+      "name": "sansCaste"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Livre de base 2e édition"
+    },
+    "description": "XOXO",
+    "abilities": {
+      "force":        6,
+      "intelligence": 3,
+      "coordination": 4,
+      "presence":     4,
+      "resistance":   7,
+      "volonte":      5,
+      "perception":   6,
+      "empathie":     5
+    },
+    "attributes": {
+      "physique": 5,
+      "mental":   3,
+      "manuel":   4,
+      "social":   3
+    },
+    "initiative": 3,
+    "use_human_injury_manager": false,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ]
+      }
+    },
+    "skills": {
+      "families": {
+        "combat":{
+          "all": [
+            {
+              "skill": "armesArticulees",
+              "value": 2
+            },
+            {
+              "skill": "armesDeJet",
+              "value": 3
+            }
+          ]
+        }
+      }
+    },
+    "equipment": [
+    ],
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    }
+  }
+]

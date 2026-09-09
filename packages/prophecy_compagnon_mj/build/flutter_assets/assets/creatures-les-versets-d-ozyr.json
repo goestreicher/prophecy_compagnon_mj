@@ -1,0 +1,245 @@
+[
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Lindraÿs",
+    "uuid": "2e726d36-4099-42d1-83be-9f1f9c311fe4",
+    "description": "Ancienne fille d’Ozyr, Lindraÿs incarne la seconde Voix d'Ozyr à [Oforia](resource://assets/place/e91722bd-49a0-47fe-b928-b76e7c841229), depuis neuf cents ans.\n\nLindraÿs passe près d’un tiers de son temps sous forme humaine dans la [tour de corail](resource://assets/place/d26711a9-3ea6-403b-9db9-cef192bb7871). Le reste du temps, elle s’isole dans les niveaux inondés de la tour et ne reçoit que les scribes les plus indispensables. Sous sa forme humaine, Lindraÿs s’incarne en deux sœurs jumelles. Âgées d’environ trente ans, elles mesurent un mètre soixante-quinze, arborent une taille fine et élégante et de fins cheveux gris et nacrés. L'une est vêtue d’une robe grise et verte, brodée aux manches, au col et au bas d’un feston de symboles entrelacés en fil d’émeraude. L'autre porte une robe bleu marine, incrustée de dentelle blanche. Elles se montrent froides, cérébrales et protectrices.\n\nLindraÿs a, depuis une vingtaine d'années, choisi un Élu en la personne de [Delvin le Tisseur](resource://assets/npc/d95e0b0a-267c-4b64-a100-5c1fd557a6e4), un mage de Nenya extrêmement compétent dans le voyage de l’Éther.\n\n## Description\n\nLes enfants du Grand Dragon des Océans sont très différents des autres dragons. Nés en milieu aquatique, ils sont dotés de plusieurs nageoires, semblables à de petites ailes, et d'une cuirasse lisse et graisseuse. Leur long cou et leurs membres atrophiés constituent autant de handicaps en combat aérien que d'avantages certains dans l'eau.\n\n## Particularités\n\nLes dragons des océans peuvent respirer aussi bien sous l'eau que dans l'air.\n\nSous l'eau, ils sont capables d'avaler toute cible de moins de 10m s'ils obtiennent 2 NR. Leur cible subit alors des dommages d'étouffement, ne dispose plus que d'une action par tour et subit une case de blessure par tour.\n\nLeur cuirasse souple et humide les rend impossible à Saisir sous forme draconique.\n\nLe feu et les sorts utilisant le feu ou la chaleur affectent plus durement les dragons des océans. Tout effet de ce type (Sphère du feu en général) inflige des dommages toujours maximum.\n\nLes dragons des océans sont insensibles au souffle des enfants de Ozyr de génération inférieure à la leur.\n\n## Forme humaine\n\nLa forme humaine des dragons des océans leur permet de pénétrer dans les cités et les bibiothèques des érudits, mais ils ne supportent leurs atours de chair que quelques heures. Ils optent généralement pour un physique sobre, tant au niveau de l'apparence que de l'accoutrement − de simples robes grises ou toges ornées de symboles suffisent à les vêtir, bien que certains apprécient également les bijoux.\n\n**Transformation :** 50 actions du dragon vers l'homme, 25 actions de l'homme vers le dragon.\n\n**Interdit :** Comme leur Mère, les dragons de la connaissance ne peuvent enfermer le savoir dans un seul esprit et sont contraints de modeler deux formes humaines qui doivent impérativement parler et agir à tour de rôle. Si les deux corps se trouvent éloignés de plus de cinq mètres, le dragon reprend instantanément sa forme originelle et perd la moitié de ses Points de Magie (Réserve personnelle ET Réserve de la Sphère des Océans). En combat, les deux corps humains agissent simultanément et se mettent généralement dos-à-dos.\n\n## Pouvoirs spéciaux\n\nLes dragons des océans peuvent prendre leur forme élémentaire.\n\nLes dragons des océans peuvent prendre forme humaine.\n\nFaculté de télépathie avec tous les êtres conscients à portée de vue.\n\nLeur capacité télépathique leur permet de lire (à vue) les pensés superficielles d'une cible par un jet en Opposition de Mental+Empathie contre Mental+Volonté de cette dernière.\n\nLes dragons des océans peuvent pénétrer dans l'esprit d'une cible par un jet en Opposition de Mental+Empathie contre Mental+Volonté de cette dernière. Ils peuvent accéder à sa mémoire durant 1+1/NR tours. Un traumatisme ou un blocage magique peuvent toutefois les en empêcher. Ils ne peuvent accéder à un esprit qu'une fois par an.\n\nLes dragons des océans peuvent modifier l'esprit et les souvenirs d'une cible dont ils ont pénétré l'esprit. Dans le laps de temps qui leur est disponible, ils peuvent modifier un élément précis (effacer, modifier ou créer) par un jet de Mental+Empathie d'une Difficulté égale à VOLx5 de la cible.\n\n## Compétences\n\n**Combat :** Toutes à 5, plus cinq disposant d'un bonus de 1\n\n**Mouvement :** Toutes à 5, plus cinq disposant d'un bonus de 1\n\n**Théorie :** Toutes à 20, plus cinq disposant d'un bonus de 2\n\n**Pratique :** Toutes à 15, plus cinq disposant d'un bonus de 3\n\n**Technique :** Toutes à 10, plus cinq disposant d'un bonus de 3\n\n**Manipulation :** Toutes à 5, plus cinq disposant d'un bonus de 2\n\n**Communication :** Toutes à 15, plus cinq disposant d'un bonus de 2\n\n**Influence :** Toutes à 5, plus cinq disposant d'un bonus de 3\n\n**Sorts :** 1000 pts de Complexité en Magie instinctive, 1200 en Magie invocatoire et 950 en Sorcellerie.\n\n**Faveurs :** cinq Faveurs de chaque niveau, qu’il est possible de conférer par le Lien.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 20,
+      "intelligence": 24,
+      "coordination": 6,
+      "presence": 20,
+      "resistance": 30,
+      "volonte": 20,
+      "perception": 15,
+      "empathie": 4
+    },
+    "attributes": {
+      "physique": 22,
+      "mental": 25,
+      "manuel": 14,
+      "social": 16
+    },
+    "initiative": 2,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 5
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 5
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 5
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 2
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 5,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "reserved": true,
+                  "value": 3,
+                  "reserved_prefix": "creature:2e726d36-4099-42d1-83be-9f1f9c311fe4:specialized:misc:"
+                }
+              ]
+            },
+            {
+              "skill": "natation",
+              "value": 15,
+              "implementation": ""
+            },
+            {
+              "skill": "esquive",
+              "value": 5,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 14,
+        "invocatoire": 15,
+        "sorcellerie": 14
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 15,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 90,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 15,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": true,
+    "category": "dragons",
+    "biome": "Kor",
+    "real_size": "55m de long, 31m d'envergure",
+    "weight": "85 tonnes",
+    "natural_armor": 60,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "special": null,
+        "skill": 13,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 2,
+          "add": 10,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 3,
+            "maximum_distance": 3
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 3,
+            "maximum_distance": 3
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 14,
+        "damage": {
+          "static": 70,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 1
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 13,
+            "maximum_distance": 13
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 13,
+            "maximum_distance": 13
+          }
+        }
+      },
+      {
+        "name": "Queue",
+        "special": "Les dégats sont de FOR + RES",
+        "skill": 14,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 30,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Souffle des Abysses (12)",
+        "description": "Grâce à leur souffle, les dragons aquatiques sont capables d'influer sur les courants pour créer des siphons et des raz-de-marée. Ils ne peuvent utiliser cette capacité qu'en milieu marin, mais rien ne les empêche d'en projeter les vagues dévastatrices sur la terre ferme.\nUtilisation : PHY + Souffle, Diff. 15\nPortée : Jusqu'à 250m\nZone d'effet : Siphon de 50m de diamètre ou lame de fond de largeur égale à la moitié de la portée\nEffets : Le souffle des enfants de Ozyr provoque le recul, mais sans dommages additionnels. L'onde de choc et la compression infligent 1D10 pts de dégâts par NR. Les cibles doivent réussir un jet de Natation contre FOR+5 du dragon ou subir les effets de la noyade durant les 3+1/NR tours que dure l'effet."
+      }
+    ]
+  }
+]

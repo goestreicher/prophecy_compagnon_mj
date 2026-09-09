@@ -1,0 +1,1585 @@
+[
+  {
+    "uuid": "20005403-7147-4e1c-be62-316187999853",
+    "name": "Erfoon",
+    "description": "Erfoon, alors jeune érudit ambitieux, a, lors d’une discussion un peu houleuse, assassiné l’un de ses collègues pour lui prouver manu militari le bien-fondé de ses théories. Pourchassé par la loi des hommes, Erfoon a fui sa ville d’origine, au cœur des Marches Alyzées, pour se réfugier dans l’anonymat d’Oforia la magnifique. Il vécut, ainsi, heureux de nombreuses années, fondant même une famille et oubliant, si ce n’est l’espace de terribles cauchemars, la folie meurtrière qui avait guidé sa main.\n\nMalheureusement pour lui, ce passé trouble refait surface et met à mal la petite vie rangée qu’il s’était confectionnée. Sous le coup d’un odieux chantage, Erfoon reprend les armes et tue pour la seconde fois de son existence. Ce meurtre ne passe pas inaperçu car l’un des fils d’Ozyr (Vouarg) est témoin de la scène. Ce dernier suit Erfoon et lui permet d’expliquer son acte. Fasciné par un humain capable de meurtre pour défendre ses idées, Vouarg offre le Lien à Erfoon. Ainsi commence le second exil de l’érudit qui, du jour au lendemain, abandonne famille et biens pour prendre la route.\n\nD’escale en escale, Erfoon poursuit ses recherches jusqu’au jour où il est convaincu que les réponses que recherche l’Humanité ne peuvent se trouver qu’au-delà des océans, là où les mers sont générées par des terres lustrales. Inquiet pour son protégé, Vouarg s’en remet à sa mère et… perd la vie pour son incompétence ! Depuis, Erfoon erre aux abords des côtes et se cache du courroux des hommes et… du Grand Dragon des Océans !\n\nErfoon a le regard fou du fugitif et le sourire carnassier du prédateur. Il survit de rapines et en vendant ses connaissances aux plus offrants. Complètement paranoïaque, il ne croit personne, ne tourne jamais le dos et préfère la fuite à une trop longue discussion.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 5,
+      "intelligence": 9,
+      "coordination": 4,
+      "presence": 2,
+      "resistance": 7,
+      "volonte": 10,
+      "perception": 9,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 4,
+      "mental": 9,
+      "manuel": 5,
+      "social": 1
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+            {
+              "skill": "corpsACorps",
+              "value": 7
+            }
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 10
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 7
+            },
+            {
+              "skill": "connaissanceDeLaMagie",
+              "value": 5
+            },
+            {
+              "skill": "geographie",
+              "value": 7
+            },
+            {
+              "skill": "histoire",
+              "value": 5
+            },
+            {
+              "skill": "orientation",
+              "value": 9
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "alchimie",
+              "value": 4
+            },
+            {
+              "skill": "astrologie",
+              "value": 5
+            },
+            {
+              "skill": "cartographie",
+              "value": 8
+            },
+            {
+              "skill": "estimation",
+              "value": 8
+            },
+            {
+              "skill": "explosifs",
+              "value": 4
+            },
+            {
+              "skill": "herboristerie",
+              "value": 6
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 8
+            },
+            {
+              "skill": "medecine",
+              "value": 6
+            },
+            {
+              "skill": "premiersSoins",
+              "value": 8
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "armesMecaniques",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Arbalète",
+                  "value": 6,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "discretion",
+              "value": 9
+            },
+            {
+              "skill": "pieges",
+              "value": 7
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "armesAProjectiles",
+              "value": 3
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
+    "equipment": [
+      {
+        "type": "armor:7d98e81b-8963-4197-ad02-37ff2dbc90bb"
+      },
+      {
+        "type": "weapon:422fb0e1-b27f-42b2-82ba-c0c90eda198d"
+      }
+    ],
+    "caste": {
+      "caste": "erudit",
+      "status": "expert",
+      "career": null,
+      "interdicts": [
+        "loiDuSavoir"
+      ],
+      "privileges": [
+        {
+          "privilege": "aplomb",
+          "description": null
+        },
+        {
+          "privilege": "calligraphieOfficielle",
+          "description": null
+        },
+        {
+          "privilege": "linguistique",
+          "description": null
+        },
+        {
+          "privilege": "memoire",
+          "description": null
+        }
+      ]
+    },
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "bf64abcb-62c3-4f5e-960e-7e7bcce9efda"
+    },
+    "luck": 2,
+    "proficiency": 4,
+    "renown": 0,
+    "disadvantages": [
+      {
+        "disadvantage": "appelDeLaBete",
+        "cost": 5,
+        "details": ""
+      },
+      {
+        "disadvantage": "deviance",
+        "cost": 3,
+        "details": "Paranoïaque"
+      },
+      {
+        "disadvantage": "ennemiRare",
+        "cost": 5,
+        "details": "Recherché par les autorités"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "ambidextre",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "pressentiment",
+        "cost": 3,
+        "details": ""
+      },
+      {
+        "advantage": "resistanceALaMagie",
+        "cost": 5,
+        "details": "Toutes les sphères"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 3,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 2,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "elus",
+    "sub_category": {
+      "name": "elusDOzyr"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 3
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
+    }
+  },
+  {
+    "uuid": "9b84a597-6fce-4fde-b093-da3ef8437fe1",
+    "name": "Pier",
+    "description": "Pier est un vieil homme maigre d’une bonne cinquantaine d’années, aux cheveux gris coupés au bol. Il est vêtu d’une large toge grise de voyage et porte des sandales de cuir fatigué. Droit et sec, il est assez grand et dégage une impression de majesté surannée. Il porte ses affaires dans une large musette de cuir et un gros étui de bois garni de feutre, passé dans le dos, renferme son précieux télescope.\n\nPier est un astronome déviant sillonnant les routes de Kor afin d’expliquer aux hommes le pouvoir des Étoiles. Souvent pris pour un vieillard fêlé, il provoque parfois des réactions violentes lorsqu’il se risque à prendre part à des discussions oiseuses portant sur la comparaison entre Étoiles et Dragons. Ceci lui vaut d'être vaguement surveillé par l’Inquisition, qui se demande s’il ne prêche pas pour les Humanistes. Complètement inapte au combat, Pier est un Inspiré de T'lan et l’Archiviste de sa Compagnie. Il ne doit d’ailleurs qu’à ses compagnons le fait de pouvoir se sortir du pétrin où il se fourre régulièrement. Repéré aux côtés du célèbre contrebandier Lark d’Astir, il persiste à étudier les Éoiles, tout en parcourant le monde et en instruisant les hommes au sujet de leurs “protecteurs célestes”.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.8,
+    "initiative": 3,
+    "abilities": {
+      "force": 2,
+      "intelligence": 8,
+      "coordination": 3,
+      "presence": 6,
+      "resistance": 3,
+      "volonte": 8,
+      "perception": 7,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 1,
+      "mental": 8,
+      "manuel": 3,
+      "social": 5
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "castes",
+              "value": 5
+            },
+            {
+              "skill": "connaissanceDesDragons",
+              "value": 5
+            },
+            {
+              "skill": "geographie",
+              "value": 7
+            },
+            {
+              "skill": "histoire",
+              "value": 9
+            },
+            {
+              "skill": "lois",
+              "value": 7
+            },
+            {
+              "skill": "orientation",
+              "value": 4
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "astrologie",
+              "value": 8,
+              "specializations": [
+                {
+                  "name": "Recensement",
+                  "value": 10,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "cartographie",
+              "value": 5
+            },
+            {
+              "skill": "lireEtEcrire",
+              "value": 7
+            },
+            {
+              "skill": "vieEnCite",
+              "value": 7
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "mecanismes",
+              "value": 5
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "conte",
+              "value": 6
+            },
+            {
+              "skill": "psychologie",
+              "value": 6
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+            {
+              "skill": "diplomatie",
+              "value": 6
+            }
+          ]
+        }
+      }
+    },
+    "equipment": [],
+    "caste": {
+      "caste": "erudit",
+      "status": "expert",
+      "career": null,
+      "interdicts": [
+        "loiDuSavoir"
+      ],
+      "privileges": [
+        {
+          "privilege": "aplomb",
+          "description": null
+        },
+        {
+          "privilege": "avalDraconique",
+          "description": "posséder une lunette astronomique"
+        },
+        {
+          "privilege": "calligraphieOfficielle",
+          "description": null
+        },
+        {
+          "privilege": "linguistique",
+          "description": null
+        }
+      ]
+    },
+    "age": 57,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "id": "unknown"
+    },
+    "luck": 3,
+    "proficiency": 7,
+    "renown": 0,
+    "disadvantages": [
+      {
+        "disadvantage": "ennemiRare",
+        "cost": 5,
+        "details": "Compagnie opposée"
+      },
+      {
+        "disadvantage": "incompetence",
+        "cost": 5,
+        "details": "Combat"
+      }
+    ],
+    "advantages": [
+      {
+        "advantage": "objetDePredilection",
+        "cost": 3,
+        "details": "lunette astronomique"
+      },
+      {
+        "advantage": "prestance",
+        "cost": 2,
+        "details": "influence et pouvoirs d'Archiviste"
+      }
+    ],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 4,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 1,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesErudits"
+    },
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "unique": true,
+    "use_human_injury_manager": true,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 3
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 2
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 1
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+      ]
+    }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Alakis Serball",
+    "uuid": "c4a29230-2083-4aea-8a41-b38731b1d16e",
+    "description": "Le Prophète Serball est le maître de la [Loge des Historiens](resource://assets/faction/1da5de41-adb0-4c20-b9bf-0425eb98ff6c). Homme âgé, portant avec peine ses soixante ans, il s’est distingué dans son jeune temps par ses recherches très actives aux quatre coins de Kor avant de perdre une jambe, gangrenée durant une expédition dans les marais de Path. Très instruit en matière de connaissances impies, il fut longtemps un membre éminent de l'ordre des érudits, avant de prendre ses fonctions il ya onze ans. Alakis Serball est Lié à Yrrs’ky, un dragon des océans adulte de genre masculin, célèbre pour avoir participé à la Deuxième Croisade à Pyr, où il a, par la suite, emmené Alakis lors d’expéditions discrètes.\n\nLe maître de la Loge des Historiens est très proche d’Ozyr et l’un de ses principaux lieutenants dans le contrôle des sciences impies. Dans les milieux bien informés, on murmure qu’Alakis Serball serait membre de la “[société des historiens](resource://assets/faction/25735b8f-ba15-4e32-a502-274b17722783)”, un groupe mystérieux dont personne ne semble capable de donner une description en termes d’activités. Portant d’amples robes de velours, Alalsis masque sa jambe de bois sculpté sous ses habits, mais son boitillement révèle systématiquement son handicap. Il vit dans les [tours de corail](resource://assets/place/d26711a9-3ea6-403b-9db9-cef192bb7871), mais dispose d'appartements dans le [temple d’Ozyr](resource://assets/place/e6ce25b8-2e6d-44bd-b7c8-64efbafa7292).\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "erudit",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 60,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "oceans",
+      "dragon": "Yrrs’ky",
+      "progress": "quatriemeNiveau"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesErudits"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Allham Quastih",
+    "uuid": "d2539af5-1ccc-48ef-bfd5-60134954b42c",
+    "description": "Originaire de Griff, Allham devint orphelin à l’âge de trois ans. Ses parents disparurent en mer au cours d’une partie de pêche familiale endeuillée par une terrible tempête, certainement causée par Szyl. Allham dériva pendant plusieurs jours sur un espar et échoua sur les côtes horaldienes, où il fut recueilli. Allham passa son enfance sur l’archipel, épousant par l'esprit la mentalité horaldiene. Parvenu à l’âge de dix ans, le conseil de Talgesh décida de son renvoi vers les terres des hommes. Il fut remis à des érudits venus étudier l’architecture horaldienne. Adopté et éduqué par les érudits, Allham montra vite les signes d’un grave traumatisme. Exceptionnel par sa résistance mentale, son séjour chez les Horaldiens lui avait pourtant causé des troubles mentaux irréversibles. Lorsque ses maîtres comprirent que cet enfant avait déjà appris bon nombre de secrets sur l'archipel, ils prirent peur et demandèrent audience à la Maîtresse de la caste.\n\nCelle-ci emmena Allham dans les jardins de corail et le présenta à Ozyr. Toute la vie d’Allham fut alors aménagée pour lui confier la responsabilité de la bibliothèque du temple, seul un esprit de sa trempe pouvant côtoyer de tels secrets.\n\nMaigre et chauve, d'âge indéfinissable, Allham dégage une aura malsaine de détachement envers la réalité. Il est l’interlocuteur privilégié des visiteurs du temple d’Ozyr, refusant à ses subordonnés l'accueil des visiteurs. Maître de Loge sans assistant, Allham passe en général ses étés à parcourir Kor dans l’espoir de trouver un successeur.\n\nOn dit qu’il serait lié à un dragon des océans de l’âge des Immortels, qui ne sortirait que rarement de sa fosse abyssale pour parler avec lui de secrets aptes à désaxer le plus solide des Prodiges.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "erudit",
+      "status": "grandMaitre",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 25,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": "a15e4d82-7b50-4fcf-b096-db4c1a1a0555"
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesErudits"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Delvin le Tisseur",
+    "uuid": "d95e0b0a-267c-4b64-a100-5c1fd557a6e4",
+    "description": "Delvin est un prélat d’Ozyr, conscient de sa charge, qui se charge de relayer les volontés d’Ozyr auprès de personnes particulières et de recueillir oniriquement les avis des autres prélats d’[Ysmir](resource://assets/place/6b275174-2f30-4697-a266-531d1883a60d). C’est un homme âgé qui, sous des abords francs et réfléchis, cache une personnalité manipulatrice sans morale.\n\nC'est l’ancien maître de [Soder Fendrick](resource://assets/npc/bf934e6b-cc32-474d-a163-27bc3c4d3acb). Delvin se désintéresse de la politique de la caste des mages et n’a plus de contact avec son ancien élève, qui l’a dépassé depuis longtemps.\n\nDelvin le Tisseur est un Grand Mage, spécialisé dans la Sphère des Rêves et touché par la Marque de Nenya, dont il use de façon discutable. Il dispose d’un éventail colossal de Sorts oniriques et de nombreuses Compétences en rapport à l’Éther à des niveaux compris entre 8 et 10.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "mage",
+      "status": "maitre",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 63,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "ysmir"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Margeth d'Orande",
+    "uuid": "d412be5e-e52e-49a9-96c0-055e63f1ed5b",
+    "description": "Héritière d’une famille noble d’Orande, la Sage Margeth est l’aînée de sa fratrie, ce qui la désignait comme héritière du titre de comtesse. Cela fit de sa carrière d’érudit un défi majeur. Dotée d’une mémoire phénoménale, elle sut concilier ses devoirs familiaux et son instruction, et devint une architecte compétente. Bien qu'ayant rarement quitté Ysmir, elle connaît un nombre surprenant de styles et de techniques, dont elle rend les principes par des croquis unanimement reconnus.\n\nAyant connu un mariage heureux, elle put, il y a huit ans, renoncer à son titre en faveur de son fils aîné et se consacrer pleinement à la gestion de l'[ordre des architectes](resource://assets/faction/c6467289-c5f3-4106-afa4-76fb289f61d1). Elle en devint vite une des principales administratrices en raison de son sens de l’organisation et de son charisme. C’est la maîtresse de [Loge](resource://assets/faction/e5cd7b2e-754a-40cf-b1da-db1a445e3a8d) la plus récemment nommée, ayant accédé à ses fonctions il ya deux ans. Margeth est une femme d’une cinquantaine d’années, très grande, dont le port altier marque tous ses interlocuteurs. Souriante, rusée, mais très chaleureuse, elle est l’un des meilleurs liens entre les érudits et les artisans, reconnue par ces derniers comme une maîtresse dans l’art des mécanismes et de l’étude des forces des bâtiments.\n\nMargeth vit à Orande dans son palais personnel où se pressent en permanence bon nombre de visiteurs.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "erudit",
+      "status": "maitre",
+      "career": "architectes",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 60,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesErudits"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Marillan Hyunthiz",
+    "uuid": "ad842ec0-d887-4684-a6be-ac0d0fd38c4e",
+    "description": "Membre de l’[ordre des historiens](resource://assets/faction/14696ec2-4c28-469a-8070-211c08ffea57), Marillan est le Légat de l’université des [Marches Alyzées](resource://assets/place/bf64abcb-62c3-4f5e-960e-7e7bcce9efda), une université d’[Elia](resource://assets/place/a1cb0caf-15ea-4951-82b5-3d12a4cb6e87) dirigée par le Prophète Gythanni de l’ordre des historiens.\n\nMarillan est seulement un érudit, mais il a l'ambition de réussir à fédérer les divers Légats des Marches Alyzées. Ceux-ci sont censés rassembler les éléments d'histoire et de géographie les plus complets possibles afin de publier dans les années à venir un traité sur les Marches Alyzées.\n\nMarillan est un homme encore jeune d’environ trente-cinq ans, habité par une flamme dévorante, qui le pousse à réaliser ce travail quelles que soient les difficultés rencontrées. Parcourant inlassablement les routes, accompagné de cartographes ou de quelques amis voyageurs, il va de cours en conseils et de palais en manoirs, rencontrant les dirigeants des nations et cherchant à rassembler lui-même un maximum d’informations.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "erudit",
+      "status": "expert",
+      "career": null,
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 35,
+    "height": 1.7,
+    "weight": 60,
+    "origin": {
+      "uuid": null
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "personnalites",
+    "sub_category": {
+      "name": "casteDesErudits"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Versets d'Ozyr"
+    },
+    "name": "Thyll le Galyr",
+    "uuid": "9a541e65-bccf-4a3a-9b96-e39d2f5fc31b",
+    "description": "Surnommé ainsi lors de son instruction, le Prophète Thyll est originaire des montagnes de l’ouest de Keyral. Élève d’un soigneur, il quitta son peuple à l’âge de onze ans afin de postuler à l'académie des arts du corps, la plus célèbre d’Oforia en matière de médecine. Habile et connu pour sa chaleur humaine, Thyll est célèbre de Jaspor à la Pomyrie pour avoir sillonné la côte en tous sens. C’est sa grande dévotion à Ozyr et son endurance légendaire qui lui ont permis de se tailler une réputation dans l’[ordre des médecins](resource://assets/faction/5a2df75d-4e34-4dcb-a274-3a915a917172).\n\nLorsque des rumeurs circulèrent sur la nécessité d’un nouvel assistant au maître de la [Loge des Soigneurs](resource://assets/faction/473992cd-0086-4e70-9e8b-978859abbb43), son nom circula et, à la surprise générale, il se porta volontaire sous prétexte que ce serait un honneur de servir sa caste à cette fonction. Son tuteur mourut quelques années plus tard et Thyll, à présent âgé de quarante-cinq ans, s’est vu confier ce poste il y a quatre ans.\n\nImpressionnant par sa taille et sa carrure, Thyll retient en natte ses longs cheveux, qu’il laisse pousser librement depuis son accession à ce poste. Il porte en permanence un ample m’jarh de Prodige, offert à titre honorifique. Sa ceinture est une large bande de gal, arborant les couleurs de son clan d’origine. Du haut de ses deux mètres massifs, Thyll compense son allure colossale par un sourire désarmant et un pacifisme exemplaire. Il voyage souvent en caravane privée entre Ysmir et l’Empire de Solyr, afin de rencontrer ses Légats et coordonner les recherches de ses confrères.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 0,
+      "intelligence": 0,
+      "coordination": 0,
+      "presence": 0,
+      "resistance": 0,
+      "volonte": 0,
+      "perception": 0,
+      "empathie": 0
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 0,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 1,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": []
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "fervor": {
+      "value": 0,
+      "powers": []
+    },
+    "caste": {
+      "caste": "erudit",
+      "status": "grandMaitre",
+      "career": "medecins",
+      "interdicts": [],
+      "privileges": []
+    },
+    "honorary_caste": null,
+    "age": 45,
+    "height": 2,
+    "weight": 60,
+    "origin": {
+      "uuid": "af49b28d-ec78-4c7d-969d-7b2254ccb58b"
+    },
+    "luck": 0,
+    "proficiency": 0,
+    "renown": 0,
+    "disadvantages": [],
+    "advantages": [],
+    "tendencies": {
+      "dragon": {
+        "value": 0,
+        "circles": 0
+      },
+      "human": {
+        "value": 0,
+        "circles": 0
+      },
+      "fatality": {
+        "value": 0,
+        "circles": 0
+      }
+    },
+    "draconic_link": {
+      "sphere": "pierre",
+      "dragon": "",
+      "progress": "aucunLien"
+    },
+    "category": "dirigeants",
+    "sub_category": {
+      "name": "casteDesErudits"
+    },
+    "unique": true,
+    "use_human_injury_manager": false
+  }
+]

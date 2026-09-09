@@ -1,0 +1,1051 @@
+[
+  {
+    "uuid": "8a50e0ba-807f-449d-94af-2e8762447411",
+    "name": "Eyrok",
+    "description": "Ce solide bovidé au cuir parsemé de fourrure a la machoire prolongée par deux courtes défenses. Docile, particulièrement calme, il constitue une excellente monture et s'avère très efficace en combat, où il cherchera toujours à protéger son maître contre les prédateurs. De plus, son métabolisme particulier lui permet de récupérer naturellement et de cicatriser beaucoup plus rapidement qu’un être humain.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 1,
+    "initiative": 3,
+    "abilities": {
+      "force": 11,
+      "intelligence": 1,
+      "coordination": 4,
+      "presence": 0,
+      "resistance": 11,
+      "volonte": 6,
+      "perception": 6,
+      "empathie": 7
+    },
+    "attributes": {
+      "physique": 6,
+      "mental": 1,
+      "manuel": 0,
+      "social": 0
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 4,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 5,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 5,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 5,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": [
+        "Regain d'énergie"
+      ]
+    },
+    "unique": false,
+    "category": "animauxSauvages",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "biome": "régions tempérées et boisées",
+    "real_size": "1.7m au garrot",
+    "weight": "600kg",
+    "natural_armor": 2,
+    "natural_armor_description": "cuir",
+    "natural_weapons": [
+      {
+        "name": "Défenses",
+        "skill": 5,
+        "damage": { "ability": "force", "add": 6 },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.2
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.4
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "skill": 3,
+        "damage": { "ability": "force", "add": 5 },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.2
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.4
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Charge",
+        "description": "L'eyrok bénéficie d'un bonus de +3 sur ses attaques de charge."
+      }
+    ],
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "ignore",
+            "start": 0,
+            "end": 5,
+            "capacity": 1
+          },
+          {
+            "type": "injured",
+            "start": 5,
+            "end": 40,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    }
+  },
+  {
+    "uuid": "b01e5f5d-b5de-4d2a-bfda-8194f451c24f",
+    "name": "Rat gris",
+    "description": "Légèrement plus fins que la moyenne, ces rats se distinguent surtout par leur fourrure grise et soyeuse, que la lumière teinte de reflets argentés à la tombée de la nuit. Incapables de survivre hors des cités humaines, ces rongeurs à l'intelligence stupéfiante communiquent grâce à une empathie sélective qu’ils peuvent déclencher entre eux, mais aussi avec d’autres espèces. Leur vivacité et leur don pour la survie urbaine en ont fait des compagnons indispensables pour tout commergant ou Élu de Khy. De plus, les rats gris sont très sensibles aux Tendances et peuvent détecter la présence d’une créature où d'une manifestation particulièrement “teintée” dans un rayon de plusieurs centaines de mètres.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.4,
+    "initiative": 4,
+    "abilities": {
+      "force": 1,
+      "intelligence": 8,
+      "coordination": 8,
+      "presence": 1,
+      "resistance": 1,
+      "volonte": 5,
+      "perception": 10,
+      "empathie": 6
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 4,
+      "manuel": 1,
+      "social": 4
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+          ]
+        },
+        "theorie": {
+          "all": [
+            {
+              "skill": "orientation",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Cité",
+                  "value": 8,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 8
+            },
+            {
+              "skill": "pister",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Cité",
+                  "value": 5,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+            {
+              "skill": "psychologie",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Empathie (Tendances)",
+                  "value": 5,
+                  "reserved": false
+                }
+              ]
+            }
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
+    "equipment": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "biome": "cités",
+    "real_size": "25 à 30cm",
+    "weight": "500g",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "skill": 3,
+        "damage": { "ability": "force", "add": 2 },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.05
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.1
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "skill": 3,
+        "damage": { "ability": "force", "add": 1 },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.05
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.1
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Empathie",
+        "description": "La Compétence Empathie des rats gris peut être développée grâce à un jet de Social + Dressage contre une Difficulté de 20. Elle permet, en réussissant un jet de Mental + Empathie contre une Difficulté de 15, de sentir la présence d’une vie ou d’un objet fortement imprégné par l’une des trois Tendances dans un rayon de 100 mètres. Cette Difficulté est augmentée de 5 pour un rayon d’un kilomètre, mais peut être réduite de 5 si l'élément est particulièrement teintée. Dans un rayon de 10 mètres, la réussite est automatique."
+      }
+    ],
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 10,
+            "capacity": 1
+          },
+          {
+            "type": "death",
+            "start": 10,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    }
+  },
+  {
+    "uuid": "3d240e37-af17-40d6-a7d8-2ea8bd8298ff",
+    "name": "Hurleur",
+    "description": "Ce canidé au pelage ocre possède des yeux tristes et des oreilles tombantes qui lui donnent un petit air malherreux, mais le hurleur est un excellent chien de garde et un pisteur hors pair. La particularité de ce familier, très prisé des aventuriers et des combatiants, est le cri très caractéristique qu’il pousse en cas de danger ou d’intrusion. À mi-chemin entre le grognement typiquement canin et les pleurs d'un enfant, ce cri est perceptible à plusieurs centaines de mètres à la ronde. Une fois apprivoisés, les lhurleurs restent fidèles à leur maître jusqu’à la mort.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.6,
+    "initiative": 4,
+    "abilities": {
+      "force": 3,
+      "intelligence": 4,
+      "coordination": 6,
+      "presence": 0,
+      "resistance": 3,
+      "volonte": 5,
+      "perception": 8,
+      "empathie": 3
+    },
+    "attributes": {
+      "physique": 2,
+      "mental": 2,
+      "manuel": 0,
+      "social": 1
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "specializations": [
+                {
+                  "name": "Course",
+                  "value": 5,
+                  "reserved": false
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 6
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "pister",
+              "value": 7
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
+    "equipment": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "biome": "campagnes et plaines tempérées",
+    "real_size": "80 cm à 1 m",
+    "weight": "30 à 60 kg",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Morsure",
+        "skill": 6,
+        "damage": { "ability": "force", "add": 4 },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.15
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.3
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Dressage",
+        "description": "Les Compétences Pister et Esquive du hurleur peuvent être développées grâce à un jet de Dressage contre une Difficulté de 15, jusqu’à un niveau maximum de 18 pour Pister et 9 pour Esquive. Pour développer sa Compétence Morsure, la Difficulté est de 20 et le niveau maximum de 8."
+      }
+    ],
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 25,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 25,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    }
+  },
+  {
+    "uuid": "5c9d74ab-6761-4e54-a339-ddd1a359815d",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Chevalin",
+    "description": "Cousin du cheval de selle, mais bien plus petit, le chevalin est une race de poney dont l'origine se perd dans la nuits des temps. Docile, solide, mais de petit gabarit et mauvais coureur, le chevalin est un bon animal de monte pour les femmes, les enfants et les cavaliers inexpérimentés.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 8,
+      "intelligence": 4,
+      "coordination": 5,
+      "presence": 0,
+      "resistance": 9,
+      "volonte": 5,
+      "perception": 5,
+      "empathie": 9
+    },
+    "attributes": {
+      "physique": 5,
+      "mental": 2,
+      "manuel": 0,
+      "social": 0
+    },
+    "initiative": 3,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 35,
+            "capacity": 3
+          },
+          {
+            "type": "death",
+            "start": 35,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 1,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Course",
+                  "reserved": false,
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 3,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 0,
+        "invocatoire": 0,
+        "sorcellerie": 0
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 0,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 0,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "biome": "régions tempérées",
+    "real_size": "1m au garrot",
+    "weight": "250kg",
+    "natural_armor": 1,
+    "natural_armor_description": "Crin",
+    "natural_weapons": [
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 1,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 3,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.15,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.3,
+            "maximum_distance": null
+          }
+        }
+      },
+      {
+        "name": "Ruade",
+        "special": null,
+        "skill": 2,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 6,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 0.3,
+            "maximum_distance": null
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 0.6,
+            "maximum_distance": null
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Docilité",
+        "description": "Les chevalins octroient un bonus de +3 à tout jet d'Équitation."
+      },
+      {
+        "name": "Gabarit réduit",
+        "description": "Il est impossible de Charger sur un chevalin."
+      }
+    ]
+  },
+  {
+    "uuid": "a8f55320-bb2f-414a-810b-9634a0300281",
+    "name": "Zokoï",
+    "description": "Cette étonnante petite créature humanoïde a la mauvaise réputation d’être douée de malice et d’un goût très prononcé pour le vol. Son comportement agité révèle une véritable obsession pour les objets de valeur, la confection de pièges et les tours pendables - tels qu’enduire les fourreaux d’eau salée pour faire rouiller les lames, nouer les chausses pendant le sommeil, limer les rouages d’une arbalète, etc.\n\nIl ne parle que par grognements, mais la communication par gestes et par symboles s'avère possible lorsque le zokoï est relativement calme. En règle générale, les possesseurs de telles créatures sont extrêmement mal vus au sein des cités marchandes.\n\n",
+    "image": null,
+    "icon": null,
+    "status": {
+      "bitfield": 0
+    },
+    "size": 0.4,
+    "initiative": 4,
+    "abilities": {
+      "force": 1,
+      "intelligence": 5,
+      "coordination": 8,
+      "presence": 0,
+      "resistance": 1,
+      "volonte": 4,
+      "perception": 9,
+      "empathie": 3
+    },
+    "attributes": {
+      "physique": 0,
+      "mental": 3,
+      "manuel": 5,
+      "social": 2
+    },
+    "skills": {
+      "families": {
+        "combat": {
+          "all": [
+          ]
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "esquive",
+              "value": 7
+            }
+          ]
+        },
+        "theorie": {
+          "all": [
+          ]
+        },
+        "pratique": {
+          "all": [
+            {
+              "skill": "langueDesSignes",
+              "value": 8
+            }
+          ]
+        },
+        "technique": {
+          "all": [
+            {
+              "skill": "discretion",
+              "value": 6
+            },
+            {
+              "skill": "mecanismes",
+              "value": 1
+            }
+          ]
+        },
+        "manipulation": {
+          "all": [
+            {
+              "skill": "faireLesPoches",
+              "value": 7
+            }
+          ]
+        },
+        "communication": {
+          "all": [
+          ]
+        },
+        "influence": {
+          "all": [
+          ]
+        }
+      }
+    },
+    "equipment": [],
+    "unique": false,
+    "category": "animauxSauvages",
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "biome": "forêts et plaines tempérées",
+    "real_size": "30cm",
+    "weight": "2kg",
+    "natural_armor": 0,
+    "natural_armor_description": "",
+    "natural_weapons": [],
+    "special_capabilities": [
+      {
+        "name": "Dressage",
+        "description": "Toutes les Compétences du zokoï peuvent être développées grâce à un jet de Dressage - Discrétion, Esquive et Pickpocket contre une Difficulté de 15 et jusqu’à un niveau maximum de 10, Langage des signes contre une Difficulté de 20 et jusqu’à un niveau maximum de 6, Mécanismes contre une Difficulté de 25 et jusqu’à un niveau maximum de 4.\nIl est également possible de lui apprendre des Compétences de Manipulation jusqu’à un niveau maximum de 5. La Difficulté est de 20 pour un jet d'apprentissage, de 15 pour le développement de ces Compétences."
+      }
+    ],
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "injured",
+            "start": 0,
+            "end": 20,
+            "capacity": 2
+          },
+          {
+            "type": "death",
+            "start": 20,
+            "end": -1,
+            "capacity": 1
+          }
+        ],
+        "injuries": {}
+      }
+    }
+  },
+  {
+    "source": {
+      "type": "officiel",
+      "name": "Les Enfants de Heyra"
+    },
+    "name": "Jamaël Onyx",
+    "uuid": "533b5860-211d-4c4e-ab66-ff47279941e6",
+    "description": "Jamaël est un vieux dragon qui passe plus clair de son temps sous sa forme humaine. Il parcourt le monde de Kor et dirige un Refuge d'urgence au sud de la [Forêt de Solor](resource://assets/place/bcc7e2b4-c746-4d34-8ca2-f9841664f0d9) - région ravagée par une épidémie d’origine inconnue. En général, il prend l’apparence d’un colosse au visage léonin encadré d’une énorme barbe rousse. Sa force - sous forme humaine - est prodigieuse et il travaille autant comme magicien que comme simple bûcheron.\n\nMais Jamaël est aussi l'un des agents de renseignement de Heyra, et l'un de ses fils directs. La Mère Nature a observé depuis quelques années une augmentation des maladies contagieuses. Or, ayant cartographié la répartition des épidémies, elle a constaté qu’elles n’apparaissaient qu'aux frontières des royaumes.\n\nBien entendu, la réaction de la population locale est d’accuser les voisins et déjà plusieurs conflits ont éclaté au niveau local. Heyra voudrait bien savoir qui est en train de semer le chaos et, pour le moment, les mages humains qu’elle a fait enquêter n’ont rien trouvé ou ont disparu sans laisser de traces.\n\nLe mystère reste complet à ce jour.\n\n## Description\n\nLes enfants de Heyra sont beaucoup moins agressifs que les autres ailés, tant dans leur comportement que dans leur physique, harmonieux, féérique. Leur corps tout entier semble sculpté dans le bois, l'herbe et les fleurs, et leurs écailles lisses allient la solidité du chêne aux couleurs des forêts printanières. Trapus et massifs, ils possèdent des ailes savamment articulées et des membres agiles qui leur permettent de se mouvoir dans les milieux les plus denses.\n\n## Particularités\n\nLes dragons de la nature sont immunisés aux dommages des poisons et aux effets altérant directement leurs cases de blessures (sorts ou capacités) sans provoquer de dommages.\n\nLe feu et les sorts l'utilisant affectent plus durement les dragons de la nature. Tout effet de ce type (Sphère du feu en général) inflige des dommages toujours maximum.\n\nLes dragons de la nature peuvent communiquer par télépathie avec toute créature vivante située à portée de vue (animal, plante, créature) tant que celle-ci a une conscience, même larvaire ou infime.\n\nLes animaux sauvages et les prédateurs naturels respectent intuitivement les dragons de la nature. Ils ne les attaqueront pas et respecteront leurs décisions. Ceci n'inclut pas les créatures draconiques ou élémentaires.\n\nLes dragons de la nature sont insensibles au souffle des enfants de Heyra de génération inférieure à la leur.\n\n## Forme humaine\n\nLa forme humain des dragons de la nature est caractérisée par la grâce, la beauté et la simplicité des atours qu'ils choisissent. Indifféremment masculins ou féminins, les corps de ces dragons sont dotés d'une morphologie quasi parfaite, et seul leur regard permet de soupçonner leur nature magique. Leurs cheveux et leur voix, douce et chaude, sont également caractéristiques.\n\nCes dragons ne peuvent prendre forme humaine qu'à partir de l'âge adulte, mais ils peuvent comprendre et se faire comprendre des humains dès leur plus jeune âge.\n\n**Transformation :** 16 actions du dragon vers l'homme, 12 actions de l'homme vers le dragon.\n\n**Interdit :** Fils des forêts et de la nature, les dragons de Heyra sont incapables d'abandonner le soleil et la terre en pénétrant des habitations ou des édifice dotés d'un toit et d'un plancher. S'ils s'y trouvent contraints, ils déchirent leur enveloppe de chair en quelques secondes. Toute rupture provoque la perte de points de magie de la Réserve personnelle ET de la Réserve de la Sphère de la Nature.\n\n## Pouvoirs spéciaux\n\nDans un combat en milieu naturel contre un être brisant l'équilibre naturel (dragon enragé, prédateur inhabituel invoqué, bûcherons dévastateurs) ils ajoutent 4 à leurs dés d'Initiative, en attaque et en défense.\n\nLes dragons de la nature peuvent prendre leur forme humaine.\n\nEn milieu non urbain, ils peuvent communiquer avec les forces naturelles dans un rayon de 4km. Ils peuvent ainsi lever les Hordes ou localiser approximativement une créature. Ce pouvoir peut être utilisé une fois par semaine.\n\nLes dragons de la nature peuvent prendre leur forme élémentaire. Sous toutes leurs formes, ils focalisent tant les énergies élémentaires que toutes période de convalescence (cf. p.193 du LdB) dans les (Empathie x5) m autour d'eux compte double.\n\n## Compétences\n\n**Combat :** Toutes à 8, plus quatre disposant d'un bonus de 1\n\n**Mouvement :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Théorie :** Toutes à 8, plus quatre disposant d'un bonus de 2\n\n**Pratique :** Toutes à 12, plus quatre disposant d'un bonus de 3\n\n**Technique :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Manipulation :** Toutes à 4, plus quatre disposant d'un bonus de 2\n\n**Communication :** Toutes à 16, plus quatre disposant d'un bonus de 1\n\n**Influence :** Toutes à 12, plus quatre disposant d'un bonus de 2\n\n**Sorts :** 700 pts de Complexité en Magie instinctive, 1000 en Magie invocatoire et 750 en Sorcellerie.\n\n**Faveurs :** quatre Faveurs de chaque niveau, qu’il est possible de conférer par le Lien.\n\n",
+    "image": null,
+    "icon": null,
+    "abilities": {
+      "force": 18,
+      "intelligence": 15,
+      "coordination": 10,
+      "presence": 16,
+      "resistance": 26,
+      "volonte": 14,
+      "perception": 11,
+      "empathie": 16
+    },
+    "attributes": {
+      "physique": 20,
+      "mental": 16,
+      "manuel": 14,
+      "social": 16
+    },
+    "initiative": 3,
+    "injuries": {
+      "manager": {
+        "levels": [
+          {
+            "type": "scratch",
+            "start": 0,
+            "end": 10,
+            "capacity": 5
+          },
+          {
+            "type": "light",
+            "start": 10,
+            "end": 20,
+            "capacity": 5
+          },
+          {
+            "type": "grave",
+            "start": 20,
+            "end": 30,
+            "capacity": 4
+          },
+          {
+            "type": "fatal",
+            "start": 30,
+            "end": 40,
+            "capacity": 4
+          },
+          {
+            "type": "death",
+            "start": 40,
+            "end": -1,
+            "capacity": 2
+          }
+        ],
+        "injuries": {}
+      }
+    },
+    "size": 0.8,
+    "skills": {
+      "families": {
+        "combat": {
+          "all": []
+        },
+        "mouvement": {
+          "all": [
+            {
+              "skill": "athletisme",
+              "value": 12,
+              "implementation": "",
+              "specializations": [
+                {
+                  "name": "Voler",
+                  "reserved": true,
+                  "value": 8,
+                  "reserved_prefix": "creature:c5481833-67fc-4436-88c8-28ac4062698c:specialized:misc:"
+                }
+              ]
+            },
+            {
+              "skill": "esquive",
+              "value": 9,
+              "implementation": ""
+            }
+          ]
+        },
+        "theorie": {
+          "all": []
+        },
+        "pratique": {
+          "all": []
+        },
+        "technique": {
+          "all": []
+        },
+        "manipulation": {
+          "all": []
+        },
+        "communication": {
+          "all": []
+        },
+        "influence": {
+          "all": []
+        }
+      }
+    },
+    "status": {
+      "value": {
+        "bitfield": 0
+      }
+    },
+    "equipment": [],
+    "magic": {
+      "skills": {
+        "instinctive": 14,
+        "invocatoire": 15,
+        "sorcellerie": 13
+      },
+      "spheres": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 15,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "pool": 66,
+      "pools": {
+        "pierre": 0,
+        "feu": 0,
+        "oceans": 0,
+        "metal": 0,
+        "nature": 15,
+        "reves": 0,
+        "cite": 0,
+        "vents": 0,
+        "ombre": 0
+      },
+      "spells": []
+    },
+    "favors": [],
+    "unique": true,
+    "category": "dragons",
+    "biome": "Sud de la Forêt de Solor",
+    "real_size": "25m de long, 25m d'envergure",
+    "weight": "46 tonnes",
+    "natural_armor": 45,
+    "natural_armor_description": "",
+    "natural_weapons": [
+      {
+        "name": "Griffes",
+        "special": null,
+        "skill": 13,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 2,
+          "add": 15,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 4.5,
+            "maximum_distance": 4.5
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 4.5,
+            "maximum_distance": 4.5
+          }
+        }
+      },
+      {
+        "name": "Morsure",
+        "special": null,
+        "skill": 14,
+        "damage": {
+          "static": 60,
+          "ability": null,
+          "multiply": 1,
+          "add": 0,
+          "dice": 1
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          }
+        }
+      },
+      {
+        "name": "Queue",
+        "special": "Les dégâts sont de FOR + RES",
+        "skill": 11,
+        "damage": {
+          "static": null,
+          "ability": "force",
+          "multiply": 1,
+          "add": 26,
+          "dice": 0
+        },
+        "ranges": {
+          "contact": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          },
+          "melee": {
+            "initiative": 0,
+            "effective_distance": 6,
+            "maximum_distance": 6
+          }
+        }
+      }
+    ],
+    "special_capabilities": [
+      {
+        "name": "Souffle de la Nature (12)",
+        "description": "Leur souffle est une soie épaisse d'un doigt qui se désagrège en plusieurs minutes sous la forme d'une vapeur urticante et asphyxiante.\nUtilisation: PHY + Souffle en Opposition au Physique de la cible.\nPortée: 40m\nZone d'effet: Cône d'une largeur égale au quart de la longueur.\nEffets: La toile forme un cocon partiel autour des victimes situées dans la zone d'effet et les paralyse en les entravant (-1 action par NR sur le jet d'Oppositon). Les dragons de la nature peuvent affecter une surface énorme et seul le jet en Opposition peut rendre compte des efforts des cibles pour déchirer ces filaments au fur et à mesure de leur accumulation. Le dégagement demande une action et un jet de PHY+FOR égale à la Résistance du dragon de la nature ayant créé la toile.\nEn huit tours, la toile va se désagréger en libérant un gaz élémentaire scintillant et verdâtre. Asphyxiantes et provoquant des douleurs cutanées terribles, les vapeurs vont infliger 1D10 points de dommage par tour et étoufferont la victime (cf p. 194 du LdB, asphyxie par gaz nocifs).\nUn vent régulier ou un effet magique peuvent annuler les effets de l'asphyxie.\nLes créatures de l'ombre touchées par ces vapeurs doublent tous les dommages subis, car le gaz élémentaire de la nature les affecte particulièrement…"
+      }
+    ]
+  }
+]

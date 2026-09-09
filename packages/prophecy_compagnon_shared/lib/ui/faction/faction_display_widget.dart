@@ -1,0 +1,171 @@
+import 'dart:convert';
+
+import 'package:file_picker/file_picker.dart';
+import 'package:flutter/material.dart';
+import 'package:prophecy_compagnon_shared/classes/faction.dart';
+import 'package:prophecy_compagnon_shared/classes/object_location.dart';
+import 'package:prophecy_compagnon_shared/classes/object_source.dart';
+import 'package:prophecy_compagnon_shared/classes/resource_link/resource_link.dart';
+import 'package:prophecy_compagnon_shared/ui/character_role_display_widget.dart';
+import 'package:prophecy_compagnon_shared/ui/faction/faction_edit_dialog.dart';
+import 'package:prophecy_compagnon_shared/ui/markdown_display_widget.dart';
+
+class FactionDisplayWidget extends StatelessWidget {
+  const FactionDisplayWidget({
+    super.key,
+    this.factionId,
+    this.onEdited,
+    this.onDelete,
+    this.modifyIfSourceMatches,
+    this.resourceLinkProvider,
+  });
+
+  final String? factionId;
+  final void Function(Faction)? onEdited;
+  final void Function(Faction)? onDelete;
+  final ObjectSource? modifyIfSourceMatches;
+  final ResourceLinkProvider? resourceLinkProvider;
+
+  Future<Faction?> load() {
+    return factionId == null
+        ? Future.sync(() => null)
+        : Faction.get(factionId!);
+  }
+
+  Future<List<Map<String, dynamic>>> _export(Faction f) async {
+    var ret = <Map<String, dynamic>>[];
+    ret.add(f.toJson());
+    for(var child in await Faction.withParent(f.id)) {
+      ret.addAll(await _export(child));
+    }
+    return ret;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if(factionId == null) {
+      return Text('Pas de faction sélectionnée');
+    }
+
+    return FutureBuilder(
+      future: load(),
+      builder: (BuildContext context, AsyncSnapshot<Faction?> snapshot) {
+        if(snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator());
+        }
+
+        if(snapshot.hasError) {
+          return ErrorWidget(snapshot.error!);
+        }
+
+        if(!snapshot.hasData || snapshot.data == null) {
+          return Center(
+            child: const Text('Faction non trouvée'),
+          );
+        }
+
+        var faction = snapshot.data!;
+        var theme = Theme.of(context);
+
+        bool canEdit = modifyIfSourceMatches != null
+            ? faction.source == modifyIfSourceMatches
+            : faction.source == ObjectSource.local;
+
+        var actionButtons = <Widget>[];
+
+        if(faction.location.type != ObjectLocationType.assets) {
+          actionButtons.add(IconButton(
+            onPressed: () async {
+              var j = await _export(faction);
+              var jStr = json.encode(j);
+              await FilePicker.saveFile(
+                fileName: 'faction-${faction.id}.json',
+                bytes: utf8.encode(jStr),
+              );
+            },
+            icon: const Icon(Icons.download),
+          ));
+        }
+
+        if(canEdit) {
+          if(onDelete != null) {
+            actionButtons.add(
+              IconButton(
+                onPressed: () {
+                  onDelete!(faction);
+                },
+                icon: const Icon(Icons.delete),
+              ),
+            );
+          }
+
+          if(onEdited != null) {
+            actionButtons.add(
+              IconButton(
+                onPressed: () async {
+                  var child = await showDialog<Faction>(
+                    context: context,
+                    barrierDismissible: false,
+                    builder: (BuildContext context) =>
+                      FactionEditDialog(
+                        faction: faction,
+                        resourceLinkProvider: resourceLinkProvider,
+                      ),
+                  );
+                  if (child == null) return;
+                  onEdited!(faction);
+                },
+                icon: const Icon(Icons.edit),
+              ),
+            );
+          }
+        }
+
+        return SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  spacing: 12.0,
+                  children: [
+                    Text(
+                      faction.name,
+                      style: theme.textTheme.headlineMedium,
+                    ),
+                    Spacer(),
+                    ...actionButtons,
+                  ],
+                ),
+                const SizedBox(height: 16.0),
+                if(faction.leaders.isNotEmpty)
+                  Text(
+                    'Dirigeant${faction.leaders.length > 1 ? "s" : ""}',
+                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                for(var leader in faction.leaders)
+                  CharacterRoleDisplayWidget(member: leader),
+                if(faction.leaders.isNotEmpty)
+                  const SizedBox(height: 16.0),
+                if(faction.members.isNotEmpty)
+                  Text(
+                    'Membres',
+                    style: theme.textTheme.titleMedium!.copyWith(fontWeight: FontWeight.bold),
+                  ),
+                for(var member in faction.members)
+                  CharacterRoleDisplayWidget(member: member),
+                if(faction.members.isNotEmpty)
+                  const SizedBox(height: 16.0),
+                MarkdownDisplayWidget(data: faction.description),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+
+    /*
+     */
+  }
+}
