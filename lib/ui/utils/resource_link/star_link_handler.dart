@@ -4,7 +4,13 @@ import '../../../classes/resource_link/resource_link.dart';
 import '../../../classes/star.dart';
 import '../star/display_widget.dart';
 
-Future<Widget?> handleStarLinkClicked(ResourceLink link, BuildContext context) async {
+Future<Widget?> handleStarLinkClicked(
+    ResourceLink link,
+    BuildContext context,
+    {
+      List<Widget>? extraActionButtons,
+    }
+) async {
   var star = await Star.get(link.id);
   if(!context.mounted) return null;
 
@@ -32,6 +38,7 @@ Future<Widget?> handleStarLinkClicked(ResourceLink link, BuildContext context) a
         ),
       ),
       actions: [
+        ...?extraActionButtons,
         TextButton(
           onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
           child: const Text('OK')

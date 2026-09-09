@@ -9,13 +9,13 @@ import "package:prophecy_compagnon_mj/classes/equipment/shield.dart";
 import "package:prophecy_compagnon_mj/classes/equipment/weapon.dart";
 import "package:prophecy_compagnon_mj/classes/exportable_binary_data.dart";
 import "package:prophecy_compagnon_mj/classes/faction.dart";
-import "package:prophecy_compagnon_mj/classes/game_session.dart";
 import "package:prophecy_compagnon_mj/classes/non_player_character.dart";
 import "package:prophecy_compagnon_mj/classes/npc_category.dart";
 import "package:prophecy_compagnon_mj/classes/place.dart";
 import "package:prophecy_compagnon_mj/classes/place_map.dart";
 import "package:prophecy_compagnon_mj/classes/player_character.dart";
-import "package:prophecy_compagnon_mj/classes/scenario.dart";
+import "package:prophecy_compagnon_mj/classes/scenario/scenario.dart";
+import "package:prophecy_compagnon_mj/classes/session/game_session.dart";
 import "package:prophecy_compagnon_mj/classes/star.dart";
 import "package:prophecy_compagnon_mj/classes/table.dart";
 
@@ -79,10 +79,6 @@ void registerStoreAdapters() {
     () => FactionStore(),
   );
   DataStorage.registerStoreAdapter(
-    GameSessionStore().storeCategory(),
-    () => GameSessionStore(),
-  );
-  DataStorage.registerStoreAdapter(
     NonPlayerCharacterSummaryStore().storeCategory(),
     () => NonPlayerCharacterSummaryStore(),
   );
@@ -125,6 +121,10 @@ void registerStoreAdapters() {
   DataStorage.registerStoreAdapter(
     ScenarioStore().storeCategory(),
     () => ScenarioStore(),
+  );
+  DataStorage.registerStoreAdapter(
+    GameSessionStore().storeCategory(),
+    () => GameSessionStore(),
   );
   DataStorage.registerStoreAdapter(
     StarStore().storeCategory(),

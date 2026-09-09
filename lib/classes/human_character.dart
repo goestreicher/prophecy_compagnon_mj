@@ -18,7 +18,8 @@ import 'entity/magic.dart';
 import 'entity/skill.dart';
 import 'entity/skills.dart';
 import 'entity/specialized_skill.dart';
-import 'entity/status.dart';
+import 'entity/combat_status.dart';
+import 'entity/health_status.dart';
 import 'entity_base.dart';
 import 'combat.dart';
 import 'equipment/enums.dart';
@@ -167,7 +168,8 @@ class HumanCharacter extends EntityBase with MagicUser {
     super.size,
     super.description,
     super.skills,
-    super.status,
+    super.healthStatus,
+    super.combatStatus,
     super.equipment,
     super.money,
     super.magic,
@@ -178,7 +180,9 @@ class HumanCharacter extends EntityBase with MagicUser {
     CharacterCaste? caste,
     this.honoraryCaste,
     this.luck = 0,
+    this.usedLuck = 0,
     this.proficiency = 0,
+    this.usedProficiency = 0,
     this.renown = 0,
     this.age = 25,
     this.height = 1.7,
@@ -206,7 +210,11 @@ class HumanCharacter extends EntityBase with MagicUser {
   double weight;
   CharacterOrigin origin;
   int luck;
+  int usedLuck;
+  int get availableLuck => luck - usedLuck;
   int proficiency;
+  int usedProficiency;
+  int get availableProficiency => proficiency - usedProficiency;
   int renown;
   @JsonKey(fromJson: CharacterDisadvantages.fromJson, toJson: CharacterDisadvantages.toJson)
   CharacterDisadvantages disadvantages;
@@ -214,6 +222,16 @@ class HumanCharacter extends EntityBase with MagicUser {
   CharacterAdvantages advantages;
   CharacterTendencies tendencies;
   DraconicLink draconicLink;
+
+  void gainLuckPoints(int v) {
+    usedLuck -= v;
+    if(usedLuck < 0) usedLuck = 0;
+  }
+
+  void gainProficiencyPoints(int v) {
+    usedProficiency -= v;
+    if(usedProficiency < 0) usedProficiency = 0;
+  }
 
   static bool _staticInitialized = false;
   static late final Weapon _naturalWeaponFists;

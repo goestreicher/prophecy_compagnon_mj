@@ -241,7 +241,6 @@ class _IllustrationEditWidgetState extends State<IllustrationEditWidget> {
               }
 
               setState(() {
-                //icon = ExportableBinaryData(data: cropBytes!.buffer.asUint8List());
                 icon = ExportableBinaryData(data: img.encodePng(sizedIcon));
                 widget.onIconChanged(icon);
                 creatingIcon = false;

@@ -28,9 +28,16 @@ EntityBase _$EntityBaseFromJson(Map<String, dynamic> json) => EntityBase(
   skills: json['skills'] == null
       ? null
       : EntitySkills.fromJson(json['skills'] as Map<String, dynamic>),
-  status: json['status'] == null
+  healthStatus: json['health_status'] == null
       ? null
-      : EntityStatus.fromJson(json['status'] as Map<String, dynamic>),
+      : EntityHealthStatus.fromJson(
+          json['health_status'] as Map<String, dynamic>,
+        ),
+  combatStatus: json['combat_status'] == null
+      ? null
+      : EntityCombatStatus.fromJson(
+          json['combat_status'] as Map<String, dynamic>,
+        ),
   equipment: EntityEquipment.fromJson(json['equipment'] as List),
   money: json['money'] == null
       ? null
@@ -57,19 +64,20 @@ Map<String, dynamic> _$EntityBaseToJson(EntityBase instance) =>
       'source': instance.source.toJson(),
       'name': instance.name,
       'uuid': ?instance.uuid,
-      'description': instance.description,
-      'image': instance.image?.toJson(),
-      'icon': instance.icon?.toJson(),
       'abilities': instance.abilities.toJson(),
       'attributes': instance.attributes.toJson(),
       'initiative': instance.initiative,
       'injuries': instance.injuries.toJson(),
       'size': instance.size,
+      'description': instance.description,
       'skills': instance.skills.toJson(),
-      'status': instance.status.toJson(),
+      'health_status': instance.healthStatus.toJson(),
+      'combat_status': instance.combatStatus.toJson(),
       'equipment': EntityEquipment.toJson(instance.equipment),
       'money': instance.money.toJson(),
       'magic': instance.magic.toJson(),
       'favors': EntityDraconicFavors.toJson(instance.favors),
       'fervor': instance.fervor.toJson(),
+      'image': instance.image?.toJson(),
+      'icon': instance.icon?.toJson(),
     };

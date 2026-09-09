@@ -18,11 +18,15 @@ class EntityEditWeaponsWidget extends StatelessWidget {
     required this.entity,
     this.showUnequipable = true,
     this.showStored = true,
+    this.allowCreate = true,
+    this.allowDelete = true,
   });
 
   final EntityBase entity;
   final bool showUnequipable;
   final bool showStored;
+  final bool allowCreate;
+  final bool allowDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +46,8 @@ class EntityEditWeaponsWidget extends StatelessWidget {
             entity: entity,
             showUnequipable: showUnequipable,
             showStored: showStored,
+            allowCreate: allowCreate,
+            allowDelete: allowDelete,
           );
         }
       ),
@@ -54,11 +60,15 @@ class _WeaponsWidget extends StatelessWidget {
     required this.entity,
     this.showUnequipable = true,
     this.showStored = true,
+    this.allowCreate = true,
+    this.allowDelete = true,
   });
 
   final EntityBase entity;
   final bool showUnequipable;
   final bool showStored;
+  final bool allowCreate;
+  final bool allowDelete;
 
   bool canDisplay(EquipableItem e) =>
       (showUnequipable || entity.meetsEquipableRequirements(e))
@@ -97,6 +107,7 @@ class _WeaponsWidget extends StatelessWidget {
                   return WeaponEquipWidget(
                     entity: entity,
                     weapon: eq,
+                    allowDelete: allowDelete,
                   );
                 }
               );
@@ -117,6 +128,7 @@ class _WeaponsWidget extends StatelessWidget {
                   return ShieldEquipWidget(
                     entity: entity,
                     shield: eq,
+                    allowDelete: allowDelete,
                   );
                 }
               );
@@ -131,49 +143,50 @@ class _WeaponsWidget extends StatelessWidget {
       spacing: 12.0,
       children: [
         ...widgets,
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          spacing: 16.0,
-          children: [
-            ElevatedButton.icon(
-              icon: const Icon(
-                Icons.add,
-                size: 16.0,
-              ),
-              style: ElevatedButton.styleFrom(
-                textStyle: theme.textTheme.bodySmall,
-              ),
-              label: const Text('Nouvelle arme'),
-              onPressed: () async {
-                Weapon? w = await showDialog(
-                  context: context,
-                  builder: (BuildContext context) => const WeaponPickerDialog(),
-                );
-                if(w == null) return;
+        if(allowCreate)
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 16.0,
+            children: [
+              ElevatedButton.icon(
+                icon: const Icon(
+                  Icons.add,
+                  size: 16.0,
+                ),
+                style: ElevatedButton.styleFrom(
+                  textStyle: theme.textTheme.bodySmall,
+                ),
+                label: const Text('Nouvelle arme'),
+                onPressed: () async {
+                  Weapon? w = await showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const WeaponPickerDialog(),
+                  );
+                  if(w == null) return;
 
-                entity.equipment.add(w);
-              },
-            ),
-            ElevatedButton.icon(
-              icon: const Icon(
-                Icons.add,
-                size: 16.0,
+                  entity.equipment.add(w);
+                },
               ),
-              style: ElevatedButton.styleFrom(
-                textStyle: theme.textTheme.bodySmall,
+              ElevatedButton.icon(
+                icon: const Icon(
+                  Icons.add,
+                  size: 16.0,
+                ),
+                style: ElevatedButton.styleFrom(
+                  textStyle: theme.textTheme.bodySmall,
+                ),
+                label: const Text('Nouveau bouclier'),
+                onPressed: () async {
+                  Shield? s = await showDialog(
+                    context: context,
+                    builder: (BuildContext context) => const ShieldPickerDialog(),
+                  );
+                  if(s == null) return;
+                  entity.equipment.add(s);
+                },
               ),
-              label: const Text('Nouveau bouclier'),
-              onPressed: () async {
-                Shield? s = await showDialog(
-                  context: context,
-                  builder: (BuildContext context) => const ShieldPickerDialog(),
-                );
-                if(s == null) return;
-                entity.equipment.add(s);
-              },
-            ),
-          ],
-        )
+            ],
+          ),
       ],
     );
   }

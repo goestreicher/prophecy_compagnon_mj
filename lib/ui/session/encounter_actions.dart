@@ -10,7 +10,7 @@ import '../../classes/dice.dart';
 import '../../classes/entity/attributes.dart';
 import '../../classes/entity/skill.dart';
 import '../../classes/entity/specialized_skill.dart';
-import '../../classes/entity/status.dart';
+import '../../classes/entity/health_status.dart';
 import '../../classes/entity_base.dart';
 import '../../classes/equipment/enums.dart';
 import '../../classes/equipment/shield.dart';
@@ -263,7 +263,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
         const Text('Action validée'),
       ]);
     }
-    else if(widget.action.entity.status.value & EntityStatusValue.unconscious != EntityStatusValue.none) {
+    else if(widget.action.entity.healthStatus.value & EntityHealthStatusValue.unconscious != EntityHealthStatusValue.none) {
       buttonRow.add(const Text('Inconscient(e)'));
     }
     else if(!active) {
@@ -903,7 +903,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           damage += action.environment[CombatTurnActionEnvironmentKey.attackPreciseAdditionalDifficulty] as int;
         }
 
-        var prevStatus = target.status;
+        var prevStatus = target.healthStatus;
 
         if(action.subtype.specification == CombatActionSpecification.stun) {
           if(!context.mounted) return;
@@ -925,13 +925,13 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
 
           if(stunResist < damage ~/ 2) {
             // Target is unconscious for 2D10 turns and takes full damage
-            target.status.value = target.status.value | EntityStatusValue.unconscious;
+            target.healthStatus.value = target.healthStatus.value | EntityHealthStatusValue.unconscious;
             var turnCount = Random().nextInt(10) + Random().nextInt(10) + 2;
             var duration = CombatActionDuration(
               entity: target,
               turns: turnCount,
               onFinished: () {
-                target.status.value = target.status.value & ~EntityStatusValue.unconscious;
+                target.healthStatus.value = target.healthStatus.value & ~EntityHealthStatusValue.unconscious;
               }
             );
             action.turn.addLongRunningAction(duration);
@@ -943,14 +943,14 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           }
           else if(stunResist < damage) {
             // Target is stunned for 1D10 turns, but takes no damage
-            target.status.value = target.status.value | EntityStatusValue.stunned;
+            target.healthStatus.value = target.healthStatus.value | EntityHealthStatusValue.stunned;
             damage = 0;
             var turnCount = Random().nextInt(10) + 1;
             var duration = CombatActionDuration(
                 entity: target,
                 turns: turnCount,
                 onFinished: () {
-                  target.status.value = target.status.value & ~EntityStatusValue.stunned;
+                  target.healthStatus.value = target.healthStatus.value & ~EntityHealthStatusValue.stunned;
                 }
             );
             action.turn.addLongRunningAction(duration);
@@ -964,7 +964,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
 
         int finalDamage = target.takeDamage(damage);
 
-        if(target.status.value & EntityStatusValue.dead != EntityStatusValue.none && context.mounted) {
+        if(target.healthStatus.value & EntityHealthStatusValue.dead != EntityHealthStatusValue.none && context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(content: Text(
               '${target.name} est mort(e)',
@@ -980,7 +980,7 @@ class _CombatTurnSingleActionWidgetState extends State<CombatTurnSingleActionWid
           );
         }
 
-        if(prevStatus != target.status) {
+        if(prevStatus != target.healthStatus) {
           widget.onEntityStatusChanged(target);
         }
       }

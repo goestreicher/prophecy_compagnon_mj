@@ -4,8 +4,8 @@ import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 
 import '../../classes/calendar.dart';
-import '../../classes/scenario.dart';
-import '../../classes/scenario_event.dart';
+import '../../classes/scenario/scenario.dart';
+import '../../classes/scenario/scenario_event.dart';
 import '../utils/markdown_display_widget.dart';
 import '../utils/resource_link/link_handler.dart';
 import 'scenario_event_edit_dialog.dart';
@@ -111,14 +111,7 @@ class _ScenarioEventsModel extends ChangeNotifier {
 
   List<DayRange> days() {
     return scenario.events.keys.toList()
-      ..sort((DayRange a, DayRange b) {
-        if(a.start == b.start) {
-          return a.start == a.end ? -1 : 1;
-        }
-        else {
-          return a.start - b.start;
-        }
-      });
+      ..sort((DayRange a, DayRange b) => a.compareTo(b));
   }
 
   ScenarioDayEvents eventsForDay(DayRange day) {

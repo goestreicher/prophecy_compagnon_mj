@@ -492,6 +492,9 @@ abstract mixin class SupportsEquipableItem {
     return ret;
   }
 
+  List<EquipableItem> equipedForSlotAndLayer(EquipableItemSlot slot, EquipableItemLayer layer) =>
+    equiped[slot]?[layer] ?? <EquipableItem>[];
+
   bool isSlotFree(EquipableItemSlot slot, EquipableItemLayer layer) {
     if(!equiped.containsKey(slot)) return true;
     if(!equiped[slot]!.containsKey(layer)) return true;

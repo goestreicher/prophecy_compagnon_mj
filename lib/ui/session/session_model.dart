@@ -1,20 +1,12 @@
 import 'package:flutter/foundation.dart';
 
 import '../../classes/encounter.dart';
-import '../../classes/game_session.dart';
-import '../../classes/scenario.dart';
+import '../../classes/scenario/scenario.dart';
+import '../../classes/session/game_session.dart';
 import '../../classes/table.dart';
-import 'map_model.dart';
+import '../../classes/session/map_model.dart';
 
-Future<SessionModel> createSessionModel(String uuid) async {
-  var session = await GameSessionStore().get(uuid);
-  // TODO: decide what to do if no session is found (null-safety on the calls below)
-  var table = await GameTableStore().getWithPlayers(session!.table.uuid);
-  var scenario = await ScenarioStore().get(session.scenario.uuid);
-
-  return SessionModel(session: session, table: table!, scenario: scenario!);
-}
-
+@Deprecated('Deprecated, use GameSession')
 class SessionModel extends ChangeNotifier {
   SessionModel({
     required this.session,

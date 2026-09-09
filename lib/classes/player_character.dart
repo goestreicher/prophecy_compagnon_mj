@@ -10,7 +10,8 @@ import 'entity/fervor.dart';
 import 'entity/injury.dart';
 import 'entity/magic.dart';
 import 'entity/skills.dart';
-import 'entity/status.dart';
+import 'entity/combat_status.dart';
+import 'entity/health_status.dart';
 import 'draconic_favor.dart';
 import 'draconic_link.dart';
 import 'entity_base.dart';
@@ -199,7 +200,8 @@ class PlayerCharacter extends HumanCharacter {
     super.injuries,
     super.injuryProvider = fullCharacterDefaultInjuries,
     super.skills,
-    super.status,
+    super.healthStatus,
+    super.combatStatus,
     super.equipment,
     super.money,
     super.magic,
@@ -210,7 +212,9 @@ class PlayerCharacter extends HumanCharacter {
     super.size,
     super.weight,
     super.luck,
+    super.usedLuck,
     super.proficiency,
+    super.usedProficiency,
     super.renown,
     super.origin,
     super.disadvantages,

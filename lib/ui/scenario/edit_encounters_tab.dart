@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../classes/scenario_encounter.dart';
+import '../../classes/scenario/scenario_encounter.dart';
 import 'encounter_edit.dart';
 import '../utils/single_line_input_dialog.dart';
 

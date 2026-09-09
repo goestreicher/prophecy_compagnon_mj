@@ -1,9 +1,10 @@
 import 'entity_base.dart';
+import 'entity_instance.dart';
 
 mixin EncounterEntityModel {
   String displayName();
   bool isUnique();
-  List<EntityBase> instantiate({ int count = 1 });
+  List<EntityInstance> instantiate({ int count = 1 });
 }
 
 class EncounterEntityFactory {
@@ -12,7 +13,7 @@ class EncounterEntityFactory {
   void registerFactory(
     String id,
     Future<EncounterEntityModel?> Function(String) modelFactory,
-    Future<Iterable<EntityBase>> Function(String, int) instanceFactory,
+    Future<Iterable<EntityInstance>> Function(String, int) instanceFactory,
   ) {
     _modelFactories[id] = modelFactory;
     _instanceFactories[id] = instanceFactory;
@@ -30,11 +31,11 @@ class EncounterEntityFactory {
     return _modelFactories[split[0]]!(split[1]);
   }
 
-  Future<Iterable<EntityBase>> Function(String, int)? getInstanceFactory(String id) =>
+  Future<Iterable<EntityInstance>> Function(String, int)? getInstanceFactory(String id) =>
       _instanceFactories[id];
 
   EncounterEntityFactory._create();
 
-  static final Map<String, Future<Iterable<EntityBase>> Function(String, int)> _instanceFactories = {};
+  static final Map<String, Future<Iterable<EntityInstance>> Function(String, int)> _instanceFactories = {};
   static final Map<String, Future<EncounterEntityModel?> Function(String)> _modelFactories = {};
 }

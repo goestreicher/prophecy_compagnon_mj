@@ -35,7 +35,10 @@ class ProphecyCompanionApp extends StatelessWidget {
       routerConfig: _goRouter,
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepOrange),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepOrange,
+          dynamicSchemeVariant: DynamicSchemeVariant.fidelity,
+        ),
         useMaterial3: true,
         tooltipTheme: TooltipTheme.of(context).copyWith(
           waitDuration: Durations.medium1,

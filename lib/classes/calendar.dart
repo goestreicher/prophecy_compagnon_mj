@@ -119,11 +119,13 @@ enum WeekDay {
   final String shortTitle;
 }
 
-class DayRange {
+class DayRange implements Comparable<DayRange> {
   DayRange({ required this.start, required this.end});
 
   final int start;
   final int end;
+
+  int get length => end - start + 1;
 
   @override
   String toString() => "$start,$end";
@@ -135,6 +137,31 @@ class DayRange {
       values[1] = values[0];
     }
     return DayRange(start: values[0], end: values[1]);
+  }
+
+  bool overlaps(DayRange other) =>
+      (start <= other.start && end >= other.start)
+      || (start >= other.start && start <= other.end);
+
+  @override
+  int compareTo(DayRange other) {
+    if(start < other.start) {
+      return -1;
+    }
+    else if(start == other.start) {
+      if(end == other.end) {
+        return 0;
+      }
+      else if(end < other.end) {
+        return 1;
+      }
+      else {
+        return -1;
+      }
+    }
+    else {
+      return 1;
+    }
   }
 
   @override
@@ -160,6 +187,14 @@ class KorDate implements Comparable<KorDate> {
   KorCycle cycle;
   int week;
   WeekDay day;
+
+  KorDate clone() => KorDate(
+    age: age,
+    year: year,
+    cycle: cycle,
+    week: week,
+    day: day,
+  );
 
   int dayIndex() =>
       (81 * cycle.index) + (9 * (week - 1)) + (day.index + 1);
@@ -192,7 +227,7 @@ class KorDate implements Comparable<KorDate> {
       '${day.index+1}/$week/${cycle.shortTitle}, $year ${age.shortTitle}';
 
   String toFullString() =>
-      '${day.title}, $week${_weekOrdinal(week)} semaine du ${cycle.title}, $year ${age.shortTitle}';
+      '${day.title} (${day.index+1}), $week${_weekOrdinal(week)} semaine du ${cycle.title}, $year ${age.shortTitle}';
 
   String format(String spec) =>
       spec
@@ -245,6 +280,40 @@ class KorDate implements Comparable<KorDate> {
 
   factory KorDate.fromJson(Map<String, dynamic> json) =>
       _$KorDateFromJson(json);
+}
+
+@JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)
+class KorDateTime {
+  KorDateTime({
+    required this.date,
+    required this.hour,
+    required this.minute,
+  });
+
+  KorDate date;
+  int hour;
+  int minute;
+
+  bool operator <(KorDateTime other) =>
+      date < other.date
+      && hour < other.hour
+      && minute < other.minute;
+
+  @override
+  bool operator ==(Object other) =>
+      other is KorDateTime
+      && date == other.date
+      && hour == other.hour
+      && minute == other.minute;
+
+  @override
+  int get hashCode => Object.hash(date.hashCode, hour, minute);
+
+  Map<String, dynamic> toJson() =>
+      _$KorDateTimeToJson(this);
+
+  factory KorDateTime.fromJson(Map<String, dynamic> json) =>
+      _$KorDateTimeFromJson(json);
 }
 
 @JsonSerializable(fieldRename: FieldRename.snake, explicitToJson: true)

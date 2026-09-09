@@ -3,8 +3,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../classes/game_session.dart';
-import '../../classes/scenario.dart';
+import '../../classes/session/game_session.dart';
+import '../../classes/scenario/scenario.dart';
 import 'edit.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';

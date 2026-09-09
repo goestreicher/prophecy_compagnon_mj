@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../../../classes/resource_link/resource_link.dart';
-import '../../../classes/scenario.dart';
-import '../../../classes/scenario_encounter.dart';
+import '../../../classes/scenario/scenario.dart';
+import '../../../classes/scenario/scenario_encounter.dart';
 import '../../scenario/encounter_display_widget.dart';
 
-Future<Widget?> handleEncounterLinkClicked(ResourceLink link, BuildContext context) async {
+Future<Widget?> handleEncounterLinkClicked(
+    ResourceLink link,
+    BuildContext context,
+    {
+      List<Widget>? extraActionButtons,
+    }
+) async {
   var scenario = await ScenarioStore().get(link.uri.pathSegments[1]);
   if(scenario == null) {
     return AlertDialog(
@@ -52,6 +58,7 @@ Future<Widget?> handleEncounterLinkClicked(ResourceLink link, BuildContext conte
         child: ScenarioEncounterDisplayWidget(encounter: encounter),
       ),
       actions: [
+        ...?extraActionButtons,
         TextButton(
           onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
           child: const Text('OK')

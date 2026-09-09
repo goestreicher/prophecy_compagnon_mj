@@ -70,6 +70,8 @@ class EntityAbilities {
 
   int ability(Ability a) => _abilities[a] ?? 0;
 
+  int operator [](Ability a) => ability(a);
+
   void setAbility(Ability a, int v) {
     _abilities[a] = v;
     streamController.add(AbilityStreamChange(ability: a, value: v));

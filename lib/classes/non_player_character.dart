@@ -5,6 +5,7 @@ import 'package:uuid/uuid.dart';
 
 import 'caste/character_caste.dart';
 import 'draconic_favor.dart';
+import 'entity/combat_status.dart';
 import 'entity/fervor.dart';
 import 'entity/injury.dart';
 import 'character/tendencies.dart';
@@ -12,7 +13,7 @@ import 'entity/abilities.dart';
 import 'entity/attributes.dart';
 import 'entity/magic.dart';
 import 'entity/skills.dart';
-import 'entity/status.dart';
+import 'entity/health_status.dart';
 import 'draconic_link.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
@@ -429,7 +430,8 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     InjuryProvider injuryProvider = humanCharacterDefaultInjuries,
     int initiative = 1,
     EntitySkills? skills,
-    EntityStatus? status,
+    EntityHealthStatus? healthStatus,
+    EntityCombatStatus? combatStatus,
     EntityEquipment? equipment,
     MoneyWallet? money,
     EntityMagic? magic,
@@ -438,7 +440,9 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     double? size,
     double weight = 60.0,
     int luck = 0,
+    int usedLuck = 0,
     int proficiency = 0,
+    int usedProficiency = 0,
     int renown = 0,
     CharacterOrigin? origin,
     CharacterCaste? caste,
@@ -470,7 +474,8 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
             injuryProvider: injuryProvider,
             initiative: initiative,
             skills: skills,
-            status: status,
+            healthStatus: healthStatus,
+            combatStatus: combatStatus,
             equipment: equipment,
             money: money,
             magic: magic,
@@ -481,7 +486,9 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
             size: size,
             weight: weight,
             luck: luck,
+            usedLuck: usedLuck,
             proficiency: proficiency,
+            usedProficiency: usedProficiency,
             renown: renown,
             origin: origin,
             disadvantages: disadvantages,
@@ -515,7 +522,8 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     super.injuryProvider,
     super.initiative,
     super.skills,
-    super.status,
+    super.healthStatus,
+    super.combatStatus,
     super.equipment,
     super.money,
     super.magic,
@@ -526,7 +534,9 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     super.size,
     super.weight,
     super.luck,
+    super.usedLuck,
     super.proficiency,
+    super.usedProficiency,
     super.renown,
     super.origin,
     super.disadvantages,
@@ -577,15 +587,15 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
   bool isUnique() => unique;
 
   @override
-  List<EntityBase> instantiate({ int count = 1 }) {
-    var ret = <EntityBase>[];
+  List<EntityInstance> instantiate({ int count = 1 }) {
+    var ret = <EntityInstance>[];
 
     var modelSpecification = 'npc:$id';
 
     for(var idx=0; idx<count; ++idx) {
       var instance = EntityInstance.prepareInstantiation(
         entity: this,
-        name: '$name #${idx+1}',
+        name: isUnique() ? name : '$name #${idx+1}',
         modelSpecification: modelSpecification,
       );
 
@@ -670,9 +680,9 @@ class NonPlayerCharacter extends HumanCharacter with EncounterEntityModel {
     return get(id);
   }
 
-  static Future<Iterable<EntityBase>> _npcFactory(String id, int count) async {
+  static Future<Iterable<EntityInstance>> _npcFactory(String id, int count) async {
     var m = await get(id);
-    if(m == null) return <EntityBase>[];
+    if(m == null) return <EntityInstance>[];
     return m.instantiate(count: count);
   }
 

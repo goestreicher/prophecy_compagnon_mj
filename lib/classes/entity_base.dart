@@ -5,14 +5,17 @@ import 'package:json_annotation/json_annotation.dart';
 import 'package:uuid/uuid.dart';
 
 import 'combat.dart';
+import 'dice/throw_modifier.dart';
+import 'dice/throw_request.dart';
 import 'draconic_favor.dart';
+import 'entity/combat_status.dart';
 import 'entity/fervor.dart';
 import 'entity/injury.dart';
 import 'entity/abilities.dart';
 import 'entity/attributes.dart';
 import 'entity/magic.dart';
 import 'entity/skills.dart';
-import 'entity/status.dart';
+import 'entity/health_status.dart';
 import 'equipment/enums.dart';
 import 'equipment/equipment.dart';
 import 'exportable_binary_data.dart';
@@ -53,7 +56,8 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     double? size,
     String? description,
     EntitySkills? skills,
-    EntityStatus? status,
+    EntityHealthStatus? healthStatus,
+    EntityCombatStatus? combatStatus,
     EntityEquipment? equipment,
     MoneyWallet? money,
     EntityMagic? magic,
@@ -68,7 +72,8 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
       size = size ?? 0.8,
       description = description ?? '',
       skills = skills ?? EntitySkills.empty(),
-      status = status ?? EntityStatus.empty(),
+      healthStatus = healthStatus ?? EntityHealthStatus.empty(),
+      combatStatus = combatStatus ?? EntityCombatStatus.empty(),
       equipment = equipment ?? EntityEquipment(null),
       money = money ?? MoneyWallet(),
       magic = magic ?? EntityMagic(),
@@ -80,41 +85,58 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     this.injuries = injuries ?? EntityInjuries(manager: injuryProvider(this, null));
   }
 
-  @override
-  String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
   @JsonKey(includeIfNull: false)
     final String? uuid;
+  @override
+    String get id => uuid ?? sentenceToCamelCase(transliterateFrenchToAscii(name));
+
+  EntityAbilities abilities;
+  EntityAttributes attributes;
+  int initiative;
+  late EntityInjuries injuries;
+  double size;
   String description;
+  EntitySkills skills;
+  EntityHealthStatus healthStatus;
+  EntityCombatStatus combatStatus;
+  @JsonKey(fromJson: EntityEquipment.fromJson, toJson: EntityEquipment.toJson)
+    final EntityEquipment equipment;
+  final MoneyWallet money;
+  final EntityMagic magic;
+  @JsonKey(
+      fromJson: EntityDraconicFavors.fromJson,
+      toJson: EntityDraconicFavors.toJson,
+      readValue: EntityDraconicFavors.readFavorsFromJson,
+    )
+    final EntityDraconicFavors favors;
+  final EntityFervor fervor;
 
   ExportableBinaryData? get image => _image;
-
   set image(ExportableBinaryData? i) {
     if(_image != null && (i == null || _image!.hash != i.hash)) BinaryDataStore().delete(_image!);
     _image = i;
   }
 
-  ExportableBinaryData? _image;
-
   ExportableBinaryData? get icon => _icon;
-
   set icon(ExportableBinaryData? i) {
     if(_icon != null && (i == null || _icon!.hash != i.hash)) BinaryDataStore().delete(_icon!);
     _icon = i;
   }
 
+  double get baseMovementDistance => attributes.physique.toDouble();
+  double get contactCombatRange => size / 2;
+
+  ExportableBinaryData? _image;
   ExportableBinaryData? _icon;
 
-  bool canAct() {
-    return status.value & EntityStatusValue.dead == EntityStatusValue.none &&
-           status.value & EntityStatusValue.unconscious == EntityStatusValue.none;
-  }
+  bool canAct() =>
+      !healthStatus.has(EntityHealthStatusValue.dead)
+      && !healthStatus.has(EntityHealthStatusValue.unconscious);
 
-  EntityAbilities abilities;
-  EntityAttributes attributes;
-
-  int initiative;
-
-  late EntityInjuries injuries;
+  bool canMove() =>
+      canAct()
+      && !combatStatus.has(EntityCombatStatusValue.onGround)
+      && !combatStatus.has(EntityCombatStatusValue.grappled);
 
   int takeDamage(int amount, { int armorDivider = 1 }) {
     var finalDamage = amount;
@@ -127,7 +149,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     if(finalDamage > 0) {
       injuries.manager.dealDamage(finalDamage);
       if(injuries.manager.isDead()) {
-        status.value |= EntityStatusValue.dead;
+        healthStatus.add(EntityHealthStatusValue.dead);
       }
     }
 
@@ -136,31 +158,39 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
 
   int damageMalus() => injuries.manager.getMalus();
 
+  List<DiceThrowModifier> throwModifiers(DiceThrowRequest request) {
+    var ret = <DiceThrowModifier>[];
+
+    if(damageMalus() > 0) {
+      ret.add(
+        DiceThrowModifier(
+          label: 'Malus de dégâts',
+          value: -damageMalus(),
+        )
+      );
+    }
+
+    if(healthStatus.has(EntityHealthStatusValue.stunned)) {
+      ret.add(
+        DiceThrowModifier(
+          label: 'Étourdi',
+          value: -10,
+        )
+      );
+    }
+
+    // TODO: manage bonuses and temporary effects
+
+    return ret;
+  }
+
   int actionMalus() {
     var malus = damageMalus();
-    if(status.value & EntityStatusValue.stunned != EntityStatusValue.none) {
+    if(healthStatus.has(EntityHealthStatusValue.stunned)) {
       malus += 10;
     }
     return malus;
   }
-
-  double size;
-  double get attackMovementDistance => size * 1.2;
-  double get contactCombatRange => size / 2;
-
-  EntitySkills skills;
-  EntityStatus status;
-  @JsonKey(fromJson: EntityEquipment.fromJson, toJson: EntityEquipment.toJson)
-  final EntityEquipment equipment;
-  final MoneyWallet money;
-  final EntityMagic magic;
-  @JsonKey(
-    fromJson: EntityDraconicFavors.fromJson,
-    toJson: EntityDraconicFavors.toJson,
-    readValue: EntityDraconicFavors.readFavorsFromJson,
-  )
-  final EntityDraconicFavors favors;
-  final EntityFervor fervor;
 
   @override
   bool meetsEquipableRequirements(EquipableItem item) {
@@ -255,6 +285,7 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
     return ret;
   }
 
+  @Deprecated("No longer supported")
   (List<int>, int?) rollInitiatives({
     int additionalDices = 0,
   }) {

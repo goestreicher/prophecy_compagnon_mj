@@ -182,9 +182,16 @@ HumanCharacter _$HumanCharacterFromJson(
   skills: json['skills'] == null
       ? null
       : EntitySkills.fromJson(json['skills'] as Map<String, dynamic>),
-  status: json['status'] == null
+  healthStatus: json['health_status'] == null
       ? null
-      : EntityStatus.fromJson(json['status'] as Map<String, dynamic>),
+      : EntityHealthStatus.fromJson(
+          json['health_status'] as Map<String, dynamic>,
+        ),
+  combatStatus: json['combat_status'] == null
+      ? null
+      : EntityCombatStatus.fromJson(
+          json['combat_status'] as Map<String, dynamic>,
+        ),
   equipment: EntityEquipment.fromJson(json['equipment'] as List),
   money: json['money'] == null
       ? null
@@ -211,7 +218,9 @@ HumanCharacter _$HumanCharacterFromJson(
       ? null
       : CharacterCaste.fromJson(json['honorary_caste'] as Map<String, dynamic>),
   luck: (json['luck'] as num?)?.toInt() ?? 0,
+  usedLuck: (json['used_luck'] as num?)?.toInt() ?? 0,
   proficiency: (json['proficiency'] as num?)?.toInt() ?? 0,
+  usedProficiency: (json['used_proficiency'] as num?)?.toInt() ?? 0,
   renown: (json['renown'] as num?)?.toInt() ?? 0,
   age: (json['age'] as num?)?.toInt() ?? 25,
   height: (json['height'] as num?)?.toDouble() ?? 1.7,
@@ -238,21 +247,22 @@ Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
       'source': instance.source.toJson(),
       'name': instance.name,
       'uuid': ?instance.uuid,
-      'description': instance.description,
-      'image': instance.image?.toJson(),
-      'icon': instance.icon?.toJson(),
       'abilities': instance.abilities.toJson(),
       'attributes': instance.attributes.toJson(),
       'initiative': instance.initiative,
       'injuries': instance.injuries.toJson(),
       'size': instance.size,
+      'description': instance.description,
       'skills': instance.skills.toJson(),
-      'status': instance.status.toJson(),
+      'health_status': instance.healthStatus.toJson(),
+      'combat_status': instance.combatStatus.toJson(),
       'equipment': EntityEquipment.toJson(instance.equipment),
       'money': instance.money.toJson(),
       'magic': instance.magic.toJson(),
       'favors': EntityDraconicFavors.toJson(instance.favors),
       'fervor': instance.fervor.toJson(),
+      'image': instance.image?.toJson(),
+      'icon': instance.icon?.toJson(),
       'caste': instance.caste.toJson(),
       'honorary_caste': instance.honoraryCaste?.toJson(),
       'age': instance.age,
@@ -260,7 +270,9 @@ Map<String, dynamic> _$HumanCharacterToJson(HumanCharacter instance) =>
       'weight': instance.weight,
       'origin': instance.origin.toJson(),
       'luck': instance.luck,
+      'used_luck': instance.usedLuck,
       'proficiency': instance.proficiency,
+      'used_proficiency': instance.usedProficiency,
       'renown': instance.renown,
       'disadvantages': CharacterDisadvantages.toJson(instance.disadvantages),
       'advantages': CharacterAdvantages.toJson(instance.advantages),

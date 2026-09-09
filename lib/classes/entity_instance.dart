@@ -5,7 +5,8 @@ import 'entity/abilities.dart';
 import 'entity/attributes.dart';
 import 'entity/skill_instance.dart';
 import 'entity/skills.dart';
-import 'entity/status.dart';
+import 'entity/combat_status.dart';
+import 'entity/health_status.dart';
 import 'equipment/equipment.dart';
 import 'entity_base.dart';
 import 'exportable_binary_data.dart';
@@ -96,6 +97,8 @@ class EntityInstance extends EntityBase with MagicUser {
       super.initiative,
       super.injuryProvider,
       super.size,
+      super.healthStatus,
+      super.combatStatus,
       required this.modelSpecification,
     }
   ) {

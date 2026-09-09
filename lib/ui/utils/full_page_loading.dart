@@ -10,7 +10,7 @@ class FullPageLoadingWidget extends StatelessWidget {
     return Center(
       child: Container(
         decoration: BoxDecoration(
-          color: theme.colorScheme.surfaceContainerHighest,
+          color: theme.colorScheme.surface,
         ),
         child: Center(child: CircularProgressIndicator()),
       )

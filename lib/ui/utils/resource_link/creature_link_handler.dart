@@ -4,7 +4,13 @@ import '../../../classes/creature.dart';
 import '../../../classes/resource_link/resource_link.dart';
 import '../creature/display_widget.dart';
 
-Future<Widget?> handleCreatureLinkClicked(ResourceLink link, BuildContext context) async {
+Future<Widget?> handleCreatureLinkClicked(
+    ResourceLink link,
+    BuildContext context,
+    {
+      List<Widget>? extraActionButtons,
+    }
+) async {
   var creature = await CreatureSummary.get(link.id);
   if(!context.mounted) return null;
 
@@ -32,6 +38,7 @@ Future<Widget?> handleCreatureLinkClicked(ResourceLink link, BuildContext contex
         ),
       ),
       actions: [
+        ...?extraActionButtons,
         TextButton(
           onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
           child: const Text('OK')

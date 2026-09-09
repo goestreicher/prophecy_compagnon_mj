@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../classes/calendar.dart';
-import '../../classes/game_session.dart';
-import '../../classes/scenario.dart';
+import '../../classes/session/game_session.dart';
+import '../../classes/scenario/scenario.dart';
 import '../../classes/table.dart';
 import '../utils/kor_date_picker_dialog.dart';
 
@@ -14,20 +14,20 @@ class SessionCreationDialog extends StatefulWidget {
 }
 
 class _SessionCreationDialogState extends State<SessionCreationDialog> {
-  late Future<dynamic> _buildFuture;
-  GameTableSummary? _table;
-  final TextEditingController _tableController = TextEditingController();
-  ScenarioSummary? _scenario;
-  final TextEditingController _scenarioController = TextEditingController();
-  List<GameTableSummary> _tables = <GameTableSummary>[];
-  List<ScenarioSummary> _scenarios = <ScenarioSummary>[];
-  KorDate? _startDate;
-  final TextEditingController _dateController = TextEditingController();
+  late Future<dynamic> buildFuture;
+  GameTableSummary? table;
+  final TextEditingController tableController = TextEditingController();
+  ScenarioSummary? scenario;
+  final TextEditingController scenarioController = TextEditingController();
+  List<GameTableSummary> tables = <GameTableSummary>[];
+  List<ScenarioSummary> scenarios = <ScenarioSummary>[];
+  KorDate? startDate;
+  final TextEditingController dateController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _buildFuture = Future.wait([
+    buildFuture = Future.wait([
       GameTableSummaryStore().getAll(),
       ScenarioSummaryStore().getAll(),
     ]);
@@ -38,7 +38,7 @@ class _SessionCreationDialogState extends State<SessionCreationDialog> {
     var theme = Theme.of(context);
 
     return FutureBuilder(
-      future: _buildFuture,
+      future: buildFuture,
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         Widget dialogContent;
 
@@ -49,34 +49,34 @@ class _SessionCreationDialogState extends State<SessionCreationDialog> {
           dialogContent = const Center(child: Text('Erreur en chargeant les données de session'));
         }
         else {
-          _tables = snapshot.data![0];
-          _scenarios = snapshot.data[1];
+          tables = snapshot.data![0];
+          scenarios = snapshot.data[1];
 
           dialogContent = Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               DropdownMenu(
-                controller: _tableController,
+                controller: tableController,
                 label: const Text('Table'),
                 expandedInsets: EdgeInsets.zero,
                 onSelected: (GameTableSummary? t) async {
-                  _table = t;
+                  table = t;
                 },
                 dropdownMenuEntries:
-                  _tables
+                  tables
                     .map((GameTableSummary t) => DropdownMenuEntry(value: t, label: t.name))
                     .toList(),
               ),
               const SizedBox(height: 12.0),
               DropdownMenu(
-                controller: _scenarioController,
+                controller: scenarioController,
                 label: const Text('Scénario'),
                 expandedInsets: EdgeInsets.zero,
                 onSelected: (ScenarioSummary? s) {
-                  _scenario = s;
+                  scenario = s;
                 },
                 dropdownMenuEntries:
-                  _scenarios
+                  scenarios
                     .map((ScenarioSummary s) => DropdownMenuEntry(value: s, label: s.name))
                     .toList(),
               ),
@@ -88,7 +88,7 @@ class _SessionCreationDialogState extends State<SessionCreationDialog> {
                   Expanded(
                     child: TextFormField(
                       key: GlobalKey<FormFieldState>(),
-                      controller: _dateController,
+                      controller: dateController,
                     ),
                   ),
                   const SizedBox(width: 8.0),
@@ -97,11 +97,11 @@ class _SessionCreationDialogState extends State<SessionCreationDialog> {
                     onPressed: () async {
                       var date = await showKorDatePicker(
                         context: context,
-                        initialDate: _startDate ?? KorDate(year: 1299, cycle: KorCycle.blanc, week: 1, day: WeekDay.roc),
+                        initialDate: startDate ?? KorDate(year: 1299, cycle: KorCycle.blanc, week: 1, day: WeekDay.roc),
                       );
                       if(date == null) return;
-                      _startDate = date;
-                      _dateController.text = _startDate!.toCompactString();
+                      startDate = date;
+                      dateController.text = startDate!.toCompactString();
                     },
                   ),
                 ],
@@ -121,17 +121,21 @@ class _SessionCreationDialogState extends State<SessionCreationDialog> {
                       const SizedBox(width: 12.0),
                       ElevatedButton(
                         onPressed: () async {
-                          if(_table == null) return;
-                          if(_scenario == null) return;
-                          if(_startDate == null) return;
+                          if(table == null) return;
+                          if(scenario == null) return;
+                          if(startDate == null) return;
+
+                          var t = await GameTableStore().get(table!.uuid);
+                          var s = await ScenarioStore().get(scenario!.uuid);
 
                           var session = GameSession(
-                              table: _table!,
-                              scenario: _scenario!,
-                              startDate: _startDate!,
+                              table: t!,
+                              scenario: s!,
+                              startDate: startDate!,
                           );
 
-                          Navigator.of(context).pop(session);
+                          if(!context.mounted) return;
+                          Navigator.of(context, rootNavigator: true).pop(session);
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: theme.colorScheme.primary,

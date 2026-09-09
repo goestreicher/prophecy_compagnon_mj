@@ -4,7 +4,13 @@ import '../../../classes/place_map.dart';
 import '../../../classes/resource_link/resource_link.dart';
 import '../place_map/display_widget.dart';
 
-Future<Widget?> handleMapLinkClicked(ResourceLink link, BuildContext context) async {
+Future<Widget?> handleMapLinkClicked(
+    ResourceLink link,
+    BuildContext context,
+    {
+      List<Widget>? extraActionButtons,
+    }
+) async {
   var map = await PlaceMapStore().get(link.id);
   if(!context.mounted) return null;
 
@@ -30,6 +36,7 @@ Future<Widget?> handleMapLinkClicked(ResourceLink link, BuildContext context) as
         child: PlaceMapDisplayWidget(map: map),
       ),
       actions: [
+        ...?extraActionButtons,
         TextButton(
           onPressed: () => Navigator.of(context, rootNavigator: true).pop(),
           child: const Text('OK')

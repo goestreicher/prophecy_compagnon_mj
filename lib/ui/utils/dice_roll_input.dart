@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'custom_icons.dart';
+
 class DiceRollInputWidget extends StatefulWidget {
   const DiceRollInputWidget({ super.key, this.initialValue, required this.onValueSelected });
 
@@ -39,6 +41,12 @@ class _DiceRollInputWidgetState extends State<DiceRollInputWidget> {
         () => widget.onValueSelected(widget.initialValue!)
       );
     }
+  }
+
+  @override
+  void didUpdateWidget(covariant DiceRollInputWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    selected = widget.initialValue ?? -1;
   }
 
   void _dismissOverlay() {
@@ -102,7 +110,18 @@ class _DiceRollInputWidgetState extends State<DiceRollInputWidget> {
 
             overlayState.insert(_selectorOverlay!);
           },
-          child: Text(selected != -1 ? selected.toString() : '?'),
+          child: Text.rich(
+            TextSpan(
+              children: [
+                if(selected != -1)
+                  TextSpan(text: selected.toString()),
+                if(selected == -1)
+                  WidgetSpan(
+                    child: Icon(CustomIcons.d10),
+                  )
+              ]
+            )
+          ),
         ),
         Positioned(
           child: Offstage(

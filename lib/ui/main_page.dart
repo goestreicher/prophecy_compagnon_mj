@@ -56,6 +56,7 @@ class _MainPageState extends State<MainPage> {
 
     loadAssetsFuture = _loadAssets();
   }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
@@ -96,7 +97,7 @@ class _MainPageState extends State<MainPage> {
                   ),
                   Expanded(
                     child: ColoredBox(
-                      color: theme.colorScheme.surfaceContainerHighest,
+                      color: theme.colorScheme.surface,
                       child: AnimatedSwitcher(
                         duration: const Duration(milliseconds: 200),
                         child: widget.pageWidget,

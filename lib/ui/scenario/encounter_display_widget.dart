@@ -5,7 +5,7 @@ import '../../classes/encounter_entity_factory.dart';
 import '../../classes/entity_base.dart';
 import '../../classes/non_player_character.dart';
 import '../../classes/resource_link/resource_link.dart';
-import '../../classes/scenario_encounter.dart';
+import '../../classes/scenario/scenario_encounter.dart';
 import '../utils/resource_link/link_handler.dart';
 
 class ScenarioEncounterDisplayWidget extends StatelessWidget {

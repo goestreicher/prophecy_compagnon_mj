@@ -11,9 +11,15 @@ class EntityEditClothesWidget extends StatelessWidget {
   const EntityEditClothesWidget({
     super.key,
     required this.entity,
+    this.showStored = true,
+    this.allowCreate = true,
+    this.allowDelete = true,
   });
 
   final EntityBase entity;
+  final bool showStored;
+  final bool allowCreate;
+  final bool allowDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +37,9 @@ class EntityEditClothesWidget extends StatelessWidget {
         builder: (BuildContext context, _) {
           return _ClothesWidget(
             entity: entity,
+            showStored: showStored,
+            allowCreate: allowCreate,
+            allowDelete: allowDelete,
           );
         }
       ),
@@ -39,9 +48,17 @@ class EntityEditClothesWidget extends StatelessWidget {
 }
 
 class _ClothesWidget extends StatelessWidget {
-  const _ClothesWidget({ required this.entity });
+  const _ClothesWidget({
+    required this.entity,
+    this.showStored = true,
+    this.allowCreate = true,
+    this.allowDelete = true,
+  });
 
   final EntityBase entity;
+  final bool showStored;
+  final bool allowCreate;
+  final bool allowDelete;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +67,7 @@ class _ClothesWidget extends StatelessWidget {
 
     for(var eq in entity.equipment) {
       if(eq is! Cloth) continue;
+      if(eq.inStore && !showStored) continue;
 
       widgets.add(
         ValueListenableBuilder(
@@ -58,6 +76,7 @@ class _ClothesWidget extends StatelessWidget {
             return ClothEquipWidget(
               entity: entity,
               cloth: eq,
+              allowDelete: allowDelete,
             );
           }
         )
@@ -69,27 +88,28 @@ class _ClothesWidget extends StatelessWidget {
       spacing: 12.0,
       children: [
         ...widgets,
-        Center(
-          child: ElevatedButton.icon(
-            icon: const Icon(
-              Icons.add,
-              size: 16.0,
-            ),
-            style: ElevatedButton.styleFrom(
-              textStyle: theme.textTheme.bodySmall,
-            ),
-            label: const Text('Nouveau vêtement'),
-            onPressed: () async {
-              Cloth? cloth = await showDialog(
-                context: context,
-                builder: (BuildContext context) => const ClothPickerDialog(),
-              );
-              if(cloth == null) return;
+        if(allowCreate)
+          Center(
+            child: ElevatedButton.icon(
+              icon: const Icon(
+                Icons.add,
+                size: 16.0,
+              ),
+              style: ElevatedButton.styleFrom(
+                textStyle: theme.textTheme.bodySmall,
+              ),
+              label: const Text('Nouveau vêtement'),
+              onPressed: () async {
+                Cloth? cloth = await showDialog(
+                  context: context,
+                  builder: (BuildContext context) => const ClothPickerDialog(),
+                );
+                if(cloth == null) return;
 
-              entity.equipment.add(cloth);
-            },
+                entity.equipment.add(cloth);
+              },
+            ),
           ),
-        ),
       ],
     );
   }

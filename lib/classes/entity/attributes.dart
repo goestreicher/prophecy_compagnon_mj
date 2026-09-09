@@ -56,6 +56,8 @@ class EntityAttributes {
 
   int attribute(Attribute a) => _attributes[a] ?? 0;
 
+  int operator [](Attribute a) => attribute(a);
+
   void setAttribute(Attribute a, int v) {
     _attributes[a] = v;
     streamController.add(AttributeStreamChange(attribute: a, value: v));

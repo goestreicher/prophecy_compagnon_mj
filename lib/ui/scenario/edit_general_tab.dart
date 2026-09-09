@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 
 import '../../classes/resource_link/scenario_resource_link_provider.dart';
-import '../../classes/scenario.dart';
+import '../../classes/scenario/scenario.dart';
 import '../utils/markdown_fleather_toolbar.dart';
 import '../utils/num_input_widget.dart';
 

@@ -9,12 +9,13 @@ import 'combat.dart';
 import 'draconic_favor.dart';
 import 'entity/abilities.dart';
 import 'entity/attributes.dart';
+import 'entity/combat_status.dart';
 import 'entity/magic.dart';
 import 'entity/skill.dart';
 import 'entity/skill_instance.dart';
 import 'entity/skills.dart';
 import 'entity/specialized_skill.dart';
-import 'entity/status.dart';
+import 'entity/health_status.dart';
 import 'entity_instance.dart';
 import 'encounter_entity_factory.dart';
 import 'entity_base.dart';
@@ -557,7 +558,8 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
     String naturalArmorDescription = '',
     List<NaturalWeaponModel>? naturalWeapons,
     List<CreatureSpecialCapability>? specialCapabilities,
-    EntityStatus? status,
+    EntityHealthStatus? healthStatus,
+    EntityCombatStatus? combatStatus,
     EntityEquipment? equipment,
     MoneyWallet? money,
     EntityMagic? magic,
@@ -586,7 +588,8 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
             naturalArmorDescription: naturalArmorDescription,
             naturalWeapons: naturalWeapons,
             specialCapabilities: specialCapabilities,
-            status: status,
+            healthStatus: healthStatus,
+            combatStatus: combatStatus,
             equipment: equipment,
             money: money,
             magic: magic,
@@ -620,7 +623,8 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
         this.naturalArmorDescription = '',
         List<NaturalWeaponModel>? naturalWeapons,
         List<CreatureSpecialCapability>? specialCapabilities,
-        super.status,
+        super.healthStatus,
+        super.combatStatus,
         super.equipment,
         super.money,
         super.magic,
@@ -657,7 +661,7 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
   bool isUnique() => unique;
 
   @override
-  List<EntityBase> instantiate({ int count = 1 }) {
+  List<EntityInstance> instantiate({ int count = 1 }) {
     var ret = <EntityInstance>[];
 
     var modelSpecification = 'creature:$id';
@@ -905,9 +909,9 @@ class Creature extends EntityBase with EncounterEntityModel, MagicUser {
     return get(id);
   }
 
-  static Future<Iterable<EntityBase>> _creatureFactory(String id, int count) async {
+  static Future<Iterable<EntityInstance>> _creatureFactory(String id, int count) async {
     var m = await get(id);
-    if(m == null) return <EntityBase>[];
+    if(m == null) return <EntityInstance>[];
     return m.instantiate(count: count);
   }
 

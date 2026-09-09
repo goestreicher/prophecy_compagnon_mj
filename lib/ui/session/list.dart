@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../classes/game_session.dart';
-import 'command_dispatcher.dart';
-import 'play.dart';
-import 'session_creation_dialog.dart';
-import 'session_model.dart';
+import '../../classes/session/game_session.dart';
 import '../utils/error_feedback.dart';
 import '../utils/full_page_loading.dart';
+import 'session_creation_dialog.dart';
 
 class SessionsListPage extends StatefulWidget {
   const SessionsListPage({ super.key });
@@ -65,30 +62,13 @@ class _SessionsListPageState extends State<SessionsListPage> {
                   clipBehavior: Clip.hardEdge,
                   child: InkWell(
                     splashColor: theme.colorScheme.surface,
-                    onTap: () async {
-                      var session = await createSessionModel(_sessions[index].uuid);
-                      if(!context.mounted) return;
-
-                      await Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) =>
-                            MultiProvider(
-                              providers: [
-                                ChangeNotifierProvider.value(value: session),
-                                ChangeNotifierProvider(create: (_) => CommandDispatcher(session: session)),
-                              ],
-                              child: const SessionPlayPage()
-                            ),
-                        ),
-                      );
-                      setState(() {
-                        loadSessionSummaries();
-                      });
+                    onTap: () {
+                      context.go('/sessions/${_sessions[index].uuid}');
                     },
                     child: ListTile(
                         title: Text(
                           'Table: ${_sessions[index].table.name}\n'
-                          'Scénario: ${_sessions[index].scenario.name} (jour ${_sessions[index].scenarioDay})'
+                          'Scénario: ${_sessions[index].scenario.name} (jour ${_sessions[index].day+1})'
                         ),
                         subtitle: Text('Date: ${_sessions[index].currentDate.toFullString()}'),
                         trailing: IconButton(

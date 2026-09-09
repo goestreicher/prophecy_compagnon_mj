@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_symbols_icons/symbols.dart';
-import 'package:prophecy_compagnon_mj/ui/timeline/main.dart';
 
 import 'creatures/clone.dart';
 import 'creatures/create.dart';
@@ -17,6 +16,7 @@ import 'places/main.dart';
 import 'scenario/edit.dart';
 import 'scenario/list.dart';
 import 'session/list.dart';
+import 'session/play.dart';
 import 'settings/main.dart';
 import 'spells/list.dart';
 import 'stars/clone.dart';
@@ -26,6 +26,7 @@ import 'stars/list.dart';
 import 'table/edit.dart';
 import 'table/list.dart';
 import 'table/pc_wizard.dart';
+import 'timeline/main.dart';
 import 'utils/custom_icons.dart';
 import 'welcome_page.dart';
 
@@ -59,6 +60,16 @@ final mainAppRoutes = [
       SessionsListPage(),
     icon: Icon(Symbols.tactic_rounded),
     label: Text('Sessions'),
+    routes: [
+      MainAppRoute(
+        path: '/:uuid',
+        builder: (BuildContext context, GoRouterState state) =>
+            SessionPlayPage(
+              uuid: state.pathParameters['uuid']!,
+            ),
+        isFullScreen: true,
+      )
+    ]
   ),
   MainAppRoute(
     path: '/tables',

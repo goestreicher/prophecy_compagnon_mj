@@ -3,11 +3,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../classes/calendar.dart';
 import '../../classes/resource_link/scenario_resource_link_provider.dart';
-import '../../classes/scenario.dart';
-import '../../classes/scenario_event.dart';
+import '../../classes/scenario/scenario.dart';
+import '../../classes/scenario/scenario_event.dart';
 import '../utils/markdown_fleather_toolbar.dart';
 
 class ScenarioEventEditResult {
@@ -36,6 +37,7 @@ class ScenarioEventEditDialog extends StatefulWidget {
 class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
   late _EventTimeLocation timeLocation;
   late DayRange? currentDayRange;
+  late bool isSingleDay;
   final TextEditingController titleController = TextEditingController();
   late final FleatherController descriptionController;
   late final FocusNode descriptionFocusNode;
@@ -52,6 +54,13 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
     ParchmentDocument document;
 
     currentDayRange = widget.dayRange;
+
+    if(widget.dayRange == null) {
+      isSingleDay = widget.event?.isRealizedInASingleDay ?? true;
+    }
+    else {
+      isSingleDay = widget.event?.isRealizedInASingleDay ?? widget.dayRange!.length == 1;
+    }
     
     if(widget.dayRange != null && widget.event != null) {
       timeLocation = widget.dayRange!.start < 0
@@ -110,7 +119,13 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                   setState(() {
                     currentDayRange = range;
                   });
-                }
+                },
+                isSingleDay: isSingleDay,
+                onIsSingleDayChanged: (bool v) {
+                  setState(() {
+                    isSingleDay = v;
+                  });
+                },
               ),
               Divider(),
               MarkdownFleatherToolbar(
@@ -153,12 +168,15 @@ class _ScenarioEventEditDialogState extends State<ScenarioEventEditDialog> {
                               event = widget.event!;
                               event.title = titleController.text;
                               event.description = ParchmentMarkdownCodec().encode(descriptionController.document);
+                              event.isRealizedInASingleDay = isSingleDay;
                               event.refreshResourceLinks();
                             }
                             else {
                               event = ScenarioEvent(
-                                  title: titleController.text,
-                                  description: ParchmentMarkdownCodec().encode(descriptionController.document)
+                                uuid: Uuid().v4().toString(),
+                                title: titleController.text,
+                                description: ParchmentMarkdownCodec().encode(descriptionController.document),
+                                isRealizedInASingleDay: isSingleDay,
                               );
                             }
                             Navigator.of(context).pop(ScenarioEventEditResult(
@@ -191,10 +209,14 @@ class _DayRangeSelectionWidget extends StatefulWidget {
   const _DayRangeSelectionWidget({
     this.dayRange,
     required this.onChanged,
+    this.isSingleDay,
+    required this.onIsSingleDayChanged,
   });
 
   final DayRange? dayRange;
   final ValueChanged<DayRange?> onChanged;
+  final bool? isSingleDay;
+  final ValueChanged<bool> onIsSingleDayChanged;
 
   @override
   State<_DayRangeSelectionWidget> createState() => _DayRangeSelectionWidgetState();
@@ -205,14 +227,18 @@ class _DayRangeSelectionWidgetState extends State<_DayRangeSelectionWidget> {
   int? currentStartCount;
   int? currentEndCount;
   bool endSet = false;
+  late bool isSingleDay;
 
   void dayRangeChanged() {
     if(currentStartCount == null) {
       widget.onChanged(null);
+      isSingleDay = true;
+      widget.onIsSingleDayChanged(isSingleDay);
     }
     else {
       if(!endSet) {
         currentEndCount = currentStartCount;
+        isSingleDay = true;
       }
       else {
         currentEndCount ??= currentStartCount!;
@@ -230,6 +256,8 @@ class _DayRangeSelectionWidgetState extends State<_DayRangeSelectionWidget> {
       }
 
       widget.onChanged(DayRange(start: start, end: end));
+      isSingleDay = end > start;
+      widget.onIsSingleDayChanged(isSingleDay);
     }
   }
 
@@ -242,6 +270,10 @@ class _DayRangeSelectionWidgetState extends State<_DayRangeSelectionWidget> {
       currentStartCount = widget.dayRange!.start ~/ duration.daysLength;
       currentEndCount = widget.dayRange!.end ~/ duration.daysLength;
       endSet = currentStartCount != currentEndCount;
+      isSingleDay = widget.isSingleDay ?? widget.dayRange!.length == 1;
+    }
+    else {
+      isSingleDay = widget.isSingleDay ?? true;
     }
   }
 
@@ -309,6 +341,16 @@ class _DayRangeSelectionWidgetState extends State<_DayRangeSelectionWidget> {
                   dayRangeChanged();
                 }),
               ),
+              const SizedBox(width: 16.0),
+              Switch(
+                value: isSingleDay,
+                onChanged: (bool value) => setState(() {
+                  isSingleDay = value;
+                  widget.onIsSingleDayChanged(isSingleDay);
+                }),
+              ),
+              const SizedBox(width: 12.0),
+              Expanded(child: Text("Réalisé sur une seule journée"))
             ],
           ),
       ],

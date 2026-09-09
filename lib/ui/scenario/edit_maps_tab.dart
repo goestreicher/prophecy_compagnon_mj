@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../classes/place_map.dart';
-import '../../classes/scenario_map.dart';
+import '../../classes/scenario/scenario_map.dart';
 import '../utils/full_page_loading.dart';
-import '../utils/place_map_picker_dialog.dart';
+import '../utils/place_map/place_map_picker_dialog.dart';
 import '../utils/single_line_input_dialog.dart';
 
 class ScenarioEditMapsPage extends StatefulWidget {

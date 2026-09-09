@@ -10,37 +10,91 @@ import 'pc_link_handler.dart';
 import 'place_link_handler.dart';
 import 'star_link_handler.dart';
 
-void handleResourceLinkClicked(ResourceLink link, BuildContext context) async {
+typedef ExtraActionButtonBuilder = Widget Function(BuildContext, ResourceLink);
+
+Future<void> handleResourceLinkClicked(
+    ResourceLink link,
+    BuildContext context,
+    {
+      List<ExtraActionButtonBuilder>? extraActionButtonBuilders,
+    }
+) async {
   Widget? dialog;
+
+  Navigator.of(context, rootNavigator: true).push(
+    DialogRoute<void>(
+      context: context,
+      builder: (BuildContext context) => Center(child: CircularProgressIndicator()),
+      barrierDismissible: false,
+    )
+  );
+
+  var extraActionButtons = (extraActionButtonBuilders ?? <ExtraActionButtonBuilder>[])
+    .map(
+      (ExtraActionButtonBuilder b) => b(context, link)
+    ).toList();
 
   switch(link.type) {
     case ResourceLinkType.creature:
-      dialog = await handleCreatureLinkClicked(link, context);
+      dialog = await handleCreatureLinkClicked(
+        link,
+        context,
+        extraActionButtons: extraActionButtons,
+      );
       break;
     case ResourceLinkType.encounter:
-      dialog = await handleEncounterLinkClicked(link, context);
+      dialog = await handleEncounterLinkClicked(
+        link,
+        context,
+        extraActionButtons: extraActionButtons,
+      );
       break;
     case ResourceLinkType.faction:
-      dialog = await handleFactionLinkClicked(link, context);
+      dialog = await handleFactionLinkClicked(
+        link,
+        context,
+        extraActionButtons: extraActionButtons,
+      );
       break;
     case ResourceLinkType.map:
-      dialog = await handleMapLinkClicked(link, context);
+      dialog = await handleMapLinkClicked(
+        link,
+        context,
+        extraActionButtons: extraActionButtons,
+      );
       break;
     case ResourceLinkType.npc:
-      dialog = await handleNPCLinkClicked(link, context);
+      dialog = await handleNPCLinkClicked(
+        link,
+        context,
+        extraActionButtons: extraActionButtons,
+      );
       break;
     case ResourceLinkType.pc:
-      dialog = await handlePCLinkClicked(link, context);
+      dialog = await handlePCLinkClicked(
+        link,
+        context,
+        extraActionButtons: extraActionButtons,
+      );
       break;
     case ResourceLinkType.place:
-      dialog = await handlePlaceLinkClicked(link, context);
+      dialog = await handlePlaceLinkClicked(
+        link,
+        context,
+        extraActionButtons: extraActionButtons,
+      );
       break;
     case ResourceLinkType.star:
-      dialog = await handleStarLinkClicked(link, context);
+      dialog = await handleStarLinkClicked(
+        link,
+        context,
+        extraActionButtons: extraActionButtons,
+      );
       break;
   }
 
   if(!context.mounted) return;
+  Navigator.of(context, rootNavigator: true).pop();
 
   if(dialog != null) {
     await showDialog(

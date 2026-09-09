@@ -112,14 +112,14 @@ class ExportableBinaryData {
   @JsonKey(fromJson: base64ToBinaryData, toJson: binaryDataToBase64)
   final Uint8List data;
   bool isNew;
+  String? _hash;
 
   ExportableBinaryData clone() => ExportableBinaryData(data: data);
 
-  String get hash => sha256.convert(
-      utf8.encode(
-        binaryDataToBase64(data)
-      )
-    ).toString();
+  String get hash {
+    _hash ??= sha256.convert(utf8.encode(binaryDataToBase64(data))).toString();
+    return _hash!;
+  }
 
   factory ExportableBinaryData.fromJson(Map<String, dynamic> json) => _$ExportableBinaryDataFromJson(json);
   Map<String, dynamic> toJson() => _$ExportableBinaryDataToJson(this);

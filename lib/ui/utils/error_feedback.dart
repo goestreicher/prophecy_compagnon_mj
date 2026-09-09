@@ -32,31 +32,33 @@ class FullPageErrorWidget extends StatelessWidget {
       ),
       child: Center(
         child: SizedBox(
-          width: 320,
+          width: 600,
           child: Card(
             color: theme.colorScheme.surfaceContainerLow,
             child: Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'Erreur',
-                    style: theme.textTheme.titleLarge,
-                  ),
-                  const SizedBox(height: 12.0),
-                  Text(message),
-                  if(canPop)
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: TextButton(
-                        onPressed: () => Navigator.of(context).pop(),
-                        child: const Text('OK'),
-                      ),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'Erreur',
+                      style: theme.textTheme.titleLarge,
                     ),
-                  if(!canPop)
-                    SizedBox(height: 8.0),
-                ],
+                    const SizedBox(height: 12.0),
+                    Text(message),
+                    if(canPop)
+                      Align(
+                        alignment: Alignment.centerRight,
+                        child: TextButton(
+                          onPressed: () => Navigator.of(context).pop(),
+                          child: const Text('OK'),
+                        ),
+                      ),
+                    if(!canPop)
+                      SizedBox(height: 8.0),
+                  ],
+                ),
               ),
             ),
           ),

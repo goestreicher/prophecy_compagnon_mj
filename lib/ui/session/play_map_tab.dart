@@ -8,14 +8,14 @@ import 'package:provider/provider.dart';
 
 import '../../classes/combat_turn.dart';
 import '../../classes/encounter.dart';
-import '../../classes/entity/status.dart';
+import '../../classes/entity/health_status.dart';
 import '../../classes/entity_base.dart';
 import '../../classes/player_character.dart';
 import 'combat_turn_initiatives.dart';
 import 'command_dispatcher.dart';
 import 'encounter_actions.dart';
-import 'map_entity_model.dart';
-import 'map_model.dart';
+import '../../classes/session/map_entity_model.dart';
+import '../../classes/session/map_model.dart';
 import 'session_model.dart';
 import '../utils/error_feedback.dart';
 
@@ -89,13 +89,13 @@ class _PlayMapPageState extends State<PlayMapPage> {
               x: mapPosition.dx,
               y: mapPosition.dy,
             );
-            session.map!.addPlayerCharacter(entityModel);
+            // session.map!.addPlayerCharacter(entityModel);
             _onEntityDeployed(pc.id);
           }
-          else {
-            var entityModel = session.map!.items[pc.id]! as MapEntityModel;
-            entityModel.moveTo(mapPosition.dx, mapPosition.dy);
-          }
+          // else {
+          //   var entityModel = session.map!.items[pc.id]! as MapEntityModel;
+          //   entityModel.moveTo(mapPosition.dx, mapPosition.dy);
+          // }
         },
       child: Text(pc.name),
     )).toList();
@@ -359,12 +359,12 @@ class _MapViewWidgetState extends State<_MapViewWidget> with SingleTickerProvide
                   y: posOffset.dy,
                 );
 
-                if(entityBase is PlayerCharacter) {
-                  map.addPlayerCharacter(entityModel);
-                }
-                else {
-                  map.addNonPlayerCharacter(entityModel);
-                }
+                // if(entityBase is PlayerCharacter) {
+                //   map.addPlayerCharacter(entityModel);
+                // }
+                // else {
+                //   map.addNonPlayerCharacter(entityModel);
+                // }
 
                 widget.onEntityDeployed(entityBase.id);
               },
@@ -505,7 +505,7 @@ class _EncounterTurnDisplayWidget extends StatelessWidget {
 
     Widget ret;
 
-    var encounterDone = encounter.deployedNpcs.isEmpty || encounter.deployedNpcs.every((e) => e.status.value & EntityStatusValue.dead == EntityStatusValue.dead);
+    var encounterDone = encounter.deployedNpcs.isEmpty || encounter.deployedNpcs.every((e) => e.healthStatus.value & EntityHealthStatusValue.dead == EntityHealthStatusValue.dead);
 
     if(encounterDone) {
       ret = ElevatedButton.icon(

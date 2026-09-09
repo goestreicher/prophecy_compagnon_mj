@@ -1,7 +1,7 @@
 import '../object_source.dart';
-import '../scenario.dart';
-import '../scenario_encounter.dart';
-import '../scenario_map.dart';
+import '../scenario/scenario.dart';
+import '../scenario/scenario_encounter.dart';
+import '../scenario/scenario_map.dart';
 import 'resource_link.dart';
 import 'sourced_resource_link_provider.dart';
 
