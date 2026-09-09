@@ -5,3 +5,5 @@
 /.flutter-plugins
 /.flutter-plugins-dependencies
 /.metadata
+/packages/*/.dart_tool/
+/packages/*/build/
