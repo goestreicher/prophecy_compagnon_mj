@@ -39,11 +39,12 @@ class SessionEncounterEntityAction {
       return false;
     }
 
-    if(weakHand) {
-      return
-        type == CombatActionType.attack
-        || type == CombatActionType.defense;
-    }
+    // TODO: uncomment this once attack and defense types are enabled
+    // if(weakHand) {
+    //   return
+    //     type == CombatActionType.attack
+    //     || type == CombatActionType.defense;
+    // }
 
     return true;
   }

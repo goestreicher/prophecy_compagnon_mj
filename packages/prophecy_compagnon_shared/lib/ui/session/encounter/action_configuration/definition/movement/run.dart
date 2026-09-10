@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_action_type.dart';
-import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actions/movement/base.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actions/descriptions/movement.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actions/implementations/movement.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/entity_action.dart';
 import 'package:prophecy_compagnon_shared/ui/session/clients/session_message_bus_client.dart';
 import 'package:prophecy_compagnon_shared/ui/session/encounter/action_configuration/definition/action_configuration.dart';
@@ -16,10 +17,10 @@ class ActionConfigurationMovementRun extends ActionConfiguration {
   ActionConfigurationMovementRun();
 
   @override
-  String get name => 'Course';
+  String get name => CombatActionMovementType.run.title;
 
   @override
-  IconData get icon => Icons.directions_run;
+  IconData get icon => CombatActionMovementType.run.icon;
 
   @override
   Future<void> plan(SessionEncounterEntityAction action) async {
@@ -131,6 +132,7 @@ class ActionConfigurationMovementRun extends ActionConfiguration {
         actionUuid: action.uuid,
         combatAction: CombatActionMovement(
           movementType: CombatActionMovementType.run,
+          distanceMultiplier: 2.0,
           rank: action.rank,
           mapId: r.mapId,
           entityId: action.entity.id,

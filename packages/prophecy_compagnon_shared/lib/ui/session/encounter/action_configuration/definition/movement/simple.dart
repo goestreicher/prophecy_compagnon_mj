@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actions/movement/base.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actions/descriptions/movement.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actions/implementations/movement.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/entity_action.dart';
 import 'package:prophecy_compagnon_shared/ui/session/clients/session_message_bus_client.dart';
 import 'package:prophecy_compagnon_shared/ui/session/encounter/action_configuration/definition/action_configuration.dart';
@@ -13,10 +14,10 @@ class ActionConfigurationMovementSimple extends ActionConfiguration {
   ActionConfigurationMovementSimple();
 
   @override
-  String get name => 'Déplacement simple';
+  String get name => CombatActionMovementType.simple.title;
 
   @override
-  IconData get icon => Icons.directions_walk;
+  IconData get icon => CombatActionMovementType.simple.icon;
 
   @override
   Future<void> plan(SessionEncounterEntityAction action) async {

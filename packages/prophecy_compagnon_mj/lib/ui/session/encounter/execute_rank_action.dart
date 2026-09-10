@@ -4,7 +4,7 @@ import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actio
 import 'package:prophecy_compagnon_shared/ui/session/clients/session_message_bus_client.dart';
 import 'package:prophecy_compagnon_shared/ui/session/messages/status/entity_position_status.dart';
 
-void executeTurnAction(CombatAction action) {
+void executeRankAction(CombatAction action) {
   switch(action.type) {
     case CombatActionType.movement:
       _executeMovementAction(action as CombatActionMovement);

@@ -21,6 +21,9 @@ import 'package:prophecy_compagnon_shared/classes/money.dart';
 import 'package:prophecy_compagnon_shared/classes/object_location.dart';
 import 'package:prophecy_compagnon_shared/classes/object_source.dart';
 import 'package:prophecy_compagnon_shared/classes/resource_base_class.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_action_description.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_action_type.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actions/descriptions/movement.dart';
 import 'package:prophecy_compagnon_shared/utils/text_utils.dart';
 import 'package:uuid/uuid.dart';
 
@@ -136,6 +139,33 @@ class EntityBase extends ResourceBaseClass with SupportsEquipableItem {
       canAct()
       && !combatStatus.has(EntityCombatStatusValue.onGround)
       && !combatStatus.has(EntityCombatStatusValue.grappled);
+
+  List<CombatActionDescription> availableActionsForType(CombatActionType type) {
+    var ret = <CombatActionDescription>[];
+    if(!canAct()) return ret;
+
+    switch(type) {
+      case CombatActionType.movement:
+        if(canMove()) {
+          ret.addAll([
+            CombatActionMovementDescription(
+                movementType: CombatActionMovementType.simple,
+            ),
+            CombatActionMovementDescription(
+              movementType: CombatActionMovementType.run,
+            ),
+            CombatActionMovementDescription(
+              movementType: CombatActionMovementType.sprint,
+            ),
+          ]);
+        }
+        else if(combatStatus.has(EntityCombatStatusValue.onGround)) {
+          // TODO: create action for the entity to get back up
+        }
+    }
+
+    return ret;
+  }
 
   int takeDamage(int amount, { int armorDivider = 1 }) {
     var finalDamage = amount;

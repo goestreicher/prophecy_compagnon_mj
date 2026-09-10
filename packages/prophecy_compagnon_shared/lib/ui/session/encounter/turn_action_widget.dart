@@ -1,10 +1,11 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_action_description.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_action_type.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actions/descriptions/finder.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/entity_action.dart';
 import 'package:prophecy_compagnon_shared/ui/session/clients/session_message_bus_client.dart';
-import 'package:prophecy_compagnon_shared/ui/session/encounter/action_button/movement.dart';
 import 'package:prophecy_compagnon_shared/ui/session/encounter/action_configuration/button_renderer.dart';
-import 'package:prophecy_compagnon_shared/ui/session/encounter/action_configuration/finder.dart';
+import 'package:prophecy_compagnon_shared/ui/session/encounter/action_configuration/menu_renderer.dart';
 import 'package:prophecy_compagnon_shared/ui/session/entity_pill_widget.dart';
 import 'package:prophecy_compagnon_shared/ui/session/messages/encounter/turn/delay_action.dart';
 import 'package:prophecy_compagnon_shared/ui/session/messages/session_message.dart';
@@ -87,12 +88,17 @@ class TurnActionWidget extends StatelessWidget {
               )
             );
 
-            if(action.entity.canMove() && action.canBeUsedFor(CombatActionType.movement)) {
-              bottomRow.add(
-                ActionMovementButtonMenu(
-                  action: action,
-                )
-              );
+            if(action.canBeUsedFor(CombatActionType.movement)) {
+              var descriptions = action.entity.availableActionsForType(CombatActionType.movement);
+              if(descriptions.isNotEmpty) {
+                bottomRow.add(
+                  _ActionTypeMenu(
+                    type: CombatActionType.movement,
+                    action: action,
+                    items: descriptions,
+                  )
+                );
+              }
             }
           }
           else {
@@ -105,11 +111,11 @@ class TurnActionWidget extends StatelessWidget {
           }
         }
         else if (action.stage == SessionEncounterEntityActionStage.assigned) {
-          var actionConfiguration = action.combatAction == null
+          var actionDescription = action.combatAction == null
               ? null
-              : actionConfigurationForCombatAction(action.combatAction!);
+              : actionDescriptionForCombatAction(action.combatAction!);
 
-          if(actionConfiguration == null) {
+          if(actionDescription == null) {
             // TODO: propose to un-assign the action
           }
           else {
@@ -123,7 +129,7 @@ class TurnActionWidget extends StatelessWidget {
                   ),
                   ActionConfigurationButtonRenderer(
                     action: action,
-                    actionConfiguration: actionConfiguration,
+                    actionConfiguration: actionDescription.instantiate(),
                   )
                 ],
               )
@@ -170,5 +176,47 @@ class TurnActionWidget extends StatelessWidget {
     else {
       return Card.filled(child: child);
     }
+  }
+}
+
+class _ActionTypeMenu extends StatelessWidget {
+  const _ActionTypeMenu({
+    required this.type,
+    required this.action,
+    required this.items,
+  });
+
+  final CombatActionType type;
+  final SessionEncounterEntityAction action;
+  final List<CombatActionDescription> items;
+
+  @override
+  Widget build(BuildContext context) {
+    return MenuAnchor(
+      menuChildren: [
+        for(var i in items)
+          ActionConfigurationMenuRenderer(
+            action: action,
+            actionConfiguration: i.instantiate(),
+          ),
+      ],
+      builder: (BuildContext context, MenuController controller, Widget? child) {
+        return IconButton(
+          icon: Icon(type.icon),
+          iconSize: 18.0,
+          padding: const EdgeInsets.all(4.0),
+          constraints: const BoxConstraints(),
+          tooltip: type.title,
+          onPressed: () {
+            if(controller.isOpen) {
+              controller.close();
+            }
+            else {
+              controller.open();
+            }
+          }
+        );
+      },
+    );
   }
 }

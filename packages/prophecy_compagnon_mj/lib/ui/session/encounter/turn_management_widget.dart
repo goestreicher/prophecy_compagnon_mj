@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
-import 'package:prophecy_compagnon_mj/ui/session/encounter/execute_turn_action.dart';
+import 'package:prophecy_compagnon_mj/ui/session/encounter/execute_rank_action.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_action.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/entity_action.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/turn.dart';
@@ -82,13 +82,13 @@ class _TurnManagementWidgetState extends State<TurnManagementWidget> {
     for(var a in approvedActions) {
       if(!a.combatAction!.interpolate) {
         // Interpolated actions are executed separately
-        executeTurnAction(a.combatAction!);
+        executeRankAction(a.combatAction!);
       }
       a.stage = SessionEncounterEntityActionStage.executed;
     }
 
     for(var a in interpolatedActions.where((CombatAction a) => a.rank == rank)) {
-      executeTurnAction(a);
+      executeRankAction(a);
     }
   }
 
