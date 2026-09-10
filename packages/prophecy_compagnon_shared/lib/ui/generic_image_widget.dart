@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:prophecy_compagnon_shared/classes/exportable_binary_data.dart';
 import 'package:prophecy_compagnon_shared/classes/generic_image.dart';

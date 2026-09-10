@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/magic.dart';
 import 'package:prophecy_compagnon_shared/classes/magic_user.dart';
 import 'package:prophecy_compagnon_shared/ui/num_input_widget.dart';

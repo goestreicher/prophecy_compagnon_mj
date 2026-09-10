@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_mj/ui/table/pc_wizard/model.dart';
 import 'package:prophecy_compagnon_mj/ui/table/pc_wizard/step_data.dart';
 import 'package:prophecy_compagnon_shared/classes/caste/base.dart';

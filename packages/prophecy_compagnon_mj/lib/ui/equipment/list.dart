@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/ui/equipment/list_filter.dart';
 import 'package:prophecy_compagnon_shared/ui/equipment/list_filter_widget.dart';
 import 'package:prophecy_compagnon_shared/ui/equipment/list_widget.dart';

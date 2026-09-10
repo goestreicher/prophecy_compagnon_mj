@@ -1,7 +1,7 @@
 import 'dart:ui' as ui;
 
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:prophecy_compagnon_shared/classes/character_role.dart';
 import 'package:prophecy_compagnon_shared/classes/exportable_binary_data.dart';

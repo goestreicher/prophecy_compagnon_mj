@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_mj/ui/scenario/scenario_event_edit_dialog.dart';
 import 'package:prophecy_compagnon_shared/classes/calendar.dart';
 import 'package:prophecy_compagnon_shared/classes/resource_link/resource_link.dart';

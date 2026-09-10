@@ -1,7 +1,7 @@
 import 'dart:collection';
 import 'dart:math';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/calendar.dart';
 import 'package:prophecy_compagnon_shared/classes/session/game_session.dart';
 import 'package:provider/provider.dart';

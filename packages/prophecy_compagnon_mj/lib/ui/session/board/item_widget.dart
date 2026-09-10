@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_mj/ui/session/board/item_map_widget.dart';
 import 'package:prophecy_compagnon_shared/classes/session/board/item.dart';
 import 'package:prophecy_compagnon_shared/classes/session/board/item_map.dart';

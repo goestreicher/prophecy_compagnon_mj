@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/draconic_favor.dart';
 import 'package:prophecy_compagnon_shared/classes/draconic_link.dart';
 import 'package:prophecy_compagnon_shared/ui/dismissible_dialog.dart';

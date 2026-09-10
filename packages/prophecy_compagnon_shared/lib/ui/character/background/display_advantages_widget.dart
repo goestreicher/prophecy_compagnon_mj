@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/human_character.dart';
 import 'package:prophecy_compagnon_shared/ui/dismissible_dialog.dart';
 import 'package:prophecy_compagnon_shared/ui/uniform_height_wrap.dart';

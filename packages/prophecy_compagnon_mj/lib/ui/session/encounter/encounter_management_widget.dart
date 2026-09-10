@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_mj/ui/session/encounter/turn_management_widget.dart';
 import 'package:prophecy_compagnon_shared/classes/entity_instance.dart';
 import 'package:prophecy_compagnon_shared/classes/player_character.dart';

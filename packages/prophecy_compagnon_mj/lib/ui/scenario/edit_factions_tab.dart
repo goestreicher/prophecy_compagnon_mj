@@ -1,5 +1,5 @@
 import 'package:animated_tree_view/animated_tree_view.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/faction.dart';
 import 'package:prophecy_compagnon_shared/classes/object_location.dart';
 import 'package:prophecy_compagnon_shared/classes/object_source.dart';

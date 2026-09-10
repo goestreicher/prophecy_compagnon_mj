@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/human_character.dart';
 import 'package:prophecy_compagnon_shared/ui/character/background/edit_advantages_widget.dart';
 import 'package:prophecy_compagnon_shared/ui/entity/background/edit_description_widget.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/star_company.dart';
 import 'package:prophecy_compagnon_shared/ui/character_role_display_widget.dart';
 

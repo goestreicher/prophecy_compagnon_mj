@@ -1,5 +1,5 @@
 import 'package:fleather/fleather.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:parchment/codecs.dart';
 import 'package:prophecy_compagnon_shared/classes/entity_base.dart';
 import 'package:prophecy_compagnon_shared/classes/resource_link/sourced_resource_link_provider.dart';

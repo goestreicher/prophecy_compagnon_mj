@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
 import 'package:prophecy_compagnon_mj/ui/session/session_creation_dialog.dart';
 import 'package:prophecy_compagnon_shared/classes/session/game_session.dart';

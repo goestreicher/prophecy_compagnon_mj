@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_markdown_plus/flutter_markdown_plus.dart';
 import 'package:prophecy_compagnon_shared/classes/resource_link/resource_link.dart';
 import 'package:prophecy_compagnon_shared/ui/resource_link/link_handler.dart';

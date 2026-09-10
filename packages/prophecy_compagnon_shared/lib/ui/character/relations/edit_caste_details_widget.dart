@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/human_character.dart';
 import 'package:prophecy_compagnon_shared/ui/character/relations/edit_caste_career_widget.dart';
 import 'package:prophecy_compagnon_shared/ui/character/relations/edit_caste_interdicts_widget.dart';

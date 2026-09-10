@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/entity_base.dart';
 import 'package:prophecy_compagnon_shared/ui/entity/base/attribute_display_widget.dart';
 import 'package:prophecy_compagnon_shared/ui/widget_group_container.dart';

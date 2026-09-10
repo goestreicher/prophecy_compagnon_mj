@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:prophecy_compagnon_mj/ui/session/encounter/encounter_management_widget.dart';
 import 'package:prophecy_compagnon_mj/ui/session/encounter/map_deployment_widget.dart';

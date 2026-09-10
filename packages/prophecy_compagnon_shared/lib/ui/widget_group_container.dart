@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:prophecy_compagnon_shared/ui/measure_widget_offscreen.dart';
 

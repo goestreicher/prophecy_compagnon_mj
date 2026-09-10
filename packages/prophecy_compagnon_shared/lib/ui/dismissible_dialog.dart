@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class DismissibleDialog<T> extends PopupRoute<T> {
   DismissibleDialog({ required this.title, required this.content });

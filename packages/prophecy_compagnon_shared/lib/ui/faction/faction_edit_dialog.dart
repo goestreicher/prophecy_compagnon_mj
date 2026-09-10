@@ -1,6 +1,6 @@
 import 'package:fleather/fleather.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:parchment/codecs.dart';
 import 'package:prophecy_compagnon_shared/classes/character_role.dart';

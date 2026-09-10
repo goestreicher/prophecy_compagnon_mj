@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/scenario/scenario_encounter.dart';
 import 'package:prophecy_compagnon_shared/ui/single_line_input_dialog.dart';
 

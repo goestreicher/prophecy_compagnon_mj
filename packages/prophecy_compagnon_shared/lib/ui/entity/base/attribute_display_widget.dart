@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class AttributeDisplayWidget extends StatelessWidget {
   const AttributeDisplayWidget({ super.key, required this.name, required this.value });

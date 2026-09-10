@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_shared/classes/creature.dart';
 import 'package:prophecy_compagnon_shared/classes/encounter_entity_factory.dart';
 import 'package:prophecy_compagnon_shared/classes/entity_base.dart';
