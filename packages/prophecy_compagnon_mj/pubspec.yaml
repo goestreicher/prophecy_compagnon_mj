@@ -28,8 +28,8 @@ dependencies:
   scrollable_positioned_list: ^0.3.0
   uuid: ^4.3.0
   vector_math: ^2.2.0
-
   material_ui: any
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
