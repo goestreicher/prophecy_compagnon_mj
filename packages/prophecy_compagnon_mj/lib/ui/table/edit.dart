@@ -4,6 +4,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:prophecy_compagnon_mj/ui/player_character/new_character_dialog.dart';
+import 'package:prophecy_compagnon_mj/ui/table/characters_list_widget.dart';
 import 'package:prophecy_compagnon_shared/classes/object_source.dart';
 import 'package:prophecy_compagnon_shared/classes/player_character.dart';
 import 'package:prophecy_compagnon_shared/classes/resource_link/pcs_resource_link_provider.dart';
@@ -15,9 +17,6 @@ import 'package:prophecy_compagnon_shared/ui/error_feedback.dart';
 import 'package:prophecy_compagnon_shared/ui/full_page_loading.dart';
 import 'package:prophecy_compagnon_shared/ui/single_line_input_dialog.dart';
 import 'package:prophecy_compagnon_shared/ui/star/edit_widget.dart';
-
-import '../player_character/new_character_dialog.dart';
-import 'characters_list_widget.dart';
 
 class TableEditPage extends StatefulWidget {
   const TableEditPage({

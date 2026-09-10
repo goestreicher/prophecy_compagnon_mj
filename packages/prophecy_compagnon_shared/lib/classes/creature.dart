@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:prophecy_compagnon_shared/classes/combat.dart';
 import 'package:prophecy_compagnon_shared/classes/draconic_favor.dart';
@@ -124,8 +121,7 @@ class CreatureCategory {
     if(_defaultAssetsLoaded) return;
     _defaultAssetsLoaded = true;
 
-    var jsonStr = await rootBundle.loadString('assets/creature-categories.json');
-    var categories = json.decode(jsonStr);
+    var categories = await loadJSONAssetObjectList('creature-categories.json');
     for(var c in categories) {
       // ignore: unused_local_variable
       var category = CreatureCategory(title: c, isDefault: true);

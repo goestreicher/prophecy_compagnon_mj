@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:prophecy_compagnon_shared/classes/exportable_binary_data.dart';
+import 'package:prophecy_compagnon_shared/classes/storage/default_assets_store.dart';
 import 'package:prophecy_compagnon_shared/classes/storage/storable.dart';
 import 'package:uuid/uuid.dart';
 
@@ -109,7 +110,7 @@ class PlaceMap {
   Future<void> load() async {
     if(sourceType == PlaceMapSourceType.asset) {
       if(imageData != null) return;
-      var data = await rootBundle.load(source);
+      var data = await loadAssetByteData(source);
       imageData = data.buffer.asUint8List();
     }
     else if(sourceType == PlaceMapSourceType.local) {

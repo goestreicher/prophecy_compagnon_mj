@@ -55,7 +55,7 @@ class _MagicSphereEditWidgetState extends State<MagicSphereEditWidget> {
                 width: 32,
                 height: 48,
                 child: Image.asset(
-                  'assets/images/magic/sphere-${widget.sphere.name}-icon.png',
+                  'packages/prophecy_compagnon_shared/assets/images/magic/sphere-${widget.sphere.name}-icon.png',
                 ),
               ),
               Text(

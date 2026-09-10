@@ -42,7 +42,7 @@ class ResourceMemoryCache<Resource extends ResourceBaseClass, Store extends Json
     Resource? ret;
 
     if(location.type == ObjectLocationType.assets) {
-      var json = await loadJsonAssetObject(location.collectionUri, id, extractId);
+      var json = await loadFilteredJsonAssetObject(location.collectionUri, id, extractId);
       if(json != null) {
         // ignore:unused_local_variable
         ret = jsonConverter(json);

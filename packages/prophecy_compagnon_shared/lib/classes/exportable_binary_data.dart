@@ -4,9 +4,8 @@ import 'dart:typed_data';
 import 'package:crypto/crypto.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:prophecy_compagnon_shared/classes/storage/exceptions.dart';
+import 'package:prophecy_compagnon_shared/classes/storage/storable.dart';
 import 'package:prophecy_compagnon_shared/classes/storage/storage.dart';
-
-import 'storage/storable.dart';
 
 part 'exportable_binary_data.g.dart';
 

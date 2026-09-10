@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:material_ui/material_ui.dart';
+import 'package:prophecy_compagnon_mj/ui/session/encounter/execute_turn_action.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_action.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/entity_action.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/turn.dart';
@@ -16,8 +17,6 @@ import 'package:prophecy_compagnon_shared/ui/session/messages/encounter/turn/sel
 import 'package:prophecy_compagnon_shared/ui/session/messages/encounter/turn/set_combat_action.dart';
 import 'package:prophecy_compagnon_shared/ui/session/messages/session_message.dart';
 import 'package:prophecy_compagnon_shared/ui/session/messages/session_message_response.dart';
-
-import 'execute_turn_action.dart';
 
 class TurnManagementWidget extends StatefulWidget {
   const TurnManagementWidget({

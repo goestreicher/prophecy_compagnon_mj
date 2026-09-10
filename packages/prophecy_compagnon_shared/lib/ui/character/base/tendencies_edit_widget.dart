@@ -88,7 +88,7 @@ class _TendenciesEditWidgetState extends State<TendenciesEditWidget> {
               top: circlesVerticalOffset,
               left: circlesHorizontalOffset,
               child: Image.asset(
-                'assets/images/tendencies/background_tendencies.png',
+                'packages/prophecy_compagnon_shared/assets/images/tendencies/background_tendencies.png',
                 width: widget.backgroundWidth.toDouble(),
               )
             ),

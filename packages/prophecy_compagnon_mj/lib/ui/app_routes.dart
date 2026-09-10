@@ -1,6 +1,16 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
 import 'package:material_symbols_icons/symbols.dart';
+import 'package:prophecy_compagnon_mj/ui/creatures/clone.dart';
+import 'package:prophecy_compagnon_mj/ui/creatures/create.dart';
+import 'package:prophecy_compagnon_mj/ui/creatures/edit.dart';
+import 'package:prophecy_compagnon_mj/ui/creatures/list.dart';
+import 'package:prophecy_compagnon_mj/ui/equipment/list.dart';
+import 'package:prophecy_compagnon_mj/ui/factions/main.dart';
+import 'package:prophecy_compagnon_mj/ui/non_player_character/clone.dart';
+import 'package:prophecy_compagnon_mj/ui/non_player_character/create.dart';
+import 'package:prophecy_compagnon_mj/ui/non_player_character/edit.dart';
+import 'package:prophecy_compagnon_mj/ui/non_player_character/list.dart';
 import 'package:prophecy_compagnon_mj/ui/places/main.dart';
 import 'package:prophecy_compagnon_mj/ui/scenario/edit.dart';
 import 'package:prophecy_compagnon_mj/ui/scenario/list.dart';
@@ -18,17 +28,6 @@ import 'package:prophecy_compagnon_mj/ui/table/pc_wizard.dart';
 import 'package:prophecy_compagnon_mj/ui/timeline/main.dart';
 import 'package:prophecy_compagnon_mj/ui/welcome_page.dart';
 import 'package:prophecy_compagnon_shared/ui/custom_icons.dart';
-
-import 'creatures/clone.dart';
-import 'creatures/create.dart';
-import 'creatures/edit.dart';
-import 'creatures/list.dart';
-import 'equipment/list.dart';
-import 'factions/main.dart';
-import 'non_player_character/clone.dart';
-import 'non_player_character/create.dart';
-import 'non_player_character/edit.dart';
-import 'non_player_character/list.dart';
 
 class MainAppRoute {
   MainAppRoute({

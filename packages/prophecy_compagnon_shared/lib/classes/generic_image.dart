@@ -3,6 +3,7 @@ import 'dart:ui' as ui;
 import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:prophecy_compagnon_shared/classes/exportable_binary_data.dart';
+import 'package:prophecy_compagnon_shared/classes/storage/default_assets_store.dart';
 
 part 'generic_image.g.dart';
 
@@ -46,7 +47,7 @@ class GenericImage {
           case GenericImageSourceType.local:
             binary = await BinaryDataStore().get(source);
           case GenericImageSourceType.asset:
-            var bytes = await rootBundle.load(source);
+            var bytes = await loadAssetByteData(source);
             binary = ExportableBinaryData(
                 data: Uint8List.sublistView(bytes)
             );

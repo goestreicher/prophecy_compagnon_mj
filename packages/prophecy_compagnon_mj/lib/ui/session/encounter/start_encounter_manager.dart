@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:prophecy_compagnon_mj/ui/session/board/item_picker.dart';
 import 'package:prophecy_compagnon_shared/classes/player_character.dart';
 import 'package:prophecy_compagnon_shared/classes/scenario/scenario_encounter.dart';
 import 'package:prophecy_compagnon_shared/classes/session/board/board.dart';
@@ -10,8 +11,6 @@ import 'package:prophecy_compagnon_shared/ui/session/clients/session_message_bus
 import 'package:prophecy_compagnon_shared/ui/session/messages/action/start_pc_review.dart';
 import 'package:prophecy_compagnon_shared/ui/session/messages/session_message.dart';
 import 'package:prophecy_compagnon_shared/ui/session/messages/session_message_response.dart';
-
-import '../board/item_picker.dart';
 
 class StartEncounterResult {
   StartEncounterResult({

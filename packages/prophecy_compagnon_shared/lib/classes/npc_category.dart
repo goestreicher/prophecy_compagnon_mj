@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:flutter/services.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:prophecy_compagnon_shared/classes/storage/default_assets_store.dart';
 import 'package:prophecy_compagnon_shared/classes/storage/storable.dart';
@@ -96,8 +93,7 @@ class NPCCategory {
     if(_defaultAssetsLoaded) return;
     _defaultAssetsLoaded = true;
 
-    var jsonStr = await rootBundle.loadString('assets/npc-categories.json');
-    var categories = json.decode(jsonStr);
+    var categories = await loadJSONAssetObjectList('npc-categories.json');
     for(var c in categories) {
       // ignore: unused_local_variable
       var category = NPCCategory(title: c, isDefault: true);

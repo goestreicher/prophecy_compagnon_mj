@@ -19,7 +19,7 @@ class CustomIcons {
   CustomIcons._();
 
   static const _kFontFam = 'CustomIcons';
-  static const String? _kFontPkg = null;
+  static const String _kFontPkg = 'prophecy_compagnon_shared';
 
   static const IconData archery = IconData(0xe800, fontFamily: _kFontFam, fontPackage: _kFontPkg);
   static const IconData creature = IconData(0xe801, fontFamily: _kFontFam, fontPackage: _kFontPkg);

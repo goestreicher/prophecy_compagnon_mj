@@ -1,4 +1,5 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:prophecy_compagnon_mj/ui/session/encounter/start_encounter_manager.dart';
 import 'package:prophecy_compagnon_shared/classes/calendar.dart';
 import 'package:prophecy_compagnon_shared/classes/resource_link/resource_link.dart';
 import 'package:prophecy_compagnon_shared/classes/scenario/scenario_encounter.dart';
@@ -7,13 +8,9 @@ import 'package:prophecy_compagnon_shared/classes/session/event.dart';
 import 'package:prophecy_compagnon_shared/classes/session/game_session.dart';
 import 'package:prophecy_compagnon_shared/ui/markdown_display_widget.dart';
 import 'package:prophecy_compagnon_shared/ui/resource_link/link_handler.dart';
-import 'package:prophecy_compagnon_shared/ui/session/messages/responses/action/pc_review_result.dart';
-import 'package:prophecy_compagnon_shared/ui/session/messages/session_message_response.dart';
 import 'package:prophecy_compagnon_shared/ui/single_line_input_dialog.dart';
 import 'package:provider/provider.dart';
 import 'package:uuid/uuid.dart';
-
-import '../encounter/start_encounter_manager.dart';
 
 class SessionDayWidget extends StatelessWidget {
   const SessionDayWidget({
@@ -228,30 +225,6 @@ class _EventWidget extends StatelessWidget {
   final DayRange range;
   final SessionEvent event;
   final Color backgroundColor;
-
-  void _onPCReviewDone(SessionMessageResponse response) {
-    // No PC were selected
-    if(response.data == null) return;
-
-    if(response.status == SessionMessageResponseStatus.rejected) {
-      // TODO: display a message
-      return;
-    }
-
-    if(response.status == SessionMessageResponseStatus.error) {
-      // TODO: display a message
-      return;
-    }
-
-    if(response.data is! SessionPlayerCharacterReviewResult) {
-      // TODO: display a message
-      return;
-    }
-
-    var result = response.data as SessionPlayerCharacterReviewResult;
-    // TODO
-    print(result.selected);
-  }
 
   @override
   Widget build(BuildContext context) {

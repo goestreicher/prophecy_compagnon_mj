@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:material_ui/material_ui.dart';
 import 'package:prophecy_compagnon_mj/ui/table/pc_wizard/enums.dart';
+import 'package:prophecy_compagnon_mj/ui/table/pc_wizard/model.dart';
 import 'package:prophecy_compagnon_mj/ui/table/pc_wizard/step_data.dart';
 import 'package:prophecy_compagnon_mj/ui/table/pc_wizard/utils.dart';
 import 'package:prophecy_compagnon_shared/classes/caste/base.dart';
@@ -22,8 +23,6 @@ import 'package:prophecy_compagnon_shared/ui/entity/magic/display_magic_spell_wi
 import 'package:prophecy_compagnon_shared/ui/entity/magic/spell_picker_dialog.dart';
 import 'package:prophecy_compagnon_shared/ui/uniform_height_wrap.dart';
 import 'package:provider/provider.dart';
-
-import 'model.dart';
 
 class PlayerCharacterWizardStepDataSkillPoints extends PlayerCharacterWizardStepData {
   PlayerCharacterWizardStepDataSkillPoints({

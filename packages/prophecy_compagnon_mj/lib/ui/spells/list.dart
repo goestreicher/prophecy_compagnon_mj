@@ -319,7 +319,7 @@ class _SphereSelectionButton extends StatelessWidget {
           InkWell(
             onTap: () => onPressed(),
             child: Image.asset(
-              'assets/images/magic/sphere-${sphere.name}-color.png',
+              'packages/prophecy_compagnon_shared/assets/images/magic/sphere-${sphere.name}-color.png',
               width: 64.0,
             )
           ),

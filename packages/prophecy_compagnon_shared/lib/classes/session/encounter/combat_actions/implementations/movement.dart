@@ -2,13 +2,8 @@ import 'dart:ui';
 
 import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_action.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_action_type.dart';
+import 'package:prophecy_compagnon_shared/classes/session/encounter/combat_actions/descriptions/movement.dart';
 import 'package:prophecy_compagnon_shared/classes/session/map/movement_path.dart';
-
-enum CombatActionMovementType {
-  simple,
-  run,
-  sprint,
-}
 
 class CombatActionAssignedMovement extends CombatAction {
   CombatActionAssignedMovement({

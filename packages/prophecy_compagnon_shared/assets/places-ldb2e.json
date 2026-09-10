@@ -25,7 +25,7 @@
     },
     "map": {
       "source_type": "asset",
-      "source": "assets/images/maps/kor_global.png",
+      "source": "images/maps/kor_global.png",
       "image_width": 1754,
       "image_height": 2480,
       "real_width": 5658065,

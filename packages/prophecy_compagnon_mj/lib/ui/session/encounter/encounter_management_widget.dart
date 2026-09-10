@@ -1,4 +1,6 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:prophecy_compagnon_mj/ui/session/encounter/entities_initiative.dart';
+import 'package:prophecy_compagnon_mj/ui/session/encounter/map_deployment_widget.dart';
 import 'package:prophecy_compagnon_mj/ui/session/encounter/turn_management_widget.dart';
 import 'package:prophecy_compagnon_shared/classes/entity_instance.dart';
 import 'package:prophecy_compagnon_shared/classes/player_character.dart';
@@ -7,9 +9,6 @@ import 'package:prophecy_compagnon_shared/classes/session/encounter.dart';
 import 'package:prophecy_compagnon_shared/classes/session/encounter/turn.dart';
 import 'package:prophecy_compagnon_shared/classes/session/game_session.dart';
 import 'package:prophecy_compagnon_shared/classes/session/map/item.dart';
-
-import 'entities_initiative.dart';
-import 'map_deployment_widget.dart';
 
 class EncounterManagementWidget extends StatefulWidget {
   const EncounterManagementWidget({

@@ -1,9 +1,8 @@
 // ignore_for_file: depend_on_referenced_packages
 import 'package:build/build.dart';
 import 'package:glob/glob.dart';
+import 'package:prophecy_compagnon_shared/builders/store_adapter_generators.dart';
 import 'package:source_gen/source_gen.dart' show LibraryReader;
-
-import 'store_adapter_generators.dart';
 
 Builder registerStoreAdaptersBuilder(BuilderOptions options) {
   var defaults = BuilderOptions({

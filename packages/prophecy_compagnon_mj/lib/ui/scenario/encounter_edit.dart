@@ -1,4 +1,6 @@
 import 'package:material_ui/material_ui.dart';
+import 'package:prophecy_compagnon_mj/ui/scenario/creature_picker_dialog.dart';
+import 'package:prophecy_compagnon_mj/ui/scenario/npc_picker_dialog.dart';
 import 'package:prophecy_compagnon_shared/classes/creature.dart';
 import 'package:prophecy_compagnon_shared/classes/encounter_entity_factory.dart';
 import 'package:prophecy_compagnon_shared/classes/entity_base.dart';
@@ -6,9 +8,6 @@ import 'package:prophecy_compagnon_shared/classes/non_player_character.dart';
 import 'package:prophecy_compagnon_shared/classes/resource_link/resource_link.dart';
 import 'package:prophecy_compagnon_shared/classes/scenario/scenario_encounter.dart';
 import 'package:prophecy_compagnon_shared/ui/resource_link/link_handler.dart';
-
-import 'creature_picker_dialog.dart';
-import 'npc_picker_dialog.dart';
 
 class EncounterEditWidget extends StatefulWidget {
   const EncounterEditWidget({

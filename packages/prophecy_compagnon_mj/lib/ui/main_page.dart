@@ -1,5 +1,6 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:go_router/go_router.dart';
+import 'package:prophecy_compagnon_mj/ui/app_routes.dart';
 import 'package:prophecy_compagnon_shared/classes/creature.dart';
 import 'package:prophecy_compagnon_shared/classes/equipment/armor.dart';
 import 'package:prophecy_compagnon_shared/classes/equipment/cloth.dart';
@@ -15,8 +16,6 @@ import 'package:prophecy_compagnon_shared/classes/npc_category.dart';
 import 'package:prophecy_compagnon_shared/classes/place.dart';
 import 'package:prophecy_compagnon_shared/classes/star.dart';
 import 'package:prophecy_compagnon_shared/ui/full_page_loading.dart';
-
-import 'app_routes.dart';
 
 Future<void> _loadAssets() async {
   // TODO: some of those can throw storage exceptions, manage them
